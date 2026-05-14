@@ -1,0 +1,3079 @@
+{
+  "generated_at": "2026-05-14T18:49:29.447045+00:00",
+  "count": 224,
+  "posts": [
+    {
+      "slug": "what-chunk-strategies-exist-and-how-to-choose-one",
+      "title": "What chunking strategies exist and how to choose one?",
+      "summary": "If you've decided to chunk your documents for a RAG pipeline or semantic search system, the next question hits almost immediately: which chunking strategy should I use?",
+      "publishDate": "2026-05-12T10:56:54.000Z",
+      "categories": [
+        "ai"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/tzo9yheodgtpvcf944rpilgn.auto",
+      "source": "https://surrealdb.com/blog/what-chunk-strategies-exist-and-how-to-choose-one",
+      "local_path": "2026/05/what-chunk-strategies-exist-and-how-to-choose-one.md"
+    },
+    {
+      "slug": "what-is-the-recommended-chunk-size",
+      "title": "What is the recommended chunk size?",
+      "summary": "If you're building a RAG (Retrieval-Augmented Generation) pipeline, a semantic search system, or any AI application that reads from a vector store, one question comes up almost immediately: what chunk size should I use?",
+      "publishDate": "2026-05-08T10:55:33.000Z",
+      "categories": [
+        "ai"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/1s43w8omsve1lak6dv2jjwvl.auto",
+      "source": "https://surrealdb.com/blog/what-is-the-recommended-chunk-size",
+      "local_path": "2026/05/what-is-the-recommended-chunk-size.md"
+    },
+    {
+      "slug": "schema-migrations-in-surrealdb-a-local-dev-workflow",
+      "title": "Schema migrations in SurrealDB: A local dev workflow",
+      "summary": "Managing schema changes in SurrealDB shouldn't slow down your local development. This post walks through a practical migration workflow that keeps your database in sync as your project evolves.",
+      "publishDate": "2026-05-07T11:30:00.000Z",
+      "categories": [
+        "tutorials",
+        "featured",
+        "releases"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/tcal2bxz4xjbp3xs4i60qcq0.auto",
+      "source": "https://surrealdb.com/blog/schema-migrations-in-surrealdb-a-local-dev-workflow",
+      "local_path": "2026/05/schema-migrations-in-surrealdb-a-local-dev-workflow.md"
+    },
+    {
+      "slug": "kreuzberg-surrealdb-from-unstructured-documents-to-hybrid-retrieval",
+      "title": "Kreuzberg & SurrealDB: from unstructured documents to hybrid retrieval",
+      "summary": "SurrealDB now integrates with Kreuzberg to ingest, chunk, and search unstructured documents across 88+ formats - with built-in keyword, semantic, and hybrid search with reranking.",
+      "publishDate": "2026-04-30T11:20:48.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/hkvf3qnxom7qx26wgbgw2ekd.auto",
+      "source": "https://surrealdb.com/blog/kreuzberg-surrealdb-from-unstructured-documents-to-hybrid-retrieval",
+      "local_path": "2026/04/kreuzberg-surrealdb-from-unstructured-documents-to-hybrid-retrieval.md"
+    },
+    {
+      "slug": "hybrid-search-inside-surrealdb",
+      "title": "Hybrid search inside SurrealDB",
+      "summary": "How I fused vector and keyword retrieval in a single query",
+      "publishDate": "2026-04-30T11:03:59.000Z",
+      "categories": [
+        "ai"
+      ],
+      "readTime": "11 min read",
+      "imageUrl": "https://cdn.surrealdb.com/fuaerpy85vnd6q9abysq1arj.auto",
+      "source": "https://surrealdb.com/blog/hybrid-search-inside-surrealdb",
+      "local_path": "2026/04/hybrid-search-inside-surrealdb.md"
+    },
+    {
+      "slug": "building-compounding-memory-with-knowledge-graphs-and-agentic-rag",
+      "title": "Building compounding memory with knowledge graphs and agentic RAG",
+      "summary": "Synapse, a memory-first reflection agent, helps users track therapy journal patterns. It structures insights into a knowledge graph, revealing patterns and answering questions based on context.",
+      "publishDate": "2026-04-27T12:44:03.000Z",
+      "categories": [
+        "community",
+        "ai"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/9815als4cfdp8asb88al3njt.auto",
+      "source": "https://surrealdb.com/blog/building-compounding-memory-with-knowledge-graphs-and-agentic-rag",
+      "local_path": "2026/04/building-compounding-memory-with-knowledge-graphs-and-agentic-rag.md"
+    },
+    {
+      "slug": "a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search",
+      "title": "New SurrealDB docs search using hybrid search and HNSW\\/BM25 reranking",
+      "summary": "How SurrealDB has implemented documentation search using hybrid search (full-text and vector hybrid search and reranking with HNSW and BM25 indexes), plus a simplified example to show the same pattern in just a few queries.",
+      "publishDate": "2026-04-22T01:24:06.000Z",
+      "categories": [
+        "engineering",
+        "tutorials"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/0wjvo2d6lcnnleyqnasjqnxy.auto",
+      "source": "https://surrealdb.com/blog/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search",
+      "local_path": "2026/04/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search.md"
+    },
+    {
+      "slug": "whats-new-in-surrealist-3-8",
+      "title": "What's new in Surrealist 3.8",
+      "summary": "Surrealist 3.8 introduces a fully redesigned organisation view, improved query formatting, and loads of other enhancements.",
+      "publishDate": "2026-04-21T10:58:01.000Z",
+      "categories": [
+        "featured",
+        "releases"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/xznknzje1thbv1o7v7plfeze.auto",
+      "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-8",
+      "local_path": "2026/04/whats-new-in-surrealist-3-8.md"
+    },
+    {
+      "slug": "graph-rag-does-not-need-a-graph-database-it-needs-a-database-that-does-everything",
+      "title": "Graph RAG does not need a graph database. It needs a database that does everything.",
+      "summary": "Graph RAG is the right idea. Using relationships between entities to scope and improve retrieval produces better results than vector similarity alone. What matters in production is whether graph traversal, vector search, full-text search, and structured filters compose in a single atomic statement.",
+      "publishDate": "2026-04-17T15:58:41.000Z",
+      "categories": [
+        "featured",
+        "ai"
+      ],
+      "readTime": "13 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d75p8dtudggs73cie0ag.auto",
+      "source": "https://surrealdb.com/blog/graph-rag-does-not-need-a-graph-database-it-needs-a-database-that-does-everything",
+      "local_path": "2026/04/graph-rag-does-not-need-a-graph-database-it-needs-a-database-that-does-everything.md"
+    },
+    {
+      "slug": "how-to-get-near-perfect-deterministic-accuracy-from-your-ai-agents",
+      "title": "How to get near-perfect, deterministic accuracy from your AI agents",
+      "summary": "Agent accuracy problems are almost always retrieval problems, not model problems. Scope-first retrieval and reasoning and retrieval graph feedback loops close the gap to 99%+.",
+      "publishDate": "2026-03-28T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "ai"
+      ],
+      "readTime": "17 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d725aiura3mc73bjahfg.auto",
+      "source": "https://surrealdb.com/blog/how-to-get-near-perfect-deterministic-accuracy-from-your-ai-agents",
+      "local_path": "2026/03/how-to-get-near-perfect-deterministic-accuracy-from-your-ai-agents.md"
+    },
+    {
+      "slug": "surrealmx-in-memory-storage-with-time-travel-and-persistent-storage",
+      "title": "SurrealMX: In-memory storage with time travel and persistent storage",
+      "summary": "SurrealMX lets you use in-memory storage along with optional time travel versioned queries and two types of persistent storage with a large number of configurations to balance performance with durability.",
+      "publishDate": "2026-03-25T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d719pigqd08s7390vj2g.auto",
+      "source": "https://surrealdb.com/blog/surrealmx-in-memory-storage-with-time-travel-and-persistent-storage",
+      "local_path": "2026/03/surrealmx-in-memory-storage-with-time-travel-and-persistent-storage.md"
+    },
+    {
+      "slug": "exponential-cost-traps-in-database-architectures-how-surrealdb-breaks-the-cycle",
+      "title": "Exponential cost traps in database architectures: how SurrealDB breaks the cycle",
+      "summary": "SurrealDB offers a consolidated solution to store data once and querying it across models to reduce overall costs, particularly in storage-heavy environments where cloud block storage is in use.",
+      "publishDate": "2026-03-19T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "engineering"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d6o2cfo79v1s739r31vg.auto",
+      "source": "https://surrealdb.com/blog/exponential-cost-traps-in-database-architectures-how-surrealdb-breaks-the-cycle",
+      "local_path": "2026/03/exponential-cost-traps-in-database-architectures-how-surrealdb-breaks-the-cycle.md"
+    },
+    {
+      "slug": "where-surrealdb-fits-in-your-stack",
+      "title": "Where SurrealDB fits in your stack",
+      "summary": "By consolidating databases into one platform, SurrealDB enables applications with multi-model capabilities, blending relational queries, graph traversals, vector search, time-series and geospatial analysis without the overhead of disparate tools.",
+      "publishDate": "2026-03-12T00:00:00.000Z",
+      "categories": [
+        "featured"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d6o2cfo79v1s739r321g.auto",
+      "source": "https://surrealdb.com/blog/where-surrealdb-fits-in-your-stack",
+      "local_path": "2026/03/where-surrealdb-fits-in-your-stack.md"
+    },
+    {
+      "slug": "surrealdb-is-now-available-on-aws-marketplace",
+      "title": "SurrealDB is now available on AWS Marketplace",
+      "summary": "You can now deploy SurrealDB directly into your AWS environment with streamlined procurement, simplified billing, and faster time to production - all through your existing AWS environment.",
+      "publishDate": "2026-03-11T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d6o2b5079v1s739r31rg.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-is-now-available-on-aws-marketplace",
+      "local_path": "2026/03/surrealdb-is-now-available-on-aws-marketplace.md"
+    },
+    {
+      "slug": "openais-postgres-architecture-a-brilliant-fix-for-a-billion-dollar-mistake",
+      "title": "OpenAI’s Postgres Architecture: A Brilliant Fix for a Billion-Dollar Mistake",
+      "summary": "OpenAI engineered an impressive PostgreSQL scaling strategy, but this article argues it is a cautionary tale and explains why distributed-first architectures can avoid many of the same pitfalls.",
+      "publishDate": "2026-03-04T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "engineering"
+      ],
+      "readTime": "16 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d6km1uo3bfis73e33er0.auto",
+      "source": "https://surrealdb.com/blog/openais-postgres-architecture-a-brilliant-fix-for-a-billion-dollar-mistake",
+      "local_path": "2026/03/openais-postgres-architecture-a-brilliant-fix-for-a-billion-dollar-mistake.md"
+    },
+    {
+      "slug": "how-to-use-surrealism-to-build-your-own-custom-surrealdb-extensions",
+      "title": "How to use Surrealism to build your own custom SurrealDB extensions",
+      "summary": "Surrealism lets you build your own custom plugins, WASM functions that you can build and compile to their own binaries that can be called directly from the database",
+      "publishDate": "2026-03-02T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials"
+      ],
+      "readTime": "10 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d6fg02ke4v5c739gcpb0.auto",
+      "source": "https://surrealdb.com/blog/how-to-use-surrealism-to-build-your-own-custom-surrealdb-extensions",
+      "local_path": "2026/03/how-to-use-surrealism-to-build-your-own-custom-surrealdb-extensions.md"
+    },
+    {
+      "slug": "file-support-in-surrealdb-3-0",
+      "title": "File support in SurrealDB 3.0",
+      "summary": "SurrealDB 3.0 includes experimental file support that allows you to create, update, and delete files regardless of whether the database itself saves its data persistently or not.",
+      "publishDate": "2026-02-25T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "engineering",
+        "tutorials"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d69eiodhk7ec73f2kdf0.auto",
+      "source": "https://surrealdb.com/blog/file-support-in-surrealdb-3-0",
+      "local_path": "2026/02/file-support-in-surrealdb-3-0.md"
+    },
+    {
+      "slug": "introducing-javascript-sdk-2-0",
+      "title": "Introducing JavaScript SDK 2.0",
+      "summary": "The most significant update to the JavaScript SDK to date: SurrealDB 3.0 support, multi-session support, automatic token refreshing, a redesigned live query API, and a new query builder pattern.",
+      "publishDate": "2026-02-25T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "releases"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d6fg02ke4v5c739gcpbg.auto",
+      "source": "https://surrealdb.com/blog/introducing-javascript-sdk-2-0",
+      "local_path": "2026/02/introducing-javascript-sdk-2-0.md"
+    },
+    {
+      "slug": "custom-api-endpoints-streamlining-your-architecture",
+      "title": "Custom API Endpoints: streamlining your architecture",
+      "summary": "Custom API endpoints allow developers to define database behaviours, set up middleware, and create custom API endpoints directly within the familiar SurrealQL query language.",
+      "publishDate": "2026-02-18T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "engineering",
+        "tutorials"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d68ukllhk7ec73f2kcc0.auto",
+      "source": "https://surrealdb.com/blog/custom-api-endpoints-streamlining-your-architecture",
+      "local_path": "2026/02/custom-api-endpoints-streamlining-your-architecture.md"
+    },
+    {
+      "slug": "surrealdb-raises-23m-series-a-extension-to-power-the-ai-native-database-era",
+      "title": "SurrealDB Raises $23M Series A extension to power the AI-native database era",
+      "summary": "SurrealDB Raises $23M Series A extension to power the AI-native database era",
+      "publishDate": "2026-02-18T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d68ukllhk7ec73f2kc90.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-raises-23m-series-a-extension-to-power-the-ai-native-database-era",
+      "local_path": "2026/02/surrealdb-raises-23m-series-a-extension-to-power-the-ai-native-database-era.md"
+    },
+    {
+      "slug": "introducing-surrealdb-3-0--the-future-of-ai-agent-memory",
+      "title": "Introducing SurrealDB 3.0 - the future of AI agent memory",
+      "summary": "Introducing SurrealDB 3.0 - the future of AI agent memory",
+      "publishDate": "2026-02-17T00:00:00.000Z",
+      "categories": [
+        "featured"
+      ],
+      "readTime": "25 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d68ukllhk7ec73f2kc9g.auto",
+      "source": "https://surrealdb.com/blog/introducing-surrealdb-3-0--the-future-of-ai-agent-memory",
+      "local_path": "2026/02/introducing-surrealdb-3-0--the-future-of-ai-agent-memory.md"
+    },
+    {
+      "slug": "surrealdb-3-0-benchmarks-a-new-foundation-for-performance",
+      "title": "SurrealDB 3.0 benchmarks: a new foundation for performance",
+      "summary": "SurrealDB 3.0 introduces a new benchmarking foundation that showcases its improved, production-ready performance and the architectural advancements driving it.",
+      "publishDate": "2026-02-17T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "engineering"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d68ukllhk7ec73f2kccg.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-3-0-benchmarks-a-new-foundation-for-performance",
+      "local_path": "2026/02/surrealdb-3-0-benchmarks-a-new-foundation-for-performance.md"
+    },
+    {
+      "slug": "introducing-surrealism",
+      "title": "Introducing Surrealism",
+      "summary": "Introducing Surrealism",
+      "publishDate": "2026-02-17T00:00:00.000Z",
+      "categories": [
+        "featured"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d68ukllhk7ec73f2kce0.auto",
+      "source": "https://surrealdb.com/blog/introducing-surrealism",
+      "local_path": "2026/02/introducing-surrealism.md"
+    },
+    {
+      "slug": "surrealdb-vs-neo4j",
+      "title": "SurrealDB vs. Neo4j",
+      "summary": "SurrealDB is built for live, large-scale application data. Neo4j is built for traversal-heavy graph workloads at modest scale.",
+      "publishDate": "2026-02-16T00:00:00.000Z",
+      "categories": [
+        "featured"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d69e7l5hk7ec73f2kdd0.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-vs-neo4j",
+      "local_path": "2026/02/surrealdb-vs-neo4j.md"
+    },
+    {
+      "slug": "surrealdb-vs-postgres",
+      "title": "SurrealDB vs. Postgres",
+      "summary": "SurrealDB natively unifies relational, graph, vector, document, and temporal data in a single engine, no extensions or workarounds.",
+      "publishDate": "2026-02-16T00:00:00.000Z",
+      "categories": [
+        "featured"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d69e7l5hk7ec73f2kdcg.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-vs-postgres",
+      "local_path": "2026/02/surrealdb-vs-postgres.md"
+    },
+    {
+      "slug": "surrealdb-vs-mongodb",
+      "title": "SurrealDB vs. MongoDB",
+      "summary": "SurrealDB is a unified, transactional, multi-model database. MongoDB is a document-oriented database with multiple specialised subsystems.",
+      "publishDate": "2026-02-16T00:00:00.000Z",
+      "categories": [
+        "featured"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d69e7l5hk7ec73f2kdbg.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-vs-mongodb",
+      "local_path": "2026/02/surrealdb-vs-mongodb.md"
+    },
+    {
+      "slug": "how-to-build-a-knowledge-graph-for-ai",
+      "title": "How to build a knowledge graph for AI",
+      "summary": "What is a knowledge graph and how can it be used to enhance AI agents?",
+      "publishDate": "2026-02-05T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "ai"
+      ],
+      "readTime": "11 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d62cfitjoqgc73be5iv0.auto",
+      "source": "https://surrealdb.com/blog/how-to-build-a-knowledge-graph-for-ai",
+      "local_path": "2026/02/how-to-build-a-knowledge-graph-for-ai.md"
+    },
+    {
+      "slug": "knowledge-graph-rag-two-query-patterns-for-smarter-ai-agents",
+      "title": "Knowledge Graph RAG: two query patterns for smarter AI agents",
+      "summary": "A post that walks through two powerful SurrealQL query patterns that demonstrate how to retrieve context from a knowledge graph to feed AI agents.",
+      "publishDate": "2026-01-29T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "ai"
+      ],
+      "readTime": "8 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d5svric8bm2s73cj5ks0.auto",
+      "source": "https://surrealdb.com/blog/knowledge-graph-rag-two-query-patterns-for-smarter-ai-agents",
+      "local_path": "2026/01/knowledge-graph-rag-two-query-patterns-for-smarter-ai-agents.md"
+    },
+    {
+      "slug": "a-look-at-surrealql-and-how-it-differs-from-postgresql",
+      "title": "A look at SurrealQL and how it differs from PostgreSQL",
+      "summary": "In this article, we will explore the similarities and differences between PostgreSQL and SurrealQL. We will also see how SurrealQL can overcome some of the limitations that relational databases have.",
+      "publishDate": "2026-01-27T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials"
+      ],
+      "readTime": "9 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d5rql5c8bm2s73cj5k7g.auto",
+      "source": "https://surrealdb.com/blog/a-look-at-surrealql-and-how-it-differs-from-postgresql",
+      "local_path": "2026/01/a-look-at-surrealql-and-how-it-differs-from-postgresql.md"
+    },
+    {
+      "slug": "learning-through-building-surrealdb-universitys-newest-tutorial",
+      "title": "Learning through building: SurrealDB University's newest tutorial",
+      "summary": "Now you can learn SurrealDB by building your own database that takes advantage of its multi-model capabilities to store and query over 100 of the world's most popular movies.",
+      "publishDate": "2025-12-18T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d51alp7eqfus73eceang.auto",
+      "source": "https://surrealdb.com/blog/learning-through-building-surrealdb-universitys-newest-tutorial",
+      "local_path": "2025/12/learning-through-building-surrealdb-universitys-newest-tutorial.md"
+    },
+    {
+      "slug": "agents-with-memory-how-agno-and-surrealdb-enable-reliable-ai-systems",
+      "title": "Agents with memory: how Agno and SurrealDB enable reliable AI systems",
+      "summary": "Highlights from our Agno x SurrealDB livestream on building reliable, context-rich agents with a strong memory layer.",
+      "publishDate": "2025-12-17T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "ai"
+      ],
+      "readTime": "11 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d51a527eqfus73eceamg.auto",
+      "source": "https://surrealdb.com/blog/agents-with-memory-how-agno-and-surrealdb-enable-reliable-ai-systems",
+      "local_path": "2025/12/agents-with-memory-how-agno-and-surrealdb-enable-reliable-ai-systems.md"
+    },
+    {
+      "slug": "polyai-on-building-context-aware-voice-agents-latency-knowledge-bases-and-what-actually-ships",
+      "title": "PolyAI on building context-aware voice agents: latency, knowledge bases, and what actually ships",
+      "summary": "Key takeaways from SurrealDB Stream #34 with PolyAI CTO & co-founder Shawn Wen on the hard parts of shipping context-aware voice agents: latency budgets, knowledge governance, and operational trust.",
+      "publishDate": "2025-12-17T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "ai",
+        "events"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d51tkrfeqfus73eceas0.auto",
+      "source": "https://surrealdb.com/blog/polyai-on-building-context-aware-voice-agents-latency-knowledge-bases-and-what-actually-ships",
+      "local_path": "2025/12/polyai-on-building-context-aware-voice-agents-latency-knowledge-bases-and-what-actually-ships.md"
+    },
+    {
+      "slug": "surrealdb-joins-the-nvidia-inception-program",
+      "title": "SurrealDB joins the NVIDIA Inception Program",
+      "summary": "SurrealDB joins the NVIDIA Inception Program, gaining access to GPU acceleration, CUDA integrations, and advanced vector search capabilities for AI-driven applications.",
+      "publishDate": "2025-12-11T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d4tc1r5subvc739svo90.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-joins-the-nvidia-inception-program",
+      "local_path": "2025/12/surrealdb-joins-the-nvidia-inception-program.md"
+    },
+    {
+      "slug": "why-companies-are-adopting-surrealdb",
+      "title": "Why companies are adopting SurrealDB",
+      "summary": "SurrealDB unifies documents, graphs, vectors, and real-time logic in one engine, cutting infrastructure complexity and empowering faster, more flexible development for modern AI-driven applications.",
+      "publishDate": "2025-11-26T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company"
+      ],
+      "readTime": "9 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d4jh55u25fgc738gai9g.auto",
+      "source": "https://surrealdb.com/blog/why-companies-are-adopting-surrealdb",
+      "local_path": "2025/11/why-companies-are-adopting-surrealdb.md"
+    },
+    {
+      "slug": "exploring-the-new-surrealdb-integration-with-agno",
+      "title": "Exploring the new SurrealDB integration with Agno",
+      "summary": "SurrealDB's built-in capabilities comprising graph queries, geolocational data and recursive queries make it the perfect fit to identify malevolent entities involved in organised influence campaigns.",
+      "publishDate": "2025-10-29T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "ai"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d40tivcf9iks73bdgbn0.auto",
+      "source": "https://surrealdb.com/blog/exploring-the-new-surrealdb-integration-with-agno",
+      "local_path": "2025/10/exploring-the-new-surrealdb-integration-with-agno.md"
+    },
+    {
+      "slug": "using-surrealdb-to-expose-organised-influence-campaigns",
+      "title": "Using SurrealDB to Expose Organised Influence Campaigns",
+      "summary": "SurrealDB's built-in capabilities comprising graph queries, geolocational data and recursive queries make it the perfect fit to identify malevolent entities involved in organised influence campaigns.",
+      "publishDate": "2025-10-10T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials"
+      ],
+      "readTime": "10 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d3ju72lq0ptc73ba3tag.auto",
+      "source": "https://surrealdb.com/blog/using-surrealdb-to-expose-organised-influence-campaigns",
+      "local_path": "2025/10/using-surrealdb-to-expose-organised-influence-campaigns.md"
+    },
+    {
+      "slug": "bring-your-own-knowledge-base-agent-studio-meets-surrealdb",
+      "title": "Bring your own knowledge base: Agent Studio meets SurrealDB",
+      "summary": "How Agent Studio from PolyAI integrates with SurrealDB",
+      "publishDate": "2025-10-09T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "ai",
+        "community"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d3jmq2lq0ptc73ba3t7g.auto",
+      "source": "https://surrealdb.com/blog/bring-your-own-knowledge-base-agent-studio-meets-surrealdb",
+      "local_path": "2025/10/bring-your-own-knowledge-base-agent-studio-meets-surrealdb.md"
+    },
+    {
+      "slug": "from-knowledge-graph-generation-to-rag-for-stablecoin-regulatory-intelligence",
+      "title": "From Knowledge Graph Generation to RAG for Stablecoin Regulatory Intelligence",
+      "summary": "We’re excited to share this community-written deep dive by Sugi Venugeethan into Stablebridge, a project tackling the complex world of stablecoin regulation. This article explores how knowledge graphs, RAG systems, and SurrealDB can be combined to connect it all together. It’s a practical look into knowledge graph generation to advanced retrieval methodologies - showcasing both challenges and breakthroughs along the way.",
+      "publishDate": "2025-09-30T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "ai",
+        "community"
+      ],
+      "readTime": "9 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d3dpg1tq0ptc73ba3idg.auto",
+      "source": "https://surrealdb.com/blog/from-knowledge-graph-generation-to-rag-for-stablecoin-regulatory-intelligence",
+      "local_path": "2025/09/from-knowledge-graph-generation-to-rag-for-stablecoin-regulatory-intelligence.md"
+    },
+    {
+      "slug": "research-paper--bridging-analytics-and-semantics-with-surrealdb",
+      "title": "Research paper - Bridging Analytics and Semantics with SurrealDB",
+      "summary": "We’re excited to highlight new research from two members of the SurrealDB community: “Bridging Analytics and Semantics: A Hybrid Database Approach to Retrieval-Augmented Generation”, now published on Zenodo.",
+      "publishDate": "2025-09-17T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d39dq1tq0ptc73ba3d9g.auto",
+      "source": "https://surrealdb.com/blog/research-paper--bridging-analytics-and-semantics-with-surrealdb",
+      "local_path": "2025/09/research-paper--bridging-analytics-and-semantics-with-surrealdb.md"
+    },
+    {
+      "slug": "using-historical-books-to-create-structured-knowledge-graphs-in-surrealdb",
+      "title": "Using historical books to create structured knowledge graphs in SurrealDB",
+      "summary": "PDF scans of old historical books can be brought to life with LLM models and then stored and queried in a structured form using SurrealQL.",
+      "publishDate": "2025-09-11T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials"
+      ],
+      "readTime": "12 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d30oumjg6hac739vbqh0.auto",
+      "source": "https://surrealdb.com/blog/using-historical-books-to-create-structured-knowledge-graphs-in-surrealdb",
+      "local_path": "2025/09/using-historical-books-to-create-structured-knowledge-graphs-in-surrealdb.md"
+    },
+    {
+      "slug": "power-up-your-ai-workflows-the-official-surrealdb-x-n8n-node-is-here",
+      "title": "Power up your AI workflows: the official SurrealDB x n8n node is here",
+      "summary": "We've shipped the official SurrealDB node for n8n. It's a first-party, production-ready integration that lets you query, create, update, upsert, and delete data in SurrealDB from any n8n workflow - and it also runs as an AI tool inside n8n's Agent nodes.",
+      "publishDate": "2025-09-03T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "engineering",
+        "ai"
+      ],
+      "readTime": "8 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d2rj87bg6hac739vbks0.auto",
+      "source": "https://surrealdb.com/blog/power-up-your-ai-workflows-the-official-surrealdb-x-n8n-node-is-here",
+      "local_path": "2025/09/power-up-your-ai-workflows-the-official-surrealdb-x-n8n-node-is-here.md"
+    },
+    {
+      "slug": "how-defence-is-changing-and-why-databases-are-critical-to-the-shift-into-ai",
+      "title": "How defence is changing and why databases are critical to the shift into AI",
+      "summary": "SurrealDB has launched SurrealMCP, giving AI agents secure, real-time, permission-aware memory powered by its multi-model database.",
+      "publishDate": "2025-09-03T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d2sjnp3g6hac739vbneg.auto",
+      "source": "https://surrealdb.com/blog/how-defence-is-changing-and-why-databases-are-critical-to-the-shift-into-ai",
+      "local_path": "2025/09/how-defence-is-changing-and-why-databases-are-critical-to-the-shift-into-ai.md"
+    },
+    {
+      "slug": "surrealdb-cloud-successfully-completes-soc-2-type-2-audit",
+      "title": "SurrealDB Cloud successfully completes SOC 2 Type 2 Audit",
+      "summary": "SurrealDB Cloud has successfully has successfully completed its SOC 2 Type 2 Audit",
+      "publishDate": "2025-08-29T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d2opse3g6hac739vbaqg.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-cloud-successfully-completes-soc-2-type-2-audit",
+      "local_path": "2025/08/surrealdb-cloud-successfully-completes-soc-2-type-2-audit.md"
+    },
+    {
+      "slug": "multi-tool-agent-with-surrealmcp-and-agno",
+      "title": "Multi-tool agent with SurrealMCP and Agno",
+      "summary": "Using SurrealMCP and Agno, this is how you can build a “researcher” agent that finds information on the web, structures the data, and stores it in SurrealDB.",
+      "publishDate": "2025-08-27T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "ai"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d2nhhm3g6hac739vb9qg.auto",
+      "source": "https://surrealdb.com/blog/multi-tool-agent-with-surrealmcp-and-agno",
+      "local_path": "2025/08/multi-tool-agent-with-surrealmcp-and-agno.md"
+    },
+    {
+      "slug": "introducing-surrealmcp",
+      "title": "Introducing SurrealMCP",
+      "summary": "SurrealDB has launched SurrealMCP, giving AI agents secure, real-time, permission-aware memory powered by its multi-model database.",
+      "publishDate": "2025-08-23T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "releases",
+        "ai"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d2kt0pllc87c73c9hu40.auto",
+      "source": "https://surrealdb.com/blog/introducing-surrealmcp",
+      "local_path": "2025/08/introducing-surrealmcp.md"
+    },
+    {
+      "slug": "using-unstructured-data-to-create-knowledge-graphs-in-surrealdb",
+      "title": "Using unstructured data to create knowledge graphs in SurrealDB",
+      "summary": "There are many ways to give structure to unstructured data so that it can be used systematically in a database.",
+      "publishDate": "2025-08-22T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "ai"
+      ],
+      "readTime": "8 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d2jduj5lc87c73c9hs10.auto",
+      "source": "https://surrealdb.com/blog/using-unstructured-data-to-create-knowledge-graphs-in-surrealdb",
+      "local_path": "2025/08/using-unstructured-data-to-create-knowledge-graphs-in-surrealdb.md"
+    },
+    {
+      "slug": "from-legacy-to-leverage--unlocking-financial-data-with-surrealdb",
+      "title": "From legacy to leverage - unlocking financial data with SurrealDB",
+      "summary": "SurrealDB helps financial institutions unlock the value of legacy transactional data by transforming it into connected, intelligent, and monetisable insights that power compliance, customer personalisation, and entirely new revenue streams.",
+      "publishDate": "2025-08-21T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d2j251tlc87c73c9hqo0.auto",
+      "source": "https://surrealdb.com/blog/from-legacy-to-leverage--unlocking-financial-data-with-surrealdb",
+      "local_path": "2025/08/from-legacy-to-leverage--unlocking-financial-data-with-surrealdb.md"
+    },
+    {
+      "slug": "enforcing-xor-eitheror-fields-in-surrealdb",
+      "title": "Enforcing XOR (Either\\/Or) Fields in SurrealDB",
+      "summary": "What to do in your schema when a record should contain one of two possible fields, but not both or neither?",
+      "publishDate": "2025-08-20T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "community"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d2i1bq5lc87c73c9hnb0.auto",
+      "source": "https://surrealdb.com/blog/enforcing-xor-eitheror-fields-in-surrealdb",
+      "local_path": "2025/08/enforcing-xor-eitheror-fields-in-surrealdb.md"
+    },
+    {
+      "slug": "surrealdb-achieves-cyber-essentials-plus-certification",
+      "title": "SurrealDB achieves Cyber Essentials Plus certification",
+      "summary": "SurrealDB has successfully achieved CyberEssentials Plus certification",
+      "publishDate": "2025-08-19T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d2i2u9dlc87c73c9hnd0.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-achieves-cyber-essentials-plus-certification",
+      "local_path": "2025/08/surrealdb-achieves-cyber-essentials-plus-certification.md"
+    },
+    {
+      "slug": "ten-tips-and-tricks-for-your-surrealdb-queries",
+      "title": "Ten tips and tricks for your SurrealDB queries",
+      "summary": "SurrealQL queries are expressive and powerful, and the more you know the more you can make your queries work for you.",
+      "publishDate": "2025-08-18T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d2hijdtlc87c73c9hn5g.auto",
+      "source": "https://surrealdb.com/blog/ten-tips-and-tricks-for-your-surrealdb-queries",
+      "local_path": "2025/08/ten-tips-and-tricks-for-your-surrealdb-queries.md"
+    },
+    {
+      "slug": "multi-model-rag-with-langchain",
+      "title": "Multi-model RAG with LangChain",
+      "summary": "A practical walkthrough of building a multi-model RAG pipeline with LangChain and SurrealDB, combining vector search with lightweight graph retrieval over chat conversations.",
+      "publishDate": "2025-08-11T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "ai"
+      ],
+      "readTime": "8 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d2b5ln5lc87c73c9he20.auto",
+      "source": "https://surrealdb.com/blog/multi-model-rag-with-langchain",
+      "local_path": "2025/08/multi-model-rag-with-langchain.md"
+    },
+    {
+      "slug": "hybrid-vector-text-search-in-the-terminal-with-surrealdb-and-ratatui",
+      "title": "Hybrid vector + text Search in the terminal with SurrealDB and Ratatui",
+      "summary": "Building an AI-native UI for the terminal that demonstrates newly added hybrid search that combines vector with full-text queries into a single result.",
+      "publishDate": "2025-08-07T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "ai"
+      ],
+      "readTime": "8 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d29fct5lc87c73c9h8a0.auto",
+      "source": "https://surrealdb.com/blog/hybrid-vector-text-search-in-the-terminal-with-surrealdb-and-ratatui",
+      "local_path": "2025/08/hybrid-vector-text-search-in-the-terminal-with-surrealdb-and-ratatui.md"
+    },
+    {
+      "slug": "migrate-your-data-directly-to-surrealdb-using-surreal-sync",
+      "title": "Migrate your data directly to SurrealDB using Surreal Sync",
+      "summary": "The Surreal Sync command-line tool lets you migrate your data from three sources into SurrealDB with a single terminal command.",
+      "publishDate": "2025-08-06T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company",
+        "tutorials"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d29hdd5lc87c73c9h8b0.auto",
+      "source": "https://surrealdb.com/blog/migrate-your-data-directly-to-surrealdb-using-surreal-sync",
+      "local_path": "2025/08/migrate-your-data-directly-to-surrealdb-using-surreal-sync.md"
+    },
+    {
+      "slug": "does-the-edge-need-a-new-database",
+      "title": "Does the edge need a new database?",
+      "summary": "As AI shifts from the cloud to the edge, it’s becoming clear that yesterday’s embedded databases weren’t built for today’s on-device intelligence.",
+      "publishDate": "2025-07-31T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company"
+      ],
+      "readTime": "8 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d25ig73v010s73fd748g.auto",
+      "source": "https://surrealdb.com/blog/does-the-edge-need-a-new-database",
+      "local_path": "2025/07/does-the-edge-need-a-new-database.md"
+    },
+    {
+      "slug": "beyond-basic-rag-building-a-multi-cycle-reasoning-engine-on-surrealdb",
+      "title": "Beyond basic RAG: Building a multi-cycle reasoning engine on SurrealDB",
+      "summary": "Standard RAG models operate on single shot principle. The Reflexion RAG Engine overcomes this through a multi-cycle, self-correcting architecture powered by SurrealDB.",
+      "publishDate": "2025-07-30T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "featured",
+        "ai"
+      ],
+      "readTime": "9 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d249e5rv010s73fd70t0.auto",
+      "source": "https://surrealdb.com/blog/beyond-basic-rag-building-a-multi-cycle-reasoning-engine-on-surrealdb",
+      "local_path": "2025/07/beyond-basic-rag-building-a-multi-cycle-reasoning-engine-on-surrealdb.md"
+    },
+    {
+      "slug": "building-an-ai-native-multi-model-ui-with-surrealdb",
+      "title": "Building an AI-native multi-model UI with SurrealDB",
+      "summary": "Schema definition in SurrealDB is a powerful thing, and the more you know the more you can make your schema work for you.",
+      "publishDate": "2025-07-29T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "ai"
+      ],
+      "readTime": "11 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1vkgndgdsrs739jmac0.auto",
+      "source": "https://surrealdb.com/blog/building-an-ai-native-multi-model-ui-with-surrealdb",
+      "local_path": "2025/07/building-an-ai-native-multi-model-ui-with-surrealdb.md"
+    },
+    {
+      "slug": "whats-new-in-surrealist-3-5",
+      "title": "What's new in Surrealist 3.5",
+      "summary": "Surrealist 3.5 introduces a fully redesigned Sidekick experience, a new Parameters view, a revamped functions view, and loads of other enhancements",
+      "publishDate": "2025-07-24T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d215gmbv010s73fd6s9g.auto",
+      "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-5",
+      "local_path": "2025/07/whats-new-in-surrealist-3-5.md"
+    },
+    {
+      "slug": "two-new-ways-to-keep-an-eye-on-your-surrealdb-database",
+      "title": "Two new ways to keep an eye on your SurrealDB database",
+      "summary": "Logging output to file and seeing the current tasks on a console are two new ways to gain greater insight into what your database is doing.",
+      "publishDate": "2025-07-22T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1vjdgdgdsrs739jmaa0.auto",
+      "source": "https://surrealdb.com/blog/two-new-ways-to-keep-an-eye-on-your-surrealdb-database",
+      "local_path": "2025/07/two-new-ways-to-keep-an-eye-on-your-surrealdb-database.md"
+    },
+    {
+      "slug": "the-new-era-of-data-lakes-knowledge-lakes",
+      "title": "The new era of data lakes: knowledge lakes",
+      "summary": "Data lakes are the new era of data storage, but they are not the only way to store data. Knowledge lakes are a new way to store data that is more flexible and scalable.",
+      "publishDate": "2025-07-18T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1t1e3tgdsrs739jm7fg.auto",
+      "source": "https://surrealdb.com/blog/the-new-era-of-data-lakes-knowledge-lakes",
+      "local_path": "2025/07/the-new-era-of-data-lakes-knowledge-lakes.md"
+    },
+    {
+      "slug": "ten-more-tips-and-tricks-for-your-database-schema",
+      "title": "Ten more tips and tricks for your database schema",
+      "summary": "Schema definition in SurrealDB is a powerful thing, and the more you know the more you can make your schema work for you.",
+      "publishDate": "2025-07-15T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1qfcpdgdsrs739jm520.auto",
+      "source": "https://surrealdb.com/blog/ten-more-tips-and-tricks-for-your-database-schema",
+      "local_path": "2025/07/ten-more-tips-and-tricks-for-your-database-schema.md"
+    },
+    {
+      "slug": "make-a-medical-chatbot-using-graphrag-with-surrealdb-langchain",
+      "title": "Make a medical chatbot using GraphRAG with SurrealDB + LangChain",
+      "summary": "Build a medical chatbot with GraphRAG, SurrealDB, and LangChain using Rust.",
+      "publishDate": "2025-07-09T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "engineering",
+        "ai"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1jphnng5t0c73ch7u70.auto",
+      "source": "https://surrealdb.com/blog/make-a-medical-chatbot-using-graphrag-with-surrealdb-langchain",
+      "local_path": "2025/07/make-a-medical-chatbot-using-graphrag-with-surrealdb-langchain.md"
+    },
+    {
+      "slug": "the-power-of-surrealdb-embedded",
+      "title": "The power of SurrealDB embedded",
+      "summary": "SurrealDB embedded is a lightweight, secure, and AI-native database engine built in Rust, designed for intelligent, offline-first applications at the edge, supporting rich data models, schema flexibility, built-in ML inference, and fast performance.",
+      "publishDate": "2025-07-08T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company"
+      ],
+      "readTime": "8 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1mj3ohlt1is73fvissg.auto",
+      "source": "https://surrealdb.com/blog/the-power-of-surrealdb-embedded",
+      "local_path": "2025/07/the-power-of-surrealdb-embedded.md"
+    },
+    {
+      "slug": "semantic-search-in-rust-with-surrealdb-and-mistral-ai",
+      "title": "Semantic search in Rust with SurrealDB and Mistral AI",
+      "summary": "SurrealDB's built-in vector search capabilities make it a perfect match for semantic search using Mistral AI",
+      "publishDate": "2025-07-07T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "engineering",
+        "ai"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1jph8vg5t0c73ch7u60.auto",
+      "source": "https://surrealdb.com/blog/semantic-search-in-rust-with-surrealdb-and-mistral-ai",
+      "local_path": "2025/07/semantic-search-in-rust-with-surrealdb-and-mistral-ai.md"
+    },
+    {
+      "slug": "minimal-langchain-chatbot-example-with-vector-and-graph",
+      "title": "Minimal LangChain chatbot example with vector and graph",
+      "summary": "Want to build a chatbot that understands context? This blog post breaks it down with a minimal LangChain example. Learn how to use vector stores and graphs to generate intelligent, natural language answers.",
+      "publishDate": "2025-07-04T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "ai"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1jtidplt1is73fviqrg.auto",
+      "source": "https://surrealdb.com/blog/minimal-langchain-chatbot-example-with-vector-and-graph",
+      "local_path": "2025/07/minimal-langchain-chatbot-example-with-vector-and-graph.md"
+    },
+    {
+      "slug": "announcing-our-official-langchain-integration",
+      "title": "Announcing our official LangChain integration",
+      "summary": "We’re thrilled to announce that SurrealDB now has an official integration with LangChain, one of the most popular frameworks for building powerful LLM-driven applications.",
+      "publishDate": "2025-07-01T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "featured",
+        "ai"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1hrntfg5t0c73ch7rj0.auto",
+      "source": "https://surrealdb.com/blog/announcing-our-official-langchain-integration",
+      "local_path": "2025/07/announcing-our-official-langchain-integration.md"
+    },
+    {
+      "slug": "make-a-genai-chatbot-using-graphrag-with-surrealdb-langchain",
+      "title": "Make a GenAI chatbot using GraphRAG with SurrealDB + LangChain",
+      "summary": "Build a GenAI chatbot with GraphRAG, SurrealDB, and LangChain for accurate, graph-enhanced LLM responses; code examples provided.",
+      "publishDate": "2025-06-30T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "ai"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1h73ifg5t0c73ch7ps0.auto",
+      "source": "https://surrealdb.com/blog/make-a-genai-chatbot-using-graphrag-with-surrealdb-langchain",
+      "local_path": "2025/06/make-a-genai-chatbot-using-graphrag-with-surrealdb-langchain.md"
+    },
+    {
+      "slug": "the-state-of-agentic-ai-and-the-need-for-agentic-memory",
+      "title": "The state of Agentic AI and the need for Agentic Memory",
+      "summary": "Rethinking your data for agents",
+      "publishDate": "2025-06-27T00:00:00.000Z",
+      "categories": [
+        "company",
+        "featured",
+        "ai"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1dr5kng5t0c73ch7ll0.auto",
+      "source": "https://surrealdb.com/blog/the-state-of-agentic-ai-and-the-need-for-agentic-memory",
+      "local_path": "2025/06/the-state-of-agentic-ai-and-the-need-for-agentic-memory.md"
+    },
+    {
+      "slug": "semantic-search-with-surrealdb-and-openai",
+      "title": "Semantic search with SurrealDB and OpenAI",
+      "summary": "SurrealDB's built-in vector search capabilities make it a perfect match for semantic search using OpenAI",
+      "publishDate": "2025-06-26T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "engineering",
+        "ai"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1e1envg5t0c73ch7m40.auto",
+      "source": "https://surrealdb.com/blog/semantic-search-with-surrealdb-and-openai",
+      "local_path": "2025/06/semantic-search-with-surrealdb-and-openai.md"
+    },
+    {
+      "slug": "surreal-cloud-enterprise",
+      "title": "Surreal Cloud Enterprise",
+      "summary": "Power your mission-critical applications with Surreal Cloud Enterprise",
+      "publishDate": "2025-06-25T00:00:00.000Z",
+      "categories": [
+        "company",
+        "featured"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1dsm17g5t0c73ch7ln0.auto",
+      "source": "https://surrealdb.com/blog/surreal-cloud-enterprise",
+      "local_path": "2025/06/surreal-cloud-enterprise.md"
+    },
+    {
+      "slug": "introducing-network-capabilities-in-surreal-cloud",
+      "title": "Introducing network capabilities in Surreal Cloud",
+      "summary": "Surreal Cloud’s latest release introduces network capabilities. Fine grained controls that determine exactly which network targets your database can reach. In this blog we will walk through network capabilities, explore the motivation behind it, and explain how it improves security for everyone running SurrealDB in the cloud.",
+      "publishDate": "2025-06-25T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1drlsfg5t0c73ch7lm0.auto",
+      "source": "https://surrealdb.com/blog/introducing-network-capabilities-in-surreal-cloud",
+      "local_path": "2025/06/introducing-network-capabilities-in-surreal-cloud.md"
+    },
+    {
+      "slug": "building-real-time-ai-pipelines-in-surrealdb",
+      "title": "Building real-time AI pipelines in SurrealDB",
+      "summary": "Say goodbye to complex ETL pipelines with SurrealDB's multi-model approach.",
+      "publishDate": "2025-06-24T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "featured",
+        "ai"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1d6n1fg5t0c73ch7lfg.auto",
+      "source": "https://surrealdb.com/blog/building-real-time-ai-pipelines-in-surrealdb",
+      "local_path": "2025/06/building-real-time-ai-pipelines-in-surrealdb.md"
+    },
+    {
+      "slug": "seamless-data-ingestion-with-the-airbyte-connector",
+      "title": "Seamless data ingestion with the Airbyte connector",
+      "summary": "Today, we’re excited to announce official support for Airbyte, the leading open-source data integration platform.",
+      "publishDate": "2025-06-23T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "featured"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1cj6q7g5t0c73ch7l8g.auto",
+      "source": "https://surrealdb.com/blog/seamless-data-ingestion-with-the-airbyte-connector",
+      "local_path": "2025/06/seamless-data-ingestion-with-the-airbyte-connector.md"
+    },
+    {
+      "slug": "what-are-knowledge-graphs-and-why-is-everyone-talking-about-them",
+      "title": "What are knowledge graphs and why is everyone talking about them?",
+      "summary": "Knowledge graphs provide the structured memory AI agents need for grounded, context-aware reasoning. Learn how this decades-old concept became essential infrastructure for modern AI systems.",
+      "publishDate": "2025-06-20T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "featured",
+        "ai"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1alohfg5t0c73ch7kl0.auto",
+      "source": "https://surrealdb.com/blog/what-are-knowledge-graphs-and-why-is-everyone-talking-about-them",
+      "local_path": "2025/06/what-are-knowledge-graphs-and-why-is-everyone-talking-about-them.md"
+    },
+    {
+      "slug": "whats-new-in-surrealist-3-4",
+      "title": "What's new in Surrealist 3.4",
+      "summary": "Surrealist 3.4 introduces multi-window support, improved computed table views, redesigned Cloud deployment workflow, and multi-record selection capabilities",
+      "publishDate": "2025-06-20T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d19telng5t0c73ch7keg.auto",
+      "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-4",
+      "local_path": "2025/06/whats-new-in-surrealist-3-4.md"
+    },
+    {
+      "slug": "databases-are-the-next-ai-frontier",
+      "title": "Databases Are the Next AI Frontier",
+      "summary": "AI’s bottleneck is no longer compute, it’s about databases: data, storage, and memory.",
+      "publishDate": "2025-06-19T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1a07jvg5t0c73ch7kgg.auto",
+      "source": "https://surrealdb.com/blog/databases-are-the-next-ai-frontier",
+      "local_path": "2025/06/databases-are-the-next-ai-frontier.md"
+    },
+    {
+      "slug": "how-to-simplify-a-graph-rag-architecture-using-amazon-bedrock-and-surrealdb",
+      "title": "How to simplify a Graph RAG architecture using Amazon Bedrock and SurrealDB",
+      "summary": "A typical RAG pipeline forces developers to juggle a vector store, a document store, a graph store (for relationships), plus an LLM endpoint, and to keep them all consistent. SurrealDB and Amazon Bedrock put an end to that sprawl.",
+      "publishDate": "2025-06-17T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials",
+        "ai"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d18l917g5t0c73ch7k40.auto",
+      "source": "https://surrealdb.com/blog/how-to-simplify-a-graph-rag-architecture-using-amazon-bedrock-and-surrealdb",
+      "local_path": "2025/06/how-to-simplify-a-graph-rag-architecture-using-amazon-bedrock-and-surrealdb.md"
+    },
+    {
+      "slug": "ten-tips-and-tricks-for-your-database-schema",
+      "title": "Ten tips and tricks for your database schema",
+      "summary": "Schema definition in SurrealDB is a powerful thing.",
+      "publishDate": "2025-06-17T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "tutorials"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1clqofg5t0c73ch7lag.auto",
+      "source": "https://surrealdb.com/blog/ten-tips-and-tricks-for-your-database-schema",
+      "local_path": "2025/06/ten-tips-and-tricks-for-your-database-schema.md"
+    },
+    {
+      "slug": "rag-can-be-rigged",
+      "title": "RAG can be Rigged",
+      "summary": "Building a smart knowledge agent with SurrealDB and Rig.rs",
+      "publishDate": "2025-06-17T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "engineering",
+        "ai"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d18pblng5t0c73ch7k60.auto",
+      "source": "https://surrealdb.com/blog/rag-can-be-rigged",
+      "local_path": "2025/06/rag-can-be-rigged.md"
+    },
+    {
+      "slug": "fraud-detection-with-surrealdb",
+      "title": "Fraud detection with SurrealDB",
+      "summary": "Fraud is fundamentally a graph problem: fraudsters rarely act alone; they connect through shared emails, reused devices, forwarding addresses, or round‑robin money flows.",
+      "publishDate": "2025-06-13T00:00:00.000Z",
+      "categories": [
+        "featured"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d1604c7g5t0c73ch7j80.auto",
+      "source": "https://surrealdb.com/blog/fraud-detection-with-surrealdb",
+      "local_path": "2025/06/fraud-detection-with-surrealdb.md"
+    },
+    {
+      "slug": "seamless-data-ingestion-with-the-fivetran-connector",
+      "title": "Seamless data ingestion with the Fivetran connector",
+      "summary": "Today, we’re excited to announce official support for Fivetran, the industry leader in automated, fully-managed data pipelines.",
+      "publishDate": "2025-06-11T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "engineering"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d144emvg5t0c73ch7i10.auto",
+      "source": "https://surrealdb.com/blog/seamless-data-ingestion-with-the-fivetran-connector",
+      "local_path": "2025/06/seamless-data-ingestion-with-the-fivetran-connector.md"
+    },
+    {
+      "slug": "how-aspire-comps-replaced-5-backend-tools-with-surrealdb-and-scaled-to-700000-users",
+      "title": "How Aspire Comps replaced 5 backend tools with SurrealDB and scaled to 700,000 users",
+      "summary": "Aspire Comps moved from Firebase to SurrealDB, eliminated backend bloat, and now powers a high-scale platform with one unified database engine.",
+      "publishDate": "2025-06-09T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "company"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d13upsvg5t0c73ch7hkg.auto",
+      "source": "https://surrealdb.com/blog/how-aspire-comps-replaced-5-backend-tools-with-surrealdb-and-scaled-to-700000-users",
+      "local_path": "2025/06/how-aspire-comps-replaced-5-backend-tools-with-surrealdb-and-scaled-to-700000-users.md"
+    },
+    {
+      "slug": "enhance-your-musical-skills-with-surrealists-graph-view",
+      "title": "Enhance your musical skills with Surrealist's Graph View",
+      "summary": "Did you know that Surrealist's Graph Visualisation tool can even make you into a better musician? Let's find out how.",
+      "publishDate": "2025-06-03T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "featured"
+      ],
+      "readTime": "10 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d0vvnj7g5t0c73ch7gk0.auto",
+      "source": "https://surrealdb.com/blog/enhance-your-musical-skills-with-surrealists-graph-view",
+      "local_path": "2025/06/enhance-your-musical-skills-with-surrealists-graph-view.md"
+    },
+    {
+      "slug": "three-ways-to-model-data-relationships-in-surrealdb",
+      "title": "Three ways to model data relationships in SurrealDB",
+      "summary": "In a recent SurrealDB Stream, we cracked open a foundational part of SurrealDB’s power: relationship modelling. From traditional record-to-record links to bidirectional references and Graph Edge metadata, we explored the many ways you can model connected data - clearly, scalably, and with performance in mind.",
+      "publishDate": "2025-06-02T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "engineering"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d0vfoung5t0c73ch7gfg.auto",
+      "source": "https://surrealdb.com/blog/three-ways-to-model-data-relationships-in-surrealdb",
+      "local_path": "2025/06/three-ways-to-model-data-relationships-in-surrealdb.md"
+    },
+    {
+      "slug": "surreal-cloud-successfully-completes-soc2-type-1-audit",
+      "title": "Surreal Cloud successfully completes SOC2 Type 1 Audit",
+      "summary": "SurrealDB's Surreal Cloud has successfully completed its SOC2 Type 1 Audit",
+      "publishDate": "2025-05-23T00:00:00.000Z",
+      "categories": [
+        "company"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d0o50ang5t0c73ch7erg.auto",
+      "source": "https://surrealdb.com/blog/surreal-cloud-successfully-completes-soc2-type-1-audit",
+      "local_path": "2025/05/surreal-cloud-successfully-completes-soc2-type-1-audit.md"
+    },
+    {
+      "slug": "introducing-teams-and-organisations-in-surreal-cloud",
+      "title": "Introducing Teams and Organisations in Surreal Cloud",
+      "summary": "Whether you're a startup of two or an enterprise of thousands, Surreal Cloud now scales with your team.",
+      "publishDate": "2025-04-15T00:00:00.000Z",
+      "categories": [
+        "featured",
+        "releases"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cvv6ek130bls73e029v0.auto",
+      "source": "https://surrealdb.com/blog/introducing-teams-and-organisations-in-surreal-cloud",
+      "local_path": "2025/04/introducing-teams-and-organisations-in-surreal-cloud.md"
+    },
+    {
+      "slug": "whats-a-database-anyway-a-blog-post-for-kids",
+      "title": "What's a database anyway?? A blog post for kids",
+      "summary": "An easy explanation for children of what a database is.",
+      "publishDate": "2025-04-10T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "featured"
+      ],
+      "readTime": "17 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cvpoha1ua1oc73cr55ng.auto",
+      "source": "https://surrealdb.com/blog/whats-a-database-anyway-a-blog-post-for-kids",
+      "local_path": "2025/04/whats-a-database-anyway-a-blog-post-for-kids.md"
+    },
+    {
+      "slug": "cooking-up-faster-rag-using-in-database-embeddings-in-surrealdb",
+      "title": "Cooking up faster RAG using in-database embeddings in SurrealDB",
+      "summary": "Speed up RAG pipelines by running embedding models directly inside SurrealDB. Eliminate external API latency with in-database vector embeddings for faster retrieval-augmented generation.",
+      "publishDate": "2025-04-02T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "ai"
+      ],
+      "readTime": "11 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cvghmhgfkedc73aljo90.auto",
+      "source": "https://surrealdb.com/blog/cooking-up-faster-rag-using-in-database-embeddings-in-surrealdb",
+      "local_path": "2025/04/cooking-up-faster-rag-using-in-database-embeddings-in-surrealdb.md"
+    },
+    {
+      "slug": "whats-new-in-surrealist-3-3",
+      "title": "What's new in Surrealist 3.3",
+      "summary": "Explore the key features of the Surrealist 3.3 release",
+      "publishDate": "2025-03-26T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cvcp9bgfkedc73aljkmg.auto",
+      "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-3",
+      "local_path": "2025/03/whats-new-in-surrealist-3-3.md"
+    },
+    {
+      "slug": "beyond-black-boxes--building-customisable-and-secure-rag-systems-for-financial-services",
+      "title": "Beyond black boxes - building customisable and secure RAG systems for financial services",
+      "summary": "This isn’t just another RAG blog post - it tackles the specific challenges financial services data teams face when building systems in regulated, data-sensitive environments.",
+      "publishDate": "2025-03-26T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "ai"
+      ],
+      "readTime": "13 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cvghsp0fkedc73aljoa0.auto",
+      "source": "https://surrealdb.com/blog/beyond-black-boxes--building-customisable-and-secure-rag-systems-for-financial-services",
+      "local_path": "2025/03/beyond-black-boxes--building-customisable-and-secure-rag-systems-for-financial-services.md"
+    },
+    {
+      "slug": "tips-and-tricks-on-using-the-rust-sdk",
+      "title": "Tips and tricks on using the Rust SDK",
+      "summary": "In this article we are going to explore some tips and tricks for using the Rust SDK.",
+      "publishDate": "2025-03-25T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "featured"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cvhcfigfkedc73aljong.auto",
+      "source": "https://surrealdb.com/blog/tips-and-tricks-on-using-the-rust-sdk",
+      "local_path": "2025/03/tips-and-tricks-on-using-the-rust-sdk.md"
+    },
+    {
+      "slug": "revolutionising-decentralised-discovery-with-surrealdb-and-confidential-computing",
+      "title": "Revolutionising decentralised discovery with SurrealDB and confidential computing",
+      "summary": "ndex Network enables secure, decentralised discovery by unifying public and private data using SurrealDB and TEEs.",
+      "publishDate": "2025-03-25T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "featured"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/d4fhgfl7kc6s739haj6g.auto",
+      "source": "https://surrealdb.com/blog/revolutionising-decentralised-discovery-with-surrealdb-and-confidential-computing",
+      "local_path": "2025/03/revolutionising-decentralised-discovery-with-surrealdb-and-confidential-computing.md"
+    },
+    {
+      "slug": "data-analysis-using-graph-traversal-recursion-and-shortest-path",
+      "title": "Data analysis using graph traversal, recursion, and shortest path",
+      "summary": "Whether you're building intelligent applications, modelling complex relationships, or looking to optimise performance, SurrealDB's graph capabilities open up exciting new possibilities.",
+      "publishDate": "2025-03-24T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "featured"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cvg7eiofkedc73aljo3g.auto",
+      "source": "https://surrealdb.com/blog/data-analysis-using-graph-traversal-recursion-and-shortest-path",
+      "local_path": "2025/03/data-analysis-using-graph-traversal-recursion-and-shortest-path.md"
+    },
+    {
+      "slug": "our-support-for-faunadb-users",
+      "title": "Our support for FaunaDB users",
+      "summary": "We wanted to take a moment to acknowledge the difficult news about FaunaDB winding down operations.",
+      "publishDate": "2025-03-21T00:00:00.000Z",
+      "categories": [
+        "company",
+        "featured"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cveq960fkedc73aljnrg.auto",
+      "source": "https://surrealdb.com/blog/our-support-for-faunadb-users",
+      "local_path": "2025/03/our-support-for-faunadb-users.md"
+    },
+    {
+      "slug": "visualising-your-data-with-surrealists-graph-view",
+      "title": "Visualising your data with Surrealist's Graph view",
+      "summary": "We as humans love visual data, and the new graph view for Surrealist provides exactly this.",
+      "publishDate": "2025-03-13T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "featured"
+      ],
+      "readTime": "11 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cv8mbagfkedc73alj7p0.auto",
+      "source": "https://surrealdb.com/blog/visualising-your-data-with-surrealists-graph-view",
+      "local_path": "2025/03/visualising-your-data-with-surrealists-graph-view.md"
+    },
+    {
+      "slug": "building-smarter-product-recommendations-with-surrealdb",
+      "title": "Building Smarter Product Recommendations with SurrealDB",
+      "summary": "Blog post inspired by your reading history",
+      "publishDate": "2025-03-06T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "featured"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cv4nh7jdj5vc73ecd9qg.auto",
+      "source": "https://surrealdb.com/blog/building-smarter-product-recommendations-with-surrealdb",
+      "local_path": "2025/03/building-smarter-product-recommendations-with-surrealdb.md"
+    },
+    {
+      "slug": "find-your-celebrity-soulmate-with-the-magic-of-vector-search",
+      "title": "Find your celebrity soulmate with the magic of vector search",
+      "summary": "Have you ever wondered how to find someone or something that’s most like you, whether it’s a roommate, someone who shares your Christmas traditions, or even a celebrity? Vector search is the answer. It’s a modern way to find matches based on multiple preferences at once, and tools like SurrealDB make it incredibly easy to use. Let’s explore what vector search is and how it works, step by step.",
+      "publishDate": "2025-02-27T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "featured"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cuus8o7si7mc73ckofl0.auto",
+      "source": "https://surrealdb.com/blog/find-your-celebrity-soulmate-with-the-magic-of-vector-search",
+      "local_path": "2025/02/find-your-celebrity-soulmate-with-the-magic-of-vector-search.md"
+    },
+    {
+      "slug": "automating-knowledge-graphs-with-surrealdb-and-gemini",
+      "title": "Automating Knowledge Graphs with SurrealDB and Gemini",
+      "summary": "This is the release you've been waiting for",
+      "publishDate": "2025-02-21T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "ai"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cus4usccqmcc73cfkqj0.auto",
+      "source": "https://surrealdb.com/blog/automating-knowledge-graphs-with-surrealdb-and-gemini",
+      "local_path": "2025/02/automating-knowledge-graphs-with-surrealdb-and-gemini.md"
+    },
+    {
+      "slug": "beginning-our-benchmarking-journey",
+      "title": "Beginning our benchmarking journey",
+      "summary": "From humble beginnings come great things.",
+      "publishDate": "2025-02-11T00:00:00.000Z",
+      "categories": [
+        "company",
+        "featured"
+      ],
+      "readTime": "12 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cu4g574ipkes73eousog.auto",
+      "source": "https://surrealdb.com/blog/beginning-our-benchmarking-journey",
+      "local_path": "2025/02/beginning-our-benchmarking-journey.md"
+    },
+    {
+      "slug": "surrealdb-2-2-benchmarking-graph-path-algorithms-and-foreign-key-constraints",
+      "title": "SurrealDB 2.2: Benchmarking, graph path algorithms and foreign key constraints",
+      "summary": "This is the release you've been waiting for",
+      "publishDate": "2025-02-11T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "company",
+        "featured"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cu4g5qsipkes73eouspg.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-2-2-benchmarking-graph-path-algorithms-and-foreign-key-constraints",
+      "local_path": "2025/02/surrealdb-2-2-benchmarking-graph-path-algorithms-and-foreign-key-constraints.md"
+    },
+    {
+      "slug": "how-we-improved-the-python-sdk-for-our-1-0-stable-version",
+      "title": "How we improved the Python SDK for our 1.0 stable version",
+      "summary": "We've released our 1.0 stable version of our Python SDK",
+      "publishDate": "2025-02-05T00:00:00.000Z",
+      "categories": [
+        "engineering"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cuhm19lsoe5c739lddd0.auto",
+      "source": "https://surrealdb.com/blog/how-we-improved-the-python-sdk-for-our-1-0-stable-version",
+      "local_path": "2025/02/how-we-improved-the-python-sdk-for-our-1-0-stable-version.md"
+    },
+    {
+      "slug": "powering-drug-trial-innovation-with-surrealdb",
+      "title": "Powering Drug Trial Innovation with SurrealDB",
+      "summary": "By leveraging SurrealDB, we built a system that simplifies the drug trial search process",
+      "publishDate": "2025-02-04T00:00:00.000Z",
+      "categories": [
+        "community",
+        "featured"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cuhhhgdsoe5c739ldalg.auto",
+      "source": "https://surrealdb.com/blog/powering-drug-trial-innovation-with-surrealdb",
+      "local_path": "2025/02/powering-drug-trial-innovation-with-surrealdb.md"
+    },
+    {
+      "slug": "enhancing-retrieval-augmented-generation-with-surrealdb",
+      "title": "Enhancing Retrieval-Augmented Generation with SurrealDB",
+      "summary": "GraphRAG: Enhancing Retrieval-Augmented Generation with SurrealDB, Gemini and DeepSeek",
+      "publishDate": "2025-01-31T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "featured",
+        "ai"
+      ],
+      "readTime": "25 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cueao4i8p6is73fqbiig.auto",
+      "source": "https://surrealdb.com/blog/enhancing-retrieval-augmented-generation-with-surrealdb",
+      "local_path": "2025/01/enhancing-retrieval-augmented-generation-with-surrealdb.md"
+    },
+    {
+      "slug": "improving-the-documentation-user-experience",
+      "title": "Improving the documentation user experience",
+      "summary": "We have made some improvements to the documentation user experience learn more",
+      "publishDate": "2025-01-31T00:00:00.000Z",
+      "categories": [
+        "community",
+        "featured"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cuec2ji8p6is73fqbjs0.auto",
+      "source": "https://surrealdb.com/blog/improving-the-documentation-user-experience",
+      "local_path": "2025/01/improving-the-documentation-user-experience.md"
+    },
+    {
+      "slug": "whats-new-in-surrealist-3-2",
+      "title": "What's new in Surrealist 3.2",
+      "summary": "Explore the key features of the Surrealist 3.2 release",
+      "publishDate": "2025-01-30T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cuckrl4attbs738rltog.auto",
+      "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-2",
+      "local_path": "2025/01/whats-new-in-surrealist-3-2.md"
+    },
+    {
+      "slug": "making-your-own-pr-to-the-surrealdb-source-code",
+      "title": "Making your own PR to the SurrealDB source code",
+      "summary": "Making a small PR to the SurrealDB source code is easier than you think, even if you come from another programming language.",
+      "publishDate": "2025-01-24T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "11 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cu9kbocattbs738rlj0g.auto",
+      "source": "https://surrealdb.com/blog/making-your-own-pr-to-the-surrealdb-source-code",
+      "local_path": "2025/01/making-your-own-pr-to-the-surrealdb-source-code.md"
+    },
+    {
+      "slug": "your-personal-surreal-sidekick",
+      "title": "Your personal Surreal Sidekick",
+      "summary": "With the recent release of Surreal Cloud (beta) and the introduction of the Surreal Cloud panel in Surrealist, we introduced a brand new tool to help you increase your SurrealDB productivity.",
+      "publishDate": "2024-12-13T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured",
+        "company"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cte15aq3l5bc738s11hg.auto",
+      "source": "https://surrealdb.com/blog/your-personal-surreal-sidekick",
+      "local_path": "2024/12/your-personal-surreal-sidekick.md"
+    },
+    {
+      "slug": "whats-new-in-surrealist-3-1",
+      "title": "What's new in Surrealist 3.1",
+      "summary": "Explore the key features of the Surrealist 3.1 release",
+      "publishDate": "2024-11-27T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/csto1b14vjrc738690p0.auto",
+      "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-1",
+      "local_path": "2024/11/whats-new-in-surrealist-3-1.md"
+    },
+    {
+      "slug": "surrealdb-2-1-0-is-live",
+      "title": "SurrealDB 2.1.0 is live!",
+      "summary": "We are excited to announce the release of SurrealDB 2.1.0, our latest version of our scalable cloud graph database.",
+      "publishDate": "2024-11-21T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/csto1614vjrc738690m0.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-2-1-0-is-live",
+      "local_path": "2024/11/surrealdb-2-1-0-is-live.md"
+    },
+    {
+      "slug": "aeons-surreal-renaissance-learn-surrealdb-through-a-story",
+      "title": "Aeon's Surreal Renaissance: Learn SurrealDB Through a Story",
+      "summary": "An immersive and interactive story that makes learning about SurrealDB as exciting as reading your favourite book.",
+      "publishDate": "2024-10-21T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/csb2od94vjrc738687g0.auto",
+      "source": "https://surrealdb.com/blog/aeons-surreal-renaissance-learn-surrealdb-through-a-story",
+      "local_path": "2024/10/aeons-surreal-renaissance-learn-surrealdb-through-a-story.md"
+    },
+    {
+      "slug": "surrealdb-empowers-developers-to-build-applications-with-the-launch-of-surrealdb-university",
+      "title": "SurrealDB Empowers Developers to Build Applications with the Launch of SurrealDB University",
+      "summary": "Access to this comprehensive course provides any developer with the education and documentation needed to quickly and successfully build applications on SurrealDB in as little as three hours",
+      "publishDate": "2024-10-15T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured",
+        "company"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cs769214vjrc738683n0.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-empowers-developers-to-build-applications-with-the-launch-of-surrealdb-university",
+      "local_path": "2024/10/surrealdb-empowers-developers-to-build-applications-with-the-launch-of-surrealdb-university.md"
+    },
+    {
+      "slug": "surrealdb-delivers-future-ready-database-technology-for-developers-and-enterprises-with-release-of-surrealdb-2-0",
+      "title": "SurrealDB Delivers Future-Ready Database Technology for Developers and Enterprises with Release of SurrealDB 2.0 ",
+      "summary": "Powerful new features introduce advanced stability, performance, security and data management capabilities to build enterprise-ready applications",
+      "publishDate": "2024-09-17T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured",
+        "company"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/crl786q4q4lc738fc6og.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-delivers-future-ready-database-technology-for-developers-and-enterprises-with-release-of-surrealdb-2-0",
+      "local_path": "2024/09/surrealdb-delivers-future-ready-database-technology-for-developers-and-enterprises-with-release-of-surrealdb-2-0.md"
+    },
+    {
+      "slug": "surrealist-3-0-is-now-available",
+      "title": "Surrealist 3.0 is now available!",
+      "summary": "We are excited to announce the latest major iteration of Surrealist",
+      "publishDate": "2024-09-17T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/crklb6a4q4lc738fc6e0.auto",
+      "source": "https://surrealdb.com/blog/surrealist-3-0-is-now-available",
+      "local_path": "2024/09/surrealist-3-0-is-now-available.md"
+    },
+    {
+      "slug": "challenge-accepted-announcing-surrealdb-2-0",
+      "title": "Challenge accepted: announcing SurrealDB 2.0",
+      "summary": "With the massive community adoption that followed came massive expectations and challenges to live up to these expectations.",
+      "publishDate": "2024-09-17T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured",
+        "company"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/crjvaoq4q4lc738fc67g.auto",
+      "source": "https://surrealdb.com/blog/challenge-accepted-announcing-surrealdb-2-0",
+      "local_path": "2024/09/challenge-accepted-announcing-surrealdb-2-0.md"
+    },
+    {
+      "slug": "surrealist-3-0-beta",
+      "title": "Surrealist 3.0 beta",
+      "summary": "We are thrilled to announce that the first beta release for Surrealist 3.0 is now available.",
+      "publishDate": "2024-09-02T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cras49o9q5as738bsmjg.auto",
+      "source": "https://surrealdb.com/blog/surrealist-3-0-beta",
+      "local_path": "2024/09/surrealist-3-0-beta.md"
+    },
+    {
+      "slug": "building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb",
+      "title": "Building a Retrieval-Augmented Generation (RAG) App with OpenAI and SurrealDB",
+      "summary": "We'll build an assistant that can answer questions based on Wikipedia information, using the GPT Turbo model from OpenAI",
+      "publishDate": "2024-08-28T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "tutorials"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cqtirqursq0s7397mlqg.auto",
+      "source": "https://surrealdb.com/blog/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb",
+      "local_path": "2024/08/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb.md"
+    },
+    {
+      "slug": "its-about-time-time-series-in-surrealdb",
+      "title": "It’s about time: time series in SurrealDB",
+      "summary": "What is time anyway",
+      "publishDate": "2024-08-20T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "tutorials"
+      ],
+      "readTime": "8 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cqtira6rsq0s7397mlog.auto",
+      "source": "https://surrealdb.com/blog/its-about-time-time-series-in-surrealdb",
+      "local_path": "2024/08/its-about-time-time-series-in-surrealdb.md"
+    },
+    {
+      "slug": "moving-from-full-text-search-to-vector-search-in-surrealdb",
+      "title": "Moving from Full-Text search to Vector search in SurrealDB",
+      "summary": "If you know exactly what you’re searching for Full-Text Search would be the way to go but when you want your search to understand you, Vector Search might be right for you.",
+      "publishDate": "2024-07-25T00:00:00.000Z",
+      "categories": [
+        "engineering"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cqh51acei02c739f59ag.auto",
+      "source": "https://surrealdb.com/blog/moving-from-full-text-search-to-vector-search-in-surrealdb",
+      "local_path": "2024/07/moving-from-full-text-search-to-vector-search-in-surrealdb.md"
+    },
+    {
+      "slug": "real-time-data-science-orchestrating-insights-with-the-right-ensemble",
+      "title": "Real-Time Data Science: Orchestrating Insights with the Right Ensemble",
+      "summary": "Building real-time analytics leveraging OLAP, multi-model databases and workload isolation.",
+      "publishDate": "2024-07-16T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "tutorials"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cqb2h71vnfds739gddk0.auto",
+      "source": "https://surrealdb.com/blog/real-time-data-science-orchestrating-insights-with-the-right-ensemble",
+      "local_path": "2024/07/real-time-data-science-orchestrating-insights-with-the-right-ensemble.md"
+    },
+    {
+      "slug": "celebrating-milestones-and-looking-forward",
+      "title": "Celebrating milestones and looking forward",
+      "summary": "Last week was awesome for our team at SurrealDB! It feels like the perfect time to pause and reflect on the whirlwind of achievements, all of which signal exciting times ahead for our company. We are incredibly proud to share some major milestones we've hit, and we want to extend our deepest gratitude to everyone who has been part of this journey to date.",
+      "publishDate": "2024-06-24T00:00:00.000Z",
+      "categories": [
+        "company",
+        "featured"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cpsok09qv93c73bv0fi0.auto",
+      "source": "https://surrealdb.com/blog/celebrating-milestones-and-looking-forward",
+      "local_path": "2024/06/celebrating-milestones-and-looking-forward.md"
+    },
+    {
+      "slug": "surrealdb-raises-20m-to-disrupt-database-tech-introduces-new-cloud-beta-access",
+      "title": "SurrealDB Raises $20M to Disrupt Database Tech; Introduces New Cloud Beta Access",
+      "summary": "London, United Kingdom June 18, 2024, SurrealDB, the ultimate multi-model database, today announced a $20 million investment round led by FirstMark and Georgian with participation from Crew Capital and Alumni Ventures. This latest round of funding brings SurrealDB’s total to $26 million.",
+      "publishDate": "2024-06-17T00:00:00.000Z",
+      "categories": [
+        "company",
+        "featured"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cpo37cuggnfs73bk5ihg.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-raises-20m-to-disrupt-database-tech-introduces-new-cloud-beta-access",
+      "local_path": "2024/06/surrealdb-raises-20m-to-disrupt-database-tech-introduces-new-cloud-beta-access.md"
+    },
+    {
+      "slug": "surrealist-just-got-better--update-now",
+      "title": "Surrealist just got better - Update now!",
+      "summary": "This article dives into the Surrealist 2.1.2 release, highlights some technical changes, and explains why you will have to download this release manually",
+      "publishDate": "2024-06-14T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cpm262f7956c73eanegg.auto",
+      "source": "https://surrealdb.com/blog/surrealist-just-got-better--update-now",
+      "local_path": "2024/06/surrealist-just-got-better--update-now.md"
+    },
+    {
+      "slug": "our-new-demo-dataset-has-a-lot-in-store-for-you",
+      "title": "Our new demo dataset has a lot in store for you!",
+      "summary": "But Wait, There's More!",
+      "publishDate": "2024-06-13T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "tutorials"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cpiq0jjpt70c73f6hh2g.auto",
+      "source": "https://surrealdb.com/blog/our-new-demo-dataset-has-a-lot-in-store-for-you",
+      "local_path": "2024/06/our-new-demo-dataset-has-a-lot-in-store-for-you.md"
+    },
+    {
+      "slug": "whats-new-in-surrealist-2-1",
+      "title": "What's new in Surrealist 2.1",
+      "summary": "Explore the key features of the Surrealist 2.1 release",
+      "publishDate": "2024-06-04T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cpev33bpt70c73f6h3hg.auto",
+      "source": "https://surrealdb.com/blog/whats-new-in-surrealist-2-1",
+      "local_path": "2024/06/whats-new-in-surrealist-2-1.md"
+    },
+    {
+      "slug": "introducing-surrealany-dynamic-support-for-any-engine-in-rust",
+      "title": "Introducing Surreal<Any>: Dynamic Support for any Engine in Rust",
+      "summary": "Understand what is a `Surreal<Any>` engine and how you can use it in your Rust code.",
+      "publishDate": "2024-05-17T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "tutorials"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cop57ib61icc73ees5s0.auto",
+      "source": "https://surrealdb.com/blog/introducing-surrealany-dynamic-support-for-any-engine-in-rust",
+      "local_path": "2024/05/introducing-surrealany-dynamic-support-for-any-engine-in-rust.md"
+    },
+    {
+      "slug": "v1-5-0-is-live",
+      "title": "v1.5.0 is live!🎉",
+      "summary": "This new release comes with performance updates and new additions to Vector Search",
+      "publishDate": "2024-05-14T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cotlbo361icc73ees7bg.auto",
+      "source": "https://surrealdb.com/blog/v1-5-0-is-live",
+      "local_path": "2024/05/v1-5-0-is-live.md"
+    },
+    {
+      "slug": "why-surrealdb-is-the-future-of-database-technology--an-in-depth-look",
+      "title": "Why SurrealDB is the Future of Database Technology - An In-Depth Look",
+      "summary": "The people who are crazy enough to think that they can change the world, are the ones who do",
+      "publishDate": "2024-05-09T00:00:00.000Z",
+      "categories": [
+        "community",
+        "tutorials"
+      ],
+      "readTime": "17 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cot6u1b61icc73ees710.auto",
+      "source": "https://surrealdb.com/blog/why-surrealdb-is-the-future-of-database-technology--an-in-depth-look",
+      "local_path": "2024/05/why-surrealdb-is-the-future-of-database-technology--an-in-depth-look.md"
+    },
+    {
+      "slug": "surrealist-2-0",
+      "title": "Surrealist 2.0",
+      "summary": "An important part of each database is the ability to easily and effortlessly control each aspect of the database. While this may appear trivial at first, it actually encompasses a wide set of different tasks. For this reason Surrealist has officially joined SurrealDB as the official management interface.",
+      "publishDate": "2024-05-01T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "featured"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cop68k361icc73ees5t0.auto",
+      "source": "https://surrealdb.com/blog/surrealist-2-0",
+      "local_path": "2024/05/surrealist-2-0.md"
+    },
+    {
+      "slug": "the-surrealist-journey",
+      "title": "The Surrealist Journey",
+      "summary": "Interacting with a database is not an easy job. You’ll often find yourself needing to query patterns in your data, testing whether your queries have the intended outcome, or carefully designing a schema to suit your application. This was a natural hurdle I ran into when first adopting SurrealDB into my workflow, and is exactly why I built Surrealist.",
+      "publishDate": "2024-04-23T00:00:00.000Z",
+      "categories": [
+        "company"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cojpv6j61icc73ees15g.auto",
+      "source": "https://surrealdb.com/blog/the-surrealist-journey",
+      "local_path": "2024/04/the-surrealist-journey.md"
+    },
+    {
+      "slug": "introducing-surrealist",
+      "title": "Introducing Surrealist",
+      "summary": "Dive into why this mobile software development company chose to migrate to our multi-model database.",
+      "publishDate": "2024-04-22T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/comn1ib61icc73ees50g.auto",
+      "source": "https://surrealdb.com/blog/introducing-surrealist",
+      "local_path": "2024/04/introducing-surrealist.md"
+    },
+    {
+      "slug": "eli5--why-surrealdb-explained-through-building-with-lego",
+      "title": "ELI5 - Why SurrealDB, explained through building with LEGO",
+      "summary": "Can databases inspire a sense of child-like play?",
+      "publishDate": "2024-04-15T00:00:00.000Z",
+      "categories": [
+        "community",
+        "tutorials"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/co7vrfr61icc73eer4q0.auto",
+      "source": "https://surrealdb.com/blog/eli5--why-surrealdb-explained-through-building-with-lego",
+      "local_path": "2024/04/eli5--why-surrealdb-explained-through-building-with-lego.md"
+    },
+    {
+      "slug": "v1-4-0-is-live",
+      "title": "v1.4.0 is live! 🎉",
+      "summary": "This new release comes with bug fixes, performance improvements, and feature updates to -insert thing-",
+      "publishDate": "2024-04-09T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cob93lb61icc73eer8dg.auto",
+      "source": "https://surrealdb.com/blog/v1-4-0-is-live",
+      "local_path": "2024/04/v1-4-0-is-live.md"
+    },
+    {
+      "slug": "exploring-the-ai-revolution",
+      "title": "Exploring the AI revolution",
+      "summary": "Looking to keep up-to-date with what's next in Generative AI and LLMs? We've got you covered.",
+      "publishDate": "2024-03-26T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/co1bh3r61icc73eeqnf0.auto",
+      "source": "https://surrealdb.com/blog/exploring-the-ai-revolution",
+      "local_path": "2024/03/exploring-the-ai-revolution.md"
+    },
+    {
+      "slug": "document-style-relationships-in-surrealdb",
+      "title": "Document-Style Relationships in SurrealDB",
+      "summary": "Your feedback matters! We’re introducing short-form video tutorials.",
+      "publishDate": "2024-03-25T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/co0ieib61icc73eeql3g.auto",
+      "source": "https://surrealdb.com/blog/document-style-relationships-in-surrealdb",
+      "local_path": "2024/03/document-style-relationships-in-surrealdb.md"
+    },
+    {
+      "slug": "how-to-simplify-your-tech-stack",
+      "title": "How to simplify your tech stack",
+      "summary": "Oscar Merry talks about powering a social podcasting app, Fountain, using SurrealDB.",
+      "publishDate": "2024-03-17T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/co0if8361icc73eeql4g.auto",
+      "source": "https://surrealdb.com/blog/how-to-simplify-your-tech-stack",
+      "local_path": "2024/03/how-to-simplify-your-tech-stack.md"
+    },
+    {
+      "slug": "understanding-cbor",
+      "title": "Understanding CBOR",
+      "summary": "JSON is the popular kid in school, but CBOR is the new kid who's smaller, faster, and has more tricks up its sleeve!",
+      "publishDate": "2024-03-15T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "tutorials"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cnnikojac7ss73a8v47g.auto",
+      "source": "https://surrealdb.com/blog/understanding-cbor",
+      "local_path": "2024/03/understanding-cbor.md"
+    },
+    {
+      "slug": "why-we-are-betting-on-rust",
+      "title": "Why we are betting on Rust",
+      "summary": "The best way to predict the future is to create it.",
+      "publishDate": "2024-03-13T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "company"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/co0iidj61icc73eeql5g.auto",
+      "source": "https://surrealdb.com/blog/why-we-are-betting-on-rust",
+      "local_path": "2024/03/why-we-are-betting-on-rust.md"
+    },
+    {
+      "slug": "v1-3-0-is-live",
+      "title": "v1.3.0 is live! 🎉",
+      "summary": "This new release comes with bug fixes, performance improvements, and feature updates to our define & remove statements and KNN syntax.",
+      "publishDate": "2024-03-12T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cnmaecbac7ss73a8v3ag.auto",
+      "source": "https://surrealdb.com/blog/v1-3-0-is-live",
+      "local_path": "2024/03/v1-3-0-is-live.md"
+    },
+    {
+      "slug": "introducing-surrealdbs-custom-emoji-pack",
+      "title": "Introducing SurrealDB's custom emoji pack",
+      "summary": "If the Internet has enabled us to communicate beyond boundaries in real-time, emojis helped it by making them the universal language of expression.",
+      "publishDate": "2024-03-09T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cnm9ofrac7ss73a8v39g.auto",
+      "source": "https://surrealdb.com/blog/introducing-surrealdbs-custom-emoji-pack",
+      "local_path": "2024/03/introducing-surrealdbs-custom-emoji-pack.md"
+    },
+    {
+      "slug": "from-medical-doctor-to-rust-developer--interview-with-our-new-senior-clinical-research-fellow",
+      "title": "From medical doctor to rust developer - interview with our new Senior Clinical Research Fellow",
+      "summary": "Read about her journey and why she is using SurrealDB for her current research.",
+      "publishDate": "2024-03-08T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "10 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cnle04rac7ss73a8v0lg.auto",
+      "source": "https://surrealdb.com/blog/from-medical-doctor-to-rust-developer--interview-with-our-new-senior-clinical-research-fellow",
+      "local_path": "2024/03/from-medical-doctor-to-rust-developer--interview-with-our-new-senior-clinical-research-fellow.md"
+    },
+    {
+      "slug": "thinking-inside-the-box-relational-style-joins-in-surrealdb",
+      "title": "Thinking Inside The Box: Relational Style Joins in SurrealDB",
+      "summary": "SurrealDB's relational style joins exist in a superposition. The only way to know for sure is by looking at this blog post.",
+      "publishDate": "2024-02-21T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cnarg9fu2otc73evhtd0.auto",
+      "source": "https://surrealdb.com/blog/thinking-inside-the-box-relational-style-joins-in-surrealdb",
+      "local_path": "2024/02/thinking-inside-the-box-relational-style-joins-in-surrealdb.md"
+    },
+    {
+      "slug": "v1-2-0-beta-1-is-live",
+      "title": "v1.2.0-beta.1 is live! 🎉",
+      "summary": "This new release comes with bug fixes, performance improvements, and feature updates to string methods, support for READONLY fields and type support for subfields.",
+      "publishDate": "2024-02-06T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cn1jrgegohdc73eqt9ag.auto",
+      "source": "https://surrealdb.com/blog/v1-2-0-beta-1-is-live",
+      "local_path": "2024/02/v1-2-0-beta-1-is-live.md"
+    },
+    {
+      "slug": "were-hiring",
+      "title": "We're hiring",
+      "summary": "We're hiring! Join SurrealDB as we continue to shape the future of database technology! We're on the lookout for exceptional individuals - those who are passionate about their craft and equally passionate about the team they work with to develop and promote groundbreaking technology.",
+      "publishDate": "2024-02-01T00:00:00.000Z",
+      "categories": [
+        "company"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cmr8l8qr3aec73fhdrqg.auto",
+      "source": "https://surrealdb.com/blog/were-hiring",
+      "local_path": "2024/02/were-hiring.md"
+    },
+    {
+      "slug": "beyond-sql-joins-exploring-surrealdbs-multi-model-relationships",
+      "title": "Beyond SQL Joins: Exploring SurrealDB's Multi-Model Relationships",
+      "summary": "Can't join? No worries, we can relate.",
+      "publishDate": "2024-01-29T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cmrs428c994c73fph3jg.auto",
+      "source": "https://surrealdb.com/blog/beyond-sql-joins-exploring-surrealdbs-multi-model-relationships",
+      "local_path": "2024/01/beyond-sql-joins-exploring-surrealdbs-multi-model-relationships.md"
+    },
+    {
+      "slug": "vart-a-persistent-data-structure-for-snapshot-isolation",
+      "title": "VART: A Persistent Data Structure For Snapshot Isolation",
+      "summary": "The blog introduces VART, an Immutable Versioned Adaptive Radix Trie, designed for snapshot isolation in databases (surrealKV), exploring isolation levels, concurrency control.",
+      "publishDate": "2024-01-23T00:00:00.000Z",
+      "categories": [
+        "engineering"
+      ],
+      "readTime": "14 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cmdt5enpl3gc739vqe6g.auto",
+      "source": "https://surrealdb.com/blog/vart-a-persistent-data-structure-for-snapshot-isolation",
+      "local_path": "2024/01/vart-a-persistent-data-structure-for-snapshot-isolation.md"
+    },
+    {
+      "slug": "integrate-auth0-as-an-authentication-provider",
+      "title": "Integrate Auth0 as an Authentication provider",
+      "summary": "This guide will cover using Auth0 as the authentication provider for single-page web applications using SurrealDB as the only backend.",
+      "publishDate": "2024-01-14T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cmf8p67pl3gc739vqpa0.auto",
+      "source": "https://surrealdb.com/blog/integrate-auth0-as-an-authentication-provider",
+      "local_path": "2024/01/integrate-auth0-as-an-authentication-provider.md"
+    },
+    {
+      "slug": "introducing-our-new-monthly-release-schedule",
+      "title": "Introducing our new monthly release schedule",
+      "summary": "We are excited to announce a change in our product release schedule, with a regular monthly release cycle, allowing developers and organisations to build on top of SurrealDB, with predictable timelines for software improvements and fixes.",
+      "publishDate": "2024-01-12T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "company"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cmf5a4vpl3gc739vqp70.auto",
+      "source": "https://surrealdb.com/blog/introducing-our-new-monthly-release-schedule",
+      "local_path": "2024/01/introducing-our-new-monthly-release-schedule.md"
+    },
+    {
+      "slug": "live-queries-in-rust",
+      "title": "Live Queries in Rust",
+      "summary": "SurrealDB comes with a LIVE SELECT statement that allows you to listen for creations, updates and deletions to specific records you are interested in or entire tables.",
+      "publishDate": "2024-01-10T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "engineering"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cmf7avfpl3gc739vqp90.auto",
+      "source": "https://surrealdb.com/blog/live-queries-in-rust",
+      "local_path": "2024/01/live-queries-in-rust.md"
+    },
+    {
+      "slug": "release-v1-1-0",
+      "title": "Release v1.1.0",
+      "summary": "We're excited to announce SurrealDB v1.1.0, with many performance improvements, bug fixes, and new features, and native machine learning computation, right within the database.",
+      "publishDate": "2024-01-09T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cmemvgvpl3gc739vqp0g.auto",
+      "source": "https://surrealdb.com/blog/release-v1-1-0",
+      "local_path": "2024/01/release-v1-1-0.md"
+    },
+    {
+      "slug": "introducing-nightly-and-beta-rust-crates",
+      "title": "Introducing Nightly and Beta Rust Crates",
+      "summary": "We are pleased to announce two additional Rust crates, surrealdb-nightly and surrealdb-beta. These crates are designed to complement the surrealdb crate.",
+      "publishDate": "2024-01-09T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "engineering",
+        "company"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cmen98fpl3gc739vqp1g.auto",
+      "source": "https://surrealdb.com/blog/introducing-nightly-and-beta-rust-crates",
+      "local_path": "2024/01/introducing-nightly-and-beta-rust-crates.md"
+    },
+    {
+      "slug": "crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy",
+      "title": "Crafting Our Full-Text Search in SurrealDB: A Journey Beyond Lucene and Tantivy",
+      "summary": "How SurrealDB built its own ACID-compliant full-text search engine instead of integrating Lucene or Tantivy, delivering a unified query experience without external dependencies.",
+      "publishDate": "2023-12-18T00:00:00.000Z",
+      "categories": [
+        "engineering"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clrf55i3j29s73b5n7m0.auto",
+      "source": "https://surrealdb.com/blog/crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy",
+      "local_path": "2023/12/crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy.md"
+    },
+    {
+      "slug": "what-is-surrealml-a-getting-started-guide",
+      "title": "What is SurrealML: A getting started guide",
+      "summary": "The developer community has made great strides in building open-source machine-learning packages that save machine-learning models. However, there are still areas of this pipeline that are not fully complete.",
+      "publishDate": "2023-12-12T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "engineering"
+      ],
+      "readTime": "9 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cloa17lnv13s73fmib30.auto",
+      "source": "https://surrealdb.com/blog/what-is-surrealml-a-getting-started-guide",
+      "local_path": "2023/12/what-is-surrealml-a-getting-started-guide.md"
+    },
+    {
+      "slug": "introducing-the-new-surrealdb-documentation-on-docusaurus",
+      "title": "Introducing the New SurrealDB Documentation on Docusaurus!",
+      "summary": "We are excited to announce the new SurrealDB documentation. At SurrealDB, we are constantly looking for ways to improve the experience of developers on our platform which has brought us to rethinking our documentation platform.",
+      "publishDate": "2023-12-05T00:00:00.000Z",
+      "categories": [
+        "company"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clhhk9go2pcc73cj1j60.auto",
+      "source": "https://surrealdb.com/blog/introducing-the-new-surrealdb-documentation-on-docusaurus",
+      "local_path": "2023/12/introducing-the-new-surrealdb-documentation-on-docusaurus.md"
+    },
+    {
+      "slug": "how-i-built-a-saas-powered-by-surrealdb-recorded-live-at-surrealdb-social",
+      "title": "How I built a SaaS powered by SurrealDB (recorded live at SurrealDB Social)",
+      "summary": "Join Software Engineer Micha de Vries as he explores his journey as a developer and dives into a practical application of SurrealDB, showcasing his SaaS product PlayrBase, built almost entirely with SurrealDB.",
+      "publishDate": "2023-11-30T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clkg3ha3gfms73e6rjh0.auto",
+      "source": "https://surrealdb.com/blog/how-i-built-a-saas-powered-by-surrealdb-recorded-live-at-surrealdb-social",
+      "local_path": "2023/11/how-i-built-a-saas-powered-by-surrealdb-recorded-live-at-surrealdb-social.md"
+    },
+    {
+      "slug": "deploy-surrealdb-to-kubernetes-with-gitops--ryota-sawada-recorded-live-at-surrealdb-social",
+      "title": "Deploy SurrealDB to Kubernetes with GitOps - Ryota Sawada (recorded live at SurrealDB Social)",
+      "summary": "Community Spotlight talk by Ryota Sawada. When trying out SurrealDB on your local machine for the first time, it is extremely simple to get started with its excellent CLI.",
+      "publishDate": "2023-11-30T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clkg3ha3gfms73e6rjgg.auto",
+      "source": "https://surrealdb.com/blog/deploy-surrealdb-to-kubernetes-with-gitops--ryota-sawada-recorded-live-at-surrealdb-social",
+      "local_path": "2023/11/deploy-surrealdb-to-kubernetes-with-gitops--ryota-sawada-recorded-live-at-surrealdb-social.md"
+    },
+    {
+      "slug": "unlocking-streaming-data-magic-with-surrealdb-live-queries-and-change-feeds",
+      "title": "Unlocking Streaming Data Magic with SurrealDB: Live Queries and Change Feeds",
+      "summary": "In this article, you will learn what streaming means with SurrealDB. We will also cover some patterns addressing how users can use streaming in practice.",
+      "publishDate": "2023-11-20T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cldhsbtol7tc73e91rbg.auto",
+      "source": "https://surrealdb.com/blog/unlocking-streaming-data-magic-with-surrealdb-live-queries-and-change-feeds",
+      "local_path": "2023/11/unlocking-streaming-data-magic-with-surrealdb-live-queries-and-change-feeds.md"
+    },
+    {
+      "slug": "how-rust-gave-surrealdb-an-edge-in-the-database-world",
+      "title": "How Rust gave SurrealDB an edge in the database world",
+      "summary": "Join Senior Software Engineer, Maxwell Flitton, as he shines a light on how Rust and Async Rust gave SurrealDB an edge in the database world.",
+      "publishDate": "2023-11-14T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91ql0.auto",
+      "source": "https://surrealdb.com/blog/how-rust-gave-surrealdb-an-edge-in-the-database-world",
+      "local_path": "2023/11/how-rust-gave-surrealdb-an-edge-in-the-database-world.md"
+    },
+    {
+      "slug": "create-a-search-engine-with-surrealdb-full-text-search",
+      "title": "Create a Search Engine with SurrealDB Full-Text Search",
+      "summary": "When it comes to managing and retrieving vast amounts of textual data, the ability to perform efficient and accurate searches is paramount.",
+      "publishDate": "2023-11-13T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cldivq5ol7tc73e91reg.auto",
+      "source": "https://surrealdb.com/blog/create-a-search-engine-with-surrealdb-full-text-search",
+      "local_path": "2023/11/create-a-search-engine-with-surrealdb-full-text-search.md"
+    },
+    {
+      "slug": "how-to-handle-big-data-properly-with-surrealdb",
+      "title": "How to handle big data properly with SurrealDB",
+      "summary": "Join SurrealDB's co-founder and CEO, Tobie Morgan Hitchcock, and Software Engineer Micha de Vries as we dive into how to handle big data properly with SurrealDB. Ask questions, leave comments, and get involved.",
+      "publishDate": "2023-11-02T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qk0.auto",
+      "source": "https://surrealdb.com/blog/how-to-handle-big-data-properly-with-surrealdb",
+      "local_path": "2023/11/how-to-handle-big-data-properly-with-surrealdb.md"
+    },
+    {
+      "slug": "surreal-stickies-2-0-adding-graph-relations-live-queries-and-authentication",
+      "title": "Surreal Stickies 2.0: Adding Graph Relations, Live Queries, and Authentication",
+      "summary": "Welcome back to the second instalment of our tutorial series on building a notes app with Next.js, Tailwind, and SurrealDB.",
+      "publishDate": "2023-10-13T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "9 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl91rta03ggs73c8tqag.auto",
+      "source": "https://surrealdb.com/blog/surreal-stickies-2-0-adding-graph-relations-live-queries-and-authentication",
+      "local_path": "2023/10/surreal-stickies-2-0-adding-graph-relations-live-queries-and-authentication.md"
+    },
+    {
+      "slug": "surrealdb-world-2023--a-recap",
+      "title": "SurrealDB World 2023 - A Recap",
+      "summary": "Two weeks ago at SurrealDB World 2023, our first-ever user conference, we launched SurrealDB 1.0! We were thrilled to see an amazing response to the event, with over 300 people attending in person and more than 2,000 online.",
+      "publishDate": "2023-10-02T00:00:00.000Z",
+      "categories": [
+        "events",
+        "company"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl920ka03ggs73c8tqeg.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-world-2023--a-recap",
+      "local_path": "2023/10/surrealdb-world-2023--a-recap.md"
+    },
+    {
+      "slug": "announcing-surrealdb-1-0",
+      "title": "Announcing SurrealDB 1.0",
+      "summary": "At SurrealDB World, we’re excited to launch SurrealDB 1.0, a revolution in the database technology landscape. With this stable release, we're not just introducing a database; we're redefining the essence of how databases function and integrate with your projects.",
+      "publishDate": "2023-09-14T00:00:00.000Z",
+      "categories": [
+        "releases",
+        "company"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl91vsi03ggs73c8tqcg.auto",
+      "source": "https://surrealdb.com/blog/announcing-surrealdb-1-0",
+      "local_path": "2023/09/announcing-surrealdb-1-0.md"
+    },
+    {
+      "slug": "whats-new-for-developers-in-surrealdb-beta-10",
+      "title": "What's new for developers in SurrealDB Beta 10",
+      "summary": "Hello Developers! After months of hard work, we're excited to roll out v1.0.0-beta.10. Here's what's new!",
+      "publishDate": "2023-09-04T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93b1a03ggs73c8tr4g.auto",
+      "source": "https://surrealdb.com/blog/whats-new-for-developers-in-surrealdb-beta-10",
+      "local_path": "2023/09/whats-new-for-developers-in-surrealdb-beta-10.md"
+    },
+    {
+      "slug": "data-modelling-and-performance",
+      "title": "Data Modelling and Performance",
+      "summary": "As SurrealDB is a multi-model database, you have a lot of options for how to model your data. In this stream, we'll take a practical look into different approaches to data modelling and discuss use cases, pros, cons and performance implications.",
+      "publishDate": "2023-08-29T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qj0.auto",
+      "source": "https://surrealdb.com/blog/data-modelling-and-performance",
+      "local_path": "2023/08/data-modelling-and-performance.md"
+    },
+    {
+      "slug": "questions-from-the-community",
+      "title": "Questions from the Community",
+      "summary": "For this stream we’ll cover a variety of topics raised by our community including data modelling in SurrealDB, performance, transactions and more. It’s also your opportunity to ask questions live during the stream. ",
+      "publishDate": "2023-08-15T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qig.auto",
+      "source": "https://surrealdb.com/blog/questions-from-the-community",
+      "local_path": "2023/08/questions-from-the-community.md"
+    },
+    {
+      "slug": "record-ids-expressions-and-graphs",
+      "title": "Record IDs, Expressions and Graphs",
+      "summary": "Join us for our 10th live stream as we talk practically about how record IDs help us with connecting data through record links and graph relations and how it can be used to simplify your CRUD operations through simple and advanced expressions.",
+      "publishDate": "2023-08-01T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qi0.auto",
+      "source": "https://surrealdb.com/blog/record-ids-expressions-and-graphs",
+      "local_path": "2023/08/record-ids-expressions-and-graphs.md"
+    },
+    {
+      "slug": "what-are-multi-model-databases",
+      "title": "What are Multi-Model Databases?",
+      "summary": "In today's digital age, staying connected is easier than ever. Social media platforms allow us to remain connected with loved ones, meet new people, and stay updated on world news...",
+      "publishDate": "2023-07-24T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "tutorials"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clcvp5dol7tc73e91qs0.auto",
+      "source": "https://surrealdb.com/blog/what-are-multi-model-databases",
+      "local_path": "2023/07/what-are-multi-model-databases.md"
+    },
+    {
+      "slug": "all-about-python",
+      "title": "All About Python",
+      "summary": "This stream is all about Python, where we'll cover the why and the how of using it with SurrealDB. You'll learn all about the design decisions for the Rust rewrite and see demos of how to get up and running as well as deploying a Flask app in Docker.",
+      "publishDate": "2023-07-18T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qhg.auto",
+      "source": "https://surrealdb.com/blog/all-about-python",
+      "local_path": "2023/07/all-about-python.md"
+    },
+    {
+      "slug": "full-text-search-indexing",
+      "title": "Full-Text Search Indexing",
+      "summary": "Join Senior Software Engineer, Emmanuel Keller and co-founder and CEO Tobie Morgan Hitchcock as we dive into the innovative roadmap of SurrealDB.",
+      "publishDate": "2023-07-04T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qh0.auto",
+      "source": "https://surrealdb.com/blog/full-text-search-indexing",
+      "local_path": "2023/07/full-text-search-indexing.md"
+    },
+    {
+      "slug": "tutorial-build-a-notes-app-with-next-js-tailwind-and-surrealdb",
+      "title": "Tutorial: Build a Notes App with Next.js, Tailwind and SurrealDB",
+      "summary": "In this guide, you'll learn how to implement a simple full-stack note-taking application called Surreal Stickies.",
+      "publishDate": "2023-06-27T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "8 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93iu203ggs73c8trjg.auto",
+      "source": "https://surrealdb.com/blog/tutorial-build-a-notes-app-with-next-js-tailwind-and-surrealdb",
+      "local_path": "2023/06/tutorial-build-a-notes-app-with-next-js-tailwind-and-surrealdb.md"
+    },
+    {
+      "slug": "were-now-on-instagram",
+      "title": "We're now on Instagram!",
+      "summary": "It’s been a crazy 9 months, and we have lots of awesome photos to share with you from our journey so far!",
+      "publishDate": "2023-06-26T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl92aqi03ggs73c8tqog.auto",
+      "source": "https://surrealdb.com/blog/were-now-on-instagram",
+      "local_path": "2023/06/were-now-on-instagram.md"
+    },
+    {
+      "slug": "javascript-library-with-micha-tobie",
+      "title": "JavaScript Library with Micha & Tobie",
+      "summary": "This week we're focusing on SurrealDB's JavaScript Library. Join Micha and Tobie as they chat about recent updates and highlights, and showcase how to use live queries and the WASM library.",
+      "publishDate": "2023-06-20T00:00:00.000Z",
+      "categories": [
+        "tutorials",
+        "engineering"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qgg.auto",
+      "source": "https://surrealdb.com/blog/javascript-library-with-micha-tobie",
+      "local_path": "2023/06/javascript-library-with-micha-tobie.md"
+    },
+    {
+      "slug": "websocket-protocol-guide",
+      "title": "WebSocket Protocol Guide",
+      "summary": "We've published a WebSocket Protocol Guide! This allows for easy bi-directional communication with SurrealDB. If you're excited about Live Queries, check this out!",
+      "publishDate": "2023-06-19T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl941ri03ggs73c8ts0g.auto",
+      "source": "https://surrealdb.com/blog/websocket-protocol-guide",
+      "local_path": "2023/06/websocket-protocol-guide.md"
+    },
+    {
+      "slug": "installing-surrealdb",
+      "title": "Installing SurrealDB",
+      "summary": "Installed SurrealDB yet? Here's a guide to get started.",
+      "publishDate": "2023-06-16T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl92jeq03ggs73c8tqtg.auto",
+      "source": "https://surrealdb.com/blog/installing-surrealdb",
+      "local_path": "2023/06/installing-surrealdb.md"
+    },
+    {
+      "slug": "deploy-to-kubernetes",
+      "title": "Deploy to Kubernetes",
+      "summary": "Our guide for deploying to Kubernetes is live! Learn more here...",
+      "publishDate": "2023-06-15T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl9413q03ggs73c8trvg.auto",
+      "source": "https://surrealdb.com/blog/deploy-to-kubernetes",
+      "local_path": "2023/06/deploy-to-kubernetes.md"
+    },
+    {
+      "slug": "announcing-developer-office-hours",
+      "title": "Announcing Developer Office Hours",
+      "summary": "We're kicking off Developer Office Hours! 🎉 Starting June 9th, we'll be hosting this on Discord every Friday.",
+      "publishDate": "2023-06-08T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl9222a03ggs73c8tqgg.auto",
+      "source": "https://surrealdb.com/blog/announcing-developer-office-hours",
+      "local_path": "2023/06/announcing-developer-office-hours.md"
+    },
+    {
+      "slug": "announcing-surrealdb-world",
+      "title": "Announcing SurrealDB World",
+      "summary": "Over the past six months, we have been forging ahead with SurrealDB, and now we are delighted to announce SurrealDB World conference, which will take place on September 13 2023 in London, UK.",
+      "publishDate": "2023-06-02T00:00:00.000Z",
+      "categories": [
+        "events"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl91lq203ggs73c8tq7g.auto",
+      "source": "https://surrealdb.com/blog/announcing-surrealdb-world",
+      "local_path": "2023/06/announcing-surrealdb-world.md"
+    },
+    {
+      "slug": "thank-you-github-for-the-feature",
+      "title": "Thank you GitHub for the feature!",
+      "summary": "Thank you GitHub for the feature on the Maintainer Month Library! 🎉\nAs part of our efforts to celebrate #MaintainerMonth 2023, we had a chat with one of our maintainers here at SurrealDB, Rushmore Mushambi.",
+      "publishDate": "2023-05-31T00:00:00.000Z",
+      "categories": [
+        "community",
+        "company"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl926ka03ggs73c8tqkg.auto",
+      "source": "https://surrealdb.com/blog/thank-you-github-for-the-feature",
+      "local_path": "2023/05/thank-you-github-for-the-feature.md"
+    },
+    {
+      "slug": "maintainer-month-2023-behind-the-scenes-with-yusuke-kuoka",
+      "title": "Maintainer Month 2023: Behind the scenes with Yusuke Kuoka",
+      "summary": "Hi! I’m Yusuke, and I’m a Senior Software Engineer at SurrealDB. It’s #MaintainerMonth, so I’d like to explain why I became a ‘maintainer’, tell you about my journey so far, and then give you a glimpse of my life as a maintainer.",
+      "publishDate": "2023-05-29T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl91ngq03ggs73c8tq9g.auto",
+      "source": "https://surrealdb.com/blog/maintainer-month-2023-behind-the-scenes-with-yusuke-kuoka",
+      "local_path": "2023/05/maintainer-month-2023-behind-the-scenes-with-yusuke-kuoka.md"
+    },
+    {
+      "slug": "rounding-up-may-with-surrealdb-social",
+      "title": "Rounding up May with SurrealDB Social",
+      "summary": "Whether you've just discovered SurrealDB or are an early adopter, you're invited to our monthly tech meetup SurrealDB Social at Huckletree, Oxford Circus. This month’s focus is on Live Queries, with talks from Hugh Kaznowski and CEO Tobie Morgan Hitchcock.",
+      "publishDate": "2023-05-26T00:00:00.000Z",
+      "categories": [
+        "events"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl92ctq03ggs73c8tqpg.auto",
+      "source": "https://surrealdb.com/blog/rounding-up-may-with-surrealdb-social",
+      "local_path": "2023/05/rounding-up-may-with-surrealdb-social.md"
+    },
+    {
+      "slug": "maintainer-month-2023-behind-the-scenes-with-rushmore-mushambi",
+      "title": "Maintainer Month 2023: Behind the scenes with Rushmore Mushambi",
+      "summary": "Hi everyone. My name is Feranmi Okafor. I'm a Social Media Manager at SurrealDB. As part of our efforts to celebrate #MaintainerMonth 2023, we had a quick chat with one of our maintainers here at SurrealDB.",
+      "publishDate": "2023-05-25T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl91ngq03ggs73c8tq9g.auto",
+      "source": "https://surrealdb.com/blog/maintainer-month-2023-behind-the-scenes-with-rushmore-mushambi",
+      "local_path": "2023/05/maintainer-month-2023-behind-the-scenes-with-rushmore-mushambi.md"
+    },
+    {
+      "slug": "live-queries-with-tobie-hugh",
+      "title": "Live Queries with Tobie & Hugh",
+      "summary": "This week we're focusing on live queries, with co-founder Tobie Morgan Hitchcock and Senior Software Engineer Hugh Kaznowski.",
+      "publishDate": "2023-05-16T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qfg.auto",
+      "source": "https://surrealdb.com/blog/live-queries-with-tobie-hugh",
+      "local_path": "2023/05/live-queries-with-tobie-hugh.md"
+    },
+    {
+      "slug": "the-life-changing-magic-of-surrealdb-record-ids",
+      "title": "The life-changing magic of SurrealDB record IDs",
+      "summary": "At SurrealDB, we are all about doing things that spark joy for developers. One of those things that constantly surprises and delights is the humble record ID, which we discussed in our live stream.",
+      "publishDate": "2023-05-11T00:00:00.000Z",
+      "categories": [
+        "engineering",
+        "tutorials"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl92kei03ggs73c8tqug.auto",
+      "source": "https://surrealdb.com/blog/the-life-changing-magic-of-surrealdb-record-ids",
+      "local_path": "2023/05/the-life-changing-magic-of-surrealdb-record-ids.md"
+    },
+    {
+      "slug": "surrealdb-giveaway",
+      "title": "SurrealDB Giveaway",
+      "summary": "We are utterly blown away! Thank you so, so much to the SurrealDB and dev communities for your amazing support since our launch in August.",
+      "publishDate": "2023-05-06T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93c7203ggs73c8tr5g.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-giveaway",
+      "local_path": "2023/05/surrealdb-giveaway.md"
+    },
+    {
+      "slug": "getting-started-with-the-surrealdb-go-driver",
+      "title": "Getting started with the SurrealDB Go Driver",
+      "summary": "In our Beta 9 release, we updated our Go driver. In this tutorial, we will learn to build a simple SurrealDB URL shortener using the Go driver. A URL shortener is a very simple yet powerful tool that can help you be more productive.",
+      "publishDate": "2023-05-05T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93iu203ggs73c8trj0.auto",
+      "source": "https://surrealdb.com/blog/getting-started-with-the-surrealdb-go-driver",
+      "local_path": "2023/05/getting-started-with-the-surrealdb-go-driver.md"
+    },
+    {
+      "slug": "surrealdb-scalability",
+      "title": "SurrealDB Scalability",
+      "summary": "SurrealDB is a multi-paradigm database that allows you to perform document, graph, temporal, spatial, and text operations within an ACID environment. The SurrealDB service is a compute layer that processes queries and operates on a storage layer. As of writing, our storage layer is predominantly RocksDB.",
+      "publishDate": "2023-05-01T00:00:00.000Z",
+      "categories": [
+        "engineering"
+      ],
+      "readTime": "8 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93hl203ggs73c8trdg.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-scalability",
+      "local_path": "2023/05/surrealdb-scalability.md"
+    },
+    {
+      "slug": "all-about-surrealql",
+      "title": "All About SurrealQL",
+      "summary": "This week's SurrealDB Stream focused on SurrealQL with co-founder Tobie Morgan Hitchcock, Data Evangelist Alexander Fridriksson and Software Engineer Micha de Vries: Why is SurrealQL a SQL-like language vs a custom language like MongoQL or Cypher?",
+      "publishDate": "2023-04-25T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qeg.auto",
+      "source": "https://surrealdb.com/blog/all-about-surrealql",
+      "local_path": "2023/04/all-about-surrealql.md"
+    },
+    {
+      "slug": "clustered-surrealdb-for-1-0-0-beta9",
+      "title": "Clustered SurrealDB for 1.0.0-beta9",
+      "summary": "In this post, I will show you how to set up a distributed SurrealDB cluster that shares a distributed TiKV cluster. This architecture allows you to scale your operations to improve writes and reads and seamlessly continue operations during failures.",
+      "publishDate": "2023-04-25T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trqg.auto",
+      "source": "https://surrealdb.com/blog/clustered-surrealdb-for-1-0-0-beta9",
+      "local_path": "2023/04/clustered-surrealdb-for-1-0-0-beta9.md"
+    },
+    {
+      "slug": "the-ultimate-beginners-guide-to-databases",
+      "title": "The ultimate beginners guide to databases",
+      "summary": "It is our belief that developers should be able to build secure, modern, collaborative applications without needing to build complicated backend APIs and database layers, and without being forced into using a single data model or cloud platform.",
+      "publishDate": "2023-04-21T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "9 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl94b7203ggs73c8ts7g.auto",
+      "source": "https://surrealdb.com/blog/the-ultimate-beginners-guide-to-databases",
+      "local_path": "2023/04/the-ultimate-beginners-guide-to-databases.md"
+    },
+    {
+      "slug": "behind-the-scenes-of-the-exciting-beta-9-release",
+      "title": "Behind the scenes of the exciting beta 9 release",
+      "summary": "Our team has been working very hard on the new release, which introduces a ton of new features, bug fixes and performance improvements you can see here...",
+      "publishDate": "2023-04-12T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl94a5203ggs73c8ts50.auto",
+      "source": "https://surrealdb.com/blog/behind-the-scenes-of-the-exciting-beta-9-release",
+      "local_path": "2023/04/behind-the-scenes-of-the-exciting-beta-9-release.md"
+    },
+    {
+      "slug": "understanding-surrealql-and-how-it-is-different-from-postgresql",
+      "title": "Understanding SurrealQL and how it is different from PostgreSQL",
+      "summary": "In this article, we will explore the similarities and differences between PostgreSQL and SurrealQL. We will also see how SurrealQL can overcome some of the limitations that relational databases have.",
+      "publishDate": "2023-03-30T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93eri03ggs73c8trag.auto",
+      "source": "https://surrealdb.com/blog/understanding-surrealql-and-how-it-is-different-from-postgresql",
+      "local_path": "2023/03/understanding-surrealql-and-how-it-is-different-from-postgresql.md"
+    },
+    {
+      "slug": "an-introduction-to-surrealdb",
+      "title": "An introduction to SurrealDB",
+      "summary": "If you are reading this, you may be wondering how to get started with this fantastic product you just discovered, SurrealDB. It's a database that does many routine things, so you can focus on what matters to you - processing your data.",
+      "publishDate": "2023-02-08T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl91lq203ggs73c8tq70.auto",
+      "source": "https://surrealdb.com/blog/an-introduction-to-surrealdb",
+      "local_path": "2023/02/an-introduction-to-surrealdb.md"
+    },
+    {
+      "slug": "surrealdb-social-x-swingers",
+      "title": "SurrealDB Social X Swingers",
+      "summary": "The room was buzzing at our first SurrealDB Social held at Swingers Crazy Golf in central London, as we had the opportunity to connect with members of our SurrealDB community face-to-face! We had Surrealers travel in from around the UK, as well as Europe and even the US.",
+      "publishDate": "2023-02-06T00:00:00.000Z",
+      "categories": [
+        "events"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl925da03ggs73c8tqig.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-social-x-swingers",
+      "local_path": "2023/02/surrealdb-social-x-swingers.md"
+    },
+    {
+      "slug": "first-new-york-surrealdb-social",
+      "title": "First New York SurrealDB Social",
+      "summary": "We’re throwing our first New York SurrealDB Social on Tuesday 14 March, 6-10PM EST, at Swingers (35 W 29th St, New York, NY 10001)!",
+      "publishDate": "2023-02-06T00:00:00.000Z",
+      "categories": [
+        "events"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93kci03ggs73c8trlg.auto",
+      "source": "https://surrealdb.com/blog/first-new-york-surrealdb-social",
+      "local_path": "2023/02/first-new-york-surrealdb-social.md"
+    },
+    {
+      "slug": "new-awesome-surrealdb-repo",
+      "title": "New 'Awesome SurrealDB' repo!",
+      "summary": "We have created an 'Awesome SurrealDB' repo. Please suggest any libraries, tools, tutorials or videos there by submitting a pull request!",
+      "publishDate": "2023-02-05T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl95baq03ggs73c8tslg.auto",
+      "source": "https://surrealdb.com/blog/new-awesome-surrealdb-repo",
+      "local_path": "2023/02/new-awesome-surrealdb-repo.md"
+    },
+    {
+      "slug": "first-london-surrealdb-social",
+      "title": "First London SurrealDB Social",
+      "summary": "We're throwing our first SurrealDB Social in London on Wednesday 25 January, 6-9PM GMT, at Swingers West End!",
+      "publishDate": "2023-01-11T00:00:00.000Z",
+      "categories": [
+        "events"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl94mdq03ggs73c8tsf0.auto",
+      "source": "https://surrealdb.com/blog/first-london-surrealdb-social",
+      "local_path": "2023/01/first-london-surrealdb-social.md"
+    },
+    {
+      "slug": "we-are-thrilled-to-announce-our-6m-seed-round-led-by-firstmark-capital-and-matt-turck",
+      "title": "We are thrilled to announce our $6M Seed round led by FirstMark Capital and Matt Turck!",
+      "summary": "Matt and FirstMark deeply share our vision, and we are truly humbled to have them with us on this journey.",
+      "publishDate": "2023-01-04T00:00:00.000Z",
+      "categories": [
+        "company"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl9433q03ggs73c8ts1g.auto",
+      "source": "https://surrealdb.com/blog/we-are-thrilled-to-announce-our-6m-seed-round-led-by-firstmark-capital-and-matt-turck",
+      "local_path": "2023/01/we-are-thrilled-to-announce-our-6m-seed-round-led-by-firstmark-capital-and-matt-turck.md"
+    },
+    {
+      "slug": "get-your-hands-on-our-first-ever-surrealdb-stickers",
+      "title": "Get your hands on our first ever SurrealDB stickers!",
+      "summary": "Want to get your hands on our first ever limited-edition SurrealDB stickers 🌈❄️👀\nWe would love to learn how you are using SurrealDB!",
+      "publishDate": "2022-12-13T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl94ohq03ggs73c8tsh0.auto",
+      "source": "https://surrealdb.com/blog/get-your-hands-on-our-first-ever-surrealdb-stickers",
+      "local_path": "2022/12/get-your-hands-on-our-first-ever-surrealdb-stickers.md"
+    },
+    {
+      "slug": "we-are-hiring",
+      "title": "We are hiring!",
+      "summary": "We are a startup with an ambitious mission to build the ultimate multi-model database for tomorrow’s applications. We are seeking to hire the best - people who care deeply about the work they do, and care about the people with whom they create and promote the product.",
+      "publishDate": "2022-11-25T00:00:00.000Z",
+      "categories": [
+        "company"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl94c4203ggs73c8ts9g.auto",
+      "source": "https://surrealdb.com/blog/we-are-hiring",
+      "local_path": "2022/11/we-are-hiring.md"
+    },
+    {
+      "slug": "release-v1-0-0-beta-8",
+      "title": "Release v1.0.0-beta.8",
+      "summary": "We know you've been waiting for it! And SurrealDB's beta 8 is finally here!",
+      "publishDate": "2022-10-01T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trrg.auto",
+      "source": "https://surrealdb.com/blog/release-v1-0-0-beta-8",
+      "local_path": "2022/10/release-v1-0-0-beta-8.md"
+    },
+    {
+      "slug": "beyond-surreal-a-closer-look-at-newsql-relational-data",
+      "title": "Beyond Surreal? A closer look at NewSQL Relational Data.",
+      "summary": "Thank you very much Fireship once again for another brilliant video on SurrealDB! We really, really appreciate it! ",
+      "publishDate": "2022-09-17T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl95e4q03ggs73c8tsq0.auto",
+      "source": "https://surrealdb.com/blog/beyond-surreal-a-closer-look-at-newsql-relational-data",
+      "local_path": "2022/09/beyond-surreal-a-closer-look-at-newsql-relational-data.md"
+    },
+    {
+      "slug": "2-on-hacker-news",
+      "title": "#2 on Hacker News",
+      "summary": "#2 on Hacker News... There won't be much sleep once again for Jaime and Tobie this weekend! Thank you once again for all the support over the past 3 weeks!",
+      "publishDate": "2022-09-17T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl99uuq03ggs73c8tto0.auto",
+      "source": "https://surrealdb.com/blog/2-on-hacker-news",
+      "local_path": "2022/09/2-on-hacker-news.md"
+    },
+    {
+      "slug": "10000-thank-yous",
+      "title": "10,000 thank yous!",
+      "summary": "⭐ 10,000 GitHub stars in 4 weeks! We are utterly blown away! Thank you so, so much to the SurrealDB and dev communities for your amazing support! This is only the start of the SurrealDB journey! We have so much more to come! ⭐",
+      "publishDate": "2022-09-17T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93d3q03ggs73c8tr70.auto",
+      "source": "https://surrealdb.com/blog/10000-thank-yous",
+      "local_path": "2022/09/10000-thank-yous.md"
+    },
+    {
+      "slug": "thank-you-fireship",
+      "title": "Thank you Fireship!",
+      "summary": "Thank you very much Fireship for the 📹 video on SurrealDB! We really appreciate it!",
+      "publishDate": "2022-09-16T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl962fa03ggs73c8tteg.auto",
+      "source": "https://surrealdb.com/blog/thank-you-fireship",
+      "local_path": "2022/09/thank-you-fireship.md"
+    },
+    {
+      "slug": "we-think-we-have-broken-github",
+      "title": "We think we have broken GitHub...",
+      "summary": "Thank you once again for all the love and support over the last 24 hours! SurrealDB is currently the No. 1 📈 AND No. 2 📈 trending public repository on GitHub worldwide! We think we have broken GitHub 😵!",
+      "publishDate": "2022-09-16T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl95q2i03ggs73c8tt50.auto",
+      "source": "https://surrealdb.com/blog/we-think-we-have-broken-github",
+      "local_path": "2022/09/we-think-we-have-broken-github.md"
+    },
+    {
+      "slug": "5000-thank-yous",
+      "title": "5000 thank yous",
+      "summary": "⭐ 5000 GitHub stars in 3 weeks! Wow! We are blown away! Thank you, thank you, thank you to the SurrealDB and dev communities for your amazing support! ⭐",
+      "publishDate": "2022-09-12T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93d3q03ggs73c8tr7g.auto",
+      "source": "https://surrealdb.com/blog/5000-thank-yous",
+      "local_path": "2022/09/5000-thank-yous.md"
+    },
+    {
+      "slug": "rust-powered-database-surrealdb-its-pretty-ambitious",
+      "title": "Rust Powered Database SurrealDB (It's Pretty Ambitious)",
+      "summary": "Thank you very much to Code to the Moon for the YouTube video tour of the query language and capabilities of SurrealDB!",
+      "publishDate": "2022-09-10T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl963pa03ggs73c8ttfg.auto",
+      "source": "https://surrealdb.com/blog/rust-powered-database-surrealdb-its-pretty-ambitious",
+      "local_path": "2022/09/rust-powered-database-surrealdb-its-pretty-ambitious.md"
+    },
+    {
+      "slug": "getting-started-with-surrealdb",
+      "title": "Getting started with SurrealDB",
+      "summary": "Thank you very much to Chris Hay, CTO at IBM iX for his excellent, thorough video on SurrealDB. We are looking forward to the sequel!",
+      "publishDate": "2022-09-06T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl95jl203ggs73c8tt1g.auto",
+      "source": "https://surrealdb.com/blog/getting-started-with-surrealdb",
+      "local_path": "2022/09/getting-started-with-surrealdb.md"
+    },
+    {
+      "slug": "just-released-surrealdb-for-windows",
+      "title": "Just released SurrealDB for Windows!",
+      "summary": "The easiest and preferred way to get going with SurrealDB on Windows is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions...",
+      "publishDate": "2022-09-02T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl95ri203ggs73c8tt60.auto",
+      "source": "https://surrealdb.com/blog/just-released-surrealdb-for-windows",
+      "local_path": "2022/09/just-released-surrealdb-for-windows.md"
+    },
+    {
+      "slug": "release-v1-0-0-beta-7",
+      "title": "Release v1.0.0-beta.7",
+      "summary": "Add support for Objects and Arrays as Record IDs, add support for querying records using Record ID ranges, add SQL <code>session<\\/code> functions for retrieving session variables, make <code>--ns<\\/code> and <code>--db<\\/code> arguments optional in command-line REPL, and much more.",
+      "publishDate": "2022-08-29T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trr0.auto",
+      "source": "https://surrealdb.com/blog/release-v1-0-0-beta-7",
+      "local_path": "2022/08/release-v1-0-0-beta-7.md"
+    },
+    {
+      "slug": "no-1-github-trending-repository",
+      "title": "No. 1 GitHub trending repository!",
+      "summary": "Absolutely shocked and honoured to reach the No. 1 trending public repository on GitHub worldwide. Thank you to everyone who has shown interest in SurrealDB and helped us reach 2500 GitHub stars!",
+      "publishDate": "2022-08-24T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl95gbi03ggs73c8tsvg.auto",
+      "source": "https://surrealdb.com/blog/no-1-github-trending-repository",
+      "local_path": "2022/08/no-1-github-trending-repository.md"
+    },
+    {
+      "slug": "no-1-on-reddits-programming-subreddit--hot-list",
+      "title": "No. 1 on Reddit's Programming subreddit 🔥 'Hot' list",
+      "summary": "Thank you for all the comments, feedback and support on the SurrealDB post on Reddit's 4.5 million member-strong Programming subreddit. We are honoured to have made No. 1 on the 🔥 'Hot' list.",
+      "publishDate": "2022-08-22T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl95tg203ggs73c8ttb0.auto",
+      "source": "https://surrealdb.com/blog/no-1-on-reddits-programming-subreddit--hot-list",
+      "local_path": "2022/08/no-1-on-reddits-programming-subreddit--hot-list.md"
+    },
+    {
+      "slug": "honoured-to-be-4-on-the-front-page-of-hacker-news",
+      "title": "Honoured to be #4 on the front page of Hacker News",
+      "summary": "Wow!!! We really can't believe this!!! We are absolutely buzzing to make it onto the front page of Hacker News, and to get to number 4, no less! 😍",
+      "publishDate": "2022-08-22T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl99ve203ggs73c8ttrg.auto",
+      "source": "https://surrealdb.com/blog/honoured-to-be-4-on-the-front-page-of-hacker-news",
+      "local_path": "2022/08/honoured-to-be-4-on-the-front-page-of-hacker-news.md"
+    },
+    {
+      "slug": "surrealdb-on-reddit-rust",
+      "title": "SurrealDB on Reddit Rust",
+      "summary": "Thank you for all the comments, feedback and support on the SurrealDB post on Reddit's Rust subreddit. We are honoured to have made the 🔥 'Hot' list.",
+      "publishDate": "2022-08-20T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl95spa03ggs73c8tta0.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-on-reddit-rust",
+      "local_path": "2022/08/surrealdb-on-reddit-rust.md"
+    },
+    {
+      "slug": "release-v1-0-0-beta-6",
+      "title": "Release v1.0.0-beta.6",
+      "summary": "Add command-line SurrealQL REPL for quick querying of a database, log username at server startup when root authentication is enabled, enable SurrealDB server to be configured using environment variables, implement config definition key and value caching within a transaction, and much more.",
+      "publishDate": "2022-08-13T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trsg.auto",
+      "source": "https://surrealdb.com/blog/release-v1-0-0-beta-6",
+      "local_path": "2022/08/release-v1-0-0-beta-6.md"
+    },
+    {
+      "slug": "thank-you",
+      "title": "Thank you!",
+      "summary": "Thank you to our SurrealDB stargazers for helping us pass 100 GitHub stars! It’s early days, but we greatly appreciate it!",
+      "publishDate": "2022-08-05T00:00:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl94gli03ggs73c8tse0.auto",
+      "source": "https://surrealdb.com/blog/thank-you",
+      "local_path": "2022/08/thank-you.md"
+    },
+    {
+      "slug": "indie-hackers-launch",
+      "title": "Indie Hackers launch",
+      "summary": "Thank you for all the comments, feedback and support on our SurrealDB 'launch' post on IndieHackers.com. We are honoured to have made the 'Popular' list!",
+      "publishDate": "2022-08-04T00:00:00.000Z",
+      "categories": [
+        "company"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl95baq03ggs73c8tsn0.auto",
+      "source": "https://surrealdb.com/blog/indie-hackers-launch",
+      "local_path": "2022/08/indie-hackers-launch.md"
+    },
+    {
+      "slug": "client-libraries-live",
+      "title": "Client libraries live!",
+      "summary": "We’re happy to announce that initial server side documentation for Node.js, Golang and Deno, along with client side documentation for JavaScript is LIVE!",
+      "publishDate": "2022-08-04T00:00:00.000Z",
+      "categories": [
+        "engineering"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl95l3q03ggs73c8tt40.auto",
+      "source": "https://surrealdb.com/blog/client-libraries-live",
+      "local_path": "2022/08/client-libraries-live.md"
+    },
+    {
+      "slug": "why-use-surrealdb",
+      "title": "Why use SurrealDB?",
+      "summary": "SurrealDB is an innovative NewSQL cloud database, suitable for serverless applications, jamstack applications, single-page applications, and traditional applications. It is unmatched in its versatility and financial value, with the ability for deployment on cloud, on-premise, embedded, and edge computing environments.",
+      "publishDate": "2022-08-03T00:00:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl94nq203ggs73c8tsg0.auto",
+      "source": "https://surrealdb.com/blog/why-use-surrealdb",
+      "local_path": "2022/08/why-use-surrealdb.md"
+    },
+    {
+      "slug": "release-v1-0-0-beta-5",
+      "title": "Release v1.0.0-beta.5",
+      "summary": "Temporarily disable HTTP response compression, improve <code>surreal import<\\/code> and <code>surreal export<\\/code> cli commands, and more...",
+      "publishDate": "2022-08-01T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trs0.auto",
+      "source": "https://surrealdb.com/blog/release-v1-0-0-beta-5",
+      "local_path": "2022/08/release-v1-0-0-beta-5.md"
+    },
+    {
+      "slug": "release-v1-0-0-beta-4",
+      "title": "Release v1.0.0-beta.4",
+      "summary": "Add new strict mode to SurrealDB server, ensure default table permissions are set to <code>NONE<\\/code> not <code>FULL<\\/code>, and more...",
+      "publishDate": "2022-07-28T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trt0.auto",
+      "source": "https://surrealdb.com/blog/release-v1-0-0-beta-4",
+      "local_path": "2022/07/release-v1-0-0-beta-4.md"
+    },
+    {
+      "slug": "release-v1-0-0-beta-3",
+      "title": "Release v1.0.0-beta.3",
+      "summary": "Log root authentication configuration status on server startup, ensure CORS headers are set on all HTTP responses even when request fails with an error, and more...",
+      "publishDate": "2022-07-24T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trtg.auto",
+      "source": "https://surrealdb.com/blog/release-v1-0-0-beta-3",
+      "local_path": "2022/07/release-v1-0-0-beta-3.md"
+    },
+    {
+      "slug": "documentation-is-live",
+      "title": "Documentation is live",
+      "summary": "We’re happy to announce that our SurrealDB Documentation is LIVE! Installation, setup, datatypes, querying, connectivity, advanced functionality. It's all here.",
+      "publishDate": "2022-07-21T00:00:00.000Z",
+      "categories": [
+        "company",
+        "releases"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl95l3q03ggs73c8tt3g.auto",
+      "source": "https://surrealdb.com/blog/documentation-is-live",
+      "local_path": "2022/07/documentation-is-live.md"
+    },
+    {
+      "slug": "dreaming-of-something-better",
+      "title": "Dreaming of something better",
+      "summary": "WE ARE LIVE!!! After 7 years of conceptualising, planning, designing and developing, our #opensource scalable cloud graph database SurrealDB is now in open beta to the world!",
+      "publishDate": "2022-07-20T00:00:00.000Z",
+      "categories": [
+        "company",
+        "featured"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/culjbaleuh0c73atorh0.auto",
+      "source": "https://surrealdb.com/blog/dreaming-of-something-better",
+      "local_path": "2022/07/dreaming-of-something-better.md"
+    },
+    {
+      "slug": "release-v1-0-0-beta-2",
+      "title": "Release v1.0.0-beta.2",
+      "summary": "Improve command-line logging output, enable new <code>--log<\\/code> argument for specifying server log level, hide default randomly-generated server password, and more...",
+      "publishDate": "2022-07-20T00:00:00.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "1 min read",
+      "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8tru0.auto",
+      "source": "https://surrealdb.com/blog/release-v1-0-0-beta-2",
+      "local_path": "2022/07/release-v1-0-0-beta-2.md"
+    }
+  ]
+}

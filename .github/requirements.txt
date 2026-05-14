@@ -1,0 +1,4 @@
+aiohttp>=3.9
+beautifulsoup4>=4.12
+tenacity>=8.2
+mdformat>=0.7

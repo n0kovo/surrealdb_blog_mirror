@@ -1,0 +1,14 @@
+---
+title: surrealdb-flutter
+description: Dart and Flutter client for connecting to SurrealDB.
+url: "https://github.com/duhanbalci/surrealdb_flutter"
+category: Source code
+author: 
+name: Duhan Balci
+role: Software Engineer
+avatar: duhan-balci
+topics: []
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/labs-items/surrealdb-flutter.mdx"
+---
+
+

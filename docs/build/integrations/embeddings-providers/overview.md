@@ -1,0 +1,28 @@
+---
+position: 1
+title: Embeddings provider integrations
+description: This section contains information about different LLM models you can use with SurrealDB.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/embeddings-providers/overview.mdx"
+---
+
+# Embeddings
+
+SurrealDB offers comprehensive support for vector embeddings, enabling powerful semantic search and machine learning capabilities across your data. Through integrations with leading embedding providers, you can easily store, index and query high-dimensional vectors alongside your regular data.
+
+- **[Quick start with Python](python-quickstart.md)** — LangChain, Ollama, Mistral, and more
+- **[Quick start with Rust](rust-quickstart.md)** — Mistral, Ollama, and more
+
+## Full examples
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/docs/integrations/embeddings/mistral">Mistral</a></td>
+      <td>Mistral AI's embedding model and SurrealDB vector search (Python and Rust)</td>
+    </tr>
+    <tr>
+      <td><a href="/docs/integrations/embeddings/openai">OpenAI</a></td>
+      <td>OpenAI's embedding service and SurrealDB vector search (Python and Rust)</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,656 @@
+---
+position: 3
+title: SurrealQueryable
+description: The SurrealQueryable class provides all query execution methods for interacting with SurrealDB.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/javascript/api/core/surreal-queryable.mdx"
+---
+
+# `SurrealQueryable` {#surrealqueryable}
+
+The `SurrealQueryable` class is an abstract base class that provides all query execution methods for interacting with SurrealDB. It is the foundation for executing database operations and is extended by [`SurrealSession`](surreal-session.md) and [`SurrealTransaction`](surreal-transaction.md).
+
+**Extended by:** [`SurrealSession`](surreal-session.md), [`SurrealTransaction`](surreal-transaction.md)
+
+**Source:** [api/queryable.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/api/queryable.ts)
+
+## Properties
+
+### `api` {#api}
+
+Access user-defined API endpoints. This property returns a [`SurrealApi`](surreal-api.md) instance for invoking custom database APIs.
+
+You can provide type definitions for type-safe API calls.
+
+**Type:** [`SurrealApi<TPaths>`](surreal-api.md)
+
+**Examples:**
+```ts title="Basic API Access"
+const api = db.api();
+const result = await api.get('/users');
+```
+
+```ts title="Type-Safe API Access"
+type MyPaths = {
+    "/users": { get: [void, User[]] };
+    [K: `/users/${number}`]: { get: [void, User] };
+};
+
+const api = db.api<MyPaths>();
+const users = await api.get("/users"); // Type: User[]
+```
+
+```ts title="API with Prefix"
+const usersApi = db.api<MyPaths>("/users");
+const user = await usersApi.get("123"); // GET /users/123
+```
+
+## Query methods
+
+### `.query()` {#query}
+
+Execute raw SurrealQL statements against the database.
+
+```ts title="Method Syntax"
+db.query<R>(query, bindings?)
+db.query<R>(boundQuery)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`query` <label label="required" /></td>
+            <td>`string | <a href="/docs/languages/javascript/api/utilities/bound-query">BoundQuery</a>`</td>
+            <td>The SurrealQL query string or BoundQuery instance.</td>
+        </tr>
+        <tr>
+            <td>`bindings` <label label="optional" /></td>
+            <td>`Record&lt;string, unknown&gt;`</td>
+            <td>Variables to bind in the query (when using string query).</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Type parameters
+- `R extends unknown[]` - Array of result types for each query statement
+
+#### Returns
+[`Query<R>`](../queries/query.md) - A query instance that can be configured and executed
+
+#### Examples
+
+```ts title="Simple Query"
+const result = await db.query('SELECT * FROM users').collect();
+console.log(result); // [{ success: true, result: [...] }]
+```
+
+```ts title="Query with Bindings"
+const result = await db.query(
+    'SELECT * FROM users WHERE age > $age',
+    { age: 18 }
+).collect();
+```
+
+```ts title="Multiple Statements"
+const results = await db.query<[User[], Post[]]>(`
+    SELECT * FROM users;
+    SELECT * FROM posts;
+`).collect();
+
+const [users, posts] = results.map(r => r.result);
+```
+
+```ts title="Using BoundQuery"
+
+const query = surql`SELECT * FROM users WHERE age > ${18}`;
+const result = await db.query(query).collect();
+```
+
+### `.select()` {#select}
+
+Select records from the database by record ID, record ID range, or table.
+
+```ts title="Method Syntax"
+db.select<T>(recordId)
+db.select<T>(range)
+db.select<T>(table)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`recordId` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordId</a>`</td>
+            <td>A specific record ID to select.</td>
+        </tr>
+        <tr>
+            <td>`range` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordIdRange</a>`</td>
+            <td>A range of record IDs to select.</td>
+        </tr>
+        <tr>
+            <td>`table` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/table">Table</a>`</td>
+            <td>A table to select all records from.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+[`SelectPromise<T>`](../queries/select-promise.md) - A promise with chainable configuration methods
+
+#### Examples
+
+```ts title="Select by Record ID"
+const user = await db.select(new RecordId('users', 'john'));
+```
+
+```ts title="Select All from Table"
+const users = await db.select(new Table('users'));
+```
+
+```ts title="Select with Configuration"
+const users = await db.select(new Table('users'))
+    .where('age > 18')
+    .limit(10)
+    .start(0);
+```
+
+### `.create()` {#create}
+
+Create new records in the database.
+
+```ts title="Method Syntax"
+db.create<T>(recordId)
+db.create<T>(table)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`recordId` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordId</a>`</td>
+            <td>The record ID for the new record.</td>
+        </tr>
+        <tr>
+            <td>`table` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/table">Table</a>`</td>
+            <td>The table to create a record in (auto-generated ID).</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+[`CreatePromise<T>`](../queries/create-promise.md) - A promise with chainable configuration methods
+
+#### Examples
+
+```ts title="Create with Specific ID"
+const user = await db.create(new RecordId('users', 'john'))
+    .content({ name: 'John Doe', email: 'john@example.com' });
+```
+
+```ts title="Create with Auto-Generated ID"
+const user = await db.create(new Table('users'))
+    .content({ name: 'Jane Doe', email: 'jane@example.com' });
+```
+
+### `.insert()` {#insert}
+
+Insert one or multiple records into the database.
+
+```ts title="Method Syntax"
+db.insert<T>(data)
+db.insert<T>(table, data)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`table` <label label="optional" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/table">Table</a>`</td>
+            <td>The table to insert records into.</td>
+        </tr>
+        <tr>
+            <td>`data` <label label="required" /></td>
+            <td>`T | T[]`</td>
+            <td>One or more records to insert.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+[`InsertPromise<T>`](../queries/insert-promise.md) - A promise with chainable configuration methods
+
+#### Examples
+
+```ts title="Insert Single Record"
+const user = await db.insert({
+    id: new RecordId('users', 'alice'),
+    name: 'Alice',
+    email: 'alice@example.com'
+});
+```
+
+```ts title="Insert Multiple Records"
+const users = await db.insert([
+    { id: new RecordId('users', 'bob'), name: 'Bob' },
+    { id: new RecordId('users', 'carol'), name: 'Carol' }
+]);
+```
+
+```ts title="Insert into Table"
+const users = await db.insert(new Table('users'), [
+    { name: 'Dave' },
+    { name: 'Eve' }
+]);
+```
+
+### `.update()` {#update}
+
+Update existing records in the database.
+
+```ts title="Method Syntax"
+db.update<T>(recordId)
+db.update<T>(range)
+db.update<T>(table)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`recordId` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordId</a>`</td>
+            <td>A specific record ID to update.</td>
+        </tr>
+        <tr>
+            <td>`range` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordIdRange</a>`</td>
+            <td>A range of record IDs to update.</td>
+        </tr>
+        <tr>
+            <td>`table` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/table">Table</a>`</td>
+            <td>A table to update all records in.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+[`UpdatePromise<T>`](../queries/update-promise.md) - A promise with chainable configuration methods
+
+#### Examples
+
+```ts title="Update with Content"
+const user = await db.update(new RecordId('users', 'john'))
+    .content({ name: 'John Smith', email: 'john@example.com' });
+```
+
+```ts title="Update with Merge"
+const user = await db.update(new RecordId('users', 'john'))
+    .merge({ email: 'newemail@example.com' });
+```
+
+```ts title="Update with Condition"
+const users = await db.update(new Table('users'))
+    .merge({ verified: true })
+    .where('age > 18');
+```
+
+### `.upsert()` {#upsert}
+
+Upsert records (insert if they don't exist, replace if they do).
+
+> [!WARNING]
+> This function replaces existing record data with the specified data.
+
+```ts title="Method Syntax"
+db.upsert<T>(recordId)
+db.upsert<T>(range)
+db.upsert<T>(table)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`recordId` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordId</a>`</td>
+            <td>A specific record ID to upsert.</td>
+        </tr>
+        <tr>
+            <td>`range` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordIdRange</a>`</td>
+            <td>A range of record IDs to upsert.</td>
+        </tr>
+        <tr>
+            <td>`table` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/table">Table</a>`</td>
+            <td>A table to upsert all records in.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+[`UpsertPromise<T>`](../queries/upsert-promise.md) - A promise with chainable configuration methods
+
+#### Example
+```ts
+const user = await db.upsert(new RecordId('users', 'john'))
+    .content({ name: 'John Doe', email: 'john@example.com' });
+```
+
+### `.delete()` {#delete}
+
+Delete records from the database.
+
+```ts title="Method Syntax"
+db.delete<T>(recordId)
+db.delete<T>(range)
+db.delete<T>(table)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`recordId` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordId</a>`</td>
+            <td>A specific record ID to delete.</td>
+        </tr>
+        <tr>
+            <td>`range` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordIdRange</a>`</td>
+            <td>A range of record IDs to delete.</td>
+        </tr>
+        <tr>
+            <td>`table` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/table">Table</a>`</td>
+            <td>A table to delete all records from.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+[`DeletePromise<T>`](../queries/delete-promise.md) - A promise with chainable configuration methods
+
+#### Examples
+
+```ts title="Delete Single Record"
+const deleted = await db.delete(new RecordId('users', 'john'));
+```
+
+```ts title="Delete All from Table"
+const deleted = await db.delete(new Table('users'));
+```
+
+### `.relate()` {#relate}
+
+Create graph relationships (edges) between records.
+
+```ts title="Method Syntax"
+db.relate<T>(from, edge, to, data?)
+db.relate<T>(from[], edge, to[], data?)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`from` <label label="required" /></td>
+            <td>`RecordId | RecordId[]`</td>
+            <td>The source record(s) for the relationship.</td>
+        </tr>
+        <tr>
+            <td>`edge` <label label="required" /></td>
+            <td>`Table | RecordId`</td>
+            <td>The edge table or specific edge record ID.</td>
+        </tr>
+        <tr>
+            <td>`to` <label label="required" /></td>
+            <td>`RecordId | RecordId[]`</td>
+            <td>The target record(s) for the relationship.</td>
+        </tr>
+        <tr>
+            <td>`data` <label label="optional" /></td>
+            <td>`Partial&lt;T&gt;`</td>
+            <td>Optional data to store on the edge record.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+[`RelatePromise<T>`](../queries/relate-promise.md) - A promise for the relationship operation
+
+#### Examples
+
+```ts title="Create Single Relationship"
+const edge = await db.relate(
+    new RecordId('users', 'john'),
+    new Table('likes'),
+    new RecordId('posts', '1'),
+    { timestamp: new Date() }
+);
+```
+
+```ts title="Create Multiple Relationships"
+const edges = await db.relate(
+    [new RecordId('users', 'john'), new RecordId('users', 'jane')],
+    new Table('follows'),
+    [new RecordId('users', 'alice'), new RecordId('users', 'bob')]
+);
+```
+
+### `.live()` {#live}
+
+Create a live query subscription to receive real-time updates when records change.
+
+```ts title="Method Syntax"
+db.live<T>(what)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`what` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/types/#liveresource">LiveResource</a>`</td>
+            <td>The table, record ID, or range to subscribe to.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+[`ManagedLivePromise<T>`](../queries/live-promise.md) - A managed live query subscription
+
+#### Example
+```ts
+const subscription = await db.live(new Table('users'));
+
+for await (const update of subscription) {
+    console.log('Update:', update.action, update.result);
+}
+```
+
+### `.liveOf()` {#liveof}
+
+Subscribe to an existing live query using its ID.
+
+> [!NOTE]
+> This function is for use with live queries not managed by the driver.
+
+```ts title="Method Syntax"
+db.liveOf(id)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`id` <label label="required" /></td>
+            <td>`<a href="/docs/languages/javascript/api/values/uuid">Uuid</a>`</td>
+            <td>The UUID of the existing live query.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+[`UnmanagedLivePromise`](../queries/live-promise.md) - An unmanaged live query subscription
+
+#### Example
+```ts
+const liveQueryId = await db.query('LIVE SELECT * FROM users').collect();
+const subscription = db.liveOf(liveQueryId);
+```
+
+### `.run()` {#run}
+
+Execute a SurrealDB function or SurrealML model.
+
+```ts title="Method Syntax"
+db.run<T>(name, args?)
+db.run<T>(name, version, args?)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`name` <label label="required" /></td>
+            <td>`string`</td>
+            <td>The full name of the function to run (e.g., `"fn::calculate"`).</td>
+        </tr>
+        <tr>
+            <td>`version` <label label="optional" /></td>
+            <td>`string`</td>
+            <td>The version of a SurrealML model to use.</td>
+        </tr>
+        <tr>
+            <td>`args` <label label="optional" /></td>
+            <td>`unknown[]`</td>
+            <td>Arguments to pass to the function.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+[`RunPromise<T>`](../queries/run-promise.md) - A promise for the function result
+
+#### Examples
+
+```ts title="Run Custom Function"
+const result = await db.run('fn::calculate', [10, 20]);
+```
+
+```ts title="Run SurrealML Model"
+const prediction = await db.run('ml::predict', '1.0.0', [inputData]);
+```
+
+### `.auth()` {#auth}
+
+Get the currently authenticated record user by selecting the `$auth` parameter.
+
+> [!NOTE]
+> The user must have permission to select their own record, otherwise an empty result is returned.
+
+```ts title="Method Syntax"
+db.auth<T>()
+```
+
+#### Returns
+`AuthPromise<T>` - A promise for the authenticated user record
+
+#### Example
+```ts
+const user = await db.auth();
+console.log('Current user:', user);
+```
+
+## See also
+
+- [SurrealSession](surreal-session.md) - Session management extending this class
+- [SurrealTransaction](surreal-transaction.md) - Transaction support extending this class
+- [Query Builders](../queries/index.md) - Detailed query builder documentation
+- [SelectPromise](../queries/select-promise.md) - SELECT query configuration
+- [CreatePromise](../queries/create-promise.md) - CREATE query configuration

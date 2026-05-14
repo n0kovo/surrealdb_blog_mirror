@@ -1,0 +1,54 @@
+---
+position: 1
+title: GraphQL
+description: In this section, you will explore GraphQL, an industry-wide recognised protocol for interacting with your data, allowing you to query your data using any preferred method which offers precision and efficiency in data retrieval.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/graphql/overview.mdx"
+---
+
+# GraphQL
+
+SurrealDB supports [GraphQL](https://graphql.org/) through the [`/graphql`](../../../reference/rest-api/http-protocol.md#graphql) endpoint, which can be accessed via [Surrealist](https://app.surrealdb.com/), GraphiQL, Postman, or any other GraphQL client.
+
+## Key features
+
+GraphQL offers a number of key features that make it a powerful tool for working with SurrealDB:
+
+- **Declarative Data Fetching**: GraphQL allows you to request exactly the data you need, no more and no less. This reduces over-fetching and under-fetching of data, leading to more efficient queries.
+
+- **Strongly Typed Schema**: GraphQL uses a strong type system to define the capabilities of an API. This schema serves as a contract between the client and the server, ensuring that queries are valid before execution.
+
+- **Hierarchical Structure**: GraphQL queries mirror the shape of the data they return, making it intuitive to work with nested data structures.
+
+- **Single Endpoint**: When using GraphQL over HTTP, it typically uses a single endpoint, simplifying API architecture and reducing network overhead.
+
+- **Ecosystem and Tools**: GraphQL has a rich ecosystem of tools for development, testing, and monitoring, including GraphiQL for query exploration and Apollo Client for state management.
+
+## Getting started
+
+Enabling GraphQL queries for SurrealDB can be done through a single statement: [`DEFINE CONFIG GRAPHQL`](../../../reference/query-language/statements/define/config.md).
+
+The simplest clause to follow this with is `AUTO`, which will automatically include all tables in the GraphQL schema.
+
+```surql
+DEFINE CONFIG GRAPHQL AUTO;
+```
+
+A query for `(INFO FOR DB).configs` will show that the above statement ends up having the clauses `TABLES AUTO FUNCTIONS AUTO`.
+
+```surql
+{ GraphQL: 'GRAPHQL TABLES AUTO FUNCTIONS AUTO' }
+```
+
+For more fine tuning of the configuration, the `TABLES` and `FUNCTIONS` clauses can be followed by [other clauses](../../../reference/query-language/statements/define/config.md#tables-configuration).
+
+## Next steps
+
+The next page introduces some common GraphQL patterns and their SurrealQL equivalents or near equivalents.
+
+This is followed by the following pages that detail the various tools by which GraphQL queries can be run on a SurrealDB database:
+
+- Using the [`/graphql`](../../../reference/rest-api/http-protocol.md#graphql) endpoint [via HTTP (cURL)](via-http.md)
+- Using the [`/graphql`](../../../reference/rest-api/http-protocol.md#graphql) endpoint [via Bruno](via-bruno.md)
+- Using [Surrealist](https://app.surrealdb.com/), SurrealDB's interactive environment for experimenting with GraphQL queries and seeing results immediately in the UI.
+
+Other tools such as Postman and many others can be used against the `/graphql` endpoint.

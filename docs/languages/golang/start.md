@@ -1,0 +1,162 @@
+---
+position: 3
+title: Quickstart
+description: Get started with the SurrealDB SDK for Go in minutes.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/golang/start.mdx"
+---
+
+# Quickstart
+
+The Go SDK for SurrealDB makes it straightforward to connect to your instance and start querying data. This guide walks you through connecting, authenticating, and performing basic operations.
+
+## 1. Install the SDK
+
+Follow the [installation guide](installation.md) to add the SDK to your project. Once installed, import the SDK and its models package.
+
+```go
+	"context"
+
+	surrealdb "github.com/surrealdb/surrealdb.go"
+	"github.com/surrealdb/surrealdb.go/pkg/models"
+)
+```
+
+The `surrealdb` package contains the client, query functions, and authentication types. The `models` package contains value types like [`RecordID`](api/values/record-id.md) and [`Table`](api/values/table.md) that map to SurrealDB's data model.
+
+## 2. Connect to SurrealDB
+
+Use [`FromEndpointURLString`](api/core/db.md#fromendpointurlstring) to create a new client and connect to a SurrealDB instance. The function accepts a `context.Context` for cancellation and a URL string that determines the connection type.
+
+Supported connection protocols include:
+- **WebSocket** (`ws://`, `wss://`) for long-lived stateful connections, required for live queries, sessions, and transactions
+- **HTTP** (`http://`, `https://`) for short-lived stateless connections
+- **Memory** (`mem://`) for [embedded instances](embedding.md)
+
+```go
+ctx := context.Background()
+
+db, err := surrealdb.FromEndpointURLString(ctx, "ws://localhost:8000")
+if err != nil {
+	log.Fatal(err)
+}
+defer db.Close(ctx)
+```
+
+After connecting, use [`.Use()`](api/core/db.md#use) to select the namespace and database you want to work with, and [`.SignIn()`](api/core/db.md#signin) to authenticate. Most operations require both.
+
+```go
+if err := db.Use(ctx, "company_name", "project_name"); err != nil {
+	log.Fatal(err)
+}
+
+_, err = db.SignIn(ctx, surrealdb.Auth{
+	Username: "root",
+	Password: "root",
+})
+if err != nil {
+	log.Fatal(err)
+}
+```
+
+The `defer db.Close(ctx)` ensures the connection is cleaned up when your function returns, similar to closing a file or database connection in Go.
+
+## 3. Inserting data into SurrealDB
+
+Once connected, you can use the [`Create`](api/core/db.md#create) function to create records. Pass a [`Table`](api/values/table.md) to generate a random ID, or a [`RecordID`](api/values/record-id.md) to specify the ID explicitly. The data can be a struct or a map.
+
+```go
+type User struct {
+	ID    *models.RecordID `json:"id,omitempty"`
+	Name  string           `json:"name"`
+	Email string           `json:"email"`
+	Age   int              `json:"age"`
+}
+
+user, err := surrealdb.Create[User](ctx, db, models.Table("users"), User{
+	Name:  "John",
+	Email: "john@example.com",
+	Age:   32,
+})
+if err != nil {
+	log.Fatal(err)
+}
+fmt.Printf("%+v\n", user)
+```
+
+You can also create a record with a specific ID using `RecordID`:
+
+```go
+type Product struct {
+	ID       *models.RecordID `json:"id,omitempty"`
+	Name     string           `json:"name"`
+	Price    float64          `json:"price"`
+	Category string           `json:"category"`
+}
+
+product, err := surrealdb.Create[Product](ctx, db, models.NewRecordID("products", "apple"), Product{
+	Name:     "Apple",
+	Price:    1.50,
+	Category: "fruit",
+})
+if err != nil {
+	log.Fatal(err)
+}
+fmt.Printf("%+v\n", product)
+```
+
+Notice that the Go SDK uses generic functions like `surrealdb.Create[User](...)` rather than methods on the `db` object. The type parameter tells the SDK what type to unmarshal the response into.
+
+## 4. Retrieving data from SurrealDB
+
+### Selecting records
+
+The [`Select`](api/core/db.md#select) function retrieves all records from a table, or a single record by its [`RecordID`](api/values/record-id.md). Use a slice type parameter when selecting a table, and a single type when selecting a specific record.
+
+```go
+users, err := surrealdb.Select[[]User](ctx, db, models.Table("users"))
+if err != nil {
+	log.Fatal(err)
+}
+fmt.Printf("All users: %+v\n", users)
+
+apple, err := surrealdb.Select[Product](ctx, db, models.NewRecordID("products", "apple"))
+if err != nil {
+	log.Fatal(err)
+}
+fmt.Printf("Apple: %+v\n", apple)
+```
+
+### Running SurrealQL queries
+
+For more advanced use cases, you can use the [`Query`](api/core/db.md#query) function to run [SurrealQL](../../reference/query-language/index.md) statements directly. Use [parameters](../../reference/query-language/language-primitives/parameters.md) to safely pass dynamic values.
+
+```go
+results, err := surrealdb.Query[[]Product](ctx, db,
+	"SELECT name, price FROM products WHERE price < $max_price ORDER BY price",
+	map[string]any{"max_price": 5.00},
+)
+if err != nil {
+	log.Fatal(err)
+}
+
+for _, qr := range *results {
+	fmt.Printf("%+v\n", qr.Result)
+}
+```
+
+## 5. Closing the connection
+
+Always close the connection when you are done to release resources. The idiomatic Go pattern is to `defer` the close immediately after creating the connection, as shown in step 2.
+
+```go
+db.Close(ctx)
+```
+
+## What's next?
+
+You have learned how to install the SDK, connect to SurrealDB, create records, and retrieve data. There is a lot more you can do with the SDK, including updating and deleting records, live queries, sessions, and interactive transactions.
+
+- **[Connection management](concepts/connecting-to-surrealdb.md)** — Learn how to manage your database connections, including protocols and configuration.
+- **[Authentication](concepts/authentication.md)** — Read more about authentication levels and how to integrate them into your application.
+- **[Data manipulation](concepts/data-manipulation.md)** — Learn how to create, read, update, and delete records using the SDK.
+- **[API Reference](api/core/db.md)** — Complete reference for all functions, methods, types, and errors.

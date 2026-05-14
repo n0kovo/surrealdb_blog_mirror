@@ -1,0 +1,28 @@
+---
+position: 8
+title: Billing & support
+description: Plans, payment methods, invoices, and how to get help with SurrealDB Cloud.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/cloud/billing-and-support.mdx"
+---
+
+# Billing & support
+
+**Billing** in SurrealDB Cloud is tied to your **organisation**: usage (compute, storage, and network) rolls up for invoicing, and historical records remain even if you delete individual instances.
+
+![SurrealDB Cloud bills along the same axes shown in this diagram: compute time on the node and capacity on the centralised storage layer.](../../assets/img/image/cloud/light/cloud-architecture-light.png)
+
+## Plans and pricing tiers
+
+Plans differ by included capacity, feature gates (such as high availability or enterprise networking), and support entitlements. Pick a tier that matches production needs and expected growth; you can usually move between tiers as requirements change.
+
+## Payment methods and invoices
+
+Add or update **payment methods** in the organisation **Billing** area. **Invoices** list charges by period and line item; download or forward them for finance workflows. Discount or credit codes, where applicable, are applied at organisation level.
+
+## Support
+
+For product issues, billing queries, or onboarding help, use the **support channels** listed in the Cloud console and on the main site (for example, contact forms or email). Enterprise or priority support may depend on your subscription tier.
+
+## Detailed billing
+
+Line items, tabs in the Surrealist UI, and how organisation-level billing behaves in practice are documented in depth here: **[Billing](../../build/deployment/surrealdb-cloud/billing-and-support/billing.md)**.

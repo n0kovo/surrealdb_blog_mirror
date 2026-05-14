@@ -1,0 +1,14 @@
+---
+title: surrealdb_extra
+description: Rust helper crate extending the official SurrealDB driver.
+url: "https://github.com/jakin010/surrealdb_extra"
+category: Source code
+author: 
+name: Jakin010
+role: Software Engineer
+avatar: jakin010
+topics: 
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/labs-items/surrealdb_extra.mdx"
+---
+
+

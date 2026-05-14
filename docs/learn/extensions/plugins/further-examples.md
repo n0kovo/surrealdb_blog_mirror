@@ -1,0 +1,63 @@
+---
+position: 3
+title: Further examples
+description: Further examples of Surrealism attributes, namespaced exports, and CLI commands
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/extensions/plugins/further-examples.mdx"
+---
+
+# Further Surrealism examples
+
+More examples of Surrealism in practice can be seen inside the [surrealism repo](https://github.com/surrealdb/surrealdb/tree/main/surrealism).
+
+## Surrealism Rust code demo
+
+[This demo](https://github.com/surrealdb/surrealdb/tree/main/surrealism/demo) contains examples of the `#[surrealism]` attribute in real code.
+
+### Renaming an export
+
+You can rename a function on the SurrealDB side:
+
+```rust
+#[surrealism(name = "other")]
+fn can_drive_bla(age: i64) -> bool {
+    age >= 18
+}
+```
+
+### Setting a default export
+
+You can make a function the default, allowing calls via the module path alone:
+
+```rust
+#[surrealism(default)]
+fn def(age: i64) -> bool {
+    age >= 18
+}
+```
+
+### Attaching export comments
+
+```rust
+#[surrealism(comment = "Parses a string into a number")]
+fn parse_number(input: String) -> Result<i64, String> {
+    input.parse::<i64>().map_err(|e| e.to_string())
+}
+```
+
+## CLI examples
+
+[This file](https://github.com/surrealdb/surrealdb/blob/main/surrealism/test/test.sh) shows ways to work with module archives directly from the CLI.
+
+```bash
+# Scaffold a new module project
+surreal module init
+
+# Build quickly while iterating
+surreal module build --debug --out demo.surli .
+
+# See function signature
+surreal module sig --fnc can_drive demo.surli
+
+# Run function with argument 
+surreal module run --fnc can_drive --arg 17 demo.surli
+```

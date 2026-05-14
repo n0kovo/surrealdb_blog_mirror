@@ -1,0 +1,30 @@
+---
+position: 3
+title: Scaling
+description: Resize SurrealDB Cloud instances and plan capacity for growing workloads.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/cloud/scaling.mdx"
+---
+
+# Scaling
+
+As your data volume and query load grow, you **scale** SurrealDB Cloud to avoid throttling, high latency, or storage exhaustion. Scaling is usually cheaper than repeated outages or emergency firefighting.
+
+## Vertical scaling
+
+**Vertical scaling** means moving to a **larger instance type** with more CPU, memory, or I/O per node. It is the first response when metrics show sustained high utilisation on a single instance.
+
+![Vertical scaling: a single SurrealDB compute node paired with a single storage node — resizing means giving this same node more CPU, memory, and I/O.](../../assets/img/image/cloud/light/start-single-node-light.png)
+
+## Horizontal scaling
+
+**Horizontal scaling** adds **capacity through additional nodes or replicas** (where the product and your topology support it), spreading read load or improving availability. Use it when a single machine is no longer economical or you need redundancy beyond one AZ.
+
+![Horizontal scaling: the instance endpoint fans out to compute nodes 1, 2, ...n, all backed by the same centralised storage layer.](../../assets/img/image/cloud/light/horizontal-scaling-light.png)
+
+## When to scale
+
+Signals to scale include **CPU pegged** near limits, **memory pressure**, **disk growth** trending toward limits, **connection saturation**, and **latency SLOs** breached under normal traffic. Schedule resizes during maintenance windows when possible; some changes may cause brief reconnects.
+
+## How to resize
+
+Change the **instance type** or **replica count** from the Cloud console or Surrealist, following any confirmation steps. After scaling, **re-check metrics** and query performance to validate the new size.

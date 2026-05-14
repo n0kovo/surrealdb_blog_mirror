@@ -1,0 +1,25 @@
+---
+position: 3
+title: Via HTTP
+description: Connect to your SurrealDB Cloud instance using the HTTP API and run queries.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/deployment/surrealdb-cloud/connecting/via-http.mdx"
+---
+
+# Connect via HTTP using cURL
+
+SurrealDB Cloud supports connection via HTTP. This allows you to connect to your SurrealDB Cloud Instance using curl or any HTTP client. To get started, select the **Connect** button on your Instance. Then select **HTTP cURL**.  
+
+![Open in HTTP cURL](../../../../assets/img/image/cloud/open-in-http.png)
+
+> [!NOTE]
+> The URL provided can be used in any HTTP client, but by default it is set to use curl. Use the URL in your HTTP client to connect to your SurrealDB Cloud Instance from clients like Postman or any other HTTP client.
+
+## Connect to your SurrealDB Cloud instance
+
+Once you have filled in the credentials, copy the URL and connect to your SurrealDB Cloud Instance. Below is an example of the connection URL in curl.
+
+```bash
+curl -X GET "YOUR_ENDPOINT" \
+  -H "Surreal-NS: DEMO namespace" \
+  -H "Surreal-DB: DEMO database"
+```

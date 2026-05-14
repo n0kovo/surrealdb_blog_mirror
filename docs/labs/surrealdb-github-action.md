@@ -1,0 +1,11 @@
+---
+title: SurrealDB GitHub Action
+description: GitHub Action to run SurrealDB in CI pipelines.
+url: "https://github.com/marketplace/actions/surrealdb-in-github-action"
+category: Source code
+author: surrealdb
+topics: 
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/labs-items/surrealdb-github-action.mdx"
+---
+
+

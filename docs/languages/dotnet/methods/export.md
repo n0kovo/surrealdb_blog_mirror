@@ -1,0 +1,64 @@
+---
+position: 1
+title: Export
+description: The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/dotnet/methods/export.mdx"
+---
+
+# `.Export()`
+
+Export the database as a SurrealQL script.
+To use this method, you need to be connected to a SurrealDB instance that is version `>= 2.1.0`.
+
+```csharp title="Method Syntax"
+await db.Export(options)
+```
+
+### Arguments
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2" scope="col">Arguments</th>
+            <th colspan="2" scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2" scope="row" data-label="Arguments">
+                `options`
+                <label label="optional" />
+            </td>
+            <td colspan="2" scope="row" data-label="Description">
+                Export configuration options.
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" scope="row" data-label="Arguments">
+                `cancellationToken`
+                <label label="optional" />
+            </td>
+            <td colspan="2" scope="row" data-label="Description">
+                The cancellationToken enables graceful cancellation of asynchronous operations.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+### Example usage
+
+```csharp title="Only exporting db functions in a schema variable"
+var options = new ExportOptions
+{
+    Users = false,
+    Accesses = false,
+    Params = false,
+    Functions = true,
+    Users = false,
+    Versions = false,
+    Tables = false,
+    Records = false,
+};
+
+string schema = await db.Export(options);
+```

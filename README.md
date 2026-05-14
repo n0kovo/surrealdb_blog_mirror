@@ -1,6 +1,6 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-05-14 18:49 UTC_
+_Last updated: 2026-05-14 19:48 UTC_
 
 ## Stats
 
@@ -15,6 +15,7 @@ _Last updated: 2026-05-14 18:49 UTC_
 - [All posts (chronological)](posts/all.md)
 - [Manifest (`posts.json`)](posts/posts.json)
 - [Atom feed (`atom.xml`)](posts/atom.xml)
+- [SurrealDB Documentation (Markdown mirror)](docs/README.md)
 
 ### By year
 

@@ -1,0 +1,98 @@
+---
+position: 3
+title: Concepts
+description: This page gives details about some of the core concepts of SurrealDB, including the intended use cases, design choices, and overarching features.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/concepts.mdx"
+---
+
+# Concepts
+
+This page aims to give details about some of the core concepts of SurrealDB, including the intended use cases, design choices, and overarching features.
+
+## Traditional database or backend layer
+SurrealDB can be used either as a traditional database platform, with backend languages and frameworks including Golang, Python, Rust, C, Java, .NET, Node.js, and PHP. Alternatively, you can use SurrealDB as a complete backend platform, connecting directly to it from frontend languages and frameworks including JavaScript, [WebAssembly](https://webassembly.org/), [React.js](https://react.dev/), [Next.js](https://nextjs.org/), and [Ember.js](https://emberjs.com/). SurrealDB provides fine-grained table-, record-, and field-level permissions that support secure access in both backend and frontend architectures.
+
+## Relational, document, or graph
+SurrealDB is, at its core, a document database. Each record is stored on an underlying key-value store storage engine, with the ability to store arbitrary arrays, objects, and many other types of data. However, SurrealDB isn't just a document database. Because of the way that SurrealDB handles Record IDs and the fetching of individual records from the underlying key-value storage engine, it can be used to store time-series ordered data, and highly-connected graph data. With its SQL-like query language named [SurrealQL](reference/query-language/index.md), it is easy to create, update, and read data from across the database.
+
+For more on the various data models available in SurrealDB, see the [Data Models](learn/data-models/index.md) section.
+
+## Single-node or distributed
+SurrealDB is designed to be run in many different ways and environments. Due to the [separation of the storage and compute layers](architecture.md), SurrealDB can be run as an embedded database, as a vertically-scalable, single-node database server, or as a horizontally-scalable, multi-node, distributed cluster. SurrealDB can be run with an in-memory storage engine both as a server and as an embedded database, in a web browser it can persist data using [IndexedDB](https://web.dev/indexeddb/), or it can persist data using the file-based [RocksDB](self-hosted/file-backed.md) or [SurrealKV](architecture.md) (beta) storage engines. As a database server, SurrealDB stores data [in memory](self-hosted/in-memory.md) by default with RocksDB or SurrealKV as options for long-term persistent storage, or [TiKV](https://tikv.org/) for distributed deployments.
+
+## System structure
+SurrealDB works similarly to other traditional relational databases and document databases, with a few slight differences. SurrealDB is designed and developed to be a multi-tenant database platform with a high-level [`namespace`](reference/query-language/statements/define/namespace.md) layer designed as a separation for each organisation, department, or development team. There is no limit to the number of namespaces on SurrealDB. Below this, the [`database`](reference/query-language/statements/define/database.md) layer is similar to databases in other database management systems. There is no limit to the number of databases on each namespace. Within each database, data can be defined within [`table`](reference/query-language/statements/define/table.md) definitions, otherwise known as collections in other database management systems. In SurrealDB each row or document is called a [`record`](reference/query-language/language-primitives/data-types/record-ids.md) and columns are called [`fields`](reference/query-language/statements/define/field.md). Each of these resources has its own [`define`](reference/query-language/statements/define/overview.md) statement:
+
+- [`namespace`](reference/query-language/statements/define/namespace.md)
+- [`databases`](reference/query-language/statements/define/database.md)
+- [`table`](reference/query-language/statements/define/table.md)
+- [`fields`](reference/query-language/statements/define/field.md)
+
+The [`records`](reference/query-language/language-primitives/data-types/record-ids.md) of a database can be [created](reference/query-language/statements/create.md), [read](reference/query-language/statements/select.md), [updated](reference/query-language/statements/update.md), and [deleted](reference/query-language/statements/delete.md). Many other statements exist to work with records, such as:
+
+* [UPSERT](reference/query-language/statements/upsert.md) to update a record if it exists or create a new one if it does not.
+* [RELATE](reference/query-language/statements/relate.md) to link one record to another via another table called a graph edge.
+
+Multiple [access](reference/query-language/statements/define/access/index.md) methods can be defined on `namespace` and `database`. The [record](reference/query-language/statements/define/access/record.md) access method allows for custom authentication across tables, records, and fields.
+
+### Namespaces and databases
+
+A namespace in SurrealDB acts as a higher-level container that can hold multiple databases. It is primarily used for organising and isolating databases within the same SurrealDB instance. This is particularly useful in multi-tenant environments where different applications or groups might need to operate independently within the same server or cluster.
+
+Namespaces help in managing permissions and access at a broader level than individual databases.
+There is no limit to the number of namespaces on SurrealDB and each namespace can have its own set of databases, tables, and records.
+
+A database within SurrealDB is contained within a namespace and is the primary unit where data is stored. Databases hold the actual data tables, indexes, and other data structures. Each database can have its own schema, settings, and permissions. The database is where you perform most of the data operations like CRUD (Create, Read, Update, Delete) operations, queries, and transactions.
+
+Namespaces and databases are defined using the [`DEFINE NAMESPACE`](reference/query-language/statements/define/namespace.md) and [`DEFINE DATABASE`](reference/query-language/statements/define/database.md) statements in SurrealQL. These statements require a unique name and can optionally include a comment for additional context. The [`USE`](reference/query-language/statements/use.md) statement allows you to move from one namespace or database to another.
+
+```surql
+DEFINE NAMESPACE dev_namespace COMMENT "Internal use only: do not use in prod";
+USE NAMESPACE dev_namespace;
+// Now inside 'dev_namespace', define a database within it
+DEFINE DATABASE dev_db_1 COMMENT "First of many dev databases";
+```
+
+You can view the list of resources in your SurrealDB instance using the [`INFO`](reference/query-language/statements/info.md) statement.
+
+* `INFO FOR ROOT`: Information on namespaces as well as system info: memory allocated, physical cores, other users, etc.
+* `INFO FOR NAMESPACE`: Information on a namespace's databases, users, and access methods.
+* `INFO FOR DATABASE`: Information on a database's tables, users, accesses, etc.
+
+Other [`INFO`](reference/query-language/statements/info.md) statements exist to see the status of tables, users, and indexes.
+
+An example of output for the `INFO FOR DATABASE` statement is as follows.
+
+```surql
+{
+	accesses: {  },
+	analyzers: {
+		blank_snowball: 'DEFINE ANALYZER blank_snowball TOKENIZERS BLANK FILTERS LOWERCASE, SNOWBALL(ENGLISH)'
+	},
+	apis: {  },
+	buckets: {  },
+	configs: {  },
+	functions: {
+		number_of_unfulfilled_orders: "DEFINE FUNCTION fn::number_of_unfulfilled_orders() -> int { SELECT VALUE count() FROM ONLY order WHERE order_status NOTINSIDE ['processed', 'shipped'] GROUP ALL } PERMISSIONS FULL",
+		pound_to_usd: 'DEFINE FUNCTION fn::pound_to_usd($price: number) -> float { $price * 1.26f } PERMISSIONS FULL'
+	},
+	models: {  },
+	modules: {  },
+	params: {  },
+	sequences: {  },
+	tables: {
+		monthly_sales: "DEFINE TABLE monthly_sales TYPE NORMAL SCHEMAFULL AS SELECT count() AS number_of_orders, time::format(time.created_at, '%Y-%m') AS month, math::sum(price * quantity) AS sum_sales, currency FROM order GROUP BY month, currency PERMISSIONS NONE",
+		order: 'DEFINE TABLE order TYPE RELATION IN person OUT product SCHEMAFULL PERMISSIONS NONE',
+		user: 'DEFINE TABLE user TYPE ANY SCHEMALESS PERMISSIONS NONE',
+		wishlist: 'DEFINE TABLE wishlist TYPE RELATION IN person OUT product SCHEMAFULL PERMISSIONS NONE'
+	},
+	users: {
+		Boris: "DEFINE USER Boris ON DATABASE PASSHASH '$argon2id$v=19$m=19456,t=2,p=1$1ZMzsVGNRxAaZAhTZ3Kn0g$sO23Ukw1OVNCQb2T72wNnb5bS6lqhLllmfNzcqwH9i4' ROLES VIEWER DURATION FOR TOKEN 1h, FOR SESSION NONE",
+		Drusilla: "DEFINE USER Drusilla ON DATABASE PASSHASH '$argon2id$v=19$m=19456,t=2,p=1$AFRMmk2Ny+ZoDdG9U7nOPQ$vsSr2TfQ9K5OUhTjygkWu/Y+8WX/Dns9wfK0rdQ8cnc' ROLES VIEWER DURATION FOR TOKEN 1h, FOR SESSION NONE"
+	}
+}
+```
+
+## Trying out a query or two
+
+The next page finishes up this introduction to SurrealDB by running through a few queries. For more on querying once you have finished these introductory pages, turn to the [Querying](learn/querying/index.md) section of the documentation which goes into further detail including schema management, security, agent memory, and more.

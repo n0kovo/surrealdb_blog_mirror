@@ -1,0 +1,14 @@
+---
+title: surrealdb-zod
+description: Define and validate SurrealDB-shaped data with Zod.
+url: "https://github.com/ShadowWolf308/surrealdb-zod"
+category: Source code
+author: 
+name: Levy van der Valk
+role: Web Developer
+avatar: levy-van-der-valk
+topics: []
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/labs-items/surrealdb-zod.mdx"
+---
+
+

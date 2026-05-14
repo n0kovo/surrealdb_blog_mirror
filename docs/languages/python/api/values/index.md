@@ -1,0 +1,77 @@
+---
+position: 1
+title: Python values
+description: Custom data types for representing SurrealDB values in Python.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/python/api/values/index.mdx"
+---
+
+# Data types {#data-types}
+
+The Python SDK provides custom classes that map SurrealDB types to Python. These classes are used throughout the SDK for parameters and return values. Standard Python types like `str`, `int`, `float`, `bool`, `None`, `bytes`, `dict`, and `list` are also used directly where they map naturally to SurrealDB types.
+
+## `Value` type {#value}
+
+The `Value` union type represents any value that can be sent to or received from SurrealDB.
+
+```python title="Type Definition"
+Value = (
+    str | int | float | bool | None | bytes | UUID | Decimal
+    | Table | Range | RecordID | Duration | Datetime
+    | GeometryPoint | GeometryLine | GeometryPolygon
+    | GeometryMultiPoint | GeometryMultiLine | GeometryMultiPolygon
+    | GeometryCollection | dict[str, "Value"] | list["Value"]
+)
+```
+
+## Type mapping {#type-mapping}
+
+| Python Type | SurrealDB Type | Notes |
+|---|---|---|
+| `str` | `string` | |
+| `int` | `int` | |
+| `float` | `float` | |
+| `bool` | `bool` | |
+| `None` | `NONE` / `NULL` | |
+| `bytes` | `bytes` | |
+| `UUID` | `uuid` | From `uuid` standard library |
+| `Decimal` | `decimal` | From `decimal` standard library |
+| `dict` | `object` | Keys must be strings |
+| `list` | `array` | |
+| [`RecordID`](record-id.md) | `record` | Table name + identifier |
+| [`Table`](table.md) | table reference | Table name wrapper |
+| [`Duration`](duration.md) | `duration` | Nanosecond precision |
+| [`Datetime`](datetime.md) | `datetime` | ISO 8601 string |
+| [`Range`](range.md) | `range` | Inclusive/exclusive bounds |
+| [`Geometry*`](geometry.md) | `geometry` | GeoJSON-compatible types |
+
+## `RecordIdType` type {#recordidtype}
+
+Many SDK methods accept a `RecordIdType`, which allows passing a table name, a `Table` object, or a `RecordID`.
+
+```python title="Type Definition"
+RecordIdType = str | Table | RecordID
+```
+
+## `Tokens` type {#tokens}
+
+Authentication methods return a `Tokens` string alias.
+
+```python title="Type Definition"
+Tokens = str
+```
+
+## Custom types
+
+- [`RecordID`](record-id.md) — Record identifier with table name and ID components
+- [`Table`](table.md) — Table name wrapper for type-safe references
+- [`Datetime`](datetime.md) — Datetime wrapper for SurrealDB datetime values
+- [`Duration`](duration.md) — Duration with nanosecond precision and unit conversion
+- [`Range`](range.md) — Range type with inclusive and exclusive bounds
+- [`Geometry`](geometry.md) — GeoJSON-compatible geometry types for spatial data
+
+---
+
+## See also
+
+- [Surreal](../core/surreal.md) — Connection and query methods
+- [Errors](../errors/index.md) — Error classes reference

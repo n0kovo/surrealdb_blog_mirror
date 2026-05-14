@@ -1,0 +1,12 @@
+---
+position: 1
+title: Integrations
+description: Integrations that connect SurrealDB to AI frameworks, embeddings providers, agents, and data tools.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/index.mdx"
+---
+
+# Integrations
+
+This section collects guides for wiring SurrealDB into the rest of your stack: AI and agent frameworks, embeddings and model providers, data movement (ELT, automation, and similar), and related topics. Each page focuses on a specific tool or pattern so you can find a starting point quickly.
+
+This section assumes a certain level of familiarity with SurrealDB itself. If more general orientation and tutorials are needed first, be sure to start with [What is SurrealDB?](../../what-is-surrealdb.md) and the [Querying](../../learn/querying/index.md) section of the docs.

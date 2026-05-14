@@ -1,0 +1,26 @@
+---
+position: 2
+title: Architecture
+description: In this section, we will explore the SurrealDB Cloud architecture and how it is designed to provide a scalable, high-performance, and secure database solution.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/deployment/surrealdb-cloud/architecture.mdx"
+---
+
+# Cloud architecture
+
+SurrealDB Cloud benefits from [SurrealDB’s layered architecture](../../../architecture.md), which separates storage from compute, enabling improved scalability, durability and availability without the need to operate, manage, scale or shard your database.
+
+## Start
+For development, and staging applications with vertically-scalable requirements. SurrealDB Cloud Start provides users with dedicated storage and a single-node for compute which can scale vertically.
+
+![SurrealDB Cloud architecture](../../../assets/img/image/cloud/light/start-single-node-light.png)
+
+## Dedicated
+
+For large-scale, mission-critical applications. Dedicated environment horizontal and vertical scalability provide fault-tolerant and highly scalable deployments, without the need to shard your database.
+
+![SurrealDB Cloud architecture](../../../assets/img/image/cloud/light/enterprise-multi-node-light.png)
+
+> [!IMPORTANT]
+> In the future, we plan to offer an option to launch multiple instances against a centralised storage layer together with autoscaling. These features will allow customers to, for example, have one production instance autoscaling running 24x7 for the main transactional part of the application and have different data and analytics teams querying the same centralised storage layer with their own individual compute needs (e.g. higher memory or GPU) meaning they can run only when needed for the specific query.
+
+To learn more about the plans, please refer to the [Pricing](/pricing) page.

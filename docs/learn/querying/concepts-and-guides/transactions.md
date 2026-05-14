@@ -1,0 +1,134 @@
+---
+position: 1
+title: Transactions
+description: "SurrealDB transactions: default per-statement scope and manual BEGIN, COMMIT and CANCEL for atomic multi-step changes."
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/concepts-and-guides/transactions.mdx"
+---
+
+# How transactions work
+
+Each statement within SurrealDB is run within its own transaction by default. This includes side effects such as [defined events](../../../reference/query-language/statements/define/event.md).
+
+## Manual transactions
+
+If a set of changes need to be made together, then groups of statements can be run together as a single transaction. If all of the statements within a transaction succeed, and the transaction is successful, then all of the data modifications made during the transaction are committed and become a permanent part of the database. If a transaction encounters errors and must be cancelled or rolled back, then any data modification made within the transaction is rolled back, and will not become a permanent part of the database.
+
+## Starting a manual transaction
+
+The `BEGIN` or `BEGIN TRANSACTION` statement starts a transaction in which multiple statements can be run together.
+
+```surql title="Starting a transaction"
+BEGIN [ TRANSACTION ];
+```
+
+The following query shows example usage of this statement.
+
+```surql title="Example usage of BEGIN TRANSACTION"
+-- Create two accounts for bank customers
+CREATE account:one SET balance = 135605.16;
+CREATE account:two SET balance = 91031.31;
+
+-- Start a manual database transaction
+BEGIN TRANSACTION;
+
+-- Update the balances of each customer involved in the wire transfer
+UPDATE account:one SET balance += 300.00;
+UPDATE account:two SET balance -= 300.00;
+
+-- Finalise the transaction. This will apply the changes to the database. If there was an error
+-- during any of the previous steps within the transaction, all changes would be rolled back and
+-- the database would remain in its initial state.
+COMMIT TRANSACTION;
+```
+
+### Committing a manual transaction
+
+The [COMMIT](../../../reference/query-language/statements/commit.md) statement is used to commit a set of statements within a transaction, ensuring that all data modifications become a permanent part of the database.
+
+```surql title="Committing a transaction"
+COMMIT [ TRANSACTION ];
+```
+
+The following query shows example usage of this statement.
+
+```surql title="Example usage of COMMIT TRANSACTION"
+-- Setup accounts
+CREATE account:one SET balance = 135605.16;
+CREATE account:two SET balance = 91031.31;
+
+BEGIN TRANSACTION;
+
+-- Move money
+UPDATE account:one SET balance += 300.00;
+UPDATE account:two SET balance -= 300.00;
+
+-- Finalise all changes
+COMMIT TRANSACTION;
+```
+
+### Cancelling a manual transaction
+
+The [CANCEL](../../../reference/query-language/statements/cancel.md) statement can be used to cancel a set of statements within a transaction, reverting or rolling back any data modification made within the transaction as a whole.
+
+```surql title="Cancelling a transaction"
+CANCEL [ TRANSACTION ];
+```
+
+The following query shows example usage of this statement.
+
+```surql title="Example usage of CANCEL TRANSACTION"
+-- Setup accounts
+CREATE account:one SET balance = 135605.16;
+CREATE account:two SET balance = 91031.31;
+
+BEGIN TRANSACTION;
+
+-- Move money
+UPDATE account:one SET balance += 300.00;
+UPDATE account:two SET balance -= 300.00;
+
+-- Rollback all changes
+CANCEL TRANSACTION;
+```
+
+## THROW to conditionally cancel a transaction
+
+While transactions are automatically rolled back if an error occurs in any of its statements, [THROW](../../../reference/query-language/statements/throw.md) can also be used to explicitly break out of a transaction at any point. `THROW` can be followed by any value which serves as the error message, usually a string.
+
+```surql
+CREATE account:one SET dollars =  100;
+CREATE account:two SET dollars =  100;
+
+LET $transfer_amount = 150;
+
+BEGIN TRANSACTION;
+
+UPDATE account:one SET dollars -= $transfer_amount;
+UPDATE account:two SET dollars += $transfer_amount;
+IF account:one.dollars < 0 {
+    THROW "Insufficient funds, would have $" + <string>account:one.dollars + " after transfer"
+};
+COMMIT TRANSACTION;
+SELECT * FROM account;
+```
+
+```surql title="Output when $transfer_amount set to 150"
+'An error occurred: Insufficient funds, would have $-50 after transfer'
+```
+
+```surql title="Output when $transfer_amount set to 50"
+[
+	{
+		dollars: 50,
+		id: account:one
+	},
+	{
+		dollars: 150,
+		id: account:two
+	}
+]
+```
+
+## See also
+
+* [Using transactions to test code for errors](testing.md#using-manual-transactions-for-testing)

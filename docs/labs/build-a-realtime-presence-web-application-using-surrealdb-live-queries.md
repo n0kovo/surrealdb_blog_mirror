@@ -1,0 +1,14 @@
+---
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/labs-items/build-a-realtime-presence-web-application-using-surrealdb-live-queries.mdx"
+---
+
+---
+title: "Build a realtime presence web application using SurrealDB Live Queries"
+description: "Official tutorial: build a realtime presence app with live queries."
+url: /docs/tutorials/build-a-realtime-presence-web-application-using-surrealdb-live-queries
+category: Documentation
+author:
+  name: David Bottiau
+  role: Software Engineer
+  avatar: david-bottiau
+---

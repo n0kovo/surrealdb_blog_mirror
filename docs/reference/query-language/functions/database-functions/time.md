@@ -1,0 +1,1285 @@
+---
+position: 24
+title: Time
+description: Datetime functions and constants for working with and manipulating datetime values.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/time.mdx"
+---
+
+# Time functions and consts
+
+This page contains built-in functions and constants for working with and manipulating [datetime](../../language-primitives/data-types/datetimes.md) values.
+
+> [!NOTE]
+> Since version 3.0.0-beta, the `::from::` functions (e.g. `time::from::millis()`) now use underscores (e.g. `time::from_millis()`) to better match the intent of the function and method syntax.
+
+Many time functions take an `option<datetime>` in order to return certain values from a datetime such as its hours, minutes, day of the year, and so in. If no argument is present, the current datetime will be extracted and used. As such, all of the following function calls are valid and will not return an error.
+
+```surql
+time::hour(d'2024-09-04T00:32:44.107Z');
+time::hour();
+
+time::minute(d'2024-09-04T00:32:44.107Z');
+time::minute();
+
+time::yday(d'2024-09-04T00:32:44.107Z');
+time::yday();
+```
+
+## Time functions
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Function</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeceil">`time::ceil()`</a></td>
+      <td scope="row" data-label="Description">Raises a datetime to the nearest multiple of duration from the Unix epoch</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeday">`time::day()`</a></td>
+      <td scope="row" data-label="Description">Extracts the day as a number from a datetime or current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timefloor">`time::floor()`</a></td>
+      <td scope="row" data-label="Description">Truncates a datetime to the nearest lower multiple of duration from the Unix epoch</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeformat">`time::format()`</a></td>
+      <td scope="row" data-label="Description">Outputs a datetime according to a specific format</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timegroup">`time::group()`</a></td>
+      <td scope="row" data-label="Description">Groups a datetime by a particular time interval</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timehour">`time::hour()`</a></td>
+      <td scope="row" data-label="Description">Extracts the hour as a number from a datetime or current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timemax">`time::max()`</a></td>
+      <td scope="row" data-label="Description">Returns the greatest datetime from an array</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timemicros">`time::micros()`</a></td>
+      <td scope="row" data-label="Description">Extracts the microseconds as a number from a datetime or current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timemillis">`time::millis()`</a></td>
+      <td scope="row" data-label="Description">Extracts the milliseconds as a number from a datetime or current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timemin">`time::min()`</a></td>
+      <td scope="row" data-label="Description">Returns the least datetime from an array</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeminute">`time::minute()`</a></td>
+      <td scope="row" data-label="Description">Extracts the minutes as a number from a datetime or current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timemonth">`time::month()`</a></td>
+      <td scope="row" data-label="Description">Extracts the month as a number from a datetime or current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timenano">`time::nano()`</a></td>
+      <td scope="row" data-label="Description">Returns the number of nanoseconds since the UNIX epoch until a datetime or current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timenow">`time::now()`</a></td>
+      <td scope="row" data-label="Description">Returns the current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeround">`time::round()`</a></td>
+      <td scope="row" data-label="Description">Rounds a datetime to the nearest multiple of a specific duration</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timesecond">`time::second()`</a></td>
+      <td scope="row" data-label="Description">Extracts the second as a number from a datetime or current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timetimezone">`time::timezone()`</a></td>
+      <td scope="row" data-label="Description">Returns the current local timezone offset in hours</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeunix">`time::unix()`</a></td>
+      <td scope="row" data-label="Description">Returns the number of seconds since the UNIX epoch</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timewday">`time::wday()`</a></td>
+      <td scope="row" data-label="Description">Extracts the week day as a number from a datetime or current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeweek">`time::week()`</a></td>
+      <td scope="row" data-label="Description">Extracts the week as a number from a datetime or current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeyday">`time::yday()`</a></td>
+      <td scope="row" data-label="Description">Extracts the yday as a number from a datetime or current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeyear">`time::year()`</a></td>
+      <td scope="row" data-label="Description">Extracts the year as a number from a datetime or current datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeisleap_year">`time::is_leap_year()`</a></td>
+      <td scope="row" data-label="Description">Checks if given datetime is a leap year</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timefrom_micros">`time::from_micros()`</a></td>
+      <td scope="row" data-label="Description">Calculates a datetime based on the microseconds since 1 January 1970 0:00:00 UTC.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timefrom_millis">`time::from_millis()`</a></td>
+      <td scope="row" data-label="Description">Calculates a datetime based on the milliseconds since 1 January 1970 0:00:00 UTC.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timefrom_nanos">`time::from_nanos()`</a></td>
+      <td scope="row" data-label="Description">Calculates a datetime based on the nanoseconds since 1 January 1970 0:00:00 UTC.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timefrom_secs">`time::from_secs()`</a></td>
+      <td scope="row" data-label="Description">Calculates a datetime based on the seconds since 1 January 1970 0:00:00 UTC.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timefrom_unix">`time::from_unix()`</a></td>
+      <td scope="row" data-label="Description">Calculates a datetime based on the seconds since 1 January 1970 0:00:00 UTC.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timefrom_ulid">`time::from_ulid()`</a></td>
+      <td scope="row" data-label="Description">Calculates a datetime based on the ULID.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timefrom_uuid">`time::from_uuid()`</a></td>
+      <td scope="row" data-label="Description">Calculates a datetime based on the UUID.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeset_year">`time::set_year()`</a></td>
+      <td scope="row" data-label="Description">Sets the year value of a datetime.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeset_month">`time::set_month()`</a></td>
+      <td scope="row" data-label="Description">Sets the year value of a datetime.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeset_day">`time::set_day()`</a></td>
+      <td scope="row" data-label="Description">Sets the year value of a datetime.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeset_hour">`time::set_hour()`</a></td>
+      <td scope="row" data-label="Description">Sets the year value of a datetime.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeset_minute">`time::set_minute()`</a></td>
+      <td scope="row" data-label="Description">Sets the year value of a datetime.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeset_second">`time::set_second()`</a></td>
+      <td scope="row" data-label="Description">Sets the year value of a datetime.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#timeset_nanosecond">`time::set_nanosecond()`</a></td>
+      <td scope="row" data-label="Description">Sets the year value of a datetime.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Time constants
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Constant</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row" data-label="Constant"><a href="#timeepoch">`time::epoch`</a></td>
+      <td scope="row" data-label="Description">Constant datetime representing the UNIX epoch</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Constant"><a href="#timemaximum">`time::maximum`</a></td>
+      <td scope="row" data-label="Description">Constant representing the greatest possible datetime</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Constant"><a href="#timeminimum">`time::minimum`</a></td>
+      <td scope="row" data-label="Description">Constant representing the least possible datetime</td>
+    </tr>
+  </tbody>
+</table>
+
+## `time::ceil`
+
+The `time::floor` function raises a datetime to the nearest multiple of duration from the Unix epoch (January 1, 1970).
+
+```surql title="API DEFINITION"
+time::ceil(datetime, $ceiling: duration) -> datetime
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "NONE"
+
+[[test.results]]
+value = "[d'2024-08-30T03:00:00Z', d'2024-09-05T00:00:00Z']"
+
+*/
+LET $now = d'2024-08-30T02:22:50.231631Z';
+
+RETURN [
+  time::ceil($now, 1h),
+  time::ceil($now, 1w)
+];
+```
+
+```surql title="Output"
+[
+	d'2024-08-30T03:00:00Z',
+	d'2024-09-05T00:00:00Z'
+]
+```
+
+### Implementation details
+
+Since this function raises a datetime to the next multiple of duration from the Unix epoch, this means for example that:
+
+* time::ceil(now, 18d) rounds up from the nearest multiple of 18 days since epoch
+* time::ceil(now, 17d) rounds up from the nearest multiple of 17 days since epoch
+
+Each call uses a different modular base, so the truncation points land at different offsets that may not be sequential. For example, for October 23, 2023 (day ~19,653 since epoch):
+
+* 19653 / 18 = 1091.83… → 1092 × 18 = day 19,656 → Oct 26
+* 19653 / 17 = 1156.05… → 1157 × 17 = day 19,669 → Nov 08
+* 19653 / 16 = 1228.31… → 1229 × 16 = day 19,664 → Nov 03
+* 19653 / 15 = 1310.20… → 1311 × 15 = day 19,665 → Nov 04
+
+```surql
+LET $now = d'2023-10-23T09:12:53Z';
+
+time::ceil($now, 18d); -- d'2023-10-26T00:00:00Z'
+time::ceil($now, 17d); -- d'2023-11-08T00:00:00Z'
+time::ceil($now, 16d); -- d'2023-11-03T00:00:00Z'
+time::ceil($now, 15d); -- d'2023-11-04T00:00:00Z'
+```
+
+To use this function to raise to midnight of the next day, the duration values above can be subtracted from the datetime first, followed by `1d` for the ceiling.
+
+```surql
+LET $now = d'2023-10-23T09:12:53Z';
+
+time::ceil($now - 18d, 1d); -- d'2023-10-06T00:00:00Z'
+time::ceil($now - 17d, 1d); -- d'2023-10-07T00:00:00Z'
+time::ceil($now - 16d, 1d); -- d'2023-10-08T00:00:00Z'
+time::ceil($now - 15d, 1d); -- d'2023-10-09T00:00:00Z'
+```
+
+## `time::day`
+
+The `time::day` function extracts the day as a number from a datetime, or from the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::day(option<datetime>) -> number
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "1"
+
+*/
+
+RETURN time::day(d"2021-11-01T08:30:17+00:00");
+
+-- 1
+```
+
+  
+
+## `time::epoch`
+
+The `time::epoch` constant returns the `datetime` for the UNIX epoch (1 January 1970).
+
+```surql
+// Return the const
+RETURN time::epoch;
+-- d'1970-01-01T00:00:00Z'
+
+// Define field using the const
+DEFINE FIELD since_epoch ON event COMPUTED time::now().floor(1d) - time::epoch;
+CREATE ONLY event:one SET information = "Something happened";
+-- { id: event:one, information: 'Something happened', since_epoch: 55y42w6d }
+```
+
+  
+
+## `time::floor`
+
+The `time::floor` function truncates a datetime to the nearest lower multiple of duration from the Unix epoch (January 1, 1970).
+
+```surql title="API DEFINITION"
+time::floor(datetime, $floor: duration) -> datetime
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'2021-10-28T00:00:00Z'"
+
+*/
+
+RETURN time::floor(d"2021-11-01T08:30:17+00:00", 1w);
+
+-- d'2021-10-28T00:00:00Z'
+```
+
+### Implementation details
+
+Since this function truncates a datetime to the nearest lower multiple of duration from the Unix epoch, this means for example that:
+
+* time::floor(now, 18d) rounds down to the nearest multiple of 18 days since epoch
+* time::floor(now, 17d) rounds down to the nearest multiple of 17 days since epoch
+
+Each call uses a different modular base, so the truncation points land at different offsets that may not be sequential. For example, for October 23, 2023 (day ~19,653 since epoch):
+
+* 19653 / 18 = 1091.83… → 1091 × 18 = day 19,638 → Oct 8
+* 19653 / 17 = 1156.05… → 1156 × 17 = day 19,652 → Oct 22
+* 19653 / 16 = 1228.31… → 1228 × 16 = day 19,648 → Oct 18
+* 19653 / 15 = 1310.20… → 1310 × 15 = day 19,650 → Oct 20
+
+```surql
+LET $now = d'2023-10-23T09:12:53Z';
+
+time::floor($now, 18d); -- d'2023-10-08T00:00:00Z'
+time::floor($now, 17d); -- d'2023-10-22T00:00:00Z'
+time::floor($now, 16d); -- d'2023-10-18T00:00:00Z'
+time::floor($now, 15d); -- d'2023-10-20T00:00:00Z'
+```
+
+To use this function to truncate to the day, the duration values above can be subtracted from the datetime first, followed by `1d` for the floor.
+
+```surql
+LET $now = d'2023-10-23T09:12:53Z';
+
+time::floor($now - 18d, 1d); -- d'2023-10-05T00:00:00Z'
+time::floor($now - 17d, 1d); -- d'2023-10-06T00:00:00Z'
+time::floor($now - 16d, 1d); -- d'2023-10-07T00:00:00Z'
+time::floor($now - 15d, 1d); -- d'2023-10-08T00:00:00Z'
+```
+
+  
+
+## `time::format`
+
+The `time::format` function outputs a datetime as a string according to a specific format.
+
+```surql title="API DEFINITION"
+time::format(datetime, $format: string) -> string
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "'2021-11-01'"
+
+*/
+
+RETURN time::format(d"2021-11-01T08:30:17+00:00", "%Y-%m-%d");
+```
+
+```surql output="Response"
+'2021-11-01'
+```
+
+[View all format options](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/formatters)
+
+  
+
+## `time::group`
+
+The `time::group` function reduces and rounds a datetime down to a particular time interval.
+
+```surql title="API DEFINITION"
+time::group(datetime, $group_by: 'year'|'month'|'day'|'hour'|'minute'|'second') -> datetime
+```
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'2021-01-01T00:00:00Z'"
+
+*/
+
+RETURN time::group(d"2021-11-01T08:30:17+00:00", "year");
+
+d'2021-01-01T00:00:00Z'
+```
+
+  
+
+## `time::hour`
+
+The `time::hour` function extracts the hour as a number from a datetime, or from the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::hour(option<datetime>) -> number
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "8"
+
+*/
+
+RETURN time::hour(d"2021-11-01T08:30:17+00:00");
+
+-- 8
+```
+
+  
+
+## `time::max`
+
+The `time::max` function returns the greatest datetime from an array of datetimes.
+
+```surql title="API DEFINITION"
+time::max(array<datetime>) -> datetime
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'1988-06-22T08:30:45Z'"
+
+*/
+
+RETURN time::max([ d"1987-06-22T08:30:45Z", d"1988-06-22T08:30:45Z" ])
+
+-- d'1988-06-22T08:30:45Z'
+```
+
+See also:
+
+* [`array::max`](array.md#arraymax), which extracts the greatest value from an array of values
+* [`math::max`](math.md#mathmax), which extracts the greatest number from an array of numbers
+
+  
+
+## `time::maximum`
+
+*Since v2.3.0*
+
+The `time::maximum` constant returns the greatest possible datetime that can be used.
+
+```surql title="API DEFINITION"
+time::maximum -> datetime
+```
+
+Some examples of the constant in use:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'+262142-12-31T23:59:59.999999999Z'"
+
+[[test.results]]
+error = ""Failed to compute: \"1ns + d'+262142-12-31T23:59:59.999999999Z'\", as the operation results in an arithmetic overflow.""
+
+[[test.results]]
+value = "true"
+
+*/
+
+time::maximum;
+
+time::maximum + 1ns;
+
+time::now() IN time::minimum..time::maximum;
+```
+
+```surql title="Output"
+-------- Query 1 --------
+
+d'+262142-12-31T23:59:59.999Z'
+
+-------- Query 2 --------
+
+"Failed to compute: \"1ns + d'+262142-12-31T23:59:59.999999999Z'\", as the operation results in an arithmetic overflow."
+
+-------- Query 3 --------
+
+true
+```
+
+  
+
+## `time::micros`
+
+The `time::micros` function extracts the microseconds as a number from a datetime, or from the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::micros(option<datetime>) -> number
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "551349045000000"
+
+*/
+
+RETURN time::micros(d"1987-06-22T08:30:45Z");
+
+-- 551349045000000
+```
+
+  
+
+## `time::millis`
+
+The `time::millis` function extracts the milliseconds as a number from a datetime, or from the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::millis(option<datetime>) -> number
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "551349045000"
+
+*/
+
+RETURN time::millis(d"1987-06-22T08:30:45Z");
+
+-- 551349045000
+```
+
+  
+
+## `time::min`
+
+The `time::min` function returns the least datetime from an array of datetimes.
+
+```surql title="API DEFINITION"
+time::min(array<datetime>) -> datetime
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'1987-06-22T08:30:45Z'"
+
+*/
+
+RETURN time::min([ d"1987-06-22T08:30:45Z", d"1988-06-22T08:30:45Z" ]);
+
+-- d'1987-06-22T08:30:45Z'
+```
+
+See also:
+
+* [`array::min`](array.md#arraymin), which extracts the least value from an array of values
+* [`math::min`](math.md#mathmin), which extracts the least number from an array of numbers
+
+  
+
+## `time::minimum`
+
+*Since v2.3.0*
+
+The `time::minimum` constant returns the least possible datetime that can be used.
+
+```surql title="API DEFINITION"
+time::minimum -> datetime
+```
+
+Some examples of the constant in use:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'-262143-01-01T00:00:00Z'"
+
+[[test.results]]
+value = "true"
+
+*/
+
+time::minimum;
+
+time::now() IN time::minimum..time::maximum;
+```
+
+```surql title="Output"
+-------- Query 1 --------
+
+d'-262143-01-01T00:00:00Z'
+
+-------- Query 2 --------
+
+true
+```
+
+  
+
+## `time::minute`
+
+The `time::minute` function extracts the minutes as a number from a datetime, or from the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::minute(option<datetime>) -> number
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "30"
+
+*/
+
+RETURN time::minute(d"2021-11-01T08:30:17+00:00");
+
+-- 30
+```
+
+  
+
+## `time::month`
+
+The `time::month` function extracts the month as a number from a datetime, or from the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::month(option<datetime>) -> number
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "11"
+
+*/
+
+RETURN time::month(d"2021-11-01T08:30:17+00:00");
+
+-- 11
+```
+
+  
+
+## `time::nano`
+
+The `time::nano` function returns a datetime as an integer representing the number of nanoseconds since the UNIX epoch until a datetime, or the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::nano(option<datetime>) -> number
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "1635755417000000000"
+
+*/
+
+RETURN time::nano(d"2021-11-01T08:30:17+00:00");
+
+-- 1635755417000000000
+```
+
+  
+
+## `time::now`
+
+The `time::now` function returns the current datetime as an ISO8601 timestamp.
+
+```surql title="API DEFINITION"
+time::now() -> datetime
+```
+
+  
+
+## `time::round`
+
+The `time::round` function rounds a datetime up by a specific duration.
+
+```surql title="API DEFINITION"
+time::round(datetime, $round_to: duration) -> datetime
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'2021-11-04T00:00:00Z'"
+
+*/
+
+RETURN time::round(d"2021-11-01T08:30:17+00:00", 1w);
+
+-- d'2021-11-04T00:00:00Z'
+```
+
+  
+
+## `time::second`
+
+The `time::second` function extracts the second as a number from a datetime, or from the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::second(option<datetime>) -> number
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "17"
+
+*/
+
+RETURN time::second(d"2021-11-01T08:30:17+00:00");
+
+-- 17
+```
+
+  
+
+## `time::timezone`
+
+The `time::timezone` function returns the current local timezone offset in hours.
+
+```surql title="API DEFINITION"
+time::timezone() -> string
+```
+
+  
+
+## `time::unix`
+
+The `time::unix` function returns a datetime as an integer representing the number of seconds since the UNIX epoch until a certain datetime, or from the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::unix(option<datetime>) -> number
+```
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "1635755417"
+
+*/
+
+RETURN time::unix(d"2021-11-01T08:30:17+00:00");
+
+-- 1635755417
+```
+
+  
+
+## `time::wday`
+
+The `time::wday` function extracts the week day as a number from a datetime, or from the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::wday(option<datetime>) -> number
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "1"
+
+*/
+
+RETURN time::wday(d"2021-11-01T08:30:17+00:00");
+
+-- 1
+```
+
+  
+
+## `time::week`
+
+The `time::week` function extracts the week as a number from a datetime, or from the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::week(option<datetime>) -> number
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "44"
+
+*/
+
+RETURN time::week(d"2021-11-01T08:30:17+00:00");
+
+-- 44
+```
+
+  
+
+## `time::yday`
+
+The `time::yday` function extracts the day of the year as a number from a datetime, or from the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::yday(option<datetime>) -> number
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "305"
+
+*/
+
+RETURN time::yday(d"2021-11-01T08:30:17+00:00");
+
+-- 305
+```
+
+  
+
+## `time::year`
+
+The `time::year` function extracts the year as a number from a datetime, or from the current date if no datetime argument is present.
+
+```surql title="API DEFINITION"
+time::year(option<datetime>) -> number
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "2021"
+
+*/
+
+RETURN time::year(d"2021-11-01T08:30:17+00:00");
+
+-- 2021
+```
+
+  
+
+## `time::is_leap_year()`
+
+The `time::is_leap_year()` function Checks if given datetime is a leap year.
+
+```surql title="API DEFINITION"
+time::is_leap_year(datetime) -> bool
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+-- Checks with current datetime if none is passed
+RETURN time::is_leap_year();
+
+RETURN time::is_leap_year(d"1987-06-22T08:30:45Z");
+-- false
+
+RETURN time::is_leap_year(d"1988-06-22T08:30:45Z");
+-- true
+
+-- Using function via method chaining
+RETURN d'2024-09-03T02:33:15.349397Z'.is_leap_year();
+-- true
+```
+
+## `time::from_micros`
+
+The `time::from_micros` function calculates a datetime based on the microseconds since 1 January 1970 0:00:00 UTC.
+
+```surql title="API DEFINITION"
+time::from_micros(number) -> datetime
+```
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'1970-01-01T00:00:01Z'"
+
+*/
+
+RETURN time::from_micros(1000000);
+
+-- d'1970-01-01T00:00:01Z'
+```
+
+  
+
+## `time::from_millis`
+
+The `time::from_millis` function calculates a datetime based on the milliseconds since 1 January 1970 0:00:00 UTC.
+
+```surql title="API DEFINITION"
+time::from_millis(number) -> datetime
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'1970-01-01T00:00:01Z'"
+
+*/
+
+RETURN time::from_millis(1000);
+
+-- d'1970-01-01T00:00:01Z'
+```
+
+  
+
+## `time::from_nanos`
+
+The `time::from_nanos` function calculates a datetime based on the nanoseconds since 1 January 1970 0:00:00 UTC.
+
+```surql title="API DEFINITION"
+time::from_nanos(number) -> datetime
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'1970-01-01T00:00:00.001Z'"
+
+*/
+
+RETURN time::from_nanos(1000000);
+
+-- d'1970-01-01T00:00:00.001Z'
+```
+
+  
+
+## `time::from_secs`
+
+The `time::from_secs` function calculates a datetime based on the seconds since 1 January 1970 0:00:00 UTC.
+
+```surql title="API DEFINITION"
+time::from_secs(number) -> datetime
+```
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'1970-01-01T00:16:40Z'"
+
+*/
+
+RETURN time::from_secs(1000);
+
+-- d'1970-01-01T00:16:40Z'
+```
+
+  
+
+## `time::from_unix`
+
+The `time::from_unix` function calculates a datetime based on the seconds since 1 January 1970 0:00:00 UTC.
+
+```surql title="API DEFINITION"
+time::from_unix(number) -> datetime
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'1970-01-01T00:16:40Z'"
+
+*/
+
+RETURN time::from_unix(1000);
+
+-- d'1970-01-01T00:16:40Z'
+```
+
+  
+
+## `time::from_ulid`
+
+The `time::from_ulid` function calculates a datetime based on the ULID.
+
+```surql title="API DEFINITION"
+time::from_ulid(ulid) -> datetime
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'2025-01-09T10:57:03.593Z'"
+
+*/
+
+RETURN time::from_ulid("01JH5BBTK9FKTGSDXHWP5YP9TQ");
+
+-- d'2025-01-09T10:57:03.593Z'
+```
+
+As a ULID is only precise up to the millisecond, a conversion from a ULID to a timestamp will truncate nanosecond precision.
+
+```surql
+LET $now = time::now();
+[$now, time::from_ulid(rand::ulid($now))];
+
+-- Output:
+[
+	d'2026-01-29T02:07:06.494218Z',
+	d'2026-01-29T02:07:06.494Z'
+]
+```
+
+  
+
+## `time::from_uuid`
+
+The `time::from_uuid` function calculates a datetime based on the UUID.
+
+```surql title="API DEFINITION"
+time::from_uuid(uuid) -> datetime
+```
+
+The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "d'2025-01-09T10:57:58.757Z'"
+
+*/
+
+RETURN time::from_uuid(u'01944ab6-c1e5-7760-ab6a-127d37eb1b94');
+
+-- d'2025-01-09T10:57:58.757Z'
+```
+
+As a UUID is only precise up to the millisecond, a conversion from a UUID to a timestamp will truncate nanosecond precision.
+
+```surql
+LET $now = time::now();
+[$now, time::from_uuid(rand::uuid($now))];
+
+-- Output:
+[
+	d'2026-01-29T02:12:13.848476Z',
+	d'2026-01-29T02:12:13.848Z'
+]
+```
+
+  
+
+## `time::set_year`
+
+*Since v3.0.2*
+
+The `time::set_year` function sets the year value of a datetime.
+
+```surql title="API DEFINITION"
+time::set_year(datetime, $year: integer) -> datetime
+```
+
+Example:
+
+```surql
+d'1970-01-01T00:00:00.500000005Z'.set_year(2026);
+-- Output
+d'2026-01-01T00:00:00.500000000Z'
+```
+
+## `time::set_month`
+
+*Since v3.0.2*
+
+The `time::set_month` function sets the month value of a datetime.
+
+```surql title="API DEFINITION"
+time::set_month(datetime, $month: integer) -> datetime
+```
+
+Example:
+
+```surql
+d'1970-01-01T00:00:00.500000005Z'.set_month(9);
+-- Output
+d'1970-09-01T00:00:00.500000005Z'
+```
+
+## `time::set_day`
+
+*Since v3.0.2*
+
+The `time::set_day` function sets the day value of a datetime.
+
+```surql title="API DEFINITION"
+time::set_day(datetime, $day: integer) -> datetime
+```
+
+Example:
+
+```surql
+d'1970-01-01T00:00:00.500000005Z'.set_day(10);
+-- Output
+d'1970-01-10T00:00:00.500000005Z'
+```
+
+## `time::set_hour`
+
+*Since v3.0.2*
+
+The `time::set_hour` function sets the hour value of a datetime.
+
+```surql title="API DEFINITION"
+time::set_hour(datetime, $hour: integer) -> datetime
+```
+
+Example:
+
+```surql
+d'1970-01-01T00:00:00.500000005Z'.set_hour(10);
+-- Output
+d'1970-01-01T10:00:00.500000005Z'
+```
+
+## `time::set_minute`
+
+*Since v3.0.2*
+
+The `time::set_minute` function sets the minute value of a datetime.
+
+```surql title="API DEFINITION"
+time::set_minute(datetime, $minute: integer) -> datetime
+```
+
+Example:
+
+```surql
+d'1970-01-01T10:00:00.500000005Z'.set_minute(55);
+-- Output
+d'1970-01-01T10:55:00.500000005Z'
+```
+
+## `time::set_second`
+
+*Since v3.0.2*
+
+The `time::set_second` function sets the second value of a datetime.
+
+```surql title="API DEFINITION"
+time::set_second(datetime, $second: integer) -> datetime
+```
+
+Example:
+
+```surql
+d'1970-01-01T10:00:00.500000005Z'.set_second(30);
+-- Output
+d'1970-01-01T10:00:30.500000005Z'
+```
+
+## `time::set_nanosecond`
+
+*Since v3.0.2*
+
+The `time::set_nanosecond` function sets the nanosecond value of a datetime.
+
+```surql title="API DEFINITION"
+time::set_nanosecond(datetime, $nanosecond: integer) -> datetime
+```
+
+Example:
+
+```surql
+d'1970-01-01T10:00:00.500000005Z'.set_nanosecond(3535);
+-- Output
+d'1970-01-01T10:00:00.000003535Z'
+```
+
+Since nanoseconds are not needed in a datetime, setting the nanoseconds of a datetime to 0 can be used to make a datetime look cleaner.
+
+```surql
+d'1970-01-01T00:00:00.500000000Z'.set_nanosecond(0);
+d'1970-01-01T00:00:00Z' -- output
+```

@@ -1,0 +1,144 @@
+---
+position: 11
+title: FOR
+description: The FOR statement creates a loop that iterates over the values of an array.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/for.mdx"
+---
+
+# `FOR` statement
+
+The `FOR` statement can be used to iterate over the values of an array, and to perform certain actions with those values.
+
+> [!NOTE]
+> A `FOR` loop currently cannot modify items outside its own scope, such as variables declared before the loop.
+
+  
+**SurrealQL Syntax**
+
+```syntax title="SurrealQL Syntax"
+FOR @item IN @iterable {
+@block
+};
+```
+
+  
+**Railroad Diagram**
+
+```
+        ╭─────╮     ┌───────┐     ╭────╮     ┌───────────┐     ╭───╮     ┌────────┐     ╭───╮     ╭───╮       
+├┼──────│ FOR │─────│ @item │─────│ IN │─────│ @iterable │─────│ { │─────│ @block │─────│ } │─────│ ; │─────┼┤
+        ╰─────╯     └───────┘     ╰────╯     └───────────┘     ╰───╯     └────────┘     ╰───╯     ╰───╯
+```
+
+## Example usage
+The following query shows example usage of this statement.
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "NONE"
+
+*/
+
+-- Create a person for everyone in the array
+FOR $name IN ['Tobie', 'Jaime'] {
+	CREATE type::record('person', $name) CONTENT {
+		name: $name
+	};
+};
+```
+
+The following query shows the `FOR` statement being used update a property on every user matching certain criteria.
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "NONE"
+
+*/
+
+-- Set can_vote to true for every person over 18 years old.
+FOR $person IN (SELECT VALUE id FROM person WHERE age >= 18) {
+	UPDATE $person SET can_vote = true;
+};
+```
+
+## Ranges in FOR loops
+
+*Since v2.0.0*
+
+A `FOR` loop can also be made out of a [range UUID](../language-primitives/data-types/ranges.md) of integers.
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "NONE"
+
+*/
+
+FOR $year IN 0..=2024 {
+    CREATE historical_events SET
+        for_year = $year,
+        events = "To be added";
+};
+```
+
+## Limitations of FOR loops
+
+Parameters declared outside of a `FOR` loop can be used inside the loop.
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "NONE"
+
+[[test.results]]
+value = "NONE"
+
+[[test.results]]
+value = "NONE"
+
+*/
+
+LET $table1 = "person";
+LET $table2 = "cat";
+
+FOR $key in 0..4 {
+    CREATE type::record($table1, $key);
+	  CREATE type::record($table2, $key);
+};
+```
+
+However, they currently cannot be modified inside a loop, making an operation like the following impossible.
+
+```surql
+LET $init = [];
+
+FOR $num IN 1..=3 {
+	$init += $num;
+};
+-- Error: 'assignment operators are only allowed in SET and DUPLICATE KEY UPDATE clauses'
+
+RETURN $init;
+```
+
+In this case, the [`array::fold`](../functions/database-functions/array.md#arrayfold) and [`array::reduce`](../functions/database-functions/array.md#arrayreduce) functions can often be used to accomplish the intended behaviour.
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "6"
+
+*/
+
+(<array>1..=3).reduce(|$one, $two| $one + $two);
+```
+
+```surql title="Output"
+6
+```

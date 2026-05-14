@@ -1,0 +1,57 @@
+---
+position: 1
+title: Introduction
+description: Use the official visual client Surrealist for SurrealDB to run SurrealQL, inspect data, and manage schema from the web or desktop.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/explore/surrealist/index.mdx"
+---
+
+# Surrealist
+
+Surrealist is a user interface for interacting with your SurrealDB database visually. It enables you to connect to any SurrealDB instance, allowing you to execute queries, explore your tables, design your schemas, and much more. Surrealist is available as a web and desktop app, and this guide will walk you through the setup process, interface navigation, and everything you need to know to get started.
+
+Before we dive into the details, let's start by installing Surrealist. The next page will introduce you to the web app and guide you through the installation process for Surrealist Desktop.
+
+<div class="flex gap-4 items-center mt-6 mb-16">
+	<a
+		href="/docs/explore/surrealist/installation"
+		class="gradient-button group"
+	>
+		Installation guide
+		
+	</a>
+	<a
+		href="https://app.surrealdb.com"
+		class="outline-button group"
+	>
+		Visit app.surrealdb.com
+		
+	</a>
+</div>
+
+<iframe
+	width="100%"
+	src="https://www.youtube.com/embed/l0_lj-ILVhE?si=gNnTmumSuJLBjr2q"
+	title="Surrealist"
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+	referrerpolicy="strict-origin-when-cross-origin"
+	style={{ aspectRatio: 1.7 }}
+	allowfullscreen
+	class="mt-8"
+></iframe>
+
+## Video guide
+
+If you prefer a video guide, you can watch the following video which covers similar content to this documentation. This includes
+installing Surrealist Desktop, getting started with the Sandbox, and exploring the many features Surrealist has to offer. The Sandbox is non-persistent; to store data in a free cloud instance, use **Deploy to Cloud** in the app.
+
+<iframe
+	width="100%"
+	src="https://www.youtube.com/embed/VQnHYKNiPso?si=wxkBYCpiIVqXQB1J"
+	title="Surrealist"
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+	referrerpolicy="strict-origin-when-cross-origin"
+	style={{ aspectRatio: 1.7 }}
+	allowfullscreen
+></iframe>

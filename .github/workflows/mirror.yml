@@ -1,4 +1,4 @@
-name: Mirror SurrealDB blog
+name: Mirror SurrealDB blog and docs
 
 on:
   schedule:
@@ -31,7 +31,10 @@ jobs:
 
     - run: pip install -r .github/workflows/requirements.txt
 
-    - name: Run mirror
+    - name: Mirror docs
+      run: python .github/workflows/fetchdocs.py
+
+    - name: Mirror blog
       run: |
         python .github/workflows/fetchposts.py --all \
           ${{ inputs.refresh && '--refresh' || '' }}

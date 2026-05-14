@@ -1,0 +1,59 @@
+---
+position: 16
+title: Regex
+description: A reged (regular expression) can be used to specify a match pattern in text.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/language-primitives/data-types/regex.mdx"
+---
+
+# Regex
+
+*Since v3.0.0*
+
+A `regex` can be created by casting from a string.
+
+The following examples all return `true`.
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "true"
+
+[[test.results]]
+value = "true"
+
+[[test.results]]
+value = "true"
+
+*/
+
+-- Either 'a' or 'b'
+<regex> "a|b" = "a";
+
+-- Either color or colour
+<regex> "col(o|ou)r" = "colour";
+
+-- Case-insensitive match on English color, colour, or French couleur
+<regex> "((?i)col(o|ou)r|couleur)" = "COULEUR";
+```
+
+While `regex` was added as a standalone type in version 2.3.0, regex matching has always been available via the [`string::matches()`](../../functions/database-functions/string.md#stringmatches) function.
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "true"
+
+[[test.results]]
+value = "true"
+
+[[test.results]]
+value = "true"
+
+*/
+
+string::matches("a", "a|b");
+string::matches("colour", "col(o|ou)r");
+string::matches("COULEUR", "((?i)col(o|ou)r|couleur)");
+```

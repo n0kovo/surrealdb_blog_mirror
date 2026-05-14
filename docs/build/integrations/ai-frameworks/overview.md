@@ -1,0 +1,60 @@
+---
+position: 1
+title: AI framework integrations
+description: This section contains information about the different frameworks that can be used to integrate with SurrealDB.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/ai-frameworks/overview.mdx"
+---
+
+# Frameworks
+SurrealDB integrates with popular AI and data frameworks, enabling you to leverage SurrealDB's powerful features like vector search, graph relationships, and structured data storage. These integrations make it easy to build sophisticated applications combining LLMs, agents, data pipelines and more - all while using familiar tools and frameworks.
+
+<table style={{ width: '100%' }}>
+    <thead>
+        <tr>
+            <th>Integration</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="/docs/build/integrations/ai-frameworks/agno">Agno</a></td>
+            <td>Agno is a python framework for building multi-agent systems with shared memory, knowledge and reasoning.</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/build/integrations/ai-frameworks/camel">Camel</a></td>
+            <td>A Python framework for building multi-agent LLM systems with SurrealDB vector storage capabilities.</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/build/integrations/ai-frameworks/crewai">CrewAI</a></td>
+            <td>A framework for orchestrating role-playing AI agents with SurrealDB for entity and short-term memory.</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/build/integrations/ai-frameworks/dagster">Dagster</a></td>
+            <td>A data orchestration framework with SurrealDB vector search integration for ML pipelines.</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/build/integrations/ai-frameworks/google-agent">Google Agent</a></td>
+            <td>A framework for building and deploying intelligent agents in Google Cloud with SurrealDB vector storage for RAG.</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/build/integrations/ai-frameworks/kreuzberg">Kreuzberg</a></td>
+            <td>A polyglot document intelligence framework to extract text, metadata, images, and structured information from documents (PDFs,images, etc.).</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/build/integrations/ai-frameworks/langchain">LangChain</a></td>
+            <td>A framework for building LLM based applications.</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/build/integrations/ai-frameworks/llamaindex">Llama Index</a></td>
+            <td>A framework for building RAG pipelines with SurrealDB's native HNSW vector index as the backing store.</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/build/integrations/ai-frameworks/pydantic-ai">Pydantic AI</a></td>
+            <td>A Python framework designed to help you quickly, confidently, and painlessly build production grade applications and workflows with Generative AI.</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/build/integrations/ai-frameworks/smolagents">Smol Agents</a></td>
+            <td>A complete walkthrough for building a code-generating AI agent that recommends grocery items by querying SurrealDB's HNSW vector index.</td>
+        </tr>
+    </tbody>
+</table>

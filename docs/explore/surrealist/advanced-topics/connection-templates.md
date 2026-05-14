@@ -1,0 +1,18 @@
+---
+position: 2
+title: Connection templates
+description: Save reusable connection fragments as templates in Surrealist, then apply them whenever you create a new connection.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/explore/surrealist/advanced-topics/connection-templates.mdx"
+---
+
+# Connection templates
+
+When you find yourself frequently connecting to databases that share similar connection details, it might make sense to create a template.
+Templates allow you to save partial connection details and reuse them when creating new connections.
+
+## Creating a new template
+
+Templates can be managed from the settings dialog under the "Templates" section. To create a new template, click the "New template" button and fill in the connection details you want to save.
+All fields within a template are optional, so you can save as much or as little information as you like.
+
+![Surrealist Templates](../../../assets/img/image/surrealist/templates.png)

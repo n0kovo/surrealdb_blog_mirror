@@ -1,0 +1,14 @@
+---
+position: 0
+title: Overview
+description: Sample applications and datasets you can clone, import, or run locally to explore SurrealDB without a long-form walkthrough.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/explore/tutorials/demos/overview.mdx"
+---
+
+# Demos
+
+This section collects **demos**: fairly complete examples you can **clone and run** (or import) to see SurrealDB in a realistic setting. Each item is a self-contained project or dataset with its own README or import steps rather than a page-by-page guide.
+
+Use demos when you want to explore behaviour, skim the code, or validate a setup quickly. For guided steps and explanations, use the [tutorials](../tutorials/overview.md) section instead.
+
+Pick a demo from the sidebar to get started.

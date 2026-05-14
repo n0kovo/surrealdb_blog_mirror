@@ -155,9 +155,6 @@ def asset_filename(url, content_type=None):
     return f"{_digest(url)}{ext or '.bin'}"
 
 
-# ---------- markdown conversion ----------
-
-
 def transform_link(url, slug_map):
     if not url or not url.startswith(BLOG_BASE):
         return url
@@ -343,9 +340,6 @@ def convert_yoopta_to_markdown(payload, slug_map=None, asset_map=None, asset_pre
         else:
             final += md
     return final
-
-
-# ---------- network: HTML + assets ----------
 
 
 @retry(
@@ -708,7 +702,11 @@ def write_indexes(outdir, posts, slug_to_date_path):
     out.append("## Browse\n")
     out.append(f"- [All posts (chronological)]({readme_prefix}all.md)")
     out.append(f"- [Manifest (`posts.json`)]({readme_prefix}posts.json)")
-    out.append(f"- [Atom feed (`atom.xml`)]({readme_prefix}atom.xml)\n")
+    out.append(f"- [Atom feed (`atom.xml`)]({readme_prefix}atom.xml)")
+    docs_readme = outdir.parent / "docs" / "README.md"
+    if docs_readme.exists():
+        out.append("- [SurrealDB Documentation (Markdown mirror)](docs/README.md)")
+    out.append("")
 
     out.append("### By year\n")
     for y in sorted(by_year, reverse=True):

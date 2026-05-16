@@ -69,7 +69,7 @@ The guides in this section break down how to store embeddings and query them in 
 
 - [Embedding pipelines](embedding-pipelines.md): defining vector fields, record shapes, and dimension trade-offs.
 - [Similarity search](similarity-search.md): worked examples, the `vector::` function family, and KNN-style filtering.
-- [Vector indexes](vector-indexes.md): brute force vs HNSW, parameters, and the query cheat sheet.
+- [Vector indexes](vector-indexes.md): brute force vs HNSW vs DISKANN, parameters, and the query cheat sheet.
 - [Hybrid search](hybrid-search.md): combining lexical full-text search with vector retrieval, including `search::rrf()`.
 - [RAG architecture patterns](rag-architecture-patterns.md): retrieval-oriented conclusions and further reading.
 

@@ -1575,9 +1575,13 @@ CREATE pts:3 SET point = [8,9,10,11];
 SELECT id FROM pts WHERE point <|2,EUCLIDEAN|> [2,3,4,5];
 ```
 
-### HNSW method
+### Approximate graph indexes
 
-Recommended for very large datasets where speed is essential and some loss of accuracy is acceptable.
+**HNSW**
+
+#### HNSW
+
+Recommended for very large datasets where speed is essential and some loss of accuracy is acceptable, **while the graph fits in memory**.
 
 ```syntax title="SurrealQL Syntax"
 <|K,EF|>
@@ -1604,6 +1608,27 @@ CREATE pts:3 SET point = [8,9,10,11];
 DEFINE INDEX mt_pts ON pts FIELDS point HNSW DIMENSION 4 DIST EUCLIDEAN EFC 150 M 12;
 SELECT id FROM pts WHERE point <|10,40|> [2,3,4,5];
 ```
+
+**DISKANN**
+
+#### DISKANN
+
+*Since v3.1.0*
+
+Recommended when embeddings are too large to keep an HNSW graph resident in RAM as the graph lives on disk with caching. Note that WASM targets do not support DISKANN, so use HNSW or brute force there.
+
+The query syntax matches HNSW: use the approximate form `<|K, L|>` where the second value bounds the search candidate list (see [`DEFINE INDEX … DISKANN`](../statements/define/indexes.md#diskann-disk-based-approximate-nearest-neighbours) for defaults and supported `TYPE` / `DIST` combinations).
+
+```syntax title="SurrealQL Syntax"
+<|K,L|>
+```
+
+```surql
+CREATE pts:3 SET point = [8,9,10,11];
+DEFINE INDEX diskann_pts ON pts FIELDS point DISKANN DIMENSION 4 DIST EUCLIDEAN TYPE F32 DEGREE 8 L_BUILD 20;
+SELECT id FROM pts WHERE point <|10,40|> [2,3,4,5];
+```
+
   
   
 

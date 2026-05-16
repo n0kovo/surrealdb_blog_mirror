@@ -971,7 +971,7 @@ _795 pages_
 - [Similarity search](learn/data-models/vector-search/similarity-search.md)
   Run SurrealQL similarity queries with the liquids example, use vector:: distance and similarity helpers, and filter KNN results with predicates.
 - [Vector indexes](learn/data-models/vector-search/vector-indexes.md)
-  Choose brute force or HNSW vector indexes, tune DIMENSION and distance metrics, and use the query cheat sheet with vector::distance::knn().
+  Choose brute force, HNSW, or DISKANN vector indexes, tune DIMENSION and distance metrics, and use the query cheat sheet with vector::distance::knn().
 - [Creating custom modules](learn/extensions/guides/creating-custom-modules.md)
   Step-by-step guide to scaffolding a Surrealism module, exposing functions with attributes, compiling and loading into SurrealDB.
 - [Module architecture](learn/extensions/guides/module-architecture.md)
@@ -1451,7 +1451,7 @@ _795 pages_
 - [DEFINE FUNCTION](reference/query-language/statements/define/function.md)
   The DEFINE FUNCTION statement allows you to define custom functions that can be reused throughout a database.
 - [DEFINE INDEX](reference/query-language/statements/define/indexes.md)
-  SurrealDB uses indexes to help optimize query performance. An index can consist of one or more fields in a table and can enforce a uniqueness constraint.
+  SurrealDB uses indexes to help optimize query performance. An index can consist of one or more fields in a table and can enforce a uniqueness constraint — including HNSW and DISKANN vector indexes.
 - [DEFINE MODULE](reference/query-language/statements/define/module.md)
   A DEFINE MODULE statement can be used to define a module through which Surrealism extension functions can be called.
 - [DEFINE NAMESPACE](reference/query-language/statements/define/namespace.md)

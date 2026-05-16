@@ -26,4 +26,4 @@ There are no strict rules or limitations regarding the length of the embeddings,
 
 In fact, embeddings retrieved from a model can be cut down to any length you prefer if the accuracy is still acceptable for your use case.
 
-For end-to-end similarity examples, see [Similarity search](similarity-search.md). For HNSW and brute-force trade-offs, see [Vector indexes](vector-indexes.md).
+For end-to-end similarity examples, see [Similarity search](similarity-search.md). For HNSW, DISKANN, and brute-force trade-offs, see [Vector indexes](vector-indexes.md).

@@ -20,4 +20,4 @@ _Auto-generated index — 6 pages._
 - [Similarity search](similarity-search.md)
   Run SurrealQL similarity queries with the liquids example, use vector:: distance and similarity helpers, and filter KNN results with predicates.
 - [Vector indexes](vector-indexes.md)
-  Choose brute force or HNSW vector indexes, tune DIMENSION and distance metrics, and use the query cheat sheet with vector::distance::knn().
+  Choose brute force, HNSW, or DISKANN vector indexes, tune DIMENSION and distance metrics, and use the query cheat sheet with vector::distance::knn().

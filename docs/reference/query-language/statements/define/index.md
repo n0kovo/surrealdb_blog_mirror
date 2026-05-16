@@ -30,7 +30,7 @@ _Auto-generated index — 18 pages and 1 sub-section._
 - [DEFINE FUNCTION](function.md)
   The DEFINE FUNCTION statement allows you to define custom functions that can be reused throughout a database.
 - [DEFINE INDEX](indexes.md)
-  SurrealDB uses indexes to help optimize query performance. An index can consist of one or more fields in a table and can enforce a uniqueness constraint.
+  SurrealDB uses indexes to help optimize query performance. An index can consist of one or more fields in a table and can enforce a uniqueness constraint — including HNSW and DISKANN vector indexes.
 - [DEFINE MODULE](module.md)
   A DEFINE MODULE statement can be used to define a module through which Surrealism extension functions can be called.
 - [DEFINE NAMESPACE](namespace.md)

@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-05-16 06:48 UTC_
+_Last updated: 2026-06-03 07:44 UTC_
 
 ## Stats
 
-- **Total posts:** 224
+- **Total posts:** 228
 - **First post:** 2022-07-20
-- **Latest post:** 2026-05-12
+- **Latest post:** 2026-05-29
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-05-16 06:48 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 29 posts
+- [2026](posts/years/2026.md) — 33 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -27,17 +27,25 @@ _Last updated: 2026-05-16 06:48 UTC_
 
 ### By category
 
-- [ai](posts/categories/ai.md) — 36 posts
+- [ai](posts/categories/ai.md) — 37 posts
 - [community](posts/categories/community.md) — 34 posts
-- [company](posts/categories/company.md) — 39 posts
-- [engineering](posts/categories/engineering.md) — 38 posts
+- [company](posts/categories/company.md) — 40 posts
+- [engineering](posts/categories/engineering.md) — 39 posts
 - [events](posts/categories/events.md) — 7 posts
-- [featured](posts/categories/featured.md) — 103 posts
-- [releases](posts/categories/releases.md) — 44 posts
-- [tutorials](posts/categories/tutorials.md) — 84 posts
+- [featured](posts/categories/featured.md) — 105 posts
+- [releases](posts/categories/releases.md) — 45 posts
+- [tutorials](posts/categories/tutorials.md) — 86 posts
 
 ## Latest posts
 
+- **2026-05-29** · [SurrealDB 3.x by the numbers](posts/2026/05/surrealdb-3-x-by-the-numbers.md)  
+  `engineering` `company` `featured` — Fresh SurrealDB 3.x benchmarks: 141k ops\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.
+- **2026-05-27** · [SurrealDB 3.1: stability, DiskANN, and a new release process](posts/2026/05/surrealdb-3-1-stability-diskann-and-a-new-release-process.md)  
+  `releases` `featured` — SurrealDB 3.1 is here. The first minor release in the 3.x series brings DiskANN, a comprehensive stability and security pass, and a refreshed release process.
+- **2026-05-22** · [Using SurrealDB to understand how Buffalo buffalo buffalo Buffalo buffalo](posts/2026/05/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo.md)  
+  `tutorials` — Using SurrealDB and Surrealist's graph visualisation to not just understand but also see how Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo works.
+- **2026-05-19** · [Agentic retrieval for structured data with text-to-surql](posts/2026/05/agentic-retrieval-for-structured-data-with-text-to-surql.md)  
+  `ai` `tutorials` — RAG pipelines usually focus on unstructured content (chunks + vectors\/BM25), but structured data introduces a different retrieval problem: you need to pull exact rows and aggregates from tables, not just “similar passages.” This article explains an agentic pattern for structured retrieval using text-to-SurrealQL: give an LLM agent a single database-aware tool that converts natural-language questions into valid SurrealQL, executes the query in SurrealDB, and returns deterministic, auditable results.
 - **2026-05-12** · [What chunking strategies exist and how to choose one?](posts/2026/05/what-chunk-strategies-exist-and-how-to-choose-one.md)  
   `ai` — If you've decided to chunk your documents for a RAG pipeline or semantic search system, the next question hits almost immediately: which chunking strategy should I use?
 - **2026-05-08** · [What is the recommended chunk size?](posts/2026/05/what-is-the-recommended-chunk-size.md)  
@@ -50,11 +58,3 @@ _Last updated: 2026-05-16 06:48 UTC_
   `ai` — How I fused vector and keyword retrieval in a single query
 - **2026-04-27** · [Building compounding memory with knowledge graphs and agentic RAG](posts/2026/04/building-compounding-memory-with-knowledge-graphs-and-agentic-rag.md)  
   `community` `ai` — Synapse, a memory-first reflection agent, helps users track therapy journal patterns. It structures insights into a knowledge graph, revealing patterns and answering questions based on context.
-- **2026-04-22** · [New SurrealDB docs search using hybrid search and HNSW\/BM25 reranking](posts/2026/04/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search.md)  
-  `engineering` `tutorials` — How SurrealDB has implemented documentation search using hybrid search (full-text and vector hybrid search and reranking with HNSW and BM25 indexes), plus a simplified example to show the same pattern in just a few queries.
-- **2026-04-21** · [What's new in Surrealist 3.8](posts/2026/04/whats-new-in-surrealist-3-8.md)  
-  `featured` `releases` — Surrealist 3.8 introduces a fully redesigned organisation view, improved query formatting, and loads of other enhancements.
-- **2026-04-17** · [Graph RAG does not need a graph database. It needs a database that does everything.](posts/2026/04/graph-rag-does-not-need-a-graph-database-it-needs-a-database-that-does-everything.md)  
-  `featured` `ai` — Graph RAG is the right idea. Using relationships between entities to scope and improve retrieval produces better results than vector similarity alone. What matters in production is whether graph traversal, vector search, full-text search, and structured filters compose in a single atomic statement.
-- **2026-03-28** · [How to get near-perfect, deterministic accuracy from your AI agents](posts/2026/03/how-to-get-near-perfect-deterministic-accuracy-from-your-ai-agents.md)  
-  `featured` `ai` — Agent accuracy problems are almost always retrieval problems, not model problems. Scope-first retrieval and reasoning and retrieval graph feedback loops close the gap to 99%+.

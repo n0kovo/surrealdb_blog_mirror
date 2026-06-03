@@ -6,7 +6,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 ---
 
 > [!NOTE: Before you begin]
-> Make sure you’ve [installed SurrealDB](../../../../self-hosted/installation/index.md) — it should only take a second!
+> Make sure you’ve [installed SurrealDB](../../../../running/installation/index.md) — it should only take a second!
 
 # ML command
 

@@ -25,7 +25,7 @@ When starting a new project in SurrealDB, you can define your schema using eithe
 Before you start, this guide assumes the following:
 
 - Basic knowledge of databases and data modelling.
-- SurrealDB is installed on your machine. You can download and install SurrealDB from the [installation page](../../../self-hosted/installation/index.md).
+- SurrealDB is installed on your machine. You can download and install SurrealDB from the [installation page](../../../running/installation/index.md).
 - [A Command line interface (CLI)](../../../reference/cli/surrealdb-cli/commands/sql.md) for interacting with SurrealDB or a [Surrealist sandbox](../../surrealist/getting-started.md#using-the-sandbox).
 
 ## Schemafull (structured) databases

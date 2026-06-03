@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 The start command starts a SurrealDB server in memory, on disk, or in a distributed setup.
 
 > [!NOTE: BEFORE YOU START]
-> Make sure you’ve [installed SurrealDB](../../../../self-hosted/installation/index.md) — it should only take a second!
+> Make sure you’ve [installed SurrealDB](../../../../running/installation/index.md) — it should only take a second!
 
 ## Command options
 
@@ -111,11 +111,7 @@ The start command starts a SurrealDB server in memory, on disk, or in a distribu
 > [!WARNING]
 > FoundationDB support is deprecated in SurrealDB `3.0`. Please plan to migrate to a supported storage backend.
 
-In the `surreal start` command, the path argument is used to specify the location of the database. If no argument is given, the default of `memory` for storage [in memory](../../../../self-hosted/in-memory.md) is assumed. 
-
-When using a path argument with SurrealDB, we recommend not using the `file://` prefix. Instead, please use [`surrealkv://`](../../../../architecture.md) or [`rocksdb://`](../../../../self-hosted/file-backed.md) as the path argument. If you are using the `file://` prefix, the database will start with the following warning:
-
-> `file://` is deprecated, please use `surrealkv://` or `rocksdb://`
+In the `surreal start` command, the path argument is used to specify the location of the database. If no argument is given, the default of `memory` for storage [in memory](../../../../running/in-memory.md) is assumed.
 
 ### Absolute vs. relative paths
 
@@ -532,6 +528,7 @@ HTTP server:
           - True-Client-IP:   Akamai, Cloudflare true client IP
           - X-Real-IP:        Nginx real IP
           - X-Forwarded-For:  Industry standard header used by many proxies
+          - Forwarded:        RFC 7239 Forwarded header (`for=`) *Since v3.1.0*
 
           [env: SURREAL_CLIENT_IP=]
           [default: socket]

@@ -9,6 +9,10 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 The SurrealDB SDK for JavaScript and TypeScript lets you easily connect to SurrealDB from any environment: frontend, backend, serverless, or embedded within your app. It supports connecting to remote or embedded databases, running queries, managing data and authentication, and subscribing to real-time updates with live queries.
 
+> [!NOTE]
+> The latest version of the SDK is *(latest)*.
+> The SDK works with SurrealDB versions `v2.0.0` to *(latest)*, ensuring compatibility with the latest version.
+
 ## Language and engines
 
 - **[JavaScript](installation.md)**

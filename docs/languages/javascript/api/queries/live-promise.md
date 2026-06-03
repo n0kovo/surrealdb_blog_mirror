@@ -5,7 +5,7 @@ description: LivePromise variants for managing real-time live query subscription
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/javascript/api/queries/live-promise.mdx"
 ---
 
-# Live query promises {#livepromise}
+# Live Query Promises {#livepromise}
 
 Live query promises provide interfaces for subscribing to real-time updates from SurrealDB. There are two variants: `ManagedLivePromise` for new subscriptions and `UnmanagedLivePromise` for existing ones.
 
@@ -19,7 +19,7 @@ A managed live query subscription that the SDK automatically creates and manages
 
 **Returned by:** [`SurrealQueryable.live()`](../core/surreal-queryable.md#live)
 
-### Configuration methods
+### Configuration Methods
 
 #### `.diff()` {#diff}
 
@@ -128,7 +128,7 @@ for await (const update of subscription) {
 Filter live updates to only receive records matching the condition.
 
 ```ts title="Method Syntax"
-livePromise.where(condition)
+livePromise.where(expr)
 ```
 
 **Parameters:**
@@ -142,7 +142,7 @@ livePromise.where(condition)
     </thead>
     <tbody>
         <tr>
-            <td>`condition` <label label="required" /></td>
+            <td>`expr` <label label="required" /></td>
             <td>`ExprLike`</td>
             <td>Condition expression to filter updates (string or <a href="/docs/languages/javascript/api/utilities/expr">Expression</a> object).</td>
         </tr>
@@ -205,7 +205,19 @@ for await (const update of subscription) {
 
 ---
 
-### Live subscription methods
+#### `.compile()` {#compile}
+
+Compile the query into a BoundQuery.
+
+```ts title="Method Syntax"
+livePromise.compile()
+```
+
+**Returns:** `BoundQuery` - The compiled query
+
+---
+
+### Live Subscription Methods
 
 Once awaited, a `ManagedLivePromise` returns a `LiveSubscription` object:
 
@@ -243,9 +255,9 @@ for await (const update of subscription) {
 }
 ```
 
-## Complete examples
+## Complete Examples
 
-### Basic live query
+### Basic Live Query
 
 ```ts
 
@@ -263,7 +275,7 @@ for await (const update of subscription) {
 await subscription.kill();
 ```
 
-### Filtered live query
+### Filtered Live Query
 
 ```ts
 // Only receive updates for active users
@@ -281,7 +293,7 @@ for await (const update of subscription) {
 }
 ```
 
-### Live query with specific fields
+### Live Query with Specific Fields
 
 ```ts
 const subscription = await db.live(new Table('users'))
@@ -296,7 +308,7 @@ for await (const update of subscription) {
 await subscription.kill();
 ```
 
-### Diff-based updates
+### Diff-Based Updates
 
 ```ts
 // Get only changes, not full records
@@ -310,7 +322,7 @@ for await (const update of subscription) {
 }
 ```
 
-### Live query with relations
+### Live Query with Relations
 
 ```ts
 const subscription = await db.live(new Table('posts'))
@@ -324,7 +336,7 @@ for await (const update of subscription) {
 }
 ```
 
-### Real-time dashboard
+### Real-time Dashboard
 
 ```ts
 async function monitorUsers(callback: (stats: any) => void) {
@@ -350,7 +362,7 @@ monitorUsers((stats) => {
 });
 ```
 
-### Watch specific record
+### Watch Specific Record
 
 ```ts
 // Subscribe to changes on a specific record
@@ -366,7 +378,7 @@ for await (const update of subscription) {
 }
 ```
 
-### Auto-reconnect live query
+### Auto-reconnect Live Query
 
 ```ts
 let subscription: LiveSubscription | null = null;
@@ -392,7 +404,7 @@ db.subscribe('connected', async () => {
 await setupLiveQuery();
 ```
 
-### Cleanup pattern
+### Cleanup Pattern
 
 ```ts
 const subscriptions: LiveSubscription[] = [];
@@ -415,7 +427,7 @@ async function cleanup() {
 await cleanup();
 ```
 
-### Error handling
+### Error Handling
 
 ```ts
 try {
@@ -437,11 +449,11 @@ try {
 }
 ```
 
-## Update message structure
+## Update Message Structure
 
 Each update message conforms to the [`LiveMessage<T>`](../types/index.md#livemessage) interface with `action`, `result`, and optional `diff` properties.
 
-### Processing updates
+### Processing Updates
 
 ```ts
 for await (const update of subscription) {
@@ -459,9 +471,9 @@ for await (const update of subscription) {
 }
 ```
 
-## See also
+## See Also
 
 - [SurrealQueryable.live()](../core/surreal-queryable.md#live) - Create managed live subscription
 - [SurrealQueryable.liveOf()](../core/surreal-queryable.md#liveof) - Subscribe to existing live query
-- [Live Queries Guide](../../../../reference/query-language/statements/live-select.md) - SurrealQL LIVE documentation
+- [Live Queries Guide](https://surrealdb.com/docs/surrealql/statements/live) - SurrealQL LIVE documentation
 - [Query Overview](index.md) - All query builder classes

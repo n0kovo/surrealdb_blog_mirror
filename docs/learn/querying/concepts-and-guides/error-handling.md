@@ -77,6 +77,30 @@ DEFINE FIELD email ON TABLE user TYPE string
 
 Working with a schema in this way allows throwing errors to be taken care of by the definitions themselves as opposed to writing custom logic.
 
+## Assertions while debugging
+
+When you are iterating on a query in the CLI or Surrealist, it is not always obvious which step in a long [method chain](../../../reference/query-language/functions/database-functions/index.md#method-syntax) produced an unexpected value. The [`value::expect()`](../../../reference/query-language/functions/database-functions/value.md#valueexpect) function (*Since v3.1.0*) checks a condition on the current value and returns that same value when the closure is `true`, or fails the statement with a clear error (and an optional custom message).
+
+```surql
+CREATE person:one SET name = "Tommy", city = "London";
+CREATE person:two SET name = "Billy", city = "London";
+
+LET $records = SELECT * FROM person WHERE city = "London";
+
+$records
+    .expect(|$n| $n.len() > 0, "Expected at least one person in London")
+    .map(|$person| { name: $person.name + " from London" });
+```
+
+```surql title="Output"
+[
+    { name: 'Tommy from London' }, 
+    { name: 'Billy from London' }
+];
+```
+
+This can be used for temporary invariants while debugging. For permanent rules, prefer `DEFINE FIELD … ASSERT` on the schema. `.expect()` clones the value it receives, so remove it from hot paths once you are finished debugging.
+
 ## SDK error handling
 
 SurrealDB uses a [single public API error type](https://github.com/surrealdb/surrealdb/blob/main/surrealdb/types/src/error.rs#L37) that is shared by SDKs. As the repo states, the error type is:

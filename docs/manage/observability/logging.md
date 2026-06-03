@@ -1,0 +1,33 @@
+---
+position: 1
+title: Logging
+description: Server log levels, text and JSON formats, file and socket output, slow-query logging, and OpenTelemetry log levels.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/observability/logging.mdx"
+---
+
+# Logging
+
+SurrealDB writes server logs to stderr by default. You can set flags on [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md) or the matching [environment variables](../../reference/cli/surrealdb-cli/environment-variables.md) and ship lines to your collector or log store.
+
+## Core options
+
+| Concern | CLI flag (examples) | Environment variable (examples) |
+| --- | --- | --- |
+| Level | `--log` | `SURREAL_LOG` |
+| Format | `--log-format` (`text` or `json`) | `SURREAL_LOG_FORMAT` |
+| Remote socket | `--log-socket` | `SURREAL_LOG_SOCKET` |
+| File logging | `--log-file-enabled`, `--log-file-path`, `--log-file-rotation`, … | `SURREAL_LOG_FILE_ENABLED`, `SURREAL_LOG_FILE_PATH`, `SURREAL_LOG_FILE_ROTATION`, … |
+| File level | `--log-file-level` | `SURREAL_LOG_FILE_LEVEL` |
+| Slow queries | `--slow-log-threshold`, `--slow-log-param-allow`, `--slow-log-param-deny` | `SURREAL_SLOW_QUERY_LOG_THRESHOLD`, `SURREAL_SLOW_QUERY_LOG_PARAM_ALLOW`, `SURREAL_SLOW_QUERY_LOG_PARAM_DENY` |
+
+Further socket and file options (`--log-socket-level`, `--log-file-name`, `--log-file-format`, and others) are documented on [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md) and in [Environment variables](../../reference/cli/surrealdb-cli/environment-variables.md).
+
+Slow-query logging records statements that exceed your threshold. The `--slow-log-param-allow` / `--slow-log-param-deny` flags control whether bound parameters are expanded in the log line (for example turning `SELECT * FROM $table_name` into `SELECT * FROM person` when `table_name` is allowed), the use of which is recommended for any logs that may contain sensitive data.
+
+## OpenTelemetry trace and log verbosity
+
+OpenTelemetry trace output can be tuned separately from ordinary server logs:
+
+* `--log-otel-level` or `SURREAL_LOG_OTEL_LEVEL` — verbosity of OTel-related tracing output.
+
+When OTLP is enabled, **SurrealDB Enterprise** can also emit audit and slow-query records as OpenTelemetry logs when you set `SURREAL_AUDIT_OTEL_EXPORT` / `SURREAL_SLOW_QUERY_OTEL_EXPORT`. Severity mapping and dual paths (file sink versus OTLP) are summarised on [Observability (metrics and Prometheus)](observability.md), [Enterprise observability](enterprise-observability.md), and in the [Metrics reference](metrics.md). In-tree detail lives in [`doc/OBSERVABILITY.md`](https://github.com/surrealdb/surrealdb/blob/main/doc/OBSERVABILITY.md) on GitHub.

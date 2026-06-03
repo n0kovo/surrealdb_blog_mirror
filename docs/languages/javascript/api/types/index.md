@@ -1,15 +1,15 @@
 ---
 position: 1
-title: TypeScript Types
+title: TypeScript types
 description: TypeScript type definitions and interfaces used throughout the SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/javascript/api/types/index.mdx"
 ---
 
-# TypeScript types
+# TypeScript Types
 
 The SDK provides comprehensive TypeScript type definitions for type-safe development. This page documents the key types and interfaces used throughout the SDK.
 
-## Connection types
+## Connection Types
 
 ### `ConnectionStatus` {#connectionstatus}
 
@@ -144,28 +144,34 @@ const info = await db.version();
 console.log(info.version); // "surrealdb-2.1.0"
 ```
 
-## Authentication types
+## Authentication Types
 
 ### `AnyAuth` {#anyauth}
 
 Union type for all authentication methods.
 
 ```ts
-type AnyAuth = 
-    | SystemAuth 
-    | NamespaceAuth 
-    | DatabaseAuth 
-    | AccessRecordAuth
+type AnyAuth = SystemAuth | AccessAuth
 ```
 
 ---
 
 ### `SystemAuth` {#systemauth}
 
-System user authentication (root, namespace, or database level).
+Union of system-level authentication types.
 
 ```ts
-interface SystemAuth {
+type SystemAuth = RootAuth | NamespaceAuth | DatabaseAuth
+```
+
+---
+
+### `RootAuth` {#rootauth}
+
+Root-level authentication.
+
+```ts
+interface RootAuth {
     username: string;
     password: string;
 }
@@ -177,6 +183,95 @@ await db.signin({
     username: 'root',
     password: 'root'
 });
+```
+
+---
+
+### `NamespaceAuth` {#namespaceauth}
+
+Namespace-level authentication.
+
+```ts
+interface NamespaceAuth {
+    namespace: string;
+    username: string;
+    password: string;
+}
+```
+
+**Example:**
+```ts
+await db.signin({
+    namespace: 'my_namespace',
+    username: 'ns_user',
+    password: 'ns_pass'
+});
+```
+
+---
+
+### `DatabaseAuth` {#databaseauth}
+
+Database-level authentication.
+
+```ts
+interface DatabaseAuth {
+    namespace: string;
+    database: string;
+    username: string;
+    password: string;
+}
+```
+
+**Example:**
+```ts
+await db.signin({
+    namespace: 'my_namespace',
+    database: 'my_database',
+    username: 'db_user',
+    password: 'db_pass'
+});
+```
+
+---
+
+### `AccessAuth` {#accessauth}
+
+Union of access-based authentication types.
+
+```ts
+type AccessAuth = AccessSystemAuth | AccessBearerAuth | AccessRecordAuth
+```
+
+---
+
+### `AccessSystemAuth` {#accesssystemauth}
+
+System access authentication with credentials.
+
+```ts
+interface AccessSystemAuth {
+    namespace: string;
+    database: string;
+    access: string;
+    username: string;
+    password: string;
+}
+```
+
+---
+
+### `AccessBearerAuth` {#accessbearerauth}
+
+Bearer token access authentication.
+
+```ts
+interface AccessBearerAuth {
+    namespace: string;
+    database: string;
+    access: string;
+    token: string;
+}
 ```
 
 ---
@@ -209,14 +304,24 @@ await db.signup({
 
 ---
 
+### `Token` {#token}
+
+A string alias representing an authentication token (JWT).
+
+```ts
+type Token = string
+```
+
+---
+
 ### `Tokens` {#tokens}
 
 Authentication token pair.
 
 ```ts
 interface Tokens {
-    access: string;
-    refresh?: string;
+    access: Token;
+    refresh?: Token;
 }
 ```
 
@@ -249,7 +354,7 @@ await db.connect('ws://localhost:8000', {
 });
 ```
 
-## Session types
+## Session Types
 
 ### `Session` {#session}
 
@@ -309,7 +414,7 @@ type SurrealEvents = SessionEvents & {
 }
 ```
 
-## Query types
+## Query Types
 
 ### `RecordResult<T>` {#recordresult}
 
@@ -392,12 +497,35 @@ interface QueryStats {
 
 ---
 
+### `Output` {#output}
+
+Output format for query results.
+
+```ts
+type Output = "full" | "diff" | "none"
+```
+
+---
+
+### `Mutation` {#mutation}
+
+Represents a mutation event from a live query.
+
+```ts
+interface Mutation<T = unknown> {
+    action: "CREATE" | "UPDATE" | "DELETE";
+    result: T;
+}
+```
+
+---
+
 ### `LiveResource` {#liveresource}
 
 Resources that can be subscribed to with live queries.
 
 ```ts
-type LiveResource = Table | RecordId | RecordIdRange
+type LiveResource = Table
 ```
 
 ---
@@ -421,7 +549,7 @@ for await (const message of subscription) {
 }
 ```
 
-## Value types
+## Value Types
 
 ### `RecordIdValue` {#recordidvalue}
 
@@ -435,6 +563,16 @@ type RecordIdValue =
     | bigint 
     | unknown[] 
     | Record<string, unknown>
+```
+
+---
+
+### `AnyRecordId` {#anyrecordid}
+
+Union type representing any record identifier.
+
+```ts
+type AnyRecordId = RecordId | RecordIdRange
 ```
 
 ---
@@ -474,7 +612,7 @@ type Nullable<T> = {
 }
 ```
 
-## Codec types
+## Codec Types
 
 ### `CodecOptions` {#codecoptions}
 
@@ -506,7 +644,7 @@ const db = new Surreal({
 });
 ```
 
-## Export/import types
+## Export/Import Types
 
 ### `SqlExportOptions` {#sqlexportoptions}
 
@@ -538,7 +676,28 @@ const sql = await db.export({
 });
 ```
 
-## Utility types
+---
+
+### `MlExportOptions` {#mlexportoptions}
+
+Options for exporting a machine learning model.
+
+```ts
+interface MlExportOptions {
+    name: string;
+    version: string;
+}
+```
+
+**Example:**
+```ts
+const model = await db.export({
+    name: 'prediction-model',
+    version: '1.0.0'
+});
+```
+
+## Utility Types
 
 ### `Prettify<T>` {#prettify}
 
@@ -595,9 +754,9 @@ const result = await api.invoke('/custom', {
 });
 ```
 
-## Best practices
+## Best Practices
 
-### 1. Use generic type parameters
+### 1. Use Generic Type Parameters
 
 Leverage generics for type-safe operations:
 
@@ -612,7 +771,7 @@ const users = await db.select<User>(new Table('users'));
 users[0].name; // TypeScript knows this is a string
 ```
 
-### 2. Define custom types
+### 2. Define Custom Types
 
 Create types for your data models:
 
@@ -627,7 +786,7 @@ interface Post {
 const posts = await db.select<Post>(new Table('posts'));
 ```
 
-### 3. Use type guards
+### 3. Use Type Guards
 
 Implement type guards for runtime type checking:
 
@@ -646,7 +805,7 @@ if (isUser(data)) {
 }
 ```
 
-### 4. Handle union types
+### 4. Handle Union Types
 
 Properly handle discriminated unions:
 
@@ -662,7 +821,7 @@ for (const r of response) {
 }
 ```
 
-## See also
+## See Also
 
 - [Core Classes](../core/index.md) - Classes using these types
 - [Value Types](../values/index.md) - Value type classes

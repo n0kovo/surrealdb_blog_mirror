@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 # CLI tool
 
 > [!IMPORTANT]
-> Before using the CLI, you will need to [install SurrealDB](../../../self-hosted/installation/index.md). To experiment with SurrealDB before installing, see the [Surrealist sandbox](https://app.surrealdb.com/) online. To persist your Sandbox data while still experimenting, click on **Deploy to Cloud** in Surrealist to create a free SurrealDB Cloud instance.
+> Before using the CLI, you will need to [install SurrealDB](../../../running/installation/index.md). To experiment with SurrealDB before installing, see the [Surrealist sandbox](https://app.surrealdb.com/) online. To persist your Sandbox data while still experimenting, click on **Deploy to Cloud** in Surrealist to create a free SurrealDB Cloud instance.
 
 ## Getting started
 
@@ -20,7 +20,7 @@ For a quickstart, [`surreal start`](commands/start.md) and [`surreal sql`](comma
 surreal start --user root --pass secret
 ```
 
-Unless you specify otherwise, the CLI will start a database [in memory](../../../self-hosted/in-memory.md) that serves at `127.0.0.1:8000` (or `http://localhost:8000`). This database has a single root user named `root` and a password `secret`.
+Unless you specify otherwise, the CLI will start a database [in memory](../../../running/in-memory.md) that serves at `127.0.0.1:8000` (or `http://localhost:8000`). This database has a single root user named `root` and a password `secret`.
 
 In another window, you can then open up an interactive shell to make queries using the  `surreal sql` command. As of SurrealDB 3.0, the `sql` command will connect to the default 'main' name for both namespace and database.
 

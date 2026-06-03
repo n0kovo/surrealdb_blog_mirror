@@ -9,6 +9,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 These functions can be used when generating random data values.
 
+> [!NOTE]
+> For functions that take a lower and upper bound (`rand::float`, `rand::int`, `rand::duration`, `rand::time`, `rand::id`, `rand::string`), the **first argument is the minimum** and the **second is the maximum**. If the minimum is greater than the maximum, an error is returned. Length and bound arguments must be non-negative; negative values return an error.
+
 <table>
   <thead>
     <tr>
@@ -129,7 +132,7 @@ true
 The rand::duration function generates a random [`duration`](../../language-primitives/data-types/datetimes.md#durations-and-datetimes) value between two `duration` arguments.
 
 ```surql title="API DEFINITION"
-rand::bool($from: duration, $to: duration) -> duration
+rand::duration($from: duration, $to: duration) -> duration
 ```
 
 Some examples of the function in use:
@@ -187,7 +190,7 @@ The `rand::float` function generates a random [`float`](../../language-primitive
 rand::float() -> float
 ```
 
-If two numbers are provided, then the function generates a random [`float`](../../language-primitives/data-types/numbers.md#floating-point-numbers), between two numbers.
+If two numbers are provided, the function generates a random [`float`](../../language-primitives/data-types/numbers.md#floating-point-numbers) between them (inclusive of the bounds). The first argument is the **minimum** and the second is the **maximum**.
 
 ```surql title="API DEFINITION"
 rand::float($from: number, $to: number) -> float
@@ -226,7 +229,7 @@ If a number is provided, then the function generates a random ID with a specific
 rand::id(number) -> string
 ```
 
-If a second number is provided, then the function will generate a random id, with a length between the two numbers.
+If a second number is provided, the function generates a random id with a length between the two numbers. The first argument is the **minimum** length and the second is the **maximum**. Both must be non-negative.
 
 ```surql title="API DEFINITION"
 rand::id($min_len: int, $max_len: int) -> string
@@ -283,7 +286,7 @@ The `rand::int` function generates a random int.
 rand::int() -> int
 ```
 
-If two numbers are provided, then the function generates a random int between two numbers.
+If two numbers are provided, the function generates a random int between them (inclusive). The first argument is the **minimum** and the second is the **maximum**.
 
 ```surql title="API DEFINITION"
 rand::int($from: int, $to: int) -> int
@@ -319,7 +322,7 @@ The `rand::string` function generates a random string, with a specific length.
 rand::string(number) -> string
 ```
 
-If two numbers are provided, then the function generates a random string, with a length between two numbers.
+If two numbers are provided, the function generates a random string with a length between the two numbers. The first argument is the **minimum** length and the second is the **maximum**. Both must be non-negative.
 
 ```surql title="API DEFINITION"
 rand::string($from: int, $to: int) -> string
@@ -356,7 +359,7 @@ rand::time() -> datetime
 rand::time($from: datetime|number, $to: datetime|number) -> datetime
 ```
 
-The rand::time function generates a random [`datetime`](../../language-primitives/data-types/datetimes.md), either a completely random datetime when no arguments are passed in, or between two unix timestamps.
+The `rand::time` function generates a random [`datetime`](../../language-primitives/data-types/datetimes.md), either a completely random datetime when no arguments are passed in, or between two bounds. With two arguments, the first is the **earliest** bound and the second is the **latest** (each may be a unix timestamp or a `datetime`).
 
 ```surql
 RETURN rand::time();

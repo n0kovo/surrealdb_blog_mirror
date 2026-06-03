@@ -46,61 +46,57 @@ SurrealDB supports multiple levels of authentication, from [system users](../../
 
 The `.signin()` method authenticates an existing user. SurrealDB supports multiple authentication levels, and the properties you provide determine which level is used.
 
-	
 **Root user**
 
 Authenticate as a root user with full access to all namespaces and databases.
 
-		```ts
-		const tokens = await db.signin({
-			username: 'root',
-			password: 'surrealdb',
-		});
-		```
+```ts
+const tokens = await db.signin({
+	username: 'root',
+	password: 'surrealdb',
+});
+```
 
-	
 **Namespace user**
 
 Authenticate as a [namespace user](../../../reference/query-language/statements/define/user.md) with access to all databases in the specified namespace.
 
-		```ts
-		const tokens = await db.signin({
-			namespace: 'surrealdb',
-			username: 'tobie',
-			password: 'surrealdb',
-		});
-		```
+```ts
+const tokens = await db.signin({
+	namespace: 'surrealdb',
+	username: 'tobie',
+	password: 'surrealdb',
+});
+```
 
-	
 **Database user**
 
 Authenticate as a [database user](../../../reference/query-language/statements/define/user.md) with access scoped to a specific database.
 
-		```ts
-		const tokens = await db.signin({
-			namespace: 'surrealdb',
-			database: 'docs',
-			username: 'tobie',
-			password: 'surrealdb',
-		});
-		```
+```ts
+const tokens = await db.signin({
+	namespace: 'surrealdb',
+	database: 'docs',
+	username: 'tobie',
+	password: 'surrealdb',
+});
+```
 
-	
 **Record access**
 
 Authenticate as a record user through a defined [record access method](../../../reference/query-language/statements/define/access/record.md). Pass any required variables under the `variables` key.
 
-		```ts
-		const tokens = await db.signin({
-			namespace: 'surrealdb',
-			database: 'docs',
-			access: 'account',
-			variables: {
-				email: 'info@surrealdb.com',
-				pass: '123456',
-			},
-		});
-		```
+```ts
+const tokens = await db.signin({
+	namespace: 'surrealdb',
+	database: 'docs',
+	access: 'account',
+	variables: {
+		email: 'info@surrealdb.com',
+		pass: '123456',
+	},
+});
+```
 
 On success, the method returns a [`Tokens`](../api/types/index.md#tokens) object containing the access token and an optional refresh token. The session is automatically authenticated after signing in.
 

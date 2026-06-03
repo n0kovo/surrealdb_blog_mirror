@@ -1,6 +1,6 @@
 ---
 position: 1
-title: Python Types
+title: Python types
 description: Type definitions and dataclasses used throughout the Python SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/python/api/types/index.mdx"
 ---

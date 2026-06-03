@@ -8,4 +8,4 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 # CLI reference
 
 - [SurrealDB CLI](surrealdb-cli/overview.md) — commands for starting the server, importing and exporting data, running queries, upgrading between versions, and more.
-- [Formatter](formatter/overview.md) — the `surreal fmt` command for automatically formatting SurrealQL files.
+- [Formatter](formatter/overview.md) — the `surqlfmt` command for automatically formatting SurrealQL files.

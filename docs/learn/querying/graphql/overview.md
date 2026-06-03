@@ -41,6 +41,21 @@ A query for `(INFO FOR DB).configs` will show that the above statement ends up h
 
 For more fine tuning of the configuration, the `TABLES` and `FUNCTIONS` clauses can be followed by [other clauses](../../../reference/query-language/statements/define/config.md#tables-configuration).
 
+## Schema naming *Since v3.1.0*
+
+From SurrealDB 3.1.0, the auto-generated GraphQL schema follows a single **Apollo-style** naming convention (there is no `NAMING` switch):
+
+| Operation | Example for table `person` |
+| --- | --- |
+| Fetch one record | `person(id: ID!)` |
+| List records | `people(filter, where, order, limit, start, version)` — pluralised table name |
+| Aggregate | `people_aggregate(filter, groupBy, …)` |
+| Create / update / delete | `createPerson`, `updatePerson`, `deletePerson` (bulk: `createPeople`, …) |
+
+Field names on types mirror SurrealQL unless you set [`GRAPHQL_ALIAS`](../../../reference/query-language/statements/define/field.md) or [`GRAPHQL_DEPRECATED`](../../../reference/query-language/statements/define/field.md) on [`DEFINE FIELD`](../../../reference/query-language/statements/define/field.md) / [`DEFINE TABLE`](../../../reference/query-language/statements/define/table.md) / [`DEFINE FUNCTION`](../../../reference/query-language/statements/define/function.md). List queries also support Relay-style **`peopleConnection`** cursor pagination alongside offset `limit` / `start`.
+
+If you upgrade from 3.0.x, regenerate client stubs and saved queries — names such as `_get_person` and `createManyPerson` are no longer generated for typical tables.
+
 ## Next steps
 
 The next page introduces some common GraphQL patterns and their SurrealQL equivalents or near equivalents.

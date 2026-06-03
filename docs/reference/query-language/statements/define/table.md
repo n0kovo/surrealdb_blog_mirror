@@ -292,7 +292,7 @@ SHOW CHANGES FOR TABLE reading SINCE 0 LIMIT 10;
 The following example demonstrates the `SCHEMAFULL` portion of the `DEFINE TABLE` statement. When a table is defined as schemafull, the database strictly enforces any schema definitions that are specified using the `DEFINE TABLE` statement. New fields can not be added to a `SCHEMAFULL` table unless they are defined via the [`DEFINE FIELD`](field.md) statement.
 
 > [!NOTE]
-> Since `v2.0.0`, schemafull tables are implicitly type [`NORMAL`](#table-with-specialized-type-clause) tables by default.
+> Schemafull tables are implicitly type [`NORMAL`](#table-with-specialized-type-clause) tables by default.
 
 ```surql
 /**[test]

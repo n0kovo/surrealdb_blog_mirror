@@ -9,6 +9,10 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 The SurrealDB SDK for Java lets you connect to [SurrealDB](https://surrealdb.com/docs/start) from any Java application. It supports connecting to remote instances over WebSocket or HTTP, and running embedded databases in-process. The SDK provides methods for querying with [SurrealQL](../../reference/query-language/index.md), managing data, [authentication](../../learn/security/authentication/authentication.md), live queries, and transactions. It uses JNI to call native Rust code for high performance.
 
+> [!NOTE]
+> The latest version of the SDK is *(latest)*.
+> The SDK works with SurrealDB versions `v2.0.0` to *(latest)*, ensuring compatibility with the latest version.
+
 ## Getting started
 
 - **[Installation](installation.md)** — Install the SDK using Gradle or Maven and import it into your project.

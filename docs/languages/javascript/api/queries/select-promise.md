@@ -13,13 +13,13 @@ The `SelectPromise` class provides a chainable interface for configuring SELECT 
 
 **Source:** [query/select.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/select.ts)
 
-## Type parameters
+## Type Parameters
 
 - `T` - The result type
 - `I` - The input type for field selection
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration methods
+## Configuration Methods
 
 ### `.fields()` {#fields}
 
@@ -116,7 +116,7 @@ const names = await db.select(new Table('users'))
 Add a WHERE clause to filter results.
 
 ```ts title="Method Syntax"
-selectPromise.where(condition)
+selectPromise.where(expr)
 ```
 
 #### Parameters
@@ -130,7 +130,7 @@ selectPromise.where(condition)
     </thead>
     <tbody>
         <tr>
-            <td>`condition` <label label="required" /></td>
+            <td>`expr` <label label="required" /></td>
             <td>`ExprLike`</td>
             <td>The condition expression (string or <a href="/docs/languages/javascript/api/utilities/expr">Expression</a> object).</td>
         </tr>
@@ -220,7 +220,7 @@ const posts = await db.select(new Table('posts'))
 Set the pagination offset (number of records to skip).
 
 ```ts title="Method Syntax"
-selectPromise.start(offset)
+selectPromise.start(start)
 ```
 
 #### Parameters
@@ -234,7 +234,7 @@ selectPromise.start(offset)
     </thead>
     <tbody>
         <tr>
-            <td>`offset` <label label="required" /></td>
+            <td>`start` <label label="required" /></td>
             <td>`number`</td>
             <td>Number of records to skip.</td>
         </tr>
@@ -262,7 +262,7 @@ const users = await db.select(new Table('users'))
 Limit the number of results returned.
 
 ```ts title="Method Syntax"
-selectPromise.limit(count)
+selectPromise.limit(limit)
 ```
 
 #### Parameters
@@ -276,7 +276,7 @@ selectPromise.limit(count)
     </thead>
     <tbody>
         <tr>
-            <td>`count` <label label="required" /></td>
+            <td>`limit` <label label="required" /></td>
             <td>`number`</td>
             <td>Maximum number of records to return.</td>
         </tr>
@@ -392,6 +392,27 @@ console.log(typeof jsonString); // 'string'
 
 ---
 
+### `.compile()` {#compile}
+
+Compile the query into a `BoundQuery` without executing it.
+
+```ts title="Method Syntax"
+selectPromise.compile()
+```
+
+#### Returns
+`BoundQuery<[T]>` - The compiled query
+
+#### Example
+
+```ts
+const query = db.select(new Table('users'))
+    .where('age >= 18')
+    .compile();
+```
+
+---
+
 ### `.stream()` {#stream}
 
 Stream results as they arrive instead of waiting for all results.
@@ -411,9 +432,9 @@ for await (const user of db.select(new Table('users')).stream()) {
 }
 ```
 
-## Complete examples
+## Complete Examples
 
-### Basic selection
+### Basic Selection
 
 ```ts
 
@@ -427,7 +448,7 @@ const allUsers = await db.select(new Table('users'));
 const user = await db.select(new RecordId('users', 'john'));
 ```
 
-### Filtered selection
+### Filtered Selection
 
 ```ts
 const activeAdults = await db.select(new Table('users'))
@@ -435,7 +456,7 @@ const activeAdults = await db.select(new Table('users'))
     .fields('name', 'email', 'age');
 ```
 
-### Paginated selection
+### Paginated Selection
 
 ```ts
 function getPage(page: number, pageSize: number) {
@@ -448,7 +469,7 @@ const page1 = await getPage(1, 20);
 const page2 = await getPage(2, 20);
 ```
 
-### Complex query with relations
+### Complex Query with Relations
 
 ```ts
 const posts = await db.select(new Table('posts'))
@@ -470,7 +491,7 @@ const stats = await db.select(new Table('orders'))
     .fields('count() as total_orders', 'sum(amount) as total_revenue', 'avg(amount) as avg_order');
 ```
 
-### Streaming large results
+### Streaming Large Results
 
 ```ts
 let count = 0;
@@ -483,7 +504,7 @@ for await (const user of db.select(new Table('users')).stream()) {
 }
 ```
 
-## Chaining pattern
+## Chaining Pattern
 
 All configuration methods return a new `SelectPromise`, allowing you to chain them in any order:
 
@@ -497,7 +518,7 @@ const result = await db.select(new Table('users'))
     .timeout(Duration.parse('5s'));
 ```
 
-## See also
+## See Also
 
 - [SurrealQueryable.select()](../core/surreal-queryable.md#select) - Method that returns SelectPromise
 - [Query Overview](index.md) - All query builder classes

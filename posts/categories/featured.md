@@ -1,8 +1,12 @@
 # Category: featured
 
-_103 posts_  
+_105 posts_  
 [← Index](../../README.md)
 
+- **2026-05-29** · [SurrealDB 3.x by the numbers](../2026/05/surrealdb-3-x-by-the-numbers.md)  
+  `engineering` `company` `featured` — Fresh SurrealDB 3.x benchmarks: 141k ops\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.
+- **2026-05-27** · [SurrealDB 3.1: stability, DiskANN, and a new release process](../2026/05/surrealdb-3-1-stability-diskann-and-a-new-release-process.md)  
+  `releases` `featured` — SurrealDB 3.1 is here. The first minor release in the 3.x series brings DiskANN, a comprehensive stability and security pass, and a refreshed release process.
 - **2026-05-07** · [Schema migrations in SurrealDB: A local dev workflow](../2026/05/schema-migrations-in-surrealdb-a-local-dev-workflow.md)  
   `tutorials` `featured` `releases` — Managing schema changes in SurrealDB shouldn't slow down your local development. This post walks through a practical migration workflow that keeps your database in sync as your project evolves.
 - **2026-04-21** · [What's new in Surrealist 3.8](../2026/04/whats-new-in-surrealist-3-8.md)  
@@ -181,21 +185,21 @@ _103 posts_
   `releases` `company` `featured` — This is the release you've been waiting for
 - **2025-02-04** · [Powering Drug Trial Innovation with SurrealDB](../2025/02/powering-drug-trial-innovation-with-surrealdb.md)  
   `community` `featured` — By leveraging SurrealDB, we built a system that simplifies the drug trial search process
-- **2025-01-31** · [Enhancing Retrieval-Augmented Generation with SurrealDB](../2025/01/enhancing-retrieval-augmented-generation-with-surrealdb.md)  
+- **2025-01-31** · [Enhancing retrieval-augmented generation with SurrealDB](../2025/01/enhancing-retrieval-augmented-generation-with-surrealdb.md)  
   `tutorials` `featured` `ai` — GraphRAG: Enhancing Retrieval-Augmented Generation with SurrealDB, Gemini and DeepSeek
 - **2025-01-31** · [Improving the documentation user experience](../2025/01/improving-the-documentation-user-experience.md)  
   `community` `featured` — We have made some improvements to the documentation user experience learn more
 - **2025-01-30** · [What's new in Surrealist 3.2](../2025/01/whats-new-in-surrealist-3-2.md)  
   `releases` `featured` — Explore the key features of the Surrealist 3.2 release
 - **2024-12-13** · [Your personal Surreal Sidekick](../2024/12/your-personal-surreal-sidekick.md)  
-  `releases` `featured` `company` — With the recent release of Surreal Cloud (beta) and the introduction of the Surreal Cloud panel in Surrealist, we introduced a brand new tool to help you increase your SurrealDB productivity.
+  `releases` `featured` `company` — With the recent release of SurrealDB Cloud (beta) and the introduction of the SurrealDB Cloud panel in Surrealist, we introduced a brand new tool to help you increase your SurrealDB productivity.
 - **2024-11-27** · [What's new in Surrealist 3.1](../2024/11/whats-new-in-surrealist-3-1.md)  
   `releases` `featured` — Explore the key features of the Surrealist 3.1 release
-- **2024-10-21** · [Aeon's Surreal Renaissance: Learn SurrealDB Through a Story](../2024/10/aeons-surreal-renaissance-learn-surrealdb-through-a-story.md)  
+- **2024-10-21** · [Aeon's Surreal Renaissance: Learn SurrealDB through a story](../2024/10/aeons-surreal-renaissance-learn-surrealdb-through-a-story.md)  
   `releases` `featured` — An immersive and interactive story that makes learning about SurrealDB as exciting as reading your favourite book.
 - **2024-10-15** · [SurrealDB Empowers Developers to Build Applications with the Launch of SurrealDB University](../2024/10/surrealdb-empowers-developers-to-build-applications-with-the-launch-of-surrealdb-university.md)  
   `releases` `featured` `company` — Access to this comprehensive course provides any developer with the education and documentation needed to quickly and successfully build applications on SurrealDB in as little as three hours
-- **2024-09-17** · [SurrealDB Delivers Future-Ready Database Technology for Developers and Enterprises with Release of SurrealDB 2.0 ](../2024/09/surrealdb-delivers-future-ready-database-technology-for-developers-and-enterprises-with-release-of-surrealdb-2-0.md)  
+- **2024-09-17** · [SurrealDB delivers future-ready database technology for developers and enterprises with release of SurrealDB 2.0 ](../2024/09/surrealdb-delivers-future-ready-database-technology-for-developers-and-enterprises-with-release-of-surrealdb-2-0.md)  
   `releases` `featured` `company` — Powerful new features introduce advanced stability, performance, security and data management capabilities to build enterprise-ready applications
 - **2024-09-17** · [Surrealist 3.0 is now available!](../2024/09/surrealist-3-0-is-now-available.md)  
   `releases` `featured` — We are excited to announce the latest major iteration of Surrealist

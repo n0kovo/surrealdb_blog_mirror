@@ -11,5 +11,5 @@ _Auto-generated index — 0 pages and 4 sub-sections._
 
 - **[Core](core/index.md)**
 - **[Errors](errors/index.md)** — The Java SDK provides a structured exception hierarchy for handling errors from SurrealDB.
-- **[Java Types](types/index.md)** — The Java SDK provides credential classes, enums, and helper types for authentication and data operations.
+- **[Java types](types/index.md)** — The Java SDK provides credential classes, enums, and helper types for authentication and data operations.
 - **[Values](values/index.md)**

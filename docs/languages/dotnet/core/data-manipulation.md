@@ -1,6 +1,6 @@
 ---
 position: 4
-title: Data Manipulation
+title: Data manipulation
 description: SurrealDB supports a number of methods for interacting with the database and performing CRUD operations.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/dotnet/core/data-manipulation.mdx"
 ---

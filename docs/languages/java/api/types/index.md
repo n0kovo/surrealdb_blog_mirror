@@ -1,6 +1,6 @@
 ---
 position: 1
-title: Java Types
+title: Java types
 description: The Java SDK provides credential classes, enums, and helper types for authentication and data operations.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/java/api/types/index.mdx"
 ---

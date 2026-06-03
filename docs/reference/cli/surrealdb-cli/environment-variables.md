@@ -204,11 +204,17 @@ These environment variables can be used to configure a SurrealDB server to confi
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">How many concurrent network requests can be handled at once</td>
     </tr>
-<tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_ML_BODY_SIZE`</td>
       <td scope="row" data-label="Default">4,398,046,511,104 (4 GiB)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP /ml endpoints</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_MCP_BODY_SIZE`*Since v3.1.0*</td>
+      <td scope="row" data-label="Default">4,194,304 (4 MiB)</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP `/mcp` endpoint. See [MCP](../../../build/ai-agents/mcp.md).</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_SQL_BODY_SIZE`</td>
@@ -251,6 +257,47 @@ These environment variables can be used to configure a SurrealDB server to confi
       <td scope="row" data-label="Default">1024 (1 KiB)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">The maximum HTTP body size of the HTTP /signin endpoints</td>
+    </tr>
+  </tbody>
+</table>
+
+### MCP config *Since v3.1.0*
+
+Used by the built-in [Model Context Protocol](../../../build/ai-agents/mcp.md) server (`/mcp` on `surreal start`, `surreal mcp` on stdio). Stdio namespace/database selection uses `SURREAL_MCP_NS` and `SURREAL_MCP_DB` on the [`mcp`](commands/mcp.md) subcommand.
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col" style={{width: '40%'}}>Environment variable</th>
+      <th scope="col" style={{width: '20%'}}>Default</th>
+      <th scope="col" style={{width: '20%'}}>Allowed values</th>
+      <th scope="col" style={{width: '20%'}}>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MCP_QUERY_TIMEOUT_SECS`</td>
+      <td scope="row" data-label="Default">60</td>
+      <td scope="row" data-label="Allowed values">Seconds (integer); `0` disables</td>
+      <td scope="row" data-label="Notes">Outer timeout on each MCP tool execution.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MCP_MAX_RESULT_BYTES`</td>
+      <td scope="row" data-label="Default">262,144 (256 KiB)</td>
+      <td scope="row" data-label="Allowed values">Bytes (integer); `0` disables</td>
+      <td scope="row" data-label="Notes">Maximum serialised tool / resource response size; larger results are truncated with a marker.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MCP_RUN_MAX_ARGS`</td>
+      <td scope="row" data-label="Default">64</td>
+      <td scope="row" data-label="Allowed values">A positive integer</td>
+      <td scope="row" data-label="Notes">Maximum arguments for a single `run` tool call.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MCP_PARAMS_MAX_KEYS`</td>
+      <td scope="row" data-label="Default">256</td>
+      <td scope="row" data-label="Allowed values">A positive integer</td>
+      <td scope="row" data-label="Notes">Maximum top-level keys in MCP parameter / data objects.</td>
     </tr>
   </tbody>
 </table>
@@ -878,8 +925,8 @@ surreal start --allow-all true
       <td scope="row" data-label="Command arg">`client-ip`</td>
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">none</td>
-      <td scope="row" data-label="Allowed values">none, socket, CF-Connecting-IP, Fly-Client-IP, True-Client-IP, X-Real-IP, X-Forwarded-For</td>
-      <td scope="row" data-label="Notes">The method of detecting the client's IP address.</td>
+      <td scope="row" data-label="Allowed values">none, socket, CF-Connecting-IP, Fly-Client-IP, True-Client-IP, X-Real-IP, X-Forwarded-For, Forwarded</td>
+      <td scope="row" data-label="Notes">The method of detecting the client's IP address. *Since v3.1.0* `Forwarded` parses the RFC 7239 `Forwarded` header (`for=` parameter).</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_DATABASE`</td>

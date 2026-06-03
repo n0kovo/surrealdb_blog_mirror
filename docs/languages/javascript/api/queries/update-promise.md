@@ -13,13 +13,13 @@ The `UpdatePromise` class provides a chainable interface for configuring UPDATE 
 
 **Source:** [query/update.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/update.ts)
 
-## Type parameters
+## Type Parameters
 
 - `T` - The result type
 - `I` - The input type for record data
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration methods
+## Configuration Methods
 
 ### `.content()` {#content}
 
@@ -84,7 +84,7 @@ updatePromise.merge(data)
     <tbody>
         <tr>
             <td>`data` <label label="required" /></td>
-            <td>`Partial&lt;Values&lt;I&gt;&gt;`</td>
+            <td>`Values&lt;I&gt;`</td>
             <td>Partial data to merge (only specified fields are updated).</td>
         </tr>
     </tbody>
@@ -170,7 +170,7 @@ updatePromise.patch(operations)
     <tbody>
         <tr>
             <td>`operations` <label label="required" /></td>
-            <td>`PatchOperation[]`</td>
+            <td>`Values&lt;I&gt;`</td>
             <td>JSON Patch operations to apply.</td>
         </tr>
     </tbody>
@@ -196,7 +196,7 @@ const user = await db.update(new RecordId('users', 'john'))
 Add a WHERE clause to conditionally update records.
 
 ```ts title="Method Syntax"
-updatePromise.where(condition)
+updatePromise.where(expr)
 ```
 
 #### Parameters
@@ -210,7 +210,7 @@ updatePromise.where(condition)
     </thead>
     <tbody>
         <tr>
-            <td>`condition` <label label="required" /></td>
+            <td>`expr` <label label="required" /></td>
             <td>`ExprLike`</td>
             <td>The condition expression (string or <a href="/docs/languages/javascript/api/utilities/expr">Expression</a> object).</td>
         </tr>
@@ -324,37 +324,6 @@ updatePromise.timeout(duration)
 
 ---
 
-### `.version()` {#version}
-
-Update at a specific version (for versioned storage engines).
-
-```ts title="Method Syntax"
-updatePromise.version(timestamp)
-```
-
-#### Parameters
-<table>
-    <thead>
-        <tr>
-            <th>Parameter</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>`timestamp` <label label="required" /></td>
-            <td>`<a href="/docs/languages/javascript/api/values/datetime">DateTime</a>`</td>
-            <td>The version timestamp.</td>
-        </tr>
-    </tbody>
-</table>
-
-#### Returns
-`UpdatePromise<T, I, J>` - Chainable promise
-
----
-
 ### `.json()` {#json}
 
 Return result as JSON string.
@@ -365,6 +334,28 @@ updatePromise.json()
 
 #### Returns
 `UpdatePromise<T, I, true>` - Promise returning JSON string
+
+---
+
+### `.compile()` {#compile}
+
+Compile the query into a `BoundQuery` without executing it.
+
+```ts title="Method Syntax"
+updatePromise.compile()
+```
+
+#### Returns
+`BoundQuery<[T]>` - The compiled query
+
+#### Example
+
+```ts
+const query = db.update(new Table('users'))
+    .merge({ status: 'active' })
+    .where('verified = true')
+    .compile();
+```
 
 ---
 
@@ -379,9 +370,9 @@ updatePromise.stream()
 #### Returns
 `AsyncIterableIterator` - Async iterator
 
-## Complete examples
+## Complete Examples
 
-### Basic updates
+### Basic Updates
 
 ```ts
 
@@ -402,7 +393,7 @@ const user = await db.update(new RecordId('users', 'john'))
     });
 ```
 
-### Bulk updates
+### Bulk Updates
 
 ```ts
 // Update all users matching condition
@@ -413,7 +404,7 @@ const updated = await db.update(new Table('users'))
 console.log(`Updated ${updated.length} users`);
 ```
 
-### Conditional updates
+### Conditional Updates
 
 ```ts
 // Update only if condition is met
@@ -424,7 +415,7 @@ const users = await db.update(new Table('users'))
     });
 ```
 
-### Complex merge
+### Complex Merge
 
 ```ts
 const user = await db.update(new RecordId('users', 'john'))
@@ -441,7 +432,7 @@ const user = await db.update(new RecordId('users', 'john'))
     });
 ```
 
-### Tracking changes
+### Tracking Changes
 
 ```ts
 const diff = await db.update(new RecordId('users', 'john'))
@@ -455,7 +446,7 @@ console.log('Changed fields:', diff);
 // { email: 'new@example.com', age: 31 }
 ```
 
-### Batch update with stream
+### Batch Update with Stream
 
 ```ts
 const updates = db.update(new Table('users'))
@@ -467,7 +458,7 @@ for await (const user of updates.stream()) {
 }
 ```
 
-## Difference between methods
+## Difference Between Methods
 
 ### `.content()` vs `.merge()` vs `.replace()`
 
@@ -492,7 +483,7 @@ await db.update(recordId).replace({
 // Result: Replaces specified fields
 ```
 
-## Chaining pattern
+## Chaining Pattern
 
 ```ts
 const result = await db.update(new Table('users'))
@@ -502,7 +493,7 @@ const result = await db.update(new Table('users'))
     .timeout(Duration.parse('5s'));
 ```
 
-## See also
+## See Also
 
 - [SurrealQueryable.update()](../core/surreal-queryable.md#update) - Method that returns UpdatePromise
 - [UpsertPromise](upsert-promise.md) - Insert or update

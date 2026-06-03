@@ -15,7 +15,7 @@ The `BoundQuery` class represents a parameterized SurrealQL query with bound var
 
 **Source:** [utils/bound-query.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/utils/bound-query.ts)
 
-## Type parameters
+## Type Parameters
 
 - `R extends unknown[]` - Array of result types for the query
 
@@ -164,52 +164,6 @@ query.append` WHERE status = ${status}`;
 
 ---
 
-### `.bind()` {#bind}
-
-Add or update a parameter binding.
-
-```ts title="Method Syntax"
-query.bind(key, value)
-```
-
-#### Parameters
-<table>
-    <thead>
-        <tr>
-            <th>Parameter</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>`key` <label label="required" /></td>
-            <td>`string`</td>
-            <td>Parameter name (without $ prefix).</td>
-        </tr>
-        <tr>
-            <td>`value` <label label="required" /></td>
-            <td>`unknown`</td>
-            <td>Parameter value.</td>
-        </tr>
-    </tbody>
-</table>
-
-#### Returns
-`this` - Chainable
-
-#### Example
-
-```ts
-const query = new BoundQuery('SELECT * FROM users WHERE age > $age');
-query.bind('age', 18);
-query.bind('status', 'active');
-
-const [users] = await db.query(query).collect();
-```
-
----
-
 ### `.toString()` {#tostring}
 
 Get the query string.
@@ -221,9 +175,9 @@ query.toString()
 #### Returns
 `string` - The query string
 
-## Complete examples
+## Complete Examples
 
-### Basic parameterized query
+### Basic Parameterized Query
 
 ```ts
 
@@ -238,7 +192,7 @@ const query = new BoundQuery(
 const [users] = await db.query(query).collect();
 ```
 
-### Building queries incrementally
+### Building Queries Incrementally
 
 ```ts
 // Start with base query
@@ -262,7 +216,7 @@ query.append(' ORDER BY created_at DESC LIMIT $limit', { limit: 10 });
 const [products] = await db.query(query).collect();
 ```
 
-### Query builder pattern
+### Query Builder Pattern
 
 ```ts
 class QueryBuilder {
@@ -298,7 +252,7 @@ const query = builder
 const [users] = await db.query(query).collect();
 ```
 
-### Reusable query fragments
+### Reusable Query Fragments
 
 ```ts
 // Define reusable fragments
@@ -314,7 +268,7 @@ query.append(verifiedFilter);
 const [users] = await db.query(query).collect();
 ```
 
-### Complex multi-statement query
+### Complex Multi-Statement Query
 
 ```ts
 const userId = new RecordId('users', 'john');
@@ -346,7 +300,7 @@ query.append('COMMIT TRANSACTION;');
 await db.query(query).collect();
 ```
 
-### Pagination helper
+### Pagination Helper
 
 ```ts
 function paginatedQuery(
@@ -377,9 +331,9 @@ const query = paginatedQuery('users', 2, 20, { status: 'active' });
 const [users] = await db.query(query).collect();
 ```
 
-## Best practices
+## Best Practices
 
-### 1. Use surql template instead
+### 1. Use surql Template Instead
 
 For most cases, the `surql` template is easier:
 
@@ -394,7 +348,7 @@ const query = new BoundQuery(
 );
 ```
 
-### 2. Validate parameter names
+### 2. Validate Parameter Names
 
 ```ts
 // Good: Consistent parameter naming
@@ -410,7 +364,7 @@ const query = new BoundQuery(
 );
 ```
 
-### 3. Use append() for dynamic queries
+### 3. Use append() for Dynamic Queries
 
 ```ts
 // Good: Incremental building
@@ -426,7 +380,7 @@ if (filter) {
 }
 ```
 
-## See also
+## See Also
 
 - [surql](surql.md) - Template tag for queries
 - [Query](../queries/query.md) - Query execution class

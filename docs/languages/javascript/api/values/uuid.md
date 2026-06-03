@@ -59,7 +59,7 @@ const uuid = new Uuid(bytes);
 const copy = new Uuid(uuid);
 ```
 
-## Static methods
+## Static Methods
 
 ### `Uuid.v4()` {#v4}
 
@@ -113,44 +113,7 @@ const id2 = Uuid.v7();
 // id1 < id2 (lexicographically)
 ```
 
----
-
-### `Uuid.parse(string)` {#parse}
-
-Parse a UUID from its string representation.
-
-```ts title="Syntax"
-Uuid.parse(str)
-```
-
-#### Parameters
-<table>
-    <thead>
-        <tr>
-            <th>Parameter</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>`str` <label label="required" /></td>
-            <td>`string`</td>
-            <td>UUID string in standard format.</td>
-        </tr>
-    </tbody>
-</table>
-
-#### Returns
-`Uuid` - Parsed UUID
-
-#### Example
-
-```ts
-const uuid = Uuid.parse('550e8400-e29b-41d4-a716-446655440000');
-```
-
-## Instance methods
+## Instance Methods
 
 ### `.toString()` {#tostring}
 
@@ -231,9 +194,9 @@ uuid.equals(other)
 #### Returns
 `boolean` - True if equal
 
-## Complete examples
+## Complete Examples
 
-### Session management
+### Session Management
 
 ```ts
 
@@ -246,14 +209,14 @@ const session = await db.create(new RecordId('sessions', sessionId))
     .content({
         user: userId,
         created_at: DateTime.now(),
-        expires_at: DateTime.now().plus(Duration.parse('24h')),
+        expires_at: DateTime.now().plus(new Duration('24h')),
         ip_address: '192.168.1.1'
     });
 
 console.log('Session ID:', sessionId.toString());
 ```
 
-### Time-ordered records
+### Time-Ordered Records
 
 ```ts
 // Use v7 for time-series data
@@ -274,7 +237,7 @@ for (let i = 0; i < 100; i++) {
 // Events are naturally sorted by creation time
 ```
 
-### Unique identifiers
+### Unique Identifiers
 
 ```ts
 // Generate unique IDs for various purposes
@@ -290,7 +253,7 @@ await db.create(new Table('requests')).content({
 });
 ```
 
-### API keys
+### API Keys
 
 ```ts
 // Generate API keys
@@ -308,7 +271,7 @@ await db.create(new Table('api_keys')).content({
 });
 ```
 
-### Distributed system ids
+### Distributed System IDs
 
 ```ts
 // Use UUID v7 for distributed systems (sortable)
@@ -330,7 +293,7 @@ const orderId = IdGenerator.generateOrderId();
 const txnId = IdGenerator.generateTransactionId();
 ```
 
-### File upload tracking
+### File Upload Tracking
 
 ```ts
 // Track file uploads with UUIDs
@@ -349,13 +312,13 @@ async function uploadFile(file: File): Promise<string> {
 }
 ```
 
-### Parsing and validation
+### Parsing and Validation
 
 ```ts
 // Parse UUID from user input
 function validateUuid(input: string): Uuid | null {
     try {
-        return Uuid.parse(input);
+        return new Uuid(input);
     } catch (error) {
         console.error('Invalid UUID format');
         return null;
@@ -370,7 +333,7 @@ if (uuid) {
 }
 ```
 
-### Batch ID generation
+### Batch ID Generation
 
 ```ts
 // Generate multiple UUIDs
@@ -390,7 +353,7 @@ const sortableIds = generateBatchIds(100, true); // 100 time-ordered UUIDs
 
 ## UUID v4 vs UUID v7
 
-### UUID v4 (random)
+### UUID v4 (Random)
 
 - **Pros:** Truly random, no predictability
 - **Cons:** Not sortable, no time information
@@ -400,7 +363,7 @@ const sortableIds = generateBatchIds(100, true); // 100 time-ordered UUIDs
 const randomId = Uuid.v4();
 ```
 
-### UUID v7 (time-ordered)
+### UUID v7 (Time-ordered)
 
 - **Pros:** Sortable, includes timestamp, better for database indexes
 - **Cons:** Slightly predictable (timestamp component)
@@ -410,9 +373,9 @@ const randomId = Uuid.v4();
 const timeOrderedId = Uuid.v7();
 ```
 
-## Best practices
+## Best Practices
 
-### 1. Choose the right version
+### 1. Choose the Right Version
 
 ```ts
 // Good: v7 for time-series and events
@@ -432,19 +395,19 @@ const userId = new RecordId('users', Uuid.v7());
 await db.create(userId).content(userData);
 ```
 
-### 3. Validate user input
+### 3. Validate User Input
 
 ```ts
 // Good: Validate before use
 try {
-    const uuid = Uuid.parse(userInput);
+    const uuid = new Uuid(userInput);
     await processUuid(uuid);
 } catch (error) {
     return { error: 'Invalid UUID format' };
 }
 ```
 
-### 4. Store as Uuid type
+### 4. Store as UUID Type
 
 ```ts
 // Good: Store as UUID
@@ -458,9 +421,9 @@ await db.create(table).content({
 });
 ```
 
-## See also
+## See Also
 
 - [RecordId](record-id.md) - Record identifiers
 - [Data Types Overview](index.md) - All custom data types
 - [Query Builders](../queries/index.md) - Using Uuid in queries
-- [SurrealQL UUID](../../../../reference/query-language/language-primitives/data-types/uuids.md) - Database UUID type
+- [SurrealQL UUID](https://surrealdb.com/docs/surrealql/datamodel/uuid) - Database UUID type

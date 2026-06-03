@@ -13,12 +13,12 @@ The `InsertPromise` class provides a chainable interface for configuring INSERT 
 
 **Source:** [query/insert.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/insert.ts)
 
-## Type parameters
+## Type Parameters
 
 - `T` - The result type
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration methods
+## Configuration Methods
 
 ### `.relation()` {#relation}
 
@@ -188,6 +188,26 @@ insertPromise.json()
 
 ---
 
+### `.compile()` {#compile}
+
+Compile the query into a `BoundQuery` without executing it.
+
+```ts title="Method Syntax"
+insertPromise.compile()
+```
+
+#### Returns
+`BoundQuery<[T]>` - The compiled query
+
+#### Example
+
+```ts
+const query = db.insert(records)
+    .compile();
+```
+
+---
+
 ### `.stream()` {#stream}
 
 Stream results as records are inserted.
@@ -199,9 +219,9 @@ insertPromise.stream()
 #### Returns
 `AsyncIterableIterator` - Async iterator
 
-## Complete examples
+## Complete Examples
 
-### Basic insertion
+### Basic Insertion
 
 ```ts
 
@@ -222,7 +242,7 @@ const users = await db.insert([
 ]);
 ```
 
-### Insert into table
+### Insert into Table
 
 ```ts
 // Let database generate IDs
@@ -232,7 +252,7 @@ const users = await db.insert(new Table('users'), [
 ]);
 ```
 
-### Ignore duplicates
+### Ignore Duplicates
 
 ```ts
 // Skip existing records without error
@@ -244,7 +264,7 @@ const users = await db.insert([
 console.log(`Inserted ${users.length} new users`);
 ```
 
-### Bulk insert with streaming
+### Bulk Insert with Streaming
 
 ```ts
 const largeDataset = generateThousandsOfRecords();
@@ -258,7 +278,7 @@ for await (const record of db.insert(largeDataset).stream()) {
 }
 ```
 
-### Insert relations (edges)
+### Insert Relations (Edges)
 
 ```ts
 const likes = await db.insert([
@@ -277,7 +297,7 @@ const likes = await db.insert([
 ]).relation();
 ```
 
-### Optimized insertion
+### Optimized Insertion
 
 ```ts
 // Don't wait for return values
@@ -286,19 +306,19 @@ await db.insert(logEntries)
 // Faster execution when you don't need the results
 ```
 
-### Insert with timeout
+### Insert with Timeout
 
 ```ts
 const users = await db.insert(largeDataset)
     .timeout(Duration.parse('30s'));
 ```
 
-### Error handling
+### Error Handling
 
 ```ts
 try {
     const users = await db.insert([
-        { id: new RecordId('users', 'existing'), name: 'main' }
+        { id: new RecordId('users', 'existing'), name: 'Test' }
     ]);
 } catch (error) {
     if (error instanceof ResponseError) {
@@ -306,13 +326,13 @@ try {
         
         // Retry with ignore
         const users = await db.insert([
-            { id: new RecordId('users', 'existing'), name: 'main' }
+            { id: new RecordId('users', 'existing'), name: 'Test' }
         ]).ignore();
     }
 }
 ```
 
-### Batch processing
+### Batch Processing
 
 ```ts
 const BATCH_SIZE = 100;
@@ -325,7 +345,7 @@ for (let i = 0; i < allUsers.length; i += BATCH_SIZE) {
 }
 ```
 
-## Vs CREATE
+## vs CREATE
 
 ### When to use INSERT vs CREATE
 
@@ -342,7 +362,7 @@ const users = await db.insert([
 ]);
 ```
 
-## Chaining pattern
+## Chaining Pattern
 
 ```ts
 const result = await db.insert(records)
@@ -351,7 +371,7 @@ const result = await db.insert(records)
     .timeout(Duration.parse('10s'));
 ```
 
-## See also
+## See Also
 
 - [SurrealQueryable.insert()](../core/surreal-queryable.md#insert) - Method that returns InsertPromise
 - [CreatePromise](create-promise.md) - Single record creation

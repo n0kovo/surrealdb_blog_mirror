@@ -1,10 +1,10 @@
 # All Documentation Pages
 
-_795 pages_  
+_921 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
-  This page aims to give details about some of the core architecture choices of SurrealDB, including details about the different layers which make up a SurrealDB instance, or SurrealDB cluster.
+  How SurrealDB separates compute from storage, and how that design supports embedded, single-node, distributed, and managed deployments.
 - [Agent rules](build/ai-agents/agent-rules.md)
   Building AI agents and agent rules with SurrealDB.
 - [Agent Skills](build/ai-agents/agent-skills.md)
@@ -12,11 +12,11 @@ _795 pages_
 - [AI frameworks](build/ai-agents/ai-frameworks.md)
   Building AI agents and agent rules with SurrealDB.
 - [Why SurrealDB for AI agents](build/ai-agents/index.md)
-  Learn why SurrealDB suits AI agents: durable state, graph memory, SurrealQL and HTTP tools, and vector retrieval.
+  Learn why SurrealDB suits AI agents: durable state, graph memory, SurrealQL and HTTP tools, and vector retrieval
+- [Model Context Protocol (MCP)](build/ai-agents/mcp.md)
+  Connect AI agents and IDEs to SurrealDB through the built-in MCP server over HTTP or stdio.
 - [Deployment](build/deployment/index.md)
-  Deploy SurrealDB using SurrealDB Cloud or self-hosted.
-- [Observability](build/deployment/observability/observability.md)
-  In SurrealDB, metrics and traces are available if enabled.
+  Deployment models for SurrealDB — managed cloud, single-node RocksDB, multi-node SurrealDS, and embedded runtimes — and how to choose between them.
 - [Amazon EKS](build/deployment/self-hosted/amazon-eks.md)
   Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that eliminates the need to install.
 - [Azure AKS](build/deployment/self-hosted/azure-aks.md)
@@ -374,15 +374,15 @@ _795 pages_
 - [Using SurrealDB to prove football statistics.](labs/using-surrealdb-to-prove-football-statistics.md)
 - [Handle authentication](languages/dotnet/core/authentication.md)
   In this section, we will walk you through the process of authenticating users and securing your SurrealDB database.
-- [Connection Strings](languages/dotnet/core/connection-strings.md)
+- [Connection strings](languages/dotnet/core/connection-strings.md)
   The .NET SDK for SurrealDB supports the familiar concept of ConnectionString.
 - [Create a new connection](languages/dotnet/core/create-a-new-connection.md)
   The SurrealDB SDK for .NET enables simple and advanced querying of a remote or embedded database.
-- [Data Manipulation](languages/dotnet/core/data-manipulation.md)
+- [Data manipulation](languages/dotnet/core/data-manipulation.md)
   SurrealDB supports a number of methods for interacting with the database and performing CRUD operations.
-- [Dependency Injection](languages/dotnet/core/dependency-injection.md)
+- [Dependency injection](languages/dotnet/core/dependency-injection.md)
   The SurrealDB SDK for .NET also supports the concept of Dependency Injection pattern.
-- [SDK Concepts](languages/dotnet/core/index.md)
+- [SDK concepts](languages/dotnet/core/index.md)
   The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
 - [Logging](languages/dotnet/core/logging.md)
   In case you need to understand what your application is doing, the SurrealDB SDK has a built-in logging mechanism.
@@ -396,7 +396,7 @@ _795 pages_
   The .NET SDK supports atomic transactions for executing multiple queries that succeed or fail together.
 - [Run SurrealQL queries](languages/dotnet/core/writing-surrealql.md)
   SurrealDB supports a number of methods for interacting with the database and performing CRUD operations.
-- [Data Types](languages/dotnet/data-types.md)
+- [Data types](languages/dotnet/data-types.md)
   The .NET SDK translates all datatypes native to SurrealQL into either datatypes native to .NET, or a custom implementation. This document describes all datatypes, and links to their respective documentation.
 - [Embedding](languages/dotnet/embedding.md)
   The documentation for embedding SurrealDB within .NET.
@@ -534,7 +534,7 @@ _795 pages_
   The Transaction class provides methods for executing queries within an atomic transaction.
 - [Errors](languages/java/api/errors/index.md)
   The Java SDK provides a structured exception hierarchy for handling errors from SurrealDB.
-- [Java Types](languages/java/api/types/index.md)
+- [Java types](languages/java/api/types/index.md)
   The Java SDK provides credential classes, enums, and helper types for authentication and data operations.
 - [Datetime](languages/java/api/values/datetime.md)
   SurrealDB datetime values map to Java's ZonedDateTime class.
@@ -614,13 +614,13 @@ _795 pages_
   UpdatePromise provides chainable methods for configuring UPDATE operations.
 - [UpsertPromise](languages/javascript/api/queries/upsert-promise.md)
   UpsertPromise provides chainable methods for configuring UPSERT operations (insert or replace).
-- [TypeScript Types](languages/javascript/api/types/index.md)
+- [TypeScript types](languages/javascript/api/types/index.md)
   TypeScript type definitions and interfaces used throughout the SDK.
 - [BoundQuery](languages/javascript/api/utilities/bound-query.md)
   Parameterized query class for safe query composition.
 - [equals](languages/javascript/api/utilities/equals.md)
   Deep equality comparison for SurrealDB values and JavaScript types.
-- [Escape Functions](languages/javascript/api/utilities/escape.md)
+- [Escape functions](languages/javascript/api/utilities/escape.md)
   Functions for escaping identifiers and values in SurrealQL queries.
 - [expr](languages/javascript/api/utilities/expr.md)
   Type-safe expression builder for constructing SurrealQL conditions.
@@ -636,7 +636,7 @@ _795 pages_
   The FileRef class represents a reference to a file stored in SurrealDB.
 - [Geometry](languages/javascript/api/values/geometry.md)
   Geometric and spatial data types for location-based applications.
-- [Data Types](languages/javascript/api/values/index.md)
+- [Data types](languages/javascript/api/values/index.md)
   Type mapping between SurrealQL and JavaScript, and custom data type classes.
 - [Range](languages/javascript/api/values/range.md)
   Generic range values for numeric, datetime, and other ordered types.
@@ -692,13 +692,13 @@ _795 pages_
   SurrealDB has official SDKs for many languages, along with non-official SDKs created by the community.
 - [Authentication](languages/php/core/authentication.md)
   Learn how to authenticate users and secure the database with the SurrealDB PHP SDK.
-- [Data Querying](languages/php/core/data-querying.md)
+- [Data querying](languages/php/core/data-querying.md)
   Learn how to interact with the database and perform CRUD operations using the SurrealDB SDK for PHP.
-- [SDK Concepts](languages/php/core/index.md)
+- [SDK concepts](languages/php/core/index.md)
   Learn the core concepts of the SurrealDB SDK for PHP. Understand how to connect to a SurrealDB instance, manage authentication, and interact with the database.
 - [Initialization](languages/php/core/initialization.md)
   Learn how to initialize the SurrealDB SDK for PHP. Understand how to connect to a SurrealDB instance, manage authentication, and interact with the database.
-- [Data Types](languages/php/data-types.md)
+- [Data types](languages/php/data-types.md)
   The SurrealDB SDK for PHP enables simple and advanced querying of a remote database.
 - [PHP SDK](languages/php/index.md)
   The SurrealDB SDK for PHP enables simple and advanced querying of a remote database.
@@ -768,7 +768,7 @@ _795 pages_
   The Surreal and AsyncSurreal factory functions are the main entry points for connecting to and interacting with a SurrealDB instance from Python.
 - [Errors](languages/python/api/errors/index.md)
   Error classes for handling different types of failures in the Python SDK.
-- [Python Types](languages/python/api/types/index.md)
+- [Python types](languages/python/api/types/index.md)
   Type definitions and dataclasses used throughout the Python SDK.
 - [Datetime](languages/python/api/values/datetime.md)
   Datetime wrapper for SurrealDB datetime values.
@@ -902,10 +902,6 @@ _795 pages_
   The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
 - [Quick start](languages/rust/start.md)
   The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
-- [Getting started](learn/context/getting-started.md)
-  Create a Spectron context in Surrealist, try the Playground, inspect memories, add knowledge, and call the API with a key.
-- [Overview](learn/context/index.md)
-  A persistent agent memory layer built on SurrealDB.
 - [Common patterns](learn/data-models/document/common-patterns.md)
   Map document-database concepts to SurrealDB, compare SurrealQL with MongoDB-style operations, and find resources for CRUD and migration.
 - [Nested objects and arrays](learn/data-models/document/nested-objects-and-arrays.md)
@@ -1101,7 +1097,7 @@ _795 pages_
 - [Tokens & JWTs](learn/security/authorization/tokens-and-jwts.md)
   How SurrealDB authenticates clients with JWTs, DEFINE ACCESS TYPE JWT, symmetric and asymmetric verification, claims as session variables, and RECORD access for database-managed sign-in.
 - [Security best practices](learn/security/best-practices/security-best-practices.md)
-  This guide outlines some key security best practices for using SurrealDB 2.0. While SurrealDB offers powerful and flexible features to support you in meeting your desired security standards, the use that you make of those features will ultimately determine whether or not you meet them.
+  This guide outlines some key security best practices for using SurrealDB 3.0. While SurrealDB offers powerful and flexible features to support you in meeting your desired security standards, the use that you make of those features will ultimately determine whether or not you meet them.
 - [Troubleshooting](learn/security/best-practices/troubleshooting.md)
   This page provides some troubleshooting advice to support users in addressing issues either caused by or involved in the usage of specific security features provided by SurrealDB.
 - [Security](learn/security/index.md)
@@ -1150,6 +1146,26 @@ _795 pages_
   SurrealDB Enterprise Edition support tiers: Standard, Premium, and Mission-Critical coverage and escalation.
 - [Upgrading from Community](manage/enterprise/upgrading-from-community.md)
   SurrealDB Enterprise Edition: features, licensing, security, and support.
+- [Audit logging](manage/observability/audit-logging.md)
+  The Enterprise audit log pipeline: events captured, record shape, rotation, hash chaining, redaction and pipeline self-metrics.
+- [Configuration reference](manage/observability/configuration.md)
+  Every observability, audit log and slow-query log environment variable, plus recommended configurations for local, production and multi-tenant deployments.
+- [Enterprise observability](manage/observability/enterprise-observability.md)
+  Metrics, logs, and traces in SurrealDB Enterprise versus Community — OTLP opt-ins, audit and slow-query pipelines, and SurrealDS cluster instruments.
+- [Observability](manage/observability/index.md)
+  Logging, Prometheus pull, OTLP push, Enterprise pipelines, metric catalogues, and Tokio console — production visibility for SurrealDB Community and Enterprise.
+- [Logging](manage/observability/logging.md)
+  Server log levels, text and JSON formats, file and socket output, slow-query logging, and OpenTelemetry log levels.
+- [Metrics reference](manage/observability/metrics.md)
+  Access paths, label catalogue and the complete metric reference for SurrealDB Community and Enterprise, with a migration table from 3.0.
+- [Observability (metrics and Prometheus)](manage/observability/observability.md)
+  Unified OpenTelemetry metrics, `GET /metrics`, scraper authentication, naming, migration, and behaviour common to Community and Enterprise.
+- [Slow-query logging](manage/observability/slow-query-logging.md)
+  The Enterprise slow-query log pipeline: how a query qualifies, record shape, rotation, hash chaining, redaction and pipeline self-metrics.
+- [Telemetry (OTLP)](manage/observability/telemetry.md)
+  OTLP push export — metrics, logs, traces, intervals, backward-compatible instruments, and differences before and after SurrealDB 3.1.
+- [Tokio console](manage/observability/tokio-console.md)
+  Inspect SurrealDB’s async runtime with the Tokio console — tasks, polls, and bottlenecks separate from OpenTelemetry metrics and traces.
 - [embed_schema! macro](manage/schema-migration/embed-schema-macro.md)
   The embed_schema! macro bakes your .surql schema files into the Rust binary at compile time, so schema is always in sync with the application that ships it.
 - [Existing databases](manage/schema-migration/getting-started/existing-databases.md)
@@ -1181,11 +1197,11 @@ _795 pages_
 - [Self-hosted management](manage/self-hosted/index.md)
   Operate a self-hosted SurrealDB deployment: configuration, backups, monitoring, and upgrades.
 - [Monitoring & observability](manage/self-hosted/monitoring-and-observability.md)
-  Health checks, OpenTelemetry metrics and traces, and integration with common observability stacks.
+  Health checks, OpenTelemetry metrics and traces, audit logs and slow-query logs, and integration with common observability stacks.
 - [Upgrades & patching](manage/self-hosted/upgrades-and-patching.md)
   Upgrade SurrealDB safely: binary replacement, surreal fix for major versions, migrations, and cluster rolling upgrades.
 - [SurrealQL Formatter](reference/cli/formatter/overview.md)
-  The surreal fmt command automatically formats SurrealQL files for consistent style and readability.
+  The surqlfmt command automatically formats SurrealQL files for consistent style and readability.
 - [CLI Reference](reference/cli/index.md)
   Reference documentation for the SurrealDB command-line interface and the SurrealQL formatter.
 - [export](reference/cli/surrealdb-cli/commands/export.md)
@@ -1200,6 +1216,8 @@ _795 pages_
   How the SurrealDB CLI is organised into subcommands, with links to each command’s flags and examples.
 - [isready](reference/cli/surrealdb-cli/commands/isready.md)
   A command that determines whether a SurrealDB server has started and is able to accept connections.
+- [mcp](reference/cli/surrealdb-cli/commands/mcp.md)
+  Start SurrealDB's Model Context Protocol server over stdio for local IDE and agent integrations.
 - [ml](reference/cli/surrealdb-cli/commands/ml.md)
   The ML command can be used to import and export machine learning models.
 - [module](reference/cli/surrealdb-cli/commands/module.md)
@@ -1520,31 +1538,265 @@ _795 pages_
   SurrealDB exposes an HTTP-based REST API for executing queries, managing authentication, and performing CRUD operations.
 - [RPC protocol](reference/rest-api/rpc-protocol.md)
   The RPC protocol allows for easy bidirectional communication with SurrealDB.
+- [SurrealDB Cloud](running/cloud.md)
+  Get a free managed SurrealDB instance with an email sign-in—persistent data without installing the server yourself.
+- [Docker](running/docker.md)
+  Use this tutorial to get started with SurrealDB from within Docker.
+- [File-backed](running/file-backed.md)
+  For the purposes of getting started with SurrealDB quickly, we will start a RocksDB database which persists data on the filesystem.
+- [In-memory](running/in-memory.md)
+  For the purposes of getting started with SurrealDB quickly, we will start an in-memory database which does not persist data on shutdown.
+- [Installation](running/installation/index.md)
+  Install the SurrealDB server on your machine: macOS, Windows, Linux, and nightly builds.
+- [Linux](running/installation/linux.md)
+  Use this tutorial to install SurrealDB on Linux or Unix operating systems using the SurrealDB install script.
+- [macOS](running/installation/macos.md)
+  Use this tutorial to install SurrealDB on macOS, using the SurrealDB install script, or using the third-party Homebrew package manager.
+- [Nightly](running/installation/nightly.md)
+  If you prefer developing on the bleeding edge, you can follow this tutorial to install SurrealDB Nightly. The nightly version is built and released every night at midnight.
+- [Windows](running/installation/windows.md)
+  Use this tutorial to install SurrealDB on Windows using the SurrealDB install script, or using third-party package managers like Chocolatey or Scoop.
+- [Multi-node](running/multi-node.md)
+  For highly-available and highly-scalable setups, SurrealDB can be run on top of a TiKV cluster, with the ability to horizontally scale to very large datasets.
+- [Overview](running/overview.md)
+  Ways to run SurrealDB—from a browser sandbox to a managed cloud instance to installing on your own hardware.
+- [Surrealist Sandbox](running/sandbox.md)
+  Try SurrealDB in the browser with the Surrealist Sandbox—no install and no account required.
 - [Sample queries](sample-queries.md)
   Learn how to get started with SurrealDB
-- [SurrealDB Cloud](self-hosted/cloud.md)
-  Get a free managed SurrealDB instance with an email sign-in—persistent data without installing the server yourself.
-- [Docker](self-hosted/docker.md)
-  Use this tutorial to get started with SurrealDB from within Docker.
-- [File-backed](self-hosted/file-backed.md)
-  For the purposes of getting started with SurrealDB quickly, we will start a RocksDB database which persists data on the filesystem.
-- [In-memory](self-hosted/in-memory.md)
-  For the purposes of getting started with SurrealDB quickly, we will start an in-memory database which does not persist data on shutdown.
-- [Installation](self-hosted/installation/index.md)
-  Install the SurrealDB server on your machine: macOS, Windows, Linux, and nightly builds.
-- [Linux](self-hosted/installation/linux.md)
-  Use this tutorial to install SurrealDB on Linux or Unix operating systems using the SurrealDB install script.
-- [macOS](self-hosted/installation/macos.md)
-  Use this tutorial to install SurrealDB on macOS, using the SurrealDB install script, or using the third-party Homebrew package manager.
-- [Nightly](self-hosted/installation/nightly.md)
-  If you prefer developing on the bleeding edge, you can follow this tutorial to install SurrealDB Nightly. The nightly version is built and released every night at midnight.
-- [Windows](self-hosted/installation/windows.md)
-  Use this tutorial to install SurrealDB on Windows using the SurrealDB install script, or using third-party package managers like Chocolatey or Scoop.
-- [Multi-node](self-hosted/multi-node.md)
-  For highly-available and highly-scalable setups, SurrealDB can be run on top of a TiKV cluster, with the ability to horizontally scale to very large datasets.
-- [Overview](self-hosted/overview.md)
-  Ways to run SurrealDB—from a browser sandbox to a managed cloud instance to installing on your own hardware.
-- [Surrealist Sandbox](self-hosted/sandbox.md)
-  Try SurrealDB in the browser with the Surrealist Sandbox—no install and no account required.
+- [Coding agent with project memory](spectron/cookbooks/build/coding-agent-with-project-memory.md)
+  Repository scoped sessions and MCP.
+- [Customer support agent](spectron/cookbooks/build/customer-support-agent.md)
+  Ticket-linked memory with authoritative knowledge policies.
+- [Long-running research agent](spectron/cookbooks/build/long-running-research-agent.md)
+  Sessions across days with reflection.
+- [Multi-agent shared memory](spectron/cookbooks/build/multi-agent-shared-memory.md)
+  Supervisors, reflection, and shared scopes.
+- [Personal AI assistant](spectron/cookbooks/build/personal-ai-assistant.md)
+  End-user scoped memory with profiles and preferences.
+- [Overview](spectron/cookbooks/index.md)
+  Opinionated recipes and migration guides.
+- [Migrate from LangMem](spectron/cookbooks/migrate/from-langmem.md)
+  Moving LangChain memory to Spectron.
+- [Migrate from Mem0](spectron/cookbooks/migrate/from-mem0.md)
+  Mapping concepts and incremental migration.
+- [Migrate from a vector store](spectron/cookbooks/migrate/from-vector-store.md)
+  From chunk-only search to structured memory.
+- [Migrate from Zep](spectron/cookbooks/migrate/from-zep.md)
+  Mapping Zep concepts to Spectron's unified graph.
+- [Adding memory to an existing app](spectron/cookbooks/patterns/adding-memory-to-existing-app.md)
+  Introduce turns without replacing your LLM client.
+- [Knowledge-grounded agents](spectron/cookbooks/patterns/knowledge-grounded-agents.md)
+  Combine authoritative knowledge retrieval with experiential memory.
+- [Reflection loops](spectron/cookbooks/patterns/reflection-loops.md)
+  Scheduled or triggered reflect jobs.
+- [Stateful workflows](spectron/cookbooks/patterns/stateful-workflows.md)
+  Diff-friendly state for workflow UIs.
+- [User memory in chat](spectron/cookbooks/patterns/user-memory-in-chat.md)
+  Per-user scopes and profile injection.
+- [Coherence, retrieval, and cost tiers](spectron/index/architecture/coherence-retrieval-and-tiers.md)
+  Five coherence dimensions, hybrid structural retrieval, and the four-tier query ladder.
+- [Eight pillars and six categories](spectron/index/architecture/eight-pillars-and-categories.md)
+  The primitives Spectron operationalises – pillars of agent memory and typed experiential sub-stores.
+- [Spectron glossary](spectron/index/architecture/glossary.md)
+  Alphabetical definitions of terms used across Spectron architecture and memory docs.
+- [Principles and goals](spectron/index/architecture/principles-and-goals.md)
+  What Spectron is built to do – and what it deliberately is not.
+- [Surface, models, and security](spectron/index/architecture/surface-security-and-models.md)
+  HTTP ingest and read verbs, integrations, model hooks, and security properties.
+- [Traces and memory evolution](spectron/index/architecture/traces-and-evolution.md)
+  Graph-resident traces, reflection, elaboration, consolidation, and semantic response reuse.
+- [Tri-temporal model](spectron/index/architecture/tri-temporal-model.md)
+  System time, known time, and valid time – supersession, aging, and explicit forget.
+- [Overview](spectron/index/index.md)
+  Principles, architecture, quickstarts, and mental model for Spectron – memory and knowledge for AI agents on SurrealDB.
+- [Contexts and scope](spectron/index/mental-model/contexts-and-scope.md)
+  How Contexts isolate tenants and how scope tags partition memory within a Context.
+- [Memory categories](spectron/index/mental-model/memory-categories.md)
+  Episodic raw turns plus five extracted experiential categories – identity, knowledge, context, instructions, uncertainty.
+- [Provenance and traceability](spectron/index/mental-model/provenance-and-traceability.md)
+  The source object on every record – kinds, spans, trust, derivation, and traces.
+- [Sessions and turns](spectron/index/mental-model/sessions-and-turns.md)
+  How conversations map to sessions, turns, and provenance.
+- [Unified substrate and authority](spectron/index/mental-model/two-layer-architecture.md)
+  One SurrealDB graph for authoritative and experiential knowledge – provenance and reconciliation, not two silos.
+- [Embedded library quickstart](spectron/index/quickstarts/embedded.md)
+  Integration surfaces for Spectron.
+- [Hosted quickstart](spectron/index/quickstarts/hosted.md)
+  Get up and running with Spectron Cloud in five minutes.
+- [Self-hosted quickstart](spectron/index/quickstarts/self-hosted.md)
+  Run Spectron with Docker Compose and make your first remember and recall calls.
+- [Surrealist dashboard quickstart](spectron/index/quickstarts/surrealist-dashboard.md)
+  Create a Spectron context in Surrealist, try the Playground, inspect memories, add knowledge, and call the HTTP API.
+- [The accuracy promise](spectron/index/welcome/accuracy-promise.md)
+  Defensible correctness – provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
+- [How it works in five minutes](spectron/index/welcome/how-it-works.md)
+  From a message to structured substrate state – extraction, reconciliation, traces, and tiered reads.
+- [What is Spectron?](spectron/index/welcome/what-is-spectron.md)
+  Spectron as a memory and knowledge layer – one SurrealDB substrate, provenance-first, trace-aware, tri-temporal.
+- [Why agentic memory?](spectron/index/welcome/why-agentic-memory.md)
+  Why conversational agents need structured memory beyond plain retrieval.
+- [CrewAI](spectron/integrations/frameworks/crewai.md)
+  CrewAI integration status.
+- [LangChain](spectron/integrations/frameworks/langchain.md)
+  LangChain harness adapter for Spectron.
+- [Semantic Kernel](spectron/integrations/frameworks/semantic-kernel.md)
+  Semantic Kernel integration status.
+- [Vercel AI SDK](spectron/integrations/frameworks/vercel-ai-sdk.md)
+  Using Spectron memory with the Vercel AI SDK.
+- [Overview](spectron/integrations/index.md)
+  Connecting Spectron to your stack – SDKs, MCP server, REST API, and framework integrations.
+- [Claude Desktop and Claude Code](spectron/integrations/mcp-server/coding-assistants/claude-desktop-and-code.md)
+  Installing Spectron as an MCP server in Claude Desktop and Claude Code.
+- [Cursor](spectron/integrations/mcp-server/coding-assistants/cursor.md)
+  Installing Spectron as an MCP server in Cursor.
+- [VS Code](spectron/integrations/mcp-server/coding-assistants/vscode.md)
+  Installing Spectron as an MCP server in VS Code.
+- [Windsurf](spectron/integrations/mcp-server/coding-assistants/windsurf.md)
+  Installing Spectron as an MCP server in Windsurf.
+- [Installing the MCP server](spectron/integrations/mcp-server/install.md)
+  Connect Spectron to Claude, Cursor, Windsurf, VS Code, and other MCP clients.
+- [MCP tools reference](spectron/integrations/mcp-server/tools-reference.md)
+  Complete reference for all seven Spectron MCP tools.
+- [Errors and retries](spectron/integrations/sdks/errors-and-retries.md)
+  Handling errors and configuring retry behaviour in the Spectron SDKs.
+- [JavaScript and TypeScript SDK](spectron/integrations/sdks/javascript-and-typescript.md)
+  Using Spectron from JavaScript and TypeScript applications.
+- [Python SDK](spectron/integrations/sdks/python.md)
+  Using Spectron from Python applications and agents.
+- [Embedded library](spectron/integrations/surfaces/embedded-library.md)
+  In-process integration surfaces.
+- [Filesystem view](spectron/integrations/surfaces/filesystem-view.md)
+  Accessing Spectron's knowledge layer as a virtual filesystem.
+- [REST API](spectron/integrations/surfaces/rest.md)
+  Accessing Spectron directly via its HTTP REST API.
+- [Confluence connector](spectron/knowledge/connectors/confluence.md)
+  Planned sync from Confluence spaces into Spectron documents.
+- [GitHub connector](spectron/knowledge/connectors/github.md)
+  Planned sync from GitHub repositories into Spectron documents.
+- [Google Drive connector](spectron/knowledge/connectors/google-drive.md)
+  Planned sync from Google Drive into Spectron documents.
+- [Notion connector](spectron/knowledge/connectors/notion.md)
+  Planned sync from Notion workspaces into Spectron documents.
+- [Connectors overview](spectron/knowledge/connectors/overview.md)
+  Automatic sync from external sources into Spectron documents (not yet available).
+- [Snowflake and Databricks](spectron/knowledge/connectors/snowflake-and-databricks.md)
+  Sync structured knowledge from data warehouses into Spectron.
+- [Overview](spectron/knowledge/index.md)
+  Multi-modal document ingest, object-store originals, hybrid retrieval, and authoritative knowledge on the unified Spectron substrate.
+- [Bulk import](spectron/knowledge/ingestion/bulk-import.md)
+  Importing large quantities of documents or knowledge nodes into Spectron.
+- [Structured fact ingest](spectron/knowledge/ingestion/knowledge-nodes.md)
+  Uploading structured facts alongside documents.
+- [Multimodal content](spectron/knowledge/ingestion/multimodal-content.md)
+  Ingesting images, audio, and video into the Spectron knowledge layer.
+- [Uploading documents](spectron/knowledge/ingestion/uploading-documents.md)
+  How to ingest documents into the Spectron knowledge layer.
+- [Cross-layer linking](spectron/knowledge/retrieval/cross-layer-linking.md)
+  How authoritative documents and experiential facts relate in the unified graph.
+- [Graph traversal](spectron/knowledge/retrieval/graph-traversal.md)
+  Structural edges in the knowledge layer and how retrieval uses them.
+- [Hybrid search](spectron/knowledge/retrieval/hybrid-search.md)
+  Using vector, BM25, and graph-density retrieval modes in Spectron.
+- [Keywords and BM25](spectron/knowledge/retrieval/keywords-and-bm25.md)
+  Using keyword extraction and full-text search in Spectron's knowledge layer.
+- [Overview](spectron/memory/index.md)
+  Sessions, episodic memory, operations, and tuning – experiential memory on the unified Spectron substrate.
+- [Forgetting memories](spectron/memory/operations/forget.md)
+  How to retire or permanently erase memories — default forget, purge, and scoped erasure.
+- [Profiles](spectron/memory/operations/profiles.md)
+  Auto-maintained entity profiles aggregated from memory and knowledge.
+- [Recalling memories](spectron/memory/operations/recall.md)
+  Unified retrieval over facts and document passages.
+- [Reflection](spectron/memory/operations/reflect.md)
+  Synthesise insights from patterns across stored memories.
+- [Storing memories](spectron/memory/operations/remember.md)
+  Ingesting facts and conversations into the unified substrate.
+- [Authority when pillars meet](spectron/memory/reasoning-model/authority-hierarchy.md)
+  How the Authoritative and Experiential pillars interact – reconciliation, uncertainty, and resolves_to.
+- [Extraction pipeline](spectron/memory/reasoning-model/extraction-pipeline.md)
+  How Spectron classifies and extracts structured memory from conversation turns.
+- [Instructions and uncertainties](spectron/memory/reasoning-model/instructions-and-uncertainties.md)
+  How Spectron captures behavioural directives and tracks ambiguous or contradictory information.
+- [Reconciliation and supersession](spectron/memory/reasoning-model/reconciliation-and-supersession.md)
+  How Spectron deduplicates entities, detects conflicts, and tracks corrections with full history.
+- [Temporal validity](spectron/memory/reasoning-model/temporal-validity.md)
+  How Spectron tracks when facts were true using valid_from and valid_until.
+- [Adding turns](spectron/memory/sessions/adding-turns.md)
+  How to add conversation turns and interpret the structured extraction result.
+- [Chat sessions](spectron/memory/sessions/chat-sessions.md)
+  Using session.chat() for Spectron-managed conversation loops.
+- [Creating sessions](spectron/memory/sessions/creating-sessions.md)
+  How to create and manage conversation sessions in Spectron.
+- [State and diffs](spectron/memory/sessions/state-and-diffs.md)
+  Reading structured memory state and tracking what changed between turns.
+- [Caching and invalidation](spectron/memory/tuning/caching-and-invalidation.md)
+  How Spectron's semantic response cache works and how to manage memory lifecycle.
+- [Models per stage](spectron/memory/tuning/models-per-stage.md)
+  Configure which LLM is used for each processing stage in Spectron.
+- [Ontology grounding](spectron/memory/tuning/ontology-grounding.md)
+  Constrain extraction to known entity types, attribute keys, and relation labels for domain-specific accuracy.
+- [CLI](spectron/reference/cli.md)
+  Command-line interface reference.
+- [Configuration](spectron/reference/configuration.md)
+  Context config, models, and limits.
+- [Data model and schema](spectron/reference/data-model-and-schema.md)
+  Tables, relations, and indexes in SurrealDB.
+- [Errors](spectron/reference/errors.md)
+  Error codes and troubleshooting.
+- [Glossary](spectron/reference/glossary.md)
+  Terminology used across Spectron docs.
+- [Overview](spectron/reference/index.md)
+  Complete API and configuration reference for Spectron.
+- [Management API](spectron/reference/management-api.md)
+  Contexts, keys, and operator lifecycle.
+- [MCP tools](spectron/reference/mcp-tools.md)
+  Tool payloads and ACL alignment.
+- [REST API](spectron/reference/rest-api.md)
+  End-user HTTP endpoints on the unified Spectron substrate.
+- [JavaScript SDK reference](spectron/reference/sdk-javascript.md)
+  Package layout and configuration for @surrealdb/spectron.
+- [Python SDK reference](spectron/reference/sdk-python.md)
+  Package layout and configuration for surrealdb-spectron.
+- [Architecture overview](spectron/self-hosting/deployment/architecture-overview.md)
+  How Spectron's components fit together in a self-hosted deployment.
+- [Bare metal](spectron/self-hosting/deployment/bare-metal.md)
+  Running Spectron as a systemd service on Linux.
+- [Docker](spectron/self-hosting/deployment/docker.md)
+  Deploying Spectron with Docker and Docker Compose.
+- [Kubernetes](spectron/self-hosting/deployment/kubernetes.md)
+  Deploying Spectron on Kubernetes for production workloads.
+- [Storage and scaling](spectron/self-hosting/deployment/storage-and-scaling.md)
+  Configuring object storage and scaling Spectron for production.
+- [Overview](spectron/self-hosting/index.md)
+  Deploy and operate Spectron on your own infrastructure.
+- [Cost and rate limits](spectron/self-hosting/observability/cost-and-rate-limits.md)
+  Token budgets, tier breakdowns, and rate limiting.
+- [Live queries and dashboards](spectron/self-hosting/observability/live-queries-and-dashboards.md)
+  Live SurrealDB queries and operational dashboards.
+- [Profiles and audit trails](spectron/self-hosting/observability/profiles-and-audit-trails.md)
+  Provenance, traces, and operational audit events.
+- [Tracing](spectron/self-hosting/observability/tracing.md)
+  Retrieval, decision, and response traces stored in the substrate.
+- [Backups and retention](spectron/self-hosting/operations/backups-and-retention.md)
+  Database backups and scoped retention policies.
+- [Contexts](spectron/self-hosting/operations/contexts.md)
+  Create, patch, and delete contexts via the management plane.
+- [Migrations and upgrades](spectron/self-hosting/operations/migrations-and-upgrades.md)
+  Schema migrations and upgrade playbooks.
+- [Models and providers](spectron/self-hosting/operations/models-and-providers.md)
+  Provider keys and per-context model routing.
+- [API keys and delegation](spectron/self-hosting/security/api-keys-and-delegation.md)
+  Minting, rotation, and delegated sub-keys.
+- [Authentication](spectron/self-hosting/security/authentication.md)
+  API key authentication and management in Spectron.
+- [Multi-tenancy](spectron/self-hosting/security/multi-tenancy.md)
+  Patterns for serving multiple tenants from a single Spectron deployment.
+- [Principals](spectron/self-hosting/security/principals.md)
+  The three principal types – management, agent, and supervisor – and their capabilities.
+- [Scope as a security boundary](spectron/self-hosting/security/scope-as-security-boundary.md)
+  How scope-bound API keys enforce data isolation in Spectron.
+- [Transactions and isolation](transactions-and-isolation.md)
+  How SurrealDB transactions work, the isolation guarantees they provide under concurrency, and what application developers should plan for.
 - [What is SurrealDB](what-is-surrealdb.md)
   The purpose of this document is to provide you with a comprehensive understanding of SurrealDB. Whether you are a beginner getting started with SurrealDB or an experienced user looking for specific information, this overview will serve as a valuable resource.

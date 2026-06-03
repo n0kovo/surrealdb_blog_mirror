@@ -12,21 +12,21 @@ SurrealDB is a multi-model database designed to simplify building modern applica
 The SurrealDB documentation contains a large number of guides, each designed to address different aspects of database management and application development.
 
 - **[Querying](learn/querying/index.md)** — Learn to query your data with SurrealQL, SDKs or GraphQL.
-- **[Schema Management](learn/schema-management/index.md)** — Learn how to shape data in SurrealDB using tables, fields, indexes, events, functions, and more.
-- **[Data Models](learn/data-models/index.md)** — Store and query document, graph, vector, time-series, and geospatial data with SurrealDB.
+- **[Schema management](learn/schema-management/index.md)** — Learn how to shape data in SurrealDB using tables, fields, indexes, events, functions, and more.
+- **[Data models](learn/data-models/index.md)** — Store and query document, graph, vector, time-series, and geospatial data with SurrealDB.
 - **[Security](learn/security/index.md)** — Learn how to strengthen your SurrealDB deployment with best security practices.
-- **[Agent Memory Context](learn/context/index.md)** — Learn how to use SurrealDB as a memory context for AI agents.
+- **[Spectron](https://surrealdb.com/docs/spectron)** — Learn how to use Spectron, the memory context for AI agents.
 - **[Extensions](learn/extensions/index.md)** — Learn how to extend SurrealDB with custom modules and WASM plugins.
 
 ## Features
 
 SurrealDB is built around a rich feature set that supports a wide variety of application requirements. Rather than requiring you to stitch together separate systems for different data models or capabilities, SurrealDB provides them all within a single engine.
 
-- **[Real-Time Queries](learn/querying/real-time/live-queries.md)** — Subscribe to live queries and changefeeds for real-time data updates.
+- **[Real-time queries](learn/querying/real-time/live-queries.md)** — Subscribe to live queries and changefeeds for real-time data updates.
 - **[Authentication](learn/security/authentication/overview.md)** — Built-in authentication and access control with scoped permissions.
-- **[Graph Relationships](learn/data-models/graph/overview.md)** — Model and traverse complex relationships using native graph edges.
-- **[Vector Search](learn/data-models/vector-search/overview.md)** — Store embeddings and perform similarity searches for AI and RAG workflows.
-- **[Data Migrations](explore/surrealist/index.md)** — Evolve your database schema over time with SurrealKit.
+- **[Graph relationships](learn/data-models/graph/overview.md)** — Model and traverse complex relationships using native graph edges.
+- **[Vector search](learn/data-models/vector-search/overview.md)** — Store embeddings and perform similarity searches for AI and RAG workflows.
+- **[Data migrations](explore/surrealist/index.md)** — Evolve your database schema over time with SurrealKit.
 - **[Surrealist UI](explore/surrealist/index.md)** — A native UI to visually explore and manage your SurrealDB data.
 
 ## SDKs
@@ -48,7 +48,7 @@ SurrealDB offers flexible deployment options to suit your infrastructure require
 - **[SurrealDB Cloud](manage/cloud/index.md)** — Provision and manage cloud-hosted SurrealDB instances with automatic scaling and backups.
 - **[Self-hosted](manage/self-hosted/index.md)** — Install and run SurrealDB on your own infrastructure with full control over configuration.
 - **[Embedding](build/embedding/index.md)** — Embed SurrealDB directly into your application as an in-process database engine.
-- **[Docker](self-hosted/docker.md)** — Run SurrealDB in a Docker container for rapid setup and consistent environments.
+- **[Docker](running/docker.md)** — Run SurrealDB in a Docker container for rapid setup and consistent environments.
 
 ## Integrations
 
@@ -57,7 +57,7 @@ SurrealDB connects with third-party tools, data management platforms, AI framewo
 - **[Integrations](build/integrations/index.md)** — Connect SurrealDB to third-party tools, AI frameworks, embeddings providers, and data management platforms.
 - **[AI agents](build/ai-agents/index.md)** — Build AI agent workflows that use SurrealDB for knowledge storage, retrieval, and state management.
 
-## Developer Reference
+## Developer reference
 
 The reference documentation provides comprehensive, detailed specifications for all SurrealDB interfaces. This includes the full SurrealQL query language with syntax definitions, as well as the command-line interface for managing SurrealDB instances and the HTTP-based REST API for programmatic access.
 

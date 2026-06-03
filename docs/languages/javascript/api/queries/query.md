@@ -13,7 +13,7 @@ The `Query` class provides a configurable interface for executing raw SurrealQL 
 
 **Source:** [query/query.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/query.ts)
 
-## Type parameters
+## Type Parameters
 
 - `R extends unknown[]` - Array of result types for each query statement
 - `J extends boolean` - Boolean indicating if result is JSON (default: `false`)
@@ -48,7 +48,7 @@ query.collect<T>(...queryIndexes?)
     </tbody>
 </table>
 
-#### Type parameters
+#### Type Parameters
 - `T extends unknown[]` - Override result types
 
 #### Returns
@@ -142,11 +142,31 @@ console.log(`Processed ${count} records`);
 
 Get individual response objects for each query statement, including success/failure status.
 
+You can optionally specify which query indexes to include.
+
 ```ts title="Method Syntax"
-query.responses<T>()
+query.responses<T>(...queries?)
 ```
 
-#### Type parameters
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`queries` <label label="optional" /></td>
+            <td>`number[]`</td>
+            <td>Specific query indexes to include. If omitted, includes all.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Type Parameters
 - `T extends unknown[]` - Override result types
 
 #### Returns
@@ -201,9 +221,9 @@ const jsonResults = await db.query('SELECT * FROM users').json().collect();
 console.log(typeof jsonResults[0]); // 'string'
 ```
 
-## Complete examples
+## Complete Examples
 
-### Basic query execution
+### Basic Query Execution
 
 ```ts
 
@@ -218,7 +238,7 @@ console.log(result[0]); // Array of users
 const result = await db.query('SELECT * FROM users');
 ```
 
-### Parameterized queries
+### Parameterized Queries
 
 ```ts
 // Using bindings object
@@ -235,7 +255,7 @@ const result = await db.query(
 ).collect();
 ```
 
-### Multiple statements
+### Multiple Statements
 
 ```ts
 const [users, posts, comments] = await db.query<[User[], Post[], Comment[]]>(`
@@ -249,7 +269,7 @@ console.log('Posts:', posts);
 console.log('Comments:', comments);
 ```
 
-### Streaming large results
+### Streaming Large Results
 
 ```ts
 const query = db.query('SELECT * FROM large_table');
@@ -265,7 +285,7 @@ for await (const frame of query.stream()) {
 }
 ```
 
-### Error handling with responses
+### Error Handling with Responses
 
 ```ts
 const responses = await db.query(`
@@ -283,7 +303,7 @@ for (const [i, response] of responses.entries()) {
 }
 ```
 
-### Transaction queries
+### Transaction Queries
 
 ```ts
 const txn = await db.beginTransaction();
@@ -300,7 +320,7 @@ try {
 }
 ```
 
-### Complex query with statistics
+### Complex Query with Statistics
 
 ```ts
 const responses = await db.query(`
@@ -317,7 +337,7 @@ for (const response of responses) {
 }
 ```
 
-### Conditional logic
+### Conditional Logic
 
 ```ts
 const status = 'active';
@@ -336,7 +356,7 @@ const result = await db.query(
 ).collect();
 ```
 
-### Data migration
+### Data Migration
 
 ```ts
 // Batch update with query
@@ -357,7 +377,7 @@ const migration = await db.query(`
 console.log('Migration complete');
 ```
 
-### Streaming with progress
+### Streaming with Progress
 
 ```ts
 let totalRecords = 0;
@@ -376,9 +396,9 @@ for await (const frame of db.query('SELECT * FROM users; SELECT * FROM posts;').
 console.log(`Total: ${totalRecords} records from ${queriesCompleted} queries`);
 ```
 
-## Best practices
+## Best Practices
 
-### 1. Use parameterization
+### 1. Use Parameterization
 
 ```ts
 // Good: Parameterized
@@ -398,7 +418,7 @@ const result = await db.query(
 ).collect();
 ```
 
-### 2. Handle errors appropriately
+### 2. Handle Errors Appropriately
 
 ```ts
 // Good: Check individual responses
@@ -418,7 +438,7 @@ try {
 }
 ```
 
-### 3. Use streaming for large results
+### 3. Use Streaming for Large Results
 
 ```ts
 // Good: Stream large datasets
@@ -433,7 +453,7 @@ const [large] = await db.query('SELECT * FROM large_table').collect();
 // May cause memory issues
 ```
 
-### 4. Leverage type parameters
+### 4. Leverage Type Parameters
 
 ```ts
 // Good: Type-safe results
@@ -447,7 +467,7 @@ users[0].name; // string
 posts[0].title; // string
 ```
 
-## See also
+## See Also
 
 - [SurrealQueryable.query()](../core/surreal-queryable.md#query) - Method that returns Query
 - [BoundQuery](../utilities/index.md#boundquery) - Parameterized queries

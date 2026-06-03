@@ -18,7 +18,7 @@ Check out the [HTTP & REST integration documentation](../../../reference/rest-a
 This tutorial assumes that you have the following: 
 
 - A Postman account to fork the [SurrealDB collection](https://postman.com/surrealdb/workspace/surrealdb/collection/19100500-3da237f3-588b-4252-8882-6d487c11116a)
-- SurrealDB installed - If you do not, see the [installation guide](../../../self-hosted/installation/index.md) specific to your machine.
+- SurrealDB installed - If you do not, see the [installation guide](../../../running/installation/index.md) specific to your machine.
 
 ## Getting started
 

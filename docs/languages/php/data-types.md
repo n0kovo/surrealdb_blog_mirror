@@ -1,6 +1,6 @@
 ---
 position: 4
-title: Data Types
+title: Data types
 description: The SurrealDB SDK for PHP enables simple and advanced querying of a remote database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/php/data-types.mdx"
 ---

@@ -1,8 +1,10 @@
 # Category: ai
 
-_36 posts_  
+_37 posts_  
 [← Index](../../README.md)
 
+- **2026-05-19** · [Agentic retrieval for structured data with text-to-surql](../2026/05/agentic-retrieval-for-structured-data-with-text-to-surql.md)  
+  `ai` `tutorials` — RAG pipelines usually focus on unstructured content (chunks + vectors\/BM25), but structured data introduces a different retrieval problem: you need to pull exact rows and aggregates from tables, not just “similar passages.” This article explains an agentic pattern for structured retrieval using text-to-SurrealQL: give an LLM agent a single database-aware tool that converts natural-language questions into valid SurrealQL, executes the query in SurrealDB, and returns deterministic, auditable results.
 - **2026-05-12** · [What chunking strategies exist and how to choose one?](../2026/05/what-chunk-strategies-exist-and-how-to-choose-one.md)  
   `ai` — If you've decided to chunk your documents for a RAG pipeline or semantic search system, the next question hits almost immediately: which chunking strategy should I use?
 - **2026-05-08** · [What is the recommended chunk size?](../2026/05/what-is-the-recommended-chunk-size.md)  
@@ -73,5 +75,5 @@ _36 posts_
   `engineering` `ai` — This isn’t just another RAG blog post - it tackles the specific challenges financial services data teams face when building systems in regulated, data-sensitive environments.
 - **2025-02-21** · [Automating Knowledge Graphs with SurrealDB and Gemini](../2025/02/automating-knowledge-graphs-with-surrealdb-and-gemini.md)  
   `engineering` `ai` — This is the release you've been waiting for
-- **2025-01-31** · [Enhancing Retrieval-Augmented Generation with SurrealDB](../2025/01/enhancing-retrieval-augmented-generation-with-surrealdb.md)  
+- **2025-01-31** · [Enhancing retrieval-augmented generation with SurrealDB](../2025/01/enhancing-retrieval-augmented-generation-with-surrealdb.md)  
   `tutorials` `featured` `ai` — GraphRAG: Enhancing Retrieval-Augmented Generation with SurrealDB, Gemini and DeepSeek

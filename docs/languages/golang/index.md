@@ -11,6 +11,10 @@ The SurrealDB SDK for Go enables you to interact with SurrealDB from server-side
 
 The SDK requires Go `1.23` or greater, is available as a [go.dev package](https://pkg.go.dev/github.com/surrealdb/surrealdb.go), and is compatible with SurrealDB `v2.x` and `v3.x`.
 
+> [!NOTE]
+> The latest version of the SDK is *(latest)*.
+> The SDK works with SurrealDB versions `v2.0.0` to *(latest)*, ensuring compatibility with the latest version.
+
 ## Getting started
 
 - [Installation](installation.md) to add the SDK to your project

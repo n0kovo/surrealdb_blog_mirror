@@ -1,0 +1,92 @@
+---
+position: 2
+title: Self-hosted quickstart
+description: Run Spectron with Docker Compose and make your first remember and recall calls.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/spectron/index/quickstarts/self-hosted.mdx"
+---
+
+# Self-hosted quickstart
+
+This guide runs Spectron via **Docker Compose** alongside SurrealDB, bootstraps a Context, and exercises **remember** and **recall**. Full deployment options are in [Docker](../../self-hosting/deployment/docker.md).
+
+## Prerequisites
+
+- Docker and Docker Compose
+- An OpenAI or Anthropic API key for extraction and chat models
+
+## Step 1 — Start the stack
+
+Use the `compose.yaml` from [Docker deployment](../../self-hosting/deployment/docker.md), then:
+
+```bash
+docker compose up -d
+```
+
+Spectron listens on port **9090** by default (check your compose file if you mapped a different host port).
+
+## Step 2 — Bootstrap keys and a Context
+
+Follow the first-run steps in the Docker guide: create a management key, then create a Context and an end-user API key via the management API or CLI inside the container.
+
+Export:
+
+```bash
+export SPECTRON_URL=http://localhost:9090
+export SPECTRON_API_KEY=<context-api-key>
+export SPECTRON_CONTEXT_ID=<context-id>
+export SPECTRON_MANAGEMENT_API_KEY=<management-key>
+```
+
+## Step 3 — Remember a fact
+
+Using HTTP:
+
+```bash
+curl -sS "$SPECTRON_URL/api/v1/$SPECTRON_CONTEXT_ID/facts" \
+  -H "API-KEY: $SPECTRON_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"text":"King Charles III became head of state of the United Kingdom in September 2022.","infer":"full","scope":["org=acme"]}'
+```
+
+Or install the CLI in your environment (or run via `docker compose exec spectron …`) and use:
+
+```bash
+spectron remember "Alice was promoted to Head of Platform at Acme." \
+  --url "$SPECTRON_URL" --api-key "$SPECTRON_API_KEY" --context-id "$SPECTRON_CONTEXT_ID"
+```
+
+## Step 4 — Upload a document
+
+```bash
+spectron documents upload ./returns-policy.pdf \
+  --url "$SPECTRON_URL" --api-key "$SPECTRON_API_KEY" --context-id "$SPECTRON_CONTEXT_ID"
+```
+
+Processing runs asynchronously on the worker tier.
+
+## Step 5 — Recall
+
+```bash
+spectron recall "What is Alice's role at Acme?" --json \
+  --url "$SPECTRON_URL" --api-key "$SPECTRON_API_KEY" --context-id "$SPECTRON_CONTEXT_ID"
+```
+
+[Tier 1 or 2](https://surrealdb.com/docs/spectron/architecture/coherence-retrieval-and-tiers) hits avoid sending a large context block to the LLM.
+
+## Step 6 — Optional chat and MCP
+
+```bash
+spectron chat "Summarise what you know about Alice at Acme" \
+  --url "$SPECTRON_URL" --api-key "$SPECTRON_API_KEY" --context-id "$SPECTRON_CONTEXT_ID"
+
+spectron mcp
+```
+
+Paste the printed MCP config into Claude Desktop, Cursor, or Claude Code.
+
+## Next steps
+
+- [REST API reference](../../reference/rest-api.md)
+- [CLI reference](../../reference/cli.md)
+- [Eight pillars and six categories](https://surrealdb.com/docs/spectron/architecture/eight-pillars-and-categories)
+- [Observability](../../self-hosting/observability/tracing.md)

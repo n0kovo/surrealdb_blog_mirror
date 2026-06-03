@@ -96,7 +96,7 @@ if (session.isValid) {
 }
 ```
 
-## Session management methods
+## Session Management Methods
 
 ### `.forkSession()` {#forksession}
 
@@ -109,7 +109,7 @@ session.forkSession()
 ```
 
 #### Returns
-`Promise<SurrealSession>` - A new session instance
+[`Promise<SurrealSession>`](surreal-session.md) - A new session instance
 
 #### Example
 ```ts
@@ -148,7 +148,7 @@ await session.closeSession();
 console.log(session.isValid); // false
 ```
 
-## Transaction methods
+## Transaction Methods
 
 ### `.beginTransaction()` {#begintransaction}
 
@@ -188,7 +188,7 @@ try {
 }
 ```
 
-## Session configuration methods
+## Session Configuration Methods
 
 ### `.use()` {#use}
 
@@ -211,15 +211,15 @@ session.use(what)
     </thead>
     <tbody>
         <tr>
-            <td>`what` <label label="required" /></td>
-            <td>`<a href="/docs/languages/javascript/api/types/#namespacedatabase">NamespaceDatabase</a> | null`</td>
-            <td>Object specifying namespace and/or database to switch to.</td>
+            <td>`what` <label label="optional" /></td>
+            <td>`Nullable&lt;<a href="/docs/languages/javascript/api/types/#namespacedatabase">NamespaceDatabase</a>&gt;`</td>
+            <td>Object specifying namespace and/or database to switch to. If omitted, returns the current namespace and database.</td>
         </tr>
     </tbody>
 </table>
 
 #### Returns
-[`Promise<NamespaceDatabase>`](../types/index.md#namespacedatabase) - The newly selected namespace and database
+[`Promise<NamespaceDatabase>`](../types/index.md#namespacedatabase) - The current or newly selected namespace and database
 
 #### Examples
 
@@ -347,7 +347,7 @@ console.log(session.accessToken); // undefined
 console.log(session.parameters); // {}
 ```
 
-## Authentication methods
+## Authentication Methods
 
 ### `.signup()` {#signup}
 
@@ -476,8 +476,8 @@ session.authenticate(token)
     <tbody>
         <tr>
             <td>`token` <label label="required" /></td>
-            <td>`string | <a href="/docs/languages/javascript/api/types/#tokens">Tokens</a>`</td>
-            <td>The access token string or tokens object with access and refresh tokens.</td>
+            <td>`<a href="/docs/languages/javascript/api/types/#token">Token</a> | <a href="/docs/languages/javascript/api/types/#tokens">Tokens</a>`</td>
+            <td>The access token or tokens object with access and refresh tokens.</td>
         </tr>
     </tbody>
 </table>
@@ -597,7 +597,7 @@ const unsubscribe = session.subscribe('auth', (tokens) => {
 unsubscribe();
 ```
 
-## Inherited methods
+## Inherited Methods
 
 As `SurrealSession` extends [`SurrealQueryable`](surreal-queryable.md), it inherits all query execution methods:
 
@@ -610,10 +610,35 @@ As `SurrealSession` extends [`SurrealQueryable`](surreal-queryable.md), it inher
 - [`delete()`](surreal-queryable.md#delete) - Delete records
 - [`relate()`](surreal-queryable.md#relate) - Create graph relationships
 - [`live()`](surreal-queryable.md#live) - Subscribe to live queries
+- [`liveOf()`](surreal-queryable.md#liveof) - Subscribe to existing live queries
 - [`run()`](surreal-queryable.md#run) - Execute functions
-- [`api`](surreal-queryable.md#api) - Access user-defined APIs
+- [`auth()`](surreal-queryable.md#auth) - Get authenticated record user
+- [`api()`](surreal-queryable.md#api) - Access user-defined APIs
 
-## Complete example
+## Async Disposal
+
+### `[Symbol.asyncDispose]()` {#symbol-asyncdispose}
+
+Supports the [async disposal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/asyncDispose) protocol, allowing sessions to be used with `await using` for automatic cleanup.
+
+```ts title="Method Syntax"
+session[Symbol.asyncDispose]()
+```
+
+#### Returns
+`Promise<void>` - Resolves when the session is disposed
+
+#### Example
+```ts
+{
+    await using session = await db.newSession();
+    await session.use({ namespace: 'main', database: 'main' });
+    const users = await session.select('users');
+}
+// Session is automatically disposed when leaving the block
+```
+
+## Complete Example
 
 ```ts
 
@@ -634,7 +659,7 @@ const session = await db.newSession();
 
 // Configure the session
 await session.use({ 
-    namespace: 'production', 
+    namespace: 'main', 
     database: 'main' 
 });
 
@@ -652,7 +677,7 @@ session.subscribe('using', (using) => {
 
 // Authenticate as a record user
 const tokens = await session.signin({
-    namespace: 'production',
+    namespace: 'main',
     database: 'main',
     access: 'user_access',
     variables: {
@@ -678,7 +703,7 @@ await childSession.reset();
 await session.closeSession();
 ```
 
-## See also
+## See Also
 
 - [Surreal](surreal.md) - Main connection class
 - [SurrealQueryable](surreal-queryable.md) - Query execution methods

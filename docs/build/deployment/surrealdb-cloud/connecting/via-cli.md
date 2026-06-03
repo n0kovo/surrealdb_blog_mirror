@@ -11,7 +11,7 @@ Once you have created a SurrealDB Cloud Instance, you can connect to it via CLI.
 
 ## Prerequisites
 
-Before connecting to your SurrealDB Cloud Instance using the CLI, you need to install the [SurrealDB CLI](../../../../self-hosted/installation/index.md).
+Before connecting to your SurrealDB Cloud Instance using the CLI, you need to install the [SurrealDB CLI](../../../../running/installation/index.md).
 
 ## Connect to your SurrealDB Cloud instance
 

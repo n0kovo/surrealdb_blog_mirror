@@ -15,13 +15,13 @@ You can run SurrealDB locally or start with a [free SurrealDB Cloud account](../
 
 For local, you have two options:
 
-1. [Install SurrealDB](../../../self-hosted/installation/index.md) and run [SurrealDB](../../../self-hosted/in-memory.md). Run in-memory with:
+1. [Install SurrealDB](../../../running/installation/index.md) and run [SurrealDB](../../../running/in-memory.md). Run in-memory with:
 
 ```sh
 surreal start -u root -p secret
 ```
 
-2. [Run with Docker](../../../self-hosted/docker.md).
+2. [Run with Docker](../../../running/docker.md).
 
 ```sh
 docker run --rm \

@@ -1,6 +1,6 @@
 ---
 position: 1
-title: SDK Concepts
+title: SDK concepts
 description: Learn the core concepts of the SurrealDB SDK for PHP. Understand how to connect to a SurrealDB instance, manage authentication, and interact with the database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/php/core/index.mdx"
 ---

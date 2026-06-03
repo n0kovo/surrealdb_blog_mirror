@@ -12,7 +12,7 @@ The `REBUILD` statement is used to rebuild indexes in SurrealDB. It is usually u
 Rebuilding the index will ensure the index is fully optimized.
 
 > [!NOTE]
-> Rebuilds are concurrent or sync based on how the index is defined. For example, if you define an index with the `CONCURRENTLY` option, the rebuild will be concurrent. Please see the [`CONCURRENTLY` clause](define/indexes.md#using-concurrently-clause) section for more information. 
+> By default, `REBUILD INDEX` waits until the rebuild finishes before the statement returns (the same behaviour as `DEFINE INDEX` without `CONCURRENTLY`). Adding `CONCURRENTLY` on the rebuild statement will cause it to return immediately, after which progress can be monitored via [`INFO FOR INDEX`](info.md#index-information). Whether the index was originally created with `CONCURRENTLY` does not affect rebuilds. See the [`CONCURRENTLY` clause](define/indexes.md#using-concurrently-clause) on `DEFINE INDEX` for the same blocking vs non-blocking distinction when creating an index.
 
 ### Statement syntax
 
@@ -21,7 +21,7 @@ Rebuilding the index will ensure the index is fully optimized.
 
 ```syntax title="SurrealQL Syntax"
 REBUILD [
-	INDEX [ IF EXISTS ] @name ON [ TABLE ] @table
+	INDEX [ IF EXISTS ] @name ON [ TABLE ] @table [ CONCURRENTLY ]
 ]
 ```
 
@@ -29,11 +29,11 @@ REBUILD [
 **Railroad Diagram**
 
 ```
-                                      ╭────────────────────────────╮                          ╭─────────────╮                               
-                                      │                            │                          │             │                               
-        ╭─────────╮       ╭───────╮   │    ╭────╮     ╭────────╮   │   ┌───────┐     ╭────╮   │  ╭───────╮  │   ┌────────┐      ╭───╮       
-├┼──────│ REBUILD │───────│ INDEX │───╯────│ IF │─────│ EXISTS │───╰───│ @name │─────│ ON │───╯──│ TABLE │──╰───│ @table │──────│ ; │─────┼┤
-        ╰─────────╯       ╰───────╯        ╰────╯     ╰────────╯       └───────┘     ╰────╯      ╰───────╯      └────────┘      ╰───╯
+                                      ╭────────────────────────────╮                          ╭─────────────╮                ╭────────────────────╮                
+                                      │                            │                          │             │                │                    │                
+        ╭─────────╮       ╭───────╮   │    ╭────╮     ╭────────╮   │   ┌───────┐     ╭────╮   │  ╭───────╮  │   ┌────────┐   │  ╭──────────────╮  │    ╭───╮       
+├┼──────│ REBUILD │───────│ INDEX │───╯────│ IF │─────│ EXISTS │───╰───│ @name │─────│ ON │───╯──│ TABLE │──╰───│ @table │───╯──│ CONCURRENTLY │──╰────│ ; │─────┼┤
+        ╰─────────╯       ╰───────╯        ╰────╯     ╰────────╯       └───────┘     ╰────╯      ╰───────╯      └────────┘      ╰──────────────╯       ╰───╯
 ```
 
 > [!NOTE]

@@ -1,7 +1,63 @@
 {
-  "generated_at": "2026-05-16T06:48:59.962685+00:00",
-  "count": 224,
+  "generated_at": "2026-06-03T07:44:17.338047+00:00",
+  "count": 228,
   "posts": [
+    {
+      "slug": "surrealdb-3-x-by-the-numbers",
+      "title": "SurrealDB 3.x by the numbers",
+      "summary": "Fresh SurrealDB 3.x benchmarks: 141k ops\\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.",
+      "publishDate": "2026-05-29T13:45:37.000Z",
+      "categories": [
+        "engineering",
+        "company",
+        "featured"
+      ],
+      "readTime": "10 min read",
+      "imageUrl": "https://cdn.surrealdb.com/x7nk2jo3hcahhf5cx69mlbps.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-3-x-by-the-numbers",
+      "local_path": "2026/05/surrealdb-3-x-by-the-numbers.md"
+    },
+    {
+      "slug": "surrealdb-3-1-stability-diskann-and-a-new-release-process",
+      "title": "SurrealDB 3.1: stability, DiskANN, and a new release process",
+      "summary": "SurrealDB 3.1 is here. The first minor release in the 3.x series brings DiskANN, a comprehensive stability and security pass, and a refreshed release process.",
+      "publishDate": "2026-05-27T18:25:58.000Z",
+      "categories": [
+        "releases",
+        "featured"
+      ],
+      "readTime": "7 min read",
+      "imageUrl": "https://cdn.surrealdb.com/5794hd6hey60g57zwtz2edji.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-3-1-stability-diskann-and-a-new-release-process",
+      "local_path": "2026/05/surrealdb-3-1-stability-diskann-and-a-new-release-process.md"
+    },
+    {
+      "slug": "using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo",
+      "title": "Using SurrealDB to understand how Buffalo buffalo buffalo Buffalo buffalo",
+      "summary": "Using SurrealDB and Surrealist's graph visualisation to not just understand but also see how Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo works.",
+      "publishDate": "2026-05-22T13:38:14.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "5 min read",
+      "imageUrl": "https://cdn.surrealdb.com/1z378q51no42psi64y5efe4t.auto",
+      "source": "https://surrealdb.com/blog/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo",
+      "local_path": "2026/05/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo.md"
+    },
+    {
+      "slug": "agentic-retrieval-for-structured-data-with-text-to-surql",
+      "title": "Agentic retrieval for structured data with text-to-surql",
+      "summary": "RAG pipelines usually focus on unstructured content (chunks + vectors\\/BM25), but structured data introduces a different retrieval problem: you need to pull exact rows and aggregates from tables, not just “similar passages.” This article explains an agentic pattern for structured retrieval using text-to-SurrealQL: give an LLM agent a single database-aware tool that converts natural-language questions into valid SurrealQL, executes the query in SurrealDB, and returns deterministic, auditable results.",
+      "publishDate": "2026-05-19T13:47:30.000Z",
+      "categories": [
+        "ai",
+        "tutorials"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/o4ka6f6ynic0rrpmxtte0vmh.auto",
+      "source": "https://surrealdb.com/blog/agentic-retrieval-for-structured-data-with-text-to-surql",
+      "local_path": "2026/05/agentic-retrieval-for-structured-data-with-text-to-surql.md"
+    },
     {
       "slug": "what-chunk-strategies-exist-and-how-to-choose-one",
       "title": "What chunking strategies exist and how to choose one?",
@@ -1437,7 +1493,7 @@
     },
     {
       "slug": "enhancing-retrieval-augmented-generation-with-surrealdb",
-      "title": "Enhancing Retrieval-Augmented Generation with SurrealDB",
+      "title": "Enhancing retrieval-augmented generation with SurrealDB",
       "summary": "GraphRAG: Enhancing Retrieval-Augmented Generation with SurrealDB, Gemini and DeepSeek",
       "publishDate": "2025-01-31T00:00:00.000Z",
       "categories": [
@@ -1494,7 +1550,7 @@
     {
       "slug": "your-personal-surreal-sidekick",
       "title": "Your personal Surreal Sidekick",
-      "summary": "With the recent release of Surreal Cloud (beta) and the introduction of the Surreal Cloud panel in Surrealist, we introduced a brand new tool to help you increase your SurrealDB productivity.",
+      "summary": "With the recent release of SurrealDB Cloud (beta) and the introduction of the SurrealDB Cloud panel in Surrealist, we introduced a brand new tool to help you increase your SurrealDB productivity.",
       "publishDate": "2024-12-13T00:00:00.000Z",
       "categories": [
         "releases",
@@ -1535,7 +1591,7 @@
     },
     {
       "slug": "aeons-surreal-renaissance-learn-surrealdb-through-a-story",
-      "title": "Aeon's Surreal Renaissance: Learn SurrealDB Through a Story",
+      "title": "Aeon's Surreal Renaissance: Learn SurrealDB through a story",
       "summary": "An immersive and interactive story that makes learning about SurrealDB as exciting as reading your favourite book.",
       "publishDate": "2024-10-21T00:00:00.000Z",
       "categories": [
@@ -1564,7 +1620,7 @@
     },
     {
       "slug": "surrealdb-delivers-future-ready-database-technology-for-developers-and-enterprises-with-release-of-surrealdb-2-0",
-      "title": "SurrealDB Delivers Future-Ready Database Technology for Developers and Enterprises with Release of SurrealDB 2.0 ",
+      "title": "SurrealDB delivers future-ready database technology for developers and enterprises with release of SurrealDB 2.0 ",
       "summary": "Powerful new features introduce advanced stability, performance, security and data management capabilities to build enterprise-ready applications",
       "publishDate": "2024-09-17T00:00:00.000Z",
       "categories": [
@@ -1621,7 +1677,7 @@
     },
     {
       "slug": "building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb",
-      "title": "Building a Retrieval-Augmented Generation (RAG) App with OpenAI and SurrealDB",
+      "title": "Building a retrieval-augmented generation (RAG) app with OpenAI and SurrealDB",
       "summary": "We'll build an assistant that can answer questions based on Wikipedia information, using the GPT Turbo model from OpenAI",
       "publishDate": "2024-08-28T00:00:00.000Z",
       "categories": [
@@ -1649,7 +1705,7 @@
     },
     {
       "slug": "moving-from-full-text-search-to-vector-search-in-surrealdb",
-      "title": "Moving from Full-Text search to Vector search in SurrealDB",
+      "title": "Moving from full-text search to vector search in SurrealDB",
       "summary": "If you know exactly what you’re searching for Full-Text Search would be the way to go but when you want your search to understand you, Vector Search might be right for you.",
       "publishDate": "2024-07-25T00:00:00.000Z",
       "categories": [
@@ -1662,7 +1718,7 @@
     },
     {
       "slug": "real-time-data-science-orchestrating-insights-with-the-right-ensemble",
-      "title": "Real-Time Data Science: Orchestrating Insights with the Right Ensemble",
+      "title": "Real-time data science: Orchestrating insights with the right ensemble",
       "summary": "Building real-time analytics leveraging OLAP, multi-model databases and workload isolation.",
       "publishDate": "2024-07-16T00:00:00.000Z",
       "categories": [
@@ -1799,7 +1855,7 @@
     },
     {
       "slug": "the-surrealist-journey",
-      "title": "The Surrealist Journey",
+      "title": "The Surrealist journey",
       "summary": "Interacting with a database is not an easy job. You’ll often find yourself needing to query patterns in your data, testing whether your queries have the intended outcome, or carefully designing a schema to suit your application. This was a natural hurdle I ran into when first adopting SurrealDB into my workflow, and is exactly why I built Surrealist.",
       "publishDate": "2024-04-23T00:00:00.000Z",
       "categories": [
@@ -1997,20 +2053,20 @@
     },
     {
       "slug": "beyond-sql-joins-exploring-surrealdbs-multi-model-relationships",
-      "title": "Beyond SQL Joins: Exploring SurrealDB's Multi-Model Relationships",
+      "title": "Beyond SQL joins: Exploring SurrealDB's multi-model relationships",
       "summary": "Can't join? No worries, we can relate.",
       "publishDate": "2024-01-29T00:00:00.000Z",
       "categories": [
         "tutorials"
       ],
-      "readTime": "6 min read",
+      "readTime": "7 min read",
       "imageUrl": "https://cdn.surrealdb.com/cmrs428c994c73fph3jg.auto",
       "source": "https://surrealdb.com/blog/beyond-sql-joins-exploring-surrealdbs-multi-model-relationships",
       "local_path": "2024/01/beyond-sql-joins-exploring-surrealdbs-multi-model-relationships.md"
     },
     {
       "slug": "vart-a-persistent-data-structure-for-snapshot-isolation",
-      "title": "VART: A Persistent Data Structure For Snapshot Isolation",
+      "title": "VART: A persistent data structure for snapshot isolation",
       "summary": "The blog introduces VART, an Immutable Versioned Adaptive Radix Trie, designed for snapshot isolation in databases (surrealKV), exploring isolation levels, concurrency control.",
       "publishDate": "2024-01-23T00:00:00.000Z",
       "categories": [
@@ -2050,7 +2106,7 @@
     },
     {
       "slug": "live-queries-in-rust",
-      "title": "Live Queries in Rust",
+      "title": "Live queries in Rust",
       "summary": "SurrealDB comes with a LIVE SELECT statement that allows you to listen for creations, updates and deletions to specific records you are interested in or entire tables.",
       "publishDate": "2024-01-10T00:00:00.000Z",
       "categories": [
@@ -2092,7 +2148,7 @@
     },
     {
       "slug": "crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy",
-      "title": "Crafting Our Full-Text Search in SurrealDB: A Journey Beyond Lucene and Tantivy",
+      "title": "Crafting our full-text search in SurrealDB: A journey beyond Lucene and Tantivy",
       "summary": "How SurrealDB built its own ACID-compliant full-text search engine instead of integrating Lucene or Tantivy, delivering a unified query experience without external dependencies.",
       "publishDate": "2023-12-18T00:00:00.000Z",
       "categories": [
@@ -2185,7 +2241,7 @@
     },
     {
       "slug": "create-a-search-engine-with-surrealdb-full-text-search",
-      "title": "Create a Search Engine with SurrealDB Full-Text Search",
+      "title": "Create a search engine with SurrealDB full-text search",
       "summary": "When it comes to managing and retrieving vast amounts of textual data, the ability to perform efficient and accurate searches is paramount.",
       "publishDate": "2023-11-13T00:00:00.000Z",
       "categories": [
@@ -2304,7 +2360,7 @@
     },
     {
       "slug": "what-are-multi-model-databases",
-      "title": "What are Multi-Model Databases?",
+      "title": "What are multi-model databases?",
       "summary": "In today's digital age, staying connected is easier than ever. Social media platforms allow us to remain connected with loved ones, meet new people, and stay updated on world news...",
       "publishDate": "2023-07-24T00:00:00.000Z",
       "categories": [

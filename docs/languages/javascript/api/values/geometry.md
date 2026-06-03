@@ -5,7 +5,7 @@ description: Geometric and spatial data types for location-based applications.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/javascript/api/values/geometry.mdx"
 ---
 
-# Geometry types {#geometry}
+# Geometry Types {#geometry}
 
 Geometry classes provide support for spatial and geographic data using GeoJSON-compatible structures. These types are essential for location-based applications and geospatial queries.
 
@@ -23,7 +23,7 @@ Geometry classes provide support for spatial and geographic data using GeoJSON-c
 
 **Source:** [value/geometry.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/value/geometry.ts)
 
-## Geometry types
+## Geometry Types
 
 ### `GeometryPoint` {#geometrypoint}
 
@@ -36,11 +36,28 @@ new GeometryPoint([longitude, latitude])
 new GeometryPoint(point) // Clone existing
 ```
 
+#### Properties
+
+##### `point` {#geometrypoint-point}
+
+The underlying point data as a `[longitude, latitude]` tuple.
+
+**Type:** `[number, number]`
+
+##### `coordinates` {#geometrypoint-coordinates}
+
+GeoJSON-compatible coordinates for this point. Equivalent to `point`.
+
+**Type:** `[number, number]`
+
 #### Example
 
 ```ts
 // Create a point (San Francisco)
 const point = new GeometryPoint([-122.4194, 37.7749]);
+
+console.log(point.point);       // [-122.4194, 37.7749]
+console.log(point.coordinates); // [-122.4194, 37.7749]
 
 // Store location
 await db.create(new Table('locations')).content({
@@ -62,6 +79,37 @@ new GeometryLine([point1, point2, ...points])
 new GeometryLine(line) // Clone existing
 ```
 
+#### Properties
+
+##### `line` {#geometryline-line}
+
+The underlying array of `GeometryPoint` objects that make up this line.
+
+**Type:** `GeometryPoint[]`
+
+##### `coordinates` {#geometryline-coordinates}
+
+GeoJSON-compatible coordinates for this line.
+
+**Type:** `[number, number][]`
+
+#### Methods
+
+##### `.close()` {#geometryline-close}
+
+Closes the line by appending the first point to the end, if it is not already closed. Useful when constructing polygon boundaries.
+
+```ts
+const line = new GeometryLine([
+    new GeometryPoint([0, 0]),
+    new GeometryPoint([10, 0]),
+    new GeometryPoint([10, 10])
+]);
+
+line.close();
+// Line now ends with GeometryPoint([0, 0])
+```
+
 #### Example
 
 ```ts
@@ -70,6 +118,9 @@ const line = new GeometryLine([
     new GeometryPoint([-122.4194, 37.7749]), // San Francisco
     new GeometryPoint([-118.2437, 34.0522])  // Los Angeles
 ]);
+
+console.log(line.line);        // [GeometryPoint, GeometryPoint]
+console.log(line.coordinates); // [[-122.4194, 37.7749], [-118.2437, 34.0522]]
 
 // Multi-segment line
 const route = new GeometryLine([
@@ -93,6 +144,20 @@ new GeometryPolygon([outerBoundary, ...holes])
 new GeometryPolygon(polygon) // Clone existing
 ```
 
+#### Properties
+
+##### `polygon` {#geometrypolygon-polygon}
+
+The underlying array of `GeometryLine` objects (outer boundary and optional holes).
+
+**Type:** `GeometryLine[]`
+
+##### `coordinates` {#geometrypolygon-coordinates}
+
+GeoJSON-compatible coordinates for this polygon.
+
+**Type:** `[number, number][][]`
+
 #### Example
 
 ```ts
@@ -105,6 +170,8 @@ const triangle = new GeometryPolygon([
         new GeometryPoint([0, 0]) // Close the polygon
     ])
 ]);
+
+console.log(triangle.polygon); // [GeometryLine]
 
 // Polygon with hole (donut shape)
 const donut = new GeometryPolygon([
@@ -140,6 +207,20 @@ new GeometryMultiPoint([point1, point2, ...points])
 new GeometryMultiPoint(multiPoint) // Clone existing
 ```
 
+#### Properties
+
+##### `points` {#geometrymultipoint-points}
+
+The underlying array of `GeometryPoint` objects.
+
+**Type:** `GeometryPoint[]`
+
+##### `coordinates` {#geometrymultipoint-coordinates}
+
+GeoJSON-compatible coordinates for this multi-point.
+
+**Type:** `[number, number][]`
+
 #### Example
 
 ```ts
@@ -149,6 +230,8 @@ const stores = new GeometryMultiPoint([
     new GeometryPoint([-118.2437, 34.0522]), // LA
     new GeometryPoint([-87.6298, 41.8781])   // Chicago
 ]);
+
+console.log(stores.points); // [GeometryPoint, GeometryPoint, GeometryPoint]
 ```
 
 ---
@@ -164,6 +247,20 @@ new GeometryMultiLine([line1, line2, ...lines])
 new GeometryMultiLine(multiLine) // Clone existing
 ```
 
+#### Properties
+
+##### `lines` {#geometrymultiline-lines}
+
+The underlying array of `GeometryLine` objects.
+
+**Type:** `GeometryLine[]`
+
+##### `coordinates` {#geometrymultiline-coordinates}
+
+GeoJSON-compatible coordinates for this multi-line.
+
+**Type:** `[number, number][][]`
+
 #### Example
 
 ```ts
@@ -178,6 +275,8 @@ const routes = new GeometryMultiLine([
         new GeometryPoint([3, 3])
     ])
 ]);
+
+console.log(routes.lines); // [GeometryLine, GeometryLine]
 ```
 
 ---
@@ -193,6 +292,20 @@ new GeometryMultiPolygon([polygon1, polygon2, ...polygons])
 new GeometryMultiPolygon(multiPolygon) // Clone existing
 ```
 
+#### Properties
+
+##### `polygons` {#geometrymultipolygon-polygons}
+
+The underlying array of `GeometryPolygon` objects.
+
+**Type:** `GeometryPolygon[]`
+
+##### `coordinates` {#geometrymultipolygon-coordinates}
+
+GeoJSON-compatible coordinates for this multi-polygon.
+
+**Type:** `[number, number][][][]`
+
 #### Example
 
 ```ts
@@ -201,6 +314,8 @@ const areas = new GeometryMultiPolygon([
     new GeometryPolygon([/* first area */]),
     new GeometryPolygon([/* second area */])
 ]);
+
+console.log(areas.polygons); // [GeometryPolygon, GeometryPolygon]
 ```
 
 ---
@@ -216,6 +331,26 @@ new GeometryCollection([geometry1, geometry2, ...geometries])
 new GeometryCollection(collection) // Clone existing
 ```
 
+#### Properties
+
+##### `collection` {#geometrycollection-collection}
+
+The underlying array of geometry objects in this collection.
+
+**Type:** `Geometry[]`
+
+##### `geometries` {#geometrycollection-geometries}
+
+Getter that returns the array of geometry objects. Equivalent to `collection`.
+
+**Type:** `Geometry[]`
+
+##### `coordinates` {#geometrycollection-coordinates}
+
+GeoJSON-compatible coordinates for this collection.
+
+**Type:** `unknown[]`
+
 #### Example
 
 ```ts
@@ -228,11 +363,38 @@ const collection = new GeometryCollection([
     ]),
     new GeometryPolygon([/* polygon data */])
 ]);
+
+console.log(collection.collection);  // [GeometryPoint, GeometryLine, GeometryPolygon]
+console.log(collection.geometries);  // [GeometryPoint, GeometryLine, GeometryPolygon]
 ```
 
-## Common methods
+## Common Methods
 
 All geometry types share these methods:
+
+### `.is(type)` {#is}
+
+Type guard that checks if a geometry matches a specific type. Each geometry subclass implements this method.
+
+```ts
+is(type: "Point"): this is GeometryPoint
+is(type: "LineString"): this is GeometryLine
+is(type: "Polygon"): this is GeometryPolygon
+is(type: "MultiPoint"): this is GeometryMultiPoint
+is(type: "MultiLineString"): this is GeometryMultiLine
+is(type: "MultiPolygon"): this is GeometryMultiPolygon
+is(type: "GeometryCollection"): this is GeometryCollection
+```
+
+```ts
+function describeGeometry(geo: Geometry) {
+    if (geo.is("Point")) {
+        console.log('Point at', geo.point);
+    } else if (geo.is("Polygon")) {
+        console.log('Polygon with', geo.polygon.length, 'rings');
+    }
+}
+```
 
 ### `.toJSON()` {#tojson}
 
@@ -273,9 +435,9 @@ const b = new GeometryPoint([0, 0]);
 console.log(a.equals(b)); // true
 ```
 
-## Complete examples
+## Complete Examples
 
-### Store locations
+### Store Locations
 
 ```ts
 
@@ -301,7 +463,7 @@ for (const location of locations) {
 }
 ```
 
-### Delivery routes
+### Delivery Routes
 
 ```ts
 // Define delivery route
@@ -315,12 +477,12 @@ const route = new GeometryLine([
 await db.create(new Table('routes')).content({
     driver: new RecordId('drivers', 'john'),
     route: route,
-    estimated_time: Duration.parse('2h30m'),
+    estimated_time: new Duration('2h30m'),
     created_at: DateTime.now()
 });
 ```
 
-### Service areas
+### Service Areas
 
 ```ts
 // Define service coverage area (polygon)
@@ -341,7 +503,7 @@ await db.create(new Table('service_areas')).content({
 });
 ```
 
-### Geospatial queries
+### Geospatial Queries
 
 ```ts
 // Find locations near a point
@@ -358,7 +520,7 @@ const nearbyLocations = await db.query(`
 console.log('Nearby locations:', nearbyLocations);
 ```
 
-### Polygon containment
+### Polygon Containment
 
 ```ts
 // Check if a point is within a polygon
@@ -384,7 +546,7 @@ const result = await db.query(`
 console.log('Point is inside:', result[0]);
 ```
 
-### Multiple locations (multipoint)
+### Multiple Locations (MultiPoint)
 
 ```ts
 // Store multiple branch locations
@@ -399,11 +561,11 @@ await db.create(new Table('companies')).content({
     name: 'Tech Corp',
     headquarters: new GeometryPoint([-122.4194, 37.7749]),
     all_branches: branches,
-    founded: DateTime.parse('2020-01-01')
+    founded: new DateTime('2020-01-01')
 });
 ```
 
-### Distance calculations
+### Distance Calculations
 
 ```ts
 // Calculate distance between two points
@@ -420,7 +582,7 @@ const distance = await db.query(`
 console.log('Distance in meters:', distance[0]);
 ```
 
-### GeoJSON export
+### GeoJSON Export
 
 ```ts
 // Export as GeoJSON for mapping libraries
@@ -436,7 +598,7 @@ const geoJson = point.toJSON();
 */
 ```
 
-### Complex region with holes
+### Complex Region with Holes
 
 ```ts
 // Define a park with a lake (hole)
@@ -466,7 +628,7 @@ await db.create(new Table('parks')).content({
 });
 ```
 
-## GeoJSON compatibility
+## GeoJSON Compatibility
 
 All geometry types are compatible with GeoJSON format:
 
@@ -486,9 +648,9 @@ console.log(geoJson);
 // Use with any GeoJSON-compatible library
 ```
 
-## Best practices
+## Best Practices
 
-### 1. Use correct coordinate order
+### 1. Use Correct Coordinate Order
 
 ```ts
 // Good: [longitude, latitude] (GeoJSON standard)
@@ -498,7 +660,7 @@ const point = new GeometryPoint([-122.4194, 37.7749]);
 const wrong = new GeometryPoint([37.7749, -122.4194]);
 ```
 
-### 2. Close polygons properly
+### 2. Close Polygons Properly
 
 ```ts
 // Good: First and last points are the same
@@ -515,7 +677,7 @@ const polygon = new GeometryPolygon([
 // The library automatically closes polygons if needed
 ```
 
-### 3. Use appropriate geometry type
+### 3. Use Appropriate Geometry Type
 
 ```ts
 // Good: Single location
@@ -528,7 +690,7 @@ const branches = new GeometryMultiPoint([point1, point2, point3]);
 const wrong = new GeometryMultiPoint([point1]);
 ```
 
-### 4. Validate coordinates
+### 4. Validate Coordinates
 
 ```ts
 // Good: Valid coordinates
@@ -539,7 +701,7 @@ const valid = new GeometryPoint([-122.4194, 37.7749]);
 const invalid = new GeometryPoint([200, 100]); // Will create but may cause issues
 ```
 
-## Use cases
+## Use Cases
 
 - **Location-based Services** - Store and query business locations
 - **Delivery Systems** - Define delivery routes and service areas
@@ -548,9 +710,9 @@ const invalid = new GeometryPoint([200, 100]); // Will create but may cause issu
 - **Environmental** - Conservation areas, wildlife habitats
 - **Urban Planning** - City zones, districts, infrastructure
 
-## See also
+## See Also
 
 - [Data Types Overview](index.md) - All custom data types
 - [Query Builders](../queries/index.md) - Using Geometry in queries
-- [SurrealQL Geometry](../../../../reference/query-language/language-primitives/data-types/geometries.md) - Database geometry types
+- [SurrealQL Geometry](https://surrealdb.com/docs/surrealql/datamodel/geometries) - Database geometry types
 - [GeoJSON Specification](https://geojson.org/) - GeoJSON format standard

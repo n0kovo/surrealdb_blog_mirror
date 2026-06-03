@@ -17,7 +17,7 @@ This setup is beneficial for remote development and quick testing of application
 
 This guide assumes the following:
 
-- You have [SurrealDB installed](../../../self-hosted/installation/index.md) and a [fresh instance of SurrealDB running.](https://surrealdb.com/docs/start)
+- You have [SurrealDB installed](../../../running/installation/index.md) and a [fresh instance of SurrealDB running.](https://surrealdb.com/docs/start)
 - Downloaded [ngrok](https://ngrok.com/download) to be used as a tunnel.
 
 > [!IMPORTANT]

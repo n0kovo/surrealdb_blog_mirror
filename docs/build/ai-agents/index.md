@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Why SurrealDB for AI agents
-description: "Learn why SurrealDB suits AI agents: durable state, graph memory, SurrealQL and HTTP tools, and vector retrieval."
+description: "Learn why SurrealDB suits AI agents: durable state, graph memory, SurrealQL and HTTP tools, and vector retrieval"
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/ai-agents/index.mdx"
 ---
 
@@ -16,5 +16,7 @@ AI agents need durable state, flexible querying, and fast retrieval. SurrealDBâ€
 **Retrieval and RAG** â€” Combine structured filters with [vector indexes and similarity search](../../learn/data-models/vector-search/vector-indexes.md) to retrieve semantically similar chunks alongside exact matches, supporting grounded answers and hybrid retrieval strategies. Pair lexical filters with vector neighbours when you need both precision and recall.
 
 You can evolve schemas and indexes as your agent workflows change, keeping operational overhead low. For ready-made connections to popular agent libraries, see the [AI frameworks integrations overview](../integrations/ai-frameworks/overview.md).
+
+*Since v3.1.0* SurrealDB also exposes a built-in [Model Context Protocol (MCP)](mcp.md) server (`surreal mcp` on stdio, `/mcp` on `surreal start`) so agents can query and mutate data through a standard tool surface with the same permissions as `/sql`.
 
 What that means in practice is that you can store conversation state and retrieved chunks beside canonical records (users, tickets, products) in one place.

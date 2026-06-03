@@ -492,7 +492,7 @@ LET $regex = <regex>"gr(a|e)y";
 
 ## `string::repeat`
 
-The `string::repeat` function repeats a string a number of times.
+The `string::repeat` function repeats a string a number of times. The repeat count must be non-negative; negative values return an error.
 
 ```surql title="API DEFINITION"
 string::repeat(string, $times: number) -> string
@@ -548,7 +548,7 @@ RETURN string::replace('this is a test', 'a test', 'awesome');
 -- 'this is awesome'
 ```
 
-With [`regexes`](../../language-primitives/data-types/regex.md) added as a data type in version 2.3, the second argument can also be a regex instead of a string.
+As [`regexes`](../../language-primitives/data-types/regex.md) are their own data type, the second argument can also be a regex instead of a string.
 
 ```surql
 /**[test]
@@ -1923,7 +1923,7 @@ RETURN string::semver::inc::patch("1.2.3");
 
 ## `string::semver::set::major`
 
-The `string::semver::set::major` function sets the major number of a semver string without changing the minor and patch numbers.
+The `string::semver::set::major` function sets the major number of a semver string without changing the minor and patch numbers. The numeric argument must be non-negative.
 
 ```surql title="API DEFINITION"
 string::semver::set::major(string, $major: number) -> string
@@ -1948,7 +1948,7 @@ RETURN string::semver::set::major("1.2.3", 9);
 
 ## `string::semver::set::minor`
 
-The `string::semver::set::minor` function sets the minor number of a semver string without changing the major and patch numbers.
+The `string::semver::set::minor` function sets the minor number of a semver string without changing the major and patch numbers. The numeric argument must be non-negative.
 
 ```surql title="API DEFINITION"
 string::semver::set::minor(string, $minor: number) -> string
@@ -1972,7 +1972,7 @@ RETURN string::semver::set::minor("1.2.3", 9);
 
 ## `string::semver::set::patch`
 
-The `string::semver::set::patch` function sets the patch number of a semver string without changing the major and minor numbers.
+The `string::semver::set::patch` function sets the patch number of a semver string without changing the major and minor numbers. The numeric argument must be non-negative.
 
 ```surql title="API DEFINITION"
 string::semver::set::patch(string, $patch: number) -> string

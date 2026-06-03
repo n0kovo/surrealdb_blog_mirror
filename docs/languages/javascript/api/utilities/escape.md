@@ -1,11 +1,11 @@
 ---
 position: 6
-title: Escape Functions
+title: Escape functions
 description: Functions for escaping identifiers and values in SurrealQL queries.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/javascript/api/utilities/escape.mdx"
 ---
 
-# Escape functions {#escape}
+# Escape Functions {#escape}
 
 Escape functions provide safe handling of identifiers and values in SurrealQL queries when you need to construct queries manually.
 
@@ -15,9 +15,9 @@ Escape functions provide safe handling of identifiers and values in SurrealQL qu
 **Import:**
 ```ts
     escapeIdent,
-    escapeKey,
-    escapeRid,
-    escapeValue
+    escapeNumber,
+    escapeIdPart,
+    escapeRangeBound
 } from 'surrealdb';
 ```
 
@@ -74,32 +74,12 @@ console.log(escapeIdent('from')); // '`from`'
 
 ---
 
-### `escapeKey(key)` {#escapekey}
+### `escapeNumber(num)` {#escapenumber}
 
-Escape object keys for use in queries.
-
-```ts title="Signature"
-function escapeKey(key: string): string
-```
-
-#### Returns
-`string` - Escaped key
-
-#### Example
-
-```ts
-const key = 'user-property';
-console.log(escapeKey(key)); // Properly escaped for object notation
-```
-
----
-
-### `escapeRid(value)` {#escaperid}
-
-Escape record ID components.
+Escape a number to be used as a valid SurrealQL ident.
 
 ```ts title="Signature"
-function escapeRid(value: string | number): string
+function escapeNumber(num: number | bigint): string
 ```
 
 #### Parameters
@@ -113,37 +93,32 @@ function escapeRid(value: string | number): string
     </thead>
     <tbody>
         <tr>
-            <td>`value` <label label="required" /></td>
-            <td>`string | number`</td>
-            <td>The record ID component to escape.</td>
+            <td>`num` <label label="required" /></td>
+            <td>`number | bigint`</td>
+            <td>The number to escape.</td>
         </tr>
     </tbody>
 </table>
 
 #### Returns
-`string` - Escaped record ID component
+`string` - Escaped number representation
 
 #### Examples
 
 ```ts
 
-// Simple IDs
-console.log(escapeRid('john')); // 'john'
-console.log(escapeRid(123)); // '123'
-
-// IDs with special characters
-console.log(escapeRid('user-123')); // '`user-123`'
-console.log(escapeRid('user@email.com')); // '`user@email.com`'
+console.log(escapeNumber(123));    // '123'
+console.log(escapeNumber(42n));    // '42'
 ```
 
 ---
 
-### `escapeValue(value)` {#escapevalue}
+### `escapeIdPart(id)` {#escapeidpart}
 
-Escape values for use in queries.
+Escape a record ID value part. Handles `Uuid`, `string`, `number`, `bigint`, and object values.
 
 ```ts title="Signature"
-function escapeValue(value: unknown): string
+function escapeIdPart(id: RecordIdValue): string
 ```
 
 #### Parameters
@@ -157,40 +132,65 @@ function escapeValue(value: unknown): string
     </thead>
     <tbody>
         <tr>
-            <td>`value` <label label="required" /></td>
-            <td>`unknown`</td>
-            <td>The value to escape.</td>
+            <td>`id` <label label="required" /></td>
+            <td>`RecordIdValue`</td>
+            <td>The record ID value part to escape.</td>
         </tr>
     </tbody>
 </table>
 
 #### Returns
-`string` - Escaped value representation
+`string` - Escaped record ID part
 
 #### Examples
 
 ```ts
 
-// Strings
-console.log(escapeValue('hello')); // "'hello'"
-console.log(escapeValue("O'Reilly")); // "'O\\'Reilly'"
+// String IDs
+console.log(escapeIdPart('john'));        // 'john' or escaped equivalent
 
-// Numbers
-console.log(escapeValue(42)); // '42'
-console.log(escapeValue(3.14)); // '3.14'
+// Numeric IDs
+console.log(escapeIdPart(123));           // '123'
+console.log(escapeIdPart(42n));           // '42'
 
-// Booleans
-console.log(escapeValue(true)); // 'true'
-console.log(escapeValue(false)); // 'false'
-
-// null/undefined
-console.log(escapeValue(null)); // 'null'
-console.log(escapeValue(undefined)); // 'none'
+// UUID values
+console.log(escapeIdPart(new Uuid('...')));
 ```
 
-## Complete examples
+---
 
-### Dynamic table names
+### `escapeRangeBound(bound)` {#escaperangebound}
+
+Escape a range bound value for use in SurrealQL range expressions.
+
+```ts title="Signature"
+function escapeRangeBound<T>(bound: Bound<T>): string
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`bound` <label label="required" /></td>
+            <td>`Bound&lt;T&gt;`</td>
+            <td>The range bound to escape.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+`string` - Escaped range bound representation
+
+## Complete Examples
+
+### Dynamic Table Names
 
 ```ts
 
@@ -208,7 +208,7 @@ async function selectFromTable(tableName: string) {
 await selectFromTable('user-sessions'); // Safe
 ```
 
-### Dynamic field selection
+### Dynamic Field Selection
 
 ```ts
 
@@ -225,26 +225,10 @@ async function selectFields(table: string, fields: string[]) {
 await selectFields('users', ['first-name', 'last-name', 'email']);
 ```
 
-### Building raw queries (not recommended)
+### Using surql Instead (Recommended)
 
 ```ts
-// Only when you absolutely must build raw queries
-
-function buildUnsafeQuery(table: string, filters: Record<string, unknown>) {
-    const escapedTable = escapeIdent(table);
-    
-    const conditions = Object.entries(filters)
-        .map(([key, value]) => {
-            const field = escapeIdent(key);
-            const val = escapeValue(value);
-            return `${field} = ${val}`;
-        })
-        .join(' AND ');
-    
-    return `SELECT * FROM ${escapedTable} WHERE ${conditions}`;
-}
-
-// Better: Use surql instead!
+// Prefer surql for safe parameterization
 const filters = { status: 'active', age: 18 };
 const query = surql`
     SELECT * FROM users 
@@ -253,23 +237,23 @@ const query = surql`
 `;
 ```
 
-## When to use
+## When to Use
 
-### ✅ use escape functions when:
+### ✅ Use Escape Functions When:
 - Constructing queries with user-provided table/field names
 - Working with identifiers that have special characters
 - Building dynamic schema definitions
 - Interfacing with external query builders
 
-### ❌ prefer other solutions:
+### ❌ Prefer Other Solutions:
 - **For values:** Use [`surql`](surql.md) or [`BoundQuery`](bound-query.md)
 - **For tables:** Use [`Table`](../values/table.md) class
 - **For record IDs:** Use [`RecordId`](../values/record-id.md) class
 - **For conditions:** Use [`expr`](expr.md)
 
-## Best practices
+## Best Practices
 
-### 1. Prefer type-safe alternatives
+### 1. Prefer Type-Safe Alternatives
 
 ```ts
 // Good: Type-safe
@@ -281,7 +265,7 @@ const escaped = escapeIdent('users');
 const users = await db.query(`SELECT * FROM ${escaped}`).collect();
 ```
 
-### 2. Validate before escaping
+### 2. Validate Before Escaping
 
 ```ts
 // Good: Validate first
@@ -300,17 +284,17 @@ function unsafeQuery(tableName: string) {
 }
 ```
 
-### 3. Use surql for complex queries
+### 3. Use surql for Complex Queries
 
 ```ts
 // Good: Automatic parameterization
 const query = surql`SELECT * FROM users WHERE name = ${name}`;
 
-// Avoid: Manual escaping
-const query = `SELECT * FROM users WHERE name = ${escapeValue(name)}`;
+// Avoid: Manual string construction
+const query = `SELECT * FROM users WHERE name = '${name}'`;
 ```
 
-## Security considerations
+## Security Considerations
 
 > [!WARNING]
 > Escaping functions are NOT a complete defense against SQL injection. Always prefer parameterized queries using `surql` or `BoundQuery`.
@@ -319,14 +303,11 @@ const query = `SELECT * FROM users WHERE name = ${escapeValue(name)}`;
 // Secure: Parameterized
 const query = surql`SELECT * FROM users WHERE name = ${userInput}`;
 
-// Less secure: Manual escaping
-const query = `SELECT * FROM users WHERE name = ${escapeValue(userInput)}`;
-
 // Insecure: No escaping
 const query = `SELECT * FROM users WHERE name = '${userInput}'`;
 ```
 
-## See also
+## See Also
 
 - [surql](surql.md) - Recommended for parameterized queries
 - [BoundQuery](bound-query.md) - Parameterized query class

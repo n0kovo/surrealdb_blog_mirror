@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 *Since v3.0.0*
 
 > [!NOTE: BEFORE YOU START]
-> Make sure you’ve [installed SurrealDB](../../../../self-hosted/installation/index.md) — it should only take a second!
+> Make sure you’ve [installed SurrealDB](../../../../running/installation/index.md) — it should only take a second!
 
 ## Commands and examples
 

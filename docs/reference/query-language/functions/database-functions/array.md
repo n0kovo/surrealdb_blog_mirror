@@ -2331,7 +2331,7 @@ RETURN array::remove([1, 2, 3, 4, 5], -2);
 
 *Since v2.0.0*
 
-The `array::repeat` function creates an array of a given size contain the specified value for each element.
+The `array::repeat` function creates an array of a given size contain the specified value for each element. The `count` argument must be non-negative; negative values return an error.
 
 ```surql title="API DEFINITION"
 array::repeat(any, $count: int) -> array
@@ -2974,7 +2974,7 @@ value = "[['Name', 'Billy', 'Alice'], ['Age', 25, 30]]"
 ]
 ```
 
-The logic of this function for arrays of differing length was improved in SurrealDB 2.2, in which `NONE` is now added at points in which no item is found at an index. Take the following movies for example, in which one — Groundhog Day — does not have a bad guy.
+When the input arrays differ in length, `NONE` is added at indices where no item is found. Take the following movies for example, in which one — Groundhog Day — does not have a bad guy.
 
 ```surql
 /**[test]

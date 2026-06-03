@@ -1,6 +1,6 @@
 ---
 position: 1
-title: SDK Concepts
+title: SDK concepts
 description: The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/dotnet/core/index.mdx"
 ---

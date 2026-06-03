@@ -52,7 +52,7 @@ This project is using the following folder structure:
 
 Before you begin this tutorial you’ll need the following:
 
-a. [SurrealDB](../../../self-hosted/installation/index.md) installed on your machine (Make sure you upgrade to the latest version if you already have SurrealDB installed on your machine)
+a. [SurrealDB](../../../running/installation/index.md) installed on your machine (Make sure you upgrade to the latest version if you already have SurrealDB installed on your machine)
 
 b. The [Bun](https://bun.sh/docs/installation) runtime
 

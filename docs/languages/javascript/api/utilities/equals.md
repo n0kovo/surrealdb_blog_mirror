@@ -15,10 +15,10 @@ The `equals()` function performs deep equality comparison for values, including 
 
 **Source:** [utils/equals.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/utils/equals.ts)
 
-## Function signature
+## Function Signature
 
 ```ts
-function equals(a: unknown, b: unknown): boolean
+function equals(x: unknown, y: unknown): boolean
 ```
 
 #### Parameters
@@ -32,12 +32,12 @@ function equals(a: unknown, b: unknown): boolean
     </thead>
     <tbody>
         <tr>
-            <td>`a` <label label="required" /></td>
+            <td>`x` <label label="required" /></td>
             <td>`unknown`</td>
             <td>First value to compare.</td>
         </tr>
         <tr>
-            <td>`b` <label label="required" /></td>
+            <td>`y` <label label="required" /></td>
             <td>`unknown`</td>
             <td>Second value to compare.</td>
         </tr>
@@ -47,7 +47,7 @@ function equals(a: unknown, b: unknown): boolean
 #### Returns
 `boolean` - `true` if values are deeply equal, `false` otherwise
 
-## What it compares
+## What It Compares
 
 The `equals()` function correctly handles:
 - **Primitives** - strings, numbers, booleans, null, undefined
@@ -60,7 +60,7 @@ The `equals()` function correctly handles:
 
 ## Examples
 
-### Primitive comparisons
+### Primitive Comparisons
 
 ```ts
 
@@ -70,7 +70,7 @@ console.log(equals(true, false)); // false
 console.log(equals(null, null)); // true
 ```
 
-### SurrealDB type comparisons
+### SurrealDB Type Comparisons
 
 ```ts
 
@@ -83,8 +83,8 @@ console.log(equals(id1, id2)); // true
 console.log(equals(id1, id3)); // false
 
 // DateTime comparison (including nanoseconds)
-const dt1 = DateTime.parse('2024-01-15T12:00:00.123456789Z');
-const dt2 = DateTime.parse('2024-01-15T12:00:00.123456789Z');
+const dt1 = new DateTime('2024-01-15T12:00:00.123456789Z');
+const dt2 = new DateTime('2024-01-15T12:00:00.123456789Z');
 
 console.log(equals(dt1, dt2)); // true
 
@@ -101,7 +101,7 @@ const dec2 = new Decimal('19.99');
 console.log(equals(dec1, dec2)); // true
 ```
 
-### Object comparisons
+### Object Comparisons
 
 ```ts
 const obj1 = { name: 'John', age: 30 };
@@ -130,7 +130,7 @@ const deep2 = {
 console.log(equals(deep1, deep2)); // true
 ```
 
-### Array comparisons
+### Array Comparisons
 
 ```ts
 const arr1 = [1, 2, 3];
@@ -153,7 +153,7 @@ const ids2 = [
 console.log(equals(ids1, ids2)); // true
 ```
 
-### Mixed type comparisons
+### Mixed Type Comparisons
 
 ```ts
 // bigint and number comparison
@@ -167,9 +167,9 @@ const date2 = new Date('2024-01-15');
 console.log(equals(date1, date2)); // true
 ```
 
-## Use cases
+## Use Cases
 
-### Checking record existence
+### Checking Record Existence
 
 ```ts
 async function hasRecord(recordId: RecordId): Promise<boolean> {
@@ -206,7 +206,7 @@ const uniqueIds = deduplicate(recordIds);
 console.log(uniqueIds.length); // 2
 ```
 
-### Change detection
+### Change Detection
 
 ```ts
 function hasChanged<T>(before: T, after: T): boolean {
@@ -222,7 +222,7 @@ if (hasChanged(originalUser, updatedUser)) {
 }
 ```
 
-### Array difference
+### Array Difference
 
 ```ts
 function findNewItems<T>(oldList: T[], newList: T[]): T[] {
@@ -238,7 +238,7 @@ const added = findNewItems(oldTags, newTags);
 console.log(added); // ['react']
 ```
 
-### Caching / memoization
+### Caching / Memoization
 
 ```ts
 class Cache<K, V> {
@@ -267,7 +267,7 @@ cache.set(userId, userData);
 const cached = cache.get(new RecordId('users', 'john')); // Found!
 ```
 
-### Record comparison
+### Record Comparison
 
 ```ts
 interface User {
@@ -287,7 +287,7 @@ const user2: User = await db.select(new RecordId('users', 'john'));
 console.log(equals(user1, user2)); // true
 ```
 
-## Why not use `===` or `==`?
+## Why Not Use `===` or `==`?
 
 JavaScript's equality operators don't work correctly for:
 
@@ -317,9 +317,9 @@ console.log(arr1 === arr2); // false
 console.log(equals(arr1, arr2)); // true
 ```
 
-## Best practices
+## Best Practices
 
-### 1. Use for value comparisons
+### 1. Use for Value Comparisons
 
 ```ts
 // Good: Deep equality
@@ -333,20 +333,20 @@ if (recordId1 === recordId2) {
 }
 ```
 
-### 2. Use for complex type comparisons
+### 2. Use for Complex Type Comparisons
 
 ```ts
 // Good: Proper comparison
 const sameDateTime = equals(
-    DateTime.parse('2024-01-15T12:00:00.123456789Z'),
-    DateTime.parse('2024-01-15T12:00:00.123456789Z')
+    new DateTime('2024-01-15T12:00:00.123456789Z'),
+    new DateTime('2024-01-15T12:00:00.123456789Z')
 ); // true
 
 // Avoid: Direct comparison
 const wrong = dt1 === dt2; // false (different instances)
 ```
 
-### 3. Prefer built-in `.equals()` for single types
+### 3. Prefer Built-in `.equals()` for Single Types
 
 ```ts
 const id1 = new RecordId('users', 'john');
@@ -360,7 +360,7 @@ console.log(id1.equals(id2)); // true
 // Use equals(id1, id2) for generic comparisons
 ```
 
-## See also
+## See Also
 
 - [Data Types](../values/index.md) - SurrealDB data types
 - [RecordId.equals()](../values/record-id.md#equals) - RecordId-specific comparison

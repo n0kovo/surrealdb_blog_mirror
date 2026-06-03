@@ -1,8 +1,10 @@
 # Category: company
 
-_39 posts_  
+_40 posts_  
 [← Index](../../README.md)
 
+- **2026-05-29** · [SurrealDB 3.x by the numbers](../2026/05/surrealdb-3-x-by-the-numbers.md)  
+  `engineering` `company` `featured` — Fresh SurrealDB 3.x benchmarks: 141k ops\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.
 - **2026-03-11** · [SurrealDB is now available on AWS Marketplace](../2026/03/surrealdb-is-now-available-on-aws-marketplace.md)  
   `featured` `company` — You can now deploy SurrealDB directly into your AWS environment with streamlined procurement, simplified billing, and faster time to production - all through your existing AWS environment.
 - **2026-02-18** · [SurrealDB Raises $23M Series A extension to power the AI-native database era](../2026/02/surrealdb-raises-23m-series-a-extension-to-power-the-ai-native-database-era.md)  
@@ -42,10 +44,10 @@ _39 posts_
 - **2025-02-11** · [SurrealDB 2.2: Benchmarking, graph path algorithms and foreign key constraints](../2025/02/surrealdb-2-2-benchmarking-graph-path-algorithms-and-foreign-key-constraints.md)  
   `releases` `company` `featured` — This is the release you've been waiting for
 - **2024-12-13** · [Your personal Surreal Sidekick](../2024/12/your-personal-surreal-sidekick.md)  
-  `releases` `featured` `company` — With the recent release of Surreal Cloud (beta) and the introduction of the Surreal Cloud panel in Surrealist, we introduced a brand new tool to help you increase your SurrealDB productivity.
+  `releases` `featured` `company` — With the recent release of SurrealDB Cloud (beta) and the introduction of the SurrealDB Cloud panel in Surrealist, we introduced a brand new tool to help you increase your SurrealDB productivity.
 - **2024-10-15** · [SurrealDB Empowers Developers to Build Applications with the Launch of SurrealDB University](../2024/10/surrealdb-empowers-developers-to-build-applications-with-the-launch-of-surrealdb-university.md)  
   `releases` `featured` `company` — Access to this comprehensive course provides any developer with the education and documentation needed to quickly and successfully build applications on SurrealDB in as little as three hours
-- **2024-09-17** · [SurrealDB Delivers Future-Ready Database Technology for Developers and Enterprises with Release of SurrealDB 2.0 ](../2024/09/surrealdb-delivers-future-ready-database-technology-for-developers-and-enterprises-with-release-of-surrealdb-2-0.md)  
+- **2024-09-17** · [SurrealDB delivers future-ready database technology for developers and enterprises with release of SurrealDB 2.0 ](../2024/09/surrealdb-delivers-future-ready-database-technology-for-developers-and-enterprises-with-release-of-surrealdb-2-0.md)  
   `releases` `featured` `company` — Powerful new features introduce advanced stability, performance, security and data management capabilities to build enterprise-ready applications
 - **2024-09-17** · [Challenge accepted: announcing SurrealDB 2.0](../2024/09/challenge-accepted-announcing-surrealdb-2-0.md)  
   `releases` `featured` `company` — With the massive community adoption that followed came massive expectations and challenges to live up to these expectations.
@@ -53,7 +55,7 @@ _39 posts_
   `company` `featured` — Last week was awesome for our team at SurrealDB! It feels like the perfect time to pause and reflect on the whirlwind of achievements, all of which signal exciting times ahead for our company. We are incredibly proud to share some major milestones we've hit, and we want to extend our deepest gratitude to everyone who has been part of this journey to date.
 - **2024-06-17** · [SurrealDB Raises $20M to Disrupt Database Tech; Introduces New Cloud Beta Access](../2024/06/surrealdb-raises-20m-to-disrupt-database-tech-introduces-new-cloud-beta-access.md)  
   `company` `featured` — London, United Kingdom June 18, 2024, SurrealDB, the ultimate multi-model database, today announced a $20 million investment round led by FirstMark and Georgian with participation from Crew Capital and Alumni Ventures. This latest round of funding brings SurrealDB’s total to $26 million.
-- **2024-04-23** · [The Surrealist Journey](../2024/04/the-surrealist-journey.md)  
+- **2024-04-23** · [The Surrealist journey](../2024/04/the-surrealist-journey.md)  
   `company` — Interacting with a database is not an easy job. You’ll often find yourself needing to query patterns in your data, testing whether your queries have the intended outcome, or carefully designing a schema to suit your application. This was a natural hurdle I ran into when first adopting SurrealDB into my workflow, and is exactly why I built Surrealist.
 - **2024-03-13** · [Why we are betting on Rust](../2024/03/why-we-are-betting-on-rust.md)  
   `engineering` `company` — The best way to predict the future is to create it.

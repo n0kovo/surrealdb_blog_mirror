@@ -14,25 +14,22 @@ The JavaScript SDK for SurrealDB makes it effortless to connect to your instance
 Follow the [installation guide](installation.md) to install the SDK as a dependency in your project.
 Once installed, you can import and instantiate the SDK to start using it.
 
-	
 **ESM**
 
 ```ts
-	import { Surreal } from 'surrealdb';
 
-	// Create a new Surreal instance
-	const db = new Surreal();
-	```
+// Create a new Surreal instance
+const db = new Surreal();
+```
 
-	
 **CommonJS**
 
 ```ts
-	const { Surreal } = require('surrealdb');
+const { Surreal } = require('surrealdb');
 
-	// Create a new Surreal instance
-	const db = new Surreal();
-	```
+// Create a new Surreal instance
+const db = new Surreal();
+```
 
 The `Surreal` class can be instantiated multiple times to connect to multiple SurrealDB instances at once.
 
@@ -73,88 +70,84 @@ Alternatively you can use the `.signin()` method to authenticate, however passin
 This approach is suitable when connecting as [record user](../../learn/security/authentication/authentication.md#record-users) from a frontend application.
 Since authentication usually takes place through a login page, you can use the dedicated `.signin()` or `.signup()` methods to authenticate.
 
-	
 **Sign in an existing user**
 
 ```ts
-	const db = new Surreal();
+const db = new Surreal();
 
-	// Connect using the WebSocket protocol
-	await db.connect('ws://localhost:8000', {
-		namespace: "company_name",
-		database: "project_name"
-	});
+// Connect using the WebSocket protocol
+await db.connect('ws://localhost:8000', {
+	namespace: "company_name",
+	database: "project_name"
+});
 
-	// Sign in as a record user
-	await db.signin({
-		access: "user",
-		variables: {
-			email: "user@example.com",
-			password: "....."
-		}
-	});
-	```
+// Sign in as a record user
+await db.signin({
+	access: "user",
+	variables: {
+		email: "user@example.com",
+		password: "....."
+	}
+});
+```
 
-	
 **Sign up a new user**
 
 ```ts
-	const db = new Surreal();
+const db = new Surreal();
 
-	// Connect using the WebSocket protocol
-	await db.connect('ws://localhost:8000', {
-		namespace: "company_name",
-		database: "project_name"
-	});
+// Connect using the WebSocket protocol
+await db.connect('ws://localhost:8000', {
+	namespace: "company_name",
+	database: "project_name"
+});
 
-	// Sign up as a record user
-	await db.signup({
-		access: "user",
-		variables: {
-			email: "user@example.com",
-			password: "....."
-		}
-	});
-	```
+// Sign up as a record user
+await db.signup({
+	access: "user",
+	variables: {
+		email: "user@example.com",
+		password: "....."
+	}
+});
+```
 
 ### Connecting with an existing token
 
 This approach is suitable when connecting with an existing access or refresh token.
 
-	
 **Access token**
 
 ```ts
-	const db = new Surreal();
+const db = new Surreal();
 
-	// Connect using the WebSocket protocol
-	await db.connect('ws://localhost:8000', {
-		namespace: "company_name",
-		database: "project_name"
-	});
+// Connect using the WebSocket protocol
+await db.connect('ws://localhost:8000', {
+	namespace: "company_name",
+	database: "project_name"
+});
 
-	// Authenticate with an access token
-	await db.authenticate(".....");
-	```
+// Authenticate with an access token
+await db.authenticate(".....");
+```
 
-	
 **Access & refresh token**
 
 ```ts
-	const db = new Surreal();
+const db = new Surreal();
 
-	// Connect using the WebSocket protocol
-	await db.connect('ws://localhost:8000', {
-		namespace: "company_name",
-		database: "project_name"
-	});
+// Connect using the WebSocket protocol
+await db.connect('ws://localhost:8000', {
+	namespace: "company_name",
+	database: "project_name"
+});
 
-	// Authenticate with an access and refresh token pair
-	await db.authenticate({
-		access: ".....",
-		refresh: "....."
-	});
-	```
+// Authenticate with an access and refresh token pair
+await db.authenticate({
+	access: ".....",
+	refresh: "....."
+});
+```
 
 ## 3. Defining your tables
 

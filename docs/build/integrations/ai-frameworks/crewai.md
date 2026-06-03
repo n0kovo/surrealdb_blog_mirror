@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 # CrewAI
 
 [CrewAI](https://github.com/joaomdmoura/crewAI) lets you orchestrate role-playing AI agents that collaborate to complete complex tasks.  
-This guide shows how to use SurrealDB `>v2.0.0` as the memory backend for CrewAI, giving agents:
+This guide shows how to use SurrealDB as the memory backend for CrewAI, giving agents:
 
 - **Entity memory** for domain objects (products, people, places)  
 - **Short-term memory** for recent conversations  

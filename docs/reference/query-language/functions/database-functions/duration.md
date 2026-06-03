@@ -379,7 +379,7 @@ RETURN duration::years(300w);
 
 ## `duration::from_days`
 
-The `duration::from_days` function counts how many years fit into a duration.
+The `duration::from_days` function counts how many years fit into a duration. The argument must be non-negative; negative values return an error.
 
 ```surql title="API DEFINITION"
 duration::from_days(number) -> duration
@@ -404,7 +404,7 @@ RETURN duration::from_days(3);
 
 ## `duration::from_hours`
 
-The `duration::from_hours` function converts a numeric amount of hours into a duration that represents hours.
+The `duration::from_hours` function converts a numeric amount of hours into a duration that represents hours. The argument must be non-negative; negative values return an error.
 
 ```surql title="API DEFINITION"
 duration::from_hours(number) -> duration
@@ -429,7 +429,7 @@ RETURN duration::from_hours(3);
 
 ## `duration::from_micros`
 
-The `duration::from_micros` function converts a numeric amount of microseconds into a duration that represents microseconds.
+The `duration::from_micros` function converts a numeric amount of microseconds into a duration that represents microseconds. The argument must be non-negative; negative values return an error.
 
 ```surql title="API DEFINITION"
 duration::from_micros(number) -> duration
@@ -453,7 +453,7 @@ RETURN duration::from_micros(3);
 
 ## `duration::from_millis`
 
-The `duration::from_millis` function converts a numeric amount of milliseconds into a duration that represents milliseconds.
+The `duration::from_millis` function converts a numeric amount of milliseconds into a duration that represents milliseconds. The argument must be non-negative; negative values return an error.
 
 ```surql title="API DEFINITION"
 duration::from_millis(number) -> duration
@@ -478,7 +478,7 @@ RETURN duration::from_millis(3);
 
 ## `duration::from_mins`
 
-The `duration::from_mins` function converts a numeric amount of minutes into a duration that represents minutes.
+The `duration::from_mins` function converts a numeric amount of minutes into a duration that represents minutes. The argument must be non-negative; negative values return an error.
 
 ```surql title="API DEFINITION"
 duration::from_mins(number) -> duration
@@ -503,7 +503,7 @@ RETURN duration::from_mins(3);
 
 ## `duration::from_nanos`
 
-The `duration::from_nanos` function converts a numeric amount of nanoseconds into a duration that represents nanoseconds.
+The `duration::from_nanos` function converts a numeric amount of nanoseconds into a duration that represents nanoseconds. The argument must be non-negative; negative values return an error.
 
 ```surql title="API DEFINITION"
 duration::from_nanos(number) -> duration
@@ -527,7 +527,7 @@ RETURN duration::from_nanos(3);
 
 ## `duration::from_secs`
 
-The `duration::from_secs` function converts a numeric amount of seconds into a duration that represents seconds.
+The `duration::from_secs` function converts a numeric amount of seconds into a duration that represents seconds. The argument must be non-negative; negative values return an error.
 
 ```surql title="API DEFINITION"
 duration::from_secs(number) -> duration
@@ -551,7 +551,7 @@ RETURN duration::from_secs(3);
 
 ## `duration::from_weeks`
 
-The `duration::from_weeks` function converts a numeric amount of weeks into a duration that represents weeks.
+The `duration::from_weeks` function converts a numeric amount of weeks into a duration that represents weeks. The argument must be non-negative; negative values return an error.
 
 ```surql title="API DEFINITION"
 duration::from_weeks(number) -> duration

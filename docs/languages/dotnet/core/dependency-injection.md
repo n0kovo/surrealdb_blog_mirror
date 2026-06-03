@@ -1,6 +1,6 @@
 ---
 position: 10
-title: Dependency Injection
+title: Dependency injection
 description: The SurrealDB SDK for .NET also supports the concept of Dependency Injection pattern.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/dotnet/core/dependency-injection.mdx"
 ---

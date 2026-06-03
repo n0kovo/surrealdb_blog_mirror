@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 The SDK defines specific error classes for different failure scenarios. All error classes extend the base `SurrealError` class, allowing you to catch and handle specific error types.
 
-## Base error
+## Base Error
 
 ### `SurrealError` {#surrealerror}
 
@@ -28,7 +28,7 @@ try {
 }
 ```
 
-## Connection errors
+## Connection Errors
 
 ### `ConnectionUnavailableError` {#connectionunavailableerror}
 
@@ -133,7 +133,7 @@ try {
 }
 ```
 
-## Reconnection errors
+## Reconnection Errors
 
 ### `ReconnectExhaustionError` {#reconnectexhaustionerror}
 
@@ -146,7 +146,6 @@ Thrown when reconnect attempts have been exhausted.
 db.subscribe('error', (error) => {
     if (error instanceof ReconnectExhaustionError) {
         console.error('Failed to reconnect after multiple attempts');
-        // Implement custom reconnection logic
     }
 });
 ```
@@ -159,32 +158,261 @@ Thrown when a reconnect iterator fails to iterate.
 
 **Message:** `"The reconnect iterator failed to iterate"`
 
-## Response errors
+## Server Errors
 
-### `ResponseError` {#responseerror}
+Server errors represent structured errors returned by the SurrealDB server. They form a class hierarchy rooted at `ServerError`, which replaces the former `ResponseError` class.
 
-Thrown when a database query fails with an error response.
+### `ErrorKind` {#errorkind}
+
+Known error kinds returned by the SurrealDB server. Use these constants for matching against `ServerError.kind`.
+
+```ts
+const ErrorKind = {
+    Validation: "Validation",
+    Configuration: "Configuration",
+    Thrown: "Thrown",
+    Query: "Query",
+    Serialization: "Serialization",
+    NotAllowed: "NotAllowed",
+    NotFound: "NotFound",
+    AlreadyExists: "AlreadyExists",
+    Connection: "Connection",
+    Internal: "Internal",
+} as const;
+```
+
+---
+
+### `ServerError` {#servererror}
+
+Base class for all errors originating from the SurrealDB server. Each error carries structured information about the failure.
+
+**Extends:** `SurrealError`
 
 **Properties:**
-- `code` (number) - Error code from the database
-- `message` (string) - Error message from the database
+- `kind` (string) - The error category (e.g. `"NotAllowed"`, `"NotFound"`)
+- `code` (number) - Legacy JSON-RPC numeric error code (0 when unavailable)
+- `details` (ErrorDetail | undefined) - Kind-specific structured details from the server
+- `cause` (ServerError | undefined) - Optional inner `ServerError` forming a recursive error chain
 
 **Example:**
 ```ts
 try {
     await db.query('INVALID QUERY');
 } catch (error) {
-    if (error instanceof ResponseError) {
-        console.error(`Database error [${error.code}]: ${error.message}`);
+    if (error instanceof ServerError) {
+        console.error(`Server error [${error.kind}]: ${error.message}`);
+        if (error.cause) {
+            console.error('Caused by:', error.cause.message);
+        }
     }
 }
 ```
 
 ---
 
+### `ValidationError` {#validationerror}
+
+Thrown on validation failures such as parse errors, invalid requests, or invalid parameters.
+
+**Extends:** `ServerError` (kind: `"Validation"`)
+
+**Convenience getters:**
+- `isParseError` (boolean) - True if this is a SurrealQL parse error
+- `parameterName` (string | undefined) - The name of the invalid parameter, if applicable
+
+**Example:**
+```ts
+try {
+    await db.query('SELEC * FROM users'); // Typo
+} catch (error) {
+    if (error instanceof ValidationError) {
+        if (error.isParseError) {
+            console.error('SurrealQL syntax error:', error.message);
+        }
+    }
+}
+```
+
+---
+
+### `ConfigurationError` {#configurationerror}
+
+Thrown when a feature or configuration is not supported by the server (e.g. live queries, GraphQL).
+
+**Extends:** `ServerError` (kind: `"Configuration"`)
+
+**Convenience getters:**
+- `isLiveQueryNotSupported` (boolean) - True if live queries are not supported by the server configuration
+
+---
+
+### `ThrownError` {#thrownerror}
+
+Thrown when a user-thrown error is raised via `THROW` in SurrealQL.
+
+**Extends:** `ServerError` (kind: `"Thrown"`)
+
+**Example:**
+```ts
+try {
+    await db.query('THROW "something went wrong"');
+} catch (error) {
+    if (error instanceof ThrownError) {
+        console.error('SurrealQL THROW:', error.message);
+    }
+}
+```
+
+---
+
+### `QueryError` {#queryerror}
+
+Thrown on query execution failures such as timeouts, cancellations, or skipped statements.
+
+**Extends:** `ServerError` (kind: `"Query"`)
+
+**Convenience getters:**
+- `isNotExecuted` (boolean) - True if the query was not executed (e.g. due to a prior error in the batch)
+- `isTimedOut` (boolean) - True if the query timed out
+- `isCancelled` (boolean) - True if the query was cancelled
+- `timeout` (`{ secs: number, nanos: number } | undefined`) - The timeout duration, if this is a timeout error
+
+**Example:**
+```ts
+try {
+    await db.query('SELECT * FROM heavy_table TIMEOUT 1s');
+} catch (error) {
+    if (error instanceof QueryError) {
+        if (error.isTimedOut) {
+            console.error('Query timed out after', error.timeout?.secs, 'seconds');
+        } else if (error.isNotExecuted) {
+            console.error('Query was not executed');
+        }
+    }
+}
+```
+
+---
+
+### `SerializationError` {#serializationerror}
+
+Thrown on serialization or deserialization failures.
+
+**Extends:** `ServerError` (kind: `"Serialization"`)
+
+**Convenience getters:**
+- `isDeserialization` (boolean) - True if this is a deserialization error (as opposed to serialization)
+
+---
+
+### `NotAllowedError` {#notallowederror}
+
+Thrown when a permission is denied, a method is not allowed, or a function/scripting call is blocked.
+
+**Extends:** `ServerError` (kind: `"NotAllowed"`)
+
+**Convenience getters:**
+- `isTokenExpired` (boolean) - True if the auth token has expired
+- `isInvalidAuth` (boolean) - True if authentication credentials are invalid
+- `isScriptingBlocked` (boolean) - True if scripting is blocked
+- `methodName` (string | undefined) - The method name that is not allowed, if applicable
+- `functionName` (string | undefined) - The function name that is not allowed, if applicable
+
+**Example:**
+```ts
+try {
+    await db.query('SELECT * FROM protected_table');
+} catch (error) {
+    if (error instanceof NotAllowedError) {
+        if (error.isTokenExpired) {
+            console.error('Token expired, re-authenticate');
+        } else if (error.isInvalidAuth) {
+            console.error('Invalid credentials');
+        }
+    }
+}
+```
+
+---
+
+### `NotFoundError` {#notfounderror}
+
+Thrown when a resource is not found (table, record, namespace, method, etc.).
+
+**Extends:** `ServerError` (kind: `"NotFound"`)
+
+**Convenience getters:**
+- `tableName` (string | undefined) - The table name that was not found
+- `recordId` (string | undefined) - The record ID that was not found
+- `methodName` (string | undefined) - The RPC method name that was not found
+- `namespaceName` (string | undefined) - The namespace name that was not found
+- `databaseName` (string | undefined) - The database name that was not found
+
+**Example:**
+```ts
+try {
+    await db.query('SELECT * FROM nonexistent');
+} catch (error) {
+    if (error instanceof NotFoundError) {
+        if (error.tableName) {
+            console.error(`Table "${error.tableName}" does not exist`);
+        } else if (error.recordId) {
+            console.error(`Record "${error.recordId}" not found`);
+        }
+    }
+}
+```
+
+---
+
+### `AlreadyExistsError` {#alreadyexistserror}
+
+Thrown when a duplicate resource is encountered (record, table, namespace, etc.).
+
+**Extends:** `ServerError` (kind: `"AlreadyExists"`)
+
+**Convenience getters:**
+- `recordId` (string | undefined) - The record ID that already exists
+- `tableName` (string | undefined) - The table name that already exists
+
+**Example:**
+```ts
+try {
+    await db.create(new RecordId('users', 'john'), { name: 'John' });
+} catch (error) {
+    if (error instanceof AlreadyExistsError) {
+        if (error.recordId) {
+            console.error(`Record "${error.recordId}" already exists`);
+        }
+    }
+}
+```
+
+---
+
+### `InternalError` {#internalerror}
+
+Thrown on unexpected or unknown internal server errors. Also used as the fallback for unrecognized `kind` strings from newer servers.
+
+**Extends:** `ServerError` (kind: `"Internal"`)
+
+---
+
+### `ResponseError` (Deprecated) {#responseerror}
+
+`ResponseError` is a deprecated alias for [`ServerError`](#servererror). It exists for backward compatibility.
+
+```ts
+// ResponseError is the same as ServerError
+// Equivalent to:
+```
+
+---
+
 ### `UnexpectedServerResponseError` {#unexpectedserverresponseerror}
 
-Thrown when the server returns an unexpected response format.
+Thrown when the server returns a response in an unexpected format.
 
 **Properties:**
 - `response` (unknown) - The unexpected response received
@@ -200,7 +428,7 @@ try {
 }
 ```
 
-## Authentication errors
+## Authentication Errors
 
 ### `AuthenticationError` {#authenticationerror}
 
@@ -247,16 +475,15 @@ try {
 }
 ```
 
-## Live query errors
+## Live Query Errors
 
 ### `LiveSubscriptionError` {#livesubscriptionerror}
 
 Thrown when a live subscription fails to listen.
 
-**Message:** `"Live subscription failed to listen"`
+**Constructor:** `new LiveSubscriptionError(messageOrCause?: string | unknown)`
 
-**Properties:**
-- `cause` (unknown) - The underlying error cause
+When called with a string, it is used as the error message. When called with any other value (or no argument), the default message `"Live subscription failed to listen"` is used and the argument is set as `cause`.
 
 **Example:**
 ```ts
@@ -269,7 +496,7 @@ try {
 }
 ```
 
-## Version errors
+## Version Errors
 
 ### `UnsupportedVersionError` {#unsupportedversionerror}
 
@@ -296,11 +523,15 @@ try {
 }
 ```
 
-## Expression errors
+## Expression Errors
 
 ### `ExpressionError` {#expressionerror}
 
-Thrown when an expression fails to compile or execute.
+Thrown when a SurrealQL expression fails to compile or execute.
+
+**Constructor:** `new ExpressionError(messageOrCause?: string | unknown)`
+
+When called with a string, it is used as the error message. When called with any other value (or no argument), the default message `"Failed to parse invalid expression"` is used and the argument is set as `cause`.
 
 **Example:**
 ```ts
@@ -315,7 +546,7 @@ try {
 }
 ```
 
----
+## Event Errors
 
 ### `PublishError` {#publisherror}
 
@@ -333,18 +564,20 @@ db.subscribe('auth', () => {
 // When the event fires, a PublishError may be emitted
 ```
 
----
+## Date and Time Errors
 
 ### `InvalidDateError` {#invaliddateerror}
 
-Thrown when a parsed date is invalid.
+Thrown when a parsed date or datetime is invalid.
 
-**Message:** `"The provided date is invalid"`
+**Constructor:** `new InvalidDateError(dateOrMessage: Date | string)`
+
+When called with a `Date`, the message is `"The provided date is invalid: <date>"`. When called with a string, the string is used directly as the error message.
 
 **Example:**
 ```ts
 try {
-    DateTime.parse('not-a-date');
+    new DateTime('not-a-date');
 } catch (error) {
     if (error instanceof InvalidDateError) {
         console.error('Invalid date:', error.message);
@@ -352,7 +585,7 @@ try {
 }
 ```
 
-## Feature errors
+## Feature Errors
 
 ### `UnsupportedFeatureError` {#unsupportedfeatureerror}
 
@@ -364,8 +597,7 @@ Thrown when attempting to use a feature not supported by the configured engine.
 **Example:**
 ```ts
 try {
-    // Attempt to use a feature not supported by server
-    await db.api().get('/endpoint');
+    await db.live(new Table('users')); // Not supported by engine
 } catch (error) {
     if (error instanceof UnsupportedFeatureError) {
         console.error(`Feature "${error.feature.name}" not supported`);
@@ -386,8 +618,8 @@ Thrown when attempting to use a feature not available in the connected SurrealDB
 **Example:**
 ```ts
 try {
-    await db.connect('http://localhost:8000/rpc'); // HTTP engine
-    await db.live(new Table('users')); // Live queries require WebSocket
+    await db.connect('http://localhost:8000/rpc');
+    await db.live(new Table('users'));
 } catch (error) {
     if (error instanceof UnavailableFeatureError) {
         console.error(`Feature "${error.feature.name}" not available in version ${error.version}`);
@@ -395,7 +627,7 @@ try {
 }
 ```
 
-## API errors
+## API Errors
 
 ### `UnsuccessfulApiError` {#unsuccessfulapierror}
 
@@ -419,7 +651,7 @@ try {
 }
 ```
 
-## Session errors
+## Session Errors
 
 ### `InvalidSessionError` {#invalidsessionerror}
 
@@ -442,9 +674,77 @@ try {
 }
 ```
 
-## Error handling patterns
+## Value Validation Errors
 
-### Basic error handling
+### `InvalidRecordIdError` {#invalidrecordiderror}
+
+Thrown when a `RecordId` or `RecordIdRange` is constructed with invalid parts.
+
+**Example:**
+```ts
+try {
+    new RecordId('', 'id'); // Invalid table name
+} catch (error) {
+    if (error instanceof InvalidRecordIdError) {
+        console.error('Invalid record ID:', error.message);
+    }
+}
+```
+
+---
+
+### `InvalidDurationError` {#invaliddurationerror}
+
+Thrown when a `Duration` string cannot be parsed or a duration operation is invalid.
+
+**Example:**
+```ts
+try {
+    new Duration('not-a-duration');
+} catch (error) {
+    if (error instanceof InvalidDurationError) {
+        console.error('Invalid duration:', error.message);
+    }
+}
+```
+
+---
+
+### `InvalidDecimalError` {#invaliddecimalerror}
+
+Thrown when a `Decimal` operation fails (e.g. division by zero, invalid input).
+
+**Example:**
+```ts
+try {
+    new Decimal('not-a-number');
+} catch (error) {
+    if (error instanceof InvalidDecimalError) {
+        console.error('Invalid decimal:', error.message);
+    }
+}
+```
+
+---
+
+### `InvalidTableError` {#invalidtableerror}
+
+Thrown when a `Table` or `StringRecordId` is constructed with an invalid value.
+
+**Example:**
+```ts
+try {
+    new Table(''); // Empty table name
+} catch (error) {
+    if (error instanceof InvalidTableError) {
+        console.error('Invalid table:', error.message);
+    }
+}
+```
+
+## Error Handling Patterns
+
+### Basic Error Handling
 
 ```ts
 try {
@@ -460,7 +760,7 @@ try {
 }
 ```
 
-### Specific error handling
+### Specific Error Handling
 
 ```ts
 try {
@@ -480,7 +780,7 @@ try {
 }
 ```
 
-### Error recovery
+### Error Recovery
 
 ```ts
 async function executeWithRetry(fn: () => Promise<any>, maxRetries = 3) {
@@ -492,8 +792,8 @@ async function executeWithRetry(fn: () => Promise<any>, maxRetries = 3) {
                 // Reconnect and retry
                 await db.connect('ws://localhost:8000');
                 continue;
-            } else if (error instanceof ResponseError && attempt < maxRetries - 1) {
-                // Retry on response errors
+            } else if (error instanceof ServerError && attempt < maxRetries - 1) {
+                // Retry on server errors
                 continue;
             }
             throw error;
@@ -506,7 +806,7 @@ const result = await executeWithRetry(() =>
 );
 ```
 
-### Global error handler
+### Global Error Handler
 
 ```ts
 db.subscribe('error', (error) => {
@@ -520,9 +820,9 @@ db.subscribe('error', (error) => {
 });
 ```
 
-## Best practices
+## Best Practices
 
-### 1. Catch specific errors
+### 1. Catch Specific Errors
 
 Handle specific error types for better error recovery:
 
@@ -546,7 +846,7 @@ try {
 }
 ```
 
-### 2. Use type guards
+### 2. Use Type Guards
 
 TypeScript type guards provide better type safety:
 
@@ -561,23 +861,24 @@ if (isConnectionError(error)) {
 }
 ```
 
-### 3. Log error details
+### 3. Log Error Details
 
 Include error details in logs for debugging:
 
 ```ts
 catch (error) {
-    if (error instanceof ResponseError) {
+    if (error instanceof ServerError) {
         logger.error('Query failed', {
+            kind: error.kind,
             code: error.code,
             message: error.message,
-            query: originalQuery
+            details: error.details,
         });
     }
 }
 ```
 
-### 4. Clean up on error
+### 4. Clean Up on Error
 
 Ensure resources are cleaned up even when errors occur:
 
@@ -590,7 +891,7 @@ try {
 }
 ```
 
-## See also
+## See Also
 
 - [Core Classes](../core/index.md) - Classes that may throw errors
 - [Surreal](../core/surreal.md) - Connection methods that may throw errors

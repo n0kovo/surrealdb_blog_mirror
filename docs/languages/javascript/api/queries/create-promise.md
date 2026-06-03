@@ -13,13 +13,13 @@ The `CreatePromise` class provides a chainable interface for configuring CREATE 
 
 **Source:** [query/create.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/create.ts)
 
-## Type parameters
+## Type Parameters
 
 - `T` - The result type
 - `I` - The input type for record data
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration methods
+## Configuration Methods
 
 ### `.content()` {#content}
 
@@ -266,6 +266,27 @@ const jsonString = await db.create(new Table('users'))
 
 ---
 
+### `.compile()` {#compile}
+
+Compile the query into a `BoundQuery` without executing it.
+
+```ts title="Method Syntax"
+createPromise.compile()
+```
+
+#### Returns
+`BoundQuery<[T]>` - The compiled query
+
+#### Example
+
+```ts
+const query = db.create(new Table('users'))
+    .content(userData)
+    .compile();
+```
+
+---
+
 ### `.stream()` {#stream}
 
 Stream the operation result (useful when creating multiple records).
@@ -288,9 +309,9 @@ for await (const user of results.stream()) {
 }
 ```
 
-## Complete examples
+## Complete Examples
 
-### Basic creation
+### Basic Creation
 
 ```ts
 
@@ -314,7 +335,7 @@ const post = await db.create(new Table('posts'))
     });
 ```
 
-### Creation with output control
+### Creation with Output Control
 
 ```ts
 // Only return the ID
@@ -328,7 +349,7 @@ const summary = await db.create(new Table('users'))
     .output('id', 'name', 'created_at');
 ```
 
-### Bulk creation with streaming
+### Bulk Creation with Streaming
 
 ```ts
 const users = [
@@ -342,7 +363,7 @@ for await (const user of db.create(new Table('users')).content(users).stream()) 
 }
 ```
 
-### With relationships
+### With Relationships
 
 ```ts
 const post = await db.create(new Table('posts'))
@@ -358,7 +379,7 @@ const post = await db.create(new Table('posts'))
     });
 ```
 
-### Error handling
+### Error Handling
 
 ```ts
 try {
@@ -371,7 +392,7 @@ try {
 }
 ```
 
-### With timeout
+### With Timeout
 
 ```ts
 const user = await db.create(new Table('users'))
@@ -379,7 +400,7 @@ const user = await db.create(new Table('users'))
     .timeout(Duration.parse('10s'));
 ```
 
-## Chaining pattern
+## Chaining Pattern
 
 All configuration methods return a new `CreatePromise`, allowing method chaining:
 
@@ -390,7 +411,7 @@ const result = await db.create(new Table('users'))
     .timeout(Duration.parse('5s'));
 ```
 
-## See also
+## See Also
 
 - [SurrealQueryable.create()](../core/surreal-queryable.md#create) - Method that returns CreatePromise
 - [InsertPromise](insert-promise.md) - Bulk insertion

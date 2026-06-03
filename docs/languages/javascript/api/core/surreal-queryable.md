@@ -13,17 +13,38 @@ The `SurrealQueryable` class is an abstract base class that provides all query e
 
 **Source:** [api/queryable.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/api/queryable.ts)
 
-## Properties
+## Methods
 
-### `api` {#api}
+### `.api()` {#api}
 
-Access user-defined API endpoints. This property returns a [`SurrealApi`](surreal-api.md) instance for invoking custom database APIs.
+Create a [`SurrealApi`](surreal-api.md) instance for invoking user-defined API endpoints. You can provide type definitions for type-safe API calls and an optional path prefix.
 
-You can provide type definitions for type-safe API calls.
+```ts title="Method Syntax"
+db.api<TPaths>(prefix?)
+```
 
-**Type:** [`SurrealApi<TPaths>`](surreal-api.md)
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`prefix` <label label="optional" /></td>
+            <td>`string`</td>
+            <td>A path prefix to prepend to all API calls made through this instance.</td>
+        </tr>
+    </tbody>
+</table>
 
-**Examples:**
+#### Returns
+[`SurrealApi<TPaths>`](surreal-api.md) - An API instance for invoking custom database APIs
+
+#### Examples
 ```ts title="Basic API Access"
 const api = db.api();
 const result = await api.get('/users');
@@ -44,7 +65,7 @@ const usersApi = db.api<MyPaths>("/users");
 const user = await usersApi.get("123"); // GET /users/123
 ```
 
-## Query methods
+## Query Methods
 
 ### `.query()` {#query}
 
@@ -78,7 +99,7 @@ db.query<R>(boundQuery)
     </tbody>
 </table>
 
-#### Type parameters
+#### Type Parameters
 - `R extends unknown[]` - Array of result types for each query statement
 
 #### Returns
@@ -135,7 +156,7 @@ db.select<T>(table)
     <tbody>
         <tr>
             <td>`recordId` <label label="required" /></td>
-            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordId</a>`</td>
+            <td>`<a href="/docs/languages/javascript/api/types/#anyrecordid">AnyRecordId</a>`</td>
             <td>A specific record ID to select.</td>
         </tr>
         <tr>
@@ -152,7 +173,8 @@ db.select<T>(table)
 </table>
 
 #### Returns
-[`SelectPromise<T>`](../queries/select-promise.md) - A promise with chainable configuration methods
+- For `RecordId`: [`SelectPromise<T | undefined, T>`](../queries/select-promise.md) - A promise resolving to a single record or `undefined`
+- For `Table` or `RecordIdRange`: [`SelectPromise<T[], T>`](/docs/languages/javascript/api/queries/select-promise) - A promise resolving to an array of records
 
 #### Examples
 
@@ -192,7 +214,7 @@ db.create<T>(table)
     <tbody>
         <tr>
             <td>`recordId` <label label="required" /></td>
-            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordId</a>`</td>
+            <td>`<a href="/docs/languages/javascript/api/types/#anyrecordid">AnyRecordId</a>`</td>
             <td>The record ID for the new record.</td>
         </tr>
         <tr>
@@ -204,7 +226,7 @@ db.create<T>(table)
 </table>
 
 #### Returns
-[`CreatePromise<T>`](../queries/create-promise.md) - A promise with chainable configuration methods
+[`CreatePromise<RecordResult<T>, T>`](../queries/create-promise.md) - A promise with chainable configuration methods
 
 #### Examples
 
@@ -244,14 +266,14 @@ db.insert<T>(table, data)
         </tr>
         <tr>
             <td>`data` <label label="required" /></td>
-            <td>`T | T[]`</td>
+            <td>`Values&lt;T&gt; | Values&lt;T&gt;[]`</td>
             <td>One or more records to insert.</td>
         </tr>
     </tbody>
 </table>
 
 #### Returns
-[`InsertPromise<T>`](../queries/insert-promise.md) - A promise with chainable configuration methods
+[`InsertPromise<T[]>`](/docs/languages/javascript/api/queries/insert-promise) - A promise with chainable configuration methods
 
 #### Examples
 
@@ -299,7 +321,7 @@ db.update<T>(table)
     <tbody>
         <tr>
             <td>`recordId` <label label="required" /></td>
-            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordId</a>`</td>
+            <td>`<a href="/docs/languages/javascript/api/types/#anyrecordid">AnyRecordId</a>`</td>
             <td>A specific record ID to update.</td>
         </tr>
         <tr>
@@ -361,7 +383,7 @@ db.upsert<T>(table)
     <tbody>
         <tr>
             <td>`recordId` <label label="required" /></td>
-            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordId</a>`</td>
+            <td>`<a href="/docs/languages/javascript/api/types/#anyrecordid">AnyRecordId</a>`</td>
             <td>A specific record ID to upsert.</td>
         </tr>
         <tr>
@@ -408,7 +430,7 @@ db.delete<T>(table)
     <tbody>
         <tr>
             <td>`recordId` <label label="required" /></td>
-            <td>`<a href="/docs/languages/javascript/api/values/record-id">RecordId</a>`</td>
+            <td>`<a href="/docs/languages/javascript/api/types/#anyrecordid">AnyRecordId</a>`</td>
             <td>A specific record ID to delete.</td>
         </tr>
         <tr>
@@ -458,17 +480,17 @@ db.relate<T>(from[], edge, to[], data?)
     <tbody>
         <tr>
             <td>`from` <label label="required" /></td>
-            <td>`RecordId | RecordId[]`</td>
+            <td>`<a href="/docs/languages/javascript/api/types/#anyrecordid">AnyRecordId</a> | AnyRecordId[]`</td>
             <td>The source record(s) for the relationship.</td>
         </tr>
         <tr>
             <td>`edge` <label label="required" /></td>
-            <td>`Table | RecordId`</td>
+            <td>`Table | <a href="/docs/languages/javascript/api/types/#anyrecordid">AnyRecordId</a>`</td>
             <td>The edge table or specific edge record ID.</td>
         </tr>
         <tr>
             <td>`to` <label label="required" /></td>
-            <td>`RecordId | RecordId[]`</td>
+            <td>`<a href="/docs/languages/javascript/api/types/#anyrecordid">AnyRecordId</a> | AnyRecordId[]`</td>
             <td>The target record(s) for the relationship.</td>
         </tr>
         <tr>
@@ -547,7 +569,7 @@ Subscribe to an existing live query using its ID.
 > This function is for use with live queries not managed by the driver.
 
 ```ts title="Method Syntax"
-db.liveOf(id)
+db.liveOf<T>(id)
 ```
 
 #### Parameters
@@ -569,7 +591,7 @@ db.liveOf(id)
 </table>
 
 #### Returns
-[`UnmanagedLivePromise`](../queries/live-promise.md) - An unmanaged live query subscription
+[`UnmanagedLivePromise<T>`](../queries/live-promise.md) - An unmanaged live query subscription
 
 #### Example
 ```ts
@@ -639,7 +661,7 @@ db.auth<T>()
 ```
 
 #### Returns
-`AuthPromise<T>` - A promise for the authenticated user record
+`AuthPromise<T | undefined>` - A promise for the authenticated user record, or `undefined` if not authenticated
 
 #### Example
 ```ts
@@ -647,7 +669,7 @@ const user = await db.auth();
 console.log('Current user:', user);
 ```
 
-## See also
+## See Also
 
 - [SurrealSession](surreal-session.md) - Session management extending this class
 - [SurrealTransaction](surreal-transaction.md) - Transaction support extending this class

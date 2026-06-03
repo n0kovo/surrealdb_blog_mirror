@@ -53,41 +53,38 @@ The connection string represents a URI pointing to a SurrealDB instance. Support
 - **HTTP** (`http://`) for short lived stateless connections (e.g. server-side rendering applications)
 - **Embedded** protocols using the [WebAssembly engine](../engines/wasm.md) or [Node.js engine](../engines/node.md)
 
-	
 **Local endpoint**
 
 ```ts
-		// Over WebSocket
-		await db.connect('ws://127.0.0.1:8000');
+// Over WebSocket
+await db.connect('ws://127.0.0.1:8000');
 
-		// Over HTTP
-		await db.connect('http://127.0.0.1:8000');
-		```
+// Over HTTP
+await db.connect('http://127.0.0.1:8000');
+```
 
-	
 **Remote endpoint**
 
 ```ts
-		// Over WebSocket
-		await db.connect('wss://cloud.surrealdb.com');
+// Over WebSocket
+await db.connect('wss://cloud.surrealdb.com');
 
-		// Over HTTP
-		await db.connect('https://cloud.surrealdb.com');
-		```
+// Over HTTP
+await db.connect('https://cloud.surrealdb.com');
+```
 
-	
 **Embedded endpoint**
 
 ```ts
-		// In-memory database
-		await db.connect('mem://');
+// In-memory database
+await db.connect('mem://');
 
-		// IndexedDB database (browser)
-		await db.connect('indxdb://localhost:8000');
+// IndexedDB database (browser)
+await db.connect('indxdb://localhost:8000');
 
-		// File-system database (backend)
-		await db.connect('rocksdb://localhost:8000');
-		```
+// File-system database (backend)
+await db.connect('rocksdb://localhost:8000');
+```
 
 ### Connection options
 

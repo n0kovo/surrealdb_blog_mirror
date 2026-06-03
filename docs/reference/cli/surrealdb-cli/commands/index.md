@@ -23,5 +23,6 @@ The `surreal` executable exposes a single entry point with **subcommands** for r
 | [`version`](version.md) | Print CLI and server version information. |
 | [`help`](help.md) | Show help for the CLI or a subcommand. |
 | [`isready`](isready.md) | Health check for readiness probes. |
+| [`mcp`](mcp.md) *Since v3.1.0* | Start the Model Context Protocol server on stdio for IDE integrations. |
 
 For installation and a minimal end-to-end example, see the [SurrealDB CLI overview](../overview.md). For environment variables that mirror CLI flags, see [Environment variables](../environment-variables.md).

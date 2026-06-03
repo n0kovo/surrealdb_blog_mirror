@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 5
 title: Sample queries
 description: Learn how to get started with SurrealDB
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/sample-queries.mdx"

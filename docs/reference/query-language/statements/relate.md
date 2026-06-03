@@ -22,7 +22,7 @@ Another option for connecting data is using [record links](../language-primitive
 - Graph relations allow you to store data alongside the relationship.
 - Graph relations have their own syntax that makes it easy to build and visualise edge queries.
 
-Graph relations offer built-in bidirectional querying and referential integrity. As of SurrealDB 2.2.0, record links also offer these two advantages if they are defined inside a [`DEFINE FIELD`](define/field.md) statement using the `REFERENCES` clause. For more information, see [the page on record references](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/references).
+Graph relations offer built-in bidirectional querying and referential integrity. Record links also offer these two advantages if they are defined inside a [`DEFINE FIELD`](define/field.md) statement using the `REFERENCES` clause. For more information, see [the page on record references](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/references).
 
 ### Statement syntax
 
@@ -72,6 +72,9 @@ RELATE [ ONLY ] @from_record -> @table -> @to_record
 
 > [!NOTE]
 > `RELATE` will create a relation regardless of whether the records to relate to exist or not. As such, it is advisable to [create the records](create.md) you want to relate to before using `RELATE`, or to at least ensure that they exist before making a query on the relation. If the records to relate to don't exist, a query on the relation will still work but will return an empty array. To override this behaviour and return an error if no records exist to relate, you can use a [`DEFINE TABLE`](define/table.md) statement that includes the `ENFORCED` keyword.
+
+> [!NOTE]
+> If a `RELATE` on the create path sets `id` to an **existing** edge record (for example `RELATE a->edge->b SET id = edge:existing`), SurrealDB returns a record-exists error instead of overwriting that edge. Use [`UPDATE`](update.md) when you intend to modify an existing relation.
 
 ### Example usage
 

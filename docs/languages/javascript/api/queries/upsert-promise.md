@@ -16,13 +16,13 @@ The `UpsertPromise` class provides a chainable interface for configuring UPSERT 
 
 **Source:** [query/upsert.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/upsert.ts)
 
-## Type parameters
+## Type Parameters
 
 - `T` - The result type
 - `I` - The input type for record data
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration methods
+## Configuration Methods
 
 ### `.content()` {#content}
 
@@ -87,7 +87,7 @@ upsertPromise.merge(data)
     <tbody>
         <tr>
             <td>`data` <label label="required" /></td>
-            <td>`Partial&lt;Values&lt;I&gt;&gt;`</td>
+            <td>`Values&lt;I&gt;`</td>
             <td>Partial data to merge.</td>
         </tr>
     </tbody>
@@ -160,7 +160,7 @@ upsertPromise.patch(operations)
     <tbody>
         <tr>
             <td>`operations` <label label="required" /></td>
-            <td>`PatchOperation[]`</td>
+            <td>`Values&lt;I&gt;`</td>
             <td>JSON Patch operations.</td>
         </tr>
     </tbody>
@@ -176,7 +176,7 @@ upsertPromise.patch(operations)
 Add a WHERE clause for conditional upsert.
 
 ```ts title="Method Syntax"
-upsertPromise.where(condition)
+upsertPromise.where(expr)
 ```
 
 #### Parameters
@@ -190,7 +190,7 @@ upsertPromise.where(condition)
     </thead>
     <tbody>
         <tr>
-            <td>`condition` <label label="required" /></td>
+            <td>`expr` <label label="required" /></td>
             <td>`ExprLike`</td>
             <td>The condition expression (string or <a href="/docs/languages/javascript/api/utilities/expr">Expression</a> object).</td>
         </tr>
@@ -246,13 +246,54 @@ upsertPromise.timeout(duration)
 
 ---
 
-### `.version()`, `.json()`, `.stream()`
+### `.json()` {#json}
 
-See other query builders for these common methods.
+Return result as JSON string.
 
-## Complete examples
+```ts title="Method Syntax"
+upsertPromise.json()
+```
 
-### Basic upsert
+#### Returns
+`UpsertPromise<T, I, true>` - Promise returning JSON string
+
+---
+
+### `.compile()` {#compile}
+
+Compile the query into a `BoundQuery` without executing it.
+
+```ts title="Method Syntax"
+upsertPromise.compile()
+```
+
+#### Returns
+`BoundQuery<[T]>` - The compiled query
+
+#### Example
+
+```ts
+const query = db.upsert(new RecordId('users', 'john'))
+    .content(userData)
+    .compile();
+```
+
+---
+
+### `.stream()` {#stream}
+
+Stream results as they arrive.
+
+```ts title="Method Syntax"
+upsertPromise.stream()
+```
+
+#### Returns
+`AsyncIterableIterator` - Async iterator
+
+## Complete Examples
+
+### Basic Upsert
 
 ```ts
 
@@ -268,7 +309,7 @@ const user = await db.upsert(new RecordId('users', 'john'))
     });
 ```
 
-### Upsert with merge
+### Upsert with Merge
 
 ```ts
 // Safer: merge instead of replace
@@ -281,14 +322,14 @@ const user = await db.upsert(new RecordId('users', 'john'))
 // If not: creates user with these fields
 ```
 
-### Bulk upsert
+### Bulk Upsert
 
 ```ts
 const users = await db.upsert(new Table('users'))
     .content(userDataArray);
 ```
 
-### Track changes
+### Track Changes
 
 ```ts
 const result = await db.upsert(new RecordId('users', 'john'))
@@ -300,7 +341,7 @@ if (result) {
 }
 ```
 
-### Conditional upsert
+### Conditional Upsert
 
 ```ts
 const user = await db.upsert(new RecordId('users', 'john'))
@@ -330,9 +371,9 @@ await db.upsert(recordId).content(data);
 // Always succeeds
 ```
 
-## Use cases
+## Use Cases
 
-### Session management
+### Session Management
 
 ```ts
 // Update session or create new one
@@ -345,7 +386,7 @@ async function updateSession(sessionId: string, data: SessionData) {
 }
 ```
 
-### Cache pattern
+### Cache Pattern
 
 ```ts
 // Write-through cache
@@ -358,7 +399,7 @@ async function cacheSet(key: string, value: unknown) {
 }
 ```
 
-### Counter pattern
+### Counter Pattern
 
 ```ts
 // Increment counter or initialize
@@ -369,7 +410,7 @@ const counter = await db.upsert(new RecordId('counters', 'page_views'))
     });
 ```
 
-## Chaining pattern
+## Chaining Pattern
 
 ```ts
 const result = await db.upsert(new RecordId('users', 'john'))
@@ -378,7 +419,7 @@ const result = await db.upsert(new RecordId('users', 'john'))
     .timeout(Duration.parse('5s'));
 ```
 
-## See also
+## See Also
 
 - [SurrealQueryable.upsert()](../core/surreal-queryable.md#upsert) - Method that returns UpsertPromise
 - [CreatePromise](create-promise.md) - Create only

@@ -1,8 +1,16 @@
 # All Posts
 
-_224 posts_  
+_228 posts_  
 [← Index](../README.md)
 
+- **2026-05-29** · [SurrealDB 3.x by the numbers](2026/05/surrealdb-3-x-by-the-numbers.md)  
+  `engineering` `company` `featured` — Fresh SurrealDB 3.x benchmarks: 141k ops\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.
+- **2026-05-27** · [SurrealDB 3.1: stability, DiskANN, and a new release process](2026/05/surrealdb-3-1-stability-diskann-and-a-new-release-process.md)  
+  `releases` `featured` — SurrealDB 3.1 is here. The first minor release in the 3.x series brings DiskANN, a comprehensive stability and security pass, and a refreshed release process.
+- **2026-05-22** · [Using SurrealDB to understand how Buffalo buffalo buffalo Buffalo buffalo](2026/05/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo.md)  
+  `tutorials` — Using SurrealDB and Surrealist's graph visualisation to not just understand but also see how Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo works.
+- **2026-05-19** · [Agentic retrieval for structured data with text-to-surql](2026/05/agentic-retrieval-for-structured-data-with-text-to-surql.md)  
+  `ai` `tutorials` — RAG pipelines usually focus on unstructured content (chunks + vectors\/BM25), but structured data introduces a different retrieval problem: you need to pull exact rows and aggregates from tables, not just “similar passages.” This article explains an agentic pattern for structured retrieval using text-to-SurrealQL: give an LLM agent a single database-aware tool that converts natural-language questions into valid SurrealQL, executes the query in SurrealDB, and returns deterministic, auditable results.
 - **2026-05-12** · [What chunking strategies exist and how to choose one?](2026/05/what-chunk-strategies-exist-and-how-to-choose-one.md)  
   `ai` — If you've decided to chunk your documents for a RAG pipeline or semantic search system, the next question hits almost immediately: which chunking strategy should I use?
 - **2026-05-08** · [What is the recommended chunk size?](2026/05/what-is-the-recommended-chunk-size.md)  
@@ -205,7 +213,7 @@ _224 posts_
   `engineering` — We've released our 1.0 stable version of our Python SDK
 - **2025-02-04** · [Powering Drug Trial Innovation with SurrealDB](2025/02/powering-drug-trial-innovation-with-surrealdb.md)  
   `community` `featured` — By leveraging SurrealDB, we built a system that simplifies the drug trial search process
-- **2025-01-31** · [Enhancing Retrieval-Augmented Generation with SurrealDB](2025/01/enhancing-retrieval-augmented-generation-with-surrealdb.md)  
+- **2025-01-31** · [Enhancing retrieval-augmented generation with SurrealDB](2025/01/enhancing-retrieval-augmented-generation-with-surrealdb.md)  
   `tutorials` `featured` `ai` — GraphRAG: Enhancing Retrieval-Augmented Generation with SurrealDB, Gemini and DeepSeek
 - **2025-01-31** · [Improving the documentation user experience](2025/01/improving-the-documentation-user-experience.md)  
   `community` `featured` — We have made some improvements to the documentation user experience learn more
@@ -214,16 +222,16 @@ _224 posts_
 - **2025-01-24** · [Making your own PR to the SurrealDB source code](2025/01/making-your-own-pr-to-the-surrealdb-source-code.md)  
   `community` — Making a small PR to the SurrealDB source code is easier than you think, even if you come from another programming language.
 - **2024-12-13** · [Your personal Surreal Sidekick](2024/12/your-personal-surreal-sidekick.md)  
-  `releases` `featured` `company` — With the recent release of Surreal Cloud (beta) and the introduction of the Surreal Cloud panel in Surrealist, we introduced a brand new tool to help you increase your SurrealDB productivity.
+  `releases` `featured` `company` — With the recent release of SurrealDB Cloud (beta) and the introduction of the SurrealDB Cloud panel in Surrealist, we introduced a brand new tool to help you increase your SurrealDB productivity.
 - **2024-11-27** · [What's new in Surrealist 3.1](2024/11/whats-new-in-surrealist-3-1.md)  
   `releases` `featured` — Explore the key features of the Surrealist 3.1 release
 - **2024-11-21** · [SurrealDB 2.1.0 is live!](2024/11/surrealdb-2-1-0-is-live.md)  
   `releases` — We are excited to announce the release of SurrealDB 2.1.0, our latest version of our scalable cloud graph database.
-- **2024-10-21** · [Aeon's Surreal Renaissance: Learn SurrealDB Through a Story](2024/10/aeons-surreal-renaissance-learn-surrealdb-through-a-story.md)  
+- **2024-10-21** · [Aeon's Surreal Renaissance: Learn SurrealDB through a story](2024/10/aeons-surreal-renaissance-learn-surrealdb-through-a-story.md)  
   `releases` `featured` — An immersive and interactive story that makes learning about SurrealDB as exciting as reading your favourite book.
 - **2024-10-15** · [SurrealDB Empowers Developers to Build Applications with the Launch of SurrealDB University](2024/10/surrealdb-empowers-developers-to-build-applications-with-the-launch-of-surrealdb-university.md)  
   `releases` `featured` `company` — Access to this comprehensive course provides any developer with the education and documentation needed to quickly and successfully build applications on SurrealDB in as little as three hours
-- **2024-09-17** · [SurrealDB Delivers Future-Ready Database Technology for Developers and Enterprises with Release of SurrealDB 2.0 ](2024/09/surrealdb-delivers-future-ready-database-technology-for-developers-and-enterprises-with-release-of-surrealdb-2-0.md)  
+- **2024-09-17** · [SurrealDB delivers future-ready database technology for developers and enterprises with release of SurrealDB 2.0 ](2024/09/surrealdb-delivers-future-ready-database-technology-for-developers-and-enterprises-with-release-of-surrealdb-2-0.md)  
   `releases` `featured` `company` — Powerful new features introduce advanced stability, performance, security and data management capabilities to build enterprise-ready applications
 - **2024-09-17** · [Surrealist 3.0 is now available!](2024/09/surrealist-3-0-is-now-available.md)  
   `releases` `featured` — We are excited to announce the latest major iteration of Surrealist
@@ -231,13 +239,13 @@ _224 posts_
   `releases` `featured` `company` — With the massive community adoption that followed came massive expectations and challenges to live up to these expectations.
 - **2024-09-02** · [Surrealist 3.0 beta](2024/09/surrealist-3-0-beta.md)  
   `releases` — We are thrilled to announce that the first beta release for Surrealist 3.0 is now available.
-- **2024-08-28** · [Building a Retrieval-Augmented Generation (RAG) App with OpenAI and SurrealDB](2024/08/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb.md)  
+- **2024-08-28** · [Building a retrieval-augmented generation (RAG) app with OpenAI and SurrealDB](2024/08/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb.md)  
   `engineering` `tutorials` — We'll build an assistant that can answer questions based on Wikipedia information, using the GPT Turbo model from OpenAI
 - **2024-08-20** · [It’s about time: time series in SurrealDB](2024/08/its-about-time-time-series-in-surrealdb.md)  
   `engineering` `tutorials` — What is time anyway
-- **2024-07-25** · [Moving from Full-Text search to Vector search in SurrealDB](2024/07/moving-from-full-text-search-to-vector-search-in-surrealdb.md)  
+- **2024-07-25** · [Moving from full-text search to vector search in SurrealDB](2024/07/moving-from-full-text-search-to-vector-search-in-surrealdb.md)  
   `engineering` — If you know exactly what you’re searching for Full-Text Search would be the way to go but when you want your search to understand you, Vector Search might be right for you.
-- **2024-07-16** · [Real-Time Data Science: Orchestrating Insights with the Right Ensemble](2024/07/real-time-data-science-orchestrating-insights-with-the-right-ensemble.md)  
+- **2024-07-16** · [Real-time data science: Orchestrating insights with the right ensemble](2024/07/real-time-data-science-orchestrating-insights-with-the-right-ensemble.md)  
   `engineering` `tutorials` — Building real-time analytics leveraging OLAP, multi-model databases and workload isolation.
 - **2024-06-24** · [Celebrating milestones and looking forward](2024/06/celebrating-milestones-and-looking-forward.md)  
   `company` `featured` — Last week was awesome for our team at SurrealDB! It feels like the perfect time to pause and reflect on the whirlwind of achievements, all of which signal exciting times ahead for our company. We are incredibly proud to share some major milestones we've hit, and we want to extend our deepest gratitude to everyone who has been part of this journey to date.
@@ -257,7 +265,7 @@ _224 posts_
   `community` `tutorials` — The people who are crazy enough to think that they can change the world, are the ones who do
 - **2024-05-01** · [Surrealist 2.0](2024/05/surrealist-2-0.md)  
   `releases` `featured` — An important part of each database is the ability to easily and effortlessly control each aspect of the database. While this may appear trivial at first, it actually encompasses a wide set of different tasks. For this reason Surrealist has officially joined SurrealDB as the official management interface.
-- **2024-04-23** · [The Surrealist Journey](2024/04/the-surrealist-journey.md)  
+- **2024-04-23** · [The Surrealist journey](2024/04/the-surrealist-journey.md)  
   `company` — Interacting with a database is not an easy job. You’ll often find yourself needing to query patterns in your data, testing whether your queries have the intended outcome, or carefully designing a schema to suit your application. This was a natural hurdle I ran into when first adopting SurrealDB into my workflow, and is exactly why I built Surrealist.
 - **2024-04-22** · [Introducing Surrealist](2024/04/introducing-surrealist.md)  
   `releases` — Dive into why this mobile software development company chose to migrate to our multi-model database.
@@ -287,21 +295,21 @@ _224 posts_
   `releases` — This new release comes with bug fixes, performance improvements, and feature updates to string methods, support for READONLY fields and type support for subfields.
 - **2024-02-01** · [We're hiring](2024/02/were-hiring.md)  
   `company` — We're hiring! Join SurrealDB as we continue to shape the future of database technology! We're on the lookout for exceptional individuals - those who are passionate about their craft and equally passionate about the team they work with to develop and promote groundbreaking technology.
-- **2024-01-29** · [Beyond SQL Joins: Exploring SurrealDB's Multi-Model Relationships](2024/01/beyond-sql-joins-exploring-surrealdbs-multi-model-relationships.md)  
+- **2024-01-29** · [Beyond SQL joins: Exploring SurrealDB's multi-model relationships](2024/01/beyond-sql-joins-exploring-surrealdbs-multi-model-relationships.md)  
   `tutorials` — Can't join? No worries, we can relate.
-- **2024-01-23** · [VART: A Persistent Data Structure For Snapshot Isolation](2024/01/vart-a-persistent-data-structure-for-snapshot-isolation.md)  
+- **2024-01-23** · [VART: A persistent data structure for snapshot isolation](2024/01/vart-a-persistent-data-structure-for-snapshot-isolation.md)  
   `engineering` — The blog introduces VART, an Immutable Versioned Adaptive Radix Trie, designed for snapshot isolation in databases (surrealKV), exploring isolation levels, concurrency control.
 - **2024-01-14** · [Integrate Auth0 as an Authentication provider](2024/01/integrate-auth0-as-an-authentication-provider.md)  
   `tutorials` — This guide will cover using Auth0 as the authentication provider for single-page web applications using SurrealDB as the only backend.
 - **2024-01-12** · [Introducing our new monthly release schedule](2024/01/introducing-our-new-monthly-release-schedule.md)  
   `releases` `company` — We are excited to announce a change in our product release schedule, with a regular monthly release cycle, allowing developers and organisations to build on top of SurrealDB, with predictable timelines for software improvements and fixes.
-- **2024-01-10** · [Live Queries in Rust](2024/01/live-queries-in-rust.md)  
+- **2024-01-10** · [Live queries in Rust](2024/01/live-queries-in-rust.md)  
   `tutorials` `engineering` — SurrealDB comes with a LIVE SELECT statement that allows you to listen for creations, updates and deletions to specific records you are interested in or entire tables.
 - **2024-01-09** · [Release v1.1.0](2024/01/release-v1-1-0.md)  
   `releases` — We're excited to announce SurrealDB v1.1.0, with many performance improvements, bug fixes, and new features, and native machine learning computation, right within the database.
 - **2024-01-09** · [Introducing Nightly and Beta Rust Crates](2024/01/introducing-nightly-and-beta-rust-crates.md)  
   `releases` `engineering` `company` — We are pleased to announce two additional Rust crates, surrealdb-nightly and surrealdb-beta. These crates are designed to complement the surrealdb crate.
-- **2023-12-18** · [Crafting Our Full-Text Search in SurrealDB: A Journey Beyond Lucene and Tantivy](2023/12/crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy.md)  
+- **2023-12-18** · [Crafting our full-text search in SurrealDB: A journey beyond Lucene and Tantivy](2023/12/crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy.md)  
   `engineering` — How SurrealDB built its own ACID-compliant full-text search engine instead of integrating Lucene or Tantivy, delivering a unified query experience without external dependencies.
 - **2023-12-12** · [What is SurrealML: A getting started guide](2023/12/what-is-surrealml-a-getting-started-guide.md)  
   `tutorials` `engineering` — The developer community has made great strides in building open-source machine-learning packages that save machine-learning models. However, there are still areas of this pipeline that are not fully complete.
@@ -315,7 +323,7 @@ _224 posts_
   `tutorials` — In this article, you will learn what streaming means with SurrealDB. We will also cover some patterns addressing how users can use streaming in practice.
 - **2023-11-14** · [How Rust gave SurrealDB an edge in the database world](2023/11/how-rust-gave-surrealdb-an-edge-in-the-database-world.md)  
   `tutorials` `community` — Join Senior Software Engineer, Maxwell Flitton, as he shines a light on how Rust and Async Rust gave SurrealDB an edge in the database world.
-- **2023-11-13** · [Create a Search Engine with SurrealDB Full-Text Search](2023/11/create-a-search-engine-with-surrealdb-full-text-search.md)  
+- **2023-11-13** · [Create a search engine with SurrealDB full-text search](2023/11/create-a-search-engine-with-surrealdb-full-text-search.md)  
   `tutorials` — When it comes to managing and retrieving vast amounts of textual data, the ability to perform efficient and accurate searches is paramount.
 - **2023-11-02** · [How to handle big data properly with SurrealDB](2023/11/how-to-handle-big-data-properly-with-surrealdb.md)  
   `tutorials` — Join SurrealDB's co-founder and CEO, Tobie Morgan Hitchcock, and Software Engineer Micha de Vries as we dive into how to handle big data properly with SurrealDB. Ask questions, leave comments, and get involved.
@@ -333,7 +341,7 @@ _224 posts_
   `tutorials` — For this stream we’ll cover a variety of topics raised by our community including data modelling in SurrealDB, performance, transactions and more. It’s also your opportunity to ask questions live during the stream.
 - **2023-08-01** · [Record IDs, Expressions and Graphs](2023/08/record-ids-expressions-and-graphs.md)  
   `tutorials` — Join us for our 10th live stream as we talk practically about how record IDs help us with connecting data through record links and graph relations and how it can be used to simplify your CRUD operations through simple and advanced expressions.
-- **2023-07-24** · [What are Multi-Model Databases?](2023/07/what-are-multi-model-databases.md)  
+- **2023-07-24** · [What are multi-model databases?](2023/07/what-are-multi-model-databases.md)  
   `engineering` `tutorials` — In today's digital age, staying connected is easier than ever. Social media platforms allow us to remain connected with loved ones, meet new people, and stay updated on world news...
 - **2023-07-18** · [All About Python](2023/07/all-about-python.md)  
   `tutorials` — This stream is all about Python, where we'll cover the why and the how of using it with SurrealDB. You'll learn all about the design decisions for the Rust rewrite and see demos of how to get up and running as well as deploying a Flask app in Docker.

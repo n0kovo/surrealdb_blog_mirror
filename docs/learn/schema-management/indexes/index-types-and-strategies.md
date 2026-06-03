@@ -136,7 +136,7 @@ REBUILD INDEX userEmailIndex ON user;
 
 ## Using `CONCURRENTLY` clause
 
-Building indexes can be lengthy and may time out before they're completed. Use the `CONCURRENTLY` option to build the index without blocking operations. The statement will return immediately, allowing you to monitor the index-building progress by executing the [INFO](../../../reference/query-language/statements/info.md) statement.
+Building indexes can be lengthy and may time out before they're completed. Without `CONCURRENTLY`, `DEFINE INDEX` blocks until the index is ready. They `CONCURRENTLY` clause can be used when the statement should return immediately while the build runs in the background, during which progress can be monitored with [INFO FOR INDEX](../../../reference/query-language/statements/info.md#index-information).
 
 ```surql
 -- Create an INDEX concurrently

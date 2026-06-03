@@ -11,6 +11,10 @@ The SurrealDB SDK for Python lets you connect to SurrealDB from any Python appli
 
 The SDK requires Python 3.10 or later.
 
+> [!NOTE]
+> The latest version of the SDK is *(latest)*.
+> The SDK works with SurrealDB versions `v2.0.0` to *(latest)*, ensuring compatibility with the latest version.
+
 ## Getting started
 
 - **[Installation](installation.md)** — Install the SDK using pip and import it into your project.

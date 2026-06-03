@@ -27,7 +27,7 @@ This guide assumes the following:
 
 - You have a [fresh instance of SurrealDB running.](https://surrealdb.com/docs/start)
 
-- You can [use a local Docker container](../../../self-hosted/docker.md) without volumes for the purposes of this guide.
+- You can [use a local Docker container](../../../running/docker.md) without volumes for the purposes of this guide.
 
 ```bash
 docker run --rm --pull always -p 8000:8000 surrealdb/surrealdb:latest \

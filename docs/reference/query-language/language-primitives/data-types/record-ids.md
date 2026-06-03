@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 # Record IDs
 
 > [!NOTE]
-> As of `v2.0.0`, SurrealDB no longer eagerly converts a string into a record. An [implicit `r` prefix or cast](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#casting-vs-affixes) is required instead.
+> SurrealDB does not eagerly convert a string into a record. An [implicit `r` prefix or cast](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#casting-vs-affixes) is required instead.
 
 SurrealDB record IDs are composed of a table name and a record identifier separated by a `:` in between, allowing for a simple and consistent way to reference records across the database. Record IDs are used to uniquely identify records within a table, to [query](../../statements/select.md), [update](../../statements/update.md), and [delete](../../statements/delete.md) records, and serve as [links](../record-links.md) from one record to another.
 

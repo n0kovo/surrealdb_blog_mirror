@@ -28,7 +28,7 @@ const api = db.api<MyPaths>();
 const users = await api.get("/users"); // Type: User[]
 ```
 
-## Creating an API instance
+## Creating an API Instance
 
 API instances are created through the [`api`](surreal-queryable.md#api) property on [`Surreal`](surreal.md), [`SurrealSession`](surreal-session.md), or [`SurrealTransaction`](surreal-transaction.md):
 
@@ -43,7 +43,7 @@ const api = db.api<MyPaths>();
 const usersApi = db.api<MyPaths>("/users");
 ```
 
-## Type definitions
+## Type Definitions
 
 ### `PathDef` {#pathdef}
 
@@ -55,7 +55,7 @@ type HttpMethod = "get" | "post" | "put" | "delete" | "patch" | "trace";
 type MethodDef = [RequestBody, ResponseBody] | [];
 ```
 
-### Example path definitions
+### Example Path Definitions
 
 ```ts
 type MyApiPaths = {
@@ -137,7 +137,7 @@ Invoke a user-defined API with a custom request object. This is the generic meth
 > Prefer using method-specific functions ([`.get()`](#get), [`.post()`](#post), etc.) for better type safety.
 
 ```ts title="Method Syntax"
-api.invoke<Req, Res>(path, request?)
+api.invoke<T>(path, request?)
 ```
 
 #### Parameters
@@ -157,14 +157,14 @@ api.invoke<Req, Res>(path, request?)
         </tr>
         <tr>
             <td>`request` <label label="optional" /></td>
-            <td>`<a href="/docs/languages/javascript/api/types/#apirequest">ApiRequest</a>&lt;Req&gt;`</td>
+            <td>`<a href="/docs/languages/javascript/api/types/#apirequest">ApiRequest</a>&lt;T&gt;`</td>
             <td>The request configuration object.</td>
         </tr>
     </tbody>
 </table>
 
 #### Returns
-[`ApiPromise<Req, Res>`](../queries/api-promise.md) - A promise for the API response
+[`ApiPromise<unknown>`](../queries/api-promise.md) - A promise for the API response
 
 #### Example
 ```ts
@@ -413,9 +413,9 @@ api.trace(path, body?)
 #### Returns
 [`ApiPromise<RequestBody, ResponseBody>`](../queries/api-promise.md) - A promise for the TRACE response
 
-## Complete examples
+## Complete Examples
 
-### Basic API usage
+### Basic API Usage
 
 ```ts
 
@@ -434,7 +434,7 @@ const created = await api.post('/users', {
 });
 ```
 
-### Type-safe API
+### Type-Safe API
 
 ```ts
 // Define your API contract
@@ -465,7 +465,7 @@ const newUser: User = await api.post("/users", {
 });
 ```
 
-### Using headers
+### Using Headers
 
 ```ts
 const api = db.api();
@@ -481,7 +481,7 @@ const protected Data = await api.get('/protected-endpoint');
 api.header('Authorization', null);
 ```
 
-### API with prefix
+### API with Prefix
 
 ```ts
 type UserPaths = {
@@ -502,7 +502,7 @@ const user = await usersApi.get("/123");          // GET /users/123
 const updated = await usersApi.put("/123", data); // PUT /users/123
 ```
 
-### Error handling
+### Error Handling
 
 ```ts
 const api = db.api();
@@ -519,7 +519,7 @@ try {
 }
 ```
 
-### With transaction
+### With Transaction
 
 ```ts
 const txn = await db.beginTransaction();
@@ -540,9 +540,9 @@ try {
 }
 ```
 
-## Best practices
+## Best Practices
 
-### 1. Define API types
+### 1. Define API Types
 
 Always define types for your API paths for better developer experience:
 
@@ -557,7 +557,7 @@ const api = db.api<MyApi>();
 const api = db.api();
 ```
 
-### 2. Reuse API instances
+### 2. Reuse API Instances
 
 Create and reuse API instances rather than creating new ones for each call:
 
@@ -572,9 +572,9 @@ await db.api().get('/users');
 await db.api().get('/posts');
 ```
 
-### 3. Use prefixes for namespacing
+### 3. Use Prefixes for Namespacing
 
-Use path prefixes to organise related endpoints:
+Use path prefixes to organize related endpoints:
 
 ```ts
 const usersApi = db.api("/users");
@@ -584,8 +584,8 @@ await usersApi.get("/123");  // GET /users/123
 await postsApi.get("/456");  // GET /posts/456
 ```
 
-## See also
+## See Also
 
 - [SurrealQueryable.api](surreal-queryable.md#api) - Creating API instances
 - [ApiPromise](../queries/api-promise.md) - API response handling
-- [User-Defined APIs Guide](../../../../reference/query-language/statements/define/api.md) - Defining APIs in SurrealDB
+- [User-Defined APIs Guide](https://surrealdb.com/docs/surrealql/statements/define/api) - Defining APIs in SurrealDB

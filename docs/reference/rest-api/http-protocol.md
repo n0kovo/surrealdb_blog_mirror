@@ -830,7 +830,7 @@ curl -X GET -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Acc
 This HTTP RESTful endpoint creates a record in a specific table in the database.
 
 > [!NOTE]
-> This HTTP endpoint expects the HTTP body to be a JSON or SurrealQL `object`.
+> This HTTP endpoint expects the HTTP body to be a **single inert value** (parsed with the SurrealQL value grammar and bound to **`$data`** in the translated statement). Literals, `$param` references, and constants are allowed; function calls, statements, and parenthesised executable forms are rejected. The body is not executed as a script. Use [`/sql`](http-protocol.md#post-sql) or RPC when you need to run queries in the request body. JSON-shaped objects such as `{ name: "Billy" }` are valid SurrealQL values and are the usual choice on the wire.
 
 ### Headers
 
@@ -883,7 +883,7 @@ This HTTP RESTful endpoint creates a record in a specific table in the database.
 
 ### Translated query
 ```surql
-CREATE type::table($table) CONTENT $body;
+CREATE type::table($table) CONTENT $data;
 ```
 
 ### Example usage
@@ -915,7 +915,7 @@ curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Ac
 This HTTP RESTful endpoint updates all records in a specific table in the database.
 
 > [!NOTE]
-> This HTTP endpoint expects the HTTP body to be a JSON or SurrealQL object.
+> This HTTP endpoint expects the HTTP body to be a **single inert value** (SurrealQL literal / object syntax; not an executable statement). Use [`/sql`](http-protocol.md#post-sql) or RPC to run SurrealQL in the request body.
 
 ### Headers
 
@@ -968,7 +968,7 @@ This HTTP RESTful endpoint updates all records in a specific table in the databa
 
 ### Translated query
 ```surql
-UPDATE type::table($table) CONTENT $body;
+UPDATE type::table($table) CONTENT $data;
 ```
 
 ### Example usage
@@ -1008,7 +1008,7 @@ curl -X PUT -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Acc
 This HTTP RESTful endpoint modifies all records in a specific table in the database.
 
 > [!NOTE]
-> This HTTP endpoint expects the HTTP body to be a JSON or SurrealQL object.
+> This HTTP endpoint expects the HTTP body to be a **single inert value** (SurrealQL literal / object syntax; not an executable statement). Use [`/sql`](http-protocol.md#post-sql) or RPC to run SurrealQL in the request body.
 
 ### Headers
 
@@ -1061,7 +1061,7 @@ This HTTP RESTful endpoint modifies all records in a specific table in the datab
 
 ### Translated query
 ```surql
-UPDATE type::table($table) MERGE $body;
+UPDATE type::table($table) MERGE $data;
 ```
 
 ### Example usage
@@ -1311,7 +1311,7 @@ This HTTP RESTful endpoint creates a specific record in a table in the database.
 ### Translated query
 
 ```surql
-CREATE type::record($table, $id) CONTENT $body;
+CREATE type::record($table, $id) CONTENT $data;
 ```
 
   
@@ -1343,7 +1343,7 @@ curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Ac
 This HTTP RESTful endpoint updates a specific record in a table in the database.
 
 > [!NOTE]
-> This HTTP endpoint expects the HTTP body to be a JSON or SurrealQL object.
+> This HTTP endpoint expects the HTTP body to be a **single inert value** (SurrealQL literal / object syntax; not an executable statement). Use [`/sql`](http-protocol.md#post-sql) or RPC to run SurrealQL in the request body.
 
 ### Headers
 
@@ -1397,7 +1397,7 @@ This HTTP RESTful endpoint updates a specific record in a table in the database.
 ### Translated query
 
 ```surql
-UPDATE type::record($table, $id) CONTENT $body;
+UPDATE type::record($table, $id) CONTENT $data;
 ```
 
   
@@ -1407,7 +1407,7 @@ UPDATE type::record($table, $id) CONTENT $body;
 This HTTP RESTful endpoint modifies a specific record in a table in the database.
 
 > [!NOTE]
-> This HTTP endpoint expects the HTTP body to be a JSON or SurrealQL object.
+> This HTTP endpoint expects the HTTP body to be a **single inert value** (SurrealQL literal / object syntax; not an executable statement). Use [`/sql`](http-protocol.md#post-sql) or RPC to run SurrealQL in the request body.
 
 ### Headers
 
@@ -1461,7 +1461,7 @@ This HTTP RESTful endpoint modifies a specific record in a table in the database
 ### Translated query
 
 ```surql
-UPDATE type::record($table, $id) MERGE $body;
+UPDATE type::record($table, $id) MERGE $data;
 ```
 
   

@@ -1,0 +1,45 @@
+---
+position: 4
+title: Python SDK reference
+description: Package layout and configuration for surrealdb-spectron.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/spectron/reference/sdk-python.mdx"
+---
+
+# Python SDK reference
+
+| Item | Value |
+| --- | --- |
+| PyPI package | `surrealdb-spectron` |
+| Install | `pip install surrealdb-spectron` |
+
+## Environment variables
+
+| Variable | Purpose |
+| --- | --- |
+| `SPECTRON_URL` | Base URL (no trailing slash), e.g. `http://localhost:9090` |
+| `SPECTRON_API_KEY` | Context API key |
+| `SPECTRON_CONTEXT_ID` | Path segment after `/api/v1/` |
+
+## Auth header
+
+```http
+API-KEY: <key>
+```
+
+## Core operations (REST mapping)
+
+| SDK area | HTTP |
+| --- | --- |
+| Facts | `POST /api/v1/{ctx}/facts`, `POST .../facts/batch` |
+| Query / context | `POST .../query`, `POST .../context` |
+| Chat | `POST .../chat` |
+| Documents | `POST/GET/DELETE .../documents` |
+| Sessions | `POST/GET/DELETE .../sessions` |
+| Entities | `GET/DELETE .../entities/{type}/{name}` |
+| Reflect / forget | `POST .../reflect`, `POST .../forget` |
+
+Full tables: [REST API](rest-api.md).
+
+## User guide
+
+See [Python SDK](../integrations/sdks/python.md) for usage patterns and harness adapters.

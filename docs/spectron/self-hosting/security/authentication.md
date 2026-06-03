@@ -1,0 +1,62 @@
+---
+position: 1
+title: Authentication
+description: API key authentication and management in Spectron.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/spectron/self-hosting/security/authentication.mdx"
+---
+
+# Authentication
+
+Every request to Spectron must carry an API key in the **`API-KEY`** header:
+
+```http
+API-KEY: <secret>
+```
+
+There is no `Authorization: Bearer` scheme, no session cookies, and no OAuth on the data plane. Authentication is stateless: the server validates the key, resolves the principal, and enforces scope before handling the request.
+
+## Principal types
+
+| Principal | Typical scope floor | Capabilities |
+| --- | --- | --- |
+| **Management** | Unrestricted | Context lifecycle, key provisioning, management REST |
+| **Agent** | Org / agent / user paths | Read and write within the effective scope |
+| **Supervisor** | Org-wide read | Read across the org; limited write (for example reflection persist) |
+
+See [Principals](principals.md) and [Scope as security boundary](scope-as-security-boundary.md).
+
+## Bootstrapping the first keys
+
+On a fresh install, run **bootstrap** once (via Docker or your operator runbook):
+
+```bash
+docker compose exec spectron spectrond bootstrap \
+  --connection-string "ws://surrealdb:8000;root;root"
+```
+
+Stdout prints `SPECTRON_MANAGEMENT_API_KEY` and `SPECTRON_API_KEY` plus the new Context id. Store them immediately; secrets are not shown again.
+
+Additional Context keys are minted via:
+
+- Management REST: `POST /api/v1/contexts/{id}/keys/{name}`
+- CLI: `spectron keys generate-key` ([CLI reference](../../reference/cli.md))
+
+## Environment variables (clients)
+
+The public **`spectron`** CLI and generated SDKs expect:
+
+| Variable | Purpose |
+| --- | --- |
+| `SPECTRON_URL` | Base URL (for example `http://localhost:9090`) |
+| `SPECTRON_API_KEY` | Context-scoped end-user key |
+| `SPECTRON_CONTEXT_ID` | Context id in the path |
+
+Harness adapters also accept `SPECTRON_BASE_URL` and `SPECTRON_CONTEXT` per package READMEs in the Spectron repo `clients/` tree.
+
+## MCP
+
+MCP clients (Claude Desktop, Cursor, Claude Code) use the same `API-KEY` value in the MCP transport config. Run `spectron mcp` to print an install snippet.
+
+## Key rotation
+
+Rotate keys through the management API or CLI without restarting the api role. Old keys stop working as soon as they are revoked in the control-plane database.

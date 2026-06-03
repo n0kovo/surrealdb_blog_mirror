@@ -15,19 +15,19 @@ The `RecordId` class provides type-safe record identifiers in SurrealDB. Each re
 
 **Source:** [value/record-id.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/value/record-id.ts)
 
-## Type parameters
+## Type Parameters
 
 - `Tb extends string` - The table name (string literal type for type safety)
 - `Id` - The ID value type (string, number, object, etc.)
 
 ## Constructor
 
-### `new RecordId(table, id, validate?)` {#constructor}
+### `new RecordId(table, id)` {#constructor}
 
 Create a new record identifier.
 
 ```ts title="Syntax"
-new RecordId(table, id, validate?)
+new RecordId(table, id)
 ```
 
 #### Parameters
@@ -42,18 +42,13 @@ new RecordId(table, id, validate?)
     <tbody>
         <tr>
             <td>`table` <label label="required" /></td>
-            <td>`Tb`</td>
-            <td>The table name.</td>
+            <td>`Tb | Table&lt;Tb&gt;`</td>
+            <td>The table name, either as a string or a `Table` instance.</td>
         </tr>
         <tr>
             <td>`id` <label label="required" /></td>
             <td>`Id`</td>
             <td>The record ID value (string, number, object, array, or RecordId).</td>
-        </tr>
-        <tr>
-            <td>`validate` <label label="optional" /></td>
-            <td>`boolean`</td>
-            <td>Whether to validate the table name format (default: `true`).</td>
         </tr>
     </tbody>
 </table>
@@ -86,15 +81,16 @@ const typedUser = new RecordId<'users', string>('users', 'john');
 
 ## Properties
 
-### `tb` {#tb}
+### `table` {#table}
 
-The table name component.
+The table name component, returned as a `Table` instance.
 
-**Type:** `Tb`
+**Type:** `Table<Tb>`
 
 ```ts
 const userId = new RecordId('users', 'john');
-console.log(userId.tb); // 'users'
+console.log(userId.table);      // Table { name: 'users' }
+console.log(userId.table.name); // 'users'
 ```
 
 ---
@@ -113,89 +109,7 @@ const productId = new RecordId('products', 42);
 console.log(productId.id); // 42
 ```
 
-## Static methods
-
-### `RecordId.parse(string)` {#parse}
-
-Parse a record ID from its string representation.
-
-```ts title="Syntax"
-RecordId.parse(str)
-```
-
-#### Parameters
-<table>
-    <thead>
-        <tr>
-            <th>Parameter</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>`str` <label label="required" /></td>
-            <td>`string`</td>
-            <td>The record ID string (format: `table:id`).</td>
-        </tr>
-    </tbody>
-</table>
-
-#### Returns
-`RecordId` - The parsed record ID
-
-#### Examples
-
-```ts
-// Parse simple IDs
-const user = RecordId.parse('users:john');
-const post = RecordId.parse('posts:123');
-
-// Parse complex IDs
-const metric = RecordId.parse('metrics:{ service: "api", time: 1234567890 }');
-
-// Use in queries
-const userId = RecordId.parse('users:alice');
-const user = await db.select(userId);
-```
-
----
-
-### `RecordId.from(value)` {#from}
-
-Create a record ID from various value types.
-
-```ts title="Syntax"
-RecordId.from(value)
-```
-
-#### Parameters
-<table>
-    <thead>
-        <tr>
-            <th>Parameter</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>`value` <label label="required" /></td>
-            <td>`unknown`</td>
-            <td>Value to convert to RecordId.</td>
-        </tr>
-    </tbody>
-</table>
-
-#### Returns
-`RecordId | undefined` - The record ID or undefined if conversion fails
-
-```ts
-const rid = RecordId.from('users:john');
-const same = RecordId.from(new RecordId('users', 'john'));
-```
-
-## Instance methods
+## Instance Methods
 
 ### `.toString()` {#tostring}
 
@@ -279,9 +193,9 @@ console.log(a.equals(b)); // true
 console.log(a.equals(c)); // false
 ```
 
-## Complete examples
+## Complete Examples
 
-### Basic usage
+### Basic Usage
 
 ```ts
 
@@ -306,7 +220,7 @@ await db.update(new RecordId('users', 'john'))
 await db.delete(new RecordId('users', 'john'));
 ```
 
-### Type-safe record IDs
+### Type-Safe Record IDs
 
 ```ts
 interface User {
@@ -324,7 +238,7 @@ const userId: RecordId<'users', string> = new RecordId('users', 'alice');
 const user = await db.select<User>(userId);
 ```
 
-### Complex ID structures
+### Complex ID Structures
 
 ```ts
 // Time-series data with structured IDs
@@ -346,20 +260,23 @@ const sessionId = new RecordId('sessions', {
 });
 ```
 
-### Parsing from strings
+### Parsing from Strings
+
+Use `StringRecordId` to pass a record ID string directly without parsing it into table and ID components. The string is sent as-is to SurrealDB.
 
 ```ts
-// Parse user input
+
+// Use a record ID string directly
 const userInput = 'users:john';
-const userId = RecordId.parse(userInput);
+const userId = new StringRecordId(userInput);
 const user = await db.select(userId);
 
-// Parse from query results
-const result = await db.query('SELECT id FROM users:john').collect();
-const recordId = RecordId.parse(result[0].id);
+// Use in queries
+const recordId = new StringRecordId('users:alice');
+const result = await db.select(recordId);
 ```
 
-### Working with relations
+### Working with Relations
 
 ```ts
 // Create relationship using record IDs
@@ -377,7 +294,7 @@ console.log('Edge from:', edge.in);  // RecordId('users', 'john')
 console.log('Edge to:', edge.out);   // RecordId('posts', '123')
 ```
 
-### Uuid-based record IDs
+### UUID-based Record IDs
 
 ```ts
 
@@ -396,20 +313,22 @@ await db.create(userId).content({
 ### Validation
 
 ```ts
-// Validate table names (enabled by default)
+// Table names are validated automatically
 try {
     const invalid = new RecordId('invalid-table!', 'id');
 } catch (error) {
     console.error('Invalid table name');
 }
-
-// Skip validation
-const unvalidated = new RecordId('any-name', 'id', false);
 ```
 
-## Recordidrange {#recordidrange}
+## RecordIdRange {#recordidrange}
 
 The `RecordIdRange` class represents a range of record IDs for querying multiple records.
+
+Bounds are specified using the `BoundIncluded` and `BoundExcluded` classes, or `undefined` for unbounded:
+- `new BoundIncluded(value)` — inclusive bound (`>=` or `<=`)
+- `new BoundExcluded(value)` — exclusive bound (`>` or `<`)
+- `undefined` — unbounded (no limit)
 
 ### Constructor
 
@@ -429,18 +348,18 @@ new RecordIdRange(table, begin, end)
     <tbody>
         <tr>
             <td>`table` <label label="required" /></td>
-            <td>`string`</td>
-            <td>The table name.</td>
+            <td>`Tb | Table&lt;Tb&gt;`</td>
+            <td>The table name, either as a string or a `Table` instance.</td>
         </tr>
         <tr>
             <td>`begin` <label label="required" /></td>
-            <td>`string | number | RecordId`</td>
-            <td>Start of the range (inclusive).</td>
+            <td>`Bound&lt;Id&gt;`</td>
+            <td>Start of the range. Use `BoundIncluded`, `BoundExcluded`, or `undefined`.</td>
         </tr>
         <tr>
             <td>`end` <label label="required" /></td>
-            <td>`string | number | RecordId`</td>
-            <td>End of the range (exclusive).</td>
+            <td>`Bound&lt;Id&gt;`</td>
+            <td>End of the range. Use `BoundIncluded`, `BoundExcluded`, or `undefined`.</td>
         </tr>
     </tbody>
 </table>
@@ -449,25 +368,47 @@ new RecordIdRange(table, begin, end)
 
 ```ts
 
-// Select range of users from 'a' to 'f'
-const range = new RecordIdRange('users', 'a', 'f');
+// Select range of users from 'a' (inclusive) to 'f' (exclusive)
+const range = new RecordIdRange(
+    'users',
+    new BoundIncluded('a'),
+    new BoundExcluded('f'),
+);
 const users = await db.select(range);
 
-// Numeric range
-const numRange = new RecordIdRange('items', 1, 100);
+// Numeric range: 1 (inclusive) to 100 (inclusive)
+const numRange = new RecordIdRange(
+    'items',
+    new BoundIncluded(1),
+    new BoundIncluded(100),
+);
 const items = await db.select(numRange);
 
-// Update range
-await db.update(new RecordIdRange('users', 'a', 'f'))
-    .merge({ verified: true });
+// Unbounded start, exclusive end
+const upToF = new RecordIdRange(
+    'users',
+    undefined,
+    new BoundExcluded('f'),
+);
+
+// Inclusive start, unbounded end
+const fromA = new RecordIdRange(
+    'users',
+    new BoundIncluded('a'),
+    undefined,
+);
 
 // Delete range
-await db.delete(new RecordIdRange('logs', '2024-01-01', '2024-02-01'));
+await db.delete(new RecordIdRange(
+    'logs',
+    new BoundIncluded('2024-01-01'),
+    new BoundExcluded('2024-02-01'),
+));
 ```
 
-## Best practices
+## Best Practices
 
-### 1. Use type parameters
+### 1. Use Type Parameters
 
 ```ts
 // Good: Type-safe
@@ -480,7 +421,7 @@ function getUser(id: RecordId<'users', string>) {
 }
 ```
 
-### 2. Prefer recordId over strings
+### 2. Prefer RecordId Over Strings
 
 ```ts
 // Good: Type-safe with validation
@@ -490,7 +431,7 @@ const user = await db.select(new RecordId('users', 'john'));
 const user = await db.query('SELECT * FROM users:john').collect();
 ```
 
-### 3. Use structured ids for complex keys
+### 3. Use Structured IDs for Complex Keys
 
 ```ts
 // Good: Structured composite key
@@ -503,21 +444,21 @@ const id = new RecordId('events', {
 const id = new RecordId('events', `john-${Date.now()}`);
 ```
 
-### 4. Handle parsing errors
+### 4. Handle Construction Errors
 
 ```ts
-// Good: Safe parsing
+// Good: Safe construction
 try {
-    const id = RecordId.parse(userInput);
+    const id = new RecordId(tableName, idValue);
     const record = await db.select(id);
 } catch (error) {
     console.error('Invalid record ID format');
 }
 ```
 
-## See also
+## See Also
 
 - [Data Types Overview](index.md) - All custom data types
 - [Table](table.md) - Table references
 - [Query Builders](../queries/index.md) - Using RecordId in queries
-- [SurrealQL Record IDs](../../../../reference/query-language/language-primitives/data-types/record-ids.md) - Database record ID documentation
+- [SurrealQL Record IDs](https://surrealdb.com/docs/surrealql/datamodel/ids) - Database record ID documentation

@@ -36,7 +36,7 @@ try {
 
 The constructor is not called directly. Use [`SurrealSession.beginTransaction()`](surreal-session.md#begintransaction) to create transactions.
 
-## Transaction methods
+## Transaction Methods
 
 ### `.commit()` {#commit}
 
@@ -96,11 +96,11 @@ try {
 }
 ```
 
-## Inherited methods
+## Inherited Methods
 
 As `SurrealTransaction` extends [`SurrealQueryable`](surreal-queryable.md), it inherits all query execution methods. All queries executed on a transaction instance are part of the transaction scope:
 
-### Query methods
+### Query Methods
 - [`query()`](surreal-queryable.md#query) - Execute raw SurrealQL
 - [`select()`](surreal-queryable.md#select) - Select records
 - [`create()`](surreal-queryable.md#create) - Create records
@@ -109,13 +109,17 @@ As `SurrealTransaction` extends [`SurrealQueryable`](surreal-queryable.md), it i
 - [`upsert()`](surreal-queryable.md#upsert) - Upsert records
 - [`delete()`](surreal-queryable.md#delete) - Delete records
 - [`relate()`](surreal-queryable.md#relate) - Create graph relationships
+- [`live()`](surreal-queryable.md#live) - Subscribe to live queries
+- [`liveOf()`](surreal-queryable.md#liveof) - Subscribe to existing live queries
 - [`run()`](surreal-queryable.md#run) - Execute functions
+- [`auth()`](surreal-queryable.md#auth) - Get authenticated record user
+- [`api()`](surreal-queryable.md#api) - Access user-defined APIs
 
 All of these operations are executed within the transaction context and will be committed or canceled together.
 
-## Complete examples
+## Complete Examples
 
-### Basic transaction
+### Basic Transaction
 
 ```ts
 
@@ -157,7 +161,7 @@ try {
 }
 ```
 
-### Money transfer transaction
+### Money Transfer Transaction
 
 ```ts
 async function transferMoney(
@@ -212,7 +216,7 @@ async function transferMoney(
 await transferMoney(db, 'alice', 'bob', 50);
 ```
 
-### Complex transaction with graph relationships
+### Complex Transaction with Graph Relationships
 
 ```ts
 async function createUserWithFollows(
@@ -258,7 +262,7 @@ async function createUserWithFollows(
 }
 ```
 
-### Transaction with error handling
+### Transaction with Error Handling
 
 ```ts
 async function atomicBulkOperation(db: Surreal, records: any[]) {
@@ -295,9 +299,9 @@ async function atomicBulkOperation(db: Surreal, records: any[]) {
 }
 ```
 
-## Best practices
+## Best Practices
 
-### 1. Always handle errors
+### 1. Always Handle Errors
 
 Always use try-catch blocks to ensure transactions are properly canceled on errors:
 
@@ -312,7 +316,7 @@ try {
 }
 ```
 
-### 2. Keep transactions short
+### 2. Keep Transactions Short
 
 Execute transactions quickly to avoid locking resources:
 
@@ -329,7 +333,7 @@ await txn.update(recordId).merge(data);
 await txn.commit();
 ```
 
-### 3. Don't reuse transactions
+### 3. Don't Reuse Transactions
 
 Once a transaction is committed or canceled, create a new one for subsequent operations:
 
@@ -344,7 +348,7 @@ await txn2.create(record2);
 await txn2.commit();
 ```
 
-### 4. Validate before transaction
+### 4. Validate Before Transaction
 
 Perform validation before starting a transaction when possible:
 
@@ -360,7 +364,7 @@ const txn = await db.beginTransaction();
 await txn.commit();
 ```
 
-## See also
+## See Also
 
 - [SurrealSession.beginTransaction()](surreal-session.md#begintransaction) - Creating transactions
 - [SurrealQueryable](surreal-queryable.md) - Available query methods

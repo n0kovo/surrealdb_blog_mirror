@@ -4,10 +4,50 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-05-12T10:56:54Z</updated>
+  <updated>2026-05-29T13:45:37Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/surrealdb-3-x-by-the-numbers</id>
+    <title>SurrealDB 3.x by the numbers</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-3-x-by-the-numbers" type="text/html" />
+    <published>2026-05-29T13:45:37Z</published>
+    <updated>2026-05-29T13:45:37Z</updated>
+    <summary type="text">Fresh SurrealDB 3.x benchmarks: 141k ops\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.</summary>
+    <category term="engineering" />
+    <category term="company" />
+    <category term="featured" />
+  </entry>
+  <entry>
+    <id>https://surrealdb.com/blog/surrealdb-3-1-stability-diskann-and-a-new-release-process</id>
+    <title>SurrealDB 3.1: stability, DiskANN, and a new release process</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-3-1-stability-diskann-and-a-new-release-process" type="text/html" />
+    <published>2026-05-27T18:25:58Z</published>
+    <updated>2026-05-27T18:25:58Z</updated>
+    <summary type="text">SurrealDB 3.1 is here. The first minor release in the 3.x series brings DiskANN, a comprehensive stability and security pass, and a refreshed release process.</summary>
+    <category term="releases" />
+    <category term="featured" />
+  </entry>
+  <entry>
+    <id>https://surrealdb.com/blog/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo</id>
+    <title>Using SurrealDB to understand how Buffalo buffalo buffalo Buffalo buffalo</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo" type="text/html" />
+    <published>2026-05-22T13:38:14Z</published>
+    <updated>2026-05-22T13:38:14Z</updated>
+    <summary type="text">Using SurrealDB and Surrealist's graph visualisation to not just understand but also see how Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo works.</summary>
+    <category term="tutorials" />
+  </entry>
+  <entry>
+    <id>https://surrealdb.com/blog/agentic-retrieval-for-structured-data-with-text-to-surql</id>
+    <title>Agentic retrieval for structured data with text-to-surql</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/agentic-retrieval-for-structured-data-with-text-to-surql" type="text/html" />
+    <published>2026-05-19T13:47:30Z</published>
+    <updated>2026-05-19T13:47:30Z</updated>
+    <summary type="text">RAG pipelines usually focus on unstructured content (chunks + vectors\/BM25), but structured data introduces a different retrieval problem: you need to pull exact rows and aggregates from tables, not just “similar passages.” This article explains an agentic pattern for structured retrieval using text-to-SurrealQL: give an LLM agent a single database-aware tool that converts natural-language questions into valid SurrealQL, executes the query in SurrealDB, and returns deterministic, auditable results.</summary>
+    <category term="ai" />
+    <category term="tutorials" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/what-chunk-strategies-exist-and-how-to-choose-one</id>
     <title>What chunking strategies exist and how to choose one?</title>
@@ -471,46 +511,5 @@
     <category term="featured" />
     <category term="tutorials" />
     <category term="ai" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/from-legacy-to-leverage--unlocking-financial-data-with-surrealdb</id>
-    <title>From legacy to leverage - unlocking financial data with SurrealDB</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/from-legacy-to-leverage--unlocking-financial-data-with-surrealdb" type="text/html" />
-    <published>2025-08-21T00:00:00Z</published>
-    <updated>2025-08-21T00:00:00Z</updated>
-    <summary type="text">SurrealDB helps financial institutions unlock the value of legacy transactional data by transforming it into connected, intelligent, and monetisable insights that power compliance, customer personalisation, and entirely new revenue streams.</summary>
-    <category term="featured" />
-    <category term="tutorials" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/enforcing-xor-eitheror-fields-in-surrealdb</id>
-    <title>Enforcing XOR (Either\/Or) Fields in SurrealDB</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/enforcing-xor-eitheror-fields-in-surrealdb" type="text/html" />
-    <published>2025-08-20T00:00:00Z</published>
-    <updated>2025-08-20T00:00:00Z</updated>
-    <summary type="text">What to do in your schema when a record should contain one of two possible fields, but not both or neither?</summary>
-    <category term="featured" />
-    <category term="tutorials" />
-    <category term="community" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/surrealdb-achieves-cyber-essentials-plus-certification</id>
-    <title>SurrealDB achieves Cyber Essentials Plus certification</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-achieves-cyber-essentials-plus-certification" type="text/html" />
-    <published>2025-08-19T00:00:00Z</published>
-    <updated>2025-08-19T00:00:00Z</updated>
-    <summary type="text">SurrealDB has successfully achieved CyberEssentials Plus certification</summary>
-    <category term="featured" />
-    <category term="company" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/ten-tips-and-tricks-for-your-surrealdb-queries</id>
-    <title>Ten tips and tricks for your SurrealDB queries</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/ten-tips-and-tricks-for-your-surrealdb-queries" type="text/html" />
-    <published>2025-08-18T00:00:00Z</published>
-    <updated>2025-08-18T00:00:00Z</updated>
-    <summary type="text">SurrealQL queries are expressive and powerful, and the more you know the more you can make your queries work for you.</summary>
-    <category term="featured" />
-    <category term="tutorials" />
   </entry>
 </feed>

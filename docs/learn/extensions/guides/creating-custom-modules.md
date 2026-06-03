@@ -17,7 +17,7 @@ You need a recent [Rust toolchain](https://www.rust-lang.org/tools/install), the
 rustup target add wasm32-wasip2
 ```
 
-Install SurrealDB from the [installation guide](../../../self-hosted/installation/index.md) if you have not already.
+Install SurrealDB from the [installation guide](../../../running/installation/index.md) if you have not already.
 
 ## Scaffold a module project
 

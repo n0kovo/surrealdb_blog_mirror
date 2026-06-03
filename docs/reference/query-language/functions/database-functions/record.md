@@ -7,9 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Record functions
 
-> [!NOTE]
-> Record functions before SurrealDB 2.0 were located inside the module [meta](meta.md). Their behaviour has not changed.
-
 These functions can be used to retrieve specific metadata from a SurrealDB Record ID.
 
 <table>

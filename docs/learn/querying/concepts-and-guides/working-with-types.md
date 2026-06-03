@@ -164,3 +164,5 @@ The following example shows how to chain these functions to validate and modify 
 	}
 ]
 ```
+
+While refining pipelines like this, [`.expect()`](../../../reference/query-language/functions/database-functions/value.md#valueexpect) (*Since v3.1.0*) on the result of `.filter()` or `.map()` can confirm the shape you expect before the query continues. For example, `.expect(|$records| $records.len() = 2, "Expected exactly two valid cities")`.

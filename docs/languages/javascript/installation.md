@@ -13,33 +13,29 @@ In this section, you will learn how to install the JavaScript SDK in your projec
 
 First, install the [SurrealDB SDK](https://npmjs.com/package/surrealdb) using your favorite package manager:
 
-  
 **bun**
 
 ```bash
-    bun install surrealdb
-    ```
+bun install surrealdb
+```
 
-  
 **npm**
 
 ```bash
-    npm install --save surrealdb
-    ```
+npm install --save surrealdb
+```
 
-  
 **yarn**
 
 ```bash
-    yarn add surrealdb
-    ```
+yarn add surrealdb
+```
 
-  
 **pnpm**
 
 ```bash
-    pnpm install surrealdb
-    ```
+pnpm install surrealdb
+```
 
 > [!NOTE]
 > The SurrealDB SDK for JavaScript is also available in the JSR registry as [`@surrealdb/surrealdb`](https://jsr.io/@surrealdb/surrealdb).

@@ -1,8 +1,10 @@
 # Category: engineering
 
-_38 posts_  
+_39 posts_  
 [← Index](../../README.md)
 
+- **2026-05-29** · [SurrealDB 3.x by the numbers](../2026/05/surrealdb-3-x-by-the-numbers.md)  
+  `engineering` `company` `featured` — Fresh SurrealDB 3.x benchmarks: 141k ops\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.
 - **2026-04-22** · [New SurrealDB docs search using hybrid search and HNSW\/BM25 reranking](../2026/04/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search.md)  
   `engineering` `tutorials` — How SurrealDB has implemented documentation search using hybrid search (full-text and vector hybrid search and reranking with HNSW and BM25 indexes), plus a simplified example to show the same pattern in just a few queries.
 - **2026-03-19** · [Exponential cost traps in database architectures: how SurrealDB breaks the cycle](../2026/03/exponential-cost-traps-in-database-architectures-how-surrealdb-breaks-the-cycle.md)  
@@ -45,13 +47,13 @@ _38 posts_
   `engineering` `ai` — This is the release you've been waiting for
 - **2025-02-05** · [How we improved the Python SDK for our 1.0 stable version](../2025/02/how-we-improved-the-python-sdk-for-our-1-0-stable-version.md)  
   `engineering` — We've released our 1.0 stable version of our Python SDK
-- **2024-08-28** · [Building a Retrieval-Augmented Generation (RAG) App with OpenAI and SurrealDB](../2024/08/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb.md)  
+- **2024-08-28** · [Building a retrieval-augmented generation (RAG) app with OpenAI and SurrealDB](../2024/08/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb.md)  
   `engineering` `tutorials` — We'll build an assistant that can answer questions based on Wikipedia information, using the GPT Turbo model from OpenAI
 - **2024-08-20** · [It’s about time: time series in SurrealDB](../2024/08/its-about-time-time-series-in-surrealdb.md)  
   `engineering` `tutorials` — What is time anyway
-- **2024-07-25** · [Moving from Full-Text search to Vector search in SurrealDB](../2024/07/moving-from-full-text-search-to-vector-search-in-surrealdb.md)  
+- **2024-07-25** · [Moving from full-text search to vector search in SurrealDB](../2024/07/moving-from-full-text-search-to-vector-search-in-surrealdb.md)  
   `engineering` — If you know exactly what you’re searching for Full-Text Search would be the way to go but when you want your search to understand you, Vector Search might be right for you.
-- **2024-07-16** · [Real-Time Data Science: Orchestrating Insights with the Right Ensemble](../2024/07/real-time-data-science-orchestrating-insights-with-the-right-ensemble.md)  
+- **2024-07-16** · [Real-time data science: Orchestrating insights with the right ensemble](../2024/07/real-time-data-science-orchestrating-insights-with-the-right-ensemble.md)  
   `engineering` `tutorials` — Building real-time analytics leveraging OLAP, multi-model databases and workload isolation.
 - **2024-05-17** · [Introducing Surreal<Any>: Dynamic Support for any Engine in Rust](../2024/05/introducing-surrealany-dynamic-support-for-any-engine-in-rust.md)  
   `engineering` `tutorials` — Understand what is a `Surreal<Any>` engine and how you can use it in your Rust code.
@@ -59,17 +61,17 @@ _38 posts_
   `engineering` `tutorials` — JSON is the popular kid in school, but CBOR is the new kid who's smaller, faster, and has more tricks up its sleeve!
 - **2024-03-13** · [Why we are betting on Rust](../2024/03/why-we-are-betting-on-rust.md)  
   `engineering` `company` — The best way to predict the future is to create it.
-- **2024-01-23** · [VART: A Persistent Data Structure For Snapshot Isolation](../2024/01/vart-a-persistent-data-structure-for-snapshot-isolation.md)  
+- **2024-01-23** · [VART: A persistent data structure for snapshot isolation](../2024/01/vart-a-persistent-data-structure-for-snapshot-isolation.md)  
   `engineering` — The blog introduces VART, an Immutable Versioned Adaptive Radix Trie, designed for snapshot isolation in databases (surrealKV), exploring isolation levels, concurrency control.
-- **2024-01-10** · [Live Queries in Rust](../2024/01/live-queries-in-rust.md)  
+- **2024-01-10** · [Live queries in Rust](../2024/01/live-queries-in-rust.md)  
   `tutorials` `engineering` — SurrealDB comes with a LIVE SELECT statement that allows you to listen for creations, updates and deletions to specific records you are interested in or entire tables.
 - **2024-01-09** · [Introducing Nightly and Beta Rust Crates](../2024/01/introducing-nightly-and-beta-rust-crates.md)  
   `releases` `engineering` `company` — We are pleased to announce two additional Rust crates, surrealdb-nightly and surrealdb-beta. These crates are designed to complement the surrealdb crate.
-- **2023-12-18** · [Crafting Our Full-Text Search in SurrealDB: A Journey Beyond Lucene and Tantivy](../2023/12/crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy.md)  
+- **2023-12-18** · [Crafting our full-text search in SurrealDB: A journey beyond Lucene and Tantivy](../2023/12/crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy.md)  
   `engineering` — How SurrealDB built its own ACID-compliant full-text search engine instead of integrating Lucene or Tantivy, delivering a unified query experience without external dependencies.
 - **2023-12-12** · [What is SurrealML: A getting started guide](../2023/12/what-is-surrealml-a-getting-started-guide.md)  
   `tutorials` `engineering` — The developer community has made great strides in building open-source machine-learning packages that save machine-learning models. However, there are still areas of this pipeline that are not fully complete.
-- **2023-07-24** · [What are Multi-Model Databases?](../2023/07/what-are-multi-model-databases.md)  
+- **2023-07-24** · [What are multi-model databases?](../2023/07/what-are-multi-model-databases.md)  
   `engineering` `tutorials` — In today's digital age, staying connected is easier than ever. Social media platforms allow us to remain connected with loved ones, meet new people, and stay updated on world news...
 - **2023-06-20** · [JavaScript Library with Micha & Tobie](../2023/06/javascript-library-with-micha-tobie.md)  
   `tutorials` `engineering` — This week we're focusing on SurrealDB's JavaScript Library. Join Micha and Tobie as they chat about recent updates and highlights, and showcase how to use live queries and the WASM library.

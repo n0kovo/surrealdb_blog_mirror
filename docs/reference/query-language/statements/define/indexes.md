@@ -184,6 +184,22 @@ value = "NONE"
 DEFINE INDEX test ON user FIELDS account, email UNIQUE;
 ```
 
+#### Array-element composite indexes *Since v3.1.0*
+
+From SurrealDB 3.1.0, a composite index can lead with an **array-element** column (`tags.*`) so containment predicates combine with ordering on a trailing column without a full table scan. This supports patterns such as `WHERE tags CONTAINS 'x' ORDER BY age DESC LIMIT N` and the multi-value forms `CONTAINSANY` / `ANYINSIDE` on array fields.
+
+```surql
+DEFINE INDEX tag_age ON article FIELDS tags.*, age;
+
+-- Bounded index walk (check with EXPLAIN FULL)
+SELECT * FROM article
+WHERE tags CONTAINS 'release-notes'
+ORDER BY age DESC
+LIMIT 10;
+```
+
+`CONTAINSALL` / `ALLINSIDE` may still apply a residual filter above the union when intersection semantics require it. See [operators](../../language-primitives/operators.md) and [`EXPLAIN`](../explain.md) to confirm the planner choice.
+
 ### Count index
 
 *Since v3.0.0*
@@ -463,7 +479,7 @@ DEFINE INDEX OVERWRITE example ON example FIELDS example;
 
 *Since v2.0.0*
 
-Building indexes can be lengthy and may time out before they're completed. Use the `CONCURRENTLY` option to build the index without blocking operations. The statement will return immediately, allowing you to monitor the index-building progress by executing the [INFO](../info.md) statement.
+Building indexes can be lengthy and may time out before they're completed. Without `CONCURRENTLY`, `DEFINE INDEX` blocks until the index is fully built (or the build fails). The `CONCURRENTLY` clause can be used when you need the statement to return immediately while indexing continues in the background. This allows other operations to keep running while the index builds, during which you can monitor progress with [INFO FOR INDEX](../info.md#index-information).
 
 ```surql
 -- Create an INDEX concurrently

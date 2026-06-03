@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 # Meta functions
 
 > [!NOTE]
-> As of version 2.0, these functions are now part of SurrealDB's [record](record.md) functions.
+> These functions are deprecated. Prefer SurrealDB's [record](record.md) functions instead.
 
 These functions can be used to retrieve specific metadata from a SurrealDB Record ID.
 

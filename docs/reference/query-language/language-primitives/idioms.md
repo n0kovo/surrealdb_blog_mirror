@@ -227,7 +227,58 @@ The output for `INFO FOR TABLE person` includes an automatically generated defin
 
 *Since v2.1.0*
 
-The `.*` idiom in SurrealDB allows you to target all values in an object or all entries in an array. It can be used in various contexts such as querying, field definitions, and data manipulation. This section explains the behavior of `.*` with practical examples.
+The `.*` idiom in SurrealDB allows you to target all values in an object or all entries in an array. It can be used in various contexts such as querying, field definitions, and data manipulation. This section explains the behaviour of `.*` with practical examples.
+
+When `.*` is applied to `NONE`, `NULL`, or a scalar value, the result is `NONE`.
+
+```surql
+-- These three return NONE
+NONE.*;
+NULL.*;
+"Some string".*;
+```
+
+In mixed arrays, `.*` fetches linked records but leaves non-record elements unchanged.
+
+```surql
+-- person:one does not exist yet,
+-- will evaluate to NONE
+[1, person:one, "x"].*;
+
+CREATE person:one SET name = "Geralt";
+
+-- person:one now exists,
+-- will access record and fetch fields
+[1, person:one, "x"].*;
+```
+
+```surql title="Output"
+-------- Query 1 --------
+
+[
+	1,
+	NONE,
+	'x'
+]
+
+-------- Query 2 --------
+
+{
+	id: person:one,
+	name: 'Geralt'
+}
+
+-------- Query 3 --------
+
+[
+	1,
+	{
+		id: person:one,
+		name: 'Geralt'
+	},
+	'x'
+]
+```
 
 ### Accessing all values in an object
 
@@ -243,16 +294,16 @@ value = "{ a: 1, b: 2 }"
  { a: 1, b: 2 }.*;
 ```
 
-**SurrealDB 2.x**
-
-```surql title="Response"
-[1, 2]
-```
-
 **SurrealDB 3.x**
 
 ```surql title="Response"
 { a: 1, b: 2 }
+```
+
+**SurrealDB 2.x**
+
+```surql title="Response"
+[1, 2]
 ```
 
 To see just the values of this object, the [`object::values()`](../functions/database-functions/object.md#objectvalues) function can be used.

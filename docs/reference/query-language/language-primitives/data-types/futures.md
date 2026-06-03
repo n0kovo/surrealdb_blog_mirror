@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 # Futures
 
 > [!NOTE]
-> The `future` type is only available up to SurrealDB 2.x. Since version 3.0.0-beta, it has been replaced by [defined fields using the `COMPUTED` clause](../../statements/define/field.md#computed-fields). Most examples in this page include an equivalent `COMPUTED` clause to aid in migrating to the new implementation.
+> The `future` type is only available up to SurrealDB 2.x. Since version 3.0.0, it has been replaced by [defined fields using the `COMPUTED` clause](../../statements/define/field.md#computed-fields). Most examples in this page include an equivalent `COMPUTED` clause to aid in migrating to the new implementation.
 
 Futures are values which are only computed when the data is selected and returned to the client. Futures can be stored inside records, to enable dynamic values which are always calculated when queried.
 

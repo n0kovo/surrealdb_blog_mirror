@@ -97,7 +97,7 @@ await db.ready;
 console.log('Connection is ready');
 ```
 
-### Inherited properties
+### Inherited Properties
 
 The `Surreal` class inherits all properties from [`SurrealSession`](surreal-session.md), including:
 
@@ -108,7 +108,7 @@ The `Surreal` class inherits all properties from [`SurrealSession`](surreal-sess
 - `session` - Session ID
 - `isValid` - Session validity status
 
-## Connection methods
+## Connection Methods
 
 ### `.connect()` {#connect}
 
@@ -145,7 +145,7 @@ db.connect(url, opts?)
 </table>
 
 #### Returns
-`Promise<true>` - Resolves to `true` when connection is successful
+`Promise<void>` - Resolves when connection is successful
 
 #### Examples
 
@@ -196,7 +196,7 @@ db.close()
 ```
 
 #### Returns
-`Promise<true>` - Resolves to `true` when disconnection is successful
+`Promise<void>` - Resolves when disconnection is successful
 
 #### Example
 ```ts
@@ -279,7 +279,7 @@ if (db.isFeatureSupported(Features.LiveQueries)) {
 }
 ```
 
-## Session management methods
+## Session Management Methods
 
 ### `.sessions()` {#sessions}
 
@@ -290,7 +290,7 @@ db.sessions()
 ```
 
 #### Returns
-`Promise<Uuid[]>` - An array of session IDs
+`Promise<string[]>` - An array of session IDs
 
 #### Example
 ```ts
@@ -342,7 +342,7 @@ db.closeSession()
 await db.closeSession();
 ```
 
-## Data management methods
+## Data Management Methods
 
 ### `.export()` {#export}
 
@@ -364,14 +364,14 @@ db.export(options?)
     <tbody>
         <tr>
             <td>`options` <label label="optional" /></td>
-            <td>`<a href="/docs/languages/javascript/api/types/#sqlexportoptions">SqlExportOptions</a>`</td>
+            <td>`Partial&lt;<a href="/docs/languages/javascript/api/types/#sqlexportoptions">SqlExportOptions</a>&gt;`</td>
             <td>Options to customize what gets exported.</td>
         </tr>
     </tbody>
 </table>
 
 #### Returns
-`Promise<string>` - The exported database as a SQL string
+`ExportPromise` - A promise that resolves to the exported database as a SQL string. Has a `.raw()` method that returns the raw `Response` object.
 
 #### Examples
 
@@ -394,9 +394,13 @@ const sql = await db.export({
 });
 ```
 
+```ts title="Export as Raw Response"
+const response = await db.export().raw();
+```
+
 ### `.import()` {#import}
 
-Import database contents from a SQL string.
+Import database contents from a SQL string or a readable stream.
 
 ```ts title="Method Syntax"
 db.import(input)
@@ -414,8 +418,8 @@ db.import(input)
     <tbody>
         <tr>
             <td>`input` <label label="required" /></td>
-            <td>`string`</td>
-            <td>The SQL string to import into the database.</td>
+            <td>`string | ReadableStream&lt;string&gt;`</td>
+            <td>The SQL string or readable stream to import into the database.</td>
         </tr>
     </tbody>
 </table>
@@ -433,6 +437,49 @@ const sqlData = `
 
 await db.import(sqlData);
 console.log('Data imported successfully');
+```
+
+### `.exportModel()` {#exportmodel}
+
+Export a SurrealML model from the database.
+
+```ts title="Method Syntax"
+db.exportModel(name, version)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`name` <label label="required" /></td>
+            <td>`string`</td>
+            <td>The name of the SurrealML model to export.</td>
+        </tr>
+        <tr>
+            <td>`version` <label label="required" /></td>
+            <td>`string`</td>
+            <td>The version of the model to export.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+`ExportModelPromise` - A promise that resolves to the exported model data. Has a `.raw()` method that returns the raw `Response` object.
+
+#### Example
+```ts
+const modelData = await db.exportModel('my_model', '1.0.0');
+```
+
+```ts title="Export as Raw Response"
+const response = await db.exportModel('my_model', '1.0.0').raw();
 ```
 
 ## Events
@@ -504,7 +551,7 @@ db.subscribe('error', (error) => {
 });
 ```
 
-### Inherited events
+### Inherited Events
 
 The `Surreal` class also inherits and re-emits events from [`SurrealSession`](surreal-session.md):
 
@@ -555,23 +602,23 @@ const unsubscribe = db.subscribe('connected', (version) => {
 unsubscribe();
 ```
 
-## Inherited methods
+## Inherited Methods
 
 As `Surreal` extends [`SurrealSession`](surreal-session.md), it inherits all authentication and query methods:
 
-### Authentication methods
+### Authentication Methods
 - [`signup()`](surreal-session.md#signup) - Sign up a new user
 - [`signin()`](surreal-session.md#signin) - Sign in with credentials
 - [`authenticate()`](surreal-session.md#authenticate) - Authenticate with a token
 - [`invalidate()`](surreal-session.md#invalidate) - Invalidate the session
 
-### Session configuration methods
+### Session Configuration Methods
 - [`use()`](surreal-session.md#use) - Set namespace and database
 - [`set()`](surreal-session.md#set) - Set a session parameter
 - [`unset()`](surreal-session.md#unset) - Remove a session parameter
 - [`reset()`](surreal-session.md#reset) - Reset the session
 
-### Query methods
+### Query Methods
 
 As `Surreal` extends [`SurrealQueryable`](surreal-queryable.md) (via `SurrealSession`), it also inherits all query execution methods:
 
@@ -586,14 +633,14 @@ As `Surreal` extends [`SurrealQueryable`](surreal-queryable.md) (via `SurrealSes
 - [`live()`](surreal-queryable.md#live) - Subscribe to live queries
 - [`run()`](surreal-queryable.md#run) - Execute functions
 
-### Transaction method
+### Transaction Method
 - [`beginTransaction()`](surreal-transaction.md) - Start a transaction
 
-## Type parameters
+## Type Parameters
 
 This class does not use generic type parameters.
 
-## Complete example
+## Complete Example
 
 ```ts
 
@@ -644,10 +691,10 @@ console.log('Backup size:', backup.length);
 await db.close();
 ```
 
-## See also
+## See Also
 
 - [SurrealSession](surreal-session.md) - Session management and authentication
 - [SurrealQueryable](surreal-queryable.md) - Query execution methods
 - [SurrealTransaction](surreal-transaction.md) - Transaction support
-- [Connection Engines](../../engines/index.md) - Engine-specific documentation
-- [Data Types](../values/index.md) - Working with data types
+- [Connection Engines](https://surrealdb.com/docs/sdk/javascript/engines) - Engine-specific documentation
+- [Data Types](https://surrealdb.com/docs/sdk/javascript/api/values) - Working with data types

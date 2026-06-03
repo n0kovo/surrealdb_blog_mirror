@@ -1,6 +1,6 @@
 ---
 position: 5
-title: Data Querying
+title: Data querying
 description: Learn how to interact with the database and perform CRUD operations using the SurrealDB SDK for PHP.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/php/core/data-querying.mdx"
 ---

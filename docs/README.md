@@ -1,12 +1,12 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-05-16 06:48 UTC_
+_Last updated: 2026-06-03 07:44 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
 ## Stats
 
-- **Total pages:** 795
+- **Total pages:** 921
 
 ## Browse
 
@@ -25,14 +25,14 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Extending
 
-- **[Agent memory context](learn/context/index.md)** — LLM memory and tool context patterns. — _2 pages_
+- **Agent memory context** — LLM memory and tool context patterns. _(not mirrored)_
 - **[Extensions](learn/extensions/index.md)** — Functions, procedures, and plugins. — _8 pages_
 
 ## Build
 
 ### Running
 
-- **[Deployment](build/deployment/index.md)** — Cloud, edge, and on-premises. — _36 pages_
+- **[Deployment](build/deployment/index.md)** — Cloud, edge, and on-premises. — _35 pages_
 - **[Embedding SurrealDB](build/embedding/index.md)** — Native and WebAssembly embedding. — _7 pages_
 
 ### Ecosystem
@@ -42,7 +42,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Intelligence
 
-- **[AI agents](build/ai-agents/index.md)** — Design patterns for AI agents. — _4 pages_
+- **[AI agents](build/ai-agents/index.md)** — Design patterns for AI agents. — _5 pages_
 
 ## Manage
 
@@ -69,10 +69,9 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 ## Reference
 
 - **[Query language](reference/query-language/index.md)** — Syntax, statements, and builtins. — _147 pages_
-- **[CLI tools](reference/cli/index.md)** — CLI install, backup, and ops. — _17 pages_
+- **[CLI tools](reference/cli/index.md)** — CLI install, backup, and ops. — _18 pages_
 - **[REST API](reference/rest-api/index.md)** — HTTP API for queries and admin. — _4 pages_
 
 ## More content
 
 - **[SDKs](languages/index.md)** — Official client SDKs for Rust, JavaScript, Python, Go, .NET, PHP, and Java. _(265 pages)_
-- **[Self-hosted quickstart](self-hosted/index.md)** — Install and run SurrealDB locally for SDK development. _(12 pages)_

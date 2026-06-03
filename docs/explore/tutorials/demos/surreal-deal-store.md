@@ -21,19 +21,19 @@ In the diagram below, the nodes in pink are the [standard tables](../../../refer
 ### Download
 
   
+**SurrealDB 3.x**
+
+| Dataset                                                                          | URL                                                       |
+| -------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| [Surreal Deal Store (mini)](https://datasets.surrealdb.com/datasets/surreal-deal-store/mini-v3.surql) | https://datasets.surrealdb.com/datasets/surreal-deal-store/mini-v3.surql |
+
+  
 **SurrealDB 2.x**
 
 | Dataset                                                                          | URL                                                       |
 | -------------------------------------------------------------------------------- | --------------------------------------------------------- |
 | [Surreal Deal Store](https://datasets.surrealdb.com/surreal-deal-store.surql)             | https://datasets.surrealdb.com/surreal-deal-store.surql      |
 | [Surreal Deal Store (mini)](https://datasets.surrealdb.com/surreal-deal-store-mini.surql) | https://datasets.surrealdb.com/surreal-deal-store-mini.surql |
-
-  
-**SurrealDB 3.x**
-
-| Dataset                                                                          | URL                                                       |
-| -------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| [Surreal Deal Store (mini)](https://datasets.surrealdb.com/datasets/surreal-deal-store/mini-v3.surql) | https://datasets.surrealdb.com/datasets/surreal-deal-store/mini-v3.surql |
 
 ### Import
 

@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 Spectron is a **memory and knowledge layer for AI agents** – a **horizontally scalable application tier** in front of **SurrealDB**, which holds every durable record (graph, vector, document, relational, geospatial) with **ACID writes**, **first-class provenance and trust**, **graph-resident traces**, and **tri-temporal** belief history. Spectron aims for memory that **associates** related ideas and keeps straight **what was said, what is true now, and what used to be true** – much like people do, but queryable and auditable in software.
 
-Use this hub to go from principles to running code, then dive into operational sections (knowledge ingestion, conversational memory, self-hosting, integrations, reference).
+Use this hub to go from principles to running code, then dive into operational sections (memory & knowledge, self-hosting, integrations, reference).
 
 ## Architecture
 
@@ -46,11 +46,11 @@ How isolation, sessions, categories, and provenance fit together:
 - [Sessions and turns](https://surrealdb.com/docs/spectron/mental-model/sessions-and-turns)
 - [Memory categories](https://surrealdb.com/docs/spectron/mental-model/memory-categories)
 - [Provenance and traceability](https://surrealdb.com/docs/spectron/mental-model/provenance-and-traceability)
+- [Supersession, decay, and forget](https://surrealdb.com/docs/spectron/mental-model/memory-lifecycle) – how beliefs change, fade, and are removed
 
 ## Product sections
 
-- **[Knowledge](../knowledge/index.md)** – document ingest, hybrid retrieval, keyword graph.
-- **[Memory](../memory/index.md)** – sessions, operations (`remember`, `recall`, `reflect`, …), reasoning model, tuning.
+- **[Memory & knowledge](../agent-memory/index.md)** – authoritative and experiential ingest, unified retrieval, reasoning, operations, tuning.
 - **[Integrations](../integrations/index.md)** – SDKs, MCP, framework adapters.
 - **[Self-hosting](../self-hosting/index.md)** – deployment, security, operations, observability.
 - **[Cookbooks](../cookbooks/index.md)** – end-to-end patterns.

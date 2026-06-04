@@ -20,7 +20,7 @@ Spectron stores **authoritative** and **experiential** knowledge in **one** Surr
 | **Authoritative** | `document` (and operator `upsert`) | Manuals, policies, product data, repos, structured exports | High – vetted sources |
 | **Experiential** | `turn`, plus `reflect`, `elaboration`, `consolidation`, … | What users and agents said; synthesised or background-minted facts | Lower – must earn promotion |
 
-Retrieval, elaboration, and consolidation see **one** `entity` / `relation` graph. Hybrid rankers fuse vectors, BM25, graph structure, keyword bridges, geo predicates, and trace-derived features without cross-store joins.
+Retrieval, elaboration, and consolidation see **one** `entity` / `relation` graph. Hybrid rankers fuse vectors, BM25, graph structure, keyword bridges, geo predicates, and trace-derived features without cross-store joins — so questions like “semantically close to X, mentioning Y, linked to entity Z, valid as of last March” stay **one query** over one engine, not four databases stitched after the fact.
 
 ## How authority is enforced
 
@@ -42,4 +42,4 @@ That is how the **Authoritative** pillar wins over casual assertions: **authorit
 
 - [Eight pillars and six categories](https://surrealdb.com/docs/spectron/architecture/eight-pillars-and-categories)
 - [Principles and goals](https://surrealdb.com/docs/spectron/architecture/principles-and-goals)
-- [Authority when pillars meet](../../memory/reasoning-model/authority-hierarchy.md) – how curated and experiential streams interact in APIs today
+- [Authority when pillars meet](../../agent-memory/reasoning/authority-hierarchy.md) – how curated and experiential streams interact in APIs today

@@ -29,6 +29,12 @@ Some JSON examples in the docs show a flat `source_turn` field — that is the c
 
 `source.span` stores **character positions** in the originating turn or document passage. Citations are **stored data**, not best-effort model prose. That powers “jump to quote” in UIs and defensible audit; tiered reads are described in [Coherence, retrieval, and cost tiers](https://surrealdb.com/docs/spectron/architecture/coherence-retrieval-and-tiers).
 
+## Multiple sources, one audit trail
+
+When several sources support or contradict the same topic, Spectron **does not flatten** them into a single anonymous record. Each assertion keeps its own provenance. Cross-provenance disagreement becomes **`uncertainty`**; same-stream updates **supersede** with a chain you can replay.
+
+**Retrieval defaults** return the **current** view with sources attached, traceable to originating bytes. **`as_of`** and entity history endpoints return what the system would have answered at an earlier instant — a correction appears as a **transition** in history, not a missing gap. See [Tri-temporal model](https://surrealdb.com/docs/spectron/architecture/tri-temporal-model) and [Supersession, decay, and forget](https://surrealdb.com/docs/spectron/mental-model/memory-lifecycle).
+
 ## Traces complete the story
 
 Extraction and reconciliation emit **`decision_trace`** nodes. Ranked reads emit **`retrieval_trace`**; `/chat` and `/reflect` emit **`response_trace`**. Together they answer “**which source produced this belief?**” and “**which retrieval path led to this answer?**” Full detail: [Traces and memory evolution](https://surrealdb.com/docs/spectron/architecture/traces-and-evolution).
@@ -41,4 +47,5 @@ Extraction and reconciliation emit **`decision_trace`** nodes. Ranked reads emit
 ## Related topics
 
 - [Tri-temporal model](https://surrealdb.com/docs/spectron/architecture/tri-temporal-model)
+- [Supersession, decay, and forget](https://surrealdb.com/docs/spectron/mental-model/memory-lifecycle)
 - [Unified substrate and authority](https://surrealdb.com/docs/spectron/mental-model/two-layer-architecture)

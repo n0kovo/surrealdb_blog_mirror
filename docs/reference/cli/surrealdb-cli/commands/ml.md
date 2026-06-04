@@ -1,5 +1,5 @@
 ---
-position: 7
+position: 10
 title: ml
 description: The ML command can be used to import and export machine learning models.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/ml.mdx"

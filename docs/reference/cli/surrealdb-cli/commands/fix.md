@@ -1,5 +1,5 @@
 ---
-position: 6
+position: 5
 title: fix
 description: A command to convert SurrealDB version 1.x data into a usable format for versions 2.0 and above.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/fix.mdx"

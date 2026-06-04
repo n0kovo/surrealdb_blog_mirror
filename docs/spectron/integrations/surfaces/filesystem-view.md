@@ -105,4 +105,4 @@ The filesystem view is enabled by default when the MCP server is active. Set `SP
 
 - [MCP server: install](../mcp-server/install.md) – connecting an MCP client to Spectron
 - [MCP tools reference](../../reference/mcp-tools.md) – the full set of MCP tools and resources
-- [Uploading documents](../../knowledge/ingestion/uploading-documents.md) – ingesting documents that appear in the filesystem view
+- [Uploading documents](../../agent-memory/ingest/authoritative/uploading-documents.md) – ingesting documents that appear in the filesystem view

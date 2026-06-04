@@ -154,5 +154,5 @@ For streaming responses, use `session.getLastDiff()` after the stream completes.
 ## Next steps
 
 - [JavaScript SDK](../sdks/javascript-and-typescript.md) – using Spectron directly with the TypeScript SDK
-- [Chat sessions](../../memory/sessions/chat-sessions.md) – understanding how Spectron manages conversation sessions
-- [Adding turns](../../memory/sessions/adding-turns.md) – the manual turn-recording API
+- [Chat sessions](../../agent-memory/sessions/chat-sessions.md) – understanding how Spectron manages conversation sessions
+- [Adding turns](../../agent-memory/sessions/adding-turns.md) – the manual turn-recording API

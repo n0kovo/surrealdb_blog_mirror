@@ -40,4 +40,4 @@ Document facts may carry a `valid_from` long before upload (e.g. policy effectiv
 
 Together with [provenance](https://surrealdb.com/docs/spectron/mental-model/provenance-and-traceability) and the **single reconciler** ([Eight pillars](https://surrealdb.com/docs/spectron/architecture/eight-pillars-and-categories)), this supports a defensible audit story: unwind any current fact to what it replaced, to the source that produced it, and to the exact quote in that source – and rewind the database by system time while still querying belief history on known time.
 
-Field-level detail: [Temporal validity](../../memory/reasoning-model/temporal-validity.md) and [Reconciliation and supersession](../../memory/reasoning-model/reconciliation-and-supersession.md).
+Field-level detail: [Temporal validity](../../agent-memory/reasoning/temporal-validity.md) and [Reconciliation and supersession](../../agent-memory/reasoning/reconciliation-and-supersession.md).

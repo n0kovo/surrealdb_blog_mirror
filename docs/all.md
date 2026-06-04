@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_921 pages_  
+_916 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -11,6 +11,8 @@ _921 pages_
   Official SurrealDB agent skills for use in agentic coding workflows.
 - [AI frameworks](build/ai-agents/ai-frameworks.md)
   Building AI agents and agent rules with SurrealDB.
+- [Connect MCP to your coding assistant](build/ai-agents/connect-mcp-to-your-editor.md)
+  Step-by-step tutorial — wire Cursor, VS Code, or Claude Desktop to SurrealDB's built-in MCP server.
 - [Why SurrealDB for AI agents](build/ai-agents/index.md)
   Learn why SurrealDB suits AI agents: durable state, graph memory, SurrealQL and HTTP tools, and vector retrieval
 - [Model Context Protocol (MCP)](build/ai-agents/mcp.md)
@@ -1564,6 +1566,58 @@ _921 pages_
   Try SurrealDB in the browser with the Surrealist Sandbox—no install and no account required.
 - [Sample queries](sample-queries.md)
   Learn how to get started with SurrealDB
+- [Overview](spectron/agent-memory/index.md)
+  Ingest, retrieve, reason, and tune agent memory on Spectron's unified SurrealDB substrate.
+- [Bulk import](spectron/agent-memory/ingest/authoritative/bulk-import.md)
+  Importing large quantities of documents or knowledge nodes into Spectron.
+- [Structured fact ingest](spectron/agent-memory/ingest/authoritative/knowledge-nodes.md)
+  Uploading structured facts alongside documents.
+- [Multimodal content](spectron/agent-memory/ingest/authoritative/multimodal-content.md)
+  Ingesting images, audio, and video into the Spectron knowledge layer.
+- [Uploading documents](spectron/agent-memory/ingest/authoritative/uploading-documents.md)
+  How to ingest documents into the Spectron knowledge layer.
+- [Storing memories](spectron/agent-memory/ingest/experiential/remember.md)
+  Ingesting facts and conversations into the unified substrate.
+- [Forgetting memories](spectron/agent-memory/operations/forget.md)
+  How to retire or permanently erase memories — default forget, purge, and scoped erasure.
+- [Profiles](spectron/agent-memory/operations/profiles.md)
+  Auto-maintained entity profiles aggregated from memory and knowledge.
+- [Reflection](spectron/agent-memory/operations/reflect.md)
+  Synthesise insights from patterns across stored memories.
+- [Authority when pillars meet](spectron/agent-memory/reasoning/authority-hierarchy.md)
+  How the Authoritative and Experiential pillars interact – reconciliation, uncertainty, and resolves_to.
+- [Cross-layer linking](spectron/agent-memory/reasoning/cross-layer-linking.md)
+  How authoritative documents and experiential facts relate in the unified graph.
+- [Extraction pipeline](spectron/agent-memory/reasoning/extraction-pipeline.md)
+  How Spectron classifies and extracts structured memory from conversation turns.
+- [Instructions and uncertainties](spectron/agent-memory/reasoning/instructions-and-uncertainties.md)
+  How Spectron captures behavioural directives and tracks ambiguous or contradictory information.
+- [Reconciliation and supersession](spectron/agent-memory/reasoning/reconciliation-and-supersession.md)
+  How Spectron deduplicates entities, detects conflicts, and tracks corrections with full history.
+- [Temporal validity](spectron/agent-memory/reasoning/temporal-validity.md)
+  How Spectron tracks when facts were true using valid_from and valid_until.
+- [Graph traversal](spectron/agent-memory/retrieve/graph-traversal.md)
+  Structural edges in the knowledge layer and how retrieval uses them.
+- [Hybrid search](spectron/agent-memory/retrieve/hybrid-search.md)
+  Using vector, BM25, and graph-density retrieval modes in Spectron.
+- [Keywords and BM25](spectron/agent-memory/retrieve/keywords-and-bm25.md)
+  Using keyword extraction and full-text search in Spectron's knowledge layer.
+- [Recalling memories](spectron/agent-memory/retrieve/recall.md)
+  Unified retrieval over facts and document passages.
+- [Adding turns](spectron/agent-memory/sessions/adding-turns.md)
+  How to add conversation turns and interpret the structured extraction result.
+- [Chat sessions](spectron/agent-memory/sessions/chat-sessions.md)
+  Using session.chat() for Spectron-managed conversation loops.
+- [Creating sessions](spectron/agent-memory/sessions/creating-sessions.md)
+  How to create and manage conversation sessions in Spectron.
+- [State and diffs](spectron/agent-memory/sessions/state-and-diffs.md)
+  Reading structured memory state and tracking what changed between turns.
+- [Caching and invalidation](spectron/agent-memory/tuning/caching-and-invalidation.md)
+  How Spectron's semantic response cache works and how to manage memory lifecycle.
+- [Models per stage](spectron/agent-memory/tuning/models-per-stage.md)
+  Configure which LLM is used for each processing stage in Spectron.
+- [Ontology grounding](spectron/agent-memory/tuning/ontology-grounding.md)
+  Constrain extraction to known entity types, attribute keys, and relation labels for domain-specific accuracy.
 - [Coding agent with project memory](spectron/cookbooks/build/coding-agent-with-project-memory.md)
   Repository scoped sessions and MCP.
 - [Customer support agent](spectron/cookbooks/build/customer-support-agent.md)
@@ -1614,6 +1668,8 @@ _921 pages_
   How Contexts isolate tenants and how scope tags partition memory within a Context.
 - [Memory categories](spectron/index/mental-model/memory-categories.md)
   Episodic raw turns plus five extracted experiential categories – identity, knowledge, context, instructions, uncertainty.
+- [Supersession, decay, and forget](spectron/index/mental-model/memory-lifecycle.md)
+  Three mechanisms for how beliefs change, fade, and are removed.
 - [Provenance and traceability](spectron/index/mental-model/provenance-and-traceability.md)
   The source object on every record – kinds, spans, trust, derivation, and traces.
 - [Sessions and turns](spectron/index/mental-model/sessions-and-turns.md)
@@ -1670,72 +1726,6 @@ _921 pages_
   Accessing Spectron's knowledge layer as a virtual filesystem.
 - [REST API](spectron/integrations/surfaces/rest.md)
   Accessing Spectron directly via its HTTP REST API.
-- [Confluence connector](spectron/knowledge/connectors/confluence.md)
-  Planned sync from Confluence spaces into Spectron documents.
-- [GitHub connector](spectron/knowledge/connectors/github.md)
-  Planned sync from GitHub repositories into Spectron documents.
-- [Google Drive connector](spectron/knowledge/connectors/google-drive.md)
-  Planned sync from Google Drive into Spectron documents.
-- [Notion connector](spectron/knowledge/connectors/notion.md)
-  Planned sync from Notion workspaces into Spectron documents.
-- [Connectors overview](spectron/knowledge/connectors/overview.md)
-  Automatic sync from external sources into Spectron documents (not yet available).
-- [Snowflake and Databricks](spectron/knowledge/connectors/snowflake-and-databricks.md)
-  Sync structured knowledge from data warehouses into Spectron.
-- [Overview](spectron/knowledge/index.md)
-  Multi-modal document ingest, object-store originals, hybrid retrieval, and authoritative knowledge on the unified Spectron substrate.
-- [Bulk import](spectron/knowledge/ingestion/bulk-import.md)
-  Importing large quantities of documents or knowledge nodes into Spectron.
-- [Structured fact ingest](spectron/knowledge/ingestion/knowledge-nodes.md)
-  Uploading structured facts alongside documents.
-- [Multimodal content](spectron/knowledge/ingestion/multimodal-content.md)
-  Ingesting images, audio, and video into the Spectron knowledge layer.
-- [Uploading documents](spectron/knowledge/ingestion/uploading-documents.md)
-  How to ingest documents into the Spectron knowledge layer.
-- [Cross-layer linking](spectron/knowledge/retrieval/cross-layer-linking.md)
-  How authoritative documents and experiential facts relate in the unified graph.
-- [Graph traversal](spectron/knowledge/retrieval/graph-traversal.md)
-  Structural edges in the knowledge layer and how retrieval uses them.
-- [Hybrid search](spectron/knowledge/retrieval/hybrid-search.md)
-  Using vector, BM25, and graph-density retrieval modes in Spectron.
-- [Keywords and BM25](spectron/knowledge/retrieval/keywords-and-bm25.md)
-  Using keyword extraction and full-text search in Spectron's knowledge layer.
-- [Overview](spectron/memory/index.md)
-  Sessions, episodic memory, operations, and tuning – experiential memory on the unified Spectron substrate.
-- [Forgetting memories](spectron/memory/operations/forget.md)
-  How to retire or permanently erase memories — default forget, purge, and scoped erasure.
-- [Profiles](spectron/memory/operations/profiles.md)
-  Auto-maintained entity profiles aggregated from memory and knowledge.
-- [Recalling memories](spectron/memory/operations/recall.md)
-  Unified retrieval over facts and document passages.
-- [Reflection](spectron/memory/operations/reflect.md)
-  Synthesise insights from patterns across stored memories.
-- [Storing memories](spectron/memory/operations/remember.md)
-  Ingesting facts and conversations into the unified substrate.
-- [Authority when pillars meet](spectron/memory/reasoning-model/authority-hierarchy.md)
-  How the Authoritative and Experiential pillars interact – reconciliation, uncertainty, and resolves_to.
-- [Extraction pipeline](spectron/memory/reasoning-model/extraction-pipeline.md)
-  How Spectron classifies and extracts structured memory from conversation turns.
-- [Instructions and uncertainties](spectron/memory/reasoning-model/instructions-and-uncertainties.md)
-  How Spectron captures behavioural directives and tracks ambiguous or contradictory information.
-- [Reconciliation and supersession](spectron/memory/reasoning-model/reconciliation-and-supersession.md)
-  How Spectron deduplicates entities, detects conflicts, and tracks corrections with full history.
-- [Temporal validity](spectron/memory/reasoning-model/temporal-validity.md)
-  How Spectron tracks when facts were true using valid_from and valid_until.
-- [Adding turns](spectron/memory/sessions/adding-turns.md)
-  How to add conversation turns and interpret the structured extraction result.
-- [Chat sessions](spectron/memory/sessions/chat-sessions.md)
-  Using session.chat() for Spectron-managed conversation loops.
-- [Creating sessions](spectron/memory/sessions/creating-sessions.md)
-  How to create and manage conversation sessions in Spectron.
-- [State and diffs](spectron/memory/sessions/state-and-diffs.md)
-  Reading structured memory state and tracking what changed between turns.
-- [Caching and invalidation](spectron/memory/tuning/caching-and-invalidation.md)
-  How Spectron's semantic response cache works and how to manage memory lifecycle.
-- [Models per stage](spectron/memory/tuning/models-per-stage.md)
-  Configure which LLM is used for each processing stage in Spectron.
-- [Ontology grounding](spectron/memory/tuning/ontology-grounding.md)
-  Constrain extraction to known entity types, attribute keys, and relation labels for domain-specific accuracy.
 - [CLI](spectron/reference/cli.md)
   Command-line interface reference.
 - [Configuration](spectron/reference/configuration.md)

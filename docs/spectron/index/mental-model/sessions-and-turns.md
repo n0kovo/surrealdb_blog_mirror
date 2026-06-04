@@ -19,13 +19,13 @@ API-KEY: <key>
 Content-Type: application/json
 
 {
-  "scope": ["org=acme", "user=u_alice", "agent=support"],
+  "scope": ["org/acme/user/alice", "agent/support"],
   "metadata": { "channel": "web" }
 }
 ```
 
 ```bash
-spectron sessions create --scope org=acme --scope user=u_alice
+spectron sessions create --scope org/acme/user/alice --scope agent/support
 ```
 
 ## What is a turn?
@@ -55,11 +55,11 @@ Content-Type: application/json
     { "role": "user", "content": "My name is Alice and I work at Acme Corp." },
     { "role": "assistant", "content": "Hello Alice! How can I help?" }
   ],
-  "scope": ["org=acme", "user=u_alice"]
+  "scope": ["org/acme/user/alice"]
 }
 ```
 
-Harness adapters (LangChain, Vercel AI, OpenAI Agents) use this path with platform-derived `Idempotency-Key` values.
+Harness adapters (LangChain, Vercel AI, OpenAI Agents) use this path with platform-derived `Idempotency-Key` values. Default **`extract`** is **`whole_conversation`**; set **`per_message`** for one extraction pass per message.
 
 ## Extraction pipeline
 
@@ -68,7 +68,7 @@ Each ingest path runs the same reconciler:
 1. Extract entities, attributes, and relations from new text
 2. Reconcile against existing records (authority, temporal, calibration)
 3. Persist with provenance
-4. Return a structured diff and `trace_id`
+4. Return **`extractions`** (batch) or nested **`extraction`** (single fact), plus `sessionId` and `turnIds`
 
 You do not call a separate “process” endpoint.
 
@@ -90,4 +90,4 @@ spectron sessions list
 spectron sessions show sess_01hw…
 ```
 
-See [Creating sessions](../../memory/sessions/creating-sessions.md) and [Adding turns](../../memory/sessions/adding-turns.md) for operational detail aligned with the current API.
+See [Creating sessions](../../agent-memory/sessions/creating-sessions.md) and [Adding turns](../../agent-memory/sessions/adding-turns.md) for operational detail aligned with the current API.

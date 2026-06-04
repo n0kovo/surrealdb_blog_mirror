@@ -9,6 +9,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 Spectron's MCP server exposes seven tools at `/mcp`. Each tool maps to one or more REST endpoints and carries the same authentication and scope semantics.
 
+> [!NOTE]
+> REST responses use **camelCase** (`queryMs`, `traceId`, `trace.traceId`). **Scope** on the wire is an array of slash paths (for example `["org/acme/user/alice"]`), not `org=acme` key-value tags. Register paths with `spectron scopes create` before use.
+
 ## Authentication
 
 All tools use **`API-KEY`** authentication (same as REST). Pass the key in the MCP configuration:
@@ -53,7 +56,7 @@ Store a memory from the current conversation. Auto-classifies into Identity / Kn
   "content": "I just got promoted to CTO.",   // required
   "role": "user",                              // optional, default "user"
   "session_id": "sess_abc123",                 // optional – creates implicit session if omitted
-  "scope": { "user": "alice", "org": "acme" } // optional
+  "scope": ["org/acme/user/alice"]
 }
 ```
 
@@ -67,7 +70,7 @@ Store a memory from the current conversation. Auto-classifies into Identity / Kn
   "instructions": [],
   "uncertainties": [],
   "corrections": [],
-  "trace_id": "decision_trace:..."
+  "traceId": "…"
 }
 ```
 
@@ -86,7 +89,7 @@ Retrieve relevant memory and knowledge for a query. Returns a formatted context 
 {
   "query": "What does Alice do at Acme?",  // required
   "k": 10,                                  // optional, default 10
-  "scope": { "org": "acme" }               // optional
+  "scope": ["org/acme"]
 }
 ```
 
@@ -95,8 +98,8 @@ Retrieve relevant memory and knowledge for a query. Returns a formatted context 
 {
   "context": "Alice – CTO at Acme Corp. Currently leading the Q3 roadmap review.",
   "tier": "direct",
-  "query_ms": 12,
-  "trace_id": "decision_trace:..."
+  "queryMs": 12,
+  "traceId": "…"
 }
 ```
 
@@ -117,7 +120,7 @@ Synthesise patterns or insights from existing memory. Can optionally persist the
 {
   "query": "What recurring complaints have customers raised this month?",
   "persist": true,                                 // optional, default false
-  "scope": { "org": "acme", "project": "support" } // optional
+  "scope": ["org/acme", "project/support"]
 }
 ```
 
@@ -127,7 +130,7 @@ Synthesise patterns or insights from existing memory. Can optionally persist the
   "reflection": "Three recurring patterns emerged: billing confusion (8 tickets), …",
   "evidence": ["memory_chunk:01HF...", "attribute:..."],
   "persisted_attributes": [],
-  "trace_id": "decision_trace:..."
+  "traceId": "…"
 }
 ```
 
@@ -146,7 +149,7 @@ Get the aggregated profile for the active scope – static facts, dynamic contex
 **Input:**
 ```jsonc
 {
-  "scope": { "user": "alice", "org": "acme" } // optional
+  "scope": ["org/acme/user/alice"]
 }
 ```
 
@@ -209,8 +212,8 @@ Search the authoritative authoritative knowledge base. Returns ranked document c
       }
     }
   ],
-  "query_ms": 38,
-  "trace_id": "decision_trace:..."
+  "queryMs": 38,
+  "traceId": "…"
 }
 ```
 
@@ -252,7 +255,7 @@ Stop believing something. Sets `valid_until` on attributes that semantically mat
 ```jsonc
 {
   "query": "anything about my previous role at the old company", // required
-  "scope": { "user": "alice" }                                   // optional
+  "scope": ["org/acme/user/alice"]
 }
 ```
 
@@ -260,7 +263,7 @@ Stop believing something. Sets `valid_until` on attributes that semantically mat
 ```jsonc
 {
   "deleted": 3,
-  "trace_id": "decision_trace:..."
+  "traceId": "…"
 }
 ```
 

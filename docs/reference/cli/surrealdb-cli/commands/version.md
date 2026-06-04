@@ -1,5 +1,5 @@
 ---
-position: 11
+position: 14
 title: version
 description: A command to output the current version of the SurrealDB binary along with the machine architecture.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/version.mdx"

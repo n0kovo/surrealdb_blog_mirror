@@ -1,5 +1,5 @@
 ---
-position: 14
+position: 9
 title: mcp
 description: "Start SurrealDB's Model Context Protocol server over stdio for local IDE and agent integrations."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/mcp.mdx"
@@ -11,7 +11,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The `surreal mcp` subcommand starts the built-in [Model Context Protocol](https://modelcontextprotocol.io) server on **stdio**, suitable for Cursor, VS Code, Claude Desktop, and other MCP clients. It opens an embedded datastore at the path you pass (default `memory`) and runs every tool call under `Session::owner()`.
 
-For HTTP-based clients against a running server, use [`surreal start`](start.md) and connect to **`/mcp`** instead. See [Model Context Protocol (MCP)](../../../../build/ai-agents/mcp.md) for transports, tools, and security guidance.
+For HTTP-based clients against a running server, use [`surreal start`](start.md) and connect to the **`/mcp`** endpoint instead. See [When to use `surreal mcp` vs `surreal start`](../../../../build/ai-agents/mcp.md#when-to-use-surreal-mcp-vs-surreal-start), [Model Context Protocol (MCP)](../../../../build/ai-agents/mcp.md) for transports and security, or [Connect MCP to your coding assistant](../../../../build/ai-agents/connect-mcp-to-your-editor.md) for a step-by-step setup.
 
 > [!WARNING]
 > Stdio MCP is intended for a trusted operator on the same machine. Do not expose this process to untrusted users — there is no per-call HTTP authentication surface to re-bind credentials.

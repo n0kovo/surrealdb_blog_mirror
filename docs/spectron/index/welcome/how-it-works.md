@@ -37,7 +37,7 @@ User message (or uploaded file)
 └───────────────────────────────┘
 ```
 
-[Sessions and turns](https://surrealdb.com/docs/spectron/mental-model/sessions-and-turns) remain the conversational unit of work. **Documents** enter the multi-modal [Knowledge](../../knowledge/index.md) ingest pipeline instead of the turn path; extracted facts still reconcile identically.
+[Sessions and turns](https://surrealdb.com/docs/spectron/mental-model/sessions-and-turns) remain the conversational unit of work. **Documents** enter the multi-modal [Knowledge](../../agent-memory/index.md) ingest pipeline instead of the turn path; extracted facts still reconcile identically.
 
 ## Reconciliation in one sentence
 
@@ -65,6 +65,6 @@ You can let Spectron drive `/chat`, or you can own the loop and call ingest + `/
 ## Next steps
 
 - [Unified substrate and authority](https://surrealdb.com/docs/spectron/mental-model/two-layer-architecture)
-- [Extraction pipeline](../../memory/reasoning-model/extraction-pipeline.md)
+- [Extraction pipeline](../../agent-memory/reasoning/extraction-pipeline.md)
 - [Tri-temporal model](https://surrealdb.com/docs/spectron/architecture/tri-temporal-model)
 - [Traces and memory evolution](https://surrealdb.com/docs/spectron/architecture/traces-and-evolution)

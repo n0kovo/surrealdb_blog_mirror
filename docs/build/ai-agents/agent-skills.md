@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 5
 title: Agent Skills
 description: Official SurrealDB agent skills for use in agentic coding workflows.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/ai-agents/agent-skills.mdx"

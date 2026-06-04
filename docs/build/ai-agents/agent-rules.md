@@ -1,5 +1,5 @@
 ---
-position: 5
+position: 6
 title: Agent rules
 description: Building AI agents and agent rules with SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/ai-agents/agent-rules.mdx"

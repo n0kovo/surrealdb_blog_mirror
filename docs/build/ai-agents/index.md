@@ -17,6 +17,6 @@ AI agents need durable state, flexible querying, and fast retrieval. SurrealDBâ€
 
 You can evolve schemas and indexes as your agent workflows change, keeping operational overhead low. For ready-made connections to popular agent libraries, see the [AI frameworks integrations overview](../integrations/ai-frameworks/overview.md).
 
-*Since v3.1.0* SurrealDB also exposes a built-in [Model Context Protocol (MCP)](mcp.md) server (`surreal mcp` on stdio, `/mcp` on `surreal start`) so agents can query and mutate data through a standard tool surface with the same permissions as `/sql`.
+*Since v3.1.0* SurrealDB also exposes a built-in [Model Context Protocol (MCP)](mcp.md) server (`surreal mcp` on stdio, `/mcp` on `surreal start`) so agents can query and mutate data through a standard tool surface with the same permissions as `/sql`. New to MCP? Start with [Connect MCP to your coding assistant](connect-mcp-to-your-editor.md).
 
 What that means in practice is that you can store conversation state and retrieved chunks beside canonical records (users, tickets, products) in one place.

@@ -5,7 +5,7 @@ generated: stub
 
 # Mental Model
 
-_Auto-generated index — 5 pages._
+_Auto-generated index — 6 pages._
 
 ## Pages
 
@@ -13,6 +13,8 @@ _Auto-generated index — 5 pages._
   How Contexts isolate tenants and how scope tags partition memory within a Context.
 - [Memory categories](memory-categories.md)
   Episodic raw turns plus five extracted experiential categories – identity, knowledge, context, instructions, uncertainty.
+- [Supersession, decay, and forget](memory-lifecycle.md)
+  Three mechanisms for how beliefs change, fade, and are removed.
 - [Provenance and traceability](provenance-and-traceability.md)
   The source object on every record – kinds, spans, trust, derivation, and traces.
 - [Sessions and turns](sessions-and-turns.md)

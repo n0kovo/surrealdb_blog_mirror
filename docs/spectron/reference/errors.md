@@ -237,4 +237,4 @@ Documents that fail during async processing do not return HTTP errors – they s
 }
 ```
 
-Poll `GET /api/v1/{context_id}/documents/{id}` to check document status. See [Uploading documents](../knowledge/ingestion/uploading-documents.md) for retry guidance.
+Poll `GET /api/v1/{context_id}/documents/{id}` to check document status. See [Uploading documents](../agent-memory/ingest/authoritative/uploading-documents.md) for retry guidance.

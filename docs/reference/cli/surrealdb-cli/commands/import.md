@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 7
 title: import
 description: A command that imports a file in SurrealQL format into a local or remote SurrealDB database server.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/import.mdx"

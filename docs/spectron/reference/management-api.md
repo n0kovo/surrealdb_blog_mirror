@@ -197,7 +197,7 @@ Revokes the key immediately. Returns `204 No Content`.
 
 ## Knowledge upload (management-only)
 
-Document ingestion requires a management key or an agent key with explicit upload capability. See [Uploading documents](../knowledge/ingestion/uploading-documents.md) for the full upload API.
+Document ingestion requires a management key or an agent key with explicit upload capability. See [Uploading documents](../agent-memory/ingest/authoritative/uploading-documents.md) for the full upload API.
 
 ```http
 POST /api/v1/{context_id}/documents
@@ -211,7 +211,7 @@ scope[org]=acme
 
 ## Ontology management
 
-Ontology endpoints (entity type definitions, attribute key declarations, and relation label declarations) are management-only. See [Ontology grounding](../memory/tuning/ontology-grounding.md) for details.
+Ontology endpoints (entity type definitions, attribute key declarations, and relation label declarations) are management-only. See [Ontology grounding](../agent-memory/tuning/ontology-grounding.md) for details.
 
 ```http
 GET    /api/v1/contexts/{context_id}/ontology

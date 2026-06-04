@@ -1,5 +1,5 @@
 ---
-position: 13
+position: 8
 title: isready
 description: A command that determines whether a SurrealDB server has started and is able to accept connections.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/isready.mdx"

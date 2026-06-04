@@ -1,5 +1,5 @@
 ---
-position: 12
+position: 6
 title: help
 description: A command to display all possible top-level commands and arguments used in the the SurrealDB binary.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/help.mdx"

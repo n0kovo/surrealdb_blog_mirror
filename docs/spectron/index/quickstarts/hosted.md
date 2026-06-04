@@ -13,15 +13,22 @@ This guide takes you from a blank terminal to your first **remember** and **reca
 
 Create an account at [api.spectron.dev](https://api.spectron.dev). In the dashboard:
 
-1. Click **New Context** and choose a name (for example `acme-prod`) and **region**.
+1. Click **New Context** and choose a name (for example `acme_prod`) and **region**.
 2. Open the Context and create an **API key**. Copy it immediately – it is shown only once.
 
 ## Step 2 — Set environment variables
 
 ```bash
 export SPECTRON_URL="https://api.spectron.dev"
-export SPECTRON_CONTEXT_ID="acme-prod"
+export SPECTRON_CONTEXT_ID="acme_prod"
 export SPECTRON_API_KEY="sk-..."
+```
+
+## Step 2b — Register scope paths
+
+```bash
+spectron scopes create org/acme
+spectron scopes create org/acme/user/alice
 ```
 
 ## Step 3 — Remember a fact
@@ -33,11 +40,11 @@ curl -sS "$SPECTRON_URL/api/v1/$SPECTRON_CONTEXT_ID/facts" \
   -d '{
     "text": "I was just promoted to CTO.",
     "infer": "full",
-    "scope": ["org=acme", "user=alice"]
+    "scope": ["org/acme/user/alice"]
   }'
 ```
 
-The response includes a structured extraction diff and a **`trace_id`**.
+The response includes a nested **`extraction`** object (entities, attributes, relations, …) plus `sessionId` and `turnId`.
 
 ## Step 4 — Recall
 
@@ -47,11 +54,11 @@ curl -sS "$SPECTRON_URL/api/v1/$SPECTRON_CONTEXT_ID/query" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "What is Alice'\''s role?",
-    "scope": ["org=acme", "user=alice"]
+    "scope": ["org/acme/user/alice"]
   }'
 ```
 
-Check **`tier`** in the response – tier 1 or 2 hits avoid a full LLM synthesis pass.
+Check **`tier`** in the response — tier 1 or 2 hits avoid a full LLM synthesis pass. Use **`trace.traceId`** to fetch the full retrieval trace.
 
 ## Step 5 — Optional chat
 
@@ -61,7 +68,7 @@ curl -sS "$SPECTRON_URL/api/v1/$SPECTRON_CONTEXT_ID/chat" \
   -H "Content-Type: application/json" \
   -d '{
     "message": "Summarise what you know about me",
-    "scope": ["org=acme", "user=alice"]
+    "scope": ["org/acme/user/alice"]
   }'
 ```
 
@@ -74,4 +81,4 @@ Generated clients are published as **`surrealdb-spectron`** (Python) and **`@sur
 - [Surrealist dashboard quickstart](https://surrealdb.com/docs/spectron/quickstarts/surrealist-dashboard) – UI-first tour
 - [Sessions and turns](https://surrealdb.com/docs/spectron/mental-model/sessions-and-turns)
 - [Contexts and scope](https://surrealdb.com/docs/spectron/mental-model/contexts-and-scope)
-- [Uploading documents](../../knowledge/ingestion/uploading-documents.md)
+- [Uploading documents](../../agent-memory/ingest/authoritative/uploading-documents.md)

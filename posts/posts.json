@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T07:40:16.727489+00:00",
+  "generated_at": "2026-06-05T07:31:44.794305+00:00",
   "count": 228,
   "posts": [
     {
@@ -1255,8 +1255,8 @@
     },
     {
       "slug": "introducing-teams-and-organisations-in-surreal-cloud",
-      "title": "Introducing Teams and Organisations in Surreal Cloud",
-      "summary": "Whether you're a startup of two or an enterprise of thousands, Surreal Cloud now scales with your team.",
+      "title": "Introducing Teams and Organisations in SurrealDB Cloud",
+      "summary": "Whether you're a startup of two or an enterprise of thousands, SurrealDB Cloud now scales with your team.",
       "publishDate": "2025-04-15T00:00:00.000Z",
       "categories": [
         "featured",
@@ -1395,7 +1395,7 @@
     },
     {
       "slug": "building-smarter-product-recommendations-with-surrealdb",
-      "title": "Building Smarter Product Recommendations with SurrealDB",
+      "title": "Building smarter product recommendations with SurrealDB",
       "summary": "Blog post inspired by your reading history",
       "publishDate": "2025-03-06T00:00:00.000Z",
       "categories": [
@@ -1423,7 +1423,7 @@
     },
     {
       "slug": "automating-knowledge-graphs-with-surrealdb-and-gemini",
-      "title": "Automating Knowledge Graphs with SurrealDB and Gemini",
+      "title": "Automating knowledge graphs with SurrealDB and Gemini",
       "summary": "This is the release you've been waiting for",
       "publishDate": "2025-02-21T00:00:00.000Z",
       "categories": [

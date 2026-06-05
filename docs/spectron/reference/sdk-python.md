@@ -23,7 +23,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 ## Auth header
 
 ```http
-API-KEY: <key>
+Authorization: Bearer <key>
 ```
 
 ## Core operations (REST mapping)

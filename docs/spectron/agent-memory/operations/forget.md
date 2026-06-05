@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 Spectron distinguishes **retiring** memory (the agent stops using it) from **erasing** memory (the content is removed for compliance). Most day-to-day use is retirement; erasure is explicit and grant-gated.
 
-All forget operations require the **`forget`** grant on the caller’s API key for the relevant scope. Keys with only read/write access cannot forget.
+All forget operations require the **`memory:forget`** grant on the caller’s API key for the relevant scope. Keys with only read/write access cannot forget.
 
 ## Semantic forget (default — retire, do not erase)
 
@@ -21,7 +21,7 @@ Describe what to remove in natural language. Spectron finds matching entities, f
 ```http
 POST /api/v1/{context_id}/forget
 Content-Type: application/json
-API-KEY: sk-...
+Authorization: Bearer sk-...
 
 {
   "query": "anything about my old job"
@@ -58,7 +58,7 @@ When you must guarantee that content no longer exists in the memory substrate �
 ```http
 POST /api/v1/{context_id}/forget
 Content-Type: application/json
-API-KEY: sk-...
+Authorization: Bearer sk-...
 
 {
   "query": "anything about my old job",
@@ -79,14 +79,14 @@ To remove **everything** tagged under a scope path (a user branch, team, or proj
 ```http
 POST /api/v1/{context_id}/scopes/forget
 Content-Type: application/json
-API-KEY: sk-...
+Authorization: Bearer sk-...
 
 {
   "path": "user/alice/"
 }
 ```
 
-This **hard-deletes** all memory and knowledge records whose scope touches that subtree — entities, facts, sessions, documents, chunks, and related index state. It requires the **`forget`** grant over that subtree. The response reports how many records were erased.
+This **hard-deletes** all memory and knowledge records whose scope touches that subtree — entities, facts, sessions, documents, chunks, and related index state. It requires the **`memory:forget`** grant over that subtree. The response reports how many records were erased.
 
 Use scoped forget for GDPR-style deletion when a principal’s entire branch must go, not just a single fact.
 
@@ -106,5 +106,5 @@ Forget operates on what is stored **now**. If a later conversation turn mentions
 
 - [Reconciliation and supersession](../reasoning/reconciliation-and-supersession.md) — why corrections keep history by default
 - [Tri-temporal model](https://surrealdb.com/docs/spectron/architecture/tri-temporal-model) — time-travel and belief history
-- [Scope as security boundary](../../self-hosting/security/scope-as-security-boundary.md) — **`forget`** grants
+- [Scope as security boundary](../../self-hosting/security/scope-as-security-boundary.md) — **`memory:forget`** grants
 - [REST API](../../reference/rest-api.md)

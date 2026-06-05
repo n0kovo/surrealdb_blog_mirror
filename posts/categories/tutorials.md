@@ -81,7 +81,7 @@ _86 posts_
   `tutorials` `featured` — Whether you're building intelligent applications, modelling complex relationships, or looking to optimise performance, SurrealDB's graph capabilities open up exciting new possibilities.
 - **2025-03-13** · [Visualising your data with Surrealist's Graph view](../2025/03/visualising-your-data-with-surrealists-graph-view.md)  
   `tutorials` `featured` — We as humans love visual data, and the new graph view for Surrealist provides exactly this.
-- **2025-03-06** · [Building Smarter Product Recommendations with SurrealDB](../2025/03/building-smarter-product-recommendations-with-surrealdb.md)  
+- **2025-03-06** · [Building smarter product recommendations with SurrealDB](../2025/03/building-smarter-product-recommendations-with-surrealdb.md)  
   `tutorials` `featured` — Blog post inspired by your reading history
 - **2025-02-27** · [Find your celebrity soulmate with the magic of vector search](../2025/02/find-your-celebrity-soulmate-with-the-magic-of-vector-search.md)  
   `tutorials` `featured` — Have you ever wondered how to find someone or something that’s most like you, whether it’s a roommate, someone who shares your Christmas traditions, or even a celebrity? Vector search is the answer. It’s a modern way to find matches based on multiple preferences at once, and tools like SurrealDB make it incredibly easy to use. Let’s explore what vector search is and how it works, step by step.

@@ -34,6 +34,16 @@ spectron login --url http://localhost:9090 \
 
 Stores a named profile for later commands.
 
+### Local config and secrets
+
+`spectron login` and `spectron config set` write profiles to `~/.config/spectron/config.toml` with owner-only permissions (`0600` on Unix). **`config set`** prints the key name, never the value. To display a stored secret:
+
+```bash
+spectron config get api_key --reveal
+```
+
+Without **`--reveal`**, `api_key` is shown as `<hidden>`.
+
 ---
 
 ## `spectrond` — server (operators)
@@ -115,7 +125,18 @@ Prints JSON for Claude Desktop / Cursor and a Claude Code one-liner.
 
 ```bash
 spectron contexts create …
-spectron keys generate-key …
+spectrond keys generate-key …
+spectrond keys rotate <context_id> <key_name> [--expires-in <seconds>]
 ```
+
+### REPL
+
+Interactive mode supports structured triple writes:
+
+```text
+/fact entity=Person/Alice attr=role val=CTO
+```
+
+Uses the same triple syntax as `spectron remember --triple` (`infer=triples`).
 
 Run `spectron --help` for the full command tree.

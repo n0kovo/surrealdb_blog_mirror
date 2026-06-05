@@ -179,8 +179,8 @@ _228 posts_
   `featured` `engineering` — In a recent SurrealDB Stream, we cracked open a foundational part of SurrealDB’s power: relationship modelling. From traditional record-to-record links to bidirectional references and Graph Edge metadata, we explored the many ways you can model connected data - clearly, scalably, and with performance in mind.
 - **2025-05-23** · [Surreal Cloud successfully completes SOC2 Type 1 Audit](2025/05/surreal-cloud-successfully-completes-soc2-type-1-audit.md)  
   `company` — SurrealDB's Surreal Cloud has successfully completed its SOC2 Type 1 Audit
-- **2025-04-15** · [Introducing Teams and Organisations in Surreal Cloud](2025/04/introducing-teams-and-organisations-in-surreal-cloud.md)  
-  `featured` `releases` — Whether you're a startup of two or an enterprise of thousands, Surreal Cloud now scales with your team.
+- **2025-04-15** · [Introducing Teams and Organisations in SurrealDB Cloud](2025/04/introducing-teams-and-organisations-in-surreal-cloud.md)  
+  `featured` `releases` — Whether you're a startup of two or an enterprise of thousands, SurrealDB Cloud now scales with your team.
 - **2025-04-10** · [What's a database anyway?? A blog post for kids](2025/04/whats-a-database-anyway-a-blog-post-for-kids.md)  
   `tutorials` `featured` — An easy explanation for children of what a database is.
 - **2025-04-02** · [Cooking up faster RAG using in-database embeddings in SurrealDB](2025/04/cooking-up-faster-rag-using-in-database-embeddings-in-surrealdb.md)  
@@ -199,11 +199,11 @@ _228 posts_
   `company` `featured` — We wanted to take a moment to acknowledge the difficult news about FaunaDB winding down operations.
 - **2025-03-13** · [Visualising your data with Surrealist's Graph view](2025/03/visualising-your-data-with-surrealists-graph-view.md)  
   `tutorials` `featured` — We as humans love visual data, and the new graph view for Surrealist provides exactly this.
-- **2025-03-06** · [Building Smarter Product Recommendations with SurrealDB](2025/03/building-smarter-product-recommendations-with-surrealdb.md)  
+- **2025-03-06** · [Building smarter product recommendations with SurrealDB](2025/03/building-smarter-product-recommendations-with-surrealdb.md)  
   `tutorials` `featured` — Blog post inspired by your reading history
 - **2025-02-27** · [Find your celebrity soulmate with the magic of vector search](2025/02/find-your-celebrity-soulmate-with-the-magic-of-vector-search.md)  
   `tutorials` `featured` — Have you ever wondered how to find someone or something that’s most like you, whether it’s a roommate, someone who shares your Christmas traditions, or even a celebrity? Vector search is the answer. It’s a modern way to find matches based on multiple preferences at once, and tools like SurrealDB make it incredibly easy to use. Let’s explore what vector search is and how it works, step by step.
-- **2025-02-21** · [Automating Knowledge Graphs with SurrealDB and Gemini](2025/02/automating-knowledge-graphs-with-surrealdb-and-gemini.md)  
+- **2025-02-21** · [Automating knowledge graphs with SurrealDB and Gemini](2025/02/automating-knowledge-graphs-with-surrealdb-and-gemini.md)  
   `engineering` `ai` — This is the release you've been waiting for
 - **2025-02-11** · [Beginning our benchmarking journey](2025/02/beginning-our-benchmarking-journey.md)  
   `company` `featured` — From humble beginnings come great things.

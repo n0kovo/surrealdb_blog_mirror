@@ -21,8 +21,8 @@ _45 posts_
   `releases` `featured` — Surreal Cloud’s latest release introduces network capabilities. Fine grained controls that determine exactly which network targets your database can reach. In this blog we will walk through network capabilities, explore the motivation behind it, and explain how it improves security for everyone running SurrealDB in the cloud.
 - **2025-06-20** · [What's new in Surrealist 3.4](../2025/06/whats-new-in-surrealist-3-4.md)  
   `releases` `featured` — Surrealist 3.4 introduces multi-window support, improved computed table views, redesigned Cloud deployment workflow, and multi-record selection capabilities
-- **2025-04-15** · [Introducing Teams and Organisations in Surreal Cloud](../2025/04/introducing-teams-and-organisations-in-surreal-cloud.md)  
-  `featured` `releases` — Whether you're a startup of two or an enterprise of thousands, Surreal Cloud now scales with your team.
+- **2025-04-15** · [Introducing Teams and Organisations in SurrealDB Cloud](../2025/04/introducing-teams-and-organisations-in-surreal-cloud.md)  
+  `featured` `releases` — Whether you're a startup of two or an enterprise of thousands, SurrealDB Cloud now scales with your team.
 - **2025-03-26** · [What's new in Surrealist 3.3](../2025/03/whats-new-in-surrealist-3-3.md)  
   `releases` `featured` — Explore the key features of the Surrealist 3.3 release
 - **2025-02-11** · [SurrealDB 2.2: Benchmarking, graph path algorithms and foreign key constraints](../2025/02/surrealdb-2-2-benchmarking-graph-path-algorithms-and-foreign-key-constraints.md)  

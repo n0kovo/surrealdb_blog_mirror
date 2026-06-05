@@ -25,7 +25,9 @@ See [Provenance and traceability](https://surrealdb.com/docs/spectron/mental-mod
 | **`retrieval_trace`** | Ranked reads (`/query`, `/context`, …) | Which candidates were considered, fused scores, and what was returned |
 | **`response_trace`** | `/chat` and `/reflect` | Prompt assembly, model response, token cost; **`reused_from`** when a prior answer was reused |
 
-Trace listing is scope-gated like memory reads: **`manage`** holders see all traces; other callers see traces within their read grant. See [Tracing](tracing.md).
+Trace listing is scope-gated like memory reads: principals with broad **`memory:read`** or **`grant:manage`** see traces in their region; others see traces within their read grant. See [Tracing](tracing.md).
+
+Data-plane audit events (including **`reflect.run`** from both REST and MCP) carry **`audit.principal.id`** alongside the authenticating key id.
 
 ## Operational audit events
 

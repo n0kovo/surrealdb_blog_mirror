@@ -63,7 +63,7 @@ Ingest your exported documents into Spectron's authoritative knowledge layer. Ea
 
 client = httpx.Client(
     base_url="https://spectron.surrealdb.com/api/v1/my-context",
-    headers={"API-KEY": os.environ["SPECTRON_API_KEY"]},
+    headers={"Authorization": f"Bearer {os.environ['SPECTRON_API_KEY']}"},
 )
 
 for doc in documents:
@@ -90,7 +90,7 @@ for (const doc of exportedDocs) {
 
     await fetch("https://spectron.surrealdb.com/api/v1/my-context/documents", {
         method: "POST",
-        headers: { "API-KEY": "mgmt_..." },
+        headers: { "Authorization": "Bearer mgmt_..." },
         body: formData,
     });
 }

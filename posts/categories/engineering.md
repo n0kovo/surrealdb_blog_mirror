@@ -43,7 +43,7 @@ _39 posts_
   `engineering` `ai` — This isn’t just another RAG blog post - it tackles the specific challenges financial services data teams face when building systems in regulated, data-sensitive environments.
 - **2025-03-25** · [Revolutionising decentralised discovery with SurrealDB and confidential computing](../2025/03/revolutionising-decentralised-discovery-with-surrealdb-and-confidential-computing.md)  
   `engineering` `featured` — ndex Network enables secure, decentralised discovery by unifying public and private data using SurrealDB and TEEs.
-- **2025-02-21** · [Automating Knowledge Graphs with SurrealDB and Gemini](../2025/02/automating-knowledge-graphs-with-surrealdb-and-gemini.md)  
+- **2025-02-21** · [Automating knowledge graphs with SurrealDB and Gemini](../2025/02/automating-knowledge-graphs-with-surrealdb-and-gemini.md)  
   `engineering` `ai` — This is the release you've been waiting for
 - **2025-02-05** · [How we improved the Python SDK for our 1.0 stable version](../2025/02/how-we-improved-the-python-sdk-for-our-1-0-stable-version.md)  
   `engineering` — We've released our 1.0 stable version of our Python SDK

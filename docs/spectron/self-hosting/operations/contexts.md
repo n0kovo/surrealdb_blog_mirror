@@ -20,7 +20,7 @@ A Context is created via the management API. The operation:
 ```http
 POST /api/v1/contexts/acme-prod
 Content-Type: application/json
-API-KEY: <management-key>
+Authorization: Bearer <management-key>
 
 {
   "namespace": "acme",
@@ -86,7 +86,7 @@ await admin.contexts.create(
 
 ```http
 GET /api/v1/contexts
-API-KEY: <management-key>
+Authorization: Bearer <management-key>
 ```
 
 ```bash
@@ -99,7 +99,7 @@ Returns all Contexts registered on this deployment. Provider API key values are 
 
 ```http
 GET /api/v1/contexts/acme-prod
-API-KEY: <management-key>
+Authorization: Bearer <management-key>
 ```
 
 Returns the Context record including effective configuration:
@@ -128,7 +128,7 @@ Send a partial `config` patch – only the fields you want to change:
 ```http
 PATCH /api/v1/contexts/acme-prod
 Content-Type: application/json
-API-KEY: <management-key>
+Authorization: Bearer <management-key>
 
 {
   "config": {
@@ -174,7 +174,7 @@ After creating a Context, provision at least one agent key for your application:
 ```http
 POST /api/v1/contexts/acme-prod/keys
 Content-Type: application/json
-API-KEY: <management-key>
+Authorization: Bearer <management-key>
 
 {
   "name": "app-agent",
@@ -191,7 +191,7 @@ Deleting a Context is **irreversible**. It drops the bound SurrealDB database, r
 
 ```http
 DELETE /api/v1/contexts/acme-prod
-API-KEY: <management-key>
+Authorization: Bearer <management-key>
 ```
 
 ```bash

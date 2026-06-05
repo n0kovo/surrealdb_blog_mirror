@@ -159,8 +159,8 @@ _105 posts_
   `tutorials` `featured` — Did you know that Surrealist's Graph Visualisation tool can even make you into a better musician? Let's find out how.
 - **2025-06-02** · [Three ways to model data relationships in SurrealDB](../2025/06/three-ways-to-model-data-relationships-in-surrealdb.md)  
   `featured` `engineering` — In a recent SurrealDB Stream, we cracked open a foundational part of SurrealDB’s power: relationship modelling. From traditional record-to-record links to bidirectional references and Graph Edge metadata, we explored the many ways you can model connected data - clearly, scalably, and with performance in mind.
-- **2025-04-15** · [Introducing Teams and Organisations in Surreal Cloud](../2025/04/introducing-teams-and-organisations-in-surreal-cloud.md)  
-  `featured` `releases` — Whether you're a startup of two or an enterprise of thousands, Surreal Cloud now scales with your team.
+- **2025-04-15** · [Introducing Teams and Organisations in SurrealDB Cloud](../2025/04/introducing-teams-and-organisations-in-surreal-cloud.md)  
+  `featured` `releases` — Whether you're a startup of two or an enterprise of thousands, SurrealDB Cloud now scales with your team.
 - **2025-04-10** · [What's a database anyway?? A blog post for kids](../2025/04/whats-a-database-anyway-a-blog-post-for-kids.md)  
   `tutorials` `featured` — An easy explanation for children of what a database is.
 - **2025-03-26** · [What's new in Surrealist 3.3](../2025/03/whats-new-in-surrealist-3-3.md)  
@@ -175,7 +175,7 @@ _105 posts_
   `company` `featured` — We wanted to take a moment to acknowledge the difficult news about FaunaDB winding down operations.
 - **2025-03-13** · [Visualising your data with Surrealist's Graph view](../2025/03/visualising-your-data-with-surrealists-graph-view.md)  
   `tutorials` `featured` — We as humans love visual data, and the new graph view for Surrealist provides exactly this.
-- **2025-03-06** · [Building Smarter Product Recommendations with SurrealDB](../2025/03/building-smarter-product-recommendations-with-surrealdb.md)  
+- **2025-03-06** · [Building smarter product recommendations with SurrealDB](../2025/03/building-smarter-product-recommendations-with-surrealdb.md)  
   `tutorials` `featured` — Blog post inspired by your reading history
 - **2025-02-27** · [Find your celebrity soulmate with the magic of vector search](../2025/02/find-your-celebrity-soulmate-with-the-magic-of-vector-search.md)  
   `tutorials` `featured` — Have you ever wondered how to find someone or something that’s most like you, whether it’s a roommate, someone who shares your Christmas traditions, or even a celebrity? Vector search is the answer. It’s a modern way to find matches based on multiple preferences at once, and tools like SurrealDB make it incredibly easy to use. Let’s explore what vector search is and how it works, step by step.

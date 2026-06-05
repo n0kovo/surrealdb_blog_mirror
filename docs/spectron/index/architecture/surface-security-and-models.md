@@ -28,7 +28,7 @@ Trace listing: `GET /api/v1/{ctx}/traces`, `GET /api/v1/{ctx}/traces/stats` (sup
 ## Integrations
 
 - **Generated SDKs** – Python (`surrealdb-spectron`) and TypeScript (`@surrealdb/spectron`), both produced from Spectron’s OpenAPI specification so types track the server surface.
-- **MCP over HTTP** – tools wrapping the same handlers; shared `API-KEY` auth. See [MCP server](../../integrations/mcp-server/install.md).
+- **MCP over HTTP** – tools wrapping the same handlers; shared Bearer auth. See [MCP server](../../integrations/mcp-server/install.md).
 - **Harness adapters** – LangChain, Claude Code hook, OpenAI Agents, Vercel AI SDK, n8n – flush conversations into `/facts/batch`.
 
 ## Model configuration (five hooks)

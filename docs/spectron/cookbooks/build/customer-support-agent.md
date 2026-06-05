@@ -28,7 +28,7 @@ Define the entity ontology when creating the Context. This tells the extraction 
 
 mgmt = httpx.Client(
     base_url="https://spectron.surrealdb.com/api/v1",
-    headers={"API-KEY": os.environ["SPECTRON_MGMT_KEY"]},
+    headers={"Authorization": f"Bearer {os.environ['SPECTRON_MGMT_KEY']}"},
 )
 
 mgmt.post("/contexts", json={
@@ -62,7 +62,7 @@ mgmt.post("/contexts", json={
 const response = await fetch("https://spectron.surrealdb.com/api/v1/contexts", {
     method: "POST",
     headers: {
-        "API-KEY": "mgmt_...",
+        "Authorization": "Bearer mgmt_...",
         "Content-Type": "application/json",
     },
     body: JSON.stringify({
@@ -101,7 +101,7 @@ Upload your product catalogue as a document. Spectron chunks it, extracts keywor
 
 upload = httpx.Client(
     base_url="https://spectron.surrealdb.com/api/v1/support",
-    headers={"API-KEY": os.environ["SPECTRON_API_KEY"]},
+    headers={"Authorization": f"Bearer {os.environ['SPECTRON_API_KEY']}"},
 )
 
 with open("products.json", "rb") as f:
@@ -120,7 +120,7 @@ formData.append("content_type", "product_data");
 
 await fetch("https://spectron.surrealdb.com/api/v1/support/documents", {
     method: "POST",
-    headers: { "API-KEY": "mgmt_..." },
+    headers: { "Authorization": "Bearer mgmt_..." },
     body: formData,
 });
 ```
@@ -151,7 +151,7 @@ for (const filename of files.filter(f => f.endsWith(".md"))) {
 
     await fetch("https://spectron.surrealdb.com/api/v1/support/documents", {
         method: "POST",
-        headers: { "API-KEY": "mgmt_..." },
+        headers: { "Authorization": "Bearer mgmt_..." },
         body: formData,
     });
 }

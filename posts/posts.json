@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-06-05T07:31:44.794305+00:00",
-  "count": 228,
+  "generated_at": "2026-06-06T07:06:45.055080+00:00",
+  "count": 229,
   "posts": [
+    {
+      "slug": "context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai",
+      "title": "Context layers, semantic layers, and knowledge graphs: the modern data architecture for AI",
+      "summary": "Three concepts AI teams constantly confuse: a context layer assembles the right data into an LLM prompt at query time, a semantic layer maps raw data to business meaning, and a knowledge graph stores entities and their relationships. Most teams build all three by stitching together separate graph, vector, and relational systems - creating sync problems, higher latency, and rising costs. SurrealDB's multi-model architecture handles all three natively, letting a single SurrealQL query run vector search, graph traversal, and document retrieval in one round trip",
+      "publishDate": "2026-06-05T17:49:44.000Z",
+      "categories": [
+        "company"
+      ],
+      "readTime": "14 min read",
+      "imageUrl": "https://cdn.surrealdb.com/6r1ur5irjmadv0ht4dnibobq.auto",
+      "source": "https://surrealdb.com/blog/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai",
+      "local_path": "2026/06/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai.md"
+    },
     {
       "slug": "surrealdb-3-x-by-the-numbers",
       "title": "SurrealDB 3.x by the numbers",

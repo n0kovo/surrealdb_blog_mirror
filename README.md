@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-06-05 07:31 UTC_
+_Last updated: 2026-06-06 07:06 UTC_
 
 ## Stats
 
-- **Total posts:** 228
+- **Total posts:** 229
 - **First post:** 2022-07-20
-- **Latest post:** 2026-05-29
+- **Latest post:** 2026-06-05
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-06-05 07:31 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 33 posts
+- [2026](posts/years/2026.md) — 34 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -29,7 +29,7 @@ _Last updated: 2026-06-05 07:31 UTC_
 
 - [ai](posts/categories/ai.md) — 37 posts
 - [community](posts/categories/community.md) — 34 posts
-- [company](posts/categories/company.md) — 40 posts
+- [company](posts/categories/company.md) — 41 posts
 - [engineering](posts/categories/engineering.md) — 39 posts
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 105 posts
@@ -38,6 +38,8 @@ _Last updated: 2026-06-05 07:31 UTC_
 
 ## Latest posts
 
+- **2026-06-05** · [Context layers, semantic layers, and knowledge graphs: the modern data architecture for AI](posts/2026/06/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai.md)  
+  `company` — Three concepts AI teams constantly confuse: a context layer assembles the right data into an LLM prompt at query time, a semantic layer maps raw data to business meaning, and a knowledge graph stores entities and their relationships. Most teams build all three by stitching together separate graph, vector, and relational systems - creating sync problems, higher latency, and rising costs. SurrealDB's multi-model architecture handles all three natively, letting a single SurrealQL query run vector search, graph traversal, and document retrieval in one round trip
 - **2026-05-29** · [SurrealDB 3.x by the numbers](posts/2026/05/surrealdb-3-x-by-the-numbers.md)  
   `engineering` `company` `featured` — Fresh SurrealDB 3.x benchmarks: 141k ops\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.
 - **2026-05-27** · [SurrealDB 3.1: stability, DiskANN, and a new release process](posts/2026/05/surrealdb-3-1-stability-diskann-and-a-new-release-process.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-06-05 07:31 UTC_
   `releases` — SurrealDB now integrates with Kreuzberg to ingest, chunk, and search unstructured documents across 88+ formats - with built-in keyword, semantic, and hybrid search with reranking.
 - **2026-04-30** · [Hybrid search inside SurrealDB](posts/2026/04/hybrid-search-inside-surrealdb.md)  
   `ai` — How I fused vector and keyword retrieval in a single query
-- **2026-04-27** · [Building compounding memory with knowledge graphs and agentic RAG](posts/2026/04/building-compounding-memory-with-knowledge-graphs-and-agentic-rag.md)  
-  `community` `ai` — Synapse, a memory-first reflection agent, helps users track therapy journal patterns. It structures insights into a knowledge graph, revealing patterns and answering questions based on context.

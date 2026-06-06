@@ -4,10 +4,19 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-05-29T13:45:37Z</updated>
+  <updated>2026-06-05T17:49:44Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai</id>
+    <title>Context layers, semantic layers, and knowledge graphs: the modern data architecture for AI</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai" type="text/html" />
+    <published>2026-06-05T17:49:44Z</published>
+    <updated>2026-06-05T17:49:44Z</updated>
+    <summary type="text">Three concepts AI teams constantly confuse: a context layer assembles the right data into an LLM prompt at query time, a semantic layer maps raw data to business meaning, and a knowledge graph stores entities and their relationships. Most teams build all three by stitching together separate graph, vector, and relational systems - creating sync problems, higher latency, and rising costs. SurrealDB's multi-model architecture handles all three natively, letting a single SurrealQL query run vector search, graph traversal, and document retrieval in one round trip</summary>
+    <category term="company" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/surrealdb-3-x-by-the-numbers</id>
     <title>SurrealDB 3.x by the numbers</title>
@@ -499,17 +508,6 @@
     <summary type="text">SurrealDB has launched SurrealMCP, giving AI agents secure, real-time, permission-aware memory powered by its multi-model database.</summary>
     <category term="featured" />
     <category term="releases" />
-    <category term="ai" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/using-unstructured-data-to-create-knowledge-graphs-in-surrealdb</id>
-    <title>Using unstructured data to create knowledge graphs in SurrealDB</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/using-unstructured-data-to-create-knowledge-graphs-in-surrealdb" type="text/html" />
-    <published>2025-08-22T00:00:00Z</published>
-    <updated>2025-08-22T00:00:00Z</updated>
-    <summary type="text">There are many ways to give structure to unstructured data so that it can be used systematically in a database.</summary>
-    <category term="featured" />
-    <category term="tutorials" />
     <category term="ai" />
   </entry>
 </feed>

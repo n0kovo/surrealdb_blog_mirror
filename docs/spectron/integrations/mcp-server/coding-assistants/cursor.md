@@ -9,6 +9,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 Installing Spectron in Cursor gives every AI interaction in your editor access to persistent memory. Cursor's agent can recall previous decisions, project context, and user preferences across sessions without you having to repeat yourself.
 
+For integration rules your agent should follow (auth, scope, endpoints, common mistakes), see **[Agent guide (AGENTS.md)](../../../reference/agents.md)** — you can copy that page into `.cursor/rules/` or a project skill.
+
 ## Install
 
 Run the following command in your terminal, replacing `acme-prod` with your context ID:

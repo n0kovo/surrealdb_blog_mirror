@@ -31,8 +31,8 @@ _41 posts_
   `featured` `company` — SurrealDB embedded is a lightweight, secure, and AI-native database engine built in Rust, designed for intelligent, offline-first applications at the edge, supporting rich data models, schema flexibility, built-in ML inference, and fast performance.
 - **2025-06-27** · [The state of Agentic AI and the need for Agentic Memory](../2025/06/the-state-of-agentic-ai-and-the-need-for-agentic-memory.md)  
   `company` `featured` `ai` — Rethinking your data for agents
-- **2025-06-25** · [Surreal Cloud Enterprise](../2025/06/surreal-cloud-enterprise.md)  
-  `company` `featured` — Power your mission-critical applications with Surreal Cloud Enterprise
+- **2025-06-25** · [SurrealDB Cloud Enterprise](../2025/06/surreal-cloud-enterprise.md)  
+  `company` `featured` — Power your mission-critical applications with SurrealDB Cloud Enterprise
 - **2025-06-19** · [Databases Are the Next AI Frontier](../2025/06/databases-are-the-next-ai-frontier.md)  
   `featured` `company` — AI’s bottleneck is no longer compute, it’s about databases: data, storage, and memory.
 - **2025-06-09** · [How Aspire Comps replaced 5 backend tools with SurrealDB and scaled to 700,000 users](../2025/06/how-aspire-comps-replaced-5-backend-tools-with-surrealdb-and-scaled-to-700000-users.md)  

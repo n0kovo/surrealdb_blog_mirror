@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T07:26:08.882694+00:00",
+  "generated_at": "2026-06-08T07:44:56.335143+00:00",
   "count": 229,
   "posts": [
     {
@@ -1042,8 +1042,8 @@
     },
     {
       "slug": "surreal-cloud-enterprise",
-      "title": "Surreal Cloud Enterprise",
-      "summary": "Power your mission-critical applications with Surreal Cloud Enterprise",
+      "title": "SurrealDB Cloud Enterprise",
+      "summary": "Power your mission-critical applications with SurrealDB Cloud Enterprise",
       "publishDate": "2025-06-25T00:00:00.000Z",
       "categories": [
         "company",

@@ -149,8 +149,8 @@ _229 posts_
   `company` `featured` `ai` — Rethinking your data for agents
 - **2025-06-26** · [Semantic search with SurrealDB and OpenAI](2025/06/semantic-search-with-surrealdb-and-openai.md)  
   `featured` `engineering` `ai` — SurrealDB's built-in vector search capabilities make it a perfect match for semantic search using OpenAI
-- **2025-06-25** · [Surreal Cloud Enterprise](2025/06/surreal-cloud-enterprise.md)  
-  `company` `featured` — Power your mission-critical applications with Surreal Cloud Enterprise
+- **2025-06-25** · [SurrealDB Cloud Enterprise](2025/06/surreal-cloud-enterprise.md)  
+  `company` `featured` — Power your mission-critical applications with SurrealDB Cloud Enterprise
 - **2025-06-25** · [Introducing network capabilities in Surreal Cloud](2025/06/introducing-network-capabilities-in-surreal-cloud.md)  
   `releases` `featured` — Surreal Cloud’s latest release introduces network capabilities. Fine grained controls that determine exactly which network targets your database can reach. In this blog we will walk through network capabilities, explore the motivation behind it, and explain how it improves security for everyone running SurrealDB in the cloud.
 - **2025-06-24** · [Building real-time AI pipelines in SurrealDB](2025/06/building-real-time-ai-pipelines-in-surrealdb.md)  

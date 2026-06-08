@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_916 pages_  
+_917 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -1726,6 +1726,8 @@ _916 pages_
   Accessing Spectron's knowledge layer as a virtual filesystem.
 - [REST API](spectron/integrations/surfaces/rest.md)
   Accessing Spectron directly via its HTTP REST API.
+- [Agent guide (AGENTS.md)](spectron/reference/agents.md)
+  Instructions for coding agents integrating with Spectron — copy into Cursor rules or skills.
 - [CLI](spectron/reference/cli.md)
   Command-line interface reference.
 - [Configuration](spectron/reference/configuration.md)

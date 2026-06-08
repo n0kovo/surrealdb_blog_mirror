@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Creating custom modules
 
-This page walks you through the options avialable when building a [Surrealism](../plugins/overview.md) module from scratch.
+This page walks you through the options available when building a [Surrealism](../plugins/overview.md) module from scratch.
 
 ## Prerequisites
 
@@ -27,7 +27,12 @@ The fastest way to start is `surreal module init`:
 surreal module init
 ```
 
-This creates the project scaffold (`Cargo.toml`, `surrealism.toml`, and `src/lib.rs`) ready for Surrealism builds.
+This creates the project scaffold (`Cargo.toml`, `surrealism.toml`, `.cargo/Config.toml` with flags needed for the WASI build, and `src/lib.rs`) ready for Surrealism builds.
+
+```toml title=".cargo/Config.toml flags"
+[build]
+rustflags = ["--cfg", "tokio_unstable"]
+```
 
 To automatically set the name and organisation for a project, you can use the following flags:
 

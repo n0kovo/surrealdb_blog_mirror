@@ -11,6 +11,7 @@ Complete technical reference for all Spectron APIs, configuration options, data 
 
 ## In this section
 
+- **[Agent guide (AGENTS.md)](agents.md)** – Instructions for coding agents.
 - **[REST API](rest-api.md)** – End-user HTTP endpoints for memory and knowledge operations.
 - **[Management API](management-api.md)** – Control-plane endpoints for creating and configuring Contexts and API keys.
 - **[Python SDK](sdk-python.md)** – Complete method reference for the Python SDK.

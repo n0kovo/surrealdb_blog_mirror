@@ -1,8 +1,10 @@
 # Category: releases
 
-_45 posts_  
+_46 posts_  
 [← Index](../../README.md)
 
+- **2026-06-09** · [SurrealDB is now available on the Nebius AI Cloud Marketplace](../2026/06/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace.md)  
+  `releases` — SurrealDB is now available on the Nebius AI Cloud Marketplace.
 - **2026-05-27** · [SurrealDB 3.1: stability, DiskANN, and a new release process](../2026/05/surrealdb-3-1-stability-diskann-and-a-new-release-process.md)  
   `releases` `featured` — SurrealDB 3.1 is here. The first minor release in the 3.x series brings DiskANN, a comprehensive stability and security pass, and a refreshed release process.
 - **2026-05-07** · [Schema migrations in SurrealDB: A local dev workflow](../2026/05/schema-migrations-in-surrealdb-a-local-dev-workflow.md)  

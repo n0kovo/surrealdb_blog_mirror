@@ -4,10 +4,19 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-06-05T17:49:44Z</updated>
+  <updated>2026-06-09T09:23:40Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace</id>
+    <title>SurrealDB is now available on the Nebius AI Cloud Marketplace</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace" type="text/html" />
+    <published>2026-06-09T09:23:40Z</published>
+    <updated>2026-06-09T09:23:40Z</updated>
+    <summary type="text">SurrealDB is now available on the Nebius AI Cloud Marketplace.</summary>
+    <category term="releases" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai</id>
     <title>Context layers, semantic layers, and knowledge graphs: the modern data architecture for AI</title>
@@ -497,17 +506,6 @@
     <summary type="text">Using SurrealMCP and Agno, this is how you can build a “researcher” agent that finds information on the web, structures the data, and stores it in SurrealDB.</summary>
     <category term="featured" />
     <category term="tutorials" />
-    <category term="ai" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/introducing-surrealmcp</id>
-    <title>Introducing SurrealMCP</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/introducing-surrealmcp" type="text/html" />
-    <published>2025-08-23T00:00:00Z</published>
-    <updated>2025-08-23T00:00:00Z</updated>
-    <summary type="text">SurrealDB has launched SurrealMCP, giving AI agents secure, real-time, permission-aware memory powered by its multi-model database.</summary>
-    <category term="featured" />
-    <category term="releases" />
     <category term="ai" />
   </entry>
 </feed>

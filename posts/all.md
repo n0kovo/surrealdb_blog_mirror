@@ -1,8 +1,10 @@
 # All Posts
 
-_229 posts_  
+_230 posts_  
 [← Index](../README.md)
 
+- **2026-06-09** · [SurrealDB is now available on the Nebius AI Cloud Marketplace](2026/06/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace.md)  
+  `releases` — SurrealDB is now available on the Nebius AI Cloud Marketplace.
 - **2026-06-05** · [Context layers, semantic layers, and knowledge graphs: the modern data architecture for AI](2026/06/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai.md)  
   `company` — Three concepts AI teams constantly confuse: a context layer assembles the right data into an LLM prompt at query time, a semantic layer maps raw data to business meaning, and a knowledge graph stores entities and their relationships. Most teams build all three by stitching together separate graph, vector, and relational systems - creating sync problems, higher latency, and rising costs. SurrealDB's multi-model architecture handles all three natively, letting a single SurrealQL query run vector search, graph traversal, and document retrieval in one round trip
 - **2026-05-29** · [SurrealDB 3.x by the numbers](2026/05/surrealdb-3-x-by-the-numbers.md)  

@@ -9,6 +9,14 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 Spectron exposes four retrieval modes for **document passages** (`POST .../documents/query`) and for the **unified** read path (`POST .../query`, which also ranks experiential facts). Each mode trades coverage, precision, and computational cost differently. See [Recalling memories](recall.md) for unified recall; this page focuses on mode selection and graph-density signals.
 
+## Answer size vs search breadth
+
+**`k`** (and **`limit`** on `/query`) controls how many hits are returned after fusion — the **answer size**. Default **10**, maximum **50** (`SPECTRON_MAX_QUERY_K`, clamp-down only).
+
+The **candidate pool** that vector, BM25, and graph signals search over is sized separately (`SPECTRON_RETRIEVAL_POOL_SIZE`, default **256**). Raising `k` returns more fused results but does not widen the internal search. Tier escalation (when confidence is thin) doubles the pool rather than re-running an identical pass.
+
+Structured memories, not hundreds of raw chunks, should answer most queries — see [Coherence, retrieval, and cost tiers](https://surrealdb.com/docs/spectron/architecture/coherence-retrieval-and-tiers).
+
 ## Query modes
 
 ### `vector`

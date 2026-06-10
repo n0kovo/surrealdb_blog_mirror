@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-06-09T07:16:28.364232+00:00",
-  "count": 229,
+  "generated_at": "2026-06-10T07:31:27.462439+00:00",
+  "count": 230,
   "posts": [
+    {
+      "slug": "surrealdb-is-now-available-on-nebius-ai-cloud-marketplace",
+      "title": "SurrealDB is now available on the Nebius AI Cloud Marketplace",
+      "summary": "SurrealDB is now available on the Nebius AI Cloud Marketplace.",
+      "publishDate": "2026-06-09T09:23:40.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "2 min read",
+      "imageUrl": "https://cdn.surrealdb.com/iyrpvhru0vzmmg48htjfmuqa.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace",
+      "local_path": "2026/06/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace.md"
+    },
     {
       "slug": "context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai",
       "title": "Context layers, semantic layers, and knowledge graphs: the modern data architecture for AI",

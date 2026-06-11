@@ -5,7 +5,7 @@ generated: stub
 
 # Sdks
 
-_Auto-generated index — 3 pages._
+_Auto-generated index — 4 pages._
 
 ## Pages
 
@@ -15,3 +15,5 @@ _Auto-generated index — 3 pages._
   Using Spectron from JavaScript and TypeScript applications.
 - [Python SDK](python.md)
   Using Spectron from Python applications and agents.
+- [Swift SDK](swift.md)
+  Using Spectron from Swift applications and agents.

@@ -54,7 +54,7 @@ Authentication uses **`Authorization: Bearer`** — the same as REST. Run `spect
 | Situation | Use |
 | --- | --- |
 | Coding assistant with native MCP | `spectron mcp` config |
-| Application code (Python/TS) | `surrealdb-spectron` / `@surrealdb/spectron` |
+| Application code (Python/TS) | `surrealdb` / `@surrealdb/spectron` |
 | Agent framework with harness adapter | `spectron-langchain`, `@surrealdb/spectron-vercel-ai`, … |
 | Custom infrastructure | [REST API](../../reference/rest-api.md) |
 

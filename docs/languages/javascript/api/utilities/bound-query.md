@@ -227,7 +227,8 @@ class QueryBuilder {
     }
     
     where(field: string, value: unknown): this {
-        this.query.append(` AND ${field} = $${field}`, { [field]: value });
+                this.query.append(` AND ${field} = $${field}`,
+            { [field]: value });
         return this;
     }
     
@@ -256,8 +257,10 @@ const [users] = await db.query(query).collect();
 
 ```ts
 // Define reusable fragments
-const activeFilter = new BoundQuery('status = $status', { status: 'active' });
-const verifiedFilter = new BoundQuery('verified = $verified', { verified: true });
+const activeFilter = new BoundQuery('status = $status',
+    { status: 'active' });
+const verifiedFilter = new BoundQuery('verified = $verified',
+    { verified: true });
 
 // Combine them
 const query = new BoundQuery('SELECT * FROM users WHERE ');
@@ -287,7 +290,8 @@ query.append(
 );
 
 query.append(
-    'CREATE posts SET author = $author, title = $title, content = $content;',
+        'CREATE posts SET author = $author, title = $title,
+        content = $content;',
     {
         author: userId,
         title: postData.title,

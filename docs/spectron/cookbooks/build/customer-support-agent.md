@@ -164,7 +164,7 @@ Each customer conversation is a session scoped to that customer's `user_id`. The
 ### Initialise the client
 
 ```python
-from spectron import Spectron
+from surrealdb import Spectron
 
 client = Spectron(api_key="sk-...")
 memory = client.memory(context_id="support")
@@ -180,13 +180,13 @@ const memory = client.memory({ contextId: "support" });
 
 ```python
 session = await memory.sessions.create(
-    scope={"org": "acme-support", "user": customer_id},
+    scope=[f"org/acme-support/user/{customer_id}"],
 )
 ```
 
 ```typescript
 const session = await memory.sessions.create({
-    scope: { org: "acme-support", user: customerId },
+    scope: [`org/acme-support/user/${customerId}`],
 });
 ```
 
@@ -253,7 +253,7 @@ At any point you can inspect what Spectron knows about a specific customer:
 
 ```python
 entities = await memory.entities.list(
-    scope={"org": "acme-support", "user": customer_id},
+    scope=[f"org/acme-support/user/{customer_id}"],
     entity_type="Customer",
 )
 for entity in entities:
@@ -262,7 +262,7 @@ for entity in entities:
 
 ```typescript
 const entities = await memory.entities.list({
-    scope: { org: "acme-support", user: customerId },
+    scope: [`org/acme-support/user/${customerId}`],
     entityType: "Customer",
 });
 for (const entity of entities) {

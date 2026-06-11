@@ -335,9 +335,12 @@ The following example is identical to the above except that `full_name` has been
 ```surql
 DEFINE TABLE person SCHEMAFULL;
 
-DEFINE FIELD first_name ON TABLE person TYPE string VALUE string::lowercase($value);
-DEFINE FIELD last_name  ON TABLE person TYPE string VALUE string::lowercase($value);
-DEFINE FIELD full_name  ON TABLE person             VALUE first_name + ' ' + last_name;
+DEFINE FIELD first_name
+  ON TABLE person TYPE string VALUE string::lowercase($value);
+DEFINE FIELD last_name 
+  ON TABLE person TYPE string VALUE string::lowercase($value);
+DEFINE FIELD full_name 
+  ON TABLE person             VALUE first_name + ' ' + last_name;
 
 // Creates a `person` with `full_name` of "bob BOBSON", not "bob bobson"
 CREATE person SET first_name = "Bob", last_name = "BOBSON";
@@ -350,7 +353,8 @@ A good rule of thumb is to organise your `DEFINE FIELD` statements in alphabetic
 A field can also be defined as a [literal type](../../../reference/query-language/language-primitives/data-types/literals.md), by specifying one or more possible values and/or permitted types.
 
 ```surql
-DEFINE FIELD coffee ON TABLE order TYPE "regular" | "large" | { special_order: string };
+DEFINE FIELD coffee
+  ON TABLE order TYPE "regular" | "large" | { special_order: string };
 
 CREATE order:good SET coffee = { special_order: "Venti Quadruple Ristretto Half-Decaf Soy Latte with 4 pumps of sugar-free vanilla syrup" };
 CREATE order:bad SET coffee = "small";

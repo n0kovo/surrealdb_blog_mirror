@@ -919,9 +919,12 @@ skip-record-id-key = true
 
 DEFINE TABLE person SCHEMAFULL;
 
-DEFINE FIELD first_name ON TABLE person TYPE string VALUE string::lowercase($value);
-DEFINE FIELD last_name  ON TABLE person TYPE string VALUE string::lowercase($value);
-DEFINE FIELD name       ON TABLE person             VALUE first_name + ' ' + last_name;
+DEFINE FIELD first_name
+  ON TABLE person TYPE string VALUE string::lowercase($value);
+DEFINE FIELD last_name 
+  ON TABLE person TYPE string VALUE string::lowercase($value);
+DEFINE FIELD name      
+  ON TABLE person             VALUE first_name + ' ' + last_name;
 
 // Creates a `person` with the name "bob bobson"
 CREATE person SET first_name = "BOB", last_name = "BOBSON";
@@ -988,9 +991,12 @@ skip-record-id-key = true
 
 DEFINE TABLE person SCHEMAFULL;
 
-DEFINE FIELD first_name ON TABLE person TYPE string VALUE string::lowercase($value);
-DEFINE FIELD last_name  ON TABLE person TYPE string VALUE string::lowercase($value);
-DEFINE FIELD full_name  ON TABLE person             VALUE first_name + ' ' + last_name;
+DEFINE FIELD first_name
+  ON TABLE person TYPE string VALUE string::lowercase($value);
+DEFINE FIELD last_name 
+  ON TABLE person TYPE string VALUE string::lowercase($value);
+DEFINE FIELD full_name 
+  ON TABLE person             VALUE first_name + ' ' + last_name;
 
 // Creates a `person` with `full_name` of "bob BOBSON", not "bob bobson"
 CREATE person SET first_name = "Bob", last_name = "BOBSON";
@@ -1018,7 +1024,8 @@ error = ""Couldn't coerce value for field `coffee` of `order:bad`: Expected `'re
 
 */
 
-DEFINE FIELD coffee ON TABLE order TYPE "regular" | "large" | { special_order: string };
+DEFINE FIELD coffee
+  ON TABLE order TYPE "regular" | "large" | { special_order: string };
 
 CREATE order:good SET coffee = { special_order: "Venti Quadruple Ristretto Half-Decaf Soy Latte with 4 pumps of sugar-free vanilla syrup" };
 CREATE order:bad SET coffee = "small";
@@ -1088,7 +1095,8 @@ skip-datetime = true
 */
 
 -- using multiple data types for a Complex Record ID
-DEFINE FIELD id ON TABLE log TYPE [record, "info" | "warn" | "error", datetime];
+DEFINE FIELD id
+  ON TABLE log TYPE [record, "info" | "warn" | "error", datetime];
 
 -- Incorrect ID format, generates an error
 CREATE log:bad SET level = "info", time = time::now(), message = "Database started";

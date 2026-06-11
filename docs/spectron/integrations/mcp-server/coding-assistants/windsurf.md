@@ -31,7 +31,7 @@ The installer writes the Spectron MCP configuration to Windsurf's global MCP con
 {
   "mcpServers": {
     "spectron": {
-      "serverUrl": "https://api.spectron.dev/mcp",
+      "serverUrl": "https://<your-context-host>/mcp",
       "headers": {
         "Authorization": "Bearer <your-api-key>",
         "X-Spectron-Context": "acme-prod"
@@ -43,21 +43,11 @@ The installer writes the Spectron MCP configuration to Windsurf's global MCP con
 
 Windsurf uses `serverUrl` rather than `url`. The `install-mcp` command writes the correct key automatically.
 
-For self-hosted Spectron, replace `https://api.spectron.dev` with your instance's base URL.
+For self-hosted Spectron, replace the URL with your server's base URL + `/mcp`.
 
-## Scope defaults
+## Scope on tool calls
 
-Pass `--scope` flags to set a default scope that applies to all Spectron tool calls from Windsurf:
-
-```bash
-npx install-mcp spectron \
-  --client windsurf \
-  --context acme-prod \
-  --scope user=alice \
-  --scope org/acme/user/alice
-```
-
-This adds scope headers for the configured default. Individual tool calls can still override this scope by passing a `scope` argument (slash paths).
+Pass a **`scope`** argument on each tool (slash paths, for example `["org/acme/user/alice"]`). The install helper does not set default scope — register paths with `spectron scopes create` before first use.
 
 ## Verify the installation
 
@@ -104,14 +94,10 @@ Cascade calls `memory_store` with the full brief. Subsequent sessions recall thi
 
 ## Updating the configuration
 
-To change the API key, context, or scope, edit `~/.codeium/windsurf/mcp_config.json` directly or re-run the install command:
+To change the API key or context host, edit `~/.codeium/windsurf/mcp_config.json` directly or re-run the install command:
 
 ```bash
-npx install-mcp spectron \
-  --client windsurf \
-  --context acme-prod \
-  --scope user=alice \
-  --scope project=new-project
+npx install-mcp spectron --client windsurf --context acme-prod
 ```
 
 Re-running the command merges the updated values over the existing configuration entry.

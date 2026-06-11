@@ -22,8 +22,10 @@ Self-hosted Spectron is distributed as the container image **`ghcr.io/surrealdb/
 
 ```bash
 docker pull ghcr.io/surrealdb/spectron:latest
-docker create --name spectron-extract ghcr.io/surrealdb/spectron:latest
-docker cp spectron-extract:/usr/local/bin/spectrond /usr/local/bin/spectrond
+docker create --name spectron-extract \
+  ghcr.io/surrealdb/spectron:latest
+docker cp spectron-extract:/usr/local/bin/spectrond \
+  /usr/local/bin/spectrond
 docker rm spectron-extract
 chmod +x /usr/local/bin/spectrond
 ```
@@ -96,7 +98,8 @@ Type=exec
 User=spectron
 Group=spectron
 EnvironmentFile=/etc/docs/spectron/env
-ExecStart=/usr/local/bin/spectrond api start --connection-string ws://127.0.0.1:8000 --bind-address 0.0.0.0:9090
+ExecStart=/usr/local/bin/spectrond api start --connection-string \
+  ws://127.0.0.1:8000 --bind-address 0.0.0.0:9090
 Restart=on-failure
 RestartSec=5
 TimeoutStopSec=30

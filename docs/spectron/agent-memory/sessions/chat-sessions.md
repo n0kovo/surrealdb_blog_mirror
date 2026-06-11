@@ -33,6 +33,8 @@ When you call `session.chat()`, Spectron executes the following steps:
 
 When the transcript window is non-empty, **tier-2 response reuse is bypassed** — the cache is keyed by query embedding and scope, not session, so transcript-dependent replies must always be freshly synthesised. First-turn and sessionless calls remain cache-eligible.
 
+Multi-turn chat pins a session across messages. Under scope enforcement, each turn's session is **scope-tagged** to the caller's write region so later messages in the same session authorise correctly.
+
 ## The `chat` endpoint
 
 ```http
@@ -48,7 +50,8 @@ Response:
 
 ```json
 {
-  "reply": "Based on what you've shared, you're Alice, CTO at Acme, based in Berlin…",
+    "reply": "Based on what you've shared, you're Alice, CTO at Acme,
+      based in Berlin…",
   "memory_updates": {
     "entities": [],
     "attributes": [],
@@ -69,28 +72,32 @@ The combined extraction diff from both the user turn and the assistant turn. The
 ## Python SDK
 
 ```python
-from spectron import Spectron
+from surrealdb import Spectron
 
-memory = Spectron(context="acme-prod", api_key=os.environ["SPECTRON_API_KEY"])
-session = await memory.sessions.create(scope={"user": "alice", "org": "acme"})
+memory = Spectron(context="acme-prod",
+    api_key=os.environ["SPECTRON_API_KEY"])
+session = await memory.sessions.create(scope=["org/acme/user/alice"])
 
 reply = await session.chat("What do you know about me?")
 
 print(reply.reply)            # The model's response string
-print(reply.memory_updates)   # Entities, attributes, relations, corrections
+print(reply.memory_updates)   # Entities, attributes, relations,
+    corrections
 ```
 
 ## JavaScript SDK
 
 ```javascript
 
-const memory = new Spectron({ context: "acme-prod", apiKey: process.env.SPECTRON_API_KEY });
-const session = await memory.sessions.create({ scope: { user: "alice", org: "acme" } });
+const memory = new Spectron({ context: "acme-prod",
+    apiKey: process.env.SPECTRON_API_KEY });
+const session = await memory.sessions.create({ scope: ["org/acme/user/alice"] });
 
 const reply = await session.chat({ message: "What do you know about me?" });
 
 console.log(reply.reply);          // The model's response string
-console.log(reply.memoryUpdates);  // Entities, attributes, relations, corrections
+console.log(reply.memoryUpdates);  // Entities, attributes, relations,
+    corrections
 ```
 
 ## Full loop example
@@ -98,10 +105,11 @@ console.log(reply.memoryUpdates);  // Entities, attributes, relations, correctio
 The following pattern shows a minimal chat loop using `session.chat()`:
 
 ```python
-from spectron import Spectron
+from surrealdb import Spectron
 
-memory = Spectron(context="acme-prod", api_key=os.environ["SPECTRON_API_KEY"])
-session = await memory.sessions.create(scope={"user": "alice", "org": "acme"})
+memory = Spectron(context="acme-prod",
+    api_key=os.environ["SPECTRON_API_KEY"])
+session = await memory.sessions.create(scope=["org/acme/user/alice"])
 
 while True:
     user_input = input("You: ")
@@ -120,10 +128,12 @@ await session.close()
 
 ```javascript
 
-const memory = new Spectron({ context: "acme-prod", apiKey: process.env.SPECTRON_API_KEY });
-const session = await memory.sessions.create({ scope: { user: "alice", org: "acme" } });
+const memory = new Spectron({ context: "acme-prod",
+    apiKey: process.env.SPECTRON_API_KEY });
+const session = await memory.sessions.create({ scope: ["org/acme/user/alice"] });
 
-const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+const rl = readline.createInterface({ input: process.stdin,
+    output: process.stdout });
 
 const ask = () => rl.question("You: ", async (input) => {
     if (input.trim().toLowerCase() === "exit") {

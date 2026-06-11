@@ -80,7 +80,8 @@ SELECT name, age FROM person;
 **cURL (HTTP)**
 
 ```bash
-curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Accept: application/json" \
+curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
+  -H "Accept: application/json"
   -d '{ "query": "query { people { name age } }" }' http://localhost:8000/graphql
 ```
 
@@ -129,7 +130,8 @@ SELECT * FROM ONLY person:simon;
 **cURL (HTTP)**
 
 ```bash
-curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Accept: application/json" \
+curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
+  -H "Accept: application/json"
   -d '{ "query": "query { person(id: \"simon\") { id name age } }" }' http://localhost:8000/graphql
 ```
 
@@ -177,7 +179,8 @@ SELECT name, age FROM ONLY person LIMIT 1;
 **cURL (HTTP)**
 
 ```bash
-curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Accept: application/json" \
+curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
+  -H "Accept: application/json"
   -d '{ "query": "query { people(limit: 1) { name age } }" }' http://localhost:8000/graphql
 ```
 
@@ -224,7 +227,8 @@ SELECT name FROM person WHERE age = 23;
 **cURL (HTTP)**
 
 ```bash
-curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Accept: application/json" \
+curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
+  -H "Accept: application/json"
   -d '{ "query": "query { people(where: { age: { eq: 23 } }) { name } }" }' http://localhost:8000/graphql
 ```
 
@@ -282,7 +286,8 @@ SELECT name, age FROM person ORDER BY name ASC;
 **cURL (HTTP)**
 
 ```bash
-curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Accept: application/json" \
+curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
+  -H "Accept: application/json"
   -d '{ "query": "query { people(order: { asc: age }) { name age } }" }' http://localhost:8000/graphql
 ```
 

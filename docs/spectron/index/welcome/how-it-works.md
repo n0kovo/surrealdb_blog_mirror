@@ -37,7 +37,7 @@ User message (or uploaded file)
 └───────────────────────────────┘
 ```
 
-[Sessions and turns](https://surrealdb.com/docs/spectron/mental-model/sessions-and-turns) remain the conversational unit of work. **Documents** enter the multi-modal [Knowledge](../../agent-memory/index.md) ingest pipeline instead of the turn path; extracted facts still reconcile identically.
+[Sessions and turns](https://surrealdb.com/docs/spectron/mental-model/sessions-and-turns) remain the conversational unit of work. **Documents** enter the multi-modal [Knowledge](../../agent-memory/index.md) ingest pipeline instead of the turn path; extracted facts reconcile through the same pipeline.
 
 ## Reconciliation in one sentence
 

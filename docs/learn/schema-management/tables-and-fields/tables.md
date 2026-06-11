@@ -10,7 +10,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 A table is the first structural unit most people define: it is a named home for records. Even a `SELECT` statement requires a table to be defined before it will work.
 
 ```surql
-SELECT * FROM doesnt_exist; -- Error: "The table 'doesnt_exist' does not exist"
+SELECT *
+  FROM doesnt_exist; -- Error: "The table 'doesnt_exist' does not exist"
 DEFINE TABLE doesnt_exist;
 SELECT * FROM doesnt_exist;
 ```

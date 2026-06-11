@@ -40,6 +40,7 @@ SurrealDB offers official SDKs for popular languages, supporting queries, authen
 - **[Java](languages/java/index.md)**
 - **[.NET](languages/dotnet/index.md)**
 - **[PHP](languages/php/index.md)**
+- **[Swift](languages/swift/index.md)**
 
 ## Deployment
 

@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-06-10 07:31 UTC_
+_Last updated: 2026-06-11 07:43 UTC_
 
 ## Stats
 
-- **Total posts:** 230
+- **Total posts:** 231
 - **First post:** 2022-07-20
-- **Latest post:** 2026-06-09
+- **Latest post:** 2026-06-11
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-06-10 07:31 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 35 posts
+- [2026](posts/years/2026.md) — 36 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -30,7 +30,7 @@ _Last updated: 2026-06-10 07:31 UTC_
 - [ai](posts/categories/ai.md) — 37 posts
 - [community](posts/categories/community.md) — 34 posts
 - [company](posts/categories/company.md) — 41 posts
-- [engineering](posts/categories/engineering.md) — 39 posts
+- [engineering](posts/categories/engineering.md) — 40 posts
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 105 posts
 - [releases](posts/categories/releases.md) — 46 posts
@@ -38,6 +38,8 @@ _Last updated: 2026-06-10 07:31 UTC_
 
 ## Latest posts
 
+- **2026-06-11** · [Fuzz testing for SurrealDB: using randomised input to find bugs before users do](posts/2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md)  
+  `engineering` — A good choice to complement unit and integration tests, fuzz testing lets you use semi-random data to discover obscure bugs before users do.
 - **2026-06-09** · [SurrealDB is now available on the Nebius AI Cloud Marketplace](posts/2026/06/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace.md)  
   `releases` — SurrealDB is now available on the Nebius AI Cloud Marketplace.
 - **2026-06-05** · [Context layers, semantic layers, and knowledge graphs: the modern data architecture for AI](posts/2026/06/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-06-10 07:31 UTC_
   `ai` — If you're building a RAG (Retrieval-Augmented Generation) pipeline, a semantic search system, or any AI application that reads from a vector store, one question comes up almost immediately: what chunk size should I use?
 - **2026-05-07** · [Schema migrations in SurrealDB: A local dev workflow](posts/2026/05/schema-migrations-in-surrealdb-a-local-dev-workflow.md)  
   `tutorials` `featured` `releases` — Managing schema changes in SurrealDB shouldn't slow down your local development. This post walks through a practical migration workflow that keeps your database in sync as your project evolves.
-- **2026-04-30** · [Kreuzberg & SurrealDB: from unstructured documents to hybrid retrieval](posts/2026/04/kreuzberg-surrealdb-from-unstructured-documents-to-hybrid-retrieval.md)  
-  `releases` — SurrealDB now integrates with Kreuzberg to ingest, chunk, and search unstructured documents across 88+ formats - with built-in keyword, semantic, and hybrid search with reranking.

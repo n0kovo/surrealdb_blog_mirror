@@ -83,7 +83,8 @@ For more details, see the [`DEFINE INDEX` statement](../../../reference/query-la
 | HASHED_VECTOR | off    |         | Optional hash-stabilised vector keys |
 
 ```surql
-DEFINE INDEX diskann_idx ON pts FIELDS point DISKANN DIMENSION 4 DIST COSINE TYPE F32;
+DEFINE INDEX diskann_idx
+  ON pts FIELDS point DISKANN DIMENSION 4 DIST COSINE TYPE F32;
 ```
 
 See [`DEFINE INDEX` → DISKANN](../../../reference/query-language/statements/define/indexes.md#diskann-disk-based-approximate-nearest-neighbours) for platform notes (including **no WASM support**).

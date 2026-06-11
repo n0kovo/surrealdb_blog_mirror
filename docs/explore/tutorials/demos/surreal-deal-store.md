@@ -49,13 +49,15 @@ Lastly, use the [import command](../../../reference/cli/surrealdb-cli/commands/i
 Use the command below to import the [surreal deal store dataset](https://datasets.surrealdb.com/surreal-deal-store.surql):
 
 ```bash
-surreal import --endpoint http://localhost:8000 --user root --pass secret --ns main --db main surreal-deal-store.surql
+surreal import --endpoint http://localhost:8000 --user root --pass secret \
+  --ns main --db main surreal-deal-store.surql
 ```
 
 To import the surreal downloaded the [Surreal Deal store (mini)](https://datasets.surrealdb.com/surreal-deal-store-mini.surql) use the command below:
 
 ```bash
-surreal import --endpoint http://localhost:8000 --user root --pass secret --ns main --db main surreal-deal-store-mini.surql
+surreal import --endpoint http://localhost:8000 --user root --pass secret \
+  --ns main --db main surreal-deal-store-mini.surql
 ```
 
 Please be aware that the import process might take a few seconds.

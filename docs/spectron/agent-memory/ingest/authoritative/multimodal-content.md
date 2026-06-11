@@ -27,7 +27,7 @@ doc = await memory.knowledge.upload(
     file=open("product-diagram.png", "rb"),
     title="Product Architecture Diagram",
     profile="multimodal_balanced",
-    scope={"org": "acme"},
+    scope=["org/acme"],
 )
 ```
 
@@ -36,7 +36,7 @@ const doc = await memory.knowledge.upload({
     file: imageFile,
     title: "Product Architecture Diagram",
     profile: "multimodal_balanced",
-    scope: { org: "acme" },
+    scope: ["org/acme"],
 });
 ```
 
@@ -90,7 +90,7 @@ doc = await memory.knowledge.upload(
     file=open("scanned-invoice.pdf", "rb"),
     title="Invoice 1042",
     profile="text_plus_ocr",
-    scope={"org": "acme"},
+    scope=["org/acme"],
 )
 ```
 
@@ -115,12 +115,16 @@ This lets your application link a retrieved fact back to the precise moment in a
 
 Transcription is available with `multimodal_balanced` and `multimodal_full` profiles.
 
+Transcript segments participate in **vector recall** alongside text chunks (same embedding model and ranker leg). A query can return an `audio_chunk` hit with the segment text and timestamps even when the parent document chunk spine phrased the content differently.
+
+When a document is **reprocessed**, previous `audio_chunk` and `image_chunk` rows are cleared at the start of the run before modality stages execute, so stale transcript or frame rows cannot survive a profile or content change.
+
 ```python
 doc = await memory.knowledge.upload(
     file=open("support-call.mp3", "rb"),
     title="Support Call 2026-05-12",
     profile="multimodal_balanced",
-    scope={"user": "alice", "org": "acme"},
+    scope=["org/acme/user/alice"],
 )
 ```
 
@@ -152,7 +156,7 @@ When a URL is set, its **`_MODEL`** is required and Spectron calls the endpoint 
 
 **Vision LLMs:** under **`multimodal_full`**, image understanding runs when the worker resolves an extraction LLM for the Context — per-Context **`models.extraction`** and provider keys apply even without a deployment-wide default LLM. Vision descriptions are appended to the document body **before chunking** (same spine as OCR text). OpenAI and Anthropic providers send image content blocks when media is attached.
 
-**Per-Context ingest LLM:** document jobs resolve the extraction LLM from the Context config on each run (shared budget-enforced resolver with maintenance jobs). A Context with its own provider key but no deployment-wide `SPECTRON_LLM_PROVIDER` still gets ingest-time extraction and vision when configured.
+**Per-Context ingest LLM:** document jobs resolve the extraction LLM from the Context config on each run (shared budget-enforced resolver with maintenance jobs). A Context with its own provider key but no deployment-wide `SPECTRON_LLM_PROVIDER` gets ingest-time extraction and vision when configured.
 
 See [Configuration](../../../reference/configuration.md#multimodal-providers-optional) for the full variable list.
 

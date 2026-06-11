@@ -63,7 +63,8 @@ async fn main() -> surrealdb::Result<()> {
     db.create(Resource::from(("person", "two"))).await?;
     db.create(Resource::from(("person", "three"))).await?;
 
-    let deleted_one: Option<Person> = db.delete(("person", "one")).await?;
+        let deleted_one: Option<Person> = db.delete(("person",
+        "one")).await?;
     dbg!(deleted_one);
     let deleted_rest: Vec<Person> = db.delete("person").await?;
     dbg!(deleted_rest);
@@ -158,7 +159,8 @@ async fn main() -> surrealdb::Result<()> {
     db.create(Resource::from(("person", "two"))).await?;
     db.create(Resource::from(("person", "three"))).await?;
 
-    let deleted_one: Option<Person> = db.delete(("person", "one")).await?;
+        let deleted_one: Option<Person> = db.delete(("person",
+        "one")).await?;
     dbg!(deleted_one);
     let deleted_rest: Vec<Person> = db.delete("person").await?;
     dbg!(deleted_rest);

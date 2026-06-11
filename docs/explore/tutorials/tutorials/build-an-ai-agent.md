@@ -62,7 +62,8 @@ uv run --env-file .env -m pydantic_ai_examples.rag_surrealdb build
 Ask the agent a question:
 
 ```bash
-uv run --env-file .env -m pydantic_ai_examples.rag_surrealdb search "How do I register a function as a custom tool for my agent?"
+uv run --env-file .env -m pydantic_ai_examples.rag_surrealdb search \
+  "How do I register a function as a custom tool for my agent?"
 ```
 
 Or use the web UI:
@@ -143,7 +144,8 @@ async def retrieve(search_query: str) -> str:
         search_query: The search query.
     """
     with logfire.span(
-        'create embedding for {search_query=}', search_query=search_query
+                'create embedding for {search_query=}',
+            search_query=search_query
     ):
         result = await embedder.embed_query(search_query)
         embedding = result.embeddings
@@ -263,7 +265,8 @@ class DocsSection:
         )
 
     def embedding_content(self) -> str:
-        return '\n\n'.join((f'path: {self.path}', f'title: {self.title}', self.content))
+                return '\n\n'.join((f'path: {self.path}',
+            f'title: {self.title}', self.content))
 
 sections_ta = TypeAdapter(list[DocsSection])
 
@@ -311,7 +314,8 @@ def slugify(value: str, separator: str, unicode: bool = False) -> str:
     """Slugify a string, to make it URL friendly."""
     # Taken unchanged from https://github.com/Python-Markdown/markdown/blob/3.7/markdown/extensions/toc.py#L38
     if not unicode:
-        # Replace Extended Latin characters with ASCII, i.e. `žlutý` => `zluty`
+                # Replace Extended Latin characters with ASCII,
+            i.e. `žlutý` => `zluty`
         value = unicodedata.normalize('NFKD', value)
         value = value.encode('ascii', 'ignore').decode('ascii')
     value = re.sub(r'[^\w\s-]', '', value).strip().lower()
@@ -369,13 +373,16 @@ conn.signin({"username": "root", "password": "secret"})
 conn.use("langchain", "demo")
 vector_store = SurrealDBVectorStore(OllamaEmbeddings(model="llama3.2"), conn)
 
-doc_1 = Document(page_content="foo", metadata={"source": "https://surrealdb.com"})
-doc_2 = Document(page_content="SurrealDB", metadata={"source": "https://surrealdb.com"})
+doc_1 = Document(page_content="foo",
+    metadata={"source": "https://surrealdb.com"})
+doc_2 = Document(page_content="SurrealDB",
+    metadata={"source": "https://surrealdb.com"})
 
 vector_store.add_documents(documents=[doc_1, doc_2], ids=["1", "2"])
 
 results = vector_store.similarity_search_with_score(
-    query="surreal", k=1, custom_filter={"source": "https://surrealdb.com"}
+        query="surreal", k=1,
+        custom_filter={"source": "https://surrealdb.com"}
 )
 
 for doc, score in results:
@@ -393,14 +400,16 @@ Under the hood the helper will:
 ```python
 query = "How do I enable vector search in SurrealDB?"
 docs = vector_store.similarity_search(
-    query=query, k=1, custom_filter={"source": "https://surrealdb.com"}
+        query=query, k=1,
+        custom_filter={"source": "https://surrealdb.com"}
 )
 for doc in results:
     print(f"{doc.page_content} [{doc.metadata}]")
 ```
 
 ```
-The Vector Search feature of SurrealDB... [{'source': 'https://surrealdb.com'}]
+The Vector Search feature of SurrealDB... [{'source': \
+  'https://surrealdb.com'}]
 ```
 
 If you want to get the score with the results, use `similarity_search_with_score` instead.
@@ -417,7 +426,8 @@ retriever.invoke(query)
 ```
 
 ```
-[Document(id='4', metadata={'source': 'https://surrealdb.com'}, page_content='The Vector Search feature of SurrealDB...')]
+[Document(id='4', metadata={'source': 'https://surrealdb.com'}, \
+  page_content='The Vector Search feature of SurrealDB...')]
 ```
 
 **Agno**
@@ -440,7 +450,8 @@ SURREALDB_DATABASE = "main"
 
 # Create a client
 client = Surreal(url=SURREALDB_URL)
-client.signin({"username": SURREALDB_USER, "password": SURREALDB_PASSWORD})
+client.signin({"username": SURREALDB_USER,
+    "password": SURREALDB_PASSWORD})
 client.use(namespace=SURREALDB_NAMESPACE, database=SURREALDB_DATABASE)
 
 surrealdb = SurrealDb(

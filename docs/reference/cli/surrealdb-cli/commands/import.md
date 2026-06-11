@@ -104,13 +104,15 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 To perform a SurrealQL database import from a local file, in a terminal run the `surreal import` command with the required arguments.
 
 ```bash
-surreal import --endpoint http://localhost:8000 --user root --pass secret --ns main --db main downloads/surreal_deal_v1.surql
+surreal import --endpoint http://localhost:8000 --user root --pass secret \
+  --ns main --db main downloads/surreal_deal_v1.surql
 ```
 
 Using token-based authentication:
 
 ```bash 
-surreal import --endpoint http://localhost:8000 --token <token> --ns main --db main downloads/surreal_deal_v1.surql
+surreal import --endpoint http://localhost:8000 --token <token> --ns main \
+  --db main downloads/surreal_deal_v1.surql
 ```
 
 > [!NOTE]

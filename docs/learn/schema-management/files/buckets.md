@@ -33,7 +33,10 @@ Once this is defined, `my_bucket` can be accessed by using a file pointer: a pat
 
 ```surql
 -- Create a file by adding some content
-f"my_bucket:/my_book.txt".put("Once there were four children whose names were Peter, Susan, Edmund, and Lucy.");
+f"my_bucket:/my_book.txt".put("Once there were four children whose names were Peter,
+  Susan,
+  Edmund,
+  and Lucy.");
 -- Copy it to a new file name
 f"my_bucket:/my_book.txt".copy("lion_witch_wardrobe.txt");
 -- Read the file as bytes
@@ -61,7 +64,8 @@ The following command can be used to start running an instance in which a bucket
 
 ```bash
 # Unix
-SURREAL_BUCKET_FOLDER_ALLOWLIST="/" surreal start --user root --pass secret --allow-experimental files
+SURREAL_BUCKET_FOLDER_ALLOWLIST="/" surreal start --user root --pass \
+  secret --allow-experimental files
 
 # Windows (PowerShell)
 $env:SURREAL_BUCKET_FOLDER_ALLOWLIST = "/" 
@@ -80,7 +84,10 @@ If a global backend is set, then a `DEFINE BUCKET` statement can be as short as 
 DEFINE BUCKET my_bucket;
 
 -- Writes to e.g. `my_global_bucket:/test_ns/test_db/my_bucket/my_book.txt`
-f"my_bucket:/my_book.txt".put("Once there were four children whose names were Peter, Susan, Edmund, and Lucy.");
+f"my_bucket:/my_book.txt".put("Once there were four children whose names were Peter,
+  Susan,
+  Edmund,
+  and Lucy.");
 ```
 
 ## Setting permissions on buckets
@@ -98,7 +105,8 @@ INFO FOR DB;
   analyzers: {},
   apis: {},
   buckets: {
-    my_bucket: "DEFINE BUCKET my_bucket BACKEND 'memory' PERMISSIONS FULL"
+    my_bucket: "DEFINE BUCKET my_bucket BACKEND 'memory'
+      PERMISSIONS FULL"
   },
   configs: {},
   functions: {},

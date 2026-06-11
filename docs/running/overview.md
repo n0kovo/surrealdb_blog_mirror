@@ -23,5 +23,5 @@ After you are running SurrealDB (locally or on servers you manage), you can choo
 
 - [Run a single-node, in-memory server](in-memory.md) with optional persistence and versioning (SurrealMX)
 - [Run a single-node, on-disk server](file-backed.md) (RocksDB or SurrealKV)
-- [Run a multi-node, scalable cluster](multi-node.md)
+- [Run a multi-node cluster](multi-node.md)
 - [Run with Docker](docker.md)

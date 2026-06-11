@@ -44,7 +44,7 @@ Model assignment is per-Context. A single Spectron deployment can therefore serv
 ### Python
 
 ```python
-from spectron import Spectron
+from surrealdb import Spectron
 
 memory = Spectron(context="acme-prod", api_key=os.environ["SPECTRON_API_KEY"])
 

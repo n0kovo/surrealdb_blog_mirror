@@ -60,7 +60,7 @@ Create a session at the start of a conversation. The session object is lightweig
 
 ```typescript
 const session = await spectron.createSession({
-    scope: { org: "acme", agent: "support-bot", user: "alice" },
+    scope: ["org/acme/agent/support-bot/user/alice"],
 });
 ```
 
@@ -120,7 +120,7 @@ export async function POST(req: Request) {
     const session = spectronSessionId
         ? await spectron.resumeSession(spectronSessionId)
         : await spectron.createSession({
-              scope: { org: "acme", agent: "assistant", user: userId },
+              scope: [`org/acme/agent/assistant/user/${userId}`],
           });
 
     const result = await session.streamText({

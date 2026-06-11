@@ -16,8 +16,8 @@ _Auto-generated index — 6 pages._
 - [Docker](docker.md)
   A tutorial to run SurrealDB from within Docker.
 - [Google GKE](google-gke.md)
-  How to set up a SurrealDB cluster backed by TiKV on Google Kubernetes Engine.
+  How to set up a highly available SurrealDB cluster on Google Kubernetes Engine.
 - [Kubernetes](kubernetes.md)
-  A guide on the process of deploying SurrealDB to Kubernetes in Docker, with TiKV as the database storage engine.
+  Deploy SurrealDB to Kubernetes with RocksDB on a persistent volume.
 - [Self-hosted deployment](overview.md)
   Getting started with SurrealDB is quick and easy. Follow these tutorials for deploying SurrealDB in different environments.

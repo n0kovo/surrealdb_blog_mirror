@@ -245,7 +245,8 @@ The `UPDATE` statement supports conditional matching of records using a `WHERE` 
 
 ```surql
 -- Update all records which match the condition that `company` is not equal to "SurrealDB"
-UPDATE person SET skills += "System design" WHERE company != "SurrealDB";
+UPDATE person SET skills += "System design"
+  WHERE company != "SurrealDB";
 ```
 
 ```surql title="Output"
@@ -323,7 +324,8 @@ value = "[{ age: 70, created: d'2024-01-01T00:00:00Z', id: person:gladys }]"
 
 */
 
-DEFINE FIELD created ON person TYPE datetime DEFAULT d'2024-01-01T00:00:00Z' READONLY;
+DEFINE FIELD created
+  ON person TYPE datetime DEFAULT d'2024-01-01T00:00:00Z' READONLY;
 CREATE person:gladys SET age = 90;
 -- Does not try to modify `created` field, no error
 UPDATE person:gladys CONTENT { age: 70 };
@@ -342,7 +344,9 @@ UPDATE person:gladys CONTENT { age: 70 };
 ]
 
 -------- Query --------
-'Found changed value for field `created`, with record `person:gladys`, but field is readonly'
+'Found changed value for field `created`,
+  with record `person:gladys`,
+  but field is readonly'
 ```
 
 **Output after 2.1.0**
@@ -388,12 +392,14 @@ value = "[{ age: 70, created: d'2024-01-01T00:00:00Z', id: person:gladys }]"
 
 */
 
-DEFINE FIELD created ON person TYPE datetime DEFAULT d'2024-01-01T00:00:00Z' READONLY;
+DEFINE FIELD created
+  ON person TYPE datetime DEFAULT d'2024-01-01T00:00:00Z' READONLY;
 CREATE person:gladys SET age = 90;
 -- Attempts to change `created` field, error
 UPDATE person:gladys REPLACE { age: 70 };
 -- `created` equals current value, query works
-UPDATE person:gladys REPLACE { age: 70, created: d'2024-01-01T00:00:00Z' };
+UPDATE person:gladys REPLACE { age: 70,
+  created: d'2024-01-01T00:00:00Z' };
 ```
 
 ```surql title="Output"
@@ -407,7 +413,9 @@ UPDATE person:gladys REPLACE { age: 70, created: d'2024-01-01T00:00:00Z' };
 ]
 
 -------- Query --------
-'Found changed value for field `created`, with record `person:gladys`, but field is readonly'
+'Found changed value for field `created`,
+  with record `person:gladys`,
+  but field is readonly'
 
 -------- Query --------
 [
@@ -525,7 +533,9 @@ UPDATE person SET skills += 'reading' RETURN AFTER;
 UPDATE person SET skills += 'reading' RETURN VALUE skills;
 
 -- Return a specific field only from the updated records
-UPDATE person:tobie SET skills = ['skiing', 'music'] RETURN name, interests;
+UPDATE person:tobie SET skills = ['skiing',
+  'music'] RETURN name,
+  interests;
 ```
 
 ## Using a timeout

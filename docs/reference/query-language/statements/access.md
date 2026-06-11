@@ -99,7 +99,8 @@ ACCESS @name [ ON [ ROOT | NAMESPACE | DATABASE ] ]
 -- Define system user for automation
 DEFINE USER automation ON DATABASE PASSWORD 'secret' ROLES VIEWER;
 -- Define bearer access method to generate API keys
-DEFINE ACCESS api ON DATABASE TYPE BEARER FOR USER DURATION FOR GRANT 10d;
+DEFINE ACCESS api
+  ON DATABASE TYPE BEARER FOR USER DURATION FOR GRANT 10d;
 -- Generate bearer grant to be used by the automation
 ACCESS api GRANT FOR USER automation;
 ```
@@ -116,7 +117,8 @@ NONE
         expiration: d'2024-12-26T16:15:51.517386053Z',
         grant: {
                 id: 'BNb2pS0GmaJz',
-                key: 'surreal-bearer-BNb2pS0GmaJz-5eTfQ5uEu8jbRb3oblqVMAt8'
+                key:
+                  'surreal-bearer-BNb2pS0GmaJz-5eTfQ5uEu8jbRb3oblqVMAt8'
         },
         id: 'BNb2pS0GmaJz',
         revocation: NONE,
@@ -133,7 +135,8 @@ NONE
 -- Create record representing a user
 CREATE user:1 CONTENT { name: "tobie" };
 -- Define bearer access method to generate API keys
-DEFINE ACCESS api ON DATABASE TYPE BEARER FOR RECORD DURATION FOR GRANT 10d;
+DEFINE ACCESS api
+  ON DATABASE TYPE BEARER FOR RECORD DURATION FOR GRANT 10d;
 -- Generate bearer grant to be used by the user
 ACCESS api GRANT FOR RECORD user:1;
 ```
@@ -155,7 +158,8 @@ NONE
         expiration: d'2024-12-26T16:16:41.996934501Z',
         grant: {
                 id: 'sRLEKGxObJuM',
-                key: 'surreal-bearer-sRLEKGxObJuM-iUUFe1vijFDaFDW7jceZJDkX'
+                key:
+                  'surreal-bearer-sRLEKGxObJuM-iUUFe1vijFDaFDW7jceZJDkX'
         },
         id: 'sRLEKGxObJuM',
         revocation: NONE,
@@ -183,7 +187,8 @@ ACCESS @name [ ON [ ROOT | NAMESPACE | DATABASE ] ]
 -- Create record representing a user
 CREATE user:1 CONTENT { name: "tobie" };
 -- Define bearer access method to generate API keys
-DEFINE ACCESS api ON DATABASE TYPE BEARER FOR RECORD DURATION FOR GRANT 10d;
+DEFINE ACCESS api
+  ON DATABASE TYPE BEARER FOR RECORD DURATION FOR GRANT 10d;
 -- Generate bearer grant to be used by the user
 ACCESS api GRANT FOR RECORD user:1;
 ```
@@ -205,7 +210,8 @@ NONE
         expiration: d'2024-12-26T16:17:24.903834523Z',
         grant: {
                 id: 'JdvDFKMCVYoM',
-                key: 'surreal-bearer-JdvDFKMCVYoM-0ahEAVY6egVdg33Vs5gc6J4h'
+                key:
+                  'surreal-bearer-JdvDFKMCVYoM-0ahEAVY6egVdg33Vs5gc6J4h'
         },
         id: 'JdvDFKMCVYoM',
         revocation: NONE,
@@ -247,7 +253,8 @@ Since the `subject` attribute of grants associated with a record is a record ide
 CREATE user:1 CONTENT { name: "tobie" };
 CREATE user:2 CONTENT { name: "jaime" };
 -- Define bearer access method to generate API keys
-DEFINE ACCESS api ON DATABASE TYPE BEARER FOR RECORD DURATION FOR GRANT 10d;
+DEFINE ACCESS api
+  ON DATABASE TYPE BEARER FOR RECORD DURATION FOR GRANT 10d;
 -- Generate bearer grants to be used by the users
 ACCESS api GRANT FOR RECORD user:1;
 ACCESS api GRANT FOR RECORD user:2;
@@ -277,7 +284,8 @@ NONE
         expiration: d'2024-12-26T16:18:57.061694228Z',
         grant: {
                 id: 'HaJ19zCnP6RI',
-                key: 'surreal-bearer-HaJ19zCnP6RI-R545vHcTbSCYdHnxIsVnjSFu'
+                key:
+                  'surreal-bearer-HaJ19zCnP6RI-R545vHcTbSCYdHnxIsVnjSFu'
         },
         id: 'HaJ19zCnP6RI',
         revocation: NONE,
@@ -293,7 +301,8 @@ NONE
         expiration: d'2024-12-26T16:18:57.063674755Z',
         grant: {
                 id: 'ND2ZegEHfUGl',
-                key: 'surreal-bearer-ND2ZegEHfUGl-JGPSr162qJ2bN8kURV8mYaLv'
+                key:
+                  'surreal-bearer-ND2ZegEHfUGl-JGPSr162qJ2bN8kURV8mYaLv'
         },
         id: 'ND2ZegEHfUGl',
         revocation: NONE,
@@ -344,7 +353,8 @@ ACCESS @name [ ON [ ROOT | NAMESPACE | DATABASE ] ]
 -- Create record representing a user
 CREATE user:1 CONTENT { name: "tobie" };
 -- Define bearer access method to generate API keys
-DEFINE ACCESS api ON DATABASE TYPE BEARER FOR RECORD DURATION FOR GRANT 10d;
+DEFINE ACCESS api
+  ON DATABASE TYPE BEARER FOR RECORD DURATION FOR GRANT 10d;
 -- Generate bearer grant to be used by the user
 ACCESS api GRANT FOR RECORD user:1;
 ```
@@ -366,7 +376,8 @@ NONE
         expiration: d'2024-12-27T10:36:09.216227523Z',
         grant: {
                 id: 'NJ2I2d7OXxN9',
-                key: 'surreal-bearer-NJ2I2d7OXxN9-Oa5LqF36IzfURpo6Bhxy9WMF'
+                key:
+                  'surreal-bearer-NJ2I2d7OXxN9-Oa5LqF36IzfURpo6Bhxy9WMF'
         },
         id: 'NJ2I2d7OXxN9',
         revocation: NONE,
@@ -412,7 +423,8 @@ Since the `subject` attribute of grants associated with a record is a record ide
 CREATE user:1 CONTENT { name: "tobie" };
 CREATE user:2 CONTENT { name: "jaime" };
 -- Define bearer access method to generate API keys
-DEFINE ACCESS api ON DATABASE TYPE BEARER FOR RECORD DURATION FOR GRANT 10d;
+DEFINE ACCESS api
+  ON DATABASE TYPE BEARER FOR RECORD DURATION FOR GRANT 10d;
 -- Generate bearer grants to be used by the users
 ACCESS api GRANT FOR RECORD user:1;
 ACCESS api GRANT FOR RECORD user:2;
@@ -442,7 +454,8 @@ NONE
         expiration: d'2024-12-27T10:42:35.040903414Z',
         grant: {
                 id: 'mjSACes6sej4',
-                key: 'surreal-bearer-mjSACes6sej4-WbEPMgmLTO3Jfg3po4we9m0V'
+                key:
+                  'surreal-bearer-mjSACes6sej4-WbEPMgmLTO3Jfg3po4we9m0V'
         },
         id: 'mjSACes6sej4',
         revocation: NONE,
@@ -458,7 +471,8 @@ NONE
         expiration: d'2024-12-27T10:42:35.043164533Z',
         grant: {
                 id: 'RFilJMRp9lZi',
-                key: 'surreal-bearer-RFilJMRp9lZi-OmflYxXwikDAvm8CNpsWYxd6'
+                key:
+                  'surreal-bearer-RFilJMRp9lZi-OmflYxXwikDAvm8CNpsWYxd6'
         },
         id: 'RFilJMRp9lZi',
         revocation: NONE,
@@ -575,9 +589,11 @@ DEFINE ACCESS account ON DATABASE TYPE RECORD
     IF $email = "me@me.com" {
         THROW "That's my email!!!"
     } ELSE {
-        CREATE user SET email = $email, pass = crypto::argon2::generate($pass)}   
+        CREATE user SET email = $email,
+          pass = crypto::argon2::generate($pass)}
     })
-    SIGNIN ( SELECT * FROM user WHERE email = $email AND crypto::argon2::compare(pass, $pass) )
+    SIGNIN ( SELECT * FROM user WHERE email = $email
+      AND crypto::argon2::compare(pass, $pass) )
     DURATION FOR TOKEN 15m, FOR SESSION 12h
 ;
 ```

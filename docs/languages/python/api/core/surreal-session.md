@@ -60,7 +60,7 @@ A session exposes the same interface as the parent connection. All methods below
 | Method | Returns | Description |
 |---|---|---|
 | [`.use(namespace, database)`](surreal.md#use) | `None` | Switch namespace and database for this session. |
-| [`.query(query, vars)`](surreal.md#query) | [`Value`](../types/index.md#value) | Execute a SurrealQL query. |
+| [`.query(query, vars)`](surreal.md#query) | Awaitable / lazy `Value` or `tuple[Value, ...]` builder | Execute one or more SurrealQL statements. |
 | [`.signin(vars)`](surreal.md#signin) | [`Tokens`](../types/index.md#tokens) | Sign in within this session. |
 | [`.signup(vars)`](surreal.md#signup) | [`Tokens`](../types/index.md#tokens) | Sign up within this session. |
 | [`.authenticate(token)`](surreal.md#authenticate) | `None` | Authenticate this session with a JWT. |
@@ -68,14 +68,12 @@ A session exposes the same interface as the parent connection. All methods below
 | [`.let(key, value)`](surreal.md#let) | `None` | Define a session-scoped variable. |
 | [`.unset(key)`](surreal.md#unset) | `None` | Remove a session-scoped variable. |
 | [`.select(record)`](surreal.md#select) | [`Value`](../types/index.md#value) | Select records. |
-| [`.create(record, data)`](surreal.md#create) | [`Value`](../types/index.md#value) | Create a record. |
-| [`.update(record, data)`](surreal.md#update) | [`Value`](../types/index.md#value) | Replace a record. |
-| [`.merge(record, data)`](surreal.md#merge) | [`Value`](../types/index.md#value) | Merge data into a record. |
-| [`.patch(record, data)`](surreal.md#patch) | [`Value`](../types/index.md#value) | Apply JSON Patch operations. |
-| [`.delete(record)`](surreal.md#delete) | [`Value`](../types/index.md#value) | Delete records. |
-| [`.insert(table, data)`](surreal.md#insert) | [`Value`](../types/index.md#value) | Insert records. |
-| [`.insert_relation(table, data)`](surreal.md#insert-relation) | [`Value`](../types/index.md#value) | Insert relation records. |
-| [`.upsert(record, data)`](surreal.md#upsert) | [`Value`](../types/index.md#value) | Upsert a record. |
+| [`.create(record, data)`](surreal.md#create) | CRUD builder -> `dict[str, Value]` | Create a record (chain `.content/.replace/.merge/.patch`). |
+| [`.update(record, data)`](surreal.md#update) | CRUD builder -> `dict` or `list` | Update records (chain `.content/.replace/.merge/.patch`). |
+| [`.upsert(record, data)`](surreal.md#upsert) | CRUD builder -> `dict` or `list` | Upsert a record (chain `.content/.replace/.merge/.patch`). |
+| [`.delete(record)`](surreal.md#delete) | CRUD builder -> `dict` or `list` | Delete records. |
+| [`.insert(table, data, relation=False)`](surreal.md#insert) | Insert builder -> `list[Value]` | Insert records. Pass `relation=True` or chain `.relation()` for `INSERT RELATION`. |
+| [`.run(name, args, version)`](surreal.md#run) | [`Value`](../types/index.md#value) | Call a SurrealDB function. |
 | [`.live(table, diff)`](surreal.md#live) | `UUID` | Start a live query. |
 | [`.kill(query_uuid)`](surreal.md#kill) | `None` | Kill a live query. |
 

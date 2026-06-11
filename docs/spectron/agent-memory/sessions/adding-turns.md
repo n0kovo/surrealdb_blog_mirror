@@ -48,13 +48,15 @@ When a turn arrives, Spectron runs the following steps synchronously before retu
 ## Python SDK
 
 ```python
-result = await session.turn(role="user", content="I just got promoted to CTO")
+result = await session.turn(role="user",
+    content="I just got promoted to CTO")
 ```
 
 ## JavaScript SDK
 
 ```javascript
-const result = await session.turn({ role: "user", content: "I just got promoted to CTO" });
+const result = await session.turn({ role: "user",
+    content: "I just got promoted to CTO" });
 ```
 
 ## Extraction result
@@ -65,7 +67,8 @@ The response from a turn submission contains the full extraction diff for that t
 {
   "turn_id": "turn:01hy2…",
   "entities": [
-    { "id": "entity:01hy2a…", "type": "person", "label": "Alice", "source_turn": "turn:01hy2…" }
+        { "id": "entity:01hy2a…", "type": "person", "label": "Alice",
+        "source_turn": "turn:01hy2…" }
   ],
   "attributes": [
     {
@@ -153,7 +156,8 @@ Because the extraction result returns synchronously with the turn response, you 
 A common pattern is to compare the returned arrays against your local state and highlight changes in the UI:
 
 ```python
-result = await session.turn(role="user", content="Actually I moved to Berlin last month")
+result = await session.turn(role="user",
+    content="Actually I moved to Berlin last month")
 
 for attr in result.attributes:
     ui.render_attribute(attr.entity, attr.key, attr.value)
@@ -164,7 +168,8 @@ for correction in result.corrections:
 ```
 
 ```javascript
-const result = await session.turn({ role: "user", content: "Actually I moved to Berlin last month" });
+const result = await session.turn({ role: "user",
+    content: "Actually I moved to Berlin last month" });
 
 for (const attr of result.attributes) {
     ui.renderAttribute(attr.entity, attr.key, attr.value);

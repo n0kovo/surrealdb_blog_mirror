@@ -21,7 +21,7 @@ Install the [SurrealDB SDK](https://mvnrepository.com/artifact/com.surrealdb/sur
 
 ```groovy
 ext {
-    surrealdbVersion = "3.0.0-ALPHA.1"
+    surrealdbVersion = "2.1.1"
 }
 
 dependencies {
@@ -34,7 +34,7 @@ dependencies {
 **Gradle (Kotlin)**
 
 ```kotlin
-val surrealdbVersion by extra("3.0.0-ALPHA.1")
+val surrealdbVersion by extra("2.1.1")
 
 dependencies {
     implementation("com.surrealdb:surrealdb:${surrealdbVersion}")
@@ -48,7 +48,7 @@ dependencies {
 <dependency>
     <groupId>com.surrealdb</groupId>
     <artifactId>surrealdb</artifactId>
-    <version>3.0.0-ALPHA.1</version>
+    <version>2.1.1</version>
 </dependency>
 ```
 

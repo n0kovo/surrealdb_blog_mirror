@@ -280,7 +280,9 @@ value = "[]"
 
 */
 
-DELETE person WHERE ->knows->person->(knows WHERE influencer = false) TIMEOUT 5s;
+DELETE person
+  WHERE ->knows->person->(knows
+  WHERE influencer = false) TIMEOUT 5s;
 ```
 
 ## Deleting graph edges

@@ -5,7 +5,7 @@ generated: stub
 
 # Languages
 
-_Auto-generated index — 1 page and 7 sub-sections._
+_Auto-generated index — 1 page and 8 sub-sections._
 
 ## Sub-sections
 
@@ -16,6 +16,7 @@ _Auto-generated index — 1 page and 7 sub-sections._
 - **[PHP SDK](php/index.md)** — The SurrealDB SDK for PHP enables simple and advanced querying of a remote database.
 - **[Python](python/index.md)** — The SurrealDB SDK for Python enables simple and advanced querying of a remote or embedded database.
 - **[Rust](rust/index.md)**
+- **[Swift SDK](swift/index.md)** — The SurrealDB SDK for Swift enables simple and advanced querying of a remote database from Apple-platform and server-side Swift applications.
 
 ## Pages
 

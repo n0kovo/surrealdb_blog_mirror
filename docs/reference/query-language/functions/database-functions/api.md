@@ -286,7 +286,8 @@ api::invoke("/serialize_json").{
 ```surql title="Response"
 { 
     body: '{"message":"Hello"}', 
-    headers: { "access-control-allow-origin": '*', "content-type": 'application/json' }, 
+    headers: { "access-control-allow-origin": '*',
+      "content-type": 'application/json' }
     status: 200 
 }
 ```

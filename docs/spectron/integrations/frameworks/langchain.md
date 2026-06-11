@@ -14,7 +14,7 @@ Package: **`spectron-langchain`** (PyPI). It depends on LangChain in your app, n
 ## Installation
 
 ```bash
-pip install surrealdb-spectron spectron-langchain
+pip install surrealdb spectron-langchain
 ```
 
 ## Environment
@@ -39,7 +39,7 @@ If the host is Claude Desktop, Cursor, or another MCP-native client, prefer **`s
 
 ## When to use the SDK instead
 
-If your application calls Spectron explicitly (not only through LangChain’s memory interface), use **`surrealdb-spectron`** directly. See [Python SDK](../sdks/python.md).
+If your application calls Spectron explicitly (not only through LangChain’s memory interface), use **`surrealdb`** directly. See [Python SDK](../sdks/python.md).
 
 ## npm / TypeScript
 

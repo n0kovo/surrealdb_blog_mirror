@@ -535,7 +535,14 @@ value = "true"
 
 */
 
-RETURN array::boolean_and(["true", "false", 1, 1], ["true", "true", 0, "true"]);
+RETURN array::boolean_and(["true",
+  "false",
+  1,
+  1],
+  ["true",
+  "true",
+  0,
+  "true"]);
 
 -- [true, true, false, true]
 ```
@@ -588,7 +595,14 @@ value = "true"
 
 */
 
-RETURN array::boolean_or([false, true, false, true], [false, false, true, true]);
+RETURN array::boolean_or([false,
+  true,
+  false,
+  true],
+  [false,
+  false,
+  true,
+  true]);
 
 -- [false, true, true, true]
 ```
@@ -622,7 +636,14 @@ value = "false"
 
 */
 
-RETURN array::boolean_xor([false, true, false, true], [false, false, true, true]);
+RETURN array::boolean_xor([false,
+  true,
+  false,
+  true],
+  [false,
+  false,
+  true,
+  true]);
 
 -- [false, true, true, false]
 ```
@@ -944,10 +965,12 @@ value = "[{ importance: 10, message: 'I need some help with this query...' }, { 
 */
 
  [
-    { importance: 10, message: "I need some help with this query..." },
+    { importance: 10,
+      message: "I need some help with this query..." }
     { importance: 0, message: "TEST Is this thing on?" },
     { importance: 5, message: "I have an idea. What if we..."},
-    { importance: 100, message: "Stuck on an island with two hours of battery life left. Can you..."}
+    { importance: 100,
+      message: "Stuck on an island with two hours of battery life left. Can you..."}
 ].filter(|$v| $v.importance > 5);
 ```
 
@@ -959,7 +982,8 @@ value = "[{ importance: 10, message: 'I need some help with this query...' }, { 
 	},
 	{
 		importance: 100,
-		message: 'Stuck on an island with two hours of battery life left. Can you...'
+		message:
+		  'Stuck on an island with two hours of battery life left. Can you...'
 	}
 ]
 ```
@@ -1058,10 +1082,12 @@ value = "[0, 3]"
 */
 
  [
-    { importance: 10, message: "I need some help with this query..." },
+    { importance: 10,
+      message: "I need some help with this query..." }
     { importance: 0, message: "TEST Is this thing on?" },
     { importance: 5, message: "I have an idea. What if we..."},
-    { importance: 100, message: "Stuck on an island with two hours of battery life left. Can you..."}
+    { importance: 100,
+      message: "Stuck on an island with two hours of battery life left. Can you..."}
 ].filter_index(|$v| $v.importance > 5);
 ```
 
@@ -1243,7 +1269,15 @@ value = "[1, 2, 3, 4, 'SurrealDB', 5, 6, [7, 8]]"
 
 */
 
-RETURN array::flatten([ [1, 2], [3, 4], 'SurrealDB', [5, 6, [7, 8]] ]);
+RETURN array::flatten([ [1,
+  2],
+  [3,
+  4],
+  'SurrealDB',
+  [5,
+  6,
+  [7,
+  8]] ]);
 ```
 
 ```surql title="Response"
@@ -1333,7 +1367,10 @@ value = ""I_don't_like_whitespace""
 
 "I don't like whitespace"
   .split(" ")
-  .fold("", |$one, $two, $index| IF $index = 0 { $one + $two } ELSE { $one + "_" + $two });
+  .fold("",
+    |$one,
+    $two,
+    $index| IF $index = 0 { $one + $two } ELSE { $one + "_" + $two });
 ```
 
 ```surql title="Output"
@@ -1389,7 +1426,8 @@ RELATE city:two -> to -> city:three SET distance = 4.1;
 	ELSE {
 		{
 			city: $val.city,
-			distance: (SELECT VALUE distance FROM ONLY to WHERE in = $acc.city AND out = $val.city LIMIT 1) + $acc.distance,
+			distance: (SELECT VALUE distance FROM ONLY to WHERE in = $acc.city
+			  AND out = $val.city LIMIT 1) + $acc.distance,
 			from: $acc.from,
 			to: $val.city,
 			trips: $acc.trips + 1
@@ -1432,7 +1470,21 @@ value = "[1, 2, 3, 4, 5, 6, 7, 8, 9]"
 
 */
 
-RETURN array::group([1, 2, 3, 4, [3, 5, 6], [2, 4, 5, 6], 7, 8, 8, 9]);
+RETURN array::group([1,
+  2,
+  3,
+  4,
+  [3,
+  5,
+  6],
+  [2,
+  4,
+  5,
+  6],
+  7,
+  8,
+  8,
+  9]);
 
 -- [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 ```
@@ -1655,7 +1707,14 @@ value = "false"
 
 */
 
-RETURN array::logical_and([true, false, true, false], [true, true, false, false]);
+RETURN array::logical_and([true,
+  false,
+  true,
+  false],
+  [true,
+  true,
+  false,
+  false]);
 
 -- [ true, false, false, false ]
 ```
@@ -1713,7 +1772,14 @@ value = "false"
 
 */
 
-RETURN array::logical_or([true, false, true, false], [true, true, false, false]);
+RETURN array::logical_or([true,
+  false,
+  true,
+  false],
+  [true,
+  true,
+  false,
+  false]);
 
 -- [ true, true, true, false ]
 ```
@@ -1764,7 +1830,14 @@ value = "false"
 
 */
 
-RETURN array::logical_xor([true, false, true, false], [true, true, false, false]);
+RETURN array::logical_xor([true,
+  false,
+  true,
+  false],
+  [true,
+  true,
+  false,
+  false]);
 
 -- [ false, true, true, false ]
 ```
@@ -1884,7 +1957,8 @@ error = ""Couldn't coerce return value from function `ANONYMOUS`: Expected `int`
 ```
 
 ```surql title="Response"
-"Couldn't coerce return value from function `ANONYMOUS`: Expected `int` but found `2.1f`"
+"Couldn 't coerce return value from function `ANONYMOUS`: Expected
+  `int` but found `2.1f`"
 ```
 
 The `array::map` function also allows access to the index of each item if a second parameter is added.
@@ -2010,7 +2084,9 @@ value = "true"
 
 */
 
-RETURN array::matches([{id: r"ohno:0"}, {id: r"ohno:1"}], {id: r"ohno:1"});
+RETURN array::matches([{id: r"ohno:0"},
+  {id: r"ohno:1"}],
+  {id: r"ohno:1"});
 
 -- [false, true]
 ```
@@ -2743,7 +2819,15 @@ value = "[8, 9, 10, '2.2', '3', '11', 'Álvares', 'Obrigado', 'senhor']"
 */
 
 ['Obrigado', 'senhor', 'Álvares', 8, 9, 10, '3', '2.2', '11'].sort();
-['Obrigado', 'senhor', 'Álvares', 8, 9, 10, '3', '2.2', '11'].sort_natural_lexical();
+['Obrigado',
+  'senhor',
+  'Álvares',
+  8,
+  9,
+  10,
+  '3',
+  '2.2',
+  '11'].sort_natural_lexical();
 ```
 
 ```surql title="Output"
@@ -2826,7 +2910,14 @@ value = "["What's", 'it', 'got', 'in', 'its', 'pocketses?']"
 
 */
 
-RETURN array::swap(["What's", "its", "got", "in", "it", "pocketses?"], 1, 4);
+RETURN array::swap(["What's",
+  "its",
+  "got",
+  "in",
+  "it",
+  "pocketses?"],
+  1,
+  4);
 ```
 
 ```surql title="Output"

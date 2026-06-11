@@ -124,7 +124,7 @@ If your vector store also held per-user conversational memory (previous chat tur
 # For each user, create a session and ingest their history
 for user_id, history in user_histories.items():
     session = await memory.sessions.create(
-        scope={"org": "my-org", "user": user_id},
+        scope=[f"org/my-org/user/{user_id}"],
     )
     for message in history:
         await session.turn(role=message["role"], content=message["content"])
@@ -133,7 +133,7 @@ for user_id, history in user_histories.items():
 ```typescript
 for (const [userId, history] of Object.entries(userHistories)) {
     const session = await memory.sessions.create({
-        scope: { org: "my-org", user: userId },
+        scope: [`org/my-org/user/${userId}`],
     });
     for (const message of history) {
         await session.turn({ role: message.role, content: message.content });

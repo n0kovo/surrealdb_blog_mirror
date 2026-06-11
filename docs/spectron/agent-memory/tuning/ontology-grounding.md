@@ -28,7 +28,7 @@ None of these components are mandatory. You can set only entity types without at
 ### Python
 
 ```python
-from spectron import Spectron
+from surrealdb import Spectron
 
 memory = Spectron(context="acme-support", api_key=os.environ["SPECTRON_API_KEY"])
 

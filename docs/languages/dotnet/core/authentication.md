@@ -52,7 +52,8 @@ The .NET SDK has a [`.Query()` method](writing-surrealql.md) which allows you to
 await db.Query(
     $"""
     DEFINE ACCESS account ON DATABASE TYPE RECORD
-	SIGNUP ( CREATE user SET email = $email, pass = crypto::argon2::generate($pass) )
+		SIGNUP ( CREATE user SET email = $email,
+	    pass = crypto::argon2::generate($pass) )
 	SIGNIN ( SELECT * FROM user WHERE email = $email AND crypto::argon2::compare(pass, $pass) )
 	DURATION FOR TOKEN 15m, FOR SESSION 12h;
     """
@@ -176,7 +177,8 @@ await db.SignIn(credentials)
 
 ```csharp
 // Sign in as root user
-await db.SignIn(new RootAuth { Username = "root", Password = "secret" });
+await db.SignIn(new RootAuth { Username = "root",
+    Password = "secret" });
 ```
 
 **Namespace user**

@@ -567,7 +567,8 @@ curl -X POST -H "Accept: application/json" -d '{"user":"root","pass":"secret"}' 
 To create the namespace user needed for the following query, use the following command.
 
 ```bash
-curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Accept: application/json" \
+curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
+  -H "Accept: application/json"
   -d 'DEFINE USER johndoe ON NAMESPACE PASSWORD "123456" ROLES EDITOR' http://localhost:8000/sql
 ```
 
@@ -707,7 +708,8 @@ The above example will only work if a record access method has already been set 
 Before you sign up a new [record user](../../learn/security/authentication/authentication.md#record-users), you must first [define a record access method](../query-language/statements/define/access/record.md) for the user. The following curl command will do so on the command line using the [`POST /sql`](#sql) endpoint.
 
 ```bash
-curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Accept: application/json" \
+curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
+  -H "Accept: application/json"
   -d 'DEFINE ACCESS users ON DATABASE TYPE RECORD
     SIGNUP ( CREATE user SET email = $email, pass = crypto::argon2::generate($pass) )
     SIGNIN ( SELECT * FROM user WHERE email = $email AND crypto::argon2::compare(pass, $pass) )
@@ -722,7 +724,8 @@ To do the same using Postman, use the following steps:
 -- Enable authentication directly against a SurrealDB record
 DEFINE ACCESS users ON DATABASE TYPE RECORD
     SIGNUP ( CREATE user SET email = $email, pass = crypto::argon2::generate($pass) )
-    SIGNIN ( SELECT * FROM user WHERE email = $email AND crypto::argon2::compare(pass, $pass) )
+    SIGNIN ( SELECT * FROM user WHERE email = $email
+      AND crypto::argon2::compare(pass, $pass) )
     DURATION FOR SESSION 24h
 ;
 ```
@@ -1667,7 +1670,8 @@ Query parameters can be provided via URL query parameters. These parameters will
 **V2.x+**
 
 ```bash title="Request"
-curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Accept: application/json" \
+curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
+  -H "Accept: application/json"
   -d 'SELECT * FROM person WHERE age > $age' http://localhost:8000/sql?age=18
 ```
 
@@ -1773,15 +1777,18 @@ The GraphQL endpoint enables use of GraphQL queries to interact with your data.
 First, use the `/sql` endpoint to send in a [`DEFINE CONFIG`](../query-language/statements/define/config.md#define-config-graphql) statement to set the database up to use GraphQL.
 
 ```bash
-curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Accept: application/json" \
+curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
+  -H "Accept: application/json"
   -d 'DEFINE TABLE person SCHEMAFULL; DEFINE FIELD name ON TABLE person TYPE string; DEFINE FIELD age ON TABLE person TYPE number;' \
   http://localhost:8000/sql
 
-curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Accept: application/json" \
+curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
+  -H "Accept: application/json"
   -d 'CREATE person:simon SET name = "Simon", age = 23; CREATE person:marcus SET name = "Marcus", age = 28;' \
   http://localhost:8000/sql
 
-curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Accept: application/json" \
+curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
+  -H "Accept: application/json"
   -d 'DEFINE CONFIG GRAPHQL AUTO' \
   http://localhost:8000/sql
 ```

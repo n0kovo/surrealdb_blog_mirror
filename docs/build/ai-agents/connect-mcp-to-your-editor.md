@@ -60,7 +60,8 @@ This is the fastest path: the editor spawns `surreal mcp` as a child process and
   "mcpServers": {
     "surrealdb": {
       "command": "surreal",
-      "args": ["mcp", "--user", "root", "--pass", "secret", "--ns", "main", "--db", "main", "memory"]
+            "args": ["mcp", "--user", "root", "--pass", "secret",
+          "--ns", "main", "--db", "main", "memory"]
     }
   }
 }
@@ -72,7 +73,8 @@ This is the fastest path: the editor spawns `surreal mcp` as a child process and
 **Persist data between sessions** by replacing `memory` with a [file-backed path](../../reference/cli/surrealdb-cli/commands/start.md#datastore-configuration):
 
 ```json
-"args": ["mcp", "--user", "root", "--pass", "secret", "--ns", "main", "--db", "main", "rocksdb://tmp/surreal-mcp"]
+"args": ["mcp", "--user", "root", "--pass", "secret", "--ns", "main",
+    "--db", "main", "rocksdb://tmp/surreal-mcp"]
 ```
 
 Create the directory first, or pick a path under your project. See [`surreal mcp`](../../reference/cli/surrealdb-cli/commands/mcp.md) for other storage backends.
@@ -104,7 +106,8 @@ Config file (macOS): `~/Library/Application Support/Claude/claude_desktop_config
   "mcpServers": {
     "surrealdb": {
       "command": "surreal",
-      "args": ["mcp", "--user", "root", "--pass", "secret", "--ns", "main", "--db", "main", "memory"]
+            "args": ["mcp", "--user", "root", "--pass", "secret",
+          "--ns", "main", "--db", "main", "memory"]
     }
   }
 }
@@ -122,7 +125,8 @@ VS Code uses a `servers` object and a `type` field. Workspace config: `.vscode/m
     "surrealdb": {
       "type": "stdio",
       "command": "surreal",
-      "args": ["mcp", "--user", "root", "--pass", "secret", "--ns", "main", "--db", "main", "memory"]
+            "args": ["mcp", "--user", "root", "--pass", "secret",
+          "--ns", "main", "--db", "main", "memory"]
     }
   }
 }

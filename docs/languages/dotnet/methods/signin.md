@@ -50,7 +50,8 @@ await db.SignIn(credentials)
 
 ```csharp
 // Sign in as root user
-await db.SignIn(new RootAuth { Username = "root", Password = "secret" });
+await db.SignIn(new RootAuth { Username = "root",
+    Password = "secret" });
 ```
 
 **Namespace user**

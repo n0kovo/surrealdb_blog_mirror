@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_917 pages_  
+_946 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -18,7 +18,7 @@ _917 pages_
 - [Model Context Protocol (MCP)](build/ai-agents/mcp.md)
   Connect AI agents and IDEs to SurrealDB through the built-in MCP server over HTTP or stdio.
 - [Deployment](build/deployment/index.md)
-  Deployment models for SurrealDB — managed cloud, single-node RocksDB, multi-node SurrealDS, and embedded runtimes — and how to choose between them.
+  Deployment models for SurrealDB — managed cloud, single-node RocksDB, multi-node clusters, and embedded runtimes — and how to choose between them.
 - [Amazon EKS](build/deployment/self-hosted/amazon-eks.md)
   Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that eliminates the need to install.
 - [Azure AKS](build/deployment/self-hosted/azure-aks.md)
@@ -26,9 +26,9 @@ _917 pages_
 - [Docker](build/deployment/self-hosted/docker.md)
   A tutorial to run SurrealDB from within Docker.
 - [Google GKE](build/deployment/self-hosted/google-gke.md)
-  How to set up a SurrealDB cluster backed by TiKV on Google Kubernetes Engine.
+  How to set up a highly available SurrealDB cluster on Google Kubernetes Engine.
 - [Kubernetes](build/deployment/self-hosted/kubernetes.md)
-  A guide on the process of deploying SurrealDB to Kubernetes in Docker, with TiKV as the database storage engine.
+  Deploy SurrealDB to Kubernetes with RocksDB on a persistent volume.
 - [Self-hosted deployment](build/deployment/self-hosted/overview.md)
   Getting started with SurrealDB is quick and easy. Follow these tutorials for deploying SurrealDB in different environments.
 - [Architecture](build/deployment/surrealdb-cloud/architecture.md)
@@ -904,6 +904,58 @@ _917 pages_
   The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
 - [Quick start](languages/rust/start.md)
   The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
+- [Authentication](languages/swift/concepts/authentication.md)
+  Learn how to sign in, sign up, authenticate and resume sessions with the SurrealDB Swift SDK.
+- [Connecting to SurrealDB](languages/swift/concepts/connecting.md)
+  Learn how to connect to SurrealDB over HTTP or WebSocket and configure the client in the Swift SDK.
+- [Live queries](languages/swift/concepts/live-queries.md)
+  Subscribe to real-time data changes using live queries and AsyncStream in the SurrealDB Swift SDK.
+- [Models](languages/swift/concepts/models.md)
+  Define type-safe models for SurrealDB using the @SurrealModel macro or manual conformance in the Swift SDK.
+- [Predicates](languages/swift/concepts/predicates.md)
+  Build type-safe query conditions with the predicate DSL in the SurrealDB Swift SDK.
+- [Query DSL](languages/swift/concepts/query-dsl.md)
+  Build queries with compile-time macros or the programmatic SurrealDSL builder in the Swift SDK.
+- [Data types](languages/swift/data-types.md)
+  An overview of the data types used by the SurrealDB Swift SDK, including SurrealValue and SurrealRecordID.
+- [Swift SDK](languages/swift/index.md)
+  The SurrealDB SDK for Swift enables simple and advanced querying of a remote database from Apple-platform and server-side Swift applications.
+- [Installation](languages/swift/installation.md)
+  In this section, you will learn how to install the Swift SDK in your project.
+- [authenticate](languages/swift/methods/authenticate.md)
+  The authenticate() method for the SurrealDB Swift SDK authenticates the connection with a JWT token.
+- [connect](languages/swift/methods/connect.md)
+  The connect() method for the SurrealDB Swift SDK connects the client to the configured endpoint.
+- [create](languages/swift/methods/create.md)
+  The create() method for the SurrealDB Swift SDK creates a record in the database.
+- [delete](languages/swift/methods/delete.md)
+  The delete() method for the SurrealDB Swift SDK deletes matching records, or a specific record.
+- [SDK methods](languages/swift/methods/index.md)
+  The Swift SDK for SurrealDB enables simple and advanced querying of a remote database.
+- [invalidate](languages/swift/methods/invalidate.md)
+  The invalidate() method for the SurrealDB Swift SDK clears the connection's authentication state.
+- [kill](languages/swift/methods/kill.md)
+  The kill() method for the SurrealDB Swift SDK stops a running live query.
+- [live](languages/swift/methods/live.md)
+  The live() method for the SurrealDB Swift SDK subscribes to changes via a live query.
+- [queryRaw](languages/swift/methods/query-raw.md)
+  The queryRaw() method for the SurrealDB Swift SDK runs a raw SurrealQL query with bound parameters.
+- [query](languages/swift/methods/query.md)
+  The query() method for the SurrealDB Swift SDK runs a query built with the query DSL or macros.
+- [select](languages/swift/methods/select.md)
+  The select() method for the SurrealDB Swift SDK selects all records in a table, or a specific record.
+- [signin](languages/swift/methods/signin.md)
+  The signin() method for the SurrealDB Swift SDK signs in to a specific authentication level.
+- [signup](languages/swift/methods/signup.md)
+  The signup() method for the SurrealDB Swift SDK signs a new record-access user up.
+- [update](languages/swift/methods/update.md)
+  The update() method for the SurrealDB Swift SDK updates matching records, or a specific record.
+- [upsert](languages/swift/methods/upsert.md)
+  The upsert() method for the SurrealDB Swift SDK creates or updates matching records.
+- [use](languages/swift/methods/use.md)
+  The use() method for the SurrealDB Swift SDK switches to a specific namespace and database.
+- [Getting started](languages/swift/start.md)
+  In this section, you will learn how to connect to SurrealDB and run your first query using the Swift SDK.
 - [Common patterns](learn/data-models/document/common-patterns.md)
   Map document-database concepts to SurrealDB, compare SurrealQL with MongoDB-style operations, and find resources for CRUD and migration.
 - [Nested objects and arrays](learn/data-models/document/nested-objects-and-arrays.md)
@@ -1559,7 +1611,7 @@ _917 pages_
 - [Windows](running/installation/windows.md)
   Use this tutorial to install SurrealDB on Windows using the SurrealDB install script, or using third-party package managers like Chocolatey or Scoop.
 - [Multi-node](running/multi-node.md)
-  For highly-available and highly-scalable setups, SurrealDB can be run on top of a TiKV cluster, with the ability to horizontally scale to very large datasets.
+  Run SurrealDB against distributed storage for horizontally scalable, highly available clusters.
 - [Overview](running/overview.md)
   Ways to run SurrealDB—from a browser sandbox to a managed cloud instance to installing on your own hardware.
 - [Surrealist Sandbox](running/sandbox.md)
@@ -1679,11 +1731,13 @@ _917 pages_
 - [Embedded library quickstart](spectron/index/quickstarts/embedded.md)
   Integration surfaces for Spectron.
 - [Hosted quickstart](spectron/index/quickstarts/hosted.md)
-  Get up and running with Spectron Cloud in five minutes.
+  Get up and running with Spectron on SurrealDB Cloud in five minutes.
 - [Self-hosted quickstart](spectron/index/quickstarts/self-hosted.md)
   Run Spectron with Docker Compose and make your first remember and recall calls.
+- [Spectron on SurrealDB Cloud](spectron/index/quickstarts/surrealdb-cloud.md)
+  How Spectron contexts, authentication, and APIs work on SurrealDB Cloud versus self-hosted deployments.
 - [Surrealist dashboard quickstart](spectron/index/quickstarts/surrealist-dashboard.md)
-  Create a Spectron context in Surrealist, try the Playground, inspect memories, add knowledge, and call the HTTP API.
+  Create a Spectron Context in SurrealDB Cloud via Surrealist, mint API keys, and integrate with the Spectron data plane.
 - [The accuracy promise](spectron/index/welcome/accuracy-promise.md)
   Defensible correctness – provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
 - [How it works in five minutes](spectron/index/welcome/how-it-works.md)
@@ -1720,6 +1774,8 @@ _917 pages_
   Using Spectron from JavaScript and TypeScript applications.
 - [Python SDK](spectron/integrations/sdks/python.md)
   Using Spectron from Python applications and agents.
+- [Swift SDK](spectron/integrations/sdks/swift.md)
+  Using Spectron from Swift applications and agents.
 - [Embedded library](spectron/integrations/surfaces/embedded-library.md)
   In-process integration surfaces.
 - [Filesystem view](spectron/integrations/surfaces/filesystem-view.md)
@@ -1749,7 +1805,9 @@ _917 pages_
 - [JavaScript SDK reference](spectron/reference/sdk-javascript.md)
   Package layout and configuration for @surrealdb/spectron.
 - [Python SDK reference](spectron/reference/sdk-python.md)
-  Package layout and configuration for surrealdb-spectron.
+  Package layout and configuration for the Spectron client in surrealdb.
+- [Swift SDK reference](spectron/reference/sdk-swift.md)
+  Package layout and configuration for the Spectron Swift client.
 - [Architecture overview](spectron/self-hosting/deployment/architecture-overview.md)
   How Spectron's components fit together in a self-hosted deployment.
 - [Bare metal](spectron/self-hosting/deployment/bare-metal.md)

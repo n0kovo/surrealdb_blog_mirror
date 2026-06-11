@@ -175,7 +175,8 @@ try {
     });
     
     await txn.create(new RecordId('posts', '1'), {
-        content: { author: new RecordId('users', 'john'), title: 'Hello' }
+                content: { author: new RecordId('users', 'john'),
+            title: 'Hello' }
     });
     
     // Commit all changes atomically
@@ -668,7 +669,8 @@ await session.set('user_role', 'admin');
 
 // Subscribe to session events
 session.subscribe('auth', (tokens) => {
-    console.log('Session auth changed:', tokens ? 'authenticated' : 'signed out');
+        console.log('Session auth changed:',
+        tokens ? 'authenticated' : 'signed out');
 });
 
 session.subscribe('using', (using) => {
@@ -691,7 +693,8 @@ const users = await session.select('users');
 
 // Start a transaction
 const txn = await session.beginTransaction();
-await txn.create('logs:1', { content: { message: 'User logged in' } });
+await txn.create('logs:1',
+    { content: { message: 'User logged in' } });
 await txn.commit();
 
 // Fork the session to create an isolated copy

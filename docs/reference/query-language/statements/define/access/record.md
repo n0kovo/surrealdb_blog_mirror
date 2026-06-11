@@ -51,7 +51,8 @@ value = "NONE"
 
 DEFINE ACCESS account ON DATABASE TYPE RECORD
 	SIGNUP ( CREATE user SET email = $email, pass = crypto::argon2::generate($pass) )
-	SIGNIN ( SELECT * FROM user WHERE email = $email AND crypto::argon2::compare(pass, $pass) )
+	SIGNIN ( SELECT * FROM user WHERE email = $email
+	  AND crypto::argon2::compare(pass, $pass) )
 	DURATION FOR TOKEN 15m, FOR SESSION 12h
 ;
 ```
@@ -237,7 +238,8 @@ value = "NONE"
 
 DEFINE ACCESS user ON DATABASE TYPE RECORD
 	SIGNUP ( CREATE user SET email = $email, pass = crypto::argon2::generate($pass) )
-	SIGNIN ( SELECT * FROM user WHERE email = $email AND crypto::argon2::compare(pass, $pass) )
+	SIGNIN ( SELECT * FROM user WHERE email = $email
+	  AND crypto::argon2::compare(pass, $pass) )
 	WITH REFRESH
 	DURATION FOR GRANT 15d, FOR TOKEN 1m, FOR SESSION 12h
 ;
@@ -331,7 +333,8 @@ value = "NONE"
 
 DEFINE ACCESS user ON DATABASE TYPE RECORD
     SIGNUP ( CREATE user SET email = $email, pass = crypto::argon2::generate($pass), enabled = true )
-    SIGNIN ( SELECT * FROM user WHERE email = $email AND crypto::argon2::compare(pass, $pass) )
+    SIGNIN ( SELECT * FROM user WHERE email = $email
+      AND crypto::argon2::compare(pass, $pass) )
     AUTHENTICATE {
         IF !$auth.enabled {
             THROW "This user is not enabled";
@@ -360,7 +363,8 @@ value = "NONE"
 
 DEFINE ACCESS user ON DATABASE TYPE RECORD
     SIGNUP ( CREATE user SET email = $email, pass = crypto::argon2::generate($pass) )
-    SIGNIN ( SELECT * FROM user WHERE email = $email AND crypto::argon2::compare(pass, $pass) )
+    SIGNIN ( SELECT * FROM user WHERE email = $email
+      AND crypto::argon2::compare(pass, $pass) )
     AUTHENTICATE {
         IF type::record("token", $token.jti).revoked = true {
             THROW "This token has been revoked";

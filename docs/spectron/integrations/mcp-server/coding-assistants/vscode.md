@@ -50,7 +50,7 @@ The global config is written to your VS Code user settings directory.
   "servers": {
     "spectron": {
       "type": "http",
-      "url": "https://api.spectron.dev/mcp",
+      "url": "https://<your-context-host>/mcp",
       "headers": {
         "Authorization": "Bearer <your-api-key>",
         "X-Spectron-Context": "acme-prod"
@@ -79,7 +79,7 @@ The `.vscode/mcp.json` file can be committed to your repository so the team shar
   "servers": {
     "spectron": {
       "type": "http",
-      "url": "https://api.spectron.dev/mcp",
+      "url": "https://<your-context-host>/mcp",
       "headers": {
         "Authorization": "Bearer ${input:spectronApiKey}",
         "X-Spectron-Context": "acme-prod"
@@ -129,17 +129,7 @@ Copilot calls `knowledge_search` and returns the relevant ADR content.
 
 ## Scope per workspace
 
-Install with project-specific scope to keep memory isolated per repository:
-
-```bash
-npx install-mcp spectron \
-  --client vscode \
-  --context acme-prod \
-  --scope user=alice \
-  --scope project=platform-v3
-```
-
-This adds `X-Spectron-Scope: user=alice,project=platform-v3` to the headers for all tool calls in this workspace.
+Keep memory isolated per repository by passing a **`scope`** argument on each tool call (for example `["org/acme/project/platform-v3"]`), or by using separate Spectron contexts. The install helper does not set default scope headers.
 
 ## Removing Spectron
 

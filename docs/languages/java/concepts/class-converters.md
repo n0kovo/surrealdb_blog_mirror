@@ -34,7 +34,8 @@ person.age = 33;
 db.create(new RecordId("person", "tobie"), person);
 
 // Deserialization: SurrealDB object → Person
-Optional<Person> result = db.select(Person.class, new RecordId("person", "tobie"));
+Optional<Person> result = db.select(Person.class,
+    new RecordId("person", "tobie"));
 ```
 
 ## POJO requirements
@@ -59,24 +60,28 @@ Fields that exist in the Java class but not in the SurrealDB object are left at 
 
 ## Field type mapping
 
-POJO fields are mapped to SurrealDB types based on their declared Java type:
+POJO fields and bound values are mapped to SurrealDB types based on their declared Java type:
 
-| Java Field Type | SurrealDB Type | Notes |
-|---|---|---|
-| `String` | `string` | |
-| `long` / `Long` | `int` | |
-| `int` / `Integer` | `int` | Narrowed from SurrealDB's 64-bit integer |
-| `double` / `Double` | `float` | |
-| `float` / `Float` | `float` | Narrowed from SurrealDB's 64-bit float |
-| `boolean` / `Boolean` | `bool` | |
-| `BigDecimal` | `decimal` | `java.math` |
-| `UUID` | `uuid` | `java.util` |
-| `byte[]` | `bytes` | |
-| `ZonedDateTime` | [`datetime`](../../../reference/query-language/language-primitives/data-types/datetimes.md) | `java.time` |
-| `Duration` | [`duration`](../../../reference/query-language/language-primitives/data-types/datetimes.md#durations-and-datetimes) | `java.time` |
-| [`RecordId`](../api/values/record-id.md) | [`record`](../../../reference/query-language/language-primitives/data-types/record-ids.md) | SDK class |
-| [`Geometry`](../api/values/geometry.md) | [`geometry`](../../../reference/query-language/language-primitives/data-types/geometries.md) | SDK class |
-| [`FileRef`](../api/values/file-ref.md) | [`file`](../../../reference/query-language/language-primitives/data-types/files.md) | SDK class |
+| Java Field/Value Type                                   | SurrealDB Type                                                                                                | Notes                                    |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| `String`                                                | `string`                                                                                                      |                                          |
+| `long` / `Long`                                         | `int`                                                                                                         |                                          |
+| `int` / `Integer`                                       | `int`                                                                                                         | Narrowed from SurrealDB's 64-bit integer |
+| `double` / `Double`                                     | `float`                                                                                                       |                                          |
+| `float` / `Float`                                       | `float`                                                                                                       | Narrowed from SurrealDB's 64-bit float   |
+| `boolean` / `Boolean`                                   | `bool`                                                                                                        |                                          |
+| `BigDecimal`                                            | `decimal`                                                                                                     | `java.math`                              |
+| `UUID`                                                  | `uuid`                                                                                                        | `java.util`                              |
+| `byte[]`                                                | `bytes`                                                                                                       |                                          |
+| `Instant`                                               | [`datetime`](../../../reference/query-language/language-primitives/data-types/datetimes.md)                         | `java.time`                              |
+| `ZonedDateTime`                                         | [`datetime`](../../../reference/query-language/language-primitives/data-types/datetimes.md)                         | `java.time`                              |
+| `OffsetDateTime`                                        | [`datetime`](../../../reference/query-language/language-primitives/data-types/datetimes.md)                         | `java.time`                              |
+| `LocalDateTime`                                         | [`datetime`](../../../reference/query-language/language-primitives/data-types/datetimes.md)                         | `java.time`                              |
+| `java.util.Date`                                        | [`datetime`](../../../reference/query-language/language-primitives/data-types/datetimes.md)                         | `java.time`                              |
+| `Duration`                                              | [`duration`](../../../reference/query-language/language-primitives/data-types/datetimes.md#durations-and-datetimes) | `java.time`                              |
+| [`RecordId`](../api/values/record-id.md) | [`record`](../../../reference/query-language/language-primitives/data-types/record-ids.md)                          | SDK class                                |
+| [`Geometry`](../api/values/geometry.md)  | [`geometry`](../../../reference/query-language/language-primitives/data-types/geometries.md)                        | SDK class                                |
+| [`FileRef`](../api/values/file-ref.md)   | [`file`](../../../reference/query-language/language-primitives/data-types/files.md)                                 | SDK class                                |
 
 See [Value types](value-types.md) for the complete type mapping reference.
 
@@ -127,21 +132,55 @@ The resulting SurrealDB record contains a nested object:
 
 ## Temporal types
 
-SurrealDB [`datetime`](../../../reference/query-language/language-primitives/data-types/datetimes.md) fields map to `java.time.ZonedDateTime` and [`duration`](../../../reference/query-language/language-primitives/data-types/datetimes.md#durations-and-datetimes) fields map to `java.time.Duration` in your POJOs.
+SurrealDB [`datetime`](../../../reference/query-language/language-primitives/data-types/datetimes.md) values represent an absolute point in time. When serializing Java objects, the SDK accepts `Instant`, `ZonedDateTime`, `OffsetDateTime`, `LocalDateTime`, and `java.util.Date` fields. When deserializing SurrealDB `datetime` values back into POJOs, the same types are supported; `ZonedDateTime` is the usual choice when you need the stored instant with its offset.
+
+> Note: `LocalDateTime` does not contain a time zone or offset. The SDK interprets `LocalDateTime` values as UTC during serialization. If the value represents a user's local wall-clock time in a specific region, prefer `ZonedDateTime` or `OffsetDateTime` so the intended instant is explicit.
+
+[`duration`](../../../reference/query-language/language-primitives/data-types/datetimes.md#durations-and-datetimes) fields map to `java.time.Duration` in your POJOs.
 
 ```java
 
-public class Task {
+public class TaskWrite {
     public RecordId id;
     public String title;
-    public ZonedDateTime createdAt;
+    public Instant scheduledAt;
+    public OffsetDateTime reviewedAt;
+    public LocalDateTime localDeadline;
+    public Date legacyCreatedAt;
     public Duration timeout;
 
-    public Task() {}
+    public TaskWrite() {}
 }
 
-Optional<Task> task = db.select(Task.class, new RecordId("task", "build"));
-ZonedDateTime when = task.get().createdAt;
+TaskWrite task = new TaskWrite();
+task.scheduledAt = Instant.parse("2026-06-06T08:00:00Z");
+task.reviewedAt = OffsetDateTime.parse("2026-06-06T10:00:00+02:00");
+task.localDeadline = LocalDateTime.parse("2026-06-06T10:00:00");
+task.legacyCreatedAt = Date.from(task.scheduledAt);
+task.timeout = Duration.ofMinutes(30);
+
+db.create(new RecordId("task", "build"), task);
+```
+
+Use `ZonedDateTime` fields when you want the full stored instant (recommended for most read paths). `Instant`, `OffsetDateTime`, and `LocalDateTime` also work on deserialization:
+
+```java
+
+public class TaskRead {
+    public RecordId id;
+    public String title;
+    public ZonedDateTime scheduledAt;
+    public ZonedDateTime reviewedAt;
+    public ZonedDateTime localDeadline;
+    public ZonedDateTime legacyCreatedAt;
+    public Duration timeout;
+
+    public TaskRead() {}
+}
+
+Optional<TaskRead> task = db.select(TaskRead.class,
+    new RecordId("task", "build"));
+ZonedDateTime when = task.get().scheduledAt;
 Duration howLong = task.get().timeout;
 ```
 
@@ -190,50 +229,104 @@ db.insertRelation(Follows.class, "follows", follow);
 Typed conversion is available across most SDK methods. Any method that accepts a `Class<T>` parameter uses the converter:
 
 <table>
-	<thead>
-		<tr>
-			<th scope="col">Method</th>
-			<th scope="col">Typed variant</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/languages/java/api/core/surreal#select">`db.select(target)`</a></td>
-			<td scope="row" data-label="Typed variant">`db.select(Class, target)`</td>
-		</tr>
-		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/languages/java/api/core/surreal#create">`db.create(target, content)`</a></td>
-			<td scope="row" data-label="Typed variant">`db.create(Class, target, content)`</td>
-		</tr>
-		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/languages/java/api/core/surreal#insert">`db.insert(target, content)`</a></td>
-			<td scope="row" data-label="Typed variant">`db.insert(Class, target, content)`</td>
-		</tr>
-		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/languages/java/api/core/surreal#update">`db.update(target, upType, content)`</a></td>
-			<td scope="row" data-label="Typed variant">`db.update(Class, target, upType, content)`</td>
-		</tr>
-		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/languages/java/api/core/surreal#upsert">`db.upsert(target, upType, content)`</a></td>
-			<td scope="row" data-label="Typed variant">`db.upsert(Class, target, upType, content)`</td>
-		</tr>
-		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/languages/java/api/core/surreal#relate">`db.relate(from, table, to)`</a></td>
-			<td scope="row" data-label="Typed variant">`db.relate(Class, from, table, to)`</td>
-		</tr>
-		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/languages/java/api/core/response#take">`response.take(index)`</a></td>
-			<td scope="row" data-label="Typed variant">`response.take(Class, index)`</td>
-		</tr>
-		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/languages/java/api/values/value#get">`value.get(Class)`</a></td>
-			<td scope="row" data-label="Typed variant">Direct POJO conversion from a `Value`</td>
-		</tr>
-		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/languages/java/api/values/value#array-typed-iterator">`array.iterator(Class)`</a></td>
-			<td scope="row" data-label="Typed variant">Typed iteration over array elements</td>
-		</tr>
-	</tbody>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Typed variant</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row" data-label="Method">
+        <a href="/docs/languages/java/api/core/surreal#select">
+          `db.select(target)`
+        </a>
+      </td>
+      <td scope="row" data-label="Typed variant">
+        `db.select(Class, target)`
+      </td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Method">
+        <a href="/docs/languages/java/api/core/surreal#create">
+          `db.create(target, content)`
+        </a>
+      </td>
+      <td scope="row" data-label="Typed variant">
+        `db.create(Class, target, content)`
+      </td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Method">
+        <a href="/docs/languages/java/api/core/surreal#insert">
+          `db.insert(target, content)`
+        </a>
+      </td>
+      <td scope="row" data-label="Typed variant">
+        `db.insert(Class, target, content)`
+      </td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Method">
+        <a href="/docs/languages/java/api/core/surreal#update">
+          `db.update(target, upType, content)`
+        </a>
+      </td>
+      <td scope="row" data-label="Typed variant">
+        `db.update(Class, target, upType, content)`
+      </td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Method">
+        <a href="/docs/languages/java/api/core/surreal#upsert">
+          `db.upsert(target, upType, content)`
+        </a>
+      </td>
+      <td scope="row" data-label="Typed variant">
+        `db.upsert(Class, target, upType, content)`
+      </td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Method">
+        <a href="/docs/languages/java/api/core/surreal#relate">
+          `db.relate(from, table, to)`
+        </a>
+      </td>
+      <td scope="row" data-label="Typed variant">
+        `db.relate(Class, from, table, to)`
+      </td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Method">
+        <a href="/docs/languages/java/api/core/response#take">
+          `response.take(index)`
+        </a>
+      </td>
+      <td scope="row" data-label="Typed variant">
+        `response.take(Class, index)`
+      </td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Method">
+        <a href="/docs/languages/java/api/values/value#get">
+          `value.get(Class)`
+        </a>
+      </td>
+      <td scope="row" data-label="Typed variant">
+        Direct POJO conversion from a `Value`
+      </td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Method">
+        <a href="/docs/languages/java/api/values/value#array-typed-iterator">
+          `array.iterator(Class)`
+        </a>
+      </td>
+      <td scope="row" data-label="Typed variant">
+        Typed iteration over array elements
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 ## Handling conversion errors
@@ -242,7 +335,8 @@ When the SDK cannot convert a value to the target class — for example, because
 
 ```java
 try {
-    Optional<Person> person = db.select(Person.class, new RecordId("person", "tobie"));
+        Optional<Person> person = db.select(Person.class,
+        new RecordId("person", "tobie"));
 } catch (SerializationException e) {
     System.err.println("Conversion failed: " + e.getMessage());
 }

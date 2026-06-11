@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-06-10T07:31:27.462439+00:00",
-  "count": 230,
+  "generated_at": "2026-06-11T07:43:09.006238+00:00",
+  "count": 231,
   "posts": [
+    {
+      "slug": "fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do",
+      "title": "Fuzz testing for SurrealDB: using randomised input to find bugs before users do",
+      "summary": "A good choice to complement unit and integration tests, fuzz testing lets you use semi-random data to discover obscure bugs before users do.",
+      "publishDate": "2026-06-11T07:26:28.000Z",
+      "categories": [
+        "engineering"
+      ],
+      "readTime": "8 min read",
+      "imageUrl": "https://cdn.surrealdb.com/22okbtigeqzi1r914x1jpteb.auto",
+      "source": "https://surrealdb.com/blog/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do",
+      "local_path": "2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md"
+    },
     {
       "slug": "surrealdb-is-now-available-on-nebius-ai-cloud-marketplace",
       "title": "SurrealDB is now available on the Nebius AI Cloud Marketplace",

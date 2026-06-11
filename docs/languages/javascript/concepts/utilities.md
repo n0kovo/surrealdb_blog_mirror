@@ -147,6 +147,7 @@ const [results] = await db.query(bound);
 When you need to construct SurrealQL strings manually, the escape functions ensure that identifiers and values are properly quoted. In most cases, you should prefer [bound queries](bound-queries.md) or the [value type classes](value-types.md) instead of manual escaping.
 
 ```ts
+    escapeValue } from 'surrealdb';
 
 escapeIdent('users');           // 'users'
 escapeIdent('user-table');      // '`user-table`'

@@ -1,8 +1,10 @@
 # Category: engineering
 
-_39 posts_  
+_40 posts_  
 [← Index](../../README.md)
 
+- **2026-06-11** · [Fuzz testing for SurrealDB: using randomised input to find bugs before users do](../2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md)  
+  `engineering` — A good choice to complement unit and integration tests, fuzz testing lets you use semi-random data to discover obscure bugs before users do.
 - **2026-05-29** · [SurrealDB 3.x by the numbers](../2026/05/surrealdb-3-x-by-the-numbers.md)  
   `engineering` `company` `featured` — Fresh SurrealDB 3.x benchmarks: 141k ops\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.
 - **2026-04-22** · [New SurrealDB docs search using hybrid search and HNSW\/BM25 reranking](../2026/04/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search.md)  

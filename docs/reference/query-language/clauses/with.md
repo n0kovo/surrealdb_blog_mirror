@@ -40,5 +40,6 @@ WHERE
 	company = 'SurrealDB';
 
 -- forces the usage of the table iterator
-SELECT name FROM person WITH NOINDEX WHERE job = 'engineer' AND gender = 'm';
+SELECT name FROM person WITH NOINDEX WHERE job = 'engineer'
+  AND gender = 'm';
 ```

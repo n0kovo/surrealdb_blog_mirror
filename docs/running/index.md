@@ -22,7 +22,7 @@ _Auto-generated index — 7 pages and 1 sub-section._
 - [In-memory](in-memory.md)
   For the purposes of getting started with SurrealDB quickly, we will start an in-memory database which does not persist data on shutdown.
 - [Multi-node](multi-node.md)
-  For highly-available and highly-scalable setups, SurrealDB can be run on top of a TiKV cluster, with the ability to horizontally scale to very large datasets.
+  Run SurrealDB against distributed storage for horizontally scalable, highly available clusters.
 - [Overview](overview.md)
   Ways to run SurrealDB—from a browser sandbox to a managed cloud instance to installing on your own hardware.
 - [Surrealist Sandbox](sandbox.md)

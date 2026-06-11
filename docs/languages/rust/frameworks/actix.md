@@ -108,7 +108,8 @@ DEFINE FIELD IF NOT EXISTS created_by ON TABLE person VALUE $auth READONLY;
 
 DEFINE INDEX IF NOT EXISTS unique_name ON TABLE user FIELDS name UNIQUE;
 DEFINE ACCESS IF NOT EXISTS account ON DATABASE TYPE RECORD
-SIGNUP ( CREATE user SET name = $name, pass = crypto::argon2::generate($pass) )
+SIGNUP ( CREATE user SET name = $name,
+    pass = crypto::argon2::generate($pass) )
 SIGNIN ( SELECT * FROM user WHERE name = $name AND crypto::argon2::compare(pass, $pass) )
 DURATION FOR TOKEN 15m, FOR SESSION 12h
 ;",
@@ -140,7 +141,8 @@ DEFINE TABLE IF NOT EXISTS person SCHEMALESS
         CREATE, SELECT WHERE $auth,
         FOR UPDATE, DELETE WHERE created_by = $auth;
 DEFINE FIELD IF NOT EXISTS name ON TABLE person TYPE string;
-DEFINE FIELD IF NOT EXISTS created_by ON TABLE person VALUE $auth READONLY;
+DEFINE FIELD IF NOT EXISTS created_by
+  ON TABLE person VALUE $auth READONLY;
 ```
 
 So where does an ID like `user:qx2apv5oc8mh03wtah0q` come from? This is thanks to the following definitions that set the signup and signin behaviour of the record users. A typical [`DEFINE ACCESS`](../../../reference/query-language/statements/define/access/record.md) statement will create some sort of record on signup (in this case, a `user`) record, and will compare it against a password during signin. Note that the access has a name that we gave it (`account`), so that it can be referenced elsewhere.
@@ -148,10 +150,13 @@ So where does an ID like `user:qx2apv5oc8mh03wtah0q` come from? This is thanks t
 In addition, a `DEFINE INDEX` statement with a `UNIQUE` clause is used to ensure that no two users can have the same name.
 
 ```surql
-    DEFINE INDEX IF NOT EXISTS unique_name ON TABLE user FIELDS name UNIQUE;
+    DEFINE INDEX IF NOT EXISTS unique_name
+      ON TABLE user FIELDS name UNIQUE;
     DEFINE ACCESS IF NOT EXISTS account ON DATABASE TYPE RECORD
-	SIGNUP ( CREATE user SET name = $name, pass = crypto::argon2::generate($pass) )
-	SIGNIN ( SELECT * FROM user WHERE name = $name AND crypto::argon2::compare(pass, $pass) )
+	SIGNUP ( CREATE user SET name = $name,
+	  pass = crypto::argon2::generate($pass) )
+	SIGNIN ( SELECT * FROM user WHERE name = $name
+	  AND crypto::argon2::compare(pass, $pass) )
 	DURATION FOR TOKEN 15m, FOR SESSION 12h
 ```
 
@@ -541,7 +546,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     DEFINE INDEX unique_name ON TABLE user FIELDS name UNIQUE;
     DEFINE ACCESS account ON DATABASE TYPE RECORD
-	SIGNUP ( CREATE user SET name = $name, pass = crypto::argon2::generate($pass) )
+		SIGNUP ( CREATE user SET name = $name,
+	    pass = crypto::argon2::generate($pass) )
 	SIGNIN ( SELECT * FROM user WHERE name = $name AND crypto::argon2::compare(pass, $pass) )
 	DURATION FOR TOKEN 15m, FOR SESSION 12h
 ;",
@@ -633,7 +639,8 @@ Also note that the root user is able to see the `user` tables and their informat
 	{
 		id: user:qx2apv5oc8mh03wtah0q,
 		name: 'Gerard',
-		pass: '$argon2id$v=19$m=19456,t=2,p=1$j0ktTqUxRjOWYnwS5LoMFQ$2NcGkf5+IuLml6NorPy/Le6T8RppYXTXakwY5cDiZPY'
+		pass:
+		  '$argon2id$v=19$m=19456,t=2,p=1$j0ktTqUxRjOWYnwS5LoMFQ$2NcGkf5+IuLml6NorPy/Le6T8RppYXTXakwY5cDiZPY'
 	}
 ]
 ```
@@ -758,7 +765,8 @@ DEFINE FIELD IF NOT EXISTS created_by ON TABLE person VALUE $auth READONLY;
 
 DEFINE INDEX IF NOT EXISTS unique_name ON TABLE user FIELDS name UNIQUE;
 DEFINE ACCESS IF NOT EXISTS account ON DATABASE TYPE RECORD
-SIGNUP ( CREATE user SET name = $name, pass = crypto::argon2::generate($pass) )
+SIGNUP ( CREATE user SET name = $name,
+    pass = crypto::argon2::generate($pass) )
 SIGNIN ( SELECT * FROM user WHERE name = $name AND crypto::argon2::compare(pass, $pass) )
 DURATION FOR TOKEN 15m, FOR SESSION 12h
 ;",
@@ -792,7 +800,8 @@ DEFINE TABLE IF NOT EXISTS person SCHEMALESS
         CREATE, SELECT WHERE $auth,
         FOR UPDATE, DELETE WHERE created_by = $auth;
 DEFINE FIELD IF NOT EXISTS name ON TABLE person TYPE string;
-DEFINE FIELD IF NOT EXISTS created_by ON TABLE person VALUE $auth READONLY;
+DEFINE FIELD IF NOT EXISTS created_by
+  ON TABLE person VALUE $auth READONLY;
 ```
 
 So where does an ID like `user:qx2apv5oc8mh03wtah0q` come from? This is thanks to the following definitions that set the signup and signin behaviour of the record users. A typical [`DEFINE ACCESS`](../../../reference/query-language/statements/define/access/record.md) statement will create some sort of record on signup (in this case, a `user`) record, and will compare it against a password during signin. Note that the access has a name that we gave it (`account`), so that it can be referenced elsewhere.
@@ -800,10 +809,13 @@ So where does an ID like `user:qx2apv5oc8mh03wtah0q` come from? This is thanks t
 In addition, a `DEFINE INDEX` statement with a `UNIQUE` clause is used to ensure that no two users can have the same name.
 
 ```surql
-    DEFINE INDEX IF NOT EXISTS unique_name ON TABLE user FIELDS name UNIQUE;
+    DEFINE INDEX IF NOT EXISTS unique_name
+      ON TABLE user FIELDS name UNIQUE;
     DEFINE ACCESS IF NOT EXISTS account ON DATABASE TYPE RECORD
-	SIGNUP ( CREATE user SET name = $name, pass = crypto::argon2::generate($pass) )
-	SIGNIN ( SELECT * FROM user WHERE name = $name AND crypto::argon2::compare(pass, $pass) )
+	SIGNUP ( CREATE user SET name = $name,
+	  pass = crypto::argon2::generate($pass) )
+	SIGNIN ( SELECT * FROM user WHERE name = $name
+	  AND crypto::argon2::compare(pass, $pass) )
 	DURATION FOR TOKEN 15m, FOR SESSION 12h
 ```
 
@@ -1168,7 +1180,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     DEFINE INDEX unique_name ON TABLE user FIELDS name UNIQUE;
     DEFINE ACCESS account ON DATABASE TYPE RECORD
-	SIGNUP ( CREATE user SET name = $name, pass = crypto::argon2::generate($pass) )
+		SIGNUP ( CREATE user SET name = $name,
+	    pass = crypto::argon2::generate($pass) )
 	SIGNIN ( SELECT * FROM user WHERE name = $name AND crypto::argon2::compare(pass, $pass) )
 	DURATION FOR TOKEN 15m, FOR SESSION 12h
 ;",
@@ -1260,7 +1273,8 @@ Also note that the root user is able to see the `user` tables and their informat
 	{
 		id: user:qx2apv5oc8mh03wtah0q,
 		name: 'Gerard',
-		pass: '$argon2id$v=19$m=19456,t=2,p=1$j0ktTqUxRjOWYnwS5LoMFQ$2NcGkf5+IuLml6NorPy/Le6T8RppYXTXakwY5cDiZPY'
+		pass:
+		  '$argon2id$v=19$m=19456,t=2,p=1$j0ktTqUxRjOWYnwS5LoMFQ$2NcGkf5+IuLml6NorPy/Le6T8RppYXTXakwY5cDiZPY'
 	}
 ]
 ```

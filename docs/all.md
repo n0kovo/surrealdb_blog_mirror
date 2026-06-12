@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_946 pages_  
+_973 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -690,6 +690,56 @@ _946 pages_
   The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
 - [Start](languages/javascript/start.md)
   Get started with the SurrealDB SDK for JavaScript in minutes.
+- [SurrealClientConfig](languages/kotlin/api/core/client-config.md)
+  Configuration options for the SurrealDB Kotlin client, including reconnection and authentication.
+- [LiveQuerySubscription](languages/kotlin/api/core/live-subscription.md)
+  The subscription handle returned by live queries in the SurrealDB Kotlin SDK.
+- [Query builders](languages/kotlin/api/core/query-builder.md)
+  The fluent query builders, expression helpers, and surql DSL of the SurrealDB Kotlin SDK.
+- [SurrealSession](languages/kotlin/api/core/session.md)
+  The SurrealSession class exposes querying and authentication with isolated per-session state.
+- [SurrealClient](languages/kotlin/api/core/surreal-client.md)
+  The SurrealClient class is the main entry point for connecting to and interacting with a SurrealDB instance from Kotlin.
+- [SurrealTransaction](languages/kotlin/api/core/transaction.md)
+  The transaction handle and helpers for atomic operations in the SurrealDB Kotlin SDK.
+- [Errors](languages/kotlin/api/errors/index.md)
+  The exception hierarchy raised by the SurrealDB Kotlin SDK.
+- [Features & Events](languages/kotlin/api/features/index.md)
+  Transport feature flags and connection lifecycle events in the SurrealDB Kotlin SDK.
+- [RecordIdRange](languages/kotlin/api/values/record-id-range.md)
+  The RecordIdRange type targets a range of records within a table in the SurrealDB Kotlin SDK.
+- [RecordId](languages/kotlin/api/values/record-id.md)
+  The RecordId type identifies a single record in the SurrealDB Kotlin SDK.
+- [Table](languages/kotlin/api/values/table.md)
+  The Table type refers to a table by name in the SurrealDB Kotlin SDK.
+- [Value (JSON model)](languages/kotlin/api/values/value.md)
+  How the SurrealDB Kotlin SDK models values using kotlinx.serialization JSON types.
+- [Authentication](languages/kotlin/concepts/authentication.md)
+  Sign up, sign in, and manage authentication tokens with the SurrealDB Kotlin SDK.
+- [Connecting to SurrealDB](languages/kotlin/concepts/connecting-to-surrealdb.md)
+  The Kotlin SDK connects to SurrealDB over WebSocket or HTTP, with automatic transport selection and reconnection.
+- [Data manipulation](languages/kotlin/concepts/data-manipulation.md)
+  Create, read, update, and delete records with the fluent builders in the SurrealDB Kotlin SDK.
+- [Error handling](languages/kotlin/concepts/error-handling.md)
+  Handle exceptions and feature-support errors raised by the SurrealDB Kotlin SDK.
+- [Executing queries](languages/kotlin/concepts/executing-queries.md)
+  Run raw SurrealQL with bound parameters and decode results with the Kotlin SDK.
+- [Live queries](languages/kotlin/concepts/live-queries.md)
+  Subscribe to real-time changes with live queries in the SurrealDB Kotlin SDK.
+- [Multiple sessions](languages/kotlin/concepts/multiple-sessions.md)
+  Isolate authentication and state across concurrent sessions with the SurrealDB Kotlin SDK.
+- [Serialization](languages/kotlin/concepts/serialization.md)
+  Encode and decode records using kotlinx.serialization with the SurrealDB Kotlin SDK.
+- [Transactions](languages/kotlin/concepts/transactions.md)
+  Group operations into atomic transactions with the SurrealDB Kotlin SDK.
+- [Value types](languages/kotlin/concepts/value-types.md)
+  Work with record identifiers, tables, and the JSON value model in the SurrealDB Kotlin SDK.
+- [Kotlin SDK](languages/kotlin/index.md)
+  The SurrealDB SDK for Kotlin is a coroutine-based, Kotlin Multiplatform client for querying a remote SurrealDB instance.
+- [Installation](languages/kotlin/installation.md)
+  The SurrealDB SDK for Kotlin is published to Maven Central and can be installed using Gradle or Maven.
+- [Quickstart](languages/kotlin/start.md)
+  Get started with the SurrealDB SDK for Kotlin in minutes.
 - [SDK languages](languages/overview.md)
   SurrealDB has official SDKs for many languages, along with non-official SDKs created by the community.
 - [Authentication](languages/php/core/authentication.md)
@@ -1772,6 +1822,8 @@ _946 pages_
   Handling errors and configuring retry behaviour in the Spectron SDKs.
 - [JavaScript and TypeScript SDK](spectron/integrations/sdks/javascript-and-typescript.md)
   Using Spectron from JavaScript and TypeScript applications.
+- [Kotlin SDK](spectron/integrations/sdks/kotlin.md)
+  Using Spectron from Kotlin applications and agents on JVM, Android, and iOS.
 - [Python SDK](spectron/integrations/sdks/python.md)
   Using Spectron from Python applications and agents.
 - [Swift SDK](spectron/integrations/sdks/swift.md)
@@ -1804,6 +1856,8 @@ _946 pages_
   End-user HTTP endpoints on the unified Spectron substrate.
 - [JavaScript SDK reference](spectron/reference/sdk-javascript.md)
   Package layout and configuration for @surrealdb/spectron.
+- [Kotlin SDK reference](spectron/reference/sdk-kotlin.md)
+  Package layout, configuration, and error model for the Spectron Kotlin client.
 - [Python SDK reference](spectron/reference/sdk-python.md)
   Package layout and configuration for the Spectron client in surrealdb.
 - [Swift SDK reference](spectron/reference/sdk-swift.md)

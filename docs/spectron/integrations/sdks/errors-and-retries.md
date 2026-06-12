@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 5
 title: Errors and retries
 description: Handling errors and configuring retry behaviour in the Spectron SDKs.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/spectron/integrations/sdks/errors-and-retries.mdx"

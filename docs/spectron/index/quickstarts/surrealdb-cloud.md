@@ -2,7 +2,6 @@
 position: 1
 title: Spectron on SurrealDB Cloud
 description: How Spectron contexts, authentication, and APIs work on SurrealDB Cloud versus self-hosted deployments.
-sidebar_label: SurrealDB Cloud
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/spectron/index/quickstarts/surrealdb-cloud.mdx"
 ---
 

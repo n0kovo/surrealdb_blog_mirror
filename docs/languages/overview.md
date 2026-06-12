@@ -11,6 +11,7 @@ SurrealDB can be used in the programming language of your choice via the followi
 - [Python](python/start.md)
 - [Rust](rust/start.md)
 - [Java](java/start.md)
+- [Kotlin](kotlin/start.md)
 - [Go](golang/start.md)
 - [.NET (C#)](dotnet/index.md)
 - [PHP](php/setup.md)

@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-06-12T07:39:55.239170+00:00",
-  "count": 231,
+  "generated_at": "2026-06-13T07:20:33.831409+00:00",
+  "count": 232,
   "posts": [
+    {
+      "slug": "organizations-and-teams-for-your-surrealdb-app",
+      "title": "Organizations and Teams for your SurrealDB App",
+      "summary": "Bootstrapping multi-tenant orgs, roles, permissions, and the functions that enforce them - straight from SurrealKit templates.",
+      "publishDate": "2026-06-12T21:29:02.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "8 min read",
+      "imageUrl": "https://cdn.surrealdb.com/rahxum8zyd0lra683dbvhbjo.auto",
+      "source": "https://surrealdb.com/blog/organizations-and-teams-for-your-surrealdb-app",
+      "local_path": "2026/06/organizations-and-teams-for-your-surrealdb-app.md"
+    },
     {
       "slug": "fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do",
       "title": "Fuzz testing for SurrealDB: using randomised input to find bugs before users do",

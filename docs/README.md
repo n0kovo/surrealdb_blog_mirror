@@ -1,12 +1,12 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-06-12 07:39 UTC_
+_Last updated: 2026-06-13 07:20 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
 ## Stats
 
-- **Total pages:** 973
+- **Total pages:** 975
 
 ## Browse
 
@@ -53,7 +53,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Operations
 
-- **[Schema migration](manage/schema-migration/index.md)** — Promote schema updates safely. — _12 pages_
+- **[Schema migration](manage/schema-migration/index.md)** — Promote schema updates safely. — _14 pages_
 
 ## Explore
 

@@ -4,10 +4,19 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-06-11T07:26:28Z</updated>
+  <updated>2026-06-12T21:29:02Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/organizations-and-teams-for-your-surrealdb-app</id>
+    <title>Organizations and Teams for your SurrealDB App</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/organizations-and-teams-for-your-surrealdb-app" type="text/html" />
+    <published>2026-06-12T21:29:02Z</published>
+    <updated>2026-06-12T21:29:02Z</updated>
+    <summary type="text">Bootstrapping multi-tenant orgs, roles, permissions, and the functions that enforce them - straight from SurrealKit templates.</summary>
+    <category term="tutorials" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do</id>
     <title>Fuzz testing for SurrealDB: using randomised input to find bugs before users do</title>
@@ -493,16 +502,6 @@
     <published>2025-09-03T00:00:00Z</published>
     <updated>2025-09-03T00:00:00Z</updated>
     <summary type="text">SurrealDB has launched SurrealMCP, giving AI agents secure, real-time, permission-aware memory powered by its multi-model database.</summary>
-    <category term="featured" />
-    <category term="company" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/surrealdb-cloud-successfully-completes-soc-2-type-2-audit</id>
-    <title>SurrealDB Cloud successfully completes SOC 2 Type 2 Audit</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-cloud-successfully-completes-soc-2-type-2-audit" type="text/html" />
-    <published>2025-08-29T00:00:00Z</published>
-    <updated>2025-08-29T00:00:00Z</updated>
-    <summary type="text">SurrealDB Cloud has successfully has successfully completed its SOC 2 Type 2 Audit</summary>
     <category term="featured" />
     <category term="company" />
   </entry>

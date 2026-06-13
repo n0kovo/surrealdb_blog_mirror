@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_973 pages_  
+_975 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -1283,17 +1283,21 @@ _973 pages_
 - [Library usage example](manage/schema-migration/library/example.md)
   Worked examples of using SurrealKit's library API for both sync and rollouts in a Rust application.
 - [Using SurrealKit as a library](manage/schema-migration/library/index.md)
-  Embed SurrealKit directly in a Rust application to connect to SurrealDB, sync schema at startup, and seed data without running the CLI.
+  Embed SurrealKit directly in a Rust application to connect to SurrealDB, sync schema at startup, run rollouts, and seed data without the CLI.
 - [Rollouts](manage/schema-migration/rollouts.md)
   Rollouts provide a controlled, phased migration workflow for shared and production SurrealDB databases, with review, staged execution, and rollback support.
 - [Sync](manage/schema-migration/sync.md)
   Sync pushes your .surql schema files to SurrealDB immediately, keeping the database in desired state. Use it for local development and ephemeral environments.
 - [Template variables](manage/schema-migration/template-variables.md)
   Template variables let you parameterise .surql schema files with environment-specific values, substituted at runtime by SurrealKit.
+- [Project templates](manage/schema-migration/templates.md)
+  surrealkit init scaffolds a project from a template with selectable features. Use the bundled template, pick only the features you need, or supply your own.
 - [CI / CD](manage/schema-migration/testing/ci-cd.md)
   Run SurrealKit tests in CI pipelines using the official GitHub Action, with JSON output for test reporting and Docker Compose for full end-to-end environments.
 - [Testing](manage/schema-migration/testing/index.md)
   SurrealKit includes a built-in testing framework for validating schema correctness, permissions, and API behaviour across multiple actor types.
+- [Type generation](manage/schema-migration/typegen.md)
+  surrealkit typegen introspects a live database and emits a structured JSON schema document, with optional TypeScript types for the SurrealDB JavaScript SDK.
 - [Backups & recovery](manage/self-hosted/backups-and-recovery.md)
   Create and restore SurrealQL backups with the CLI, plan backup strategies, and prepare for disaster recovery.
 - [Configuration](manage/self-hosted/configuration.md)

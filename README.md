@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-06-12 07:39 UTC_
+_Last updated: 2026-06-13 07:20 UTC_
 
 ## Stats
 
-- **Total posts:** 231
+- **Total posts:** 232
 - **First post:** 2022-07-20
-- **Latest post:** 2026-06-11
+- **Latest post:** 2026-06-12
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-06-12 07:39 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 36 posts
+- [2026](posts/years/2026.md) — 37 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -34,10 +34,12 @@ _Last updated: 2026-06-12 07:39 UTC_
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 105 posts
 - [releases](posts/categories/releases.md) — 46 posts
-- [tutorials](posts/categories/tutorials.md) — 86 posts
+- [tutorials](posts/categories/tutorials.md) — 87 posts
 
 ## Latest posts
 
+- **2026-06-12** · [Organizations and Teams for your SurrealDB App](posts/2026/06/organizations-and-teams-for-your-surrealdb-app.md)  
+  `tutorials` — Bootstrapping multi-tenant orgs, roles, permissions, and the functions that enforce them - straight from SurrealKit templates.
 - **2026-06-11** · [Fuzz testing for SurrealDB: using randomised input to find bugs before users do](posts/2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md)  
   `engineering` — A good choice to complement unit and integration tests, fuzz testing lets you use semi-random data to discover obscure bugs before users do.
 - **2026-06-09** · [SurrealDB is now available on the Nebius AI Cloud Marketplace](posts/2026/06/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-06-12 07:39 UTC_
   `ai` — If you've decided to chunk your documents for a RAG pipeline or semantic search system, the next question hits almost immediately: which chunking strategy should I use?
 - **2026-05-08** · [What is the recommended chunk size?](posts/2026/05/what-is-the-recommended-chunk-size.md)  
   `ai` — If you're building a RAG (Retrieval-Augmented Generation) pipeline, a semantic search system, or any AI application that reads from a vector store, one question comes up almost immediately: what chunk size should I use?
-- **2026-05-07** · [Schema migrations in SurrealDB: A local dev workflow](posts/2026/05/schema-migrations-in-surrealdb-a-local-dev-workflow.md)  
-  `tutorials` `featured` `releases` — Managing schema changes in SurrealDB shouldn't slow down your local development. This post walks through a practical migration workflow that keeps your database in sync as your project evolves.

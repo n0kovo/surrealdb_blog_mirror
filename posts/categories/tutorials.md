@@ -1,8 +1,10 @@
 # Category: tutorials
 
-_86 posts_  
+_87 posts_  
 [← Index](../../README.md)
 
+- **2026-06-12** · [Organizations and Teams for your SurrealDB App](../2026/06/organizations-and-teams-for-your-surrealdb-app.md)  
+  `tutorials` — Bootstrapping multi-tenant orgs, roles, permissions, and the functions that enforce them - straight from SurrealKit templates.
 - **2026-05-22** · [Using SurrealDB to understand how Buffalo buffalo buffalo Buffalo buffalo](../2026/05/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo.md)  
   `tutorials` — Using SurrealDB and Surrealist's graph visualisation to not just understand but also see how Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo works.
 - **2026-05-19** · [Agentic retrieval for structured data with text-to-surql](../2026/05/agentic-retrieval-for-structured-data-with-text-to-surql.md)  

@@ -100,7 +100,12 @@ Create a `.env` file alongside `compose.yaml`. Never commit this file to version
 # .env
 OPENAI_API_KEY=sk-...
 # ANTHROPIC_API_KEY=sk-ant-...  # uncomment if using Anthropic models
+
+# Optional — allow browser clients (e.g. Surrealist) to call the user API cross-origin
+# SPECTRON_CORS_ALLOWED_ORIGINS=http://localhost:1420,https://app.surrealdb.com
 ```
+
+See [Configuration — CORS](../../reference/configuration.md#cors-browser-clients) for allowlist rules and management-API settings.
 
 ## Starting the stack
 

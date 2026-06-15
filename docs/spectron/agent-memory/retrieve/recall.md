@@ -44,7 +44,7 @@ Content-Type: application/json
 | `queryMs` | Server-side latency in milliseconds |
 | `trace.traceId` | Correlates with `GET .../traces/{traceId}` |
 
-Optional read modifiers: **`labels`** (descriptor filter only), **`lens`** (filter by scope-path involvement), **`scope_view`** (`strict`, `crossTeam`, `merged` — the latter two resolve like **`strict`**; see [Contexts and scope](https://surrealdb.com/docs/spectron/mental-model/contexts-and-scope#labels-lens-and-scope-views-reads)), **`include`** (`facts`, `passages`, or both — narrows the response only; retrieval considers all families).
+Optional read modifiers: **`labels`** (descriptor filter only), **`lens`** (filter by scope-path involvement), **`scope_view`** (`strict`, `crossTeam`, `merged` — the latter two resolve like **`strict`**; see [Contexts and scope](https://surrealdb.com/docs/spectron/mental-model/contexts-and-scope#labels-lens-and-scope-views-reads)), **`include`** (`facts`, `passages`, or both — narrows the response only; retrieval considers all families), **`includeDuplicates`** (default `false` — excludes near-duplicate passage chunks from fused recall; set `true` for parity with `/documents/query`).
 
 **`limit`** defaults to **10** and is capped at **50** per deployment (`SPECTRON_MAX_QUERY_K`). The internal retrieval pool is independent of `limit` — see [Hybrid search](hybrid-search.md#answer-size-vs-search-breadth).
 

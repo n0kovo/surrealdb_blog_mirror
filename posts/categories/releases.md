@@ -19,8 +19,8 @@ _46 posts_
   `featured` `releases` `ai` — SurrealDB has launched SurrealMCP, giving AI agents secure, real-time, permission-aware memory powered by its multi-model database.
 - **2025-07-24** · [What's new in Surrealist 3.5](../2025/07/whats-new-in-surrealist-3-5.md)  
   `releases` `featured` — Surrealist 3.5 introduces a fully redesigned Sidekick experience, a new Parameters view, a revamped functions view, and loads of other enhancements
-- **2025-06-25** · [Introducing network capabilities in Surreal Cloud](../2025/06/introducing-network-capabilities-in-surreal-cloud.md)  
-  `releases` `featured` — Surreal Cloud’s latest release introduces network capabilities. Fine grained controls that determine exactly which network targets your database can reach. In this blog we will walk through network capabilities, explore the motivation behind it, and explain how it improves security for everyone running SurrealDB in the cloud.
+- **2025-06-25** · [Introducing network capabilities in SurrealDB Cloud](../2025/06/introducing-network-capabilities-in-surreal-cloud.md)  
+  `releases` `featured` — SurrealDB Cloud’s latest release introduces network capabilities. Fine grained controls that determine exactly which network targets your database can reach. In this blog we will walk through network capabilities, explore the motivation behind it, and explain how it improves security for everyone running SurrealDB in the cloud.
 - **2025-06-20** · [What's new in Surrealist 3.4](../2025/06/whats-new-in-surrealist-3-4.md)  
   `releases` `featured` — Surrealist 3.4 introduces multi-window support, improved computed table views, redesigned Cloud deployment workflow, and multi-record selection capabilities
 - **2025-04-15** · [Introducing Teams and Organisations in SurrealDB Cloud](../2025/04/introducing-teams-and-organisations-in-surreal-cloud.md)  

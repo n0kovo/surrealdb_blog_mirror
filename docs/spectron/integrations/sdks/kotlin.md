@@ -101,6 +101,8 @@ val doc = memory.documents.upload(
     filename = "returns.pdf",
     contentType = "application/pdf",
     title = "Returns Policy",
+    scope = listOf("org/acme/team/eng"),
+    labels = listOf("team=eng"),
 )
 
 memory.documents.get(doc.id)

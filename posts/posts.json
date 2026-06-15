@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T07:38:18.783409+00:00",
+  "generated_at": "2026-06-15T08:01:29.700844+00:00",
   "count": 232,
   "posts": [
     {
@@ -1095,8 +1095,8 @@
     },
     {
       "slug": "introducing-network-capabilities-in-surreal-cloud",
-      "title": "Introducing network capabilities in Surreal Cloud",
-      "summary": "Surreal Cloud’s latest release introduces network capabilities. Fine grained controls that determine exactly which network targets your database can reach. In this blog we will walk through network capabilities, explore the motivation behind it, and explain how it improves security for everyone running SurrealDB in the cloud.",
+      "title": "Introducing network capabilities in SurrealDB Cloud",
+      "summary": "SurrealDB Cloud’s latest release introduces network capabilities. Fine grained controls that determine exactly which network targets your database can reach. In this blog we will walk through network capabilities, explore the motivation behind it, and explain how it improves security for everyone running SurrealDB in the cloud.",
       "publishDate": "2025-06-25T00:00:00.000Z",
       "categories": [
         "releases",

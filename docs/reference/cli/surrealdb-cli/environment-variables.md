@@ -113,12 +113,6 @@ These environment variables can be used to configure a SurrealDB server to confi
       <td scope="row" data-label="Notes">Specifies a list of paths in which files can be accessed.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_FILE_ALLOWLIST`*Since v2.1.5*</td>
-      <td scope="row" data-label="Default">none</td>
-      <td scope="row" data-label="Allowed values">Comma-separated paths</td>
-      <td scope="row" data-label="Notes">Limits file access for the mapper filter to only the specified allowed file paths. The paths must be provided as absolute paths, separated by a colon (:) on Unix-like systems or a semicolon (;) on Windows.</td>
-    </tr>
-    <tr>
       <td scope="row" data-label="Env var">`SURREAL_GLOBAL_BUCKET`</td>
       <td scope="row" data-label="Default">none</td>
       <td scope="row" data-label="Allowed values">A string</td>
@@ -836,9 +830,9 @@ surreal start --allow-all true
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_FUNC`</td>
       <td scope="row" data-label="Command arg">`allow-funcs`</td>
       <td scope="row" data-label="Command">`start`</td>
-      <td scope="row" data-label="Default">false</td>
-      <td scope="row" data-label="Allowed values">true, false, comma-separated strings to function paths</td>
-      <td scope="row" data-label="Notes">Allow execution of all functions except for functions that are specifically denied.</td>
+      <td scope="row" data-label="Default">all functions allowed</td>
+      <td scope="row" data-label="Allowed values">Empty, `*`, or comma-separated function paths</td>
+      <td scope="row" data-label="Notes">Allow execution of all functions except for functions that are specifically denied. Set to an empty value or `*` to allow all functions. Use a comma-separated list (for example, `array,string::len,http::get`) to allow specific function families or names. Values such as `true` are not valid. The environment variable name is singular (`FUNC`), matching the `--allow-funcs` flag.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_GUESTS`</td>

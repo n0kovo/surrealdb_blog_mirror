@@ -1,8 +1,10 @@
 # All Posts
 
-_232 posts_  
+_233 posts_  
 [← Index](../README.md)
 
+- **2026-06-16** · [What's new in Surrealist 3.9](2026/06/whats-new-in-surrealist-3-9.md)  
+  `featured` `releases` — Surrealist 3.9 introduces a complete design overhaul, a new datasets browser and data manager, and loads of other enhancements.
 - **2026-06-12** · [Organizations and Teams for your SurrealDB App](2026/06/organizations-and-teams-for-your-surrealdb-app.md)  
   `tutorials` — Bootstrapping multi-tenant orgs, roles, permissions, and the functions that enforce them - straight from SurrealKit templates.
 - **2026-06-11** · [Fuzz testing for SurrealDB: using randomised input to find bugs before users do](2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md)  

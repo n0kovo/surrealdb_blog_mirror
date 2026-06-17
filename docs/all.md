@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_975 pages_  
+_976 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -1750,6 +1750,8 @@ _975 pages_
   Combine authoritative knowledge retrieval with experiential memory.
 - [Reflection loops](spectron/cookbooks/patterns/reflection-loops.md)
   Scheduled or triggered reflect jobs.
+- [Spoiler-safe narrative memory](spectron/cookbooks/patterns/spoiler-safe-narrative-memory.md)
+  Ingest full canon; answer only as far as the user has read or watched.
 - [Stateful workflows](spectron/cookbooks/patterns/stateful-workflows.md)
   Diff-friendly state for workflow UIs.
 - [User memory in chat](spectron/cookbooks/patterns/user-memory-in-chat.md)

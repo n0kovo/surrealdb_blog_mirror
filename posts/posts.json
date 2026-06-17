@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-06-16T07:59:56.246847+00:00",
-  "count": 232,
+  "generated_at": "2026-06-17T07:53:14.535379+00:00",
+  "count": 233,
   "posts": [
+    {
+      "slug": "whats-new-in-surrealist-3-9",
+      "title": "What's new in Surrealist 3.9",
+      "summary": "Surrealist 3.9 introduces a complete design overhaul, a new datasets browser and data manager, and loads of other enhancements.",
+      "publishDate": "2026-06-16T23:58:55.000Z",
+      "categories": [
+        "featured",
+        "releases"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/nksi63smg3svlrwr5g01nm9y.auto",
+      "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-9",
+      "local_path": "2026/06/whats-new-in-surrealist-3-9.md"
+    },
     {
       "slug": "organizations-and-teams-for-your-surrealdb-app",
       "title": "Organizations and Teams for your SurrealDB App",

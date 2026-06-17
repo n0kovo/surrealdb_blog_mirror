@@ -1,12 +1,12 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-06-16 07:59 UTC_
+_Last updated: 2026-06-17 07:53 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
 ## Stats
 
-- **Total pages:** 975
+- **Total pages:** 976
 
 ## Browse
 

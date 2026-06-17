@@ -1,8 +1,10 @@
 # Category: featured
 
-_105 posts_  
+_106 posts_  
 [← Index](../../README.md)
 
+- **2026-06-16** · [What's new in Surrealist 3.9](../2026/06/whats-new-in-surrealist-3-9.md)  
+  `featured` `releases` — Surrealist 3.9 introduces a complete design overhaul, a new datasets browser and data manager, and loads of other enhancements.
 - **2026-05-29** · [SurrealDB 3.x by the numbers](../2026/05/surrealdb-3-x-by-the-numbers.md)  
   `engineering` `company` `featured` — Fresh SurrealDB 3.x benchmarks: 141k ops\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.
 - **2026-05-27** · [SurrealDB 3.1: stability, DiskANN, and a new release process](../2026/05/surrealdb-3-1-stability-diskann-and-a-new-release-process.md)  

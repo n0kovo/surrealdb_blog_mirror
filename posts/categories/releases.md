@@ -1,8 +1,10 @@
 # Category: releases
 
-_46 posts_  
+_47 posts_  
 [← Index](../../README.md)
 
+- **2026-06-16** · [What's new in Surrealist 3.9](../2026/06/whats-new-in-surrealist-3-9.md)  
+  `featured` `releases` — Surrealist 3.9 introduces a complete design overhaul, a new datasets browser and data manager, and loads of other enhancements.
 - **2026-06-09** · [SurrealDB is now available on the Nebius AI Cloud Marketplace](../2026/06/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace.md)  
   `releases` — SurrealDB is now available on the Nebius AI Cloud Marketplace.
 - **2026-05-27** · [SurrealDB 3.1: stability, DiskANN, and a new release process](../2026/05/surrealdb-3-1-stability-diskann-and-a-new-release-process.md)  

@@ -4,10 +4,20 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-06-12T21:29:02Z</updated>
+  <updated>2026-06-16T23:58:55Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/whats-new-in-surrealist-3-9</id>
+    <title>What's new in Surrealist 3.9</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/whats-new-in-surrealist-3-9" type="text/html" />
+    <published>2026-06-16T23:58:55Z</published>
+    <updated>2026-06-16T23:58:55Z</updated>
+    <summary type="text">Surrealist 3.9 introduces a complete design overhaul, a new datasets browser and data manager, and loads of other enhancements.</summary>
+    <category term="featured" />
+    <category term="releases" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/organizations-and-teams-for-your-surrealdb-app</id>
     <title>Organizations and Teams for your SurrealDB App</title>
@@ -494,15 +504,5 @@
     <category term="tutorials" />
     <category term="engineering" />
     <category term="ai" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/how-defence-is-changing-and-why-databases-are-critical-to-the-shift-into-ai</id>
-    <title>How defence is changing and why databases are critical to the shift into AI</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/how-defence-is-changing-and-why-databases-are-critical-to-the-shift-into-ai" type="text/html" />
-    <published>2025-09-03T00:00:00Z</published>
-    <updated>2025-09-03T00:00:00Z</updated>
-    <summary type="text">SurrealDB has launched SurrealMCP, giving AI agents secure, real-time, permission-aware memory powered by its multi-model database.</summary>
-    <category term="featured" />
-    <category term="company" />
   </entry>
 </feed>

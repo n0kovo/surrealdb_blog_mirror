@@ -34,6 +34,8 @@ export SPECTRON_CONTEXT_ID=dev
 
 spectron remember "Alice was promoted to CTO." --scope org/acme/user/alice
 
+spectron remember "The reveal happened on page 42." --scope org/acme --as-of 1886-01-01T00:00:00Z
+
 spectron remember --from-file ./transcript.jsonl --scope org/acme/user/alice --extract per_message
 ```
 
@@ -52,9 +54,12 @@ Content-Type: application/json
 {
   "text": "Alice was promoted to CTO.",
   "infer": "full",
-  "scope": ["org/acme/user/alice"]
+  "scopes": [["org/acme/user/alice"]],
+  "observed_at": "2026-05-12T10:00:00Z"
 }
 ```
+
+Optional **`observed_at`** (RFC 3339) stamps derived facts at a caller-supplied **known time** instead of wall-clock ingest. Use this for **narrative playback** — ingest an entire canon but answer only as far as the user has read or watched (see [Spoiler-safe narrative memory](../../../cookbooks/patterns/spoiler-safe-narrative-memory.md)). Omitted keeps the default (ingest time).
 
 **Response (`infer: full`):** nested **`extraction`** with entities, attributes, relations, instructions, and uncertainties, plus `sessionId` and `turnId`.
 
@@ -73,7 +78,7 @@ Content-Type: application/json
     { "role": "user", "content": "I was promoted to CTO." },
     { "role": "assistant", "content": "Congratulations!" }
   ],
-  "scope": ["org/acme/user/alice"],
+  "scopes": [["org/acme/user/alice"]],
   "extract": "whole_conversation"
 }
 ```
@@ -89,7 +94,7 @@ Returns **`extractions`**, **`sessionId`**, and **`turnIds`**.
 await client.facts.create(
     text="Alice was promoted to CTO.",
     infer="full",
-    scope=["org/acme/user/alice"],
+    scope=[["org/acme/user/alice"]],
 )
 ```
 
@@ -99,7 +104,7 @@ Sessions group episodic **turns** for transcript browsing and session-scoped con
 
 ```http
 POST /api/v1/{context_id}/sessions
-{ "scope": ["org/acme/user/alice"] }
+{ "scopes": [["org/acme/user/alice"]] }
 ```
 
 See [Sessions and turns](https://surrealdb.com/docs/spectron/mental-model/sessions-and-turns).

@@ -21,7 +21,7 @@ spectron recall "What role does Alice have?" --json \
   --limit 10
 ```
 
-Pass **`scope`** on the REST body (the CLI does not expose a `--scope` flag on `recall` today):
+Pass **`lens`** on the REST body (the CLI does not expose a `--scope` flag on `recall` today):
 
 ```http
 POST /api/v1/{context_id}/query
@@ -30,8 +30,8 @@ Content-Type: application/json
 
 {
   "query": "What role does Alice have?",
-  "limit": 10,
-  "scope": ["org/acme/user/alice"]
+  "k": 10,
+  "lens": [["org/acme/user/alice"]]
 }
 ```
 
@@ -39,16 +39,16 @@ Content-Type: application/json
 
 | Field | Meaning |
 | --- | --- |
-| `tier` | `direct`, `cache`, `hybrid`, or `full_context` |
-| `hits` | Ranked results; each hit includes **`source`** (`entity`, `attribute`, `memory_chunk`, `chunk`, or `section`) |
+| `tier` | `direct`, `cache`, `hybrid`, or `full_context` — relational questions may resolve at tier 1 when the classifier routes to a structured relation read |
+| `hits` | Ranked results; each hit includes **`source`** (`entity`, `attribute`, `memory_chunk`, `chunk`, or `section`) and optional **`occurredAt`** (known time of the row — use to resolve relative dates in source text) |
 | `queryMs` | Server-side latency in milliseconds |
 | `trace.traceId` | Correlates with `GET .../traces/{traceId}` |
 
-Optional read modifiers: **`labels`** (descriptor filter only), **`lens`** (filter by scope-path involvement), **`scope_view`** (`strict`, `crossTeam`, `merged` — the latter two resolve like **`strict`**; see [Contexts and scope](https://surrealdb.com/docs/spectron/mental-model/contexts-and-scope#labels-lens-and-scope-views-reads)), **`include`** (`facts`, `passages`, or both — narrows the response only; retrieval considers all families), **`includeDuplicates`** (default `false` — excludes near-duplicate passage chunks from fused recall; set `true` for parity with `/documents/query`).
+Optional read modifiers: **`labels`** (descriptor filter only), **`lens`** (DNF scope filter by involvement), **`asOf`** (known-time playback — hide facts and relations from later chapters or episodes; see [spoiler-safe narrative memory](../../cookbooks/patterns/spoiler-safe-narrative-memory.md)), **`scope_view`** (`strict`, `crossTeam`, `merged` — the latter two resolve like **`strict`**; see [Contexts and scope](https://surrealdb.com/docs/spectron/mental-model/contexts-and-scope#labels-lens-and-scope-views-reads)), **`include`** (`facts`, `passages`, or both — narrows the response only; retrieval considers all families), **`includeDuplicates`** (default `false` — excludes near-duplicate passage chunks from fused recall; set `true` for parity with `/documents/query`).
 
-**`limit`** defaults to **10** and is capped at **50** per deployment (`SPECTRON_MAX_QUERY_K`). The internal retrieval pool is independent of `limit` — see [Hybrid search](hybrid-search.md#answer-size-vs-search-breadth).
+**`k`** defaults to **10** and is capped at **50** per deployment (`SPECTRON_MAX_QUERY_K`). The internal retrieval pool is independent of `k` — see [Hybrid search](hybrid-search.md#answer-size-vs-search-breadth).
 
-CLI flags: `--limit`, `--mode hybrid|vector|bm25|graph`, `--include facts,passages`, tri-temporal `--as-of`, `--at-instant`, `--valid-from`, `--valid-until`.
+CLI flags: `--limit` (maps to `k`), `--mode hybrid|vector|bm25|graph`, `--include facts,passages`, tri-temporal `--as-of`, `--at-instant`, `--valid-from`, `--valid-until`.
 
 > [!NOTE]
 > **`--min-trust`** is not supported yet — the `/query` response does not expose per-hit trust scores, so the CLI rejects the flag rather than silently returning unfiltered results.
@@ -63,8 +63,8 @@ Content-Type: application/json
 
 {
   "query": "What role does Alice have?",
-  "limit": 10,
-  "scope": ["org/acme/user/alice"]
+  "k": 10,
+  "lens": [["org/acme/user/alice"]]
 }
 ```
 

@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-06-16 07:59 UTC_
+_Last updated: 2026-06-17 07:53 UTC_
 
 ## Stats
 
-- **Total posts:** 232
+- **Total posts:** 233
 - **First post:** 2022-07-20
-- **Latest post:** 2026-06-12
+- **Latest post:** 2026-06-16
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-06-16 07:59 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 37 posts
+- [2026](posts/years/2026.md) — 38 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -32,12 +32,14 @@ _Last updated: 2026-06-16 07:59 UTC_
 - [company](posts/categories/company.md) — 41 posts
 - [engineering](posts/categories/engineering.md) — 40 posts
 - [events](posts/categories/events.md) — 7 posts
-- [featured](posts/categories/featured.md) — 105 posts
-- [releases](posts/categories/releases.md) — 46 posts
+- [featured](posts/categories/featured.md) — 106 posts
+- [releases](posts/categories/releases.md) — 47 posts
 - [tutorials](posts/categories/tutorials.md) — 87 posts
 
 ## Latest posts
 
+- **2026-06-16** · [What's new in Surrealist 3.9](posts/2026/06/whats-new-in-surrealist-3-9.md)  
+  `featured` `releases` — Surrealist 3.9 introduces a complete design overhaul, a new datasets browser and data manager, and loads of other enhancements.
 - **2026-06-12** · [Organizations and Teams for your SurrealDB App](posts/2026/06/organizations-and-teams-for-your-surrealdb-app.md)  
   `tutorials` — Bootstrapping multi-tenant orgs, roles, permissions, and the functions that enforce them - straight from SurrealKit templates.
 - **2026-06-11** · [Fuzz testing for SurrealDB: using randomised input to find bugs before users do](posts/2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-06-16 07:59 UTC_
   `ai` `tutorials` — RAG pipelines usually focus on unstructured content (chunks + vectors\/BM25), but structured data introduces a different retrieval problem: you need to pull exact rows and aggregates from tables, not just “similar passages.” This article explains an agentic pattern for structured retrieval using text-to-SurrealQL: give an LLM agent a single database-aware tool that converts natural-language questions into valid SurrealQL, executes the query in SurrealDB, and returns deterministic, auditable results.
 - **2026-05-12** · [What chunking strategies exist and how to choose one?](posts/2026/05/what-chunk-strategies-exist-and-how-to-choose-one.md)  
   `ai` — If you've decided to chunk your documents for a RAG pipeline or semantic search system, the next question hits almost immediately: which chunking strategy should I use?
-- **2026-05-08** · [What is the recommended chunk size?](posts/2026/05/what-is-the-recommended-chunk-size.md)  
-  `ai` — If you're building a RAG (Retrieval-Augmented Generation) pipeline, a semantic search system, or any AI application that reads from a vector store, one question comes up almost immediately: what chunk size should I use?

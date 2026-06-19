@@ -5,7 +5,7 @@ generated: stub
 
 # Ai Frameworks
 
-_Auto-generated index — 11 pages._
+_Auto-generated index — 12 pages._
 
 ## Pages
 
@@ -13,6 +13,8 @@ _Auto-generated index — 11 pages._
   This section contains information about the Agno framework and how to integrate it with SurrealDB.
 - [CAMEL](camel.md)
   This section contains information about the Camel framework and how to integrate it with SurrealDB.
+- [CocoIndex](cocoindex.md)
+  Incremental data pipelines for AI agents with declarative SurrealDB graph and vector targets.
 - [CrewAI](crewai.md)
   How to plug SurrealDB into CrewAI as a memory and vector-search layer.
 - [Dagster](dagster.md)

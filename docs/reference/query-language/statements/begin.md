@@ -37,6 +37,9 @@ The following query shows example usage of this statement.
 /**[test]
 
 [[test.results]]
+value = "NONE"
+
+[[test.results]]
 value = "[{ balance: 135605.16f, id: account:one }]"
 
 [[test.results]]
@@ -47,6 +50,9 @@ value = "[{ balance: 135905.16f, id: account:one }]"
 
 [[test.results]]
 value = "[{ balance: 90731.31f, id: account:two }]"
+
+[[test.results]]
+value = "NONE"
 
 */
 

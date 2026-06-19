@@ -50,19 +50,7 @@ A value is not [truthy](../../language-primitives/data-types/values.md#values-an
 /**[test]
 
 [[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
+value = "[true, true, true, true, true]"
 
 */
 
@@ -81,19 +69,7 @@ Similarly, the function can be used twice to determine whether a value is truthy
 /**[test]
 
 [[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
+value = "[true, true, true, true, true]"
 
 */
 
@@ -112,19 +88,7 @@ Doubling the `!` operator is functionally identical to the above and is a more c
 /**[test]
 
 [[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
+value = "[true, true, true, true, true]"
 
 */
 

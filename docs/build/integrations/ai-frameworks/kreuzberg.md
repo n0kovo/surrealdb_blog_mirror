@@ -1,5 +1,5 @@
 ---
-position: 7
+position: 8
 title: Kreuzberg
 description: Integrate Kreuzberg document intelligence extraction pipelines with SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/ai-frameworks/kreuzberg.mdx"

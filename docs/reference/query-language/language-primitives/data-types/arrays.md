@@ -70,10 +70,13 @@ Arrays are frequently encountered in SurrealDB, as [`SELECT`](../../statements/s
 /**[test]
 
 [[test.results]]
+value = "[9]"
+
+[[test.results]]
 value = "9"
 
 [[test.results]]
-error = "'Expected a single result output when using the ONLY keyword'"
+error = "Expected a single result output when using the ONLY keyword"
 
 */
 
@@ -116,10 +119,10 @@ CREATE person SET results = [
 	{ score: 76, date: "2017-06-18T08:00:00Z", name: "Algorithmics" },
 	{ score: 83,
 	  date: "2018-03-21T08:00:00Z",
-	  name: "Concurrent Programming" }
+	  name: "Concurrent Programming" },
 	{ score: 69,
 	  date: "2018-09-17T08:00:00Z",
-	  name: "Advanced Computer Science 101" }
+	  name: "Advanced Computer Science 101" },
 	{ score: 73,
 	  date: "2019-04-20T08:00:00Z",
 	  name: "Distributed Databases" }

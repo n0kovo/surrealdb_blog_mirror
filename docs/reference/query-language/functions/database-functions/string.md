@@ -456,10 +456,7 @@ The following example shows this function, and its output, when used in a [`RETU
 /**[test]
 
 [[test.results]]
-value = "true"
-
-[[test.results]]
-value = "true"
+value = "[true, true]"
 
 */
 
@@ -622,7 +619,7 @@ The following example shows this function, and its output, when used in a [`RETU
 /**[test]
 
 [[test.results]]
-value = "'surrealdb-cloud-has-launched-database-awesome'"
+value = "'surrealdb-cloud-has-launched-ai_native_database-awesome'"
 
 */
 
@@ -919,7 +916,7 @@ value = "7"
 value = "40"
 
 [[test.results]]
-value = "'Incorrect arguments for function string::distance::hamming(). Strings must be of equal length.'"
+error = "Incorrect arguments for function string::distance::hamming(). Strings must be of equal length."
 
 */
 
@@ -1381,7 +1378,7 @@ value = "true"
 
 RETURN string::is_email("info@surrealdb.com");
 
-true
+-- true
 ```
 
   
@@ -1759,6 +1756,12 @@ The following example shows this function, and its output, when used in a [`RETU
 [[test.results]]
 value = "-1"
 
+[[test.results]]
+value = "0"
+
+[[test.results]]
+value = "1"
+
 */
 
 RETURN string::semver::compare("1.0.0", "1.3.5");
@@ -2031,7 +2034,7 @@ While the first two uses of the function in the following example compare identi
 value = "51"
 
 [[test.results]]
-value = "2997"
+value = "2935"
 
 [[test.results]]
 value = "151"
@@ -2039,14 +2042,14 @@ value = "151"
 */
 
 -- returns 51
-RETURN string::similarity::fuzzy("DB", "DB");
--- returns 2997
-RETURN string::similarity::fuzzy(
-  "SurrealDB Cloud Beta is now live! We are excited to announce that we are inviting users from the waitlist to join. Stay tuned for your invitation!", "SurrealDB Cloud Beta is now live! We are excited to announce that we are inviting users from the waitlist to join. Stay tuned for your invitation!"
+string::similarity::fuzzy("DB", "DB");
+-- returns 2935
+string::similarity::fuzzy(
+  "SurrealDB Cloud is now live! We are excited to announce that we are inviting users from the waitlist to join. Stay tuned for your invitation!", "SurrealDB Cloud is now live! We are excited to announce that we are inviting users from the waitlist to join. Stay tuned for your invitation!"
 );
 -- returns 151 despite nowhere close to exact match
-RETURN string::similarity::fuzzy(
-  "SurrealDB Cloud Beta is now live! We are excited to announce that we are inviting users from the waitlist to join. Stay tuned for your invitation!", "Surreal"
+string::similarity::fuzzy(
+  "SurrealDB Cloud is now live! We are excited to announce that we are inviting users from the waitlist to join. Stay tuned for your invitation!", "Surreal"
 );
 ```
 

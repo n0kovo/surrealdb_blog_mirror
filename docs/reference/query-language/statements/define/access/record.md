@@ -73,7 +73,7 @@ The following example shows how record access with a token can be used to grant 
 /**[test]
 
 [[test.results]]
-value = "NONE"
+value = "{ database: 'app_vitalsense', namespace: 'abcum' }"
 
 [[test.results]]
 value = "NONE"

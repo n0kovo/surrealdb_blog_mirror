@@ -94,7 +94,7 @@ The following example shows how you can create a `NAMESPACE` user using the `DEF
 /**[test]
 
 [[test.results]]
-value = "NONE"
+value = "{ database: 'test', namespace: 'abcum' }"
 
 [[test.results]]
 value = "NONE"
@@ -115,7 +115,7 @@ The following example shows how you can create a `DATABASE` user using the `DEFI
 /**[test]
 
 [[test.results]]
-value = "NONE"
+value = "{ database: 'app_vitalsense', namespace: 'abcum' }"
 
 [[test.results]]
 value = "NONE"

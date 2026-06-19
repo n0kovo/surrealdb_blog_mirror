@@ -1,5 +1,5 @@
 ---
-position: 6
+position: 7
 title: Google Agent
 description: Google Agent is a framework for building and deploying agents.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/ai-frameworks/google-agent.mdx"

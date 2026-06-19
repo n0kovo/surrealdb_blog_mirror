@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_976 pages_  
+_977 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -107,6 +107,8 @@ _976 pages_
   This section contains information about the Agno framework and how to integrate it with SurrealDB.
 - [CAMEL](build/integrations/ai-frameworks/camel.md)
   This section contains information about the Camel framework and how to integrate it with SurrealDB.
+- [CocoIndex](build/integrations/ai-frameworks/cocoindex.md)
+  Incremental data pipelines for AI agents with declarative SurrealDB graph and vector targets.
 - [CrewAI](build/integrations/ai-frameworks/crewai.md)
   How to plug SurrealDB into CrewAI as a memory and vector-search layer.
 - [Dagster](build/integrations/ai-frameworks/dagster.md)
@@ -1793,7 +1795,7 @@ _976 pages_
 - [Spectron on SurrealDB Cloud](spectron/index/quickstarts/surrealdb-cloud.md)
   How Spectron contexts, authentication, and APIs work on SurrealDB Cloud versus self-hosted deployments.
 - [Surrealist dashboard quickstart](spectron/index/quickstarts/surrealist-dashboard.md)
-  Create a Spectron Context in SurrealDB Cloud via Surrealist, mint API keys, and integrate with the Spectron data plane.
+  Create a Spectron context in Surrealist, try the Playground, inspect memory, upload documents, mint API keys, and integrate with the Spectron data plane.
 - [The accuracy promise](spectron/index/welcome/accuracy-promise.md)
   Defensible correctness – provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
 - [How it works in five minutes](spectron/index/welcome/how-it-works.md)

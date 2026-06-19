@@ -82,6 +82,7 @@ skip-record-id-key = true
 
 [[test.results]]
 value = "[{ company: 'SurrealDB', id: person:tobie, name: 'Tobie', skills: ['JavaScript', 'Go', 'SurrealQL'] }]"
+skip-record-id-key = true
 
 */
 
@@ -315,13 +316,10 @@ A statement with a `CONTENT` clause bypasses `READONLY` fields instead of genera
 
 [[test.results]]
 value = "NONE"
-
 [[test.results]]
 value = "[{ age: 90, created: d'2024-01-01T00:00:00Z', id: person:gladys }]"
-
 [[test.results]]
 value = "[{ age: 70, created: d'2024-01-01T00:00:00Z', id: person:gladys }]"
-
 */
 
 DEFINE FIELD created
@@ -380,16 +378,12 @@ Originally an alias for `CONTENT`, the `REPLACE` clause maintains the previous b
 
 [[test.results]]
 value = "NONE"
-
 [[test.results]]
 value = "[{ age: 90, created: d'2024-01-01T00:00:00Z', id: person:gladys }]"
-
 [[test.results]]
-error = "'Found changed value for field `created`, with record `person:gladys`, but field is readonly'"
-
+error = "Found changed value for field `created`, with record `person:gladys`, but field is readonly"
 [[test.results]]
 value = "[{ age: 70, created: d'2024-01-01T00:00:00Z', id: person:gladys }]"
-
 */
 
 DEFINE FIELD created

@@ -45,10 +45,10 @@ value = "'I am a string!'"
 value = "{ prop: 'value' }"
 
 [[test.results]]
-value = "[]"
+error = "The table 'person' does not exist"
 
 [[test.results]]
-value = "[person:mbn3r0epzxiz5hoqr2ls]"
+value = "[person:l8n06hvjap2dxwchhuzq]"
 skip-record-id-key = true
 
 */
@@ -80,10 +80,10 @@ value = "'I am a string!'"
 value = "{ prop: 'value' }"
 
 [[test.results]]
-value = "[]"
+error = "The table 'person' does not exist"
 
 [[test.results]]
-value = "[person:mbn3r0epzxiz5hoqr2ls]"
+value = "[person:ritmmuf01x433scdjcua]"
 skip-record-id-key = true
 
 */
@@ -105,8 +105,23 @@ SELECT * FROM person;
 /**[test]
 
 [[test.results]]
-value = "person:79e0p1et39n2dyongjzx"
+value = "NONE"
+
+[[test.results]]
+value = "NONE"
+
+[[test.results]]
+value = "NONE"
+
+[[test.results]]
+value = "NONE"
+
+[[test.results]]
+value = "person:vtuj6es8fkd1gnppfefn"
 skip-record-id-key = true
+
+[[test.results]]
+value = "NONE"
 
 */
 

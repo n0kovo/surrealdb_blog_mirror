@@ -1,5 +1,5 @@
 ---
-position: 5
+position: 6
 title: Dagster
 description: This section contains information about the Dagster framework and how to integrate it with SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/ai-frameworks/dagster.mdx"

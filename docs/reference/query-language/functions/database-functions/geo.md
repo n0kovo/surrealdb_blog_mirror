@@ -93,7 +93,7 @@ If the argument is not a geometry type, then an error will be returned.
 /**[test]
 
 [[test.results]]
-error = "'Incorrect arguments for function geo::area(). Argument 1 was the wrong type. Expected `geometry` but found `12345`'"
+error = "Incorrect arguments for function geo::area(). Argument 1 was the wrong type. Expected `geometry` but found `12345`"
 
 */
 RETURN geo::area(12345);
@@ -125,7 +125,10 @@ value = "NONE"
 value = "NONE"
 
 [[test.results]]
-value = "164.18154786094604f"
+value = "164.181547860946f"
+
+[[test.results]]
+value = "-14.70308114652181f"
 
 */
 

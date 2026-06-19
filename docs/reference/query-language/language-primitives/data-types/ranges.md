@@ -50,7 +50,7 @@ value = "0.."
 value = "0>.."
 
 [[test.results]]
-value = "..10"
+value = "..100"
 
 [[test.results]]
 value = "..=100"

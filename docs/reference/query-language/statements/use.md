@@ -39,7 +39,7 @@ The following query shows example usage of this statement if you have multiple n
 /**[test]
 
 [[test.results]]
-value = "NONE"
+value = "{ database: 'test', namespace: 'test' }"
 
 */
 
@@ -50,7 +50,7 @@ USE NS test; -- Switch to the 'main' Namespace
 /**[test]
 
 [[test.results]]
-value = "NONE"
+value = "{ database: 'test', namespace: 'test' }"
 
 */
 
@@ -61,7 +61,7 @@ USE DB test; -- Switch to the 'main' Database
 /**[test]
 
 [[test.results]]
-value = "NONE"
+value = "{ database: 'test', namespace: 'test' }"
 
 */
 

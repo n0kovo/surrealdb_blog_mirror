@@ -73,7 +73,7 @@ value = "NONE"
 value = "'HELLO'"
 
 [[test.results]]
-error = "'Incorrect arguments for function ANONYMOUS(). Expected a value of type 'string' for argument $text'"
+error = "Incorrect arguments for function ANONYMOUS(). Expected a value of type 'string' for argument $text"
 
 [[test.results]]
 value = "NONE"
@@ -82,7 +82,7 @@ value = "NONE"
 value = "16"
 
 [[test.results]]
-error = "'Incorrect arguments for function ANONYMOUS(). Expected a value of type 'number' for argument $num'"
+error = "Incorrect arguments for function ANONYMOUS(). Expected a value of type 'number' for argument $num"
 
 */
 
@@ -210,7 +210,7 @@ This has since been resolved, allowing a parameter declared outside a closure to
 value = "NONE"
 
 [[test.results]]
-value = "[[1]]"
+value = "[1]"
 
 */
 

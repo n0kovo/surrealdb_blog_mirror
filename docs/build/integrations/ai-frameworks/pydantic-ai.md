@@ -1,5 +1,5 @@
 ---
-position: 10
+position: 11
 title: Pydantic AI
 description: This section contains information about the Pydantic AI framework and how to integrate it with SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/ai-frameworks/pydantic-ai.mdx"

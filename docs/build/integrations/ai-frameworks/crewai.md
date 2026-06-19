@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 5
 title: CrewAI
 description: How to plug SurrealDB into CrewAI as a memory and vector-search layer.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/ai-frameworks/crewai.mdx"

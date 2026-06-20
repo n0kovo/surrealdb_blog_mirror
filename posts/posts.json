@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-06-19T07:54:28.757151+00:00",
-  "count": 233,
+  "generated_at": "2026-06-20T07:22:09.592354+00:00",
+  "count": 234,
   "posts": [
+    {
+      "slug": "deterministic-simulation-testing-and-its-use-at-surrealdb",
+      "title": "Deterministic simulation testing and its use at SurrealDB",
+      "summary": "How deterministic simulation works from easy to complex scenarios, and its ussage at SurrealDB's transactional key-value store and embedded key-value engine.",
+      "publishDate": "2026-06-19T11:46:02.000Z",
+      "categories": [
+        "engineering"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/wog3a3t96a4gqk3cr6fs4rnx.auto",
+      "source": "https://surrealdb.com/blog/deterministic-simulation-testing-and-its-use-at-surrealdb",
+      "local_path": "2026/06/deterministic-simulation-testing-and-its-use-at-surrealdb.md"
+    },
     {
       "slug": "whats-new-in-surrealist-3-9",
       "title": "What's new in Surrealist 3.9",

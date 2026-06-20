@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-06-19 07:54 UTC_
+_Last updated: 2026-06-20 07:22 UTC_
 
 ## Stats
 
-- **Total posts:** 233
+- **Total posts:** 234
 - **First post:** 2022-07-20
-- **Latest post:** 2026-06-16
+- **Latest post:** 2026-06-19
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-06-19 07:54 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 38 posts
+- [2026](posts/years/2026.md) — 39 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -30,7 +30,7 @@ _Last updated: 2026-06-19 07:54 UTC_
 - [ai](posts/categories/ai.md) — 37 posts
 - [community](posts/categories/community.md) — 34 posts
 - [company](posts/categories/company.md) — 41 posts
-- [engineering](posts/categories/engineering.md) — 40 posts
+- [engineering](posts/categories/engineering.md) — 41 posts
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 106 posts
 - [releases](posts/categories/releases.md) — 47 posts
@@ -38,6 +38,8 @@ _Last updated: 2026-06-19 07:54 UTC_
 
 ## Latest posts
 
+- **2026-06-19** · [Deterministic simulation testing and its use at SurrealDB](posts/2026/06/deterministic-simulation-testing-and-its-use-at-surrealdb.md)  
+  `engineering` — How deterministic simulation works from easy to complex scenarios, and its ussage at SurrealDB's transactional key-value store and embedded key-value engine.
 - **2026-06-16** · [What's new in Surrealist 3.9](posts/2026/06/whats-new-in-surrealist-3-9.md)  
   `featured` `releases` — Surrealist 3.9 introduces a complete design overhaul, a new datasets browser and data manager, and loads of other enhancements.
 - **2026-06-12** · [Organizations and Teams for your SurrealDB App](posts/2026/06/organizations-and-teams-for-your-surrealdb-app.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-06-19 07:54 UTC_
   `tutorials` — Using SurrealDB and Surrealist's graph visualisation to not just understand but also see how Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo works.
 - **2026-05-19** · [Agentic retrieval for structured data with text-to-surql](posts/2026/05/agentic-retrieval-for-structured-data-with-text-to-surql.md)  
   `ai` `tutorials` — RAG pipelines usually focus on unstructured content (chunks + vectors\/BM25), but structured data introduces a different retrieval problem: you need to pull exact rows and aggregates from tables, not just “similar passages.” This article explains an agentic pattern for structured retrieval using text-to-SurrealQL: give an LLM agent a single database-aware tool that converts natural-language questions into valid SurrealQL, executes the query in SurrealDB, and returns deterministic, auditable results.
-- **2026-05-12** · [What chunking strategies exist and how to choose one?](posts/2026/05/what-chunk-strategies-exist-and-how-to-choose-one.md)  
-  `ai` — If you've decided to chunk your documents for a RAG pipeline or semantic search system, the next question hits almost immediately: which chunking strategy should I use?

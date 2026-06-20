@@ -1,8 +1,10 @@
 # Category: engineering
 
-_40 posts_  
+_41 posts_  
 [← Index](../../README.md)
 
+- **2026-06-19** · [Deterministic simulation testing and its use at SurrealDB](../2026/06/deterministic-simulation-testing-and-its-use-at-surrealdb.md)  
+  `engineering` — How deterministic simulation works from easy to complex scenarios, and its ussage at SurrealDB's transactional key-value store and embedded key-value engine.
 - **2026-06-11** · [Fuzz testing for SurrealDB: using randomised input to find bugs before users do](../2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md)  
   `engineering` — A good choice to complement unit and integration tests, fuzz testing lets you use semi-random data to discover obscure bugs before users do.
 - **2026-05-29** · [SurrealDB 3.x by the numbers](../2026/05/surrealdb-3-x-by-the-numbers.md)  

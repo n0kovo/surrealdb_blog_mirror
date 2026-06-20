@@ -4,10 +4,19 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-06-16T23:58:55Z</updated>
+  <updated>2026-06-19T11:46:02Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/deterministic-simulation-testing-and-its-use-at-surrealdb</id>
+    <title>Deterministic simulation testing and its use at SurrealDB</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/deterministic-simulation-testing-and-its-use-at-surrealdb" type="text/html" />
+    <published>2026-06-19T11:46:02Z</published>
+    <updated>2026-06-19T11:46:02Z</updated>
+    <summary type="text">How deterministic simulation works from easy to complex scenarios, and its ussage at SurrealDB's transactional key-value store and embedded key-value engine.</summary>
+    <category term="engineering" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/whats-new-in-surrealist-3-9</id>
     <title>What's new in Surrealist 3.9</title>
@@ -492,17 +501,5 @@
     <summary type="text">PDF scans of old historical books can be brought to life with LLM models and then stored and queried in a structured form using SurrealQL.</summary>
     <category term="featured" />
     <category term="tutorials" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/power-up-your-ai-workflows-the-official-surrealdb-x-n8n-node-is-here</id>
-    <title>Power up your AI workflows: the official SurrealDB x n8n node is here</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/power-up-your-ai-workflows-the-official-surrealdb-x-n8n-node-is-here" type="text/html" />
-    <published>2025-09-03T00:00:00Z</published>
-    <updated>2025-09-03T00:00:00Z</updated>
-    <summary type="text">We've shipped the official SurrealDB node for n8n. It's a first-party, production-ready integration that lets you query, create, update, upsert, and delete data in SurrealDB from any n8n workflow - and it also runs as an AI tool inside n8n's Agent nodes.</summary>
-    <category term="featured" />
-    <category term="tutorials" />
-    <category term="engineering" />
-    <category term="ai" />
   </entry>
 </feed>

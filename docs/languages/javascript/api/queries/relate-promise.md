@@ -13,12 +13,12 @@ The `RelatePromise` class provides a chainable interface for configuring RELATE 
 
 **Source:** [query/relate.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/relate.ts)
 
-## Type Parameters
+## Type parameters
 
 - `T` - The result type (edge record type)
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration Methods
+## Configuration methods
 
 ### `.unique()` {#unique}
 
@@ -185,9 +185,9 @@ relatePromise.stream()
 #### Returns
 `AsyncIterableIterator` - Async iterator
 
-## Complete Examples
+## Complete examples
 
-### Basic Relationship
+### Basic relationship
 
 ```ts
 
@@ -207,7 +207,7 @@ console.log('From:', edge.in);  // users:john
 console.log('To:', edge.out);   // posts:1
 ```
 
-### Multiple Relationships
+### Multiple relationships
 
 ```ts
 // Create multiple edges at once
@@ -224,7 +224,7 @@ const edges = await db.relate(
 // jane->follows->bob
 ```
 
-### Unique Relationships
+### Unique relationships
 
 ```ts
 // Prevent duplicate 'likes'
@@ -244,7 +244,7 @@ const duplicate = await db.relate(
 // Returns existing edge
 ```
 
-### Relationship with Data
+### Relationship with data
 
 ```ts
 const friendship = await db.relate(
@@ -260,7 +260,7 @@ const friendship = await db.relate(
 );
 ```
 
-### Specific Edge ID
+### Specific edge ID
 
 ```ts
 // Use specific ID for the edge
@@ -272,7 +272,7 @@ const edge = await db.relate(
 );
 ```
 
-### Fan-out Relationships
+### Fan-out relationships
 
 ```ts
 // One user follows many
@@ -289,7 +289,7 @@ const edges = await db.relate(
 console.log(`Created ${edges.length} follow edges`);
 ```
 
-### Streaming Bulk Relationships
+### Streaming bulk relationships
 
 ```ts
 const users = await db.select(new Table('users'));
@@ -307,7 +307,7 @@ for await (const edge of edges.stream()) {
 }
 ```
 
-### Bidirectional Relationships
+### Bidirectional relationships
 
 ```ts
 // Create friendship in both directions
@@ -324,7 +324,7 @@ await db.relate(
 );
 ```
 
-### Relationship Metadata
+### Relationship metadata
 
 ```ts
 const edge = await db.relate(
@@ -340,7 +340,7 @@ const edge = await db.relate(
 );
 ```
 
-### Temporal Relationships
+### Temporal relationships
 
 ```ts
 // Track when relationship was created
@@ -356,7 +356,7 @@ const edge = await db.relate(
 );
 ```
 
-### Weighted Graph
+### Weighted graph
 
 ```ts
 // Create weighted edges for graph algorithms
@@ -372,7 +372,7 @@ const edge = await db.relate(
 );
 ```
 
-### Delete and Recreate Pattern
+### Delete and recreate pattern
 
 ```ts
 // Remove existing relationship and create new one
@@ -393,7 +393,7 @@ const edge = await db.relate(
 );
 ```
 
-## Graph Traversal Example
+## Graph traversal example
 
 ```ts
 // Create relationships
@@ -411,9 +411,9 @@ const followers = await db.query(
 console.log('Jane has followers:', followers);
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Use Unique for One-to-One
+### 1. Use unique for one-to-one
 
 ```ts
 // Good: Prevent duplicate likes
@@ -424,7 +424,7 @@ await db.relate(from, new Table('likes'), to);
 // May create multiple edges
 ```
 
-### 2. Include Metadata
+### 2. Include metadata
 
 ```ts
 // Good: Track when relationship was created
@@ -437,18 +437,20 @@ await db.relate(from, edge, to, {
 await db.relate(from, edge, to);
 ```
 
-### 3. Use Specific Edge IDs for Updates
+### 3. Use specific edge IDs for updates
 
 ```ts
-// Good: Use specific ID to update later
-const edgeId = new RecordId('likes', Uuid.v7());
+// Good: use a specific ID so you can update the edge later
+const edgeId = new RecordId('likes', [from.toString(), to.toString()]);
 await db.relate(from, edgeId, to, metadata);
 
-// Later: easy to update
+// Later: update by record ID
 await db.update(edgeId).merge({ updated_at: DateTime.now() });
 ```
 
-## See Also
+As of SurrealDB 3.1.5, when the edge ID already exists, `INSERT RELATION` returns an error unless you use `ON DUPLICATE KEY UPDATE`. See [Explicit edge record IDs](../../../../reference/query-language/statements/relate.md#explicit-edge-record-ids) for more details.
+
+## See also
 
 - [SurrealQueryable.relate()](../core/surreal-queryable.md#relate) - Method that returns RelatePromise
 - [Graph Relationships](https://surrealdb.com/docs/surrealql/statements/relate) - SurrealQL RELATE documentation

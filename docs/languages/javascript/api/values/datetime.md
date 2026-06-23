@@ -833,4 +833,4 @@ const localDisplay = timestamp.toDate().toLocaleString('en-US', {
 - [Duration](duration.md) - Time duration values
 - [Data Types Overview](index.md) - All custom data types
 - [Query Builders](../queries/index.md) - Using DateTime in queries
-- [SurrealQL Datetime](https://surrealdb.com/docs/surrealql/datamodel/datetimes) - Database datetime type
+- [SurrealQL Datetime](../../../../reference/query-language/language-primitives/data-types/datetimes.md) - Database datetime type

@@ -361,5 +361,5 @@ await db.run('fn:bad-name', []); // Invalid characters
 ## See Also
 
 - [SurrealQueryable.run()](../core/surreal-queryable.md#run) - Method that returns RunPromise
-- [Functions](https://surrealdb.com/docs/surrealql/statements/define/function) - SurrealQL function definitions
+- [Functions](../../../../reference/query-language/statements/define/function.md) - SurrealQL function definitions
 - [Query Overview](index.md) - All query builder classes

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # Transactions
 
-[Transactions](https://surrealdb.com/docs/surrealql/transactions) group multiple operations so they either all succeed or all fail together. The Kotlin SDK exposes transactions as extension functions on a [session](multiple-sessions.md): a block form that commits or cancels automatically, and an explicit form for manual control.
+[Transactions](../../../reference/query-language/language-primitives/transactions.md) group multiple operations so they either all succeed or all fail together. The Kotlin SDK exposes transactions as extension functions on a [session](multiple-sessions.md): a block form that commits or cancels automatically, and an explicit form for manual control.
 
 > [!NOTE]
 > Transactions require a stateful connection and are only available over the **WebSocket** transport. Check support with [`client.supports(SurrealFeature.Transactions)`](../api/core/surreal-client.md#supports).
@@ -80,4 +80,4 @@ try {
 
 - [Transaction reference](../api/core/transaction.md) for the full API
 - [Multiple sessions](multiple-sessions.md) — transactions run within a session
-- [SurrealQL transactions](https://surrealdb.com/docs/surrealql/transactions) for transaction semantics
+- [SurrealQL transactions](../../../reference/query-language/language-primitives/transactions.md) for transaction semantics

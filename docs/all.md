@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_977 pages_  
+_1021 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -127,6 +127,14 @@ _977 pages_
   This section contains information about the Pydantic AI framework and how to integrate it with SurrealDB.
 - [SmolAgents](build/integrations/ai-frameworks/smolagents.md)
   A complete walkthrough for building a code-generating AI agent that recommends grocery items by querying SurrealDB's HNSW vector index.
+- [Getting started](build/integrations/authentication/better-auth/getting-started.md)
+  Install the @surrealdb/better-auth adapter, connect to SurrealDB, configure the adapter, and generate your Better Auth schema.
+- [Overview](build/integrations/authentication/better-auth/overview.md)
+  Use SurrealDB as the database behind Better Auth with the @surrealdb/better-auth adapter, including schema generation, transactions, and support for all Better Auth plugins.
+- [Plugins](build/integrations/authentication/better-auth/plugins.md)
+  Use any Better Auth plugin with the SurrealDB adapter and call the SurrealQL helper functions generated for the organisation plugin.
+- [Transactions & limitations](build/integrations/authentication/better-auth/transactions-and-limitations.md)
+  How the @surrealdb/better-auth adapter handles transactions, and the current limitations to be aware of.
 - [Airbyte](build/integrations/data-management/airbyte.md)
   The Airbyte connector allows you to sync data to SurrealDB from hundreds of sources.
 - [Fivetran](build/integrations/data-management/fivetran.md)
@@ -742,6 +750,86 @@ _977 pages_
   The SurrealDB SDK for Kotlin is published to Maven Central and can be installed using Gradle or Maven.
 - [Quickstart](languages/kotlin/start.md)
   Get started with the SurrealDB SDK for Kotlin in minutes.
+- [Authentication](languages/mojo/concepts/authentication.md)
+  Learn how to authenticate the Mojo SDK with SurrealDB using access tokens and the signin RPC.
+- [Connecting to SurrealDB](languages/mojo/concepts/connecting-to-surrealdb.md)
+  Learn how to connect the Mojo SDK to SurrealDB over HTTP, HTTPS, and WebSocket, and how to choose a wire format.
+- [Error handling](languages/mojo/concepts/error-handling.md)
+  How the Mojo SDK reports errors, both on responses and as raised Mojo errors.
+- [Executing queries](languages/mojo/concepts/executing-queries.md)
+  Learn how to run SurrealQL with the Mojo SDK, use the CRUD convenience methods, and read responses.
+- [Live queries](languages/mojo/concepts/live-queries.md)
+  Subscribe to changes on a table with the Mojo SDK and poll for live-query notifications.
+- [Multiple sessions](languages/mojo/concepts/multiple-sessions.md)
+  Open and manage independent server-side sessions with the Mojo SDK.
+- [Query builders](languages/mojo/concepts/query-builders.md)
+  Build SurrealQL statements fluently with the Mojo SDK query builders.
+- [Transactions](languages/mojo/concepts/transactions.md)
+  Run multiple statements atomically with the Mojo SDK over HTTP or a WebSocket session.
+- [Value types](languages/mojo/concepts/value-types.md)
+  The SurrealDB tagged value types that the Mojo SDK encodes and decodes.
+- [Mojo SDK](languages/mojo/index.md)
+  The SurrealDB SDK for Mojo enables simple and advanced querying of a remote database over HTTP, HTTPS, and WebSocket.
+- [Installation](languages/mojo/installation.md)
+  In this section, you will learn how to install the SurrealDB Mojo SDK and add it to your project.
+- [api](languages/mojo/methods/api.md)
+  The api() method for the SurrealDB Mojo SDK calls a custom API handler defined on the database.
+- [authenticate](languages/mojo/methods/authenticate.md)
+  The authenticate() method for the SurrealDB Mojo SDK authenticates the current connection with a token.
+- [begin_transaction](languages/mojo/methods/begin-transaction.md)
+  The begin_transaction() method for the SurrealDB Mojo SDK starts a session-scoped transaction.
+- [call](languages/mojo/methods/call.md)
+  The call() method for the SurrealDB Mojo SDK runs a SurrealQL function.
+- [close](languages/mojo/methods/close.md)
+  The close() method for the SurrealDB Mojo SDK closes the connection.
+- [connect](languages/mojo/methods/connect.md)
+  The connect() method for the SurrealDB Mojo SDK connects to a database endpoint.
+- [create](languages/mojo/methods/create.md)
+  The create() method for the SurrealDB Mojo SDK creates a record in the database.
+- [delete](languages/mojo/methods/delete.md)
+  The delete() method for the SurrealDB Mojo SDK deletes all records in a table, or a specific record.
+- [health](languages/mojo/methods/health.md)
+  The health() method for the SurrealDB Mojo SDK runs a health check against the server.
+- [SDK methods](languages/mojo/methods/index.md)
+  The full method reference for the SurrealDB Mojo SDK.
+- [insert_relation](languages/mojo/methods/insert-relation.md)
+  The insert_relation() method for the SurrealDB Mojo SDK inserts one or more relations into a table.
+- [insert](languages/mojo/methods/insert.md)
+  The insert() method for the SurrealDB Mojo SDK inserts one or more records into a table.
+- [invalidate](languages/mojo/methods/invalidate.md)
+  The invalidate() method for the SurrealDB Mojo SDK invalidates the authentication for the current connection.
+- [kill](languages/mojo/methods/kill.md)
+  The kill() method for the SurrealDB Mojo SDK stops a running live query.
+- [live_query](languages/mojo/methods/live.md)
+  The live_query() method for the SurrealDB Mojo SDK starts a live query on a table.
+- [merge](languages/mojo/methods/merge.md)
+  The merge() method for the SurrealDB Mojo SDK merges data into a record.
+- [patch](languages/mojo/methods/patch.md)
+  The patch() method for the SurrealDB Mojo SDK applies a JSON Patch to a record.
+- [query](languages/mojo/methods/query.md)
+  The query() method for the SurrealDB Mojo SDK runs one or more SurrealQL statements against the database.
+- [select](languages/mojo/methods/select.md)
+  The select() method for the SurrealDB Mojo SDK selects all records in a table, or a specific record.
+- [set](languages/mojo/methods/set.md)
+  The set() method for the SurrealDB Mojo SDK assigns a value as a parameter for this connection.
+- [signin](languages/mojo/methods/signin.md)
+  The signin() method for the SurrealDB Mojo SDK signs in to the database with credentials.
+- [signup](languages/mojo/methods/signup.md)
+  The signup() method for the SurrealDB Mojo SDK signs up to a record-access method.
+- [transaction_multi](languages/mojo/methods/transaction-multi.md)
+  The transaction_multi() method for the SurrealDB Mojo SDK runs a list of statements as one atomic transaction.
+- [unset](languages/mojo/methods/unset.md)
+  The unset() method for the SurrealDB Mojo SDK removes a parameter for this connection.
+- [update](languages/mojo/methods/update.md)
+  The update() method for the SurrealDB Mojo SDK updates all records in a table, or a specific record.
+- [upsert](languages/mojo/methods/upsert.md)
+  The upsert() method for the SurrealDB Mojo SDK upserts all records in a table, or a specific record.
+- [use](languages/mojo/methods/use.md)
+  The use() method for the SurrealDB Mojo SDK switches to a specific namespace and database.
+- [version](languages/mojo/methods/version.md)
+  The version() method for the SurrealDB Mojo SDK returns the database version.
+- [Quickstart](languages/mojo/start.md)
+  A complete working example that connects to SurrealDB from Mojo, runs a query, and reads the response.
 - [SDK languages](languages/overview.md)
   SurrealDB has official SDKs for many languages, along with non-official SDKs created by the community.
 - [Authentication](languages/php/core/authentication.md)

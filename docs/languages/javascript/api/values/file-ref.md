@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # `FileRef` {#fileref}
 
-The `FileRef` class represents a reference to a file stored in SurrealDB. File references are returned when querying records that contain [file fields](https://surrealdb.com/docs/surrealql/datamodel/files) and provide access to file metadata such as the bucket, key, and media type.
+The `FileRef` class represents a reference to a file stored in SurrealDB. File references are returned when querying records that contain [file fields](../../../../reference/query-language/language-primitives/data-types/files.md) and provide access to file metadata such as the bucket, key, and media type.
 
 **Import:**
 ```ts
@@ -173,6 +173,6 @@ for (const record of records) {
 
 ## See Also
 
-- [Value types](https://surrealdb.com/docs/sdk/javascript/concepts/value-types) - Overview of all value types
-- [File uploads](https://surrealdb.com/docs/surrealql/datamodel/files) - Working with files in SurrealDB
-- [Data Types](https://surrealdb.com/docs/sdk/javascript/api/values) - All custom data types
+- [Value types](../../concepts/value-types.md) - Overview of all value types
+- [File uploads](../../../../reference/query-language/language-primitives/data-types/files.md) - Working with files in SurrealDB
+- [Data Types](index.md) - All custom data types

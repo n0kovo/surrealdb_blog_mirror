@@ -696,5 +696,5 @@ await db.close();
 - [SurrealSession](surreal-session.md) - Session management and authentication
 - [SurrealQueryable](surreal-queryable.md) - Query execution methods
 - [SurrealTransaction](surreal-transaction.md) - Transaction support
-- [Connection Engines](https://surrealdb.com/docs/sdk/javascript/engines) - Engine-specific documentation
-- [Data Types](https://surrealdb.com/docs/sdk/javascript/api/values) - Working with data types
+- [Connection Engines](../../engines/index.md) - Engine-specific documentation
+- [Data Types](../values/index.md) - Working with data types

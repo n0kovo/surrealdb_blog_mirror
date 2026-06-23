@@ -4,10 +4,30 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-06-19T11:46:02Z</updated>
+  <updated>2026-06-22T19:33:58Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/build-apps-on-your-data-with-surrealdb-and-lovable</id>
+    <title>Build apps on your data with SurrealDB and Lovable</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/build-apps-on-your-data-with-surrealdb-and-lovable" type="text/html" />
+    <published>2026-06-22T19:33:58Z</published>
+    <updated>2026-06-22T19:33:58Z</updated>
+    <summary type="text">Connect SurrealDB to Lovable using the Model Context Protocol (MCP), so the Lovable Agent can read your schema, query your live data, and build a working application on top of it without you writing any glue code.</summary>
+    <category term="tutorials" />
+    <category term="featured" />
+    <category term="ai" />
+  </entry>
+  <entry>
+    <id>https://surrealdb.com/blog/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex</id>
+    <title>A living knowledge layer for your agents: SurrealDB + CocoIndex</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex" type="text/html" />
+    <published>2026-06-22T08:38:22Z</published>
+    <updated>2026-06-22T08:38:22Z</updated>
+    <summary type="text">Announcing the native SurrealDB connector for CocoIndex — build a continuously-fresh document store, knowledge graph, and vector index in a single database, from one declarative pipeline.</summary>
+    <category term="releases" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/deterministic-simulation-testing-and-its-use-at-surrealdb</id>
     <title>Deterministic simulation testing and its use at SurrealDB</title>
@@ -481,25 +501,5 @@
     <category term="featured" />
     <category term="ai" />
     <category term="community" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/research-paper--bridging-analytics-and-semantics-with-surrealdb</id>
-    <title>Research paper - Bridging Analytics and Semantics with SurrealDB</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/research-paper--bridging-analytics-and-semantics-with-surrealdb" type="text/html" />
-    <published>2025-09-17T00:00:00Z</published>
-    <updated>2025-09-17T00:00:00Z</updated>
-    <summary type="text">We’re excited to highlight new research from two members of the SurrealDB community: “Bridging Analytics and Semantics: A Hybrid Database Approach to Retrieval-Augmented Generation”, now published on Zenodo.</summary>
-    <category term="featured" />
-    <category term="community" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/using-historical-books-to-create-structured-knowledge-graphs-in-surrealdb</id>
-    <title>Using historical books to create structured knowledge graphs in SurrealDB</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/using-historical-books-to-create-structured-knowledge-graphs-in-surrealdb" type="text/html" />
-    <published>2025-09-11T00:00:00Z</published>
-    <updated>2025-09-11T00:00:00Z</updated>
-    <summary type="text">PDF scans of old historical books can be brought to life with LLM models and then stored and queried in a structured form using SurrealQL.</summary>
-    <category term="featured" />
-    <category term="tutorials" />
   </entry>
 </feed>

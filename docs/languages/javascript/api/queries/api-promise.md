@@ -488,5 +488,5 @@ try {
 
 - [SurrealApi](../core/surreal-api.md) - API instance methods
 - [SurrealQueryable.api](../core/surreal-queryable.md#api) - Creating API instances
-- [User-Defined APIs](https://surrealdb.com/docs/surrealql/statements/define/api) - Defining APIs in SurrealDB
+- [User-Defined APIs](../../../../reference/query-language/statements/define/api.md) - Defining APIs in SurrealDB
 - [Query Overview](index.md) - All query builder classes

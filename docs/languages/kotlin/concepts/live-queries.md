@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # Live queries
 
-[Live queries](https://surrealdb.com/docs/surrealql/statements/live) push changes to your application as records are created, updated, or deleted. In the Kotlin SDK, a live subscription exposes a coroutine [`Flow`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/) of notifications that you collect.
+[Live queries](../../../reference/query-language/statements/live-select.md) push changes to your application as records are created, updated, or deleted. In the Kotlin SDK, a live subscription exposes a coroutine [`Flow`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/) of notifications that you collect.
 
 > [!NOTE]
 > Live queries require a stateful connection and are only available over the **WebSocket** transport. Calling [`.live()`](../api/core/surreal-client.md#live) over HTTP throws [`SurrealFeatureNotSupportedException`](../api/errors/index.md). Check support with [`client.supports(SurrealFeature.LiveQueries)`](../api/core/surreal-client.md#supports).
@@ -92,4 +92,4 @@ client.kill(liveId.toString())
 - [Live subscription reference](../api/core/live-subscription.md) for the subscription and notification types
 - [SurrealClient API reference](../api/core/surreal-client.md) for `.live()` and `.kill()`
 - [Features and events](../api/features/index.md) for checking transport support
-- [LIVE SELECT](https://surrealdb.com/docs/surrealql/statements/live) for the SurrealQL statement
+- [LIVE SELECT](../../../reference/query-language/statements/live-select.md) for the SurrealQL statement

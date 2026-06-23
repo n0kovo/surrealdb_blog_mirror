@@ -493,7 +493,7 @@ client.insertRelation(into, data)
 
 ### `.run(function)` {#run}
 
-Returns a `RunQuery` that invokes a built-in or custom [function](https://surrealdb.com/docs/surrealql/functions).
+Returns a `RunQuery` that invokes a built-in or custom [function](../../../../reference/query-language/functions/database-functions/index.md).
 
 ```kotlin title="Method Syntax"
 client.run(function)

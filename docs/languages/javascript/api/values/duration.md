@@ -1067,4 +1067,4 @@ console.log('Took:', elapsed().toString());
 - [DateTime](datetime.md) - Datetime values
 - [Data Types Overview](index.md) - All custom data types
 - [Query Builders](../queries/index.md) - Using Duration in queries
-- [SurrealQL Duration](https://surrealdb.com/docs/surrealql/datamodel/datetimes#durations) - Database duration type
+- [SurrealQL Duration](../../../../reference/query-language/language-primitives/data-types/durations.md) - Database duration type

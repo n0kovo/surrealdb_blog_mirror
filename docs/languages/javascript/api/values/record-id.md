@@ -461,4 +461,4 @@ try {
 - [Data Types Overview](index.md) - All custom data types
 - [Table](table.md) - Table references
 - [Query Builders](../queries/index.md) - Using RecordId in queries
-- [SurrealQL Record IDs](https://surrealdb.com/docs/surrealql/datamodel/ids) - Database record ID documentation
+- [SurrealQL Record IDs](../../../../reference/query-language/language-primitives/data-types/record-ids.md) - Database record ID documentation

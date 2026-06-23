@@ -426,4 +426,4 @@ await db.create(table).content({
 - [RecordId](record-id.md) - Record identifiers
 - [Data Types Overview](index.md) - All custom data types
 - [Query Builders](../queries/index.md) - Using Uuid in queries
-- [SurrealQL UUID](https://surrealdb.com/docs/surrealql/datamodel/uuid) - Database UUID type
+- [SurrealQL UUID](../../../../reference/query-language/language-primitives/data-types/uuids.md) - Database UUID type

@@ -588,4 +588,4 @@ await postsApi.get("/456");  // GET /posts/456
 
 - [SurrealQueryable.api](surreal-queryable.md#api) - Creating API instances
 - [ApiPromise](../queries/api-promise.md) - API response handling
-- [User-Defined APIs Guide](https://surrealdb.com/docs/surrealql/statements/define/api) - Defining APIs in SurrealDB
+- [User-Defined APIs Guide](../../../../reference/query-language/statements/define/api.md) - Defining APIs in SurrealDB

@@ -1,7 +1,35 @@
 {
-  "generated_at": "2026-06-22T08:03:48.315559+00:00",
-  "count": 234,
+  "generated_at": "2026-06-23T07:17:08.040874+00:00",
+  "count": 236,
   "posts": [
+    {
+      "slug": "build-apps-on-your-data-with-surrealdb-and-lovable",
+      "title": "Build apps on your data with SurrealDB and Lovable",
+      "summary": "Connect SurrealDB to Lovable using the Model Context Protocol (MCP), so the Lovable Agent can read your schema, query your live data, and build a working application on top of it without you writing any glue code.",
+      "publishDate": "2026-06-22T19:33:58.000Z",
+      "categories": [
+        "tutorials",
+        "featured",
+        "ai"
+      ],
+      "readTime": "14 min read",
+      "imageUrl": "https://cdn.surrealdb.com/sfcxy8u2o54oiocexkfpy4zf.auto",
+      "source": "https://surrealdb.com/blog/build-apps-on-your-data-with-surrealdb-and-lovable",
+      "local_path": "2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md"
+    },
+    {
+      "slug": "a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex",
+      "title": "A living knowledge layer for your agents: SurrealDB + CocoIndex",
+      "summary": "Announcing the native SurrealDB connector for CocoIndex — build a continuously-fresh document store, knowledge graph, and vector index in a single database, from one declarative pipeline.",
+      "publishDate": "2026-06-22T08:38:22.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "4 min read",
+      "imageUrl": "https://cdn.surrealdb.com/zjqi2gx2ix1mtxy1k5st40nv.auto",
+      "source": "https://surrealdb.com/blog/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex",
+      "local_path": "2026/06/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex.md"
+    },
     {
       "slug": "deterministic-simulation-testing-and-its-use-at-surrealdb",
       "title": "Deterministic simulation testing and its use at SurrealDB",

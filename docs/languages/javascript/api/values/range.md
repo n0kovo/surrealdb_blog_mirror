@@ -490,4 +490,4 @@ function createRange<T>(start: T, end: T): Range<T, T> | null {
 - [DateTime](datetime.md) - Datetime values for date ranges
 - [Decimal](decimal.md) - Precise numbers for price ranges
 - [Data Types Overview](index.md) - All custom data types
-- [SurrealQL Ranges](https://surrealdb.com/docs/surrealql/datamodel/ranges) - Database range syntax
+- [SurrealQL Ranges](../../../../reference/query-language/language-primitives/data-types/ranges.md) - Database range syntax

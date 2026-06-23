@@ -33,15 +33,16 @@ SurrealDB is built around a rich feature set that supports a wide variety of app
 
 SurrealDB offers official SDKs for popular languages, supporting queries, authentication, real-time updates, and in some cases, embedded use. See your chosen language’s docs for setup and examples.
 
-- **[Rust](languages/rust/overview.md)**
-- **[JavaScript](languages/javascript/overview.md)**
-- **[Python](languages/python/index.md)**
 - **[Go](languages/golang/index.md)**
 - **[Java](languages/java/index.md)**
+- **[JavaScript](languages/javascript/overview.md)**
+- **[Kotlin](languages/kotlin/index.md)**
+- **[Mojo](languages/mojo/index.md)**
 - **[.NET](languages/dotnet/index.md)**
 - **[PHP](languages/php/index.md)**
+- **[Python](languages/python/index.md)**
+- **[Rust](languages/rust/overview.md)**
 - **[Swift](languages/swift/index.md)**
-- **[Kotlin](languages/kotlin/index.md)**
 
 ## Deployment
 

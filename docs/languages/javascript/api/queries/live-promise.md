@@ -475,5 +475,5 @@ for await (const update of subscription) {
 
 - [SurrealQueryable.live()](../core/surreal-queryable.md#live) - Create managed live subscription
 - [SurrealQueryable.liveOf()](../core/surreal-queryable.md#liveof) - Subscribe to existing live query
-- [Live Queries Guide](https://surrealdb.com/docs/surrealql/statements/live) - SurrealQL LIVE documentation
+- [Live Queries Guide](../../../../reference/query-language/statements/live-select.md) - SurrealQL LIVE documentation
 - [Query Overview](index.md) - All query builder classes

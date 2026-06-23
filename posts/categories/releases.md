@@ -1,8 +1,10 @@
 # Category: releases
 
-_47 posts_  
+_48 posts_  
 [← Index](../../README.md)
 
+- **2026-06-22** · [A living knowledge layer for your agents: SurrealDB + CocoIndex](../2026/06/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex.md)  
+  `releases` — Announcing the native SurrealDB connector for CocoIndex — build a continuously-fresh document store, knowledge graph, and vector index in a single database, from one declarative pipeline.
 - **2026-06-16** · [What's new in Surrealist 3.9](../2026/06/whats-new-in-surrealist-3-9.md)  
   `featured` `releases` — Surrealist 3.9 introduces a complete design overhaul, a new datasets browser and data manager, and loads of other enhancements.
 - **2026-06-09** · [SurrealDB is now available on the Nebius AI Cloud Marketplace](../2026/06/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace.md)  

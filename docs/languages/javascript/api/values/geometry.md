@@ -714,5 +714,5 @@ const invalid = new GeometryPoint([200, 100]); // Will create but may cause issu
 
 - [Data Types Overview](index.md) - All custom data types
 - [Query Builders](../queries/index.md) - Using Geometry in queries
-- [SurrealQL Geometry](https://surrealdb.com/docs/surrealql/datamodel/geometries) - Database geometry types
+- [SurrealQL Geometry](../../../../reference/query-language/language-primitives/data-types/geometries.md) - Database geometry types
 - [GeoJSON Specification](https://geojson.org/) - GeoJSON format standard

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # `RecordIdRange` {#record-id-range}
 
-`RecordIdRange` targets a contiguous range of records within a table by their IDs. Pass it to the [CRUD builders](../../concepts/data-manipulation.md) to operate on a [range of records](https://surrealdb.com/docs/surrealql/datamodel/ids#record-ranges).
+`RecordIdRange` targets a contiguous range of records within a table by their IDs. Pass it to the [CRUD builders](../../concepts/data-manipulation.md) to operate on a [range of records](../../../../reference/query-language/language-primitives/data-types/record-ids.md#record-ranges).
 
 **Source:** [surrealdb.kotlin](https://github.com/surrealdb/surrealdb.kotlin)
 
@@ -44,4 +44,4 @@ client.select(range).awaitAs<List<Person>>()
 
 - [Value types](../../concepts/value-types.md)
 - [`RecordId`](record-id.md) and [`Table`](table.md)
-- [Record ranges](https://surrealdb.com/docs/surrealql/datamodel/ids#record-ranges) in SurrealQL
+- [Record ranges](../../../../reference/query-language/language-primitives/data-types/record-ids.md#record-ranges) in SurrealQL

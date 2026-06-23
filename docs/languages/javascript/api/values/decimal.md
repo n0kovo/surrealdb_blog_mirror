@@ -894,4 +894,4 @@ const result = price.add(tax);
 
 - [Data Types Overview](index.md) - All custom data types
 - [Query Builders](../queries/index.md) - Using Decimal in queries
-- [SurrealQL Decimal](https://surrealdb.com/docs/surrealql/datamodel/numbers) - Database decimal type
+- [SurrealQL Decimal](../../../../reference/query-language/language-primitives/data-types/numbers.md) - Database decimal type

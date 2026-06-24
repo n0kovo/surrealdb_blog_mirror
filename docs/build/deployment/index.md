@@ -128,7 +128,7 @@ In distributed deployments:
 - The primary dataset lives in the storage layer rather than on individual query nodes
 - The storage backend manages replication, consensus, fault tolerance, and distributed transactions
 
-For managed multi-node clusters, use [SurrealDB Cloud](surrealdb-cloud/what-is-surrealdb-cloud.md) Dedicated tiers. For self-hosted highly available setups on Kubernetes, see [Amazon EKS](self-hosted/amazon-eks.md), [Google GKE](self-hosted/google-gke.md), and [Azure AKS](self-hosted/azure-aks.md). For local development against distributed storage, see [Run a multi-node cluster](https://surrealdb.com/docs/index/running/multi-node).
+For managed multi-node clusters, use the [Scale](https://surrealdb.com/pricing/scale) plan on [SurrealDB Cloud](surrealdb-cloud/what-is-surrealdb-cloud.md). For self-hosted highly available setups on Kubernetes, see [Amazon EKS](self-hosted/amazon-eks.md), [Google GKE](self-hosted/google-gke.md), and [Azure AKS](self-hosted/azure-aks.md). For local development against distributed storage, see [Run a multi-node cluster](https://surrealdb.com/docs/index/running/multi-node).
 
 ### Features
 

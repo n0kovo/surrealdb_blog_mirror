@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-06-23 07:17 UTC_
+_Last updated: 2026-06-24 07:13 UTC_
 
 ## Stats
 
-- **Total posts:** 236
+- **Total posts:** 237
 - **First post:** 2022-07-20
-- **Latest post:** 2026-06-22
+- **Latest post:** 2026-06-23
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-06-23 07:17 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 41 posts
+- [2026](posts/years/2026.md) — 42 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -34,10 +34,12 @@ _Last updated: 2026-06-23 07:17 UTC_
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 107 posts
 - [releases](posts/categories/releases.md) — 48 posts
-- [tutorials](posts/categories/tutorials.md) — 88 posts
+- [tutorials](posts/categories/tutorials.md) — 89 posts
 
 ## Latest posts
 
+- **2026-06-23** · [Social graphs for activity-tracking apps](posts/2026/06/social-graphs-for-activity-tracking-apps.md)  
+  `tutorials` — Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in a single query.
 - **2026-06-22** · [Build apps on your data with SurrealDB and Lovable](posts/2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md)  
   `tutorials` `featured` `ai` — Connect SurrealDB to Lovable using the Model Context Protocol (MCP), so the Lovable Agent can read your schema, query your live data, and build a working application on top of it without you writing any glue code.
 - **2026-06-22** · [A living knowledge layer for your agents: SurrealDB + CocoIndex](posts/2026/06/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-06-23 07:17 UTC_
   `company` — Three concepts AI teams constantly confuse: a context layer assembles the right data into an LLM prompt at query time, a semantic layer maps raw data to business meaning, and a knowledge graph stores entities and their relationships. Most teams build all three by stitching together separate graph, vector, and relational systems - creating sync problems, higher latency, and rising costs. SurrealDB's multi-model architecture handles all three natively, letting a single SurrealQL query run vector search, graph traversal, and document retrieval in one round trip
 - **2026-05-29** · [SurrealDB 3.x by the numbers](posts/2026/05/surrealdb-3-x-by-the-numbers.md)  
   `engineering` `company` `featured` — Fresh SurrealDB 3.x benchmarks: 141k ops\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.
-- **2026-05-27** · [SurrealDB 3.1: stability, DiskANN, and a new release process](posts/2026/05/surrealdb-3-1-stability-diskann-and-a-new-release-process.md)  
-  `releases` `featured` — SurrealDB 3.1 is here. The first minor release in the 3.x series brings DiskANN, a comprehensive stability and security pass, and a refreshed release process.

@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-06-23T07:17:08.040874+00:00",
-  "count": 236,
+  "generated_at": "2026-06-24T07:13:36.616408+00:00",
+  "count": 237,
   "posts": [
+    {
+      "slug": "social-graphs-for-activity-tracking-apps",
+      "title": "Social graphs for activity-tracking apps",
+      "summary": "Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in a single query.",
+      "publishDate": "2026-06-23T10:32:13.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/azk6q3sfks9abcan8i6t0qyn.auto",
+      "source": "https://surrealdb.com/blog/social-graphs-for-activity-tracking-apps",
+      "local_path": "2026/06/social-graphs-for-activity-tracking-apps.md"
+    },
     {
       "slug": "build-apps-on-your-data-with-surrealdb-and-lovable",
       "title": "Build apps on your data with SurrealDB and Lovable",

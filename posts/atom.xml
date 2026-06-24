@@ -4,10 +4,19 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-06-22T19:33:58Z</updated>
+  <updated>2026-06-23T10:32:13Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/social-graphs-for-activity-tracking-apps</id>
+    <title>Social graphs for activity-tracking apps</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/social-graphs-for-activity-tracking-apps" type="text/html" />
+    <published>2026-06-23T10:32:13Z</published>
+    <updated>2026-06-23T10:32:13Z</updated>
+    <summary type="text">Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in a single query.</summary>
+    <category term="tutorials" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/build-apps-on-your-data-with-surrealdb-and-lovable</id>
     <title>Build apps on your data with SurrealDB and Lovable</title>
@@ -487,17 +496,6 @@
     <published>2025-10-09T00:00:00Z</published>
     <updated>2025-10-09T00:00:00Z</updated>
     <summary type="text">How Agent Studio from PolyAI integrates with SurrealDB</summary>
-    <category term="featured" />
-    <category term="ai" />
-    <category term="community" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/from-knowledge-graph-generation-to-rag-for-stablecoin-regulatory-intelligence</id>
-    <title>From Knowledge Graph Generation to RAG for Stablecoin Regulatory Intelligence</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/from-knowledge-graph-generation-to-rag-for-stablecoin-regulatory-intelligence" type="text/html" />
-    <published>2025-09-30T00:00:00Z</published>
-    <updated>2025-09-30T00:00:00Z</updated>
-    <summary type="text">We’re excited to share this community-written deep dive by Sugi Venugeethan into Stablebridge, a project tackling the complex world of stablecoin regulation. This article explores how knowledge graphs, RAG systems, and SurrealDB can be combined to connect it all together. It’s a practical look into knowledge graph generation to advanced retrieval methodologies - showcasing both challenges and breakthroughs along the way.</summary>
     <category term="featured" />
     <category term="ai" />
     <category term="community" />

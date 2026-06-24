@@ -102,6 +102,8 @@ These environment variables can be used to configure a SurrealDB server to confi
 
 ### File config
 
+Server-side filesystem access for features that read paths from disk (notably the `mapper()` filter on [`DEFINE ANALYZER`](../../query-language/statements/define/analyzer.md)). This is separate from `SURREAL_BUCKET_FOLDER_ALLOWLIST` (below), which gates the experimental [files](../../../learn/schema-management/files/buckets.md) feature.
+
 <table>
   <thead>
     <tr>
@@ -112,6 +114,12 @@ These environment variables can be used to configure a SurrealDB server to confi
     </tr>
   </thead>
   <tbody>
+  <tr>
+      <td scope="row" data-label="Env var">`SURREAL_FILE_ALLOWLIST`</td>
+      <td scope="row" data-label="Default">none (deny all)</td>
+      <td scope="row" data-label="Allowed values">Colon-separated paths on Unix; semicolon-separated on Windows</td>
+      <td scope="row" data-label="Notes">Directories the server may read when an analyzer uses `mapper('&lt;path&gt;')`. An empty or unset value denies every path. Each dictionary file must resolve under one of the listed directories. See <a href="/docs/reference/query-language/statements/define/analyzer#mapperpath">DEFINE ANALYZER — mapper</a>.</td>
+    </tr>
   <tr>
       <td scope="row" data-label="Env var">`SURREAL_BUCKET_FOLDER_ALLOWLIST`</td>
       <td scope="row" data-label="Default">none</td>

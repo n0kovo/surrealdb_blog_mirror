@@ -9,8 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 SurrealDB Cloud is organised around **organisations**—billing, instances, and policies typically belong to an organisation, and users are invited to collaborate with appropriate **roles**.
 
-![An organisation owns SurrealDB Cloud instances like the one shown here: an endpoint backed by a compute node and centralised storage.](../../assets/img/image/cloud/light/cloud-architecture-light.png)
-
 ## Organisations
 
 Create an **organisation** for each company, department, or environment you want to isolate (for example, production versus development). Organisation boundaries help separate **invoices**, **instances**, and **access** so one team cannot accidentally change another’s resources.
@@ -23,4 +21,4 @@ Create an **organisation** for each company, department, or environment you want
 
 **Role-based access control (RBAC)** limits what each member can do: for example, billing administration versus instance creation versus read-only monitoring. Assign the **least privilege** role that still lets someone do their job, and use separate organisations if you need hard isolation between tenants.
 
-Audit who can create instances, change network rules, and download backups periodically—those actions carry the highest risk.
+Audit who can create instances, change network rules, and manage backups or restores periodically—those actions carry the highest risk.

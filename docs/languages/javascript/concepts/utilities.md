@@ -1,15 +1,23 @@
 ---
 position: 14
 title: Utilities
-description: The JavaScript SDK provides utility functions for comparing values, converting to JSON, escaping identifiers, and building expressions.
+description: SQON provides value comparison, conversion, and escaping utilities. The SDK adds query-building helpers on top.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/javascript/concepts/utilities.mdx"
 ---
 
 # Utilities
 
-The JavaScript SDK provides a set of utility functions for common tasks like deep value comparison, JSON conversion, SurrealQL string serialization, identifier escaping, and expression building. These complement the SDK's core query methods and [value types](value-types.md).
+Helpers are split across two packages. [`@surrealdb/sqon`](https://www.npmjs.com/package/@surrealdb/sqon) covers value comparison, conversion, and escaping. The `surrealdb` driver adds query-building tools for parameterised SurrealQL. Import from `surrealdb` when you use the driver and want both layers in one place.
 
-## API references
+```ts
+// SQON (either package)
+
+// SDK only
+```
+
+## SQON utilities
+
+These live in `@surrealdb/sqon` alongside the [value types](value-types.md). You do not need the database client to use them.
 
 <table>
 	<thead>
@@ -24,16 +32,8 @@ The JavaScript SDK provides a set of utility functions for common tasks like dee
 			<td scope="row" data-label="Description">Deep equality comparison for all value types</td>
 		</tr>
 		<tr>
-			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/expr"> ` expr() `</a></td>
-			<td scope="row" data-label="Description">Composes type-safe expressions for WHERE clauses and conditions</td>
-		</tr>
-		<tr>
-			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/surql"> ` surql `</a></td>
-			<td scope="row" data-label="Description">Tagged template for composing parameterized queries</td>
-		</tr>
-		<tr>
-			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/bound-query"> ` BoundQuery `</a></td>
-			<td scope="row" data-label="Description">Parameterized query class with manual control</td>
+			<td scope="row" data-label="Utility">` jsonify(value) `</td>
+			<td scope="row" data-label="Description">Converts value types to JSON-safe string representations</td>
 		</tr>
 		<tr>
 			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/escape"> ` escapeIdent(name) `</a></td>
@@ -51,12 +51,16 @@ The JavaScript SDK provides a set of utility functions for common tasks like dee
 			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/escape"> ` escapeValue(value) `</a></td>
 			<td scope="row" data-label="Description">Escapes arbitrary values for embedding in queries</td>
 		</tr>
+		<tr>
+			<td scope="row" data-label="Utility">` toSurqlString(value) `</td>
+			<td scope="row" data-label="Description">Converts a value tree to a SurrealQL string representation</td>
+		</tr>
 	</tbody>
 </table>
 
-## Comparing values with deep equality
+### Comparing values with deep equality
 
-JavaScript's `===` operator compares objects by reference, which means two `RecordId` instances with the same table and ID are not considered equal. The `equals()` function performs deep structural comparison across all value types, including SurrealDB's custom classes, nested objects, arrays, `Date`, `RegExp`, and `bigint`/`number` normalization.
+`===` compares object references, so two `RecordId` instances with the same table and ID still fail an identity check. `equals()` walks the structure instead, including nested objects, arrays, SurrealDB value classes, `Date`, `RegExp`, and mixed `bigint`/`number` values.
 
 ```ts
 
@@ -67,7 +71,7 @@ console.log(id1 === id2);        // false (different references)
 console.log(equals(id1, id2));    // true (same value)
 ```
 
-This is particularly useful for detecting changes in query results.
+Handy when you want to know whether a fetched record changed between two reads:
 
 ```ts
 const user1 = await db.select(userId);
@@ -81,9 +85,9 @@ if (!equals(user1, user2)) {
 > [!NOTE]
 > Individual value classes also expose an `.equals()` instance method for single-type comparisons (e.g. `recordId.equals(other)`). Use the standalone `equals()` function for generic or cross-type comparisons.
 
-## Jsonifying query results
+### Jsonifying query results
 
-The `jsonify()` function converts SurrealDB value types in a result to their JSON representations, in the same manner that SurrealDB would serialize them. It only transforms SurrealDB-specific classes, leaving all other values untouched, and is fully type-safe.
+`jsonify()` turns SurrealDB value classes in a result into the JSON string forms SurrealDB would use. Plain numbers, strings, and objects are left as they are. The return type reflects the conversion.
 
 ```ts
 
@@ -106,48 +110,15 @@ const result = jsonify({
 }
 ```
 
-You can also jsonify query results directly using the `.json()` chain on [query methods](executing-queries.md#converting-results-to-json).
+You can also call `.json()` on [query methods](executing-queries.md#converting-results-to-json) to jsonify the result in one step.
 
-## Building expressions
+For JSON with explicit type wrappers (for example `{ "$recordId": ... }`), use [`JsonCodec`](codecs.md#json-codec) instead.
 
-The `expr()` function and its companion operators allow you to compose dynamic, type-safe conditions for use in query builder methods like `.where()` and in `surql` templates. See [Bound queries](bound-queries.md#composing-expressions) for the full guide.
+### Escaping identifiers and values
 
-```ts
-
-const premiumAdults = expr(and(
-    eq('tier', 'premium'),
-    gte('age', 18),
-));
-
-const users = await db.select(new Table('users')).where(premiumAdults);
-```
-
-Available operators include comparison (`eq`, `ne`, `gt`, `gte`, `lt`, `lte`), logical (`and`, `or`, `not`), string/array (`contains`, `containsAny`, `containsAll`), geometry (`inside`, `outside`, `intersects`), and search (`matches`, `knn`).
-
-## Composing parameterized queries
-
-The `surql` tagged template and `BoundQuery` class provide safe parameterization for dynamic queries. See [Bound queries](bound-queries.md) for the full guide.
+The escape helpers quote identifiers and values for hand-built SurrealQL. Prefer [bound queries](bound-queries.md) or [value classes](value-types.md) when you can.
 
 ```ts
-
-const minAge = 18;
-const query = surql`SELECT * FROM users WHERE age >= ${minAge}`;
-const [users] = await db.query(query);
-
-const bound = new BoundQuery(
-    'SELECT * FROM users WHERE status = $status',
-    { status: 'active' },
-);
-bound.bind('tier', 'premium');
-const [results] = await db.query(bound);
-```
-
-## Escaping identifiers and values
-
-When you need to construct SurrealQL strings manually, the escape functions ensure that identifiers and values are properly quoted. In most cases, you should prefer [bound queries](bound-queries.md) or the [value type classes](value-types.md) instead of manual escaping.
-
-```ts
-    escapeValue } from 'surrealdb';
 
 escapeIdent('users');           // 'users'
 escapeIdent('user-table');      // '`user-table`'
@@ -165,7 +136,86 @@ escapeValue(undefined);         // 'none'
 ```
 
 > [!WARNING]
-> Escape functions are not a complete defense against injection. Always prefer parameterized queries using [`surql`](bound-queries.md) or [`BoundQuery`](../api/utilities/bound-query.md).
+> Escaping alone does not stop injection. Use [`surql`](bound-queries.md) or [`BoundQuery`](../api/utilities/bound-query.md) for dynamic values.
+
+### Converting to SurrealQL strings
+
+`toSurqlString()` walks a value tree (objects, arrays, SQON classes) and returns a SurrealQL literal string. Useful for logs, debugging, or SurrealQL snippets outside bound queries.
+
+```ts
+
+toSurqlString(new RecordId('person', 'tobie')); // r"person:tobie"
+toSurqlString(new Decimal('3.14'));             // 3.14dec
+```
+
+## SDK utilities
+
+These ship with the `surrealdb` driver and tie into its query engine. They are not exported from `@surrealdb/sqon`.
+
+<table>
+	<thead>
+		<tr>
+			<th scope="col">Utility</th>
+			<th scope="col">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/expr"> ` expr() `</a></td>
+			<td scope="row" data-label="Description">Composes type-safe expressions for WHERE clauses and conditions</td>
+		</tr>
+		<tr>
+			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/surql"> ` surql `</a></td>
+			<td scope="row" data-label="Description">Tagged template for composing parameterized queries</td>
+		</tr>
+		<tr>
+			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/bound-query"> ` BoundQuery `</a></td>
+			<td scope="row" data-label="Description">Parameterized query class with manual control</td>
+		</tr>
+		<tr>
+			<td scope="row" data-label="Utility">` s, d, r, u `</td>
+			<td scope="row" data-label="Description">Tagged templates for SurrealQL string, datetime, record, and UUID prefixes</td>
+		</tr>
+	</tbody>
+</table>
+
+### Building expressions
+
+`expr()` and its operators build conditions for `.where()` and for `surql` templates. See [Bound queries](bound-queries.md#composing-expressions) for the full list.
+
+```ts
+
+const premiumAdults = expr(and(
+    eq('tier', 'premium'),
+    gte('age', 18),
+));
+
+const users = await db.select(new Table('users')).where(premiumAdults);
+```
+
+Operators cover comparisons (`eq`, `ne`, `gt`, `gte`, `lt`, `lte`), logic (`and`, `or`, `not`), strings and arrays (`contains`, `containsAny`, `containsAll`), geometry (`inside`, `outside`, `intersects`), and search (`matches`, `knn`).
+
+### Composing parameterized queries
+
+`surql` and `BoundQuery` bind parameters so you do not splice user input into query strings. See [Bound queries](bound-queries.md).
+
+```ts
+
+const minAge = 18;
+const query = surql`SELECT * FROM users WHERE age >= ${minAge}`;
+const [users] = await db.query(query);
+
+const bound = new BoundQuery(
+    'SELECT * FROM users WHERE status = $status',
+    { status: 'active' },
+);
+bound.bind('tier', 'premium');
+const [results] = await db.query(bound);
+```
+
+### String prefix templates
+
+The `s`, `d`, `r`, and `u` templates build typed literals with SurrealQL's string prefixes. See [Value types](value-types.md#string-prefixes).
 
 ## Best practices
 
@@ -207,5 +257,6 @@ if (recordId1 === recordId2) { ... }
 - [surql API reference](../api/utilities/surql.md) for template tag details
 - [BoundQuery API reference](../api/utilities/bound-query.md) for manual query building
 - [Escape functions API reference](../api/utilities/escape.md) for all escape utilities
+- [Codecs](codecs.md) for serialising value types over CBOR and JSON
 - [Bound queries](bound-queries.md) for safe query composition
 - [Value types](value-types.md) for SurrealDB-specific data classes

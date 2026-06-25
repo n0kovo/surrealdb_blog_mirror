@@ -27,7 +27,7 @@ Before forking the Collection from Postman, ensure that you have your SurrealDB 
 To do so run the [Start command](../../../reference/cli/surrealdb-cli/commands/start.md) in your terminal: 
 
 ```bash
-surreal start --user root --pass root
+surreal start --user root --pass secret
 ```
 
 The above command starts SurrealDB with [authentication](../../../reference/cli/surrealdb-cli/commands/start.md#authentication) and specifies that the user and password are `root`. Note that this is just for demonstration purposes. You can replace `root` in both instances with any other value.

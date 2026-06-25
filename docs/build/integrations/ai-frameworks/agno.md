@@ -18,7 +18,7 @@ docker run --rm \
   surrealdb/surrealdb:latest \
   start \
   --user root \
-  --pass root
+  --pass secret
 ```
 
 or

@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1021 pages_  
+_1027 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -64,7 +64,7 @@ _1021 pages_
 - [Connect VPC to SurrealDB Cloud](build/deployment/surrealdb-cloud/operations/aws-privatelink.md)
   Use AWS PrivateLink to connect your AWS VPC to SurrealDB Cloud over a private network path, without traffic traversing the public internet.
 - [Data export and backup](build/deployment/surrealdb-cloud/operations/data-export-and-backup.md)
-  Learn how to export and backup your SurrealDB Cloud instance data for external storage and disaster recovery.
+  Managed backups and in-platform restore for SurrealDB Cloud instances, plus logical export for portable data.
 - [Cloud operations](build/deployment/surrealdb-cloud/operations/index.md)
   In this section you will explore the advanced topics for navigating SurrealDB Cloud in Surrealist.
 - [Logs](build/deployment/surrealdb-cloud/operations/logs.md)
@@ -662,6 +662,8 @@ _1021 pages_
   SurrealDB supports a number of methods for authenticating users and securing the database.
 - [Bound queries](languages/javascript/concepts/bound-queries.md)
   The JavaScript SDK provides bound queries and template tags for safely composing parameterized SurrealQL queries.
+- [Codecs](languages/javascript/concepts/codecs.md)
+  The SQON library provides codecs for serialising and deserialising SurrealDB value types over CBOR and JSON wire formats.
 - [Connecting to SurrealDB](languages/javascript/concepts/connecting-to-surrealdb.md)
   The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
 - [Diagnostics](languages/javascript/concepts/diagnostics.md)
@@ -681,9 +683,9 @@ _1021 pages_
 - [Transactions](languages/javascript/concepts/transactions.md)
   The JavaScript SDK supports atomic transactions for executing multiple queries that succeed or fail together.
 - [Utilities](languages/javascript/concepts/utilities.md)
-  The JavaScript SDK provides utility functions for comparing values, converting to JSON, escaping identifiers, and building expressions.
+  SQON provides value comparison, conversion, and escaping utilities. The SDK adds query-building helpers on top.
 - [Value types](languages/javascript/concepts/value-types.md)
-  The JavaScript SDK provides custom classes for SurrealDB-specific data types, ensuring type safety and data integrity.
+  The SQON library provides custom classes for SurrealDB-specific data types, re-exported by the JavaScript SDK for convenience.
 - [Node.js](languages/javascript/engines/node.md)
   The SurrealDB SDK for JavaScript using the Node.js engine.
 - [WebAssembly](languages/javascript/engines/wasm.md)
@@ -1208,6 +1210,12 @@ _1021 pages_
   Defining custom HTTP-style endpoints on SurrealDB so clients hit a narrow surface instead of arbitrary queries.
 - [Middleware](learn/querying/custom-apis/middleware.md)
   Chaining custom functions before your API handler so you can share logic on DEFINE API routes.
+- [Overview](learn/querying/gql/overview.md)
+  Query SurrealDB graph data with ISO GQL (OpenGQL) — a Cypher-like graph pattern language over HTTP and RPC.
+- [Sample queries](learn/querying/gql/sample-queries.md)
+  Compare common GQL graph patterns against similar SurrealQL queries on the same seed graph.
+- [Via HTTP](learn/querying/gql/via-http.md)
+  Enable OpenGQL on a SurrealDB instance and run ISO GQL queries through POST /gql.
 - [GraphQL](learn/querying/graphql/overview.md)
   In this section, you will explore GraphQL, an industry-wide recognised protocol for interacting with your data, allowing you to query your data using any preferred method which offers precision and efficiency in data retrieval.
 - [Sample queries](learn/querying/graphql/sample-queries.md)
@@ -1299,9 +1307,11 @@ _1021 pages_
 - [AWS Marketplace](manage/cloud/aws-marketplace.md)
   Subscribe to SurrealDB Cloud through AWS Marketplace, link billing to your AWS account, and provision instances.
 - [Backups & recovery](manage/cloud/backups-and-recovery.md)
-  Automated backups, retention, point-in-time recovery, and manual exports for SurrealDB Cloud.
+  Automated backups, retention policy configuration, and in-platform restore for SurrealDB Cloud.
 - [Billing & support](manage/cloud/billing-and-support.md)
   Plans, payment methods, invoices, and how to get help with SurrealDB Cloud.
+- [High availability](manage/cloud/high-availability.md)
+  How fault tolerance and availability differ between SurrealDB Cloud Start and Scale plans.
 - [Cloud management](manage/cloud/index.md)
   Manage your SurrealDB Cloud deployment: instances, networking, backups, billing, and team access.
 - [Instance management](manage/cloud/instance-management.md)
@@ -1312,6 +1322,8 @@ _1021 pages_
   Secure SurrealDB Cloud connectivity with IP restrictions, VPC integration, and PrivateLink.
 - [Organisations & users](manage/cloud/organisations-and-users.md)
   Organisations, team members, and roles in SurrealDB Cloud.
+- [Patches & upgrades](manage/cloud/patches-and-upgrades.md)
+  Change the SurrealDB version on Cloud instances and what to expect during platform-managed upgrades.
 - [Scaling](manage/cloud/scaling.md)
   Resize SurrealDB Cloud instances and plan capacity for growing workloads.
 - [Distributed live queries](manage/enterprise/capabilities/distributed-live-queries.md)

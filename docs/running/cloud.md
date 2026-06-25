@@ -12,7 +12,3 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 In Surrealist you can go from the Sandbox to Cloud with **Deploy to Cloud**, create an instance, and then point your connection at the new instance instead of Sandbox.
 
 For day-to-day management of organisations, instances, and billing, use the documentation under **[SurrealDB Cloud](../manage/cloud/index.md)** in the *Manage* section.
-
-## When you are ready to self-host
-
-To install the `surreal` server on your own hardware or VMs, follow **[Installation](installation/index.md)**. That path gives you the same database engine, but you operate networking, storage, and upgrades yourself.

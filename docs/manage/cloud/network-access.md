@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 5
 title: Network access
 description: Secure SurrealDB Cloud connectivity with IP restrictions, VPC integration, and PrivateLink.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/cloud/network-access.mdx"

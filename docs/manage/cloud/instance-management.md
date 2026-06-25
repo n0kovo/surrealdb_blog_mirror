@@ -9,11 +9,11 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 A **SurrealDB Cloud instance** is a managed SurrealDB deployment you operate from the dashboard or Surrealist. This page summarises lifecycle actions and placement options.
 
-![A SurrealDB Cloud instance: the [instance-id].surreal.cloud endpoint fronts multiple compute nodes that share centralised storage on Amazon S3.](../../assets/img/image/cloud/light/architecture-light.png)
-
 ## Creating instances
 
-When you **create an instance**, you choose a **region** close to your applications, an **instance type** (CPU, memory, and storage profile), and options such as high availability or network access mode where your plan allows. Give each instance a clear name so teams can find it in the organisation view.
+When you **create an instance**, you choose a **plan** (Start or Scale), a **region** close to your applications, and an **instance type** (CPU, memory, and storage profile). **Start** provisions a single-node instance with dedicated storage. **Scale** provisions a multi-node cluster on SurrealDS — at least **three compute units** by default — for fault-tolerant, horizontally scalable workloads. Options such as network access mode depend on your organisation and plan.
+
+Give each instance a clear name so teams can find it in the organisation view. See [Cloud architecture](../../build/deployment/surrealdb-cloud/architecture.md) for how plans map to topology.
 
 ## Pausing and resuming
 
@@ -23,7 +23,7 @@ Unused free instances will be paused automatically after 7 days.
 
 ## Deleting instances
 
-**Delete** removes the instance and its data from Cloud according to the product behaviour shown at confirmation time. Ensure you have **backups or exports** before deletion if you might need the data later.
+**Delete** removes the instance and its data from Cloud according to the product behaviour shown at confirmation time. Ensure you have **backups** (paid plans) or a **logical export** before deletion if you might need the data later.
 
 ## Instance types and regions
 

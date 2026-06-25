@@ -1,41 +1,47 @@
 ---
 position: 2
 title: Data export and backup
-description: Learn how to export and backup your SurrealDB Cloud instance data for external storage and disaster recovery.
+description: Managed backups and in-platform restore for SurrealDB Cloud instances, plus logical export for portable data.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/deployment/surrealdb-cloud/operations/data-export-and-backup.mdx"
 ---
 
 # Backup and restore
 
-This section covers the backup and restore options for your SurrealDB Cloud Instance and the process of selecting a backup strategy. It also covers your responsibilities for backing up data stored in your SurrealDB Cloud instance and the available options for data export and recovery.
+This section covers **managed backups** on SurrealDB Cloud and how to restore an instance from a snapshot. For retention policy configuration and what backups cannot do, see **[Backups & recovery](../../../../manage/cloud/backups-and-recovery.md)**.
 
-## Backup
+## Managed backups
 
-SurrealDB Cloud provides a robust backup and restore solution for your SurrealDB Cloud instance. You can backup your data to a local file or to an external storage location. You can also restore your data from a backup file.
+SurrealDB Cloud takes **automated volume snapshots** of your instance on a schedule (paid plans). Snapshots are stored in the platform — you **cannot download or extract backup files** to your own storage today. Recovery is by **creating a new instance** from a snapshot in the console or Surrealist.
 
 > [!IMPORTANT]
-> Automated backups are not available for free Instances. To enable automated backups, you must upgrade to a [paid plan](/pricing). This gives you access to restore your data from a backup file.
+> Automated backups are not available for free instances. Upgrade to a paid [Start or Scale plan](https://surrealdb.com/pricing) to enable scheduled backups and restore.
 
 ### Restoring from a backup
 
-In the resources section of the Instance dashboard, you can access the list of all your available backups. To restore from a backup, click the **Create from selected** button on the backup you want to restore from. 
+In the resources section of the instance dashboard, open the list of available backups. To restore, click **Create from selected** on the snapshot you want.
 
 ![Restoring from a backup](../../../../assets/img/image/cloud/backup.png)
 
-This will take you to the [create a new Instance](../getting-started/create-an-instance.md#create-an-instance) page with the backup option already selected.
+This opens the [create a new instance](../getting-started/create-an-instance.md#create-an-instance) flow with the backup pre-selected.
 
 ![Restoring from a backup](../../../../assets/img/image/cloud/restore.png)
 
-You can also view a list of all available backups from the backup select dropdown in the Instance creation page.
+You can also pick a backup from the backup dropdown when creating a new instance.
 
-## Limitations of the backup and restore feature
+## Logical export (portable data)
 
-- The source and restore instance must be in the same region
-- It is not possible to restore a backup into an existing (or the same) Instance
-- The storage of the restore Instance must be equal or greater than the source Instance
+If you need a **portable copy** of your data outside Cloud backup restore — for migration, archival, or local development — connect to the running instance and use [`surreal export`](../../../../reference/cli/surrealdb-cli/commands/export.md). That is separate from managed snapshot backups. See [Migrating data](migrating-data.md).
+
+## Limitations of backup restore
+
+- The source and restore instance must be in the **same region**
+- You cannot restore a backup **into an existing** instance (only create a new one)
+- The restore instance **storage** must be equal to or greater than the source
+- Backup snapshots are **not downloadable** as files
 
 ## Next steps
 
-- [Configure an Instance](../getting-started/create-an-instance.md)
-- [Network Access](network-access.md)
-- [Migrating Data](migrating-data.md)
+- [Backups & recovery](../../../../manage/cloud/backups-and-recovery.md) — retention policy and operational detail
+- [Configure an instance](../getting-started/create-an-instance.md)
+- [Network access](network-access.md)
+- [Migrating data](migrating-data.md)

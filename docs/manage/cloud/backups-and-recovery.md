@@ -1,28 +1,60 @@
 ---
-position: 6
+position: 7
 title: Backups & recovery
-description: Automated backups, retention, point-in-time recovery, and manual exports for SurrealDB Cloud.
+description: Automated backups, retention policy configuration, and in-platform restore for SurrealDB Cloud.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/cloud/backups-and-recovery.mdx"
 ---
 
 # Backups & recovery
 
-SurrealDB Cloud is designed so you can **recover from mistakes, outages, or regional issues** without operating your own backup infrastructure. Policies are managed per instance or organisation according to your plan.
+SurrealDB Cloud provides **managed backups** so you can recover from mistakes or the need to clone an instance — without operating your own backup infrastructure. The same backup and restore experience applies to **Start and Scale** instances. Backups are **stored and restored inside Cloud**; you **cannot download or extract backup files** to your own storage today.
 
-![SurrealDB Cloud separates compute from storage on Amazon S3 — backups and point-in-time recovery operate on the storage layer.](../../assets/img/image/cloud/light/cloud-architecture-light.png)
+> [!IMPORTANT]
+> **Automated backups are not available on free instances.** Upgrade to a paid Start or Scale plan to enable scheduled backups and restore.
 
-## Automated backups and retention
+## Backup retention policy
 
-**Automated backups** capture instance state on a schedule defined in the Cloud console. **Retention** determines how long each backup generation is kept before it is eligible for removal—longer retention improves recoverability but increases storage use and cost. Align retention with compliance needs (for example, minimum weeks or months of history).
+Paid instances use a **tiered retention policy** you can configure per instance. Each tier keeps snapshots for a set period before they expire:
 
-## Point-in-time recovery
+| Tier | Schedule | What you configure |
+| --- | --- | --- |
+| **Daily** | Automated every day | How many **days** of daily snapshots to keep |
+| **Weekly** | Snapshot each Sunday | How many **weeks** of weekly snapshots to keep |
+| **Monthly** | Snapshot on the 1st of each month | How many **months** of monthly snapshots to keep |
 
-Where available for your instance type and version, **point-in-time recovery (PITR)** lets you restore to a moment within the retained window, not only to named backup snapshots. This narrows data loss when you need to undo a bad migration or application bug.
+To change retention, open the instance in **Surrealist**, go to **Settings → Backups**, and open **Backup retention**. Adjust the values for each tier within the allowed range shown in the UI, then save.
 
-## Manual exports
+Some tiers may be **fixed on your current plan** (not editable in the console). If you need longer retention than your plan allows, contact SurrealDB support from the same screen.
 
-For portability, audits, or migrations, use **manual export** flows to pull data or definitions in a format suitable for re-import or offline analysis. Treat exports like secrets: store them in secure object storage with restricted access.
+Longer retention improves recoverability but increases storage use and cost. Align retention with compliance and recovery objectives.
+
+## On-demand backups
+
+You can also trigger **on-demand backups** before risky changes (for example a major version upgrade). These appear alongside scheduled snapshots in the instance backup list.
+
+## Restoring from a backup
+
+Restore is an **in-platform** operation:
+
+1. Open the instance **backups** list in Surrealist or the Cloud dashboard.
+2. Select the snapshot to restore from.
+3. Choose **Create from selected** (or pick the backup when creating a new instance).
+
+This provisions a **new instance** from the backup. You cannot restore into the same instance in place.
+
+Common constraints:
+
+- Source and restore instances must be in the **same region**.
+- Restore target **storage size** must be equal to or greater than the source.
+- Restored instances must use a **compatible SurrealDB version** for that backup (the UI shows valid versions).
+
+Step-by-step screenshots and the create-instance flow are in **[Data export and backup](../../build/deployment/surrealdb-cloud/operations/data-export-and-backup.md)**.
+
+## What backups are not
+
+- **Not downloadable** — backup snapshots are not exposed as files you can copy to S3, your laptop, or another cloud. Recovery is through Cloud restore only.
+- **Not a substitute for logical export** — if you need a portable `.surql` or data file outside Cloud, use [`surreal export`](../../reference/cli/surrealdb-cli/commands/export.md) against a running instance (see [Migrating data](../../build/deployment/surrealdb-cloud/operations/migrating-data.md)).
 
 ## Operational detail
 
-Step-by-step backup schedules, export procedures, and restore workflows are covered alongside other runbooks in the deployment documentation. See **[SurrealDB Cloud operations](../../build/deployment/surrealdb-cloud/operations/index.md)** for exports, migration, and related topics.
+For migration runbooks and related operations topics, see **[SurrealDB Cloud operations](../../build/deployment/surrealdb-cloud/operations/index.md)**.

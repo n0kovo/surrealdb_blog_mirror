@@ -1,12 +1,12 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-06-24 07:13 UTC_
+_Last updated: 2026-06-25 07:13 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
 ## Stats
 
-- **Total pages:** 1021
+- **Total pages:** 1027
 
 ## Browse
 
@@ -18,7 +18,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Database
 
-- **[Querying](learn/querying/index.md)** — SurrealQL and live result handling. — _33 pages_
+- **[Querying](learn/querying/index.md)** — SurrealQL and live result handling. — _36 pages_
 - **[Schema management](learn/schema-management/index.md)** — Namespaces, tables, and indexes. — _17 pages_
 - **[Data models](learn/data-models/index.md)** — Documents, graphs, vectors, time series. — _33 pages_
 - **[Security](learn/security/index.md)** — Authentication, scopes, and permissions. — _9 pages_
@@ -48,7 +48,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Hosting
 
-- **[SurrealDB Cloud](manage/cloud/index.md)** — Hosted instances and Cloud console. — _9 pages_
+- **[SurrealDB Cloud](manage/cloud/index.md)** — Hosted instances and Cloud console. — _11 pages_
 - **[Self-hosted](manage/self-hosted/index.md)** — Clusters, backups, your infrastructure. — _5 pages_
 
 ### Operations
@@ -74,4 +74,4 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ## More content
 
-- **[SDKs](languages/index.md)** — Official client SDKs for Rust, JavaScript, Python, Go, .NET, PHP, and Java. _(356 pages)_
+- **[SDKs](languages/index.md)** — Official client SDKs for Rust, JavaScript, Python, Go, .NET, PHP, and Java. _(357 pages)_

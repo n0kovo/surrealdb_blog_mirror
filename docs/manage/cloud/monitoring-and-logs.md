@@ -1,5 +1,5 @@
 ---
-position: 5
+position: 6
 title: Monitoring & logs
 description: Dashboards, metrics, and logs for observing SurrealDB Cloud instances.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/cloud/monitoring-and-logs.mdx"
@@ -8,8 +8,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 # Monitoring & logs
 
 Operating production databases requires visibility into **health**, **capacity**, and **errors**. SurrealDB Cloud exposes monitoring and logging so you can detect issues early and audit activity without running your own observability stack for the data plane.
-
-![A SurrealDB Cloud instance comprises an endpoint, multiple compute nodes, and centralised storage — Cloud monitoring covers metrics and logs across all of these.](../../assets/img/image/cloud/light/architecture-light.png)
 
 ## Monitoring dashboard
 

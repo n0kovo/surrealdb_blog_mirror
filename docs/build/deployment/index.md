@@ -15,9 +15,9 @@ This page explains the available deployment options, storage engines, and how to
 
 | Deployment model | Storage engine(s) | Scaling | High availability | Versioning (`VERSION`) | Best for | Managed option |
 | --- | --- | --- | --- | --- | --- | --- |
-| SurrealDB Cloud | Single-node to distributed cluster | Automatic | Fully managed HA | Where enabled | Production without operating infrastructure | Yes |
+| SurrealDB Cloud | Start (single-node) to Scale (SurrealDS cluster) | Vertical and horizontal (by plan) | Fully managed HA on Scale | Where enabled | Production without operating infrastructure | Yes |
 | Single node | RocksDB (recommended for server workloads); SurrealKV (beta) | Vertical | Filesystem backups | Where enabled (see engine docs) | Development and single-node production | Self-hosted (Community Edition) |
-| Multi-node | Distributed storage | Horizontal | Replication and consensus | Where enabled on the storage tier | Large-scale production workloads | [SurrealDB Cloud](surrealdb-cloud/what-is-surrealdb-cloud.md) Dedicated tiers; self-hosted (EKS, GKE, AKS) |
+| Multi-node | SurrealDS | Horizontal; distributed storage | High (replication and consensus) | Where enabled on the storage tier | Large-scale production workloads | [Scale](https://surrealdb.com/pricing/scale) on Cloud; self-hosted Enterprise |
 | Embedded | SurrealMX (memory), SurrealKV (beta), RocksDB, IndexedDB (browser) | Application-bound | Application-bound | Where enabled | Offline, edge, browser, and low-latency local apps | No |
 
 ## Architecture overview
@@ -42,7 +42,9 @@ Because these layers are separated in the architecture, applications can move be
 
 [SurrealDB Cloud](surrealdb-cloud/what-is-surrealdb-cloud.md) provides a fully managed deployment platform built on scalable, fault-tolerant infrastructure. It removes the operational complexity of running clusters while providing production-ready deployments.
 
-For more detail, see [What is SurrealDB Cloud?](surrealdb-cloud/what-is-surrealdb-cloud.md) and [Cloud architecture](surrealdb-cloud/architecture.md).
+Cloud plans range from **Start** (single-node, vertically scalable instances) to **Scale** (multi-node clusters on [SurrealDS](https://surrealdb.com/platform/surrealds), minimum three compute units). Start is enough for many workloads; Scale is aimed at business-critical production where a single-node outage would stop the application and where operating HA yourself (Kubernetes, replication, patching, and backups) would otherwise consume platform team time. See [Cloud architecture](surrealdb-cloud/architecture.md) and [Pricing](https://surrealdb.com/pricing).
+
+For more detail, see [What is SurrealDB Cloud?](surrealdb-cloud/what-is-surrealdb-cloud.md).
 
 ### Features
 
@@ -51,7 +53,7 @@ For more detail, see [What is SurrealDB Cloud?](surrealdb-cloud/what-is-surreald
 - High availability
 - Managed backups
 - Secure connectivity
-- Multi-node distributed architecture (Dedicated tiers)
+- Multi-node distributed architecture on the Scale plan
 - Production monitoring and operations
 
 ### Best for
@@ -118,17 +120,23 @@ SurrealKV remains **beta**. For conservative production on-disk server deploymen
 
 To try SurrealKV on a server, see the SurrealKV tab on [Run a single-node, on-disk server](../../running/file-backed.md) and the [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md) storage parameters.
 
-## Multi-node (distributed storage)
+## Multi-node (SurrealDS)
 
-Multi-node deployments run multiple SurrealDB query nodes against **shared distributed storage** so reads and writes stay consistent across the cluster. This is the architecture for horizontal scaling and high availability in production.
+For high availability and horizontal scalability, SurrealDB supports distributed deployments using [SurrealDS](https://surrealdb.com/platform/surrealds) — SurrealDB's distributed transactional storage layer for large-scale clusters.
+
+### Architecture
 
 In distributed deployments:
 
-- Multiple SurrealDB query nodes scale horizontally against shared storage
-- The primary dataset lives in the storage layer rather than on individual query nodes
-- The storage backend manages replication, consensus, fault tolerance, and distributed transactions
+- Multiple query nodes scale horizontally against shared storage
+- SurrealDS manages replication, consensus, fault tolerance, and distributed transactions
+- Object-storage backing (rolling out on Scale) places transactional data in commodity object storage while frequently accessed data stays on local disk
 
-For managed multi-node clusters, use the [Scale](https://surrealdb.com/pricing/scale) plan on [SurrealDB Cloud](surrealdb-cloud/what-is-surrealdb-cloud.md). For self-hosted highly available setups on Kubernetes, see [Amazon EKS](self-hosted/amazon-eks.md), [Google GKE](self-hosted/google-gke.md), and [Azure AKS](self-hosted/azure-aks.md). For local development against distributed storage, see [Run a multi-node cluster](https://surrealdb.com/docs/index/running/multi-node).
+This architecture enables zero-downtime scaling, resilient clusters, high-throughput workloads, geographically distributed applications, and (as Scale features roll out) database branching, instant replication and recovery, and lower storage costs at scale.
+
+For managed multi-node clusters, use the [Scale](https://surrealdb.com/pricing/scale) plan on [SurrealDB Cloud](surrealdb-cloud/what-is-surrealdb-cloud.md). For self-hosted highly available setups on Kubernetes with SurrealDB Enterprise, see [Amazon EKS](self-hosted/amazon-eks.md), [Google GKE](self-hosted/google-gke.md), and [Azure AKS](self-hosted/azure-aks.md). For local development against distributed storage, see [Run a multi-node cluster](../../running/multi-node.md).
+
+For a deeper overview of the storage engine, see [SurrealDS](https://surrealdb.com/platform/surrealds).
 
 ### Features
 
@@ -177,9 +185,9 @@ SurrealDB supports embedded operation in Rust, Go, JavaScript / TypeScript, WebA
 
 **Use SurrealDB Cloud when**
 
-- You want managed infrastructure
-- You need production-ready HA quickly
-- Your team prefers building applications over operating databases
+- You want managed infrastructure instead of operating clusters yourself
+- You need production-ready HA quickly — especially on the **Scale** plan for multi-node fault tolerance
+- Your team prefers building applications over provisioning servers, Kubernetes, replication, and upgrade runbooks
 
 **Use single-node deployments with RocksDB when**
 
@@ -187,13 +195,13 @@ SurrealDB supports embedded operation in Rust, Go, JavaScript / TypeScript, WebA
 - Scaling requirements are moderate
 - You run small-to-medium production workloads without cluster-level fault tolerance
 
-**Use multi-node deployments when**
+**Use multi-node deployments with SurrealDS when**
 
 - High availability is required
 - Workloads need horizontal scaling
 - Infrastructure spans multiple nodes or availability zones
 
-For managed clusters, use [SurrealDB Cloud](surrealdb-cloud/what-is-surrealdb-cloud.md) Dedicated tiers. For self-hosted Kubernetes, follow the [EKS](self-hosted/amazon-eks.md), [GKE](self-hosted/google-gke.md), or [AKS](self-hosted/azure-aks.md) guides.
+For managed clusters, use [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale). For self-hosted Kubernetes with Enterprise, follow the [EKS](self-hosted/amazon-eks.md), [GKE](self-hosted/google-gke.md), or [AKS](self-hosted/azure-aks.md) guides.
 
 **Use embedded deployments when**
 
@@ -203,7 +211,7 @@ For managed clusters, use [SurrealDB Cloud](surrealdb-cloud/what-is-surrealdb-cl
 
 ## Conclusion
 
-SurrealDB’s architecture lets the same engine and query language run across embedded, single-node, distributed, and managed models. Whether you embed SurrealDB in a browser, run RocksDB on one server, operate a multi-node cluster, or use SurrealDB Cloud, you can match operational and scalability requirements without rewriting queries.
+SurrealDB’s architecture lets the same engine and query language run across embedded, single-node, distributed, and managed models. Whether you embed SurrealDB in a browser, run RocksDB on one server, scale horizontally with SurrealDS, or use SurrealDB Cloud Start or Scale, you can match operational and scalability requirements without rewriting queries.
 
 ## Next steps
 

@@ -231,6 +231,12 @@ Server-side filesystem access for features that read paths from disk (notably th
       <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP /sql endpoint</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_GQL_BODY_SIZE`*Since v3.2.0*</td>
+      <td scope="row" data-label="Default">1,048,576 (1 MiB)</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP `/gql` endpoint. See <a href="/docs/learn/querying/gql/via-http">GQL via HTTP</a>.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_API_BODY_SIZE`</td>
       <td scope="row" data-label="Default">4,194,304 (4 MiB)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
@@ -306,6 +312,41 @@ Used by the built-in [Model Context Protocol](../../../build/ai-agents/mcp.md) s
       <td scope="row" data-label="Default">256</td>
       <td scope="row" data-label="Allowed values">A positive integer</td>
       <td scope="row" data-label="Notes">Maximum top-level keys in MCP parameter / data objects.</td>
+    </tr>
+  </tbody>
+</table>
+
+### OpenGQL config *Since v3.2.0*
+
+Resource limits for experimental [ISO GQL (OpenGQL)](../../../learn/querying/gql/overview.md) `MATCH` execution. Errors name the knob when a limit is exceeded. The language can be enabled by passing in the [`--allow-experimental=opengql`](commands/start.md#experimental-capabilities) flag when starting the database.
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col" style={{width: '40%'}}>Environment variable</th>
+      <th scope="col" style={{width: '20%'}}>Default</th>
+      <th scope="col" style={{width: '20%'}}>Allowed values</th>
+      <th scope="col" style={{width: '20%'}}>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_GQL_MAX_PATH_ROWS`</td>
+      <td scope="row" data-label="Default">1,000,000</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">Per source row, bounds live and emitted rows during variable-length path expansion in a GQL `MATCH`.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_GQL_MAX_JOIN_BUILD_ROWS`</td>
+      <td scope="row" data-label="Default">1,000,000</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">Bounds the in-memory build side of hash joins between GQL match patterns (and distinct-operator working sets).</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_GQL_MAX_OUTPUT_ROWS`</td>
+      <td scope="row" data-label="Default">1,000,000</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">Bounds cumulative rows emitted by GQL hash-join operators (including cross joins).</td>
     </tr>
   </tbody>
 </table>
@@ -837,8 +878,8 @@ surreal start --allow-all true
       <td scope="row" data-label="Command arg">`allow-experimental`</td>
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">none</td>
-      <td scope="row" data-label="Allowed values">files, surrealism (comma-separated)</td>
-      <td scope="row" data-label="Notes">Allow execution of experimental features.</td>
+      <td scope="row" data-label="Allowed values">files, surrealism, opengql (comma-separated)</td>
+      <td scope="row" data-label="Notes">Allow execution of experimental features. See <a href="/docs/reference/cli/surrealdb-cli/commands/start#experimental-capabilities">experimental capabilities</a> for which tag enables each feature.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_FUNC`</td>

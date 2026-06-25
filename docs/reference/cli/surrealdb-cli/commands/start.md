@@ -368,6 +368,10 @@ surreal start --allow-experimental surrealism,files
             <td><a href="/docs/reference/query-language/statements/define/module">DEFINE MODULE</a></td>
             <td>`surrealism`</td>
         </tr>
+        <tr>
+            <td><a href="/docs/learn/querying/gql/overview">GQL</a> (`POST /gql`)</td>
+            <td>`opengql`</td>
+        </tr>
     </tbody>
 </table>
 

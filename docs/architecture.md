@@ -51,7 +51,7 @@ Each storage engine must support transactional read and write of individual keys
 
 SurrealDB supports:
 
-- **Managed deployment** through [SurrealDB Cloud](build/deployment/surrealdb-cloud/what-is-surrealdb-cloud.md)
+- **Managed deployment** through [SurrealDB Cloud](build/deployment/surrealdb-cloud/what-is-surrealdb-cloud.md) — from single-node **Start** instances to multi-node **Scale** clusters on SurrealDS
 - **Single-node self-hosted** deployments through RocksDB (and optionally SurrealKV while in beta)
 - **Multi-node self-hosted** deployment on Kubernetes ([EKS](build/deployment/self-hosted/amazon-eks.md), [GKE](build/deployment/self-hosted/google-gke.md), [AKS](build/deployment/self-hosted/azure-aks.md)) or managed multi-node tiers on [SurrealDB Cloud](build/deployment/surrealdb-cloud/what-is-surrealdb-cloud.md)
 - **Embedded** deployments:

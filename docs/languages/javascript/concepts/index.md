@@ -5,7 +5,7 @@ generated: stub
 
 # Concepts
 
-_Auto-generated index — 13 pages._
+_Auto-generated index — 14 pages._
 
 ## Pages
 
@@ -13,6 +13,8 @@ _Auto-generated index — 13 pages._
   SurrealDB supports a number of methods for authenticating users and securing the database.
 - [Bound queries](bound-queries.md)
   The JavaScript SDK provides bound queries and template tags for safely composing parameterized SurrealQL queries.
+- [Codecs](codecs.md)
+  The SQON library provides codecs for serialising and deserialising SurrealDB value types over CBOR and JSON wire formats.
 - [Connecting to SurrealDB](connecting-to-surrealdb.md)
   The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
 - [Diagnostics](diagnostics.md)
@@ -32,6 +34,6 @@ _Auto-generated index — 13 pages._
 - [Transactions](transactions.md)
   The JavaScript SDK supports atomic transactions for executing multiple queries that succeed or fail together.
 - [Utilities](utilities.md)
-  The JavaScript SDK provides utility functions for comparing values, converting to JSON, escaping identifiers, and building expressions.
+  SQON provides value comparison, conversion, and escaping utilities. The SDK adds query-building helpers on top.
 - [Value types](value-types.md)
-  The JavaScript SDK provides custom classes for SurrealDB-specific data types, ensuring type safety and data integrity.
+  The SQON library provides custom classes for SurrealDB-specific data types, re-exported by the JavaScript SDK for convenience.

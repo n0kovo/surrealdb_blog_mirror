@@ -1,5 +1,5 @@
 ---
-position: 8
+position: 9
 title: Billing & support
 description: Plans, payment methods, invoices, and how to get help with SurrealDB Cloud.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/cloud/billing-and-support.mdx"
@@ -8,8 +8,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 # Billing & support
 
 **Billing** in SurrealDB Cloud is tied to your **organisation**: usage (compute, storage, and network) rolls up for invoicing, and historical records remain even if you delete individual instances.
-
-![SurrealDB Cloud bills along the same axes shown in this diagram: compute time on the node and capacity on the centralised storage layer.](../../assets/img/image/cloud/light/cloud-architecture-light.png)
 
 ## Plans and pricing tiers
 

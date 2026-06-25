@@ -29,7 +29,7 @@ For local, two options:
 1. [Install SurrealDB](../../../running/installation/index.md) and run [SurrealDB](../../../running/in-memory.md). Run in-memory with:
 
     ```sh
-    surreal start -u root -p root
+    surreal start -u root -p secret
     ```
 
 2. [Run with Docker](../../../running/docker.md).

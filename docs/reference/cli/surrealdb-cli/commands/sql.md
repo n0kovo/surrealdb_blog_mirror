@@ -209,7 +209,33 @@ SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism,files surreal sql ...
 surreal sql -e [CONNECTION_STRING] --allow-experimental surrealism,files
 ```
 
-The current experimental targets are `files` and `surrealism`.
+The current experimental targets are `files`, `surrealism`, and `opengql`.
+
+<table>
+    <thead>
+        <tr>
+            <th>Example feature/statement</th>
+            <th>Tag</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="/docs/reference/query-language/statements/define/bucket">DEFINE BUCKET</a></td>
+            <td>`files`</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/reference/query-language/statements/define/module">DEFINE MODULE</a></td>
+            <td>`surrealism`</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/learn/querying/gql/overview">GQL</a> (`POST /gql`)</td>
+            <td>`opengql`</td>
+        </tr>
+    </tbody>
+</table>
+
+> [!NOTE]
+> GQL is served by a running database instance. Enable `opengql` also on the server with [`surreal start`](start.md#experimental-capabilities), not only on the `surreal sql` client.
 
 ### Default namespace and database
 

@@ -1,5 +1,5 @@
 ---
-position: 7
+position: 8
 title: AWS Marketplace
 description: Subscribe to SurrealDB Cloud through AWS Marketplace, link billing to your AWS account, and provision instances.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/cloud/aws-marketplace.mdx"

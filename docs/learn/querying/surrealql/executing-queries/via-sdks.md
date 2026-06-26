@@ -11,7 +11,7 @@ SurrealDB supports a number of methods for connecting to the database and perfor
 
 In each SDK, you can connect to the database using a local or remote connection. Once you are connected, you can start performing data queries. Here is a list of all the Supported SDKs:
 
-- **[Rust](../../../../languages/rust/index.md)**
+- **[Rust](../../../../languages/rust/overview.md)**
 - **[JavaScript](../../../../languages/javascript/concepts/connecting-to-surrealdb.md)**
 - **[TypeScript](../../../../languages/javascript/concepts/connecting-to-surrealdb.md)**
 - **[Python](../../../../languages/python/index.md)**

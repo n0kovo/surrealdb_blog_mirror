@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-06-25T07:13:59.369561+00:00",
-  "count": 237,
+  "generated_at": "2026-06-26T07:20:21.596331+00:00",
+  "count": 238,
   "posts": [
+    {
+      "slug": "graph-traversals-and-time-travel-incident-response-in-one-query-language",
+      "title": "Graph traversals and time travel: incident response in one query language",
+      "summary": "Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.",
+      "publishDate": "2026-06-25T11:51:37.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": "6 min read",
+      "imageUrl": "https://cdn.surrealdb.com/9qcg3iouf6k67fi74zcg1rum.auto",
+      "source": "https://surrealdb.com/blog/graph-traversals-and-time-travel-incident-response-in-one-query-language",
+      "local_path": "2026/06/graph-traversals-and-time-travel-incident-response-in-one-query-language.md"
+    },
     {
       "slug": "social-graphs-for-activity-tracking-apps",
       "title": "Social graphs for activity-tracking apps",

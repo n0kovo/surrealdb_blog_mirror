@@ -1,5 +1,5 @@
 ---
-position: 10
+position: 11
 title: Patches & upgrades
 description: Change the SurrealDB version on Cloud instances and what to expect during platform-managed upgrades.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/cloud/patches-and-upgrades.mdx"

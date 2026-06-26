@@ -1,5 +1,5 @@
 ---
-position: 7
+position: 8
 title: Backups & recovery
 description: Automated backups, retention policy configuration, and in-platform restore for SurrealDB Cloud.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/cloud/backups-and-recovery.mdx"

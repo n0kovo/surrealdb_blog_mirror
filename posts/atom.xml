@@ -4,10 +4,19 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-06-23T10:32:13Z</updated>
+  <updated>2026-06-25T11:51:37Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/graph-traversals-and-time-travel-incident-response-in-one-query-language</id>
+    <title>Graph traversals and time travel: incident response in one query language</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/graph-traversals-and-time-travel-incident-response-in-one-query-language" type="text/html" />
+    <published>2026-06-25T11:51:37Z</published>
+    <updated>2026-06-25T11:51:37Z</updated>
+    <summary type="text">Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.</summary>
+    <category term="tutorials" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/social-graphs-for-activity-tracking-apps</id>
     <title>Social graphs for activity-tracking apps</title>
@@ -488,16 +497,5 @@
     <summary type="text">SurrealDB's built-in capabilities comprising graph queries, geolocational data and recursive queries make it the perfect fit to identify malevolent entities involved in organised influence campaigns.</summary>
     <category term="featured" />
     <category term="tutorials" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/bring-your-own-knowledge-base-agent-studio-meets-surrealdb</id>
-    <title>Bring your own knowledge base: Agent Studio meets SurrealDB</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/bring-your-own-knowledge-base-agent-studio-meets-surrealdb" type="text/html" />
-    <published>2025-10-09T00:00:00Z</published>
-    <updated>2025-10-09T00:00:00Z</updated>
-    <summary type="text">How Agent Studio from PolyAI integrates with SurrealDB</summary>
-    <category term="featured" />
-    <category term="ai" />
-    <category term="community" />
   </entry>
 </feed>

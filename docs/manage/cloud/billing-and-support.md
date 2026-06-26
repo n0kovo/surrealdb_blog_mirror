@@ -1,5 +1,5 @@
 ---
-position: 9
+position: 10
 title: Billing & support
 description: Plans, payment methods, invoices, and how to get help with SurrealDB Cloud.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/cloud/billing-and-support.mdx"

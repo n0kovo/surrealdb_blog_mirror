@@ -5,7 +5,7 @@ generated: stub
 
 # Surrealdb Cloud
 
-_Auto-generated index — 2 pages and 5 sub-sections._
+_Auto-generated index — 1 page and 5 sub-sections._
 
 ## Sub-sections
 
@@ -17,7 +17,5 @@ _Auto-generated index — 2 pages and 5 sub-sections._
 
 ## Pages
 
-- [Architecture](architecture.md)
-  In this section, we will explore the SurrealDB Cloud architecture and how it is designed to provide a scalable, high-performance, and secure database solution.
 - [What is SurrealDB Cloud?](what-is-surrealdb-cloud.md)
   SurrealDB Cloud redefines the database experience, offering the power and flexibility of SurrealDB without the pain of managing infrastructure. Focus on building tomorrow's applications. Let us take care of the rest.

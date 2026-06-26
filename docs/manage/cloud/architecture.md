@@ -1,0 +1,29 @@
+---
+position: 2
+title: Architecture
+description: How SurrealDB Cloud is built — Start single-node and Scale multi-node topologies on SurrealDS.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/cloud/architecture.mdx"
+---
+
+# Cloud architecture
+
+SurrealDB Cloud benefits from [SurrealDB's layered architecture](../../architecture.md), which separates storage from compute, enabling improved scalability, durability and availability without the need to operate, manage, scale or shard your database.
+
+## Start
+
+For development and staging applications with vertically scalable requirements. SurrealDB Cloud **Start** provides dedicated storage and a single compute node that you can resize as workloads grow.
+
+![SurrealDB Cloud Start: single-node architecture](../../assets/img/image/cloud/light/start-single-node-light.png)
+
+## Scale
+
+For **business-critical** applications that must stay available when a node fails and scale query throughput horizontally. **Scale** clusters run on [SurrealDS](https://surrealdb.com/platform/surrealds), SurrealDB's distributed storage engine — with quorum consensus, compute–storage separation, and object-storage-backed durability — and start at **three nodes**, with the ability to scale horizontally beyond that. Scale automatically handles data replication and distributed transactions.
+
+Provisioning a production cluster on SurrealDB Cloud avoids the operational work of self-hosting: Kubernetes, replication, patching, backups, and upgrade orchestration are managed for you.
+
+![SurrealDB Cloud Scale architecture](../../assets/img/image/cloud/light/enterprise-multi-node-light.png)
+
+> [!NOTE]
+> Some Scale capabilities — such as read replicas, database branching, and database forking — are still rolling out. See [Pricing](https://surrealdb.com/pricing) and [Roadmap](https://surrealdb.com/roadmap) for current availability.
+
+To learn more about deployment models and self-hosted SurrealDS, see [Deployment](../../build/deployment/index.md) and [SurrealDS](https://surrealdb.com/platform/surrealds).

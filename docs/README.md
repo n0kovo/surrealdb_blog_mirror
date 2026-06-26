@@ -1,6 +1,6 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-06-25 07:13 UTC_
+_Last updated: 2026-06-26 07:20 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
@@ -32,7 +32,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Running
 
-- **[Deployment](build/deployment/index.md)** — Cloud, edge, and on-premises. — _35 pages_
+- **[Deployment](build/deployment/index.md)** — Cloud, edge, and on-premises. — _34 pages_
 - **[Embedding SurrealDB](build/embedding/index.md)** — Native and WebAssembly embedding. — _7 pages_
 
 ### Ecosystem
@@ -48,7 +48,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Hosting
 
-- **[SurrealDB Cloud](manage/cloud/index.md)** — Hosted instances and Cloud console. — _11 pages_
+- **[SurrealDB Cloud](manage/cloud/index.md)** — Hosted instances and Cloud console. — _12 pages_
 - **[Self-hosted](manage/self-hosted/index.md)** — Clusters, backups, your infrastructure. — _5 pages_
 
 ### Operations

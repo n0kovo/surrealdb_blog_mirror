@@ -31,8 +31,6 @@ _1027 pages_
   Deploy SurrealDB to Kubernetes with RocksDB on a persistent volume.
 - [Self-hosted deployment](build/deployment/self-hosted/overview.md)
   Getting started with SurrealDB is quick and easy. Follow these tutorials for deploying SurrealDB in different environments.
-- [Architecture](build/deployment/surrealdb-cloud/architecture.md)
-  In this section, we will explore the SurrealDB Cloud architecture and how it is designed to provide a scalable, high-performance, and secure database solution.
 - [Billing](build/deployment/surrealdb-cloud/billing-and-support/billing.md)
   Overview of SurrealDB Cloud billing and its flexible pricing models.
 - [FAQs](build/deployment/surrealdb-cloud/billing-and-support/faqs.md)
@@ -1304,6 +1302,8 @@ _1027 pages_
   This page provides some troubleshooting advice to support users in addressing issues either caused by or involved in the usage of specific security features provided by SurrealDB.
 - [Security](learn/security/index.md)
   Learn how to secure your SurrealDB deployment with authentication, authorization, and security best practices.
+- [Architecture](manage/cloud/architecture.md)
+  How SurrealDB Cloud is built — Start single-node and Scale multi-node topologies on SurrealDS.
 - [AWS Marketplace](manage/cloud/aws-marketplace.md)
   Subscribe to SurrealDB Cloud through AWS Marketplace, link billing to your AWS account, and provision instances.
 - [Backups & recovery](manage/cloud/backups-and-recovery.md)

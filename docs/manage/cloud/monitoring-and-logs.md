@@ -1,5 +1,5 @@
 ---
-position: 6
+position: 7
 title: Monitoring & logs
 description: Dashboards, metrics, and logs for observing SurrealDB Cloud instances.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/cloud/monitoring-and-logs.mdx"

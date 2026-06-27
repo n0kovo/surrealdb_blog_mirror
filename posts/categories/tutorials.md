@@ -1,8 +1,10 @@
 # Category: tutorials
 
-_90 posts_  
+_91 posts_  
 [← Index](../../README.md)
 
+- **2026-06-26** · [Generating embeddings inside SurrealQL with a custom function](../2026/06/generating-embeddings-inside-surrealql-with-a-custom-function.md)  
+  `ai` `tutorials` — Define a custom SurrealQL function to call any embedding API, then run semantic search, graph traversal and field shaping in one query
 - **2026-06-25** · [Graph traversals and time travel: incident response in one query language](../2026/06/graph-traversals-and-time-travel-incident-response-in-one-query-language.md)  
   `tutorials` — Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.
 - **2026-06-23** · [Social graphs for activity-tracking apps](../2026/06/social-graphs-for-activity-tracking-apps.md)  

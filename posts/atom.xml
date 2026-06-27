@@ -4,10 +4,20 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-06-25T11:51:37Z</updated>
+  <updated>2026-06-26T12:52:41Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/generating-embeddings-inside-surrealql-with-a-custom-function</id>
+    <title>Generating embeddings inside SurrealQL with a custom function</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/generating-embeddings-inside-surrealql-with-a-custom-function" type="text/html" />
+    <published>2026-06-26T12:52:41Z</published>
+    <updated>2026-06-26T12:52:41Z</updated>
+    <summary type="text">Define a custom SurrealQL function to call any embedding API, then run semantic search, graph traversal and field shaping in one query</summary>
+    <category term="ai" />
+    <category term="tutorials" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/graph-traversals-and-time-travel-incident-response-in-one-query-language</id>
     <title>Graph traversals and time travel: incident response in one query language</title>
@@ -487,15 +497,5 @@
     <category term="featured" />
     <category term="tutorials" />
     <category term="ai" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/using-surrealdb-to-expose-organised-influence-campaigns</id>
-    <title>Using SurrealDB to Expose Organised Influence Campaigns</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/using-surrealdb-to-expose-organised-influence-campaigns" type="text/html" />
-    <published>2025-10-10T00:00:00Z</published>
-    <updated>2025-10-10T00:00:00Z</updated>
-    <summary type="text">SurrealDB's built-in capabilities comprising graph queries, geolocational data and recursive queries make it the perfect fit to identify malevolent entities involved in organised influence campaigns.</summary>
-    <category term="featured" />
-    <category term="tutorials" />
   </entry>
 </feed>

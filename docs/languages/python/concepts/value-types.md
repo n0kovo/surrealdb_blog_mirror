@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 The Python SDK maps SurrealDB data types to Python types automatically. Standard Python types like `str`, `int`, `float`, `bool`, `None`, `dict`, and `list` map directly to their SurrealDB equivalents. For SurrealDB-specific types such as record identifiers, durations, and geometry, the SDK provides dedicated Python classes.
 
-See the [Data Types reference](../api/values/index.md) for the full API details of each type.
+See the [Data types reference](../api/values/index.md) for the full API details of each type.
 
 ## API references
 
@@ -226,7 +226,7 @@ More complex types compose from simpler ones — a `GeometryLine` is built from 
 
 ## Learn more
 
-- [Data Types reference](../api/values/index.md) for complete API details
+- [Data types reference](../api/values/index.md) for complete API details
 - [RecordID reference](../api/values/record-id.md) for record identifier API
 - [Duration reference](../api/values/duration.md) for duration API
 - [Python types](../api/types/index.md) for Value and RecordIdType definitions

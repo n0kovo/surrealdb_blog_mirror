@@ -1,5 +1,5 @@
 ---
-position: 28
+position: 30
 title: USE
 description: The USE statement specifies a namespace and / or a database to use for the subsequent SurrealQL statements when switching between namespaces and databases.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/use.mdx"

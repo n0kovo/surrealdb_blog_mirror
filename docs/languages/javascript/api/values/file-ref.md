@@ -79,7 +79,7 @@ The unique key identifying the file within its bucket.
 console.log(fileRef.key); // "profile-photo.png"
 ```
 
-## Instance Methods
+## Instance methods
 
 ### `.toString()` {#tostring}
 
@@ -171,8 +171,8 @@ for (const record of records) {
 }
 ```
 
-## See Also
+## See also
 
 - [Value types](../../concepts/value-types.md) - Overview of all value types
 - [File uploads](../../../../reference/query-language/language-primitives/data-types/files.md) - Working with files in SurrealDB
-- [Data Types](index.md) - All custom data types
+- [Data types](index.md) - All custom data types

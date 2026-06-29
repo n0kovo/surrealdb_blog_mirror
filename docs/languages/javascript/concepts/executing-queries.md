@@ -86,7 +86,7 @@ const [users, posts] = await db.query<[User[], Post[]]>(`
 `);
 ```
 
-You can also pass a [bound query](bound-queries.md) for automatic parameterization using the `surql` template tag.
+You can also pass a [bound query](bound-queries.md) for automatic parameterisation using the `surql` template tag.
 
 ```ts
 
@@ -314,8 +314,8 @@ for (const response of responses) {
 
 ## Learn more
 
-- [Bound queries](bound-queries.md) for parameterized query building with `surql` and `BoundQuery`
+- [Bound queries](bound-queries.md) for parameterised query building with `surql` and `BoundQuery`
 - [Live queries](live-queries.md) for real-time subscriptions
 - [Transactions](transactions.md) for atomic multi-query operations
-- [Query Builders API reference](../api/queries/index.md) for detailed method signatures
+- [Query builders API reference](../api/queries/index.md) for detailed method signatures
 - [SurrealQL statements](../../../reference/query-language/statements/overview.md) for the query language reference

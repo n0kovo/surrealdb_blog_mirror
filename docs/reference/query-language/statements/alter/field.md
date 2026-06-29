@@ -1,5 +1,5 @@
 ---
-position: 3
+position: 9
 title: ALTER FIELD
 description: The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/alter/field.mdx"

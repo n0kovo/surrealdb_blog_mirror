@@ -340,7 +340,7 @@ try {
 
 ## Learn more
 
-- [Data Types API reference](../api/values/index.md) for the full list of value class documentation
+- [Data types API reference](../api/values/index.md) for the full list of value class documentation
 - [Codecs](codecs.md) for serialising and deserialising value types
 - [SurrealQL data model](https://surrealdb.com/docs/reference/query-language/datamodel) for the database-level type system
 - [Utilities](utilities.md) for comparing and converting values

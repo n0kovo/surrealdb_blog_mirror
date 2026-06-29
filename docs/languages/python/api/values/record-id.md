@@ -161,12 +161,12 @@ Methods that accept a record or table reference use the `RecordIdType` alias, wh
 RecordIdType = str | Table | RecordID
 ```
 
-See the [Data Types overview](index.md#recordidtype) for details.
+See the [Data types overview](index.md#recordidtype) for details.
 
 ---
 
 ## See also
 
-- [Data Types](index.md) — All SDK data types
+- [Data types](index.md) — All SDK data types
 - [Table](table.md) — Table name wrapper
 - [Surreal](../core/surreal.md) — Connection and query methods

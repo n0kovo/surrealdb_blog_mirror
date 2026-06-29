@@ -1,6 +1,6 @@
 ---
 position: 4
-title: API
+title: ALTER API
 description: The ALTER API statement can be used to modify an existing defined API.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/alter/api.mdx"
 ---

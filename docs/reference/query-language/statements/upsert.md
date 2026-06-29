@@ -1,5 +1,5 @@
 ---
-position: 27
+position: 29
 title: UPSERT
 description: The UPSERT statement can be used to insert records or modify records that already exist.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/upsert.mdx"

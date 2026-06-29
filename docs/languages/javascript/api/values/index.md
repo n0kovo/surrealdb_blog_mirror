@@ -5,11 +5,11 @@ description: Type mapping between SurrealQL and JavaScript, and custom data type
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/javascript/api/values/index.mdx"
 ---
 
-# Data Types
+# Data types
 
 The JavaScript SDK provides custom classes for SurrealDB-specific data types, ensuring type safety and data integrity when working with the database. For a conceptual overview with usage examples and best practices, see the [Value types concept page](../../concepts/value-types.md).
 
-## Custom Data Type Classes
+## Custom data type classes
 
 - [**RecordId**](record-id.md) - Type-safe record identifiers with table and ID components
   - `new RecordId(table, id)` - Create record ID
@@ -42,7 +42,7 @@ The JavaScript SDK provides custom classes for SurrealDB-specific data types, en
   - `.bucket` - Storage bucket name
   - `.key` - File key within the bucket
 
-## Geometric Types
+## Geometric types
 
 - [**Geometry**](geometry.md) - Spatial/geometric data types
   - `GeometryPoint` - Single point
@@ -51,8 +51,8 @@ The JavaScript SDK provides custom classes for SurrealDB-specific data types, en
   - `GeometryMultiPoint`, `GeometryMultiLine`, `GeometryMultiPolygon`
   - `GeometryCollection` - Mixed geometry collection
 
-## See Also
+## See also
 
 - [Value types concept page](../../concepts/value-types.md) - Usage guide with type mapping, examples, and best practices
-- [SurrealQL Data Types](../../../../reference/query-language/language-primitives/data-types/index.md) - Database data model
+- [SurrealQL data types](../../../../reference/query-language/language-primitives/data-types/index.md) - Database data model
 - [Utilities](../../concepts/utilities.md) - Comparing and converting values

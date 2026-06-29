@@ -15,7 +15,7 @@ The `RecordId` class provides type-safe record identifiers in SurrealDB. Each re
 
 **Source:** [value/record-id.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/value/record-id.ts)
 
-## Type Parameters
+## Type parameters
 
 - `Tb extends string` - The table name (string literal type for type safety)
 - `Id` - The ID value type (string, number, object, etc.)
@@ -109,7 +109,7 @@ const productId = new RecordId('products', 42);
 console.log(productId.id); // 42
 ```
 
-## Instance Methods
+## Instance methods
 
 ### `.toString()` {#tostring}
 
@@ -193,9 +193,9 @@ console.log(a.equals(b)); // true
 console.log(a.equals(c)); // false
 ```
 
-## Complete Examples
+## Complete examples
 
-### Basic Usage
+### Basic usage
 
 ```ts
 
@@ -220,7 +220,7 @@ await db.update(new RecordId('users', 'john'))
 await db.delete(new RecordId('users', 'john'));
 ```
 
-### Type-Safe Record IDs
+### Type-safe record IDs
 
 ```ts
 interface User {
@@ -238,7 +238,7 @@ const userId: RecordId<'users', string> = new RecordId('users', 'alice');
 const user = await db.select<User>(userId);
 ```
 
-### Complex ID Structures
+### Complex ID structures
 
 ```ts
 // Time-series data with structured IDs
@@ -260,7 +260,7 @@ const sessionId = new RecordId('sessions', {
 });
 ```
 
-### Parsing from Strings
+### Parsing from strings
 
 Use `StringRecordId` to pass a record ID string directly without parsing it into table and ID components. The string is sent as-is to SurrealDB.
 
@@ -276,7 +276,7 @@ const recordId = new StringRecordId('users:alice');
 const result = await db.select(recordId);
 ```
 
-### Working with Relations
+### Working with relations
 
 ```ts
 // Create relationship using record IDs
@@ -294,7 +294,7 @@ console.log('Edge from:', edge.in);  // RecordId('users', 'john')
 console.log('Edge to:', edge.out);   // RecordId('posts', '123')
 ```
 
-### UUID-based Record IDs
+### UUID-based record IDs
 
 ```ts
 
@@ -406,9 +406,9 @@ await db.delete(new RecordIdRange(
 ));
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Use Type Parameters
+### 1. Use type parameters
 
 ```ts
 // Good: Type-safe
@@ -421,7 +421,7 @@ function getUser(id: RecordId<'users', string>) {
 }
 ```
 
-### 2. Prefer RecordId Over Strings
+### 2. Prefer RecordId over strings
 
 ```ts
 // Good: Type-safe with validation
@@ -431,7 +431,7 @@ const user = await db.select(new RecordId('users', 'john'));
 const user = await db.query('SELECT * FROM users:john').collect();
 ```
 
-### 3. Use Structured IDs for Complex Keys
+### 3. Use structured IDs for complex keys
 
 ```ts
 // Good: Structured composite key
@@ -444,7 +444,7 @@ const id = new RecordId('events', {
 const id = new RecordId('events', `john-${Date.now()}`);
 ```
 
-### 4. Handle Construction Errors
+### 4. Handle construction errors
 
 ```ts
 // Good: Safe construction
@@ -456,9 +456,9 @@ try {
 }
 ```
 
-## See Also
+## See also
 
-- [Data Types Overview](index.md) - All custom data types
+- [Data types overview](index.md) - All custom data types
 - [Table](table.md) - Table references
-- [Query Builders](../queries/index.md) - Using RecordId in queries
-- [SurrealQL Record IDs](../../../../reference/query-language/language-primitives/data-types/record-ids.md) - Database record ID documentation
+- [Query builders](../queries/index.md) - Using RecordId in queries
+- [SurrealQL record IDs](../../../../reference/query-language/language-primitives/data-types/record-ids.md) - Database record ID documentation

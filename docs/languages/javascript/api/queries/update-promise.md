@@ -13,13 +13,13 @@ The `UpdatePromise` class provides a chainable interface for configuring UPDATE 
 
 **Source:** [query/update.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/update.ts)
 
-## Type Parameters
+## Type parameters
 
 - `T` - The result type
 - `I` - The input type for record data
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration Methods
+## Configuration methods
 
 ### `.content()` {#content}
 
@@ -370,9 +370,9 @@ updatePromise.stream()
 #### Returns
 `AsyncIterableIterator` - Async iterator
 
-## Complete Examples
+## Complete examples
 
-### Basic Updates
+### Basic updates
 
 ```ts
 
@@ -393,7 +393,7 @@ const user = await db.update(new RecordId('users', 'john'))
     });
 ```
 
-### Bulk Updates
+### Bulk updates
 
 ```ts
 // Update all users matching condition
@@ -404,7 +404,7 @@ const updated = await db.update(new Table('users'))
 console.log(`Updated ${updated.length} users`);
 ```
 
-### Conditional Updates
+### Conditional updates
 
 ```ts
 // Update only if condition is met
@@ -415,7 +415,7 @@ const users = await db.update(new Table('users'))
     });
 ```
 
-### Complex Merge
+### Complex merge
 
 ```ts
 const user = await db.update(new RecordId('users', 'john'))
@@ -432,7 +432,7 @@ const user = await db.update(new RecordId('users', 'john'))
     });
 ```
 
-### Tracking Changes
+### Tracking changes
 
 ```ts
 const diff = await db.update(new RecordId('users', 'john'))
@@ -446,7 +446,7 @@ console.log('Changed fields:', diff);
 // { email: 'new@example.com', age: 31 }
 ```
 
-### Batch Update with Stream
+### Batch update with stream
 
 ```ts
 const updates = db.update(new Table('users'))
@@ -458,7 +458,7 @@ for await (const user of updates.stream()) {
 }
 ```
 
-## Difference Between Methods
+## Difference between methods
 
 ### `.content()` vs `.merge()` vs `.replace()`
 
@@ -483,7 +483,7 @@ await db.update(recordId).replace({
 // Result: Replaces specified fields
 ```
 
-## Chaining Pattern
+## Chaining pattern
 
 ```ts
 const result = await db.update(new Table('users'))
@@ -493,9 +493,9 @@ const result = await db.update(new Table('users'))
     .timeout(Duration.parse('5s'));
 ```
 
-## See Also
+## See also
 
 - [SurrealQueryable.update()](../core/surreal-queryable.md#update) - Method that returns UpdatePromise
 - [UpsertPromise](upsert-promise.md) - Insert or update
 - [CreatePromise](create-promise.md) - Create records
-- [Query Overview](index.md) - All query builder classes
+- [Query overview](index.md) - All query builder classes

@@ -28,7 +28,7 @@ Value = (
 )
 ```
 
-This type is recursive: dictionaries and lists can contain nested `Value` types. See the [Data Types overview](../values/index.md) for details on each SurrealDB-specific type.
+This type is recursive: dictionaries and lists can contain nested `Value` types. See the [Data types overview](../values/index.md) for details on each SurrealDB-specific type.
 
 ---
 
@@ -148,6 +148,6 @@ class UrlScheme(Enum):
 
 ## See also
 
-- [Data Types](../values/index.md) for the SurrealDB-specific type classes
+- [Data types](../values/index.md) for the SurrealDB-specific type classes
 - [Errors](../errors/index.md) for error classes and constants
 - [Surreal API reference](../core/surreal.md) for methods using these types

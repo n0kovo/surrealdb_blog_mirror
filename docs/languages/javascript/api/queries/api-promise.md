@@ -13,14 +13,14 @@ The `ApiPromise` class provides an interface for executing user-defined API endp
 
 **Source:** [query/api.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/api.ts)
 
-## Type Parameters
+## Type parameters
 
 - `Req` - The request body type
 - `Res` - The response body type
 - `V` - Boolean for value-only response (default: `false`)
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration Methods
+## Configuration methods
 
 ### `.json()` {#json}
 
@@ -182,9 +182,9 @@ const result = await db.api().get('/users')
     .value();
 ```
 
-## Response Structure
+## Response structure
 
-### Default Response (without `.value()`)
+### Default response (without `.value()`)
 
 ```ts
 interface ApiResponse<T> {
@@ -194,15 +194,15 @@ interface ApiResponse<T> {
 }
 ```
 
-### Value Response (with `.value()`)
+### Value response (with `.value()`)
 
 ```ts
 // Returns Res directly instead of ApiResponse<Res>
 ```
 
-## Complete Examples
+## Complete examples
 
-### Basic API Calls
+### Basic API calls
 
 ```ts
 
@@ -229,7 +229,7 @@ const updated = await api.put('/users/123', {
 await api.delete('/users/123').value();
 ```
 
-### With Full Response
+### With full response
 
 ```ts
 const response = await db.api().get('/users');
@@ -243,7 +243,7 @@ if (response.status === 200) {
 }
 ```
 
-### Custom Headers
+### Custom headers
 
 ```ts
 const result = await db.api().post('/protected', data)
@@ -252,7 +252,7 @@ const result = await db.api().post('/protected', data)
     .value();
 ```
 
-### Type-Safe API Calls
+### Type-safe API calls
 
 ```ts
 interface User {
@@ -285,7 +285,7 @@ const newUser: User = await api.post('/users', {
 }).value();
 ```
 
-### Error Handling
+### Error handling
 
 ```ts
 try {
@@ -310,7 +310,7 @@ const page1 = await fetchPage(1, 20);
 const page2 = await fetchPage(2, 20);
 ```
 
-### File Upload
+### File upload
 
 ```ts
 const formData = new FormData();
@@ -322,7 +322,7 @@ const result = await db.api().post('/upload', formData)
     .value();
 ```
 
-### Authentication Flow
+### Authentication flow
 
 ```ts
 // Login
@@ -341,7 +341,7 @@ const profile = await api.get('/profile').value();
 const orders = await api.get('/orders').value();
 ```
 
-### Conditional Requests
+### Conditional requests
 
 ```ts
 const api = db.api();
@@ -358,7 +358,7 @@ if (checkResponse.status === 404) {
 }
 ```
 
-### Batch Operations
+### Batch operations
 
 ```ts
 const api = db.api();
@@ -371,7 +371,7 @@ const users = await Promise.all(promises);
 console.log(`Fetched ${users.length} users`);
 ```
 
-### Response Transformation
+### Response transformation
 
 ```ts
 const response = await db.api().get('/users');
@@ -384,7 +384,7 @@ const transformed = {
 };
 ```
 
-### Retry Pattern
+### Retry pattern
 
 ```ts
 async function apiWithRetry(
@@ -406,7 +406,7 @@ const result = await apiWithRetry(() =>
 );
 ```
 
-### Query Parameters
+### Query parameters
 
 ```ts
 // Build query params manually
@@ -419,7 +419,7 @@ const params = new URLSearchParams({
 const users = await db.api().get(`/users?${params}`).value();
 ```
 
-### WebSocket vs API Endpoints
+### WebSocket vs API endpoints
 
 ```ts
 // Both use the same connection
@@ -435,7 +435,7 @@ const users2 = await db.api().get('/users').value();
 // Both work, but API endpoints allow custom logic
 ```
 
-## Response Headers
+## Response headers
 
 ```ts
 const response = await db.api().get('/users');
@@ -445,9 +445,9 @@ console.log('Cache-Control:', response.headers?.['Cache-Control']);
 console.log('X-Custom:', response.headers?.['X-Custom-Header']);
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Use Type Definitions
+### 1. Use type definitions
 
 ```ts
 // Good: Type-safe API
@@ -460,7 +460,7 @@ const api = db.api<MyApi>();
 const api = db.api();
 ```
 
-### 2. Use .value() for Simpler Code
+### 2. Use .value() for simpler code
 
 ```ts
 // Good: Direct value access
@@ -471,7 +471,7 @@ const response = await api.get('/users');
 const users = response.body;
 ```
 
-### 3. Handle Errors Gracefully
+### 3. Handle errors gracefully
 
 ```ts
 // Good: Specific error handling
@@ -484,9 +484,9 @@ try {
 }
 ```
 
-## See Also
+## See also
 
 - [SurrealApi](../core/surreal-api.md) - API instance methods
 - [SurrealQueryable.api](../core/surreal-queryable.md#api) - Creating API instances
 - [User-Defined APIs](../../../../reference/query-language/statements/define/api.md) - Defining APIs in SurrealDB
-- [Query Overview](index.md) - All query builder classes
+- [Query overview](index.md) - All query builder classes

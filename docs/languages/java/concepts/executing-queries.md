@@ -25,7 +25,7 @@ The Java SDK provides methods for executing raw [SurrealQL](../../../reference/q
 		</tr>
 		<tr>
 			<td scope="row" data-label="Method"><a href="/docs/languages/java/api/core/surreal#query-bind">`db.queryBind(sql, params)`</a></td>
-			<td scope="row" data-label="Description">Executes a parameterized query</td>
+			<td scope="row" data-label="Description">Executes a parameterised query</td>
 		</tr>
 		<tr>
 			<td scope="row" data-label="Method"><a href="/docs/languages/java/api/core/surreal#run">`db.run(name, args)`</a></td>
@@ -47,7 +47,7 @@ List<Post> posts = response.take(Post.class, 1);
 
 ## Using query parameters
 
-The [`.queryBind()`](../api/core/surreal.md#query-bind) method accepts a `Map<String, ?>` of parameters that are safely injected into the query. Parameterized queries prevent SurrealQL injection and ensure values are properly escaped.
+The [`.queryBind()`](../api/core/surreal.md#query-bind) method accepts a `Map<String, ?>` of parameters that are safely injected into the query. Parameterised queries prevent SurrealQL injection and ensure values are properly escaped.
 
 ```java
 Map<String, Object> params = Map.of("min_age", 18);

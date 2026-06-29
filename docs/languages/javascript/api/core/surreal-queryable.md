@@ -65,7 +65,7 @@ const usersApi = db.api<MyPaths>("/users");
 const user = await usersApi.get("123"); // GET /users/123
 ```
 
-## Query Methods
+## Query methods
 
 ### `.query()` {#query}
 
@@ -99,7 +99,7 @@ db.query<R>(boundQuery)
     </tbody>
 </table>
 
-#### Type Parameters
+#### Type parameters
 - `R extends unknown[]` - Array of result types for each query statement
 
 #### Returns
@@ -669,10 +669,10 @@ const user = await db.auth();
 console.log('Current user:', user);
 ```
 
-## See Also
+## See also
 
 - [SurrealSession](surreal-session.md) - Session management extending this class
 - [SurrealTransaction](surreal-transaction.md) - Transaction support extending this class
-- [Query Builders](../queries/index.md) - Detailed query builder documentation
+- [Query builders](../queries/index.md) - Detailed query builder documentation
 - [SelectPromise](../queries/select-promise.md) - SELECT query configuration
 - [CreatePromise](../queries/create-promise.md) - CREATE query configuration

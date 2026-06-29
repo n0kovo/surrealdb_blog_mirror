@@ -12,7 +12,7 @@ _Auto-generated index — 14 pages._
 - [Authentication](authentication.md)
   SurrealDB supports a number of methods for authenticating users and securing the database.
 - [Bound queries](bound-queries.md)
-  The JavaScript SDK provides bound queries and template tags for safely composing parameterized SurrealQL queries.
+  The JavaScript SDK provides bound queries and template tags for safely composing parameterised SurrealQL queries.
 - [Codecs](codecs.md)
   The SQON library provides codecs for serialising and deserialising SurrealDB value types over CBOR and JSON wire formats.
 - [Connecting to SurrealDB](connecting-to-surrealdb.md)

@@ -15,12 +15,12 @@ The `Range` class provides generic range values for representing inclusive or ex
 
 **Source:** [value/range.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/value/range.ts)
 
-## Type Parameters
+## Type parameters
 
 - `Beg` - The type of the beginning bound
 - `End` - The type of the ending bound
 
-## Bound Types
+## Bound types
 
 Bounds are represented using `BoundIncluded` and `BoundExcluded` classes:
 
@@ -121,7 +121,7 @@ console.log(range.end.value); // 10
 console.log(range.end instanceof BoundIncluded); // true
 ```
 
-## Instance Methods
+## Instance methods
 
 ### `.toString()` {#tostring}
 
@@ -185,9 +185,9 @@ range.equals(other)
 #### Returns
 `boolean` - True if equal
 
-## Complete Examples
+## Complete examples
 
-### Numeric Ranges
+### Numeric ranges
 
 ```ts
 
@@ -209,7 +209,7 @@ const adults = await db.query(`
 }).collect();
 ```
 
-### Date Ranges
+### Date ranges
 
 ```ts
 
@@ -228,7 +228,7 @@ const events = await db.query(`
 }).collect();
 ```
 
-### Price Ranges
+### Price ranges
 
 ```ts
 
@@ -246,7 +246,7 @@ const products = await db.query(`
 }).collect();
 ```
 
-### Score Ranges
+### Score ranges
 
 ```ts
 
@@ -276,7 +276,7 @@ const students = await db.query(`
 }).collect();
 ```
 
-### Time-based Filtering
+### Time-based filtering
 
 ```ts
 
@@ -298,7 +298,7 @@ const recentActivity = await db.query(`
 }).collect();
 ```
 
-### Pagination with ID Ranges
+### Pagination with ID ranges
 
 ```ts
 
@@ -316,7 +316,7 @@ const users = await db.query(`
 }).collect();
 ```
 
-### Exclusive Ranges
+### Exclusive ranges
 
 ```ts
 
@@ -335,7 +335,7 @@ const results = await db.query(`
 }).collect();
 ```
 
-### Half-Open Ranges
+### Half-open ranges
 
 ```ts
 
@@ -355,7 +355,7 @@ const items = await db.query(`
 }).collect();
 ```
 
-### Multiple Ranges
+### Multiple ranges
 
 ```ts
 
@@ -384,7 +384,7 @@ const criticalIssues = await db.query(`
 }).collect();
 ```
 
-### Range Queries in Application
+### Range queries in application
 
 ```ts
 
@@ -413,7 +413,7 @@ const orders = await db.query(`
 }).collect();
 ```
 
-## Range Notation
+## Range notation
 
 SurrealDB uses specific notation for ranges:
 
@@ -424,9 +424,9 @@ SurrealDB uses specific notation for ranges:
 | `a>..b` | Exclusive start, exclusive end `(a, b)` | `1>..10` |
 | `a>..=b` | Exclusive start, inclusive end `(a, b]` | `1>..=10` |
 
-## Best Practices
+## Best practices
 
-### 1. Use Appropriate Inclusivity
+### 1. Use appropriate inclusivity
 
 ```ts
 // Good: Inclusive for dates (including full days)
@@ -442,7 +442,7 @@ const arrayRange = new Range(
 ); // [0, 10)
 ```
 
-### 2. Type Safety
+### 2. Type safety
 
 ```ts
 // Good: Explicit types
@@ -458,7 +458,7 @@ const dateRange: Range<DateTime, DateTime> = new Range(
 );
 ```
 
-### 3. Validate Bounds
+### 3. Validate bounds
 
 ```ts
 // Good: Ensure start <= end
@@ -475,7 +475,7 @@ function createRange<T>(start: T, end: T): Range<T, T> | null {
 }
 ```
 
-## Use Cases
+## Use cases
 
 - **Filtering** - Filter records by numeric, date, or other ordered values
 - **Pagination** - Query records in ID ranges
@@ -484,10 +484,10 @@ function createRange<T>(start: T, end: T): Range<T, T> | null {
 - **Score Categorization** - Categorize by score ranges (grades, ratings)
 - **Geographic Bounds** - Coordinate ranges for maps
 
-## See Also
+## See also
 
 - [RecordIdRange](record-id.md#recordidrange) - Range of record IDs
 - [DateTime](datetime.md) - Datetime values for date ranges
 - [Decimal](decimal.md) - Precise numbers for price ranges
-- [Data Types Overview](index.md) - All custom data types
+- [Data types overview](index.md) - All custom data types
 - [SurrealQL Ranges](../../../../reference/query-language/language-primitives/data-types/ranges.md) - Database range syntax

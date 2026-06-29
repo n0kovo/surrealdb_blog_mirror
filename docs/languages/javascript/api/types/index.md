@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 The SDK provides comprehensive TypeScript type definitions for type-safe development. This page documents the key types and interfaces used throughout the SDK.
 
-## Connection Types
+## Connection types
 
 ### `ConnectionStatus` {#connectionstatus}
 
@@ -144,7 +144,7 @@ const info = await db.version();
 console.log(info.version); // "surrealdb-2.1.0"
 ```
 
-## Authentication Types
+## Authentication types
 
 ### `AnyAuth` {#anyauth}
 
@@ -354,7 +354,7 @@ await db.connect('ws://localhost:8000', {
 });
 ```
 
-## Session Types
+## Session types
 
 ### `Session` {#session}
 
@@ -414,7 +414,7 @@ type SurrealEvents = SessionEvents & {
 }
 ```
 
-## Query Types
+## Query types
 
 ### `RecordResult<T>` {#recordresult}
 
@@ -549,7 +549,7 @@ for await (const message of subscription) {
 }
 ```
 
-## Value Types
+## Value types
 
 ### `RecordIdValue` {#recordidvalue}
 
@@ -612,7 +612,7 @@ type Nullable<T> = {
 }
 ```
 
-## Codec Types
+## Codec types
 
 ### `CodecOptions` {#codecoptions}
 
@@ -644,7 +644,7 @@ const db = new Surreal({
 });
 ```
 
-## Export/Import Types
+## Export/import types
 
 ### `SqlExportOptions` {#sqlexportoptions}
 
@@ -697,7 +697,7 @@ const model = await db.export({
 });
 ```
 
-## Utility Types
+## Utility types
 
 ### `Prettify<T>` {#prettify}
 
@@ -754,9 +754,9 @@ const result = await api.invoke('/custom', {
 });
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Use Generic Type Parameters
+### 1. Use generic type parameters
 
 Leverage generics for type-safe operations:
 
@@ -771,7 +771,7 @@ const users = await db.select<User>(new Table('users'));
 users[0].name; // TypeScript knows this is a string
 ```
 
-### 2. Define Custom Types
+### 2. Define custom types
 
 Create types for your data models:
 
@@ -786,7 +786,7 @@ interface Post {
 const posts = await db.select<Post>(new Table('posts'));
 ```
 
-### 3. Use Type Guards
+### 3. Use type guards
 
 Implement type guards for runtime type checking:
 
@@ -805,7 +805,7 @@ if (isUser(data)) {
 }
 ```
 
-### 4. Handle Union Types
+### 4. Handle union types
 
 Properly handle discriminated unions:
 
@@ -821,10 +821,10 @@ for (const r of response) {
 }
 ```
 
-## See Also
+## See also
 
-- [Core Classes](../core/index.md) - Classes using these types
-- [Value Types](../values/index.md) - Value type classes
-- [Query Builders](../queries/index.md) - Query builder types
+- [Core classes](../core/index.md) - Classes using these types
+- [Value types](../values/index.md) - Value type classes
+- [Query builders](../queries/index.md) - Query builder types
 
 **Source:** [types/](https://github.com/surrealdb/surrealdb.js/tree/main/packages/sdk/src/types)

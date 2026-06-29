@@ -1,6 +1,6 @@
 ---
 position: 1
-title: DEFINE overview
+title: Overview
 description: "DEFINE declares SurrealDB schema: namespaces, tables, fields, indexes, functions, events and access in SurrealQL."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/define/overview.mdx"
 ---

@@ -1,5 +1,5 @@
 ---
-position: 10
+position: 12
 title: EXPLAIN
 description: The EXPLAIN statement is used to display the query planner for a following statement.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/explain.mdx"

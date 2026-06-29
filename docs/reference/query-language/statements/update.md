@@ -1,5 +1,5 @@
 ---
-position: 26
+position: 28
 title: UPDATE
 description: The UPDATE statement can be used to update records in the database. If they already exist, they will be updated. If they do not exist, no records will be updated.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/update.mdx"

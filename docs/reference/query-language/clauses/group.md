@@ -117,3 +117,15 @@ Explanation:
 This query will return a result set where each row represents a unique combination of `product_id` and `region`, along with the total sales amount for that combination. This is useful for understanding how different products are performing in different regions.
 
 [▶ Open in Surrealist](https://app.surrealdb.com/mini?query=%0A%09%09SELECT%0A%09count%28%29%20AS%20total%2C%0A%09math%3A%3Amean%28age%29%20AS%20average_age%2C%0A%09gender%2C%0A%09country%0AFROM%20rams%0AGROUP%20BY%20gender%2C%20country%3B%0A%09)
+
+## Latest record per group
+
+When you need the most recently modified record for each value of a field, group by that field and use [`.map()`](../functions/database-functions/array.md#arraymap) to run a nested `SELECT` per group:
+
+```surql
+(SELECT id, role FROM person GROUP BY role).map(|$o| {
+    SELECT * FROM ONLY $o.id ORDER BY modified_at DESC LIMIT 1
+});
+```
+
+`GROUP BY` collects record ids into an array, after which the inner query orders those records and returns the latest. For a worked example with sample data, see [Latest record per group](../../../learn/querying/concepts-and-guides/subqueries-and-advanced-patterns.md#latest-record-per-group).

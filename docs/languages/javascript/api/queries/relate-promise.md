@@ -453,6 +453,6 @@ As of SurrealDB 3.1.5, when the edge ID already exists, `INSERT RELATION` return
 ## See also
 
 - [SurrealQueryable.relate()](../core/surreal-queryable.md#relate) - Method that returns RelatePromise
-- [Graph Relationships](../../../../reference/query-language/statements/relate.md) - SurrealQL RELATE documentation
+- [Graph relationships](../../../../reference/query-language/statements/relate.md) - SurrealQL RELATE documentation
 - [RecordId](../values/index.md#recordid) - Record identifier type
-- [Query Overview](index.md) - All query builder classes
+- [Query overview](index.md) - All query builder classes

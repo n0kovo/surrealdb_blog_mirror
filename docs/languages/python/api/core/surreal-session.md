@@ -211,5 +211,5 @@ asyncio.run(main())
 
 - [Surreal](surreal.md) — Connection reference with full method documentation
 - [SurrealTransaction](surreal-transaction.md) — Transaction reference
-- [Data Types](../types/index.md) — Type aliases and value types
+- [Data types](../types/index.md) — Type aliases and value types
 - [Errors](../errors/index.md) — Error classes reference

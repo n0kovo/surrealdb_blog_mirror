@@ -1,5 +1,5 @@
 ---
-position: 9
+position: 11
 title: DELETE
 description: The DELETE statement can be used to delete records from the database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/delete.mdx"

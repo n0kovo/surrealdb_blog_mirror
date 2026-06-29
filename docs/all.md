@@ -627,7 +627,7 @@ _1027 pages_
 - [TypeScript types](languages/javascript/api/types/index.md)
   TypeScript type definitions and interfaces used throughout the SDK.
 - [BoundQuery](languages/javascript/api/utilities/bound-query.md)
-  Parameterized query class for safe query composition.
+  Parameterised query class for safe query composition.
 - [equals](languages/javascript/api/utilities/equals.md)
   Deep equality comparison for SurrealDB values and JavaScript types.
 - [Escape functions](languages/javascript/api/utilities/escape.md)
@@ -635,7 +635,7 @@ _1027 pages_
 - [expr](languages/javascript/api/utilities/expr.md)
   Type-safe expression builder for constructing SurrealQL conditions.
 - [surql](languages/javascript/api/utilities/surql.md)
-  Tagged template for composing parameterized SurrealQL queries.
+  Tagged template for composing parameterised SurrealQL queries.
 - [DateTime](languages/javascript/api/values/datetime.md)
   Datetime values with nanosecond precision for time-based operations.
 - [Decimal](languages/javascript/api/values/decimal.md)
@@ -659,7 +659,7 @@ _1027 pages_
 - [Authentication](languages/javascript/concepts/authentication.md)
   SurrealDB supports a number of methods for authenticating users and securing the database.
 - [Bound queries](languages/javascript/concepts/bound-queries.md)
-  The JavaScript SDK provides bound queries and template tags for safely composing parameterized SurrealQL queries.
+  The JavaScript SDK provides bound queries and template tags for safely composing parameterised SurrealQL queries.
 - [Codecs](languages/javascript/concepts/codecs.md)
   The SQON library provides codecs for serialising and deserialising SurrealDB value types over CBOR and JSON wire formats.
 - [Connecting to SurrealDB](languages/javascript/concepts/connecting-to-surrealdb.md)
@@ -1197,7 +1197,7 @@ _1027 pages_
 - [Sessions and scoping](learn/querying/concepts-and-guides/sessions-and-scoping.md)
   A session stores information about the current connection.
 - [Subqueries and advanced patterns](learn/querying/concepts-and-guides/subqueries-and-advanced-patterns.md)
-  Nested SELECTs, CREATE as a value, $parent and $this, and graph paths that behave like inner queries.
+  Nested SELECTs, CREATE as a value, $parent and $this, latest record per group, and graph paths that behave like inner queries.
 - [Testing](learn/querying/concepts-and-guides/testing.md)
   This page details a number of ways that SurrealDB can be tested.
 - [Transactions](learn/querying/concepts-and-guides/transactions.md)
@@ -1608,31 +1608,31 @@ _1027 pages_
   Any value from SurrealDB is converted into a JavaScript type automatically, and the return value from the JavaScript function is converted to a SurrealQL value.
 - [ACCESS](reference/query-language/statements/access.md)
   The ACCESS statement can be used to manage access grants.
-- [ACCESS](reference/query-language/statements/alter/access.md)
+- [ALTER ACCESS](reference/query-language/statements/alter/access.md)
   The ALTER ACCESS statement can be used to modify an existing defined access.
-- [ANALYZER](reference/query-language/statements/alter/analyzer.md)
+- [ALTER ANALYZER](reference/query-language/statements/alter/analyzer.md)
   The ALTER ANALYZER statement can be used to modify an existing defined analyzer.
-- [API](reference/query-language/statements/alter/api.md)
+- [ALTER API](reference/query-language/statements/alter/api.md)
   The ALTER API statement can be used to modify an existing defined API.
-- [BUCKET](reference/query-language/statements/alter/bucket.md)
+- [ALTER BUCKET](reference/query-language/statements/alter/bucket.md)
   The ALTER BUCKET statement can be used to modify an existing defined bucket.
-- [CONFIG](reference/query-language/statements/alter/config.md)
+- [ALTER CONFIG](reference/query-language/statements/alter/config.md)
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
 - [ALTER DATABASE](reference/query-language/statements/alter/database.md)
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
-- [EVENT](reference/query-language/statements/alter/event.md)
+- [ALTER EVENT](reference/query-language/statements/alter/event.md)
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
 - [ALTER FIELD](reference/query-language/statements/alter/field.md)
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
-- [FUNCTION](reference/query-language/statements/alter/function.md)
+- [ALTER FUNCTION](reference/query-language/statements/alter/function.md)
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
-- [INDEX](reference/query-language/statements/alter/indexes.md)
+- [ALTER INDEX](reference/query-language/statements/alter/indexes.md)
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
 - [ALTER NAMESPACE](reference/query-language/statements/alter/namespace.md)
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
-- [ALTER overview](reference/query-language/statements/alter/overview.md)
+- [Overview](reference/query-language/statements/alter/overview.md)
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
-- [PARAM](reference/query-language/statements/alter/param.md)
+- [ALTER PARAM](reference/query-language/statements/alter/param.md)
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
 - [ALTER SEQUENCE](reference/query-language/statements/alter/sequence.md)
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
@@ -1640,7 +1640,7 @@ _1027 pages_
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
 - [ALTER TABLE](reference/query-language/statements/alter/table.md)
   The ALTER TABLE statement is used to alter a defined table.
-- [USER](reference/query-language/statements/alter/user.md)
+- [ALTER USER](reference/query-language/statements/alter/user.md)
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
 - [BEGIN](reference/query-language/statements/begin.md)
   The BEGIN statement starts a single transaction in which run multiple statements can be run, either succeeding as a whole, or failing.
@@ -1684,7 +1684,7 @@ _1027 pages_
   A DEFINE MODULE statement can be used to define a module through which Surrealism extension functions can be called.
 - [DEFINE NAMESPACE](reference/query-language/statements/define/namespace.md)
   The DEFINE NAMESPACE statement can be used to setup namespaces, which can contain multiple databases.
-- [DEFINE overview](reference/query-language/statements/define/overview.md)
+- [Overview](reference/query-language/statements/define/overview.md)
   DEFINE declares SurrealDB schema: namespaces, tables, fields, indexes, functions, events and access in SurrealQL.
 - [DEFINE PARAM](reference/query-language/statements/define/param.md)
   The DEFINE PARAM statement allows you to define global (database-wide) parameters that are available to every client.

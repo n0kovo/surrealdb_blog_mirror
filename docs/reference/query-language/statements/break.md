@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 5
 title: BREAK
 description: The BREAK statement can be used to break out of a loop.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/break.mdx"

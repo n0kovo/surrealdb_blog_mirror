@@ -1,6 +1,6 @@
 ---
 position: 5
-title: BUCKET
+title: ALTER BUCKET
 description: The ALTER BUCKET statement can be used to modify an existing defined bucket.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/alter/bucket.mdx"
 ---

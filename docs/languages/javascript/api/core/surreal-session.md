@@ -96,7 +96,7 @@ if (session.isValid) {
 }
 ```
 
-## Session Management Methods
+## Session management methods
 
 ### `.forkSession()` {#forksession}
 
@@ -148,7 +148,7 @@ await session.closeSession();
 console.log(session.isValid); // false
 ```
 
-## Transaction Methods
+## Transaction methods
 
 ### `.beginTransaction()` {#begintransaction}
 
@@ -189,7 +189,7 @@ try {
 }
 ```
 
-## Session Configuration Methods
+## Session configuration methods
 
 ### `.use()` {#use}
 
@@ -348,7 +348,7 @@ console.log(session.accessToken); // undefined
 console.log(session.parameters); // {}
 ```
 
-## Authentication Methods
+## Authentication methods
 
 ### `.signup()` {#signup}
 
@@ -598,7 +598,7 @@ const unsubscribe = session.subscribe('auth', (tokens) => {
 unsubscribe();
 ```
 
-## Inherited Methods
+## Inherited methods
 
 As `SurrealSession` extends [`SurrealQueryable`](surreal-queryable.md), it inherits all query execution methods:
 
@@ -616,7 +616,7 @@ As `SurrealSession` extends [`SurrealQueryable`](surreal-queryable.md), it inher
 - [`auth()`](surreal-queryable.md#auth) - Get authenticated record user
 - [`api()`](surreal-queryable.md#api) - Access user-defined APIs
 
-## Async Disposal
+## Async disposal
 
 ### `[Symbol.asyncDispose]()` {#symbol-asyncdispose}
 
@@ -639,7 +639,7 @@ session[Symbol.asyncDispose]()
 // Session is automatically disposed when leaving the block
 ```
 
-## Complete Example
+## Complete example
 
 ```ts
 
@@ -706,7 +706,7 @@ await childSession.reset();
 await session.closeSession();
 ```
 
-## See Also
+## See also
 
 - [Surreal](surreal.md) - Main connection class
 - [SurrealQueryable](surreal-queryable.md) - Query execution methods

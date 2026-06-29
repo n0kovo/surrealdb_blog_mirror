@@ -1,6 +1,6 @@
 ---
 position: 3
-title: ANALYZER
+title: ALTER ANALYZER
 description: The ALTER ANALYZER statement can be used to modify an existing defined analyzer.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/alter/analyzer.mdx"
 ---

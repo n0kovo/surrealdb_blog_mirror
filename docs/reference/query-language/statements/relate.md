@@ -1,5 +1,5 @@
 ---
-position: 19
+position: 21
 title: RELATE
 description: The RELATE statement can be used to generate graph edges between two records in the database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/relate.mdx"

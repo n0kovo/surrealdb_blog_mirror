@@ -16,13 +16,13 @@ The `UpsertPromise` class provides a chainable interface for configuring UPSERT 
 
 **Source:** [query/upsert.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/upsert.ts)
 
-## Type Parameters
+## Type parameters
 
 - `T` - The result type
 - `I` - The input type for record data
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration Methods
+## Configuration methods
 
 ### `.content()` {#content}
 
@@ -291,9 +291,9 @@ upsertPromise.stream()
 #### Returns
 `AsyncIterableIterator` - Async iterator
 
-## Complete Examples
+## Complete examples
 
-### Basic Upsert
+### Basic upsert
 
 ```ts
 
@@ -309,7 +309,7 @@ const user = await db.upsert(new RecordId('users', 'john'))
     });
 ```
 
-### Upsert with Merge
+### Upsert with merge
 
 ```ts
 // Safer: merge instead of replace
@@ -322,14 +322,14 @@ const user = await db.upsert(new RecordId('users', 'john'))
 // If not: creates user with these fields
 ```
 
-### Bulk Upsert
+### Bulk upsert
 
 ```ts
 const users = await db.upsert(new Table('users'))
     .content(userDataArray);
 ```
 
-### Track Changes
+### Track changes
 
 ```ts
 const result = await db.upsert(new RecordId('users', 'john'))
@@ -341,7 +341,7 @@ if (result) {
 }
 ```
 
-### Conditional Upsert
+### Conditional upsert
 
 ```ts
 const user = await db.upsert(new RecordId('users', 'john'))
@@ -371,9 +371,9 @@ await db.upsert(recordId).content(data);
 // Always succeeds
 ```
 
-## Use Cases
+## Use cases
 
-### Session Management
+### Session management
 
 ```ts
 // Update session or create new one
@@ -386,7 +386,7 @@ async function updateSession(sessionId: string, data: SessionData) {
 }
 ```
 
-### Cache Pattern
+### Cache pattern
 
 ```ts
 // Write-through cache
@@ -399,7 +399,7 @@ async function cacheSet(key: string, value: unknown) {
 }
 ```
 
-### Counter Pattern
+### Counter pattern
 
 ```ts
 // Increment counter or initialize
@@ -410,7 +410,7 @@ const counter = await db.upsert(new RecordId('counters', 'page_views'))
     });
 ```
 
-## Chaining Pattern
+## Chaining pattern
 
 ```ts
 const result = await db.upsert(new RecordId('users', 'john'))
@@ -419,9 +419,9 @@ const result = await db.upsert(new RecordId('users', 'john'))
     .timeout(Duration.parse('5s'));
 ```
 
-## See Also
+## See also
 
 - [SurrealQueryable.upsert()](../core/surreal-queryable.md#upsert) - Method that returns UpsertPromise
 - [CreatePromise](create-promise.md) - Create only
 - [UpdatePromise](update-promise.md) - Update only
-- [Query Overview](index.md) - All query builder classes
+- [Query overview](index.md) - All query builder classes

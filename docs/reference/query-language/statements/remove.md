@@ -1,5 +1,5 @@
 ---
-position: 20
+position: 22
 title: REMOVE
 description: The REMOVE statement is used to remove resources such as databases, tables, indexes, events and more.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/remove.mdx"

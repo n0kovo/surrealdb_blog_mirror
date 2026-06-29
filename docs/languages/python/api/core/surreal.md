@@ -1489,6 +1489,6 @@ asyncio.run(main())
 
 - [SurrealSession](surreal-session.md) — Session management reference
 - [SurrealTransaction](surreal-transaction.md) — Transaction reference
-- [Data Types](../types/index.md) — Type aliases and value types
+- [Data types](../types/index.md) — Type aliases and value types
 - [Errors](../errors/index.md) — Error classes reference
 - [Connecting to SurrealDB](../../concepts/connecting-to-surrealdb.md) — Connection protocols and patterns

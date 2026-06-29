@@ -13,12 +13,12 @@ The `RunPromise` class provides an interface for executing SurrealDB functions a
 
 **Source:** [query/run.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/run.ts)
 
-## Type Parameters
+## Type parameters
 
 - `T` - The return type of the function
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration Methods
+## Configuration methods
 
 ### `.json()` {#json}
 
@@ -64,9 +64,9 @@ runPromise.stream()
 #### Returns
 `AsyncIterableIterator<Frame<T, J>>` - Async iterator
 
-## Complete Examples
+## Complete examples
 
-### Built-in Functions
+### Built-in functions
 
 ```ts
 
@@ -97,7 +97,7 @@ const hash = await db.run('crypto::md5', ['password123']);
 console.log('Hash:', hash);
 ```
 
-### Custom Functions
+### Custom functions
 
 ```ts
 // First, define a custom function in SurrealDB
@@ -117,7 +117,7 @@ const total = await db.run('fn::calculate_total', [items]);
 console.log('Total:', total); // 35
 ```
 
-### SurrealML Models
+### SurrealML models
 
 ```ts
 // Run a machine learning model
@@ -130,7 +130,7 @@ const prediction = await db.run(
 console.log('Sentiment:', prediction);
 ```
 
-### With Type Safety
+### With type safety
 
 ```ts
 interface CalculationResult {
@@ -149,7 +149,7 @@ console.log('Average:', result.average);
 console.log('Count:', result.count);
 ```
 
-### Complex Function Arguments
+### Complex function arguments
 
 ```ts
 // Function with multiple arguments
@@ -164,7 +164,7 @@ const result = await db.run('fn::process_order', [
 ]);
 ```
 
-### Parameterized Functions
+### Parameterised functions
 
 ```ts
 // Function that uses session variables
@@ -176,7 +176,7 @@ const total = await db.run('fn::calculate_price', [
 ]);
 ```
 
-### Error Handling
+### Error handling
 
 ```ts
 try {
@@ -188,7 +188,7 @@ try {
 }
 ```
 
-### Batch Function Calls
+### Batch function calls
 
 ```ts
 const results = await db.query(`
@@ -200,7 +200,7 @@ const results = await db.query(`
 console.log('Batch results:', results);
 ```
 
-### With Transaction
+### With transaction
 
 ```ts
 const txn = await db.beginTransaction();
@@ -224,7 +224,7 @@ try {
 }
 ```
 
-### Scheduled Functions
+### Scheduled functions
 
 ```ts
 // Define a scheduled function
@@ -238,7 +238,7 @@ await db.query(`
 await db.run('fn::cleanup_old_records');
 ```
 
-### Recursive Functions
+### Recursive functions
 
 ```ts
 await db.query(`
@@ -255,7 +255,7 @@ const result = await db.run('fn::factorial', [5]);
 console.log('5! =', result); // 120
 ```
 
-### Data Transformation
+### Data transformation
 
 ```ts
 // Define transformation function
@@ -275,7 +275,7 @@ const formatted = await db.run('fn::format_user', [user]);
 console.log(formatted);
 ```
 
-### ML Model Versions
+### ML model versions
 
 ```ts
 // Run specific model version
@@ -286,7 +286,7 @@ console.log('v1 prediction:', v1Result);
 console.log('v2 prediction:', v2Result);
 ```
 
-### Validation Functions
+### Validation functions
 
 ```ts
 await db.query(`
@@ -302,9 +302,9 @@ if (isValid) {
 }
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Type Function Results
+### 1. Type function results
 
 ```ts
 // Good: Type the result
@@ -321,7 +321,7 @@ const stats = await db.run('fn::calculate_stats', [data]);
 stats.count; // No type safety
 ```
 
-### 2. Handle Function Errors
+### 2. Handle function errors
 
 ```ts
 // Good: Handle errors
@@ -343,7 +343,7 @@ await db.query(`
 `).collect();
 ```
 
-### 3. Validate Function Names
+### 3. Validate function names
 
 Function names must follow the pattern: `namespace::function_name`
 
@@ -358,8 +358,8 @@ await db.run('invalid name', []); // No namespace
 await db.run('fn:bad-name', []); // Invalid characters
 ```
 
-## See Also
+## See also
 
 - [SurrealQueryable.run()](../core/surreal-queryable.md#run) - Method that returns RunPromise
 - [Functions](../../../../reference/query-language/statements/define/function.md) - SurrealQL function definitions
-- [Query Overview](index.md) - All query builder classes
+- [Query overview](index.md) - All query builder classes

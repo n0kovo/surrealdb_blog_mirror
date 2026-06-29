@@ -1,6 +1,6 @@
 ---
 position: 17
-title: USER
+title: ALTER USER
 description: The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/alter/user.mdx"
 ---

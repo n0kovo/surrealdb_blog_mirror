@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 The SDK defines specific error classes for different failure scenarios. All error classes extend the base `SurrealError` class, allowing you to catch and handle specific error types.
 
-## Base Error
+## Base error
 
 ### `SurrealError` {#surrealerror}
 
@@ -28,7 +28,7 @@ try {
 }
 ```
 
-## Connection Errors
+## Connection errors
 
 ### `ConnectionUnavailableError` {#connectionunavailableerror}
 
@@ -133,7 +133,7 @@ try {
 }
 ```
 
-## Reconnection Errors
+## Reconnection errors
 
 ### `ReconnectExhaustionError` {#reconnectexhaustionerror}
 
@@ -158,7 +158,7 @@ Thrown when a reconnect iterator fails to iterate.
 
 **Message:** `"The reconnect iterator failed to iterate"`
 
-## Server Errors
+## Server errors
 
 Server errors represent structured errors returned by the SurrealDB server. They form a class hierarchy rooted at `ServerError`, which replaces the former `ResponseError` class.
 
@@ -428,7 +428,7 @@ try {
 }
 ```
 
-## Authentication Errors
+## Authentication errors
 
 ### `AuthenticationError` {#authenticationerror}
 
@@ -475,7 +475,7 @@ try {
 }
 ```
 
-## Live Query Errors
+## Live query errors
 
 ### `LiveSubscriptionError` {#livesubscriptionerror}
 
@@ -496,7 +496,7 @@ try {
 }
 ```
 
-## Version Errors
+## Version errors
 
 ### `UnsupportedVersionError` {#unsupportedversionerror}
 
@@ -523,7 +523,7 @@ try {
 }
 ```
 
-## Expression Errors
+## Expression errors
 
 ### `ExpressionError` {#expressionerror}
 
@@ -546,7 +546,7 @@ try {
 }
 ```
 
-## Event Errors
+## Event errors
 
 ### `PublishError` {#publisherror}
 
@@ -564,7 +564,7 @@ db.subscribe('auth', () => {
 // When the event fires, a PublishError may be emitted
 ```
 
-## Date and Time Errors
+## Date and time errors
 
 ### `InvalidDateError` {#invaliddateerror}
 
@@ -585,7 +585,7 @@ try {
 }
 ```
 
-## Feature Errors
+## Feature errors
 
 ### `UnsupportedFeatureError` {#unsupportedfeatureerror}
 
@@ -627,7 +627,7 @@ try {
 }
 ```
 
-## API Errors
+## API errors
 
 ### `UnsuccessfulApiError` {#unsuccessfulapierror}
 
@@ -651,7 +651,7 @@ try {
 }
 ```
 
-## Session Errors
+## Session errors
 
 ### `InvalidSessionError` {#invalidsessionerror}
 
@@ -674,7 +674,7 @@ try {
 }
 ```
 
-## Value Validation Errors
+## Value validation errors
 
 ### `InvalidRecordIdError` {#invalidrecordiderror}
 
@@ -742,9 +742,9 @@ try {
 }
 ```
 
-## Error Handling Patterns
+## Error handling patterns
 
-### Basic Error Handling
+### Basic error handling
 
 ```ts
 try {
@@ -760,7 +760,7 @@ try {
 }
 ```
 
-### Specific Error Handling
+### Specific error handling
 
 ```ts
 try {
@@ -780,7 +780,7 @@ try {
 }
 ```
 
-### Error Recovery
+### Error recovery
 
 ```ts
 async function executeWithRetry(fn: () => Promise<any>, maxRetries = 3) {
@@ -806,7 +806,7 @@ const result = await executeWithRetry(() =>
 );
 ```
 
-### Global Error Handler
+### Global error handler
 
 ```ts
 db.subscribe('error', (error) => {
@@ -820,9 +820,9 @@ db.subscribe('error', (error) => {
 });
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Catch Specific Errors
+### 1. Catch specific errors
 
 Handle specific error types for better error recovery:
 
@@ -846,7 +846,7 @@ try {
 }
 ```
 
-### 2. Use Type Guards
+### 2. Use type guards
 
 TypeScript type guards provide better type safety:
 
@@ -861,7 +861,7 @@ if (isConnectionError(error)) {
 }
 ```
 
-### 3. Log Error Details
+### 3. Log error details
 
 Include error details in logs for debugging:
 
@@ -878,7 +878,7 @@ catch (error) {
 }
 ```
 
-### 4. Clean Up on Error
+### 4. Clean up on error
 
 Ensure resources are cleaned up even when errors occur:
 
@@ -891,7 +891,7 @@ try {
 }
 ```
 
-## See Also
+## See also
 
 - [Core Classes](../core/index.md) - Classes that may throw errors
 - [Surreal](../core/surreal.md) - Connection methods that may throw errors

@@ -97,7 +97,7 @@ await db.ready;
 console.log('Connection is ready');
 ```
 
-### Inherited Properties
+### Inherited properties
 
 The `Surreal` class inherits all properties from [`SurrealSession`](surreal-session.md), including:
 
@@ -108,7 +108,7 @@ The `Surreal` class inherits all properties from [`SurrealSession`](surreal-sess
 - `session` - Session ID
 - `isValid` - Session validity status
 
-## Connection Methods
+## Connection methods
 
 ### `.connect()` {#connect}
 
@@ -279,7 +279,7 @@ if (db.isFeatureSupported(Features.LiveQueries)) {
 }
 ```
 
-## Session Management Methods
+## Session management methods
 
 ### `.sessions()` {#sessions}
 
@@ -342,7 +342,7 @@ db.closeSession()
 await db.closeSession();
 ```
 
-## Data Management Methods
+## Data management methods
 
 ### `.export()` {#export}
 
@@ -551,7 +551,7 @@ db.subscribe('error', (error) => {
 });
 ```
 
-### Inherited Events
+### Inherited events
 
 The `Surreal` class also inherits and re-emits events from [`SurrealSession`](surreal-session.md):
 
@@ -602,23 +602,23 @@ const unsubscribe = db.subscribe('connected', (version) => {
 unsubscribe();
 ```
 
-## Inherited Methods
+## Inherited methods
 
 As `Surreal` extends [`SurrealSession`](surreal-session.md), it inherits all authentication and query methods:
 
-### Authentication Methods
+### Authentication methods
 - [`signup()`](surreal-session.md#signup) - Sign up a new user
 - [`signin()`](surreal-session.md#signin) - Sign in with credentials
 - [`authenticate()`](surreal-session.md#authenticate) - Authenticate with a token
 - [`invalidate()`](surreal-session.md#invalidate) - Invalidate the session
 
-### Session Configuration Methods
+### Session configuration methods
 - [`use()`](surreal-session.md#use) - Set namespace and database
 - [`set()`](surreal-session.md#set) - Set a session parameter
 - [`unset()`](surreal-session.md#unset) - Remove a session parameter
 - [`reset()`](surreal-session.md#reset) - Reset the session
 
-### Query Methods
+### Query methods
 
 As `Surreal` extends [`SurrealQueryable`](surreal-queryable.md) (via `SurrealSession`), it also inherits all query execution methods:
 
@@ -633,14 +633,14 @@ As `Surreal` extends [`SurrealQueryable`](surreal-queryable.md) (via `SurrealSes
 - [`live()`](surreal-queryable.md#live) - Subscribe to live queries
 - [`run()`](surreal-queryable.md#run) - Execute functions
 
-### Transaction Method
+### Transaction method
 - [`beginTransaction()`](surreal-transaction.md) - Start a transaction
 
-## Type Parameters
+## Type parameters
 
 This class does not use generic type parameters.
 
-## Complete Example
+## Complete example
 
 ```ts
 
@@ -691,10 +691,10 @@ console.log('Backup size:', backup.length);
 await db.close();
 ```
 
-## See Also
+## See also
 
 - [SurrealSession](surreal-session.md) - Session management and authentication
 - [SurrealQueryable](surreal-queryable.md) - Query execution methods
 - [SurrealTransaction](surreal-transaction.md) - Transaction support
 - [Connection Engines](../../engines/index.md) - Engine-specific documentation
-- [Data Types](../values/index.md) - Working with data types
+- [Data types](../values/index.md) - Working with data types

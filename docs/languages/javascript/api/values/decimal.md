@@ -15,7 +15,7 @@ The `Decimal` class provides arbitrary precision decimal numbers, essential for 
 
 **Source:** [value/decimal.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/value/decimal.ts)
 
-## Why Use Decimal?
+## Why use Decimal?
 
 JavaScript's `number` type uses floating-point arithmetic, which can lead to precision errors:
 
@@ -80,7 +80,7 @@ const scientific = new Decimal('1.23e-10');
 const copy = new Decimal(price);
 ```
 
-## Static Methods
+## Static methods
 
 ### `Decimal.fromScientificNotation(input)` {#fromscientificnotation}
 
@@ -151,7 +151,7 @@ const d = new Decimal('19.99');
 console.log(d.scale); // 2
 ```
 
-## Instance Methods
+## Instance methods
 
 ### `.toString()` {#tostring}
 
@@ -672,9 +672,9 @@ const pos = new Decimal('5');
 console.log(pos.isNegative()); // false
 ```
 
-## Complete Examples
+## Complete examples
 
-### Financial Calculations
+### Financial calculations
 
 ```ts
 
@@ -699,7 +699,7 @@ console.log('Tax:', tax.toString());         // 1.49925
 console.log('Total:', total.toString());     // 21.48925
 ```
 
-### Order Total Calculation
+### Order total calculation
 
 ```ts
 interface OrderItem {
@@ -729,7 +729,7 @@ const orderTotal = calculateOrderTotal(items);
 console.log('Order total:', orderTotal.toString()); // '99.94'
 ```
 
-### Currency Exchange
+### Currency exchange
 
 ```ts
 // Exchange rate calculation
@@ -740,7 +740,7 @@ const eurAmount = usdAmount.mul(exchangeRate);
 console.log(`$${usdAmount} = €${eurAmount}`);
 ```
 
-### Interest Calculation
+### Interest calculation
 
 ```ts
 // Calculate compound interest
@@ -767,7 +767,7 @@ const finalAmount = calculateCompoundInterest(principal, annualRate, years);
 console.log('Final amount:', finalAmount.toString());
 ```
 
-### Database Storage
+### Database storage
 
 ```ts
 // Store precise financial data
@@ -790,7 +790,7 @@ for (const txn of transactions) {
 console.log('Total:', totalAmount.toString());
 ```
 
-### Percentage Calculations
+### Percentage calculations
 
 ```ts
 // Calculate percentage
@@ -808,7 +808,7 @@ console.log('Discount:', discountAmount.toString()); // '15.00'
 console.log('Final price:', finalPrice.toString()); // '85.00'
 ```
 
-### Scientific Calculations
+### Scientific calculations
 
 ```ts
 // High precision scientific value
@@ -819,9 +819,9 @@ console.log('Avogadro:', avogadroNumber.toString());
 console.log('Boltzmann:', boltzmannConstant.toString());
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Use Strings for Input
+### 1. Use strings for input
 
 ```ts
 // Good: String input preserves precision
@@ -831,7 +831,7 @@ const price = new Decimal('19.99');
 const price = new Decimal(19.99); // Already has float imprecision
 ```
 
-### 2. Keep as Decimal for Calculations
+### 2. Keep as Decimal for calculations
 
 ```ts
 // Good: All calculations use Decimal
@@ -843,7 +843,7 @@ const total = subtotal.add(tax);
 const subtotal = price.toFloat() * quantity; // Loses precision
 ```
 
-### 3. Convert to String for Display
+### 3. Convert to string for display
 
 ```ts
 // Good: String preserves precision
@@ -854,7 +854,7 @@ console.log(`$${display}`);
 const display = price.toFloat().toFixed(2);
 ```
 
-### 4. Store Decimals in Database
+### 4. Store decimals in database
 
 ```ts
 // Good: Store as Decimal
@@ -868,9 +868,9 @@ await db.create(table).content({
 });
 ```
 
-## Common Pitfalls
+## Common pitfalls
 
-### Floating-Point Input
+### Floating-point input
 
 ```ts
 // Problem: Number already has floating-point error
@@ -880,7 +880,7 @@ const wrong = new Decimal(0.1 + 0.2); // 0.30000000000000004
 const correct = new Decimal('0.1').add(new Decimal('0.2')); // 0.3
 ```
 
-### Premature Conversion to Number
+### Premature conversion to number
 
 ```ts
 // Problem: Loses precision
@@ -890,8 +890,8 @@ const result = price.toFloat() + tax.toFloat();
 const result = price.add(tax);
 ```
 
-## See Also
+## See also
 
-- [Data Types Overview](index.md) - All custom data types
-- [Query Builders](../queries/index.md) - Using Decimal in queries
-- [SurrealQL Decimal](../../../../reference/query-language/language-primitives/data-types/numbers.md) - Database decimal type
+- [Data types overview](index.md) - All custom data types
+- [Query builders](../queries/index.md) - Using Decimal in queries
+- [SurrealQL decimal](../../../../reference/query-language/language-primitives/data-types/numbers.md) - Database decimal type

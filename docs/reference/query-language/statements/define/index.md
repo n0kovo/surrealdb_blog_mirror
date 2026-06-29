@@ -35,7 +35,7 @@ _Auto-generated index — 18 pages and 1 sub-section._
   A DEFINE MODULE statement can be used to define a module through which Surrealism extension functions can be called.
 - [DEFINE NAMESPACE](namespace.md)
   The DEFINE NAMESPACE statement can be used to setup namespaces, which can contain multiple databases.
-- [DEFINE overview](overview.md)
+- [Overview](overview.md)
   DEFINE declares SurrealDB schema: namespaces, tables, fields, indexes, functions, events and access in SurrealQL.
 - [DEFINE PARAM](param.md)
   The DEFINE PARAM statement allows you to define global (database-wide) parameters that are available to every client.

@@ -28,7 +28,7 @@ _Auto-generated index — 13 pages._
 - [Sessions and scoping](sessions-and-scoping.md)
   A session stores information about the current connection.
 - [Subqueries and advanced patterns](subqueries-and-advanced-patterns.md)
-  Nested SELECTs, CREATE as a value, $parent and $this, and graph paths that behave like inner queries.
+  Nested SELECTs, CREATE as a value, $parent and $this, latest record per group, and graph paths that behave like inner queries.
 - [Testing](testing.md)
   This page details a number of ways that SurrealDB can be tested.
 - [Transactions](transactions.md)

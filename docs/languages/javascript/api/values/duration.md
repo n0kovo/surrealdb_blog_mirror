@@ -61,7 +61,7 @@ const duration = new Duration([300n, 0n]); // 5 minutes
 const clone = new Duration(fiveMinutes);
 ```
 
-## Supported Units
+## Supported units
 
 <table>
     <thead>
@@ -120,7 +120,7 @@ const clone = new Duration(fiveMinutes);
     </tbody>
 </table>
 
-## Static Methods
+## Static methods
 
 ### `Duration.nanoseconds(ns)` {#nanoseconds-static}
 
@@ -522,7 +522,7 @@ const duration = elapsed();
 console.log('Operation took:', duration.toString());
 ```
 
-## Property Getters
+## Property getters
 
 Property getters for accessing the total duration in specific units. All return `bigint`.
 
@@ -595,7 +595,7 @@ console.log(duration.milliseconds); // 9000000n
 console.log(duration.nanoseconds);  // 9000000000000n
 ```
 
-## Instance Methods
+## Instance methods
 
 ### `.toString()` {#tostring}
 
@@ -866,9 +866,9 @@ duration.equals(other)
 #### Returns
 `boolean` - True if equal
 
-## Complete Examples
+## Complete examples
 
-### Timeouts and Expiration
+### Timeouts and expiration
 
 ```ts
 
@@ -883,7 +883,7 @@ const session = await db.create(new Table('sessions')).content({
 });
 ```
 
-### Query Timeouts
+### Query timeouts
 
 ```ts
 // Set timeout on queries
@@ -896,7 +896,7 @@ const result = await db.query(`
 `).timeout(new Duration('30s')).collect();
 ```
 
-### Rate Limiting
+### Rate limiting
 
 ```ts
 // Define rate limit window
@@ -914,7 +914,7 @@ await db.create(new Table('rate_limits')).content({
 });
 ```
 
-### Scheduled Tasks
+### Scheduled tasks
 
 ```ts
 // Schedule task with delay
@@ -943,7 +943,7 @@ function isCacheValid(entry: typeof cacheEntry): boolean {
 }
 ```
 
-### Performance Measurement
+### Performance measurement
 
 ```ts
 // Measure operation duration
@@ -955,7 +955,7 @@ const duration = elapsed();
 console.log('Operation took:', duration.toString());
 ```
 
-### Conversion Examples
+### Conversion examples
 
 ```ts
 // Parse from string
@@ -975,7 +975,7 @@ const doubled = duration.add(duration);
 console.log(doubled.toString()); // '5h'
 ```
 
-### Complex Durations
+### Complex durations
 
 ```ts
 // Very precise timing
@@ -989,7 +989,7 @@ const extended = complex.add(new Duration('12h'));
 console.log(extended.toString()); // '1d14h30m15s'
 ```
 
-### Static Factory Methods
+### Static factory methods
 
 ```ts
 // Create durations from numeric values
@@ -1003,9 +1003,9 @@ const maxRetries = 3;
 const backoff = Duration.seconds(2).mul(maxRetries);
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Use Human-Readable Formats
+### 1. Use human-readable formats
 
 ```ts
 // Good: Clear intent
@@ -1016,7 +1016,7 @@ const cacheTTL = new Duration('1h');
 const timeout = new Duration([30n, 0n]);
 ```
 
-### 2. Use Duration for Time Arithmetic
+### 2. Use Duration for time arithmetic
 
 ```ts
 // Good: Type-safe duration arithmetic
@@ -1027,7 +1027,7 @@ const extended = base.add(new Duration('30m'));
 const delay = Duration.seconds(retryCount * 2);
 ```
 
-### 3. Store Durations in Database
+### 3. Store durations in database
 
 ```ts
 // Good: Store as Duration for type safety
@@ -1041,7 +1041,7 @@ await db.create(table).content({
 });
 ```
 
-### 4. Use Appropriate Units
+### 4. Use appropriate units
 
 ```ts
 // Good: Use largest appropriate unit
@@ -1053,7 +1053,7 @@ const oneDay = new Duration('24h');
 const oneWeek = new Duration('168h');
 ```
 
-### 5. Use Duration.measure() for Timing
+### 5. Use duration.measure() for timing
 
 ```ts
 // Good: Built-in measurement
@@ -1062,9 +1062,9 @@ await performOperation();
 console.log('Took:', elapsed().toString());
 ```
 
-## See Also
+## See also
 
 - [DateTime](datetime.md) - Datetime values
-- [Data Types Overview](index.md) - All custom data types
-- [Query Builders](../queries/index.md) - Using Duration in queries
-- [SurrealQL Duration](../../../../reference/query-language/language-primitives/data-types/durations.md) - Database duration type
+- [Data types overview](index.md) - All custom data types
+- [Query builders](../queries/index.md) - Using Duration in queries
+- [SurrealQL durations](../../../../reference/query-language/language-primitives/data-types/durations.md) - Database duration type

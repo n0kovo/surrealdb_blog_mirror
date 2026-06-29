@@ -5,11 +5,11 @@ description: The SurrealDB SDK for PHP enables simple and advanced querying of a
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/php/data-types.mdx"
 ---
 
-# Data Types
+# Data types
 
 The PHP SDK translates all SurrealQL datatypes into native PHP types, or a custom implementation. This document describes all datatypes, and links to their respective documentation.
 
-## Data Types overview
+## Data types overview
 
 <table>
     <thead>

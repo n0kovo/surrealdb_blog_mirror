@@ -13,7 +13,7 @@ The `Query` class provides a configurable interface for executing raw SurrealQL 
 
 **Source:** [query/query.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/query.ts)
 
-## Type Parameters
+## Type parameters
 
 - `R extends unknown[]` - Array of result types for each query statement
 - `J extends boolean` - Boolean indicating if result is JSON (default: `false`)
@@ -48,7 +48,7 @@ query.collect<T>(...queryIndexes?)
     </tbody>
 </table>
 
-#### Type Parameters
+#### Type parameters
 - `T extends unknown[]` - Override result types
 
 #### Returns
@@ -166,7 +166,7 @@ query.responses<T>(...queries?)
     </tbody>
 </table>
 
-#### Type Parameters
+#### Type parameters
 - `T extends unknown[]` - Override result types
 
 #### Returns
@@ -221,9 +221,9 @@ const jsonResults = await db.query('SELECT * FROM users').json().collect();
 console.log(typeof jsonResults[0]); // 'string'
 ```
 
-## Complete Examples
+## Complete examples
 
-### Basic Query Execution
+### Basic query execution
 
 ```ts
 
@@ -238,7 +238,7 @@ console.log(result[0]); // Array of users
 const result = await db.query('SELECT * FROM users');
 ```
 
-### Parameterized Queries
+### Parameterised queries
 
 ```ts
 // Using bindings object
@@ -255,7 +255,7 @@ const result = await db.query(
 ).collect();
 ```
 
-### Multiple Statements
+### Multiple statements
 
 ```ts
 const [users, posts, comments] = await db.query<[User[], Post[], Comment[]]>(`
@@ -269,7 +269,7 @@ console.log('Posts:', posts);
 console.log('Comments:', comments);
 ```
 
-### Streaming Large Results
+### Streaming large results
 
 ```ts
 const query = db.query('SELECT * FROM large_table');
@@ -285,7 +285,7 @@ for await (const frame of query.stream()) {
 }
 ```
 
-### Error Handling with Responses
+### Error handling with responses
 
 ```ts
 const responses = await db.query(`
@@ -303,7 +303,7 @@ for (const [i, response] of responses.entries()) {
 }
 ```
 
-### Transaction Queries
+### Transaction queries
 
 ```ts
 const txn = await db.beginTransaction();
@@ -320,7 +320,7 @@ try {
 }
 ```
 
-### Complex Query with Statistics
+### Complex query with statistics
 
 ```ts
 const responses = await db.query(`
@@ -337,7 +337,7 @@ for (const response of responses) {
 }
 ```
 
-### Conditional Logic
+### Conditional logic
 
 ```ts
 const status = 'active';
@@ -356,7 +356,7 @@ const result = await db.query(
 ).collect();
 ```
 
-### Data Migration
+### Data migration
 
 ```ts
 // Batch update with query
@@ -377,7 +377,7 @@ const migration = await db.query(`
 console.log('Migration complete');
 ```
 
-### Streaming with Progress
+### Streaming with progress
 
 ```ts
 let totalRecords = 0;
@@ -396,12 +396,12 @@ for await (const frame of db.query('SELECT * FROM users; SELECT * FROM posts;').
 console.log(`Total: ${totalRecords} records from ${queriesCompleted} queries`);
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Use Parameterization
+### 1. Use parameterisation
 
 ```ts
-// Good: Parameterized
+// Good: Parameterised
 const result = await db.query(
     'SELECT * FROM users WHERE name = $name',
     { name: userName }
@@ -418,7 +418,7 @@ const result = await db.query(
 ).collect();
 ```
 
-### 2. Handle Errors Appropriately
+### 2. Handle errors appropriately
 
 ```ts
 // Good: Check individual responses
@@ -438,7 +438,7 @@ try {
 }
 ```
 
-### 3. Use Streaming for Large Results
+### 3. Use streaming for large results
 
 ```ts
 // Good: Stream large datasets
@@ -453,7 +453,7 @@ const [large] = await db.query('SELECT * FROM large_table').collect();
 // May cause memory issues
 ```
 
-### 4. Leverage Type Parameters
+### 4. Leverage type parameters
 
 ```ts
 // Good: Type-safe results
@@ -467,9 +467,9 @@ users[0].name; // string
 posts[0].title; // string
 ```
 
-## See Also
+## See also
 
 - [SurrealQueryable.query()](../core/surreal-queryable.md#query) - Method that returns Query
-- [BoundQuery](../utilities/index.md#boundquery) - Parameterized queries
+- [BoundQuery](../utilities/index.md#boundquery) - Parameterised queries
 - [surql](../utilities/index.md#surql) - Template tag for queries
-- [Query Overview](index.md) - All query builder classes
+- [Query overview](index.md) - All query builder classes

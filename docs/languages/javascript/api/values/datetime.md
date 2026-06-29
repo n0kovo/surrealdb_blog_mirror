@@ -70,7 +70,7 @@ const precise = new DateTime([1705320000n, 500000000n]);
 const clone = new DateTime(now);
 ```
 
-## Static Methods
+## Static methods
 
 ### `DateTime.now()` {#now}
 
@@ -269,7 +269,7 @@ const dt = DateTime.fromEpochSeconds(1705320000);
 console.log(dt.toString()); // '2024-01-15T12:00:00.000000000Z'
 ```
 
-## Instance Methods
+## Instance methods
 
 ### `.toDate()` {#todate}
 
@@ -618,9 +618,9 @@ const dt = new DateTime('2024-01-15T12:00:00.123456789Z');
 console.log(dt.seconds); // 1705320000
 ```
 
-## Complete Examples
+## Complete examples
 
-### Event Timestamps
+### Event timestamps
 
 ```ts
 
@@ -638,7 +638,7 @@ const event = await db.create(new Table('events')).content({
 console.log('Event created at:', event.timestamp.toString());
 ```
 
-### Date Arithmetic
+### Date arithmetic
 
 ```ts
 
@@ -653,7 +653,7 @@ const past = now.sub(Duration.parse('30d')); // 30 days ago
 const recentCutoff = now.sub(Duration.parse('1h')); // Last hour
 ```
 
-### Query with Date Ranges
+### Query with date ranges
 
 ```ts
 const startDate = new DateTime('2024-01-01T00:00:00Z');
@@ -668,7 +668,7 @@ const events = await db.query(`
 }).collect();
 ```
 
-### Time-series Data
+### Time-series data
 
 ```ts
 // Record metrics with precise timestamps
@@ -693,7 +693,7 @@ const recent = await db.query(`
 }).collect();
 ```
 
-### Conversion Examples
+### Conversion examples
 
 ```ts
 // From JavaScript Date
@@ -721,7 +721,7 @@ const fromMs = DateTime.fromEpochMilliseconds(1705320000123);
 const fromSecs = DateTime.fromEpochSeconds(1705320000);
 ```
 
-### Scheduled Tasks
+### Scheduled tasks
 
 ```ts
 // Schedule future task
@@ -742,7 +742,7 @@ const overdue = await db.query(`
 `, { now }).collect();
 ```
 
-### Expiration Handling
+### Expiration handling
 
 ```ts
 // Set expiration time
@@ -762,7 +762,7 @@ if (isExpired(session.expires_at)) {
 }
 ```
 
-### Timezone Handling
+### Timezone handling
 
 ```ts
 // DateTime is always stored in UTC
@@ -776,9 +776,9 @@ console.log('UTC:', utcTime.toString());
 console.log('Local:', localString);
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Use DateTime for Database Timestamps
+### 1. Use DateTime for database timestamps
 
 ```ts
 // Good: Nanosecond precision preserved
@@ -794,7 +794,7 @@ await db.create(new Table('logs')).content({
 });
 ```
 
-### 2. Be Aware of Precision Loss
+### 2. Be aware of precision loss
 
 ```ts
 // Good: Keep as DateTime for precision
@@ -805,7 +805,7 @@ const stored = dt.toString(); // Preserves nanoseconds
 const jsDate = dt.toDate(); // Only milliseconds
 ```
 
-### 3. Use Duration for Time Arithmetic
+### 3. Use Duration for time arithmetic
 
 ```ts
 // Good: Type-safe duration arithmetic
@@ -815,7 +815,7 @@ const future = now.add(Duration.parse('1h'));
 const future2 = DateTime.fromEpochMilliseconds(now.milliseconds + 3600000);
 ```
 
-### 4. Store as DateTime, Display as Localized
+### 4. Store as DateTime, display as localized
 
 ```ts
 // Store in UTC using DateTime
@@ -828,9 +828,9 @@ const localDisplay = timestamp.toDate().toLocaleString('en-US', {
 });
 ```
 
-## See Also
+## See also
 
 - [Duration](duration.md) - Time duration values
-- [Data Types Overview](index.md) - All custom data types
-- [Query Builders](../queries/index.md) - Using DateTime in queries
-- [SurrealQL Datetime](../../../../reference/query-language/language-primitives/data-types/datetimes.md) - Database datetime type
+- [Data types overview](index.md) - All custom data types
+- [Query builders](../queries/index.md) - Using DateTime in queries
+- [SurrealQL datetimes](../../../../reference/query-language/language-primitives/data-types/datetimes.md) - Database datetime type

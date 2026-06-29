@@ -1,5 +1,5 @@
 ---
-position: 22
+position: 24
 title: SELECT
 description: The SELECT statement can be used for selecting and querying data in a database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/select.mdx"
@@ -564,6 +564,8 @@ SELECT count() AS number_of_records FROM person GROUP ALL;
 	}
 ]
 ```
+
+To return the most recently modified record per group instead of aggregate totals, see [Latest record per group](../../../learn/querying/concepts-and-guides/subqueries-and-advanced-patterns.md#latest-record-per-group).
 
 ### `GROUP` and `SPLIT` incompatibility
 

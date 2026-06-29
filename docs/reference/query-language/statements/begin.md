@@ -1,5 +1,5 @@
 ---
-position: 3
+position: 4
 title: BEGIN
 description: The BEGIN statement starts a single transaction in which run multiple statements can be run, either succeeding as a whole, or failing.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/begin.mdx"

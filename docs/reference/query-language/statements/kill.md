@@ -1,5 +1,5 @@
 ---
-position: 15
+position: 17
 title: KILL
 description: The KILL statement is used to terminate a running live query.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/kill.mdx"

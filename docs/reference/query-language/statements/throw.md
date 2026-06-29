@@ -1,5 +1,5 @@
 ---
-position: 25
+position: 27
 title: THROW
 description: The THROW statement can be used to stop execution of a query and return information on the underlying problem
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/throw.mdx"

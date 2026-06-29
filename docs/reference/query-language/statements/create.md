@@ -1,5 +1,5 @@
 ---
-position: 8
+position: 9
 title: CREATE
 description: The CREATE statement can be used to add a record to the database if it does not already exist.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/create.mdx"

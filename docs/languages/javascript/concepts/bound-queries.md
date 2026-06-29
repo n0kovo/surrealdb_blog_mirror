@@ -1,13 +1,13 @@
 ---
 position: 7
 title: Bound queries
-description: The JavaScript SDK provides bound queries and template tags for safely composing parameterized SurrealQL queries.
+description: The JavaScript SDK provides bound queries and template tags for safely composing parameterised SurrealQL queries.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/javascript/concepts/bound-queries.mdx"
 ---
 
 # Bound queries
 
-When composing dynamic queries, it is important to avoid string interpolation to prevent injection vulnerabilities. The JavaScript SDK provides bound queries and the `surql` template tag to safely parameterize values, along with an expressions API for composing dynamic conditions.
+When composing dynamic queries, it is important to avoid string interpolation to prevent injection vulnerabilities. The JavaScript SDK provides bound queries and the `surql` template tag to safely parameterise values, along with an expressions API for composing dynamic conditions.
 
 ## API references
 
@@ -21,11 +21,11 @@ When composing dynamic queries, it is important to avoid string interpolation to
 	<tbody>
 		<tr>
 			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/surql"> ` surql `</a></td>
-			<td scope="row" data-label="Description">Tagged template literal for composing parameterized queries</td>
+			<td scope="row" data-label="Description">Tagged template literal for composing parameterised queries</td>
 		</tr>
 		<tr>
 			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/bound-query"> ` BoundQuery `</a></td>
-			<td scope="row" data-label="Description">Class for manually building parameterized queries</td>
+			<td scope="row" data-label="Description">Class for manually building parameterised queries</td>
 		</tr>
 		<tr>
 			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/expr"> ` expr() `</a></td>
@@ -36,7 +36,7 @@ When composing dynamic queries, it is important to avoid string interpolation to
 
 ## Using the surql template tag
 
-The `surql` tagged template literal is the recommended way to compose parameterized queries. Interpolated values are automatically bound as parameters, preventing injection and preserving type safety.
+The `surql` tagged template literal is the recommended way to compose parameterised queries. Interpolated values are automatically bound as parameters, preventing injection and preserving type safety.
 
 ```ts
 

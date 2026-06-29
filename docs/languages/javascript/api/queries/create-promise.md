@@ -13,13 +13,13 @@ The `CreatePromise` class provides a chainable interface for configuring CREATE 
 
 **Source:** [query/create.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/create.ts)
 
-## Type Parameters
+## Type parameters
 
 - `T` - The result type
 - `I` - The input type for record data
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration Methods
+## Configuration methods
 
 ### `.content()` {#content}
 
@@ -309,9 +309,9 @@ for await (const user of results.stream()) {
 }
 ```
 
-## Complete Examples
+## Complete examples
 
-### Basic Creation
+### Basic creation
 
 ```ts
 
@@ -335,7 +335,7 @@ const post = await db.create(new Table('posts'))
     });
 ```
 
-### Creation with Output Control
+### Creation with output control
 
 ```ts
 // Only return the ID
@@ -349,7 +349,7 @@ const summary = await db.create(new Table('users'))
     .output('id', 'name', 'created_at');
 ```
 
-### Bulk Creation with Streaming
+### Bulk creation with streaming
 
 ```ts
 const users = [
@@ -363,7 +363,7 @@ for await (const user of db.create(new Table('users')).content(users).stream()) 
 }
 ```
 
-### With Relationships
+### With relationships
 
 ```ts
 const post = await db.create(new Table('posts'))
@@ -379,7 +379,7 @@ const post = await db.create(new Table('posts'))
     });
 ```
 
-### Error Handling
+### Error handling
 
 ```ts
 try {
@@ -392,7 +392,7 @@ try {
 }
 ```
 
-### With Timeout
+### With timeout
 
 ```ts
 const user = await db.create(new Table('users'))
@@ -400,7 +400,7 @@ const user = await db.create(new Table('users'))
     .timeout(Duration.parse('10s'));
 ```
 
-## Chaining Pattern
+## Chaining pattern
 
 All configuration methods return a new `CreatePromise`, allowing method chaining:
 
@@ -411,9 +411,9 @@ const result = await db.create(new Table('users'))
     .timeout(Duration.parse('5s'));
 ```
 
-## See Also
+## See also
 
 - [SurrealQueryable.create()](../core/surreal-queryable.md#create) - Method that returns CreatePromise
 - [InsertPromise](insert-promise.md) - Bulk insertion
 - [UpsertPromise](upsert-promise.md) - Insert or replace
-- [Query Overview](index.md) - All query builder classes
+- [Query overview](index.md) - All query builder classes

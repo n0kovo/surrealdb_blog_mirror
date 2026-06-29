@@ -59,7 +59,7 @@ const uuid = new Uuid(bytes);
 const copy = new Uuid(uuid);
 ```
 
-## Static Methods
+## Static methods
 
 ### `Uuid.v4()` {#v4}
 
@@ -113,7 +113,7 @@ const id2 = Uuid.v7();
 // id1 < id2 (lexicographically)
 ```
 
-## Instance Methods
+## Instance methods
 
 ### `.toString()` {#tostring}
 
@@ -194,9 +194,9 @@ uuid.equals(other)
 #### Returns
 `boolean` - True if equal
 
-## Complete Examples
+## Complete examples
 
-### Session Management
+### Session management
 
 ```ts
 
@@ -216,7 +216,7 @@ const session = await db.create(new RecordId('sessions', sessionId))
 console.log('Session ID:', sessionId.toString());
 ```
 
-### Time-Ordered Records
+### Time-ordered records
 
 ```ts
 // Use v7 for time-series data
@@ -237,7 +237,7 @@ for (let i = 0; i < 100; i++) {
 // Events are naturally sorted by creation time
 ```
 
-### Unique Identifiers
+### Unique identifiers
 
 ```ts
 // Generate unique IDs for various purposes
@@ -253,7 +253,7 @@ await db.create(new Table('requests')).content({
 });
 ```
 
-### API Keys
+### API keys
 
 ```ts
 // Generate API keys
@@ -271,7 +271,7 @@ await db.create(new Table('api_keys')).content({
 });
 ```
 
-### Distributed System IDs
+### Distributed system IDs
 
 ```ts
 // Use UUID v7 for distributed systems (sortable)
@@ -293,7 +293,7 @@ const orderId = IdGenerator.generateOrderId();
 const txnId = IdGenerator.generateTransactionId();
 ```
 
-### File Upload Tracking
+### File upload tracking
 
 ```ts
 // Track file uploads with UUIDs
@@ -312,7 +312,7 @@ async function uploadFile(file: File): Promise<string> {
 }
 ```
 
-### Parsing and Validation
+### Parsing and validation
 
 ```ts
 // Parse UUID from user input
@@ -333,7 +333,7 @@ if (uuid) {
 }
 ```
 
-### Batch ID Generation
+### Batch ID generation
 
 ```ts
 // Generate multiple UUIDs
@@ -353,7 +353,7 @@ const sortableIds = generateBatchIds(100, true); // 100 time-ordered UUIDs
 
 ## UUID v4 vs UUID v7
 
-### UUID v4 (Random)
+### UUID v4 (random)
 
 - **Pros:** Truly random, no predictability
 - **Cons:** Not sortable, no time information
@@ -363,7 +363,7 @@ const sortableIds = generateBatchIds(100, true); // 100 time-ordered UUIDs
 const randomId = Uuid.v4();
 ```
 
-### UUID v7 (Time-ordered)
+### UUID v7 (time-ordered)
 
 - **Pros:** Sortable, includes timestamp, better for database indexes
 - **Cons:** Slightly predictable (timestamp component)
@@ -373,9 +373,9 @@ const randomId = Uuid.v4();
 const timeOrderedId = Uuid.v7();
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Choose the Right Version
+### 1. Choose the right version
 
 ```ts
 // Good: v7 for time-series and events
@@ -395,7 +395,7 @@ const userId = new RecordId('users', Uuid.v7());
 await db.create(userId).content(userData);
 ```
 
-### 3. Validate User Input
+### 3. Validate user input
 
 ```ts
 // Good: Validate before use
@@ -407,7 +407,7 @@ try {
 }
 ```
 
-### 4. Store as UUID Type
+### 4. Store as UUID type
 
 ```ts
 // Good: Store as UUID
@@ -421,9 +421,9 @@ await db.create(table).content({
 });
 ```
 
-## See Also
+## See also
 
 - [RecordId](record-id.md) - Record identifiers
-- [Data Types Overview](index.md) - All custom data types
-- [Query Builders](../queries/index.md) - Using Uuid in queries
+- [Data types overview](index.md) - All custom data types
+- [Query builders](../queries/index.md) - Using Uuid in queries
 - [SurrealQL UUID](../../../../reference/query-language/language-primitives/data-types/uuids.md) - Database UUID type

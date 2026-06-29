@@ -1,5 +1,5 @@
 ---
-position: 16
+position: 18
 title: LET
 description: The LET statement sets and stores a value which can then be used in a subsequent query.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/let.mdx"

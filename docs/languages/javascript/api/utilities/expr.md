@@ -25,7 +25,7 @@ The `expr()` function creates type-safe SurrealQL expressions using standalone o
 
 **Source:** [utils/expr.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/utils/expr.ts)
 
-## Function Signature
+## Function signature
 
 ```ts
 function expr(expression: ExprLike): BoundQuery
@@ -52,7 +52,7 @@ function expr(expression: ExprLike): BoundQuery
 #### Returns
 `BoundQuery` - Compiled query with bindings
 
-## Comparison Operators
+## Comparison operators
 
 ### `eq(field, value)` {#eq}
 
@@ -108,7 +108,7 @@ const young = expr(lt('age', 30));
 const youngInclusive = expr(lte('age', 29));
 ```
 
-## Logical Operators
+## Logical operators
 
 ### `and(...conditions)` {#and}
 
@@ -147,7 +147,7 @@ const notBanned = expr(not(eq('status', 'banned')));
 // WHERE NOT status = 'banned'
 ```
 
-## Collection Operators
+## Collection operators
 
 ### `contains(field, value)` {#contains}
 
@@ -191,7 +191,7 @@ const noBadTags = expr(containsNone('tags', ['spam', 'banned']));
 // WHERE tags CONTAINSNONE ['spam', 'banned']
 ```
 
-## Geometry Operators
+## Geometry operators
 
 ### `inside(field, geometry)` {#inside}
 
@@ -224,7 +224,7 @@ const overlaps = expr(intersects('area', otherArea));
 // WHERE area INTERSECTS $otherArea
 ```
 
-## Search Operators
+## Search operators
 
 ### `matches(field, query, ref?)` {#matches}
 
@@ -251,7 +251,7 @@ const similar = expr(knn('embedding', [0.1, 0.2, 0.3], 10, 'cosine'));
 // WHERE embedding <|10,COSINE|> [0.1, 0.2, 0.3]
 ```
 
-## Range Operator
+## Range operator
 
 ### `between(field, a, b)` {#between}
 
@@ -262,7 +262,7 @@ const midRange = expr(between('price', 10, 50));
 // WHERE price >= 10 AND price <= 50
 ```
 
-## Raw Expressions
+## Raw expressions
 
 ### `raw(sql)` {#raw}
 
@@ -275,9 +275,9 @@ Create raw SurrealQL expressions.
 const custom = expr(raw('custom_function()'));
 ```
 
-## Complete Examples
+## Complete examples
 
-### Basic Filtering
+### Basic filtering
 
 ```ts
 
@@ -295,7 +295,7 @@ const premiumAdults = expr(and(
 const results = await db.select(new Table('users')).where(premiumAdults);
 ```
 
-### Complex Conditions
+### Complex conditions
 
 ```ts
 // Nested OR and AND
@@ -313,7 +313,7 @@ const eligibleUsers = expr(or(
 const users = await db.select(new Table('users')).where(eligibleUsers);
 ```
 
-### Date Filtering
+### Date filtering
 
 ```ts
 
@@ -323,7 +323,7 @@ const recentUsers = expr(gte('created_at', cutoffDate));
 const users = await db.select(new Table('users')).where(recentUsers);
 ```
 
-### Array Operations
+### Array operations
 
 ```ts
 // Check if user has specific tags
@@ -339,7 +339,7 @@ const fullyVerified = expr(containsAll('badges', ['email-verified', 'phone-verif
 const cleanContent = expr(containsNone('flags', ['spam', 'inappropriate']));
 ```
 
-### Geospatial Queries
+### Geospatial queries
 
 ```ts
 
@@ -354,7 +354,7 @@ const overlapping = expr(intersects('coverage_area', searchArea));
 const zones = await db.select(new Table('zones')).where(overlapping);
 ```
 
-### Full-Text Search
+### Full-text search
 
 ```ts
 // Basic text search
@@ -369,7 +369,7 @@ const multiField = expr(or(
 ));
 ```
 
-### Vector Search
+### Vector search
 
 ```ts
 // Find similar items using KNN
@@ -379,7 +379,7 @@ const similar = expr(knn('embedding', queryVector, 10, 'cosine'));
 const results = await db.select(new Table('items')).where(similar);
 ```
 
-### Reusable Expressions
+### Reusable expressions
 
 ```ts
 // Define reusable filters
@@ -396,7 +396,7 @@ const users1 = await db.select(new Table('users')).where(premiumActive);
 const users2 = await db.select(new Table('users')).where(verifiedActive);
 ```
 
-### Update with Expressions
+### Update with expressions
 
 ```ts
 const condition = expr(and(
@@ -409,7 +409,7 @@ const updated = await db.update(new Table('orders'))
     .where(condition);
 ```
 
-### Delete with Expressions
+### Delete with expressions
 
 ```ts
 const oldInactive = expr(and(
@@ -420,9 +420,9 @@ const oldInactive = expr(and(
 const deleted = await db.delete(new Table('users')).where(oldInactive);
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Use Expressions for Complex Conditions
+### 1. Use expressions for complex conditions
 
 ```ts
 // Good: Type-safe and reusable
@@ -435,7 +435,7 @@ const condition = expr(and(
 const condition = 'age >= 18 AND verified = true';
 ```
 
-### 2. Build Expressions Compositionally
+### 2. Build expressions compositionally
 
 ```ts
 // Good: Compose small expressions
@@ -449,7 +449,7 @@ const eligibleUsers = expr(and(isAdult, isVerified, isActive));
 const premiumEligible = expr(and(isAdult, isVerified));
 ```
 
-### 3. Avoid `raw()` When Possible
+### 3. Avoid `raw()` when possible
 
 ```ts
 // Good: Use typed operators
@@ -459,19 +459,19 @@ const condition = expr(gte('score', 80));
 const condition = expr(raw(`score >= ${userInput}`));
 ```
 
-### 4. Parameterize Dynamic Values
+### 4. Parameterise dynamic values
 
 ```ts
-// Good: Values are automatically parameterized
+// Good: Values are automatically parameterised
 const minAge = getUserInput();
 const condition = expr(gte('age', minAge));
 
 // Safe: minAge is bound as a parameter, not concatenated
 ```
 
-## Common Patterns
+## Common patterns
 
-### Dynamic Filter Builder
+### Dynamic filter builder
 
 ```ts
 function buildUserFilter(options: {
@@ -501,7 +501,7 @@ if (filter) {
 }
 ```
 
-### Search with Multiple Criteria
+### Search with multiple criteria
 
 ```ts
 function searchProducts(criteria: {
@@ -529,9 +529,9 @@ function searchProducts(criteria: {
 }
 ```
 
-## See Also
+## See also
 
-- [Query Builders](../queries/index.md) - Using expressions in queries
+- [Query builders](../queries/index.md) - Using expressions in queries
 - [surql](surql.md) - Template tag for queries
-- [BoundQuery](bound-query.md) - Parameterized queries
+- [BoundQuery](bound-query.md) - Parameterised queries
 - [SelectPromise.where()](../queries/select-promise.md#where) - Using expressions with WHERE

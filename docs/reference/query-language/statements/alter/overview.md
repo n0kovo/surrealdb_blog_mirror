@@ -1,6 +1,6 @@
 ---
 position: 1
-title: ALTER overview
+title: Overview
 description: The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/alter/overview.mdx"
 ---

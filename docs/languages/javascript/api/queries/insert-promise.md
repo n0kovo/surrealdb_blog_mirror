@@ -13,12 +13,12 @@ The `InsertPromise` class provides a chainable interface for configuring INSERT 
 
 **Source:** [query/insert.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/insert.ts)
 
-## Type Parameters
+## Type parameters
 
 - `T` - The result type
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration Methods
+## Configuration methods
 
 ### `.relation()` {#relation}
 
@@ -219,9 +219,9 @@ insertPromise.stream()
 #### Returns
 `AsyncIterableIterator` - Async iterator
 
-## Complete Examples
+## Complete examples
 
-### Basic Insertion
+### Basic insertion
 
 ```ts
 
@@ -242,7 +242,7 @@ const users = await db.insert([
 ]);
 ```
 
-### Insert into Table
+### Insert into table
 
 ```ts
 // Let database generate IDs
@@ -252,7 +252,7 @@ const users = await db.insert(new Table('users'), [
 ]);
 ```
 
-### Ignore Duplicates
+### Ignore duplicates
 
 ```ts
 // Skip existing records without error
@@ -264,7 +264,7 @@ const users = await db.insert([
 console.log(`Inserted ${users.length} new users`);
 ```
 
-### Bulk Insert with Streaming
+### Bulk insert with streaming
 
 ```ts
 const largeDataset = generateThousandsOfRecords();
@@ -278,7 +278,7 @@ for await (const record of db.insert(largeDataset).stream()) {
 }
 ```
 
-### Insert Relations (Edges)
+### Insert relations (edges)
 
 ```ts
 const likes = await db.insert([
@@ -297,7 +297,7 @@ const likes = await db.insert([
 ]).relation();
 ```
 
-### Optimized Insertion
+### Optimised insertion
 
 ```ts
 // Don't wait for return values
@@ -306,14 +306,14 @@ await db.insert(logEntries)
 // Faster execution when you don't need the results
 ```
 
-### Insert with Timeout
+### Insert with timeout
 
 ```ts
 const users = await db.insert(largeDataset)
     .timeout(Duration.parse('30s'));
 ```
 
-### Error Handling
+### Error handling
 
 ```ts
 try {
@@ -332,7 +332,7 @@ try {
 }
 ```
 
-### Batch Processing
+### Batch processing
 
 ```ts
 const BATCH_SIZE = 100;
@@ -345,7 +345,7 @@ for (let i = 0; i < allUsers.length; i += BATCH_SIZE) {
 }
 ```
 
-## vs CREATE
+## INSERT vs CREATE
 
 ### When to use INSERT vs CREATE
 
@@ -362,7 +362,7 @@ const users = await db.insert([
 ]);
 ```
 
-## Chaining Pattern
+## Chaining pattern
 
 ```ts
 const result = await db.insert(records)
@@ -371,9 +371,9 @@ const result = await db.insert(records)
     .timeout(Duration.parse('10s'));
 ```
 
-## See Also
+## See also
 
 - [SurrealQueryable.insert()](../core/surreal-queryable.md#insert) - Method that returns InsertPromise
 - [CreatePromise](create-promise.md) - Single record creation
 - [UpsertPromise](upsert-promise.md) - Insert or update
-- [Query Overview](index.md) - All query builder classes
+- [Query overview](index.md) - All query builder classes

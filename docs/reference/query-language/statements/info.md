@@ -1,5 +1,5 @@
 ---
-position: 13
+position: 15
 title: INFO
 description: The INFO command outputs information about the setup of the SurrealDB system.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/info.mdx"

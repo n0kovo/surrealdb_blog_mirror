@@ -1,5 +1,5 @@
 ---
-position: 18
+position: 20
 title: REBUILD
 description: The REBUILD statement is used to rebuild indexes.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/rebuild.mdx"

@@ -23,7 +23,7 @@ Geometry classes provide support for spatial and geographic data using GeoJSON-c
 
 **Source:** [value/geometry.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/value/geometry.ts)
 
-## Geometry Types
+## Geometry types
 
 ### `GeometryPoint` {#geometrypoint}
 
@@ -368,7 +368,7 @@ console.log(collection.collection);  // [GeometryPoint, GeometryLine, GeometryPo
 console.log(collection.geometries);  // [GeometryPoint, GeometryLine, GeometryPolygon]
 ```
 
-## Common Methods
+## Common methods
 
 All geometry types share these methods:
 
@@ -435,9 +435,9 @@ const b = new GeometryPoint([0, 0]);
 console.log(a.equals(b)); // true
 ```
 
-## Complete Examples
+## Complete examples
 
-### Store Locations
+### Store locations
 
 ```ts
 
@@ -463,7 +463,7 @@ for (const location of locations) {
 }
 ```
 
-### Delivery Routes
+### Delivery routes
 
 ```ts
 // Define delivery route
@@ -482,7 +482,7 @@ await db.create(new Table('routes')).content({
 });
 ```
 
-### Service Areas
+### Service areas
 
 ```ts
 // Define service coverage area (polygon)
@@ -503,7 +503,7 @@ await db.create(new Table('service_areas')).content({
 });
 ```
 
-### Geospatial Queries
+### Geospatial queries
 
 ```ts
 // Find locations near a point
@@ -520,7 +520,7 @@ const nearbyLocations = await db.query(`
 console.log('Nearby locations:', nearbyLocations);
 ```
 
-### Polygon Containment
+### Polygon containment
 
 ```ts
 // Check if a point is within a polygon
@@ -546,7 +546,7 @@ const result = await db.query(`
 console.log('Point is inside:', result[0]);
 ```
 
-### Multiple Locations (MultiPoint)
+### Multiple locations (MultiPoint)
 
 ```ts
 // Store multiple branch locations
@@ -565,7 +565,7 @@ await db.create(new Table('companies')).content({
 });
 ```
 
-### Distance Calculations
+### Distance calculations
 
 ```ts
 // Calculate distance between two points
@@ -582,7 +582,7 @@ const distance = await db.query(`
 console.log('Distance in meters:', distance[0]);
 ```
 
-### GeoJSON Export
+### GeoJSON export
 
 ```ts
 // Export as GeoJSON for mapping libraries
@@ -598,7 +598,7 @@ const geoJson = point.toJSON();
 */
 ```
 
-### Complex Region with Holes
+### Complex region with holes
 
 ```ts
 // Define a park with a lake (hole)
@@ -628,7 +628,7 @@ await db.create(new Table('parks')).content({
 });
 ```
 
-## GeoJSON Compatibility
+## GeoJSON compatibility
 
 All geometry types are compatible with GeoJSON format:
 
@@ -648,9 +648,9 @@ console.log(geoJson);
 // Use with any GeoJSON-compatible library
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Use Correct Coordinate Order
+### 1. Use correct coordinate order
 
 ```ts
 // Good: [longitude, latitude] (GeoJSON standard)
@@ -660,7 +660,7 @@ const point = new GeometryPoint([-122.4194, 37.7749]);
 const wrong = new GeometryPoint([37.7749, -122.4194]);
 ```
 
-### 2. Close Polygons Properly
+### 2. Close polygons properly
 
 ```ts
 // Good: First and last points are the same
@@ -677,7 +677,7 @@ const polygon = new GeometryPolygon([
 // The library automatically closes polygons if needed
 ```
 
-### 3. Use Appropriate Geometry Type
+### 3. Use appropriate Geometry type
 
 ```ts
 // Good: Single location
@@ -690,7 +690,7 @@ const branches = new GeometryMultiPoint([point1, point2, point3]);
 const wrong = new GeometryMultiPoint([point1]);
 ```
 
-### 4. Validate Coordinates
+### 4. Validate coordinates
 
 ```ts
 // Good: Valid coordinates
@@ -701,7 +701,7 @@ const valid = new GeometryPoint([-122.4194, 37.7749]);
 const invalid = new GeometryPoint([200, 100]); // Will create but may cause issues
 ```
 
-## Use Cases
+## Use cases
 
 - **Location-based Services** - Store and query business locations
 - **Delivery Systems** - Define delivery routes and service areas
@@ -710,9 +710,9 @@ const invalid = new GeometryPoint([200, 100]); // Will create but may cause issu
 - **Environmental** - Conservation areas, wildlife habitats
 - **Urban Planning** - City zones, districts, infrastructure
 
-## See Also
+## See also
 
-- [Data Types Overview](index.md) - All custom data types
-- [Query Builders](../queries/index.md) - Using Geometry in queries
-- [SurrealQL Geometry](../../../../reference/query-language/language-primitives/data-types/geometries.md) - Database geometry types
+- [Data types overview](index.md) - All custom data types
+- [Query builders](../queries/index.md) - Using Geometry in queries
+- [SurrealQL geometry](../../../../reference/query-language/language-primitives/data-types/geometries.md) - Database geometry types
 - [GeoJSON Specification](https://geojson.org/) - GeoJSON format standard

@@ -1,5 +1,5 @@
 ---
-position: 5
+position: 6
 title: CANCEL
 description: The CANCEL statement can be used to cancel the statements within a transaction, reverting or rolling back any data modification made within the transaction as a whole.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/cancel.mdx"

@@ -28,7 +28,7 @@ const api = db.api<MyPaths>();
 const users = await api.get("/users"); // Type: User[]
 ```
 
-## Creating an API Instance
+## Creating an API instance
 
 API instances are created through the [`api`](surreal-queryable.md#api) property on [`Surreal`](surreal.md), [`SurrealSession`](surreal-session.md), or [`SurrealTransaction`](surreal-transaction.md):
 
@@ -43,7 +43,7 @@ const api = db.api<MyPaths>();
 const usersApi = db.api<MyPaths>("/users");
 ```
 
-## Type Definitions
+## Type definitions
 
 ### `PathDef` {#pathdef}
 
@@ -55,7 +55,7 @@ type HttpMethod = "get" | "post" | "put" | "delete" | "patch" | "trace";
 type MethodDef = [RequestBody, ResponseBody] | [];
 ```
 
-### Example Path Definitions
+### Example path definitions
 
 ```ts
 type MyApiPaths = {
@@ -413,9 +413,9 @@ api.trace(path, body?)
 #### Returns
 [`ApiPromise<RequestBody, ResponseBody>`](../queries/api-promise.md) - A promise for the TRACE response
 
-## Complete Examples
+## Complete examples
 
-### Basic API Usage
+### Basic API usage
 
 ```ts
 
@@ -434,7 +434,7 @@ const created = await api.post('/users', {
 });
 ```
 
-### Type-Safe API
+### Type-safe API
 
 ```ts
 // Define your API contract
@@ -465,7 +465,7 @@ const newUser: User = await api.post("/users", {
 });
 ```
 
-### Using Headers
+### Using headers
 
 ```ts
 const api = db.api();
@@ -481,7 +481,7 @@ const protected Data = await api.get('/protected-endpoint');
 api.header('Authorization', null);
 ```
 
-### API with Prefix
+### API with prefix
 
 ```ts
 type UserPaths = {
@@ -502,7 +502,7 @@ const user = await usersApi.get("/123");          // GET /users/123
 const updated = await usersApi.put("/123", data); // PUT /users/123
 ```
 
-### Error Handling
+### Error handling
 
 ```ts
 const api = db.api();
@@ -519,7 +519,7 @@ try {
 }
 ```
 
-### With Transaction
+### With transaction
 
 ```ts
 const txn = await db.beginTransaction();
@@ -540,9 +540,9 @@ try {
 }
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Define API Types
+### 1. Define API types
 
 Always define types for your API paths for better developer experience:
 
@@ -557,7 +557,7 @@ const api = db.api<MyApi>();
 const api = db.api();
 ```
 
-### 2. Reuse API Instances
+### 2. Reuse API instances
 
 Create and reuse API instances rather than creating new ones for each call:
 
@@ -572,7 +572,7 @@ await db.api().get('/users');
 await db.api().get('/posts');
 ```
 
-### 3. Use Prefixes for Namespacing
+### 3. Use prefixes for namespacing
 
 Use path prefixes to organize related endpoints:
 
@@ -584,7 +584,7 @@ await usersApi.get("/123");  // GET /users/123
 await postsApi.get("/456");  // GET /posts/456
 ```
 
-## See Also
+## See also
 
 - [SurrealQueryable.api](surreal-queryable.md#api) - Creating API instances
 - [ApiPromise](../queries/api-promise.md) - API response handling

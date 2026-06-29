@@ -1,13 +1,13 @@
 ---
 position: 3
 title: surql
-description: Tagged template for composing parameterized SurrealQL queries.
+description: Tagged template for composing parameterised SurrealQL queries.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/javascript/api/utilities/surql.mdx"
 ---
 
 # `surql` {#surql}
 
-The `surql` tagged template function creates parameterized SurrealQL queries with automatic value binding and SQL injection prevention.
+The `surql` tagged template function creates parameterised SurrealQL queries with automatic value binding and SQL injection prevention.
 
 **Import:**
 ```ts
@@ -48,7 +48,7 @@ function surql(
 </table>
 
 #### Returns
-`BoundQuery` - Parameterized query with automatic bindings
+`BoundQuery` - Parameterised query with automatic bindings
 
 ## How it works
 
@@ -69,7 +69,7 @@ const query = surql`SELECT * FROM users WHERE age > ${age}`;
 
 ## Basic examples
 
-### Simple parameterized query
+### Simple parameterised query
 
 ```ts
 
@@ -269,7 +269,7 @@ const [users] = await db.query(query).collect();
 
 ## SQL injection prevention
 
-The `surql` template prevents SQL injection by automatically parameterizing all values:
+The `surql` template prevents SQL injection by automatically parameterising all values:
 
 ```ts
 // User input
@@ -288,7 +288,7 @@ const query = surql`SELECT * FROM users WHERE name = ${userInput}`;
 ### 1. Always use surql for user input
 
 ```ts
-// Good: Safe parameterization
+// Good: Safe parameterisation
 const userName = getUserInput();
 const query = surql`SELECT * FROM users WHERE name = ${userName}`;
 
@@ -351,7 +351,7 @@ query.append(surql` ORDER BY created_at DESC LIMIT ${limit}`);
 ### 1. Identifier interpolation
 
 ```ts
-// Problem: Table names can't be parameterized
+// Problem: Table names can't be parameterised
 const tableName = 'users';
 const wrong = surql`SELECT * FROM ${tableName}`; // Creates $bind__1
 
@@ -374,7 +374,7 @@ const correct = surql`SELECT * FROM users WHERE ${raw(validated)} > 18`;
 
 ## See also
 
-- [BoundQuery](bound-query.md) - Parameterized query class
+- [BoundQuery](bound-query.md) - Parameterised query class
 - [expr](expr.md) - Expression builder
 - [Query](../queries/query.md) - Executing queries
 - [SurrealQueryable.query()](../core/surreal-queryable.md#query) - Query method

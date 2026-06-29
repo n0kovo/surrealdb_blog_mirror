@@ -83,5 +83,5 @@ db.create("events", {
 
 ## See also
 
-- [Data Types](index.md), All SDK data types
+- [Data types](index.md), All SDK data types
 - [Duration](duration.md), Duration type with unit conversion

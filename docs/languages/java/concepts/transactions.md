@@ -51,7 +51,7 @@ Transaction tx = db.beginTransaction();
 The [`tx.query()`](../api/core/transaction.md#query) method works like `db.query()` but executes within the transaction scope. Each call returns a [`Response`](../api/core/response.md) that you can inspect immediately, but the underlying changes are not visible outside the transaction until it is committed.
 
 > [!NOTE]
-> Parameterized queries via `.queryBind()` are not available inside transactions. To pass dynamic values, use SurrealQL `LET` statements or inline the values in the query string.
+> Parameterised queries via `.queryBind()` are not available inside transactions. To pass dynamic values, use SurrealQL `LET` statements or inline the values in the query string.
 
 ```java
 Transaction tx = db.beginTransaction();

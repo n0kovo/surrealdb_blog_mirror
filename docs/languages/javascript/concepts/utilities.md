@@ -166,11 +166,11 @@ These ship with the `surrealdb` driver and tie into its query engine. They are n
 		</tr>
 		<tr>
 			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/surql"> ` surql `</a></td>
-			<td scope="row" data-label="Description">Tagged template for composing parameterized queries</td>
+			<td scope="row" data-label="Description">Tagged template for composing parameterised queries</td>
 		</tr>
 		<tr>
 			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/bound-query"> ` BoundQuery `</a></td>
-			<td scope="row" data-label="Description">Parameterized query class with manual control</td>
+			<td scope="row" data-label="Description">Parameterised query class with manual control</td>
 		</tr>
 		<tr>
 			<td scope="row" data-label="Utility">` s, d, r, u `</td>
@@ -195,7 +195,7 @@ const users = await db.select(new Table('users')).where(premiumAdults);
 
 Operators cover comparisons (`eq`, `ne`, `gt`, `gte`, `lt`, `lte`), logic (`and`, `or`, `not`), strings and arrays (`contains`, `containsAny`, `containsAll`), geometry (`inside`, `outside`, `intersects`), and search (`matches`, `knn`).
 
-### Composing parameterized queries
+### Composing parameterised queries
 
 `surql` and `BoundQuery` bind parameters so you do not splice user input into query strings. See [Bound queries](bound-queries.md).
 
@@ -219,7 +219,7 @@ The `s`, `d`, `r`, and `u` templates build typed literals with SurrealQL's strin
 
 ## Best practices
 
-### Use surql for parameterization
+### Use surql for parameterisation
 
 ```ts
 const query = surql`SELECT * FROM users WHERE name = ${userName}`;

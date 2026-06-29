@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 The Go SDK provides two ways to execute SurrealQL queries: [`Query`](../api/core/db.md#query) for typed, parameterised queries and [`QueryRaw`](../api/core/db.md#queryraw) for composing multiple statements with per-statement results. Both are generic functions that work with [`*DB`](../api/core/db.md), [`*Session`](../api/core/session.md), and [`*Transaction`](../api/core/transaction.md).
 
-This page covers running queries, parameterizing them, handling multi-statement results, and managing connection-scoped variables.
+This page covers running queries, parameterising them, handling multi-statement results, and managing connection-scoped variables.
 
 ## API references
 
@@ -60,7 +60,7 @@ for _, qr := range *results {
 
 The function returns `*[]QueryResult[T]`, where each [`QueryResult`](../api/types/index.md#queryresult) contains the `Status`, execution `Time`, `Result`, and an optional `Error` for that statement.
 
-## Parameterizing queries
+## Parameterising queries
 
 Always use parameters (`$name`) instead of string interpolation to prevent injection attacks and ensure correct CBOR encoding of [value types](value-types.md).
 

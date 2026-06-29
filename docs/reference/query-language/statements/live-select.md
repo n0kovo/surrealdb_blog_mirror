@@ -1,5 +1,5 @@
 ---
-position: 17
+position: 19
 title: LIVE SELECT
 description: The LIVE SELECT statement can be used to initiate a real-time selection from a table, including the option to apply filters.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/live-select.mdx"

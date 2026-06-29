@@ -342,6 +342,6 @@ result = db.query("""
 
 ## See also
 
-- [Data Types](index.md) — All SDK data types
+- [Data types](index.md) — All SDK data types
 - [RecordID](record-id.md) — Record identifier
 - [SurrealQL Geometry Functions](../../../../reference/query-language/functions/database-functions/geo.md) — Geospatial query functions

@@ -518,6 +518,6 @@ const posts = createTable<Post>('posts');
 ## See also
 
 - [RecordId](record-id.md) - Record identifiers
-- [Data Types Overview](index.md) - All custom data types
-- [Query Builders](../queries/index.md) - Using Table in queries
-- [SurrealQL Tables](../../../../reference/query-language/statements/define/table.md) - Database table definitions
+- [Data types overview](index.md) - All custom data types
+- [Query builders](../queries/index.md) - Using Table in queries
+- [SurrealQL tables](../../../../reference/query-language/statements/define/table.md) - Database table definitions

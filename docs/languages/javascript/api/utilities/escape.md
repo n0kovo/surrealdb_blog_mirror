@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 Escape functions provide safe handling of identifiers and values in SurrealQL queries when you need to construct queries manually.
 
 > [!NOTE: Tip]
-> Prefer using [`surql`](surql.md) or [`BoundQuery`](bound-query.md) for automatic parameterization. Use escape functions only when absolutely necessary.
+> Prefer using [`surql`](surql.md) or [`BoundQuery`](bound-query.md) for automatic parameterisation. Use escape functions only when absolutely necessary.
 
 **Import:**
 ```ts
@@ -188,9 +188,9 @@ function escapeRangeBound<T>(bound: Bound<T>): string
 #### Returns
 `string` - Escaped range bound representation
 
-## Complete Examples
+## Complete examples
 
-### Dynamic Table Names
+### Dynamic table names
 
 ```ts
 
@@ -208,7 +208,7 @@ async function selectFromTable(tableName: string) {
 await selectFromTable('user-sessions'); // Safe
 ```
 
-### Dynamic Field Selection
+### Dynamic field selection
 
 ```ts
 
@@ -225,10 +225,10 @@ async function selectFields(table: string, fields: string[]) {
 await selectFields('users', ['first-name', 'last-name', 'email']);
 ```
 
-### Using surql Instead (Recommended)
+### Using surql instead (recommended)
 
 ```ts
-// Prefer surql for safe parameterization
+// Prefer surql for safe parameterisation
 const filters = { status: 'active', age: 18 };
 const query = surql`
     SELECT * FROM users 
@@ -237,23 +237,23 @@ const query = surql`
 `;
 ```
 
-## When to Use
+## When to use
 
-### ✅ Use Escape Functions When:
+### ✅ Use escape functions when:
 - Constructing queries with user-provided table/field names
 - Working with identifiers that have special characters
 - Building dynamic schema definitions
 - Interfacing with external query builders
 
-### ❌ Prefer Other Solutions:
+### ❌ Prefer other solutions:
 - **For values:** Use [`surql`](surql.md) or [`BoundQuery`](bound-query.md)
 - **For tables:** Use [`Table`](../values/table.md) class
 - **For record IDs:** Use [`RecordId`](../values/record-id.md) class
 - **For conditions:** Use [`expr`](expr.md)
 
-## Best Practices
+## Best practices
 
-### 1. Prefer Type-Safe Alternatives
+### 1. Prefer type-safe alternatives
 
 ```ts
 // Good: Type-safe
@@ -265,7 +265,7 @@ const escaped = escapeIdent('users');
 const users = await db.query(`SELECT * FROM ${escaped}`).collect();
 ```
 
-### 2. Validate Before Escaping
+### 2. Validate before escaping
 
 ```ts
 // Good: Validate first
@@ -284,32 +284,32 @@ function unsafeQuery(tableName: string) {
 }
 ```
 
-### 3. Use surql for Complex Queries
+### 3. Use surql for complex queries
 
 ```ts
-// Good: Automatic parameterization
+// Good: Automatic parameterisation
 const query = surql`SELECT * FROM users WHERE name = ${name}`;
 
 // Avoid: Manual string construction
 const query = `SELECT * FROM users WHERE name = '${name}'`;
 ```
 
-## Security Considerations
+## Security considerations
 
 > [!WARNING]
-> Escaping functions are NOT a complete defense against SQL injection. Always prefer parameterized queries using `surql` or `BoundQuery`.
+> Escaping functions are NOT a complete defense against SQL injection. Always prefer parameterised queries using `surql` or `BoundQuery`.
 
 ```ts
-// Secure: Parameterized
+// Secure: Parameterised
 const query = surql`SELECT * FROM users WHERE name = ${userInput}`;
 
 // Insecure: No escaping
 const query = `SELECT * FROM users WHERE name = '${userInput}'`;
 ```
 
-## See Also
+## See also
 
-- [surql](surql.md) - Recommended for parameterized queries
-- [BoundQuery](bound-query.md) - Parameterized query class
+- [surql](surql.md) - Recommended for parameterised queries
+- [BoundQuery](bound-query.md) - Parameterised query class
 - [Table](../values/table.md) - Type-safe table references
 - [RecordId](../values/record-id.md) - Type-safe record identifiers

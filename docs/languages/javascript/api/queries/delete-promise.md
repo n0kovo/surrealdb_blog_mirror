@@ -13,12 +13,12 @@ The `DeletePromise` class provides a chainable interface for configuring DELETE 
 
 **Source:** [query/delete.ts](https://github.com/surrealdb/surrealdb.js/blob/main/packages/sdk/src/query/delete.ts)
 
-## Type Parameters
+## Type parameters
 
 - `T` - The result type (deleted record data)
 - `J` - Boolean indicating if result is JSON (default: `false`)
 
-## Configuration Methods
+## Configuration methods
 
 ### `.output()` {#output}
 
@@ -184,9 +184,9 @@ deletePromise.stream()
 #### Returns
 `AsyncIterableIterator` - Async iterator
 
-## Complete Examples
+## Complete examples
 
-### Basic Deletion
+### Basic deletion
 
 ```ts
 
@@ -208,7 +208,7 @@ const deleted = await db.delete(new Table('temp_data'));
 console.log(`Deleted ${deleted.length} records`);
 ```
 
-### Capture Deleted Data
+### Capture deleted data
 
 ```ts
 // Store deleted data before removing
@@ -223,7 +223,7 @@ await db.create(new RecordId('archived_users', user.id))
     });
 ```
 
-### Conditional Deletion
+### Conditional deletion
 
 ```ts
 // Note: WHERE clauses are not directly supported on delete promises
@@ -235,7 +235,7 @@ const result = await db.query(
 console.log(`Deleted ${result[0].result.length} inactive users`);
 ```
 
-### Bulk Deletion with Streaming
+### Bulk deletion with streaming
 
 ```ts
 const deletedRecords = db.delete(new Table('old_logs'));
@@ -249,7 +249,7 @@ for await (const record of deletedRecords.stream()) {
 }
 ```
 
-### Soft Delete Pattern
+### Soft delete pattern
 
 ```ts
 // Instead of deleting, mark as deleted
@@ -269,7 +269,7 @@ if (user) {
 }
 ```
 
-### Delete with Error Handling
+### Delete with error handling
 
 ```ts
 try {
@@ -287,7 +287,7 @@ try {
 }
 ```
 
-### Performance Optimization
+### Performance optimization
 
 ```ts
 // Don't wait for deleted data if not needed
@@ -296,7 +296,7 @@ await db.delete(new Table('temp_cache'))
 // Faster execution
 ```
 
-### Delete with Timeout
+### Delete with timeout
 
 ```ts
 // For large deletions
@@ -304,7 +304,7 @@ const deleted = await db.delete(new Table('old_logs'))
     .timeout(Duration.parse('30s'));
 ```
 
-### Cascading Deletes
+### Cascading deletes
 
 ```ts
 // Delete user and all related data
@@ -326,7 +326,7 @@ await db.query(
 console.log('User and related data deleted');
 ```
 
-### Batch Deletion
+### Batch deletion
 
 ```ts
 const idsToDelete = ['user1', 'user2', 'user3'];
@@ -341,7 +341,7 @@ const result = await db.query(
 ).collect();
 ```
 
-### Archive Before Delete
+### Archive before delete
 
 ```ts
 async function archiveAndDelete(recordId: RecordId) {
@@ -368,7 +368,7 @@ async function archiveAndDelete(recordId: RecordId) {
 await archiveAndDelete(new RecordId('users', 'john'));
 ```
 
-## Important Notes
+## Important notes
 
 > [!WARNING]
 > DELETE operations are permanent and cannot be undone. Always ensure you have backups or use the `.output('BEFORE')` method to capture data before deletion.
@@ -376,7 +376,7 @@ await archiveAndDelete(new RecordId('users', 'john'));
 > [!NOTE: Tip]
 > For conditional deletions, use [`db.query()`](../core/surreal-queryable.md#query) with a DELETE statement including a WHERE clause.
 
-## Chaining Pattern
+## Chaining pattern
 
 ```ts
 const result = await db.delete(new Table('users'))
@@ -384,9 +384,9 @@ const result = await db.delete(new Table('users'))
     .timeout(Duration.parse('10s'));
 ```
 
-## See Also
+## See also
 
 - [SurrealQueryable.delete()](../core/surreal-queryable.md#delete) - Method that returns DeletePromise
 - [UpdatePromise](update-promise.md) - Update records
 - [Query](query.md) - Raw SurrealQL for conditional deletes
-- [Query Overview](index.md) - All query builder classes
+- [Query overview](index.md) - All query builder classes

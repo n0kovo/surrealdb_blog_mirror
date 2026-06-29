@@ -605,7 +605,7 @@ SELECT * FROM transfer;
 
 ### Loans and repayments
 
-Loan management system with automated interest calculations and repayment scheduling. Features [parameterized loan terms](../../../reference/query-language/statements/define/param.md), mathematical payment calculations using [custom functions](../../../reference/query-language/statements/define/function.md), and status tracking. Demonstrates complex financial formulas, temporal data management, and regulatory compliance constraints.
+Loan management system with automated interest calculations and repayment scheduling. Features [parameterised loan terms](../../../reference/query-language/statements/define/param.md), mathematical payment calculations using [custom functions](../../../reference/query-language/statements/define/function.md), and status tracking. Demonstrates complex financial formulas, temporal data management, and regulatory compliance constraints.
 
 ```surql
 -- Some government-set maximum term for loans

@@ -1,5 +1,5 @@
 ---
-position: 8
+position: 16
 title: ALTER TABLE
 description: The ALTER TABLE statement is used to alter a defined table.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/alter/table.mdx"

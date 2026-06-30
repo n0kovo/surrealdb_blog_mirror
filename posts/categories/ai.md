@@ -1,10 +1,8 @@
 # Category: ai
 
-_39 posts_  
+_38 posts_  
 [← Index](../../README.md)
 
-- **2026-06-26** · [Generating embeddings inside SurrealQL with a custom function](../2026/06/generating-embeddings-inside-surrealql-with-a-custom-function.md)  
-  `ai` `tutorials` — Define a custom SurrealQL function to call any embedding API, then run semantic search, graph traversal and field shaping in one query
 - **2026-06-22** · [Build apps on your data with SurrealDB and Lovable](../2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md)  
   `tutorials` `featured` `ai` — Connect SurrealDB to Lovable using the Model Context Protocol (MCP), so the Lovable Agent can read your schema, query your live data, and build a working application on top of it without you writing any glue code.
 - **2026-05-19** · [Agentic retrieval for structured data with text-to-surql](../2026/05/agentic-retrieval-for-structured-data-with-text-to-surql.md)  

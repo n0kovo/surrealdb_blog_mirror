@@ -1,34 +1,7 @@
 {
-  "generated_at": "2026-06-29T07:45:16.783294+00:00",
-  "count": 239,
+  "generated_at": "2026-06-30T07:20:08.852411+00:00",
+  "count": 237,
   "posts": [
-    {
-      "slug": "generating-embeddings-inside-surrealql-with-a-custom-function",
-      "title": "Generating embeddings inside SurrealQL with a custom function",
-      "summary": "Define a custom SurrealQL function to call any embedding API, then run semantic search, graph traversal and field shaping in one query",
-      "publishDate": "2026-06-26T12:52:41.000Z",
-      "categories": [
-        "ai",
-        "tutorials"
-      ],
-      "readTime": "5 min read",
-      "imageUrl": "https://cdn.surrealdb.com/ydz0f41005mduy56514grpbv.auto",
-      "source": "https://surrealdb.com/blog/generating-embeddings-inside-surrealql-with-a-custom-function",
-      "local_path": "2026/06/generating-embeddings-inside-surrealql-with-a-custom-function.md"
-    },
-    {
-      "slug": "graph-traversals-and-time-travel-incident-response-in-one-query-language",
-      "title": "Graph traversals and time travel: incident response in one query language",
-      "summary": "Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.",
-      "publishDate": "2026-06-25T11:51:37.000Z",
-      "categories": [
-        "tutorials"
-      ],
-      "readTime": "6 min read",
-      "imageUrl": "https://cdn.surrealdb.com/9qcg3iouf6k67fi74zcg1rum.auto",
-      "source": "https://surrealdb.com/blog/graph-traversals-and-time-travel-incident-response-in-one-query-language",
-      "local_path": "2026/06/graph-traversals-and-time-travel-incident-response-in-one-query-language.md"
-    },
     {
       "slug": "social-graphs-for-activity-tracking-apps",
       "title": "Social graphs for activity-tracking apps",

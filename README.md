@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-06-29 07:45 UTC_
+_Last updated: 2026-06-30 07:20 UTC_
 
 ## Stats
 
-- **Total posts:** 239
+- **Total posts:** 237
 - **First post:** 2022-07-20
-- **Latest post:** 2026-06-26
+- **Latest post:** 2026-06-23
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-06-29 07:45 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 44 posts
+- [2026](posts/years/2026.md) — 42 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -27,21 +27,17 @@ _Last updated: 2026-06-29 07:45 UTC_
 
 ### By category
 
-- [ai](posts/categories/ai.md) — 39 posts
+- [ai](posts/categories/ai.md) — 38 posts
 - [community](posts/categories/community.md) — 34 posts
 - [company](posts/categories/company.md) — 41 posts
 - [engineering](posts/categories/engineering.md) — 41 posts
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 107 posts
 - [releases](posts/categories/releases.md) — 48 posts
-- [tutorials](posts/categories/tutorials.md) — 91 posts
+- [tutorials](posts/categories/tutorials.md) — 89 posts
 
 ## Latest posts
 
-- **2026-06-26** · [Generating embeddings inside SurrealQL with a custom function](posts/2026/06/generating-embeddings-inside-surrealql-with-a-custom-function.md)  
-  `ai` `tutorials` — Define a custom SurrealQL function to call any embedding API, then run semantic search, graph traversal and field shaping in one query
-- **2026-06-25** · [Graph traversals and time travel: incident response in one query language](posts/2026/06/graph-traversals-and-time-travel-incident-response-in-one-query-language.md)  
-  `tutorials` — Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.
 - **2026-06-23** · [Social graphs for activity-tracking apps](posts/2026/06/social-graphs-for-activity-tracking-apps.md)  
   `tutorials` — Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in a single query.
 - **2026-06-22** · [Build apps on your data with SurrealDB and Lovable](posts/2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md)  
@@ -58,3 +54,7 @@ _Last updated: 2026-06-29 07:45 UTC_
   `engineering` — A good choice to complement unit and integration tests, fuzz testing lets you use semi-random data to discover obscure bugs before users do.
 - **2026-06-09** · [SurrealDB is now available on the Nebius AI Cloud Marketplace](posts/2026/06/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace.md)  
   `releases` — SurrealDB is now available on the Nebius AI Cloud Marketplace.
+- **2026-06-05** · [Context layers, semantic layers, and knowledge graphs: the modern data architecture for AI](posts/2026/06/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai.md)  
+  `company` — Three concepts AI teams constantly confuse: a context layer assembles the right data into an LLM prompt at query time, a semantic layer maps raw data to business meaning, and a knowledge graph stores entities and their relationships. Most teams build all three by stitching together separate graph, vector, and relational systems - creating sync problems, higher latency, and rising costs. SurrealDB's multi-model architecture handles all three natively, letting a single SurrealQL query run vector search, graph traversal, and document retrieval in one round trip
+- **2026-05-29** · [SurrealDB 3.x by the numbers](posts/2026/05/surrealdb-3-x-by-the-numbers.md)  
+  `engineering` `company` `featured` — Fresh SurrealDB 3.x benchmarks: 141k ops\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.

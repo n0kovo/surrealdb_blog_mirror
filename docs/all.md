@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1027 pages_  
+_1066 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -832,76 +832,154 @@ _1027 pages_
   A complete working example that connects to SurrealDB from Mojo, runs a query, and reads the response.
 - [SDK languages](languages/overview.md)
   SurrealDB has official SDKs for many languages, along with non-official SDKs created by the community.
-- [Authentication](languages/php/core/authentication.md)
+- [Configuration](languages/php/frameworks/laravel/configuration.md)
+  Configure the SurrealDB Laravel integration with environment variables, authentication modes, multiple named connections, and the ORM model list.
+- [Container and facades](languages/php/frameworks/laravel/container-and-facades.md)
+  The service providers, container bindings, and the SurrealDB, Surreal, and Surqlize facades the Laravel integration registers.
+- [Overview](languages/php/frameworks/laravel/index.md)
+  The Laravel integration wires the SurrealDB PHP SDK and the Surqlize ORM into Laravel's config, service container, facades, and Artisan commands.
+- [Installation](languages/php/frameworks/laravel/installation.md)
+  Install the SurrealDB Laravel integration with Composer and publish the SDK and ORM configuration files.
+- [Queries and transactions](languages/php/frameworks/laravel/queries-and-transactions.md)
+  Run Surqlize model queries, raw SurrealQL, and transactions in a Laravel application, including against named connections.
+- [Schema commands](languages/php/frameworks/laravel/schema-commands.md)
+  Dump and apply your Surqlize schema in a Laravel application with the surqlize:schema-dump and surqlize:schema-apply Artisan commands.
+- [Testing](languages/php/frameworks/laravel/testing.md)
+  Test SurrealDB code in Laravel with the fake query executor, query assertions, and the trait that resets Surqlize's global state between tests.
+- [Overview](languages/php/index.md)
+  The SurrealDB SDK for PHP lets you query a remote SurrealDB instance from any PHP application, with a stable v1 release and a v2 rewrite in alpha.
+- [Code generation and CLI](languages/php/libraries/surqlize/code-generation-and-cli.md)
+  Generate typed field adapters for Surqlize models and run the Surqlize CLI for field generation, schema application, and memory reports.
+- [Connections](languages/php/libraries/surqlize/connections.md)
+  Register an SDK executor with Surqlize's ConnectionManager, and inject a per-query executor when you need more than one connection.
+- [Edges and graph](languages/php/libraries/surqlize/edges-and-graph.md)
+  Model SurrealDB graph relations in Surqlize with edge models, traverse them in a SELECT, and create them with RELATE.
+- [Overview](languages/php/libraries/surqlize/index.md)
+  Surqlize is an object-relational mapper for SurrealDB in PHP, built on version 2 of the SDK, with attribute-driven models, a typed query builder, graph relations, and schema tooling.
+- [Installation](languages/php/libraries/surqlize/installation.md)
+  Install Surqlize with Composer, including the alpha v2 SurrealDB PHP SDK it depends on.
+- [Models](languages/php/libraries/surqlize/models.md)
+  Describe SurrealDB tables as PHP classes in Surqlize, using attributes for the table name, record id, casts, schema, and specialised fields.
+- [Mutations](languages/php/libraries/surqlize/mutations.md)
+  Create, update, upsert, and delete records in Surqlize with model helpers and the mutation builder, including payload modes and return modes.
+- [Querying](languages/php/libraries/surqlize/querying.md)
+  Build SELECT queries in Surqlize with typed fields, where clauses, ordering, projections, and the advanced SurrealQL SELECT clauses, then execute or compile them.
+- [Schema](languages/php/libraries/surqlize/schema.md)
+  Define SurrealDB tables, fields, indexes, and analysers in Surqlize with a schema contract or the fluent schema DSL, then apply them with the schema manager.
+- [Search, vector, and geometry](languages/php/libraries/surqlize/search-vector-geometry.md)
+  Compile SurrealDB full-text search, vector KNN, and geometry expressions in Surqlize with the SearchField, VectorField, and GeometryField helpers.
+- [Transactions](languages/php/libraries/surqlize/transactions.md)
+  Batch Surqlize ORM queries into a single SurrealDB transaction with automatic rollback, and handle the validation exceptions Surqlize raises.
+- [Authentication](languages/php/v1/concepts/authentication.md)
   Learn how to authenticate users and secure the database with the SurrealDB PHP SDK.
-- [Data querying](languages/php/core/data-querying.md)
-  Learn how to interact with the database and perform CRUD operations using the SurrealDB SDK for PHP.
-- [SDK concepts](languages/php/core/index.md)
-  Learn the core concepts of the SurrealDB SDK for PHP. Understand how to connect to a SurrealDB instance, manage authentication, and interact with the database.
-- [Initialization](languages/php/core/initialization.md)
-  Learn how to initialize the SurrealDB SDK for PHP. Understand how to connect to a SurrealDB instance, manage authentication, and interact with the database.
-- [Data types](languages/php/data-types.md)
+- [Connecting to SurrealDB](languages/php/v1/concepts/connecting.md)
+  Initialize the SurrealDB PHP SDK, connect to an instance, and select a namespace and database.
+- [Data types](languages/php/v1/concepts/data-types.md)
   The SurrealDB SDK for PHP enables simple and advanced querying of a remote database.
-- [PHP SDK](languages/php/index.md)
-  The SurrealDB SDK for PHP enables simple and advanced querying of a remote database.
-- [authenticate](languages/php/methods/authenticate.md)
+- [Executing queries](languages/php/v1/concepts/executing-queries.md)
+  Interact with the database and perform CRUD operations using version 1 of the SurrealDB PHP SDK.
+- [Overview](languages/php/v1/index.md)
+  Version 1 is the current stable release of the SurrealDB PHP SDK, with direct RPC-style methods for querying a remote database.
+- [Installation](languages/php/v1/installation.md)
+  Install version 1 of the SurrealDB PHP SDK with Composer.
+- [authenticate](languages/php/v1/methods/authenticate.md)
   Authenticate the current connection with a JWT token using the authenticate method in the SurrealDB PHP SDK.
-- [close](languages/php/methods/close.md)
+- [close](languages/php/v1/methods/close.md)
   Close the persistent connection to the database using the close method in the SurrealDB PHP SDK.
-- [connect](languages/php/methods/connect.md)
+- [connect](languages/php/v1/methods/connect.md)
   Connect to a local or remote database endpoint using the connect method in the SurrealDB PHP SDK.
-- [create](languages/php/methods/create.md)
+- [create](languages/php/v1/methods/create.md)
   Create a record in the database using the create method with the SurrealDB PHP SDK.
-- [delete](languages/php/methods/delete.md)
+- [delete](languages/php/v1/methods/delete.md)
   Delete records from a table in the database using the delete method with the SurrealDB PHP SDK.
-- [export](languages/php/methods/export.md)
+- [export](languages/php/v1/methods/export.md)
   Export data from a local or remote database using the export method with the SurrealDB PHP SDK.
-- [health](languages/php/methods/health.md)
+- [health](languages/php/v1/methods/health.md)
   Check the storage layer health of a local or remote database using the health method with the SurrealDB PHP SDK.
-- [import](languages/php/methods/import.md)
+- [import](languages/php/v1/methods/import.md)
   Import data into an existing database using the import method with the SurrealDB PHP SDK.
-- [SDK methods](languages/php/methods/index.md)
+- [SDK methods](languages/php/v1/methods/index.md)
   List of methods available in the SurrealDB SDK for PHP. Learn how to connect to a database, query data, and manage authentication.
-- [info](languages/php/methods/info.md)
+- [info](languages/php/v1/methods/info.md)
   The info method returns information about the authenticated user in the SurrealDB PHP SDK.
-- [insert](languages/php/methods/insert.md)
-  Insert one or multiple records in the database using the insert method with the SurrealDB PHP SDK.
-- [insertRelation](languages/php/methods/insertRelation.md)
+- [insertRelation](languages/php/v1/methods/insert-relation.md)
   Insert one or multiple relations in the database using the insertRelation method with the SurrealDB PHP SDK.
-- [invalidate](languages/php/methods/invalidate.md)
+- [insert](languages/php/v1/methods/insert.md)
+  Insert one or multiple records in the database using the insert method with the SurrealDB PHP SDK.
+- [invalidate](languages/php/v1/methods/invalidate.md)
   Invalidate the authentication for the current connection using the invalidate method in the SurrealDB PHP SDK.
-- [let](languages/php/methods/let.md)
+- [let](languages/php/v1/methods/let.md)
   Assign parameters to a query using the let method in the SurrealDB PHP SDK.
-- [merge](languages/php/methods/merge.md)
+- [merge](languages/php/v1/methods/merge.md)
   The ->merge() method for the SurrealDB SDK for PHP merges record data with the specified data.
-- [patch](languages/php/methods/patch.md)
+- [patch](languages/php/v1/methods/patch.md)
   The ->patch() method for the SurrealDB SDK for PHP applies JSON patch changes to records in the database.
-- [query](languages/php/methods/query.md)
-  The ->query() method for the SurrealDB SDK for PHP runs a set of SurrealQL statements against the database.
-- [queryRaw](languages/php/methods/queryRaw.md)
+- [queryRaw](languages/php/v1/methods/query-raw.md)
   The queryRaw method in the SurrealDB PHP SDK allows you to execute raw SQL queries and return the raw RPC response.
-- [run](languages/php/methods/run.md)
+- [query](languages/php/v1/methods/query.md)
+  The ->query() method for the SurrealDB SDK for PHP runs a set of SurrealQL statements against the database.
+- [run](languages/php/v1/methods/run.md)
   The run method in the SurrealDB PHP SDK allows you to execute a defined SurrealQL function on the remote database.
-- [select](languages/php/methods/select.md)
+- [select](languages/php/v1/methods/select.md)
   The ->select() method for the SurrealDB SDK for PHP selects all or specific records from the database.
-- [signin](languages/php/methods/signin.md)
+- [signin](languages/php/v1/methods/signin.md)
   The ->signin() method for the SurrealDB SDK for PHP signs in to a specific access method.
-- [signup](languages/php/methods/signup.md)
+- [signup](languages/php/v1/methods/signup.md)
   The ->signup() method for the SurrealDB SDK for PHP signs up to a specific access method.
-- [status](languages/php/methods/status.md)
+- [status](languages/php/v1/methods/status.md)
   The status method in the SurrealDB PHP SDK retrieves the current status of a remote database.
-- [unset](languages/php/methods/unset.md)
+- [unset](languages/php/v1/methods/unset.md)
   The ->unset() method for the SurrealDB SDK for PHP removes a parameter from the connection.
-- [update](languages/php/methods/update.md)
+- [update](languages/php/v1/methods/update.md)
   The ->update() method for the SurrealDB SDK for Rust updates all or specific records in the database if they exist.
-- [upsert](languages/php/methods/upsert.md)
+- [upsert](languages/php/v1/methods/upsert.md)
   The upsert method in the SurrealDB PHP SDK allows you to create or update a record in a table.
-- [use](languages/php/methods/use.md)
+- [use](languages/php/v1/methods/use.md)
   The ->use() method for the SurrealDB SDK for PHP switches to a specific namespace and database.
-- [version](languages/php/methods/version.md)
+- [version](languages/php/v1/methods/version.md)
   The version method in the SurrealDB PHP SDK retrieves the current version of a remote database.
-- [Getting started](languages/php/setup.md)
-  The SurrealDB SDK for PHP enables simple and advanced querying of a remote database.
+- [Quickstart](languages/php/v1/start.md)
+  Connect to SurrealDB with version 1 of the PHP SDK and run your first queries.
+- [Core classes](languages/php/v2/api/core.md)
+  Reference for the Surreal class, the ConnectionController, and the supporting connection types in version 2 of the PHP SDK.
+- [Data types](languages/php/v2/api/data-types.md)
+  Reference for the SurrealQL value classes in version 2 of the PHP SDK, in the SurrealDB\SDK\Types namespace.
+- [Query builders](languages/php/v2/api/query-builders.md)
+  Reference for the fluent query builders in version 2 of the PHP SDK, including select, create, update, delete, insert, and relate.
+- [Utilities](languages/php/v2/api/utilities.md)
+  Reference for BoundQuery, driver options, enums, and helpers in version 2 of the PHP SDK.
+- [Authentication](languages/php/v2/concepts/authentication.md)
+  Sign in and sign up with typed credentials in version 2 of the PHP SDK, then manage tokens and authentication state.
+- [Connecting to SurrealDB](languages/php/v2/concepts/connecting-to-surrealdb.md)
+  Open a connection to a SurrealDB instance with version 2 of the PHP SDK, select a namespace and database, and configure reconnection.
+- [Data types](languages/php/v2/concepts/data-types.md)
+  How version 2 of the PHP SDK maps SurrealQL data types to native PHP types and custom value classes.
+- [Error handling](languages/php/v2/concepts/error-handling.md)
+  Handle failures in version 2 of the PHP SDK with the typed exception hierarchy rooted at SurrealException.
+- [Events](languages/php/v2/concepts/events.md)
+  Observe connection lifecycle and RPC traffic in version 2 of the PHP SDK with the high-level subscribe() API and the lower-level PSR-14 event dispatcher.
+- [Executing queries](languages/php/v2/concepts/executing-queries.md)
+  Run raw SurrealQL or use the fluent query builders for select, create, update, and delete in version 2 of the PHP SDK.
+- [Live queries](languages/php/v2/concepts/live-queries.md)
+  Subscribe to real-time changes from SurrealDB over a WebSocket connection with version 2 of the PHP SDK.
+- [Middleware](languages/php/v2/concepts/middleware.md)
+  Intercept every RPC in version 2 of the PHP SDK with middleware, including the built-in logging, telemetry, retry, and authentication steps.
+- [Observability](languages/php/v2/concepts/observability.md)
+  Emit OpenTelemetry traces and metrics from version 2 of the PHP SDK, with runtime-aware presets, a configurable provider factory, and vendor-neutral tracing and metrics seams.
+- [Runtimes and workers](languages/php/v2/concepts/runtimes.md)
+  Configure your PHP environment (PHP-FPM, OpenSwoole, or FrankenPHP) so live queries and other long-lived connections run without blocking your application.
+- [Sessions](languages/php/v2/concepts/sessions.md)
+  Run multiple independent sessions over a single WebSocket connection with version 2 of the PHP SDK, each with its own namespace, variables, and authentication.
+- [Transactions](languages/php/v2/concepts/transactions.md)
+  Run multiple statements atomically with version 2 of the PHP SDK, using a SurrealQL transaction block or explicit transaction handles.
+- [Overview](languages/php/v2/index.md)
+  Version 2 of the SurrealDB SDK for PHP is a rewrite with a fluent query builder, typed credentials, and a PSR-based transport layer.
+- [Installation](languages/php/v2/installation.md)
+  Install version 2 of the SurrealDB PHP SDK with Composer, including a PSR-18 HTTP client.
+- [Migration guide](languages/php/v2/migration.md)
+  Move a project from version 1 to version 2 of the SurrealDB PHP SDK, with a method-by-method mapping of the breaking changes.
+- [Quickstart](languages/php/v2/start.md)
+  Connect to SurrealDB with version 2 of the PHP SDK and run your first queries.
 - [SurrealSession](languages/python/api/core/surreal-session.md)
   Isolated session for running queries with independent namespace, database, and authentication state.
 - [SurrealTransaction](languages/python/api/core/surreal-transaction.md)

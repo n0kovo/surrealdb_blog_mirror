@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-06-30T07:20:08.852411+00:00",
-  "count": 237,
+  "generated_at": "2026-07-01T07:32:25.814512+00:00",
+  "count": 238,
   "posts": [
+    {
+      "slug": "introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale",
+      "title": "Introducing Scale: SurrealDB Cloud, built for high availability and scale ",
+      "summary": "SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.",
+      "publishDate": "2026-06-30T23:19:08.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/dltwdtp8w6f8t212zss1ibf8.auto",
+      "source": "https://surrealdb.com/blog/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale",
+      "local_path": "2026/06/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md"
+    },
     {
       "slug": "social-graphs-for-activity-tracking-apps",
       "title": "Social graphs for activity-tracking apps",

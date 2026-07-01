@@ -15,7 +15,7 @@ SurrealDB can be used in the programming language of your choice via the followi
 - [Mojo](mojo/start.md)
 - [Go](golang/start.md)
 - [.NET (C#)](dotnet/index.md)
-- [PHP](php/setup.md)
+- [PHP](php/index.md)
 - [Swift](swift/index.md)
 
 ## Community and experimental clients

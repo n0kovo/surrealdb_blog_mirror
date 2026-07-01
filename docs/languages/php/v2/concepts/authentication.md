@@ -1,0 +1,221 @@
+---
+position: 2
+title: Authentication
+description: Sign in and sign up with typed credentials in version 2 of the PHP SDK, then manage tokens and authentication state.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/php/v2/concepts/authentication.mdx"
+---
+
+# Authentication
+
+SurrealDB supports several levels of authentication, from [system users](../../../../learn/security/authentication/authentication.md#system-user) to fine-grained [record access](../../../../learn/security/authentication/authentication.md#record-users). Version 2 of the PHP SDK represents each level as a typed credential class, so the required fields are explicit.
+
+## API references
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Method</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="row" data-label="Method"><a href="/docs/languages/php/v2/api/core#signin"> ` $db->signin($auth) `</a></td>
+            <td scope="row" data-label="Description">Signs in as a root, namespace, database, or record user</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Method"><a href="/docs/languages/php/v2/api/core#signup"> ` $db->signup($auth) `</a></td>
+            <td scope="row" data-label="Description">Signs up a new record user through an access method</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Method"><a href="/docs/languages/php/v2/api/core#authenticate"> ` $db->authenticate($token) `</a></td>
+            <td scope="row" data-label="Description">Authenticates the session with an existing token</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Method"><a href="/docs/languages/php/v2/api/core#invalidate"> ` $db->invalidate() `</a></td>
+            <td scope="row" data-label="Description">Invalidates the current session, signing the user out</td>
+        </tr>
+    </tbody>
+</table>
+
+## Credential types
+
+Each authentication level has a credential class in the `SurrealDB\SDK\Auth` namespace.
+
+| Class | Level | Constructor |
+|-------|-------|-------------|
+| `RootAuth` | Root (system) user | `new RootAuth($username, $password)` |
+| `NamespaceAuth` | Namespace user | `new NamespaceAuth($namespace, $username, $password)` |
+| `DatabaseAuth` | Database user | `new DatabaseAuth($namespace, $database, $username, $password)` |
+| `RecordAccessAuth` | Record access | `new RecordAccessAuth($namespace, $database, $access, $variables)` |
+| `BearerAuth` | Bearer access key | `new BearerAuth($namespace, $database, $access, $key)` |
+
+## Signing in users
+
+The `signin()` method authenticates an existing user. Pass the credential class for the level you need. It returns a [`Tokens`](../api/core.md#tokens) object holding the access token and an optional refresh token.
+
+**Root user**
+
+```php
+use SurrealDB\SDK\Auth\RootAuth;
+
+$tokens = $db->signin(new RootAuth('root', 'surrealdb'));
+```
+
+**Namespace user**
+
+```php
+use SurrealDB\SDK\Auth\NamespaceAuth;
+
+$tokens = $db->signin(new NamespaceAuth('surrealdb', 'tobie', 'surrealdb'));
+```
+
+**Database user**
+
+```php
+use SurrealDB\SDK\Auth\DatabaseAuth;
+
+$tokens = $db->signin(new DatabaseAuth('surrealdb', 'docs', 'tobie', 'surrealdb'));
+```
+
+**Record access**
+
+```php
+use SurrealDB\SDK\Auth\RecordAccessAuth;
+
+$tokens = $db->signin(new RecordAccessAuth(
+    namespace: 'surrealdb',
+    database: 'docs',
+    access: 'account',
+    variables: [
+        'email' => 'info@surrealdb.com',
+        'pass' => '123456',
+    ],
+));
+
+echo $tokens->access;
+```
+
+The session is authenticated after a successful sign in.
+
+> [!NOTE]
+> The credential classes map to the keys SurrealDB expects (`user`, `pass`, `ns`, `db`, `ac`). You can also pass a raw array if you prefer, but the typed classes document the required fields and avoid mistakes.
+
+## Signing up users
+
+The `signup()` method creates a new record user through a defined [record access method](../../../../reference/query-language/statements/define/access/record.md). Use `RecordAccessAuth` with the variables your access definition expects.
+
+```php
+use SurrealDB\SDK\Auth\RecordAccessAuth;
+
+$tokens = $db->signup(new RecordAccessAuth(
+    namespace: 'surrealdb',
+    database: 'docs',
+    access: 'account',
+    variables: [
+        'email' => 'info@surrealdb.com',
+        'pass' => '123456',
+    ],
+));
+```
+
+## Authenticating with a token
+
+If you already have an access token, authenticate with it directly instead of signing in again. This restores a session without re-entering credentials.
+
+```php
+$db->authenticate($accessToken);
+```
+
+## Bearer access
+
+A bearer access key authenticates against a defined [bearer access method](../../../../reference/query-language/statements/define/access/bearer.md). Use `BearerAuth` with the access name and the key.
+
+```php
+use SurrealDB\SDK\Auth\BearerAuth;
+
+$tokens = $db->signin(new BearerAuth(
+    namespace: 'surrealdb',
+    database: 'docs',
+    access: 'api',
+    key: $bearerKey,
+));
+```
+
+## Refreshing and revoking tokens
+
+When a record access method issues refresh tokens, `signin()` and `signup()` return a `Tokens` object with both an `access` and a `refresh` token. Use the refresh token to obtain a new pair without re-entering credentials. Both operations are on the [`ConnectionController`](../api/core.md#connectioncontroller).
+
+```php
+$tokens = $db->connection()->refresh($tokens);   // new access + refresh pair
+
+$db->connection()->revoke($tokens);              // invalidate the refresh token
+```
+
+> [!IMPORTANT]
+> Refresh tokens require SurrealDB `3.0.0` or later. Check with `isFeatureSupported(Features::refreshTokens())` before relying on them.
+
+By default the SDK renews an expiring token in the background. To sign the session out instead of renewing it, set `invalidateOnExpiry` to `true` on [`connect()`](connecting-to-surrealdb.md#connection-options).
+
+```php
+use SurrealDB\SDK\Connection\ConnectOptions;
+
+$db->connect('ws://127.0.0.1:8000/rpc', new ConnectOptions(
+    invalidateOnExpiry: true,
+));
+```
+
+## Providing credentials on connect
+
+Rather than calling `signin()` separately, pass credentials to `connect()` through the `authentication` option. This is preferred for system users because it lets the SDK re-authenticate automatically after a reconnect.
+
+```php
+use SurrealDB\SDK\Connection\ConnectOptions;
+use SurrealDB\SDK\Auth\RootAuth;
+
+$db->connect('ws://127.0.0.1:8000/rpc', new ConnectOptions(
+    namespace: 'surrealdb',
+    database: 'docs',
+    authentication: new RootAuth('root', 'surrealdb'),
+));
+```
+
+The `authentication` option also accepts a closure, which is useful when credentials are fetched at runtime.
+
+```php
+$db->connect('ws://127.0.0.1:8000/rpc', new ConnectOptions(
+    authentication: fn () => new RootAuth(getUsername(), getPassword()),
+));
+```
+
+## Listening to authentication changes
+
+The SDK emits an `auth` event whenever the authentication state changes, including on sign in, sign up, token renewal, and invalidation. The payload is the current `Tokens` object, or `null` when signed out.
+
+```php
+$db->subscribe('auth', function (?Tokens $tokens): void {
+    echo $tokens === null ? 'Signed out' : 'Authenticated';
+});
+```
+
+## Selecting the current user
+
+The `auth()` builder compiles to `SELECT * FROM ONLY $auth`, which returns the record of the authenticated record user.
+
+```php
+$me = $db->auth()->execute();
+```
+
+## Signing out
+
+The `invalidate()` method clears the session's authentication. Queries after this run unauthenticated.
+
+```php
+$db->invalidate();
+```
+
+## Learn more
+
+- [Surreal API reference](../api/core.md) for the authentication method signatures
+- [Authentication in SurrealDB](../../../../learn/security/authentication/authentication.md) for how authentication works at the database level
+- [DEFINE ACCESS](../../../../reference/query-language/statements/define/access/index.md) for defining access methods

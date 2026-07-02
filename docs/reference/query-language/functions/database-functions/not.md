@@ -1,5 +1,5 @@
 ---
-position: 14
+position: 15
 title: Not
 description: This function can be used to reverse the truthiness of a value.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/not.mdx"

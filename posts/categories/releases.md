@@ -1,10 +1,8 @@
 # Category: releases
 
-_49 posts_  
+_48 posts_  
 [← Index](../../README.md)
 
-- **2026-06-30** · [Introducing Scale: SurrealDB Cloud, built for high availability and scale ](../2026/06/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  
-  `releases` — SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.
 - **2026-06-22** · [A living knowledge layer for your agents: SurrealDB + CocoIndex](../2026/06/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex.md)  
   `releases` — Announcing the native SurrealDB connector for CocoIndex — build a continuously-fresh document store, knowledge graph, and vector index in a single database, from one declarative pipeline.
 - **2026-06-16** · [What's new in Surrealist 3.9](../2026/06/whats-new-in-surrealist-3-9.md)  

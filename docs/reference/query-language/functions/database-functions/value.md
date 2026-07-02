@@ -1,5 +1,5 @@
 ---
-position: 26
+position: 28
 title: Value
 description: This module contains several miscellaneous functions that can be used with values of any type.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/value.mdx"

@@ -5,7 +5,7 @@ generated: stub
 
 # Concepts And Guides
 
-_Auto-generated index — 13 pages._
+_Auto-generated index — 14 pages._
 
 ## Pages
 
@@ -23,6 +23,8 @@ _Auto-generated index — 13 pages._
   Queries can make use of parameters which hold stored values, even those from the output of a previous query.
 - [Query optimisation](query-optimisation.md)
   Practical ideas for faster SurrealQL: EXPLAIN, record ranges, async events, denormalised flags, and indexes.
+- [Representations and codecs](representations-and-codecs.md)
+  Choose the right built-in when moving data between strings, bytes, tokens, patches, and executable query text.
 - [Sequences](sequences.md)
   SurrealDB sequences for monotonic numeric identifiers, and how they differ from default randomly generated record IDs.
 - [Sessions and scoping](sessions-and-scoping.md)

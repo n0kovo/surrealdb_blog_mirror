@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Overview
-description: Query SurrealDB graph data with ISO GQL (OpenGQL) — a Cypher-like graph pattern language over HTTP and RPC.
+description: Query SurrealDB graph data with ISO GQL — a Cypher-like graph pattern language over HTTP and RPC.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/gql/overview.mdx"
 ---
 
@@ -9,10 +9,23 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 *Since v3.2.0*
 
-SurrealDB supports **[ISO/IEC 39075 GQL](https://www.iso.org/standard/76120.html)** (often called **OpenGQL**) for **read-only graph pattern matching** over your existing tables and `RELATE` edges. The surface syntax is closer to **Cypher-style `MATCH … RETURN`** than to SurrealQL `SELECT`, but it runs on the same storage model: node labels map to tables, edge types map to relation tables, and properties map to record fields.
+SurrealDB supports **[ISO/IEC 39075 GQL](https://www.iso.org/standard/76120.html)** for **graph pattern matching and data modification** over your existing tables and `RELATE` edges. The surface syntax is closer to **Cypher-style `MATCH … RETURN`** than to SurrealQL `SELECT`, but it runs on the same storage model: node labels map to tables, edge types map to relation tables, and properties map to record fields.
 
 > [!WARNING]
-> OpenGQL is **experimental** in 3.2. Enable it at server start with `--allow-experimental=opengql` (or `SURREAL_CAPS_ALLOW_EXPERIMENTAL=opengql`). The language is **read-only** in this release — `CREATE`, `UPDATE`, `DELETE`, and `RELATE` are not supported via GQL.
+> GQL is **experimental** in 3.2. Enable it at server start with `--allow-experimental gql` (or `SURREAL_CAPS_ALLOW_EXPERIMENTAL=gql`). The surface includes read queries (`MATCH … RETURN`) and data-modifying statements (`INSERT`, `SET`, `REMOVE`, `DELETE`) — see [GQL mutations](mutations.md).
+
+## GQL is not GraphQL
+
+SurrealDB exposes two different graph query languages on **separate** endpoints. Do not abbreviate [GraphQL](../graphql/overview.md) to `gql` in product identifiers — the short name **`gql`** refers to ISO GQL only.
+
+| | **GQL** (this guide) | **[GraphQL](../graphql/overview.md)** |
+| --- | --- | --- |
+| Standard | [ISO/IEC 39075 GQL](https://www.iso.org/standard/76120.html) | [GraphQL](https://graphql.org/) |
+| Syntax | `MATCH (a)-[:knows]->(b) RETURN …` | `query { people { name } }` |
+| HTTP | [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) | [`POST /graphql`](../../../reference/rest-api/http-protocol.md#graphql) |
+| WebSocket RPC | `method: "gql"` | `method: "graphql"` |
+| Setup | Experimental capability `gql` | [`DEFINE CONFIG GRAPHQL`](../../../reference/query-language/statements/define/config.md) |
+| Schema | Tables and `RELATE` edges you already have | Auto-generated GraphQL schema from your database |
 
 ## When to use GQL
 
@@ -20,7 +33,7 @@ SurrealDB supports **[ISO/IEC 39075 GQL](https://www.iso.org/standard/76120.html
 - You are migrating a database from Neo4j to SurrealDB and want to test to ensure that existing Cypher queries map to the same output.
 - You want a **stable graph query surface** aligned with the ISO GQL standard.
 
-For general-purpose CRUD, schema changes, and full SurrealQL expressiveness, keep using [SurrealQL](../../../reference/query-language/index.md) and the [`/sql`](../../../reference/rest-api/http-protocol.md) endpoint.
+For general-purpose schema changes, bulk load, and full SurrealQL expressiveness, keep using [SurrealQL](../../../reference/query-language/index.md) and the [`/sql`](../../../reference/rest-api/http-protocol.md) endpoint. For ISO graph-pattern **writes** (`INSERT`, `SET`, `REMOVE`, `DELETE`), see [GQL mutations](mutations.md).
 
 ## Wire surfaces
 
@@ -29,8 +42,38 @@ For general-purpose CRUD, schema changes, and full SurrealQL expressiveness, kee
 | **HTTP** | [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) — raw GQL query in the request body |
 | **WebSocket RPC** | `{ "method": "gql", "params": ["<query>", { "var": value }] }` — use for typed `$variables` |
 | **MCP** | `gql` tool (when the server exposes MCP) |
+| **SurrealQL** | [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) — nested GQL in the caller's transaction (capability-gated) |
 
 Session headers match `/sql`: `Surreal-NS`, `Surreal-DB`, and authentication. Responses use the same JSON envelope as `/sql` (`status`, `result`, `time`).
+
+## Try from SurrealQL (`eval::gql`)
+
+To experiment in the REPL without `curl` or `POST /gql`, wrap a GQL string in [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql). The function runs the same engine as the HTTP endpoint and participates in the caller's transaction (including [mutations](mutations.md)).
+
+`eval::gql` needs **two** capability gates that `--allow-all` does not enable:
+
+1. **`gql`** — [`--allow-experimental gql`](../../../reference/cli/surrealdb-cli/commands/start.md#experimental-capabilities)
+2. **`eval`** — [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) (denied for every subject by default)
+
+**Embedded REPL** (`surreal sql` against `memory` or a file path — no separate `surreal start`):
+
+```bash
+surreal sql --user root --pass secret \
+  --allow-experimental gql --allow-eval-query
+```
+
+```surql
+eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");
+```
+
+**Remote server** (`surreal start` + `surreal sql -e ws://…`): pass both flags on **`surreal start`** only. The client REPL does not enable `eval` at runtime.
+
+```bash
+surreal start --user root --pass secret \
+  --allow-experimental gql --allow-eval-query
+```
+
+Optional bindings use an object as the second argument: `eval::gql("… WHERE n.age > $min …", { min: 18 })`. Full setup, seed data, and more examples can be found on the [Eval functions](../../../reference/query-language/functions/database-functions/eval.md#evalgql) page.
 
 ## Data model mapping
 
@@ -51,10 +94,12 @@ GQL is **not** lowered to SurrealQL text — it compiles to an internal match pl
 - Variable-length quantifiers are **postfix on the edge**: `-[e:knows]->{1,3}(b)`, not `*1..3` inside the brackets.
 - No `IN` list membership operator in this subset.
 
-The upstream OpenGQL design notes and supported read-only subset are documented in the SurrealDB source tree under `doc/opengql/` (REFERENCE.md, LOWERING.md).
+Design notes, the supported subset, and mutation semantics are documented in the SurrealDB source tree under `doc/opengql/` (`REFERENCE.md`, `LOWERING.md`). The parser grammar is vendored from the upstream [opengql/grammar](https://github.com/opengql/grammar) project; that name refers to the grammar repository, not the ISO standard SurrealDB implements.
 
 ## Next steps
 
-- [GQL via HTTP](via-http.md) — enable OpenGQL, load data, and call `POST /gql` with cURL
+- [GQL via HTTP](via-http.md) — enable GQL, load data, and call `POST /gql` with cURL or `eval::gql` from the REPL
+- [GQL mutations](mutations.md) — `INSERT`, `SET`, `REMOVE`, `DELETE`
 - [`POST /gql` HTTP reference](../../../reference/rest-api/http-protocol.md#gql) — headers, response envelope, and parameters
 - [Sample GQL and SurrealQL queries](sample-queries.md) — side-by-side examples on the seed graph
+- [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) — run GQL from inside SurrealQL with `eval::gql`

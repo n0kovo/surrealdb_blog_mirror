@@ -1,5 +1,5 @@
 ---
-position: 23
+position: 25
 title: String
 description: These functions can be used when working with and manipulating text and string values.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/string.mdx"

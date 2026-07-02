@@ -3,8 +3,8 @@
 _238 posts_  
 [← Index](../README.md)
 
-- **2026-06-30** · [Introducing Scale: SurrealDB Cloud, built for high availability and scale ](2026/06/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  
-  `releases` — SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.
+- **2026-07-01** · [Bring SurrealDB to your Replit Agent](2026/07/bring-surrealdb-to-your-replit-agent.md)  
+  `tutorials` `ai` `featured` — SurrealDB's MCP server lets Replit Agent build apps directly on a database you own, reading your schema and querying live data.
 - **2026-06-23** · [Social graphs for activity-tracking apps](2026/06/social-graphs-for-activity-tracking-apps.md)  
   `tutorials` — Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in a single query.
 - **2026-06-22** · [Build apps on your data with SurrealDB and Lovable](2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md)  

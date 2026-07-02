@@ -431,7 +431,7 @@ SELECT results[$].score FROM student;
 ]
 ```
 
-`[$]` applies to arrays. Sets are ordered, but their index operator follows sort order rather than insertion order: `[0]` returns the smallest value. For the greatest value in a set, you can use [`set::last()`](../functions/database-functions/set.md#setlast) instead of `[$]`. See [sets](data-types/sets.md#using-the-index-operator-on-sets) for detail.
+`[$]` applies to arrays and sets. Sets are ordered, but their index operator follows sort order rather than insertion order: `[0]` returns the smallest value and `[$]` returns the greatest. You can also use [`set::last()`](../functions/database-functions/set.md#setlast) on sets. See [sets](data-types/sets.md#using-the-index-operator-on-sets) for detail.
 
 ## Method chaining
 

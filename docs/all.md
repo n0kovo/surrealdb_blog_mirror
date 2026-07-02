@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1066 pages_  
+_1068 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -1270,6 +1270,8 @@ _1066 pages_
   Queries can make use of parameters which hold stored values, even those from the output of a previous query.
 - [Query optimisation](learn/querying/concepts-and-guides/query-optimisation.md)
   Practical ideas for faster SurrealQL: EXPLAIN, record ranges, async events, denormalised flags, and indexes.
+- [Representations and codecs](learn/querying/concepts-and-guides/representations-and-codecs.md)
+  Choose the right built-in when moving data between strings, bytes, tokens, patches, and executable query text.
 - [Sequences](learn/querying/concepts-and-guides/sequences.md)
   SurrealDB sequences for monotonic numeric identifiers, and how they differ from default randomly generated record IDs.
 - [Sessions and scoping](learn/querying/concepts-and-guides/sessions-and-scoping.md)
@@ -1286,12 +1288,14 @@ _1066 pages_
   Defining custom HTTP-style endpoints on SurrealDB so clients hit a narrow surface instead of arbitrary queries.
 - [Middleware](learn/querying/custom-apis/middleware.md)
   Chaining custom functions before your API handler so you can share logic on DEFINE API routes.
+- [Mutations](learn/querying/gql/mutations.md)
+  ISO GQL data-modifying statements — INSERT, SET, REMOVE, and DELETE — on the /gql endpoint.
 - [Overview](learn/querying/gql/overview.md)
-  Query SurrealDB graph data with ISO GQL (OpenGQL) — a Cypher-like graph pattern language over HTTP and RPC.
+  Query SurrealDB graph data with ISO GQL — a Cypher-like graph pattern language over HTTP and RPC.
 - [Sample queries](learn/querying/gql/sample-queries.md)
   Compare common GQL graph patterns against similar SurrealQL queries on the same seed graph.
 - [Via HTTP](learn/querying/gql/via-http.md)
-  Enable OpenGQL on a SurrealDB instance and run ISO GQL queries through POST /gql.
+  Enable ISO GQL on a SurrealDB instance and run queries through POST /gql.
 - [GraphQL](learn/querying/graphql/overview.md)
   In this section, you will explore GraphQL, an industry-wide recognised protocol for interacting with your data, allowing you to query your data using any preferred method which offers precision and efficiency in data retrieval.
 - [Sample queries](learn/querying/graphql/sample-queries.md)
@@ -1562,6 +1566,8 @@ _1066 pages_
   Functions and constants for working with duration-related data.
 - [Encoding](reference/query-language/functions/database-functions/encoding.md)
   These functions can be used to encode and decode data in base64. It is particularly used when that data needs to be stored and transferred over media that are designed to deal with text. This encoding and decoding helps to ensure that the data remains intact without modification during transport.
+- [Eval](reference/query-language/functions/database-functions/eval.md)
+  Evaluate a SurrealQL or ISO GQL query string at runtime inside the caller's transaction, gated by dedicated capabilities.
 - [File](reference/query-language/functions/database-functions/file.md)
   These functions can be used to work with files.
 - [Geo](reference/query-language/functions/database-functions/geo.md)
@@ -1569,7 +1575,7 @@ _1066 pages_
 - [HTTP](reference/query-language/functions/database-functions/http.md)
   These functions can be used when opening and submitting remote web requests, and webhooks.
 - [Database Functions](reference/query-language/functions/database-functions/index.md)
-  SurrealDB comes with a large number of in-built functions for checking, manipulating, and working with many different types of data.
+  Built-in SurrealQL database functions and constants, along with JavaScript and SurrealML functions.
 - [Math](reference/query-language/functions/database-functions/math.md)
   Built-in math functions and consts for analysing numeric data and collections.
 - [Meta](reference/query-language/functions/database-functions/meta.md)
@@ -1578,8 +1584,6 @@ _1066 pages_
   This function can be used to reverse the truthiness of a value.
 - [Object](reference/query-language/functions/database-functions/object.md)
   These functions can be used when working with, and manipulating data objects.
-- [Overview](reference/query-language/functions/database-functions/overview.md)
-  Built-in SurrealQL database functions and constants, along with JavaScript and SurrealML functions.
 - [Parse](reference/query-language/functions/database-functions/parse.md)
   These functions can be used when parsing email addresses and URL web addresses.
 - [Rand functions](reference/query-language/functions/database-functions/rand.md)

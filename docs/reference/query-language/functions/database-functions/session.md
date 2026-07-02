@@ -1,5 +1,5 @@
 ---
-position: 20
+position: 22
 title: Session
 description: These functions return information about the current SurrealDB session.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/session.mdx"

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Scoring and ranking
 
-After you have [defined analysers](analyzers-and-tokenizers.md) and attached [search indexes](search-indexes.md), you can run full-text queries.
+After you have [defined analyzers](analyzers-and-tokenizers.md) and attached [search indexes](search-indexes.md), you can run full-text queries.
 
 ## Querying
 

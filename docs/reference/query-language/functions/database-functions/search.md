@@ -1,5 +1,5 @@
 ---
-position: 18
+position: 20
 title: Search
 description: "These functions are used in conjunction with the 'matches' operator to either collect the relevance score or highlight the searched keywords within the content."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/search.mdx"
@@ -432,3 +432,8 @@ SELECT id, title, search::score(1) AS score FROM book
 	}
 ]
 ```
+
+## See also
+
+- [Representations and codecs](../../../../learn/querying/concepts-and-guides/representations-and-codecs.md) — `search::analyze` as an offline preview of analyzer tokenization
+- [`DEFINE ANALYZER`](../../statements/define/analyzer.md)

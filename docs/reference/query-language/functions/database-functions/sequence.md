@@ -1,5 +1,5 @@
 ---
-position: 19
+position: 21
 title: Sequence
 description: Functions to work with sequences.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/sequence.mdx"

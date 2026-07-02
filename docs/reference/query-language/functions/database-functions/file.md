@@ -1,5 +1,5 @@
 ---
-position: 9
+position: 10
 title: File
 description: These functions can be used to work with files.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/file.mdx"

@@ -1,5 +1,5 @@
 ---
-position: 22
+position: 24
 title: Sleep
 description: This function can be used to introduce a delay or pause in the execution of a query or a batch of queries for a specific amount of time.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/sleep.mdx"

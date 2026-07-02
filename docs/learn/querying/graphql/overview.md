@@ -9,6 +9,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 SurrealDB supports [GraphQL](https://graphql.org/) through the [`/graphql`](../../../reference/rest-api/http-protocol.md#graphql) endpoint, which can be accessed via [Surrealist](https://app.surrealdb.com/), GraphiQL, Postman, or any other GraphQL client.
 
+> [!NOTE]
+> **GraphQL is not GQL.** [ISO GQL](../gql/overview.md) (`MATCH … RETURN …`) is a separate language on [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql). Do not abbreviate GraphQL to `gql` — in SurrealDB, `gql` always means ISO GQL.
+
 ## Key features
 
 GraphQL offers a number of key features that make it a powerful tool for working with SurrealDB:

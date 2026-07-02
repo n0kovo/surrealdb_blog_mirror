@@ -1,5 +1,5 @@
 ---
-position: 12
+position: 13
 title: Math
 description: Built-in math functions and consts for analysing numeric data and collections.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/math.mdx"

@@ -352,6 +352,9 @@ SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism,files surreal start
 surreal start --allow-experimental surrealism,files
 ```
 
+> [!NOTE]
+> Experimental capabilities are enforced on the **server** for remote clients. If you use [`surreal sql`](sql.md) against `ws://` or `http://`, configure flags here — not only on the REPL. See [Capabilities and remote connections](sql.md#capabilities-and-remote-connections).
+
 <table>
     <thead>
         <tr>
@@ -370,7 +373,7 @@ surreal start --allow-experimental surrealism,files
         </tr>
         <tr>
             <td><a href="/docs/learn/querying/gql/overview">GQL</a> (`POST /gql`)</td>
-            <td>`opengql`</td>
+            <td>`gql`</td>
         </tr>
     </tbody>
 </table>

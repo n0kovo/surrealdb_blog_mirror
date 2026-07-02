@@ -1,5 +1,5 @@
 ---
-position: 27
+position: 29
 title: Vector
 description: A collection of essential vector operations that provide foundational functionality for numerical computation, machine learning, and data analysis.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/vector.mdx"

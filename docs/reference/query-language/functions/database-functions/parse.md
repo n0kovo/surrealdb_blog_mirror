@@ -1,5 +1,5 @@
 ---
-position: 16
+position: 17
 title: Parse
 description: These functions can be used when parsing email addresses and URL web addresses.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/parse.mdx"

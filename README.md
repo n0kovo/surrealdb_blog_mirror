@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-07-01 07:32 UTC_
+_Last updated: 2026-07-02 07:09 UTC_
 
 ## Stats
 
 - **Total posts:** 238
 - **First post:** 2022-07-20
-- **Latest post:** 2026-06-30
+- **Latest post:** 2026-07-01
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -27,19 +27,19 @@ _Last updated: 2026-07-01 07:32 UTC_
 
 ### By category
 
-- [ai](posts/categories/ai.md) — 38 posts
+- [ai](posts/categories/ai.md) — 39 posts
 - [community](posts/categories/community.md) — 34 posts
 - [company](posts/categories/company.md) — 41 posts
 - [engineering](posts/categories/engineering.md) — 41 posts
 - [events](posts/categories/events.md) — 7 posts
-- [featured](posts/categories/featured.md) — 107 posts
-- [releases](posts/categories/releases.md) — 49 posts
-- [tutorials](posts/categories/tutorials.md) — 89 posts
+- [featured](posts/categories/featured.md) — 108 posts
+- [releases](posts/categories/releases.md) — 48 posts
+- [tutorials](posts/categories/tutorials.md) — 90 posts
 
 ## Latest posts
 
-- **2026-06-30** · [Introducing Scale: SurrealDB Cloud, built for high availability and scale ](posts/2026/06/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  
-  `releases` — SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.
+- **2026-07-01** · [Bring SurrealDB to your Replit Agent](posts/2026/07/bring-surrealdb-to-your-replit-agent.md)  
+  `tutorials` `ai` `featured` — SurrealDB's MCP server lets Replit Agent build apps directly on a database you own, reading your schema and querying live data.
 - **2026-06-23** · [Social graphs for activity-tracking apps](posts/2026/06/social-graphs-for-activity-tracking-apps.md)  
   `tutorials` — Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in a single query.
 - **2026-06-22** · [Build apps on your data with SurrealDB and Lovable](posts/2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md)  

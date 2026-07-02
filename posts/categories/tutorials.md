@@ -1,8 +1,10 @@
 # Category: tutorials
 
-_89 posts_  
+_90 posts_  
 [← Index](../../README.md)
 
+- **2026-07-01** · [Bring SurrealDB to your Replit Agent](../2026/07/bring-surrealdb-to-your-replit-agent.md)  
+  `tutorials` `ai` `featured` — SurrealDB's MCP server lets Replit Agent build apps directly on a database you own, reading your schema and querying live data.
 - **2026-06-23** · [Social graphs for activity-tracking apps](../2026/06/social-graphs-for-activity-tracking-apps.md)  
   `tutorials` — Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in a single query.
 - **2026-06-22** · [Build apps on your data with SurrealDB and Lovable](../2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md)  

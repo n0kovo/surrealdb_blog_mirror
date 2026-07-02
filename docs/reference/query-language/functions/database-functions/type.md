@@ -1,5 +1,5 @@
 ---
-position: 25
+position: 27
 title: Type
 description: These functions can be used for generating and coercing data to specific data types.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/type.mdx"

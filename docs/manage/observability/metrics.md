@@ -485,6 +485,8 @@ The cadence of the process snapshot can be tuned with `SURREAL_PROCESS_METRICS_R
 
 <Edition value="community" />
 
+`surrealdb_live_query_orphaned_total` increments when a live-query registration cannot be torn down cleanly after a WebSocket disconnect, leaving a catalog row that still receives notifications. Alert on sustained growth.
+
 <table>
     <thead>
         <tr>
@@ -503,6 +505,11 @@ The cadence of the process snapshot can be tuned with `SURREAL_PROCESS_METRICS_R
             <td scope="row" data-label="Name">`surrealdb_live_query_notifications_total`</td>
             <td scope="row" data-label="Type">counter</td>
             <td scope="row" data-label="Labels">—</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Name">`surrealdb_live_query_orphaned_total`*Since v3.2.0*</td>
+            <td scope="row" data-label="Type">counter</td>
+            <td scope="row" data-label="Labels">`namespace`, `database`</td>
         </tr>
     </tbody>
 </table>

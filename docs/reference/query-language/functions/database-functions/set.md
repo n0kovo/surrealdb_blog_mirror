@@ -1,5 +1,5 @@
 ---
-position: 21
+position: 23
 title: Set
 description: These functions can be used when working with, and manipulating sets of data.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/set.mdx"

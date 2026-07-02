@@ -7,6 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 In this section we will learn about the multitude of ways to write and send queries to your SurrealDB database. The main focus is on the SurrealQL query language, which strongly resembles traditional SQL but differs in a number of ways to accommodate patterns such as graph traversal, record links, and other features unique to SurrealDB.
 
-Queries can also be written without using direct SurrealQL through methods such as SDKs in your preferred programming language, [GraphQL](graphql/overview.md), or [GQL](gql/overview.md) (ISO graph pattern queries on the `/gql` endpoint).
+Queries can also be written without using direct SurrealQL through methods such as SDKs in your preferred programming language, [GraphQL](graphql/overview.md), or [GQL](gql/overview.md) (ISO graph pattern queries on the `/gql` endpoint). Built-in [`eval::*`](../../reference/query-language/functions/database-functions/eval.md) functions can also run SurrealQL or GQL query strings from inside a transaction when explicitly enabled.
 
 This section also includes tips and tricks to get the most out of your queries. For even more information after reading this section, feel free to look into the [reference](../../reference/query-language/index.md) section of the documentation which has separate pages for each statement, data type, clause and more for the entire SurrealQL query language.

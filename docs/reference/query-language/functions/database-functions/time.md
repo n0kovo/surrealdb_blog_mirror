@@ -1,5 +1,5 @@
 ---
-position: 24
+position: 26
 title: Time
 description: Datetime functions and constants for working with and manipulating datetime values.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/time.mdx"

@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Via HTTP
-description: Enable OpenGQL on a SurrealDB instance and run ISO GQL queries through POST /gql.
+description: Enable ISO GQL on a SurrealDB instance and run queries through POST /gql.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/gql/via-http.mdx"
 ---
 
@@ -11,24 +11,24 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 The **`POST /gql`** endpoint accepts a **raw GQL query** in the request body (not JSON-wrapped). Authentication and namespace selection use the same headers as [`POST /sql`](../../../reference/rest-api/http-protocol.md). For the full HTTP reference (headers, response envelope, limits), see [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql).
 
-## Start SurrealDB with OpenGQL
+## Start SurrealDB with GQL
 
-OpenGQL is gated behind the experimental capability **`opengql`**. Pass the storage path **after** the flag (or use `memory`):
+ISO GQL is gated behind the experimental capability **`gql`**. Pass the storage path **after** the flag (or use `memory`):
 
 ```bash
 surreal start --log info --user root --pass secret \
-  --allow-experimental=opengql memory
+  --allow-experimental gql memory
 ```
 
 Environment variable equivalent:
 
 ```bash
-export SURREAL_CAPS_ALLOW_EXPERIMENTAL=opengql
+export SURREAL_CAPS_ALLOW_EXPERIMENTAL=gql
 surreal start --log info --user root --pass secret memory
 ```
 
 > [!NOTE]
-> `--allow-all` does **not** enable experimental capabilities. You must allow `opengql` explicitly.
+> `--allow-all` does **not** enable experimental capabilities. You must allow `gql` explicitly. This is **not** [GraphQL](../graphql/overview.md) — use [`POST /graphql`](../../../reference/rest-api/http-protocol.md#graphql) for GraphQL queries.
 
 ## Load sample data
 
@@ -87,7 +87,23 @@ Set `Accept` to:
 - `application/json` (default)
 - `application/cbor` for CBOR-encoded results
 
-Parse errors return **HTTP 400** with an error payload. If OpenGQL is not enabled on the server, expect a capability or route error (**403**).
+Parse errors return **HTTP 400** with an error payload. If GQL is not enabled on the server, expect a capability or route error (**403**).
+
+## Mutations
+
+The same endpoint accepts **data-modifying** GQL — `INSERT`, `SET`, `REMOVE`, and `DELETE` — interleaved with `MATCH` / `OPTIONAL` in one query. Mutation-bearing requests run in a **write transaction** and enforce the same permissions as SurrealQL writes.
+
+Example — update a property and return the new value:
+
+```bash
+curl -sS -X POST -u "root:secret" \
+  -H "Surreal-NS: main" -H "Surreal-DB: main" \
+  -H "Accept: application/json" -H "Content-Type: text/plain" \
+  -d "MATCH (n:person WHERE n.name = 'A') SET n.age = 99 RETURN n.age AS age" \
+  http://localhost:8000/gql
+```
+
+See [GQL mutations](mutations.md) for `INSERT`, `REMOVE`, `DELETE`, read-after-write interleaving, and rejected forms.
 
 ## WebSocket RPC
 
@@ -115,3 +131,27 @@ With parameters:
 	]
 }
 ```
+
+## Try without HTTP — `eval::gql`
+
+If you prefer the CLI or Surrealist over cURL, run GQL through [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) inside SurrealQL. You still need the **`gql`** experimental capability **and** [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries), as `eval::*` is denied by default even under `--allow-all`.
+
+**One process (embedded):** pass both flags on `surreal sql`, load the [seed data](#load-sample-data) with ordinary SurrealQL, then:
+
+```surql
+eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");
+```
+
+```bash
+surreal sql --user root --pass secret \
+  --allow-experimental gql --allow-eval-query
+```
+
+**Two processes (remote):** enable both on **`surreal start`**, then connect with `surreal sql` as usual — capability flags on the client do not turn on `eval` for a remote engine.
+
+```bash
+surreal start --user root --pass secret \
+  --allow-experimental gql --allow-eval-query
+```
+
+Mutations work the same way: `eval::gql("MATCH (n:person WHERE n.name = 'A') SET n.age = 99 RETURN n.age AS age")` runs in the open SurrealQL transaction. See [GQL mutations](mutations.md) and [Eval functions](../../../reference/query-language/functions/database-functions/eval.md#evalgql).

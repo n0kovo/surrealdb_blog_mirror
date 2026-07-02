@@ -11,7 +11,7 @@ Environment variables can be used to tailor the behaviour of a running SurrealDB
 
 Environment variables are divided into four types: 
 
-* **SurrealDB environment variables**: environment variables that pertain to the overall running of a SurrealDB server. Example: `SURREAL_DEFAULT_DATABASE`.
+* **SurrealDB environment variables**: environment variables that pertain to the overall running of a SurrealDB server. Example: `SURREAL_DEFAULT_DATABASE`. Includes an [operator and internal config](#operator-and-internal-config) subsection for advanced settings.
 * **Command environment variables**: environment variables that can be used in lieu of a command flag. Example: `SURREAL_CAPS_ALLOW_ALL=true surreal start`, equivalent to `surreal start --allow-all`.
 * **Storage backend environment variables**: environment variables that pertain to a certain storage backend. Example: `SURREAL_SURREALKV_MAX_SEGMENT_SIZE`.
 * **SurrealDB Cloud environment variables**: environment variables that are set via the [Configure instance](../../../build/deployment/surrealdb-cloud/getting-started/create-an-instance.md#configure-an-instance) sidebar for a SurrealDB Cloud instance.
@@ -316,9 +316,9 @@ Used by the built-in [Model Context Protocol](../../../build/ai-agents/mcp.md) s
   </tbody>
 </table>
 
-### OpenGQL config *Since v3.2.0*
+### GQL config *Since v3.2.0*
 
-Resource limits for experimental [ISO GQL (OpenGQL)](../../../learn/querying/gql/overview.md) `MATCH` execution. Errors name the knob when a limit is exceeded. The language can be enabled by passing in the [`--allow-experimental=opengql`](commands/start.md#experimental-capabilities) flag when starting the database.
+Resource limits for experimental [ISO GQL](../../../learn/querying/gql/overview.md) `MATCH` execution. Errors name the limit when it is exceeded. The language can be enabled by passing in the [`--allow-experimental gql`](commands/start.md#experimental-capabilities) flag when starting the database.
 
 <table>
   <thead>
@@ -697,6 +697,49 @@ Resource limits for experimental [ISO GQL (OpenGQL)](../../../learn/querying/gql
   </tbody>
 </table>
 
+### Operator and internal config
+
+*Since v3.2.0*
+
+These settings are for operators, benchmarks, and advanced debugging — not typical application configuration. They are documented so core contributors and self-hosted deployments can find configuration options that already exist in the engine. Changing them can affect performance, reproducibility, or live-query behaviour; leave defaults in place unless you have a specific reason to tune them.
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col" style={{width: '40%'}}>Environment variable</th>
+      <th scope="col" style={{width: '20%'}}>Default</th>
+      <th scope="col" style={{width: '20%'}}>Allowed values</th>
+      <th scope="col" style={{width: '20%'}}>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_RAND_SEED`</td>
+      <td scope="row" data-label="Default">none (non-deterministic)</td>
+      <td scope="row" data-label="Allowed values">A `u64`</td>
+      <td scope="row" data-label="Notes">Seeds the engine-wide RNG for reproducible runs in benchmarks and tests. Do not use in production.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_LIVE_QUERY_ENGINE`</td>
+      <td scope="row" data-label="Default">`inline`</td>
+      <td scope="row" data-label="Allowed values">`inline`, `router`</td>
+      <td scope="row" data-label="Notes">Selects the live-query execution engine. `inline` is the historical behaviour; `router` decouples write cost from subscriber count (experimental rollout).</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_LIVE_QUERY_RETENTION`</td>
+      <td scope="row" data-label="Default">1h</td>
+      <td scope="row" data-label="Allowed values">A duration</td>
+      <td scope="row" data-label="Notes">How long the router engine retains live-query event history for subscriber resume. Only applies when `SURREAL_LIVE_QUERY_ENGINE=router`.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_HNSW_BUILD_SEED`</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">A `u64`</td>
+      <td scope="row" data-label="Notes">Seeds HNSW index construction for reproducible graph layouts in benchmarks. Do not use in production.</td>
+    </tr>
+  </tbody>
+</table>
+
 ### Other environment variables
 
 <table>
@@ -874,12 +917,20 @@ surreal start --allow-all true
       <td scope="row" data-label="Notes">Allows arbitrary queries to be used by user groups except when specifically denied. Alternatively, you can provide a comma-separated list of user groups to allow specifically denied user groups to prevail over any other allowed user group.</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_EVAL_QUERY`*Since v3.2.0*</td>
+      <td scope="row" data-label="Command arg">`allow-eval-query`</td>
+      <td scope="row" data-label="Command">`start`, `sql`</td>
+      <td scope="row" data-label="Default">none (denied for all subjects)</td>
+      <td scope="row" data-label="Allowed values">guest, record, system (comma-separated)</td>
+      <td scope="row" data-label="Notes">Allow `eval::surql` and `eval::gql` for listed subject groups. Not enabled by `--allow-all`. Still subject to <a href="/docs/learn/security/authorization/capabilities#arbitrary-queries">arbitrary-query</a> restrictions — `--deny-arbitrary-query` blocks `eval` for that subject even when eval is allowed here. For remote clients, set on the `start` process only. See <a href="/docs/reference/cli/surrealdb-cli/commands/sql#capabilities-and-remote-connections">Capabilities and remote connections</a>.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_EXPERIMENTAL`</td>
       <td scope="row" data-label="Command arg">`allow-experimental`</td>
-      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Command">`start`, `sql`</td>
       <td scope="row" data-label="Default">none</td>
-      <td scope="row" data-label="Allowed values">files, surrealism, opengql (comma-separated)</td>
-      <td scope="row" data-label="Notes">Allow execution of experimental features. See <a href="/docs/reference/cli/surrealdb-cli/commands/start#experimental-capabilities">experimental capabilities</a> for which tag enables each feature.</td>
+      <td scope="row" data-label="Allowed values">files, surrealism, gql (comma-separated)</td>
+      <td scope="row" data-label="Notes">Allow execution of experimental features. For remote clients, set on the `start` process. On `surreal sql`, affects embedded engines and REPL parse validation only. See <a href="/docs/reference/cli/surrealdb-cli/commands/start#experimental-capabilities">experimental capabilities</a>.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_FUNC`</td>
@@ -928,6 +979,14 @@ surreal start --allow-all true
       <td scope="row" data-label="Default">false</td>
       <td scope="row" data-label="Allowed values">true, false</td>
       <td scope="row" data-label="Notes">Deny all capabilities.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_CAPS_DENY_EVAL_QUERY`*Since v3.2.0*</td>
+      <td scope="row" data-label="Command arg">`deny-eval-query`</td>
+      <td scope="row" data-label="Command">`start`, `sql`</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">guest, record, system (comma-separated)</td>
+      <td scope="row" data-label="Notes">Deny `eval::surql` and `eval::gql` for listed subject groups. Deny prevails over allow at the same specificity. For remote clients, set on the `start` process.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_DENY_FUNC`</td>
@@ -1273,6 +1332,22 @@ surreal start --allow-all true
       <td scope="row" data-label="Default">none</td>
       <td scope="row" data-label="Allowed values">A duration</td>
       <td scope="row" data-label="Notes">The maximum duration that a set of statements can run for.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_RECLAIM_INTERVAL`*Since v3.2.0*</td>
+      <td scope="row" data-label="Command arg">`reclaim-interval`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">60s</td>
+      <td scope="row" data-label="Allowed values">A duration</td>
+      <td scope="row" data-label="Notes">How often the background reaper scans for tombstoned namespace, database, and index data to physically delete after a `REMOVE` statement.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_RECLAIM_GRACE`*Since v3.2.0*</td>
+      <td scope="row" data-label="Command arg">`reclaim-grace`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">10m</td>
+      <td scope="row" data-label="Allowed values">A duration</td>
+      <td scope="row" data-label="Notes">Minimum age a removed namespace, database, or index must reach before its data is reclaimed. The effective grace is the maximum of this value and `--tikv-gc-lifetime` on TiKV backends.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_SLOW_QUERY_LOG_THRESHOLD`  

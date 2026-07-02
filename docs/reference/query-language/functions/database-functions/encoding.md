@@ -9,6 +9,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 These functions can be used to encode and decode data into other formats, such as `base64` and [`CBOR`](../../../rest-api/cbor-protocol.md) (Concise Binary Object Representation). It is particularly used when that data needs to be stored and transferred over media that are designed to deal with text. This encoding and decoding helps to ensure that the data remains intact without modification during transport.
 
+> [!TIP]
+> For an overview of serialisation, parsing, analysis, and other representation transformations, see [Representations and codecs](../../../../learn/querying/concepts-and-guides/representations-and-codecs.md).
+
 <table>
   <thead>
     <tr>
@@ -355,3 +358,8 @@ LET $byte_string = <bytes>encoding::json::decode($json_byte_array);
 -- Returns NONE, not NULL
 encoding::cbor::decode($byte_string);
 ```
+
+## See also
+
+- [Representations and codecs](../../../../learn/querying/concepts-and-guides/representations-and-codecs.md)
+- [CBOR protocol](../../../rest-api/cbor-protocol.md)

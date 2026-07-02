@@ -1,8 +1,10 @@
 # Category: ai
 
-_38 posts_  
+_39 posts_  
 [← Index](../../README.md)
 
+- **2026-07-01** · [Bring SurrealDB to your Replit Agent](../2026/07/bring-surrealdb-to-your-replit-agent.md)  
+  `tutorials` `ai` `featured` — SurrealDB's MCP server lets Replit Agent build apps directly on a database you own, reading your schema and querying live data.
 - **2026-06-22** · [Build apps on your data with SurrealDB and Lovable](../2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md)  
   `tutorials` `featured` `ai` — Connect SurrealDB to Lovable using the Model Context Protocol (MCP), so the Lovable Agent can read your schema, query your live data, and build a working application on top of it without you writing any glue code.
 - **2026-05-19** · [Agentic retrieval for structured data with text-to-surql](../2026/05/agentic-retrieval-for-structured-data-with-text-to-surql.md)  

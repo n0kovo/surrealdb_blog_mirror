@@ -1,5 +1,5 @@
 ---
-position: 17
+position: 19
 title: Record
 description: These functions can be used to retrieve specific metadata from a SurrealDB Record ID.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/record.mdx"

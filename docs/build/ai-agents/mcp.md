@@ -62,6 +62,8 @@ See [`surreal mcp`](../../reference/cli/surrealdb-cli/commands/mcp.md) for flags
 | Tool | Purpose |
 | --- | --- |
 | `query` | Run SurrealQL and return serialised results |
+| `gql` | Run an [OpenGQL](../../learn/querying/gql/overview.md) query (requires the `opengql` experimental capability on the server) |
+| `graphql` | Run a [GraphQL](../../learn/querying/graphql/overview.md) query against the configured schema |
 | `select`, `create`, `insert`, `upsert`, `update`, `delete`, `relate` | Data manipulation helpers |
 | `run` | Call a database function with typed arguments |
 | `list` | List namespaces, databases, tables, indexes, users, … |

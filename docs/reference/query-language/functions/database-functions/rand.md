@@ -1,5 +1,5 @@
 ---
-position: 17
+position: 18
 title: Rand functions
 description: These functions can be used when generating random data values.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/rand.mdx"

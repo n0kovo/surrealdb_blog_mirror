@@ -9,11 +9,25 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 *Since v3.2.0*
 
-The examples below use the same **person / knows / city** seed graph as the OpenGQL language tests. SurrealQL snippets return the **same or equivalent row shape**, but are not a mechanical translation of the GQL compiler; they are idiomatic reads you can compare while learning.
+The examples below use the same **person / knows / city** seed graph as the GQL language tests. SurrealQL snippets return the **same or equivalent row shape**, but are not a mechanical translation of the GQL compiler; they are idiomatic reads you can compare while learning.
 
 ## Prerequisites
 
-Start a local instance with OpenGQL enabled and load the seed graph — see [GQL via HTTP](via-http.md#load-sample-data).
+Start a local instance with GQL enabled and load the seed graph — see [GQL via HTTP](via-http.md#load-sample-data).
+
+You can run the GQL examples in either of these ways:
+
+| Approach | How |
+| --- | --- |
+| **HTTP** | cURL to `POST /gql` (shown in each GQL tab) — server needs `--allow-experimental gql` |
+| **REPL** | [`eval::gql("…")`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) in `surreal sql` or Surrealist — also needs [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) on the process that runs the engine (embedded `surreal sql`, or `surreal start` for remote) |
+
+Example REPL equivalent for the first query:
+
+```surql
+eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");
+-- [{ name: 'A' }, { name: 'B' }, { name: 'C' }]
+```
 
 ## List nodes by label
 
@@ -189,4 +203,4 @@ ORDER BY name;
 
 ## What to try next
 
-The language-test corpus under `language-tests/tests/opengql/` in the SurrealDB repository covers variable-length quantifiers (`->{1,3}`, `->*`), path search (`ALL SHORTEST`, `SHORTEST k`), and multi-pattern comma joins. Those patterns have no single-line SurrealQL equivalent — they are the main reason to reach for GQL on the wire.
+The language-test corpus under `language-tests/tests/opengql/` in the SurrealDB repository covers variable-length quantifiers (`->{1,3}`, `->*`), path search (`ALL SHORTEST`, `SHORTEST k`), multi-pattern comma joins, and [mutations](mutations.md). Variable-length and path patterns have no single-line SurrealQL equivalent — they are the main reason to reach for GQL for reads; mutations are the ISO-native way to change graph data in the same program as `MATCH`.

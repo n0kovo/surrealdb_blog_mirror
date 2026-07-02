@@ -1,12 +1,12 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-07-01 07:32 UTC_
+_Last updated: 2026-07-02 07:09 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
 ## Stats
 
-- **Total pages:** 1066
+- **Total pages:** 1068
 
 ## Browse
 
@@ -18,7 +18,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Database
 
-- **[Querying](learn/querying/index.md)** — SurrealQL and live result handling. — _36 pages_
+- **[Querying](learn/querying/index.md)** — SurrealQL and live result handling. — _38 pages_
 - **[Schema management](learn/schema-management/index.md)** — Namespaces, tables, and indexes. — _17 pages_
 - **[Data models](learn/data-models/index.md)** — Documents, graphs, vectors, time series. — _33 pages_
 - **[Security](learn/security/index.md)** — Authentication, scopes, and permissions. — _9 pages_

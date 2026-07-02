@@ -1,5 +1,5 @@
 ---
-position: 15
+position: 16
 title: Object
 description: These functions can be used when working with, and manipulating data objects.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/object.mdx"

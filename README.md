@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-07-02 07:09 UTC_
+_Last updated: 2026-07-03 08:57 UTC_
 
 ## Stats
 
-- **Total posts:** 238
+- **Total posts:** 239
 - **First post:** 2022-07-20
-- **Latest post:** 2026-07-01
+- **Latest post:** 2026-07-02
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-07-02 07:09 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 43 posts
+- [2026](posts/years/2026.md) — 44 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -32,12 +32,14 @@ _Last updated: 2026-07-02 07:09 UTC_
 - [company](posts/categories/company.md) — 41 posts
 - [engineering](posts/categories/engineering.md) — 41 posts
 - [events](posts/categories/events.md) — 7 posts
-- [featured](posts/categories/featured.md) — 108 posts
-- [releases](posts/categories/releases.md) — 48 posts
+- [featured](posts/categories/featured.md) — 109 posts
+- [releases](posts/categories/releases.md) — 49 posts
 - [tutorials](posts/categories/tutorials.md) — 90 posts
 
 ## Latest posts
 
+- **2026-07-02** · [Introducing Scale: SurrealDB Cloud, built for high availability and scale ](posts/2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  
+  `featured` `releases` — SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.
 - **2026-07-01** · [Bring SurrealDB to your Replit Agent](posts/2026/07/bring-surrealdb-to-your-replit-agent.md)  
   `tutorials` `ai` `featured` — SurrealDB's MCP server lets Replit Agent build apps directly on a database you own, reading your schema and querying live data.
 - **2026-06-23** · [Social graphs for activity-tracking apps](posts/2026/06/social-graphs-for-activity-tracking-apps.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-07-02 07:09 UTC_
   `engineering` — A good choice to complement unit and integration tests, fuzz testing lets you use semi-random data to discover obscure bugs before users do.
 - **2026-06-09** · [SurrealDB is now available on the Nebius AI Cloud Marketplace](posts/2026/06/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace.md)  
   `releases` — SurrealDB is now available on the Nebius AI Cloud Marketplace.
-- **2026-06-05** · [Context layers, semantic layers, and knowledge graphs: the modern data architecture for AI](posts/2026/06/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai.md)  
-  `company` — Three concepts AI teams constantly confuse: a context layer assembles the right data into an LLM prompt at query time, a semantic layer maps raw data to business meaning, and a knowledge graph stores entities and their relationships. Most teams build all three by stitching together separate graph, vector, and relational systems - creating sync problems, higher latency, and rising costs. SurrealDB's multi-model architecture handles all three natively, letting a single SurrealQL query run vector search, graph traversal, and document retrieval in one round trip

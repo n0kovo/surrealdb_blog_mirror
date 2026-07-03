@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-07-02T07:09:31.866751+00:00",
-  "count": 238,
+  "generated_at": "2026-07-03T08:57:19.557161+00:00",
+  "count": 239,
   "posts": [
+    {
+      "slug": "introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale",
+      "title": "Introducing Scale: SurrealDB Cloud, built for high availability and scale ",
+      "summary": "SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.",
+      "publishDate": "2026-07-02T11:48:20.000Z",
+      "categories": [
+        "featured",
+        "releases"
+      ],
+      "readTime": "3 min read",
+      "imageUrl": "https://cdn.surrealdb.com/dltwdtp8w6f8t212zss1ibf8.auto",
+      "source": "https://surrealdb.com/blog/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale",
+      "local_path": "2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md"
+    },
     {
       "slug": "bring-surrealdb-to-your-replit-agent",
       "title": "Bring SurrealDB to your Replit Agent",

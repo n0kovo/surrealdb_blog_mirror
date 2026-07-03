@@ -4,10 +4,20 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-07-01T06:56:16Z</updated>
+  <updated>2026-07-02T11:48:20Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale</id>
+    <title>Introducing Scale: SurrealDB Cloud, built for high availability and scale </title>
+    <link rel="alternate" href="https://surrealdb.com/blog/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale" type="text/html" />
+    <published>2026-07-02T11:48:20Z</published>
+    <updated>2026-07-02T11:48:20Z</updated>
+    <summary type="text">SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.</summary>
+    <category term="featured" />
+    <category term="releases" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/bring-surrealdb-to-your-replit-agent</id>
     <title>Bring SurrealDB to your Replit Agent</title>
@@ -489,15 +499,5 @@
     <category term="featured" />
     <category term="tutorials" />
     <category term="ai" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/using-surrealdb-to-expose-organised-influence-campaigns</id>
-    <title>Using SurrealDB to Expose Organised Influence Campaigns</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/using-surrealdb-to-expose-organised-influence-campaigns" type="text/html" />
-    <published>2025-10-10T00:00:00Z</published>
-    <updated>2025-10-10T00:00:00Z</updated>
-    <summary type="text">SurrealDB's built-in capabilities comprising graph queries, geolocational data and recursive queries make it the perfect fit to identify malevolent entities involved in organised influence campaigns.</summary>
-    <category term="featured" />
-    <category term="tutorials" />
   </entry>
 </feed>

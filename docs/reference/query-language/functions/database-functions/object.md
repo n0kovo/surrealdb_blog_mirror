@@ -372,8 +372,6 @@ RETURN object::values({
 
 ## Method chaining
 
-*Since v2.0.0*
-
 Method chaining allows functions to be called using the `.` dot operator on a value of a certain type instead of the full path of the function followed by the value.
 
 ```surql

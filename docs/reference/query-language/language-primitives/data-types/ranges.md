@@ -7,8 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Ranges
 
-*Since v2.0.0*
-
 A range is composed of `..` and possible delimiters to set the maximum and minimum possible values. The default syntax includes the lower limit and excludes the upper limit. A `=` can be used to make the upper limit inclusive, and `>` can be used to make the lower limit exclusive.
 
 ```surql

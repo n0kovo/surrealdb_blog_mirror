@@ -153,8 +153,6 @@ DEFINE USER IF NOT EXISTS example
 
 ## Using `OVERWRITE` clause
 
-*Since v2.0.0*
-
 The `OVERWRITE` clause can be used to define a user and overwrite an existing one if it already exists. You should use the `OVERWRITE` clause when you want to modify an existing user definition. If the user already exists, the `DEFINE USER` statement will overwrite the existing user definition with the new one.
 
 ```surql
@@ -200,7 +198,5 @@ It also grants view permissions for child resources that support the `PERMISSION
 </table>
 
 ## Duration
-
-*Since v2.0.0*
 
 The duration clause specifies the duration of the token returned after successful authentication with a password or passhash as well as the duration of the session established both using a password or passhash and the aforementioned token. The difference between these concepts is explained in the [expiration](../../../../learn/security/authentication/authentication.md#expiration) documentation.

@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 # Sets
 
 > [!NOTE]
-> Before version 3.0.0-beta, sets were simply arrays that deduplicated their items. To emulate the former behaviour, add the clause `VALUE $value.distinct()` to a `DEFINE FIELD` definition.
+> Before version 3.0.0, sets were simply arrays that deduplicated their items. To emulate the former behaviour, add the clause `VALUE $value.distinct()` to a `DEFINE FIELD` definition.
 
 A set is similar to an array, but with two key differences:
 

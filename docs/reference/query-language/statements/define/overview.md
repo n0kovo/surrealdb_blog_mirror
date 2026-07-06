@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 The DEFINE statement can be used to specify instructions to the schema such as authentication access and behaviour, global parameters, table configurations, table events, analyzers, and indexes.
 
 > [!NOTE]
-> Before SurrealDB version 3.0.0-beta, the `FULLTEXT ANALYZER` clause used the syntax `SEARCH ANALYZER`.
+> Before SurrealDB version 3.0.0, the `FULLTEXT ANALYZER` clause used the syntax `SEARCH ANALYZER`.
 
 ```syntax title="SurrealQL Syntax"
 DEFINE [

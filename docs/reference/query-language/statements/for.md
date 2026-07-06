@@ -67,8 +67,6 @@ FOR $person IN (SELECT VALUE id FROM person WHERE age >= 18) {
 
 ## Ranges in FOR loops
 
-*Since v2.0.0*
-
 A `FOR` loop can also be made out of a [range UUID](../language-primitives/data-types/ranges.md) of integers.
 
 ```surql

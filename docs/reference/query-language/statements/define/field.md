@@ -51,7 +51,7 @@ DEFINE FIELD [ OVERWRITE | IF NOT EXISTS ] @name ON [ TABLE ] @table
 *Since v3.0.0*
 
 > [!NOTE]
-> In versions of SurrealDB before 3.0.0-beta, `COMPUTED` fields were implemented using a data type called a `future`. Please see [the page on futures](../../language-primitives/data-types/futures.md) in this case.
+> In versions of SurrealDB before 3.0.0, `COMPUTED` fields were implemented using a data type called a `future`. Please see [the page on futures](../../language-primitives/data-types/futures.md) in this case.
 
 A `COMPUTED` field is one that is not stored but computed every time it is accessed. Such fields have a more limited set of clauses that can be used. Furthermore, a `COMPUTED` field cannot be defined on the `id` field of a record, nor any nested fields (i.e. a field `metadata` can be defined as computed, but not `medatata.can_drive`).
 
@@ -204,7 +204,7 @@ As the output shows, the `.` enclosed inside backticks in the last field results
 
 The `DEFINE FIELD` statement allows you to set the data type of a field. For a full list of supported data types, see [Data types](https://surrealdb.com/docs/reference/query-language/datamodel).
 
-From version `v2.2.0`, when defining nested fields, where both the parent and the nested fields have types defined, it is no longer possible to have mismatching types, to prevent any impossible type issues once the schema is defined.
+When defining nested fields, if both the parent and the nested fields have types defined, those types must agree. Mismatching types are rejected to prevent impossible schema states.
 
 For example, the following will fail:
 
@@ -449,7 +449,7 @@ DEFINE FIELD locked ON TABLE user TYPE bool
 
 *Since v2.2.0*
 
-In addition to the `DEFAULT` clause, you can use the `DEFAULT ALWAYS` clause to set a default value for a field. The `ALWAYS` keyword indicates that the `DEFAULT` clause is used not only on `CREATE`, but also on `UPDATE` if the value is empty (NONE).
+`DEFAULT ALWAYS` applies a default on `CREATE` and on `UPDATE` when the value is `NONE`. The `ALWAYS` keyword distinguishes this from plain `DEFAULT`, which only runs on `CREATE`.
 
 ```surql
 /**[test]
@@ -720,8 +720,6 @@ DEFINE FIELD IF NOT EXISTS email ON TABLE user TYPE string;
 ```
 
 ## Using `OVERWRITE` clause
-
-*Since v2.0.0*
 
 The `OVERWRITE` clause can be used to define a field and overwrite an existing one if it already exists. You should use the `OVERWRITE` clause when you want to modify an existing field definition. If the field already exists, the `DEFINE FIELD` statement will overwrite the existing definition with the new one.
 
@@ -1005,9 +1003,6 @@ CREATE person SET first_name = "Bob", last_name = "BOBSON";
 A good rule of thumb is to organise your `DEFINE FIELD` statements in alphabetical order so that the field definitions show up in the same order as that in which they are computed.
 
 ## Defining a literal on a field
-
-*Since v2.0.0*
-
 A field can also be defined as a [literal type](../../language-primitives/data-types/literals.md), by specifying one or more possible values and/or permitted types.
 
 ```surql

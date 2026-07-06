@@ -7,8 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `ALTER` statement
 
-*Since v2.0.0*
-
 The `ALTER` statement can be used to change the behaviour of database resources.
 
 There are two main cases in which to use an `ALTER` statement:

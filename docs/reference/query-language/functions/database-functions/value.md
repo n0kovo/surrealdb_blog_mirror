@@ -38,8 +38,6 @@ This module contains several miscellaneous functions that can be used with value
 
 ## `.chain()`
 
-*Since v2.0.0*
-
 The `.chain()` method passes a value into a [closure](../../language-primitives/data-types/closures.md) through which an operation can be performed to return any value.
 
 ```surql title="API DEFINITION"
@@ -87,8 +85,6 @@ value = ""{ company: 'SURREALDB!!!!!', latest_version: '3.1' }""
 For a similar function that allows using a closure on each item in an array instead of a value as a whole, see [array::map](array.md#arraymap).
 
 ## `value::diff`
-
-*Since v2.0.0*
 
 The `value::diff` function returns an object that shows the [JSON Patch](https://jsonpatch.com/) operation(s) required for the first value to equal the second one.
 
@@ -218,8 +214,6 @@ This method is most conveniently used when chaining methods to make assertions a
 As closures in SurrealDB take ownership of the values of their arguments, this function clones the original value in order to return it. It is thus only recommended to use when debugging or when the assertion is a simple one.
 
 ## `value::patch`
-
-*Since v2.0.0*
 
 The `value::patch` function applies an array of [JSON Patch](https://jsonpatch.com/) operations to a value. Patches produced by [`value::diff()`](value.md#valuediff) round-trip correctly, including when the value is a top-level scalar (the empty path `""` refers to the root value per RFC 6901).
 

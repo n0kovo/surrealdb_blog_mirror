@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 # `DEFINE ANALYZER` statement
 
 > [!NOTE]
-> Before SurrealDB version 3.0.0-beta, the `FULLTEXT ANALYZER` clause used the syntax `SEARCH ANALYZER`.
+> Before SurrealDB version 3.0.0, the `FULLTEXT ANALYZER` clause used the syntax `SEARCH ANALYZER`.
 
 In the context of a database, an analyzer plays a crucial role in text processing and searching. It is defined by its name, a set of tokenizers, and a collection of filters.
 
@@ -534,8 +534,6 @@ DEFINE ANALYZER IF NOT EXISTS example TOKENIZERS blank;
 ```
 
 ## Using `OVERWRITE` clause
-
-*Since v2.0.0*
 
 The `OVERWRITE` clause can be used to create an analyzer and overwrite an existing one if it already exists. You should use the `OVERWRITE` clause when you want to modify an existing analyzer definition. If the analyzer already exists, the `DEFINE ANALYZER` statement will overwrite the existing analyzer definition with the new one.
 

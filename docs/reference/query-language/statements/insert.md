@@ -245,8 +245,6 @@ INSERT IGNORE INTO person [
 
 ### Return values
 
-*Since v2.0.0*
-
 By default, the `INSERT` statement returns the record once it has been inserted. To change what is returned, we can use the `RETURN` clause, specifying either `NONE`, `BEFORE`, `AFTER`, `DIFF`, or a comma-separated list of specific fields to return.
 
 `RETURN NONE` can be useful to avoid excess output:
@@ -410,8 +408,6 @@ INSERT INTO planet [
 ```
 
 ## Bulk insert
-
-*Since v2.0.0*
 
 The `INSERT` statement supports bulk insert, which allows multiple records to be inserted in a single query. The `@what` part of the syntax can be either a single object or an array of objects.
 

@@ -730,8 +730,6 @@ RETURN type::point([ 51.509865, -0.118092 ]);
 
 ## `type::range`
 
-*Since v2.0.0*
-
 The `type::range` function converts a value into a [range](../../language-primitives/data-types/ranges.md). It accepts a single argument, either a range or an array with two values. If the argument is an array, it will be converted into a range, similar to [casting](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting).
 
 ```surql title="API DEFINITION"
@@ -771,7 +769,7 @@ RETURN type::range([1,9,4]);
 **3.x**
 
 > [!NOTE]
-> This function was known as `type::thing` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::thing` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::record` function converts a value into a record pointer definition.
 
@@ -1055,7 +1053,7 @@ RETURN type::uuid("0191f946-936f-7223-bef5-aebbc527ad80");
 ## `type::is_array`
 
 > [!NOTE]
-> This function was known as `type::is::array` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::array` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_array` function checks if the passed value is of type `array`.
 
@@ -1083,7 +1081,7 @@ RETURN type::is_array([ 'a', 'b', 'c' ]);
 ## `type::is_bool`
 
 > [!NOTE]
-> This function was known as `type::is::bool` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::bool` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_bool` function checks if the passed value is of type `bool`.
 
@@ -1111,7 +1109,7 @@ RETURN type::is_bool(true);
 ## `type::is_bytes`
 
 > [!NOTE]
-> This function was known as `type::is::bytes` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::bytes` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_bytes` function checks if the passed value is of type `bytes`.
 
@@ -1139,7 +1137,7 @@ RETURN type::is_bytes("I am not bytes");
 ## `type::is_collection`
 
 > [!NOTE]
-> This function was known as `type::is::collection` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::collection` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_collection` function checks if the passed value is of type `collection`.
 
@@ -1167,7 +1165,7 @@ RETURN type::is_collection("I am not a collection");
 ## `type::is_datetime`
 
 > [!NOTE]
-> This function was known as `type::is::datetime` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::datetime` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_datetime` function checks if the passed value is of type `datetime`.
 
@@ -1194,7 +1192,7 @@ RETURN type::is_datetime(time::now());
 ## `type::is_decimal`
 
 > [!NOTE]
-> This function was known as `type::is::decimal` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::decimal` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_decimal` function checks if the passed value is of type `decimal`.
 
@@ -1223,7 +1221,7 @@ RETURN type::is_decimal(<decimal>
 ## `type::is_duration`
 
 > [!NOTE]
-> This function was known as `type::is::duration` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::duration` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_duration` function checks if the passed value is of type `duration`.
 
@@ -1250,7 +1248,7 @@ RETURN type::is_duration('1970-01-01T00:00:00');
 ## `type::is_float`
 
 > [!NOTE]
-> This function was known as `type::is::float` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::float` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_float` function checks if the passed value is of type ` float`.
 
@@ -1277,7 +1275,7 @@ RETURN type::is_float(<float> 41.5);
 ## `type::is_geometry`
 
 > [!NOTE]
-> This function was known as `type::is::geometry` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::geometry` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_geometry` function checks if the passed value is of type `geometry`.
 
@@ -1304,7 +1302,7 @@ RETURN type::is_geometry((-0.118092, 51.509865));
 ## `type::is_int`
 
 > [!NOTE]
-> This function was known as `type::is::int` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::int` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_int` function checks if the passed value is of type `int`.
 
@@ -1331,7 +1329,7 @@ RETURN type::is_int(<int> 123);
 ## `type::is_line`
 
 > [!NOTE]
-> This function was known as `type::is::line` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::line` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_line` function checks if the passed value is of type `line`.
 
@@ -1359,7 +1357,7 @@ RETURN type::is_line("I am not a line");
 ## `type::is_none`
 
 > [!NOTE]
-> This function was known as `type::is::none` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::none` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_none` function checks if the passed value is of type `none`.
 
@@ -1386,7 +1384,7 @@ RETURN type::is_none(NONE);
 ## `type::is_null`
 
 > [!NOTE]
-> This function was known as `type::is::null` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::null` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_null` function checks if the passed value is of type `null`.
 
@@ -1414,7 +1412,7 @@ RETURN type::is_null(NULL);
 ## `type::is_multiline`
 
 > [!NOTE]
-> This function was known as `type::is::multiline` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::multiline` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_multiline` function checks if the passed value is of type `multiline`.
 
@@ -1442,7 +1440,7 @@ RETURN type::is_multiline("I am not a multiline");
 ## `type::is_multipoint`
 
 > [!NOTE]
-> This function was known as `type::is::multipoint` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::multipoint` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_multipoint` function checks if the passed value is of type `multipoint`.
 
@@ -1470,7 +1468,7 @@ RETURN type::is_multipoint("I am not a multipoint");
 ## `type::is_multipolygon`
 
 > [!NOTE]
-> This function was known as `type::is::multipolygon` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::multipolygon` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_multipolygon` function checks if the passed value is of type `multipolygon`.
 
@@ -1498,7 +1496,7 @@ RETURN type::is_multipolygon("I am not a multipolygon");
 ## `type::is_number`
 
 > [!NOTE]
-> This function was known as `type::is::number` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::number` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_number` function checks if the passed value is of type `number`.
 
@@ -1526,7 +1524,7 @@ RETURN type::is_number(123);
 ## `type::is_object`
 
 > [!NOTE]
-> This function was known as `type::is::object` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::object` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_object` function checks if the passed value is of type `object`.
 
@@ -1554,7 +1552,7 @@ RETURN type::is_object({ hello: 'world' });
 ## `type::is_point`
 
 > [!NOTE]
-> This function was known as `type::is::point` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::point` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_point` function checks if the passed value is of type `point`.
 
@@ -1582,7 +1580,7 @@ RETURN type::is_point((-0.118092, 51.509865));
 ## `type::is_polygon`
 
 > [!NOTE]
-> This function was known as `type::is::polygon` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::polygon` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_polygon` function checks if the passed value is of type `polygon`.
 
@@ -1608,7 +1606,7 @@ RETURN type::is_polygon("I am not a polygon");
 ## `type::is_range`
 
 > [!NOTE]
-> This function was known as `type::is::range` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::range` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_range` function checks if the passed value is of type `range`.
 
@@ -1638,7 +1636,7 @@ type::is_range(0..1);
 ## `type::is_record`
 
 > [!NOTE]
-> This function was known as `type::is::record` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::record` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_record` function checks if the passed value is of type `record`.
 
@@ -1681,7 +1679,7 @@ RETURN type::is_record(user:tobie, 'test');
 ## `type::is_string`
 
 > [!NOTE]
-> This function was known as `type::is::string` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::string` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_string` function checks if the passed value is of type `string`.
 
@@ -1709,7 +1707,7 @@ RETURN type::is_string("abc");
 ## `type::is_uuid`
 
 > [!NOTE]
-> This function was known as `type::is::uuid` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `type::is::uuid` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `type::is_uuid` function checks if the passed value is of type `uuid`.
 
@@ -1736,8 +1734,6 @@ RETURN type::is_uuid(u"018a6680-bef9-701b-9025-e1754f296a0f");
   
 
 ## Method chaining
-
-*Since v2.0.0*
 
 Method chaining allows functions to be called using the `.` dot operator on a value of a certain type instead of the full path of the function followed by the value.
 

@@ -7,8 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `UPSERT` statement
 
-*Since v2.0.0*
-
 The `UPSERT` statement can be used to insert records into the database, or to update them if they exist.
 
 > [!NOTE]

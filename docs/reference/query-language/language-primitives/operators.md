@@ -1250,8 +1250,6 @@ SELECT * FROM (-0.118092, 51.509865) INSIDE {
 true
 ```
 
-*Since v2.1.0*
-
 This operator can also be used to check for the existence of a key inside an [object](data-types/objects.md). To do so, precede `IN` with the field name as a string.
 
 ```surql
@@ -1494,7 +1492,7 @@ ORDER BY score DESC;
 
 ### `AND`, `OR`, and numeric operators inside `@@`
 
-In addition to the `AND` keyword, the `OR` matches operator can also be used as of 3.0.0-beta. This allows a single string to be compared against instead of needing to specify individual parts of the string.
+In addition to the `AND` keyword, the `OR` matches operator can also be used. This allows a single string to be compared against instead of needing to specify individual parts of the string.
 
 ```surql
 /**[test]

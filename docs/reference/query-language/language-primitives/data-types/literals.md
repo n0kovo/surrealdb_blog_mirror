@@ -7,8 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Literals
 
-*Since v2.0.0*
-
 A literal is a value that may have multiple representations or formats, similar to an enum or a union type. A literal can be composed of strings, numbers, objects, arrays, or durations.
 
 ## Examples

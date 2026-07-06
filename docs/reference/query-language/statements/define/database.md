@@ -81,8 +81,6 @@ DEFINE DATABASE IF NOT EXISTS app_vitalsense;
 
 ## Using `OVERWRITE` clause
 
-*Since v2.0.0*
-
 The `OVERWRITE` clause can be used to define a database and overwrite an existing one if it already exists. You should use the `OVERWRITE` clause when you want to modify an existing database definition. If the database already exists, the `DEFINE DATABASE` statement will overwrite the existing definition with the new one.
 
 ```surql

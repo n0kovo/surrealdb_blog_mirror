@@ -759,7 +759,7 @@ RETURN [1,2].concat([3,4], [4,3])
 -- [1, 2, 3, 4, 4, 3]
 ```
 
-As of SurrealDB 3.0.0-beta, the behaviour of this function can also be achieved using the `+` operator.
+As of SurrealDB 3.0.0, the behaviour of this function can also be achieved using the `+` operator.
 
 ```surql
 /**[test]
@@ -863,8 +863,6 @@ RETURN array::distinct([ 1, 2, 1, 3, 3, 4 ]);
   
 
 ## `array::fill`
-
-*Since v2.0.0*
 
 The `array::fill` function replaces all values of an array with a new value.
 
@@ -1288,8 +1286,6 @@ RETURN array::flatten([ [1,
 
 ## `array::fold`
 
-*Since v2.1.0*
-
 The `array::fold` function returns a final value from the elements of an array by allowing an operation to be performed at each step of the way as each subsequent item in the array is encountered. To use `array::fold`, pass in an initial value, followed by parameter names for the current value and the next value and an operation to perform on them. If you only want to perform an operation on each item and do not need an initial value, use the [`array::reduce`](#arrayreduce) function instead.
 
 ```surql title="API DEFINITION"
@@ -1561,8 +1557,6 @@ RETURN array::intersect([1, 2, 3, 4], [3, 4, 5, 6]);
   
 
 ## `array::is_empty`
-
-*Since v2.0.0*
 
 The `array::is_empty` function checks whether the array contains values.
 
@@ -2214,13 +2208,11 @@ RETURN array::push([1, 2, 3, 4], 5);
 
 ## `array::range`
 
-*Since v2.0.0*
-
 The `array::range` function creates an array of numbers from a given range.
 
 ```surql title="API DEFINITION"
 array::range($start: int, $end: int) -> array
--- Also since 3.0.0-beta
+-- Also since 3.0.0
 array::range(range) -> array;
 ```
 
@@ -2255,8 +2247,6 @@ RETURN array::range(1..=5);
   
 
 ## `array::reduce`
-
-*Since v2.1.0*
 
 The `array::reduce` function reduces the elements of an array to a single final value by allowing an operation to be performed at each step of the way as each subsequent item in the array is encountered. To use `array::reduce`, pass in parameter names for the current value and the next value and an operation to perform on them. If you need an initial value to pass in before the other items are operated on, use the [`array::fold`](#arrayfold) function instead.
 
@@ -2405,8 +2395,6 @@ RETURN array::remove([1, 2, 3, 4, 5], -2);
 
 ## `array::repeat`
 
-*Since v2.0.0*
-
 The `array::repeat` function creates an array of a given size contain the specified value for each element. The `count` argument must be non-negative; negative values return an error.
 
 ```surql title="API DEFINITION"
@@ -2495,8 +2483,6 @@ array::sequence(-5, 6);
 
 ## `array::shuffle`
 
-*Since v2.0.0*
-
 The `array::shuffle` function randomly shuffles the items of an array.
 
 ```surql title="API DEFINITION"
@@ -2526,7 +2512,7 @@ The `array::slice` function returns a slice of an array, based on a starting pos
 
 ```surql title="API DEFINITION"
 array::slice(array, $start: int, $len: int) -> array
--- Also since 3.0.0-beta
+-- Also since 3.0.0
 array::slice(array, $slice: range) -> array;
 ```
 
@@ -2892,8 +2878,6 @@ RETURN array::sort::desc([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
 
 ## `array::swap`
 
-*Since v2.0.0*
-
 The `array::swap` function swaps two values of an array based on indexes.
 
 ```surql title="API DEFINITION"
@@ -3200,8 +3184,6 @@ RETURN array::union([1, 2, 1, 6], [1, 3, 4, 5, 6]);
 
 ## `array::windows`
 
-*Since v2.0.0*
-
 ```surql title="API DEFINITION"
 array::windows(array, $window_size: int) -> array
 ```
@@ -3266,8 +3248,6 @@ FROM person;
 ```
 
 ## Method chaining
-
-*Since v2.0.0*
 
 Method chaining allows functions to be called using the `.` dot operator on a value of a certain type instead of the full path of the function followed by the value.
 

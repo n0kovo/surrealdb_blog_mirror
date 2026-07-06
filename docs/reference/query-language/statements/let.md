@@ -173,8 +173,6 @@ LET $session = 10;
 
 ## Typed LET statements
 
-*Since v2.0.0*
-
 Type safety in a `LET` statement can be ensured by adding a `:` (a colon) and the type name after the `LET` keyword.
 
 ```surql

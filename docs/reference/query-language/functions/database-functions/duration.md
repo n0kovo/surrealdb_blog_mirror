@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 This page contains built-in functions and constants for converting between numeric and [duration](../../language-primitives/data-types/durations.md) data.
 
 > [!NOTE]
-> Since version 3.0.0-beta, the `::from::` functions (e.g. `duration::from::millis()`) now use underscores (e.g. `duration::from_millis()`) to better match the intent of the function and method syntax.
+> Since version 3.0.0, the `::from::` functions (e.g. `duration::from::millis()`) now use underscores (e.g. `duration::from_millis()`) to better match the intent of the function and method syntax.
 
 ## Duration functions
 
@@ -575,8 +575,6 @@ RETURN duration::from_weeks(3);
   
 
 ## Method chaining
-
-*Since v2.0.0*
 
 Method chaining allows functions to be called using the `.` dot operator on a value of a certain type instead of the full path of the function followed by the value.
 

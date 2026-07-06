@@ -308,8 +308,6 @@ INSERT [ { id: person:bgq0b0rblnozrufizdjm } ];
 
 ### Export configuration
 
-*Since v2.1.0*
-
 The [`Export`](https://docs.rs/surrealdb/2/surrealdb/method/struct.Export.html) struct has a method called `.with_config()` that gives access to the configuration parameters for the export. These can be chained one after another inside a single line of code. The majority of these functions take a single `bool`:
 
 * `.versions()`: whether to include [version information](../../../reference/query-language/statements/select.md#the-version-clause) for backends with versioning enabled

@@ -80,7 +80,7 @@ These environment variables can be used to configure a SurrealDB server to confi
       <td scope="row" data-label="Notes">Specifies the number of items which can be cached within a single transaction.</td>
     </tr>
 <tr>
-      <td scope="row" data-label="Env var">`SURREAL_DATASTORE_CACHE_SIZE`*Since v2.1.0*</td>
+      <td scope="row" data-label="Env var">`SURREAL_DATASTORE_CACHE_SIZE`</td>
       <td scope="row" data-label="Default">1,000</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">The number of definitions which can be cached across transactions.</td>
@@ -155,7 +155,7 @@ Server-side filesystem access for features that read paths from disk (notably th
   <tbody>
 
   <tr>
-      <td scope="row" data-label="Env var">`SURREAL_MAX_HTTP_REDIRECTS`*Since v2.0.5*</td>
+      <td scope="row" data-label="Env var">`SURREAL_MAX_HTTP_REDIRECTS`</td>
       <td scope="row" data-label="Default">10</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">The maximum number of HTTP redirects allowed within http functions.</td>
@@ -419,13 +419,13 @@ Resource limits for experimental [ISO GQL](../../../learn/querying/gql/overview.
       <td scope="row" data-label="Notes">Specifies how deep the parser will parse recursive queries (queries within queries).</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_OPERATOR_BUFFER_SIZE`*Since v2.1.5*</td>
+      <td scope="row" data-label="Env var">`SURREAL_OPERATOR_BUFFER_SIZE`</td>
       <td scope="row" data-label="Default">2</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">The number of batches each operator buffers ahead of downstream demand. Set to 0 to disable operator-level pipeline buffering.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_REGEX_SIZE_LIMIT`*Since v2.1.5*</td>
+      <td scope="row" data-label="Env var">`SURREAL_REGEX_SIZE_LIMIT`</td>
       <td scope="row" data-label="Default">10,485,760 (10 MiB)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">Limits the maximum allowed size (in bytes) for regular expressions. This prevents excessive memory consumption when building complex or very large regex patterns.</td>
@@ -491,7 +491,7 @@ Resource limits for experimental [ISO GQL](../../../learn/querying/gql/overview.
       <td scope="row" data-label="Notes">Maximum memory limit of the JavaScript function runtime.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_SCRIPTING_MAX_TIME_LIMIT`*Since v2.0.5*</td>
+      <td scope="row" data-label="Env var">`SURREAL_SCRIPTING_MAX_TIME_LIMIT`</td>
       <td scope="row" data-label="Default">5000 (5000 milliseconds or 5 seconds)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">Maximum allowed time in milliseconds that a JavaScript function is allowed to run for.</td>
@@ -596,13 +596,13 @@ Resource limits for experimental [ISO GQL](../../../learn/querying/gql/overview.
   </thead>
   <tbody>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_TELEMETRY_DISABLE_METRICS`*Since v2.1.3*</td>
+      <td scope="row" data-label="Env var">`SURREAL_TELEMETRY_DISABLE_METRICS`</td>
       <td scope="row" data-label="Default">false</td>
       <td scope="row" data-label="Allowed values">true, false</td>
       <td scope="row" data-label="Notes">Whether to disable sending metrics to the GRPC OTEL collector.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_TELEMETRY_DISABLE_TRACING`*Since v2.1.3*</td>
+      <td scope="row" data-label="Env var">`SURREAL_TELEMETRY_DISABLE_TRACING`</td>
       <td scope="row" data-label="Default">false</td>
       <td scope="row" data-label="Allowed values">true, false</td>
       <td scope="row" data-label="Notes">Whether to disable sending traces to the GRPC OTEL collector.</td>
@@ -795,7 +795,7 @@ These settings are for operators, benchmarks, and advanced debugging — not typ
       <td scope="row" data-label="Notes">Whether MVCC versioning is enabled. Used by memory and surrealkv engines.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_MEMORY_THRESHOLD`*Since v2.1.5*</td>
+      <td scope="row" data-label="Env var">`SURREAL_MEMORY_THRESHOLD`</td>
       <td scope="row" data-label="Default">0</td>
       <td scope="row" data-label="Allowed values">A usize or suffixed integer</td>
       <td scope="row" data-label="Notes">Configuring the memory threshold which can be used across the programme to check if the amount of memory available to the programme is lower than required. The value can be specified as bytes (b, or without any suffix), kibibytes (k, kb, or kib), mebibytes (m, mb, or mib), or gibibytes (g, gb, or gib). If the environment variable is not specified, then the threshold is not used, and no memory limit is enabled.</td>
@@ -1547,25 +1547,25 @@ The available environment variables for configuring a RocksDB instance are:
       <td scope="row" data-label="Notes">The readahead buffer size used during compaction.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_COMPACTION_STYLE` *Since v2.0.3*</td>
+      <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_COMPACTION_STYLE` </td>
       <td scope="row" data-label="Default">level</td>
       <td scope="row" data-label="Allowed values">level, universal</td>
       <td scope="row" data-label="Notes">Use to specify the database compaction style.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_DELETION_FACTORY_DELETE_COUNT`*Since v2.0.3*</td>
+      <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_DELETION_FACTORY_DELETE_COUNT`</td>
       <td scope="row" data-label="Default">50</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">The number of deletions to track in the window.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_DELETION_FACTORY_RATIO`*Since v2.0.3*</td>
+      <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_DELETION_FACTORY_RATIO`</td>
       <td scope="row" data-label="Default">0.5</td>
       <td scope="row" data-label="Allowed values">A float</td>
       <td scope="row" data-label="Notes">The ratio of deletions to track in the window.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_DELETION_FACTORY_WINDOW_SIZE`*Since v2.0.3*</td>
+      <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_DELETION_FACTORY_WINDOW_SIZE`</td>
       <td scope="row" data-label="Default">1000</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">The size of the window used to track deletions.</td>
@@ -1613,7 +1613,7 @@ The available environment variables for configuring a RocksDB instance are:
       <td scope="row" data-label="Notes">The number of files needed to trigger level 0 compaction.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_JOBS_COUNT` *Since v2.0.3*</td>
+      <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_JOBS_COUNT`</td>
       <td scope="row" data-label="Default">Number of CPUs * 2</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">The maximum number of threads to use for flushing and compaction.</td>
@@ -1805,7 +1805,7 @@ The available environment variables for configuring a RocksDB instance are:
       <td scope="row" data-label="Notes">A string specifying the keyspace identifier for data isolation.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_TIKV_GRPC_MAX_DECODING_MESSAGE_SIZE`*Since v2.1.8*</td>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_GRPC_MAX_DECODING_MESSAGE_SIZE`</td>
       <td scope="row" data-label="Default">4,194,304 (4 MiB)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">Sets the maximum decoding size of a gRPC message.</td>

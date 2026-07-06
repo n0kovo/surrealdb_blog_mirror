@@ -7,8 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `DEFINE ACCESS` statement
 
-*Since v2.0.0*
-
 Defining an access method allows SurrealDB to grant access to resources using different kinds of credentials.
 
 ## Requirements

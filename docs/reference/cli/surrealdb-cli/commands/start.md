@@ -303,8 +303,6 @@ surreal start --deny-all --allow-funcs "array, string, crypto::argon2, http::get
 
 ## Unauthenticated mode
 
-*Since v2.0.0*
-
 > [!NOTE]
 > We recommend enabling authentication when running SurrealDB in production or in publicly exposed ways. Failure to do so may result in unauthorized access.
 
@@ -317,8 +315,6 @@ surreal start --unauthenticated
 ```
 
 ## Identification headers
-
-*Since v2.0.0*
 
 By default, SurrealDB includes headers in the HTTP response that identify the server name and version. You can suppress these headers by using the `--no-identification-headers` flag.
 

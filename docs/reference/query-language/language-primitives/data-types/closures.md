@@ -7,8 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Closures (anonymous functions)
 
-*Since v2.0.0*
-
 ```syntax title="SurrealQL Syntax"
 LET $parameter = |@parameters| @expression;
 ```

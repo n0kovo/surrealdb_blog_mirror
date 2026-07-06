@@ -1633,8 +1633,6 @@ SELECT id, ->knows[WHERE same_high_school
 
 ### Recursive graph queries
 
-*Since v2.1.0*
-
 Graph edges can also be queried recursively. For a full explanation of this syntax, see the page on [recursive paths](../language-primitives/idioms.md#recursive-paths).
 
 Take the following example which creates five cities, each of which is connected to the next by some type of road of random length.

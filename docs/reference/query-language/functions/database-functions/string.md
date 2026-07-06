@@ -338,8 +338,6 @@ RETURN string::contains('abcdefg', 'cde');
 
 ## `string::ends_with`
 
-*Since v2.0.0*
-
 > [!NOTE]
 > This function was known as `string::endsWith` in versions of SurrealDB before 2.0. The behaviour has not changed.
 
@@ -657,8 +655,6 @@ RETURN string::split('this, is, a, list', ', ');
 
 ## `string::starts_with`
 
-*Since v2.0.0*
-
 > [!NOTE]
 > This function was known as `string::startsWith` in versions of SurrealDB before 2.0. The behaviour has not changed.
 
@@ -758,8 +754,6 @@ RETURN string::words('this is a test');
 
 ## `string::distance::damerau_levenshtein`
 
-*Since v2.1.0*
-
 The `string::distance::damerau_levenshtein` function returns the Damerau-Levenshtein distance between two strings.
 
 ```surql title="API DEFINITION"
@@ -817,8 +811,6 @@ string::distance::damerau_levenshtein($first, $short);
 ```
 
 ## `string::distance::normalized_damerau_levenshtein`
-
-*Since v2.1.0*
 
 The `string::distance::normalized_damerau_levenshtein` function returns the normalized Damerau-Levenshtein distance between two strings. Normalized means that identical strings will return a score of 1, with less similar strings returning lower numbers as the distance grows.
 
@@ -878,8 +870,6 @@ string::distance::normalized_damerau_levenshtein($first, $short);
 
 ## `string::distance::hamming`
 
-*Since v2.1.0*
-
 The `string::distance::hamming` function returns the Hamming distance between two strings of equal length.
 
 ```surql title="API DEFINITION"
@@ -938,8 +928,6 @@ string::distance::hamming($first, $short);
 
 ## `string::distance::levenshtein`
 
-*Since v2.1.0*
-
 The `string::distance::levenshtein` function returns the Levenshtein distance between two strings.
 
 ```surql title="API DEFINITION"
@@ -997,8 +985,6 @@ string::distance::levenshtein($first, $short);
 ```
 
 ## `string::distance::normalized_levenshtein`
-
-*Since v2.1.0*
 
 The `string::distance::normalized_levenshtein` function returns the normalized Levenshtein distance between two strings. Normalized means that identical strings will return a score of 1, with less similar strings returning lower numbers as the distance grows.
 
@@ -1059,9 +1045,7 @@ string::distance::normalized_levenshtein($first, $short);
 ## `string::distance::osa`
 
 > [!NOTE]
-> This function was known as `string::distance::osa_distance` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
-
-*Since v2.1.0*
+> This function was known as `string::distance::osa_distance` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::distance::osa_distance` function returns the OSA (Optimal String Alignment) distance between two strings.
 
@@ -1121,8 +1105,6 @@ string::distance::osa($first, $short);
 
 ## `string::html::encode`
 
-*Since v2.0.0*
-
 The `string::html::encode` function encodes special characters into HTML entities to prevent HTML injection. It is recommended to use this function in most cases when retrieving any untrusted content that may be rendered inside of an HTML document. You can learn more about its behavior from the [original implementation](https://docs.rs/ammonia/latest/ammonia/fn.clean_text.html).
 
 ```surql title="API DEFINITION"
@@ -1146,8 +1128,6 @@ RETURN string::html::encode("<h1>Safe Title</h1><script>alert('XSS')</script><p>
   
 
 ## `string::html::sanitize`
-
-*Since v2.0.0*
 
 The `string::html::sanitize` function sanitizes HTML code to prevent the most dangerous subset of HTML injection that can lead to attacks like cross-site scripting, layout breaking or clickjacking. This function will keep any other HTML syntax intact in order to support user-generated content that needs to contain HTML styling. It is only recommended to rely on this function if you want to allow the creators of the content to have some control over its HTML styling. You can learn more about its behavior from the [original implementation](https://docs.rs/ammonia/latest/ammonia/fn.clean.html).
 
@@ -1173,7 +1153,7 @@ RETURN string::html::sanitize("<h1>Safe Title</h1><script>alert('XSS')</script><
 ## `string::is_alphanum`
 
 > [!NOTE]
-> This function was known as `string::is::alphanum` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::alphanum` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_alphanum` function checks whether a value has only alphanumeric characters.
 
@@ -1201,7 +1181,7 @@ RETURN string::is_alphanum("ABC123");
 ## `string::is_alpha`
 
 > [!NOTE]
-> This function was known as `string::is::alpha` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::alpha` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_alpha` function checks whether a value has only alpha characters.
 
@@ -1228,7 +1208,7 @@ RETURN string::is_alpha("ABCDEF");
 ## `string::is_ascii`
 
 > [!NOTE]
-> This function was known as `string::is::ascii` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::ascii` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_ascii` function checks whether a value has only ascii characters.
 
@@ -1257,7 +1237,7 @@ RETURN string::is_ascii("ABC123"); -- true
 ## `string::is_datetime`
 
 > [!NOTE]
-> This function was known as `string::is::datetime` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::datetime` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_datetime` function checks whether a string representation of a date and time matches either the [datetime](../../language-primitives/data-types/datetimes.md) format or a user-specified format.
 
@@ -1331,7 +1311,7 @@ false
 ## `string::is_domain`
 
 > [!NOTE]
-> This function was known as `string::is::domain` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::domain` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_domain` function checks whether a value is a domain.
 
@@ -1358,7 +1338,7 @@ RETURN string::is_domain("surrealdb.com");
 ## `string::is_email`
 
 > [!NOTE]
-> This function was known as `string::is::email` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::email` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_email` function checks whether a value is an email.
 
@@ -1386,7 +1366,7 @@ RETURN string::is_email("info@surrealdb.com");
 ## `string::is_hexadecimal`
 
 > [!NOTE]
-> This function was known as `string::is::hexadecimal` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::hexadecimal` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_hexadecimal` function checks whether a value is hexadecimal.
 
@@ -1414,9 +1394,7 @@ RETURN string::is_hexadecimal("ff009e");
 ## `string::is_ip`
 
 > [!NOTE]
-> This function was known as `string::is::ip` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
-
-*Since v2.0.0*
+> This function was known as `string::is::ip` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_ip` function checks whether a value is an IP address.
 
@@ -1444,9 +1422,7 @@ RETURN string::is_ip("192.168.0.1");
 ## `string::is_ipv4`
 
 > [!NOTE]
-> This function was known as `string::is::ipv4` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
-
-*Since v2.0.0*
+> This function was known as `string::is::ipv4` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_ipv4` function checks whether a value is an IP v4 address.
 
@@ -1474,9 +1450,7 @@ RETURN string::is_ipv4("192.168.0.1");
 ## `string::is_ipv6`
 
 > [!NOTE]
-> This function was known as `string::is::ipv6` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
-
-*Since v2.0.0*
+> This function was known as `string::is::ipv6` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_ipv6` function checks whether a value is an IP v6 address.
 
@@ -1504,7 +1478,7 @@ RETURN string::is_ipv6("2001:0db8:85a3:0000:0000:8a2e:0370:7334");
 ## `string::is_latitude`
 
 > [!NOTE]
-> This function was known as `string::is::latitude` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::latitude` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_latitude` function checks whether a value is a latitude value.
 
@@ -1532,7 +1506,7 @@ RETURN string::is_latitude("-0.118092");
 ## `string::is_longitude`
 
 > [!NOTE]
-> This function was known as `string::is::longitude` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::longitude` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_longitude` function checks whether a value is a longitude value.
 
@@ -1560,7 +1534,7 @@ RETURN string::is_longitude("51.509865");
 ## `string::is_numeric`
 
 > [!NOTE]
-> This function was known as `string::is::numeric` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::numeric` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_numeric` function checks whether a value has only numeric characters.
 
@@ -1587,7 +1561,7 @@ RETURN string::is_numeric("1484091748");
 ## `string::is_semver`
 
 > [!NOTE]
-> This function was known as `string::is::semver` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::semver` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_semver` function checks whether a value matches a semver version.
 
@@ -1615,7 +1589,7 @@ RETURN string::is_semver("1.0.0");
 ## `string::is_ulid`
 
 > [!NOTE]
-> This function was known as `string::is::ulid` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::ulid` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_ulid` function checks whether a string is a ULID.
 
@@ -1643,7 +1617,7 @@ RETURN string::is_ulid("01JCJB3TPQ50XTG32WM088NKJD");
 ## `string::is_url`
 
 > [!NOTE]
-> This function was known as `string::is::url` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::url` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_url` function checks whether a value is a valid URL.
 
@@ -1671,7 +1645,7 @@ RETURN string::is_url("https://surrealdb.com");
 ## `string::is_record`
 
 > [!NOTE]
-> This function was known as `string::is::record` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::record` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_record` function checks whether a string is a Record ID.
 
@@ -1713,7 +1687,7 @@ RETURN string::is_record("not a record id");       -- false
 ## `string::is_uuid`
 
 > [!NOTE]
-> This function was known as `string::is::uuid` in versions of SurrealDB before 3.0.0-beta. The behaviour has not changed.
+> This function was known as `string::is::uuid` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
 The `string::is_uuid` function checks whether a string is a UUID.
 
@@ -2117,8 +2091,6 @@ SELECT of, score FROM comparison ORDER BY score DESC;
 
 ## `string::similarity::jaro`
 
-*Since v2.1.0*
-
 The `string::similarity::jaro` function returns the Jaro similarity between two strings. Two strings that are identical have a score of 1, while less similar strings will have lower scores as the distance between them increases.
 
 ```surql title="API DEFINITION"
@@ -2177,8 +2149,6 @@ string::similarity::jaro($first, $short);
 
 ## `string::similarity::jaro_winkler`
 
-*Since v2.1.0*
-
 The `string::similarity::jaro_winkler` function returns the Jaro-Winkler similarity between two strings. Two strings that are identical have a score of 1, while less similar strings will have lower scores as the distance between them increases.
 
 ```surql title="API DEFINITION"
@@ -2236,8 +2206,6 @@ string::similarity::jaro_winkler($first, $short);
 ```
 
 ## Method chaining
-
-*Since v2.0.0*
 
 Method chaining allows functions to be called using the `.` dot operator on a value of a certain type instead of the full path of the function followed by the value.
 

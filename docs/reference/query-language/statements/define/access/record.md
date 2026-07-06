@@ -7,8 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `DEFINE ACCESS ... TYPE RECORD`
 
-*Since v2.0.0*
-
 A record access method allows accessing SurrealDB as a [record user](../../../../../learn/security/authentication/authentication.md#record-users).
 
 Record users allow SurrealDB to operate as a web database by offering mechanisms to define custom signin and signup logic as well as custom table and field permissions.

@@ -5,7 +5,7 @@ generated: stub
 
 # Utilities
 
-_Auto-generated index — 5 pages._
+_Auto-generated index — 6 pages._
 
 ## Pages
 
@@ -17,5 +17,7 @@ _Auto-generated index — 5 pages._
   Functions for escaping identifiers and values in SurrealQL queries.
 - [expr](expr.md)
   Type-safe expression builder for constructing SurrealQL conditions.
+- [isRetryableConflict](is-retryable-conflict.md)
+  Default predicate used to detect retryable write conflicts.
 - [surql](surql.md)
   Tagged template for composing parameterised SurrealQL queries.

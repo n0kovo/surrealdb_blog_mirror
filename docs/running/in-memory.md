@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # Run a single-node, in-memory server
 
-**3.x**
+**SurrealDB 3.x**
 
 ```bash
 surreal start mem
@@ -47,6 +47,8 @@ After running the above command, you should see the SurrealDB server start up su
 
 ```bash
 surreal start --user root --pass secret --bind 0.0.0.0:8080
+```
+```text title="Output"
 2026-03-05T03:15:21.128111Z  INFO surrealdb::core::kvs::ds: Starting kvs store in memory
 2026-03-05T03:15:21.129330Z  INFO surrealdb::core::kvs::ds: Started kvs store in memory
 2026-03-05T03:15:21.130104Z  INFO surreal::dbs: Operation succeeded operation="check_version" attempts=1
@@ -85,7 +87,7 @@ The following chart sums up the durability guarantees for SurrealMX in contrast 
 | Sync AOL + Interval fsync | ✅ | ⚠️ (since last fsync) | Fast |
 | Sync AOL + Every fsync | ✅ | ✅ | Slow |
 
-**2.x**
+**SurrealDB 2.x**
 
 ```bash
 surreal start memory
@@ -125,6 +127,8 @@ After running the above command, you should see the SurrealDB server start up su
 
 ```bash
 surreal start --user root --pass secret --bind 0.0.0.0:8080 memory
+```
+```text title="Output"
 2025-08-30T15:06:34.788821Z  INFO surrealdb::kvs::ds: Starting kvs store in memory
 2025-08-30T15:06:34.788859Z  INFO surrealdb::kvs::ds: Started kvs store in memory
 2025-08-30T15:06:34.789222Z  INFO surrealdb::kvs::ds: Initial credentials were provided and no existing root-level users were found: create the initial user 'root'.

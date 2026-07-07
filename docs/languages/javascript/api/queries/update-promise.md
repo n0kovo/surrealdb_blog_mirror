@@ -324,6 +324,47 @@ updatePromise.timeout(duration)
 
 ---
 
+### `.retry()` {#retry}
+
+Retry the operation with exponential backoff if it fails due to a write conflict. Off by default; passing an options object (or calling with no arguments) opts the operation in.
+
+This overrides the connection-wide default set via the [`retry`](../types/index.md#connectoptions) option on `ConnectOptions`.
+
+```ts title="Method Syntax"
+updatePromise.retry(options?)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`options` <label label="optional" /></td>
+            <td>`Partial&lt;<a href="/docs/languages/javascript/api/types/#retryoptions">RetryOptions</a>&gt;`</td>
+            <td>Retry configuration. If omitted, retry is enabled with the default configuration.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+`UpdatePromise<T, I, J>` - Chainable promise
+
+#### Example
+
+```ts
+await db.update(new RecordId('counter', 'c'))
+    .merge({ n: 1 })
+    .retry({ attempts: 3 });
+```
+
+---
+
 ### `.json()` {#json}
 
 Return result as JSON string.

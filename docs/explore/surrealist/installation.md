@@ -25,13 +25,7 @@ This web app contains most of the features available in the desktop app, but wit
 The Surrealist Desktop app is the recommended way to use Surrealist, as it offers more features and flexibility compared to the web app. Some advantages of the desktop app include the ability to connect to insecure endpoints,
 directly opening `.surql` files from your file system, and more.
 
-<a
-	href="/surrealist?download"
-	class="gradient-button group mt-2 mb-8"
->
-	Install Surrealist Desktop
-	
-</a>
+<Button label="Install Surrealist Desktop" href="/surrealist?download" />
 
 ### Windows
 

@@ -197,8 +197,18 @@ async function withRetry<T>(fn: () => Promise<T>, maxRetries = 3): Promise<T> {
 const users = await withRetry(() => db.select(new Table('users')));
 ```
 
+For the specific case of write conflicts under concurrent load, prefer the SDK's built-in [`.retry()`](../api/queries/query.md#retry) over a hand-rolled loop — it applies exponential backoff and only replays work known to be safely retryable.
+
+```ts
+const [n] = await db
+    .query<[number]>('UPDATE counter:c SET n += 1 RETURN n')
+    .retry({ attempts: 3 })
+    .collect();
+```
+
 ## Learn more
 
 - [Errors API reference](../api/errors/index.md) for a complete list of error classes and their properties
 - [Connecting to SurrealDB](connecting-to-surrealdb.md) for connection and reconnection configuration
+- [Retrying on write conflict](connecting-to-surrealdb.md#retrying-on-write-conflict) for configuring built-in query retry
 - [Authentication](authentication.md) for handling authentication flows

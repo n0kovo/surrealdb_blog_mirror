@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T10:11:38.910915+00:00",
+  "generated_at": "2026-07-07T09:35:16.663590+00:00",
   "count": 239,
   "posts": [
     {
@@ -11,7 +11,7 @@
         "featured",
         "releases"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/dltwdtp8w6f8t212zss1ibf8.auto",
       "source": "https://surrealdb.com/blog/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale",
       "local_path": "2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md"
@@ -26,7 +26,7 @@
         "ai",
         "featured"
       ],
-      "readTime": "13 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/0qosv25zuvkwjm9lvzpi8fe7.auto",
       "source": "https://surrealdb.com/blog/bring-surrealdb-to-your-replit-agent",
       "local_path": "2026/07/bring-surrealdb-to-your-replit-agent.md"
@@ -39,7 +39,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/azk6q3sfks9abcan8i6t0qyn.auto",
       "source": "https://surrealdb.com/blog/social-graphs-for-activity-tracking-apps",
       "local_path": "2026/06/social-graphs-for-activity-tracking-apps.md"
@@ -54,7 +54,7 @@
         "featured",
         "ai"
       ],
-      "readTime": "14 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/sfcxy8u2o54oiocexkfpy4zf.auto",
       "source": "https://surrealdb.com/blog/build-apps-on-your-data-with-surrealdb-and-lovable",
       "local_path": "2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md"
@@ -67,7 +67,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/zjqi2gx2ix1mtxy1k5st40nv.auto",
       "source": "https://surrealdb.com/blog/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex",
       "local_path": "2026/06/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex.md"
@@ -80,7 +80,7 @@
       "categories": [
         "engineering"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/wog3a3t96a4gqk3cr6fs4rnx.auto",
       "source": "https://surrealdb.com/blog/deterministic-simulation-testing-and-its-use-at-surrealdb",
       "local_path": "2026/06/deterministic-simulation-testing-and-its-use-at-surrealdb.md"
@@ -94,7 +94,7 @@
         "featured",
         "releases"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/nksi63smg3svlrwr5g01nm9y.auto",
       "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-9",
       "local_path": "2026/06/whats-new-in-surrealist-3-9.md"
@@ -107,7 +107,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "8 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/rahxum8zyd0lra683dbvhbjo.auto",
       "source": "https://surrealdb.com/blog/organizations-and-teams-for-your-surrealdb-app",
       "local_path": "2026/06/organizations-and-teams-for-your-surrealdb-app.md"
@@ -120,7 +120,7 @@
       "categories": [
         "engineering"
       ],
-      "readTime": "8 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/22okbtigeqzi1r914x1jpteb.auto",
       "source": "https://surrealdb.com/blog/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do",
       "local_path": "2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md"
@@ -133,7 +133,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/iyrpvhru0vzmmg48htjfmuqa.auto",
       "source": "https://surrealdb.com/blog/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace",
       "local_path": "2026/06/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace.md"
@@ -146,7 +146,7 @@
       "categories": [
         "company"
       ],
-      "readTime": "14 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/6r1ur5irjmadv0ht4dnibobq.auto",
       "source": "https://surrealdb.com/blog/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai",
       "local_path": "2026/06/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai.md"
@@ -161,7 +161,7 @@
         "company",
         "featured"
       ],
-      "readTime": "10 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/x7nk2jo3hcahhf5cx69mlbps.auto",
       "source": "https://surrealdb.com/blog/surrealdb-3-x-by-the-numbers",
       "local_path": "2026/05/surrealdb-3-x-by-the-numbers.md"
@@ -175,7 +175,7 @@
         "releases",
         "featured"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/5794hd6hey60g57zwtz2edji.auto",
       "source": "https://surrealdb.com/blog/surrealdb-3-1-stability-diskann-and-a-new-release-process",
       "local_path": "2026/05/surrealdb-3-1-stability-diskann-and-a-new-release-process.md"
@@ -188,7 +188,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/1z378q51no42psi64y5efe4t.auto",
       "source": "https://surrealdb.com/blog/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo",
       "local_path": "2026/05/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo.md"
@@ -202,7 +202,7 @@
         "ai",
         "tutorials"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/o4ka6f6ynic0rrpmxtte0vmh.auto",
       "source": "https://surrealdb.com/blog/agentic-retrieval-for-structured-data-with-text-to-surql",
       "local_path": "2026/05/agentic-retrieval-for-structured-data-with-text-to-surql.md"
@@ -215,7 +215,7 @@
       "categories": [
         "ai"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/tzo9yheodgtpvcf944rpilgn.auto",
       "source": "https://surrealdb.com/blog/what-chunk-strategies-exist-and-how-to-choose-one",
       "local_path": "2026/05/what-chunk-strategies-exist-and-how-to-choose-one.md"
@@ -228,7 +228,7 @@
       "categories": [
         "ai"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/1s43w8omsve1lak6dv2jjwvl.auto",
       "source": "https://surrealdb.com/blog/what-is-the-recommended-chunk-size",
       "local_path": "2026/05/what-is-the-recommended-chunk-size.md"
@@ -243,7 +243,7 @@
         "featured",
         "releases"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/tcal2bxz4xjbp3xs4i60qcq0.auto",
       "source": "https://surrealdb.com/blog/schema-migrations-in-surrealdb-a-local-dev-workflow",
       "local_path": "2026/05/schema-migrations-in-surrealdb-a-local-dev-workflow.md"
@@ -256,7 +256,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/hkvf3qnxom7qx26wgbgw2ekd.auto",
       "source": "https://surrealdb.com/blog/kreuzberg-surrealdb-from-unstructured-documents-to-hybrid-retrieval",
       "local_path": "2026/04/kreuzberg-surrealdb-from-unstructured-documents-to-hybrid-retrieval.md"
@@ -269,7 +269,7 @@
       "categories": [
         "ai"
       ],
-      "readTime": "11 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/fuaerpy85vnd6q9abysq1arj.auto",
       "source": "https://surrealdb.com/blog/hybrid-search-inside-surrealdb",
       "local_path": "2026/04/hybrid-search-inside-surrealdb.md"
@@ -283,7 +283,7 @@
         "community",
         "ai"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/9815als4cfdp8asb88al3njt.auto",
       "source": "https://surrealdb.com/blog/building-compounding-memory-with-knowledge-graphs-and-agentic-rag",
       "local_path": "2026/04/building-compounding-memory-with-knowledge-graphs-and-agentic-rag.md"
@@ -297,7 +297,7 @@
         "engineering",
         "tutorials"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/0wjvo2d6lcnnleyqnasjqnxy.auto",
       "source": "https://surrealdb.com/blog/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search",
       "local_path": "2026/04/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search.md"
@@ -311,7 +311,7 @@
         "featured",
         "releases"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/xznknzje1thbv1o7v7plfeze.auto",
       "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-8",
       "local_path": "2026/04/whats-new-in-surrealist-3-8.md"
@@ -325,7 +325,7 @@
         "featured",
         "ai"
       ],
-      "readTime": "13 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d75p8dtudggs73cie0ag.auto",
       "source": "https://surrealdb.com/blog/graph-rag-does-not-need-a-graph-database-it-needs-a-database-that-does-everything",
       "local_path": "2026/04/graph-rag-does-not-need-a-graph-database-it-needs-a-database-that-does-everything.md"
@@ -339,7 +339,7 @@
         "featured",
         "ai"
       ],
-      "readTime": "17 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d725aiura3mc73bjahfg.auto",
       "source": "https://surrealdb.com/blog/how-to-get-near-perfect-deterministic-accuracy-from-your-ai-agents",
       "local_path": "2026/03/how-to-get-near-perfect-deterministic-accuracy-from-your-ai-agents.md"
@@ -353,7 +353,7 @@
         "featured",
         "tutorials"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d719pigqd08s7390vj2g.auto",
       "source": "https://surrealdb.com/blog/surrealmx-in-memory-storage-with-time-travel-and-persistent-storage",
       "local_path": "2026/03/surrealmx-in-memory-storage-with-time-travel-and-persistent-storage.md"
@@ -367,7 +367,7 @@
         "featured",
         "engineering"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d6o2cfo79v1s739r31vg.auto",
       "source": "https://surrealdb.com/blog/exponential-cost-traps-in-database-architectures-how-surrealdb-breaks-the-cycle",
       "local_path": "2026/03/exponential-cost-traps-in-database-architectures-how-surrealdb-breaks-the-cycle.md"
@@ -380,7 +380,7 @@
       "categories": [
         "featured"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d6o2cfo79v1s739r321g.auto",
       "source": "https://surrealdb.com/blog/where-surrealdb-fits-in-your-stack",
       "local_path": "2026/03/where-surrealdb-fits-in-your-stack.md"
@@ -394,7 +394,7 @@
         "featured",
         "company"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d6o2b5079v1s739r31rg.auto",
       "source": "https://surrealdb.com/blog/surrealdb-is-now-available-on-aws-marketplace",
       "local_path": "2026/03/surrealdb-is-now-available-on-aws-marketplace.md"
@@ -408,7 +408,7 @@
         "featured",
         "engineering"
       ],
-      "readTime": "16 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d6km1uo3bfis73e33er0.auto",
       "source": "https://surrealdb.com/blog/openais-postgres-architecture-a-brilliant-fix-for-a-billion-dollar-mistake",
       "local_path": "2026/03/openais-postgres-architecture-a-brilliant-fix-for-a-billion-dollar-mistake.md"
@@ -422,7 +422,7 @@
         "featured",
         "tutorials"
       ],
-      "readTime": "10 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d6fg02ke4v5c739gcpb0.auto",
       "source": "https://surrealdb.com/blog/how-to-use-surrealism-to-build-your-own-custom-surrealdb-extensions",
       "local_path": "2026/03/how-to-use-surrealism-to-build-your-own-custom-surrealdb-extensions.md"
@@ -437,7 +437,7 @@
         "engineering",
         "tutorials"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d69eiodhk7ec73f2kdf0.auto",
       "source": "https://surrealdb.com/blog/file-support-in-surrealdb-3-0",
       "local_path": "2026/02/file-support-in-surrealdb-3-0.md"
@@ -451,7 +451,7 @@
         "engineering",
         "releases"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d6fg02ke4v5c739gcpbg.auto",
       "source": "https://surrealdb.com/blog/introducing-javascript-sdk-2-0",
       "local_path": "2026/02/introducing-javascript-sdk-2-0.md"
@@ -466,7 +466,7 @@
         "engineering",
         "tutorials"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d68ukllhk7ec73f2kcc0.auto",
       "source": "https://surrealdb.com/blog/custom-api-endpoints-streamlining-your-architecture",
       "local_path": "2026/02/custom-api-endpoints-streamlining-your-architecture.md"
@@ -480,7 +480,7 @@
         "featured",
         "company"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d68ukllhk7ec73f2kc90.auto",
       "source": "https://surrealdb.com/blog/surrealdb-raises-23m-series-a-extension-to-power-the-ai-native-database-era",
       "local_path": "2026/02/surrealdb-raises-23m-series-a-extension-to-power-the-ai-native-database-era.md"
@@ -493,7 +493,7 @@
       "categories": [
         "featured"
       ],
-      "readTime": "25 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d68ukllhk7ec73f2kc9g.auto",
       "source": "https://surrealdb.com/blog/introducing-surrealdb-3-0--the-future-of-ai-agent-memory",
       "local_path": "2026/02/introducing-surrealdb-3-0--the-future-of-ai-agent-memory.md"
@@ -507,7 +507,7 @@
         "featured",
         "engineering"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d68ukllhk7ec73f2kccg.auto",
       "source": "https://surrealdb.com/blog/surrealdb-3-0-benchmarks-a-new-foundation-for-performance",
       "local_path": "2026/02/surrealdb-3-0-benchmarks-a-new-foundation-for-performance.md"
@@ -520,7 +520,7 @@
       "categories": [
         "featured"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d68ukllhk7ec73f2kce0.auto",
       "source": "https://surrealdb.com/blog/introducing-surrealism",
       "local_path": "2026/02/introducing-surrealism.md"
@@ -533,7 +533,7 @@
       "categories": [
         "featured"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d69e7l5hk7ec73f2kdd0.auto",
       "source": "https://surrealdb.com/blog/surrealdb-vs-neo4j",
       "local_path": "2026/02/surrealdb-vs-neo4j.md"
@@ -546,7 +546,7 @@
       "categories": [
         "featured"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d69e7l5hk7ec73f2kdcg.auto",
       "source": "https://surrealdb.com/blog/surrealdb-vs-postgres",
       "local_path": "2026/02/surrealdb-vs-postgres.md"
@@ -559,7 +559,7 @@
       "categories": [
         "featured"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d69e7l5hk7ec73f2kdbg.auto",
       "source": "https://surrealdb.com/blog/surrealdb-vs-mongodb",
       "local_path": "2026/02/surrealdb-vs-mongodb.md"
@@ -574,7 +574,7 @@
         "tutorials",
         "ai"
       ],
-      "readTime": "11 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d62cfitjoqgc73be5iv0.auto",
       "source": "https://surrealdb.com/blog/how-to-build-a-knowledge-graph-for-ai",
       "local_path": "2026/02/how-to-build-a-knowledge-graph-for-ai.md"
@@ -589,7 +589,7 @@
         "tutorials",
         "ai"
       ],
-      "readTime": "8 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d5svric8bm2s73cj5ks0.auto",
       "source": "https://surrealdb.com/blog/knowledge-graph-rag-two-query-patterns-for-smarter-ai-agents",
       "local_path": "2026/01/knowledge-graph-rag-two-query-patterns-for-smarter-ai-agents.md"
@@ -603,7 +603,7 @@
         "featured",
         "tutorials"
       ],
-      "readTime": "9 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d5rql5c8bm2s73cj5k7g.auto",
       "source": "https://surrealdb.com/blog/a-look-at-surrealql-and-how-it-differs-from-postgresql",
       "local_path": "2026/01/a-look-at-surrealql-and-how-it-differs-from-postgresql.md"
@@ -617,7 +617,7 @@
         "featured",
         "tutorials"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d51alp7eqfus73eceang.auto",
       "source": "https://surrealdb.com/blog/learning-through-building-surrealdb-universitys-newest-tutorial",
       "local_path": "2025/12/learning-through-building-surrealdb-universitys-newest-tutorial.md"
@@ -631,7 +631,7 @@
         "featured",
         "ai"
       ],
-      "readTime": "11 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d51a527eqfus73eceamg.auto",
       "source": "https://surrealdb.com/blog/agents-with-memory-how-agno-and-surrealdb-enable-reliable-ai-systems",
       "local_path": "2025/12/agents-with-memory-how-agno-and-surrealdb-enable-reliable-ai-systems.md"
@@ -646,7 +646,7 @@
         "ai",
         "events"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d51tkrfeqfus73eceas0.auto",
       "source": "https://surrealdb.com/blog/polyai-on-building-context-aware-voice-agents-latency-knowledge-bases-and-what-actually-ships",
       "local_path": "2025/12/polyai-on-building-context-aware-voice-agents-latency-knowledge-bases-and-what-actually-ships.md"
@@ -660,7 +660,7 @@
         "featured",
         "company"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d4tc1r5subvc739svo90.auto",
       "source": "https://surrealdb.com/blog/surrealdb-joins-the-nvidia-inception-program",
       "local_path": "2025/12/surrealdb-joins-the-nvidia-inception-program.md"
@@ -674,7 +674,7 @@
         "featured",
         "company"
       ],
-      "readTime": "9 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d4jh55u25fgc738gai9g.auto",
       "source": "https://surrealdb.com/blog/why-companies-are-adopting-surrealdb",
       "local_path": "2025/11/why-companies-are-adopting-surrealdb.md"
@@ -689,7 +689,7 @@
         "tutorials",
         "ai"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d40tivcf9iks73bdgbn0.auto",
       "source": "https://surrealdb.com/blog/exploring-the-new-surrealdb-integration-with-agno",
       "local_path": "2025/10/exploring-the-new-surrealdb-integration-with-agno.md"
@@ -703,7 +703,7 @@
         "featured",
         "tutorials"
       ],
-      "readTime": "10 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d3ju72lq0ptc73ba3tag.auto",
       "source": "https://surrealdb.com/blog/using-surrealdb-to-expose-organised-influence-campaigns",
       "local_path": "2025/10/using-surrealdb-to-expose-organised-influence-campaigns.md"
@@ -718,7 +718,7 @@
         "ai",
         "community"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d3jmq2lq0ptc73ba3t7g.auto",
       "source": "https://surrealdb.com/blog/bring-your-own-knowledge-base-agent-studio-meets-surrealdb",
       "local_path": "2025/10/bring-your-own-knowledge-base-agent-studio-meets-surrealdb.md"
@@ -733,7 +733,7 @@
         "ai",
         "community"
       ],
-      "readTime": "9 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d3dpg1tq0ptc73ba3idg.auto",
       "source": "https://surrealdb.com/blog/from-knowledge-graph-generation-to-rag-for-stablecoin-regulatory-intelligence",
       "local_path": "2025/09/from-knowledge-graph-generation-to-rag-for-stablecoin-regulatory-intelligence.md"
@@ -747,7 +747,7 @@
         "featured",
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d39dq1tq0ptc73ba3d9g.auto",
       "source": "https://surrealdb.com/blog/research-paper--bridging-analytics-and-semantics-with-surrealdb",
       "local_path": "2025/09/research-paper--bridging-analytics-and-semantics-with-surrealdb.md"
@@ -761,7 +761,7 @@
         "featured",
         "tutorials"
       ],
-      "readTime": "12 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d30oumjg6hac739vbqh0.auto",
       "source": "https://surrealdb.com/blog/using-historical-books-to-create-structured-knowledge-graphs-in-surrealdb",
       "local_path": "2025/09/using-historical-books-to-create-structured-knowledge-graphs-in-surrealdb.md"
@@ -777,7 +777,7 @@
         "engineering",
         "ai"
       ],
-      "readTime": "8 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d2rj87bg6hac739vbks0.auto",
       "source": "https://surrealdb.com/blog/power-up-your-ai-workflows-the-official-surrealdb-x-n8n-node-is-here",
       "local_path": "2025/09/power-up-your-ai-workflows-the-official-surrealdb-x-n8n-node-is-here.md"
@@ -791,7 +791,7 @@
         "featured",
         "company"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d2sjnp3g6hac739vbneg.auto",
       "source": "https://surrealdb.com/blog/how-defence-is-changing-and-why-databases-are-critical-to-the-shift-into-ai",
       "local_path": "2025/09/how-defence-is-changing-and-why-databases-are-critical-to-the-shift-into-ai.md"
@@ -805,7 +805,7 @@
         "featured",
         "company"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d2opse3g6hac739vbaqg.auto",
       "source": "https://surrealdb.com/blog/surrealdb-cloud-successfully-completes-soc-2-type-2-audit",
       "local_path": "2025/08/surrealdb-cloud-successfully-completes-soc-2-type-2-audit.md"
@@ -820,7 +820,7 @@
         "tutorials",
         "ai"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d2nhhm3g6hac739vb9qg.auto",
       "source": "https://surrealdb.com/blog/multi-tool-agent-with-surrealmcp-and-agno",
       "local_path": "2025/08/multi-tool-agent-with-surrealmcp-and-agno.md"
@@ -835,7 +835,7 @@
         "releases",
         "ai"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d2kt0pllc87c73c9hu40.auto",
       "source": "https://surrealdb.com/blog/introducing-surrealmcp",
       "local_path": "2025/08/introducing-surrealmcp.md"
@@ -850,7 +850,7 @@
         "tutorials",
         "ai"
       ],
-      "readTime": "8 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d2jduj5lc87c73c9hs10.auto",
       "source": "https://surrealdb.com/blog/using-unstructured-data-to-create-knowledge-graphs-in-surrealdb",
       "local_path": "2025/08/using-unstructured-data-to-create-knowledge-graphs-in-surrealdb.md"
@@ -864,7 +864,7 @@
         "featured",
         "tutorials"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d2j251tlc87c73c9hqo0.auto",
       "source": "https://surrealdb.com/blog/from-legacy-to-leverage--unlocking-financial-data-with-surrealdb",
       "local_path": "2025/08/from-legacy-to-leverage--unlocking-financial-data-with-surrealdb.md"
@@ -879,7 +879,7 @@
         "tutorials",
         "community"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d2i1bq5lc87c73c9hnb0.auto",
       "source": "https://surrealdb.com/blog/enforcing-xor-eitheror-fields-in-surrealdb",
       "local_path": "2025/08/enforcing-xor-eitheror-fields-in-surrealdb.md"
@@ -893,7 +893,7 @@
         "featured",
         "company"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d2i2u9dlc87c73c9hnd0.auto",
       "source": "https://surrealdb.com/blog/surrealdb-achieves-cyber-essentials-plus-certification",
       "local_path": "2025/08/surrealdb-achieves-cyber-essentials-plus-certification.md"
@@ -907,7 +907,7 @@
         "featured",
         "tutorials"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d2hijdtlc87c73c9hn5g.auto",
       "source": "https://surrealdb.com/blog/ten-tips-and-tricks-for-your-surrealdb-queries",
       "local_path": "2025/08/ten-tips-and-tricks-for-your-surrealdb-queries.md"
@@ -922,7 +922,7 @@
         "tutorials",
         "ai"
       ],
-      "readTime": "8 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d2b5ln5lc87c73c9he20.auto",
       "source": "https://surrealdb.com/blog/multi-model-rag-with-langchain",
       "local_path": "2025/08/multi-model-rag-with-langchain.md"
@@ -937,7 +937,7 @@
         "tutorials",
         "ai"
       ],
-      "readTime": "8 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d29fct5lc87c73c9h8a0.auto",
       "source": "https://surrealdb.com/blog/hybrid-vector-text-search-in-the-terminal-with-surrealdb-and-ratatui",
       "local_path": "2025/08/hybrid-vector-text-search-in-the-terminal-with-surrealdb-and-ratatui.md"
@@ -952,7 +952,7 @@
         "company",
         "tutorials"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d29hdd5lc87c73c9h8b0.auto",
       "source": "https://surrealdb.com/blog/migrate-your-data-directly-to-surrealdb-using-surreal-sync",
       "local_path": "2025/08/migrate-your-data-directly-to-surrealdb-using-surreal-sync.md"
@@ -966,7 +966,7 @@
         "featured",
         "company"
       ],
-      "readTime": "8 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d25ig73v010s73fd748g.auto",
       "source": "https://surrealdb.com/blog/does-the-edge-need-a-new-database",
       "local_path": "2025/07/does-the-edge-need-a-new-database.md"
@@ -981,7 +981,7 @@
         "featured",
         "ai"
       ],
-      "readTime": "9 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d249e5rv010s73fd70t0.auto",
       "source": "https://surrealdb.com/blog/beyond-basic-rag-building-a-multi-cycle-reasoning-engine-on-surrealdb",
       "local_path": "2025/07/beyond-basic-rag-building-a-multi-cycle-reasoning-engine-on-surrealdb.md"
@@ -996,7 +996,7 @@
         "tutorials",
         "ai"
       ],
-      "readTime": "11 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1vkgndgdsrs739jmac0.auto",
       "source": "https://surrealdb.com/blog/building-an-ai-native-multi-model-ui-with-surrealdb",
       "local_path": "2025/07/building-an-ai-native-multi-model-ui-with-surrealdb.md"
@@ -1010,7 +1010,7 @@
         "releases",
         "featured"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d215gmbv010s73fd6s9g.auto",
       "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-5",
       "local_path": "2025/07/whats-new-in-surrealist-3-5.md"
@@ -1024,7 +1024,7 @@
         "featured",
         "tutorials"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1vjdgdgdsrs739jmaa0.auto",
       "source": "https://surrealdb.com/blog/two-new-ways-to-keep-an-eye-on-your-surrealdb-database",
       "local_path": "2025/07/two-new-ways-to-keep-an-eye-on-your-surrealdb-database.md"
@@ -1038,7 +1038,7 @@
         "featured",
         "company"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1t1e3tgdsrs739jm7fg.auto",
       "source": "https://surrealdb.com/blog/the-new-era-of-data-lakes-knowledge-lakes",
       "local_path": "2025/07/the-new-era-of-data-lakes-knowledge-lakes.md"
@@ -1052,7 +1052,7 @@
         "featured",
         "tutorials"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1qfcpdgdsrs739jm520.auto",
       "source": "https://surrealdb.com/blog/ten-more-tips-and-tricks-for-your-database-schema",
       "local_path": "2025/07/ten-more-tips-and-tricks-for-your-database-schema.md"
@@ -1067,7 +1067,7 @@
         "engineering",
         "ai"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1jphnng5t0c73ch7u70.auto",
       "source": "https://surrealdb.com/blog/make-a-medical-chatbot-using-graphrag-with-surrealdb-langchain",
       "local_path": "2025/07/make-a-medical-chatbot-using-graphrag-with-surrealdb-langchain.md"
@@ -1081,7 +1081,7 @@
         "featured",
         "company"
       ],
-      "readTime": "8 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1mj3ohlt1is73fvissg.auto",
       "source": "https://surrealdb.com/blog/the-power-of-surrealdb-embedded",
       "local_path": "2025/07/the-power-of-surrealdb-embedded.md"
@@ -1096,7 +1096,7 @@
         "engineering",
         "ai"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1jph8vg5t0c73ch7u60.auto",
       "source": "https://surrealdb.com/blog/semantic-search-in-rust-with-surrealdb-and-mistral-ai",
       "local_path": "2025/07/semantic-search-in-rust-with-surrealdb-and-mistral-ai.md"
@@ -1111,7 +1111,7 @@
         "tutorials",
         "ai"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1jtidplt1is73fviqrg.auto",
       "source": "https://surrealdb.com/blog/minimal-langchain-chatbot-example-with-vector-and-graph",
       "local_path": "2025/07/minimal-langchain-chatbot-example-with-vector-and-graph.md"
@@ -1126,7 +1126,7 @@
         "featured",
         "ai"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1hrntfg5t0c73ch7rj0.auto",
       "source": "https://surrealdb.com/blog/announcing-our-official-langchain-integration",
       "local_path": "2025/07/announcing-our-official-langchain-integration.md"
@@ -1141,7 +1141,7 @@
         "tutorials",
         "ai"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1h73ifg5t0c73ch7ps0.auto",
       "source": "https://surrealdb.com/blog/make-a-genai-chatbot-using-graphrag-with-surrealdb-langchain",
       "local_path": "2025/06/make-a-genai-chatbot-using-graphrag-with-surrealdb-langchain.md"
@@ -1156,7 +1156,7 @@
         "featured",
         "ai"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1dr5kng5t0c73ch7ll0.auto",
       "source": "https://surrealdb.com/blog/the-state-of-agentic-ai-and-the-need-for-agentic-memory",
       "local_path": "2025/06/the-state-of-agentic-ai-and-the-need-for-agentic-memory.md"
@@ -1171,7 +1171,7 @@
         "engineering",
         "ai"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1e1envg5t0c73ch7m40.auto",
       "source": "https://surrealdb.com/blog/semantic-search-with-surrealdb-and-openai",
       "local_path": "2025/06/semantic-search-with-surrealdb-and-openai.md"
@@ -1185,7 +1185,7 @@
         "company",
         "featured"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1dsm17g5t0c73ch7ln0.auto",
       "source": "https://surrealdb.com/blog/surreal-cloud-enterprise",
       "local_path": "2025/06/surreal-cloud-enterprise.md"
@@ -1199,7 +1199,7 @@
         "releases",
         "featured"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1drlsfg5t0c73ch7lm0.auto",
       "source": "https://surrealdb.com/blog/introducing-network-capabilities-in-surreal-cloud",
       "local_path": "2025/06/introducing-network-capabilities-in-surreal-cloud.md"
@@ -1214,7 +1214,7 @@
         "featured",
         "ai"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1d6n1fg5t0c73ch7lfg.auto",
       "source": "https://surrealdb.com/blog/building-real-time-ai-pipelines-in-surrealdb",
       "local_path": "2025/06/building-real-time-ai-pipelines-in-surrealdb.md"
@@ -1228,7 +1228,7 @@
         "engineering",
         "featured"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1cj6q7g5t0c73ch7l8g.auto",
       "source": "https://surrealdb.com/blog/seamless-data-ingestion-with-the-airbyte-connector",
       "local_path": "2025/06/seamless-data-ingestion-with-the-airbyte-connector.md"
@@ -1243,7 +1243,7 @@
         "featured",
         "ai"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1alohfg5t0c73ch7kl0.auto",
       "source": "https://surrealdb.com/blog/what-are-knowledge-graphs-and-why-is-everyone-talking-about-them",
       "local_path": "2025/06/what-are-knowledge-graphs-and-why-is-everyone-talking-about-them.md"
@@ -1257,7 +1257,7 @@
         "releases",
         "featured"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d19telng5t0c73ch7keg.auto",
       "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-4",
       "local_path": "2025/06/whats-new-in-surrealist-3-4.md"
@@ -1271,7 +1271,7 @@
         "featured",
         "company"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1a07jvg5t0c73ch7kgg.auto",
       "source": "https://surrealdb.com/blog/databases-are-the-next-ai-frontier",
       "local_path": "2025/06/databases-are-the-next-ai-frontier.md"
@@ -1286,7 +1286,7 @@
         "tutorials",
         "ai"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d18l917g5t0c73ch7k40.auto",
       "source": "https://surrealdb.com/blog/how-to-simplify-a-graph-rag-architecture-using-amazon-bedrock-and-surrealdb",
       "local_path": "2025/06/how-to-simplify-a-graph-rag-architecture-using-amazon-bedrock-and-surrealdb.md"
@@ -1300,7 +1300,7 @@
         "featured",
         "tutorials"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1clqofg5t0c73ch7lag.auto",
       "source": "https://surrealdb.com/blog/ten-tips-and-tricks-for-your-database-schema",
       "local_path": "2025/06/ten-tips-and-tricks-for-your-database-schema.md"
@@ -1315,7 +1315,7 @@
         "engineering",
         "ai"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d18pblng5t0c73ch7k60.auto",
       "source": "https://surrealdb.com/blog/rag-can-be-rigged",
       "local_path": "2025/06/rag-can-be-rigged.md"
@@ -1328,7 +1328,7 @@
       "categories": [
         "featured"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d1604c7g5t0c73ch7j80.auto",
       "source": "https://surrealdb.com/blog/fraud-detection-with-surrealdb",
       "local_path": "2025/06/fraud-detection-with-surrealdb.md"
@@ -1342,7 +1342,7 @@
         "featured",
         "engineering"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d144emvg5t0c73ch7i10.auto",
       "source": "https://surrealdb.com/blog/seamless-data-ingestion-with-the-fivetran-connector",
       "local_path": "2025/06/seamless-data-ingestion-with-the-fivetran-connector.md"
@@ -1356,7 +1356,7 @@
         "featured",
         "company"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d13upsvg5t0c73ch7hkg.auto",
       "source": "https://surrealdb.com/blog/how-aspire-comps-replaced-5-backend-tools-with-surrealdb-and-scaled-to-700000-users",
       "local_path": "2025/06/how-aspire-comps-replaced-5-backend-tools-with-surrealdb-and-scaled-to-700000-users.md"
@@ -1370,7 +1370,7 @@
         "tutorials",
         "featured"
       ],
-      "readTime": "10 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d0vvnj7g5t0c73ch7gk0.auto",
       "source": "https://surrealdb.com/blog/enhance-your-musical-skills-with-surrealists-graph-view",
       "local_path": "2025/06/enhance-your-musical-skills-with-surrealists-graph-view.md"
@@ -1384,7 +1384,7 @@
         "featured",
         "engineering"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d0vfoung5t0c73ch7gfg.auto",
       "source": "https://surrealdb.com/blog/three-ways-to-model-data-relationships-in-surrealdb",
       "local_path": "2025/06/three-ways-to-model-data-relationships-in-surrealdb.md"
@@ -1397,7 +1397,7 @@
       "categories": [
         "company"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d0o50ang5t0c73ch7erg.auto",
       "source": "https://surrealdb.com/blog/surreal-cloud-successfully-completes-soc2-type-1-audit",
       "local_path": "2025/05/surreal-cloud-successfully-completes-soc2-type-1-audit.md"
@@ -1411,7 +1411,7 @@
         "featured",
         "releases"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cvv6ek130bls73e029v0.auto",
       "source": "https://surrealdb.com/blog/introducing-teams-and-organisations-in-surreal-cloud",
       "local_path": "2025/04/introducing-teams-and-organisations-in-surreal-cloud.md"
@@ -1425,7 +1425,7 @@
         "tutorials",
         "featured"
       ],
-      "readTime": "17 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cvpoha1ua1oc73cr55ng.auto",
       "source": "https://surrealdb.com/blog/whats-a-database-anyway-a-blog-post-for-kids",
       "local_path": "2025/04/whats-a-database-anyway-a-blog-post-for-kids.md"
@@ -1439,7 +1439,7 @@
         "engineering",
         "ai"
       ],
-      "readTime": "11 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cvghmhgfkedc73aljo90.auto",
       "source": "https://surrealdb.com/blog/cooking-up-faster-rag-using-in-database-embeddings-in-surrealdb",
       "local_path": "2025/04/cooking-up-faster-rag-using-in-database-embeddings-in-surrealdb.md"
@@ -1453,7 +1453,7 @@
         "releases",
         "featured"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cvcp9bgfkedc73aljkmg.auto",
       "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-3",
       "local_path": "2025/03/whats-new-in-surrealist-3-3.md"
@@ -1467,7 +1467,7 @@
         "engineering",
         "ai"
       ],
-      "readTime": "13 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cvghsp0fkedc73aljoa0.auto",
       "source": "https://surrealdb.com/blog/beyond-black-boxes--building-customisable-and-secure-rag-systems-for-financial-services",
       "local_path": "2025/03/beyond-black-boxes--building-customisable-and-secure-rag-systems-for-financial-services.md"
@@ -1481,7 +1481,7 @@
         "tutorials",
         "featured"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cvhcfigfkedc73aljong.auto",
       "source": "https://surrealdb.com/blog/tips-and-tricks-on-using-the-rust-sdk",
       "local_path": "2025/03/tips-and-tricks-on-using-the-rust-sdk.md"
@@ -1495,7 +1495,7 @@
         "engineering",
         "featured"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/d4fhgfl7kc6s739haj6g.auto",
       "source": "https://surrealdb.com/blog/revolutionising-decentralised-discovery-with-surrealdb-and-confidential-computing",
       "local_path": "2025/03/revolutionising-decentralised-discovery-with-surrealdb-and-confidential-computing.md"
@@ -1509,7 +1509,7 @@
         "tutorials",
         "featured"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cvg7eiofkedc73aljo3g.auto",
       "source": "https://surrealdb.com/blog/data-analysis-using-graph-traversal-recursion-and-shortest-path",
       "local_path": "2025/03/data-analysis-using-graph-traversal-recursion-and-shortest-path.md"
@@ -1523,7 +1523,7 @@
         "company",
         "featured"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cveq960fkedc73aljnrg.auto",
       "source": "https://surrealdb.com/blog/our-support-for-faunadb-users",
       "local_path": "2025/03/our-support-for-faunadb-users.md"
@@ -1537,7 +1537,7 @@
         "tutorials",
         "featured"
       ],
-      "readTime": "11 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cv8mbagfkedc73alj7p0.auto",
       "source": "https://surrealdb.com/blog/visualising-your-data-with-surrealists-graph-view",
       "local_path": "2025/03/visualising-your-data-with-surrealists-graph-view.md"
@@ -1551,7 +1551,7 @@
         "tutorials",
         "featured"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cv4nh7jdj5vc73ecd9qg.auto",
       "source": "https://surrealdb.com/blog/building-smarter-product-recommendations-with-surrealdb",
       "local_path": "2025/03/building-smarter-product-recommendations-with-surrealdb.md"
@@ -1565,7 +1565,7 @@
         "tutorials",
         "featured"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cuus8o7si7mc73ckofl0.auto",
       "source": "https://surrealdb.com/blog/find-your-celebrity-soulmate-with-the-magic-of-vector-search",
       "local_path": "2025/02/find-your-celebrity-soulmate-with-the-magic-of-vector-search.md"
@@ -1579,7 +1579,7 @@
         "engineering",
         "ai"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cus4usccqmcc73cfkqj0.auto",
       "source": "https://surrealdb.com/blog/automating-knowledge-graphs-with-surrealdb-and-gemini",
       "local_path": "2025/02/automating-knowledge-graphs-with-surrealdb-and-gemini.md"
@@ -1593,7 +1593,7 @@
         "company",
         "featured"
       ],
-      "readTime": "12 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cu4g574ipkes73eousog.auto",
       "source": "https://surrealdb.com/blog/beginning-our-benchmarking-journey",
       "local_path": "2025/02/beginning-our-benchmarking-journey.md"
@@ -1608,7 +1608,7 @@
         "company",
         "featured"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cu4g5qsipkes73eouspg.auto",
       "source": "https://surrealdb.com/blog/surrealdb-2-2-benchmarking-graph-path-algorithms-and-foreign-key-constraints",
       "local_path": "2025/02/surrealdb-2-2-benchmarking-graph-path-algorithms-and-foreign-key-constraints.md"
@@ -1621,7 +1621,7 @@
       "categories": [
         "engineering"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cuhm19lsoe5c739lddd0.auto",
       "source": "https://surrealdb.com/blog/how-we-improved-the-python-sdk-for-our-1-0-stable-version",
       "local_path": "2025/02/how-we-improved-the-python-sdk-for-our-1-0-stable-version.md"
@@ -1635,7 +1635,7 @@
         "community",
         "featured"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cuhhhgdsoe5c739ldalg.auto",
       "source": "https://surrealdb.com/blog/powering-drug-trial-innovation-with-surrealdb",
       "local_path": "2025/02/powering-drug-trial-innovation-with-surrealdb.md"
@@ -1650,7 +1650,7 @@
         "featured",
         "ai"
       ],
-      "readTime": "25 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cueao4i8p6is73fqbiig.auto",
       "source": "https://surrealdb.com/blog/enhancing-retrieval-augmented-generation-with-surrealdb",
       "local_path": "2025/01/enhancing-retrieval-augmented-generation-with-surrealdb.md"
@@ -1664,7 +1664,7 @@
         "community",
         "featured"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cuec2ji8p6is73fqbjs0.auto",
       "source": "https://surrealdb.com/blog/improving-the-documentation-user-experience",
       "local_path": "2025/01/improving-the-documentation-user-experience.md"
@@ -1678,7 +1678,7 @@
         "releases",
         "featured"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cuckrl4attbs738rltog.auto",
       "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-2",
       "local_path": "2025/01/whats-new-in-surrealist-3-2.md"
@@ -1691,7 +1691,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "11 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cu9kbocattbs738rlj0g.auto",
       "source": "https://surrealdb.com/blog/making-your-own-pr-to-the-surrealdb-source-code",
       "local_path": "2025/01/making-your-own-pr-to-the-surrealdb-source-code.md"
@@ -1706,7 +1706,7 @@
         "featured",
         "company"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cte15aq3l5bc738s11hg.auto",
       "source": "https://surrealdb.com/blog/your-personal-surreal-sidekick",
       "local_path": "2024/12/your-personal-surreal-sidekick.md"
@@ -1720,7 +1720,7 @@
         "releases",
         "featured"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/csto1b14vjrc738690p0.auto",
       "source": "https://surrealdb.com/blog/whats-new-in-surrealist-3-1",
       "local_path": "2024/11/whats-new-in-surrealist-3-1.md"
@@ -1733,7 +1733,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/csto1614vjrc738690m0.auto",
       "source": "https://surrealdb.com/blog/surrealdb-2-1-0-is-live",
       "local_path": "2024/11/surrealdb-2-1-0-is-live.md"
@@ -1747,7 +1747,7 @@
         "releases",
         "featured"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/csb2od94vjrc738687g0.auto",
       "source": "https://surrealdb.com/blog/aeons-surreal-renaissance-learn-surrealdb-through-a-story",
       "local_path": "2024/10/aeons-surreal-renaissance-learn-surrealdb-through-a-story.md"
@@ -1762,7 +1762,7 @@
         "featured",
         "company"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cs769214vjrc738683n0.auto",
       "source": "https://surrealdb.com/blog/surrealdb-empowers-developers-to-build-applications-with-the-launch-of-surrealdb-university",
       "local_path": "2024/10/surrealdb-empowers-developers-to-build-applications-with-the-launch-of-surrealdb-university.md"
@@ -1777,7 +1777,7 @@
         "featured",
         "company"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/crl786q4q4lc738fc6og.auto",
       "source": "https://surrealdb.com/blog/surrealdb-delivers-future-ready-database-technology-for-developers-and-enterprises-with-release-of-surrealdb-2-0",
       "local_path": "2024/09/surrealdb-delivers-future-ready-database-technology-for-developers-and-enterprises-with-release-of-surrealdb-2-0.md"
@@ -1791,7 +1791,7 @@
         "releases",
         "featured"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/crklb6a4q4lc738fc6e0.auto",
       "source": "https://surrealdb.com/blog/surrealist-3-0-is-now-available",
       "local_path": "2024/09/surrealist-3-0-is-now-available.md"
@@ -1806,7 +1806,7 @@
         "featured",
         "company"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/crjvaoq4q4lc738fc67g.auto",
       "source": "https://surrealdb.com/blog/challenge-accepted-announcing-surrealdb-2-0",
       "local_path": "2024/09/challenge-accepted-announcing-surrealdb-2-0.md"
@@ -1819,7 +1819,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cras49o9q5as738bsmjg.auto",
       "source": "https://surrealdb.com/blog/surrealist-3-0-beta",
       "local_path": "2024/09/surrealist-3-0-beta.md"
@@ -1833,7 +1833,7 @@
         "engineering",
         "tutorials"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cqtirqursq0s7397mlqg.auto",
       "source": "https://surrealdb.com/blog/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb",
       "local_path": "2024/08/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb.md"
@@ -1847,7 +1847,7 @@
         "engineering",
         "tutorials"
       ],
-      "readTime": "8 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cqtira6rsq0s7397mlog.auto",
       "source": "https://surrealdb.com/blog/its-about-time-time-series-in-surrealdb",
       "local_path": "2024/08/its-about-time-time-series-in-surrealdb.md"
@@ -1860,7 +1860,7 @@
       "categories": [
         "engineering"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cqh51acei02c739f59ag.auto",
       "source": "https://surrealdb.com/blog/moving-from-full-text-search-to-vector-search-in-surrealdb",
       "local_path": "2024/07/moving-from-full-text-search-to-vector-search-in-surrealdb.md"
@@ -1874,7 +1874,7 @@
         "engineering",
         "tutorials"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cqb2h71vnfds739gddk0.auto",
       "source": "https://surrealdb.com/blog/real-time-data-science-orchestrating-insights-with-the-right-ensemble",
       "local_path": "2024/07/real-time-data-science-orchestrating-insights-with-the-right-ensemble.md"
@@ -1888,7 +1888,7 @@
         "company",
         "featured"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cpsok09qv93c73bv0fi0.auto",
       "source": "https://surrealdb.com/blog/celebrating-milestones-and-looking-forward",
       "local_path": "2024/06/celebrating-milestones-and-looking-forward.md"
@@ -1902,7 +1902,7 @@
         "company",
         "featured"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cpo37cuggnfs73bk5ihg.auto",
       "source": "https://surrealdb.com/blog/surrealdb-raises-20m-to-disrupt-database-tech-introduces-new-cloud-beta-access",
       "local_path": "2024/06/surrealdb-raises-20m-to-disrupt-database-tech-introduces-new-cloud-beta-access.md"
@@ -1915,7 +1915,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cpm262f7956c73eanegg.auto",
       "source": "https://surrealdb.com/blog/surrealist-just-got-better--update-now",
       "local_path": "2024/06/surrealist-just-got-better--update-now.md"
@@ -1929,7 +1929,7 @@
         "releases",
         "tutorials"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cpiq0jjpt70c73f6hh2g.auto",
       "source": "https://surrealdb.com/blog/our-new-demo-dataset-has-a-lot-in-store-for-you",
       "local_path": "2024/06/our-new-demo-dataset-has-a-lot-in-store-for-you.md"
@@ -1942,7 +1942,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cpev33bpt70c73f6h3hg.auto",
       "source": "https://surrealdb.com/blog/whats-new-in-surrealist-2-1",
       "local_path": "2024/06/whats-new-in-surrealist-2-1.md"
@@ -1956,7 +1956,7 @@
         "engineering",
         "tutorials"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cop57ib61icc73ees5s0.auto",
       "source": "https://surrealdb.com/blog/introducing-surrealany-dynamic-support-for-any-engine-in-rust",
       "local_path": "2024/05/introducing-surrealany-dynamic-support-for-any-engine-in-rust.md"
@@ -1969,7 +1969,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cotlbo361icc73ees7bg.auto",
       "source": "https://surrealdb.com/blog/v1-5-0-is-live",
       "local_path": "2024/05/v1-5-0-is-live.md"
@@ -1983,7 +1983,7 @@
         "community",
         "tutorials"
       ],
-      "readTime": "17 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cot6u1b61icc73ees710.auto",
       "source": "https://surrealdb.com/blog/why-surrealdb-is-the-future-of-database-technology--an-in-depth-look",
       "local_path": "2024/05/why-surrealdb-is-the-future-of-database-technology--an-in-depth-look.md"
@@ -1997,7 +1997,7 @@
         "releases",
         "featured"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cop68k361icc73ees5t0.auto",
       "source": "https://surrealdb.com/blog/surrealist-2-0",
       "local_path": "2024/05/surrealist-2-0.md"
@@ -2010,7 +2010,7 @@
       "categories": [
         "company"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cojpv6j61icc73ees15g.auto",
       "source": "https://surrealdb.com/blog/the-surrealist-journey",
       "local_path": "2024/04/the-surrealist-journey.md"
@@ -2023,7 +2023,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/comn1ib61icc73ees50g.auto",
       "source": "https://surrealdb.com/blog/introducing-surrealist",
       "local_path": "2024/04/introducing-surrealist.md"
@@ -2037,7 +2037,7 @@
         "community",
         "tutorials"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/co7vrfr61icc73eer4q0.auto",
       "source": "https://surrealdb.com/blog/eli5--why-surrealdb-explained-through-building-with-lego",
       "local_path": "2024/04/eli5--why-surrealdb-explained-through-building-with-lego.md"
@@ -2050,7 +2050,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cob93lb61icc73eer8dg.auto",
       "source": "https://surrealdb.com/blog/v1-4-0-is-live",
       "local_path": "2024/04/v1-4-0-is-live.md"
@@ -2063,7 +2063,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/co1bh3r61icc73eeqnf0.auto",
       "source": "https://surrealdb.com/blog/exploring-the-ai-revolution",
       "local_path": "2024/03/exploring-the-ai-revolution.md"
@@ -2076,7 +2076,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/co0ieib61icc73eeql3g.auto",
       "source": "https://surrealdb.com/blog/document-style-relationships-in-surrealdb",
       "local_path": "2024/03/document-style-relationships-in-surrealdb.md"
@@ -2089,7 +2089,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/co0if8361icc73eeql4g.auto",
       "source": "https://surrealdb.com/blog/how-to-simplify-your-tech-stack",
       "local_path": "2024/03/how-to-simplify-your-tech-stack.md"
@@ -2103,7 +2103,7 @@
         "engineering",
         "tutorials"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cnnikojac7ss73a8v47g.auto",
       "source": "https://surrealdb.com/blog/understanding-cbor",
       "local_path": "2024/03/understanding-cbor.md"
@@ -2117,7 +2117,7 @@
         "engineering",
         "company"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/co0iidj61icc73eeql5g.auto",
       "source": "https://surrealdb.com/blog/why-we-are-betting-on-rust",
       "local_path": "2024/03/why-we-are-betting-on-rust.md"
@@ -2130,7 +2130,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cnmaecbac7ss73a8v3ag.auto",
       "source": "https://surrealdb.com/blog/v1-3-0-is-live",
       "local_path": "2024/03/v1-3-0-is-live.md"
@@ -2143,7 +2143,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cnm9ofrac7ss73a8v39g.auto",
       "source": "https://surrealdb.com/blog/introducing-surrealdbs-custom-emoji-pack",
       "local_path": "2024/03/introducing-surrealdbs-custom-emoji-pack.md"
@@ -2156,7 +2156,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "10 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cnle04rac7ss73a8v0lg.auto",
       "source": "https://surrealdb.com/blog/from-medical-doctor-to-rust-developer--interview-with-our-new-senior-clinical-research-fellow",
       "local_path": "2024/03/from-medical-doctor-to-rust-developer--interview-with-our-new-senior-clinical-research-fellow.md"
@@ -2169,7 +2169,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cnarg9fu2otc73evhtd0.auto",
       "source": "https://surrealdb.com/blog/thinking-inside-the-box-relational-style-joins-in-surrealdb",
       "local_path": "2024/02/thinking-inside-the-box-relational-style-joins-in-surrealdb.md"
@@ -2182,7 +2182,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cn1jrgegohdc73eqt9ag.auto",
       "source": "https://surrealdb.com/blog/v1-2-0-beta-1-is-live",
       "local_path": "2024/02/v1-2-0-beta-1-is-live.md"
@@ -2195,7 +2195,7 @@
       "categories": [
         "company"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cmr8l8qr3aec73fhdrqg.auto",
       "source": "https://surrealdb.com/blog/were-hiring",
       "local_path": "2024/02/were-hiring.md"
@@ -2208,7 +2208,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cmrs428c994c73fph3jg.auto",
       "source": "https://surrealdb.com/blog/beyond-sql-joins-exploring-surrealdbs-multi-model-relationships",
       "local_path": "2024/01/beyond-sql-joins-exploring-surrealdbs-multi-model-relationships.md"
@@ -2221,7 +2221,7 @@
       "categories": [
         "engineering"
       ],
-      "readTime": "14 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cmdt5enpl3gc739vqe6g.auto",
       "source": "https://surrealdb.com/blog/vart-a-persistent-data-structure-for-snapshot-isolation",
       "local_path": "2024/01/vart-a-persistent-data-structure-for-snapshot-isolation.md"
@@ -2234,7 +2234,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cmf8p67pl3gc739vqpa0.auto",
       "source": "https://surrealdb.com/blog/integrate-auth0-as-an-authentication-provider",
       "local_path": "2024/01/integrate-auth0-as-an-authentication-provider.md"
@@ -2248,7 +2248,7 @@
         "releases",
         "company"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cmf5a4vpl3gc739vqp70.auto",
       "source": "https://surrealdb.com/blog/introducing-our-new-monthly-release-schedule",
       "local_path": "2024/01/introducing-our-new-monthly-release-schedule.md"
@@ -2262,7 +2262,7 @@
         "tutorials",
         "engineering"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cmf7avfpl3gc739vqp90.auto",
       "source": "https://surrealdb.com/blog/live-queries-in-rust",
       "local_path": "2024/01/live-queries-in-rust.md"
@@ -2275,7 +2275,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cmemvgvpl3gc739vqp0g.auto",
       "source": "https://surrealdb.com/blog/release-v1-1-0",
       "local_path": "2024/01/release-v1-1-0.md"
@@ -2290,7 +2290,7 @@
         "engineering",
         "company"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cmen98fpl3gc739vqp1g.auto",
       "source": "https://surrealdb.com/blog/introducing-nightly-and-beta-rust-crates",
       "local_path": "2024/01/introducing-nightly-and-beta-rust-crates.md"
@@ -2303,7 +2303,7 @@
       "categories": [
         "engineering"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clrf55i3j29s73b5n7m0.auto",
       "source": "https://surrealdb.com/blog/crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy",
       "local_path": "2023/12/crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy.md"
@@ -2317,7 +2317,7 @@
         "tutorials",
         "engineering"
       ],
-      "readTime": "9 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cloa17lnv13s73fmib30.auto",
       "source": "https://surrealdb.com/blog/what-is-surrealml-a-getting-started-guide",
       "local_path": "2023/12/what-is-surrealml-a-getting-started-guide.md"
@@ -2330,7 +2330,7 @@
       "categories": [
         "company"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clhhk9go2pcc73cj1j60.auto",
       "source": "https://surrealdb.com/blog/introducing-the-new-surrealdb-documentation-on-docusaurus",
       "local_path": "2023/12/introducing-the-new-surrealdb-documentation-on-docusaurus.md"
@@ -2343,7 +2343,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clkg3ha3gfms73e6rjh0.auto",
       "source": "https://surrealdb.com/blog/how-i-built-a-saas-powered-by-surrealdb-recorded-live-at-surrealdb-social",
       "local_path": "2023/11/how-i-built-a-saas-powered-by-surrealdb-recorded-live-at-surrealdb-social.md"
@@ -2356,7 +2356,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clkg3ha3gfms73e6rjgg.auto",
       "source": "https://surrealdb.com/blog/deploy-surrealdb-to-kubernetes-with-gitops--ryota-sawada-recorded-live-at-surrealdb-social",
       "local_path": "2023/11/deploy-surrealdb-to-kubernetes-with-gitops--ryota-sawada-recorded-live-at-surrealdb-social.md"
@@ -2369,7 +2369,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cldhsbtol7tc73e91rbg.auto",
       "source": "https://surrealdb.com/blog/unlocking-streaming-data-magic-with-surrealdb-live-queries-and-change-feeds",
       "local_path": "2023/11/unlocking-streaming-data-magic-with-surrealdb-live-queries-and-change-feeds.md"
@@ -2383,7 +2383,7 @@
         "tutorials",
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91ql0.auto",
       "source": "https://surrealdb.com/blog/how-rust-gave-surrealdb-an-edge-in-the-database-world",
       "local_path": "2023/11/how-rust-gave-surrealdb-an-edge-in-the-database-world.md"
@@ -2396,7 +2396,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cldivq5ol7tc73e91reg.auto",
       "source": "https://surrealdb.com/blog/create-a-search-engine-with-surrealdb-full-text-search",
       "local_path": "2023/11/create-a-search-engine-with-surrealdb-full-text-search.md"
@@ -2409,7 +2409,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qk0.auto",
       "source": "https://surrealdb.com/blog/how-to-handle-big-data-properly-with-surrealdb",
       "local_path": "2023/11/how-to-handle-big-data-properly-with-surrealdb.md"
@@ -2422,7 +2422,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "9 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl91rta03ggs73c8tqag.auto",
       "source": "https://surrealdb.com/blog/surreal-stickies-2-0-adding-graph-relations-live-queries-and-authentication",
       "local_path": "2023/10/surreal-stickies-2-0-adding-graph-relations-live-queries-and-authentication.md"
@@ -2436,7 +2436,7 @@
         "events",
         "company"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl920ka03ggs73c8tqeg.auto",
       "source": "https://surrealdb.com/blog/surrealdb-world-2023--a-recap",
       "local_path": "2023/10/surrealdb-world-2023--a-recap.md"
@@ -2450,7 +2450,7 @@
         "releases",
         "company"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl91vsi03ggs73c8tqcg.auto",
       "source": "https://surrealdb.com/blog/announcing-surrealdb-1-0",
       "local_path": "2023/09/announcing-surrealdb-1-0.md"
@@ -2463,7 +2463,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93b1a03ggs73c8tr4g.auto",
       "source": "https://surrealdb.com/blog/whats-new-for-developers-in-surrealdb-beta-10",
       "local_path": "2023/09/whats-new-for-developers-in-surrealdb-beta-10.md"
@@ -2476,7 +2476,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qj0.auto",
       "source": "https://surrealdb.com/blog/data-modelling-and-performance",
       "local_path": "2023/08/data-modelling-and-performance.md"
@@ -2489,7 +2489,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qig.auto",
       "source": "https://surrealdb.com/blog/questions-from-the-community",
       "local_path": "2023/08/questions-from-the-community.md"
@@ -2502,7 +2502,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qi0.auto",
       "source": "https://surrealdb.com/blog/record-ids-expressions-and-graphs",
       "local_path": "2023/08/record-ids-expressions-and-graphs.md"
@@ -2516,7 +2516,7 @@
         "engineering",
         "tutorials"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clcvp5dol7tc73e91qs0.auto",
       "source": "https://surrealdb.com/blog/what-are-multi-model-databases",
       "local_path": "2023/07/what-are-multi-model-databases.md"
@@ -2529,7 +2529,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qhg.auto",
       "source": "https://surrealdb.com/blog/all-about-python",
       "local_path": "2023/07/all-about-python.md"
@@ -2542,7 +2542,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qh0.auto",
       "source": "https://surrealdb.com/blog/full-text-search-indexing",
       "local_path": "2023/07/full-text-search-indexing.md"
@@ -2555,7 +2555,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "8 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93iu203ggs73c8trjg.auto",
       "source": "https://surrealdb.com/blog/tutorial-build-a-notes-app-with-next-js-tailwind-and-surrealdb",
       "local_path": "2023/06/tutorial-build-a-notes-app-with-next-js-tailwind-and-surrealdb.md"
@@ -2568,7 +2568,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl92aqi03ggs73c8tqog.auto",
       "source": "https://surrealdb.com/blog/were-now-on-instagram",
       "local_path": "2023/06/were-now-on-instagram.md"
@@ -2582,7 +2582,7 @@
         "tutorials",
         "engineering"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qgg.auto",
       "source": "https://surrealdb.com/blog/javascript-library-with-micha-tobie",
       "local_path": "2023/06/javascript-library-with-micha-tobie.md"
@@ -2595,7 +2595,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl941ri03ggs73c8ts0g.auto",
       "source": "https://surrealdb.com/blog/websocket-protocol-guide",
       "local_path": "2023/06/websocket-protocol-guide.md"
@@ -2608,7 +2608,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl92jeq03ggs73c8tqtg.auto",
       "source": "https://surrealdb.com/blog/installing-surrealdb",
       "local_path": "2023/06/installing-surrealdb.md"
@@ -2621,7 +2621,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl9413q03ggs73c8trvg.auto",
       "source": "https://surrealdb.com/blog/deploy-to-kubernetes",
       "local_path": "2023/06/deploy-to-kubernetes.md"
@@ -2634,7 +2634,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl9222a03ggs73c8tqgg.auto",
       "source": "https://surrealdb.com/blog/announcing-developer-office-hours",
       "local_path": "2023/06/announcing-developer-office-hours.md"
@@ -2647,7 +2647,7 @@
       "categories": [
         "events"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl91lq203ggs73c8tq7g.auto",
       "source": "https://surrealdb.com/blog/announcing-surrealdb-world",
       "local_path": "2023/06/announcing-surrealdb-world.md"
@@ -2661,7 +2661,7 @@
         "community",
         "company"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl926ka03ggs73c8tqkg.auto",
       "source": "https://surrealdb.com/blog/thank-you-github-for-the-feature",
       "local_path": "2023/05/thank-you-github-for-the-feature.md"
@@ -2674,7 +2674,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl91ngq03ggs73c8tq9g.auto",
       "source": "https://surrealdb.com/blog/maintainer-month-2023-behind-the-scenes-with-yusuke-kuoka",
       "local_path": "2023/05/maintainer-month-2023-behind-the-scenes-with-yusuke-kuoka.md"
@@ -2687,7 +2687,7 @@
       "categories": [
         "events"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl92ctq03ggs73c8tqpg.auto",
       "source": "https://surrealdb.com/blog/rounding-up-may-with-surrealdb-social",
       "local_path": "2023/05/rounding-up-may-with-surrealdb-social.md"
@@ -2700,7 +2700,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl91ngq03ggs73c8tq9g.auto",
       "source": "https://surrealdb.com/blog/maintainer-month-2023-behind-the-scenes-with-rushmore-mushambi",
       "local_path": "2023/05/maintainer-month-2023-behind-the-scenes-with-rushmore-mushambi.md"
@@ -2713,7 +2713,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qfg.auto",
       "source": "https://surrealdb.com/blog/live-queries-with-tobie-hugh",
       "local_path": "2023/05/live-queries-with-tobie-hugh.md"
@@ -2727,7 +2727,7 @@
         "engineering",
         "tutorials"
       ],
-      "readTime": "4 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl92kei03ggs73c8tqug.auto",
       "source": "https://surrealdb.com/blog/the-life-changing-magic-of-surrealdb-record-ids",
       "local_path": "2023/05/the-life-changing-magic-of-surrealdb-record-ids.md"
@@ -2740,7 +2740,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93c7203ggs73c8tr5g.auto",
       "source": "https://surrealdb.com/blog/surrealdb-giveaway",
       "local_path": "2023/05/surrealdb-giveaway.md"
@@ -2753,7 +2753,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "6 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93iu203ggs73c8trj0.auto",
       "source": "https://surrealdb.com/blog/getting-started-with-the-surrealdb-go-driver",
       "local_path": "2023/05/getting-started-with-the-surrealdb-go-driver.md"
@@ -2766,7 +2766,7 @@
       "categories": [
         "engineering"
       ],
-      "readTime": "8 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93hl203ggs73c8trdg.auto",
       "source": "https://surrealdb.com/blog/surrealdb-scalability",
       "local_path": "2023/05/surrealdb-scalability.md"
@@ -2779,7 +2779,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/clcv8o5ol7tc73e91qeg.auto",
       "source": "https://surrealdb.com/blog/all-about-surrealql",
       "local_path": "2023/04/all-about-surrealql.md"
@@ -2792,7 +2792,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trqg.auto",
       "source": "https://surrealdb.com/blog/clustered-surrealdb-for-1-0-0-beta9",
       "local_path": "2023/04/clustered-surrealdb-for-1-0-0-beta9.md"
@@ -2805,7 +2805,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "9 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl94b7203ggs73c8ts7g.auto",
       "source": "https://surrealdb.com/blog/the-ultimate-beginners-guide-to-databases",
       "local_path": "2023/04/the-ultimate-beginners-guide-to-databases.md"
@@ -2818,7 +2818,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "3 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl94a5203ggs73c8ts50.auto",
       "source": "https://surrealdb.com/blog/behind-the-scenes-of-the-exciting-beta-9-release",
       "local_path": "2023/04/behind-the-scenes-of-the-exciting-beta-9-release.md"
@@ -2831,7 +2831,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "7 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93eri03ggs73c8trag.auto",
       "source": "https://surrealdb.com/blog/understanding-surrealql-and-how-it-is-different-from-postgresql",
       "local_path": "2023/03/understanding-surrealql-and-how-it-is-different-from-postgresql.md"
@@ -2844,7 +2844,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl91lq203ggs73c8tq70.auto",
       "source": "https://surrealdb.com/blog/an-introduction-to-surrealdb",
       "local_path": "2023/02/an-introduction-to-surrealdb.md"
@@ -2857,7 +2857,7 @@
       "categories": [
         "events"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl925da03ggs73c8tqig.auto",
       "source": "https://surrealdb.com/blog/surrealdb-social-x-swingers",
       "local_path": "2023/02/surrealdb-social-x-swingers.md"
@@ -2870,7 +2870,7 @@
       "categories": [
         "events"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93kci03ggs73c8trlg.auto",
       "source": "https://surrealdb.com/blog/first-new-york-surrealdb-social",
       "local_path": "2023/02/first-new-york-surrealdb-social.md"
@@ -2883,7 +2883,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl95baq03ggs73c8tslg.auto",
       "source": "https://surrealdb.com/blog/new-awesome-surrealdb-repo",
       "local_path": "2023/02/new-awesome-surrealdb-repo.md"
@@ -2896,7 +2896,7 @@
       "categories": [
         "events"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl94mdq03ggs73c8tsf0.auto",
       "source": "https://surrealdb.com/blog/first-london-surrealdb-social",
       "local_path": "2023/01/first-london-surrealdb-social.md"
@@ -2909,7 +2909,7 @@
       "categories": [
         "company"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl9433q03ggs73c8ts1g.auto",
       "source": "https://surrealdb.com/blog/we-are-thrilled-to-announce-our-6m-seed-round-led-by-firstmark-capital-and-matt-turck",
       "local_path": "2023/01/we-are-thrilled-to-announce-our-6m-seed-round-led-by-firstmark-capital-and-matt-turck.md"
@@ -2922,7 +2922,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl94ohq03ggs73c8tsh0.auto",
       "source": "https://surrealdb.com/blog/get-your-hands-on-our-first-ever-surrealdb-stickers",
       "local_path": "2022/12/get-your-hands-on-our-first-ever-surrealdb-stickers.md"
@@ -2935,7 +2935,7 @@
       "categories": [
         "company"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl94c4203ggs73c8ts9g.auto",
       "source": "https://surrealdb.com/blog/we-are-hiring",
       "local_path": "2022/11/we-are-hiring.md"
@@ -2948,7 +2948,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trrg.auto",
       "source": "https://surrealdb.com/blog/release-v1-0-0-beta-8",
       "local_path": "2022/10/release-v1-0-0-beta-8.md"
@@ -2961,7 +2961,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl95e4q03ggs73c8tsq0.auto",
       "source": "https://surrealdb.com/blog/beyond-surreal-a-closer-look-at-newsql-relational-data",
       "local_path": "2022/09/beyond-surreal-a-closer-look-at-newsql-relational-data.md"
@@ -2974,7 +2974,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl99uuq03ggs73c8tto0.auto",
       "source": "https://surrealdb.com/blog/2-on-hacker-news",
       "local_path": "2022/09/2-on-hacker-news.md"
@@ -2987,7 +2987,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93d3q03ggs73c8tr70.auto",
       "source": "https://surrealdb.com/blog/10000-thank-yous",
       "local_path": "2022/09/10000-thank-yous.md"
@@ -3000,7 +3000,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl962fa03ggs73c8tteg.auto",
       "source": "https://surrealdb.com/blog/thank-you-fireship",
       "local_path": "2022/09/thank-you-fireship.md"
@@ -3013,7 +3013,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl95q2i03ggs73c8tt50.auto",
       "source": "https://surrealdb.com/blog/we-think-we-have-broken-github",
       "local_path": "2022/09/we-think-we-have-broken-github.md"
@@ -3026,7 +3026,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93d3q03ggs73c8tr7g.auto",
       "source": "https://surrealdb.com/blog/5000-thank-yous",
       "local_path": "2022/09/5000-thank-yous.md"
@@ -3039,7 +3039,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl963pa03ggs73c8ttfg.auto",
       "source": "https://surrealdb.com/blog/rust-powered-database-surrealdb-its-pretty-ambitious",
       "local_path": "2022/09/rust-powered-database-surrealdb-its-pretty-ambitious.md"
@@ -3052,7 +3052,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl95jl203ggs73c8tt1g.auto",
       "source": "https://surrealdb.com/blog/getting-started-with-surrealdb",
       "local_path": "2022/09/getting-started-with-surrealdb.md"
@@ -3065,7 +3065,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl95ri203ggs73c8tt60.auto",
       "source": "https://surrealdb.com/blog/just-released-surrealdb-for-windows",
       "local_path": "2022/09/just-released-surrealdb-for-windows.md"
@@ -3078,7 +3078,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trr0.auto",
       "source": "https://surrealdb.com/blog/release-v1-0-0-beta-7",
       "local_path": "2022/08/release-v1-0-0-beta-7.md"
@@ -3091,7 +3091,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl95gbi03ggs73c8tsvg.auto",
       "source": "https://surrealdb.com/blog/no-1-github-trending-repository",
       "local_path": "2022/08/no-1-github-trending-repository.md"
@@ -3104,7 +3104,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl95tg203ggs73c8ttb0.auto",
       "source": "https://surrealdb.com/blog/no-1-on-reddits-programming-subreddit--hot-list",
       "local_path": "2022/08/no-1-on-reddits-programming-subreddit--hot-list.md"
@@ -3117,7 +3117,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl99ve203ggs73c8ttrg.auto",
       "source": "https://surrealdb.com/blog/honoured-to-be-4-on-the-front-page-of-hacker-news",
       "local_path": "2022/08/honoured-to-be-4-on-the-front-page-of-hacker-news.md"
@@ -3130,7 +3130,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl95spa03ggs73c8tta0.auto",
       "source": "https://surrealdb.com/blog/surrealdb-on-reddit-rust",
       "local_path": "2022/08/surrealdb-on-reddit-rust.md"
@@ -3143,7 +3143,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trsg.auto",
       "source": "https://surrealdb.com/blog/release-v1-0-0-beta-6",
       "local_path": "2022/08/release-v1-0-0-beta-6.md"
@@ -3156,7 +3156,7 @@
       "categories": [
         "community"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl94gli03ggs73c8tse0.auto",
       "source": "https://surrealdb.com/blog/thank-you",
       "local_path": "2022/08/thank-you.md"
@@ -3169,7 +3169,7 @@
       "categories": [
         "company"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl95baq03ggs73c8tsn0.auto",
       "source": "https://surrealdb.com/blog/indie-hackers-launch",
       "local_path": "2022/08/indie-hackers-launch.md"
@@ -3182,7 +3182,7 @@
       "categories": [
         "engineering"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl95l3q03ggs73c8tt40.auto",
       "source": "https://surrealdb.com/blog/client-libraries-live",
       "local_path": "2022/08/client-libraries-live.md"
@@ -3195,7 +3195,7 @@
       "categories": [
         "tutorials"
       ],
-      "readTime": "5 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl94nq203ggs73c8tsg0.auto",
       "source": "https://surrealdb.com/blog/why-use-surrealdb",
       "local_path": "2022/08/why-use-surrealdb.md"
@@ -3208,7 +3208,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trs0.auto",
       "source": "https://surrealdb.com/blog/release-v1-0-0-beta-5",
       "local_path": "2022/08/release-v1-0-0-beta-5.md"
@@ -3221,7 +3221,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trt0.auto",
       "source": "https://surrealdb.com/blog/release-v1-0-0-beta-4",
       "local_path": "2022/07/release-v1-0-0-beta-4.md"
@@ -3234,7 +3234,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8trtg.auto",
       "source": "https://surrealdb.com/blog/release-v1-0-0-beta-3",
       "local_path": "2022/07/release-v1-0-0-beta-3.md"
@@ -3248,7 +3248,7 @@
         "company",
         "releases"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl95l3q03ggs73c8tt3g.auto",
       "source": "https://surrealdb.com/blog/documentation-is-live",
       "local_path": "2022/07/documentation-is-live.md"
@@ -3262,7 +3262,7 @@
         "company",
         "featured"
       ],
-      "readTime": "2 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/culjbaleuh0c73atorh0.auto",
       "source": "https://surrealdb.com/blog/dreaming-of-something-better",
       "local_path": "2022/07/dreaming-of-something-better.md"
@@ -3275,7 +3275,7 @@
       "categories": [
         "releases"
       ],
-      "readTime": "1 min read",
+      "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/cl93uia03ggs73c8tru0.auto",
       "source": "https://surrealdb.com/blog/release-v1-0-0-beta-2",
       "local_path": "2022/07/release-v1-0-0-beta-2.md"

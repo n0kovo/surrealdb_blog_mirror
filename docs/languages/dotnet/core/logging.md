@@ -15,7 +15,7 @@ The SurrealDB SDK for .NET has a set of logging categories so that you can pick 
 
 Example:
 
-```bash
+```json
 {
   "Logging": {
     "LogLevel": {

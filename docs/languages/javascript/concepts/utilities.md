@@ -176,6 +176,10 @@ These ship with the `surrealdb` driver and tie into its query engine. They are n
 			<td scope="row" data-label="Utility">` s, d, r, u `</td>
 			<td scope="row" data-label="Description">Tagged templates for SurrealQL string, datetime, record, and UUID prefixes</td>
 		</tr>
+		<tr>
+			<td scope="row" data-label="Utility"><a href="/docs/languages/javascript/api/utilities/is-retryable-conflict"> ` isRetryableConflict(error) `</a></td>
+			<td scope="row" data-label="Description">Default predicate used by `.retry()` to detect retryable write conflicts</td>
+		</tr>
 	</tbody>
 </table>
 

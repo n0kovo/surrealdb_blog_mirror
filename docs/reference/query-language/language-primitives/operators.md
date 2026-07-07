@@ -12,14 +12,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 <table>
 	<thead>
 		<tr>
-			<th scope="col" class="w-48">Operator</th>
+			<th scope="col">Operator</th>
 			<th scope="col">Description</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex gap-2">
+				<div style="display: flex; gap: 0.5rem;">
 					<a href="#and">
 						`&&`
 					</a>
@@ -34,7 +34,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex gap-2">
+				<div style="display: flex; gap: 0.5rem;">
 					<a href="#or">
 						`||`
 					</a>
@@ -89,7 +89,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex gap-2">
+				<div style="display: flex; gap: 0.5rem;">
 					<a href="#equal">
 						`=`
 					</a>
@@ -104,7 +104,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex gap-2">
+				<div style="display: flex; gap: 0.5rem;">
 					<a href="#notequal">
 						`!=`
 					</a>
@@ -252,7 +252,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex gap-2">
+				<div style="display: flex; gap: 0.5rem;">
 					<a href="#mul">
 						`*`
 					</a>
@@ -267,7 +267,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex gap-2">
+				<div style="display: flex; gap: 0.5rem;">
 					<a href="#div">
 						`/`
 					</a>
@@ -292,7 +292,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex flex-col gap-2">
+				<div style="display: flex; flex-direction: column; gap: 0.5rem;">
 					<a href="#contains">
 						`CONTAINS`
 					</a>
@@ -307,7 +307,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex flex-col gap-2">
+				<div style="display: flex; flex-direction: column; gap: 0.5rem;">
 					<a href="#containsnot">
 						`CONTAINSNOT`
 					</a>
@@ -322,7 +322,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex flex-col gap-2">
+				<div style="display: flex; flex-direction: column; gap: 0.5rem;">
 					<a href="#containsall">
 						`CONTAINSALL`
 					</a>
@@ -337,7 +337,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex flex-col gap-2">
+				<div style="display: flex; flex-direction: column; gap: 0.5rem;">
 					<a href="#containsany">
 						`CONTAINSANY`
 					</a>
@@ -352,7 +352,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex flex-col gap-2">
+				<div style="display: flex; flex-direction: column; gap: 0.5rem;">
 					<a href="#containsnone">
 						`CONTAINSNONE`
 					</a>
@@ -367,7 +367,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex flex-col items-start gap-2">
+				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#inside">
 						`INSIDE`
 					</a>
@@ -385,7 +385,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex flex-col items-start gap-2">
+				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#notinside">
 						`NOTINSIDE`
 					</a>
@@ -403,7 +403,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex flex-col items-start gap-2">
+				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#allinside">
 						`ALLINSIDE`
 					</a>
@@ -418,7 +418,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex flex-col items-start gap-2">
+				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#anyinside">
 						`ANYINSIDE`
 					</a>
@@ -433,7 +433,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex flex-col items-start gap-2">
+				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#noneinside">
 					`NONEINSIDE`
 					</a>
@@ -470,7 +470,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex flex-col items-start gap-2">
+				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#matches">
 						`@@`
 					</a>
@@ -486,7 +486,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div class="flex flex-col items-start gap-2">
+				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#knn">
 						` &lt;|4|&gt; `
 					</a>
@@ -1693,7 +1693,7 @@ To determine which operator is executed first, a concept called "binding power" 
 <table>
 	<thead>
 		<tr>
-			<th scope="col" class="w-40">Operator name</th>
+			<th scope="col">Operator name</th>
 			<th scope="col">Description</th>
 		</tr>
 	</thead>

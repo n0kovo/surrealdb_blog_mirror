@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1068 pages_  
+_1069 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -634,6 +634,8 @@ _1068 pages_
   Functions for escaping identifiers and values in SurrealQL queries.
 - [expr](languages/javascript/api/utilities/expr.md)
   Type-safe expression builder for constructing SurrealQL conditions.
+- [isRetryableConflict](languages/javascript/api/utilities/is-retryable-conflict.md)
+  Default predicate used to detect retryable write conflicts.
 - [surql](languages/javascript/api/utilities/surql.md)
   Tagged template for composing parameterised SurrealQL queries.
 - [DateTime](languages/javascript/api/values/datetime.md)

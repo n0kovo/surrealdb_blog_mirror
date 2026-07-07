@@ -312,10 +312,28 @@ for (const response of responses) {
 }
 ```
 
+## Retrying on write conflict
+
+Under concurrent write load, a query can fail with a read/write conflict when another transaction touched the same data. Chain `.retry()` onto `.query()` or any query builder method to replay the operation automatically with exponential backoff.
+
+```ts
+const [n] = await db
+    .query<[number]>('UPDATE counter:c SET n += 1 RETURN n')
+    .retry({ attempts: 3 })
+    .collect();
+
+await db.delete(new RecordId('users', 'john')).retry();
+```
+
+Retry is off by default, and only applies to `.collect()` (or awaiting the query directly) — not `.responses()` or `.stream()`. For raw queries with multiple statements, only enable it when the statements are safe to apply more than once, since a retried query re-sends the whole thing.
+
+You can also set a connection-wide default with the `retry` option on [`.connect()`](connecting-to-surrealdb.md#retrying-on-write-conflict), which `.retry()` overrides per call.
+
 ## Learn more
 
 - [Bound queries](bound-queries.md) for parameterised query building with `surql` and `BoundQuery`
 - [Live queries](live-queries.md) for real-time subscriptions
 - [Transactions](transactions.md) for atomic multi-query operations
+- [Connecting to SurrealDB](connecting-to-surrealdb.md#retrying-on-write-conflict) for connection-wide retry configuration
 - [Query builders API reference](../api/queries/index.md) for detailed method signatures
 - [SurrealQL statements](../../../reference/query-language/statements/overview.md) for the query language reference

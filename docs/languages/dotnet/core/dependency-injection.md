@@ -24,7 +24,7 @@ dotnet add package SurrealDb.Net
 Open `appsettings.Development.json` and replace everything in there with the following code.
 We have added a new Connection String called `SurrealDB` with the default configuration.
 
-```bash
+```json
 {
   "AllowedHosts": "*",
   "Logging": {

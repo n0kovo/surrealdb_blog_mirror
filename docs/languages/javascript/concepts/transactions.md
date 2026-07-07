@@ -72,6 +72,22 @@ Call `.cancel()` to discard all pending changes. This is typically done when an 
 await txn.cancel();
 ```
 
+## Retrying on write conflict
+
+Queries executed within a transaction can fail with a write conflict under concurrent load, just like queries outside a transaction. Since `SurrealTransaction` exposes the same query methods as a regular session, you can chain [`.retry()`](../api/queries/query.md#retry) onto any statement inside the transaction to replay it with exponential backoff.
+
+```ts
+const txn = await db.beginTransaction();
+
+await txn.update(new RecordId('accounts', 'alice'))
+    .merge({ balance: from.balance - 100 })
+    .retry({ attempts: 3 });
+
+await txn.commit();
+```
+
+See [Retrying on write conflict](connecting-to-surrealdb.md#retrying-on-write-conflict) for how to configure a connection-wide default.
+
 ## Handling errors in transactions
 
 Always wrap transaction logic in a try-catch block to ensure the transaction is cancelled if any operation fails. This prevents partial changes from being committed.

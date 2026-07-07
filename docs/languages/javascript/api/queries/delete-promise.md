@@ -140,6 +140,45 @@ deletePromise.version(timestamp)
 
 ---
 
+### `.retry()` {#retry}
+
+Retry the operation with exponential backoff if it fails due to a write conflict. Off by default; passing an options object (or calling with no arguments) opts the operation in.
+
+This overrides the connection-wide default set via the [`retry`](../types/index.md#connectoptions) option on `ConnectOptions`.
+
+```ts title="Method Syntax"
+deletePromise.retry(options?)
+```
+
+#### Parameters
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`options` <label label="optional" /></td>
+            <td>`Partial&lt;<a href="/docs/languages/javascript/api/types/#retryoptions">RetryOptions</a>&gt;`</td>
+            <td>Retry configuration. If omitted, retry is enabled with the default configuration.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Returns
+`DeletePromise<T, J>` - Chainable promise
+
+#### Example
+
+```ts
+await db.delete(new RecordId('users', 'john')).retry();
+```
+
+---
+
 ### `.json()` {#json}
 
 Return result as JSON string.

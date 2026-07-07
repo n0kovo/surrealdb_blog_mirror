@@ -24,82 +24,48 @@ SurrealDB Cloud spans single-node and multi-node managed deployments:
 
 See [Cloud architecture](../../../manage/cloud/architecture.md) for diagrams and [Deployment](../index.md) for how Cloud fits alongside self-hosted and embedded options.
 
-<a
-	href="/docs/manage/cloud"
-	class="gradient-button group mt-2"
->
-	Get started with SurrealDB Cloud 
-	
-</a>
+<Button label="Get started with SurrealDB Cloud" href="/docs/manage/cloud" />
 
-<iframe
-	width="100%"
-	src="https://www.youtube.com/embed/S04qOKkVcmE?si=6tOcQyeXPTzcR8JS"
-	title="Getting started with SurrealDB Cloud "
-	frameborder="0"
-	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-	referrerpolicy="strict-origin-when-cross-origin"
-	style={{ aspectRatio: 1.7, paddingTop: '20px' }}
-	class="mt-8"
-	allowfullscreen
-></iframe>
+<YouTube code="S04qOKkVcmE?si=6tOcQyeXPTzcR8JS" />
 
 ## What can you do?
 
 When using SurrealDB Cloud, you can connect to your SurrealDB instance with a few clicks. You can connect to any SurrealDB instance via Surrealist, the command-line interface, and any of the supported SDKs. 
 
-<div className="flex flex-col items-start justify-between">
-  <div className="w-full">
-    
-      
 **Create an instance**
 
-<div className="flex flex-col md:flex-row items-start justify-between">
-          <div className="flex-1">
-            SurrealDB Cloud allows you to connect to your SurrealDB instance with just a few clicks. You can create an instance, connect to it, and start building your application.
+SurrealDB Cloud allows you to connect to your SurrealDB instance with just a few clicks. You can create an instance, connect to it, and start building your application.
 
-            <h4>1. Create Instance.</h4>
+	**1. Create Instance.**
 
-            When creating an instance, you will enter the instance name and organisation to ensure that you can easily identify your instance. Finally, you can select the version of SurrealDB to use and the region to deploy your instance.
+	When creating an instance, you will enter the instance name and organisation to ensure that you can easily identify your instance. Finally, you can select the version of SurrealDB to use and the region to deploy your instance.
 
-            <h4>2. Select a region.</h4>
+	**2. Select a region.**
 
-            Once you have created your instance, you can select the region to deploy your instance. This will allow you to connect to your instance from anywhere in the world.
+	Once you have created your instance, you can select the region to deploy your instance. This will allow you to connect to your instance from anywhere in the world.
 
-            <h4>3. Select an Instance preset.</h4>
+	**3. Select an Instance preset.**
 
-            Once you have selected a region, you can select an instance preset. This will allow you to select the instance size and type to best suit your needs.
+	Once you have selected a region, you can select an instance preset. This will allow you to select the instance size and type to best suit your needs.
 
-            <h4>4. Finalise and connect to your Instance.</h4>
+	**4. Finalise and connect to your Instance.**
 
-            Once you have created your instance, you can connect to it from anywhere.
-          </div>
-          
-        </div>
+	Once you have created your instance, you can connect to it from anywhere.
 
-      
 **Connect to your instance**
 
-<div className="flex flex-col md:flex-row items-start justify-between">
-          <div className="flex-1 text-left">
-            You can connect to any SurrealDB Cloud Instance via [Surrealist](connecting/via-surrealist.md), the [command-line interface (CLI)](connecting/via-cli.md), and [any of the supported SDKs](connecting/via-sdk.md).
+You can connect to any SurrealDB Cloud Instance via [Surrealist](connecting/via-surrealist.md), the [command-line interface (CLI)](connecting/via-cli.md), and [any of the supported SDKs](connecting/via-sdk.md).
 
-            <h4>[Connect via Surrealist](connecting/via-surrealist.md)</h4>
+	[Connect via Surrealist](connecting/via-surrealist.md)
 
-            Since SurrealDB Cloud is closely integrated with Surrealist, you can execute queries directly from the interface. This allows you to interact with your data in real time, without having to switch between different tools.
+	Since SurrealDB Cloud is closely integrated with Surrealist, you can execute queries directly from the interface. This allows you to interact with your data in real time, without having to switch between different tools.
 
-            <h4>[Connect via CLI](connecting/via-cli.md)</h4>
+	[Connect via CLI](connecting/via-cli.md)
 
-            If you prefer to use a command-line interface, you can use the SurrealDB CLI to connect to your instance. This connection includes a token that is used to authenticate your connection.
+	If you prefer to use a command-line interface, you can use the SurrealDB CLI to connect to your instance. This connection includes a token that is used to authenticate your connection.
 
-            To do so, select the connect with the CLI option and copy the command.
+	To do so, select the connect with the CLI option and copy the command.
 
-            <h4>[Connect via SDK](connecting/via-sdk.md)</h4>
+	[Connect via SDK](connecting/via-sdk.md)
 
-            You can also connect to your instance using any of the supported SDKs. In your preferred SDK, use the connect method and pass in your instance endpoint.
-          </div>
-        </div>
-
-    
-  </div>
-</div>
+	You can also connect to your instance using any of the supported SDKs. In your preferred SDK, use the connect method and pass in your instance endpoint.

@@ -9,13 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 To get started, sign up for an account and create an instance. Once your instance is running, you can connect to it [via Surrealist](../connecting/via-surrealist.md), [the CLI](../connecting/via-cli.md), or [any of the supported SDKs](../connecting/via-sdk.md).
 
-<a
-	href="https://app.surrealdb.com/cloud"
-	class="gradient-button group mt-2 mb-6"
->
-	Sign up for SurrealDB Cloud 
-	
-</a>
+<Button label="Sign up for SurrealDB Cloud" href="https://app.surrealdb.com/cloud" />
 
 ## Next steps
 

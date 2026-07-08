@@ -1,0 +1,67 @@
+---
+position: 1
+title: queryRaw
+description: The queryRaw method in the SurrealDB PHP SDK allows you to execute raw SQL queries and return the raw RPC response.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/query-raw.mdx"
+---
+
+# `->queryRaw()` {#queryRaw}
+
+With queryRaw, you will get back the raw RPC response. 
+This contrast to the .query() method, this will not throw for errors that occur in individual queries, 
+but will rather give those back as a string, and this will include the time it took to execute the individual queries.
+
+```php title="Method Syntax"
+$db->queryRaw($query, $params);
+```
+
+### Arguments
+<table>
+    <thead>
+        <tr>
+            <th colspan="2" scope="col">Arguments</th>
+			<th colspan="2" scope="col">Type</th>
+            <th colspan="2" scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2" scope="row" data-label="Arguments">
+                `$query`
+                <label label="required" />
+            </td>
+			<td colspan="2" scope="row" data-label="Type">
+				`string`
+			</td>
+            <td colspan="2" scope="row" data-label="Description">
+                The query to execute
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" scope="row" data-label="Arguments">
+                `$params`
+               <label label="optional" />
+            </td>
+			<td colspan="2" scope="row" data-label="Type">
+				`associative array`
+			</td>
+            <td colspan="2" scope="row" data-label="Description">
+                An associative array of parameters to bind to the query.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+### Example
+
+```php title="Example"
+
+// Query the database for all users with the firstname "Tobie" with parameters.
+$response = $db->queryRaw(
+	'SELECT * FROM users WHERE firstname = $firstname',
+	['firstname' => 'Tobie']
+);
+
+// Query the database for all users with the firstname "Tobie" without parameters.
+$response = $db->queryRaw('SELECT * FROM users WHERE firstname = "Tobie"');
+```

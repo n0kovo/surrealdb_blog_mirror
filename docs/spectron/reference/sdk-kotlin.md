@@ -14,7 +14,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 | Models | `com.surrealdb.kotlin.spectron.model` |
 | Sub-clients | `com.surrealdb.kotlin.spectron.ns` |
 
-The Spectron client ships inside the [SurrealDB Kotlin SDK](../../languages/kotlin/index.md) — there is no separate artifact. It is independent of the SurrealDB RPC engine and speaks Spectron's HTTP API directly.
+The Spectron client ships inside the [SurrealDB Kotlin SDK](../../reference/kotlin/index.md) — there is no separate artifact. It is independent of the SurrealDB RPC engine and speaks Spectron's HTTP API directly.
 
 ## Constructor
 

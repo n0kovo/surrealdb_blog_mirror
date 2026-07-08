@@ -7,14 +7,14 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 # Kotlin SDK
 
-The Spectron client for Kotlin ships inside the [SurrealDB Kotlin SDK](../../../languages/kotlin/index.md) — there is no separate package. It lives in the `com.surrealdb.kotlin.spectron` package and talks to Spectron's HTTP API directly, independently of the SurrealDB RPC engine. Like the rest of the Kotlin SDK, it is [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) (JVM, Android, iOS) and every method is a `suspend` function.
+The Spectron client for Kotlin ships inside the [SurrealDB Kotlin SDK](../../../reference/kotlin/index.md) — there is no separate package. It lives in the `com.surrealdb.kotlin.spectron` package and talks to Spectron's HTTP API directly, independently of the SurrealDB RPC engine. Like the rest of the Kotlin SDK, it is [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) (JVM, Android, iOS) and every method is a `suspend` function.
 
 > [!NOTE]
 > The Kotlin SDK is in early development (`0.1.0-SNAPSHOT`) and the Spectron client is not yet released. The APIs below are provisional.
 
 ## Installation
 
-Add the Kotlin SDK to your project as described in the [installation guide](../../../languages/kotlin/installation.md):
+Add the Kotlin SDK to your project as described in the [installation guide](../../../reference/kotlin/installation.md):
 
 ```kotlin
 dependencies {
@@ -177,5 +177,5 @@ try {
 ## Learn more
 
 - [Kotlin SDK reference](../../reference/sdk-kotlin.md) for package layout and the full surface
-- [SurrealDB Kotlin SDK](../../../languages/kotlin/index.md) for the database client in the same package
+- [SurrealDB Kotlin SDK](../../../reference/kotlin/index.md) for the database client in the same package
 - [REST API](../../reference/rest-api.md) for the underlying HTTP surface

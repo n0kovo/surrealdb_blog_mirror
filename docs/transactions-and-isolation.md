@@ -49,7 +49,7 @@ COMMIT TRANSACTION;
 
 If any statement in the transaction fails, or you [CANCEL](reference/query-language/statements/cancel.md), all changes in that transaction are rolled back. Use [THROW](reference/query-language/statements/throw.md) to abort a transaction when needed.
 
-Client SDKs expose the same model through transaction handles. See the transactions guide for your language under [SDKs](languages/overview.md).
+Client SDKs expose the same model through transaction handles. See the transactions guide for your language under [SDKs](languages/javascript.md).
 
 ## Write–write conflicts and retries
 

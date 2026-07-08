@@ -1,0 +1,58 @@
+---
+position: 12
+title: insert_relation
+description: The insert_relation() method for the SurrealDB Mojo SDK inserts one or more relations into a table.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/mojo/methods/insert-relation.mdx"
+---
+
+# `insert_relation()`
+
+Inserts one or more relation records into a table. This is a convenience wrapper that runs `INSERT RELATION INTO <table> <data_json>;`.
+
+```python title="Method Syntax"
+client.insert_relation(table, data_json, session, txn)
+```
+
+### Arguments
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2" scope="col">Argument</th>
+            <th colspan="2" scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2" scope="row" data-label="Argument">`table`</td>
+            <td colspan="2" scope="row" data-label="Description">The relation table to insert into.</td>
+        </tr>
+        <tr>
+            <td colspan="2" scope="row" data-label="Argument">`data_json`</td>
+            <td colspan="2" scope="row" data-label="Description">A single relation or an array of relations, as a JSON string. Each carries an `in` and an `out` record.</td>
+        </tr>
+        <tr>
+            <td colspan="2" scope="row" data-label="Argument">`session`</td>
+            <td colspan="2" scope="row" data-label="Description">An optional session id.</td>
+        </tr>
+        <tr>
+            <td colspan="2" scope="row" data-label="Argument">`txn`</td>
+            <td colspan="2" scope="row" data-label="Description">An optional transaction id.</td>
+        </tr>
+    </tbody>
+</table>
+
+### Example usage
+
+```python
+var resp = client.insert_relation(
+    "likes",
+    '[{ "in": "person:alice", "out": "person:bob" }]',
+)
+```
+
+### Translated query
+
+```surql
+INSERT RELATION INTO $table $data_json;
+```

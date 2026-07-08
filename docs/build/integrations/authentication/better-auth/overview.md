@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Better Auth
 
-[Better Auth](https://better-auth.com) is a comprehensive, framework-agnostic authentication and authorisation library for TypeScript. The `@surrealdb/better-auth` adapter lets you use SurrealDB as the database behind Better Auth: you pass it a single connected [`Surreal`](../../../../languages/javascript/index.md) client and Better Auth manages all of its table operations through the adapter.
+[Better Auth](https://better-auth.com) is a comprehensive, framework-agnostic authentication and authorisation library for TypeScript. The `@surrealdb/better-auth` adapter lets you use SurrealDB as the database behind Better Auth: you pass it a single connected [`Surreal`](../../../../reference/javascript/index.md) client and Better Auth manages all of its table operations through the adapter.
 
 The adapter supports schema generation, transactions, the full set of Better Auth WHERE operators, and every Better Auth plugin.
 

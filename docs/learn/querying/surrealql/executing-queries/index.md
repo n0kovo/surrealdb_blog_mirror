@@ -105,13 +105,13 @@ SurrealDB offers a variety of SDKs that allow you to interact with the database 
 
 SurrealDB supports SDKs for several popular programming languages, including:
 
-- **JavaScript/TypeScript**: The [JavaScript/TypeScript SDK](../../../../languages/javascript/concepts/connecting-to-surrealdb.md) allows you to interact with SurrealDB from web applications, Node.js environments, and other JavaScript-based platforms. It provides a comprehensive set of methods to perform queries, manage records, and handle database transactions.
+- **JavaScript/TypeScript**: The [JavaScript/TypeScript SDK](../../../../reference/javascript/concepts/connecting-to-surrealdb.md) allows you to interact with SurrealDB from web applications, Node.js environments, and other JavaScript-based platforms. It provides a comprehensive set of methods to perform queries, manage records, and handle database transactions.
 
-- **Python**: The [Python SDK](../../../../languages/python/index.md) offers a seamless way to integrate SurrealDB with your Python applications. Whether you are building web applications, data analysis tools, or automation scripts, the Python SDK provides the necessary functions to interact with the database efficiently.
+- **Python**: The [Python SDK](../../../../reference/python/index.md) offers a seamless way to integrate SurrealDB with your Python applications. Whether you are building web applications, data analysis tools, or automation scripts, the Python SDK provides the necessary functions to interact with the database efficiently.
 
-- **.NET**: The [.NET SDK](../../../../languages/dotnet/index.md) allows you to interact with SurrealDB using the .NET framework. It provides a comprehensive set of methods to perform queries, manage records, and handle database transactions, making it suitable for building robust and scalable applications.
+- **.NET**: The [.NET SDK](../../../../reference/dotnet/index.md) allows you to interact with SurrealDB using the .NET framework. It provides a comprehensive set of methods to perform queries, manage records, and handle database transactions, making it suitable for building robust and scalable applications.
 
-- **Rust**: The [Rust SDK](https://surrealdb.com/docs/languages/rust/setup) leverages the safety and performance features of the Rust programming language. It allows you to interact with SurrealDB in a type-safe manner, ensuring that your database operations are both efficient and reliable.
+- **Rust**: The [Rust SDK](https://surrealdb.com/docs/reference/rust/setup) leverages the safety and performance features of the Rust programming language. It allows you to interact with SurrealDB in a type-safe manner, ensuring that your database operations are both efficient and reliable.
 
 ### Getting started with SDKs
 

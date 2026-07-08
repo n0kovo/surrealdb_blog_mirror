@@ -11,7 +11,7 @@ This guide walks through installing the `@surrealdb/better-auth` adapter, connec
 
 ## Installation
 
-Install the adapter alongside `better-auth` and the [SurrealDB JavaScript SDK](../../../../languages/javascript/index.md):
+Install the adapter alongside `better-auth` and the [SurrealDB JavaScript SDK](../../../../reference/javascript/index.md):
 
 **Bun**
 
@@ -72,7 +72,7 @@ await db.connect('http://localhost:8000', {
 });
 ```
 
-For a full reference of connection options, see [Connecting to SurrealDB](../../../../languages/javascript/concepts/connecting-to-surrealdb.md) in the JavaScript SDK documentation.
+For a full reference of connection options, see [Connecting to SurrealDB](../../../../reference/javascript/concepts/connecting-to-surrealdb.md) in the JavaScript SDK documentation.
 
 ## Configuration options
 
@@ -112,7 +112,7 @@ The generated schema uses `SCHEMAFULL` tables by default. Each field is typed fr
 
 - Required fields take a concrete type (`string`, `datetime`, `bool`, and so on).
 - Optional fields use `option<T | null>`, so they accept a typed value, a stored `NULL`, or a missing value.
-- Object fields are marked `FLEXIBLE` so they can hold arbitrary keys.
+- Object fields use `TYPE object FLEXIBLE` so nested objects can hold arbitrary keys.
 - `DEFINE INDEX` statements are emitted for unique fields and for fields Better Auth marks as indexed.
 
 Every statement uses `IF NOT EXISTS`, so the file is safe to reapply.

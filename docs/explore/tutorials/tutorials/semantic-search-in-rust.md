@@ -218,7 +218,7 @@ let embeds = result.data.remove(0).embedding;
 ```
   
 
-There are a [number of ways](../../../languages/rust/concepts/flexible-typing.md) to work with or avoid structs when using the Rust SDK, but we'll just go with two basic structs: one to represent the input into a `.create()` statement, and one to display the results.
+There are a [number of ways](../../../reference/rust/concepts/flexible-typing.md) to work with or avoid structs when using the Rust SDK, but we'll just go with two basic structs: one to represent the input into a `.create()` statement, and one to display the results.
 
 ```rust
 #[derive(SurrealValue)]
@@ -705,7 +705,7 @@ let embeds = result.data.remove(0).embedding;
 ```
   
 
-There are a [number of ways](../../../languages/rust/concepts/flexible-typing.md) to work with or avoid structs when using the Rust SDK, but we'll just go with two basic structs: one to represent the input into a `.create()` statement, and another to show the results.
+There are a [number of ways](../../../reference/rust/concepts/flexible-typing.md) to work with or avoid structs when using the Rust SDK, but we'll just go with two basic structs: one to represent the input into a `.create()` statement, and another to show the results.
 
 ```rust
 #[derive(SurrealValue)]

@@ -72,7 +72,7 @@ ACCESS api GRANT FOR USER automation;
 
 The key value returned in the grant object is the bearer key, which can be used to sign in as the `automation` user without using its password.
 
-Here are some examples on how to do that using the [JavaScript SDK](../../../../../languages/javascript/overview.md) or a raw [HTTP request](../../../../rest-api/http-protocol.md).
+Here are some examples on how to do that using the [JavaScript SDK](https://surrealdb.com/docs/reference/javascript/overview) or a raw [HTTP request](../../../../rest-api/http-protocol.md).
 
 #### JavaScript SDK
 

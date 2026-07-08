@@ -11,15 +11,15 @@ SurrealDB supports a number of methods for connecting to the database and perfor
 
 In each SDK, you can connect to the database using a local or remote connection. Once you are connected, you can start performing data queries. Here is a list of all the Supported SDKs:
 
-- **[Rust](../../../../languages/rust/overview.md)**
-- **[JavaScript](../../../../languages/javascript/concepts/connecting-to-surrealdb.md)**
-- **[TypeScript](../../../../languages/javascript/concepts/connecting-to-surrealdb.md)**
-- **[Python](../../../../languages/python/index.md)**
-- **[Node.js](../../../../languages/javascript/engines/node.md)**
-- **[.NET](../../../../languages/dotnet/index.md)**
-- **[Golang](../../../../languages/golang/index.md)**
-- **[Java](../../../../languages/java/index.md)**
-- **[PHP](../../../../languages/php/index.md)**
+- **[Rust](https://surrealdb.com/docs/reference/rust/overview)**
+- **[JavaScript](../../../../reference/javascript/concepts/connecting-to-surrealdb.md)**
+- **[TypeScript](../../../../reference/javascript/concepts/connecting-to-surrealdb.md)**
+- **[Python](../../../../reference/python/index.md)**
+- **[Node.js](../../../../reference/javascript/engines/node.md)**
+- **[.NET](../../../../reference/dotnet/index.md)**
+- **[Golang](../../../../reference/golang/index.md)**
+- **[Java](../../../../reference/java/index.md)**
+- **[PHP](../../../../reference/php/index.md)**
 
 ## Writing SurrealQL queries in SDKs
 

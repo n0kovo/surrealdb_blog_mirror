@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Embedding in Go
 
-SurrealDB can be run [as an embedded database](../../../languages/golang/embedding.md) within your Go application, allowing you to use SurrealDB without running a separate server process. This is ideal for desktop applications, testing, local development, and edge computing scenarios.
+SurrealDB can be run [as an embedded database](../../../reference/golang/embedding.md) within your Go application, allowing you to use SurrealDB without running a separate server process. This is ideal for desktop applications, testing, local development, and edge computing scenarios.
 
 ## Embedded database options
 
@@ -57,4 +57,4 @@ func main() {
 }
 ```
 
-For complete documentation, installation instructions, examples, best practices, and troubleshooting, see the [Go SDK embedding guide](../../../languages/golang/embedding.md).
+For complete documentation, installation instructions, examples, best practices, and troubleshooting, see the [Go SDK embedding guide](../../../reference/golang/embedding.md).

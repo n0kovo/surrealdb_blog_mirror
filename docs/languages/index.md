@@ -5,22 +5,29 @@ generated: stub
 
 # Languages
 
-_Auto-generated index — 1 page and 10 sub-sections._
-
-## Sub-sections
-
-- **[.NET SDK](dotnet/index.md)** — The SurrealDB SDK for .NET provides a number of methods for interacting with your SurrealDB database.
-- **[Go SDK](golang/index.md)** — The SurrealDB SDK for Go enables simple and advanced querying of a remote database from server-side applications.
-- **[Java SDK](java/index.md)** — The SurrealDB SDK for Java enables simple and advanced querying of a remote or embedded database.
-- **[Javascript](javascript/index.md)**
-- **[Kotlin SDK](kotlin/index.md)** — The SurrealDB SDK for Kotlin is a coroutine-based, Kotlin Multiplatform client for querying a remote SurrealDB instance.
-- **[Mojo SDK](mojo/index.md)** — The SurrealDB SDK for Mojo enables simple and advanced querying of a remote database over HTTP, HTTPS, and WebSocket.
-- **[Overview](php/index.md)** — The SurrealDB SDK for PHP lets you query a remote SurrealDB instance from any PHP application, with a stable v1 release and a v2 rewrite in alpha.
-- **[Python](python/index.md)** — The SurrealDB SDK for Python enables simple and advanced querying of a remote or embedded database.
-- **[Rust](rust/index.md)**
-- **[Swift SDK](swift/index.md)** — The SurrealDB SDK for Swift enables simple and advanced querying of a remote database from Apple-platform and server-side Swift applications.
+_Auto-generated index — 11 pages._
 
 ## Pages
 
-- [SDK languages](overview.md)
-  SurrealDB has official SDKs for many languages, along with non-official SDKs created by the community.
+- [Community SDKs](community.md)
+  Community-maintained and experimental SurrealDB clients for languages beyond the official SDKs.
+- [.NET](dotnet.md)
+  Connect to SurrealDB and run your first queries with the .NET SDK.
+- [Go](golang.md)
+  Connect to SurrealDB and run your first queries with the Go SDK.
+- [Java](java.md)
+  Connect to SurrealDB and run your first queries with the Java SDK.
+- [JavaScript](javascript.md)
+  Connect to SurrealDB and run your first queries with the JavaScript SDK.
+- [Kotlin](kotlin.md)
+  Connect to SurrealDB and run your first queries with the Kotlin SDK.
+- [Mojo](mojo.md)
+  Connect to SurrealDB and run your first queries with the Mojo SDK.
+- [PHP](php.md)
+  Connect to SurrealDB and run your first queries with the PHP SDK.
+- [Python](python.md)
+  Connect to SurrealDB and run your first queries with the Python SDK.
+- [Rust](rust.md)
+  Connect to SurrealDB and run your first queries with the Rust SDK.
+- [Swift](swift.md)
+  Connect to SurrealDB and run your first queries with the Swift SDK.

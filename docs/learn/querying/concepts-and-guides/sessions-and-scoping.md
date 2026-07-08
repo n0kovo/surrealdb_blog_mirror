@@ -39,7 +39,7 @@ USE NS other_ns DB other_db;
 CREATE $person;
 ```
 
-Beyond this, the only way to persist values beyond the current session is to use [an SDK](../../../languages/overview.md) or [an extension](../../extensions/plugins/overview.md).
+Beyond this, the only way to persist values beyond the current session is to use [an SDK](../../../languages/javascript.md) or [an extension](../../extensions/plugins/overview.md).
 
 ## Accessing session information
 

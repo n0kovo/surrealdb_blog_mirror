@@ -356,7 +356,7 @@ poetry add langchain-surrealdb langchain_ollama surrealdb
 uv add --upgrade langchain-surrealdb langchain_ollama surrealdb
 ```
 
-* `surrealdb` → [SurrealDB Python SDK](../../../languages/python/index.md)
+* `surrealdb` → [SurrealDB Python SDK](../../../reference/python/index.md)
 * `langchain-surrealdb` → houses `SurrealDBVectorStore`
 * `langchain_ollama`, `langchain-openai` (or HF, Cohere, etc.) → embeddings
 

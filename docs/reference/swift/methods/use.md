@@ -1,0 +1,51 @@
+---
+position: 3
+title: use
+description: The use() method for the SurrealDB Swift SDK switches to a specific namespace and database.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/swift/methods/use.mdx"
+---
+
+# `use()` {#use}
+
+Switches the connection to a specific namespace and database.
+
+```swift title="Method Syntax"
+try await client.use(namespace: ns, database: db)
+```
+
+### Arguments
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2" scope="col">Arguments</th>
+            <th colspan="2" scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2" scope="row" data-label="Arguments">
+                `namespace`
+                <label label="required" />
+            </td>
+            <td colspan="2" scope="row" data-label="Description">
+                The namespace to switch to.
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" scope="row" data-label="Arguments">
+                `database`
+                <label label="required" />
+            </td>
+            <td colspan="2" scope="row" data-label="Description">
+                The database to switch to.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+### Example usage
+
+```swift
+try await client.use(namespace: "myapp", database: "mydb")
+```

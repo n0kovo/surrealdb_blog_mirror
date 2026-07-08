@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Type generation
 
-`surrealkit typegen` introspects a live database and emits a structured description of its schema. JSON is the primary output; TypeScript interfaces for the [SurrealDB JavaScript SDK](../../languages/javascript/index.md) can be generated alongside it.
+`surrealkit typegen` introspects a live database and emits a structured description of its schema. JSON is the primary output; TypeScript interfaces for the [SurrealDB JavaScript SDK](../../reference/javascript/index.md) can be generated alongside it.
 
 ```bash
 surrealkit typegen --user root --pass secret

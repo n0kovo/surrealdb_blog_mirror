@@ -382,800 +382,28 @@ _1069 pages_
 - [Use SurrealDB with LangChain](labs/use-surrealdb-with-langchain.md)
   Reference integration for using SurrealDB with LangChain.
 - [Using SurrealDB to prove football statistics.](labs/using-surrealdb-to-prove-football-statistics.md)
-- [Handle authentication](languages/dotnet/core/authentication.md)
-  In this section, we will walk you through the process of authenticating users and securing your SurrealDB database.
-- [Connection strings](languages/dotnet/core/connection-strings.md)
-  The .NET SDK for SurrealDB supports the familiar concept of ConnectionString.
-- [Create a new connection](languages/dotnet/core/create-a-new-connection.md)
-  The SurrealDB SDK for .NET enables simple and advanced querying of a remote or embedded database.
-- [Data manipulation](languages/dotnet/core/data-manipulation.md)
-  SurrealDB supports a number of methods for interacting with the database and performing CRUD operations.
-- [Dependency injection](languages/dotnet/core/dependency-injection.md)
-  The SurrealDB SDK for .NET also supports the concept of Dependency Injection pattern.
-- [SDK concepts](languages/dotnet/core/index.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Logging](languages/dotnet/core/logging.md)
-  In case you need to understand what your application is doing, the SurrealDB SDK has a built-in logging mechanism.
-- [Multiple sessions](languages/dotnet/core/multiple-sessions.md)
-  The .NET SDK supports multiple isolated sessions within a single connection, each with their own authentication and context.
-- [Set parameters](languages/dotnet/core/parameters.md)
-  In this section, you will learn how to set parameters in the .NET SDK for SurrealDB.
-- [Realtime data streaming](languages/dotnet/core/streaming.md)
-  The SurrealDB SDK for .NET allows you to create live queries that listen for changes in the database and automatically update your application when changes occur.
-- [Transactions](languages/dotnet/core/transactions.md)
-  The .NET SDK supports atomic transactions for executing multiple queries that succeed or fail together.
-- [Run SurrealQL queries](languages/dotnet/core/writing-surrealql.md)
-  SurrealDB supports a number of methods for interacting with the database and performing CRUD operations.
-- [Data types](languages/dotnet/data-types.md)
-  The .NET SDK translates all datatypes native to SurrealQL into either datatypes native to .NET, or a custom implementation. This document describes all datatypes, and links to their respective documentation.
-- [Embedding](languages/dotnet/embedding.md)
-  The documentation for embedding SurrealDB within .NET.
-- [.NET SDK](languages/dotnet/index.md)
-  The SurrealDB SDK for .NET provides a number of methods for interacting with your SurrealDB database.
-- [Installation](languages/dotnet/installation.md)
-  In this section, you will learn how to install the .NET SDK in your project.
-- [Authenticate](languages/dotnet/methods/authenticate.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Connect](languages/dotnet/methods/connect.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Create](languages/dotnet/methods/create.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Delete](languages/dotnet/methods/delete.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Export](languages/dotnet/methods/export.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Health](languages/dotnet/methods/health.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Import](languages/dotnet/methods/import.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [SDK methods](languages/dotnet/methods/index.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Info](languages/dotnet/methods/info.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [InsertRelation](languages/dotnet/methods/insert-relation.md)
-  The .NET SDK for SurrealDB enables you to insert a relation between two records.
-- [Insert](languages/dotnet/methods/insert.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Invalidate](languages/dotnet/methods/invalidate.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Kill](languages/dotnet/methods/kill.md)
-  The .NET SDK for SurrealDB enables you to kill a running live query.
-- [ListenLive](languages/dotnet/methods/listen_live.md)
-  The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
-- [LiveQuery](languages/dotnet/methods/live-query.md)
-  The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
-- [LiveRawQuery](languages/dotnet/methods/live-raw-query.md)
-  The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
-- [LiveTable](languages/dotnet/methods/live-table.md)
-  The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
-- [Merge](languages/dotnet/methods/merge.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Patch](languages/dotnet/methods/patch.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Query](languages/dotnet/methods/query.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [RawQuery](languages/dotnet/methods/raw-query.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Relate](languages/dotnet/methods/relate.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Run](languages/dotnet/methods/run.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Select](languages/dotnet/methods/select.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Set](languages/dotnet/methods/set.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [SignIn](languages/dotnet/methods/signin.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [SignUp](languages/dotnet/methods/signup.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Unset](languages/dotnet/methods/unset.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Update](languages/dotnet/methods/update.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Upsert](languages/dotnet/methods/upsert.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Use](languages/dotnet/methods/use.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Version](languages/dotnet/methods/version.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
-- [Quick start](languages/dotnet/start.md)
-  In this guide, we will walk you through setting up and querying your first project with the .NET SDK for SurrealDB.
-- [DB](languages/golang/api/core/db.md)
-  The DB struct is the main entry point for connecting to and interacting with a SurrealDB instance from Go.
-- [Session](languages/golang/api/core/session.md)
-  The Session struct represents an isolated SurrealDB session on a WebSocket connection with its own authentication and namespace state.
-- [Transaction](languages/golang/api/core/transaction.md)
-  The Transaction struct represents an interactive SurrealDB transaction that allows executing statements one at a time with commit or cancel control.
-- [Errors](languages/golang/api/errors/index.md)
-  The Go SDK provides structured error types and sentinel errors for handling SurrealDB failures.
-- [Types](languages/golang/api/types/index.md)
-  The Go SDK defines several types for authentication, query results, relationships, and data patching.
-- [CustomDateTime](languages/golang/api/values/datetime.md)
-  The CustomDateTime type wraps time.Time with SurrealDB-compatible CBOR encoding at nanosecond precision.
-- [CustomDuration](languages/golang/api/values/duration.md)
-  The CustomDuration type wraps time.Duration with SurrealDB-compatible CBOR encoding and human-readable formatting.
-- [Geometry](languages/golang/api/values/geometry.md)
-  The Go SDK provides typed geometry types for all SurrealDB geometry values including points, lines, polygons, and collections.
-- [Range](languages/golang/api/values/range.md)
-  The Range type represents a SurrealDB range value with inclusive or exclusive bounds.
-- [RecordID](languages/golang/api/values/record-id.md)
-  The RecordID type represents a SurrealDB record identifier consisting of a table name and an ID value.
-- [Table](languages/golang/api/values/table.md)
-  The Table type represents a SurrealDB table name used to scope data operations to an entire table.
-- [UUID](languages/golang/api/values/uuid.md)
-  The UUID type represents a UUID v4 or v7 value with CBOR tag 37 encoding for SurrealDB.
-- [Authentication](languages/golang/concepts/authentication.md)
-  The Go SDK provides methods for signing in, signing up, and managing authentication at root, namespace, database, and record levels.
-- [Connecting to SurrealDB](languages/golang/concepts/connecting-to-surrealdb.md)
-  The Go SDK supports connecting to SurrealDB over WebSocket or HTTP using a URL-based connection factory.
-- [Data manipulation](languages/golang/concepts/data-manipulation.md)
-  The Go SDK provides generic functions for selecting, creating, updating, and deleting records in SurrealDB.
-- [Error handling](languages/golang/concepts/error-handling.md)
-  The Go SDK provides structured error types for distinguishing between server errors, query errors, and transport failures.
-- [Executing queries](languages/golang/concepts/executing-queries.md)
-  The Go SDK provides generic functions for executing SurrealQL queries with typed results and parameterised variables.
-- [Live queries](languages/golang/concepts/live-queries.md)
-  The Go SDK supports real-time live queries that stream change notifications from the database through Go channels.
-- [Multiple sessions](languages/golang/concepts/multiple-sessions.md)
-  The Go SDK supports creating multiple isolated sessions on a single WebSocket connection, each with its own authentication and namespace.
-- [Query builder](languages/golang/concepts/query-builder.md)
-  The Go SDK provides a contrib package for building type-safe SurrealQL queries programmatically with automatic parameter binding.
-- [Reliable connections](languages/golang/concepts/reliable-connections.md)
-  The Go SDK provides a contrib package for auto-reconnecting WebSocket connections with session restoration and live query persistence.
-- [Transactions](languages/golang/concepts/transactions.md)
-  The Go SDK supports interactive transactions that let you execute statements one at a time and conditionally commit or cancel.
-- [Value types](languages/golang/concepts/value-types.md)
-  The Go SDK uses typed wrappers for SurrealDB values like RecordID, UUID, DateTime, and Duration, encoded over CBOR.
-- [Embedding](languages/golang/embedding.md)
-  The surrealdb.c C FFI library contains Go bindings that can be used to access an embedded SurrealDB instance.
-- [Go SDK](languages/golang/index.md)
-  The SurrealDB SDK for Go enables simple and advanced querying of a remote database from server-side applications.
-- [Installation](languages/golang/installation.md)
-  The SurrealDB Go SDK can be installed with a single go get command.
-- [Quickstart](languages/golang/start.md)
-  Get started with the SurrealDB SDK for Go in minutes.
-- [LiveStream](languages/java/api/core/live-stream.md)
-  The LiveStream class provides a blocking interface for receiving real-time notifications from live queries.
-- [Response](languages/java/api/core/response.md)
-  The Response class wraps the results of a SurrealQL query execution.
-- [Surreal](languages/java/api/core/surreal.md)
-  The Surreal class is the main entry point for connecting to and interacting with a SurrealDB instance from Java.
-- [Transaction](languages/java/api/core/transaction.md)
-  The Transaction class provides methods for executing queries within an atomic transaction.
-- [Errors](languages/java/api/errors/index.md)
-  The Java SDK provides a structured exception hierarchy for handling errors from SurrealDB.
-- [Java types](languages/java/api/types/index.md)
-  The Java SDK provides credential classes, enums, and helper types for authentication and data operations.
-- [Datetime](languages/java/api/values/datetime.md)
-  SurrealDB datetime values map to Java's ZonedDateTime class.
-- [Duration](languages/java/api/values/duration.md)
-  SurrealDB duration values map to Java's Duration class.
-- [FileRef](languages/java/api/values/file-ref.md)
-  The FileRef class represents a reference to a file stored in SurrealDB.
-- [Geometry](languages/java/api/values/geometry.md)
-  The Geometry class represents SurrealDB geometric data types.
-- [Range](languages/java/api/values/range.md)
-  SurrealDB range values are accessed through Value methods for start and end bounds.
-- [RecordId](languages/java/api/values/record-id.md)
-  The RecordId class represents a SurrealDB record identifier consisting of a table name and an ID value.
-- [Table](languages/java/api/values/table.md)
-  SurrealDB table values map to Java strings via Value methods.
-- [Value](languages/java/api/values/value.md)
-  The Value class represents any SurrealDB value and provides type checking and conversion methods.
-- [Authentication](languages/java/concepts/authentication.md)
-  The Java SDK provides methods for signing in, signing up, and managing authentication tokens.
-- [Class converters](languages/java/concepts/class-converters.md)
-  The Java SDK automatically converts between Java classes and SurrealDB values, letting you use POJOs for type-safe database operations.
-- [Connecting to SurrealDB](languages/java/concepts/connecting-to-surrealdb.md)
-  The Java SDK supports WebSocket, HTTP, and embedded connections to SurrealDB instances.
-- [Data manipulation](languages/java/concepts/data-manipulation.md)
-  The Java SDK provides type-safe methods for creating, selecting, updating, upserting, and deleting records.
-- [Embedded databases](languages/java/concepts/embedded-databases.md)
-  The Java SDK can run SurrealDB as an embedded in-process database for testing and standalone applications.
-- [Error handling](languages/java/concepts/error-handling.md)
-  The Java SDK provides a structured exception hierarchy for handling errors from the database and SDK.
-- [Executing queries](languages/java/concepts/executing-queries.md)
-  The Java SDK provides methods for executing SurrealQL queries with optional parameter binding.
-- [Live queries](languages/java/concepts/live-queries.md)
-  The Java SDK supports real-time live queries that stream changes from the database to your application.
-- [Multiple sessions](languages/java/concepts/multiple-sessions.md)
-  The Java SDK supports creating multiple isolated sessions over a single connection.
-- [Transactions](languages/java/concepts/transactions.md)
-  The Java SDK supports client-side transactions for grouping multiple queries into an atomic unit.
-- [Value types](languages/java/concepts/value-types.md)
-  The Java SDK maps SurrealDB data types to native Java types and provides custom classes for complex values.
-- [Java SDK](languages/java/index.md)
-  The SurrealDB SDK for Java enables simple and advanced querying of a remote or embedded database.
-- [Installation](languages/java/installation.md)
-  The SurrealDB SDK for Java is available on Maven Central and can be installed using Gradle or Maven.
-- [Quickstart](languages/java/start.md)
-  Get started with the SurrealDB SDK for Java in minutes.
-- [SurrealApi](languages/javascript/api/core/surreal-api.md)
-  The SurrealApi class provides methods for invoking user-defined API endpoints in SurrealDB.
-- [SurrealQueryable](languages/javascript/api/core/surreal-queryable.md)
-  The SurrealQueryable class provides all query execution methods for interacting with SurrealDB.
-- [SurrealSession](languages/javascript/api/core/surreal-session.md)
-  The SurrealSession class provides session-scoped context with authentication and query execution capabilities.
-- [SurrealTransaction](languages/javascript/api/core/surreal-transaction.md)
-  The SurrealTransaction class provides atomic transaction support for executing multiple queries.
-- [Surreal](languages/javascript/api/core/surreal.md)
-  The Surreal class is the main entry point for connecting to and interacting with a SurrealDB instance.
-- [Errors](languages/javascript/api/errors/index.md)
-  Error classes for handling different types of failures in the SDK.
-- [ApiPromise](languages/javascript/api/queries/api-promise.md)
-  ApiPromise provides methods for executing user-defined API calls.
-- [CreatePromise](languages/javascript/api/queries/create-promise.md)
-  CreatePromise provides chainable methods for configuring CREATE operations.
-- [DeletePromise](languages/javascript/api/queries/delete-promise.md)
-  DeletePromise provides chainable methods for configuring DELETE operations.
-- [InsertPromise](languages/javascript/api/queries/insert-promise.md)
-  InsertPromise provides chainable methods for configuring INSERT operations.
-- [LivePromise](languages/javascript/api/queries/live-promise.md)
-  LivePromise variants for managing real-time live query subscriptions.
-- [Query](languages/javascript/api/queries/query.md)
-  Query class for executing raw SurrealQL with streaming and batch processing support.
-- [RelatePromise](languages/javascript/api/queries/relate-promise.md)
-  RelatePromise provides chainable methods for configuring RELATE operations for graph relationships.
-- [RunPromise](languages/javascript/api/queries/run-promise.md)
-  RunPromise provides methods for executing SurrealDB functions and SurrealML models.
-- [SelectPromise](languages/javascript/api/queries/select-promise.md)
-  SelectPromise provides chainable methods for configuring SELECT queries.
-- [UpdatePromise](languages/javascript/api/queries/update-promise.md)
-  UpdatePromise provides chainable methods for configuring UPDATE operations.
-- [UpsertPromise](languages/javascript/api/queries/upsert-promise.md)
-  UpsertPromise provides chainable methods for configuring UPSERT operations (insert or replace).
-- [TypeScript types](languages/javascript/api/types/index.md)
-  TypeScript type definitions and interfaces used throughout the SDK.
-- [BoundQuery](languages/javascript/api/utilities/bound-query.md)
-  Parameterised query class for safe query composition.
-- [equals](languages/javascript/api/utilities/equals.md)
-  Deep equality comparison for SurrealDB values and JavaScript types.
-- [Escape functions](languages/javascript/api/utilities/escape.md)
-  Functions for escaping identifiers and values in SurrealQL queries.
-- [expr](languages/javascript/api/utilities/expr.md)
-  Type-safe expression builder for constructing SurrealQL conditions.
-- [isRetryableConflict](languages/javascript/api/utilities/is-retryable-conflict.md)
-  Default predicate used to detect retryable write conflicts.
-- [surql](languages/javascript/api/utilities/surql.md)
-  Tagged template for composing parameterised SurrealQL queries.
-- [DateTime](languages/javascript/api/values/datetime.md)
-  Datetime values with nanosecond precision for time-based operations.
-- [Decimal](languages/javascript/api/values/decimal.md)
-  Arbitrary precision decimal numbers for financial and scientific calculations.
-- [Duration](languages/javascript/api/values/duration.md)
-  Time duration values with support for multiple units and nanosecond precision.
-- [FileRef](languages/javascript/api/values/file-ref.md)
-  The FileRef class represents a reference to a file stored in SurrealDB.
-- [Geometry](languages/javascript/api/values/geometry.md)
-  Geometric and spatial data types for location-based applications.
-- [Data types](languages/javascript/api/values/index.md)
-  Type mapping between SurrealQL and JavaScript, and custom data type classes.
-- [Range](languages/javascript/api/values/range.md)
-  Generic range values for numeric, datetime, and other ordered types.
-- [RecordId](languages/javascript/api/values/record-id.md)
-  Type-safe record identifiers with table name and ID components.
-- [Table](languages/javascript/api/values/table.md)
-  Type-safe table references for query operations.
-- [Uuid](languages/javascript/api/values/uuid.md)
-  Universally unique identifiers for generating unique IDs.
-- [Authentication](languages/javascript/concepts/authentication.md)
-  SurrealDB supports a number of methods for authenticating users and securing the database.
-- [Bound queries](languages/javascript/concepts/bound-queries.md)
-  The JavaScript SDK provides bound queries and template tags for safely composing parameterised SurrealQL queries.
-- [Codecs](languages/javascript/concepts/codecs.md)
-  The SQON library provides codecs for serialising and deserialising SurrealDB value types over CBOR and JSON wire formats.
-- [Connecting to SurrealDB](languages/javascript/concepts/connecting-to-surrealdb.md)
-  The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
-- [Diagnostics](languages/javascript/concepts/diagnostics.md)
-  The JavaScript SDK provides a diagnostics API for intercepting and inspecting protocol-level communication with SurrealDB.
-- [Embedded engines](languages/javascript/concepts/embedded-engines.md)
-  Run SurrealDB as an embedded database in the browser or on the server using the WebAssembly and Node.js engine plugins.
-- [Error handling](languages/javascript/concepts/error-handling.md)
-  The JavaScript SDK provides specific error classes for handling different types of failures when interacting with SurrealDB.
-- [Executing queries](languages/javascript/concepts/executing-queries.md)
-  The JavaScript SDK provides query builder methods and a raw query API for interacting with SurrealDB.
-- [Invoking APIs](languages/javascript/concepts/invoking-apis.md)
-  The JavaScript SDK allows you to invoke user-defined API endpoints in SurrealDB with type-safe HTTP-style methods.
-- [Live queries](languages/javascript/concepts/live-queries.md)
-  The JavaScript SDK supports real-time live queries that stream changes from the database to your application.
-- [Multiple sessions](languages/javascript/concepts/multiple-sessions.md)
-  The JavaScript SDK supports multiple isolated sessions within a single connection, each with their own authentication and context.
-- [Transactions](languages/javascript/concepts/transactions.md)
-  The JavaScript SDK supports atomic transactions for executing multiple queries that succeed or fail together.
-- [Utilities](languages/javascript/concepts/utilities.md)
-  SQON provides value comparison, conversion, and escaping utilities. The SDK adds query-building helpers on top.
-- [Value types](languages/javascript/concepts/value-types.md)
-  The SQON library provides custom classes for SurrealDB-specific data types, re-exported by the JavaScript SDK for convenience.
-- [Node.js](languages/javascript/engines/node.md)
-  The SurrealDB SDK for JavaScript using the Node.js engine.
-- [WebAssembly](languages/javascript/engines/wasm.md)
-  The SurrealDB SDK for JavaScript using the WebAssembly engine.
-- [React](languages/javascript/frameworks/react.md)
-  The SurrealDB SDK for JavaScript can be used in React applications to interact with your SurrealDB instance.
-- [SolidJS](languages/javascript/frameworks/solidjs.md)
-  The SurrealDB SDK for JavaScript can be used in SolidJS applications to interact with your SurrealDB instance.
-- [Vue.js](languages/javascript/frameworks/vuejs.md)
-  The SurrealDB SDK for JavaScript can be used in Vue.js applications to interact with your SurrealDB instance.
-- [Installation](languages/javascript/installation.md)
-  In this section, you will learn how to install the JavaScript SDK in your project.
-- [Overview](languages/javascript/overview.md)
-  The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
-- [Start](languages/javascript/start.md)
-  Get started with the SurrealDB SDK for JavaScript in minutes.
-- [SurrealClientConfig](languages/kotlin/api/core/client-config.md)
-  Configuration options for the SurrealDB Kotlin client, including reconnection and authentication.
-- [LiveQuerySubscription](languages/kotlin/api/core/live-subscription.md)
-  The subscription handle returned by live queries in the SurrealDB Kotlin SDK.
-- [Query builders](languages/kotlin/api/core/query-builder.md)
-  The fluent query builders, expression helpers, and surql DSL of the SurrealDB Kotlin SDK.
-- [SurrealSession](languages/kotlin/api/core/session.md)
-  The SurrealSession class exposes querying and authentication with isolated per-session state.
-- [SurrealClient](languages/kotlin/api/core/surreal-client.md)
-  The SurrealClient class is the main entry point for connecting to and interacting with a SurrealDB instance from Kotlin.
-- [SurrealTransaction](languages/kotlin/api/core/transaction.md)
-  The transaction handle and helpers for atomic operations in the SurrealDB Kotlin SDK.
-- [Errors](languages/kotlin/api/errors/index.md)
-  The exception hierarchy raised by the SurrealDB Kotlin SDK.
-- [Features & Events](languages/kotlin/api/features/index.md)
-  Transport feature flags and connection lifecycle events in the SurrealDB Kotlin SDK.
-- [RecordIdRange](languages/kotlin/api/values/record-id-range.md)
-  The RecordIdRange type targets a range of records within a table in the SurrealDB Kotlin SDK.
-- [RecordId](languages/kotlin/api/values/record-id.md)
-  The RecordId type identifies a single record in the SurrealDB Kotlin SDK.
-- [Table](languages/kotlin/api/values/table.md)
-  The Table type refers to a table by name in the SurrealDB Kotlin SDK.
-- [Value (JSON model)](languages/kotlin/api/values/value.md)
-  How the SurrealDB Kotlin SDK models values using kotlinx.serialization JSON types.
-- [Authentication](languages/kotlin/concepts/authentication.md)
-  Sign up, sign in, and manage authentication tokens with the SurrealDB Kotlin SDK.
-- [Connecting to SurrealDB](languages/kotlin/concepts/connecting-to-surrealdb.md)
-  The Kotlin SDK connects to SurrealDB over WebSocket or HTTP, with automatic transport selection and reconnection.
-- [Data manipulation](languages/kotlin/concepts/data-manipulation.md)
-  Create, read, update, and delete records with the fluent builders in the SurrealDB Kotlin SDK.
-- [Error handling](languages/kotlin/concepts/error-handling.md)
-  Handle exceptions and feature-support errors raised by the SurrealDB Kotlin SDK.
-- [Executing queries](languages/kotlin/concepts/executing-queries.md)
-  Run raw SurrealQL with bound parameters and decode results with the Kotlin SDK.
-- [Live queries](languages/kotlin/concepts/live-queries.md)
-  Subscribe to real-time changes with live queries in the SurrealDB Kotlin SDK.
-- [Multiple sessions](languages/kotlin/concepts/multiple-sessions.md)
-  Isolate authentication and state across concurrent sessions with the SurrealDB Kotlin SDK.
-- [Serialization](languages/kotlin/concepts/serialization.md)
-  Encode and decode records using kotlinx.serialization with the SurrealDB Kotlin SDK.
-- [Transactions](languages/kotlin/concepts/transactions.md)
-  Group operations into atomic transactions with the SurrealDB Kotlin SDK.
-- [Value types](languages/kotlin/concepts/value-types.md)
-  Work with record identifiers, tables, and the JSON value model in the SurrealDB Kotlin SDK.
-- [Kotlin SDK](languages/kotlin/index.md)
-  The SurrealDB SDK for Kotlin is a coroutine-based, Kotlin Multiplatform client for querying a remote SurrealDB instance.
-- [Installation](languages/kotlin/installation.md)
-  The SurrealDB SDK for Kotlin is published to Maven Central and can be installed using Gradle or Maven.
-- [Quickstart](languages/kotlin/start.md)
-  Get started with the SurrealDB SDK for Kotlin in minutes.
-- [Authentication](languages/mojo/concepts/authentication.md)
-  Learn how to authenticate the Mojo SDK with SurrealDB using access tokens and the signin RPC.
-- [Connecting to SurrealDB](languages/mojo/concepts/connecting-to-surrealdb.md)
-  Learn how to connect the Mojo SDK to SurrealDB over HTTP, HTTPS, and WebSocket, and how to choose a wire format.
-- [Error handling](languages/mojo/concepts/error-handling.md)
-  How the Mojo SDK reports errors, both on responses and as raised Mojo errors.
-- [Executing queries](languages/mojo/concepts/executing-queries.md)
-  Learn how to run SurrealQL with the Mojo SDK, use the CRUD convenience methods, and read responses.
-- [Live queries](languages/mojo/concepts/live-queries.md)
-  Subscribe to changes on a table with the Mojo SDK and poll for live-query notifications.
-- [Multiple sessions](languages/mojo/concepts/multiple-sessions.md)
-  Open and manage independent server-side sessions with the Mojo SDK.
-- [Query builders](languages/mojo/concepts/query-builders.md)
-  Build SurrealQL statements fluently with the Mojo SDK query builders.
-- [Transactions](languages/mojo/concepts/transactions.md)
-  Run multiple statements atomically with the Mojo SDK over HTTP or a WebSocket session.
-- [Value types](languages/mojo/concepts/value-types.md)
-  The SurrealDB tagged value types that the Mojo SDK encodes and decodes.
-- [Mojo SDK](languages/mojo/index.md)
-  The SurrealDB SDK for Mojo enables simple and advanced querying of a remote database over HTTP, HTTPS, and WebSocket.
-- [Installation](languages/mojo/installation.md)
-  In this section, you will learn how to install the SurrealDB Mojo SDK and add it to your project.
-- [api](languages/mojo/methods/api.md)
-  The api() method for the SurrealDB Mojo SDK calls a custom API handler defined on the database.
-- [authenticate](languages/mojo/methods/authenticate.md)
-  The authenticate() method for the SurrealDB Mojo SDK authenticates the current connection with a token.
-- [begin_transaction](languages/mojo/methods/begin-transaction.md)
-  The begin_transaction() method for the SurrealDB Mojo SDK starts a session-scoped transaction.
-- [call](languages/mojo/methods/call.md)
-  The call() method for the SurrealDB Mojo SDK runs a SurrealQL function.
-- [close](languages/mojo/methods/close.md)
-  The close() method for the SurrealDB Mojo SDK closes the connection.
-- [connect](languages/mojo/methods/connect.md)
-  The connect() method for the SurrealDB Mojo SDK connects to a database endpoint.
-- [create](languages/mojo/methods/create.md)
-  The create() method for the SurrealDB Mojo SDK creates a record in the database.
-- [delete](languages/mojo/methods/delete.md)
-  The delete() method for the SurrealDB Mojo SDK deletes all records in a table, or a specific record.
-- [health](languages/mojo/methods/health.md)
-  The health() method for the SurrealDB Mojo SDK runs a health check against the server.
-- [SDK methods](languages/mojo/methods/index.md)
-  The full method reference for the SurrealDB Mojo SDK.
-- [insert_relation](languages/mojo/methods/insert-relation.md)
-  The insert_relation() method for the SurrealDB Mojo SDK inserts one or more relations into a table.
-- [insert](languages/mojo/methods/insert.md)
-  The insert() method for the SurrealDB Mojo SDK inserts one or more records into a table.
-- [invalidate](languages/mojo/methods/invalidate.md)
-  The invalidate() method for the SurrealDB Mojo SDK invalidates the authentication for the current connection.
-- [kill](languages/mojo/methods/kill.md)
-  The kill() method for the SurrealDB Mojo SDK stops a running live query.
-- [live_query](languages/mojo/methods/live.md)
-  The live_query() method for the SurrealDB Mojo SDK starts a live query on a table.
-- [merge](languages/mojo/methods/merge.md)
-  The merge() method for the SurrealDB Mojo SDK merges data into a record.
-- [patch](languages/mojo/methods/patch.md)
-  The patch() method for the SurrealDB Mojo SDK applies a JSON Patch to a record.
-- [query](languages/mojo/methods/query.md)
-  The query() method for the SurrealDB Mojo SDK runs one or more SurrealQL statements against the database.
-- [select](languages/mojo/methods/select.md)
-  The select() method for the SurrealDB Mojo SDK selects all records in a table, or a specific record.
-- [set](languages/mojo/methods/set.md)
-  The set() method for the SurrealDB Mojo SDK assigns a value as a parameter for this connection.
-- [signin](languages/mojo/methods/signin.md)
-  The signin() method for the SurrealDB Mojo SDK signs in to the database with credentials.
-- [signup](languages/mojo/methods/signup.md)
-  The signup() method for the SurrealDB Mojo SDK signs up to a record-access method.
-- [transaction_multi](languages/mojo/methods/transaction-multi.md)
-  The transaction_multi() method for the SurrealDB Mojo SDK runs a list of statements as one atomic transaction.
-- [unset](languages/mojo/methods/unset.md)
-  The unset() method for the SurrealDB Mojo SDK removes a parameter for this connection.
-- [update](languages/mojo/methods/update.md)
-  The update() method for the SurrealDB Mojo SDK updates all records in a table, or a specific record.
-- [upsert](languages/mojo/methods/upsert.md)
-  The upsert() method for the SurrealDB Mojo SDK upserts all records in a table, or a specific record.
-- [use](languages/mojo/methods/use.md)
-  The use() method for the SurrealDB Mojo SDK switches to a specific namespace and database.
-- [version](languages/mojo/methods/version.md)
-  The version() method for the SurrealDB Mojo SDK returns the database version.
-- [Quickstart](languages/mojo/start.md)
-  A complete working example that connects to SurrealDB from Mojo, runs a query, and reads the response.
-- [SDK languages](languages/overview.md)
-  SurrealDB has official SDKs for many languages, along with non-official SDKs created by the community.
-- [Configuration](languages/php/frameworks/laravel/configuration.md)
-  Configure the SurrealDB Laravel integration with environment variables, authentication modes, multiple named connections, and the ORM model list.
-- [Container and facades](languages/php/frameworks/laravel/container-and-facades.md)
-  The service providers, container bindings, and the SurrealDB, Surreal, and Surqlize facades the Laravel integration registers.
-- [Overview](languages/php/frameworks/laravel/index.md)
-  The Laravel integration wires the SurrealDB PHP SDK and the Surqlize ORM into Laravel's config, service container, facades, and Artisan commands.
-- [Installation](languages/php/frameworks/laravel/installation.md)
-  Install the SurrealDB Laravel integration with Composer and publish the SDK and ORM configuration files.
-- [Queries and transactions](languages/php/frameworks/laravel/queries-and-transactions.md)
-  Run Surqlize model queries, raw SurrealQL, and transactions in a Laravel application, including against named connections.
-- [Schema commands](languages/php/frameworks/laravel/schema-commands.md)
-  Dump and apply your Surqlize schema in a Laravel application with the surqlize:schema-dump and surqlize:schema-apply Artisan commands.
-- [Testing](languages/php/frameworks/laravel/testing.md)
-  Test SurrealDB code in Laravel with the fake query executor, query assertions, and the trait that resets Surqlize's global state between tests.
-- [Overview](languages/php/index.md)
-  The SurrealDB SDK for PHP lets you query a remote SurrealDB instance from any PHP application, with a stable v1 release and a v2 rewrite in alpha.
-- [Code generation and CLI](languages/php/libraries/surqlize/code-generation-and-cli.md)
-  Generate typed field adapters for Surqlize models and run the Surqlize CLI for field generation, schema application, and memory reports.
-- [Connections](languages/php/libraries/surqlize/connections.md)
-  Register an SDK executor with Surqlize's ConnectionManager, and inject a per-query executor when you need more than one connection.
-- [Edges and graph](languages/php/libraries/surqlize/edges-and-graph.md)
-  Model SurrealDB graph relations in Surqlize with edge models, traverse them in a SELECT, and create them with RELATE.
-- [Overview](languages/php/libraries/surqlize/index.md)
-  Surqlize is an object-relational mapper for SurrealDB in PHP, built on version 2 of the SDK, with attribute-driven models, a typed query builder, graph relations, and schema tooling.
-- [Installation](languages/php/libraries/surqlize/installation.md)
-  Install Surqlize with Composer, including the alpha v2 SurrealDB PHP SDK it depends on.
-- [Models](languages/php/libraries/surqlize/models.md)
-  Describe SurrealDB tables as PHP classes in Surqlize, using attributes for the table name, record id, casts, schema, and specialised fields.
-- [Mutations](languages/php/libraries/surqlize/mutations.md)
-  Create, update, upsert, and delete records in Surqlize with model helpers and the mutation builder, including payload modes and return modes.
-- [Querying](languages/php/libraries/surqlize/querying.md)
-  Build SELECT queries in Surqlize with typed fields, where clauses, ordering, projections, and the advanced SurrealQL SELECT clauses, then execute or compile them.
-- [Schema](languages/php/libraries/surqlize/schema.md)
-  Define SurrealDB tables, fields, indexes, and analysers in Surqlize with a schema contract or the fluent schema DSL, then apply them with the schema manager.
-- [Search, vector, and geometry](languages/php/libraries/surqlize/search-vector-geometry.md)
-  Compile SurrealDB full-text search, vector KNN, and geometry expressions in Surqlize with the SearchField, VectorField, and GeometryField helpers.
-- [Transactions](languages/php/libraries/surqlize/transactions.md)
-  Batch Surqlize ORM queries into a single SurrealDB transaction with automatic rollback, and handle the validation exceptions Surqlize raises.
-- [Authentication](languages/php/v1/concepts/authentication.md)
-  Learn how to authenticate users and secure the database with the SurrealDB PHP SDK.
-- [Connecting to SurrealDB](languages/php/v1/concepts/connecting.md)
-  Initialize the SurrealDB PHP SDK, connect to an instance, and select a namespace and database.
-- [Data types](languages/php/v1/concepts/data-types.md)
-  The SurrealDB SDK for PHP enables simple and advanced querying of a remote database.
-- [Executing queries](languages/php/v1/concepts/executing-queries.md)
-  Interact with the database and perform CRUD operations using version 1 of the SurrealDB PHP SDK.
-- [Overview](languages/php/v1/index.md)
-  Version 1 is the current stable release of the SurrealDB PHP SDK, with direct RPC-style methods for querying a remote database.
-- [Installation](languages/php/v1/installation.md)
-  Install version 1 of the SurrealDB PHP SDK with Composer.
-- [authenticate](languages/php/v1/methods/authenticate.md)
-  Authenticate the current connection with a JWT token using the authenticate method in the SurrealDB PHP SDK.
-- [close](languages/php/v1/methods/close.md)
-  Close the persistent connection to the database using the close method in the SurrealDB PHP SDK.
-- [connect](languages/php/v1/methods/connect.md)
-  Connect to a local or remote database endpoint using the connect method in the SurrealDB PHP SDK.
-- [create](languages/php/v1/methods/create.md)
-  Create a record in the database using the create method with the SurrealDB PHP SDK.
-- [delete](languages/php/v1/methods/delete.md)
-  Delete records from a table in the database using the delete method with the SurrealDB PHP SDK.
-- [export](languages/php/v1/methods/export.md)
-  Export data from a local or remote database using the export method with the SurrealDB PHP SDK.
-- [health](languages/php/v1/methods/health.md)
-  Check the storage layer health of a local or remote database using the health method with the SurrealDB PHP SDK.
-- [import](languages/php/v1/methods/import.md)
-  Import data into an existing database using the import method with the SurrealDB PHP SDK.
-- [SDK methods](languages/php/v1/methods/index.md)
-  List of methods available in the SurrealDB SDK for PHP. Learn how to connect to a database, query data, and manage authentication.
-- [info](languages/php/v1/methods/info.md)
-  The info method returns information about the authenticated user in the SurrealDB PHP SDK.
-- [insertRelation](languages/php/v1/methods/insert-relation.md)
-  Insert one or multiple relations in the database using the insertRelation method with the SurrealDB PHP SDK.
-- [insert](languages/php/v1/methods/insert.md)
-  Insert one or multiple records in the database using the insert method with the SurrealDB PHP SDK.
-- [invalidate](languages/php/v1/methods/invalidate.md)
-  Invalidate the authentication for the current connection using the invalidate method in the SurrealDB PHP SDK.
-- [let](languages/php/v1/methods/let.md)
-  Assign parameters to a query using the let method in the SurrealDB PHP SDK.
-- [merge](languages/php/v1/methods/merge.md)
-  The ->merge() method for the SurrealDB SDK for PHP merges record data with the specified data.
-- [patch](languages/php/v1/methods/patch.md)
-  The ->patch() method for the SurrealDB SDK for PHP applies JSON patch changes to records in the database.
-- [queryRaw](languages/php/v1/methods/query-raw.md)
-  The queryRaw method in the SurrealDB PHP SDK allows you to execute raw SQL queries and return the raw RPC response.
-- [query](languages/php/v1/methods/query.md)
-  The ->query() method for the SurrealDB SDK for PHP runs a set of SurrealQL statements against the database.
-- [run](languages/php/v1/methods/run.md)
-  The run method in the SurrealDB PHP SDK allows you to execute a defined SurrealQL function on the remote database.
-- [select](languages/php/v1/methods/select.md)
-  The ->select() method for the SurrealDB SDK for PHP selects all or specific records from the database.
-- [signin](languages/php/v1/methods/signin.md)
-  The ->signin() method for the SurrealDB SDK for PHP signs in to a specific access method.
-- [signup](languages/php/v1/methods/signup.md)
-  The ->signup() method for the SurrealDB SDK for PHP signs up to a specific access method.
-- [status](languages/php/v1/methods/status.md)
-  The status method in the SurrealDB PHP SDK retrieves the current status of a remote database.
-- [unset](languages/php/v1/methods/unset.md)
-  The ->unset() method for the SurrealDB SDK for PHP removes a parameter from the connection.
-- [update](languages/php/v1/methods/update.md)
-  The ->update() method for the SurrealDB SDK for Rust updates all or specific records in the database if they exist.
-- [upsert](languages/php/v1/methods/upsert.md)
-  The upsert method in the SurrealDB PHP SDK allows you to create or update a record in a table.
-- [use](languages/php/v1/methods/use.md)
-  The ->use() method for the SurrealDB SDK for PHP switches to a specific namespace and database.
-- [version](languages/php/v1/methods/version.md)
-  The version method in the SurrealDB PHP SDK retrieves the current version of a remote database.
-- [Quickstart](languages/php/v1/start.md)
-  Connect to SurrealDB with version 1 of the PHP SDK and run your first queries.
-- [Core classes](languages/php/v2/api/core.md)
-  Reference for the Surreal class, the ConnectionController, and the supporting connection types in version 2 of the PHP SDK.
-- [Data types](languages/php/v2/api/data-types.md)
-  Reference for the SurrealQL value classes in version 2 of the PHP SDK, in the SurrealDB\SDK\Types namespace.
-- [Query builders](languages/php/v2/api/query-builders.md)
-  Reference for the fluent query builders in version 2 of the PHP SDK, including select, create, update, delete, insert, and relate.
-- [Utilities](languages/php/v2/api/utilities.md)
-  Reference for BoundQuery, driver options, enums, and helpers in version 2 of the PHP SDK.
-- [Authentication](languages/php/v2/concepts/authentication.md)
-  Sign in and sign up with typed credentials in version 2 of the PHP SDK, then manage tokens and authentication state.
-- [Connecting to SurrealDB](languages/php/v2/concepts/connecting-to-surrealdb.md)
-  Open a connection to a SurrealDB instance with version 2 of the PHP SDK, select a namespace and database, and configure reconnection.
-- [Data types](languages/php/v2/concepts/data-types.md)
-  How version 2 of the PHP SDK maps SurrealQL data types to native PHP types and custom value classes.
-- [Error handling](languages/php/v2/concepts/error-handling.md)
-  Handle failures in version 2 of the PHP SDK with the typed exception hierarchy rooted at SurrealException.
-- [Events](languages/php/v2/concepts/events.md)
-  Observe connection lifecycle and RPC traffic in version 2 of the PHP SDK with the high-level subscribe() API and the lower-level PSR-14 event dispatcher.
-- [Executing queries](languages/php/v2/concepts/executing-queries.md)
-  Run raw SurrealQL or use the fluent query builders for select, create, update, and delete in version 2 of the PHP SDK.
-- [Live queries](languages/php/v2/concepts/live-queries.md)
-  Subscribe to real-time changes from SurrealDB over a WebSocket connection with version 2 of the PHP SDK.
-- [Middleware](languages/php/v2/concepts/middleware.md)
-  Intercept every RPC in version 2 of the PHP SDK with middleware, including the built-in logging, telemetry, retry, and authentication steps.
-- [Observability](languages/php/v2/concepts/observability.md)
-  Emit OpenTelemetry traces and metrics from version 2 of the PHP SDK, with runtime-aware presets, a configurable provider factory, and vendor-neutral tracing and metrics seams.
-- [Runtimes and workers](languages/php/v2/concepts/runtimes.md)
-  Configure your PHP environment (PHP-FPM, OpenSwoole, or FrankenPHP) so live queries and other long-lived connections run without blocking your application.
-- [Sessions](languages/php/v2/concepts/sessions.md)
-  Run multiple independent sessions over a single WebSocket connection with version 2 of the PHP SDK, each with its own namespace, variables, and authentication.
-- [Transactions](languages/php/v2/concepts/transactions.md)
-  Run multiple statements atomically with version 2 of the PHP SDK, using a SurrealQL transaction block or explicit transaction handles.
-- [Overview](languages/php/v2/index.md)
-  Version 2 of the SurrealDB SDK for PHP is a rewrite with a fluent query builder, typed credentials, and a PSR-based transport layer.
-- [Installation](languages/php/v2/installation.md)
-  Install version 2 of the SurrealDB PHP SDK with Composer, including a PSR-18 HTTP client.
-- [Migration guide](languages/php/v2/migration.md)
-  Move a project from version 1 to version 2 of the SurrealDB PHP SDK, with a method-by-method mapping of the breaking changes.
-- [Quickstart](languages/php/v2/start.md)
-  Connect to SurrealDB with version 2 of the PHP SDK and run your first queries.
-- [SurrealSession](languages/python/api/core/surreal-session.md)
-  Isolated session for running queries with independent namespace, database, and authentication state.
-- [SurrealTransaction](languages/python/api/core/surreal-transaction.md)
-  Transaction scope for executing multiple operations atomically.
-- [Surreal](languages/python/api/core/surreal.md)
-  The Surreal and AsyncSurreal factory functions are the main entry points for connecting to and interacting with a SurrealDB instance from Python.
-- [Errors](languages/python/api/errors/index.md)
-  Error classes for handling different types of failures in the Python SDK.
-- [Python types](languages/python/api/types/index.md)
-  Type definitions and dataclasses used throughout the Python SDK.
-- [Datetime](languages/python/api/values/datetime.md)
-  Datetime wrapper for SurrealDB datetime values.
-- [Duration](languages/python/api/values/duration.md)
-  Duration type with nanosecond precision and unit conversion properties.
-- [Geometry](languages/python/api/values/geometry.md)
-  GeoJSON-compatible geometry types for spatial data.
-- [Python values](languages/python/api/values/index.md)
-  Custom data types for representing SurrealDB values in Python.
-- [Range](languages/python/api/values/range.md)
-  Range type with inclusive and exclusive bound support.
-- [RecordID](languages/python/api/values/record-id.md)
-  Record identifier with table name and ID components.
-- [Table](languages/python/api/values/table.md)
-  Table name wrapper for type-safe table references.
-- [Authentication](languages/python/concepts/authentication.md)
-  The Python SDK supports multiple levels of authentication for signing in and managing user credentials.
-- [Connecting to SurrealDB](languages/python/concepts/connecting-to-surrealdb.md)
-  The Python SDK provides synchronous and asynchronous connections to local, remote, or embedded SurrealDB instances.
-- [Data manipulation](languages/python/concepts/data-manipulation.md)
-  The Python SDK provides methods for selecting, creating, updating, and deleting records in SurrealDB.
-- [Embedded databases](languages/python/concepts/embedded-databases.md)
-  The Python SDK supports running SurrealDB as an embedded database directly within your application.
-- [Error handling](languages/python/concepts/error-handling.md)
-  The Python SDK provides a structured error hierarchy for handling server and client-side failures.
-- [Executing queries](languages/python/concepts/executing-queries.md)
-  The Python SDK provides methods for executing SurrealQL queries with parameter binding support.
-- [Live queries](languages/python/concepts/live-queries.md)
-  The Python SDK supports real-time live queries that stream changes from the database to your application.
-- [Multiple sessions](languages/python/concepts/multiple-sessions.md)
-  The Python SDK supports creating multiple isolated sessions within a single WebSocket connection.
-- [Transactions](languages/python/concepts/transactions.md)
-  The Python SDK supports client-side transactions for executing multiple operations atomically over WebSocket connections.
-- [Value types](languages/python/concepts/value-types.md)
-  The Python SDK provides custom types for representing SurrealDB-specific values like record identifiers, durations, and geometry.
-- [Python](languages/python/index.md)
-  The SurrealDB SDK for Python enables simple and advanced querying of a remote or embedded database.
-- [Installation](languages/python/installation.md)
-  In this section, you will learn how to install the Python SDK in your project.
-- [Quickstart](languages/python/start.md)
-  Get started with the SurrealDB SDK for Python in minutes.
-- [Authenticating users](languages/rust/concepts/authenticating-users.md)
-  The Rust SDK for SurrealDB supports a number of methods for authenticating users and securing the database.
-- [Concurrency](languages/rust/concepts/concurrency.md)
-  Multiple threads or asynchronous tasks can be used to speed up queries to a SurrealDB database
-- [Fetching linked records](languages/rust/concepts/fetch.md)
-  All the fields of a SurrealDB linked record can be fetched and deserialized into a Rust type
-- [Flexible typing](languages/rust/concepts/flexible-typing.md)
-  The Rust SDK for SurrealDB offers methods for working with types without deserialization
-- [SDK Concepts](languages/rust/concepts/index.md)
-  The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
-- [Live queries](languages/rust/concepts/live.md)
-  The Rust SDK for SurrealDB allows changes to tables in real time to be observed
-- [Multi-tenancy in 3.0](languages/rust/concepts/multi-tenancy.md)
-  Multi-tenancy was introduced in SurrealDB 3.0, allowing multiple connections to be used simultaneously in the Rust SDK.
-- [Types after 3.0](languages/rust/concepts/rust-after-3.0.md)
-  Many structural changes were implemented in SurrealDB 3.0, bringing large improvements to working with types in the Rust SDK.
-- [Manual transactions](languages/rust/concepts/transaction.md)
-  Use SurrealQL BEGIN and COMMIT in queries, or the Rust SDK `begin` / `commit` / `cancel` transaction handle, and check per-statement results before committing
-- [Vector embeddings](languages/rust/concepts/vector-embeddings.md)
-  Many crates are available to work with vector embeddings via the SurrealDB Rust SDK.
-- [Embedding](languages/rust/embedding.md)
-  In Rust, SurrealDB can be run as an in-memory database, it can persist data using a file-based storage engine, or on a distributed cluster.
-- [Actix](languages/rust/frameworks/actix.md)
-  The SDK for Rust allows SurrealDB to be used as the storage backend for an Actix web server
-- [Axum](languages/rust/frameworks/axum.md)
-  The SDK for Rust allows SurrealDB to be used as the storage backend for an Axum web server
-- [Egui](languages/rust/frameworks/egui.md)
-  The SDK for Rust allows SurrealDB to be used as the storage backend for an Egui visual app
-- [Crates](languages/rust/frameworks/index.md)
-  The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
-- [Rocket](languages/rust/frameworks/rocket.md)
-  The SDK for Rust allows SurrealDB to be used as the storage backend for a Rocket web server
-- [authenticate](languages/rust/methods/authenticate.md)
-  The .authenticate() method for the SurrealDB Rust SDK authenticates the current connection with a JWT token.
-- [begin](languages/rust/methods/begin.md)
-  The .begin() method on the SurrealDB Rust SDK client starts a multi-statement transaction and returns a handle for running queries, commits, and rollbacks.
-- [connect](languages/rust/methods/connect.md)
-  The .connect() method for the SurrealDB Rust SDK connects to a local or remote database endpoint.
-- [create](languages/rust/methods/create.md)
-  The .create() method for the SurrealDB Rust SDK creates one or more records in the database.
-- [delete](languages/rust/methods/delete.md)
-  The .delete() method for the SurrealDB Rust SDK deletes all or specific records from the database.
-- [export](languages/rust/methods/export.md)
-  The .export() method for the SurrealDB Rust SDK dumps the database contents to a file.
-- [get](languages/rust/methods/get.md)
-  The .get() method for the SurrealDB Rust SDK retrieves the value at a certain field or index.
-- [health](languages/rust/methods/health.md)
-  The .health() method for the SurrealDB Rust SDK checks that the server-side connection is able to run a health command (useful for readiness and liveness checks).
-- [import](languages/rust/methods/import.md)
-  The .import() method for the SurrealDB Rust SDK restores the database from a file.
-- [SDK methods](languages/rust/methods/index.md)
-  The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
-- [init](languages/rust/methods/init.md)
-  The .init() method for the SurrealDB Rust SDK initializes a new unconnected instance.
-- [insert](languages/rust/methods/insert.md)
-  The .insert() method for the SurrealDB Rust SDK inserts a record or records into a table.
-- [invalidate](languages/rust/methods/invalidate.md)
-  The .invalidate() method for the SurrealDB Rust SDK invalidates the authentication for the current connection.
-- [new](languages/rust/methods/new.md)
-  The .new() method for the SurrealDB Rust SDK connects to a local or remote database endpoint.
-- [query](languages/rust/methods/query.md)
-  The .query() method for the SurrealDB Rust SDK runs one or more SurrealQL statements against the database.
-- [run](languages/rust/methods/run.md)
-  The .run() method for the SurrealDB Rust SDK runs a SurrealQL function.
-- [select_live](languages/rust/methods/select-live.md)
-  The .select().live() methods for the SurrealDB Rust SDK initiate live queries for a live stream of notifications.
-- [select](languages/rust/methods/select.md)
-  The .select() method for the SurrealDB Rust SDK selects all or specific records from the database.
-- [set](languages/rust/methods/set.md)
-  The .set() method for the SurrealDB Rust SDK assigns a value as a parameter for this connection.
-- [signin](languages/rust/methods/signin.md)
-  The .signin() method for the SurrealDB Rust SDK signs in to a specific access method.
-- [signup](languages/rust/methods/signup.md)
-  The .signup() method for the SurrealDB Rust SDK signs up to a specific access method.
-- [unset](languages/rust/methods/unset.md)
-  The .unset() method for the SurrealDB Rust SDK removes a parameter from the connection.
-- [update](languages/rust/methods/update.md)
-  The .update() method for the SurrealDB Rust SDK updates all or specific records in the database.
-- [upsert](languages/rust/methods/upsert.md)
-  The .upsert() method for the SurrealDB Rust SDK upserts all or specific records in a table.
-- [use_defaults](languages/rust/methods/use-defaults.md)
-  The .use_defaults() method for the SurrealDB Rust SDK selects the default namespace and database for this connection, if the server and client are configured to provide one.
-- [use_ns and use_db](languages/rust/methods/use.md)
-  The .use_ns() and .use_db() methods for the SurrealDB Rust SDK switch to a specific namespace and database.
-- [version](languages/rust/methods/version.md)
-  The .version() method for the SurrealDB Rust SDK returns the version of the server.
-- [wait_for](languages/rust/methods/wait-for.md)
-  The .wait_for() method for the SurrealDB Rust SDK waits for the selected event to happen before proceeding.
-- [Rust SDK](languages/rust/overview.md)
-  The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
-- [Quick start](languages/rust/start.md)
-  The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
-- [Authentication](languages/swift/concepts/authentication.md)
-  Learn how to sign in, sign up, authenticate and resume sessions with the SurrealDB Swift SDK.
-- [Connecting to SurrealDB](languages/swift/concepts/connecting.md)
-  Learn how to connect to SurrealDB over HTTP or WebSocket and configure the client in the Swift SDK.
-- [Live queries](languages/swift/concepts/live-queries.md)
-  Subscribe to real-time data changes using live queries and AsyncStream in the SurrealDB Swift SDK.
-- [Models](languages/swift/concepts/models.md)
-  Define type-safe models for SurrealDB using the @SurrealModel macro or manual conformance in the Swift SDK.
-- [Predicates](languages/swift/concepts/predicates.md)
-  Build type-safe query conditions with the predicate DSL in the SurrealDB Swift SDK.
-- [Query DSL](languages/swift/concepts/query-dsl.md)
-  Build queries with compile-time macros or the programmatic SurrealDSL builder in the Swift SDK.
-- [Data types](languages/swift/data-types.md)
-  An overview of the data types used by the SurrealDB Swift SDK, including SurrealValue and SurrealRecordID.
-- [Swift SDK](languages/swift/index.md)
-  The SurrealDB SDK for Swift enables simple and advanced querying of a remote database from Apple-platform and server-side Swift applications.
-- [Installation](languages/swift/installation.md)
-  In this section, you will learn how to install the Swift SDK in your project.
-- [authenticate](languages/swift/methods/authenticate.md)
-  The authenticate() method for the SurrealDB Swift SDK authenticates the connection with a JWT token.
-- [connect](languages/swift/methods/connect.md)
-  The connect() method for the SurrealDB Swift SDK connects the client to the configured endpoint.
-- [create](languages/swift/methods/create.md)
-  The create() method for the SurrealDB Swift SDK creates a record in the database.
-- [delete](languages/swift/methods/delete.md)
-  The delete() method for the SurrealDB Swift SDK deletes matching records, or a specific record.
-- [SDK methods](languages/swift/methods/index.md)
-  The Swift SDK for SurrealDB enables simple and advanced querying of a remote database.
-- [invalidate](languages/swift/methods/invalidate.md)
-  The invalidate() method for the SurrealDB Swift SDK clears the connection's authentication state.
-- [kill](languages/swift/methods/kill.md)
-  The kill() method for the SurrealDB Swift SDK stops a running live query.
-- [live](languages/swift/methods/live.md)
-  The live() method for the SurrealDB Swift SDK subscribes to changes via a live query.
-- [queryRaw](languages/swift/methods/query-raw.md)
-  The queryRaw() method for the SurrealDB Swift SDK runs a raw SurrealQL query with bound parameters.
-- [query](languages/swift/methods/query.md)
-  The query() method for the SurrealDB Swift SDK runs a query built with the query DSL or macros.
-- [select](languages/swift/methods/select.md)
-  The select() method for the SurrealDB Swift SDK selects all records in a table, or a specific record.
-- [signin](languages/swift/methods/signin.md)
-  The signin() method for the SurrealDB Swift SDK signs in to a specific authentication level.
-- [signup](languages/swift/methods/signup.md)
-  The signup() method for the SurrealDB Swift SDK signs a new record-access user up.
-- [update](languages/swift/methods/update.md)
-  The update() method for the SurrealDB Swift SDK updates matching records, or a specific record.
-- [upsert](languages/swift/methods/upsert.md)
-  The upsert() method for the SurrealDB Swift SDK creates or updates matching records.
-- [use](languages/swift/methods/use.md)
-  The use() method for the SurrealDB Swift SDK switches to a specific namespace and database.
-- [Getting started](languages/swift/start.md)
-  In this section, you will learn how to connect to SurrealDB and run your first query using the Swift SDK.
+- [Community SDKs](languages/community.md)
+  Community-maintained and experimental SurrealDB clients for languages beyond the official SDKs.
+- [.NET](languages/dotnet.md)
+  Connect to SurrealDB and run your first queries with the .NET SDK.
+- [Go](languages/golang.md)
+  Connect to SurrealDB and run your first queries with the Go SDK.
+- [Java](languages/java.md)
+  Connect to SurrealDB and run your first queries with the Java SDK.
+- [JavaScript](languages/javascript.md)
+  Connect to SurrealDB and run your first queries with the JavaScript SDK.
+- [Kotlin](languages/kotlin.md)
+  Connect to SurrealDB and run your first queries with the Kotlin SDK.
+- [Mojo](languages/mojo.md)
+  Connect to SurrealDB and run your first queries with the Mojo SDK.
+- [PHP](languages/php.md)
+  Connect to SurrealDB and run your first queries with the PHP SDK.
+- [Python](languages/python.md)
+  Connect to SurrealDB and run your first queries with the Python SDK.
+- [Rust](languages/rust.md)
+  Connect to SurrealDB and run your first queries with the Rust SDK.
+- [Swift](languages/swift.md)
+  Connect to SurrealDB and run your first queries with the Swift SDK.
 - [Common patterns](learn/data-models/document/common-patterns.md)
   Map document-database concepts to SurrealDB, compare SurrealQL with MongoDB-style operations, and find resources for CRUD and migration.
 - [Nested objects and arrays](learn/data-models/document/nested-objects-and-arrays.md)
@@ -1530,6 +758,638 @@ _1069 pages_
   A list of the available environment variables used when running SurrealDB.
 - [SurrealDB CLI](reference/cli/surrealdb-cli/overview.md)
   The SurrealDB command-line tool can be used to export a dataset as SurrealQL from a local or remote SurrealDB database, import SurrealQL data into a local or remote database, and start a single SurrealDB instance or distributed cluster.
+- [Handle authentication](reference/dotnet/core/authentication.md)
+  In this section, we will walk you through the process of authenticating users and securing your SurrealDB database.
+- [Connection strings](reference/dotnet/core/connection-strings.md)
+  The .NET SDK for SurrealDB supports the familiar concept of ConnectionString.
+- [Create a new connection](reference/dotnet/core/create-a-new-connection.md)
+  The SurrealDB SDK for .NET enables simple and advanced querying of a remote or embedded database.
+- [Data manipulation](reference/dotnet/core/data-manipulation.md)
+  SurrealDB supports a number of methods for interacting with the database and performing CRUD operations.
+- [Dependency injection](reference/dotnet/core/dependency-injection.md)
+  The SurrealDB SDK for .NET also supports the concept of Dependency Injection pattern.
+- [SDK concepts](reference/dotnet/core/index.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Logging](reference/dotnet/core/logging.md)
+  In case you need to understand what your application is doing, the SurrealDB SDK has a built-in logging mechanism.
+- [Multiple sessions](reference/dotnet/core/multiple-sessions.md)
+  The .NET SDK supports multiple isolated sessions within a single connection, each with their own authentication and context.
+- [Set parameters](reference/dotnet/core/parameters.md)
+  In this section, you will learn how to set parameters in the .NET SDK for SurrealDB.
+- [Realtime data streaming](reference/dotnet/core/streaming.md)
+  The SurrealDB SDK for .NET allows you to create live queries that listen for changes in the database and automatically update your application when changes occur.
+- [Transactions](reference/dotnet/core/transactions.md)
+  The .NET SDK supports atomic transactions for executing multiple queries that succeed or fail together.
+- [Run SurrealQL queries](reference/dotnet/core/writing-surrealql.md)
+  SurrealDB supports a number of methods for interacting with the database and performing CRUD operations.
+- [Data types](reference/dotnet/data-types.md)
+  The .NET SDK translates all datatypes native to SurrealQL into either datatypes native to .NET, or a custom implementation. This document describes all datatypes, and links to their respective documentation.
+- [Embedding](reference/dotnet/embedding.md)
+  The documentation for embedding SurrealDB within .NET.
+- [.NET SDK](reference/dotnet/index.md)
+  The SurrealDB SDK for .NET provides a number of methods for interacting with your SurrealDB database.
+- [Installation](reference/dotnet/installation.md)
+  In this section, you will learn how to install the .NET SDK in your project.
+- [Authenticate](reference/dotnet/methods/authenticate.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Connect](reference/dotnet/methods/connect.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Create](reference/dotnet/methods/create.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Delete](reference/dotnet/methods/delete.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Export](reference/dotnet/methods/export.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Health](reference/dotnet/methods/health.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Import](reference/dotnet/methods/import.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [SDK methods](reference/dotnet/methods/index.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Info](reference/dotnet/methods/info.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [InsertRelation](reference/dotnet/methods/insert-relation.md)
+  The .NET SDK for SurrealDB enables you to insert a relation between two records.
+- [Insert](reference/dotnet/methods/insert.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Invalidate](reference/dotnet/methods/invalidate.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Kill](reference/dotnet/methods/kill.md)
+  The .NET SDK for SurrealDB enables you to kill a running live query.
+- [ListenLive](reference/dotnet/methods/listen_live.md)
+  The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
+- [LiveQuery](reference/dotnet/methods/live-query.md)
+  The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
+- [LiveRawQuery](reference/dotnet/methods/live-raw-query.md)
+  The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
+- [LiveTable](reference/dotnet/methods/live-table.md)
+  The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
+- [Merge](reference/dotnet/methods/merge.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Patch](reference/dotnet/methods/patch.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Query](reference/dotnet/methods/query.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [RawQuery](reference/dotnet/methods/raw-query.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Relate](reference/dotnet/methods/relate.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Run](reference/dotnet/methods/run.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Select](reference/dotnet/methods/select.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Set](reference/dotnet/methods/set.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [SignIn](reference/dotnet/methods/signin.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [SignUp](reference/dotnet/methods/signup.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Unset](reference/dotnet/methods/unset.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Update](reference/dotnet/methods/update.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Upsert](reference/dotnet/methods/upsert.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Use](reference/dotnet/methods/use.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [Version](reference/dotnet/methods/version.md)
+  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+- [DB](reference/golang/api/core/db.md)
+  The DB struct is the main entry point for connecting to and interacting with a SurrealDB instance from Go.
+- [Session](reference/golang/api/core/session.md)
+  The Session struct represents an isolated SurrealDB session on a WebSocket connection with its own authentication and namespace state.
+- [Transaction](reference/golang/api/core/transaction.md)
+  The Transaction struct represents an interactive SurrealDB transaction that allows executing statements one at a time with commit or cancel control.
+- [Errors](reference/golang/api/errors/index.md)
+  The Go SDK provides structured error types and sentinel errors for handling SurrealDB failures.
+- [Types](reference/golang/api/types/index.md)
+  The Go SDK defines several types for authentication, query results, relationships, and data patching.
+- [CustomDateTime](reference/golang/api/values/datetime.md)
+  The CustomDateTime type wraps time.Time with SurrealDB-compatible CBOR encoding at nanosecond precision.
+- [CustomDuration](reference/golang/api/values/duration.md)
+  The CustomDuration type wraps time.Duration with SurrealDB-compatible CBOR encoding and human-readable formatting.
+- [Geometry](reference/golang/api/values/geometry.md)
+  The Go SDK provides typed geometry types for all SurrealDB geometry values including points, lines, polygons, and collections.
+- [Range](reference/golang/api/values/range.md)
+  The Range type represents a SurrealDB range value with inclusive or exclusive bounds.
+- [RecordID](reference/golang/api/values/record-id.md)
+  The RecordID type represents a SurrealDB record identifier consisting of a table name and an ID value.
+- [Table](reference/golang/api/values/table.md)
+  The Table type represents a SurrealDB table name used to scope data operations to an entire table.
+- [UUID](reference/golang/api/values/uuid.md)
+  The UUID type represents a UUID v4 or v7 value with CBOR tag 37 encoding for SurrealDB.
+- [Authentication](reference/golang/concepts/authentication.md)
+  The Go SDK provides methods for signing in, signing up, and managing authentication at root, namespace, database, and record levels.
+- [Connecting to SurrealDB](reference/golang/concepts/connecting-to-surrealdb.md)
+  The Go SDK supports connecting to SurrealDB over WebSocket or HTTP using a URL-based connection factory.
+- [Data manipulation](reference/golang/concepts/data-manipulation.md)
+  The Go SDK provides generic functions for selecting, creating, updating, and deleting records in SurrealDB.
+- [Error handling](reference/golang/concepts/error-handling.md)
+  The Go SDK provides structured error types for distinguishing between server errors, query errors, and transport failures.
+- [Executing queries](reference/golang/concepts/executing-queries.md)
+  The Go SDK provides generic functions for executing SurrealQL queries with typed results and parameterised variables.
+- [Live queries](reference/golang/concepts/live-queries.md)
+  The Go SDK supports real-time live queries that stream change notifications from the database through Go channels.
+- [Multiple sessions](reference/golang/concepts/multiple-sessions.md)
+  The Go SDK supports creating multiple isolated sessions on a single WebSocket connection, each with its own authentication and namespace.
+- [Query builder](reference/golang/concepts/query-builder.md)
+  The Go SDK provides a contrib package for building type-safe SurrealQL queries programmatically with automatic parameter binding.
+- [Reliable connections](reference/golang/concepts/reliable-connections.md)
+  The Go SDK provides a contrib package for auto-reconnecting WebSocket connections with session restoration and live query persistence.
+- [Transactions](reference/golang/concepts/transactions.md)
+  The Go SDK supports interactive transactions that let you execute statements one at a time and conditionally commit or cancel.
+- [Value types](reference/golang/concepts/value-types.md)
+  The Go SDK uses typed wrappers for SurrealDB values like RecordID, UUID, DateTime, and Duration, encoded over CBOR.
+- [Embedding](reference/golang/embedding.md)
+  The surrealdb.c C FFI library contains Go bindings that can be used to access an embedded SurrealDB instance.
+- [Go SDK](reference/golang/index.md)
+  The SurrealDB SDK for Go enables simple and advanced querying of a remote database from server-side applications.
+- [Installation](reference/golang/installation.md)
+  The SurrealDB Go SDK can be installed with a single go get command.
+- [LiveStream](reference/java/api/core/live-stream.md)
+  The LiveStream class provides a blocking interface for receiving real-time notifications from live queries.
+- [Response](reference/java/api/core/response.md)
+  The Response class wraps the results of a SurrealQL query execution.
+- [Surreal](reference/java/api/core/surreal.md)
+  The Surreal class is the main entry point for connecting to and interacting with a SurrealDB instance from Java.
+- [Transaction](reference/java/api/core/transaction.md)
+  The Transaction class provides methods for executing queries within an atomic transaction.
+- [Errors](reference/java/api/errors/index.md)
+  The Java SDK provides a structured exception hierarchy for handling errors from SurrealDB.
+- [Java types](reference/java/api/types/index.md)
+  The Java SDK provides credential classes, enums, and helper types for authentication and data operations.
+- [Datetime](reference/java/api/values/datetime.md)
+  SurrealDB datetime values map to Java's ZonedDateTime class.
+- [Duration](reference/java/api/values/duration.md)
+  SurrealDB duration values map to Java's Duration class.
+- [FileRef](reference/java/api/values/file-ref.md)
+  The FileRef class represents a reference to a file stored in SurrealDB.
+- [Geometry](reference/java/api/values/geometry.md)
+  The Geometry class represents SurrealDB geometric data types.
+- [Range](reference/java/api/values/range.md)
+  SurrealDB range values are accessed through Value methods for start and end bounds.
+- [RecordId](reference/java/api/values/record-id.md)
+  The RecordId class represents a SurrealDB record identifier consisting of a table name and an ID value.
+- [Table](reference/java/api/values/table.md)
+  SurrealDB table values map to Java strings via Value methods.
+- [Value](reference/java/api/values/value.md)
+  The Value class represents any SurrealDB value and provides type checking and conversion methods.
+- [Authentication](reference/java/concepts/authentication.md)
+  The Java SDK provides methods for signing in, signing up, and managing authentication tokens.
+- [Class converters](reference/java/concepts/class-converters.md)
+  The Java SDK automatically converts between Java classes and SurrealDB values, letting you use POJOs for type-safe database operations.
+- [Connecting to SurrealDB](reference/java/concepts/connecting-to-surrealdb.md)
+  The Java SDK supports WebSocket, HTTP, and embedded connections to SurrealDB instances.
+- [Data manipulation](reference/java/concepts/data-manipulation.md)
+  The Java SDK provides type-safe methods for creating, selecting, updating, upserting, and deleting records.
+- [Embedded databases](reference/java/concepts/embedded-databases.md)
+  The Java SDK can run SurrealDB as an embedded in-process database for testing and standalone applications.
+- [Error handling](reference/java/concepts/error-handling.md)
+  The Java SDK provides a structured exception hierarchy for handling errors from the database and SDK.
+- [Executing queries](reference/java/concepts/executing-queries.md)
+  The Java SDK provides methods for executing SurrealQL queries with optional parameter binding.
+- [Live queries](reference/java/concepts/live-queries.md)
+  The Java SDK supports real-time live queries that stream changes from the database to your application.
+- [Multiple sessions](reference/java/concepts/multiple-sessions.md)
+  The Java SDK supports creating multiple isolated sessions over a single connection.
+- [Transactions](reference/java/concepts/transactions.md)
+  The Java SDK supports client-side transactions for grouping multiple queries into an atomic unit.
+- [Value types](reference/java/concepts/value-types.md)
+  The Java SDK maps SurrealDB data types to native Java types and provides custom classes for complex values.
+- [Java SDK](reference/java/index.md)
+  The SurrealDB SDK for Java enables simple and advanced querying of a remote or embedded database.
+- [Installation](reference/java/installation.md)
+  The SurrealDB SDK for Java is available on Maven Central and can be installed using Gradle or Maven.
+- [SurrealApi](reference/javascript/api/core/surreal-api.md)
+  The SurrealApi class provides methods for invoking user-defined API endpoints in SurrealDB.
+- [SurrealQueryable](reference/javascript/api/core/surreal-queryable.md)
+  The SurrealQueryable class provides all query execution methods for interacting with SurrealDB.
+- [SurrealSession](reference/javascript/api/core/surreal-session.md)
+  The SurrealSession class provides session-scoped context with authentication and query execution capabilities.
+- [SurrealTransaction](reference/javascript/api/core/surreal-transaction.md)
+  The SurrealTransaction class provides atomic transaction support for executing multiple queries.
+- [Surreal](reference/javascript/api/core/surreal.md)
+  The Surreal class is the main entry point for connecting to and interacting with a SurrealDB instance.
+- [Errors](reference/javascript/api/errors/index.md)
+  Error classes for handling different types of failures in the SDK.
+- [ApiPromise](reference/javascript/api/queries/api-promise.md)
+  ApiPromise provides methods for executing user-defined API calls.
+- [CreatePromise](reference/javascript/api/queries/create-promise.md)
+  CreatePromise provides chainable methods for configuring CREATE operations.
+- [DeletePromise](reference/javascript/api/queries/delete-promise.md)
+  DeletePromise provides chainable methods for configuring DELETE operations.
+- [InsertPromise](reference/javascript/api/queries/insert-promise.md)
+  InsertPromise provides chainable methods for configuring INSERT operations.
+- [LivePromise](reference/javascript/api/queries/live-promise.md)
+  LivePromise variants for managing real-time live query subscriptions.
+- [Query](reference/javascript/api/queries/query.md)
+  Query class for executing raw SurrealQL with streaming and batch processing support.
+- [RelatePromise](reference/javascript/api/queries/relate-promise.md)
+  RelatePromise provides chainable methods for configuring RELATE operations for graph relationships.
+- [RunPromise](reference/javascript/api/queries/run-promise.md)
+  RunPromise provides methods for executing SurrealDB functions and SurrealML models.
+- [SelectPromise](reference/javascript/api/queries/select-promise.md)
+  SelectPromise provides chainable methods for configuring SELECT queries.
+- [UpdatePromise](reference/javascript/api/queries/update-promise.md)
+  UpdatePromise provides chainable methods for configuring UPDATE operations.
+- [UpsertPromise](reference/javascript/api/queries/upsert-promise.md)
+  UpsertPromise provides chainable methods for configuring UPSERT operations (insert or replace).
+- [TypeScript types](reference/javascript/api/types/index.md)
+  TypeScript type definitions and interfaces used throughout the SDK.
+- [BoundQuery](reference/javascript/api/utilities/bound-query.md)
+  Parameterised query class for safe query composition.
+- [equals](reference/javascript/api/utilities/equals.md)
+  Deep equality comparison for SurrealDB values and JavaScript types.
+- [Escape functions](reference/javascript/api/utilities/escape.md)
+  Functions for escaping identifiers and values in SurrealQL queries.
+- [expr](reference/javascript/api/utilities/expr.md)
+  Type-safe expression builder for constructing SurrealQL conditions.
+- [isRetryableConflict](reference/javascript/api/utilities/is-retryable-conflict.md)
+  Default predicate used to detect retryable write conflicts.
+- [surql](reference/javascript/api/utilities/surql.md)
+  Tagged template for composing parameterised SurrealQL queries.
+- [DateTime](reference/javascript/api/values/datetime.md)
+  Datetime values with nanosecond precision for time-based operations.
+- [Decimal](reference/javascript/api/values/decimal.md)
+  Arbitrary precision decimal numbers for financial and scientific calculations.
+- [Duration](reference/javascript/api/values/duration.md)
+  Time duration values with support for multiple units and nanosecond precision.
+- [FileRef](reference/javascript/api/values/file-ref.md)
+  The FileRef class represents a reference to a file stored in SurrealDB.
+- [Geometry](reference/javascript/api/values/geometry.md)
+  Geometric and spatial data types for location-based applications.
+- [Data types](reference/javascript/api/values/index.md)
+  Type mapping between SurrealQL and JavaScript, and custom data type classes.
+- [Range](reference/javascript/api/values/range.md)
+  Generic range values for numeric, datetime, and other ordered types.
+- [RecordId](reference/javascript/api/values/record-id.md)
+  Type-safe record identifiers with table name and ID components.
+- [Table](reference/javascript/api/values/table.md)
+  Type-safe table references for query operations.
+- [Uuid](reference/javascript/api/values/uuid.md)
+  Universally unique identifiers for generating unique IDs.
+- [Authentication](reference/javascript/concepts/authentication.md)
+  SurrealDB supports a number of methods for authenticating users and securing the database.
+- [Bound queries](reference/javascript/concepts/bound-queries.md)
+  The JavaScript SDK provides bound queries and template tags for safely composing parameterised SurrealQL queries.
+- [Codecs](reference/javascript/concepts/codecs.md)
+  The SQON library provides codecs for serialising and deserialising SurrealDB value types over CBOR and JSON wire formats.
+- [Connecting to SurrealDB](reference/javascript/concepts/connecting-to-surrealdb.md)
+  The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
+- [Diagnostics](reference/javascript/concepts/diagnostics.md)
+  The JavaScript SDK provides a diagnostics API for intercepting and inspecting protocol-level communication with SurrealDB.
+- [Embedded engines](reference/javascript/concepts/embedded-engines.md)
+  Run SurrealDB as an embedded database in the browser or on the server using the WebAssembly and Node.js engine plugins.
+- [Error handling](reference/javascript/concepts/error-handling.md)
+  The JavaScript SDK provides specific error classes for handling different types of failures when interacting with SurrealDB.
+- [Executing queries](reference/javascript/concepts/executing-queries.md)
+  The JavaScript SDK provides query builder methods and a raw query API for interacting with SurrealDB.
+- [Invoking APIs](reference/javascript/concepts/invoking-apis.md)
+  The JavaScript SDK allows you to invoke user-defined API endpoints in SurrealDB with type-safe HTTP-style methods.
+- [Live queries](reference/javascript/concepts/live-queries.md)
+  The JavaScript SDK supports real-time live queries that stream changes from the database to your application.
+- [Multiple sessions](reference/javascript/concepts/multiple-sessions.md)
+  The JavaScript SDK supports multiple isolated sessions within a single connection, each with their own authentication and context.
+- [Transactions](reference/javascript/concepts/transactions.md)
+  The JavaScript SDK supports atomic transactions for executing multiple queries that succeed or fail together.
+- [Utilities](reference/javascript/concepts/utilities.md)
+  SQON provides value comparison, conversion, and escaping utilities. The SDK adds query-building helpers on top.
+- [Value types](reference/javascript/concepts/value-types.md)
+  The SQON library provides custom classes for SurrealDB-specific data types, re-exported by the JavaScript SDK for convenience.
+- [Node.js](reference/javascript/engines/node.md)
+  The SurrealDB SDK for JavaScript using the Node.js engine.
+- [WebAssembly](reference/javascript/engines/wasm.md)
+  The SurrealDB SDK for JavaScript using the WebAssembly engine.
+- [React](reference/javascript/frameworks/react.md)
+  The SurrealDB SDK for JavaScript can be used in React applications to interact with your SurrealDB instance.
+- [SolidJS](reference/javascript/frameworks/solidjs.md)
+  The SurrealDB SDK for JavaScript can be used in SolidJS applications to interact with your SurrealDB instance.
+- [Vue.js](reference/javascript/frameworks/vuejs.md)
+  The SurrealDB SDK for JavaScript can be used in Vue.js applications to interact with your SurrealDB instance.
+- [JavaScript SDK](reference/javascript/index.md)
+  The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
+- [Installation](reference/javascript/installation.md)
+  In this section, you will learn how to install the JavaScript SDK in your project.
+- [SurrealClientConfig](reference/kotlin/api/core/client-config.md)
+  Configuration options for the SurrealDB Kotlin client, including reconnection and authentication.
+- [LiveQuerySubscription](reference/kotlin/api/core/live-subscription.md)
+  The subscription handle returned by live queries in the SurrealDB Kotlin SDK.
+- [Query builders](reference/kotlin/api/core/query-builder.md)
+  The fluent query builders, expression helpers, and surql DSL of the SurrealDB Kotlin SDK.
+- [SurrealSession](reference/kotlin/api/core/session.md)
+  The SurrealSession class exposes querying and authentication with isolated per-session state.
+- [SurrealClient](reference/kotlin/api/core/surreal-client.md)
+  The SurrealClient class is the main entry point for connecting to and interacting with a SurrealDB instance from Kotlin.
+- [SurrealTransaction](reference/kotlin/api/core/transaction.md)
+  The transaction handle and helpers for atomic operations in the SurrealDB Kotlin SDK.
+- [Errors](reference/kotlin/api/errors/index.md)
+  The exception hierarchy raised by the SurrealDB Kotlin SDK.
+- [Features & Events](reference/kotlin/api/features/index.md)
+  Transport feature flags and connection lifecycle events in the SurrealDB Kotlin SDK.
+- [RecordIdRange](reference/kotlin/api/values/record-id-range.md)
+  The RecordIdRange type targets a range of records within a table in the SurrealDB Kotlin SDK.
+- [RecordId](reference/kotlin/api/values/record-id.md)
+  The RecordId type identifies a single record in the SurrealDB Kotlin SDK.
+- [Table](reference/kotlin/api/values/table.md)
+  The Table type refers to a table by name in the SurrealDB Kotlin SDK.
+- [Value (JSON model)](reference/kotlin/api/values/value.md)
+  How the SurrealDB Kotlin SDK models values using kotlinx.serialization JSON types.
+- [Authentication](reference/kotlin/concepts/authentication.md)
+  Sign up, sign in, and manage authentication tokens with the SurrealDB Kotlin SDK.
+- [Connecting to SurrealDB](reference/kotlin/concepts/connecting-to-surrealdb.md)
+  The Kotlin SDK connects to SurrealDB over WebSocket or HTTP, with automatic transport selection and reconnection.
+- [Data manipulation](reference/kotlin/concepts/data-manipulation.md)
+  Create, read, update, and delete records with the fluent builders in the SurrealDB Kotlin SDK.
+- [Error handling](reference/kotlin/concepts/error-handling.md)
+  Handle exceptions and feature-support errors raised by the SurrealDB Kotlin SDK.
+- [Executing queries](reference/kotlin/concepts/executing-queries.md)
+  Run raw SurrealQL with bound parameters and decode results with the Kotlin SDK.
+- [Live queries](reference/kotlin/concepts/live-queries.md)
+  Subscribe to real-time changes with live queries in the SurrealDB Kotlin SDK.
+- [Multiple sessions](reference/kotlin/concepts/multiple-sessions.md)
+  Isolate authentication and state across concurrent sessions with the SurrealDB Kotlin SDK.
+- [Serialization](reference/kotlin/concepts/serialization.md)
+  Encode and decode records using kotlinx.serialization with the SurrealDB Kotlin SDK.
+- [Transactions](reference/kotlin/concepts/transactions.md)
+  Group operations into atomic transactions with the SurrealDB Kotlin SDK.
+- [Value types](reference/kotlin/concepts/value-types.md)
+  Work with record identifiers, tables, and the JSON value model in the SurrealDB Kotlin SDK.
+- [Kotlin SDK](reference/kotlin/index.md)
+  The SurrealDB SDK for Kotlin is a coroutine-based, Kotlin Multiplatform client for querying a remote SurrealDB instance.
+- [Installation](reference/kotlin/installation.md)
+  The SurrealDB SDK for Kotlin is published to Maven Central and can be installed using Gradle or Maven.
+- [Authentication](reference/mojo/concepts/authentication.md)
+  Learn how to authenticate the Mojo SDK with SurrealDB using access tokens and the signin RPC.
+- [Connecting to SurrealDB](reference/mojo/concepts/connecting-to-surrealdb.md)
+  Learn how to connect the Mojo SDK to SurrealDB over HTTP, HTTPS, and WebSocket, and how to choose a wire format.
+- [Error handling](reference/mojo/concepts/error-handling.md)
+  How the Mojo SDK reports errors, both on responses and as raised Mojo errors.
+- [Executing queries](reference/mojo/concepts/executing-queries.md)
+  Learn how to run SurrealQL with the Mojo SDK, use the CRUD convenience methods, and read responses.
+- [Live queries](reference/mojo/concepts/live-queries.md)
+  Subscribe to changes on a table with the Mojo SDK and poll for live-query notifications.
+- [Multiple sessions](reference/mojo/concepts/multiple-sessions.md)
+  Open and manage independent server-side sessions with the Mojo SDK.
+- [Query builders](reference/mojo/concepts/query-builders.md)
+  Build SurrealQL statements fluently with the Mojo SDK query builders.
+- [Transactions](reference/mojo/concepts/transactions.md)
+  Run multiple statements atomically with the Mojo SDK over HTTP or a WebSocket session.
+- [Value types](reference/mojo/concepts/value-types.md)
+  The SurrealDB tagged value types that the Mojo SDK encodes and decodes.
+- [Mojo SDK](reference/mojo/index.md)
+  The SurrealDB SDK for Mojo enables simple and advanced querying of a remote database over HTTP, HTTPS, and WebSocket.
+- [Installation](reference/mojo/installation.md)
+  In this section, you will learn how to install the SurrealDB Mojo SDK and add it to your project.
+- [api](reference/mojo/methods/api.md)
+  The api() method for the SurrealDB Mojo SDK calls a custom API handler defined on the database.
+- [authenticate](reference/mojo/methods/authenticate.md)
+  The authenticate() method for the SurrealDB Mojo SDK authenticates the current connection with a token.
+- [begin_transaction](reference/mojo/methods/begin-transaction.md)
+  The begin_transaction() method for the SurrealDB Mojo SDK starts a session-scoped transaction.
+- [call](reference/mojo/methods/call.md)
+  The call() method for the SurrealDB Mojo SDK runs a SurrealQL function.
+- [close](reference/mojo/methods/close.md)
+  The close() method for the SurrealDB Mojo SDK closes the connection.
+- [connect](reference/mojo/methods/connect.md)
+  The connect() method for the SurrealDB Mojo SDK connects to a database endpoint.
+- [create](reference/mojo/methods/create.md)
+  The create() method for the SurrealDB Mojo SDK creates a record in the database.
+- [delete](reference/mojo/methods/delete.md)
+  The delete() method for the SurrealDB Mojo SDK deletes all records in a table, or a specific record.
+- [health](reference/mojo/methods/health.md)
+  The health() method for the SurrealDB Mojo SDK runs a health check against the server.
+- [SDK methods](reference/mojo/methods/index.md)
+  The full method reference for the SurrealDB Mojo SDK.
+- [insert_relation](reference/mojo/methods/insert-relation.md)
+  The insert_relation() method for the SurrealDB Mojo SDK inserts one or more relations into a table.
+- [insert](reference/mojo/methods/insert.md)
+  The insert() method for the SurrealDB Mojo SDK inserts one or more records into a table.
+- [invalidate](reference/mojo/methods/invalidate.md)
+  The invalidate() method for the SurrealDB Mojo SDK invalidates the authentication for the current connection.
+- [kill](reference/mojo/methods/kill.md)
+  The kill() method for the SurrealDB Mojo SDK stops a running live query.
+- [live_query](reference/mojo/methods/live.md)
+  The live_query() method for the SurrealDB Mojo SDK starts a live query on a table.
+- [merge](reference/mojo/methods/merge.md)
+  The merge() method for the SurrealDB Mojo SDK merges data into a record.
+- [patch](reference/mojo/methods/patch.md)
+  The patch() method for the SurrealDB Mojo SDK applies a JSON Patch to a record.
+- [query](reference/mojo/methods/query.md)
+  The query() method for the SurrealDB Mojo SDK runs one or more SurrealQL statements against the database.
+- [select](reference/mojo/methods/select.md)
+  The select() method for the SurrealDB Mojo SDK selects all records in a table, or a specific record.
+- [set](reference/mojo/methods/set.md)
+  The set() method for the SurrealDB Mojo SDK assigns a value as a parameter for this connection.
+- [signin](reference/mojo/methods/signin.md)
+  The signin() method for the SurrealDB Mojo SDK signs in to the database with credentials.
+- [signup](reference/mojo/methods/signup.md)
+  The signup() method for the SurrealDB Mojo SDK signs up to a record-access method.
+- [transaction_multi](reference/mojo/methods/transaction-multi.md)
+  The transaction_multi() method for the SurrealDB Mojo SDK runs a list of statements as one atomic transaction.
+- [unset](reference/mojo/methods/unset.md)
+  The unset() method for the SurrealDB Mojo SDK removes a parameter for this connection.
+- [update](reference/mojo/methods/update.md)
+  The update() method for the SurrealDB Mojo SDK updates all records in a table, or a specific record.
+- [upsert](reference/mojo/methods/upsert.md)
+  The upsert() method for the SurrealDB Mojo SDK upserts all records in a table, or a specific record.
+- [use](reference/mojo/methods/use.md)
+  The use() method for the SurrealDB Mojo SDK switches to a specific namespace and database.
+- [version](reference/mojo/methods/version.md)
+  The version() method for the SurrealDB Mojo SDK returns the database version.
+- [Configuration](reference/php/frameworks/laravel/configuration.md)
+  Configure the SurrealDB Laravel integration with environment variables, authentication modes, multiple named connections, and the ORM model list.
+- [Container and facades](reference/php/frameworks/laravel/container-and-facades.md)
+  The service providers, container bindings, and the SurrealDB, Surreal, and Surqlize facades the Laravel integration registers.
+- [Overview](reference/php/frameworks/laravel/index.md)
+  The Laravel integration wires the SurrealDB PHP SDK and the Surqlize ORM into Laravel's config, service container, facades, and Artisan commands.
+- [Installation](reference/php/frameworks/laravel/installation.md)
+  Install the SurrealDB Laravel integration with Composer and publish the SDK and ORM configuration files.
+- [Queries and transactions](reference/php/frameworks/laravel/queries-and-transactions.md)
+  Run Surqlize model queries, raw SurrealQL, and transactions in a Laravel application, including against named connections.
+- [Schema commands](reference/php/frameworks/laravel/schema-commands.md)
+  Dump and apply your Surqlize schema in a Laravel application with the surqlize:schema-dump and surqlize:schema-apply Artisan commands.
+- [Testing](reference/php/frameworks/laravel/testing.md)
+  Test SurrealDB code in Laravel with the fake query executor, query assertions, and the trait that resets Surqlize's global state between tests.
+- [Overview](reference/php/index.md)
+  The SurrealDB SDK for PHP lets you query a remote SurrealDB instance from any PHP application, with a stable v1 release and a v2 rewrite in alpha.
+- [Code generation and CLI](reference/php/libraries/surqlize/code-generation-and-cli.md)
+  Generate typed field adapters for Surqlize models and run the Surqlize CLI for field generation, schema application, and memory reports.
+- [Connections](reference/php/libraries/surqlize/connections.md)
+  Register an SDK executor with Surqlize's ConnectionManager, and inject a per-query executor when you need more than one connection.
+- [Edges and graph](reference/php/libraries/surqlize/edges-and-graph.md)
+  Model SurrealDB graph relations in Surqlize with edge models, traverse them in a SELECT, and create them with RELATE.
+- [Overview](reference/php/libraries/surqlize/index.md)
+  Surqlize is an object-relational mapper for SurrealDB in PHP, built on version 2 of the SDK, with attribute-driven models, a typed query builder, graph relations, and schema tooling.
+- [Installation](reference/php/libraries/surqlize/installation.md)
+  Install Surqlize with Composer, including the alpha v2 SurrealDB PHP SDK it depends on.
+- [Models](reference/php/libraries/surqlize/models.md)
+  Describe SurrealDB tables as PHP classes in Surqlize, using attributes for the table name, record id, casts, schema, and specialised fields.
+- [Mutations](reference/php/libraries/surqlize/mutations.md)
+  Create, update, upsert, and delete records in Surqlize with model helpers and the mutation builder, including payload modes and return modes.
+- [Querying](reference/php/libraries/surqlize/querying.md)
+  Build SELECT queries in Surqlize with typed fields, where clauses, ordering, projections, and the advanced SurrealQL SELECT clauses, then execute or compile them.
+- [Schema](reference/php/libraries/surqlize/schema.md)
+  Define SurrealDB tables, fields, indexes, and analysers in Surqlize with a schema contract or the fluent schema DSL, then apply them with the schema manager.
+- [Search, vector, and geometry](reference/php/libraries/surqlize/search-vector-geometry.md)
+  Compile SurrealDB full-text search, vector KNN, and geometry expressions in Surqlize with the SearchField, VectorField, and GeometryField helpers.
+- [Transactions](reference/php/libraries/surqlize/transactions.md)
+  Batch Surqlize ORM queries into a single SurrealDB transaction with automatic rollback, and handle the validation exceptions Surqlize raises.
+- [Authentication](reference/php/v1/concepts/authentication.md)
+  Learn how to authenticate users and secure the database with the SurrealDB PHP SDK.
+- [Connecting to SurrealDB](reference/php/v1/concepts/connecting.md)
+  Initialize the SurrealDB PHP SDK, connect to an instance, and select a namespace and database.
+- [Data types](reference/php/v1/concepts/data-types.md)
+  The SurrealDB SDK for PHP enables simple and advanced querying of a remote database.
+- [Executing queries](reference/php/v1/concepts/executing-queries.md)
+  Interact with the database and perform CRUD operations using version 1 of the SurrealDB PHP SDK.
+- [Overview](reference/php/v1/index.md)
+  Version 1 is the current stable release of the SurrealDB PHP SDK, with direct RPC-style methods for querying a remote database.
+- [Installation](reference/php/v1/installation.md)
+  Install version 1 of the SurrealDB PHP SDK with Composer.
+- [authenticate](reference/php/v1/methods/authenticate.md)
+  Authenticate the current connection with a JWT token using the authenticate method in the SurrealDB PHP SDK.
+- [close](reference/php/v1/methods/close.md)
+  Close the persistent connection to the database using the close method in the SurrealDB PHP SDK.
+- [connect](reference/php/v1/methods/connect.md)
+  Connect to a local or remote database endpoint using the connect method in the SurrealDB PHP SDK.
+- [create](reference/php/v1/methods/create.md)
+  Create a record in the database using the create method with the SurrealDB PHP SDK.
+- [delete](reference/php/v1/methods/delete.md)
+  Delete records from a table in the database using the delete method with the SurrealDB PHP SDK.
+- [export](reference/php/v1/methods/export.md)
+  Export data from a local or remote database using the export method with the SurrealDB PHP SDK.
+- [health](reference/php/v1/methods/health.md)
+  Check the storage layer health of a local or remote database using the health method with the SurrealDB PHP SDK.
+- [import](reference/php/v1/methods/import.md)
+  Import data into an existing database using the import method with the SurrealDB PHP SDK.
+- [SDK methods](reference/php/v1/methods/index.md)
+  List of methods available in the SurrealDB SDK for PHP. Learn how to connect to a database, query data, and manage authentication.
+- [info](reference/php/v1/methods/info.md)
+  The info method returns information about the authenticated user in the SurrealDB PHP SDK.
+- [insertRelation](reference/php/v1/methods/insert-relation.md)
+  Insert one or multiple relations in the database using the insertRelation method with the SurrealDB PHP SDK.
+- [insert](reference/php/v1/methods/insert.md)
+  Insert one or multiple records in the database using the insert method with the SurrealDB PHP SDK.
+- [invalidate](reference/php/v1/methods/invalidate.md)
+  Invalidate the authentication for the current connection using the invalidate method in the SurrealDB PHP SDK.
+- [let](reference/php/v1/methods/let.md)
+  Assign parameters to a query using the let method in the SurrealDB PHP SDK.
+- [merge](reference/php/v1/methods/merge.md)
+  The ->merge() method for the SurrealDB SDK for PHP merges record data with the specified data.
+- [patch](reference/php/v1/methods/patch.md)
+  The ->patch() method for the SurrealDB SDK for PHP applies JSON patch changes to records in the database.
+- [queryRaw](reference/php/v1/methods/query-raw.md)
+  The queryRaw method in the SurrealDB PHP SDK allows you to execute raw SQL queries and return the raw RPC response.
+- [query](reference/php/v1/methods/query.md)
+  The ->query() method for the SurrealDB SDK for PHP runs a set of SurrealQL statements against the database.
+- [run](reference/php/v1/methods/run.md)
+  The run method in the SurrealDB PHP SDK allows you to execute a defined SurrealQL function on the remote database.
+- [select](reference/php/v1/methods/select.md)
+  The ->select() method for the SurrealDB SDK for PHP selects all or specific records from the database.
+- [signin](reference/php/v1/methods/signin.md)
+  The ->signin() method for the SurrealDB SDK for PHP signs in to a specific access method.
+- [signup](reference/php/v1/methods/signup.md)
+  The ->signup() method for the SurrealDB SDK for PHP signs up to a specific access method.
+- [status](reference/php/v1/methods/status.md)
+  The status method in the SurrealDB PHP SDK retrieves the current status of a remote database.
+- [unset](reference/php/v1/methods/unset.md)
+  The ->unset() method for the SurrealDB SDK for PHP removes a parameter from the connection.
+- [update](reference/php/v1/methods/update.md)
+  The ->update() method for the SurrealDB SDK for Rust updates all or specific records in the database if they exist.
+- [upsert](reference/php/v1/methods/upsert.md)
+  The upsert method in the SurrealDB PHP SDK allows you to create or update a record in a table.
+- [use](reference/php/v1/methods/use.md)
+  The ->use() method for the SurrealDB SDK for PHP switches to a specific namespace and database.
+- [version](reference/php/v1/methods/version.md)
+  The version method in the SurrealDB PHP SDK retrieves the current version of a remote database.
+- [Core classes](reference/php/v2/api/core.md)
+  Reference for the Surreal class, the ConnectionController, and the supporting connection types in version 2 of the PHP SDK.
+- [Data types](reference/php/v2/api/data-types.md)
+  Reference for the SurrealQL value classes in version 2 of the PHP SDK, in the SurrealDB\SDK\Types namespace.
+- [Query builders](reference/php/v2/api/query-builders.md)
+  Reference for the fluent query builders in version 2 of the PHP SDK, including select, create, update, delete, insert, and relate.
+- [Utilities](reference/php/v2/api/utilities.md)
+  Reference for BoundQuery, driver options, enums, and helpers in version 2 of the PHP SDK.
+- [Authentication](reference/php/v2/concepts/authentication.md)
+  Sign in and sign up with typed credentials in version 2 of the PHP SDK, then manage tokens and authentication state.
+- [Connecting to SurrealDB](reference/php/v2/concepts/connecting-to-surrealdb.md)
+  Open a connection to a SurrealDB instance with version 2 of the PHP SDK, select a namespace and database, and configure reconnection.
+- [Data types](reference/php/v2/concepts/data-types.md)
+  How version 2 of the PHP SDK maps SurrealQL data types to native PHP types and custom value classes.
+- [Error handling](reference/php/v2/concepts/error-handling.md)
+  Handle failures in version 2 of the PHP SDK with the typed exception hierarchy rooted at SurrealException.
+- [Events](reference/php/v2/concepts/events.md)
+  Observe connection lifecycle and RPC traffic in version 2 of the PHP SDK with the high-level subscribe() API and the lower-level PSR-14 event dispatcher.
+- [Executing queries](reference/php/v2/concepts/executing-queries.md)
+  Run raw SurrealQL or use the fluent query builders for select, create, update, and delete in version 2 of the PHP SDK.
+- [Live queries](reference/php/v2/concepts/live-queries.md)
+  Subscribe to real-time changes from SurrealDB over a WebSocket connection with version 2 of the PHP SDK.
+- [Middleware](reference/php/v2/concepts/middleware.md)
+  Intercept every RPC in version 2 of the PHP SDK with middleware, including the built-in logging, telemetry, retry, and authentication steps.
+- [Observability](reference/php/v2/concepts/observability.md)
+  Emit OpenTelemetry traces and metrics from version 2 of the PHP SDK, with runtime-aware presets, a configurable provider factory, and vendor-neutral tracing and metrics seams.
+- [Runtimes and workers](reference/php/v2/concepts/runtimes.md)
+  Configure your PHP environment (PHP-FPM, OpenSwoole, or FrankenPHP) so live queries and other long-lived connections run without blocking your application.
+- [Sessions](reference/php/v2/concepts/sessions.md)
+  Run multiple independent sessions over a single WebSocket connection with version 2 of the PHP SDK, each with its own namespace, variables, and authentication.
+- [Transactions](reference/php/v2/concepts/transactions.md)
+  Run multiple statements atomically with version 2 of the PHP SDK, using a SurrealQL transaction block or explicit transaction handles.
+- [Overview](reference/php/v2/index.md)
+  Version 2 of the SurrealDB SDK for PHP is a rewrite with a fluent query builder, typed credentials, and a PSR-based transport layer.
+- [Installation](reference/php/v2/installation.md)
+  Install version 2 of the SurrealDB PHP SDK with Composer, including a PSR-18 HTTP client.
+- [Migration guide](reference/php/v2/migration.md)
+  Move a project from version 1 to version 2 of the SurrealDB PHP SDK, with a method-by-method mapping of the breaking changes.
+- [v2 (alpha)](reference/php/versions/v2-alpha.md)
+  Connect to SurrealDB and run your first queries with version 2 (alpha) of the PHP SDK.
+- [SurrealSession](reference/python/api/core/surreal-session.md)
+  Isolated session for running queries with independent namespace, database, and authentication state.
+- [SurrealTransaction](reference/python/api/core/surreal-transaction.md)
+  Transaction scope for executing multiple operations atomically.
+- [Surreal](reference/python/api/core/surreal.md)
+  The Surreal and AsyncSurreal factory functions are the main entry points for connecting to and interacting with a SurrealDB instance from Python.
+- [Errors](reference/python/api/errors/index.md)
+  Error classes for handling different types of failures in the Python SDK.
+- [Python types](reference/python/api/types/index.md)
+  Type definitions and dataclasses used throughout the Python SDK.
+- [Datetime](reference/python/api/values/datetime.md)
+  Datetime wrapper for SurrealDB datetime values.
+- [Duration](reference/python/api/values/duration.md)
+  Duration type with nanosecond precision and unit conversion properties.
+- [Geometry](reference/python/api/values/geometry.md)
+  GeoJSON-compatible geometry types for spatial data.
+- [Python values](reference/python/api/values/index.md)
+  Custom data types for representing SurrealDB values in Python.
+- [Range](reference/python/api/values/range.md)
+  Range type with inclusive and exclusive bound support.
+- [RecordID](reference/python/api/values/record-id.md)
+  Record identifier with table name and ID components.
+- [Table](reference/python/api/values/table.md)
+  Table name wrapper for type-safe table references.
+- [Authentication](reference/python/concepts/authentication.md)
+  The Python SDK supports multiple levels of authentication for signing in and managing user credentials.
+- [Connecting to SurrealDB](reference/python/concepts/connecting-to-surrealdb.md)
+  The Python SDK provides synchronous and asynchronous connections to local, remote, or embedded SurrealDB instances.
+- [Data manipulation](reference/python/concepts/data-manipulation.md)
+  The Python SDK provides methods for selecting, creating, updating, and deleting records in SurrealDB.
+- [Embedded databases](reference/python/concepts/embedded-databases.md)
+  The Python SDK supports running SurrealDB as an embedded database directly within your application.
+- [Error handling](reference/python/concepts/error-handling.md)
+  The Python SDK provides a structured error hierarchy for handling server and client-side failures.
+- [Executing queries](reference/python/concepts/executing-queries.md)
+  The Python SDK provides methods for executing SurrealQL queries with parameter binding support.
+- [Live queries](reference/python/concepts/live-queries.md)
+  The Python SDK supports real-time live queries that stream changes from the database to your application.
+- [Multiple sessions](reference/python/concepts/multiple-sessions.md)
+  The Python SDK supports creating multiple isolated sessions within a single WebSocket connection.
+- [Transactions](reference/python/concepts/transactions.md)
+  The Python SDK supports client-side transactions for executing multiple operations atomically over WebSocket connections.
+- [Value types](reference/python/concepts/value-types.md)
+  The Python SDK provides custom types for representing SurrealDB-specific values like record identifiers, durations, and geometry.
+- [Python SDK](reference/python/index.md)
+  The SurrealDB SDK for Python enables simple and advanced querying of a remote or embedded database.
+- [Installation](reference/python/installation.md)
+  In this section, you will learn how to install the Python SDK in your project.
 - [EXPLAIN](reference/query-language/clauses/explain.md)
   The `EXPLAIN` clause is used to explain the plan used for a query.
 - [FETCH](reference/query-language/clauses/fetch.md)
@@ -1832,6 +1692,146 @@ _1069 pages_
   SurrealDB exposes an HTTP-based REST API for executing queries, managing authentication, and performing CRUD operations.
 - [RPC protocol](reference/rest-api/rpc-protocol.md)
   The RPC protocol allows for easy bidirectional communication with SurrealDB.
+- [Authenticating users](reference/rust/concepts/authenticating-users.md)
+  The Rust SDK for SurrealDB supports a number of methods for authenticating users and securing the database.
+- [Concurrency](reference/rust/concepts/concurrency.md)
+  Multiple threads or asynchronous tasks can be used to speed up queries to a SurrealDB database
+- [Fetching linked records](reference/rust/concepts/fetch.md)
+  All the fields of a SurrealDB linked record can be fetched and deserialized into a Rust type
+- [Flexible typing](reference/rust/concepts/flexible-typing.md)
+  The Rust SDK for SurrealDB offers methods for working with types without deserialization
+- [SDK Concepts](reference/rust/concepts/index.md)
+  The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
+- [Live queries](reference/rust/concepts/live.md)
+  The Rust SDK for SurrealDB allows changes to tables in real time to be observed
+- [Multi-tenancy in 3.0](reference/rust/concepts/multi-tenancy.md)
+  Multi-tenancy was introduced in SurrealDB 3.0, allowing multiple connections to be used simultaneously in the Rust SDK.
+- [Types after 3.0](reference/rust/concepts/rust-after-3.0.md)
+  Many structural changes were implemented in SurrealDB 3.0, bringing large improvements to working with types in the Rust SDK.
+- [Manual transactions](reference/rust/concepts/transaction.md)
+  Use SurrealQL BEGIN and COMMIT in queries, or the Rust SDK `begin` / `commit` / `cancel` transaction handle, and check per-statement results before committing
+- [Vector embeddings](reference/rust/concepts/vector-embeddings.md)
+  Many crates are available to work with vector embeddings via the SurrealDB Rust SDK.
+- [Embedding](reference/rust/embedding.md)
+  In Rust, SurrealDB can be run as an in-memory database, it can persist data using a file-based storage engine, or on a distributed cluster.
+- [Actix](reference/rust/frameworks/actix.md)
+  The SDK for Rust allows SurrealDB to be used as the storage backend for an Actix web server
+- [Axum](reference/rust/frameworks/axum.md)
+  The SDK for Rust allows SurrealDB to be used as the storage backend for an Axum web server
+- [Egui](reference/rust/frameworks/egui.md)
+  The SDK for Rust allows SurrealDB to be used as the storage backend for an Egui visual app
+- [Crates](reference/rust/frameworks/index.md)
+  The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
+- [Rocket](reference/rust/frameworks/rocket.md)
+  The SDK for Rust allows SurrealDB to be used as the storage backend for a Rocket web server
+- [Rust SDK](reference/rust/index.md)
+  The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
+- [authenticate](reference/rust/methods/authenticate.md)
+  The .authenticate() method for the SurrealDB Rust SDK authenticates the current connection with a JWT token.
+- [begin](reference/rust/methods/begin.md)
+  The .begin() method on the SurrealDB Rust SDK client starts a multi-statement transaction and returns a handle for running queries, commits, and rollbacks.
+- [connect](reference/rust/methods/connect.md)
+  The .connect() method for the SurrealDB Rust SDK connects to a local or remote database endpoint.
+- [create](reference/rust/methods/create.md)
+  The .create() method for the SurrealDB Rust SDK creates one or more records in the database.
+- [delete](reference/rust/methods/delete.md)
+  The .delete() method for the SurrealDB Rust SDK deletes all or specific records from the database.
+- [export](reference/rust/methods/export.md)
+  The .export() method for the SurrealDB Rust SDK dumps the database contents to a file.
+- [get](reference/rust/methods/get.md)
+  The .get() method for the SurrealDB Rust SDK retrieves the value at a certain field or index.
+- [health](reference/rust/methods/health.md)
+  The .health() method for the SurrealDB Rust SDK checks that the server-side connection is able to run a health command (useful for readiness and liveness checks).
+- [import](reference/rust/methods/import.md)
+  The .import() method for the SurrealDB Rust SDK restores the database from a file.
+- [SDK methods](reference/rust/methods/index.md)
+  The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
+- [init](reference/rust/methods/init.md)
+  The .init() method for the SurrealDB Rust SDK initializes a new unconnected instance.
+- [insert](reference/rust/methods/insert.md)
+  The .insert() method for the SurrealDB Rust SDK inserts a record or records into a table.
+- [invalidate](reference/rust/methods/invalidate.md)
+  The .invalidate() method for the SurrealDB Rust SDK invalidates the authentication for the current connection.
+- [new](reference/rust/methods/new.md)
+  The .new() method for the SurrealDB Rust SDK connects to a local or remote database endpoint.
+- [query](reference/rust/methods/query.md)
+  The .query() method for the SurrealDB Rust SDK runs one or more SurrealQL statements against the database.
+- [run](reference/rust/methods/run.md)
+  The .run() method for the SurrealDB Rust SDK runs a SurrealQL function.
+- [select_live](reference/rust/methods/select-live.md)
+  The .select().live() methods for the SurrealDB Rust SDK initiate live queries for a live stream of notifications.
+- [select](reference/rust/methods/select.md)
+  The .select() method for the SurrealDB Rust SDK selects all or specific records from the database.
+- [set](reference/rust/methods/set.md)
+  The .set() method for the SurrealDB Rust SDK assigns a value as a parameter for this connection.
+- [signin](reference/rust/methods/signin.md)
+  The .signin() method for the SurrealDB Rust SDK signs in to a specific access method.
+- [signup](reference/rust/methods/signup.md)
+  The .signup() method for the SurrealDB Rust SDK signs up to a specific access method.
+- [unset](reference/rust/methods/unset.md)
+  The .unset() method for the SurrealDB Rust SDK removes a parameter from the connection.
+- [update](reference/rust/methods/update.md)
+  The .update() method for the SurrealDB Rust SDK updates all or specific records in the database.
+- [upsert](reference/rust/methods/upsert.md)
+  The .upsert() method for the SurrealDB Rust SDK upserts all or specific records in a table.
+- [use_defaults](reference/rust/methods/use-defaults.md)
+  The .use_defaults() method for the SurrealDB Rust SDK selects the default namespace and database for this connection, if the server and client are configured to provide one.
+- [use_ns and use_db](reference/rust/methods/use.md)
+  The .use_ns() and .use_db() methods for the SurrealDB Rust SDK switch to a specific namespace and database.
+- [version](reference/rust/methods/version.md)
+  The .version() method for the SurrealDB Rust SDK returns the version of the server.
+- [wait_for](reference/rust/methods/wait-for.md)
+  The .wait_for() method for the SurrealDB Rust SDK waits for the selected event to happen before proceeding.
+- [Authentication](reference/swift/concepts/authentication.md)
+  Learn how to sign in, sign up, authenticate and resume sessions with the SurrealDB Swift SDK.
+- [Connecting to SurrealDB](reference/swift/concepts/connecting.md)
+  Learn how to connect to SurrealDB over HTTP or WebSocket and configure the client in the Swift SDK.
+- [Live queries](reference/swift/concepts/live-queries.md)
+  Subscribe to real-time data changes using live queries and AsyncStream in the SurrealDB Swift SDK.
+- [Models](reference/swift/concepts/models.md)
+  Define type-safe models for SurrealDB using the @SurrealModel macro or manual conformance in the Swift SDK.
+- [Predicates](reference/swift/concepts/predicates.md)
+  Build type-safe query conditions with the predicate DSL in the SurrealDB Swift SDK.
+- [Query DSL](reference/swift/concepts/query-dsl.md)
+  Build queries with compile-time macros or the programmatic SurrealDSL builder in the Swift SDK.
+- [Data types](reference/swift/data-types.md)
+  An overview of the data types used by the SurrealDB Swift SDK, including SurrealValue and SurrealRecordID.
+- [Swift SDK](reference/swift/index.md)
+  The SurrealDB SDK for Swift enables simple and advanced querying of a remote database from Apple-platform and server-side Swift applications.
+- [Installation](reference/swift/installation.md)
+  In this section, you will learn how to install the Swift SDK in your project.
+- [authenticate](reference/swift/methods/authenticate.md)
+  The authenticate() method for the SurrealDB Swift SDK authenticates the connection with a JWT token.
+- [connect](reference/swift/methods/connect.md)
+  The connect() method for the SurrealDB Swift SDK connects the client to the configured endpoint.
+- [create](reference/swift/methods/create.md)
+  The create() method for the SurrealDB Swift SDK creates a record in the database.
+- [delete](reference/swift/methods/delete.md)
+  The delete() method for the SurrealDB Swift SDK deletes matching records, or a specific record.
+- [SDK methods](reference/swift/methods/index.md)
+  The Swift SDK for SurrealDB enables simple and advanced querying of a remote database.
+- [invalidate](reference/swift/methods/invalidate.md)
+  The invalidate() method for the SurrealDB Swift SDK clears the connection's authentication state.
+- [kill](reference/swift/methods/kill.md)
+  The kill() method for the SurrealDB Swift SDK stops a running live query.
+- [live](reference/swift/methods/live.md)
+  The live() method for the SurrealDB Swift SDK subscribes to changes via a live query.
+- [queryRaw](reference/swift/methods/query-raw.md)
+  The queryRaw() method for the SurrealDB Swift SDK runs a raw SurrealQL query with bound parameters.
+- [query](reference/swift/methods/query.md)
+  The query() method for the SurrealDB Swift SDK runs a query built with the query DSL or macros.
+- [select](reference/swift/methods/select.md)
+  The select() method for the SurrealDB Swift SDK selects all records in a table, or a specific record.
+- [signin](reference/swift/methods/signin.md)
+  The signin() method for the SurrealDB Swift SDK signs in to a specific authentication level.
+- [signup](reference/swift/methods/signup.md)
+  The signup() method for the SurrealDB Swift SDK signs a new record-access user up.
+- [update](reference/swift/methods/update.md)
+  The update() method for the SurrealDB Swift SDK updates matching records, or a specific record.
+- [upsert](reference/swift/methods/upsert.md)
+  The upsert() method for the SurrealDB Swift SDK creates or updates matching records.
+- [use](reference/swift/methods/use.md)
+  The use() method for the SurrealDB Swift SDK switches to a specific namespace and database.
 - [SurrealDB Cloud](running/cloud.md)
   Get a free managed SurrealDB instance with an email sign-in—persistent data without installing the server yourself.
 - [Docker](running/docker.md)

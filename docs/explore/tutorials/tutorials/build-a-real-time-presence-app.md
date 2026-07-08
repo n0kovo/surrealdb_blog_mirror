@@ -455,4 +455,4 @@ And then let's enjoy the nature of randomness to make the app alive!
 - [GitHub repository](https://github.com/Odonno/surrealdb-presence-demo) - The GitHub repository of the application
 - [SurrealDB Live Queries](../../../reference/query-language/statements/live-select.md) - The SurrealDB Live Queries documentation
 - [SurrealQL Documentation](../../../reference/query-language/index.md) - The SurrealQL documentation
-- [Javascript SDK documentation](../../../languages/javascript/overview.md) - The Javascript SDK documentation
+- [Javascript SDK documentation](https://surrealdb.com/docs/reference/javascript/overview) - The Javascript SDK documentation

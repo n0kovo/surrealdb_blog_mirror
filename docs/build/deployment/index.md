@@ -179,7 +179,7 @@ SurrealDB supports embedded operation in Rust, Go, JavaScript / TypeScript, WebA
 
 **SurrealKV** — Same beta engine as single-node server deployments; aimed at embedded and local-first in-process workloads where smaller resident memory and simple operational behaviour matter most.
 
-**IndexedDB (browser)** — Browser-native persistence with binary serialisation for PWAs and local-first web apps. See [Embedding SurrealDB](../embedding/index.md) and the [Wasm engine](../../languages/javascript/engines/wasm.md).
+**IndexedDB (browser)** — Browser-native persistence with binary serialisation for PWAs and local-first web apps. See [Embedding SurrealDB](../embedding/index.md) and the [Wasm engine](../../reference/javascript/engines/wasm.md).
 
 ## Choosing the right deployment model
 

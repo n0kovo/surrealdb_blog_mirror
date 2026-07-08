@@ -22,7 +22,7 @@ Then import it:
 ```swift
 ```
 
-See the [SurrealDB Swift SDK installation guide](../../../languages/swift/installation.md) for how to add the package itself.
+See the [SurrealDB Swift SDK installation guide](../../../reference/swift/installation.md) for how to add the package itself.
 
 ## Configuration
 

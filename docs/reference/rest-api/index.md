@@ -25,4 +25,4 @@ The full HTTP protocol reference, including request and response formats, authen
 If you prefer a richer client experience, SurrealDB also supports:
 
 - **WebSocket protocol** — persistent connections with real-time capabilities.
-- **Official SDKs** — language-specific clients for [JavaScript](../../languages/javascript/overview.md), [Python](../../languages/python/index.md), [Rust](../../languages/rust/overview.md), [Go](../../languages/golang/index.md), [Java](../../languages/java/index.md), [.NET](../../languages/dotnet/index.md), and [PHP](../../languages/php/index.md).
+- **Official SDKs** — language-specific clients for [JavaScript](https://surrealdb.com/docs/reference/javascript/overview), [Python](../python/index.md), [Rust](https://surrealdb.com/docs/reference/rust/overview), [Go](../golang/index.md), [Java](../java/index.md), [.NET](../dotnet/index.md), and [PHP](../php/index.md).

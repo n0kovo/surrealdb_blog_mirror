@@ -43,13 +43,13 @@ SurrealDB Cloud is currently in beta as we continue to improve the platform and 
 
 SurrealDB Cloud supports the following programming languages:
 
-- [JavaScript/TypeScript](../../../../languages/javascript/overview.md)
-- [Python](../../../../languages/python/index.md)
-- [Go](../../../../languages/golang/index.md)
-- [Java](../../../../languages/java/index.md)
-- [Rust](../../../../languages/rust/overview.md)
-- [PHP](../../../../languages/php/index.md)
-- [.NET](../../../../languages/dotnet/index.md)
+- [JavaScript/TypeScript](https://surrealdb.com/docs/reference/javascript/overview)
+- [Python](../../../../reference/python/index.md)
+- [Go](../../../../reference/golang/index.md)
+- [Java](../../../../reference/java/index.md)
+- [Rust](https://surrealdb.com/docs/reference/rust/overview)
+- [PHP](../../../../reference/php/index.md)
+- [.NET](../../../../reference/dotnet/index.md)
 
 ### Why am I getting an authentication error connecting via SDK?
 

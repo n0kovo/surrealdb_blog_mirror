@@ -305,5 +305,5 @@ python -m mycrew.crew
 
 * [Vector Search reference guide](../../../learn/data-models/vector-search/overview.md)
 * [Using SurrealDB as a Vector Database](../../../learn/data-models/vector-search/overview.md)
-* [Python SDK docs](../../../languages/python/index.md)
+* [Python SDK docs](../../../reference/python/index.md)
 * [DEFINE INDEX statement](../../../reference/query-language/statements/define/indexes.md)

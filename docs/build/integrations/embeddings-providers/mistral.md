@@ -375,7 +375,7 @@ let embeds = result.data.remove(0).embedding;
 ```
   
 
-There are a [number of ways](../../../languages/rust/concepts/flexible-typing.md) to work with or avoid structs when using the Rust SDK, including creating structs: one to represent the input into a `.create()` statement, which will implement `Serialize`, and another that implements `Deserialize` to show the result.
+There are a [number of ways](../../../reference/rust/concepts/flexible-typing.md) to work with or avoid structs when using the Rust SDK, including creating structs: one to represent the input into a `.create()` statement, which will implement `Serialize`, and another that implements `Deserialize` to show the result.
 
 ```rust
 #[derive(Serialize)]

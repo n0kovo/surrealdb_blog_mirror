@@ -51,7 +51,7 @@ For the background processing interval, [`MAXDEPTH`](../../../reference/query-la
 
 ### `LIVE SELECT`
 
-While different from an event, a [`LIVE SELECT`](../../../reference/query-language/statements/live-select.md) is reactive in that it streams notifications when records matching the selection change. While an event embeds what the database should do in a `THEN` block, a live query only tells subscribers that something changed, so your app (or another service) decides how to react—typically in [SDK code](../../../languages/javascript/concepts/live-queries.md) using the connection's live-query APIs.
+While different from an event, a [`LIVE SELECT`](../../../reference/query-language/statements/live-select.md) is reactive in that it streams notifications when records matching the selection change. While an event embeds what the database should do in a `THEN` block, a live query only tells subscribers that something changed, so your app (or another service) decides how to react—typically in [SDK code](../../../reference/javascript/concepts/live-queries.md) using the connection's live-query APIs.
 
 For behaviour on the wire, subscriptions, and production caveats, read [Live queries](../../querying/real-time/live-queries.md). To end a subscription, use [`KILL`](../../../reference/query-language/statements/kill.md) with the query UUID the server returns when you register the live select. [Real-time best practices](../../querying/real-time/real-time-best-practices.md#defining-events) also contrasts live queries with defining events when the database can do the work without a client listener.
 

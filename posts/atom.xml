@@ -4,10 +4,19 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-07-02T11:48:20Z</updated>
+  <updated>2026-07-08T09:48:41Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2</id>
+    <title>Detecting connections as they form: An introduction to streaming graph pattern matching</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2" type="text/html" />
+    <published>2026-07-08T09:48:41Z</published>
+    <updated>2026-07-08T09:48:41Z</updated>
+    <summary type="text">Guest author Cyril Scetbon on streaming graph pattern matching: detecting when a pattern is satisfied in real time, incrementally, as new edges are added.</summary>
+    <category term="community" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale</id>
     <title>Introducing Scale: SurrealDB Cloud, built for high availability and scale </title>
@@ -488,16 +497,5 @@
     <summary type="text">SurrealDB unifies documents, graphs, vectors, and real-time logic in one engine, cutting infrastructure complexity and empowering faster, more flexible development for modern AI-driven applications.</summary>
     <category term="featured" />
     <category term="company" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/exploring-the-new-surrealdb-integration-with-agno</id>
-    <title>Exploring the new SurrealDB integration with Agno</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/exploring-the-new-surrealdb-integration-with-agno" type="text/html" />
-    <published>2025-10-29T00:00:00Z</published>
-    <updated>2025-10-29T00:00:00Z</updated>
-    <summary type="text">SurrealDB's built-in capabilities comprising graph queries, geolocational data and recursive queries make it the perfect fit to identify malevolent entities involved in organised influence campaigns.</summary>
-    <category term="featured" />
-    <category term="tutorials" />
-    <category term="ai" />
   </entry>
 </feed>

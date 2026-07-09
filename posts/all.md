@@ -1,8 +1,10 @@
 # All Posts
 
-_239 posts_  
+_240 posts_  
 [← Index](../README.md)
 
+- **2026-07-08** · [Detecting connections as they form: An introduction to streaming graph pattern matching](2026/07/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2.md)  
+  `community` — Guest author Cyril Scetbon on streaming graph pattern matching: detecting when a pattern is satisfied in real time, incrementally, as new edges are added.
 - **2026-07-02** · [Introducing Scale: SurrealDB Cloud, built for high availability and scale ](2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  
   `featured` `releases` — SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.
 - **2026-07-01** · [Bring SurrealDB to your Replit Agent](2026/07/bring-surrealdb-to-your-replit-agent.md)  

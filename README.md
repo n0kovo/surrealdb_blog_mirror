@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-07-08 08:22 UTC_
+_Last updated: 2026-07-09 09:37 UTC_
 
 ## Stats
 
-- **Total posts:** 239
+- **Total posts:** 240
 - **First post:** 2022-07-20
-- **Latest post:** 2026-07-02
+- **Latest post:** 2026-07-08
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-07-08 08:22 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 44 posts
+- [2026](posts/years/2026.md) — 45 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -28,7 +28,7 @@ _Last updated: 2026-07-08 08:22 UTC_
 ### By category
 
 - [ai](posts/categories/ai.md) — 39 posts
-- [community](posts/categories/community.md) — 34 posts
+- [community](posts/categories/community.md) — 35 posts
 - [company](posts/categories/company.md) — 41 posts
 - [engineering](posts/categories/engineering.md) — 41 posts
 - [events](posts/categories/events.md) — 7 posts
@@ -38,6 +38,8 @@ _Last updated: 2026-07-08 08:22 UTC_
 
 ## Latest posts
 
+- **2026-07-08** · [Detecting connections as they form: An introduction to streaming graph pattern matching](posts/2026/07/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2.md)  
+  `community` — Guest author Cyril Scetbon on streaming graph pattern matching: detecting when a pattern is satisfied in real time, incrementally, as new edges are added.
 - **2026-07-02** · [Introducing Scale: SurrealDB Cloud, built for high availability and scale ](posts/2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  
   `featured` `releases` — SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.
 - **2026-07-01** · [Bring SurrealDB to your Replit Agent](posts/2026/07/bring-surrealdb-to-your-replit-agent.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-07-08 08:22 UTC_
   `tutorials` — Bootstrapping multi-tenant orgs, roles, permissions, and the functions that enforce them - straight from SurrealKit templates.
 - **2026-06-11** · [Fuzz testing for SurrealDB: using randomised input to find bugs before users do](posts/2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md)  
   `engineering` — A good choice to complement unit and integration tests, fuzz testing lets you use semi-random data to discover obscure bugs before users do.
-- **2026-06-09** · [SurrealDB is now available on the Nebius AI Cloud Marketplace](posts/2026/06/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace.md)  
-  `releases` — SurrealDB is now available on the Nebius AI Cloud Marketplace.

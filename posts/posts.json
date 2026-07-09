@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-07-08T08:22:18.298884+00:00",
-  "count": 239,
+  "generated_at": "2026-07-09T09:37:59.288680+00:00",
+  "count": 240,
   "posts": [
+    {
+      "slug": "detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2",
+      "title": "Detecting connections as they form: An introduction to streaming graph pattern matching",
+      "summary": "Guest author Cyril Scetbon on streaming graph pattern matching: detecting when a pattern is satisfied in real time, incrementally, as new edges are added.",
+      "publishDate": "2026-07-08T09:48:41.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/9f4yzl5oo2009euy6bjxazpk.auto",
+      "source": "https://surrealdb.com/blog/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2",
+      "local_path": "2026/07/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2.md"
+    },
     {
       "slug": "introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale",
       "title": "Introducing Scale: SurrealDB Cloud, built for high availability and scale ",

@@ -1,8 +1,10 @@
 # Category: community
 
-_34 posts_  
+_35 posts_  
 [← Index](../../README.md)
 
+- **2026-07-08** · [Detecting connections as they form: An introduction to streaming graph pattern matching](../2026/07/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2.md)  
+  `community` — Guest author Cyril Scetbon on streaming graph pattern matching: detecting when a pattern is satisfied in real time, incrementally, as new edges are added.
 - **2026-04-27** · [Building compounding memory with knowledge graphs and agentic RAG](../2026/04/building-compounding-memory-with-knowledge-graphs-and-agentic-rag.md)  
   `community` `ai` — Synapse, a memory-first reflection agent, helps users track therapy journal patterns. It structures insights into a knowledge graph, revealing patterns and answering questions based on context.
 - **2025-10-09** · [Bring your own knowledge base: Agent Studio meets SurrealDB](../2025/10/bring-your-own-knowledge-base-agent-studio-meets-surrealdb.md)  

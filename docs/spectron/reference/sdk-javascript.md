@@ -81,15 +81,15 @@ Python names `query_context` as `context` here. Python exposes `whoami()` and `k
 | `ServerError` | 5xx |
 | `ConnectionError` | Network / timeout |
 
-→ [Errors and retries](../integrations/sdks/errors-and-retries.md)
+→ [Errors and retries](../integrations/sdks/javascript-and-typescript.md#errors-and-retries)
 
 ## Harness adapter
 
 ```bash
-npm install @surrealdb/spectron-vercel-ai
+npm install @surrealdb/vercel-ai
 ```
 
-→ [Vercel AI SDK](../integrations/frameworks/vercel-ai-sdk.md)
+→ [Vercel AI SDK](../integrations/ai-sdks/vercel-ai-sdk.md)
 
 ## User guide
 

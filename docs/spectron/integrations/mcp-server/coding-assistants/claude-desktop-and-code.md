@@ -1,11 +1,11 @@
 ---
 position: 2
-title: Claude Desktop and Claude Code
+title: Claude
 description: Installing Spectron as an MCP server in Claude Desktop and Claude Code.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/spectron/integrations/mcp-server/coding-assistants/claude-desktop-and-code.mdx"
 ---
 
-# Claude Desktop and Claude Code
+# Claude
 
 Spectron can be installed as an MCP server in both Claude Desktop (the macOS and Windows application) and Claude Code (the CLI-based agentic coding tool). Once installed, Claude gains access to all seven Spectron tools and can persist and retrieve memory across conversations.
 
@@ -141,7 +141,7 @@ claude "What do you remember about our database schema decisions?"
 
 **Scope per project:**
 
-Pass a `scope` argument on each MCP tool call (slash paths, for example `["org/acme/project/orders-service"]`). The install helper does not set a default scope — use separate contexts or distinct scope paths per repository.
+Pass a `scope` argument on each MCP tool call (slash paths, for example `["org/acme/project/orders-service"]`). The install helper does not set a default scope; use separate contexts or distinct scope paths per repository.
 
 ---
 

@@ -4,10 +4,20 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-07-08T09:48:41Z</updated>
+  <updated>2026-07-09T16:29:50Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/generating-embeddings-inside-surrealql-with-a-custom-function</id>
+    <title>Generating embeddings inside SurrealQL with a custom function</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/generating-embeddings-inside-surrealql-with-a-custom-function" type="text/html" />
+    <published>2026-07-09T16:29:50Z</published>
+    <updated>2026-07-09T16:29:50Z</updated>
+    <summary type="text">Define a custom SurrealQL function to call any embedding API, then run semantic search, graph traversal and field shaping in one query</summary>
+    <category term="ai" />
+    <category term="tutorials" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2</id>
     <title>Detecting connections as they form: An introduction to streaming graph pattern matching</title>
@@ -485,16 +495,6 @@
     <published>2025-12-11T00:00:00Z</published>
     <updated>2025-12-11T00:00:00Z</updated>
     <summary type="text">SurrealDB joins the NVIDIA Inception Program, gaining access to GPU acceleration, CUDA integrations, and advanced vector search capabilities for AI-driven applications.</summary>
-    <category term="featured" />
-    <category term="company" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/why-companies-are-adopting-surrealdb</id>
-    <title>Why companies are adopting SurrealDB</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/why-companies-are-adopting-surrealdb" type="text/html" />
-    <published>2025-11-26T00:00:00Z</published>
-    <updated>2025-11-26T00:00:00Z</updated>
-    <summary type="text">SurrealDB unifies documents, graphs, vectors, and real-time logic in one engine, cutting infrastructure complexity and empowering faster, more flexible development for modern AI-driven applications.</summary>
     <category term="featured" />
     <category term="company" />
   </entry>

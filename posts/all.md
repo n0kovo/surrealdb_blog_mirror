@@ -1,8 +1,10 @@
 # All Posts
 
-_240 posts_  
+_241 posts_  
 [← Index](../README.md)
 
+- **2026-07-09** · [Generating embeddings inside SurrealQL with a custom function](2026/07/generating-embeddings-inside-surrealql-with-a-custom-function.md)  
+  `ai` `tutorials` — Define a custom SurrealQL function to call any embedding API, then run semantic search, graph traversal and field shaping in one query
 - **2026-07-08** · [Detecting connections as they form: An introduction to streaming graph pattern matching](2026/07/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2.md)  
   `community` — Guest author Cyril Scetbon on streaming graph pattern matching: detecting when a pattern is satisfied in real time, incrementally, as new edges are added.
 - **2026-07-02** · [Introducing Scale: SurrealDB Cloud, built for high availability and scale ](2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  

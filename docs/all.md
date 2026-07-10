@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1069 pages_  
+_1096 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -1988,30 +1988,80 @@ _1069 pages_
   Spectron as a memory and knowledge layer – one SurrealDB substrate, provenance-first, trace-aware, tri-temporal.
 - [Why agentic memory?](spectron/index/welcome/why-agentic-memory.md)
   Why conversational agents need structured memory beyond plain retrieval.
+- [Cloudflare Workers AI](spectron/integrations/ai-sdks/cloudflare-workers-ai.md)
+  Using Spectron memory from a Cloudflare Worker alongside Workers AI models.
+- [TanStack AI](spectron/integrations/ai-sdks/tanstack-ai.md)
+  Adding Spectron memory to a TanStack Start application.
+- [Vercel AI SDK](spectron/integrations/ai-sdks/vercel-ai-sdk.md)
+  Spectron memory for the Vercel AI SDK, via language-model middleware and a tool set.
+- [n8n](spectron/integrations/automation/n8n.md)
+  Using SurrealDB and Spectron from n8n workflows.
+- [Zo Computer](spectron/integrations/automation/zo-computer.md)
+  Adding Spectron memory to a Zo Computer skill.
+- [Agno](spectron/integrations/frameworks/agno.md)
+  Adding Spectron memory to Agno agents with the Spectron SDK.
+- [AutoGen](spectron/integrations/frameworks/autogen.md)
+  Adding Spectron memory to Microsoft AutoGen agents with the Spectron SDK.
+- [Camel AI](spectron/integrations/frameworks/camel-ai.md)
+  Adding Spectron memory to Camel AI agents with the Spectron SDK.
 - [CrewAI](spectron/integrations/frameworks/crewai.md)
-  CrewAI integration status.
+  CrewAI integration for Spectron, with memory tools and automatic per-task memory.
+- [Eve](spectron/integrations/frameworks/eve.md)
+  Spectron memory for Eve agents, via auto-memory middleware and a tool pack.
+- [Google ADK](spectron/integrations/frameworks/google-adk.md)
+  Spectron memory as tools for Google's Agent Development Kit.
+- [Hermes Agent](spectron/integrations/frameworks/hermes.md)
+  Spectron memory provider for the Hermes Agent.
 - [LangChain](spectron/integrations/frameworks/langchain.md)
-  LangChain harness adapter for Spectron.
-- [Semantic Kernel](spectron/integrations/frameworks/semantic-kernel.md)
-  Semantic Kernel integration status.
-- [Vercel AI SDK](spectron/integrations/frameworks/vercel-ai-sdk.md)
-  Using Spectron memory with the Vercel AI SDK.
+  LangChain and LangGraph integration for Spectron, with retrievers, agent tools, and a LangGraph store.
+- [LlamaIndex](spectron/integrations/frameworks/llamaindex.md)
+  Adding Spectron memory to LlamaIndex agents with the Spectron SDK.
+- [Mastra](spectron/integrations/frameworks/mastra.md)
+  Spectron memory provider and tools for Mastra, plus the SurrealDB storage adapter.
+- [OpenAI Agents SDK](spectron/integrations/frameworks/openai-agents.md)
+  Spectron memory for agents built with the OpenAI Agents SDK.
+- [OpenClaw](spectron/integrations/frameworks/openclaw.md)
+  OpenClaw plugin that backs agent memory with Spectron.
+- [Pydantic AI](spectron/integrations/frameworks/pydantic-ai.md)
+  Spectron memory for Pydantic AI, via a toolset, auto-recall processor, and persistence helpers.
+- [Strands Agents](spectron/integrations/frameworks/strands-agents.md)
+  Spectron memory as tools for the Strands Agents SDK.
 - [Overview](spectron/integrations/index.md)
-  Connecting Spectron to your stack – SDKs, MCP server, REST API, and framework integrations.
-- [Claude Desktop and Claude Code](spectron/integrations/mcp-server/coding-assistants/claude-desktop-and-code.md)
+  Connecting Spectron to your stack – SDKs, MCP server, AI SDKs, agent frameworks, voice tools, and automation.
+- [Antigravity](spectron/integrations/mcp-server/coding-assistants/antigravity.md)
+  Installing Spectron as an MCP server in Google Antigravity.
+- [Claude](spectron/integrations/mcp-server/coding-assistants/claude-desktop-and-code.md)
   Installing Spectron as an MCP server in Claude Desktop and Claude Code.
+- [Codex](spectron/integrations/mcp-server/coding-assistants/codex.md)
+  Installing Spectron as an MCP server in the OpenAI Codex CLI.
 - [Cursor](spectron/integrations/mcp-server/coding-assistants/cursor.md)
   Installing Spectron as an MCP server in Cursor.
+- [JetBrains](spectron/integrations/mcp-server/coding-assistants/jetbrains.md)
+  Installing Spectron as an MCP server in JetBrains IDEs (IntelliJ IDEA, PyCharm, WebStorm, Rider, and more).
+- [OpenCode](spectron/integrations/mcp-server/coding-assistants/opencode.md)
+  Installing Spectron as an MCP server in OpenCode.
 - [VS Code](spectron/integrations/mcp-server/coding-assistants/vscode.md)
   Installing Spectron as an MCP server in VS Code.
 - [Windsurf](spectron/integrations/mcp-server/coding-assistants/windsurf.md)
   Installing Spectron as an MCP server in Windsurf.
+- [Zed](spectron/integrations/mcp-server/coding-assistants/zed.md)
+  Installing Spectron as an MCP server in the Zed editor.
 - [Installing the MCP server](spectron/integrations/mcp-server/install.md)
   Connect Spectron to Claude, Cursor, Windsurf, VS Code, and other MCP clients.
 - [MCP tools reference](spectron/integrations/mcp-server/tools-reference.md)
   Complete reference for all seven Spectron MCP tools.
-- [Errors and retries](spectron/integrations/sdks/errors-and-retries.md)
-  Handling errors and configuring retry behaviour in the Spectron SDKs.
+- [AgentOps](spectron/integrations/observability/agentops.md)
+  Using Spectron memory in an agent instrumented by AgentOps.
+- [Respan](spectron/integrations/observability/respan.md)
+  Using Spectron memory alongside Respan tracing and the Respan LLM gateway.
+- [Dart SDK](spectron/integrations/sdks/dart.md)
+  Using Spectron from Dart and Flutter applications.
+- [Elixir SDK](spectron/integrations/sdks/elixir.md)
+  Using Spectron from Elixir applications.
+- [Go SDK](spectron/integrations/sdks/go.md)
+  Using Spectron from Go applications and agents.
+- [Haskell SDK](spectron/integrations/sdks/haskell.md)
+  Using Spectron from Haskell applications.
 - [JavaScript and TypeScript SDK](spectron/integrations/sdks/javascript-and-typescript.md)
   Using Spectron from JavaScript and TypeScript applications.
 - [Kotlin SDK](spectron/integrations/sdks/kotlin.md)
@@ -2026,6 +2076,10 @@ _1069 pages_
   Accessing Spectron's knowledge layer as a virtual filesystem.
 - [REST API](spectron/integrations/surfaces/rest.md)
   Accessing Spectron directly via its HTTP REST API.
+- [ElevenLabs](spectron/integrations/voice/elevenlabs.md)
+  Giving an ElevenLabs Conversational AI agent memory with Spectron.
+- [LiveKit](spectron/integrations/voice/livekit.md)
+  Adding Spectron memory to a LiveKit voice agent.
 - [Agent guide (AGENTS.md)](spectron/reference/agents.md)
   Instructions for coding agents integrating with Spectron — copy into Cursor rules or skills.
 - [CLI](spectron/reference/cli.md)

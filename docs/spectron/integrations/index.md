@@ -1,74 +1,92 @@
 ---
 position: 0
 title: Overview
-description: Connecting Spectron to your stack – SDKs, MCP server, REST API, and framework integrations.
+description: Connecting Spectron to your stack – SDKs, MCP server, AI SDKs, agent frameworks, voice tools, and automation.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/spectron/integrations/index.mdx"
 ---
 
 # Integrations
 
-Spectron integrates with agents through HTTP, MCP, **official SDKs**, and harness adapters that batch conversation turns into `/facts/batch`, using the same provenance and trust model as the server.
+Spectron connects to agents through HTTP, MCP, **official SDKs**, and harness adapters that mirror conversation turns into `POST /api/v1/{context_id}/facts/batch`, using the same provenance and trust model as the server.
 
-The REST surface is described by an OpenAPI specification. Python, TypeScript, and Swift clients track that spec so request and response shapes stay aligned with the server.
+The REST surface is described by an OpenAPI specification. The Python, TypeScript, Swift, and Kotlin clients track that spec so request and response shapes stay aligned with the server.
 
 ## MCP server (coding assistants)
 
-Native MCP at `/mcp` on the api port — same **`Authorization: Bearer`** auth as REST. Prefer this when the client already speaks MCP (Claude Desktop, Cursor, Windsurf, VS Code, Claude Code).
+Native MCP at `/mcp` on the api port, with the same **`Authorization: Bearer`** auth as REST. Prefer this when the client already speaks MCP.
 
 ```bash
 spectron mcp
 ```
 
-→ [MCP server install](mcp-server/install.md)
+→ [MCP server install](mcp-server/install.md) · Per-client guides: [Claude](mcp-server/coding-assistants/claude-desktop-and-code.md) · [Cursor](mcp-server/coding-assistants/cursor.md) · [VS Code](mcp-server/coding-assistants/vscode.md) · [JetBrains](mcp-server/coding-assistants/jetbrains.md) · [Zed](mcp-server/coding-assistants/zed.md) · [Windsurf](mcp-server/coding-assistants/windsurf.md) · [Codex](mcp-server/coding-assistants/codex.md) · [Antigravity](mcp-server/coding-assistants/antigravity.md) · [OpenCode](mcp-server/coding-assistants/opencode.md)
 
-## Python SDK
+## SDKs
 
-Spectron ships **inside** the [`surrealdb`](https://pypi.org/project/surrealdb/) package on PyPI — the same install as the SurrealDB Python driver. Do not install the unrelated **`spectron`** package.
+Call Spectron directly from application code.
 
-```bash
-pip install surrealdb
-```
+| Language | Package |
+| --- | --- |
+| Python | `surrealdb` (Spectron ships inside it) |
+| JavaScript / TypeScript | `@surrealdb/spectron` |
+| Swift | `Spectron` product in `surrealdb.swift` |
+| Kotlin | bundled in `com.surrealdb:kotlin` |
+| Go | `spectron` package in `surrealdb.go` |
+| Dart | `surrealdb` (import `spectron.dart`) |
+| Elixir | `:surrealdb` (`SurrealDB.Spectron`) |
+| Haskell | `surrealdb-spectron` |
 
-```python
-from surrealdb import Spectron
-```
+→ [Python](sdks/python.md) · [JavaScript & TypeScript](sdks/javascript-and-typescript.md) · [Swift](sdks/swift.md) · [Kotlin](sdks/kotlin.md) · [Go](sdks/go.md) · [Dart](sdks/dart.md) · [Elixir](sdks/elixir.md) · [Haskell](sdks/haskell.md)
 
-→ [Python SDK guide](sdks/python.md)
+## AI SDKs
 
-## JavaScript and TypeScript SDK
+Drop-in memory for the popular TypeScript AI SDKs, with recall and storage wrapped around your model calls.
 
-Separate npm package under the SurrealDB scope:
+- **Vercel AI SDK**: `@surrealdb/vercel-ai`, via `wrapLanguageModel` middleware and a tool set.
+- **TanStack AI**: the `@surrealdb/spectron` client in TanStack Start server routes.
+- **Cloudflare Workers AI**: the client inside a Worker, alongside Workers AI models.
 
-```bash
-npm install @surrealdb/spectron
-```
+→ [Vercel AI SDK](ai-sdks/vercel-ai-sdk.md) · [TanStack AI](ai-sdks/tanstack-ai.md) · [Cloudflare Workers AI](ai-sdks/cloudflare-workers-ai.md)
 
-→ [JavaScript SDK guide](sdks/javascript-and-typescript.md)
+## Agent frameworks
 
-## Swift SDK
+Harness adapters expose Spectron as agent tools and add automatic per-turn memory, without changing your prompts.
 
-The [`Spectron`](https://github.com/surrealdb/surrealdb.swift) product ships alongside the SurrealDB Swift driver in [`surrealdb.swift`](https://github.com/surrealdb/surrealdb.swift). Add the `Spectron` library product to your target, then import it:
+| Framework | Package | Language |
+| --- | --- | --- |
+| LangChain / LangGraph | `@surrealdb/langchain`, `@surrealdb/langgraph` | TypeScript |
+| CrewAI | `spectron-integration-crewai` | Python |
+| OpenAI Agents SDK | `spectron-openai-agents` | Python |
+| Pydantic AI | `spectron-pydantic-ai` | Python |
+| Google ADK | `spectron-google-adk` | Python |
+| Strands Agents | `spectron-strands` | Python |
+| Mastra | `@surrealdb/mastra-ai` | TypeScript |
+| Hermes Agent | `spectron-integration-hermes-agent` | Python |
+| OpenClaw | `@surrealdb/spectron-openclaw` | TypeScript |
+| Eve | `@surrealdb/spectron-eve` | TypeScript |
 
-```swift
+→ [LangChain](frameworks/langchain.md) · [CrewAI](frameworks/crewai.md) · [OpenAI Agents SDK](frameworks/openai-agents.md) · [Pydantic AI](frameworks/pydantic-ai.md) · [Google ADK](frameworks/google-adk.md) · [Strands Agents](frameworks/strands-agents.md) · [Mastra](frameworks/mastra.md) · [Hermes Agent](frameworks/hermes.md) · [OpenClaw](frameworks/openclaw.md) · [Eve](frameworks/eve.md)
 
-let memory = try Spectron(
-    context: "acme-prod",
-    endpoint: "https://api.spectron.example",
-    apiKey: "sk-spec-..."
-)
-```
+Frameworks without a dedicated package integrate directly through the SDK: [AutoGen](frameworks/autogen.md) · [Agno](frameworks/agno.md) · [Camel AI](frameworks/camel-ai.md) · [LlamaIndex](frameworks/llamaindex.md)
 
-→ [Swift SDK guide](sdks/swift.md)
+## Voice & realtime
 
-## Kotlin SDK
+Give voice agents memory that persists across calls.
 
-The Spectron client for Kotlin is bundled in the [SurrealDB Kotlin SDK](../../reference/kotlin/index.md) (`com.surrealdb:kotlin`) under the `com.surrealdb.kotlin.spectron` package — no separate dependency. It is Kotlin Multiplatform (JVM, Android, iOS) with a `suspend`-based API.
+→ [LiveKit](voice/livekit.md) · [ElevenLabs](voice/elevenlabs.md)
 
-```kotlin
-implementation("com.surrealdb:kotlin:0.1.0-SNAPSHOT")
-```
+## Automation
 
-→ [Kotlin SDK guide](sdks/kotlin.md)
+- **n8n**: the `@surrealdb/n8n-nodes-surrealdb` community node, plus Spectron memory over the REST API.
+- **Zo Computer**: a Zo skill that calls the Spectron SDK for recall and storage.
+
+→ [n8n](automation/n8n.md) · [Zo Computer](automation/zo-computer.md)
+
+## Observability
+
+Run Spectron for memory while an observability platform traces and evaluates the agent.
+
+→ [Respan](observability/respan.md) · [AgentOps](observability/agentops.md)
 
 ## REST API
 
@@ -76,21 +94,6 @@ Direct HTTP from any language. End-user routes: `/api/v1/{context_id}/…`. Mana
 
 → [REST integration guide](surfaces/rest.md) · [Full reference](../reference/rest-api.md)
 
-## Harness adapters (automatic turn capture)
-
-Thin packages that mirror agent runtime traffic into `POST /api/v1/{ctx}/facts/batch` without changing your prompts:
-
-| Platform | Package |
-| --- | --- |
-| LangChain (Python) | `spectron-langchain` |
-| OpenAI Agents (Python) | `spectron-openai` |
-| Vercel AI SDK (TS) | `@surrealdb/spectron-vercel-ai` |
-| n8n | `n8n-nodes-spectron` |
-| Claude Code | `npx install-spectron-hook` |
-
-→ [LangChain](frameworks/langchain.md) · [Vercel AI SDK](frameworks/vercel-ai-sdk.md)
-
 ## Not shipped yet
 
-- **Semantic Kernel** and **CrewAI** adapters — no packages in the repo; pages are placeholders.
-- **Embedded in-process library** — use REST or SDK against a deployed instance ([Embedded quickstart](https://surrealdb.com/docs/spectron/quickstarts/embedded)).
+- **Embedded in-process library**: use REST or an SDK against a deployed instance ([Embedded quickstart](https://surrealdb.com/docs/spectron/quickstarts/embedded)).

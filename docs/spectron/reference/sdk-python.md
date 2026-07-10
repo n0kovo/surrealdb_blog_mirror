@@ -93,7 +93,7 @@ Nested graph and extraction payloads may remain `dict` values where the server s
 | `SpectronScopeError` | 403 |
 | `SpectronNotFoundError` | 404 |
 
-→ [Errors and retries](../integrations/sdks/errors-and-retries.md)
+→ [Errors and retries](../integrations/sdks/python.md#errors-and-retries)
 
 ## User guide
 

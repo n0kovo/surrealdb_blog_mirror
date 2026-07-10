@@ -1,8 +1,10 @@
 # Category: tutorials
 
-_90 posts_  
+_91 posts_  
 [← Index](../../README.md)
 
+- **2026-07-09** · [Generating embeddings inside SurrealQL with a custom function](../2026/07/generating-embeddings-inside-surrealql-with-a-custom-function.md)  
+  `ai` `tutorials` — Define a custom SurrealQL function to call any embedding API, then run semantic search, graph traversal and field shaping in one query
 - **2026-07-01** · [Bring SurrealDB to your Replit Agent](../2026/07/bring-surrealdb-to-your-replit-agent.md)  
   `tutorials` `ai` `featured` — SurrealDB's MCP server lets Replit Agent build apps directly on a database you own, reading your schema and querying live data.
 - **2026-06-23** · [Social graphs for activity-tracking apps](../2026/06/social-graphs-for-activity-tracking-apps.md)  

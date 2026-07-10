@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 # Installing the MCP server
 
-Spectron serves MCP (Streamable HTTP) at **`/mcp`** on the same host and port as the REST API (default `http://localhost:9090/mcp`). Tools map to the unified substrate — remember, recall, documents, reflect, and related operations.
+Spectron serves MCP (Streamable HTTP) at **`/mcp`** on the same host and port as the REST API (default `http://localhost:9090/mcp`). Tools map to the unified substrate: remember, recall, documents, reflect, and related operations.
 
 ## Generate config
 
@@ -40,7 +40,7 @@ The command prints an `mcpServers` JSON block for Claude Desktop, Cursor, and Cl
 
 Context is usually encoded in the key or passed per tool; follow the snippet `spectron mcp` prints for your client version.
 
-Authentication uses **`Authorization: Bearer`** — the same as REST. Run `spectron mcp` to print an install snippet with the correct headers.
+Authentication uses **`Authorization: Bearer`**, the same as REST. Run `spectron mcp` to print an install snippet with the correct headers.
 
 ## Per-client guides
 
@@ -55,7 +55,7 @@ Authentication uses **`Authorization: Bearer`** — the same as REST. Run `spect
 | --- | --- |
 | Coding assistant with native MCP | `spectron mcp` config |
 | Application code (Python/TS) | `surrealdb` / `@surrealdb/spectron` |
-| Agent framework with harness adapter | `spectron-langchain`, `@surrealdb/spectron-vercel-ai`, … |
+| Agent framework with harness adapter | `spectron-integration-crewai`, `@surrealdb/vercel-ai`, … |
 | Custom infrastructure | [REST API](../../reference/rest-api.md) |
 
 Tool schemas: [MCP tools reference](../../reference/mcp-tools.md).

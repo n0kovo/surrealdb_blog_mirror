@@ -205,7 +205,7 @@ except SpectronAPIError as e:
         print(f"Rate limit exceeded: {e.body}")
 ```
 
-See [Errors and retries](../integrations/sdks/errors-and-retries.md) for the full hierarchy and retry behaviour.
+See the SDK error sections for [Python](../integrations/sdks/python.md#errors-and-retries) and [JavaScript](../integrations/sdks/javascript-and-typescript.md#errors-and-retries) for the full hierarchy and retry behaviour.
 
 ### JavaScript SDK
 

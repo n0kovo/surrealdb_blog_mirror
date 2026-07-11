@@ -1991,7 +1991,7 @@ _1096 pages_
 - [Cloudflare Workers AI](spectron/integrations/ai-sdks/cloudflare-workers-ai.md)
   Using Spectron memory from a Cloudflare Worker alongside Workers AI models.
 - [TanStack AI](spectron/integrations/ai-sdks/tanstack-ai.md)
-  Adding Spectron memory to a TanStack Start application.
+  Adding Spectron memory to a TanStack AI application.
 - [Vercel AI SDK](spectron/integrations/ai-sdks/vercel-ai-sdk.md)
   Spectron memory for the Vercel AI SDK, via language-model middleware and a tool set.
 - [n8n](spectron/integrations/automation/n8n.md)

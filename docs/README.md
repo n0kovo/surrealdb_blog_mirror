@@ -1,6 +1,6 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-07-11 07:49 UTC_
+_Last updated: 2026-07-12 08:10 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 

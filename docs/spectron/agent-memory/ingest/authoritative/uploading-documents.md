@@ -11,9 +11,9 @@ The **knowledge** layer holds **authoritative** material – manuals, policies, 
 
 ## Supported formats
 
-### Text-first (default ingestion profile)
+### Text-first formats
 
-These MIME types are accepted on **`POST /api/v1/{context_id}/documents`** and processed under the default **`TextOnly`** or **`StandardMultimodal`** profiles:
+These MIME types are accepted on **`POST /api/v1/{context_id}/documents`** under every ingestion profile:
 
 | Format | MIME type |
 | --- | --- |
@@ -23,9 +23,9 @@ These MIME types are accepted on **`POST /api/v1/{context_id}/documents`** and p
 | HTML | `text/html` |
 | PDF | `application/pdf` |
 
-### Multimodal (requires a richer ingestion profile)
+### Multimodal formats
 
-The upload endpoint also accepts image, audio, and video MIME types when the Context uses **`StandardMultimodal`** or **`MultimodalFull`**. OCR, transcription, captioning, and modality-native embeddings run only when the selected profile enables them:
+The upload endpoint also accepts image, audio, and video MIME types. The default Context profile is **`MultimodalFull`**, so OCR, transcription, captioning, and modality-native embeddings run when providers are configured. Dial the Context down to **`StandardMultimodal`**, **`TextPlusKeyword`**, or **`TextOnly`** to skip richer stages:
 
 | Format | MIME types (examples) |
 | --- | --- |
@@ -96,6 +96,8 @@ Poll **`GET /api/v1/{context_id}/documents/{id}`** until **`status`** is **`read
 | `keywording` | RAKE keyword extraction |
 | `ready` | Fully indexed and available for retrieval |
 | `failed` | Pipeline error; inspect `error` on the document record |
+
+Oversized chunk persists (SurrealDB transaction write-set or WebSocket message caps) are classified as permanent size errors and dead-letter without burning multi-minute re-parse retries. Operators tuning large corpora should keep the Spectron client WS cap (`SPECTRON_DB_WS_MAX_MESSAGE_BYTES`) aligned with the SurrealDB server's `SURREAL_WEBSOCKET_MAX_MESSAGE_SIZE` — see [Configuration](../../../reference/configuration.md#request-and-list-limits).
 
 ## Content addressing and deduplication
 

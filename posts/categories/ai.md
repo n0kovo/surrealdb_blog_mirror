@@ -1,8 +1,10 @@
 # Category: ai
 
-_40 posts_  
+_41 posts_  
 [← Index](../../README.md)
 
+- **2026-07-14** · [One query, not two stores: how vector + graph in SurrealDB makes agents more accurate](../2026/07/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate.md)  
+  `ai` `tutorials` — Vector search and graph traversal in a single SurrealDB query — no fusion code, no two-store sync. How single-engine hybrid retrieval makes RAG agents more accurate.
 - **2026-07-09** · [Generating embeddings inside SurrealQL with a custom function](../2026/07/generating-embeddings-inside-surrealql-with-a-custom-function.md)  
   `ai` `tutorials` — Define a custom SurrealQL function to call any embedding API, then run semantic search, graph traversal and field shaping in one query
 - **2026-07-01** · [Bring SurrealDB to your Replit Agent](../2026/07/bring-surrealdb-to-your-replit-agent.md)  

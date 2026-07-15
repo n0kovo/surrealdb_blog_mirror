@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-07-14T07:56:57.602249+00:00",
-  "count": 241,
+  "generated_at": "2026-07-15T08:02:14.942541+00:00",
+  "count": 242,
   "posts": [
+    {
+      "slug": "one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate",
+      "title": "One query, not two stores: how vector + graph in SurrealDB makes agents more accurate",
+      "summary": "Vector search and graph traversal in a single SurrealDB query — no fusion code, no two-store sync. How single-engine hybrid retrieval makes RAG agents more accurate.",
+      "publishDate": "2026-07-14T13:02:06.000Z",
+      "categories": [
+        "ai",
+        "tutorials"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/ker1hgjbx0nar86uxmxe5686.auto",
+      "source": "https://surrealdb.com/blog/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate",
+      "local_path": "2026/07/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate.md"
+    },
     {
       "slug": "generating-embeddings-inside-surrealql-with-a-custom-function",
       "title": "Generating embeddings inside SurrealQL with a custom function",

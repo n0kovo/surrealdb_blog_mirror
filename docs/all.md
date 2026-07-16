@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1096 pages_  
+_1097 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -1932,6 +1932,8 @@ _1096 pages_
   Mapping Zep concepts to Spectron's unified graph.
 - [Adding memory to an existing app](spectron/cookbooks/patterns/adding-memory-to-existing-app.md)
   Introduce turns without replacing your LLM client.
+- [Event-driven game client](spectron/cookbooks/patterns/event-driven-game-client.md)
+  Pipe RPG or simulation events into Spectron with epistemic labels and careful extraction.
 - [Knowledge-grounded agents](spectron/cookbooks/patterns/knowledge-grounded-agents.md)
   Combine authoritative knowledge retrieval with experiential memory.
 - [Reflection loops](spectron/cookbooks/patterns/reflection-loops.md)

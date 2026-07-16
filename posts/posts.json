@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-07-15T08:02:14.942541+00:00",
-  "count": 242,
+  "generated_at": "2026-07-16T08:07:06.023114+00:00",
+  "count": 243,
   "posts": [
+    {
+      "slug": "your-asset-inventory-is-a-graph-query-it-like-one",
+      "title": "Graph traversals and time travel: incident response in one query language",
+      "summary": "Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.",
+      "publishDate": "2026-07-15T13:04:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/9qcg3iouf6k67fi74zcg1rum.auto",
+      "source": "https://surrealdb.com/blog/your-asset-inventory-is-a-graph-query-it-like-one",
+      "local_path": "2026/07/your-asset-inventory-is-a-graph-query-it-like-one.md"
+    },
     {
       "slug": "one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate",
       "title": "One query, not two stores: how vector + graph in SurrealDB makes agents more accurate",

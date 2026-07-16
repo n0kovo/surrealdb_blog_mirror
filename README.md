@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-07-15 08:02 UTC_
+_Last updated: 2026-07-16 08:07 UTC_
 
 ## Stats
 
-- **Total posts:** 242
+- **Total posts:** 243
 - **First post:** 2022-07-20
-- **Latest post:** 2026-07-14
+- **Latest post:** 2026-07-15
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-07-15 08:02 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 47 posts
+- [2026](posts/years/2026.md) — 48 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -34,10 +34,12 @@ _Last updated: 2026-07-15 08:02 UTC_
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 109 posts
 - [releases](posts/categories/releases.md) — 49 posts
-- [tutorials](posts/categories/tutorials.md) — 92 posts
+- [tutorials](posts/categories/tutorials.md) — 93 posts
 
 ## Latest posts
 
+- **2026-07-15** · [Graph traversals and time travel: incident response in one query language](posts/2026/07/your-asset-inventory-is-a-graph-query-it-like-one.md)  
+  `tutorials` — Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.
 - **2026-07-14** · [One query, not two stores: how vector + graph in SurrealDB makes agents more accurate](posts/2026/07/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate.md)  
   `ai` `tutorials` — Vector search and graph traversal in a single SurrealDB query — no fusion code, no two-store sync. How single-engine hybrid retrieval makes RAG agents more accurate.
 - **2026-07-09** · [Generating embeddings inside SurrealQL with a custom function](posts/2026/07/generating-embeddings-inside-surrealql-with-a-custom-function.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-07-15 08:02 UTC_
   `releases` — Announcing the native SurrealDB connector for CocoIndex — build a continuously-fresh document store, knowledge graph, and vector index in a single database, from one declarative pipeline.
 - **2026-06-19** · [Deterministic simulation testing and its use at SurrealDB](posts/2026/06/deterministic-simulation-testing-and-its-use-at-surrealdb.md)  
   `engineering` — How deterministic simulation works from easy to complex scenarios, and its ussage at SurrealDB's transactional key-value store and embedded key-value engine.
-- **2026-06-16** · [What's new in Surrealist 3.9](posts/2026/06/whats-new-in-surrealist-3-9.md)  
-  `featured` `releases` — Surrealist 3.9 introduces a complete design overhaul, a new datasets browser and data manager, and loads of other enhancements.

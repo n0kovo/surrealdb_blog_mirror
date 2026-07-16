@@ -5,12 +5,14 @@ generated: stub
 
 # Patterns
 
-_Auto-generated index — 6 pages._
+_Auto-generated index — 7 pages._
 
 ## Pages
 
 - [Adding memory to an existing app](adding-memory-to-existing-app.md)
   Introduce turns without replacing your LLM client.
+- [Event-driven game client](event-driven-game-client.md)
+  Pipe RPG or simulation events into Spectron with epistemic labels and careful extraction.
 - [Knowledge-grounded agents](knowledge-grounded-agents.md)
   Combine authoritative knowledge retrieval with experiential memory.
 - [Reflection loops](reflection-loops.md)

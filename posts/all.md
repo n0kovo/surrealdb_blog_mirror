@@ -1,8 +1,10 @@
 # All Posts
 
-_242 posts_  
+_243 posts_  
 [← Index](../README.md)
 
+- **2026-07-15** · [Graph traversals and time travel: incident response in one query language](2026/07/your-asset-inventory-is-a-graph-query-it-like-one.md)  
+  `tutorials` — Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.
 - **2026-07-14** · [One query, not two stores: how vector + graph in SurrealDB makes agents more accurate](2026/07/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate.md)  
   `ai` `tutorials` — Vector search and graph traversal in a single SurrealDB query — no fusion code, no two-store sync. How single-engine hybrid retrieval makes RAG agents more accurate.
 - **2026-07-09** · [Generating embeddings inside SurrealQL with a custom function](2026/07/generating-embeddings-inside-surrealql-with-a-custom-function.md)  

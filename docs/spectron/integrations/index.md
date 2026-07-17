@@ -13,10 +13,12 @@ The REST surface is described by an OpenAPI specification. The Python, TypeScrip
 
 ## MCP server (coding assistants)
 
-Native MCP at `/mcp` on the api port, with the same **`Authorization: Bearer`** auth as REST. Prefer this when the client already speaks MCP.
+Native MCP at `/mcp` on the api port, with the same **`Authorization: Bearer`** auth as REST. Prefer this when the client already speaks MCP. Point the client at your instance's `/mcp` endpoint, or install it with [`install-mcp`](https://github.com/supermemoryai/install-mcp):
 
 ```bash
-spectron mcp
+npx install-mcp https://<your-context-host>/mcp \
+  --client cursor \
+  --header "Authorization: Bearer <your-api-key>" --oauth no
 ```
 
 → [MCP server install](mcp-server/install.md) · Per-client guides: [Claude](mcp-server/coding-assistants/claude-desktop-and-code.md) · [Cursor](mcp-server/coding-assistants/cursor.md) · [VS Code](mcp-server/coding-assistants/vscode.md) · [JetBrains](mcp-server/coding-assistants/jetbrains.md) · [Zed](mcp-server/coding-assistants/zed.md) · [Windsurf](mcp-server/coding-assistants/windsurf.md) · [Codex](mcp-server/coding-assistants/codex.md) · [Antigravity](mcp-server/coding-assistants/antigravity.md) · [OpenCode](mcp-server/coding-assistants/opencode.md)
@@ -42,7 +44,7 @@ Call Spectron directly from application code.
 
 Drop-in memory for the popular TypeScript AI SDKs, with recall and storage wrapped around your model calls.
 
-- **Vercel AI SDK**: `@surrealdb/vercel-ai`, via `wrapLanguageModel` middleware and a tool set.
+- **Vercel AI SDK**: `@surrealdb/spectron-vercel-ai`, via `wrapLanguageModel` middleware and a tool set.
 - **TanStack AI**: the `@surrealdb/spectron` client in TanStack Start server routes.
 - **Cloudflare Workers AI**: the client inside a Worker, alongside Workers AI models.
 
@@ -55,13 +57,13 @@ Harness adapters expose Spectron as agent tools and add automatic per-turn memor
 | Framework | Package | Language |
 | --- | --- | --- |
 | LangChain / LangGraph | `@surrealdb/langchain`, `@surrealdb/langgraph` | TypeScript |
-| CrewAI | `spectron-crewai` | Python |
-| OpenAI Agents SDK | `spectron-openai-agents` | Python |
+| CrewAI | `spectron-crew-ai` | Python |
+| OpenAI Agents SDK | `spectron-openai-agents-sdk` | Python |
 | Pydantic AI | `spectron-pydantic-ai` | Python |
 | Google ADK | `spectron-google-adk` | Python |
-| Strands Agents | `spectron-strands` | Python |
+| Strands Agents | `spectron-strands-agents` | Python |
 | Mastra | `@surrealdb/mastra-ai` | TypeScript |
-| Hermes Agent | `spectron-hermes-agent` | Python |
+| Hermes Agent | `spectron-hermes` | Python |
 | OpenClaw | `@surrealdb/spectron-openclaw` | TypeScript |
 | Eve | `@surrealdb/spectron-eve` | TypeScript |
 

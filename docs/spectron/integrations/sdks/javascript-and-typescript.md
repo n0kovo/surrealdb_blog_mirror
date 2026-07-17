@@ -146,7 +146,7 @@ The default timeout is 30,000 ms; streaming chat disables the read timeout while
 ## Vercel AI SDK adapter
 
 ```bash
-npm install @surrealdb/vercel-ai
+npm install @surrealdb/spectron-vercel-ai
 ```
 
 → [Vercel AI SDK](../ai-sdks/vercel-ai-sdk.md)

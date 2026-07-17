@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 # Vercel AI SDK
 
-`@surrealdb/vercel-ai` integrates Spectron with the [Vercel AI SDK](https://ai-sdk.dev). Keep using your own model provider (`@ai-sdk/openai`, `@ai-sdk/anthropic`, and so on) with `generateText` / `streamText`, and let Spectron transparently:
+`@surrealdb/spectron-vercel-ai` integrates Spectron with the [Vercel AI SDK](https://ai-sdk.dev). Keep using your own model provider (`@ai-sdk/openai`, `@ai-sdk/anthropic`, and so on) with `generateText` / `streamText`, and let Spectron transparently:
 
 - **inject** relevant long-term memory (and the user's profile) into the prompt before generation, and
 - **store** each user and assistant exchange afterwards,
@@ -19,7 +19,7 @@ The API is `createSpectron()` → `.middleware()` / `.tools()`.
 ## Installation
 
 ```bash
-npm i @surrealdb/vercel-ai ai @surrealdb/spectron
+npm i @surrealdb/spectron-vercel-ai ai @surrealdb/spectron
 # plus your model provider, e.g.
 npm i @ai-sdk/openai
 ```

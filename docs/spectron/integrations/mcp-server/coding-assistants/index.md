@@ -12,7 +12,7 @@ _Auto-generated index — 9 pages._
 - [Antigravity](antigravity.md)
   Installing Spectron as an MCP server in Google Antigravity.
 - [Claude](claude-desktop-and-code.md)
-  Installing Spectron as an MCP server in Claude Desktop and Claude Code.
+  Connecting Spectron to Claude Code, Cowork, and Claude Desktop.
 - [Codex](codex.md)
   Installing Spectron as an MCP server in the OpenAI Codex CLI.
 - [Cursor](cursor.md)

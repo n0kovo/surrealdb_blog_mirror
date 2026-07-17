@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 Spectron exposes its memory operations as [Strands Agents](https://strandsagents.com) tools, so any Strands agent can store and retrieve long-term memory with a single line of setup.
 
-Package: **`spectron-strands`** (PyPI). It pulls in `strands-agents` and `surrealdb` (which provides the Spectron client).
+Package: **`spectron-strands-agents`** (PyPI). It pulls in `strands-agents` and `surrealdb` (which provides the Spectron client).
 
 ```python
 from strands import Agent
@@ -24,13 +24,13 @@ print(agent("What is the value of the Meditech Solutions contract?"))
 ## Installation
 
 ```bash
-pip install spectron-strands
+pip install spectron-strands-agents
 ```
 
 To run the examples with Amazon Bedrock (Strands' default model provider):
 
 ```bash
-pip install "spectron-strands[bedrock]"
+pip install "spectron-strands-agents[bedrock]"
 ```
 
 Requires Python 3.10+.

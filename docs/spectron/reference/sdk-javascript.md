@@ -86,7 +86,7 @@ Python names `query_context` as `context` here. Python exposes `whoami()` and `k
 ## Harness adapter
 
 ```bash
-npm install @surrealdb/vercel-ai
+npm install @surrealdb/spectron-vercel-ai
 ```
 
 → [Vercel AI SDK](../integrations/ai-sdks/vercel-ai-sdk.md)

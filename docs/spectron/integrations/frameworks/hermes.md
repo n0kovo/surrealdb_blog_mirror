@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 Spectron is a memory provider for the [Hermes Agent](https://github.com/NousResearch/hermes-agent). Once installed and selected, the agent recalls relevant memories before each turn, writes each completed turn back to Spectron asynchronously, and consolidates memory when a session ends. It also gains explicit memory tools it can call directly.
 
-Package: **`spectron-hermes-agent`** (PyPI). It pulls in the Spectron SDK (`surrealdb[spectron]`) and registers the plugin with Hermes through the `hermes_agent.plugins` entry point.
+Package: **`spectron-hermes`** (PyPI). It pulls in the SurrealDB SDK (`surrealdb` v3, which bundles Spectron) and registers the plugin with Hermes through the `hermes_agent.plugins` entry point.
 
 ## Requirements
 
@@ -20,7 +20,7 @@ Package: **`spectron-hermes-agent`** (PyPI). It pulls in the Spectron SDK (`surr
 ## Installation
 
 ```bash
-pip install spectron-hermes-agent
+pip install spectron-hermes
 ```
 
 ## Environment

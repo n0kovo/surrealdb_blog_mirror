@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 Spectron gives [CrewAI](https://www.crewai.com/) agents persistent, provenance-first memory. The integration offers two approaches that compose: tools an agent calls explicitly, and automatic memory that recalls before each task, writes back after it, and consolidates when the crew finishes, without changing your agents or tasks.
 
-Package: **`spectron-crewai`** (PyPI). It pulls in CrewAI and the Spectron SDK (`surrealdb[spectron]`).
+Package: **`spectron-crew-ai`** (PyPI). It pulls in CrewAI and the SurrealDB SDK (`surrealdb` v3, which bundles Spectron).
 
 ## Requirements
 
@@ -20,7 +20,7 @@ Package: **`spectron-crewai`** (PyPI). It pulls in CrewAI and the Spectron SDK (
 ## Installation
 
 ```bash
-pip install spectron-crewai
+pip install spectron-crew-ai
 ```
 
 ## Environment

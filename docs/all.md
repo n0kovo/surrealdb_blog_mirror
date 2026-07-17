@@ -2033,7 +2033,7 @@ _1097 pages_
 - [Antigravity](spectron/integrations/mcp-server/coding-assistants/antigravity.md)
   Installing Spectron as an MCP server in Google Antigravity.
 - [Claude](spectron/integrations/mcp-server/coding-assistants/claude-desktop-and-code.md)
-  Installing Spectron as an MCP server in Claude Desktop and Claude Code.
+  Connecting Spectron to Claude Code, Cowork, and Claude Desktop.
 - [Codex](spectron/integrations/mcp-server/coding-assistants/codex.md)
   Installing Spectron as an MCP server in the OpenAI Codex CLI.
 - [Cursor](spectron/integrations/mcp-server/coding-assistants/cursor.md)

@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 This guide takes you from a blank terminal to your first **remember** and **recall** calls against **Spectron on SurrealDB Cloud**. Cloud runs the Spectron data plane, SurrealDB, and object store per context — you do not provision infrastructure yourself.
 
 > [!NOTE]
-> Spectron contexts are created in **[Surrealist](https://surrealdb.com/surrealist)** (organisation → **Contexts**). See the [Surrealist dashboard quickstart](https://surrealdb.com/docs/spectron/quickstarts/surrealist-dashboard) for UI setup, billing, and API keys. This page assumes you already have a **context host**, **context id**, and **API key** from the **API keys** view.
+> Spectron contexts are created in **[Surrealist](https://surrealdb.com/surrealist)** (organisation → **Contexts**). See [Spectron on SurrealDB Cloud](https://surrealdb.com/docs/spectron/quickstarts/surrealdb-cloud) for context setup and API keys. This page assumes you already have a **context host**, **context id**, and **API key** from the **API keys** view.
 
 ## Step 1 — Create a Context and API key (Surrealist)
 
@@ -108,7 +108,6 @@ For Docker or bare-metal deployment, see [Self-hosted quickstart](https://surrea
 ## Next steps
 
 - [Spectron on SurrealDB Cloud](https://surrealdb.com/docs/spectron/quickstarts/surrealdb-cloud) — Cloud API vs data plane
-- [Surrealist dashboard quickstart](https://surrealdb.com/docs/spectron/quickstarts/surrealist-dashboard) — UI tour
 - [Sessions and turns](https://surrealdb.com/docs/spectron/mental-model/sessions-and-turns)
 - [Contexts and scope](https://surrealdb.com/docs/spectron/mental-model/contexts-and-scope)
 - [Uploading documents](../../agent-memory/ingest/authoritative/uploading-documents.md)

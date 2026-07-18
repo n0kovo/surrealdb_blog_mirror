@@ -32,7 +32,6 @@ What Spectron is built to do, what it is not, and how retrieval, traces, and tim
 
 **Quickstarts**
 
-- **[Surrealist dashboard quickstart](https://surrealdb.com/docs/spectron/quickstarts/surrealist-dashboard)** – Spectron contexts on SurrealDB Cloud.
 - **[Spectron on SurrealDB Cloud](https://surrealdb.com/docs/spectron/quickstarts/surrealdb-cloud)** – Cloud API vs data plane and organisation roles.
 - **[Hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/hosted)** – Spectron Cloud, API key, first remember and recall.
 - **[Self-hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/self-hosted)** – Docker Compose and your first remember/recall calls.

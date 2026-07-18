@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1097 pages_  
+_1096 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -1980,8 +1980,6 @@ _1097 pages_
   Run Spectron with Docker Compose and make your first remember and recall calls.
 - [Spectron on SurrealDB Cloud](spectron/index/quickstarts/surrealdb-cloud.md)
   How Spectron contexts, authentication, and APIs work on SurrealDB Cloud versus self-hosted deployments.
-- [Surrealist dashboard quickstart](spectron/index/quickstarts/surrealist-dashboard.md)
-  Create a Spectron context in Surrealist, try the Playground, inspect memory, upload documents, mint API keys, and integrate with the Spectron data plane.
 - [The accuracy promise](spectron/index/welcome/accuracy-promise.md)
   Defensible correctness – provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
 - [How it works in five minutes](spectron/index/welcome/how-it-works.md)

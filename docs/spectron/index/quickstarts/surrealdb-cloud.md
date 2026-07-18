@@ -41,7 +41,7 @@ Admin proxy routes return **403** for members. See [API keys and delegation](../
 | Integration snippets (SDK, REST, MCP, frameworks) | Yes |
 | Settings — users, configuration, usage | Admins and owners |
 
-For a UI tour, see [Surrealist dashboard quickstart](https://surrealdb.com/docs/spectron/quickstarts/surrealist-dashboard). For terminal-first **remember** / **recall**, see [Hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/hosted).
+For terminal-first **remember** / **recall**, see [Hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/hosted).
 
 ## Scope on Cloud
 
@@ -60,6 +60,5 @@ Data-plane **scope** uses hierarchical slash paths — for example `[["org/acme/
 ## Related reading
 
 - [Hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/hosted)
-- [Surrealist dashboard quickstart](https://surrealdb.com/docs/spectron/quickstarts/surrealist-dashboard)
 - [Contexts and scope](https://surrealdb.com/docs/spectron/mental-model/contexts-and-scope)
 - [REST API](../../reference/rest-api.md)

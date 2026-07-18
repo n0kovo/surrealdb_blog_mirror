@@ -9,6 +9,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 These functions can be used when opening and submitting remote web requests, and webhooks.
 
+> [!IMPORTANT]
+> All `http::*` functions require network capabilities, which are **denied by default**. Start the server with `--allow-net` (optionally scoped to specific targets); otherwise calls fail with `Access to network target '…' is not allowed` (verified on v3.2.0). See [Capabilities](https://surrealdb.com/docs/learn/security/capabilities).
+
 <table>
   <thead>
     <tr>

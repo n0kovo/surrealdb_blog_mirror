@@ -34,7 +34,6 @@ What Spectron is built to do, what it is not, and how retrieval, traces, and tim
 
 - **[Spectron on SurrealDB Cloud](https://surrealdb.com/docs/spectron/quickstarts/surrealdb-cloud)** – Cloud API vs data plane and organisation roles.
 - **[Hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/hosted)** – Spectron Cloud, API key, first remember and recall.
-- **[Self-hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/self-hosted)** – Docker Compose and your first remember/recall calls.
 - **[Embedded library](https://surrealdb.com/docs/spectron/quickstarts/embedded)** – HTTP, MCP, and SDK integration surfaces.
 
 **Building with AI coding tools?** Start with **[Agent guide (AGENTS.md)](../reference/agents.md)** — copy it into Cursor rules or a project skill so your agent can learn Spectron without reading the full docs.

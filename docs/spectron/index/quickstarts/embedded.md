@@ -25,6 +25,6 @@ There is **no** supported in-process API that runs extraction and recall inside 
 | Python / TypeScript agent | [Python](../../integrations/sdks/python.md) or [JavaScript SDK](../../integrations/sdks/javascript-and-typescript.md) |
 | Coding assistant | [MCP install](../../integrations/mcp-server/install.md) |
 | LangChain / Vercel AI / OpenAI Agents | [Framework adapters](../../integrations/frameworks/langchain.md) |
-| Self-hosted stack | [Self-hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/self-hosted) or [Docker](../../self-hosting/deployment/docker.md) |
+| Hosted Spectron | [Hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/hosted) |
 
 See also [Embedded library](../../integrations/surfaces/embedded-library.md) for Rust-specific notes.

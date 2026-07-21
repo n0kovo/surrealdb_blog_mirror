@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1096 pages_  
+_1095 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -605,7 +605,7 @@ _1096 pages_
 - [Capabilities](learn/security/authorization/capabilities.md)
   SurrealDB is secure by default and is suitable for all database use cases. It offers powerful features like scripting, functions or network access from within your SurrealQL queries.
 - [Permissions & row-level security](learn/security/authorization/permissions-and-row-level-security.md)
-  How SurrealDB's PERMISSIONS clause on tables and fields controls create, select, update, and delete, including row-level and field-level rules using $auth.
+  How SurrealDB's PERMISSIONS clause on tables and fields controls create, select, update, and delete, including per-record and field-level rules using $auth.
 - [Tokens & JWTs](learn/security/authorization/tokens-and-jwts.md)
   How SurrealDB authenticates clients with JWTs, DEFINE ACCESS TYPE JWT, symmetric and asymmetric verification, claims as session variables, and RECORD access for database-managed sign-in.
 - [Security best practices](learn/security/best-practices/security-best-practices.md)
@@ -1976,8 +1976,6 @@ _1096 pages_
   Integration surfaces for Spectron.
 - [Hosted quickstart](spectron/index/quickstarts/hosted.md)
   Get up and running with Spectron on SurrealDB Cloud in five minutes.
-- [Self-hosted quickstart](spectron/index/quickstarts/self-hosted.md)
-  Run Spectron with Docker Compose and make your first remember and recall calls.
 - [Spectron on SurrealDB Cloud](spectron/index/quickstarts/surrealdb-cloud.md)
   How Spectron contexts, authentication, and APIs work on SurrealDB Cloud versus self-hosted deployments.
 - [The accuracy promise](spectron/index/welcome/accuracy-promise.md)

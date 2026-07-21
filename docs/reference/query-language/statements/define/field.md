@@ -753,7 +753,7 @@ DEFINE FIELD OVERWRITE example ON TABLE user TYPE string;
 
 ## Setting permissions on fields
 
-By default, the permissions on a field will be set to FULL unless otherwise specified.
+By default, the permissions on a field will be set to `FULL` unless otherwise specified. The table is the main access gate, while field permissions only narrow further when you need to (for example, when hiding a password). With `FULL`, a field follows the [table](table.md#defining-permissions)'s rules without adding its own. Tables default the other way: omitting table `PERMISSIONS` in a `DEFINE` statement stores `PERMISSIONS NONE`.
 
 ```surql
 /**[test]
@@ -783,6 +783,8 @@ INFO FOR TABLE some_table;
 ```
 
 You can set permissions on fields to control who can perform operations on them using the `PERMISSIONS` clause. The `PERMISSIONS` clause can be used to set permissions for `SELECT`, `CREATE`, and `UPDATE` operations. The `DELETE` operation only relates to records and, as such, is not available for fields.
+
+Like table permissions, field permissions apply to [record users](../../../../learn/security/authentication/authentication.md#record-users) (and guests when enabled), not to system users.
 
 ```surql
 /**[test]

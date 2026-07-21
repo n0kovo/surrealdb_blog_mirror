@@ -7,6 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/e
 
 # Frequently Asked Questions
 
-We want to make Surrealist the best database client for SurrealDB. If you have any questions, please reach out to us on [Discord](https://discord.com/invite/surrealdb) or [GitHub](https://github.com/surrealdb/surrealist).
+We want to make Surrealist the best database client for SurrealDB. If you have any questions, please [join our Discord](https://discord.com/invite/surrealdb) (the `#surrealist` channel is a good place to start) or reach out on [GitHub](https://github.com/surrealdb/surrealist).
 
 For more specific questions about SurrealDB, please refer to the [SurrealDB FAQs](https://surrealdb.com/docs/start).

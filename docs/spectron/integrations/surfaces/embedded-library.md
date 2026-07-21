@@ -25,4 +25,4 @@ Deploy **`spectrond`** with [Docker](../../self-hosting/deployment/docker.md) an
 ## Related
 
 - [Embedded quickstart](https://surrealdb.com/docs/spectron/quickstarts/embedded)
-- [Self-hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/self-hosted)
+- [Hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/hosted)

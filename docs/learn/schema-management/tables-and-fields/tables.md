@@ -23,7 +23,7 @@ CREATE doesnt_exist;
 SELECT * FROM doesnt_exist;
 ```
 
-`DEFINE TABLE` can also set high-level rules, such as whether new fields are allowed without a definition, whether rows are normal documents or graph edges, whether the table is a pre-computed view, and who may select / create / update / delete.
+`DEFINE TABLE` can also set high-level rules, such as whether new fields are allowed without a definition, whether records are normal documents or graph edges, whether the table is a pre-computed view, and who may select / create / update / delete.
 
 Individual columns still use [`DEFINE FIELD`](../../../reference/query-language/statements/define/field.md); the table statement does not replace that.
 
@@ -126,7 +126,9 @@ SELECT * FROM avg_product_review;
 
 ## Defining permissions
 
-By default, the permissions on a table will be set to NONE unless otherwise specified.
+Table `PERMISSIONS` control what [record users](../../security/authentication/authentication.md#record-users) (and [guests](../../security/authorization/capabilities.md#guest-access), when guest access is enabled) may do with records in that table. They do not restrict [system users](../../security/authentication/authentication.md#system-users) at the root, namespace, or database level, as those users are governed by roles instead.
+
+If you omit the clause, SurrealDB will default to `PERMISSIONS NONE` which denies `SELECT`, `CREATE`, `UPDATE`, and `DELETE` for record users until you grant access explicitly. The opposite shorthand is `PERMISSIONS FULL`, which allows all four operations.
 
 ```surql
 CREATE some_table;
@@ -151,7 +153,7 @@ INFO FOR DB;
 }
 ```
 
-The following shows how to set table level `PERMISSIONS` using the `DEFINE TABLE` statement. This allows you to set independent permissions for selecting, creating, updating, and deleting data.
+You can also set independent rules for selecting, creating, updating, and deleting data. Each `FOR` clause is a SurrealQL expression evaluated in the context of the current authentication (often using the [`$auth`](../../security/authorization/permissions-and-row-level-security.md) parameter which is set when a record user authenticates).
 
 ```surql
 -- Specify access permissions for the 'post' table
@@ -172,6 +174,8 @@ DEFINE TABLE post SCHEMALESS
 			OR $auth.admin = true
 ;
 ```
+
+Field permissions work the same way but default to `PERMISSIONS FULL` instead of `NONE`. The table is the main access gate, while field permissions only narrow further when you need to (for example hiding a password). With `FULL`, a field follows the table's rules without adding its own. See [Setting permissions on fields](fields-and-validation.md#setting-permissions-on-fields) and [Permissions & row-level security](../../security/authorization/permissions-and-row-level-security.md).
 
 ## Table with specialized `TYPE` clause
 

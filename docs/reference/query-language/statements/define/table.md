@@ -489,7 +489,9 @@ Also note that table views are not triggered when importing data.
 
 ## Defining permissions
 
-By default, the permissions on a table will be set to NONE unless otherwise specified.
+Table `PERMISSIONS` control what [record users](../../../../learn/security/authentication/authentication.md#record-users) (and [guests](../../../../learn/security/authorization/capabilities.md#guest-access), when guest access is enabled) may do with records in that table. They do not restrict [system users](../../../../learn/security/authentication/authentication.md#system-users) at the root, namespace, or database level, as those users are governed by roles instead.
+
+If you omit the clause, SurrealDB stores `PERMISSIONS NONE`. That denies `SELECT`, `CREATE`, `UPDATE`, and `DELETE` for record users until you grant access explicitly. The opposite shorthand is `PERMISSIONS FULL`, which allows all four operations.
 
 ```surql
 /**[test]
@@ -527,7 +529,7 @@ INFO FOR DB;
 }
 ```
 
-The following shows how to set table level `PERMISSIONS` using the `DEFINE TABLE` statement. This allows you to set independent permissions for selecting, creating, updating, and deleting data.
+You can also set independent rules for selecting, creating, updating, and deleting data. Each `FOR` clause is a SurrealQL expression evaluated in the context of the current authentication (often using [`$auth`](../../../../learn/security/authorization/permissions-and-row-level-security.md)).
 
 ```surql
 /**[test]
@@ -555,6 +557,8 @@ DEFINE TABLE post SCHEMALESS
 			OR $auth.admin = true
 ;
 ```
+
+Field permissions work the same way but default to `PERMISSIONS FULL` instead of `NONE`. This is because the table is the main access gate, while field permissions only narrow further when you need to (for example hiding a password). With `FULL`, a field follows the table's rules without adding its own. See [`DEFINE FIELD`](field.md#setting-permissions-on-fields) and [Permissions & row-level security](../../../../learn/security/authorization/permissions-and-row-level-security.md).
 
 ## Using `IF NOT EXISTS` clause
 

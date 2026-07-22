@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-07-21 08:22 UTC_
+_Last updated: 2026-07-22 08:22 UTC_
 
 ## Stats
 
-- **Total posts:** 243
+- **Total posts:** 244
 - **First post:** 2022-07-20
-- **Latest post:** 2026-07-15
+- **Latest post:** 2026-07-21
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-07-21 08:22 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 48 posts
+- [2026](posts/years/2026.md) — 49 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -27,17 +27,19 @@ _Last updated: 2026-07-21 08:22 UTC_
 
 ### By category
 
-- [ai](posts/categories/ai.md) — 41 posts
+- [ai](posts/categories/ai.md) — 42 posts
 - [community](posts/categories/community.md) — 35 posts
 - [company](posts/categories/company.md) — 41 posts
 - [engineering](posts/categories/engineering.md) — 41 posts
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 109 posts
 - [releases](posts/categories/releases.md) — 49 posts
-- [tutorials](posts/categories/tutorials.md) — 93 posts
+- [tutorials](posts/categories/tutorials.md) — 94 posts
 
 ## Latest posts
 
+- **2026-07-21** · [Modelling a financial services enterprise ontology in SurrealDB](posts/2026/07/modelling-a-financial-services-enterprise-ontology-in-surrealdb.md)  
+  `ai` `tutorials` — Model a financial services ontology in SurrealDB: map ownership, custody, and transactions as a graph and resolve beneficial-ownership chains in one query.
 - **2026-07-15** · [Graph traversals and time travel: incident response in one query language](posts/2026/07/your-asset-inventory-is-a-graph-query-it-like-one.md)  
   `tutorials` — Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.
 - **2026-07-14** · [One query, not two stores: how vector + graph in SurrealDB makes agents more accurate](posts/2026/07/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-07-21 08:22 UTC_
   `tutorials` `featured` `ai` — Connect SurrealDB to Lovable using the Model Context Protocol (MCP), so the Lovable Agent can read your schema, query your live data, and build a working application on top of it without you writing any glue code.
 - **2026-06-22** · [A living knowledge layer for your agents: SurrealDB + CocoIndex](posts/2026/06/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex.md)  
   `releases` — Announcing the native SurrealDB connector for CocoIndex — build a continuously-fresh document store, knowledge graph, and vector index in a single database, from one declarative pipeline.
-- **2026-06-19** · [Deterministic simulation testing and its use at SurrealDB](posts/2026/06/deterministic-simulation-testing-and-its-use-at-surrealdb.md)  
-  `engineering` — How deterministic simulation works from easy to complex scenarios, and its ussage at SurrealDB's transactional key-value store and embedded key-value engine.

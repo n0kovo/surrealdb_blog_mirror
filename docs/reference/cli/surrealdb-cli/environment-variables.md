@@ -313,6 +313,30 @@ Used by the built-in [Model Context Protocol](../../../build/ai-agents/mcp.md) s
       <td scope="row" data-label="Allowed values">A positive integer</td>
       <td scope="row" data-label="Notes">Maximum top-level keys in MCP parameter / data objects.</td>
     </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MCP_PARAMS_MAX_QL_BYTES`</td>
+      <td scope="row" data-label="Default">4,096 (4 KiB)</td>
+      <td scope="row" data-label="Allowed values">A positive integer; values ≤ 0 fall back to the default</td>
+      <td scope="row" data-label="Notes">Maximum byte length of a single `$ql` SurrealQL pass-through string inside a `*_data` payload.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MCP_SCHEMA_RESOURCE_MAX_TABLES`</td>
+      <td scope="row" data-label="Default">200</td>
+      <td scope="row" data-label="Allowed values">A positive integer; values ≤ 0 fall back to the default</td>
+      <td scope="row" data-label="Notes">Maximum tables the database-level schema resource enriches with per-table fields / indexes / events. Tables beyond the cap keep a bare `DEFINE TABLE` and the body includes a `tables_truncated_at` marker.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MCP_ALLOWED_HOSTS` *Since v3.2.1*</td>
+      <td scope="row" data-label="Default">loopback only (`localhost`, `127.0.0.1`, `::1`)</td>
+      <td scope="row" data-label="Allowed values">Comma-separated exact hostnames</td>
+      <td scope="row" data-label="Notes">Hostnames accepted in the HTTP `Host` header for `/mcp` (DNS-rebinding guard). A non-empty list <strong>replaces</strong> the loopback default, so include `localhost` yourself if you still need it. Entries without a port match any port. Ignored when `SURREAL_MCP_ALLOW_ALL_HOSTS` is set.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MCP_ALLOW_ALL_HOSTS` *Since v3.2.1*</td>
+      <td scope="row" data-label="Default">`false`</td>
+      <td scope="row" data-label="Allowed values">`true` / `1` to enable</td>
+      <td scope="row" data-label="Notes">Disables the `Host`-header allowlist (accept any `Host`). Escape hatch for a trusted proxy or load balancer. Takes precedence over `SURREAL_MCP_ALLOWED_HOSTS`.</td>
+    </tr>
   </tbody>
 </table>
 

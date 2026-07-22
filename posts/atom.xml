@@ -4,10 +4,20 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-07-15T13:04:00Z</updated>
+  <updated>2026-07-21T13:05:00Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/modelling-a-financial-services-enterprise-ontology-in-surrealdb</id>
+    <title>Modelling a financial services enterprise ontology in SurrealDB</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/modelling-a-financial-services-enterprise-ontology-in-surrealdb" type="text/html" />
+    <published>2026-07-21T13:05:00Z</published>
+    <updated>2026-07-21T13:05:00Z</updated>
+    <summary type="text">Model a financial services ontology in SurrealDB: map ownership, custody, and transactions as a graph and resolve beneficial-ownership chains in one query.</summary>
+    <category term="ai" />
+    <category term="tutorials" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/your-asset-inventory-is-a-graph-query-it-like-one</id>
     <title>Graph traversals and time travel: incident response in one query language</title>
@@ -485,15 +495,5 @@
     <summary type="text">Now you can learn SurrealDB by building your own database that takes advantage of its multi-model capabilities to store and query over 100 of the world's most popular movies.</summary>
     <category term="featured" />
     <category term="tutorials" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/agents-with-memory-how-agno-and-surrealdb-enable-reliable-ai-systems</id>
-    <title>Agents with memory: how Agno and SurrealDB enable reliable AI systems</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/agents-with-memory-how-agno-and-surrealdb-enable-reliable-ai-systems" type="text/html" />
-    <published>2025-12-17T00:00:00Z</published>
-    <updated>2025-12-17T00:00:00Z</updated>
-    <summary type="text">Highlights from our Agno x SurrealDB livestream on building reliable, context-rich agents with a strong memory layer.</summary>
-    <category term="featured" />
-    <category term="ai" />
   </entry>
 </feed>

@@ -1,8 +1,10 @@
 # Category: tutorials
 
-_93 posts_  
+_94 posts_  
 [← Index](../../README.md)
 
+- **2026-07-21** · [Modelling a financial services enterprise ontology in SurrealDB](../2026/07/modelling-a-financial-services-enterprise-ontology-in-surrealdb.md)  
+  `ai` `tutorials` — Model a financial services ontology in SurrealDB: map ownership, custody, and transactions as a graph and resolve beneficial-ownership chains in one query.
 - **2026-07-15** · [Graph traversals and time travel: incident response in one query language](../2026/07/your-asset-inventory-is-a-graph-query-it-like-one.md)  
   `tutorials` — Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.
 - **2026-07-14** · [One query, not two stores: how vector + graph in SurrealDB makes agents more accurate](../2026/07/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate.md)  

@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-07-21T08:22:04.209996+00:00",
-  "count": 243,
+  "generated_at": "2026-07-22T08:22:08.106615+00:00",
+  "count": 244,
   "posts": [
+    {
+      "slug": "modelling-a-financial-services-enterprise-ontology-in-surrealdb",
+      "title": "Modelling a financial services enterprise ontology in SurrealDB",
+      "summary": "Model a financial services ontology in SurrealDB: map ownership, custody, and transactions as a graph and resolve beneficial-ownership chains in one query.",
+      "publishDate": "2026-07-21T13:05:00.000Z",
+      "categories": [
+        "ai",
+        "tutorials"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/pocrvud0xxcevqoxkv9y9a9d.auto",
+      "source": "https://surrealdb.com/blog/modelling-a-financial-services-enterprise-ontology-in-surrealdb",
+      "local_path": "2026/07/modelling-a-financial-services-enterprise-ontology-in-surrealdb.md"
+    },
     {
       "slug": "your-asset-inventory-is-a-graph-query-it-like-one",
       "title": "Graph traversals and time travel: incident response in one query language",

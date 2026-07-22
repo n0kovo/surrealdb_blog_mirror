@@ -42,4 +42,4 @@ Database tuning flags from `surreal start` are also available via the shared `db
 
 ## Limits
 
-Process-wide MCP limits use the `SURREAL_MCP_*` variables documented in [Environment variables](../environment-variables.md) and on [MCP for AI agents](../../../../build/ai-agents/mcp.md#configuration).
+Process-wide MCP limits use the `SURREAL_MCP_*` variables documented in [Environment variables](../environment-variables.md) and on [MCP for AI agents](../../../../build/ai-agents/mcp.md#configuration). For HTTP `/mcp` on a non-loopback hostname, set `SURREAL_MCP_ALLOWED_HOSTS` (or `SURREAL_MCP_ALLOW_ALL_HOSTS` behind a trusted proxy). See those pages for details.

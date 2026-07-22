@@ -1,8 +1,10 @@
 # Category: ai
 
-_41 posts_  
+_42 posts_  
 [← Index](../../README.md)
 
+- **2026-07-21** · [Modelling a financial services enterprise ontology in SurrealDB](../2026/07/modelling-a-financial-services-enterprise-ontology-in-surrealdb.md)  
+  `ai` `tutorials` — Model a financial services ontology in SurrealDB: map ownership, custody, and transactions as a graph and resolve beneficial-ownership chains in one query.
 - **2026-07-14** · [One query, not two stores: how vector + graph in SurrealDB makes agents more accurate](../2026/07/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate.md)  
   `ai` `tutorials` — Vector search and graph traversal in a single SurrealDB query — no fusion code, no two-store sync. How single-engine hybrid retrieval makes RAG agents more accurate.
 - **2026-07-09** · [Generating embeddings inside SurrealQL with a custom function](../2026/07/generating-embeddings-inside-surrealql-with-a-custom-function.md)  

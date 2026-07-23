@@ -25,16 +25,32 @@ The server is actively running, and can be left alone until you want to stop hos
 
 ## Running queries
 
-To run a SurrealQL query, open up a new terminal window and run the [`surreal sql`](../../../../reference/cli/surrealdb-cli/commands/sql.md) command. You will now be connected to the server and able to follow up with a query. For example, to run a simple `SELECT` query, you can run the following command:
+Open a second terminal and connect with [`surreal sql`](../../../../reference/cli/surrealdb-cli/commands/sql.md). You can stay in the interactive REPL, or pipe a one-shot query.
 
-```bash title="Start a SurrealDB Shell with local endpoint"
-surreal sql --endpoint http://localhost:8000 --ns main --db main
+To open a REPL:
+
+```bash title="Start a SurrealDB shell (local endpoint)"
+surreal sql --endpoint http://localhost:8000 --ns main --db main --user root --pass secret --pretty
 ```
 
-```bash title="Start a SurrealDB Shell with memory endpoint"
-## Run query in memory
-surreal sql --endpoint memory --ns main --db main
+```bash title="Start a SurrealDB shell (in-memory)"
+surreal sql --endpoint memory --ns main --db main --user root --pass secret --pretty
 ```
+
+To run a simple `SELECT` without staying in the REPL:
+
+**Bash**
+
+```bash
+echo 'SELECT * FROM person;' | surreal sql --endpoint http://localhost:8000 --ns main --db main --user root --pass secret --pretty --hide-welcome
+```
+
+**PowerShell**
+
+```powershell
+'SELECT * FROM person;' | surreal sql --endpoint http://localhost:8000 --ns main --db main --user root --pass secret --pretty --hide-welcome
+```
+
 ![Terminal SQL](../../../../assets/img/terminal-sql.png)
 
 ## Learn more

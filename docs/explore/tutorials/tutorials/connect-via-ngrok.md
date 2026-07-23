@@ -50,34 +50,27 @@ Note the forwarding address provided by ngrok. For example, **`25f6-2402-e280-21
 > [!IMPORTANT]
 > Keep this address handy as we will use it in the next step.
     
-### Connect to SurrealDB via the ngrok address
+### Connect and verify
     
-Now, let's [connect to your SurrealDB instance](../../../reference/cli/surrealdb-cli/commands/sql.md) using the forwarding address provided by Ngrok.
-    
-Run the following command in a new terminal window/tab, replacing **`[ngrok-address]`** with the actual ngrok forwarding address you noted earlier:
-    
+Connect using the forwarding address from ngrok, replacing **`[ngrok-address]`** with the address you noted earlier. You can open an interactive REPL:
+
 ```bash
 surreal sql --conn wss://[ngrok-address] --user root --pass secret --ns main --db main --pretty
 ```
-    
-### Verify the connection
-    
-Finally, let’s ensure the connection is properly set up by running a test query.
-With the help of the `CREATE` statement, [create a new record](../../../reference/query-language/statements/create.md). 
-    
-```surql
-CREATE registration SET 
-full_name = 'John Doe',
-email = 'johndoe@gmail.com',
-address_line1 = 'Room number 1, Hogwarts',
-address_line2 = 'Near Diagon Alley',
-city = 'Hogwarts',
-country = 'England';
+
+Or run a one-shot check that [creates a record](../../../reference/query-language/statements/create.md) and [selects it](../../../reference/query-language/statements/select.md):
+
+**Bash**
+
+```bash
+echo "CREATE registration SET full_name = 'John Doe', email = 'johndoe@gmail.com', address_line1 = 'Room number 1, Hogwarts', address_line2 = 'Near Diagon Alley', city = 'Hogwarts', country = 'England'; SELECT * FROM registration;" | surreal sql --conn wss://[ngrok-address] --user root --pass secret --ns main --db main --pretty --hide-welcome
 ```
-And let's [query the data](../../../reference/query-language/statements/select.md) from the record now. 
-```surql
-SELECT * FROM registration
- ```
+
+**PowerShell**
+
+```powershell
+"CREATE registration SET full_name = 'John Doe', email = 'johndoe@gmail.com', address_line1 = 'Room number 1, Hogwarts', address_line2 = 'Near Diagon Alley', city = 'Hogwarts', country = 'England'; SELECT * FROM registration;" | surreal sql --conn wss://[ngrok-address] --user root --pass secret --ns main --db main --pretty --hide-welcome
+```
 
 ## Conclusion
 

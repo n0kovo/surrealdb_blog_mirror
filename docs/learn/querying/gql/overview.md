@@ -57,13 +57,23 @@ To experiment in the REPL without `curl` or `POST /gql`, wrap a GQL string in [`
 
 **Embedded REPL** (`surreal sql` against `memory` or a file path — no separate `surreal start`):
 
+**Bash**
+
+```bash
+echo 'eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");' | surreal sql --user root --pass secret --allow-experimental gql --allow-eval-query --pretty --hide-welcome
+```
+
+**PowerShell**
+
+```powershell
+'eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");' | surreal sql --user root --pass secret --allow-experimental gql --allow-eval-query --pretty --hide-welcome
+```
+
+To explore interactively instead, open the same REPL without piping:
+
 ```bash
 surreal sql --user root --pass secret \
   --allow-experimental gql --allow-eval-query
-```
-
-```surql
-eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");
 ```
 
 **Remote server** (`surreal start` + `surreal sql -e ws://…`): pass both flags on **`surreal start`** only. The client REPL does not enable `eval` at runtime.

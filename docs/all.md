@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1095 pages_  
+_1096 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -179,6 +179,8 @@ _1095 pages_
   How to map existing data and concepts from Neo4j to SurrealDB
 - [Migrating from PostgreSQL](build/migrating/from-other-databases/from-postgresql.md)
   How to map existing data and concepts from PostgreSQL to SurrealDB
+- [Migrating from Snowflake](build/migrating/from-other-databases/from-snowflake.md)
+  How to map existing data and concepts from Snowflake to SurrealDB
 - [Migrating from other databases](build/migrating/from-other-databases/overview.md)
   Map data and concepts from other databases to SurrealDB using Surreal Sync, the CLI import or SDKs.
 - [Migrating to SurrealDB](build/migrating/index.md)

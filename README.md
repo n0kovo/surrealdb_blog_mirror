@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-07-23 08:24 UTC_
+_Last updated: 2026-07-24 08:21 UTC_
 
 ## Stats
 
-- **Total posts:** 244
+- **Total posts:** 245
 - **First post:** 2022-07-20
-- **Latest post:** 2026-07-21
+- **Latest post:** 2026-07-23
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-07-23 08:24 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 49 posts
+- [2026](posts/years/2026.md) — 50 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -34,10 +34,12 @@ _Last updated: 2026-07-23 08:24 UTC_
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 109 posts
 - [releases](posts/categories/releases.md) — 49 posts
-- [tutorials](posts/categories/tutorials.md) — 94 posts
+- [tutorials](posts/categories/tutorials.md) — 95 posts
 
 ## Latest posts
 
+- **2026-07-23** · [One graph for the whole maison: modelling luxury retail on SurrealDB](posts/2026/07/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb.md)  
+  `tutorials` — How a high-end fashion house can model clients, artisans, products, and waitlists as one graph — with vector recommendations and full-text search built in.
 - **2026-07-21** · [Modelling a financial services enterprise ontology in SurrealDB](posts/2026/07/modelling-a-financial-services-enterprise-ontology-in-surrealdb.md)  
   `ai` `tutorials` — Model a financial services ontology in SurrealDB: map ownership, custody, and transactions as a graph and resolve beneficial-ownership chains in one query.
 - **2026-07-15** · [Graph traversals and time travel: incident response in one query language](posts/2026/07/your-asset-inventory-is-a-graph-query-it-like-one.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-07-23 08:24 UTC_
   `tutorials` — Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in a single query.
 - **2026-06-22** · [Build apps on your data with SurrealDB and Lovable](posts/2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md)  
   `tutorials` `featured` `ai` — Connect SurrealDB to Lovable using the Model Context Protocol (MCP), so the Lovable Agent can read your schema, query your live data, and build a working application on top of it without you writing any glue code.
-- **2026-06-22** · [A living knowledge layer for your agents: SurrealDB + CocoIndex](posts/2026/06/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex.md)  
-  `releases` — Announcing the native SurrealDB connector for CocoIndex — build a continuously-fresh document store, knowledge graph, and vector index in a single database, from one declarative pipeline.

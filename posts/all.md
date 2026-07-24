@@ -1,8 +1,10 @@
 # All Posts
 
-_244 posts_  
+_245 posts_  
 [← Index](../README.md)
 
+- **2026-07-23** · [One graph for the whole maison: modelling luxury retail on SurrealDB](2026/07/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb.md)  
+  `tutorials` — How a high-end fashion house can model clients, artisans, products, and waitlists as one graph — with vector recommendations and full-text search built in.
 - **2026-07-21** · [Modelling a financial services enterprise ontology in SurrealDB](2026/07/modelling-a-financial-services-enterprise-ontology-in-surrealdb.md)  
   `ai` `tutorials` — Model a financial services ontology in SurrealDB: map ownership, custody, and transactions as a graph and resolve beneficial-ownership chains in one query.
 - **2026-07-15** · [Graph traversals and time travel: incident response in one query language](2026/07/your-asset-inventory-is-a-graph-query-it-like-one.md)  

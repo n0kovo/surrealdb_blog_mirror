@@ -5,7 +5,7 @@ generated: stub
 
 # From Other Databases
 
-_Auto-generated index — 5 pages._
+_Auto-generated index — 6 pages._
 
 ## Pages
 
@@ -17,5 +17,7 @@ _Auto-generated index — 5 pages._
   How to map existing data and concepts from Neo4j to SurrealDB
 - [Migrating from PostgreSQL](from-postgresql.md)
   How to map existing data and concepts from PostgreSQL to SurrealDB
+- [Migrating from Snowflake](from-snowflake.md)
+  How to map existing data and concepts from Snowflake to SurrealDB
 - [Migrating from other databases](overview.md)
   Map data and concepts from other databases to SurrealDB using Surreal Sync, the CLI import or SDKs.

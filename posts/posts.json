@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-07-23T08:24:00.027534+00:00",
-  "count": 244,
+  "generated_at": "2026-07-24T08:21:09.140879+00:00",
+  "count": 245,
   "posts": [
+    {
+      "slug": "one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb",
+      "title": "One graph for the whole maison: modelling luxury retail on SurrealDB",
+      "summary": "How a high-end fashion house can model clients, artisans, products, and waitlists as one graph — with vector recommendations and full-text search built in.",
+      "publishDate": "2026-07-23T13:11:00.000Z",
+      "categories": [
+        "tutorials"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/04t7vsyxvc28logqvciyyxlo.auto",
+      "source": "https://surrealdb.com/blog/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb",
+      "local_path": "2026/07/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb.md"
+    },
     {
       "slug": "modelling-a-financial-services-enterprise-ontology-in-surrealdb",
       "title": "Modelling a financial services enterprise ontology in SurrealDB",

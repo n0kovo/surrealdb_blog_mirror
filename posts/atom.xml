@@ -4,10 +4,19 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-07-21T13:05:00Z</updated>
+  <updated>2026-07-23T13:11:00Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb</id>
+    <title>One graph for the whole maison: modelling luxury retail on SurrealDB</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb" type="text/html" />
+    <published>2026-07-23T13:11:00Z</published>
+    <updated>2026-07-23T13:11:00Z</updated>
+    <summary type="text">How a high-end fashion house can model clients, artisans, products, and waitlists as one graph — with vector recommendations and full-text search built in.</summary>
+    <category term="tutorials" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/modelling-a-financial-services-enterprise-ontology-in-surrealdb</id>
     <title>Modelling a financial services enterprise ontology in SurrealDB</title>
@@ -483,16 +492,6 @@
     <published>2026-01-27T00:00:00Z</published>
     <updated>2026-01-27T00:00:00Z</updated>
     <summary type="text">In this article, we will explore the similarities and differences between PostgreSQL and SurrealQL. We will also see how SurrealQL can overcome some of the limitations that relational databases have.</summary>
-    <category term="featured" />
-    <category term="tutorials" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/learning-through-building-surrealdb-universitys-newest-tutorial</id>
-    <title>Learning through building: SurrealDB University's newest tutorial</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/learning-through-building-surrealdb-universitys-newest-tutorial" type="text/html" />
-    <published>2025-12-18T00:00:00Z</published>
-    <updated>2025-12-18T00:00:00Z</updated>
-    <summary type="text">Now you can learn SurrealDB by building your own database that takes advantage of its multi-model capabilities to store and query over 100 of the world's most popular movies.</summary>
     <category term="featured" />
     <category term="tutorials" />
   </entry>

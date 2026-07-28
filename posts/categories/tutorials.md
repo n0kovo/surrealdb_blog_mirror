@@ -1,8 +1,10 @@
 # Category: tutorials
 
-_95 posts_  
+_96 posts_  
 [← Index](../../README.md)
 
+- **2026-07-27** · [Even a jailbroken LLM can't exceed its database permissions — here's how](../2026/07/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how.md)  
+  `ai` `tutorials` — AI agents that write their own database queries can be talked into rewriting, deleting, or leaking your data with a single polite request, with no jailbreak required. No system-prompt rule can reliably stop that. SurrealDB's role-based access control can, because it lives in the data layer the LLM can't reach.
 - **2026-07-23** · [One graph for the whole maison: modelling luxury retail on SurrealDB](../2026/07/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb.md)  
   `tutorials` — How a high-end fashion house can model clients, artisans, products, and waitlists as one graph — with vector recommendations and full-text search built in.
 - **2026-07-21** · [Modelling a financial services enterprise ontology in SurrealDB](../2026/07/modelling-a-financial-services-enterprise-ontology-in-surrealdb.md)  

@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-07-27 09:43 UTC_
+_Last updated: 2026-07-28 08:27 UTC_
 
 ## Stats
 
-- **Total posts:** 245
+- **Total posts:** 246
 - **First post:** 2022-07-20
-- **Latest post:** 2026-07-23
+- **Latest post:** 2026-07-27
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-07-27 09:43 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 50 posts
+- [2026](posts/years/2026.md) — 51 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -27,17 +27,19 @@ _Last updated: 2026-07-27 09:43 UTC_
 
 ### By category
 
-- [ai](posts/categories/ai.md) — 42 posts
+- [ai](posts/categories/ai.md) — 43 posts
 - [community](posts/categories/community.md) — 35 posts
 - [company](posts/categories/company.md) — 41 posts
 - [engineering](posts/categories/engineering.md) — 41 posts
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 109 posts
 - [releases](posts/categories/releases.md) — 49 posts
-- [tutorials](posts/categories/tutorials.md) — 95 posts
+- [tutorials](posts/categories/tutorials.md) — 96 posts
 
 ## Latest posts
 
+- **2026-07-27** · [Even a jailbroken LLM can't exceed its database permissions — here's how](posts/2026/07/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how.md)  
+  `ai` `tutorials` — AI agents that write their own database queries can be talked into rewriting, deleting, or leaking your data with a single polite request, with no jailbreak required. No system-prompt rule can reliably stop that. SurrealDB's role-based access control can, because it lives in the data layer the LLM can't reach.
 - **2026-07-23** · [One graph for the whole maison: modelling luxury retail on SurrealDB](posts/2026/07/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb.md)  
   `tutorials` — How a high-end fashion house can model clients, artisans, products, and waitlists as one graph — with vector recommendations and full-text search built in.
 - **2026-07-21** · [Modelling a financial services enterprise ontology in SurrealDB](posts/2026/07/modelling-a-financial-services-enterprise-ontology-in-surrealdb.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-07-27 09:43 UTC_
   `tutorials` `ai` `featured` — SurrealDB's MCP server lets Replit Agent build apps directly on a database you own, reading your schema and querying live data.
 - **2026-06-23** · [Social graphs for activity-tracking apps](posts/2026/06/social-graphs-for-activity-tracking-apps.md)  
   `tutorials` — Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in a single query.
-- **2026-06-22** · [Build apps on your data with SurrealDB and Lovable](posts/2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md)  
-  `tutorials` `featured` `ai` — Connect SurrealDB to Lovable using the Model Context Protocol (MCP), so the Lovable Agent can read your schema, query your live data, and build a working application on top of it without you writing any glue code.

@@ -19,14 +19,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 	<tbody>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; gap: 0.5rem;">
+				<span style="display: flex; gap: 0.5rem;">
 					<a href="#and">
 						`&&`
 					</a>
 					<a href="#and">
 						`AND`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether both of two values are truthy
@@ -34,14 +34,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; gap: 0.5rem;">
+				<span style="display: flex; gap: 0.5rem;">
 					<a href="#or">
 						`||`
 					</a>
 					<a href="#or">
 						`OR`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether either of two values is truthy
@@ -89,14 +89,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; gap: 0.5rem;">
+				<span style="display: flex; gap: 0.5rem;">
 					<a href="#equal">
 						`=`
 					</a>
 					<a href="#equal">
 						`IS`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Check whether two values are equal
@@ -104,14 +104,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; gap: 0.5rem;">
+				<span style="display: flex; gap: 0.5rem;">
 					<a href="#notequal">
 						`!=`
 					</a>
 					<a href="#notequal">
 						`IS NOT`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Check whether two values are not equal
@@ -252,14 +252,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; gap: 0.5rem;">
+				<span style="display: flex; gap: 0.5rem;">
 					<a href="#mul">
 						`*`
 					</a>
 					<a href="#mul">
 						`×`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Multiply two values together
@@ -267,14 +267,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; gap: 0.5rem;">
+				<span style="display: flex; gap: 0.5rem;">
 					<a href="#div">
 						`/`
 					</a>
 					<a href="#div">
 						`÷`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Divide a value by another value
@@ -292,14 +292,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; flex-direction: column; gap: 0.5rem;">
+				<span style="display: flex; flex-direction: column; gap: 0.5rem;">
 					<a href="#contains">
 						`CONTAINS`
 					</a>
 					<a href="#contains">
 						`∋`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether a value contains another value
@@ -307,14 +307,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; flex-direction: column; gap: 0.5rem;">
+				<span style="display: flex; flex-direction: column; gap: 0.5rem;">
 					<a href="#containsnot">
 						`CONTAINSNOT`
 					</a>
 					<a href="#containsnot">
 						`∌`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether a value does not contain another value
@@ -322,14 +322,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; flex-direction: column; gap: 0.5rem;">
+				<span style="display: flex; flex-direction: column; gap: 0.5rem;">
 					<a href="#containsall">
 						`CONTAINSALL`
 					</a>
 					<a href="#containsall">
 						`⊇`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether a value contains all other values
@@ -337,14 +337,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; flex-direction: column; gap: 0.5rem;">
+				<span style="display: flex; flex-direction: column; gap: 0.5rem;">
 					<a href="#containsany">
 						`CONTAINSANY`
 					</a>
 					<a href="#containsany">
 						`⊃`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether a value contains any other value
@@ -352,14 +352,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; flex-direction: column; gap: 0.5rem;">
+				<span style="display: flex; flex-direction: column; gap: 0.5rem;">
 					<a href="#containsnone">
 						`CONTAINSNONE`
 					</a>
 					<a href="#containsnone">
 						`⊅`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether a value contains none of the following values
@@ -367,7 +367,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+				<span style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#inside">
 						`INSIDE`
 					</a>
@@ -377,7 +377,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 					<a href="#inside">
 						`∈`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether a value is contained within another value
@@ -385,7 +385,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+				<span style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#notinside">
 						`NOTINSIDE`
 					</a>
@@ -395,7 +395,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 					<a href="#notinside">
 						`∉`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether a value is not contained within another value
@@ -403,14 +403,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+				<span style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#allinside">
 						`ALLINSIDE`
 					</a>
 					<a href="#allinside">
 						`⊆`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether all values are contained within other values
@@ -418,14 +418,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+				<span style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#anyinside">
 						`ANYINSIDE`
 					</a>
 					<a href="#anyinside">
 						`⊂`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether any value is contained within other values
@@ -433,14 +433,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+				<span style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#noneinside">
 					`NONEINSIDE`
 					</a>
 					<a href="#noneinside">
 						`⊄`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether no value is contained within other values
@@ -470,14 +470,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+				<span style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#matches">
 						`@@`
 					</a>
 					<a href="#matches">
 						`@[ref]@`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Checks whether the terms are found in a full-text indexed
@@ -486,14 +486,14 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+				<span style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
 					<a href="#knn">
 						` &lt;|4|&gt; `
 					</a>
 					<a href="#knn">
 						`&lt;|3,HAMMING| &gt;`
 					</a>
-				</div>
+				</span>
 			</td>
 			<td scope="row" data-label="Description">
 				Performs a K-Nearest Neighbors (KNN) search to find a

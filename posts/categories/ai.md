@@ -1,8 +1,10 @@
 # Category: ai
 
-_42 posts_  
+_43 posts_  
 [← Index](../../README.md)
 
+- **2026-07-27** · [Even a jailbroken LLM can't exceed its database permissions — here's how](../2026/07/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how.md)  
+  `ai` `tutorials` — AI agents that write their own database queries can be talked into rewriting, deleting, or leaking your data with a single polite request, with no jailbreak required. No system-prompt rule can reliably stop that. SurrealDB's role-based access control can, because it lives in the data layer the LLM can't reach.
 - **2026-07-21** · [Modelling a financial services enterprise ontology in SurrealDB](../2026/07/modelling-a-financial-services-enterprise-ontology-in-surrealdb.md)  
   `ai` `tutorials` — Model a financial services ontology in SurrealDB: map ownership, custody, and transactions as a graph and resolve beneficial-ownership chains in one query.
 - **2026-07-14** · [One query, not two stores: how vector + graph in SurrealDB makes agents more accurate](../2026/07/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate.md)  

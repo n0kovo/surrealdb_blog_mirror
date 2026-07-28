@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-07-27T09:43:05.427212+00:00",
-  "count": 245,
+  "generated_at": "2026-07-28T08:27:48.209254+00:00",
+  "count": 246,
   "posts": [
+    {
+      "slug": "even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how",
+      "title": "Even a jailbroken LLM can't exceed its database permissions — here's how",
+      "summary": "AI agents that write their own database queries can be talked into rewriting, deleting, or leaking your data with a single polite request, with no jailbreak required. No system-prompt rule can reliably stop that. SurrealDB's role-based access control can, because it lives in the data layer the LLM can't reach.",
+      "publishDate": "2026-07-27T09:59:00.000Z",
+      "categories": [
+        "ai",
+        "tutorials"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/ggyvs37y5pr7rtnfh1z2vg46.auto",
+      "source": "https://surrealdb.com/blog/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how",
+      "local_path": "2026/07/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how.md"
+    },
     {
       "slug": "one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb",
       "title": "One graph for the whole maison: modelling luxury retail on SurrealDB",

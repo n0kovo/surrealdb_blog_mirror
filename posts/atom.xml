@@ -4,10 +4,20 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-07-23T13:11:00Z</updated>
+  <updated>2026-07-27T09:59:00Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how</id>
+    <title>Even a jailbroken LLM can't exceed its database permissions — here's how</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how" type="text/html" />
+    <published>2026-07-27T09:59:00Z</published>
+    <updated>2026-07-27T09:59:00Z</updated>
+    <summary type="text">AI agents that write their own database queries can be talked into rewriting, deleting, or leaking your data with a single polite request, with no jailbreak required. No system-prompt rule can reliably stop that. SurrealDB's role-based access control can, because it lives in the data layer the LLM can't reach.</summary>
+    <category term="ai" />
+    <category term="tutorials" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb</id>
     <title>One graph for the whole maison: modelling luxury retail on SurrealDB</title>
@@ -484,15 +494,5 @@
     <category term="featured" />
     <category term="tutorials" />
     <category term="ai" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/a-look-at-surrealql-and-how-it-differs-from-postgresql</id>
-    <title>A look at SurrealQL and how it differs from PostgreSQL</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/a-look-at-surrealql-and-how-it-differs-from-postgresql" type="text/html" />
-    <published>2026-01-27T00:00:00Z</published>
-    <updated>2026-01-27T00:00:00Z</updated>
-    <summary type="text">In this article, we will explore the similarities and differences between PostgreSQL and SurrealQL. We will also see how SurrealQL can overcome some of the limitations that relational databases have.</summary>
-    <category term="featured" />
-    <category term="tutorials" />
   </entry>
 </feed>

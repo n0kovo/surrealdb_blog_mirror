@@ -146,6 +146,8 @@ await txn2.create(record2).content(data2);
 await txn2.commit();
 ```
 
+On a remote WebSocket server, each open client-managed transaction counts toward [`SURREAL_MAX_TRANSACTIONS_PER_CONNECTION`](../../cli/surrealdb-cli/environment-variables.md#websocket-config) or [`SURREAL_MAX_TRANSACTIONS_PER_SESSION`](../../cli/surrealdb-cli/environment-variables.md#websocket-config) (default 64 each). Exceeding the limit fails with `Too many open transactions`.
+
 ## Learn more
 
 - [SurrealTransaction API reference](../api/core/surreal-transaction.md) for the complete transaction interface

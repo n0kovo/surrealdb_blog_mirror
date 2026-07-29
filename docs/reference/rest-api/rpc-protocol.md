@@ -1180,7 +1180,7 @@ relate [ in, relation, out, data? ]
 
 ## `reset`
 
-This method will reset all attributes for the current connection. reset your authentication (much like invalidate) unsets the selected NS/DB, unsets any defined connection params, and aborts any active live queries.
+This method will reset all attributes for the current connection. It clears authentication (much like invalidate), unsets the selected NS/DB, unsets any defined connection params, and aborts any active live queries. On WebSocket connections it also cancels open client-managed transactions for the session being reset and frees their slots under [`SURREAL_MAX_TRANSACTIONS_PER_CONNECTION`](../cli/surrealdb-cli/environment-variables.md#websocket-config) / [`SURREAL_MAX_TRANSACTIONS_PER_SESSION`](../cli/surrealdb-cli/environment-variables.md#websocket-config).
 
 ```json title="Method Syntax"
 reset

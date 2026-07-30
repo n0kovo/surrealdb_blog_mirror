@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-07-29 08:34 UTC_
+_Last updated: 2026-07-30 08:19 UTC_
 
 ## Stats
 
-- **Total posts:** 246
+- **Total posts:** 247
 - **First post:** 2022-07-20
-- **Latest post:** 2026-07-27
+- **Latest post:** 2026-07-29
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-07-29 08:34 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 51 posts
+- [2026](posts/years/2026.md) — 52 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -27,17 +27,19 @@ _Last updated: 2026-07-29 08:34 UTC_
 
 ### By category
 
-- [ai](posts/categories/ai.md) — 43 posts
+- [ai](posts/categories/ai.md) — 44 posts
 - [community](posts/categories/community.md) — 35 posts
 - [company](posts/categories/company.md) — 41 posts
 - [engineering](posts/categories/engineering.md) — 41 posts
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 109 posts
 - [releases](posts/categories/releases.md) — 49 posts
-- [tutorials](posts/categories/tutorials.md) — 96 posts
+- [tutorials](posts/categories/tutorials.md) — 97 posts
 
 ## Latest posts
 
+- **2026-07-29** · [One database for the whole claim: agentic claims triage on SurrealDB](posts/2026/07/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb.md)  
+  `ai` `tutorials` — An AI agent triaging an insurance claim needs semantic, graph, and document data at once. Do it in one SurrealDB database — vector recall of similar past claims plus graph fraud-ring detection, fused in a single function. Schema, seed data, and queries included.
 - **2026-07-27** · [Even a jailbroken LLM can't exceed its database permissions — here's how](posts/2026/07/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how.md)  
   `ai` `tutorials` — AI agents that write their own database queries can be talked into rewriting, deleting, or leaking your data with a single polite request, with no jailbreak required. No system-prompt rule can reliably stop that. SurrealDB's role-based access control can, because it lives in the data layer the LLM can't reach.
 - **2026-07-23** · [One graph for the whole maison: modelling luxury retail on SurrealDB](posts/2026/07/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-07-29 08:34 UTC_
   `featured` `releases` — SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.
 - **2026-07-01** · [Bring SurrealDB to your Replit Agent](posts/2026/07/bring-surrealdb-to-your-replit-agent.md)  
   `tutorials` `ai` `featured` — SurrealDB's MCP server lets Replit Agent build apps directly on a database you own, reading your schema and querying live data.
-- **2026-06-23** · [Social graphs for activity-tracking apps](posts/2026/06/social-graphs-for-activity-tracking-apps.md)  
-  `tutorials` — Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in a single query.

@@ -4,10 +4,20 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-07-27T09:59:00Z</updated>
+  <updated>2026-07-29T10:19:00Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb</id>
+    <title>One database for the whole claim: agentic claims triage on SurrealDB</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb" type="text/html" />
+    <published>2026-07-29T10:19:00Z</published>
+    <updated>2026-07-29T10:19:00Z</updated>
+    <summary type="text">An AI agent triaging an insurance claim needs semantic, graph, and document data at once. Do it in one SurrealDB database — vector recall of similar past claims plus graph fraud-ring detection, fused in a single function. Schema, seed data, and queries included.</summary>
+    <category term="ai" />
+    <category term="tutorials" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how</id>
     <title>Even a jailbroken LLM can't exceed its database permissions — here's how</title>
@@ -480,17 +490,6 @@
     <published>2026-02-05T00:00:00Z</published>
     <updated>2026-02-05T00:00:00Z</updated>
     <summary type="text">What is a knowledge graph and how can it be used to enhance AI agents?</summary>
-    <category term="featured" />
-    <category term="tutorials" />
-    <category term="ai" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/knowledge-graph-rag-two-query-patterns-for-smarter-ai-agents</id>
-    <title>Knowledge Graph RAG: two query patterns for smarter AI agents</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/knowledge-graph-rag-two-query-patterns-for-smarter-ai-agents" type="text/html" />
-    <published>2026-01-29T00:00:00Z</published>
-    <updated>2026-01-29T00:00:00Z</updated>
-    <summary type="text">A post that walks through two powerful SurrealQL query patterns that demonstrate how to retrieve context from a knowledge graph to feed AI agents.</summary>
     <category term="featured" />
     <category term="tutorials" />
     <category term="ai" />

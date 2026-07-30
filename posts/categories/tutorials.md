@@ -1,8 +1,10 @@
 # Category: tutorials
 
-_96 posts_  
+_97 posts_  
 [← Index](../../README.md)
 
+- **2026-07-29** · [One database for the whole claim: agentic claims triage on SurrealDB](../2026/07/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb.md)  
+  `ai` `tutorials` — An AI agent triaging an insurance claim needs semantic, graph, and document data at once. Do it in one SurrealDB database — vector recall of similar past claims plus graph fraud-ring detection, fused in a single function. Schema, seed data, and queries included.
 - **2026-07-27** · [Even a jailbroken LLM can't exceed its database permissions — here's how](../2026/07/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how.md)  
   `ai` `tutorials` — AI agents that write their own database queries can be talked into rewriting, deleting, or leaking your data with a single polite request, with no jailbreak required. No system-prompt rule can reliably stop that. SurrealDB's role-based access control can, because it lives in the data layer the LLM can't reach.
 - **2026-07-23** · [One graph for the whole maison: modelling luxury retail on SurrealDB](../2026/07/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb.md)  

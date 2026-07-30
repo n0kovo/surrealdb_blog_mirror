@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-07-29T08:34:10.437998+00:00",
-  "count": 246,
+  "generated_at": "2026-07-30T08:19:22.201706+00:00",
+  "count": 247,
   "posts": [
+    {
+      "slug": "one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb",
+      "title": "One database for the whole claim: agentic claims triage on SurrealDB",
+      "summary": "An AI agent triaging an insurance claim needs semantic, graph, and document data at once. Do it in one SurrealDB database — vector recall of similar past claims plus graph fraud-ring detection, fused in a single function. Schema, seed data, and queries included.",
+      "publishDate": "2026-07-29T10:19:00.000Z",
+      "categories": [
+        "ai",
+        "tutorials"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/ajyfryxatg8eaqzcadygcow2.auto",
+      "source": "https://surrealdb.com/blog/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb",
+      "local_path": "2026/07/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb.md"
+    },
     {
       "slug": "even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how",
       "title": "Even a jailbroken LLM can't exceed its database permissions — here's how",

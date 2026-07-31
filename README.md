@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-07-30 08:19 UTC_
+_Last updated: 2026-07-31 08:43 UTC_
 
 ## Stats
 
-- **Total posts:** 247
+- **Total posts:** 249
 - **First post:** 2022-07-20
-- **Latest post:** 2026-07-29
+- **Latest post:** 2026-07-30
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-07-30 08:19 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 52 posts
+- [2026](posts/years/2026.md) — 54 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -27,10 +27,10 @@ _Last updated: 2026-07-30 08:19 UTC_
 
 ### By category
 
-- [ai](posts/categories/ai.md) — 44 posts
+- [ai](posts/categories/ai.md) — 45 posts
 - [community](posts/categories/community.md) — 35 posts
 - [company](posts/categories/company.md) — 41 posts
-- [engineering](posts/categories/engineering.md) — 41 posts
+- [engineering](posts/categories/engineering.md) — 42 posts
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 109 posts
 - [releases](posts/categories/releases.md) — 49 posts
@@ -38,6 +38,10 @@ _Last updated: 2026-07-30 08:19 UTC_
 
 ## Latest posts
 
+- **2026-07-30** · [Embedding models comparison: OpenAI, Google, Qwen, Nomic, Jina, BAAI](posts/2026/07/embedding-models-comparison.md)  
+  `ai` — A practical guide to eight embedding models — text-embedding-3-small\/large, gemini-embedding-001, embeddinggemma-300m, qwen3-embedding, nomic-embed-text-v2-moe, jina-embeddings-v5-text-small, and BGE-M3.
+- **2026-07-30** · [Integrating Ultima VII with Spectron, part I: the game](posts/2026/07/using-ultima-vii-to-test-spectron-part-i-the-game.md)  
+  `engineering` — Why Ultima VII through the Exult open-source game engine ended up being the perfect testing platform for SurrealDB's memory layer Spectron.
 - **2026-07-29** · [One database for the whole claim: agentic claims triage on SurrealDB](posts/2026/07/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb.md)  
   `ai` `tutorials` — An AI agent triaging an insurance claim needs semantic, graph, and document data at once. Do it in one SurrealDB database — vector recall of similar past claims plus graph fraud-ring detection, fused in a single function. Schema, seed data, and queries included.
 - **2026-07-27** · [Even a jailbroken LLM can't exceed its database permissions — here's how](posts/2026/07/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how.md)  
@@ -54,7 +58,3 @@ _Last updated: 2026-07-30 08:19 UTC_
   `ai` `tutorials` — Define a custom SurrealQL function to call any embedding API, then run semantic search, graph traversal and field shaping in one query
 - **2026-07-08** · [Detecting connections as they form: An introduction to streaming graph pattern matching](posts/2026/07/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2.md)  
   `community` — Guest author Cyril Scetbon on streaming graph pattern matching: detecting when a pattern is satisfied in real time, incrementally, as new edges are added.
-- **2026-07-02** · [Introducing Scale: SurrealDB Cloud, built for high availability and scale ](posts/2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  
-  `featured` `releases` — SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.
-- **2026-07-01** · [Bring SurrealDB to your Replit Agent](posts/2026/07/bring-surrealdb-to-your-replit-agent.md)  
-  `tutorials` `ai` `featured` — SurrealDB's MCP server lets Replit Agent build apps directly on a database you own, reading your schema and querying live data.

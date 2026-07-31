@@ -1,7 +1,33 @@
 {
-  "generated_at": "2026-07-30T08:19:22.201706+00:00",
-  "count": 247,
+  "generated_at": "2026-07-31T08:43:46.725284+00:00",
+  "count": 249,
   "posts": [
+    {
+      "slug": "embedding-models-comparison",
+      "title": "Embedding models comparison: OpenAI, Google, Qwen, Nomic, Jina, BAAI",
+      "summary": "A practical guide to eight embedding models — text-embedding-3-small\\/large, gemini-embedding-001, embeddinggemma-300m, qwen3-embedding, nomic-embed-text-v2-moe, jina-embeddings-v5-text-small, and BGE-M3.",
+      "publishDate": "2026-07-30T17:54:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/a2910381koawv0w9mzvkxfm7.auto",
+      "source": "https://surrealdb.com/blog/embedding-models-comparison",
+      "local_path": "2026/07/embedding-models-comparison.md"
+    },
+    {
+      "slug": "using-ultima-vii-to-test-spectron-part-i-the-game",
+      "title": "Integrating Ultima VII with Spectron, part I: the game",
+      "summary": "Why Ultima VII through the Exult open-source game engine ended up being the perfect testing platform for SurrealDB's memory layer Spectron.",
+      "publishDate": "2026-07-30T03:46:30.000Z",
+      "categories": [
+        "engineering"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/6i5kygnic4976ubexe6wy06s.auto",
+      "source": "https://surrealdb.com/blog/using-ultima-vii-to-test-spectron-part-i-the-game",
+      "local_path": "2026/07/using-ultima-vii-to-test-spectron-part-i-the-game.md"
+    },
     {
       "slug": "one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb",
       "title": "One database for the whole claim: agentic claims triage on SurrealDB",

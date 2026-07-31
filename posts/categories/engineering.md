@@ -1,8 +1,10 @@
 # Category: engineering
 
-_41 posts_  
+_42 posts_  
 [← Index](../../README.md)
 
+- **2026-07-30** · [Integrating Ultima VII with Spectron, part I: the game](../2026/07/using-ultima-vii-to-test-spectron-part-i-the-game.md)  
+  `engineering` — Why Ultima VII through the Exult open-source game engine ended up being the perfect testing platform for SurrealDB's memory layer Spectron.
 - **2026-06-19** · [Deterministic simulation testing and its use at SurrealDB](../2026/06/deterministic-simulation-testing-and-its-use-at-surrealdb.md)  
   `engineering` — How deterministic simulation works from easy to complex scenarios, and its ussage at SurrealDB's transactional key-value store and embedded key-value engine.
 - **2026-06-11** · [Fuzz testing for SurrealDB: using randomised input to find bugs before users do](../2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md)  

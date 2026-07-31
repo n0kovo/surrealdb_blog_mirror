@@ -20,13 +20,13 @@ _1096 pages_
 - [Deployment](build/deployment/index.md)
   Deployment models for SurrealDB — managed cloud, single-node RocksDB, multi-node clusters, and embedded runtimes — and how to choose between them.
 - [Amazon EKS](build/deployment/self-hosted/amazon-eks.md)
-  Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that eliminates the need to install.
+  Options for running SurrealDB on Amazon Elastic Kubernetes Service — managed Scale, Enterprise SurrealDS, or single-node RocksDB.
 - [Azure AKS](build/deployment/self-hosted/azure-aks.md)
-  Learn how to deploy SurrealDB on Azure Kubernetes Service, a managed Kubernetes service offered by Microsoft Azure.
+  Options for running SurrealDB on Azure Kubernetes Service — managed Scale, Enterprise SurrealDS, or single-node RocksDB.
 - [Docker](build/deployment/self-hosted/docker.md)
   A tutorial to run SurrealDB from within Docker.
 - [Google GKE](build/deployment/self-hosted/google-gke.md)
-  How to set up a highly available SurrealDB cluster on Google Kubernetes Engine.
+  Options for running SurrealDB on Google Kubernetes Engine — managed Scale, Enterprise SurrealDS, or single-node RocksDB.
 - [Kubernetes](build/deployment/self-hosted/kubernetes.md)
   Deploy SurrealDB to Kubernetes with RocksDB on a persistent volume.
 - [Self-hosted deployment](build/deployment/self-hosted/overview.md)

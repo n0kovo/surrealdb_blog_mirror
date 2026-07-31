@@ -17,7 +17,7 @@ Once a self-hosted instance is running, the [Observability](../../../manage/obse
 | --- | --- |
 | [Docker](docker.md) | Quickest path; RocksDB with a volume mount |
 | [Kubernetes](kubernetes.md) | Single SurrealDB pod with RocksDB on a persistent volume |
-| [Amazon EKS](amazon-eks.md) / [GKE](google-gke.md) / [AKS](azure-aks.md) | Highly available clusters on managed Kubernetes |
+| [Amazon EKS](amazon-eks.md) / [GKE](google-gke.md) / [AKS](azure-aks.md) | Paths on managed Kubernetes: Cloud Scale / Enterprise SurrealDS, or single-node RocksDB |
 | [SurrealDB Cloud](../surrealdb-cloud/what-is-surrealdb-cloud.md) | Managed infrastructure without operating servers yourself |
 
 Most self-hosted workloads use **RocksDB** on disk — one SurrealDB process per database file. See [Deployment models](../index.md) for how single-node and highly available topologies compare.

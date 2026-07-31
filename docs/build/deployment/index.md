@@ -134,7 +134,7 @@ In distributed deployments:
 
 This architecture enables zero-downtime scaling, resilient clusters, high-throughput workloads, geographically distributed applications, and (as Scale features roll out) database branching, instant replication and recovery, and lower storage costs at scale.
 
-For managed multi-node clusters, use the [Scale](https://surrealdb.com/pricing/scale) plan on [SurrealDB Cloud](surrealdb-cloud/what-is-surrealdb-cloud.md). For self-hosted highly available setups on Kubernetes with SurrealDB Enterprise, see [Amazon EKS](self-hosted/amazon-eks.md), [Google GKE](self-hosted/google-gke.md), and [Azure AKS](self-hosted/azure-aks.md). For local development against distributed storage, see [Run a multi-node cluster](../../running/multi-node.md).
+For managed multi-node clusters, use the [Scale](https://surrealdb.com/pricing/scale) plan on [SurrealDB Cloud](surrealdb-cloud/what-is-surrealdb-cloud.md). For self-hosted SurrealDS on Kubernetes, use [SurrealDB Enterprise](https://surrealdb.com/enterprise); the [Amazon EKS](self-hosted/amazon-eks.md), [Google GKE](self-hosted/google-gke.md), and [Azure AKS](self-hosted/azure-aks.md) pages summarise options per cloud. For a local Community playground against open-source distributed storage (TiKV), see [Run a multi-node cluster](../../running/multi-node.md) — that path is not SurrealDS.
 
 For a deeper overview of the storage engine, see [SurrealDS](https://surrealdb.com/platform/surrealds).
 
@@ -201,7 +201,7 @@ SurrealDB supports embedded operation in Rust, Go, JavaScript / TypeScript, WebA
 - Workloads need horizontal scaling
 - Infrastructure spans multiple nodes or availability zones
 
-For managed clusters, use [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale). For self-hosted Kubernetes with Enterprise, follow the [EKS](self-hosted/amazon-eks.md), [GKE](self-hosted/google-gke.md), or [AKS](self-hosted/azure-aks.md) guides.
+For managed clusters, use [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale). For self-hosted SurrealDS, see [SurrealDB Enterprise](https://surrealdb.com/enterprise) and the [EKS](self-hosted/amazon-eks.md), [GKE](self-hosted/google-gke.md), or [AKS](self-hosted/azure-aks.md) option pages.
 
 **Use embedded deployments when**
 

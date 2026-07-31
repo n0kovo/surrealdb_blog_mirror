@@ -1,8 +1,12 @@
 # All Posts
 
-_247 posts_  
+_249 posts_  
 [← Index](../README.md)
 
+- **2026-07-30** · [Embedding models comparison: OpenAI, Google, Qwen, Nomic, Jina, BAAI](2026/07/embedding-models-comparison.md)  
+  `ai` — A practical guide to eight embedding models — text-embedding-3-small\/large, gemini-embedding-001, embeddinggemma-300m, qwen3-embedding, nomic-embed-text-v2-moe, jina-embeddings-v5-text-small, and BGE-M3.
+- **2026-07-30** · [Integrating Ultima VII with Spectron, part I: the game](2026/07/using-ultima-vii-to-test-spectron-part-i-the-game.md)  
+  `engineering` — Why Ultima VII through the Exult open-source game engine ended up being the perfect testing platform for SurrealDB's memory layer Spectron.
 - **2026-07-29** · [One database for the whole claim: agentic claims triage on SurrealDB](2026/07/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb.md)  
   `ai` `tutorials` — An AI agent triaging an insurance claim needs semantic, graph, and document data at once. Do it in one SurrealDB database — vector recall of similar past claims plus graph fraud-ring detection, fused in a single function. Schema, seed data, and queries included.
 - **2026-07-27** · [Even a jailbroken LLM can't exceed its database permissions — here's how](2026/07/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how.md)  

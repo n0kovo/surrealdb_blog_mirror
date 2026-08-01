@@ -1,22 +1,26 @@
 # All Documentation Pages
 
-_1096 pages_  
+_1098 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
   How SurrealDB separates compute from storage, and how that design supports embedded, single-node, distributed, and managed deployments.
-- [Agent rules](build/ai-agents/agent-rules.md)
-  Building AI agents and agent rules with SurrealDB.
 - [Agent Skills](build/ai-agents/agent-skills.md)
   Official SurrealDB agent skills for use in agentic coding workflows.
 - [AI frameworks](build/ai-agents/ai-frameworks.md)
-  Building AI agents and agent rules with SurrealDB.
-- [Connect MCP to your coding assistant](build/ai-agents/connect-mcp-to-your-editor.md)
-  Step-by-step tutorial — wire Cursor, VS Code, or Claude Desktop to SurrealDB's built-in MCP server.
-- [Why SurrealDB for AI agents](build/ai-agents/index.md)
-  Learn why SurrealDB suits AI agents: durable state, graph memory, SurrealQL and HTTP tools, and vector retrieval
-- [Model Context Protocol (MCP)](build/ai-agents/mcp.md)
-  Connect AI agents and IDEs to SurrealDB through the built-in MCP server over HTTP or stdio.
+  Framework integrations that let AI and machine learning libraries use SurrealDB for vectors, memory, and pipelines.
+- [AI agents](build/ai-agents/index.md)
+  The ways SurrealDB fits into AI tooling — MCP servers, Agent Skills, and framework integrations — and what the database gives an agent.
+- [MCP in Claude](build/ai-agents/mcp/claude.md)
+  Add the SurrealDB MCP Server to Claude Code, Claude Desktop, or the Claude app.
+- [MCP in Cursor](build/ai-agents/mcp/cursor.md)
+  Add the SurrealDB MCP Server to Cursor and sign in with your Surreal ID.
+- [Embedded MCP](build/ai-agents/mcp/embedded.md)
+  Connect AI agents and editors to a SurrealDB server you run yourself, through the built-in MCP server over HTTP or stdio.
+- [Example usages](build/ai-agents/mcp/examples.md)
+  Prompts that show what an assistant can do with the SurrealDB MCP Server, from deploying an instance to querying its data.
+- [SurrealDB MCP Server](build/ai-agents/mcp/index.md)
+  Connect Claude, Cursor, and other AI tools to your SurrealDB Cloud account with a single URL.
 - [Deployment](build/deployment/index.md)
   Deployment models for SurrealDB — managed cloud, single-node RocksDB, multi-node clusters, and embedded runtimes — and how to choose between them.
 - [Amazon EKS](build/deployment/self-hosted/amazon-eks.md)

@@ -1,7 +1,7 @@
 ---
-position: 4
+position: 3
 title: AI frameworks
-description: Building AI agents and agent rules with SurrealDB.
+description: Framework integrations that let AI and machine learning libraries use SurrealDB for vectors, memory, and pipelines.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/ai-agents/ai-frameworks.mdx"
 ---
 

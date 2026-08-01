@@ -1,12 +1,12 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-07-31 08:43 UTC_
+_Last updated: 2026-08-01 08:13 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
 ## Stats
 
-- **Total pages:** 1096
+- **Total pages:** 1098
 
 ## Browse
 
@@ -42,7 +42,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Intelligence
 
-- **[AI agents](build/ai-agents/index.md)** — Design patterns for AI agents. — _6 pages_
+- **[AI agents](build/ai-agents/index.md)** — Design patterns for AI agents. — _8 pages_
 
 ## Manage
 

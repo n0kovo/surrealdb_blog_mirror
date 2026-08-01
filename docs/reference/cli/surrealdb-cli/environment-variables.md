@@ -222,7 +222,7 @@ Server-side filesystem access for features that read paths from disk (notably th
       <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_MCP_BODY_SIZE`*Since v3.1.0*</td>
       <td scope="row" data-label="Default">4,194,304 (4 MiB)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP `/mcp` endpoint. See [MCP](../../../build/ai-agents/mcp.md).</td>
+      <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP `/mcp` endpoint. See [Embedded MCP](../../../build/ai-agents/mcp/embedded.md).</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_SQL_BODY_SIZE`</td>
@@ -277,7 +277,7 @@ Server-side filesystem access for features that read paths from disk (notably th
 
 ### MCP config *Since v3.1.0*
 
-Used by the built-in [Model Context Protocol](../../../build/ai-agents/mcp.md) server (`/mcp` on `surreal start`, `surreal mcp` on stdio). Stdio namespace/database selection uses `SURREAL_MCP_NS` and `SURREAL_MCP_DB` on the [`mcp`](commands/mcp.md) subcommand.
+Used by the built-in [Model Context Protocol](../../../build/ai-agents/mcp/embedded.md) server (`/mcp` on `surreal start`, `surreal mcp` on stdio). Stdio namespace/database selection uses `SURREAL_MCP_NS` and `SURREAL_MCP_DB` on the [`mcp`](commands/mcp.md) subcommand.
 
 <table>
   <thead>

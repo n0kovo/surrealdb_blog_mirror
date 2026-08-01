@@ -9,7 +9,7 @@ _Auto-generated index — 0 pages and 5 sub-sections._
 
 ## Sub-sections
 
-- **[Why SurrealDB for AI agents](ai-agents/index.md)** — Learn why SurrealDB suits AI agents: durable state, graph memory, SurrealQL and HTTP tools, and vector retrieval
+- **[AI agents](ai-agents/index.md)** — The ways SurrealDB fits into AI tooling — MCP servers, Agent Skills, and framework integrations — and what the database gives an agent.
 - **[Deployment](deployment/index.md)** — Deployment models for SurrealDB — managed cloud, single-node RocksDB, multi-node clusters, and embedded runtimes — and how to choose between them.
 - **[Embedding SurrealDB](embedding/index.md)** — In this section, you will find detailed instructions on how to embed SurrealDB into your application depending on your programming language.
 - **[Integrations](integrations/index.md)** — Integrations that connect SurrealDB to AI frameworks, embeddings providers, agents, and data tools.

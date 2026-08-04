@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Fields and validation
 
-Fields are where you can spell out what each table column means by using certain clauses, such as its type (`TYPE`), optional default values (`DEFAULT`), how writes are normalised (`VALUE`), what counts as valid data (`ASSERT`), or who may see or change it (`PERMISSIONS`).
+Fields are where you can spell out what each table column means by using certain clauses, such as its type (`TYPE`), optional default values (`DEFAULT`), how writes are normalised (`VALUE`), what counts as valid data (`ASSERT`), or who may see or change it (`PERMISSIONS`). A [`COMMENT`](../../../reference/query-language/statements/define/overview.md#comments-on-definitions) is a good place for comparison rules and invariants that are not fully captured by the type alone.
 
 You need database-level access and an active [`USE`](../../../reference/query-language/statements/use.md) scope, same as for tables.
 

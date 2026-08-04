@@ -9,6 +9,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 The **knowledge** layer holds **authoritative** material – manuals, policies, product data, and files your agents should treat as curated sources. Documents enter through an asynchronous upload pipeline: bytes land in object storage, then Spectron extracts, chunks, embeds, and indexes structured state in SurrealDB.
 
+Document extraction uses the same structured schema and reconciler as conversational ingest ([Storing memories](../experiential/remember.md)). Facts from a PDF and facts from a turn land in one substrate; prefer documents for long curated sources and `/facts` for short lived moments.
+
 ## Supported formats
 
 ### Text-first formats

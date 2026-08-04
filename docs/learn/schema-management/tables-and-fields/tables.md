@@ -23,7 +23,7 @@ CREATE doesnt_exist;
 SELECT * FROM doesnt_exist;
 ```
 
-`DEFINE TABLE` can also set high-level rules, such as whether new fields are allowed without a definition, whether records are normal documents or graph edges, whether the table is a pre-computed view, and who may select / create / update / delete.
+`DEFINE TABLE` can also set high-level rules, such as whether new fields are allowed without a definition, whether records are normal documents or graph edges, whether the table is a pre-computed view, and who may select / create / update / delete. A [`COMMENT`](../../../reference/query-language/statements/define/overview.md#comments-on-definitions) is optional but worth adding when the table's role, record-ID convention, or graph edges would otherwise be unclear to readers or to agents that load the schema via [`INFO`](../../../reference/query-language/statements/info.md) or MCP.
 
 Individual columns still use [`DEFINE FIELD`](../../../reference/query-language/statements/define/field.md); the table statement does not replace that.
 

@@ -1983,7 +1983,7 @@ _1098 pages_
 - [Hosted quickstart](spectron/index/quickstarts/hosted.md)
   Get up and running with Spectron on SurrealDB Cloud in five minutes.
 - [Spectron on SurrealDB Cloud](spectron/index/quickstarts/surrealdb-cloud.md)
-  How Spectron contexts, authentication, and APIs work on SurrealDB Cloud versus self-hosted deployments.
+  How Spectron contexts, authentication, and APIs work on SurrealDB Cloud.
 - [The accuracy promise](spectron/index/welcome/accuracy-promise.md)
   Defensible correctness – provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
 - [How it works in five minutes](spectron/index/welcome/how-it-works.md)

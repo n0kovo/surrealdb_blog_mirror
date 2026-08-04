@@ -91,6 +91,15 @@ value = "NONE"
 DEFINE TABLE reading;
 ```
 
+### Comments
+
+Add a `COMMENT` when the table's role is not obvious from the name alone. The text is returned by [`INFO`](../info.md) and by agent-facing schema tools, so prefer operational detail (record-ID conventions, graph paths, invariants) over a one-line restatement of the table name. See [Comments on definitions](overview.md#comments-on-definitions) for a fuller pattern.
+
+```surql
+DEFINE TABLE person TYPE NORMAL SCHEMAFULL
+	COMMENT "Deduplicated person. The record id is the canonical full name (person:`Alice Chen`); use record::id(id) to read it. Edges: person->attended->meeting.";
+```
+
 The following example uses the `DROP` portion of the `DEFINE TABLE` statement. Marking a table as `DROP` disallows creating or updating records.
 
 `DROP` tables are useful in combination with events or foreign (view) tables, as you can compute a record and essentially drop the input.

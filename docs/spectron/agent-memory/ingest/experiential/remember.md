@@ -9,6 +9,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 Spectron stores memory by **extracting** structured entities, attributes, and relations from text — not by accepting opaque key-value blobs. Every write runs through the reconciler (calibration, supersession, uncertainty on conflict).
 
+Conversation turns (`/facts`, `/facts/batch`, `/chat`) and document uploads share one extraction contract: the same JSON schema, confidence and temporal fields, and reconciler. Adapters supply the input kind and trust posture (spoken turn vs curated document); they do not invent parallel entity-type vocabularies. That keeps a person named in a policy PDF and the same person named in chat as one node when normalisation matches.
+
 Register scope paths before first write:
 
 ```bash

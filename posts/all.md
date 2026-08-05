@@ -1,8 +1,10 @@
 # All Posts
 
-_249 posts_  
+_250 posts_  
 [← Index](../README.md)
 
+- **2026-08-04** · [Agent memory needs three clocks: tri-temporal belief history in Spectron](2026/08/spectron-insights-how-tri-temporal-belief-history-works.md)  
+  `engineering` — Why tri-temporal belief history is needed for agent memory to properly simulate human memory and how to work with Spectron to best use it.
 - **2026-07-30** · [Embedding models comparison: OpenAI, Google, Qwen, Nomic, Jina, BAAI](2026/07/embedding-models-comparison.md)  
   `ai` — A practical guide to eight embedding models — text-embedding-3-small\/large, gemini-embedding-001, embeddinggemma-300m, qwen3-embedding, nomic-embed-text-v2-moe, jina-embeddings-v5-text-small, and BGE-M3.
 - **2026-07-30** · [Integrating Ultima VII with Spectron, part I: the game](2026/07/using-ultima-vii-to-test-spectron-part-i-the-game.md)  

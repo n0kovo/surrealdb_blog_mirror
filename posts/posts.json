@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-08-04T08:30:40.930554+00:00",
-  "count": 249,
+  "generated_at": "2026-08-05T08:29:35.655290+00:00",
+  "count": 250,
   "posts": [
+    {
+      "slug": "spectron-insights-how-tri-temporal-belief-history-works",
+      "title": "Agent memory needs three clocks: tri-temporal belief history in Spectron",
+      "summary": "Why tri-temporal belief history is needed for agent memory to properly simulate human memory and how to work with Spectron to best use it.",
+      "publishDate": "2026-08-04T21:01:26.000Z",
+      "categories": [
+        "engineering"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/q9r7680x1izqy6tvgktnupqr.auto",
+      "source": "https://surrealdb.com/blog/spectron-insights-how-tri-temporal-belief-history-works",
+      "local_path": "2026/08/spectron-insights-how-tri-temporal-belief-history-works.md"
+    },
     {
       "slug": "embedding-models-comparison",
       "title": "Embedding models comparison: OpenAI, Google, Qwen, Nomic, Jina, BAAI",

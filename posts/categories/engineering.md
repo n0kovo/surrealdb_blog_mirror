@@ -1,8 +1,10 @@
 # Category: engineering
 
-_42 posts_  
+_43 posts_  
 [← Index](../../README.md)
 
+- **2026-08-04** · [Agent memory needs three clocks: tri-temporal belief history in Spectron](../2026/08/spectron-insights-how-tri-temporal-belief-history-works.md)  
+  `engineering` — Why tri-temporal belief history is needed for agent memory to properly simulate human memory and how to work with Spectron to best use it.
 - **2026-07-30** · [Integrating Ultima VII with Spectron, part I: the game](../2026/07/using-ultima-vii-to-test-spectron-part-i-the-game.md)  
   `engineering` — Why Ultima VII through the Exult open-source game engine ended up being the perfect testing platform for SurrealDB's memory layer Spectron.
 - **2026-06-19** · [Deterministic simulation testing and its use at SurrealDB](../2026/06/deterministic-simulation-testing-and-its-use-at-surrealdb.md)  

@@ -1,8 +1,12 @@
 # Category: tutorials
 
-_97 posts_  
+_99 posts_  
 [← Index](../../README.md)
 
+- **2026-08-05** · [Chat with your meeting notes: a CocoIndex knowledge graph and a text-to-SurrealQL agent](../2026/08/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent.md)  
+  `tutorials` `ai` — A folder of Markdown meeting notes becomes a self-maintaining knowledge graph in SurrealDB — and the text-to-SurrealQL prompt is not a string in the repo, it is a function call against the live database. Built with CocoIndex and Pydantic AI, fenced in by a database role rather than a regex.
+- **2026-08-05** · [Empower your agents with the new SurrealDB MCP](../2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  
+  `featured` `releases` `tutorials` `ai` — The SurrealMCP server is now fully managed. Add one URL to Claude, Cursor, or any other AI tool, sign in with your Surreal ID, and your assistant can deploy, query, and look after your SurrealDB Cloud account alongside you.
 - **2026-07-29** · [One database for the whole claim: agentic claims triage on SurrealDB](../2026/07/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb.md)  
   `ai` `tutorials` — An AI agent triaging an insurance claim needs semantic, graph, and document data at once. Do it in one SurrealDB database — vector recall of similar past claims plus graph fraud-ring detection, fused in a single function. Schema, seed data, and queries included.
 - **2026-07-27** · [Even a jailbroken LLM can't exceed its database permissions — here's how](../2026/07/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how.md)  

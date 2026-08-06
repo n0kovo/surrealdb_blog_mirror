@@ -1,8 +1,10 @@
 # Category: engineering
 
-_43 posts_  
+_44 posts_  
 [← Index](../../README.md)
 
+- **2026-08-06** · [Integrating Ultima VII with Spectron, part II: the testing](../2026/08/integrating-ultima-vii-with-spectron-part-ii-the-testing.md)  
+  `engineering` — How Ultima VII through Exult was integrated with Spectron via some changes to the Exult code to emit events in a certain way and a Rust app built using egui to stand in between the game and Spectron.
 - **2026-08-04** · [Agent memory needs three clocks: tri-temporal belief history in Spectron](../2026/08/spectron-insights-how-tri-temporal-belief-history-works.md)  
   `engineering` — Why tri-temporal belief history is needed for agent memory to properly simulate human memory and how to work with Spectron to best use it.
 - **2026-07-30** · [Integrating Ultima VII with Spectron, part I: the game](../2026/07/using-ultima-vii-to-test-spectron-part-i-the-game.md)  

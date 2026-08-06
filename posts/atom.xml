@@ -4,10 +4,50 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-08-04T21:01:26Z</updated>
+  <updated>2026-08-06T04:09:56Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/integrating-ultima-vii-with-spectron-part-ii-the-testing</id>
+    <title>Integrating Ultima VII with Spectron, part II: the testing</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/integrating-ultima-vii-with-spectron-part-ii-the-testing" type="text/html" />
+    <published>2026-08-06T04:09:56Z</published>
+    <updated>2026-08-06T04:09:56Z</updated>
+    <summary type="text">How Ultima VII through Exult was integrated with Spectron via some changes to the Exult code to emit events in a certain way and a Rust app built using egui to stand in between the game and Spectron.</summary>
+    <category term="engineering" />
+  </entry>
+  <entry>
+    <id>https://surrealdb.com/blog/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent</id>
+    <title>Chat with your meeting notes: a CocoIndex knowledge graph and a text-to-SurrealQL agent</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent" type="text/html" />
+    <published>2026-08-05T16:16:16Z</published>
+    <updated>2026-08-05T16:16:16Z</updated>
+    <summary type="text">A folder of Markdown meeting notes becomes a self-maintaining knowledge graph in SurrealDB — and the text-to-SurrealQL prompt is not a string in the repo, it is a function call against the live database. Built with CocoIndex and Pydantic AI, fenced in by a database role rather than a regex.</summary>
+    <category term="tutorials" />
+    <category term="ai" />
+  </entry>
+  <entry>
+    <id>https://surrealdb.com/blog/announcing-snowflake-integration-for-surrealdb-from-data-warehouse-to-context-layer</id>
+    <title>Announcing the Snowflake integration for SurrealDB: from data warehouse to context layer</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/announcing-snowflake-integration-for-surrealdb-from-data-warehouse-to-context-layer" type="text/html" />
+    <published>2026-08-05T15:36:30Z</published>
+    <updated>2026-08-05T15:36:30Z</updated>
+    <summary type="text">SurrealDB now imports Snowflake tables directly. Move warehouse data into a context layer where facts, relationships, vectors and agent memory live in one engine.</summary>
+    <category term="releases" />
+  </entry>
+  <entry>
+    <id>https://surrealdb.com/blog/surrealmcp-a-managed-mcp-server-for-ai-agents</id>
+    <title>Empower your agents with the new SurrealDB MCP</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/surrealmcp-a-managed-mcp-server-for-ai-agents" type="text/html" />
+    <published>2026-08-05T14:01:36Z</published>
+    <updated>2026-08-05T14:01:36Z</updated>
+    <summary type="text">The SurrealMCP server is now fully managed. Add one URL to Claude, Cursor, or any other AI tool, sign in with your Surreal ID, and your assistant can deploy, query, and look after your SurrealDB Cloud account alongside you.</summary>
+    <category term="featured" />
+    <category term="releases" />
+    <category term="tutorials" />
+    <category term="ai" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/spectron-insights-how-tri-temporal-belief-history-works</id>
     <title>Agent memory needs three clocks: tri-temporal belief history in Spectron</title>
@@ -454,42 +494,5 @@
     <summary type="text">SurrealDB Raises $23M Series A extension to power the AI-native database era</summary>
     <category term="featured" />
     <category term="company" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/introducing-surrealdb-3-0--the-future-of-ai-agent-memory</id>
-    <title>Introducing SurrealDB 3.0 - the future of AI agent memory</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/introducing-surrealdb-3-0--the-future-of-ai-agent-memory" type="text/html" />
-    <published>2026-02-17T00:00:00Z</published>
-    <updated>2026-02-17T00:00:00Z</updated>
-    <summary type="text">Introducing SurrealDB 3.0 - the future of AI agent memory</summary>
-    <category term="featured" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/surrealdb-3-0-benchmarks-a-new-foundation-for-performance</id>
-    <title>SurrealDB 3.0 benchmarks: a new foundation for performance</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-3-0-benchmarks-a-new-foundation-for-performance" type="text/html" />
-    <published>2026-02-17T00:00:00Z</published>
-    <updated>2026-02-17T00:00:00Z</updated>
-    <summary type="text">SurrealDB 3.0 introduces a new benchmarking foundation that showcases its improved, production-ready performance and the architectural advancements driving it.</summary>
-    <category term="featured" />
-    <category term="engineering" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/introducing-surrealism</id>
-    <title>Introducing Surrealism</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/introducing-surrealism" type="text/html" />
-    <published>2026-02-17T00:00:00Z</published>
-    <updated>2026-02-17T00:00:00Z</updated>
-    <summary type="text">Introducing Surrealism</summary>
-    <category term="featured" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/surrealdb-vs-neo4j</id>
-    <title>SurrealDB vs. Neo4j</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-vs-neo4j" type="text/html" />
-    <published>2026-02-16T00:00:00Z</published>
-    <updated>2026-02-16T00:00:00Z</updated>
-    <summary type="text">SurrealDB is built for live, large-scale application data. Neo4j is built for traversal-heavy graph workloads at modest scale.</summary>
-    <category term="featured" />
   </entry>
 </feed>

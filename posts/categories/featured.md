@@ -1,8 +1,10 @@
 # Category: featured
 
-_109 posts_  
+_110 posts_  
 [← Index](../../README.md)
 
+- **2026-08-05** · [Empower your agents with the new SurrealDB MCP](../2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  
+  `featured` `releases` `tutorials` `ai` — The SurrealMCP server is now fully managed. Add one URL to Claude, Cursor, or any other AI tool, sign in with your Surreal ID, and your assistant can deploy, query, and look after your SurrealDB Cloud account alongside you.
 - **2026-07-02** · [Introducing Scale: SurrealDB Cloud, built for high availability and scale ](../2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  
   `featured` `releases` — SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.
 - **2026-07-01** · [Bring SurrealDB to your Replit Agent](../2026/07/bring-surrealdb-to-your-replit-agent.md)  

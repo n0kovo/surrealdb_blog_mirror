@@ -1,8 +1,12 @@
 # Category: ai
 
-_45 posts_  
+_47 posts_  
 [← Index](../../README.md)
 
+- **2026-08-05** · [Chat with your meeting notes: a CocoIndex knowledge graph and a text-to-SurrealQL agent](../2026/08/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent.md)  
+  `tutorials` `ai` — A folder of Markdown meeting notes becomes a self-maintaining knowledge graph in SurrealDB — and the text-to-SurrealQL prompt is not a string in the repo, it is a function call against the live database. Built with CocoIndex and Pydantic AI, fenced in by a database role rather than a regex.
+- **2026-08-05** · [Empower your agents with the new SurrealDB MCP](../2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  
+  `featured` `releases` `tutorials` `ai` — The SurrealMCP server is now fully managed. Add one URL to Claude, Cursor, or any other AI tool, sign in with your Surreal ID, and your assistant can deploy, query, and look after your SurrealDB Cloud account alongside you.
 - **2026-07-30** · [Embedding models comparison: OpenAI, Google, Qwen, Nomic, Jina, BAAI](../2026/07/embedding-models-comparison.md)  
   `ai` — A practical guide to eight embedding models — text-embedding-3-small\/large, gemini-embedding-001, embeddinggemma-300m, qwen3-embedding, nomic-embed-text-v2-moe, jina-embeddings-v5-text-small, and BGE-M3.
 - **2026-07-29** · [One database for the whole claim: agentic claims triage on SurrealDB](../2026/07/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb.md)  

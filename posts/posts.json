@@ -1,7 +1,63 @@
 {
-  "generated_at": "2026-08-05T08:29:35.655290+00:00",
-  "count": 250,
+  "generated_at": "2026-08-06T08:29:03.240823+00:00",
+  "count": 254,
   "posts": [
+    {
+      "slug": "integrating-ultima-vii-with-spectron-part-ii-the-testing",
+      "title": "Integrating Ultima VII with Spectron, part II: the testing",
+      "summary": "How Ultima VII through Exult was integrated with Spectron via some changes to the Exult code to emit events in a certain way and a Rust app built using egui to stand in between the game and Spectron.",
+      "publishDate": "2026-08-06T04:09:56.000Z",
+      "categories": [
+        "engineering"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/dyqh7as2hv0tiikoml37ax34.auto",
+      "source": "https://surrealdb.com/blog/integrating-ultima-vii-with-spectron-part-ii-the-testing",
+      "local_path": "2026/08/integrating-ultima-vii-with-spectron-part-ii-the-testing.md"
+    },
+    {
+      "slug": "chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent",
+      "title": "Chat with your meeting notes: a CocoIndex knowledge graph and a text-to-SurrealQL agent",
+      "summary": "A folder of Markdown meeting notes becomes a self-maintaining knowledge graph in SurrealDB — and the text-to-SurrealQL prompt is not a string in the repo, it is a function call against the live database. Built with CocoIndex and Pydantic AI, fenced in by a database role rather than a regex.",
+      "publishDate": "2026-08-05T16:16:16.000Z",
+      "categories": [
+        "tutorials",
+        "ai"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/cc3vv48l8mk2780ma9fkoaog.auto",
+      "source": "https://surrealdb.com/blog/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent",
+      "local_path": "2026/08/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent.md"
+    },
+    {
+      "slug": "announcing-snowflake-integration-for-surrealdb-from-data-warehouse-to-context-layer",
+      "title": "Announcing the Snowflake integration for SurrealDB: from data warehouse to context layer",
+      "summary": "SurrealDB now imports Snowflake tables directly. Move warehouse data into a context layer where facts, relationships, vectors and agent memory live in one engine.",
+      "publishDate": "2026-08-05T15:36:30.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/06znpnv4h879ozwar2pqpjhg.auto",
+      "source": "https://surrealdb.com/blog/announcing-snowflake-integration-for-surrealdb-from-data-warehouse-to-context-layer",
+      "local_path": "2026/08/announcing-snowflake-integration-for-surrealdb-from-data-warehouse-to-context-layer.md"
+    },
+    {
+      "slug": "surrealmcp-a-managed-mcp-server-for-ai-agents",
+      "title": "Empower your agents with the new SurrealDB MCP",
+      "summary": "The SurrealMCP server is now fully managed. Add one URL to Claude, Cursor, or any other AI tool, sign in with your Surreal ID, and your assistant can deploy, query, and look after your SurrealDB Cloud account alongside you.",
+      "publishDate": "2026-08-05T14:01:36.000Z",
+      "categories": [
+        "featured",
+        "releases",
+        "tutorials",
+        "ai"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/124xhsbmpzb7xjsb2cslf9xh.auto",
+      "source": "https://surrealdb.com/blog/surrealmcp-a-managed-mcp-server-for-ai-agents",
+      "local_path": "2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md"
+    },
     {
       "slug": "spectron-insights-how-tri-temporal-belief-history-works",
       "title": "Agent memory needs three clocks: tri-temporal belief history in Spectron",

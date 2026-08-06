@@ -1,8 +1,16 @@
 # All Posts
 
-_250 posts_  
+_254 posts_  
 [← Index](../README.md)
 
+- **2026-08-06** · [Integrating Ultima VII with Spectron, part II: the testing](2026/08/integrating-ultima-vii-with-spectron-part-ii-the-testing.md)  
+  `engineering` — How Ultima VII through Exult was integrated with Spectron via some changes to the Exult code to emit events in a certain way and a Rust app built using egui to stand in between the game and Spectron.
+- **2026-08-05** · [Chat with your meeting notes: a CocoIndex knowledge graph and a text-to-SurrealQL agent](2026/08/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent.md)  
+  `tutorials` `ai` — A folder of Markdown meeting notes becomes a self-maintaining knowledge graph in SurrealDB — and the text-to-SurrealQL prompt is not a string in the repo, it is a function call against the live database. Built with CocoIndex and Pydantic AI, fenced in by a database role rather than a regex.
+- **2026-08-05** · [Announcing the Snowflake integration for SurrealDB: from data warehouse to context layer](2026/08/announcing-snowflake-integration-for-surrealdb-from-data-warehouse-to-context-layer.md)  
+  `releases` — SurrealDB now imports Snowflake tables directly. Move warehouse data into a context layer where facts, relationships, vectors and agent memory live in one engine.
+- **2026-08-05** · [Empower your agents with the new SurrealDB MCP](2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  
+  `featured` `releases` `tutorials` `ai` — The SurrealMCP server is now fully managed. Add one URL to Claude, Cursor, or any other AI tool, sign in with your Surreal ID, and your assistant can deploy, query, and look after your SurrealDB Cloud account alongside you.
 - **2026-08-04** · [Agent memory needs three clocks: tri-temporal belief history in Spectron](2026/08/spectron-insights-how-tri-temporal-belief-history-works.md)  
   `engineering` — Why tri-temporal belief history is needed for agent memory to properly simulate human memory and how to work with Spectron to best use it.
 - **2026-07-30** · [Embedding models comparison: OpenAI, Google, Qwen, Nomic, Jina, BAAI](2026/07/embedding-models-comparison.md)  

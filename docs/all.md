@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1098 pages_  
+_1099 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -1940,6 +1940,8 @@ _1098 pages_
   Introduce turns without replacing your LLM client.
 - [Event-driven game client](spectron/cookbooks/patterns/event-driven-game-client.md)
   Pipe RPG or simulation events into Spectron with epistemic labels and careful extraction.
+- [Historical and archaeological data](spectron/cookbooks/patterns/historical-and-archaeological-data.md)
+  Ingest fragmentary primary sources, ask questions the corpus can answer, and prove the answers came from the corpus.
 - [Knowledge-grounded agents](spectron/cookbooks/patterns/knowledge-grounded-agents.md)
   Combine authoritative knowledge retrieval with experiential memory.
 - [Reflection loops](spectron/cookbooks/patterns/reflection-loops.md)

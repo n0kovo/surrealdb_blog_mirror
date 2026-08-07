@@ -23,6 +23,7 @@ Practical, end-to-end guides for building trustworthy agent memory with Spectron
 - [Adding memory to an existing app](patterns/adding-memory-to-existing-app.md)
 - [Spoiler-safe narrative memory](patterns/spoiler-safe-narrative-memory.md)
 - [Event-driven game client](patterns/event-driven-game-client.md)
+- [Historical and archaeological data](patterns/historical-and-archaeological-data.md)
 
 ## Migrate
 

@@ -5,7 +5,7 @@ generated: stub
 
 # Patterns
 
-_Auto-generated index — 7 pages._
+_Auto-generated index — 8 pages._
 
 ## Pages
 
@@ -13,6 +13,8 @@ _Auto-generated index — 7 pages._
   Introduce turns without replacing your LLM client.
 - [Event-driven game client](event-driven-game-client.md)
   Pipe RPG or simulation events into Spectron with epistemic labels and careful extraction.
+- [Historical and archaeological data](historical-and-archaeological-data.md)
+  Ingest fragmentary primary sources, ask questions the corpus can answer, and prove the answers came from the corpus.
 - [Knowledge-grounded agents](knowledge-grounded-agents.md)
   Combine authoritative knowledge retrieval with experiential memory.
 - [Reflection loops](reflection-loops.md)

@@ -77,7 +77,7 @@ To create a transaction, first open a session with `.new_session()` on the conne
 
 ## Executing operations within a transaction
 
-Once a transaction is created, use its methods — such as `.query()`, `.create()`, `.select()`, `.update()`, and `.delete()` — to perform operations. These operations are buffered within the transaction scope and are not visible to other connections or sessions until the transaction is committed.
+Once a transaction is created, use its methods — such as `.query()`, `.create()`, `.select()`, `.update()`, and `.delete()` — to perform operations. `.query()` returns a lazy builder, so remember to finish it with `.execute()` or `.first()`; nothing is sent to the server until you do. These operations are buffered within the transaction scope and are not visible to other connections or sessions until the transaction is committed.
 
 	
 **Synchronous**
@@ -95,7 +95,7 @@ Once a transaction is created, use its methods — such as `.query()`, `.create(
 		    "age": 25,
 		})
 
-		result = txn.query("SELECT * FROM users")
+		users = txn.query("SELECT * FROM users").first()
 		```
 
 	
@@ -114,7 +114,7 @@ Once a transaction is created, use its methods — such as `.query()`, `.create(
 		    "age": 25,
 		})
 
-		result = await txn.query("SELECT * FROM users")
+		users = await txn.query("SELECT * FROM users").first()
 		```
 
 Refer to the [SurrealTransaction API reference](../api/core/surreal-transaction.md) for the full list of methods available on the transaction object.

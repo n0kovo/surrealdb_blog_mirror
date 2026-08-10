@@ -69,7 +69,7 @@ A transaction exposes query and CRUD methods that mirror the parent connection's
 
 | Method | Returns | Description |
 |---|---|---|
-| [`.query(query, vars)`](surreal.md#query) | Awaitable / lazy `Value` or `tuple[Value, ...]` builder | Execute one or more SurrealQL statements within the transaction. |
+| [`.query(query, vars)`](surreal.md#query) | Awaitable / lazy builder -> `list[Value]`, one entry per statement (`.execute()`), or the first statement's result (`.first()`) | Execute one or more SurrealQL statements within the transaction. |
 | [`.select(record)`](surreal.md#select) | [`Value`](../types/index.md#value) | Select records. |
 | [`.create(record, data)`](surreal.md#create) | CRUD builder -> `dict[str, Value]` | Create a record (chain `.content/.replace/.merge/.patch`). |
 | [`.update(record, data)`](surreal.md#update) | CRUD builder -> `dict` or `list` | Update records (chain `.content/.replace/.merge/.patch`). |
@@ -166,11 +166,11 @@ with Surreal("ws://localhost:8000") as db:
         txn.query(
             "UPDATE accounts:alice SET balance = balance - $amount",
             {"amount": 200},
-        )
+        ).execute()
         txn.query(
             "UPDATE accounts:bob SET balance = balance + $amount",
             {"amount": 200},
-        )
+        ).execute()
         txn.commit()
         print("Transfer committed")
     except Exception:
@@ -202,11 +202,11 @@ async def main():
             await txn.query(
                 "UPDATE accounts:alice SET balance = balance - $amount",
                 {"amount": 200},
-            )
+            ).execute()
             await txn.query(
                 "UPDATE accounts:bob SET balance = balance + $amount",
                 {"amount": 200},
-            )
+            ).execute()
             await txn.commit()
             print("Transfer committed")
         except Exception:

@@ -60,7 +60,7 @@ A session exposes the same interface as the parent connection. All methods below
 | Method | Returns | Description |
 |---|---|---|
 | [`.use(namespace, database)`](surreal.md#use) | `None` | Switch namespace and database for this session. |
-| [`.query(query, vars)`](surreal.md#query) | Awaitable / lazy `Value` or `tuple[Value, ...]` builder | Execute one or more SurrealQL statements. |
+| [`.query(query, vars)`](surreal.md#query) | Awaitable / lazy builder -> `list[Value]`, one entry per statement (`.execute()`), or the first statement's result (`.first()`) | Execute one or more SurrealQL statements. |
 | [`.signin(vars)`](surreal.md#signin) | [`Tokens`](../types/index.md#tokens) | Sign in within this session. |
 | [`.signup(vars)`](surreal.md#signup) | [`Tokens`](../types/index.md#tokens) | Sign up within this session. |
 | [`.authenticate(token)`](surreal.md#authenticate) | `None` | Authenticate this session with a JWT. |

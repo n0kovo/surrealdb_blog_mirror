@@ -23,10 +23,10 @@ This page covers how to run queries, bind variables, and work with raw results.
 	<tbody>
 		<tr>
 			<td scope="row" data-label="Method"><a href="/docs/reference/python/api/core/surreal#query">`db.query(query, vars?)`</a></td>
-			<td scope="row" data-label="Description">Executes a SurrealQL query and returns the processed result</td>
+			<td scope="row" data-label="Description">Builds a SurrealQL query; trigger it with `.execute()`, `.first()` or `.into(cls)`</td>
 		</tr>
 		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/reference/python/api/core/surreal#query-raw">`db.query_raw(query, params?)`</a></td>
+			<td scope="row" data-label="Method"><a href="/docs/reference/python/api/core/surreal#query-raw">`db.query_raw(query, vars?)`</a></td>
 			<td scope="row" data-label="Description">Executes a SurrealQL query and returns the full raw response</td>
 		</tr>
 	</tbody>
@@ -34,7 +34,12 @@ This page covers how to run queries, bind variables, and work with raw results.
 
 ## Running a query
 
-The `.query()` method executes a SurrealQL statement and returns the result directly as a [Value](../api/types/index.md#value). This is the simplest way to run queries when you need only the result data.
+The `.query()` method builds a SurrealQL query. It does not talk to the database on its own — you trigger it explicitly:
+
+- `.execute()` returns a `list` of [Value](../api/types/index.md#value) with **one entry per statement**, always a list, even when the query contains a single statement.
+- `.first()` returns just the first statement's result, which is what you usually want for a one-statement query.
+
+On an async connection you can also `await` the builder directly, which is the same as awaiting `.execute()`.
 
 	
 **Synchronous**
@@ -46,8 +51,11 @@ The `.query()` method executes a SurrealQL statement and returns the result dire
 		    db.use("surrealdb", "docs")
 		    db.signin({"username": "root", "password": "root"})
 
-		    result = db.query("SELECT * FROM users")
-		    print(result)
+		    statements = db.query("SELECT * FROM users").execute()
+		    print(statements)  # [[{...}, {...}]] - one entry, one statement
+
+		    users = db.query("SELECT * FROM users").first()
+		    print(users)       # [{...}, {...}]
 		```
 
 	
@@ -60,8 +68,11 @@ The `.query()` method executes a SurrealQL statement and returns the result dire
 		    await db.use("surrealdb", "docs")
 		    await db.signin({"username": "root", "password": "root"})
 
-		    result = await db.query("SELECT * FROM users")
-		    print(result)
+		    statements = await db.query("SELECT * FROM users").execute()
+		    print(statements)  # [[{...}, {...}]] - one entry, one statement
+
+		    users = await db.query("SELECT * FROM users").first()
+		    print(users)       # [{...}, {...}]
 		```
 
 ## Passing variables
@@ -72,20 +83,20 @@ You can pass a dictionary of variables as the second argument to `.query()`. Var
 **Synchronous**
 
 ```python
-		result = db.query(
+		users = db.query(
 		    "SELECT * FROM users WHERE age > $min_age AND active = $active",
 		    {"min_age": 18, "active": True},
-		)
+		).first()
 		```
 
 	
 **Asynchronous**
 
 ```python
-		result = await db.query(
+		users = await db.query(
 		    "SELECT * FROM users WHERE age > $min_age AND active = $active",
 		    {"min_age": 18, "active": True},
-		)
+		).first()
 		```
 
 You can bind any Python value supported by the SDK, including strings, numbers, booleans, lists, dictionaries, and SurrealDB-specific types such as [RecordID](../api/values/record-id.md).
@@ -93,10 +104,10 @@ You can bind any Python value supported by the SDK, including strings, numbers, 
 ```python
 from surrealdb import RecordID
 
-result = db.query(
+users = db.query(
     "SELECT * FROM users WHERE id = $user_id",
     {"user_id": RecordID("users", "tobie")},
-)
+).first()
 ```
 
 ## Getting raw query results
@@ -109,7 +120,7 @@ The `.query_raw()` method returns the full response from the server, including m
 ```python
 		response = db.query_raw("SELECT * FROM users; SELECT * FROM products")
 
-		for statement in response:
+		for statement in response["result"]:
 		    print(statement["status"])
 		    print(statement["time"])
 		    print(statement["result"])
@@ -121,51 +132,43 @@ The `.query_raw()` method returns the full response from the server, including m
 ```python
 		response = await db.query_raw("SELECT * FROM users; SELECT * FROM products")
 
-		for statement in response:
+		for statement in response["result"]:
 		    print(statement["status"])
 		    print(statement["time"])
 		    print(statement["result"])
 		```
 
-Each element in the response corresponds to one statement in the query and contains the `status`, `time`, and `result` fields.
+The response is a `dict` containing the RPC envelope. Its `result` key holds one entry per statement in the query, each with `status`, `time`, and `result` fields. Unlike `.query()`, a failed statement is reported as `"status": "ERR"` rather than raised.
 
 ## Handling multiple statements
 
-When a query string contains multiple semicolon-separated statements, `.query()` returns only the result of the **last** statement. If you need the results from every statement, use `.query_raw()` instead.
-
-The following example demonstrates the difference between the two methods for multi-statement queries.
+When a query string contains multiple semicolon-separated statements, `.execute()` returns one entry per statement, in order. Nothing is discarded, so you can unpack the results directly.
 
 	
 **Synchronous**
 
 ```python
-		last_result = db.query("""
+		created, users = db.query("""
 		    CREATE users CONTENT {"name": "Alice", "age": 30};
 		    SELECT * FROM users;
-		""")
+		""").execute()
 
-		all_results = db.query_raw("""
-		    CREATE users CONTENT {"name": "Alice", "age": 30};
-		    SELECT * FROM users;
-		""")
+		# .first() would return only the CREATE result
 		```
 
 	
 **Asynchronous**
 
 ```python
-		last_result = await db.query("""
+		created, users = await db.query("""
 		    CREATE users CONTENT {"name": "Alice", "age": 30};
 		    SELECT * FROM users;
-		""")
+		""").execute()
 
-		all_results = await db.query_raw("""
-		    CREATE users CONTENT {"name": "Alice", "age": 30};
-		    SELECT * FROM users;
-		""")
+		# .first() would return only the CREATE result
 		```
 
-In the example above, `last_result` contains only the `SELECT` output, while `all_results` contains the full response for both the `CREATE` and `SELECT` statements.
+`.query_raw()` returns those same per-statement results wrapped in the raw RPC envelope, with each statement's `status` and `time` alongside its `result`. Reach for it when you need that metadata, or when you want failed statements reported rather than raised.
 
 ## Learn more
 

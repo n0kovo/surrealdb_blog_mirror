@@ -195,10 +195,10 @@ with Surreal("ws://localhost:8000") as db:
     db.use("my_ns", "my_db")
     db.signin({"username": "root", "password": "root"})
 
-    result = db.query(
+    events = db.query(
         "SELECT * FROM events WHERE year IN $range",
         {"range": Range(BoundIncluded(2020), BoundIncluded(2025))},
-    )
+    ).first()
 ```
 
 See the [Range reference](../api/values/range.md) for the full API and bound types.

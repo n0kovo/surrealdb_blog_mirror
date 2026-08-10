@@ -60,7 +60,7 @@ with Surreal("ws://localhost:8000") as db:
     db.signin({"username": "root", "password": "root"})
 
     try:
-        result = db.query("SELECT * FROM users")
+        result = db.query("SELECT * FROM users").execute()
     except SurrealError as e:
         print("SDK error:", e)
 ```
@@ -77,7 +77,7 @@ You can check whether an error is a `ServerError` and then inspect its kind usin
 from surrealdb import ServerError, ErrorKind
 
 try:
-    result = db.query("INVALID QUERY")
+    result = db.query("INVALID QUERY").execute()
 except ServerError as e:
     print("Kind:", e.kind)
     print("Details:", e.details)

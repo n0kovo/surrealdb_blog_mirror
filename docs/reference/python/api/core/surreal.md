@@ -474,12 +474,12 @@ db.let(key, value)
 
 ```python title="Synchronous"
 db.let("user_id", RecordID("users", "john"))
-result = db.query("SELECT * FROM users WHERE id = $user_id")
+result = db.query("SELECT * FROM users WHERE id = $user_id").first()
 ```
 
 ```python title="Asynchronous"
 await db.let("user_id", RecordID("users", "john"))
-result = await db.query("SELECT * FROM users WHERE id = $user_id")
+result = await db.query("SELECT * FROM users WHERE id = $user_id").first()
 ```
 
 ### `.unset()` {#unset}
@@ -525,14 +525,14 @@ await db.unset("user_id")
 
 ### `.query()` {#query}
 
-Runs a set of [SurrealQL](../../../query-language/index.md) statements against the database. Returns an awaitable (async) or lazy (sync) builder.
+Builds a set of [SurrealQL](../../../query-language/index.md) statements to run against the database. Returns an awaitable (async) or lazy (sync) builder — nothing is sent until you trigger it.
 
 ```python title="Method Syntax"
 db.query(query, vars)
 ```
 
 > [!IMPORTANT]
-> **Behaviour change in v3.0.** `.query()` now surfaces every statement result. When the server returns a single statement result it returns the result directly; when it returns multiple results it returns a `tuple[Value, ...]`. This fixes the silent-discard behaviour reported in [issue #232](https://github.com/surrealdb/surrealdb.py/issues/232).
+> **Behaviour change in v3.0.** `.query()` no longer returns a result directly — it returns a builder that you trigger explicitly with `.execute()`, `.first()` or `.into(cls)`. `.execute()` returns a `list[Value]` with **one entry per statement, always** — even when the query contains a single statement. This surfaces every statement result, fixing the silent-discard behaviour reported in [issue #232](https://github.com/surrealdb/surrealdb.py/issues/232). Use `.first()` when you only care about the first statement's result.
 
 <table>
     <thead>
@@ -556,9 +556,27 @@ db.query(query, vars)
     </tbody>
 </table>
 
-**Returns:** [`Value`](../types/index.md#value) for a single-statement query, otherwise `tuple[Value, ...]` of statement results.
+**Returns:** a builder. Nothing is sent to the database until you trigger it with one of the accessors below.
 
-The returned object also exposes `.into(cls)` which maps the N statement results positionally onto the fields of a dataclass (or any class accepting keyword arguments).
+| Accessor | Returns |
+|---|---|
+| `.execute()` | `list[Value]` — one entry per statement, **always a list**, even for a single statement. See [Value](../types/index.md#value). |
+| `.first()` | The first statement's result, or `None` when the query contains no statements. |
+| `.into(cls)` | The N statement results mapped positionally onto the fields of a dataclass (or any class accepting keyword arguments). |
+| `.into(cls, rows=True)` | `list[cls]` — each **row** of the first statement's result mapped onto `cls`. |
+
+On an async connection every accessor is awaitable — `await db.query(...).execute()`, `await db.query(...).first()`, `await db.query(...).into(Stats)` — and the builder itself is too, so `await db.query(...)` is shorthand for `await db.query(...).execute()`. The sync builder has no such shortcut: you must call an accessor.
+
+> [!NOTE]
+> A single-statement `SELECT` without `ONLY` produces **two** levels of nesting, and only the outer one comes from the SDK. The outer list is the per-statement envelope described above; the inner list is SurrealQL's own result set, because `SELECT ... FROM person:tobie` returns an *array of matching rows* even when it targets one record. Use [`ONLY`](../../../query-language/statements/select.md#the-only-clause) to collapse the inner list server-side, and `.first()` to peel the outer one.
+>
+> ```python
+> db.query("SELECT name FROM person:tobie").execute()            # [[{'name': 'Tobie'}]]
+> db.query("SELECT name FROM person:tobie").first()              # [{'name': 'Tobie'}]
+> db.query("SELECT VALUE name FROM person:tobie").first()        # ['Tobie']
+> db.query("SELECT name FROM ONLY person:tobie").first()         # {'name': 'Tobie'}
+> db.query("SELECT VALUE name FROM ONLY person:tobie").first()   # 'Tobie'
+> ```
 
 #### Examples
 
@@ -566,13 +584,21 @@ The returned object also exposes `.into(cls)` which maps the N statement results
 result = await db.query(
     "SELECT * FROM users WHERE age > $min_age",
     {"min_age": 18},
-)
+).execute()
+# [[{'id': RecordID(table_name=users, record_id='tobie'), 'age': 30}]]
+#  ^ one entry, because the query has one statement
+
+users = await db.query(
+    "SELECT * FROM users WHERE age > $min_age",
+    {"min_age": 18},
+).first()
+# [{'id': RecordID(table_name=users, record_id='tobie'), 'age': 30}]
 ```
 
-```python title="Multi-statement returns tuple"
+```python title="Multi-statement: one entry per statement"
 people, count = await db.query(
     "SELECT * FROM person; SELECT count() FROM person GROUP ALL"
-)
+).execute()
 ```
 
 ```python title="Map results onto a dataclass"
@@ -589,10 +615,13 @@ stats = await db.query(
 ```
 
 ```python title="Synchronous lazy builder"
-# The sync builder auto-executes when consumed (indexed, iterated, compared, etc.).
-# For fire-and-forget statements call .execute() explicitly.
-people = db.query("SELECT * FROM users")
+# The sync builder never auto-executes - it has no __len__, __iter__ or
+# __getitem__. Always call an accessor, including for fire-and-forget
+# statements.
+builder = db.query("SELECT * FROM users")   # nothing has run yet
+people = builder.first()
 print(len(people))
+
 db.query("DELETE temp_data;").execute()
 ```
 
@@ -601,7 +630,7 @@ db.query("DELETE temp_data;").execute()
 Runs a set of SurrealQL statements and returns the raw RPC response, including per-statement results, statuses, and execution times. Unlike `.query()`, errors in individual statements are returned in the response rather than raised as exceptions.
 
 ```python title="Method Syntax"
-db.query_raw(query, params)
+db.query_raw(query, vars)
 ```
 
 <table>
@@ -619,14 +648,14 @@ db.query_raw(query, params)
             <td>The SurrealQL query string to execute.</td>
         </tr>
         <tr>
-            <td>`params` *[optional]*</td>
+            <td>`vars` *[optional]*</td>
             <td>`dict[str, <a href="/docs/reference/python/api/types/#value">Value</a>] | None`</td>
             <td>Variables to bind into the query. Defaults to `None`.</td>
         </tr>
     </tbody>
 </table>
 
-**Returns:** `dict[str, Any]`
+**Returns:** `dict[str, Any]` — the RPC envelope. Its `result` key holds one entry per statement, each with `status`, `time`, and `result`.
 
 #### Examples
 
@@ -1355,13 +1384,13 @@ db.commit(txn_id, session_id)
 
 ```python title="Synchronous"
 txn_id = db.begin()
-db.query("CREATE users SET name = 'Alice'")
+db.query("CREATE users SET name = 'Alice'").execute()
 db.commit(txn_id)
 ```
 
 ```python title="Asynchronous"
 txn_id = await db.begin()
-await db.query("CREATE users SET name = 'Alice'")
+await db.query("CREATE users SET name = 'Alice'").execute()
 await db.commit(txn_id)
 ```
 
@@ -1401,13 +1430,13 @@ db.cancel(txn_id, session_id)
 
 ```python title="Synchronous"
 txn_id = db.begin()
-db.query("DELETE users")
+db.query("DELETE users").execute()
 db.cancel(txn_id)
 ```
 
 ```python title="Asynchronous"
 txn_id = await db.begin()
-await db.query("DELETE users")
+await db.query("DELETE users").execute()
 await db.cancel(txn_id)
 ```
 
@@ -1459,7 +1488,7 @@ with Surreal("ws://localhost:8000") as db:
     cheap = db.query(
         "SELECT * FROM products WHERE price < $max",
         {"max": 100},
-    )
+    ).first()
     print("Affordable:", cheap)
 
     db.update(RecordID("products", products[0]["id"].id)).merge({"stock": 50})

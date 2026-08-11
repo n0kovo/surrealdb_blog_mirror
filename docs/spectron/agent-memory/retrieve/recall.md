@@ -94,7 +94,7 @@ POST /api/v1/{context_id}/documents/query
 ```
 
 ```bash
-spectron documents query "return policy"
+spectron recall "return policy" --include passages
 ```
 
 ## Chat (composed recall + synthesis)

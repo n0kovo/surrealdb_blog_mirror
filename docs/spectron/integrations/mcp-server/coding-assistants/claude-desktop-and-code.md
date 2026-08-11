@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 # Claude
 
-The official [SurrealDB plugin marketplace for Claude](https://github.com/surrealdb/ai-claude-plugin) ships a **`spectron`** plugin that connects Claude to your Spectron instance's `/mcp` endpoint and installs a usage skill. It supports **Claude Code**, **Cowork**, and **Claude Desktop**. There is no default URL — point it at your own instance (SurrealDB Cloud: your context host from Surrealist **API keys**; self-hosted: your server's base URL).
+The official [SurrealDB plugin marketplace for Claude](https://github.com/surrealdb/ai-claude-plugin) ships a **`spectron`** plugin that connects Claude to your Spectron instance's `/mcp` endpoint and installs a usage skill. It supports **Claude Code**, **Cowork**, and **Claude Desktop**. There is no default URL — point it at your own instance (SurrealDB Cloud: your context host from SurrealDB Studio **API keys**; self-hosted: your server's base URL).
 
 ## Claude Code and Cowork
 

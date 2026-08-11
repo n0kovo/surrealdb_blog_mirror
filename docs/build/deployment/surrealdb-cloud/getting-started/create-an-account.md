@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Create a SurrealDB Cloud account
 
-To get started, in the Surrealist app, click on the **Explore SurrealDB Cloud** option on the start screen. This will open the Cloud dashboard on the sidebar. Click on the **continue** button to create a SurrealDB Cloud account. You will be redirected to the SurrealDB Cloud authentication page where you can create or sign in to your account.
+To get started, in the SurrealDB Studio app, click on the **Explore SurrealDB Cloud** option on the start screen. This will open the Cloud dashboard on the sidebar. Click on the **continue** button to create a SurrealDB Cloud account. You will be redirected to the SurrealDB Cloud authentication page where you can create or sign in to your account.
 
 This account is used to authenticate your access to SurrealDB Cloud and [manage your created Instances](create-an-instance.md).
 
@@ -65,7 +65,7 @@ If you already have an account, you can sign in to SurrealDB Cloud . Sign in is 
 
 ### Sign in with Google
 
-1. Navigate to the [SurrealDB Cloud](https://app.surrealdb.com/cloud) dashboard in [Surrealist](https://app.surrealdb.com).
+1. Navigate to the [SurrealDB Cloud](https://app.surrealdb.com/cloud) dashboard in [SurrealDB Studio](https://app.surrealdb.com).
 2. **Select "Continue with Google"**: click on the "Continue with Google" option.
 3. **Choose Google account**: a Google sign-in window may appear; select your Google account or enter your Google email and password if prompted.
 4. **Authenticate**: complete any additional security steps if required, such as two-factor authentication.
@@ -73,7 +73,7 @@ If you already have an account, you can sign in to SurrealDB Cloud . Sign in is 
 
 ### Sign in with GitHub
 
-1. Navigate to the [SurrealDB Cloud](https://app.surrealdb.com/cloud) dashboard in [Surrealist](https://app.surrealdb.com).
+1. Navigate to the [SurrealDB Cloud](https://app.surrealdb.com/cloud) dashboard in [SurrealDB Studio](https://app.surrealdb.com).
 2. **Select "Continue with GitHub"**: click on the "Continue with GitHub" option.
 3. **Choose GitHub account**: a GitHub sign-in window may appear; select your GitHub account or enter your GitHub email and password if prompted.
 4. **Authenticate**: complete any additional security steps if required, such as two-factor authentication.
@@ -81,17 +81,17 @@ If you already have an account, you can sign in to SurrealDB Cloud . Sign in is 
 
 ### Sign in with email
 
-1. Navigate to the [SurrealDB Cloud](https://app.surrealdb.com/cloud) dashboard in [Surrealist](https://app.surrealdb.com).
+1. Navigate to the [SurrealDB Cloud](https://app.surrealdb.com/cloud) dashboard in [SurrealDB Studio](https://app.surrealdb.com).
 2. **Select "Sign In with Email"**: click on the "Sign In with Email" option.
 3. **Enter your email and password**: enter your email address and password.
 4. **Access granted**: you are now securely logged into your account using your email and password.
 
 ### Sign in with passkey
 
-1. Navigate to the [SurrealDB Cloud](https://app.surrealdb.com/cloud) dashboard in [Surrealist](https://app.surrealdb.com).
+1. Navigate to the [SurrealDB Cloud](https://app.surrealdb.com/cloud) dashboard in [SurrealDB Studio](https://app.surrealdb.com).
 2. **Select "Continue with Passkey"**: click on the "Continue with Passkey" option.
 3. **Access granted**: you are now securely logged into your account using your passkey.
 
 ## Next steps
 
-After creating an account, you can connect to a SurrealDB Cloud instance using Surrealist, a command-line interface, or any of the supported SDKs. For more information, see the [create a SurrealDB Cloud Instance](create-an-instance.md) document.
+After creating an account, you can connect to a SurrealDB Cloud instance using SurrealDB Studio, a command-line interface, or any of the supported SDKs. For more information, see the [create a SurrealDB Cloud Instance](create-an-instance.md) document.

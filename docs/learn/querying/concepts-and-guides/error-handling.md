@@ -79,7 +79,7 @@ Working with a schema in this way allows throwing errors to be taken care of by 
 
 ## Assertions while debugging
 
-When you are iterating on a query in the CLI or Surrealist, it is not always obvious which step in a long [method chain](../../../reference/query-language/functions/database-functions/index.md#method-syntax) produced an unexpected value. The [`value::expect()`](../../../reference/query-language/functions/database-functions/value.md#valueexpect) function (*Since v3.1.0*) checks a condition on the current value and returns that same value when the closure is `true`, or fails the statement with a clear error (and an optional custom message).
+When you are iterating on a query in the CLI or SurrealDB Studio, it is not always obvious which step in a long [method chain](../../../reference/query-language/functions/database-functions/index.md#method-syntax) produced an unexpected value. The [`value::expect()`](../../../reference/query-language/functions/database-functions/value.md#valueexpect) function (*Since v3.1.0*) checks a condition on the current value and returns that same value when the closure is `true`, or fails the statement with a clear error (and an optional custom message).
 
 ```surql
 CREATE person:one SET name = "Tommy", city = "London";

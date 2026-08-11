@@ -19,7 +19,7 @@ Start a running database using the following command:
 surreal start --user root --pass secret 
 ```
 
-To follow along interactively, connect [using Surrealist](../../../explore/surrealist/getting-started.md#creating-a-connection) or the following command to open up the CLI:
+To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open up the CLI:
 
 ```
 surrealdb % surreal sql --user root --pass secret --pretty
@@ -79,7 +79,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-We can now move to Surrealist or the CLI to execute a few queries and see what happens. The following queries create, update, and delete ten `account` records.
+We can now move to SurrealDB Studio or the CLI to execute a few queries and see what happens. The following queries create, update, and delete ten `account` records.
 
 ```surql
 FOR $_ IN 0..10 { CREATE account SET balance = 10.0 };
@@ -181,7 +181,7 @@ Start a running database using the following command:
 surreal start --user root --pass secret 
 ```
 
-To follow along interactively, connect [using Surrealist](../../../explore/surrealist/getting-started.md#creating-a-connection) or the following command to open up the CLI:
+To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open up the CLI:
 
 ```
 surrealdb % surreal sql --user root --pass secret --ns namespace --db database --pretty
@@ -250,7 +250,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-We can now move to Surrealist or the CLI to execute a few queries and see what happens. The following queries create, update, and delete ten `account` records.
+We can now move to SurrealDB Studio or the CLI to execute a few queries and see what happens. The following queries create, update, and delete ten `account` records.
 
 ```surql
 FOR $_ IN 0..10 { CREATE account SET balance = 10 };

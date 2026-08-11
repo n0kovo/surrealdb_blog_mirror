@@ -294,6 +294,6 @@ curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
 ## Next steps
 
 - Query the same endpoint from HTTP clients: [GraphQL via HTTP](via-http.md)
-- Optional: [Bruno](via-bruno.md) or [Surrealist](via-surrealist.md)
+- Optional: [Bruno](via-bruno.md) or [SurrealDB Studio](via-studio.md)
 
 For the full configuration surface (tables, functions, limits), see [`DEFINE CONFIG GRAPHQL`](../../../reference/query-language/statements/define/config.md).

@@ -12,8 +12,8 @@ _Auto-generated index — 1 page and 5 sub-sections._
 - **[Billing & support](billing-and-support/index.md)** — In this section you will explore the billing and support options for SurrealDB Cloud.
 - **[Connecting to Cloud](connecting/index.md)** — In this section you will explore the connection options for SurrealDB Cloud instances. You can connect to your Instance using the SurrealDB Cloud CLI or any of the supported SDKs.
 - **[Getting started with Cloud](getting-started/index.md)** — SurrealDB Cloud is a cloud-based platform that provides a comprehensive suite of tools and services to help you build, manage, and deploy your database.
-- **[Cloud operations](operations/index.md)** — In this section you will explore the advanced topics for navigating SurrealDB Cloud in Surrealist.
-- **[Cloud tooling](tooling/index.md)** — In this section you will explore the advanced topics for navigating SurrealDB Cloud in Surrealist.
+- **[Cloud operations](operations/index.md)** — In this section you will explore the advanced topics for navigating SurrealDB Cloud in SurrealDB Studio.
+- **[Cloud tooling](tooling/index.md)** — In this section you will explore the advanced topics for navigating SurrealDB Cloud in SurrealDB Studio.
 
 ## Pages
 

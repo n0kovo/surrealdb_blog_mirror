@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Importing JSON Lines data
-description: "SurrealDB's Surrealist UI can be used to import CSV data to SurrealDB."
+description: SurrealDB Studio can be used to import CSV data to SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/migrating/from-files-and-streams/json-lines.mdx"
 ---
 

@@ -48,7 +48,7 @@ Or:
 The guides in this section break down how SurrealDB implements these ideas in practice:
 
 - [Creating relations](creating-relations.md): [`RELATE`](../../../reference/query-language/statements/relate.md), edge tables, `in` / `out`, schema with `TYPE RELATION`, and edge cases such as relations before records exist.
-- [Graph traversal](graph-traversal.md): arrow syntax, traversing from record IDs, flattening behaviour, graph paths in schema, and using Surrealist’s Explorer.
+- [Graph traversal](graph-traversal.md): arrow syntax, traversing from record IDs, flattening behaviour, graph paths in schema, and using SurrealDB Studio’s Explorer.
 - [Recursive traversals](recursive-traversals.md): `@.{n}` paths and nested shapes along a graph.
 - [Record links vs graph relations](record-links-vs-graph-relations.md): when to use each, metadata on edges, weighting, and delete behaviour.
 - [Social network patterns](social-network-patterns.md): friendship-style edges, bidirectional queries, and interaction weighting examples.

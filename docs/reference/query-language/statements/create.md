@@ -485,7 +485,7 @@ CREATE |person:500000| SET age = 46, username = "john-smith" TIMEOUT 500ms;
 
 While a number of definitions need to be in place for a `CREATE` statement to happen, SurrealDB will handle them automatically by default. This behaviour is best seen by starting a new database.
 
-While a connection to SurrealDB via Surrealist or the [surreal sql](../../cli/surrealdb-cli/commands/sql.md) command can include a defined namespace and database, the namespace and database names do not exist upon creation. At this point, they are only held inside the pre-defined [$session](../language-primitives/parameters.md#session) parameter. This can be seen through the [INFO](info.md) statements, which will show no definitions at all inside a new database.
+While a connection to SurrealDB via SurrealDB Studio or the [surreal sql](../../cli/surrealdb-cli/commands/sql.md) command can include a defined namespace and database, the namespace and database names do not exist upon creation. At this point, they are only held inside the pre-defined [$session](../language-primitives/parameters.md#session) parameter. This can be seen through the [INFO](info.md) statements, which will show no definitions at all inside a new database.
 
 ```surql
 INFO FOR ROOT;

@@ -129,7 +129,7 @@ Upload the `.surli` file with [`DEFINE BUCKET`](../../../reference/query-languag
 
 ## Test your functions
 
-Connect with the CLI, [Surrealist](https://surrealdb.com/docs/surrealist/overview), or an SDK and invoke your functions from SurrealQL. Confirm return values and error handling match what you expect.
+Connect with the CLI, [SurrealDB Studio](../../../explore/studio/index.md), or an SDK and invoke your functions from SurrealQL. Confirm return values and error handling match what you expect.
 
 If something fails:
 

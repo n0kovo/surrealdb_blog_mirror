@@ -77,7 +77,7 @@ Let's look at some examples of how to use the `UPDATE` statement. First we'll cr
 /**[test]
 
 [[test.results]]
-value = "[{ company: 'Surrealist', id: person:1iberbyuqfpoi6girgv9, name: 'John', skills: ['JavaScript', 'Go', 'SurrealQL'] }]"
+value = "[{ company: 'SurrealDB Studio', id: person:1iberbyuqfpoi6girgv9, name: 'John', skills: ['JavaScript', 'Go', 'SurrealQL'] }]"
 skip-record-id-key = true
 
 [[test.results]]
@@ -89,7 +89,7 @@ skip-record-id-key = true
 -- Create a Schemaless person table with a random id
 CREATE person CONTENT {
     name: 'John',
-    company: 'Surrealist',
+    company: 'SurrealDB Studio',
     skills: ['JavaScript', 'Go' , 'SurrealQL']
 };
 
@@ -119,7 +119,7 @@ UPDATE person SET
 ```surql title="Output"
 [
 	{
-		company: 'Surrealist',
+		company: 'SurrealDB Studio',
 		dollars: 50,
 		enjoys: [
 			'reading'
@@ -253,7 +253,7 @@ UPDATE person SET skills += "System design"
 ```surql title="Output"
 [
 	{
-		company: 'Surrealist',
+		company: 'SurrealDB Studio',
 		dollars: 50,
 		enjoys: [
 			'reading'

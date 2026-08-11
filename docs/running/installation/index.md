@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # Installation
 
-If you are not ready to install anything yet, start with the [Surrealist Sandbox](../sandbox.md) or [SurrealDB Cloud](../cloud.md) as described in the [Running overview](../overview.md).
+If you are not ready to install anything yet, start with the [SurrealDB Studio Sandbox](../sandbox.md) or [SurrealDB Cloud](../cloud.md) as described in the [Running overview](../overview.md).
 
 One of the most popular ways to get started with SurrealDB is to install and run it as a standalone database service, allowing any number of clients to connect to it and interact with the data.
 

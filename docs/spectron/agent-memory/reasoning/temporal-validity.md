@@ -76,6 +76,8 @@ See the [spoiler-safe narrative memory](../../cookbooks/patterns/spoiler-safe-na
 
 When each unit of a serial (page, chapter, episode, policy revision) should appear on a **known-time axis** distinct from when you ran the import, pass **`observed_at`** on `POST /facts` (or **`observedAt`** in document upload metadata). Spectron stamps derived facts with that instant as their **known time** (`created_at`), so **`asOf`** queries reconstruct what the system would have believed at that point in the narrative — not at bulk-import time.
 
+**Derived values ride the same axis.** A number you recompute per unit — mentions so far, a running score, sentiment to date — becomes one supersession per unit when you write it with that unit's **`observed_at`**. Reading it back with **`asOf`** returns the value as it stood at that position. See [Tracking prominence over the timeline](../../cookbooks/patterns/spoiler-safe-narrative-memory.md#tracking-prominence-over-the-timeline).
+
 ## Reading validity through the API
 
 - **`GET /entities/{type}/{name}`** — active attributes for an entity; optional temporal query params on the request.

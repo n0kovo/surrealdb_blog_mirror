@@ -4,10 +4,29 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-08-06T04:09:56Z</updated>
+  <updated>2026-08-11T03:43:59Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/hi</id>
+    <title>Testing known time in Spectron on a 2,200-year corpus</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/hi" type="text/html" />
+    <published>2026-08-11T03:43:59Z</published>
+    <updated>2026-08-11T03:43:59Z</updated>
+    <summary type="text">How to use asOf in Spectron to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.</summary>
+    <category term="engineering" />
+  </entry>
+  <entry>
+    <id>https://surrealdb.com/blog/introducing-surrealdb-studio</id>
+    <title>Introducing SurrealDB Studio</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/introducing-surrealdb-studio" type="text/html" />
+    <published>2026-08-10T18:03:04Z</published>
+    <updated>2026-08-10T18:03:04Z</updated>
+    <summary type="text">Introducing SurrealDB Studio: the new app for working with your SurrealDB instances and Spectron contexts, and the most powerful way to interact with your data yet.</summary>
+    <category term="featured" />
+    <category term="releases" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/integrating-ultima-vii-with-spectron-part-ii-the-testing</id>
     <title>Integrating Ultima VII with Spectron, part II: the testing</title>
@@ -473,26 +492,5 @@
     <summary type="text">The most significant update to the JavaScript SDK to date: SurrealDB 3.0 support, multi-session support, automatic token refreshing, a redesigned live query API, and a new query builder pattern.</summary>
     <category term="engineering" />
     <category term="releases" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/custom-api-endpoints-streamlining-your-architecture</id>
-    <title>Custom API Endpoints: streamlining your architecture</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/custom-api-endpoints-streamlining-your-architecture" type="text/html" />
-    <published>2026-02-18T00:00:00Z</published>
-    <updated>2026-02-18T00:00:00Z</updated>
-    <summary type="text">Custom API endpoints allow developers to define database behaviours, set up middleware, and create custom API endpoints directly within the familiar SurrealQL query language.</summary>
-    <category term="featured" />
-    <category term="engineering" />
-    <category term="tutorials" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/surrealdb-raises-23m-series-a-extension-to-power-the-ai-native-database-era</id>
-    <title>SurrealDB Raises $23M Series A extension to power the AI-native database era</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-raises-23m-series-a-extension-to-power-the-ai-native-database-era" type="text/html" />
-    <published>2026-02-18T00:00:00Z</published>
-    <updated>2026-02-18T00:00:00Z</updated>
-    <summary type="text">SurrealDB Raises $23M Series A extension to power the AI-native database era</summary>
-    <category term="featured" />
-    <category term="company" />
   </entry>
 </feed>

@@ -25,5 +25,5 @@ _Auto-generated index — 7 pages and 1 sub-section._
   Run SurrealDB against distributed storage for horizontally scalable, highly available clusters.
 - [Overview](overview.md)
   Ways to run SurrealDB—from a browser sandbox to a managed cloud instance to installing on your own hardware.
-- [Surrealist Sandbox](sandbox.md)
-  Try SurrealDB in the browser with the Surrealist Sandbox—no install and no account required.
+- [SurrealDB Studio Sandbox](sandbox.md)
+  Try SurrealDB in the browser with the SurrealDB Studio Sandbox—no install and no account required.

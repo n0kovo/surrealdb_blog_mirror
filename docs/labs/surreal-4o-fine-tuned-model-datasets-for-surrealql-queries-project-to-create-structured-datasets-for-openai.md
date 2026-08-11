@@ -8,6 +8,7 @@ name: Sebastian Fritsch
 role: Fullstack Developer
 avatar: sebastian-fritsch
 topics: 
+languages: 
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/labs-items/surreal-4o-fine-tuned-model-datasets-for-surrealql-queries-project-to-create-structured-datasets-for-openai.mdx"
 ---
 

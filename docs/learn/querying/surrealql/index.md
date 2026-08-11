@@ -18,4 +18,4 @@ _Auto-generated index — 3 pages and 1 sub-section._
 - [What is SurrealQL?](what-is-surrealql.md)
   SurrealQL is SurrealDB’s SQL-like language for queries, schemas, graph relationships and optimised execution.
 - [Writing SurrealQL](writing-surrealql.md)
-  Ways of executing SurrealQL queries such as Surrealist, CLI, HTTP, SDKs, and GraphQL.
+  Ways of executing SurrealQL queries such as SurrealDB Studio, CLI, HTTP, SDKs, and GraphQL.

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Get started with SurrealDB Cloud
 
-To get started, sign up for an account and create an instance. Once your instance is running, you can connect to it [via Surrealist](../connecting/via-surrealist.md), [the CLI](../connecting/via-cli.md), or [any of the supported SDKs](../connecting/via-sdk.md).
+To get started, sign up for an account and create an instance. Once your instance is running, you can connect to it [via SurrealDB Studio](../connecting/via-studio.md), [the CLI](../connecting/via-cli.md), or [any of the supported SDKs](../connecting/via-sdk.md).
 
 <Button label="Sign up for SurrealDB Cloud" href="https://app.surrealdb.com/cloud" />
 

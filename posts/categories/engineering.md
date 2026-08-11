@@ -1,8 +1,10 @@
 # Category: engineering
 
-_44 posts_  
+_45 posts_  
 [← Index](../../README.md)
 
+- **2026-08-11** · [Testing known time in Spectron on a 2,200-year corpus](../2026/08/hi.md)  
+  `engineering` — How to use asOf in Spectron to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.
 - **2026-08-06** · [Integrating Ultima VII with Spectron, part II: the testing](../2026/08/integrating-ultima-vii-with-spectron-part-ii-the-testing.md)  
   `engineering` — How Ultima VII through Exult was integrated with Spectron via some changes to the Exult code to emit events in a certain way and a Rust app built using egui to stand in between the game and Spectron.
 - **2026-08-04** · [Agent memory needs three clocks: tri-temporal belief history in Spectron](../2026/08/spectron-insights-how-tri-temporal-belief-history-works.md)  

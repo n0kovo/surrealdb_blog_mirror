@@ -1,8 +1,10 @@
 # Category: featured
 
-_110 posts_  
+_111 posts_  
 [← Index](../../README.md)
 
+- **2026-08-10** · [Introducing SurrealDB Studio](../2026/08/introducing-surrealdb-studio.md)  
+  `featured` `releases` — Introducing SurrealDB Studio: the new app for working with your SurrealDB instances and Spectron contexts, and the most powerful way to interact with your data yet.
 - **2026-08-05** · [Empower your agents with the new SurrealDB MCP](../2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  
   `featured` `releases` `tutorials` `ai` — The SurrealMCP server is now fully managed. Add one URL to Claude, Cursor, or any other AI tool, sign in with your Surreal ID, and your assistant can deploy, query, and look after your SurrealDB Cloud account alongside you.
 - **2026-07-02** · [Introducing Scale: SurrealDB Cloud, built for high availability and scale ](../2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  

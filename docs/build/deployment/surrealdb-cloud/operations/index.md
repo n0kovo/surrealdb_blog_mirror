@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Cloud operations
-description: In this section you will explore the advanced topics for navigating SurrealDB Cloud in Surrealist.
+description: In this section you will explore the advanced topics for navigating SurrealDB Cloud in SurrealDB Studio.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/deployment/surrealdb-cloud/operations/index.mdx"
 ---
 
@@ -16,4 +16,4 @@ Explore the following topics for managing your SurrealDB Cloud instances:
 
 ## Next steps
 
-Explore the advanced topics for navigating SurrealDB Cloud in Surrealist in detail.
+Explore the advanced topics for navigating SurrealDB Cloud in SurrealDB Studio in detail.

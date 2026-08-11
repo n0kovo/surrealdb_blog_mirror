@@ -134,7 +134,7 @@ With parameters:
 
 ## Try without HTTP — `eval::gql`
 
-If you prefer the CLI or Surrealist over cURL, run GQL through [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) inside SurrealQL. You still need the **`gql`** experimental capability **and** [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries), as `eval::*` is denied by default even under `--allow-all`.
+If you prefer the CLI or SurrealDB Studio over cURL, run GQL through [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) inside SurrealQL. You still need the **`gql`** experimental capability **and** [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries), as `eval::*` is denied by default even under `--allow-all`.
 
 **One process (embedded):** pass both flags on `surreal sql`, load the [seed data](#load-sample-data) with ordinary SurrealQL, then:
 

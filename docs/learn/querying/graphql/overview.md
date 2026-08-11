@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # GraphQL
 
-SurrealDB supports [GraphQL](https://graphql.org/) through the [`/graphql`](../../../reference/rest-api/http-protocol.md#graphql) endpoint, which can be accessed via [Surrealist](https://app.surrealdb.com/), GraphiQL, Postman, or any other GraphQL client.
+SurrealDB supports [GraphQL](https://graphql.org/) through the [`/graphql`](../../../reference/rest-api/http-protocol.md#graphql) endpoint, which can be accessed via [SurrealDB Studio](https://app.surrealdb.com/), GraphiQL, Postman, or any other GraphQL client.
 
 > [!NOTE]
 > **GraphQL is not GQL.** [ISO GQL](../gql/overview.md) (`MATCH … RETURN …`) is a separate language on [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql). Do not abbreviate GraphQL to `gql` — in SurrealDB, `gql` always means ISO GQL.
@@ -67,6 +67,6 @@ This is followed by the following pages that detail the various tools by which G
 
 - Using the [`/graphql`](../../../reference/rest-api/http-protocol.md#graphql) endpoint [via HTTP (cURL)](via-http.md)
 - Using the [`/graphql`](../../../reference/rest-api/http-protocol.md#graphql) endpoint [via Bruno](via-bruno.md)
-- Using [Surrealist](https://app.surrealdb.com/), SurrealDB's interactive environment for experimenting with GraphQL queries and seeing results immediately in the UI.
+- Using [SurrealDB Studio](https://app.surrealdb.com/), SurrealDB's interactive environment for experimenting with GraphQL queries and seeing results immediately in the UI.
 
 Other tools such as Postman and many others can be used against the `/graphql` endpoint.

@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 You can connect to your SurrealDB Cloud instances in three main ways. In this section you will explore the following connection options:
 
  
-- [querying in Surrealist](via-surrealist.md): Surrealist is a query builder and IDE for SurrealDB. It allows you to connect to your SurrealDB Cloud Instance and run queries in a graphical interface.
+- [querying in SurrealDB Studio](via-studio.md): SurrealDB Studio is a query builder and IDE for SurrealDB. It allows you to connect to your SurrealDB Cloud Instance and run queries in a graphical interface.
 - [connect via CLI](via-cli.md): using the command-line interface for SurrealDB, you can connect to your SurrealDB Cloud Instance and run queries in a command-line interface.
 - [connect via SDK](via-sdk.md): SurrealDB Cloud supports a variety of SDKs for connecting to your Instance. You can use the SDKs to connect to your Instance and run queries in your preferred programming language.
 - [connect via HTTP](via-http.md): SurrealDB Cloud supports a REST API for connecting to your Instance. You can use the API to connect to your Instance and run queries using CURL or any HTTP client.

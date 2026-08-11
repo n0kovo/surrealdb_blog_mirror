@@ -47,4 +47,4 @@ How writes are extracted, reconciled, and time-stamped — for **both** document
 ## Operations & tuning
 
 - [Reflect](operations/reflect.md), [Forget](operations/forget.md), [Profiles](operations/profiles.md)
-- [Models per stage](tuning/models-per-stage.md), [Caching and invalidation](tuning/caching-and-invalidation.md), [Ontology grounding](tuning/ontology-grounding.md)
+- [Models per stage](tuning/models-per-stage.md), [Caching and invalidation](tuning/caching-and-invalidation.md), [Extraction vocabulary](tuning/ontology-grounding.md)

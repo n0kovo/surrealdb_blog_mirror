@@ -4,6 +4,7 @@ url: "https://www.youtube.com/watch?v=TyX45cyZ-WO"
 category: Videos
 author: surrealdb
 topics: 
+languages: 
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/labs-items/document-style-relationships-in-surrealdb.mdx"
 ---
 

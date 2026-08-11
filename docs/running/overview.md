@@ -11,7 +11,7 @@ You can start with SurrealDB in more than one way. This section orders them from
 
 ## Try it without installing
 
-1. **[Surrealist Sandbox](sandbox.md)** — Open Surrealist in the browser and use the built-in Sandbox. Nothing to install; data is not persistent, which is perfect for quick experiments and learning SurrealQL.
+1. **[SurrealDB Studio Sandbox](sandbox.md)** — Open SurrealDB Studio in the browser and use the built-in Sandbox. Nothing to install; data is not persistent, which is perfect for quick experiments and learning SurrealQL.
 
 2. **[SurrealDB Cloud](cloud.md)** — Create a free [SurrealDB Cloud](../manage/cloud/index.md) instance (you will need an email to sign in). You keep persistence and a managed database without running a server on your own machine.
 

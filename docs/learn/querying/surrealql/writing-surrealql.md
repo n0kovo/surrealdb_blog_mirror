@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Writing SurrealQL
-description: Ways of executing SurrealQL queries such as Surrealist, CLI, HTTP, SDKs, and GraphQL.
+description: Ways of executing SurrealQL queries such as SurrealDB Studio, CLI, HTTP, SDKs, and GraphQL.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/surrealql/writing-surrealql.mdx"
 ---
 
@@ -15,12 +15,12 @@ The following four approaches are the most commonly used ways to execute Surreal
 
 | Approach | Typical use |
 | -------- | ----------- |
-| [Surrealist](executing-queries/via-surrealist.md) | Interactive editing, Sandbox, and visual results in the browser. |
+| [SurrealDB Studio](executing-queries/via-studio.md) | Interactive editing, Sandbox, and visual results in the browser. |
 | [CLI](executing-queries/via-cli.md) | Local development, scripts, and [`surreal sql`](../../../reference/cli/surrealdb-cli/commands/sql.md) against a running server. |
 | [HTTP](executing-queries/via-http.md) | Services and integrations that call the [`/sql`](../../../reference/rest-api/http-protocol.md#sql) endpoint. |
 | [SDKs](executing-queries/via-sdks.md) | Application code using the official clients (WebSocket or HTTP under the hood, depending on SDK and configuration). |
 
-In Surrealist, the built-in Sandbox does not persist data. To keep experimental work, use **Deploy to Cloud** in the app to create a free SurrealDB Cloud instance.
+In SurrealDB Studio, the built-in Sandbox does not persist data. To keep experimental work, use **Deploy to Cloud** in the app to create a free SurrealDB Cloud instance.
 
 For a single entry point into these guides, see **[Executing queries](executing-queries/index.md)**.
 
@@ -30,4 +30,4 @@ Language syntax, statements, and functions are documented in the **[SurrealQL re
 
 ## GraphQL
 
-[GraphQL](../graphql/overview.md) is a separate query interface on top of SurrealDB: you describe fields and shapes in GraphQL, not in SurrealQL. You can use it from [Surrealist](../graphql/via-surrealist.md), over [HTTP](../graphql/via-http.md), or from tools such as Postman or Bruno.
+[GraphQL](../graphql/overview.md) is a separate query interface on top of SurrealDB: you describe fields and shapes in GraphQL, not in SurrealQL. You can use it from [SurrealDB Studio](../graphql/via-studio.md), over [HTTP](../graphql/via-http.md), or from tools such as Postman or Bruno.

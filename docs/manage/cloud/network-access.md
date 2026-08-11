@@ -21,7 +21,7 @@ Where available, connect your cloud **VPC** to SurrealDB Cloud so traffic stays 
 
 **AWS PrivateLink** offers interface endpoints so traffic between your VPC and SurrealDB Cloud does not traverse the public internet. Enterprise setups often require coordinated enablement and DNS configuration.
 
-![Surrealist instance creation screen with the Network Access panel highlighted, showing the Public and Private toggle used to enable AWS PrivateLink connectivity.](../../assets/img/image/cloud/aws-privatelink-surrealist-light.png)
+![SurrealDB Studio instance creation screen with the Network Access panel highlighted, showing the Public and Private toggle used to enable AWS PrivateLink connectivity.](../../assets/img/image/cloud/aws-privatelink-surrealist-light.png)
 
 ## Detailed configuration
 

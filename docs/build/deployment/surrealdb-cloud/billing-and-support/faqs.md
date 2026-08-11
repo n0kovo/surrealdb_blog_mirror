@@ -15,7 +15,7 @@ SurrealDB Cloud offers the power and flexibility of SurrealDB without the pain o
 
 ### How do I get started with SurrealDB Cloud?
 
-Getting started is easy. [Sign up for an account on Surrealist](https://app.surrealdb.com/cloud/). Once registered, you can access the dashboard, choose services, and start building with SurrealDB Cloud immediately.
+Getting started is easy. [Sign up for an account on SurrealDB Studio](https://app.surrealdb.com/cloud/). Once registered, you can access the dashboard, choose services, and start building with SurrealDB Cloud immediately.
 
 ### Are there self-help resources like documentation or tutorials available?
 Yes. We have a [resource hub with all our latest documentation](/docs/).  We also recommend our [YouTube channel](https://www.youtube.com/channel/UCjf2teVEuYVvvVC-gFZNq6w) where you can find easy-to-follow tutorials, and content from our Community.
@@ -112,7 +112,7 @@ We commit to...
 - ... crediting you in any relevant public security advisory unless you desire otherwise.
 
 ### How do I configure user authentication?
-SurrealDB Cloud allows users to authenticate directly into their instances from Surrealist using a pre-defined access method. Once connected to your Instance, you may [define users](../../../../reference/query-language/statements/define/user.md) or [access methods](../../../../reference/query-language/statements/define/access/index.md) that users can use to access your Instance or specific namespaces or databases using any of the available [interfaces](../../../../reference/rest-api/index.md), the [SurrealDB CLI](../../../../reference/cli/surrealdb-cli/overview.md) or [Surrealist](https://app.surrealdb.com/query).
+SurrealDB Cloud allows users to authenticate directly into their instances from SurrealDB Studio using a pre-defined access method. Once connected to your Instance, you may [define users](../../../../reference/query-language/statements/define/user.md) or [access methods](../../../../reference/query-language/statements/define/access/index.md) that users can use to access your Instance or specific namespaces or databases using any of the available [interfaces](../../../../reference/rest-api/index.md), the [SurrealDB CLI](../../../../reference/cli/surrealdb-cli/overview.md) or [SurrealDB Studio](https://app.surrealdb.com/query).
 
 ### Can I use my own encryption keys?
 Currently, any encryption keys used to encrypt data at rest are managed by SurrealDB Cloud. Since the architecture technically supports it, we may consider allowing customers to associate their own Customer-Managed Encryption Keys (CMEK) to be used to encrypt data at rest in the future. If you are interested in CMEK, please, contact us.
@@ -177,7 +177,7 @@ If you are unable to connect to SurrealDB Cloud, please check the following:
 
 You can find a variety of resources to help you learn more about SurrealDB via [our website](https://surrealdb.com) including:
 
-- [SurrealDB Docs](/docs/): Comprehensive guides and references for all features, including docs to accompany [Surrealist](../../../../explore/surrealist/index.md)
+- [SurrealDB Docs](/docs/): Comprehensive guides and references for all features, including docs to accompany [SurrealDB Studio](../../../../explore/studio/index.md)
 - [YouTube Channel](https://youtube.com/surrealdb): Stay up-to-date with the latest releases, learn new skills and discover what other developers are building with SurrealDB.
 - [SurrealDB University](/learn): A self-paced video course with hands-on labs and interactive tutorials.
 - [SurrealDB Book](/learn/book): An in-depth, story-driven guide to mastering SurrealDB.

@@ -30,7 +30,7 @@ See [Cloud architecture](../../../manage/cloud/architecture.md) for diagrams and
 
 ## What can you do?
 
-When using SurrealDB Cloud, you can connect to your SurrealDB instance with a few clicks. You can connect to any SurrealDB instance via Surrealist, the command-line interface, and any of the supported SDKs. 
+When using SurrealDB Cloud, you can connect to your SurrealDB instance with a few clicks. You can connect to any SurrealDB instance via SurrealDB Studio, the command-line interface, and any of the supported SDKs. 
 
 **Create an instance**
 
@@ -54,11 +54,11 @@ SurrealDB Cloud allows you to connect to your SurrealDB instance with just a few
 
 **Connect to your instance**
 
-You can connect to any SurrealDB Cloud Instance via [Surrealist](connecting/via-surrealist.md), the [command-line interface (CLI)](connecting/via-cli.md), and [any of the supported SDKs](connecting/via-sdk.md).
+You can connect to any SurrealDB Cloud Instance via [SurrealDB Studio](connecting/via-studio.md), the [command-line interface (CLI)](connecting/via-cli.md), and [any of the supported SDKs](connecting/via-sdk.md).
 
-	[Connect via Surrealist](connecting/via-surrealist.md)
+	[Connect via SurrealDB Studio](connecting/via-studio.md)
 
-	Since SurrealDB Cloud is closely integrated with Surrealist, you can execute queries directly from the interface. This allows you to interact with your data in real time, without having to switch between different tools.
+	Since SurrealDB Cloud is closely integrated with SurrealDB Studio, you can execute queries directly from the interface. This allows you to interact with your data in real time, without having to switch between different tools.
 
 	[Connect via CLI](connecting/via-cli.md)
 

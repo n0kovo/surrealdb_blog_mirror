@@ -10,7 +10,7 @@ _Auto-generated index — 14 pages._
 ## Pages
 
 - [Bulk operations and data import](bulk-operations-and-data-import.md)
-  Bulk INSERT patterns in SurrealQL, plus Surreal Sync, HTTP import, /sql for side effects, and Surrealist CSV.
+  Bulk INSERT patterns in SurrealQL, plus Surreal Sync, HTTP import, /sql for side effects, and SurrealDB Studio CSV.
 - [Connecting from serverless & edge](connecting-from-serverless-and-edge.md)
   Serverless and edge environments change how applications connect to databases.
 - [Custom functions](custom-functions.md)

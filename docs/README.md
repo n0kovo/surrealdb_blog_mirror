@@ -1,12 +1,12 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-08-10 07:24 UTC_
+_Last updated: 2026-08-11 06:59 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
 ## Stats
 
-- **Total pages:** 1099
+- **Total pages:** 1077
 
 ## Browse
 
@@ -59,7 +59,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Tools
 
-- **[Surrealist UI](explore/surrealist/index.md)** — Official SurrealDB IDE. — _23 pages_
+- **Surrealist UI** — Official SurrealDB IDE. _(not mirrored)_
 
 ### Guides and resources
 

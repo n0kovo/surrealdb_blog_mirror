@@ -12,7 +12,7 @@ _Auto-generated index — 7 pages._
 - [Creating relations](creating-relations.md)
   Create graph edges with RELATE, store data on edge tables, define TYPE RELATION for safety and tooling, and handle symmetric relations with unique indexes.
 - [Graph traversal](graph-traversal.md)
-  Use SurrealQL arrow syntax, bidirectional edges, traversals from record IDs, automatic flattening, graph paths in schema fields, and Surrealist’s Explorer to debug paths step by step.
+  Use SurrealQL arrow syntax, bidirectional edges, traversals from record IDs, automatic flattening, graph paths in schema fields, and SurrealDB Studio’s Explorer to debug paths step by step.
 - [Knowledge graph patterns](knowledge-graph-patterns.md)
   Model entities and relationships as first-class data for
 - [Graph model](overview.md)

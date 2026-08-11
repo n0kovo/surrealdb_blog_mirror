@@ -20,7 +20,7 @@ You can run the GQL examples in either of these ways:
 | Approach | How |
 | --- | --- |
 | **HTTP** | cURL to `POST /gql` (shown in each GQL tab) — server needs `--allow-experimental gql` |
-| **REPL** | [`eval::gql("…")`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) in `surreal sql` or Surrealist — also needs [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) on the process that runs the engine (embedded `surreal sql`, or `surreal start` for remote) |
+| **REPL** | [`eval::gql("…")`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) in `surreal sql` or SurrealDB Studio — also needs [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) on the process that runs the engine (embedded `surreal sql`, or `surreal start` for remote) |
 
 Example REPL equivalent for the first query:
 

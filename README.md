@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-08-10 07:24 UTC_
+_Last updated: 2026-08-11 07:00 UTC_
 
 ## Stats
 
-- **Total posts:** 254
+- **Total posts:** 256
 - **First post:** 2022-07-20
-- **Latest post:** 2026-08-06
+- **Latest post:** 2026-08-11
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-08-10 07:24 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 59 posts
+- [2026](posts/years/2026.md) — 61 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -30,14 +30,18 @@ _Last updated: 2026-08-10 07:24 UTC_
 - [ai](posts/categories/ai.md) — 47 posts
 - [community](posts/categories/community.md) — 35 posts
 - [company](posts/categories/company.md) — 41 posts
-- [engineering](posts/categories/engineering.md) — 44 posts
+- [engineering](posts/categories/engineering.md) — 45 posts
 - [events](posts/categories/events.md) — 7 posts
-- [featured](posts/categories/featured.md) — 110 posts
-- [releases](posts/categories/releases.md) — 51 posts
+- [featured](posts/categories/featured.md) — 111 posts
+- [releases](posts/categories/releases.md) — 52 posts
 - [tutorials](posts/categories/tutorials.md) — 99 posts
 
 ## Latest posts
 
+- **2026-08-11** · [Testing known time in Spectron on a 2,200-year corpus](posts/2026/08/hi.md)  
+  `engineering` — How to use asOf in Spectron to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.
+- **2026-08-10** · [Introducing SurrealDB Studio](posts/2026/08/introducing-surrealdb-studio.md)  
+  `featured` `releases` — Introducing SurrealDB Studio: the new app for working with your SurrealDB instances and Spectron contexts, and the most powerful way to interact with your data yet.
 - **2026-08-06** · [Integrating Ultima VII with Spectron, part II: the testing](posts/2026/08/integrating-ultima-vii-with-spectron-part-ii-the-testing.md)  
   `engineering` — How Ultima VII through Exult was integrated with Spectron via some changes to the Exult code to emit events in a certain way and a Rust app built using egui to stand in between the game and Spectron.
 - **2026-08-05** · [Chat with your meeting notes: a CocoIndex knowledge graph and a text-to-SurrealQL agent](posts/2026/08/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent.md)  
@@ -54,7 +58,3 @@ _Last updated: 2026-08-10 07:24 UTC_
   `engineering` — Why Ultima VII through the Exult open-source game engine ended up being the perfect testing platform for SurrealDB's memory layer Spectron.
 - **2026-07-29** · [One database for the whole claim: agentic claims triage on SurrealDB](posts/2026/07/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb.md)  
   `ai` `tutorials` — An AI agent triaging an insurance claim needs semantic, graph, and document data at once. Do it in one SurrealDB database — vector recall of similar past claims plus graph fraud-ring detection, fused in a single function. Schema, seed data, and queries included.
-- **2026-07-27** · [Even a jailbroken LLM can't exceed its database permissions — here's how](posts/2026/07/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how.md)  
-  `ai` `tutorials` — AI agents that write their own database queries can be talked into rewriting, deleting, or leaking your data with a single polite request, with no jailbreak required. No system-prompt rule can reliably stop that. SurrealDB's role-based access control can, because it lives in the data layer the LLM can't reach.
-- **2026-07-23** · [One graph for the whole maison: modelling luxury retail on SurrealDB](posts/2026/07/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb.md)  
-  `tutorials` — How a high-end fashion house can model clients, artisans, products, and waitlists as one graph — with vector recommendations and full-text search built in.

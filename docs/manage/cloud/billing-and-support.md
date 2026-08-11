@@ -23,4 +23,4 @@ For product issues, billing queries, or onboarding help, use the **support chann
 
 ## Detailed billing
 
-Line items, tabs in the Surrealist UI, and how organisation-level billing behaves in practice are documented in depth here: **[Billing](../../build/deployment/surrealdb-cloud/billing-and-support/billing.md)**.
+Line items, tabs in the SurrealDB Studio, and how organisation-level billing behaves in practice are documented in depth here: **[Billing](../../build/deployment/surrealdb-cloud/billing-and-support/billing.md)**.

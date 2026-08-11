@@ -10,7 +10,7 @@ _Auto-generated index — 76 pages._
 ## Pages
 
 - [10 schema tips for SurrealDB](10-schema-tips-for-surrealdb.md)
-- [10 Tips and Tricks for Surrealist](10-tips-and-tricks-for-surrealist.md)
+- [10 Tips and Tricks for SurrealDB Studio](10-tips-and-tricks-for-surrealist.md)
 - [allographer](allographer.md)
   Nim ORM and query builder that supports SurrealDB.
 - [Aspire Integration](aspire-community-package.md)
@@ -23,19 +23,19 @@ _Auto-generated index — 76 pages._
 - [CLI phone book in Python using SurrealDB as database.](cli-phone-book-in-python-using-surrealdb-as-database.md)
   Tutorial building a CLI phonebook in Python with SurrealDB.
 - [CRUD using SurrealDB in RUST | SurrealDB](crud-using-surrealdb-in-rust-surrealdb.md)
-- [Designing your schema in Surrealist](designing-your-schema-in-surrealist.md)
+- [Designing your schema in SurrealDB Studio](designing-your-schema-in-surrealist.md)
 - [Different ways to perform a Vector Search in SurrealDB](different-ways-to-perform-a-vector-search-in-surrealdb.md)
 - [Document-Style Relationships in SurrealDB](document-style-relationships-in-surrealdb.md)
-- [Embed Surrealist in your projects](embed-surrealist-in-your-projects.md)
+- [Embed SurrealDB Studio in your projects](embed-surrealist-in-your-projects.md)
 - [Getting started with Surreal Cloud](getting-started-with-surreal-cloud.md)
 - [Getting started with SurrealDB! Future of cloud databases (maybe)?](getting-started-with-surrealdb-future-of-cloud-databases-maybe.md)
 - [Getting started with SurrealDB using our JavaScript SDK](getting-started-with-surrealdb-using-our-javascript-sdk.md)
 - [Getting started with SurrealDB using our Rust SDK](getting-started-with-surrealdb-using-our-rust-sdk.md)
 - [Getting started with SurrealDB using Python and Docker.](getting-started-with-surrealdb-using-python-and-docker.md)
   Walkthrough for running SurrealDB with Python and Docker.
-- [Getting started with Surrealist](getting-started-with-surrealist.md)
+- [Getting started with SurrealDB Studio](getting-started-with-surrealist.md)
 - [gke-using-terraform.md](gke-using-terraform.md)
-- [Graph, Full-Text Search and Vector Search in Surrealist](graph-full-text-search-vector-search-in-surrealist.md)
+- [Graph, Full-Text Search and Vector Search in SurrealDB Studio](graph-full-text-search-vector-search-in-surrealist.md)
 - [Graph-Style Relationships in SurrealDB](graph-style-relationships-in-surrealdb.md)
 - [Hosting Surreal DB in Rust in Less Than 3 Minutes.](hosting-surreal-db-in-rust-in-less-than-3-minutes.md)
 - [How a luxury fashion retailer scaled personalised recommendations using Surre](how-a-luxury-fashion-retailer-scaled-personalised-recommendations-using-surre.md)
@@ -105,7 +105,7 @@ _Auto-generated index — 76 pages._
   Define and validate SurrealDB-shaped data with Zod.
 - [surrealdb_extra](surrealdb_extra.md)
   Rust helper crate extending the official SurrealDB driver.
-- [Surrealist for Power Users](surrealist-for-power-users.md)
+- [SurrealDB Studio for Power Users](surrealist-for-power-users.md)
 - [Surrealist Python tool](surrealist-python.md)
   Python driver and ergonomic query helpers for SurrealDB.
 - [SvelteKit Surreal Database Authentication](sveltekit-surreal-database-authentication.md)

@@ -29,7 +29,7 @@ Start a running database using the following command:
 surreal start --user root --pass secret 
 ```
 
-To follow along interactively, connect [using Surrealist](../../../explore/surrealist/getting-started.md#creating-a-connection) or the following command to open up the CLI:
+To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open up the CLI:
 
 ```
 surrealdb % surreal sql --user root --pass secret --pretty
@@ -75,7 +75,7 @@ async fn main() -> Result<(), Error> {
 }
 ```
 
-Before running this code, first use Surrealist or the CLI to populate the database with two students.
+Before running this code, first use SurrealDB Studio or the CLI to populate the database with two students.
 
 ```surql
 CREATE student SET name = "Student 1", class_id = 10; CREATE student SET name = "Another student", class_id = 20;
@@ -280,7 +280,7 @@ Start a running database using the following command:
 surreal start --user root --pass secret 
 ```
 
-To follow along interactively, connect [using Surrealist](../../../explore/surrealist/getting-started.md#creating-a-connection) or the following command to open up the CLI:
+To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open up the CLI:
 
 ```
 surrealdb % surreal sql --user root --pass secret --ns main --db main --pretty
@@ -334,7 +334,7 @@ async fn main() -> Result<(), Error> {
 }
 ```
 
-Before running this code, first use Surrealist or the CLI to populate the database with two students.
+Before running this code, first use SurrealDB Studio or the CLI to populate the database with two students.
 
 ```surql
 CREATE student SET name = "Student 1", class_id = 10; CREATE student SET name = "Another student", class_id = 20;

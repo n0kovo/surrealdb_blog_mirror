@@ -26,8 +26,8 @@ SurrealDB is built around a rich feature set that supports a wide variety of app
 - **[Authentication](learn/security/authentication/overview.md)** — Built-in authentication and access control with scoped permissions.
 - **[Graph relationships](learn/data-models/graph/overview.md)** — Model and traverse complex relationships using native graph edges.
 - **[Vector search](learn/data-models/vector-search/overview.md)** — Store embeddings and perform similarity searches for AI and RAG workflows.
-- **[Data migrations](explore/surrealist/index.md)** — Evolve your database schema over time with SurrealKit.
-- **[Surrealist UI](explore/surrealist/index.md)** — A native UI to visually explore and manage your SurrealDB data.
+- **[Data migrations](manage/schema-migration/index.md)** — Evolve your database schema over time with SurrealKit.
+- **[SurrealDB Studio](explore/studio/index.md)** — A native UI to visually explore and manage your SurrealDB data.
 
 ## SDKs
 

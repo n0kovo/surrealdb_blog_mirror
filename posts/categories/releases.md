@@ -1,8 +1,10 @@
 # Category: releases
 
-_51 posts_  
+_52 posts_  
 [← Index](../../README.md)
 
+- **2026-08-10** · [Introducing SurrealDB Studio](../2026/08/introducing-surrealdb-studio.md)  
+  `featured` `releases` — Introducing SurrealDB Studio: the new app for working with your SurrealDB instances and Spectron contexts, and the most powerful way to interact with your data yet.
 - **2026-08-05** · [Announcing the Snowflake integration for SurrealDB: from data warehouse to context layer](../2026/08/announcing-snowflake-integration-for-surrealdb-from-data-warehouse-to-context-layer.md)  
   `releases` — SurrealDB now imports Snowflake tables directly. Move warehouse data into a context layer where facts, relationships, vectors and agent memory live in one engine.
 - **2026-08-05** · [Empower your agents with the new SurrealDB MCP](../2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  

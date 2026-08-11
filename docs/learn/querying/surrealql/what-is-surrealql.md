@@ -27,4 +27,4 @@ SurrealQL offers several key features that make it a powerful tool for working w
 
 - **Performance optimisation**: SurrealQL incorporates optimisations specific to SurrealDB, ensuring efficient execution of queries and minimising resource usage.
 
-![Surrealist query view](../../../assets/img/image/surrealist/query-new.png)
+![SurrealDB Studio query view](../../../assets/img/image/surrealist/query-new.png)

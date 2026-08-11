@@ -19,7 +19,7 @@ First, open up a terminal window and use the following command to start an empty
 surreal start --user root --pass secret
 ```
 
-You can also use the [Start serving](../../../explore/surrealist/concepts/local-database-serving.md) button on [Surrealist](../../../explore/surrealist/index.md) to do the same if you have it installed locally.
+You can also use the [Start serving](../../../explore/studio/index.md) button on [SurrealDB Studio](../../../explore/studio/index.md) to do the same if you have it installed locally.
 
 The database initiated by the [surreal start](../../cli/surrealdb-cli/commands/start.md) command stores data in memory by default, which then disappears every time the database is shut down. As such, you can simply use Ctrl+C every time you want to start the database anew with no existing definitions or data. To save data to disk which will persist after shutting down, add a [positional argument](../../cli/surrealdb-cli/commands/start.md#positional-argument) for one of the storage backends such as `rocksdb://mydatabase` or `surrealkv://mydatabase` (or `surrealkv+versioned//mydatabase` to include SurrealKV versioning).
 
@@ -380,7 +380,7 @@ The `Command::SignUp` and `Command::SignIn` variants are a bit more interesting.
 
 A user is allowed to choose a name and a password when signing up as a record user, but to make the process as quick as possible we will use the `faker_rand` crate to generate two names: one for the username and one for the password.
 
-The [`.signup()`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.signup) method actually returns a struct that holds an access token which can be displayed using the `.into_insecure_token()` method. However, tokens are mostly useful when signing in via the [surreal sql](../../cli/surrealdb-cli/commands/sql.md) command or through Surrealist. In our case, we can simply use the `.signin()` method along with a name and password and so we don't need to display the token.
+The [`.signup()`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.signup) method actually returns a struct that holds an access token which can be displayed using the `.into_insecure_token()` method. However, tokens are mostly useful when signing in via the [surreal sql](../../cli/surrealdb-cli/commands/sql.md) command or through SurrealDB Studio. In our case, we can simply use the `.signin()` method along with a name and password and so we don't need to display the token.
 
 The `Params` struct is our own struct, which holds a `name` and a `pass` field because those are the two fields that we specified in the `DEFINE ACCESS` statement which creates a new `user` record every time a record user is signed up. Similarly, the `access` field inside `.signup()` takes the input "account" because that is the name that we have to the `DEFINE ACCESS` statement.
 
@@ -866,7 +866,7 @@ First, open up a terminal window and use the following command to start an empty
 surreal start --user root --pass secret
 ```
 
-You can also use the [Start serving](../../../explore/surrealist/concepts/local-database-serving.md) button on [Surrealist](../../../explore/surrealist/index.md) to do the same if you have it installed locally.
+You can also use the [Start serving](../../../explore/studio/index.md) button on [SurrealDB Studio](../../../explore/studio/index.md) to do the same if you have it installed locally.
 
 The database initiated by the [surreal start](../../cli/surrealdb-cli/commands/start.md) command stores data in memory by default, which then disappears every time the database is shut down. As such, you can simply use Ctrl+C every time you want to start the database anew with no existing definitions or data. To save data to disk which will persist after shutting down, add a [positional argument](../../cli/surrealdb-cli/commands/start.md#positional-argument) for one of the storage backends such as `rocksdb://mydatabase` or `surrealkv://mydatabase`.
 
@@ -1227,7 +1227,7 @@ The `Command::SignUp` and `Command::SignIn` variants are a bit more interesting.
 
 A user is allowed to choose a name and a password when signing up as a record user, but to make the process as quick as possible we will use the `faker_rand` crate to generate two names: one for the username and one for the password.
 
-The [`.signup()`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.signup) method actually returns a token (a [`JWT`](https://docs.rs/surrealdb/latest/surrealdb/opt/auth/struct.Jwt.html) struct) that can [display the actual token](https://docs.rs/surrealdb/latest/surrealdb/opt/auth/struct.Jwt.html#method.as_insecure_token) if preferred, but these tokens are mostly useful when signing in via the [surreal sql](../../cli/surrealdb-cli/commands/sql.md) command or through Surrealist. In our case, we can simply use the `.signin()` method along with a name and password and so we don't need to display the token.
+The [`.signup()`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.signup) method actually returns a token (a [`JWT`](https://docs.rs/surrealdb/latest/surrealdb/opt/auth/struct.Jwt.html) struct) that can [display the actual token](https://docs.rs/surrealdb/latest/surrealdb/opt/auth/struct.Jwt.html#method.as_insecure_token) if preferred, but these tokens are mostly useful when signing in via the [surreal sql](../../cli/surrealdb-cli/commands/sql.md) command or through SurrealDB Studio. In our case, we can simply use the `.signin()` method along with a name and password and so we don't need to display the token.
 
 The `Params` struct is our own struct, which holds a `name` and a `pass` field because those are the two fields that we specified in the `DEFINE ACCESS` statement which creates a new `user` record every time a record user is signed up. Similarly, the `access` field inside `.signup()` takes the input "account" because that is the name that we have to the `DEFINE ACCESS` statement.
 

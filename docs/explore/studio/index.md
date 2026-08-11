@@ -1,0 +1,14 @@
+---
+position: 1
+title: Introduction
+description: SurrealDB Studio is the official visual interface for SurrealDB.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/explore/studio/index.mdx"
+---
+
+# SurrealDB Studio
+
+SurrealDB Studio is the official visual interface for managing and querying SurrealDB. It connects to any SurrealDB instance, letting you run SurrealQL, explore records, and manage schema from the web or desktop.
+
+<Button label="Visit app.surrealdb.com" href="https://app.surrealdb.com" variant="surreal" />
+
+Full documentation for SurrealDB Studio is coming soon.

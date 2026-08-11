@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1099 pages_  
+_1077 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -53,8 +53,8 @@ _1099 pages_
   Connect to your SurrealDB Cloud instance using the HTTP API and run queries.
 - [Via SDK](build/deployment/surrealdb-cloud/connecting/via-sdk.md)
   Connect to your SurrealDB Cloud Instance using any of the available SDKs.
-- [Via Surrealist](build/deployment/surrealdb-cloud/connecting/via-surrealist.md)
-  Query your SurrealDB Cloud instance using Surrealist.
+- [Via SurrealDB Studio](build/deployment/surrealdb-cloud/connecting/via-studio.md)
+  Query your SurrealDB Cloud instance using SurrealDB Studio.
 - [Create an account](build/deployment/surrealdb-cloud/getting-started/create-an-account.md)
   To get started with SurrealDB Cloud, you need to create an account. You can use your email address, a passkey, Google, or GitHub to create an account.
 - [Create an instance](build/deployment/surrealdb-cloud/getting-started/create-an-instance.md)
@@ -68,7 +68,7 @@ _1099 pages_
 - [Data export and backup](build/deployment/surrealdb-cloud/operations/data-export-and-backup.md)
   Managed backups and in-platform restore for SurrealDB Cloud instances, plus logical export for portable data.
 - [Cloud operations](build/deployment/surrealdb-cloud/operations/index.md)
-  In this section you will explore the advanced topics for navigating SurrealDB Cloud in Surrealist.
+  In this section you will explore the advanced topics for navigating SurrealDB Cloud in SurrealDB Studio.
 - [Logs](build/deployment/surrealdb-cloud/operations/logs.md)
   Learn how to view the logs of your SurrealDB Cloud Instance. 
 - [Metrics](build/deployment/surrealdb-cloud/operations/metrics.md)
@@ -82,11 +82,11 @@ _1099 pages_
 - [Scaling](build/deployment/surrealdb-cloud/operations/scaling.md)
   Resize Cloud instances, add replicas, and use metrics to decide when to scale SurrealDB Cloud.
 - [Cloud tooling](build/deployment/surrealdb-cloud/tooling/index.md)
-  In this section you will explore the advanced topics for navigating SurrealDB Cloud in Surrealist.
+  In this section you will explore the advanced topics for navigating SurrealDB Cloud in SurrealDB Studio.
 - [Search and shortcuts](build/deployment/surrealdb-cloud/tooling/search-and-shortcuts.md)
-  In this section, you will learn about the search and shortcuts in Surrealist as it relates to the SurrealDB Cloud dashboard.
+  In this section, you will learn about the search and shortcuts in SurrealDB Studio as it relates to the SurrealDB Cloud dashboard.
 - [SurrealQL editors](build/deployment/surrealdb-cloud/tooling/surrealql-editors.md)
-  SurrealQL editor shortcuts in Surrealist when working with SurrealDB Cloud for indentation, comments, multi-cursor edits, run query, record inspection, and JSON formatting for values.
+  SurrealQL editor shortcuts in SurrealDB Studio when working with SurrealDB Cloud for indentation, comments, multi-cursor edits, run query, record inspection, and JSON formatting for values.
 - [What is SurrealDB Cloud?](build/deployment/surrealdb-cloud/what-is-surrealdb-cloud.md)
   SurrealDB Cloud redefines the database experience, offering the power and flexibility of SurrealDB without the pain of managing infrastructure. Focus on building tomorrow's applications. Let us take care of the rest.
 - [.NET](build/embedding/by-language/dotnet.md)
@@ -162,11 +162,11 @@ _1099 pages_
 - [Integrations](build/integrations/index.md)
   Integrations that connect SurrealDB to AI frameworks, embeddings providers, agents, and data tools.
 - [Importing CSV data](build/migrating/from-files-and-streams/csv.md)
-  SurrealDB's Surrealist UI can be used to import CSV data to SurrealDB.
+  SurrealDB Studio can be used to import CSV data to SurrealDB.
 - [Migrating](build/migrating/from-files-and-streams/index.md)
   Migrating
 - [Importing JSON Lines data](build/migrating/from-files-and-streams/json-lines.md)
-  SurrealDB's Surrealist UI can be used to import CSV data to SurrealDB.
+  SurrealDB Studio can be used to import CSV data to SurrealDB.
 - [Importing Kafka data](build/migrating/from-files-and-streams/kafka.md)
   SurrealDB's Surreal Sync tool can be used to import Kafka data to SurrealDB.
 - [1.x to 2.x](build/migrating/from-old-surrealdb-versions/1x-to-2x.md)
@@ -197,52 +197,8 @@ _1099 pages_
   SurrealML enables machine learning models to be greatly simplified, ensuring reproducibility and consistency in machine learning pipelines.
 - [Storage](explore/ml-models/surrealml/storage.md)
   SurrealML enables machine learning models to be greatly simplified, ensuring reproducibility and consistency in machine learning pipelines.
-- [Connection templates](explore/surrealist/advanced-topics/connection-templates.md)
-  Save reusable connection fragments as templates in Surrealist, then apply them whenever you create a new connection.
-- [Embedding Surrealist](explore/surrealist/advanced-topics/embedding-surrealist.md)
-  Embed Surrealist queries on a page, use variable defaults, preview, copyable URLs and iframe snippets, and optional dataset loading for reproducible demos.
-- [Surrealist advanced topics](explore/surrealist/advanced-topics/overview.md)
-  Surrealist advanced topics including global search and shortcuts, embeddable UIs, connection templates, appearance and behaviour settings, SurrealQL editor keys, and URL intents for deep links.
-- [Search and shortcuts](explore/surrealist/advanced-topics/search-and-shortcuts.md)
-  Open Surrealist search to reach connections, views, tables, and settings quickly, and scan the in-app shortcut reference for navigation and editing.
-- [Settings and customisation](explore/surrealist/advanced-topics/settings-and-customisation.md)
-  Tune Surrealist with behaviour and editor options, appearance and default result modes, connection templates, local database serving paths, and experimental feature flags.
-- [SurrealQL editors](explore/surrealist/advanced-topics/surrealql-editors.md)
-  SurrealQL editor shortcuts in Surrealist for indentation, find and replace, comments, multi-cursor selection, run query, record-id inspection, and JSON value formatting preferences.
-- [URL intents](explore/surrealist/advanced-topics/url-intents.md)
-  Trigger Surrealist actions from URLs via intent query parameters on app.surrealdb.com, surrealist:// deep links on desktop, argument syntax, and other supported intents.
-- [Deploying via SurrealDB Cloud](explore/surrealist/concepts/deploying-via-surrealdb-cloud.md)
-  SurrealDB Cloud redefines the database experience, offering the power and flexibility of SurrealDB without the pain of managing infrastructure. Elevate your business to unparalleled levels of scale and resilience. Focus on building tomorrow's applications. Let us take care of the rest.
-- [Designing the database schema](explore/surrealist/concepts/designing-the-database-schema.md)
-  Design schema visually in Surrealist using interactive table graphs, edge detection, and a table designer for fields, indexes, events, and permissions backed by INFO FOR DB and INFO FOR TABLE.
-- [Exploring database records](explore/surrealist/concepts/exploring-database-records.md)
-  Use Surrealist's Explorer view to list tables, page through records, filter with WHERE clauses, open the inspector for edits and relations, and import CSV and other structured data.
-- [Local database serving](explore/surrealist/concepts/local-database-serving.md)
-  Launch a local SurrealDB instance from Surrealist Desktop, configure the executable path, start and stop from the toolbar, and stream server logs in the console drawer.
-- [Managing database access](explore/surrealist/concepts/managing-database-access.md)
-  Manage SurrealDB authentication from Surrealist: root, namespace, and database system users plus record access scopes, sign-up, and sign-in flows from a single Authentication view.
-- [Surrealist concepts](explore/surrealist/concepts/overview.md)
-  Surrealist concepts: connect to your database, run queries, explore data, design schemas and manage access.
-- [Sending queries with GraphQL](explore/surrealist/concepts/sending-queries-with-graphql.md)
-  Use Surrealist's GraphQL view to write and execute queries, refetch schema, format requests, manage variables, and follow through to the GraphQL querying documentation.
-- [Sending queries](explore/surrealist/concepts/sending-queries.md)
-  Run SurrealQL from Surrealist's Query view over multiple tabs, see saved queries, history, variables, and result layouts.
-- [Specialised API docs](explore/surrealist/concepts/specialized-api-docs.md)
-  SDK-focused API documentation inside Surrealist including topics filtered by chosen language, schema-aware snippets, and optional CLI-style command previews for the same operations.
-- [Writing stored procedures](explore/surrealist/concepts/writing-stored-procedures.md)
-  Create and edit SurrealDB functions in Surrealist, browse definitions, namespace names with fn::, edit arguments and permissions, then save or export from the functions workspace.
-- [FAQ details](explore/surrealist/faqs/faq-details.md)
-  Frequently asked questions about Surrealist. Find answers to common questions about Surrealist, the SurrealDB database, and more.
-- [FAQs](explore/surrealist/faqs/faqs.md)
-  Frequently asked questions about Surrealist. Find answers to common questions about Surrealist, the SurrealDB database, and more.
-- [Getting started](explore/surrealist/getting-started.md)
-  This page will guide you through the process of setting up and using Surrealist. At this point we assume you have already installed Surrealist on your system. If you have not done so yet, please refer to the installation guide.
-- [Introduction](explore/surrealist/index.md)
-  Use the official visual client Surrealist for SurrealDB to run SurrealQL, inspect data, and manage schema from the web or desktop.
-- [Installation](explore/surrealist/installation.md)
-  Get started with Surrealist by installing the desktop or web app. The desktop app offers more features and flexibility, while the web app is more accessible and portable.
-- [Troubleshooting](explore/surrealist/troubleshooting/troubleshooting.md)
-  This page contains information on troubleshooting and feedback for Surrealist.
+- [Introduction](explore/studio/index.md)
+  SurrealDB Studio is the official visual interface for SurrealDB.
 - [Blink note-taking app](explore/tutorials/demos/blink.md)
   Blink—a Notion-style workspace demo built with SurrealDB and WebAssembly.
 - [Kai G AI demos](explore/tutorials/demos/kaig-ai-demos.md)
@@ -282,7 +238,7 @@ _1099 pages_
 - [Getting started](index.md)
   The official documentation for SurrealDB, a multi-model database for modern applications.
 - [10 schema tips for SurrealDB](labs/10-schema-tips-for-surrealdb.md)
-- [10 Tips and Tricks for Surrealist](labs/10-tips-and-tricks-for-surrealist.md)
+- [10 Tips and Tricks for SurrealDB Studio](labs/10-tips-and-tricks-for-surrealist.md)
 - [allographer](labs/allographer.md)
   Nim ORM and query builder that supports SurrealDB.
 - [Aspire Integration](labs/aspire-community-package.md)
@@ -295,19 +251,19 @@ _1099 pages_
 - [CLI phone book in Python using SurrealDB as database.](labs/cli-phone-book-in-python-using-surrealdb-as-database.md)
   Tutorial building a CLI phonebook in Python with SurrealDB.
 - [CRUD using SurrealDB in RUST | SurrealDB](labs/crud-using-surrealdb-in-rust-surrealdb.md)
-- [Designing your schema in Surrealist](labs/designing-your-schema-in-surrealist.md)
+- [Designing your schema in SurrealDB Studio](labs/designing-your-schema-in-surrealist.md)
 - [Different ways to perform a Vector Search in SurrealDB](labs/different-ways-to-perform-a-vector-search-in-surrealdb.md)
 - [Document-Style Relationships in SurrealDB](labs/document-style-relationships-in-surrealdb.md)
-- [Embed Surrealist in your projects](labs/embed-surrealist-in-your-projects.md)
+- [Embed SurrealDB Studio in your projects](labs/embed-surrealist-in-your-projects.md)
 - [Getting started with Surreal Cloud](labs/getting-started-with-surreal-cloud.md)
 - [Getting started with SurrealDB! Future of cloud databases (maybe)?](labs/getting-started-with-surrealdb-future-of-cloud-databases-maybe.md)
 - [Getting started with SurrealDB using our JavaScript SDK](labs/getting-started-with-surrealdb-using-our-javascript-sdk.md)
 - [Getting started with SurrealDB using our Rust SDK](labs/getting-started-with-surrealdb-using-our-rust-sdk.md)
 - [Getting started with SurrealDB using Python and Docker.](labs/getting-started-with-surrealdb-using-python-and-docker.md)
   Walkthrough for running SurrealDB with Python and Docker.
-- [Getting started with Surrealist](labs/getting-started-with-surrealist.md)
+- [Getting started with SurrealDB Studio](labs/getting-started-with-surrealist.md)
 - [labs/gke-using-terraform.md](labs/gke-using-terraform.md)
-- [Graph, Full-Text Search and Vector Search in Surrealist](labs/graph-full-text-search-vector-search-in-surrealist.md)
+- [Graph, Full-Text Search and Vector Search in SurrealDB Studio](labs/graph-full-text-search-vector-search-in-surrealist.md)
 - [Graph-Style Relationships in SurrealDB](labs/graph-style-relationships-in-surrealdb.md)
 - [Hosting Surreal DB in Rust in Less Than 3 Minutes.](labs/hosting-surreal-db-in-rust-in-less-than-3-minutes.md)
 - [How a luxury fashion retailer scaled personalised recommendations using Surre](labs/how-a-luxury-fashion-retailer-scaled-personalised-recommendations-using-surre.md)
@@ -377,7 +333,7 @@ _1099 pages_
   Define and validate SurrealDB-shaped data with Zod.
 - [surrealdb_extra](labs/surrealdb_extra.md)
   Rust helper crate extending the official SurrealDB driver.
-- [Surrealist for Power Users](labs/surrealist-for-power-users.md)
+- [SurrealDB Studio for Power Users](labs/surrealist-for-power-users.md)
 - [Surrealist Python tool](labs/surrealist-python.md)
   Python driver and ergonomic query helpers for SurrealDB.
 - [SvelteKit Surreal Database Authentication](labs/sveltekit-surreal-database-authentication.md)
@@ -441,7 +397,7 @@ _1099 pages_
 - [Creating relations](learn/data-models/graph/creating-relations.md)
   Create graph edges with RELATE, store data on edge tables, define TYPE RELATION for safety and tooling, and handle symmetric relations with unique indexes.
 - [Graph traversal](learn/data-models/graph/graph-traversal.md)
-  Use SurrealQL arrow syntax, bidirectional edges, traversals from record IDs, automatic flattening, graph paths in schema fields, and Surrealist’s Explorer to debug paths step by step.
+  Use SurrealQL arrow syntax, bidirectional edges, traversals from record IDs, automatic flattening, graph paths in schema fields, and SurrealDB Studio’s Explorer to debug paths step by step.
 - [Knowledge graph patterns](learn/data-models/graph/knowledge-graph-patterns.md)
   Model entities and relationships as first-class data for
 - [Graph model](learn/data-models/graph/overview.md)
@@ -493,7 +449,7 @@ _1099 pages_
 - [Quick tutorial](learn/extensions/plugins/quick-tutorial.md)
   A quick tutorial showing the steps involved in turning regular Rust code into SurrealDB-accessible WASM functions.
 - [Bulk operations and data import](learn/querying/concepts-and-guides/bulk-operations-and-data-import.md)
-  Bulk INSERT patterns in SurrealQL, plus Surreal Sync, HTTP import, /sql for side effects, and Surrealist CSV.
+  Bulk INSERT patterns in SurrealQL, plus Surreal Sync, HTTP import, /sql for side effects, and SurrealDB Studio CSV.
 - [Connecting from serverless & edge](learn/querying/concepts-and-guides/connecting-from-serverless-and-edge.md)
   Serverless and edge environments change how applications connect to databases.
 - [Custom functions](learn/querying/concepts-and-guides/custom-functions.md)
@@ -540,8 +496,8 @@ _1099 pages_
   In this section, you will explore querying SurrealDB using Bruno.
 - [Via HTTP](learn/querying/graphql/via-http.md)
   In this section, you will explore querying SurrealDB using the GraphQL HTTP endpoint. The HTTP API is designed to be simple and intuitive, with any interface that provides a consistent way to interact with the database.
-- [Via Surrealist](learn/querying/graphql/via-surrealist.md)
-  In this section, you will explore querying SurrealDB using Surrealist.
+- [Via SurrealDB Studio](learn/querying/graphql/via-studio.md)
+  In this section, you will explore querying SurrealDB using SurrealDB Studio.
 - [Querying](learn/querying/index.md)
   Query SurrealDB with SurrealQL, SDKs or GraphQL—SQL-like syntax with graphs, links and practical querying tips.
 - [Performance best practices](learn/querying/performance/performance-best-practices.md)
@@ -560,14 +516,14 @@ _1099 pages_
   In this section, you will explore querying SurrealDB using HTTP. The HTTP API is designed to be simple and intuitive, with a RESTful interface that provides a consistent way to interact with the database.
 - [Via SDKs](learn/querying/surrealql/executing-queries/via-sdks.md)
   Query SurrealDB programmatically using one of the official SDKs available for Rust, JavaScript, Python, Go, Java, .NET, and PHP.
-- [Via Surrealist](learn/querying/surrealql/executing-queries/via-surrealist.md)
-  In this section, you will explore SurrealQL queries using Surrealist, the official query editor for SurrealDB. Surrealist is a powerful tool that allows you to write, execute, and visualise SurrealQL queries in real-time.
+- [Via SurrealDB Studio](learn/querying/surrealql/executing-queries/via-studio.md)
+  In this section, you will explore SurrealQL queries using SurrealDB Studio, the official query editor for SurrealDB. SurrealDB Studio is a powerful tool that allows you to write, execute, and visualise SurrealQL queries in real-time.
 - [Statements and values](learn/querying/surrealql/statements-and-values.md)
   SurrealQL statements grouped as resource definitions, control flow with transactions, and CRUD-style query operations.
 - [What is SurrealQL?](learn/querying/surrealql/what-is-surrealql.md)
   SurrealQL is SurrealDB’s SQL-like language for queries, schemas, graph relationships and optimised execution.
 - [Writing SurrealQL](learn/querying/surrealql/writing-surrealql.md)
-  Ways of executing SurrealQL queries such as Surrealist, CLI, HTTP, SDKs, and GraphQL.
+  Ways of executing SurrealQL queries such as SurrealDB Studio, CLI, HTTP, SDKs, and GraphQL.
 - [Closures](learn/schema-management/computed-data/closures.md)
   Anonymous functions in SurrealQL, colloquially known as closures.
 - [Computed fields](learn/schema-management/computed-data/computed-fields.md)
@@ -1860,8 +1816,8 @@ _1099 pages_
   Run SurrealDB against distributed storage for horizontally scalable, highly available clusters.
 - [Overview](running/overview.md)
   Ways to run SurrealDB—from a browser sandbox to a managed cloud instance to installing on your own hardware.
-- [Surrealist Sandbox](running/sandbox.md)
-  Try SurrealDB in the browser with the Surrealist Sandbox—no install and no account required.
+- [SurrealDB Studio Sandbox](running/sandbox.md)
+  Try SurrealDB in the browser with the SurrealDB Studio Sandbox—no install and no account required.
 - [Sample queries](sample-queries.md)
   Learn how to get started with SurrealDB
 - [Overview](spectron/agent-memory/index.md)
@@ -1914,8 +1870,8 @@ _1099 pages_
   How Spectron's semantic response cache works and how to manage memory lifecycle.
 - [Models per stage](spectron/agent-memory/tuning/models-per-stage.md)
   Configure which LLM is used for each processing stage in Spectron.
-- [Ontology grounding](spectron/agent-memory/tuning/ontology-grounding.md)
-  Constrain extraction to known entity types, attribute keys, and relation labels for domain-specific accuracy.
+- [Extraction vocabulary](spectron/agent-memory/tuning/ontology-grounding.md)
+  How Spectron keeps entity names, attribute keys, and relation labels consistent across extractions.
 - [Coding agent with project memory](spectron/cookbooks/build/coding-agent-with-project-memory.md)
   Repository scoped sessions and MCP.
 - [Customer support agent](spectron/cookbooks/build/customer-support-agent.md)

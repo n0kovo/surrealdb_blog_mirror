@@ -24,7 +24,7 @@ Learn more about [namespaces and databases](../../../../concepts.md#system-struc
 > [!NOTE]
 > This step is only required if you are authenticating using the `signin` method on your initial connection. Learn more about [access methods](../../../../reference/query-language/statements/define/access/index.md) and [system Users](../../../../reference/query-language/statements/define/user.md) in the SurrealDB documentation.
 
-First navigate to the Authentication panel of Surrealist. There, you can create a root user by clicking on the **+** button in the **Root Authentication** section. 
+First navigate to the Authentication panel of SurrealDB Studio. There, you can create a root user by clicking on the **+** button in the **Root Authentication** section. 
 
 In the dialog that appears, select either:
 

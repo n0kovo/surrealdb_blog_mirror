@@ -1,13 +1,13 @@
 ---
 position: 5
-title: Via Surrealist
-description: In this section, you will explore querying SurrealDB using Surrealist.
-source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/graphql/via-surrealist.mdx"
+title: Via SurrealDB Studio
+description: In this section, you will explore querying SurrealDB using SurrealDB Studio.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/graphql/via-studio.mdx"
 ---
 
-# GraphQL via Surrealist
+# GraphQL via SurrealDB Studio
 
-The GraphQL query view in [Surrealist](https://app.surrealdb.com/query) provides syntax highlighting, query validation, and real-time execution, with results displayed as the JSON structure returned by GraphQL.
+The GraphQL query view in [SurrealDB Studio](https://app.surrealdb.com/query) provides syntax highlighting, query validation, and real-time execution, with results displayed as the JSON structure returned by GraphQL.
 
 ## Getting started
 
@@ -25,28 +25,28 @@ surreal start --log debug --user root --password secret
 surreal start --log debug --user root --password secret
 ```
 
-After starting the SurrealDB instance, you can navigate to the Surrealist to start a new connection.
+After starting the SurrealDB instance, you can navigate to SurrealDB Studio to start a new connection.
 
 ### Start a new connection
 
-In the top left corner of the Surrealist, start a new connection. Ensure that the connection information is the same as the one you used to start the SurrealDB instance. In the example above we have set the user to `root` and the password to `secret`.
+In the top left corner of the SurrealDB Studio, start a new connection. Ensure that the connection information is the same as the one you used to start the SurrealDB instance. In the example above we have set the user to `root` and the password to `secret`.
 
 > [!IMPORTANT]
-> Querying via GraphQL is not supported in the Surrealist sandbox.
+> Querying via GraphQL is not supported in the SurrealDB Studio sandbox.
 
-Learn more about starting a connection in the [Surrealist documentation](../../../explore/surrealist/getting-started.md).
+Learn more about starting a connection in the [SurrealDB Studio documentation](../../../explore/studio/index.md).
 
 ### Setting a namespace and database
 
 Before you can start writing queries, you need to set the [namespace and database](../../../concepts.md#namespaces-and-databases) you want to use. For example, you can set the namespace to `test` and the database to `test`. This will set the namespace and database for the current connection.
 
-Additionally, you can start [a serving in Surrealist](../../../explore/surrealist/concepts/local-database-serving.md) which also enables GraphQL automatically, starting a server on `http://localhost:8000` by default for a root user with username and password `root`.
+Additionally, you can start [a serving in SurrealDB Studio](../../../explore/studio/index.md) which also enables GraphQL automatically, starting a server on `http://localhost:8000` by default for a root user with username and password `root`.
 
-![Surrealist connection settings](../../../assets/img/image/surrealist/connection.png)
+![SurrealDB Studio connection settings](../../../assets/img/image/surrealist/connection.png)
 
 ### Preparing your database
 
-Next, use the [SurrealQL query editor](../../../explore/surrealist/concepts/sending-queries.md) to create some data. For example, you can create a new `user` table with fields for `firstName`, `lastName`, and `email` and add a new user to the database.
+Next, use the [SurrealQL query editor](../../../explore/studio/index.md) to create some data. For example, you can create a new `user` table with fields for `firstName`, `lastName`, and `email` and add a new user to the database.
 
 In order to allow querying the created table using GraphQL, you will need to explicitly enable GraphQL using the [`DEFINE CONFIG`](../../../reference/query-language/statements/define/config.md) statement. This will allow you to query the table using GraphQL on a per-database basis.
 
@@ -77,7 +77,7 @@ CREATE user CONTENT {
 
 ## Write your first GraphQL query
 
-After you have created some data, you can start writing GraphQL queries. You can use the [Surrealist GraphQL editor](../../../explore/surrealist/concepts/sending-queries-with-graphql.md) to write your GraphQL queries.
+After you have created some data, you can start writing GraphQL queries. You can use the [SurrealDB Studio GraphQL editor](../../../explore/studio/index.md) to write your GraphQL queries.
 
 For example, to query the `person` table for all records, you can write the following GraphQL query:
 
@@ -91,7 +91,7 @@ For example, to query the `person` table for all records, you can write the foll
 }
 ```
 
-![Surrealist GraphQL query](../../../assets/img/image/surrealist/graphql-querying-fields.png)
+![SurrealDB Studio GraphQL query](../../../assets/img/image/surrealist/graphql-querying-fields.png)
 
 And to get the person with the email "Jon.Doe@surrealdb.com", you can write the following GraphQL query:
 
@@ -104,14 +104,14 @@ And to get the person with the email "Jon.Doe@surrealdb.com", you can write the 
 }
 ```
 
-Surrealist will automatically validate the query and provide you with the results.
+SurrealDB Studio will automatically validate the query and provide you with the results.
 
 ## Introspection
 
-Surrealist also supports introspection with GraphQL. This means that you can query the database and Surrealist will automatically infer the type of the data you are querying. For example, if you query the `user` table for all records, Surrealist will automatically infer the type of the data to be `user`.
+SurrealDB Studio also supports introspection with GraphQL. This means that you can query the database and SurrealDB Studio will automatically infer the type of the data you are querying. For example, if you query the `user` table for all records, SurrealDB Studio will automatically infer the type of the data to be `user`.
 
-![Surrealist GraphQL type inference](../../../assets/img/image/surrealist/graphql-type-inference.png)
+![SurrealDB Studio GraphQL type inference](../../../assets/img/image/surrealist/graphql-type-inference.png)
 
 ## Learn more
 
-To learn more about the GraphQL view in Surrealist, check out the [Surrealist documentation](../../../explore/surrealist/index.md).
+To learn more about the GraphQL view in SurrealDB Studio, check out the [SurrealDB Studio documentation](../../../explore/studio/index.md).

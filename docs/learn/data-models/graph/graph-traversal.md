@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Graph traversal
-description: Use SurrealQL arrow syntax, bidirectional edges, traversals from record IDs, automatic flattening, graph paths in schema fields, and Surrealist’s Explorer to debug paths step by step.
+description: Use SurrealQL arrow syntax, bidirectional edges, traversals from record IDs, automatic flattening, graph paths in schema fields, and SurrealDB Studio’s Explorer to debug paths step by step.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/data-models/graph/graph-traversal.mdx"
 ---
 
@@ -245,9 +245,9 @@ person:1.*;
 }
 ```
 
-## Using Surrealist Explorer to debug paths
+## Using SurrealDB Studio Explorer to debug paths
 
-Surrealist’s [Explorer view](../../../explore/surrealist/concepts/exploring-database-records.md) lets you step through records and relations one hop at a time, useful for building intuition for queries like `SELECT ->wrote->comment FROM user`.
+SurrealDB Studio’s [Explorer view](../../../explore/studio/index.md) lets you step through records and relations one hop at a time, useful for building intuition for queries like `SELECT ->wrote->comment FROM user`.
 
 Example setup with two outgoing edges:
 

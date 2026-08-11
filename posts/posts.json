@@ -1,7 +1,34 @@
 {
-  "generated_at": "2026-08-10T07:24:27.732324+00:00",
-  "count": 254,
+  "generated_at": "2026-08-11T07:00:07.412389+00:00",
+  "count": 256,
   "posts": [
+    {
+      "slug": "hi",
+      "title": "Testing known time in Spectron on a 2,200-year corpus",
+      "summary": "How to use asOf in Spectron to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.",
+      "publishDate": "2026-08-11T03:43:59.000Z",
+      "categories": [
+        "engineering"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/r8jmyr1ulot9ym5yxsaolmky.auto",
+      "source": "https://surrealdb.com/blog/hi",
+      "local_path": "2026/08/hi.md"
+    },
+    {
+      "slug": "introducing-surrealdb-studio",
+      "title": "Introducing SurrealDB Studio",
+      "summary": "Introducing SurrealDB Studio: the new app for working with your SurrealDB instances and Spectron contexts, and the most powerful way to interact with your data yet.",
+      "publishDate": "2026-08-10T18:03:04.000Z",
+      "categories": [
+        "featured",
+        "releases"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/0svblhm0973e542twm7db607.auto",
+      "source": "https://surrealdb.com/blog/introducing-surrealdb-studio",
+      "local_path": "2026/08/introducing-surrealdb-studio.md"
+    },
     {
       "slug": "integrating-ultima-vii-with-spectron-part-ii-the-testing",
       "title": "Integrating Ultima VII with Spectron, part II: the testing",

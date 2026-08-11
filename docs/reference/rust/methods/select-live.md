@@ -84,7 +84,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-Then connect to it using Surrealist or open a new terminal window with the following command.
+Then connect to it using SurrealDB Studio or open a new terminal window with the following command.
 
 ```
 surreal sql --user root --pass secret --pretty
@@ -185,7 +185,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-Then connect to it using Surrealist or open a new terminal window with the following command.
+Then connect to it using SurrealDB Studio or open a new terminal window with the following command.
 
 ```
 surreal sql --namespace ns --database db --user root --pass secret --pretty

@@ -50,11 +50,11 @@ The steps are:
 
 Once onboarding is complete, you can view and manage the access mode of your instances from the SurrealDB Cloud dashboard.
 
-## Using AWS PrivateLink in Surrealist
+## Using AWS PrivateLink in SurrealDB Studio
 
 Once you have onboarded, you will see the option to select the **PrivateLink** access mode in the instance creation, once you have selected the region.
 
-*[image: AWS PrivateLink in Surrealist]*
+*[image: AWS PrivateLink in SurrealDB Studio]*
 
 You can change this access mode later in the instance dashboard by clicking on the **Manage Instance** button and then selecting the **Network**.
 

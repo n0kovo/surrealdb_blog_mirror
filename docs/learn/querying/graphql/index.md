@@ -17,5 +17,5 @@ _Auto-generated index — 5 pages._
   In this section, you will explore querying SurrealDB using Bruno.
 - [Via HTTP](via-http.md)
   In this section, you will explore querying SurrealDB using the GraphQL HTTP endpoint. The HTTP API is designed to be simple and intuitive, with any interface that provides a consistent way to interact with the database.
-- [Via Surrealist](via-surrealist.md)
-  In this section, you will explore querying SurrealDB using Surrealist.
+- [Via SurrealDB Studio](via-studio.md)
+  In this section, you will explore querying SurrealDB using SurrealDB Studio.

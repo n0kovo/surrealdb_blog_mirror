@@ -7,8 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # SurrealDB Cloud
 
-[SurrealDB Cloud](../build/deployment/surrealdb-cloud/what-is-surrealdb-cloud.md) is a managed service: SurrealDB runs in our environment, and you connect from Surrealist, the SDKs, or the HTTP and WebSocket APIs. Compared to the [Surrealist Sandbox](sandbox.md), you sign in (typically with an email) and your **data persists** in a proper cloud instance.
+[SurrealDB Cloud](../build/deployment/surrealdb-cloud/what-is-surrealdb-cloud.md) is a managed service: SurrealDB runs in our environment, and you connect from SurrealDB Studio, the SDKs, or the HTTP and WebSocket APIs. Compared to the [SurrealDB Studio Sandbox](sandbox.md), you sign in (typically with an email) and your **data persists** in a proper cloud instance.
 
-In Surrealist you can go from the Sandbox to Cloud with **Deploy to Cloud**, create an instance, and then point your connection at the new instance instead of Sandbox.
+In SurrealDB Studio you can go from the Sandbox to Cloud with **Deploy to Cloud**, create an instance, and then point your connection at the new instance instead of Sandbox.
 
 For day-to-day management of organisations, instances, and billing, use the documentation under **[SurrealDB Cloud](../manage/cloud/index.md)** in the *Manage* section.

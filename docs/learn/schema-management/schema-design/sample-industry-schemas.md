@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Sample schemas by industry
 
-These snippets are starting points that are realistic enough to learn from, short enough to paste into Surrealist or to lift into [SurrealKit](../../../manage/schema-migration/index.md) `.surql` schema files and then reshape. They mix **tables**, **relations**, **computed** fields, **events**, and **indexes** the way a real app might.
+These snippets are starting points that are realistic enough to learn from, short enough to paste into SurrealDB Studio or to lift into [SurrealKit](../../../manage/schema-migration/index.md) `.surql` schema files and then reshape. They mix **tables**, **relations**, **computed** fields, **events**, and **indexes** the way a real app might.
 
 > [!NOTE]
 > Many fields use [`COMPUTED`](../../../reference/query-language/statements/define/field.md#computed-fields) (SurrealDB 3.0.0 onward). On older versions, replace with a [`future`](../../../reference/query-language/language-primitives/data-types/futures.md) and `VALUE { … }` as in the futures documentation.
@@ -680,7 +680,7 @@ DEFINE EVENT cancel_high_volume
 };
 ```
 
-### Using Surrealist's graph visualisation to see fraudulent activities
+### Using SurrealDB Studio's graph visualisation to see fraudulent activities
 
 For more on these queries and their visual output, see [this dedicated blog post](/blog/fraud-detection-with-surrealdb).
 

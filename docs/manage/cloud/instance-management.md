@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Instance management
 
-A **SurrealDB Cloud instance** is a managed SurrealDB deployment you operate from the dashboard or Surrealist. This page summarises lifecycle actions and placement options.
+A **SurrealDB Cloud instance** is a managed SurrealDB deployment you operate from the dashboard or SurrealDB Studio. This page summarises lifecycle actions and placement options.
 
 ## Creating instances
 

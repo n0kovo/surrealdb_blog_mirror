@@ -321,7 +321,7 @@ surreal start --user root -password root
 ## Enabling capabilities
 
 > [!NOTE]
-> If using SurrealDB Cloud, capabilities can be set using the [Configure Instance](../../../../build/deployment/surrealdb-cloud/getting-started/create-an-instance.md#configure-an-instance) panel on Surrealist.
+> If using SurrealDB Cloud, capabilities can be set using the [Configure Instance](../../../../build/deployment/surrealdb-cloud/getting-started/create-an-instance.md#configure-an-instance) panel on SurrealDB Studio.
 
 Capabilities arguments such as `allow-scripting` or `deny-net` can also be passed into the `surreal start` command. These arguments, the order in which they are evaluated, and other notes on security are presented in detail in a [separate page on capabilities](../../../../learn/security/authorization/capabilities.md).
 

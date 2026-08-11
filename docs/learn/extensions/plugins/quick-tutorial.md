@@ -179,7 +179,7 @@ Now it's time to [start the database](../../../reference/cli/surrealdb-cli/comma
 SURREAL_CAPS_ALLOW_EXPERIMENTAL=files,surrealism SURREAL_BUCKET_FOLDER_ALLOWLIST="/Users/my_name/my_rust_code/" surreal start --user root --pass secret
 ```
 
-You can then connect through [surrealist](../../../explore/surrealist/index.md) or the CLI with the [surreal sql](../../../reference/cli/surrealdb-cli/commands/sql.md) command:
+You can then connect through [SurrealDB Studio](../../../explore/studio/index.md) or the CLI with the [surreal sql](../../../reference/cli/surrealdb-cli/commands/sql.md) command:
 
 ```bash
 SURREAL_CAPS_ALLOW_EXPERIMENTAL=files,surrealism SURREAL_BUCKET_FOLDER_ALLOWLIST="/Users/my_name/my_rust_code/" surreal sql --user root --pass secret

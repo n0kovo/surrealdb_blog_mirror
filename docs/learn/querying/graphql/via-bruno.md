@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 ## Getting started
 
-Before you can start making queries, you need to start SurrealDB. You can do this by starting a new instance of SurrealDB with the [`surreal start`](../../../reference/cli/surrealdb-cli/commands/start.md) command, Docker, or Surrealist.
+Before you can start making queries, you need to start SurrealDB. You can do this by starting a new instance of SurrealDB with the [`surreal start`](../../../reference/cli/surrealdb-cli/commands/start.md) command, Docker, or SurrealDB Studio.
 
 **CLI**
 

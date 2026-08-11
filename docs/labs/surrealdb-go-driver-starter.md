@@ -8,6 +8,7 @@ name: Salman Shah
 role: Software Engineer
 avatar: salman-shah
 topics: 
+languages: 
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/labs-items/surrealdb-go-driver-starter.mdx"
 ---
 

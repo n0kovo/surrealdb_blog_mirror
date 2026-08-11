@@ -1,7 +1,7 @@
 ---
 position: 5
 title: Bulk operations and data import
-description: Bulk INSERT patterns in SurrealQL, plus Surreal Sync, HTTP import, /sql for side effects, and Surrealist CSV.
+description: Bulk INSERT patterns in SurrealQL, plus Surreal Sync, HTTP import, /sql for side effects, and SurrealDB Studio CSV.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/concepts-and-guides/bulk-operations-and-data-import.mdx"
 ---
 
@@ -54,6 +54,6 @@ Importing data from external sources can be done through a number of methods.
 
 - **`POST /sql`** runs SurrealQL like a normal query session. Use this endpoint when you **want side effects** during a load such as events and live query behaviour. The [HTTP API](../../../reference/rest-api/http-protocol.md#sql) documents the `/sql` endpoint; the [CLI `import`](../../../reference/cli/surrealdb-cli/commands/import.md) page describes the same trade-off for file-based imports.
 
-- **Surrealist** can import SurrealQL files and **CSV** from the Explorer view (choose fields, map to a table, and create records). See [exploring database records / import](../../../explore/surrealist/concepts/exploring-database-records.md).
+- **SurrealDB Studio** can import SurrealQL files and **CSV** from the Explorer view (choose fields, map to a table, and create records). See [exploring database records / import](../../../explore/studio/index.md).
 
 For large one-off file loads from the shell, the **[`surreal import`](../../../reference/cli/surrealdb-cli/commands/import.md)** command is the usual companion to `POST /import`.

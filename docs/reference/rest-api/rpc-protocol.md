@@ -294,7 +294,7 @@ delete [ thing ]
 }
 ```
 
-Notice how the deleted record is returned. This differs from a [`DELETE`](../query-language/statements/delete.md) statement via the CLI or Surrealist which returns nothing unless the `RETURN BEFORE` clause is used.
+Notice how the deleted record is returned. This differs from a [`DELETE`](../query-language/statements/delete.md) statement via the CLI or SurrealDB Studio which returns nothing unless the `RETURN BEFORE` clause is used.
 
 ```json title="Response"
 {

@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Importing CSV data
-description: "SurrealDB's Surrealist UI can be used to import CSV data to SurrealDB."
+description: SurrealDB Studio can be used to import CSV data to SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/migrating/from-files-and-streams/csv.mdx"
 ---
 
@@ -9,11 +9,11 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 This page details some methods to import CSV data to SurrealDB.
 
-## Using Surrealist
+## Using SurrealDB Studio
 
-CSV data is the easiest external data type to import to SurrealDB, as it can be imported directly via the [Surrealist](../../../explore/surrealist/index.md) UI.
+CSV data is the easiest external data type to import to SurrealDB, as it can be imported directly via the [SurrealDB Studio](../../../explore/studio/index.md) UI.
 
-Importing the data is done by going to the Explorer tab, clicking on Import database below, and following the prompts. For more details, see [this page](../../../explore/surrealist/concepts/exploring-database-records.md#importing-a-csv-file) in the Surrealist documentation.
+Importing the data is done by going to the Explorer tab, clicking on Import database below, and following the prompts. For more details, see [this page](../../../explore/studio/index.md) in the SurrealDB Studio documentation.
 
 ## Importing CSV data using Surreal Sync
 

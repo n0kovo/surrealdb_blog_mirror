@@ -19,7 +19,7 @@ Start a running database using the following command:
 surreal start --user root --pass secret 
 ```
 
-To follow along interactively, connect [using Surrealist](../../../explore/surrealist/getting-started.md#creating-a-connection) or the following command to open a connection in the CLI:
+To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open a connection in the CLI:
 
 ```
 surreal sql --user root --pass secret --pretty
@@ -217,7 +217,7 @@ Start a running database using the following command:
 surreal start --user root --pass secret 
 ```
 
-To follow along interactively, connect [using Surrealist](../../../explore/surrealist/getting-started.md#creating-a-connection) or the following command to open a connection in the CLI:
+To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open a connection in the CLI:
 
 ```
 surreal sql --user root --pass secret --ns main --db main --pretty

@@ -116,7 +116,7 @@ surreal import --endpoint http://localhost:8000 --token <token> --ns main \
 ```
 
 > [!NOTE]
-> If you are using Surrealist, you can import files into your database by using the `Import database` button in the Explorer view. See the [Surrealist documentation](../../../../explore/surrealist/concepts/exploring-database-records.md) for more information.
+> If you are using SurrealDB Studio, you can import files into your database by using the `Import database` button in the Explorer view. See the [SurrealDB Studio documentation](../../../../explore/studio/index.md) for more information.
 
 ## Validating files before import
 

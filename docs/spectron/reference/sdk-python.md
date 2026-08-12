@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 | Item | Value |
 | --- | --- |
 | PyPI package | [`surrealdb`](https://pypi.org/project/surrealdb/) (Spectron client bundled with the driver) |
-| Install | `pip install surrealdb` |
+| Install | `pip install --pre surrealdb` |
 | Import | `from surrealdb import Spectron, AsyncSpectron` |
 | Submodule | `surrealdb.spectron` (models, namespaces, errors) |
 

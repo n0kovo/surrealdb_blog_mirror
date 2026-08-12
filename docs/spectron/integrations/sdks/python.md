@@ -9,12 +9,12 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 The Spectron client ships **inside the main SurrealDB Python package** (`surrealdb`). Install one package and import `Spectron` or `AsyncSpectron` alongside the database driver.
 
-> **Package naming:** On [PyPI](https://pypi.org), the Spectron client ships in the **`surrealdb`** package alongside the database driver, so use **`pip install surrealdb`**. The bare name **`spectron`** belongs to an unrelated project; do not install it for SurrealDB Spectron.
+> **Package naming:** On [PyPI](https://pypi.org), the Spectron client ships in the **`surrealdb`** package alongside the database driver. It lands in the **3.x** line, which is still prerelease, so the install needs **`--pre`** — a bare `pip install surrealdb` resolves to the 2.x stable release, which carries no Spectron client. The bare name **`spectron`** belongs to an unrelated project; do not install it for SurrealDB Spectron.
 
 ## Installation
 
 ```bash
-pip install surrealdb
+pip install --pre surrealdb
 ```
 
 Python 3.10+ recommended.
@@ -67,7 +67,7 @@ The Python client accepts:
 ## Remember (facts)
 
 ```python
-memory.remember("Alice was promoted to CTO.", infer="full", scope=["org/acme/user/alice"])
+memory.remember("Alice was promoted to CTO.", infer="full", scopes=["org/acme/user/alice"])
 memory.remember("Q3 board notes", labels=["topic=board"], memory_category="context")
 
 memory.remember_many(
@@ -76,7 +76,7 @@ memory.remember_many(
         {"role": "assistant", "content": "Congratulations!"},
     ],
     extract="whole_conversation",
-    scope=["org/acme/user/alice"],
+    scopes=["org/acme/user/alice"],
 )
 ```
 
@@ -89,13 +89,13 @@ result = memory.recall(
     "What is Alice's role?",
     k=10,
     mode="hybrid",
-    scope=["org/acme/user/alice"],
+    lens=["org/acme/user/alice"],
 )
 
 block = memory.query_context(
     "What is Alice's role?",
     k=10,
-    scope=["org/acme/user/alice"],
+    lens=["org/acme/user/alice"],
 )
 ```
 
@@ -120,7 +120,7 @@ memory.documents.keywords.search("returns policy", k=10)
 ## Chat (including streaming)
 
 ```python
-reply = memory.chat("Summarise what you know about Alice", scope=["user/alice"])
+reply = memory.chat("Summarise what you know about Alice", scopes=["user/alice"])
 print(reply.reply)
 
 for chunk in memory.chat("Summarise what you know about Alice", stream=True):
@@ -146,7 +146,7 @@ The SDK raises typed exceptions so you can handle auth, scope, and not-found cas
 from surrealdb import SpectronAPIError, SpectronAuthError, SpectronNotFoundError, SpectronScopeError
 
 try:
-    hits = memory.recall("what is my name?", scope=["user/alice"])
+    hits = memory.recall("what is my name?", lens=["user/alice"])
 except SpectronAuthError as exc:
     print(exc.status_code, exc.message)
 except SpectronScopeError as exc:

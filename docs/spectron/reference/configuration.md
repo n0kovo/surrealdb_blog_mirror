@@ -104,7 +104,6 @@ Each Context stores a `config` object in the control plane. This is updated via 
 {
   "config": {
     "token_limit": 1000000,
-    "retention_days": 90,
     "models": {
       "extraction": { "provider": "google", "model": "gemini-2.5-flash" },
       "synthesis": { "provider": "google", "model": "gemini-2.5-pro" },
@@ -125,7 +124,6 @@ Each Context stores a `config` object in the control plane. This is updated via 
 | Field | Type | Description |
 |---|---|---|
 | `token_limit` | integer (optional) | Soft monthly token cap for metering and billing. Does not reject requests while `enforcement_blocked` is `false`. `null` = no cap. |
-| `retention_days` | integer (optional) | Automatic expiry for `context`-category experiential memory data. `null` = no automatic expiry. |
 | `ingestion_profile` | string | Document ingest dial: `TextOnly`, `TextPlusKeyword`, `StandardMultimodal`, or `MultimodalFull` (default). See [Multimodal content](../agent-memory/ingest/authoritative/multimodal-content.md). |
 | `models.extraction` | `{provider, model}` | LLM for turn and document extraction. |
 | `models.reconciliation` | `{provider, model}` (optional) | LLM assist when structural entity merge is inconclusive. |

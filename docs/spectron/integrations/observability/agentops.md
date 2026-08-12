@@ -15,7 +15,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 ## Installation
 
 ```bash
-pip install agentops surrealdb openai
+pip install agentops openai
+pip install --pre surrealdb
 ```
 
 ```bash
@@ -44,7 +45,7 @@ memory = Spectron(
 scope = ["org/acme/user/alice"]
 
 def answer(user_message: str) -> str:
-    block = memory.query_context(user_message, k=8, scope=scope)
+    block = memory.query_context(user_message, k=8, lens=scope)
 
     completion = llm.chat.completions.create(
         model="gpt-4o",
@@ -57,7 +58,7 @@ def answer(user_message: str) -> str:
 
     memory.remember_many(
         [{"role": "user", "content": user_message}, {"role": "assistant", "content": reply}],
-        scope=scope,
+        scopes=scope,
     )
     return reply
 ```

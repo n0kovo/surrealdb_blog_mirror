@@ -16,6 +16,6 @@ _Auto-generated index — 5 pages._
 - [Multi-tenancy](multi-tenancy.md)
   Patterns for serving multiple tenants from a single Spectron deployment.
 - [Principals](principals.md)
-  The three principal types – management, agent, and supervisor – and their capabilities.
+  Principal kinds, grant verbs, and how effective authority is resolved.
 - [Scope as a security boundary](scope-as-security-boundary.md)
   How scope-bound API keys enforce data isolation in Spectron.

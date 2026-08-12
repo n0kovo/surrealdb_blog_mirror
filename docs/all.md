@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1077 pages_  
+_1081 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -235,6 +235,10 @@ _1077 pages_
   Step-by-step tutorials and walkthroughs for specific tasks with SurrealDB: integrations, real-time apps, AI patterns, and more.
 - [Implement semantic search in Rust](explore/tutorials/tutorials/semantic-search-in-rust.md)
   In this guide, you'll learn how to implement semantic search in Rust using either Mistral AI or OpenAI via their Rust crates.
+- [Expo](frameworks/expo.md)
+  Connect an Expo app to SurrealDB and run your first queries.
+- [React Native](frameworks/react-native.md)
+  Connect a React Native app to SurrealDB and run your first queries.
 - [Getting started](index.md)
   The official documentation for SurrealDB, a multi-model database for modern applications.
 - [10 schema tips for SurrealDB](labs/10-schema-tips-for-surrealdb.md)
@@ -1022,6 +1026,10 @@ _1077 pages_
   The SurrealDB SDK for JavaScript using the Node.js engine.
 - [WebAssembly](reference/javascript/engines/wasm.md)
   The SurrealDB SDK for JavaScript using the WebAssembly engine.
+- [Expo](reference/javascript/frameworks/expo.md)
+  The SurrealDB SDK for JavaScript can be used in Expo applications to connect to a remote SurrealDB instance from Android and iOS.
+- [React Native](reference/javascript/frameworks/react-native.md)
+  The SurrealDB SDK for JavaScript can be used in React Native applications to connect to a remote SurrealDB instance from Android and iOS.
 - [React](reference/javascript/frameworks/react.md)
   The SurrealDB SDK for JavaScript can be used in React applications to interact with your SurrealDB instance.
 - [SolidJS](reference/javascript/frameworks/solidjs.md)
@@ -1861,7 +1869,7 @@ _1077 pages_
 - [Adding turns](spectron/agent-memory/sessions/adding-turns.md)
   How to add conversation turns and interpret the structured extraction result.
 - [Chat sessions](spectron/agent-memory/sessions/chat-sessions.md)
-  Using session.chat() for Spectron-managed conversation loops.
+  Using chat() for Spectron-managed conversation loops.
 - [Creating sessions](spectron/agent-memory/sessions/creating-sessions.md)
   How to create and manage conversation sessions in Spectron.
 - [State and diffs](spectron/agent-memory/sessions/state-and-diffs.md)
@@ -2105,7 +2113,7 @@ _1077 pages_
 - [Multi-tenancy](spectron/self-hosting/security/multi-tenancy.md)
   Patterns for serving multiple tenants from a single Spectron deployment.
 - [Principals](spectron/self-hosting/security/principals.md)
-  The three principal types – management, agent, and supervisor – and their capabilities.
+  Principal kinds, grant verbs, and how effective authority is resolved.
 - [Scope as a security boundary](spectron/self-hosting/security/scope-as-security-boundary.md)
   How scope-bound API keys enforce data isolation in Spectron.
 - [Transactions and isolation](transactions-and-isolation.md)

@@ -16,6 +16,9 @@ The JavaScript SDK supports running SurrealDB as an embedded database through tw
 
 Both plugins work with ES modules (`import`), not CommonJS (`require`).
 
+> [!NOTE]
+> Neither engine runs on Android or iOS. Hermes has no WebAssembly runtime, and the Node.js engine is a native Node addon that React Native cannot load. Apps built with [Expo](../frameworks/expo.md) or [React Native](../frameworks/react-native.md) connect to a remote instance over `wss://` or `https://`.
+
 ## WebAssembly engine (browser)
 
 The `@surrealdb/wasm` package runs SurrealDB inside a browser environment. It supports in-memory databases and persistent storage via IndexedDB, and can optionally run inside a Web Worker to keep the main thread responsive.

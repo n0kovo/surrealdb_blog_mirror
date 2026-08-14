@@ -187,7 +187,7 @@ models:
 
 You may use any provider supported by your Spectron deployment. The extraction and response models can differ – a faster, cheaper model is often suitable for extraction while a more capable model handles final response generation.
 
-See [Models and providers](../../self-hosting/operations/models-and-providers.md) for the full list of supported providers and how to configure API keys.
+See [Configuration](../../reference/configuration.md#default-provider-api-keys) for the supported providers and how to configure API keys.
 
 ## When to use `remember()` instead
 

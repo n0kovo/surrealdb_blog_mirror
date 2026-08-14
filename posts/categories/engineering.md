@@ -1,8 +1,10 @@
 # Category: engineering
 
-_45 posts_  
+_46 posts_  
 [← Index](../../README.md)
 
+- **2026-08-13** · [Graph engineering is missing a graph](../2026/08/graph-engineering-is-missing-a-graph.md)  
+  `featured` `engineering` `ai` — Graph engineering is suddenly everywhere, but most takes stop at the diagram. The harder half is the context graph underneath: whether relations, vectors, documents and memory sit under one consistency boundary, and whether anything understood the data before it became a graph.
 - **2026-08-11** · [Testing known time in Spectron on a 2,200-year corpus](../2026/08/hi.md)  
   `engineering` — How to use asOf in Spectron to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.
 - **2026-08-06** · [Integrating Ultima VII with Spectron, part II: the testing](../2026/08/integrating-ultima-vii-with-spectron-part-ii-the-testing.md)  

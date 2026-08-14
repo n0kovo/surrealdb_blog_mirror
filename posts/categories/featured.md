@@ -1,8 +1,10 @@
 # Category: featured
 
-_111 posts_  
+_112 posts_  
 [← Index](../../README.md)
 
+- **2026-08-13** · [Graph engineering is missing a graph](../2026/08/graph-engineering-is-missing-a-graph.md)  
+  `featured` `engineering` `ai` — Graph engineering is suddenly everywhere, but most takes stop at the diagram. The harder half is the context graph underneath: whether relations, vectors, documents and memory sit under one consistency boundary, and whether anything understood the data before it became a graph.
 - **2026-08-10** · [Introducing SurrealDB Studio](../2026/08/introducing-surrealdb-studio.md)  
   `featured` `releases` — Introducing SurrealDB Studio: the new app for working with your SurrealDB instances and Spectron contexts, and the most powerful way to interact with your data yet.
 - **2026-08-05** · [Empower your agents with the new SurrealDB MCP](../2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  

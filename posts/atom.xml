@@ -4,10 +4,30 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-08-11T03:43:59Z</updated>
+  <updated>2026-08-13T13:36:49Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/graph-engineering-is-missing-a-graph</id>
+    <title>Graph engineering is missing a graph</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/graph-engineering-is-missing-a-graph" type="text/html" />
+    <published>2026-08-13T13:36:49Z</published>
+    <updated>2026-08-13T13:36:49Z</updated>
+    <summary type="text">Graph engineering is suddenly everywhere, but most takes stop at the diagram. The harder half is the context graph underneath: whether relations, vectors, documents and memory sit under one consistency boundary, and whether anything understood the data before it became a graph.</summary>
+    <category term="featured" />
+    <category term="engineering" />
+    <category term="ai" />
+  </entry>
+  <entry>
+    <id>https://surrealdb.com/blog/announcing-the-swift-sdk-for-surrealdb</id>
+    <title>Announcing the Swift SDK for SurrealDB</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/announcing-the-swift-sdk-for-surrealdb" type="text/html" />
+    <published>2026-08-12T09:40:21Z</published>
+    <updated>2026-08-12T09:40:21Z</updated>
+    <summary type="text">The first alpha of the official Swift SDK for SurrealDB is here, with async\/await, type-safe models, live queries, and Swift Package Manager support.</summary>
+    <category term="releases" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/hi</id>
     <title>Testing known time in Spectron on a 2,200-year corpus</title>
@@ -471,26 +491,5 @@
     <summary type="text">Surrealism lets you build your own custom plugins, WASM functions that you can build and compile to their own binaries that can be called directly from the database</summary>
     <category term="featured" />
     <category term="tutorials" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/file-support-in-surrealdb-3-0</id>
-    <title>File support in SurrealDB 3.0</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/file-support-in-surrealdb-3-0" type="text/html" />
-    <published>2026-02-25T00:00:00Z</published>
-    <updated>2026-02-25T00:00:00Z</updated>
-    <summary type="text">SurrealDB 3.0 includes experimental file support that allows you to create, update, and delete files regardless of whether the database itself saves its data persistently or not.</summary>
-    <category term="featured" />
-    <category term="engineering" />
-    <category term="tutorials" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/introducing-javascript-sdk-2-0</id>
-    <title>Introducing JavaScript SDK 2.0</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/introducing-javascript-sdk-2-0" type="text/html" />
-    <published>2026-02-25T00:00:00Z</published>
-    <updated>2026-02-25T00:00:00Z</updated>
-    <summary type="text">The most significant update to the JavaScript SDK to date: SurrealDB 3.0 support, multi-session support, automatic token refreshing, a redesigned live query API, and a new query builder pattern.</summary>
-    <category term="engineering" />
-    <category term="releases" />
   </entry>
 </feed>

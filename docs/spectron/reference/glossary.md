@@ -71,7 +71,7 @@ A classification for **experiential** data (plus the raw **episodic** record): `
 
 ## Principal
 
-The identity an API key acts as. A principal has a `kind` (`human`, `agent`, `service`, or `unknown`) that describes what it is, and a per-verb `grants` map that decides what it may do and where. Kind never affects access. See [Principals](../self-hosting/security/principals.md).
+The identity an API key acts as. A principal has a `kind` (`human`, `agent`, `service`, or `unknown`) that describes what it is, and a per-verb `grants` map that decides what it may do and where. Kind never affects access. See [Permissions and delegation](https://surrealdb.com/docs/spectron/mental-model/contexts-and-scope#permissions-and-delegation).
 
 ## Profile
 

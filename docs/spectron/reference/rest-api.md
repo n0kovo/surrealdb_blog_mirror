@@ -365,7 +365,7 @@ Per-Context policy (see [Configuration](configuration.md)):
 - **`allow_self_service_keys`** — set `false` to require Cloud-brokered keys only.
 - **`max_token_ttl_seconds`** — server-side TTL clamp on every mint path (management, broker, self-service).
 
-See [API keys and delegation](../self-hosting/security/api-keys-and-delegation.md#self-service-keys-and-cloud-brokerage).
+See [Key policy](configuration.md#key-policy).
 
 **`/audit`** returns **`rows`** with a **`kind`** filter (`decision`, `retrieval`, or `response`) and **`traceId`** linking back to graph-resident traces. Query with `?kind=decision&limit=50`.
 
@@ -386,7 +386,7 @@ POST /api/v1/{context_id}/principals
 GET  /api/v1/{context_id}/principals/{principal_id}/effective
 ```
 
-See [Scope as security boundary](../self-hosting/security/scope-as-security-boundary.md).
+See [Permissions and delegation](https://surrealdb.com/docs/spectron/mental-model/contexts-and-scope#permissions-and-delegation).
 
 ---
 

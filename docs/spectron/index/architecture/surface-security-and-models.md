@@ -63,4 +63,4 @@ Operators can derive:
 - **Supersession churn** – `decision_trace.superseded` per entity.
 - **Retrieval quality** – candidate sizes and per-signal agreement from `retrieval_trace`.
 
-See [Self-hosting observability](../../self-hosting/observability/tracing.md) for more details.
+See [Traces and memory evolution](https://surrealdb.com/docs/spectron/architecture/traces-and-evolution) for more details.

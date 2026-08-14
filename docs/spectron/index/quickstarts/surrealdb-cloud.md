@@ -26,7 +26,7 @@ Customers integrate against the **context host** and **`sk-ctx-…` API keys** f
 | **Admin** | Create contexts, mint API keys, call admin proxy routes (principals, scopes, grants, usage) |
 | **Member** | Use Playground, Memory, Documents, and Scopes in SurrealDB Studio; broker a short-lived access token for SDK use |
 
-Admin proxy routes return **403** for members. See [API keys and delegation](../../self-hosting/security/api-keys-and-delegation.md#surrealdb-cloud-surrealdb-studio).
+Admin proxy routes return **403** for members. See [Key policy](../../reference/configuration.md#key-policy) for how self-service and Cloud-brokered keys are governed.
 
 ## What SurrealDB Studio exposes
 
@@ -42,6 +42,42 @@ Admin proxy routes return **403** for members. See [API keys and delegation](../
 | Settings — users, configuration, usage | Admins and owners |
 
 For terminal-first **remember** / **recall**, see [Hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/hosted).
+
+## Create your first context
+
+This walkthrough uses SurrealDB Studio only — no terminal and no API key. When you finish, you will have a live context that stores and recalls memory.
+
+You need the **Owner** or **Admin** role to deploy a context. Members can use the Playground, Memory, and Documents in a context that already exists.
+
+### 1. Deploy a context
+
+1. In [SurrealDB Studio](https://studio.surrealdb.com), open **Contexts** from the left sidebar.
+2. Click **Deploy new context** at the top of the screen.
+3. Give the context a name. Any name works.
+4. Select a region. **US West** is the region available today.
+5. Click **Create context**. Provisioning takes a minute or two.
+
+When provisioning finishes, Studio opens the context screen. The context is ready to use.
+
+### 2. Explore in the Playground
+
+The Playground is a chat surface that writes to memory as you use it.
+
+1. Open **Playground** from the left sidebar.
+2. Describe facts, entities, and relationships in plain language. Spectron extracts them and stores them.
+3. Ask Spectron a question. It answers from what it has learned.
+4. Watch the **Graph** panel on the right. It fills out as Spectron ingests your conversations and documents.
+5. Open the **Activity** panel on the right. It shows what Spectron recalls and learns from one message to the next.
+
+> [!NOTE]
+> Playground turns are durable memory in this context, and they compete with your own data at retrieval time. For a clean evaluation run, use a separate context. See [Contexts and scope](https://surrealdb.com/docs/spectron/mental-model/contexts-and-scope).
+
+### 3. Add documents and inspect memory
+
+1. Open **Documents** from the left sidebar. Upload files for Spectron to ingest.
+2. Open **Memory** from the left sidebar. Review the entities Spectron stores and the traces behind your Playground messages.
+
+Your context is now live and learning. To move from Studio to code, create an API key in the context's **API keys** view, then follow the [Hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/hosted).
 
 ## Scope on Cloud
 

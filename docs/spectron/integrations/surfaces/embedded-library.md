@@ -20,7 +20,7 @@ There is no supported in-process library that runs extraction and recall inside 
 
 ## Rust agents
 
-Deploy **`spectrond`** with [Docker](../../self-hosting/deployment/docker.md) and call the HTTP API or generated client.
+Deploy **`spectrond`** and call the HTTP API or generated client.
 
 ## Related
 

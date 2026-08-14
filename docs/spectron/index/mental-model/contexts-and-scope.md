@@ -12,7 +12,7 @@ Spectron uses two complementary mechanisms:
 - **Contexts** — hard isolation between separate products or deployments (each with its own database and keys).
 - **Scope** — tags on memory **records** that partition data within a Context (org, user, project, and so on).
 
-**Scope is not the same as permissions.** Scope says *which bucket a fact belongs to*. [Principals and grants](../../self-hosting/security/principals.md) say *who may read or write* at which scope paths. Together they define what each caller can trust to see. A principal may **delegate** grants to another principal, but only up to what they already hold — you cannot grant access you do not have.
+**Scope is not the same as permissions.** Scope says *which bucket a fact belongs to*. [Principals and grants](#permissions-and-delegation) say *who may read or write* at which scope paths. Together they define what each caller can trust to see. A principal may **delegate** grants to another principal, but only up to what they already hold — you cannot grant access you do not have.
 
 ## Contexts
 
@@ -142,7 +142,7 @@ Scope tags partition **data**. **Grants** partition **access**:
 - Granting to someone else can only convey **part or all of what you already have** — not broader access.
 - API keys bind a principal to a scope **floor**; the server clamps requests that try to escalate.
 
-See [Scope as security boundary](../../self-hosting/security/scope-as-security-boundary.md) and [API keys and delegation](../../self-hosting/security/api-keys-and-delegation.md).
+See [Surface, models, and security](https://surrealdb.com/docs/spectron/architecture/surface-security-and-models#security-and-privacy) for how keys and grants are enforced at the request surface.
 
 ## Geographic scope
 
@@ -173,6 +173,6 @@ None of these widen past a principal’s grant. See [REST API](../../reference/r
 
 ## Related reading
 
-- [Scope as security boundary](../../self-hosting/security/scope-as-security-boundary.md)
-- [API keys and delegation](../../self-hosting/security/api-keys-and-delegation.md)
-- [Principals](../../self-hosting/security/principals.md)
+- [Surface, models, and security](https://surrealdb.com/docs/spectron/architecture/surface-security-and-models)
+- [Principal](../../reference/glossary.md#principal)
+- [REST API](../../reference/rest-api.md)

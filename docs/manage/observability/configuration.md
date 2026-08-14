@@ -303,8 +303,21 @@ A short list of the SurrealDS networking and consensus knobs that operators rout
             <td scope="row" data-label="Default">`500` / `5000`</td>
             <td scope="row" data-label="Trigger">Rising `surrealdb_ds_finalize_prepare_retries_total`.</td>
         </tr>
+        <tr>
+            <td scope="row" data-label="Variable">`SURREAL_DS_ROCKSDB_BLOCK_CACHE_SIZE`*Since v3.1.1*</td>
+            <td scope="row" data-label="Default">`max(memory/2 - 1 GiB, 16 MiB)`</td>
+            <td scope="row" data-label="Trigger">Steady-state RSS pressure. The largest single consumer in a node using the RocksDB durable backend, and the cache through which full-text and vector index reads are served. The default is derived from detected memory, so set it explicitly on memory-constrained pods.</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Variable">`SURREAL_DS_ROCKSDB_MAX_WRITE_BUFFER_NUMBER`*Since v3.1.1*</td>
+            <td scope="row" data-label="Default">Derived from detected memory (`2`–`32`)</td>
+            <td scope="row" data-label="Trigger">RSS pressure during sustained write phases. The memtable ceiling is this value multiplied by `SURREAL_DS_ROCKSDB_WRITE_BUFFER_SIZE` and by the four heavy column families, so it is the knob to cap first when headroom is tight.</td>
+        </tr>
     </tbody>
 </table>
+
+> [!NOTE]
+> `SURREAL_DS_ROCKSDB_*` applies only when a node's store path selects the RocksDB durable backend. Memtable and block-cache memory are bounded together by a write-buffer manager that stalls writes on reaching the limit rather than failing them, so an undersized budget presents as write latency rather than errors.
 
 ## Recommended configurations
 

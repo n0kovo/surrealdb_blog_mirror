@@ -74,7 +74,7 @@ Content-Type: application/json
 
 Creates the Context, provisions the SurrealDB namespace and database, and applies schema migrations. Returns `201 Created`.
 
-If provisioning fails **after** the database was created by this request, Spectron **discards that database** so a retry starts from a clean migration state. Pre-existing databases (operator-provided or left over from a crash) are never removed — only a database this request created is eligible for discard. See [Provisioning failures](../self-hosting/operations/contexts.md#provisioning-failures).
+If provisioning fails **after** the database was created by this request, Spectron **discards that database** so a retry starts from a clean migration state. Pre-existing databases (operator-provided or left over from a crash) are never removed — only a database this request created is eligible for discard.
 
 When **`admin_external_id`** is set, Spectron seeds an initial **`principal:admin`** bound to that opaque, issuer-qualified identity (for example `surreal-cloud:<user_id>`) with full `/*` grants — so a Cloud proxy can create a Context and immediately resolve the org owner without a follow-up principal call. **`admin_display_name`** is an optional human-readable label. Omit both fields to keep the generic admin principal.
 
@@ -99,7 +99,7 @@ When **`admin_external_id`** is set, Spectron seeds an initial **`principal:admi
 GET /api/v1/migrations
 ```
 
-Returns a fleet-wide view of per-Context schema catch-up after a binary upgrade: version histogram, Contexts still behind the embedded latest, and DLQ entries. See [Migrations and upgrades](../self-hosting/operations/migrations-and-upgrades.md).
+Returns a fleet-wide view of per-Context schema catch-up after a binary upgrade: version histogram, Contexts still behind the embedded latest, and DLQ entries.
 
 ### Get a Context
 

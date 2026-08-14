@@ -1,7 +1,35 @@
 {
-  "generated_at": "2026-08-12T07:18:54.955458+00:00",
-  "count": 256,
+  "generated_at": "2026-08-14T07:18:32.017651+00:00",
+  "count": 258,
   "posts": [
+    {
+      "slug": "graph-engineering-is-missing-a-graph",
+      "title": "Graph engineering is missing a graph",
+      "summary": "Graph engineering is suddenly everywhere, but most takes stop at the diagram. The harder half is the context graph underneath: whether relations, vectors, documents and memory sit under one consistency boundary, and whether anything understood the data before it became a graph.",
+      "publishDate": "2026-08-13T13:36:49.000Z",
+      "categories": [
+        "featured",
+        "engineering",
+        "ai"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/019t43ta5gtur7jci7rcgw0k.auto",
+      "source": "https://surrealdb.com/blog/graph-engineering-is-missing-a-graph",
+      "local_path": "2026/08/graph-engineering-is-missing-a-graph.md"
+    },
+    {
+      "slug": "announcing-the-swift-sdk-for-surrealdb",
+      "title": "Announcing the Swift SDK for SurrealDB",
+      "summary": "The first alpha of the official Swift SDK for SurrealDB is here, with async\\/await, type-safe models, live queries, and Swift Package Manager support.",
+      "publishDate": "2026-08-12T09:40:21.000Z",
+      "categories": [
+        "releases"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/pp93wfzmu0lv7ee0i0ovizhn.auto",
+      "source": "https://surrealdb.com/blog/announcing-the-swift-sdk-for-surrealdb",
+      "local_path": "2026/08/announcing-the-swift-sdk-for-surrealdb.md"
+    },
     {
       "slug": "hi",
       "title": "Testing known time in Spectron on a 2,200-year corpus",

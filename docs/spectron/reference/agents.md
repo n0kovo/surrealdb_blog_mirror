@@ -238,7 +238,7 @@ Errors are [RFC 7807 problem details](errors.md). Typical codes:
 | Control plane | [Management API](management-api.md) |
 | Scope model | [Contexts and scope](https://surrealdb.com/docs/spectron/mental-model/contexts-and-scope) |
 | Retrieval tiers | [Coherence, retrieval, and cost tiers](https://surrealdb.com/docs/spectron/architecture/coherence-retrieval-and-tiers) |
-| Keys and Cloud brokerage | [API keys and delegation](../self-hosting/security/api-keys-and-delegation.md) |
+| Keys and Cloud brokerage | [Key policy](configuration.md#key-policy) |
 | MCP schemas | [MCP tools](mcp-tools.md) |
 
 Spectron is designed to be auditable, so **verify against traces** before changing application logic when behaviour seems wrong.

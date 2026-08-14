@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1081 pages_  
+_1062 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -2078,44 +2078,6 @@ _1081 pages_
   Package layout and configuration for the Spectron client in surrealdb.
 - [Swift SDK reference](spectron/reference/sdk-swift.md)
   Package layout and configuration for the Spectron Swift client.
-- [Architecture overview](spectron/self-hosting/deployment/architecture-overview.md)
-  How Spectron's components fit together in a self-hosted deployment.
-- [Bare metal](spectron/self-hosting/deployment/bare-metal.md)
-  Running Spectron as a systemd service on Linux.
-- [Docker](spectron/self-hosting/deployment/docker.md)
-  Deploying Spectron with Docker and Docker Compose.
-- [Kubernetes](spectron/self-hosting/deployment/kubernetes.md)
-  Deploying Spectron on Kubernetes for production workloads.
-- [Storage and scaling](spectron/self-hosting/deployment/storage-and-scaling.md)
-  Configuring object storage and scaling Spectron for production.
-- [Overview](spectron/self-hosting/index.md)
-  Deploy and operate Spectron on your own infrastructure.
-- [Cost and rate limits](spectron/self-hosting/observability/cost-and-rate-limits.md)
-  Token budgets, tier breakdowns, and rate limiting.
-- [Live queries and dashboards](spectron/self-hosting/observability/live-queries-and-dashboards.md)
-  Live SurrealDB queries and operational dashboards.
-- [Profiles and audit trails](spectron/self-hosting/observability/profiles-and-audit-trails.md)
-  Provenance, traces, and operational audit events.
-- [Tracing](spectron/self-hosting/observability/tracing.md)
-  Retrieval, decision, and response traces stored in the substrate.
-- [Backups and retention](spectron/self-hosting/operations/backups-and-retention.md)
-  Database backups and scoped retention policies.
-- [Contexts](spectron/self-hosting/operations/contexts.md)
-  Create, patch, and delete contexts via the management plane.
-- [Migrations and upgrades](spectron/self-hosting/operations/migrations-and-upgrades.md)
-  Schema migrations and upgrade playbooks.
-- [Models and providers](spectron/self-hosting/operations/models-and-providers.md)
-  Provider keys and per-context model routing.
-- [API keys and delegation](spectron/self-hosting/security/api-keys-and-delegation.md)
-  Minting, rotation, and delegated sub-keys.
-- [Authentication](spectron/self-hosting/security/authentication.md)
-  API key authentication and management in Spectron.
-- [Multi-tenancy](spectron/self-hosting/security/multi-tenancy.md)
-  Patterns for serving multiple tenants from a single Spectron deployment.
-- [Principals](spectron/self-hosting/security/principals.md)
-  Principal kinds, grant verbs, and how effective authority is resolved.
-- [Scope as a security boundary](spectron/self-hosting/security/scope-as-security-boundary.md)
-  How scope-bound API keys enforce data isolation in Spectron.
 - [Transactions and isolation](transactions-and-isolation.md)
   How SurrealDB transactions work, the isolation guarantees they provide under concurrency, and what application developers should plan for.
 - [What is SurrealDB](what-is-surrealdb.md)

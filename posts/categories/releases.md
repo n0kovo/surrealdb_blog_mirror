@@ -1,8 +1,10 @@
 # Category: releases
 
-_52 posts_  
+_53 posts_  
 [← Index](../../README.md)
 
+- **2026-08-12** · [Announcing the Swift SDK for SurrealDB](../2026/08/announcing-the-swift-sdk-for-surrealdb.md)  
+  `releases` — The first alpha of the official Swift SDK for SurrealDB is here, with async\/await, type-safe models, live queries, and Swift Package Manager support.
 - **2026-08-10** · [Introducing SurrealDB Studio](../2026/08/introducing-surrealdb-studio.md)  
   `featured` `releases` — Introducing SurrealDB Studio: the new app for working with your SurrealDB instances and Spectron contexts, and the most powerful way to interact with your data yet.
 - **2026-08-05** · [Announcing the Snowflake integration for SurrealDB: from data warehouse to context layer](../2026/08/announcing-snowflake-integration-for-surrealdb-from-data-warehouse-to-context-layer.md)  

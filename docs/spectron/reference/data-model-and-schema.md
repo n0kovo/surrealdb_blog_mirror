@@ -334,4 +334,4 @@ Audit record for every retrieval and storage operation.
 
 ## Migrations
 
-Schema is bundled into the Spectron binary and applied automatically when a Context is created or upgraded. See [Migrations and upgrades](../self-hosting/operations/migrations-and-upgrades.md).
+Schema is bundled into the Spectron binary and applied automatically when a Context is created or upgraded. See [Migration status](management-api.md#migration-status) for the fleet-wide catch-up view.

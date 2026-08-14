@@ -127,5 +127,5 @@ Forget operates on what is stored **now**. If a later conversation turn mentions
 
 - [Reconciliation and supersession](../reasoning/reconciliation-and-supersession.md) — why corrections keep history by default
 - [Tri-temporal model](https://surrealdb.com/docs/spectron/architecture/tri-temporal-model) — time-travel and belief history
-- [Scope as security boundary](../../self-hosting/security/scope-as-security-boundary.md) — **`memory:forget`** grants
+- [Permissions and delegation](https://surrealdb.com/docs/spectron/mental-model/contexts-and-scope#permissions-and-delegation) — **`memory:forget`** grants
 - [REST API](../../reference/rest-api.md)

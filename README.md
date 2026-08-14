@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-08-12 07:18 UTC_
+_Last updated: 2026-08-14 07:18 UTC_
 
 ## Stats
 
-- **Total posts:** 256
+- **Total posts:** 258
 - **First post:** 2022-07-20
-- **Latest post:** 2026-08-11
+- **Latest post:** 2026-08-13
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-08-12 07:18 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 61 posts
+- [2026](posts/years/2026.md) — 63 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -27,17 +27,21 @@ _Last updated: 2026-08-12 07:18 UTC_
 
 ### By category
 
-- [ai](posts/categories/ai.md) — 47 posts
+- [ai](posts/categories/ai.md) — 48 posts
 - [community](posts/categories/community.md) — 35 posts
 - [company](posts/categories/company.md) — 41 posts
-- [engineering](posts/categories/engineering.md) — 45 posts
+- [engineering](posts/categories/engineering.md) — 46 posts
 - [events](posts/categories/events.md) — 7 posts
-- [featured](posts/categories/featured.md) — 111 posts
-- [releases](posts/categories/releases.md) — 52 posts
+- [featured](posts/categories/featured.md) — 112 posts
+- [releases](posts/categories/releases.md) — 53 posts
 - [tutorials](posts/categories/tutorials.md) — 99 posts
 
 ## Latest posts
 
+- **2026-08-13** · [Graph engineering is missing a graph](posts/2026/08/graph-engineering-is-missing-a-graph.md)  
+  `featured` `engineering` `ai` — Graph engineering is suddenly everywhere, but most takes stop at the diagram. The harder half is the context graph underneath: whether relations, vectors, documents and memory sit under one consistency boundary, and whether anything understood the data before it became a graph.
+- **2026-08-12** · [Announcing the Swift SDK for SurrealDB](posts/2026/08/announcing-the-swift-sdk-for-surrealdb.md)  
+  `releases` — The first alpha of the official Swift SDK for SurrealDB is here, with async\/await, type-safe models, live queries, and Swift Package Manager support.
 - **2026-08-11** · [Testing known time in Spectron on a 2,200-year corpus](posts/2026/08/hi.md)  
   `engineering` — How to use asOf in Spectron to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.
 - **2026-08-10** · [Introducing SurrealDB Studio](posts/2026/08/introducing-surrealdb-studio.md)  
@@ -54,7 +58,3 @@ _Last updated: 2026-08-12 07:18 UTC_
   `engineering` — Why tri-temporal belief history is needed for agent memory to properly simulate human memory and how to work with Spectron to best use it.
 - **2026-07-30** · [Embedding models comparison: OpenAI, Google, Qwen, Nomic, Jina, BAAI](posts/2026/07/embedding-models-comparison.md)  
   `ai` — A practical guide to eight embedding models — text-embedding-3-small\/large, gemini-embedding-001, embeddinggemma-300m, qwen3-embedding, nomic-embed-text-v2-moe, jina-embeddings-v5-text-small, and BGE-M3.
-- **2026-07-30** · [Integrating Ultima VII with Spectron, part I: the game](posts/2026/07/using-ultima-vii-to-test-spectron-part-i-the-game.md)  
-  `engineering` — Why Ultima VII through the Exult open-source game engine ended up being the perfect testing platform for SurrealDB's memory layer Spectron.
-- **2026-07-29** · [One database for the whole claim: agentic claims triage on SurrealDB](posts/2026/07/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb.md)  
-  `ai` `tutorials` — An AI agent triaging an insurance claim needs semantic, graph, and document data at once. Do it in one SurrealDB database — vector recall of similar past claims plus graph fraud-ring detection, fused in a single function. Schema, seed data, and queries included.

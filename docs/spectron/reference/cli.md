@@ -14,7 +14,7 @@ Spectron ships two binaries:
 | **`spectrond`** | Server (runs in your container or cluster): `api`, `worker`, `scheduler`, `management`, `bootstrap` |
 | **`spectron`** | Client: `remember`, `recall`, `chat`, `documents`, provisioning helpers |
 
-The **`spectron`** CLI is what integrators install locally. **`spectrond`** is operated via Docker, Kubernetes, or your platform team; start with [Docker](../self-hosting/deployment/docker.md).
+The **`spectron`** CLI is what integrators install locally. **`spectrond`** is operated via Docker, Kubernetes, or your platform team.
 
 ## Installing the CLI
 

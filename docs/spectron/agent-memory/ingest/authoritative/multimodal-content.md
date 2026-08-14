@@ -200,4 +200,4 @@ Stage: ready
 
 ## PII redaction
 
-PII redaction can be enabled per-Context and applies to all ingested content, including OCR-recognised text and speech transcripts, before chunking. See [Context configuration](../../../self-hosting/security/authentication.md) for details on enabling PII redaction.
+PII redaction can be enabled per-Context and applies to all ingested content, including OCR-recognised text and speech transcripts, before chunking. See [Extraction tuning](../../../reference/configuration.md#extraction-tuning) for the **`pii_redaction_enabled`** field.

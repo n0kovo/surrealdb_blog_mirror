@@ -1,8 +1,10 @@
 # Category: ai
 
-_47 posts_  
+_48 posts_  
 [← Index](../../README.md)
 
+- **2026-08-13** · [Graph engineering is missing a graph](../2026/08/graph-engineering-is-missing-a-graph.md)  
+  `featured` `engineering` `ai` — Graph engineering is suddenly everywhere, but most takes stop at the diagram. The harder half is the context graph underneath: whether relations, vectors, documents and memory sit under one consistency boundary, and whether anything understood the data before it became a graph.
 - **2026-08-05** · [Chat with your meeting notes: a CocoIndex knowledge graph and a text-to-SurrealQL agent](../2026/08/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent.md)  
   `tutorials` `ai` — A folder of Markdown meeting notes becomes a self-maintaining knowledge graph in SurrealDB — and the text-to-SurrealQL prompt is not a string in the repo, it is a function call against the live database. Built with CocoIndex and Pydantic AI, fenced in by a database role rather than a regex.
 - **2026-08-05** · [Empower your agents with the new SurrealDB MCP](../2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  

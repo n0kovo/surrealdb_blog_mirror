@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 Spectron is a **memory and knowledge layer for AI agents** – a **horizontally scalable application tier** in front of **SurrealDB**, which holds every durable record (graph, vector, document, relational, geospatial) with **ACID writes**, **first-class provenance and trust**, **graph-resident traces**, and **tri-temporal** belief history. Spectron aims for memory that **associates** related ideas and keeps straight **what was said, what is true now, and what used to be true** – much like people do, but queryable and auditable in software.
 
-Use this hub to go from principles to running code, then dive into operational sections (memory & knowledge, self-hosting, integrations, reference).
+Use this hub to go from principles to running code, then dive into the product sections (memory & knowledge, integrations, cookbooks, reference).
 
 ## Architecture
 
@@ -32,7 +32,7 @@ What Spectron is built to do, what it is not, and how retrieval, traces, and tim
 
 **Quickstarts**
 
-- **[Spectron on SurrealDB Cloud](https://surrealdb.com/docs/spectron/quickstarts/surrealdb-cloud)** – Cloud API vs data plane and organisation roles.
+- **[Spectron on SurrealDB Cloud](https://surrealdb.com/docs/spectron/quickstarts/surrealdb-cloud)** – Cloud API vs data plane, organisation roles, and your first context in SurrealDB Studio.
 - **[Hosted quickstart](https://surrealdb.com/docs/spectron/quickstarts/hosted)** – Spectron Cloud, API key, first remember and recall.
 - **[Embedded library](https://surrealdb.com/docs/spectron/quickstarts/embedded)** – HTTP, MCP, and SDK integration surfaces.
 
@@ -53,6 +53,5 @@ How isolation, sessions, categories, and provenance fit together:
 
 - **[Memory & knowledge](../agent-memory/index.md)** – authoritative and experiential ingest, unified retrieval, reasoning, operations, tuning.
 - **[Integrations](../integrations/index.md)** – SDKs, MCP, framework adapters.
-- **[Self-hosting](../self-hosting/index.md)** – deployment, security, operations, observability.
 - **[Cookbooks](../cookbooks/index.md)** – end-to-end patterns.
 - **[Reference](../reference/index.md)** – REST, management API, CLI, configuration, errors.

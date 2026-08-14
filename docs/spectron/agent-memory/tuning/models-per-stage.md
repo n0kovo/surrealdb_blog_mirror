@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/s
 
 Spectron’s pipeline uses separate LLM stages with different latency and quality needs. Assign a model per stage rather than one model for everything. Embeddings are fixed deployment-wide.
 
-For provider keys and Gemini defaults, see [Models and providers](../../self-hosting/operations/models-and-providers.md).
+For provider keys and Gemini defaults, see [Configuration](../../reference/configuration.md#default-provider-api-keys).
 
 ## The stages
 

@@ -104,7 +104,7 @@ eval::surql($template, { greeting: 'Hello', name: 'world' });
 -- 'Hello, world'
 ```
 
-For [ISO GQL](../gql/overview.md) strings, use `eval::gql` instead — same bindings object, plus the `gql` experimental capability. See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) for setup and examples.
+For [ISO GQL](../gql/overview.md) strings, use `eval::gql` instead — same bindings object, plus [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries). See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) for setup and examples.
 
 ## See also
 

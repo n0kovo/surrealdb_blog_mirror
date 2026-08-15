@@ -180,10 +180,13 @@ Both `surreal sql` and [`surreal start`](start.md) accept the same capability fl
 
 | Connection | Examples | Where capabilities are enforced |
 | --- | --- | --- |
-| **Remote server** | `ws://localhost:8000`, `http://…` with sign-in | On the **server** process started with `surreal start` |
+| **Remote server** | `ws://localhost:8000`, `http://…`, `grpc://…` with sign-in | On the **server** process started with `surreal start` |
 | **Embedded engine** | `memory`, `rocksdb://…`, `surrealkv://…` (no separate server) | On the **`surreal sql` process** itself |
 
-When you use `surreal sql` against a **running instance**, flags on the REPL command do **not** change what the server allows at execution time. Configure [`surreal start`](start.md) (or the server's environment variables) instead — including for [`eval::*`](../../../query-language/functions/database-functions/eval.md), arbitrary-query gates, and experimental features such as [`gql`](../../../../learn/querying/gql/overview.md).
+> [!NOTE]
+> `grpc://` and `grpcs://` endpoints are accepted from SurrealDB 3.3.0. The server always mounts the gRPC transport, and the `surreal` binary now ships the client, so `surreal sql --endpoint grpc://127.0.0.1:8000` connects without a custom build. On earlier versions the endpoint was rejected as an invalid connection string or an invalid URI.
+
+When you use `surreal sql` against a **running instance**, flags on the REPL command do **not** change what the server allows at execution time. Configure [`surreal start`](start.md) (or the server's environment variables) instead — including for [`eval::*`](../../../query-language/functions/database-functions/eval.md), arbitrary-query gates, and experimental features such as Surrealism.
 
 Capability flags on `surreal sql` still matter in two cases:
 
@@ -223,7 +226,7 @@ SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism,files surreal sql ...
 surreal sql -e [CONNECTION_STRING] --allow-experimental surrealism,files
 ```
 
-The current experimental targets are `files`, `surrealism`, and `gql`.
+The current experimental targets are `files` and `surrealism`. The legacy tag `gql` is still accepted for compatibility but has no effect from 3.3.0 — [ISO GQL](../../../../learn/querying/gql/overview.md) is enabled by default.
 
 <table>
     <thead>
@@ -241,15 +244,11 @@ The current experimental targets are `files`, `surrealism`, and `gql`.
             <td><a href="/docs/reference/query-language/statements/define/module">DEFINE MODULE</a></td>
             <td>`surrealism`</td>
         </tr>
-        <tr>
-            <td><a href="/docs/learn/querying/gql/overview">GQL</a> (`POST /gql`)</td>
-            <td>`gql`</td>
-        </tr>
     </tbody>
 </table>
 
 > [!NOTE]
-> When connecting to a **remote** server (`ws://`, `http://`, …), experimental features are enforced on the server. Enable `gql` with [`surreal start`](start.md#experimental-capabilities) (or the server's `SURREAL_CAPS_ALLOW_EXPERIMENTAL`). Flags on `surreal sql` only affect [embedded connections](#capabilities-and-remote-connections) or REPL parse validation — not whether the server runs GQL or `eval::gql`.
+> When connecting to a **remote** server (`ws://`, `http://`, …), experimental features are enforced on the server. Configure them with [`surreal start`](start.md#experimental-capabilities) (or the server's `SURREAL_CAPS_ALLOW_EXPERIMENTAL`). Flags on `surreal sql` only affect [embedded connections](#capabilities-and-remote-connections) or REPL parse validation. From 3.3.0, [ISO GQL](../../../../learn/querying/gql/overview.md) does not need an experimental flag; `eval::gql` still needs [`--allow-eval-query`](../../../../learn/security/authorization/capabilities.md#eval-queries) on the server.
 
 ### Default namespace and database
 

@@ -23,3 +23,15 @@ curl -X GET "YOUR_ENDPOINT" \
   -H "Surreal-NS: DEMO namespace" \
   -H "Surreal-DB: DEMO database"
 ```
+
+## Request size limits
+
+Cloud instances run the SurrealDB defaults for request size, and those defaults differ per endpoint. The `/sql` endpoint accepts 1 MiB, which is the limit large queries sent over plain HTTP tend to reach first. A request over the cap is rejected with `413 Payload Too Large`.
+
+If a payload does not fit:
+
+* Connect through a client SDK such as [Rust](../../../../reference/rust/index.md) or [JavaScript](../../../../reference/javascript/index.md) instead. Most use the WebSocket engine by default, which allows up to 128 MiB per message.
+* To stay on HTTP, send the query through [`POST /rpc`](../../../../reference/rest-api/rpc-protocol.md), which accepts 4 MiB.
+* For bulk data loading, use [`POST /import`](../../../../reference/rest-api/http-protocol.md#import), which accepts up to 4 GiB per request. See [Migrating data](../operations/migrating-data.md#import-size-limits).
+
+The full table is in [request size limits](../../../../reference/rest-api/http-protocol.md#request-size-limits). These limits are set by environment variables on a self-hosted server, while Cloud instances run the defaults.

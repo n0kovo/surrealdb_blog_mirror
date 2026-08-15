@@ -33,6 +33,15 @@ The start command starts a SurrealDB server in memory, on disk, or in a distribu
         </tr>
         <tr>
             <td colspan="2">
+                `--postgres-bind`
+               <label label="optional" />
+            </td>
+            <td>
+            Sets the hostname or IP address to listen for <a href="/docs/reference/rest-api/postgres-protocol">Postgres wire protocol</a> connections on (for example `127.0.0.1:5432`). The listener is disabled when omitted.
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
                 `--import-file`
                <label label="optional" />
             </td>
@@ -398,6 +407,9 @@ surreal start --allow-experimental surrealism,files
 > [!NOTE]
 > Experimental capabilities are enforced on the **server** for remote clients. If you use [`surreal sql`](sql.md) against `ws://` or `http://`, configure flags here — not only on the REPL. See [Capabilities and remote connections](sql.md#capabilities-and-remote-connections).
 
+> [!NOTE]
+> From **3.3.0**, [ISO GQL](../../../../learn/querying/gql/overview.md) is enabled by default and no longer uses an experimental capability. The legacy tag `gql` is still accepted for compatibility but has no effect. On **3.2.x**, use `--allow-experimental gql`.
+
 <table>
     <thead>
         <tr>
@@ -415,11 +427,14 @@ surreal start --allow-experimental surrealism,files
             <td>`surrealism`</td>
         </tr>
         <tr>
-            <td><a href="/docs/learn/querying/gql/overview">GQL</a> (`POST /gql`)</td>
-            <td>`gql`</td>
+            <td><a href="/docs/reference/query-language/statements/define/table#writes-inside-a-permission-clause">Writes inside create, update, and delete permission clauses</a></td>
+            <td>`mutable_permissions`</td>
         </tr>
     </tbody>
 </table>
+
+> [!NOTE]
+> `mutable_permissions` does not work like the tags above. From 3.3.0 a server enables it on its own, so you never pass it to `--allow-experimental`. Name it in `--deny-experimental` or `SURREAL_CAPS_DENY_EXPERIMENTAL` to turn it off. Embedded engines still have it off by default and must allow it explicitly.
 
 ## Further examples
 

@@ -118,6 +118,16 @@ surreal import --endpoint http://localhost:8000 --token <token> --ns main \
 > [!NOTE]
 > If you are using SurrealDB Studio, you can import files into your database by using the `Import database` button in the Explorer view. See the [SurrealDB Studio documentation](../../../../explore/studio/index.md) for more information.
 
+## Size limits and partial imports
+
+An import against a remote endpoint goes through the [`/import`](../../../rest-api/http-protocol.md#import) endpoint, which accepts up to 4 GiB per request by default. The limit is cumulative for the whole request rather than per chunk, so a single file larger than the cap fails no matter how it is transferred — split the dataset across several files instead.
+
+The import is applied as it is parsed, statement by statement, and each statement commits as it goes. An import that exceeds the limit or is interrupted therefore leaves everything applied up to that point in the database, with nothing rolled back.
+
+Before importing a large file, decide how a failed run would be retried. Either write the file so that running it twice is safe, or import into a fresh namespace or database and switch over once the import has completed.
+
+See [request size limits](../../../rest-api/http-protocol.md#request-size-limits) for the caps on every endpoint, and [environment variables](../environment-variables.md#http-server-config) for changing them on a self-hosted server.
+
 ## Validating files before import
 
 A good practice before importing for the first time is to use the [`surreal validate`](validate.md) command to ensure that the statements therein are valid SurrealQL. This allows you to save time by failing quickly on the command line if there is invalid SurrealQL instead of starting a full database instance that will eventually fail in the middle of the import process.

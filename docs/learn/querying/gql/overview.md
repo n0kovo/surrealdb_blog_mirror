@@ -11,8 +11,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 SurrealDB supports **[ISO/IEC 39075 GQL](https://www.iso.org/standard/76120.html)** for **graph pattern matching and data modification** over your existing tables and `RELATE` edges. The surface syntax is closer to **Cypher-style `MATCH … RETURN`** than to SurrealQL `SELECT`, but it runs on the same storage model: node labels map to tables, edge types map to relation tables, and properties map to record fields.
 
-> [!WARNING]
-> GQL is **experimental** in 3.2. Enable it at server start with `--allow-experimental gql` (or `SURREAL_CAPS_ALLOW_EXPERIMENTAL=gql`). The surface includes read queries (`MATCH … RETURN`) and data-modifying statements (`INSERT`, `SET`, `REMOVE`, `DELETE`) — see [GQL mutations](mutations.md).
+> [!NOTE]
+> From **3.3.0**, ISO GQL is enabled by default on `POST /gql`, the `gql` RPC method, and MCP — no experimental capability is required. On **3.2.x**, enable it with `--allow-experimental gql` (or `SURREAL_CAPS_ALLOW_EXPERIMENTAL=gql`). The surface includes read queries (`MATCH … RETURN`) and data-modifying statements (`INSERT`, `SET`, `REMOVE`, `DELETE`) — see [GQL mutations](mutations.md).
 
 ## GQL is not GraphQL
 
@@ -24,7 +24,7 @@ SurrealDB exposes two different graph query languages on **separate** endpoints.
 | Syntax | `MATCH (a)-[:knows]->(b) RETURN …` | `query { people { name } }` |
 | HTTP | [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) | [`POST /graphql`](../../../reference/rest-api/http-protocol.md#graphql) |
 | WebSocket RPC | `method: "gql"` | `method: "graphql"` |
-| Setup | Experimental capability `gql` | [`DEFINE CONFIG GRAPHQL`](../../../reference/query-language/statements/define/config.md) |
+| Setup | On by default from 3.3.0 (experimental `gql` on 3.2.x) | [`DEFINE CONFIG GRAPHQL`](../../../reference/query-language/statements/define/config.md) |
 | Schema | Tables and `RELATE` edges you already have | Auto-generated GraphQL schema from your database |
 
 ## When to use GQL
@@ -41,6 +41,7 @@ For general-purpose schema changes, bulk load, and full SurrealQL expressiveness
 | --- | --- |
 | **HTTP** | [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) — raw GQL query in the request body |
 | **WebSocket RPC** | `{ "method": "gql", "params": ["<query>", { "var": value }] }` — use for typed `$variables` |
+| **Postgres wire** | [`SET dialect = 'gql'`](../../../reference/rest-api/postgres-protocol.md) (or `options=-c dialect=gql` at connect) on a Postgres client connection |
 | **MCP** | `gql` tool (when the server exposes MCP) |
 | **SurrealQL** | [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) — nested GQL in the caller's transaction (capability-gated) |
 
@@ -50,37 +51,32 @@ Session headers match `/sql`: `Surreal-NS`, `Surreal-DB`, and authentication. Re
 
 To experiment in the REPL without `curl` or `POST /gql`, wrap a GQL string in [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql). The function runs the same engine as the HTTP endpoint and participates in the caller's transaction (including [mutations](mutations.md)).
 
-`eval::gql` needs **two** capability gates that `--allow-all` does not enable:
-
-1. **`gql`** — [`--allow-experimental gql`](../../../reference/cli/surrealdb-cli/commands/start.md#experimental-capabilities)
-2. **`eval`** — [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) (denied for every subject by default)
+`eval::gql` needs the **`eval`** capability that `--allow-all` does not enable: [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) (denied for every subject by default). From 3.3.0 you do **not** also need `--allow-experimental gql` (that flag is still required on 3.2.x).
 
 **Embedded REPL** (`surreal sql` against `memory` or a file path — no separate `surreal start`):
 
 **Bash**
 
 ```bash
-echo 'eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");' | surreal sql --user root --pass secret --allow-experimental gql --allow-eval-query --pretty --hide-welcome
+echo 'eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");' | surreal sql --user root --pass secret --allow-eval-query --pretty --hide-welcome
 ```
 
 **PowerShell**
 
 ```powershell
-'eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");' | surreal sql --user root --pass secret --allow-experimental gql --allow-eval-query --pretty --hide-welcome
+'eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");' | surreal sql --user root --pass secret --allow-eval-query --pretty --hide-welcome
 ```
 
 To explore interactively instead, open the same REPL without piping:
 
 ```bash
-surreal sql --user root --pass secret \
-  --allow-experimental gql --allow-eval-query
+surreal sql --user root --pass secret --allow-eval-query
 ```
 
-**Remote server** (`surreal start` + `surreal sql -e ws://…`): pass both flags on **`surreal start`** only. The client REPL does not enable `eval` at runtime.
+**Remote server** (`surreal start` + `surreal sql -e ws://…`): pass `--allow-eval-query` on **`surreal start`** only. The client REPL does not enable `eval` at runtime.
 
 ```bash
-surreal start --user root --pass secret \
-  --allow-experimental gql --allow-eval-query
+surreal start --user root --pass secret --allow-eval-query
 ```
 
 Optional bindings use an object as the second argument: `eval::gql("… WHERE n.age > $min …", { min: 18 })`. Full setup, seed data, and more examples can be found on the [Eval functions](../../../reference/query-language/functions/database-functions/eval.md#evalgql) page.
@@ -109,6 +105,7 @@ Design notes, the supported subset, and mutation semantics are documented in the
 ## Next steps
 
 - [GQL via HTTP](via-http.md) — enable GQL, load data, and call `POST /gql` with cURL or `eval::gql` from the REPL
+- [Postgres wire protocol](../../../reference/rest-api/postgres-protocol.md) — run GQL from `psql` or Postgres drivers with `SET dialect = 'gql'`
 - [GQL mutations](mutations.md) — `INSERT`, `SET`, `REMOVE`, `DELETE`
 - [`POST /gql` HTTP reference](../../../reference/rest-api/http-protocol.md#gql) — headers, response envelope, and parameters
 - [Sample GQL and SurrealQL queries](sample-queries.md) — side-by-side examples on the seed graph

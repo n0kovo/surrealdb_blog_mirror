@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1062 pages_  
+_1063 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -1660,6 +1660,8 @@ _1062 pages_
   The HTTP endpoints enable selection and modification of data, along with custom SurrealQL queries, using traditional RESTful HTTP endpoints.
 - [REST API](reference/rest-api/index.md)
   SurrealDB exposes an HTTP-based REST API for executing queries, managing authentication, and performing CRUD operations.
+- [Postgres wire protocol](reference/rest-api/postgres-protocol.md)
+  Connect to SurrealDB with standard Postgres clients and drivers, run SurrealQL or ISO GQL, and receive tabular typed results over the Postgres v3 wire protocol.
 - [RPC protocol](reference/rest-api/rpc-protocol.md)
   The RPC protocol allows for easy bidirectional communication with SurrealDB.
 - [Authenticating users](reference/rust/concepts/authenticating-users.md)

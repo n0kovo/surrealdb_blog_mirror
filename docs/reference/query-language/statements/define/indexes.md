@@ -204,7 +204,7 @@ LIMIT 10;
 
 *Since v3.0.0*
 
-A count index maintains a running count of records on a table. It is used with `count()` and `GROUP ALL` in a query. SurrealDB stores incremental count deltas and compacts them in the background.
+A count index maintains a running count of records on a table. It is used with `count()` and `GROUP ALL` in a query. SurrealDB stores incremental count deltas and compacts them in the background. From 3.2.5, a bare `count()` projection [implies `GROUP ALL`](../select.md#bare-count-implies-group-all); the examples below keep the explicit form.
 
 Count indexes come in two forms:
 
@@ -253,7 +253,7 @@ EXPLAIN ANALYZE SELECT count() FROM item WHERE status = "active" GROUP ALL;
 
 Requirements for the filtered fast path:
 
-- `GROUP ALL` must be present.
+- `GROUP ALL` must be present (written explicitly, or [implied](../select.md#bare-count-implies-group-all) by a bare `count()` projection from 3.2.5).
 - The query `WHERE` must match the index condition exactly (not a broader or different predicate).
 - The index build must be complete (`INFO FOR INDEX …` shows `ready`).
 - Field-level `SELECT` permissions on fields in the condition must not block index-only counting.

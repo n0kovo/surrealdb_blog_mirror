@@ -50,4 +50,4 @@ This will still need a strategy to keep the flag up to date, but allows you to a
 
 ## Fast table counts
 
-For `SELECT count() … GROUP ALL` over a whole table, a `COUNT` index maintains a running total instead of scanning every row each time. See the note under [`SELECT` — `COUNT` index](../../../reference/query-language/statements/select.md#using-a-count-index-to-speed-up-count-in-group-all-queries).
+For `SELECT count() … GROUP ALL` over a whole table, a `COUNT` index maintains a running total instead of scanning every row each time. See the note under [`SELECT` — `COUNT` index](../../../reference/query-language/statements/select.md#using-a-count-index-to-speed-up-count-in-group-all-queries). From 3.2.5, a bare `count()` projection can [imply `GROUP ALL`](../../../reference/query-language/statements/select.md#bare-count-implies-group-all).

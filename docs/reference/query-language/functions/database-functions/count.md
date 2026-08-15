@@ -26,12 +26,16 @@ This function can be used when counting field values and expressions.
 
 ## `count`
 
-The count function counts the number of times that the function is called. This is useful for returning the total number of records in a SELECT statement with a `GROUP BY` clause.
+The count function counts the number of times that the function is called. In a [`SELECT`](../../statements/select.md) that aggregates with [`GROUP BY`](../../clauses/group.md) or `GROUP ALL`, that call count is the size of each group.
+
+*Since v3.2.5*
+
+When every field in the projection is a bare zero-argument `count()` (optionally aliased), SurrealDB [implies `GROUP ALL`](../../statements/select.md#bare-count-implies-group-all). Before this change, a bare `count()` returned the constant `1` once per record.
 
 ```surql title="API DEFINITION"
 count() -> 1
 ```
-If a value is given as the first argument, then this function checks whether a given value is [truthy](../../language-primitives/data-types/values.md#values-and-truthiness). This is useful for returning the total number of rows, which match a certain condition, in a [`SELECT`](../../statements/select.md) statement, with a GROUP BY clause.
+If a value is given as the first argument, then this function checks whether a given value is [truthy](../../language-primitives/data-types/values.md#values-and-truthiness). This is useful for returning the total number of rows which match a certain condition in a [`SELECT`](../../statements/select.md) with a `GROUP BY` or `GROUP ALL` clause.
 
 ```surql title="API DEFINITION"
 count(any) -> number
@@ -99,7 +103,7 @@ RETURN count([ 1, 2, 3, null, 0, false, (15 > 10), rand::uuid() ]);
 5
 ```
 
-The following examples show this function being used in a [`SELECT`](../../statements/select.md) statement with a GROUP clause: 
+The following examples show this function being used in a [`SELECT`](../../statements/select.md) statement with a `GROUP ALL` clause. From 3.2.5, a projection made only of bare `count()` [implies `GROUP ALL`](../../statements/select.md#bare-count-implies-group-all); the examples keep the explicit form.
 
 ```surql
 /**[test]
@@ -192,7 +196,7 @@ GROUP BY country;
 
 *Since v3.0.0*
 
-A `COUNT` index can be defined to speed up `count()` when used with a `GROUP ALL` clause. This allows `count()` to access a single stored value when it is called instead of iterating over the entire table.
+A `COUNT` index can be defined to speed up `count()` when used with a `GROUP ALL` clause. This allows `count()` to access a single stored value when it is called instead of iterating over the entire table. From 3.2.5, a bare `count()` projection [implies `GROUP ALL`](../../statements/select.md#bare-count-implies-group-all); prefer the explicit form in examples and production queries.
 
 ```surql
 /**[test]

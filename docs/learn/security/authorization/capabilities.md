@@ -112,7 +112,7 @@ List of options for allowing capabilities:
                 --allow-experimental
             </td>
             <td colspan="2" scope="row" data-label="Description">
-                Allow the usage of one or more experimental features. Possible values are `files`, `surrealism`, and `gql`, separated by a comma. See <a href="/docs/reference/cli/surrealdb-cli/commands/start#experimental-capabilities">experimental capabilities</a> for which tag enables each feature.
+                Allow the usage of one or more experimental features. Possible values are `files`, `surrealism`, and `mutable_permissions`, separated by a comma. See <a href="/docs/reference/cli/surrealdb-cli/commands/start#experimental-capabilities">experimental capabilities</a> for which tag enables each feature. From 3.3.0 a server enables `mutable_permissions` on its own; name it in `--deny-experimental` to turn it off. (The legacy tag `gql` is still accepted for compatibility but is unused from 3.3.0 — GQL is on by default.)
             </td>
             <td scope="row" data-label="Default">
                 None
@@ -357,7 +357,7 @@ Deny by default: list only the `--allow-net` targets you need, and keep addition
 
 *Since v2.2.0*
 
-The `--allow-arbitrary-query` and `--deny-arbitrary-query` allows database administrators to allow or deny arbitrary quering by either guest, record or system users, or a combination of those. This capability settings affects the following:  [/sql endpoint](https://surrealdb.com/docs/reference/rest-api/http#sql), [/key endpoints](https://surrealdb.com/docs/reference/rest-api/http#get-table), [/graphql endpoint](https://surrealdb.com/docs/reference/rest-api/http#graphql), [/gql endpoint](../../../reference/rest-api/http-protocol.md#gql), [RPC methods](https://surrealdb.com/docs/reference/rest-api/rpc) `use`, `select`, `create`, `update`, `merge`, `patch`, `delete`, `relate`, `insert`, `insert_relation`, `query`, `gql`, and `graphql`, and the [`eval::*`](../../../reference/query-language/functions/database-functions/eval.md) functions.
+The `--allow-arbitrary-query` and `--deny-arbitrary-query` allows database administrators to allow or deny arbitrary quering by either guest, record or system users, or a combination of those. This capability settings affects the following:  [/sql endpoint](https://surrealdb.com/docs/reference/rest-api/http#sql), [/key endpoints](https://surrealdb.com/docs/reference/rest-api/http#get-table), [/graphql endpoint](https://surrealdb.com/docs/reference/rest-api/http#graphql), [/gql endpoint](../../../reference/rest-api/http-protocol.md#gql), the [Postgres wire protocol](../../../reference/rest-api/postgres-protocol.md) listener, [RPC methods](https://surrealdb.com/docs/reference/rest-api/rpc) `use`, `select`, `create`, `update`, `merge`, `patch`, `delete`, `relate`, `insert`, `insert_relation`, `query`, `gql`, and `graphql`, and the [`eval::*`](../../../reference/query-language/functions/database-functions/eval.md) functions.
 
 Endpoints that do not accept arbitrary queries such as [`/version`](https://surrealdb.com/docs/reference/rest-api/http#version) and [authentication endpoints](https://surrealdb.com/docs/reference/rest-api/http#signin) are not affected.
 
@@ -381,4 +381,4 @@ Deny rules at the same specificity prevail over allow rules. A record user calli
 
 Configure `--allow-eval-query` on **`surreal start`** when clients connect to a remote instance. It is not required on `surreal sql` for remote connections — only for [embedded REPL sessions](../../../reference/cli/surrealdb-cli/commands/sql.md#capabilities-and-remote-connections).
 
-`eval::gql` additionally requires the **`gql` experimental capability**. See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) and [Representations and codecs](../../querying/concepts-and-guides/representations-and-codecs.md).
+`eval::gql` does not need an experimental capability from **3.3.0** (on **3.2.x**, also allow `gql`). See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) and [Representations and codecs](../../querying/concepts-and-guides/representations-and-codecs.md).

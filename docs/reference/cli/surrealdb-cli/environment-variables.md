@@ -18,6 +18,22 @@ Environment variables are divided into four types:
 
 Many environment variables have a maximum value equivalent to the greatest possible `usize`, which is an unsigned integer with a number of bytes depending on the target that the database runs on. For most systems this will be 64 bits, leading to a maximum size of 18_446_744_073_709_551_615 (2<sup>64</sup>), while for 32 bits the maximum will be 4_294_967_296 (2<sup>32</sup>).
 
+## Byte size suffixes
+
+*Since v3.0.0*
+
+Environment variables that set a size in bytes, such as `SURREAL_HTTP_MAX_SQL_BODY_SIZE` and `SURREAL_WEBSOCKET_MAX_MESSAGE_SIZE`, accept either a raw byte count or a number with a suffix. Suffixes are case-insensitive, and all of them are powers of 1024, so `4GB` and `4GiB` both mean 4,294,967,296 bytes.
+
+| Suffix | Multiplier |
+| ------ | ---------- |
+| none, `b` | 1 |
+| `k`, `kb`, `kib` | 1024 |
+| `m`, `mb`, `mib` | 1024<sup>2</sup> |
+| `g`, `gb`, `gib` | 1024<sup>3</sup> |
+
+> [!WARNING]
+> A value that cannot be parsed is discarded and the default is used instead — the server does not fail to start. On 2.x these variables take a raw byte count only, so a suffixed value such as `16MiB` is silently ignored there and the default remains in effect.
+
 ## SurrealDB environment variables
 
 These environment variables can be used to configure a SurrealDB server to configure areas such as the HTTP server and client, limits, telemetry, and so on.
@@ -214,9 +230,9 @@ Server-side filesystem access for features that read paths from disk (notably th
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_ML_BODY_SIZE`</td>
-      <td scope="row" data-label="Default">4,398,046,511,104 (4 GiB)</td>
+      <td scope="row" data-label="Default">4,294,967,296 (4 GiB)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP /ml endpoints</td>
+      <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP /ml endpoints. Counted cumulatively across the whole request, not per chunk.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_MCP_BODY_SIZE`*Since v3.1.0*</td>
@@ -262,9 +278,9 @@ Server-side filesystem access for features that read paths from disk (notably th
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_IMPORT_BODY_SIZE`</td>
-      <td scope="row" data-label="Default">4,398,046,511,104 (4 GiB)</td>
+      <td scope="row" data-label="Default">4,294,967,296 (4 GiB)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP /import endpoints</td>
+      <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP `/import` endpoint. Counted cumulatively across the whole request, not per chunk. Also enforced on the gRPC import stream. See [Request size limits](../../rest-api/http-protocol.md#request-size-limits).</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_SIGNIN_BODY_SIZE`</td>
@@ -274,6 +290,9 @@ Server-side filesystem access for features that read paths from disk (notably th
     </tr>
   </tbody>
 </table>
+
+> [!NOTE]
+> Before SurrealDB 3.3.0, `SURREAL_HTTP_MAX_SIGNUP_BODY_SIZE` and `SURREAL_HTTP_MAX_SIGNIN_BODY_SIZE` were applied to each other's endpoint. Both default to 1 KiB, so no default deployment was affected, but raising one of them had no effect on the endpoint it names and the other endpoint kept returning `413 Payload Too Large`. If you worked around this by tuning the opposite variable, move the value back to the one that matches the endpoint.
 
 ### MCP config *Since v3.1.0*
 
@@ -342,7 +361,7 @@ Used by the built-in [Model Context Protocol](../../../build/ai-agents/mcp/embed
 
 ### GQL config *Since v3.2.0*
 
-Resource limits for experimental [ISO GQL](../../../learn/querying/gql/overview.md) `MATCH` execution. Errors name the limit when it is exceeded. The language can be enabled by passing in the [`--allow-experimental gql`](commands/start.md#experimental-capabilities) flag when starting the database.
+Resource limits for [ISO GQL](../../../learn/querying/gql/overview.md) `MATCH` execution. Errors name the limit when it is exceeded. From **3.3.0**, GQL is enabled by default; on **3.2.x**, enable it with [`--allow-experimental gql`](commands/start.md#experimental-capabilities).
 
 <table>
   <thead>
@@ -943,6 +962,14 @@ surreal start --allow-all true
       <td scope="row" data-label="Notes">The hostname or IP address(es) to listen for connections on.</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_POSTGRES_BIND`</td>
+      <td scope="row" data-label="Command arg">`postgres-bind`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">(disabled)</td>
+      <td scope="row" data-label="Allowed values">String to an address</td>
+      <td scope="row" data-label="Notes">The hostname or IP address to listen for <a href="/docs/reference/rest-api/postgres-protocol">Postgres wire protocol</a> connections on.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_ALL`</td>
       <td scope="row" data-label="Command arg">`allow-all`</td>
       <td scope="row" data-label="Command">`start`</td>
@@ -971,8 +998,8 @@ surreal start --allow-all true
       <td scope="row" data-label="Command arg">`allow-experimental`</td>
       <td scope="row" data-label="Command">`start`, `sql`</td>
       <td scope="row" data-label="Default">none</td>
-      <td scope="row" data-label="Allowed values">files, surrealism, gql (comma-separated)</td>
-      <td scope="row" data-label="Notes">Allow execution of experimental features. For remote clients, set on the `start` process. On `surreal sql`, affects embedded engines and REPL parse validation only. See <a href="/docs/reference/cli/surrealdb-cli/commands/start#experimental-capabilities">experimental capabilities</a>.</td>
+      <td scope="row" data-label="Allowed values">files, surrealism (comma-separated; legacy `gql` accepted but unused from 3.3.0)</td>
+      <td scope="row" data-label="Notes">Allow execution of experimental features. For remote clients, set on the `start` process. On `surreal sql`, affects embedded engines and REPL parse validation only. See <a href="/docs/reference/cli/surrealdb-cli/commands/start#experimental-capabilities">experimental capabilities</a>. From 3.3.0, ISO GQL is on by default and does not need this variable.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_FUNC`</td>

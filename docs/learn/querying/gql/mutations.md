@@ -9,10 +9,10 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 *Since v3.2.0*
 
-ISO GQL on SurrealDB supports the four **data-modifying** statements from the standard — **`INSERT`**, **`SET`**, **`REMOVE`**, and **`DELETE`** — in addition to read-only `MATCH … RETURN` queries. Mutations run on the same [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) endpoint and through [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) when the `gql` capability is enabled.
+ISO GQL on SurrealDB supports the four **data-modifying** statements from the standard — **`INSERT`**, **`SET`**, **`REMOVE`**, and **`DELETE`** — in addition to read-only `MATCH … RETURN` queries. Mutations run on the same [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) endpoint and through [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) (which still needs [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries)).
 
-> [!WARNING]
-> GQL remains **experimental**. Enable it with [`--allow-experimental gql`](../../../reference/cli/surrealdb-cli/commands/start.md#experimental-capabilities). Mutation-bearing queries open a **write transaction** — the same permissions, field validation, events, indexes, references, and live-query behaviour as native SurrealQL `CREATE` / `UPDATE` / `DELETE` / `RELATE` apply.
+> [!NOTE]
+> From **3.3.0**, GQL is enabled by default. On **3.2.x**, enable it with [`--allow-experimental gql`](../../../reference/cli/surrealdb-cli/commands/start.md#experimental-capabilities). Mutation-bearing queries open a **write transaction** — the same permissions, field validation, events, indexes, references, and live-query behaviour as native SurrealQL `CREATE` / `UPDATE` / `DELETE` / `RELATE` apply.
 
 ## Linear programs
 

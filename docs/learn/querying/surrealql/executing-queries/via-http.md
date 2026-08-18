@@ -117,4 +117,4 @@ INFO FOR DB;
 
 ## Learn more
 
-Learn more about other [HTTP Endpoints](../../../../reference/rest-api/http-protocol.md) available in SurrealDB. For a more detailed tutorial on using Postman with SurrealDB, refer to the [working with SurrealDB over HTTP via Postman tutorial](https://surrealdb.com/docs/tutorials/working-with-surrealdb-over-http-via-postman).
+Learn more about other [HTTP Endpoints](../../../../reference/rest-api/http-protocol.md) available in SurrealDB. For a more detailed tutorial on using Postman with SurrealDB, refer to the [working with SurrealDB over HTTP via Postman tutorial](../../../../explore/tutorials/tutorials/http-via-postman.md).

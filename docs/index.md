@@ -35,13 +35,13 @@ SurrealDB offers official SDKs for popular languages, supporting queries, authen
 
 - **[Go](reference/golang/index.md)**
 - **[Java](reference/java/index.md)**
-- **[JavaScript](https://surrealdb.com/docs/reference/javascript/overview)**
+- **[JavaScript](reference/javascript/index.md)**
 - **[Kotlin](reference/kotlin/index.md)**
 - **[Mojo](reference/mojo/index.md)**
 - **[.NET](reference/dotnet/index.md)**
 - **[PHP](reference/php/index.md)**
 - **[Python](reference/python/index.md)**
-- **[Rust](https://surrealdb.com/docs/reference/rust/overview)**
+- **[Rust](reference/rust/index.md)**
 - **[Swift](reference/swift/index.md)**
 
 ## Deployment

@@ -521,6 +521,6 @@ posts[0].title; // string
 ## See also
 
 - [SurrealQueryable.query()](../core/surreal-queryable.md#query) - Method that returns Query
-- [BoundQuery](../utilities/index.md#boundquery) - Parameterised queries
-- [surql](../utilities/index.md#surql) - Template tag for queries
+- [BoundQuery](../utilities/bound-query.md) - Parameterised queries
+- [surql](../utilities/surql.md) - Template tag for queries
 - [Query overview](index.md) - All query builder classes

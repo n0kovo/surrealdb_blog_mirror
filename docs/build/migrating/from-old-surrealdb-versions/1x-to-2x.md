@@ -21,7 +21,7 @@ This guide will help you upgrade your current SurrealDB installation to the late
 ### SurrealQL
 - The `UPDATE` statement no longer creates records if these are missing. Instead, use the new [UPSERT](../../../reference/query-language/statements/upsert.md) statement for this behaviour.
 - The `file://` connection protocol has been deprecated in favour of the more explicit `rocksdb://` protocol.
-- The `DEFINE SCOPE` statement has been dropped in favor for the new [`DEFINE ACCESS TYPE RECORD`](../../../reference/query-language/statements/define/access/record.md) statement
+- The `DEFINE SCOPE` statement has been dropped in favour for the new [`DEFINE ACCESS TYPE RECORD`](../../../reference/query-language/statements/define/access/record.md) statement
   - `DEFINE TOKEN` definitions defined under scopes are now integrated into `DEFINE ACCESS TYPE RECORD`.
 - Some functions have been renamed for clarity
   - `meta::tb()` -> [`record::tb()`](../../../reference/query-language/functions/database-functions/record.md)
@@ -30,10 +30,10 @@ This guide will help you upgrade your current SurrealDB installation to the late
   - `string::startsWith()` -> [`string::starts_with()`](../../../reference/query-language/functions/database-functions/string.md)
 
 ### Authentication and headers
-- Authentication is now enabled by default as you previously would with `--auth`. The [`--unauthenticated`](../../../reference/cli/surrealdb-cli/commands/start.md#unauthenticated-mode) flag is now required in order to provide the previous default behavior.
+- Authentication is now enabled by default as you previously would with `--auth`. The [`--unauthenticated`](../../../reference/cli/surrealdb-cli/commands/start.md#unauthenticated-mode) flag is now required in order to provide the previous default behaviour.
 - Specifying the level on which credentials will be authenticated is now required when connecting to SurrealDB. By default, this level will be root. This can be provided with the `--auth-level` flag in the CLI or the `surreal-auth-ns` and `surreal-auth-db` headers in the HTTP REST API.
 - SurrealDB now listens only for connections from the local machine unless another interface (e.g. 0.0.0.0) is provided via the `--bind` command line argument.
-- SurrealDB now does not print secrets in response to `INFO` statements. The values of the secrets will appear as `[REDACTED]` to prevent accidental leakage. The export functionality will still print the values of the secrets. An `UNREDACTED` clause will be added soon to provide the previous behavior.
+- SurrealDB now does not print secrets in response to `INFO` statements. The values of the secrets will appear as `[REDACTED]` to prevent accidental leakage. The export functionality will still print the values of the secrets. An `UNREDACTED` clause will be added soon to provide the previous behaviour.
 - Headers used to communicated via HTTP with SurrealDB now require the `surreal-` prefix. For example, the legacy `ns` and `db` headers are now `surreal-ns` and `surreal-db`.
 
 ## Upgrading your data
@@ -54,7 +54,7 @@ Although the `surreal fix` command is a quick way to migrate your data, it is no
 
 -  If you have used the now deprecated [`DEFINE TOKEN`](../../../reference/query-language/statements/define/token.md) command to define a token on a Scope with the also deprecated [`DEFINE SCOPE`](../../../reference/query-language/statements/define/scope.md) command, you will have to update your access management rules to use the new [`DEFINE ACCESS`](../../../reference/query-language/statements/define/access/index.md) which supports creating permissions using [TYPE JWT](../../../reference/query-language/statements/define/access/jwt.md) and [TYPE RECORD](../../../reference/query-language/statements/define/access/record.md) rules.
 
-- If you were querying SurrealDB via the HTTP API, the `surreal fix` command will not update the header format for you. You will need to manually update the header format  from `ns` and `db` to `surreal-ns` and `surreal-db` respectively before using the `surreal fix` command. Learn more about this in the [HTTP documentation](https://surrealdb.com/docs/reference/rest-api/http).
+- If you were querying SurrealDB via the HTTP API, the `surreal fix` command will not update the header format for you. You will need to manually update the header format  from `ns` and `db` to `surreal-ns` and `surreal-db` respectively before using the `surreal fix` command. Learn more about this in the [HTTP documentation](../../../reference/rest-api/http-protocol.md).
 
 ### Upgrading from 2.0.0-alpha
 

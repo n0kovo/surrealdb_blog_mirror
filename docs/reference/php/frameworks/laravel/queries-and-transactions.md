@@ -11,7 +11,7 @@ In Laravel you query SurrealDB three ways: through Surqlize models, through the 
 
 ## Model queries
 
-Define [Surqlize models](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/models) and query them directly. They run through the Laravel-managed connection.
+Define [Surqlize models](../../libraries/surqlize/models.md) and query them directly. They run through the Laravel-managed connection.
 
 ```php
 $users = User::select(fn ($user) => [$user->id, $user->name])
@@ -21,7 +21,7 @@ $users = User::select(fn ($user) => [$user->id, $user->name])
 $user = User::create(['name' => 'Tobie', 'age' => 32], id: 'tobie');
 ```
 
-See [Querying](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/querying) and [Mutations](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/mutations) for the full model API.
+See [Querying](../../libraries/surqlize/querying.md) and [Mutations](../../libraries/surqlize/mutations.md) for the full model API.
 
 ## Raw SDK access
 
@@ -74,5 +74,5 @@ Surqlize::transaction(
 ## Learn more
 
 - [Container and facades](container-and-facades.md) for the facade method reference
-- [Surqlize transactions](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/transactions) for the batching mechanism
+- [Surqlize transactions](../../libraries/surqlize/transactions.md) for the batching mechanism
 - [Testing](testing.md) for asserting the queries your code sends

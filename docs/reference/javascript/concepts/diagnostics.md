@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Diagnostics
 
-The Diagnostics API allows you to wrap engines and intercept protocol-level communication between the SDK and SurrealDB. This is useful for debugging queries, analysing SDK behavior, measuring operation timings, and building custom logging or monitoring tools.
+The Diagnostics API allows you to wrap engines and intercept protocol-level communication between the SDK and SurrealDB. This is useful for debugging queries, analysing SDK behaviour, measuring operation timings, and building custom logging or monitoring tools.
 
 Since the API is implemented as an engine wrapper, it adds no overhead to the SDK unless you explicitly enable it.
 

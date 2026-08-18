@@ -108,7 +108,7 @@ console.log(special.toString()); // Properly escaped
 
 ### `.toJSON()` {#tojson}
 
-Serialize for JSON.
+Serialise for JSON.
 
 ```ts title="Syntax"
 table.toJSON()

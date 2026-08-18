@@ -430,4 +430,4 @@ if (access) {
 - [Authentication](../concepts/authentication.md) for signing in, signing up, and token management
 - [Executing queries](../concepts/executing-queries.md) for query builders and raw SurrealQL
 - [Live queries](../concepts/live-queries.md) for real-time subscriptions
-- [JavaScript SDK API reference](https://surrealdb.com/docs/reference/javascript/api) for the complete method reference
+- [JavaScript SDK API reference](../api/index.md) for the complete method reference

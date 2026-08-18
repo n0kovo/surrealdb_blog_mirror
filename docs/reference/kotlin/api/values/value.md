@@ -1,7 +1,7 @@
 ---
 position: 4
 title: Value (JSON model)
-description: How the SurrealDB Kotlin SDK models values using kotlinx.serialization JSON types.
+description: How the SurrealDB Kotlin SDK models values using kotlinx.serialisation JSON types.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/kotlin/api/values/value.mdx"
 ---
 
@@ -41,4 +41,4 @@ val people: List<Person> = client.queryAs("SELECT * FROM person")
 ## Learn more
 
 - [Value types](../../concepts/value-types.md)
-- [Serialization](../../concepts/serialization.md)
+- [Serialisation](../../concepts/serialization.md)

@@ -537,7 +537,7 @@ const region = new GeometryPolygon([
 const testPoint = new GeometryPoint([5, 5]);
 
 const result = await db.query(`
-    RETURN geo::area::contains($region, $point)
+    RETURN $region CONTAINS $point
 `, {
     region,
     point: testPoint

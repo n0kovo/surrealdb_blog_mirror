@@ -14,7 +14,7 @@ This guide walks you through setting up a connection plugin and executing querie
 ## Prerequisites
 
 - A basic understanding of Vue 3 and the Composition API
-- A running [SurrealDB instance](https://surrealdb.com/docs/start)
+- A running [SurrealDB instance](../../../running/overview.md)
 - The [JavaScript SDK installed](../installation.md) in your project
 
 ## Installing dependencies
@@ -124,7 +124,7 @@ export function useSurrealClient(): Surreal {
 }
 ```
 
-## Initializing the plugin
+## Initialising the plugin
 
 Register the TanStack Query plugin in your application entry point, then call `provideSurreal()` in your root component. Pass the endpoint and any [connection options](../concepts/connecting-to-surrealdb.md#connection-options) through the `params` field.
 
@@ -226,8 +226,8 @@ export function useAuth() {
 
 ## Learn more
 
-- [Connecting to SurrealDB](../concepts/connecting-to-surrealdb.md) for connection protocols and reconnection behavior
+- [Connecting to SurrealDB](../concepts/connecting-to-surrealdb.md) for connection protocols and reconnection behaviour
 - [Authentication](../concepts/authentication.md) for signing in, signing up, and token management
 - [Executing queries](../concepts/executing-queries.md) for query builders and raw SurrealQL
 - [Live queries](../concepts/live-queries.md) for real-time subscriptions
-- [JavaScript SDK API reference](https://surrealdb.com/docs/reference/javascript/api) for the complete method reference
+- [JavaScript SDK API reference](../api/index.md) for the complete method reference

@@ -406,7 +406,7 @@ RETURN time::format(d"2021-11-01T08:30:17+00:00", "%Y-%m-%d");
 '2021-11-01'
 ```
 
-[View all format options](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/formatters)
+[View all format options](../../language-primitives/formatters.md)
 
   
 

@@ -47,7 +47,7 @@ A collection of essential vector operations that provide foundational functional
     </tr>
     <tr>
       <td scope="row" data-label="Function"><a href="#vectornormalize">`vector::normalize()`</a></td>
-      <td scope="row" data-label="Description">Computes the normalization of a vector</td>
+      <td scope="row" data-label="Description">Computes the normalisation of a vector</td>
     </tr>
     <tr>
       <td scope="row" data-label="Function"><a href="#vectorproject">`vector::project()`</a></td>
@@ -296,7 +296,7 @@ RETURN vector::multiply([1, 2, 3], [1, 2, 3]);
 
 ## `vector::normalize`
 
-The `vector::normalize` function computes the normalization of a vector, transforming it to a unit vector (a vector of length 1) that maintains the original direction.
+The `vector::normalize` function computes the normalisation of a vector, transforming it to a unit vector (a vector of length 1) that maintains the original direction.
 
 ```surql title="API DEFINITION"
 vector::normalize(array) -> array

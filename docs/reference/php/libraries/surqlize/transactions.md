@@ -43,6 +43,6 @@ Surqlize validates several contracts before it builds or executes a query, and r
 
 ## Learn more
 
-- [Connections](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/connections) for executor injection
-- [Mutations](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/mutations) for the queries you batch
+- [Connections](connections.md) for executor injection
+- [Mutations](mutations.md) for the queries you batch
 - [Transactions in the SDK](../../v2/concepts/transactions.md) for the underlying mechanism

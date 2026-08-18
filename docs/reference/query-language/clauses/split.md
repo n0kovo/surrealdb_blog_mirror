@@ -180,7 +180,7 @@ SELECT
 ]
 ```
 
-An example of the same query then mapped into a set of unique keys for serialization:
+An example of the same query then mapped into a set of unique keys for serialisation:
 
 ```surql
 (SELECT

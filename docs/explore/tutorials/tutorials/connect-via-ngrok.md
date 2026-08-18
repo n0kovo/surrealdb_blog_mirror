@@ -17,7 +17,7 @@ This setup is beneficial for remote development and quick testing of application
 
 This guide assumes the following:
 
-- You have [SurrealDB installed](../../../running/installation/index.md) and a [fresh instance of SurrealDB running.](https://surrealdb.com/docs/start)
+- You have [SurrealDB installed](../../../running/installation/index.md) and a [fresh instance of SurrealDB running.](../../../running/overview.md)
 - Downloaded [ngrok](https://ngrok.com/download) to be used as a tunnel.
 
 > [!IMPORTANT]
@@ -29,7 +29,7 @@ There are two ways to connect to a SurrealDB instance via ngrok tunnel.
 
 ### Start SurrealDB instance
 
-Open your command line or terminal and run the following command to [start SurrealDB](https://surrealdb.com/docs/start).
+Open your command line or terminal and run the following command to [start SurrealDB](../../../running/overview.md).
     
 ```bash
 surreal start memory -A --user root --pass secret

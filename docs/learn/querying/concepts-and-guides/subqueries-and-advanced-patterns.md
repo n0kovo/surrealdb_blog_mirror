@@ -81,7 +81,7 @@ Full detail: [Reserved variables — `$parent`, `$this`](../../../reference/quer
 
 ## Latest record per group
 
-A common pattern is to return the **most recently modified record** for each distinct value of a field — the equivalent of a `ROW_NUMBER() OVER (PARTITION BY … ORDER BY …)` window in SQL. In SurrealQL you can combine [`GROUP BY`](https://surrealdb.com/docs/reference/query-language/clauses/group-by), [`.map()`](../../../reference/query-language/functions/database-functions/array.md#arraymap), and a nested [`SELECT`](../../../reference/query-language/statements/select.md):
+A common pattern is to return the **most recently modified record** for each distinct value of a field — the equivalent of a `ROW_NUMBER() OVER (PARTITION BY … ORDER BY …)` window in SQL. In SurrealQL you can combine [`GROUP BY`](../../../reference/query-language/clauses/group.md), [`.map()`](../../../reference/query-language/functions/database-functions/array.md#arraymap), and a nested [`SELECT`](../../../reference/query-language/statements/select.md):
 
 ```surql
 CREATE person:1 SET role = "user", modified_at = d'1970-01-01';
@@ -123,7 +123,7 @@ To partition by more than one field, include every non-aggregated field in both 
 });
 ```
 
-See also the [`GROUP` clause](https://surrealdb.com/docs/reference/query-language/clauses/group-by#latest-record-per-group) reference for a shorter summary.
+See also the [`GROUP` clause](../../../reference/query-language/clauses/group.md#latest-record-per-group) reference for a shorter summary.
 
 ## Graph paths and inner queries
 

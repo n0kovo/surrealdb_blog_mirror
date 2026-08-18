@@ -13,7 +13,7 @@ This crate was separated from the SurrealDB core to decouple types and type conv
 
 ## The `SurrealValue` trait
 
-The main difference between SurrealDB 3.0 and previous versions for Rust users is the existence of a `SurrealValue` trait that can be derived automatically. Deriving this trait is all that is needed to use a Rust type for serialization and deserialization.
+The main difference between SurrealDB 3.0 and previous versions for Rust users is the existence of a `SurrealValue` trait that can be derived automatically. Deriving this trait is all that is needed to use a Rust type for serialisation and deserialisation.
 
 ```rust
 use surrealdb::engine::any::connect;
@@ -355,6 +355,98 @@ async fn main() {
 }
 ```
 
+## Value construction macros
+
+Alongside `kind!`, the crate exports four macros for building values by hand: `object!`, `array!`, `set!` and `vars!`. Each is available from `surrealdb::types` as well as from `surrealdb_types` directly.
+
+| Macro | Builds | Notes |
+| ----- | ------ | ----- |
+| `object!` | `Object` | Keys can be bare identifiers or quoted string literals |
+| `array!` | `Array` | Uses square brackets, like `vec!` |
+| `set!` | `Set` | Deduplicates its items; takes `Value`s, not raw Rust values |
+| `vars!` | `Variables` | Same syntax as `object!`, used for `.bind()` after `.query()` |
+
+Values passed to `object!`, `array!` and `vars!` only need to implement `SurrealValue`, so ordinary Rust types can be used directly.
+
+```rust
+use surrealdb::types::{Value, array, object, set};
+
+fn main() {
+    let obj = object! {
+        name: "Aeon",
+        age: 30,
+        "home-town": "Bregna",
+    };
+
+    let arr = array![1, "two", true];
+
+    let tags = set! {
+        Value::from_t("rust"),
+        Value::from_t("surrealdb"),
+        Value::from_t("rust"),
+    };
+
+    println!("{obj:?}");
+    println!("{arr:?}");
+    println!("{tags:?}");
+}
+```
+
+Output:
+
+```
+Object({"age": Number(Int(30)), "home-town": String("Bregna"), "name": String("Aeon")})
+Array([Number(Int(1)), String("two"), Bool(true)])
+Set({String("rust"), String("surrealdb")})
+```
+
+Note the two differences between `array!` and `set!`. `set!` drops the duplicate `"rust"`, and it does not convert its items for you: each one must already be a `Value`. Passing `set! { 1, 2, 3 }` will not compile, while `array![1, 2, 3]` will.
+
+### The `vars!` macro
+
+`vars!` builds a `Variables` map, which is what the [`.bind()`](../methods/query.md#binding-parameters) method on a query takes. It is the most direct way to pass more than one parameter into a query.
+
+```rust
+use surrealdb::engine::any::connect;
+use surrealdb::types::{RecordId, SurrealValue, vars};
+
+#[derive(Debug, SurrealValue)]
+struct Person {
+    id: RecordId,
+    name: String,
+    age: i64,
+}
+
+#[tokio::main]
+async fn main() -> surrealdb::Result<()> {
+    let db = connect("mem://").await?;
+    db.use_ns("main").use_db("main").await?;
+
+    let sql = "
+        CREATE type::table($table) SET name = $name, age = $age;
+        SELECT * FROM type::table($table) WHERE age >= $min_age;
+    ";
+
+    let mut result = db
+        .query(sql)
+        .bind(vars! {
+            table: "person",
+            name: "Aeon",
+            age: 30,
+            min_age: 18,
+        })
+        .await?;
+
+    let created: Option<Person> = result.take(0)?;
+    dbg!(created);
+    let adults: Vec<Person> = result.take(1)?;
+    dbg!(adults);
+    Ok(())
+}
+```
+
+`Variables` is an ordinary struct as well as a macro target. `Variables::new()` followed by `.insert()` builds the same value at runtime, which is the better choice when the set of parameters is not known when the code is written.
+
 ## Convenience methods for the `Value` type
 
 Importing the `SurrealValue` trait gives access to a lot of convenience methods.
@@ -521,7 +613,7 @@ The attributes below are the ones the derive currently recognises.
 
 ### `surreal(default)`
 
-The `surreal(default)` attribute fills in values when fields are missing during deserialization. On a struct container, missing fields come from the type’s `Default` implementation. On a single field, use `#[surreal(default)]` for `<T as Default>::default()`, or `#[surreal(default = "path")]` for a custom function path.
+The `surreal(default)` attribute fills in values when fields are missing during deserialisation. On a struct container, missing fields come from the type’s `Default` implementation. On a single field, use `#[surreal(default)]` for `<T as Default>::default()`, or `#[surreal(default = "path")]` for a custom function path.
 
 ```rust
 use surrealdb::engine::any::connect;
@@ -899,7 +991,7 @@ You can also put `skip_content` or `skip_content_if` on individual variants. The
 
 ### `surreal(other)`
 
-On a **unit** variant, `other` marks a deserialization catch-all: if no other variant matches, that variant is chosen instead of returning an error. At most one variant per enum should use it. It cannot be combined with `rename` or `value` on the same variant.
+On a **unit** variant, `other` marks a deserialisation catch-all: if no other variant matches, that variant is chosen instead of returning an error. At most one variant per enum should use it. It cannot be combined with `rename` or `value` on the same variant.
 
 ```rust
 use surrealdb_types::SurrealValue;

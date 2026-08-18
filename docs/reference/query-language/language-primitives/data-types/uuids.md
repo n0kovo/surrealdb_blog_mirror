@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 UUIDs represent UUID v4 and v7 values. They can be obtained via either the:
 - [`rand::uuid::*` functions](../../functions/database-functions/rand.md#randuuidv4)
-- [casted from strings](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#uuid)
+- [casted from strings](../casting.md#uuid)
 - or via [string prefixes](strings.md#uuid)
 
 > [!NOTE]

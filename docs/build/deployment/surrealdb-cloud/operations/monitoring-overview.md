@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Monitoring
 
-SurrealDB Cloud gives you built-in monitoring and observability tools to help you understand the behavior and health of your database in real time. In this section, you will learn how you can access logs and metrics for debugging, performance tuning, and keeping your applications running smoothly.
+SurrealDB Cloud gives you built-in monitoring and observability tools to help you understand the behaviour and health of your database in real time. In this section, you will learn how you can access logs and metrics for debugging, performance tuning, and keeping your applications running smoothly.
 
 - [Metrics](metrics.md)
 - [Logs](logs.md)

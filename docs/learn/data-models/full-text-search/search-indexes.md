@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 ## Defining an index that uses an analyzer
 
-Once a search analyzer is defined, it can be applied to the fields of a table to make them searchable by [defining an index](../../../reference/query-language/statements/define/indexes.md#full-text-search-index) that uses the `FULLTEXT ANALYZER` clause.
+Once a search analyzer is defined, it can be applied to the fields of a table to make them searchable by [defining an index](../../../reference/query-language/statements/define/indexes.md#full-text-search-fulltext-index) that uses the `FULLTEXT ANALYZER` clause.
 
 ```surql
 DEFINE ANALYZER my_analyzer

@@ -22,7 +22,7 @@ SurrealDB has a large variety of statements. They can be divided into three type
 These statements pertain to defining, removing, altering, and rebuilding database resources. They are:
 
 * [`DEFINE`](define/overview.md) statements to define database resources,
-* [`ALTER`](alter/index.md) statements to alter certain resources,
+* [`ALTER`](alter/overview.md) statements to alter certain resources,
 * [`REMOVE`](remove.md) statements to remove resources,
 * [`REBUILD`](rebuild.md) to rebuild an index,
 * [`ACCESS`](access.md) to manage access grants.
@@ -145,7 +145,7 @@ REMOVE TABLE person;  -- NONE
 
 The following chart can help to remember which output to expect depending on your SurrealDB version and database strictness.
 
-| Example of statement  | STRICT database      | Non-STRICT database behavior (default)                     | Behavior in versions < 3.0       |
+| Example of statement  | STRICT database      | Non-STRICT database behaviour (default)                     | Behaviour in versions < 3.0       |
 |-----------------------|----------------------|------------------------------------------------------------|----------------------------------|
 | CREATE / UPDATE       | Error if not defined | Succeeds (defines table, database, namespace if necessary) | Identical                        |
 | SELECT / DELETE       | Error if not defined | Returns error if table not defined                         | Empty array if table not defined |

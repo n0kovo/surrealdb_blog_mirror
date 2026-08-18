@@ -184,7 +184,7 @@ res = conn.query(
     f"""
     SELECT
         *,
-        vector::similarity::knn() AS dist
+        vector::distance::knn() AS dist
     FROM documents
     WHERE embedding <|{k}|> $vector;
     """,

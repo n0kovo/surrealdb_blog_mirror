@@ -22,7 +22,7 @@ SurrealDB has a large variety of statements. They can be divided into three type
 These statements pertain to defining, removing, altering, and rebuilding database resources. Some examples are:
 
 * [`DEFINE`](../../../reference/query-language/statements/define/overview.md) statements to define database resources,
-* [`ALTER`](../../../reference/query-language/statements/alter/index.md) statements to alter certain resources,
+* [`ALTER`](../../../reference/query-language/statements/alter/overview.md) statements to alter certain resources,
 * [`REBUILD`](../../../reference/query-language/statements/rebuild.md) to rebuild an index.
 
 Some other statements pertain to using defined resources. They are:

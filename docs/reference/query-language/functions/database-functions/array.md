@@ -952,7 +952,7 @@ RETURN [true, false, false, false, true, true].filter(true);
 -- [ true, true, true ]
 ```
 
-The `array::filter` function can also take a [closure](../../language-primitives/data-types/closures.md) for more customized filtering.
+The `array::filter` function can also take a [closure](../../language-primitives/data-types/closures.md) for more customised filtering.
 
 ```surql
 /**[test]
@@ -1069,7 +1069,7 @@ RETURN [0, 0, 1, 0, 0, 5, 1].filter_index(0);
 -- [ 0, 1, 3, 4 ]
 ```
 
-The `array::filter_index` function can also take a [closure](../../language-primitives/data-types/closures.md) for more customized filtering.
+The `array::filter_index` function can also take a [closure](../../language-primitives/data-types/closures.md) for more customised filtering.
 
 ```surql
 /**[test]
@@ -1124,7 +1124,7 @@ RETURN [1, 2, 3].find(4);
 -- [NONE]
 ```
 
-The `array::find` function is most useful when a [closure](../../language-primitives/data-types/closures.md) is passed in which allows for customized searching.
+The `array::find` function is most useful when a [closure](../../language-primitives/data-types/closures.md) is passed in which allows for customised searching.
 
 ```surql
 /**[test]
@@ -1194,7 +1194,7 @@ RETURN [1, 2, 3].find_index(4);
 -- NONE
 ```
 
-The `array::find_index` function can also take a [closure](../../language-primitives/data-types/closures.md) for more customized searching.
+The `array::find_index` function can also take a [closure](../../language-primitives/data-types/closures.md) for more customised searching.
 
 ```surql
 /**[test]

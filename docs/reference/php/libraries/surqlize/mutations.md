@@ -132,6 +132,6 @@ $user = User::createQuery(['name' => 'beau'])
 
 ## Learn more
 
-- [Querying](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/querying) for reading records
-- [Transactions](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/transactions) for grouping mutations atomically
-- [Connections](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/connections) for per-query executor injection
+- [Querying](querying.md) for reading records
+- [Transactions](transactions.md) for grouping mutations atomically
+- [Connections](connections.md) for per-query executor injection

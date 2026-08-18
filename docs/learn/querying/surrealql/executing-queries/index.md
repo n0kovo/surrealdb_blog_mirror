@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Querying data in SurrealDB
 
-SurrealDB supports multiple query interfaces: [SurrealQL](../what-is-surrealql.md) for full-featured database queries, [GraphQL](../../graphql/overview.md) for schema-driven access, and any of the [available SDKs](https://surrealdb.com/docs/start) for language-native integration.
+SurrealDB supports multiple query interfaces: [SurrealQL](../what-is-surrealql.md) for full-featured database queries, [GraphQL](../../graphql/overview.md) for schema-driven access, and any of the [available SDKs](/docs#sdks) for language-native integration.
 
 # SurrealQL
 
@@ -111,11 +111,11 @@ SurrealDB supports SDKs for several popular programming languages, including:
 
 - **.NET**: The [.NET SDK](../../../../reference/dotnet/index.md) allows you to interact with SurrealDB using the .NET framework. It provides a comprehensive set of methods to perform queries, manage records, and handle database transactions, making it suitable for building robust and scalable applications.
 
-- **Rust**: The [Rust SDK](https://surrealdb.com/docs/reference/rust/setup) leverages the safety and performance features of the Rust programming language. It allows you to interact with SurrealDB in a type-safe manner, ensuring that your database operations are both efficient and reliable.
+- **Rust**: The [Rust SDK](../../../../reference/rust/index.md) leverages the safety and performance features of the Rust programming language. It allows you to interact with SurrealDB in a type-safe manner, ensuring that your database operations are both efficient and reliable.
 
 ### Getting started with SDKs
 
-To get started with any of the SDKs, you need to install the appropriate package for your programming language. Once installed, you can initialize the SDK and connect to your SurrealDB instance. Here is an example of how to get started with the JavaScript SDK:
+To get started with any of the SDKs, you need to install the appropriate package for your programming language. Once installed, you can initialise the SDK and connect to your SurrealDB instance. Here is an example of how to get started with the JavaScript SDK:
 
 ```javascript
 

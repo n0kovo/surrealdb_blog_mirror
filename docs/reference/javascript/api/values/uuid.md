@@ -138,7 +138,7 @@ console.log(uuid.toString());
 
 ### `.toJSON()` {#tojson}
 
-Serialize for JSON.
+Serialise for JSON.
 
 ```ts title="Syntax"
 uuid.toJSON()

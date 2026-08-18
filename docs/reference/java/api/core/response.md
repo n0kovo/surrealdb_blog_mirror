@@ -36,7 +36,7 @@ Value take(int num)
         <tr>
             <td>`type` *[optional]*</td>
             <td>`Class&lt;T&gt;`</td>
-            <td>The class to deserialize the result into. Omit for an untyped `Value` return.</td>
+            <td>The class to deserialise the result into. Omit for an untyped `Value` return.</td>
         </tr>
         <tr>
             <td>`num` *[required]*</td>

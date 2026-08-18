@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Create a new connection
 
-After [installing the SDK](../installation.md), you can initialize a new instance of a SurrealDB client.
+After [installing the SDK](../installation.md), you can initialise a new instance of a SurrealDB client.
 When creating a new connection to a SurrealDB instance, you can choose to connect to a local or remote endpoint.
 
 ```csharp
@@ -19,7 +19,7 @@ await db.Connect();
 await db.Use("main", "main");
 ```
 
-From the code snippet above, you can see that the .NET SDK has a couple of methods that you can use to initialize a new project with SurrealDB. 
+From the code snippet above, you can see that the .NET SDK has a couple of methods that you can use to initialise a new project with SurrealDB. 
 
 ## `SurrealDbClient`
 

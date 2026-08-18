@@ -89,7 +89,7 @@ sessionID := tx.SessionID()
 
 ### `.IsClosed()` {#isclosed}
 
-Returns whether the transaction has been committed or canceled.
+Returns whether the transaction has been committed or cancelled.
 
 ```go title="Syntax"
 closed := tx.IsClosed()
@@ -128,13 +128,13 @@ err := tx.Commit(ctx)
 
 **Returns:** `error`
 
-Returns [`ErrTransactionClosed`](../errors/index.md#sentinel-errors) if the transaction has already been committed or canceled.
+Returns [`ErrTransactionClosed`](../errors/index.md#sentinel-errors) if the transaction has already been committed or cancelled.
 
 ### `.Cancel()` {#cancel}
 
 Cancels the transaction, discarding all changes. After calling `.Cancel()`, the transaction cannot be used.
 
-It is safe to call `.Cancel()` on an already committed or canceled transaction. It returns [`ErrTransactionClosed`](../errors/index.md#sentinel-errors) but causes no harm, making it safe for use with `defer`.
+It is safe to call `.Cancel()` on an already committed or cancelled transaction. It returns [`ErrTransactionClosed`](../errors/index.md#sentinel-errors) but causes no harm, making it safe for use with `defer`.
 
 ```go title="Syntax"
 err := tx.Cancel(ctx)

@@ -97,4 +97,4 @@ The test should complete in a few seconds if your Fivetran deployment can access
 
 - [API Destination Configuration](https://fivetran.com/docs/rest-api/api-reference/destinations/create-destination?service=surrealdb_destination)
 
-- [Documentation Home](https://surrealdb.com/docs/start)
+- [Documentation Home](/docs)

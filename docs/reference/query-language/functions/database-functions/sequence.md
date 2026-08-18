@@ -20,18 +20,18 @@ These functions can be used to work with [sequences](../../statements/define/seq
   </thead>
   <tbody>
     <tr>
-      <td scope="row" data-label="Function"><a href="#sequencenext">`sequence::next()`</a></td>
+      <td scope="row" data-label="Function"><a href="#sequencenextval">`sequence::nextval()`</a></td>
       <td scope="row" data-label="Description">Returns the next value in a sequence.</td>
     </tr>
   </tbody>
 </table>
 
-## `sequence::next`
+## `sequence::nextval`
 
-The `sequence::next` function returns the next value in a sequence.
+The `sequence::nextval` function returns the next value in a sequence.
 
 ```surql title="API DEFINITION"
-sequence::next($seq_name: string) -> int
+sequence::nextval($seq_name: string) -> int
 ```
 
 ```surql 

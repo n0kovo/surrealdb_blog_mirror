@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Value types
 
-The Go SDK communicates with SurrealDB using CBOR (Concise Binary Object Representation) rather than JSON. The SDK provides Go types that map to SurrealDB's data model and handle CBOR serialization transparently when used in structs or maps.
+The Go SDK communicates with SurrealDB using CBOR (Concise Binary Object Representation) rather than JSON. The SDK provides Go types that map to SurrealDB's data model and handle CBOR serialisation transparently when used in structs or maps.
 
 This page covers the mapping between SurrealDB types and Go types, and how to work with the most common value types.
 
@@ -164,4 +164,4 @@ surrealdb.Create[any](ctx, db, models.Table("test"), map[string]any{
 - [DateTime reference](../api/values/datetime.md) for datetime handling
 - [Duration reference](../api/values/duration.md) for duration types and parsing
 - [Geometry reference](../api/values/geometry.md) for all geometry types
-- [SurrealQL data model](https://surrealdb.com/docs/reference/query-language/datamodel) for the underlying type system
+- [SurrealQL data model](../../query-language/language-primitives/data-types/index.md) for the underlying type system

@@ -11,6 +11,6 @@ This section holds **tutorials**: practical **walkthroughs** that take you throu
 
 If you prefer a **ready-made project** you can clone and run with minimal narrative, see the [demos](../demos/overview.md) section instead.
 
-If you are new to SurrealDB, you may also want [Getting started](https://surrealdb.com/docs/start) and the [SurrealQL](../../../reference/query-language/index.md) reference.
+If you are new to SurrealDB, you may also want [Getting started](/docs) and the [SurrealQL](../../../reference/query-language/index.md) reference.
 
 Pick a tutorial from the sidebar to begin.

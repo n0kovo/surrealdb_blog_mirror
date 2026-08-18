@@ -77,7 +77,7 @@ txn.cancel()
 ```
 
 #### Returns
-`Promise<void>` - Resolves when the transaction is canceled
+`Promise<void>` - Resolves when the transaction is cancelled
 
 #### Example
 ```ts
@@ -115,7 +115,7 @@ As `SurrealTransaction` extends [`SurrealQueryable`](surreal-queryable.md), it i
 - [`auth()`](surreal-queryable.md#auth) - Get authenticated record user
 - [`api()`](surreal-queryable.md#api) - Access user-defined APIs
 
-All of these operations are executed within the transaction context and will be committed or canceled together.
+All of these operations are executed within the transaction context and will be committed or cancelled together.
 
 ## Complete examples
 
@@ -303,7 +303,7 @@ async function atomicBulkOperation(db: Surreal, records: any[]) {
 
 ### 1. Always handle errors
 
-Always use try-catch blocks to ensure transactions are properly canceled on errors:
+Always use try-catch blocks to ensure transactions are properly cancelled on errors:
 
 ```ts
 const txn = await db.beginTransaction();
@@ -335,7 +335,7 @@ await txn.commit();
 
 ### 3. Don't reuse transactions
 
-Once a transaction is committed or canceled, create a new one for subsequent operations:
+Once a transaction is committed or cancelled, create a new one for subsequent operations:
 
 ```ts
 const txn1 = await db.beginTransaction();

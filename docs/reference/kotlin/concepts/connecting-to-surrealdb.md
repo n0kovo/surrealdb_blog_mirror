@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Connecting to SurrealDB
 
-The first step towards interacting with [SurrealDB](https://surrealdb.com/docs/start) is to create a connection to a database instance. This involves constructing a [`SurrealClient`](../api/core/surreal-client.md) with a [`SurrealClientConfig`](../api/core/client-config.md), then selecting a namespace and database. The SDK supports remote connections over WebSocket and HTTP.
+The first step towards interacting with [SurrealDB](/docs) is to create a connection to a database instance. This involves constructing a [`SurrealClient`](../api/core/surreal-client.md) with a [`SurrealClientConfig`](../api/core/client-config.md), then selecting a namespace and database. The SDK supports remote connections over WebSocket and HTTP.
 
 ## API references
 

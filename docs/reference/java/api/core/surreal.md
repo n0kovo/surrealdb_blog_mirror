@@ -446,7 +446,7 @@ Creates one or more records. When called with a table name, SurrealDB generates 
         <tr>
             <td>`type` *[required]*</td>
             <td>`Class&lt;T&gt;`</td>
-            <td>The class to deserialize results into.</td>
+            <td>The class to deserialise results into.</td>
         </tr>
         <tr>
             <td>`target` *[required]*</td>
@@ -496,7 +496,7 @@ Selects records from a table or retrieves specific records by ID.
         <tr>
             <td>`type` *[required]*</td>
             <td>`Class&lt;T&gt;`</td>
-            <td>The class to deserialize results into.</td>
+            <td>The class to deserialise results into.</td>
         </tr>
         <tr>
             <td>`target` *[required]*</td>
@@ -537,7 +537,7 @@ Thread-safe variant of [`.select()`](#select) for table-level queries. Returns a
         <tr>
             <td>`type` *[required]*</td>
             <td>`Class&lt;T&gt;`</td>
-            <td>The class to deserialize results into.</td>
+            <td>The class to deserialise results into.</td>
         </tr>
         <tr>
             <td>`target` *[required]*</td>
@@ -573,7 +573,7 @@ Inserts one or more records into a table.
         <tr>
             <td>`type` *[required]*</td>
             <td>`Class&lt;T&gt;`</td>
-            <td>The class to deserialize results into.</td>
+            <td>The class to deserialise results into.</td>
         </tr>
         <tr>
             <td>`target` *[required]*</td>
@@ -619,7 +619,7 @@ Updates existing records. Use `UpType.CONTENT` to replace the entire record, `Up
         <tr>
             <td>`type` *[required]*</td>
             <td>`Class&lt;T&gt;`</td>
-            <td>The class to deserialize results into.</td>
+            <td>The class to deserialise results into.</td>
         </tr>
         <tr>
             <td>`target` *[required]*</td>
@@ -685,7 +685,7 @@ Updates an existing record or creates a new one if it does not exist. Accepts th
         <tr>
             <td>`type` *[required]*</td>
             <td>`Class&lt;T&gt;`</td>
-            <td>The class to deserialize results into.</td>
+            <td>The class to deserialise results into.</td>
         </tr>
         <tr>
             <td>`target` *[required]*</td>
@@ -792,7 +792,7 @@ Value relate(RecordId from, String table, RecordId to)
         <tr>
             <td>`type` *[optional]*</td>
             <td>`Class&lt;T extends Relation&gt;`</td>
-            <td>The class to deserialize the relation into. Omit for untyped `Value` return.</td>
+            <td>The class to deserialise the relation into. Omit for untyped `Value` return.</td>
         </tr>
         <tr>
             <td>`from` *[required]*</td>
@@ -854,7 +854,7 @@ Inserts a relation record into a relation table with additional data.
         <tr>
             <td>`type` *[required]*</td>
             <td>`Class&lt;T extends InsertRelation&gt;`</td>
-            <td>The relation class to deserialize into.</td>
+            <td>The relation class to deserialise into.</td>
         </tr>
         <tr>
             <td>`target` *[required]*</td>
@@ -900,7 +900,7 @@ Inserts multiple relation records into a relation table using varargs.
         <tr>
             <td>`type` *[required]*</td>
             <td>`Class&lt;T extends InsertRelation&gt;`</td>
-            <td>The relation class to deserialize into.</td>
+            <td>The relation class to deserialise into.</td>
         </tr>
         <tr>
             <td>`target` *[required]*</td>

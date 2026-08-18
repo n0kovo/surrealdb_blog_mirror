@@ -129,7 +129,7 @@ final class ArticleSchema implements SchemaContract
 
 ## Applying a schema
 
-Apply the schema for a set of models with the `SchemaManager`. Pass an [executor](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/connections), or rely on the registered one.
+Apply the schema for a set of models with the `SchemaManager`. Pass an [executor](connections.md), or rely on the registered one.
 
 ```php
 use Surqlize\Model\SchemaManager;
@@ -140,10 +140,10 @@ use Surqlize\Model\SchemaManager;
 ], $surreal);
 ```
 
-Use `definitions()` instead of `apply()` to inspect the statements without running them. You can also apply schemas from the [CLI](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/code-generation-and-cli#schema-apply).
+Use `definitions()` instead of `apply()` to inspect the statements without running them. You can also apply schemas from the [CLI](code-generation-and-cli.md#schema-apply).
 
 ## Learn more
 
-- [Models](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/models) for the `#[Schema]` attribute
-- [Code generation and CLI](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/code-generation-and-cli) to apply schemas from the command line
+- [Models](models.md) for the `#[Schema]` attribute
+- [Code generation and CLI](code-generation-and-cli.md) to apply schemas from the command line
 - [DEFINE](../../../query-language/statements/define/overview.md) for the SurrealQL schema statements

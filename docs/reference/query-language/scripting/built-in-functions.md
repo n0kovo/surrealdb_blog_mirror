@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Built-in functions
 
-Besides basic JavaScript utilities and [classes for SurrealQL types](https://surrealdb.com/docs/reference/query-language/functions/script/type-conversion), there are a handful of utilities built into the embedded scripting functions.
+Besides basic JavaScript utilities and [classes for SurrealQL types](type-conversion.md), there are a handful of utilities built into the embedded scripting functions.
 
 <table>
   <thead>

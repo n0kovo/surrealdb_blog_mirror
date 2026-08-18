@@ -660,7 +660,7 @@ ns/strict_db> CREATE person;
 ## Learn more
 
 To learn more about SurrealDB, check out the following resources:
-- [Getting started guide](https://surrealdb.com/docs/start)
+- [Getting started guide](/docs)
 - [Select statement](select.md)
 - [Update statement](update.md)
 - [Insert statement](insert.md)

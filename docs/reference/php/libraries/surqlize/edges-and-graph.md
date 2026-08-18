@@ -102,6 +102,6 @@ Both endpoint models must already have `RecordId` values. The builder validates 
 
 ## Learn more
 
-- [Models](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/models) for the `#[Edge]` attribute
-- [Schema](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/schema) to define the relation table
+- [Models](models.md) for the `#[Edge]` attribute
+- [Schema](schema.md) to define the relation table
 - [RELATE](../../../query-language/statements/relate.md) for the SurrealQL statement

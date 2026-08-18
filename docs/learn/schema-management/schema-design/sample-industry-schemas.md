@@ -139,7 +139,7 @@ LIVE SELECT * FROM alert;
 
 ### Risk management
 
-Project risk assessment and mitigation tracking schema. Features temporal risk modeling with active/inactive periods, probability-impact calculations, and automated risk scoring using [futures](../../../reference/query-language/statements/define/field.md#futures). Demonstrates [unique constraints](../../../reference/query-language/statements/define/indexes.md#unique-indexes) and complex mathematical aggregations across related records.
+Project risk assessment and mitigation tracking schema. Features temporal risk modelling with active/inactive periods, probability-impact calculations, and automated risk scoring using [futures](../../../reference/query-language/statements/define/field.md#futures). Demonstrates [unique constraints](../../../reference/query-language/statements/define/indexes.md#unique-index) and complex mathematical aggregations across related records.
 
 ```surql
 DEFINE TABLE risk SCHEMAFULL;
@@ -424,7 +424,7 @@ ORDER BY due_date;
 
 ### HSSE (health, safety, security, environment) incidents
 
-Incident reporting and investigation schema using [graph relationships](../../data-models/graph/overview.md). Models safety events as edges between employees and projects with severity classification and role identification. Demonstrates graph-style data modeling for complex incident tracking and analysis.
+Incident reporting and investigation schema using [graph relationships](../../data-models/graph/overview.md). Models safety events as edges between employees and projects with severity classification and role identification. Demonstrates graph-style data modelling for complex incident tracking and analysis.
 
 ```surql
 -- Projects and employees (nodes)
@@ -470,7 +470,7 @@ SELECT id, <-incident[WHERE severity = "moderate"]<-employee FROM project;
 
 ### General bank schema (graph schema)
 
-Multi-currency banking system using [graph relationships](../../data-models/graph/overview.md). Demonstrates polymorphic account types (JPY, EUR, CAD, USD) with different field structures, customer-bank relationships, and [unique constraint enforcement](../../../reference/query-language/statements/define/indexes.md#unique-indexes). Shows how to model complex financial relationships with type-specific behaviors.
+Multi-currency banking system using [graph relationships](../../data-models/graph/overview.md). Demonstrates polymorphic account types (JPY, EUR, CAD, USD) with different field structures, customer-bank relationships, and [unique constraint enforcement](../../../reference/query-language/statements/define/indexes.md#unique-index). Shows how to model complex financial relationships with type-specific behaviours.
 
 ```surql
 DEFINE TABLE bank SCHEMAFULL;
@@ -762,7 +762,7 @@ SELECT id, ->sent->account FROM account;
 
 ### Characters and quests
 
-RPG game system with character progression, inventory management, and quest tracking. Features polymorphic item effects, character statistics, and complex game state management. Demonstrates flexible data modeling for gaming applications with rich object structures and [relationship tracking](../../data-models/graph/overview.md).
+RPG game system with character progression, inventory management, and quest tracking. Features polymorphic item effects, character statistics, and complex game state management. Demonstrates flexible data modelling for gaming applications with rich object structures and [relationship tracking](../../data-models/graph/overview.md).
 
 ```surql
 -- Characters controlled by players
@@ -917,7 +917,7 @@ LIVE SELECT * FROM telemetry WHERE id[0] = component:two;
 
 ### Missions and tasks
 
-Military mission management system with unit tracking and operational logging. Features hierarchical command structure, real-time status updates, and comprehensive audit trails. Demonstrates complex organisational modeling, [geospatial tracking](../../../reference/query-language/language-primitives/data-types/geometries.md#point), and mission-critical data management patterns.
+Military mission management system with unit tracking and operational logging. Features hierarchical command structure, real-time status updates, and comprehensive audit trails. Demonstrates complex organisational modelling, [geospatial tracking](../../../reference/query-language/language-primitives/data-types/geometries.md#point), and mission-critical data management patterns.
 
 ```surql
 -- Mission-level directive
@@ -974,7 +974,7 @@ CREATE log:[unit:drone1, time::now()] SET message = "Recon sweep complete", stat
 
 ### People, products and commerce
 
-E-commerce platform schema with customer profiles, product catalog, and shopping cart management. Features flexible address storage, multi-currency support, and comprehensive timestamp tracking. Demonstrates modern e-commerce data modeling with [flexible object fields](../../../reference/query-language/language-primitives/data-types/objects.md#flexible-objects) and relationship management.
+E-commerce platform schema with customer profiles, product catalog, and shopping cart management. Features flexible address storage, multi-currency support, and comprehensive timestamp tracking. Demonstrates modern e-commerce data modelling with [flexible object fields](../../../reference/query-language/language-primitives/data-types/objects.md#flexible-objects) and relationship management.
 
 ```surql
 -- Person / customer profile
@@ -1033,7 +1033,7 @@ DEFINE FIELD time.updated_at ON cart TYPE datetime VALUE time::now();
 
 ### Orders, reviews, reports
 
-Order processing and analytics system with review management and business intelligence. Features order lifecycle tracking, automated analytics tables, and [full-text search](../../../reference/query-language/statements/define/analyzer.md) capabilities. Demonstrates complex aggregations, [materialized views](../../../reference/query-language/statements/define/table.md#pre-computed-table-views), and search optimization for e-commerce applications.
+Order processing and analytics system with review management and business intelligence. Features order lifecycle tracking, automated analytics tables, and [full-text search](../../../reference/query-language/statements/define/analyzer.md) capabilities. Demonstrates complex aggregations, [materialized views](../../../reference/query-language/statements/define/table.md#pre-computed-table-views), and search optimisation for e-commerce applications.
 
 ```surql
 
@@ -1094,7 +1094,7 @@ DEFINE INDEX review_content ON review FIELDS review_text FULLTEXT ANALYZER blank
 
 ### Patient records and encounters
 
-Healthcare management system with patient records, encounter tracking, and clinical data management. Features vital signs [time-series data](../../data-models/time-series/overview.md), medication tracking, and automated encounter lifecycle management using [events](../../../reference/query-language/statements/define/event.md). Demonstrates healthcare data modeling with temporal data, clinical workflows, and medical record compliance patterns.
+Healthcare management system with patient records, encounter tracking, and clinical data management. Features vital signs [time-series data](../../data-models/time-series/overview.md), medication tracking, and automated encounter lifecycle management using [events](../../../reference/query-language/statements/define/event.md). Demonstrates healthcare data modelling with temporal data, clinical workflows, and medical record compliance patterns.
 
 ```surql
 -- Patient record

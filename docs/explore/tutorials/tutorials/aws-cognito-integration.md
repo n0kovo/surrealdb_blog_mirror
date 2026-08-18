@@ -25,7 +25,7 @@ This guide will cover the most general case, in which SurrealDB is the only back
 
 This guide assumes the following:
 
-- You have a [fresh instance of SurrealDB running](https://surrealdb.com/docs/start) with version `1.2.0` or later.
+- You have a [fresh instance of SurrealDB running](../../../running/overview.md).
 
 - You can [use a local Docker container](../../../running/docker.md) without volumes for the purposes of this guide.
 
@@ -168,7 +168,7 @@ DEFINE FIELD cognito_username ON user TYPE string;
 
 #### Defining a token verification method in SurrealDB
 
-Next, we should configure SurrealDB so that it can verify tokens sent to it through the [HTTP REST API](../../../reference/rest-api/http-protocol.md) via the “Authorization” header or through any of the [SDKs](https://surrealdb.com/docs/start) via the “Authenticate” methods.
+Next, we should configure SurrealDB so that it can verify tokens sent to it through the [HTTP REST API](../../../reference/rest-api/http-protocol.md) via the “Authorization” header or through any of the [SDKs](/docs#sdks) via the “Authenticate” methods.
 
 To do that, we will leverage the [JWKS support in SurrealDB](../../../reference/query-language/statements/define/token.md#json-web-key-set-jwks) in order to define a token verification mechanism pointing to a JWKS object served by AWS for your Cognito user pool. This JWKS object can be found in an endpoint [build from your AWS region and user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-verifying-a-jwt.html) in the format `https://cognito-idp.<Region>.amazonaws.com/<userPoolId>/.well-known/jwks.json`. Pointing to a remote JWKS object ensures that token verification will work even in the case that AWS rotates their encryption keys and that tokens signed with revoked keys will no longer be accepted by SurrealDB. To understand how revocation is handled by SurrealDB, read the [JSON Web Key Set documentation](../../../reference/query-language/statements/define/token.md#json-web-key-set-jwks) under `DEFINE ACCESS ... TYPE JWT`.
 
@@ -218,7 +218,7 @@ For the strongest security, provide your specific Cognito user pool domain when 
 
 #### Defining a token verification method in SurrealDB
 
-Next, we should configure SurrealDB so that it can verify tokens sent to it through the [HTTP REST API](../../../reference/rest-api/http-protocol.md) via the “Authorization” header or through any of the [SDKs](https://surrealdb.com/docs/start) via the “Authenticate” methods.
+Next, we should configure SurrealDB so that it can verify tokens sent to it through the [HTTP REST API](../../../reference/rest-api/http-protocol.md) via the “Authorization” header or through any of the [SDKs](/docs#sdks) via the “Authenticate” methods.
 
 To do that, we will leverage the [JWKS support in SurrealDB](../../../reference/query-language/statements/define/token.md#json-web-key-set-jwks) in order to define a token verification mechanism pointing to a JWKS object served by AWS for your Cognito user pool. This JWKS object can be found in an endpoint [build from your AWS region and user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-verifying-a-jwt.html) in the format `https://cognito-idp.<Region>.amazonaws.com/<userPoolId>/.well-known/jwks.json`.
 
@@ -292,7 +292,7 @@ It is also important to note that the `$auth` variable accessible from SurrealQL
 For this guide, we will create a simple client-side web application that will direct the user to log in using the Cognito Hosted UI, redirect the user back your our application with a query parameter containing an authorization code and exchange that code to Cognito for the user identity token which we will use to authenticate with SurrealDB. The application will create or update a SurrealDB user using data from the token claims. This user will later be able visit our web application and retrieve their information from SurrealDB.
 
 > [!NOTE]
-> As most other authentication providers using OpenID Connect (OIDC), AWS Cognito issues both identity and access tokens. In this example, we will be using the identity token as it can include custom claims (which are required by SurrealDB) by default. It is important to note that identity tokens should only be used to assert identity claims as opposed to access claims. In this case, we trust the identity token to provide information about the indentity of the user. If we wanted the token to contain authorization claims (e.g. OAuth scopes) we should instead rely on the access token. Customizing access token claims has been <a href="https://aws.amazon.com/about-aws/whats-new/2023/12/amazon-cognito-user-pools-customize-access-tokens/">recently supported by AWS</a> and requires enabling <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html#cognito-user-pool-settings-advanced-security.title">advanced security features</a>. This guide makes the deliberate decision of using the identity token to simplify the process.
+> As most other authentication providers using OpenID Connect (OIDC), AWS Cognito issues both identity and access tokens. In this example, we will be using the identity token as it can include custom claims (which are required by SurrealDB) by default. It is important to note that identity tokens should only be used to assert identity claims as opposed to access claims. In this case, we trust the identity token to provide information about the indentity of the user. If we wanted the token to contain authorization claims (e.g. OAuth scopes) we should instead rely on the access token. Customising access token claims has been <a href="https://aws.amazon.com/about-aws/whats-new/2023/12/amazon-cognito-user-pools-customize-access-tokens/">recently supported by AWS</a> and requires enabling <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html#cognito-user-pool-settings-advanced-security.title">advanced security features</a>. This guide makes the deliberate decision of using the identity token to simplify the process.
 
 We have developed an [example application](https://github.com/surrealdb/examples/tree/main/aws-cognito) that uses plain JavaScript to authenticate with Cognito using basic HTTP requests against the [login endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/login-endpoint.html) of the Cognito Hosted UI and the Cognito [token endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/token-endpoint.html). For the purposes of following this guide, we recommend using our example code. However, keep in mind that this code aims to be as simple as possible and is not suitable for production applications. Alternatively, you can develop this application yourself using the [Cognito SDK](https://docs.aws.amazon.com/cognito/latest/developerguide/service_code_examples_cognito-identity-provider.html) or the new [Amplify SDK](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-integrate-apps.html#cognito-integrate-apps-amplify).
 

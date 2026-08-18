@@ -17,7 +17,7 @@ The image above is a Google search for the word “lead”, a word with more tha
 
 Let's consider this in the context of a database of liquid samples which note down harmful chemicals that are found in them.
 
-In the example below, we have a table called `liquids` with a `sample` field and a `content` field.  Next, we can define a [full-text index](../../../reference/query-language/statements/define/indexes.md#full-text-search-index) on the `content` field by first defining an analyzer called `liquid_analyzer`. We can then [define an index](../../../reference/query-language/statements/define/indexes.md) on the content field in the liquid table and set our [custom analyzer](../../../reference/query-language/statements/define/analyzer.md) (`liquid_analyzer`)to search through the index.
+In the example below, we have a table called `liquids` with a `sample` field and a `content` field.  Next, we can define a [full-text index](../../../reference/query-language/statements/define/indexes.md#full-text-search-fulltext-index) on the `content` field by first defining an analyzer called `liquid_analyzer`. We can then [define an index](../../../reference/query-language/statements/define/indexes.md) on the content field in the liquid table and set our [custom analyzer](../../../reference/query-language/statements/define/analyzer.md) (`liquid_analyzer`)to search through the index.
 
 Then, using the select statement to retrieve all the samples containing the chemical lead will also bring up samples that mention the word `lead`.
 

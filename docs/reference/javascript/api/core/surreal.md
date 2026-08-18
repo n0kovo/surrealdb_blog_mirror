@@ -36,7 +36,7 @@ new Surreal(options?)
         <tr>
             <td>`options` <label label="optional" /></td>
             <td>`<a href="/docs/reference/javascript/api/types/#driveroptions">DriverOptions</a>`</td>
-            <td>Driver-wide configuration options for customizing engines, codecs, and implementations.</td>
+            <td>Driver-wide configuration options for customising engines, codecs, and implementations.</td>
         </tr>
     </tbody>
 </table>
@@ -365,7 +365,7 @@ db.export(options?)
         <tr>
             <td>`options` <label label="optional" /></td>
             <td>`Partial&lt;<a href="/docs/reference/javascript/api/types/#sqlexportoptions">SqlExportOptions</a>&gt;`</td>
-            <td>Options to customize what gets exported.</td>
+            <td>Options to customise what gets exported.</td>
         </tr>
     </tbody>
 </table>
@@ -696,5 +696,5 @@ await db.close();
 - [SurrealSession](surreal-session.md) - Session management and authentication
 - [SurrealQueryable](surreal-queryable.md) - Query execution methods
 - [SurrealTransaction](surreal-transaction.md) - Transaction support
-- [Connection Engines](../../engines/index.md) - Engine-specific documentation
+- [Node engine](../../engines/node.md) and [WASM engine](../../engines/wasm.md) - Engine-specific documentation
 - [Data types](../values/index.md) - Working with data types

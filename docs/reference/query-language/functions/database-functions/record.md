@@ -30,10 +30,6 @@ These functions can be used to retrieve specific metadata from a SurrealDB Recor
       <td scope="row" data-label="Description">Extracts and returns the table name from a SurrealDB Record ID</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Function"><a href="#recordrefs">`record::refs()`</a></td>
-      <td scope="row" data-label="Description">Extracts and returns the record IDs of any records that have a record link along with a `REFERENCES` clause</td>
-    </tr>
-    <tr>
       <td scope="row" data-label="Function"><a href="#recordis_edge">`record::is_edge()`</a></td>
       <td scope="row" data-label="Description">Identifies whether the value passed in is a graph edge</td>
     </tr>
@@ -134,6 +130,11 @@ RETURN record::tb(person:tobie);
 
 -- 'person'
 ```
+
+This function can also be called using the path `record::table`.
+
+> [!NOTE]
+> To retrieve the records that point at a record through a [reference](../../language-primitives/record-references.md), define a computed field using the `<~` syntax rather than a function.
 
   
   

@@ -140,7 +140,7 @@ See the [Duration reference](../api/values/duration.md) for all unit properties 
 
 ## Working with datetime values
 
-A [`Datetime`](../api/values/datetime.md) wraps an ISO 8601 datetime string for use with SurrealDB's `datetime` type. It preserves the original string representation through serialization and deserialization.
+A [`Datetime`](../api/values/datetime.md) wraps an ISO 8601 datetime string for use with SurrealDB's `datetime` type. It preserves the original string representation through serialisation and deserialisation.
 
 ```python
 from surrealdb import Datetime

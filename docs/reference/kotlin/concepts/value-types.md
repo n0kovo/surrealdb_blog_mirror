@@ -44,4 +44,4 @@ val data = buildJsonObject {
 
 - [`Table`](../api/values/table.md), [`RecordId`](../api/values/record-id.md), and [`RecordIdRange`](../api/values/record-id-range.md) references
 - [Value (JSON model)](../api/values/value.md) reference
-- [Serialization](serialization.md) for decoding into your own types
+- [Serialisation](serialization.md) for decoding into your own types

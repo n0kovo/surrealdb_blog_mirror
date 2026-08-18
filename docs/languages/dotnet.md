@@ -84,7 +84,7 @@ public class Name
 
 ### Selecting records
 
-The [`Select`](../reference/dotnet/methods/select.md) method retrieves all records from a table. Provide the type parameter to tell the SDK what type to deserialize the response into.
+The [`Select`](../reference/dotnet/methods/select.md) method retrieves all records from a table. Provide the type parameter to tell the SDK what type to deserialise the response into.
 
 ```csharp
 var people = await db.Select<Person>(TABLE);

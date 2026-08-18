@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Querying
 
-Surqlize builds a `SELECT` as a typed query object. You start it from a model, refine it with chained methods, and either compile it to a SurrealQL string or execute it through the [SDK executor](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/connections).
+Surqlize builds a `SELECT` as a typed query object. You start it from a model, refine it with chained methods, and either compile it to a SurrealQL string or execute it through the [SDK executor](connections.md).
 
 ```php
 $query = User::select(fn ($user) => [$user->name, $user->age])
@@ -188,6 +188,6 @@ foreach ($users as $user) {
 
 ## Learn more
 
-- [Mutations](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/mutations) for create, update, and delete
-- [Edges and graph](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/edges-and-graph) for graph traversal in a select
-- [Search, vector, and geometry](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/search-vector-geometry) for specialised field helpers
+- [Mutations](mutations.md) for create, update, and delete
+- [Edges and graph](edges-and-graph.md) for graph traversal in a select
+- [Search, vector, and geometry](search-vector-geometry.md) for specialised field helpers

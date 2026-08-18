@@ -11,7 +11,7 @@ This page details some MySQL data types and their SurrealQL equivalents, followe
 
 ## Data types
 
-The following chart shows MySQL data types along with the equivalent or near-equivalent [SurrealQL data type](https://surrealdb.com/docs/reference/query-language/datamodel) for each.
+The following chart shows MySQL data types along with the equivalent or near-equivalent [SurrealQL data type](../../../reference/query-language/language-primitives/data-types/index.md) for each.
 
 |   MySQL Data Type   | Wire Protocol Type |               SQL Representation                | SurrealDB Mapping |                     Notes                      |
 | ------------------- | ------------------ | ----------------------------------------------- | ----------------- | ---------------------------------------------- |

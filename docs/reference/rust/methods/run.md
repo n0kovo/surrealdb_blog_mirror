@@ -85,7 +85,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-The return value of the `.run()` function can be deserialized in the same way as any other database function.
+The return value of the `.run()` function can be deserialised in the same way as any other database function.
 
 ```rust title="Deserialize to user-defined struct"
 use surrealdb::engine::any::connect;
@@ -220,7 +220,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-The return value of the `.run()` function can be deserialized in the same way as any other database function.
+The return value of the `.run()` function can be deserialised in the same way as any other database function.
 
 ```rust
 use serde::Deserialize;

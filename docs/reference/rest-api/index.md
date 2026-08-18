@@ -26,4 +26,4 @@ If you prefer a richer client experience, SurrealDB also supports:
 
 - **WebSocket protocol** — persistent connections with real-time capabilities.
 - **[Postgres wire protocol](postgres-protocol.md)** — connect with `psql`, JDBC, and other Postgres clients, then run SurrealQL or ISO GQL with tabular typed results.
-- **Official SDKs** — language-specific clients for [JavaScript](https://surrealdb.com/docs/languages/javascript/overview), [Python](../../languages/python.md), [Rust](https://surrealdb.com/docs/languages/rust/overview), [Go](../../languages/golang.md), [Java](../../languages/java.md), [.NET](../../languages/dotnet.md), and [PHP](../../languages/php.md).
+- **Official SDKs** — language-specific clients for [JavaScript](../../languages/javascript.md), [Python](../../languages/python.md), [Rust](../../languages/rust.md), [Go](../../languages/golang.md), [Java](../../languages/java.md), [.NET](../../languages/dotnet.md), and [PHP](../../languages/php.md).

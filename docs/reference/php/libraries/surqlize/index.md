@@ -16,22 +16,22 @@ The core idea is small: describe your SurrealDB tables with models and attribute
 
 ## Getting started
 
-- **[Installation](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/installation)** — Install Surqlize with Composer and the alpha SDK it depends on.
-- **[Models](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/models)** — Describe tables as PHP classes with attribute-driven fields.
-- **[Connections](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/connections)** — Register an SDK executor and inject one per query when needed.
+- **[Installation](installation.md)** — Install Surqlize with Composer and the alpha SDK it depends on.
+- **[Models](models.md)** — Describe tables as PHP classes with attribute-driven fields.
+- **[Connections](connections.md)** — Register an SDK executor and inject one per query when needed.
 
 ## Building queries
 
-- **[Querying](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/querying)** — Typed select, where, ordering, projections, and the execution methods.
-- **[Mutations](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/mutations)** — Create, update, upsert, and delete with model helpers and builders.
-- **[Edges and graph](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/edges-and-graph)** — Edge models, graph traversal, and RELATE.
-- **[Search, vector, and geometry](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/search-vector-geometry)** — Full-text search, vector KNN, and geometry helpers.
+- **[Querying](querying.md)** — Typed select, where, ordering, projections, and the execution methods.
+- **[Mutations](mutations.md)** — Create, update, upsert, and delete with model helpers and builders.
+- **[Edges and graph](edges-and-graph.md)** — Edge models, graph traversal, and RELATE.
+- **[Search, vector, and geometry](search-vector-geometry.md)** — Full-text search, vector KNN, and geometry helpers.
 
 ## Schema and tooling
 
-- **[Schema](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/schema)** — Define tables with a schema contract or the fluent DSL.
-- **[Code generation and CLI](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/code-generation-and-cli)** — Generate typed field adapters and run the CLI commands.
-- **[Transactions](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/transactions)** — Batch ORM queries into a single transaction with rollback.
+- **[Schema](schema.md)** — Define tables with a schema contract or the fluent DSL.
+- **[Code generation and CLI](code-generation-and-cli.md)** — Generate typed field adapters and run the CLI commands.
+- **[Transactions](transactions.md)** — Batch ORM queries into a single transaction with rollback.
 
 ## Sources
 

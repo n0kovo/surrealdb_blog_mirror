@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Authentication
 
-SurrealDB supports multiple levels of authentication, from [system users](../../../learn/security/authentication/authentication.md#system-user) to fine-grained [record-level access](../../../learn/security/authentication/authentication.md#record-users). The JavaScript SDK provides methods for signing up and signing in users, managing tokens, and automatically restoring sessions on reconnect.
+SurrealDB supports multiple levels of authentication, from [system users](../../../learn/security/authentication/authentication.md#system-users) to fine-grained [record-level access](../../../learn/security/authentication/authentication.md#record-users). The JavaScript SDK provides methods for signing up and signing in users, managing tokens, and automatically restoring sessions on reconnect.
 
 ## API references
 
@@ -232,5 +232,5 @@ await session.closeSession();
 - [Security best practices](../../../learn/security/best-practices/security-best-practices.md#authentication) for securing your application
 - [DEFINE ACCESS](../../query-language/statements/define/access/index.md) for defining access methods with SurrealQL
 - [DEFINE USER](../../query-language/statements/define/user.md) for creating system users
-- [Connecting to SurrealDB](connecting-to-surrealdb.md) for connection setup and reconnection behavior
+- [Connecting to SurrealDB](connecting-to-surrealdb.md) for connection setup and reconnection behaviour
 - [Multiple sessions](multiple-sessions.md) for isolated session management

@@ -63,10 +63,10 @@ RETURN meta::tb(person:tobie);
 "person"
 ```
 
-This function can also be called using the path `meta::table`.
+The equivalent [`record::tb`](record.md#recordtb) function can also be called using the path `record::table`.
 
 ```surql
-RETURN meta::table(person:tobie);
+RETURN record::table(person:tobie);
 
 "person"
 ```

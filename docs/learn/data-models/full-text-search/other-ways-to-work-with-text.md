@@ -64,7 +64,7 @@ SELECT VALUE val FROM data ORDER BY val COLLATE NUMERIC;
 
 #### Sorting functions
 
-The functions [`array::sort_natural()`, `array::sort_lexical()`, and `array::sort_lexical_natural()`](../../../reference/query-language/functions/database-functions/array.md) can be used on ad-hoc data to return the same output as the `COLLATE` and `NUMERIC` clauses in a [`SELECT` statement](../../../reference/query-language/statements/select.md).
+The functions [`array::sort_natural()`, `array::sort_lexical()`, and `array::sort_natural_lexical()`](../../../reference/query-language/functions/database-functions/array.md) can be used on ad-hoc data to return the same output as the `COLLATE` and `NUMERIC` clauses in a [`SELECT` statement](../../../reference/query-language/statements/select.md).
 
 ### Contains functions and operators
 
@@ -109,7 +109,7 @@ SurrealDB offers quite a few algorithms inside the [string functions module](../
 * `string::distance::hamming()`
 * `string::distance::levenshtein()`
 * `string::distance::normalized_levenshtein()`
-* `string::distance::osa_distance()`
+* `string::distance::osa()`
 
 * `string::similarity::jaro()`
 * `string::similarity::jaro_winkler()`

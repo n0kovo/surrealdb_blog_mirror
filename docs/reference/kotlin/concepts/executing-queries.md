@@ -113,4 +113,4 @@ val result = client.query(bound)
 - [SurrealClient API reference](../api/core/surreal-client.md) for complete method signatures
 - [Query builder reference](../api/core/query-builder.md) for the fluent builders and `surql` DSL
 - [Data manipulation](data-manipulation.md) for CRUD with the builders
-- [Serialization](serialization.md) for working with `@Serializable` types
+- [Serialisation](serialization.md) for working with `@Serializable` types

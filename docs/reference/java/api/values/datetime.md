@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Datetime {#datetime}
 
-SurrealDB [`datetime`](../../../query-language/language-primitives/data-types/datetimes.md) values map to Java's `java.time.ZonedDateTime`. The SDK handles conversion automatically when deserializing query results into [`Value`](value.md) objects or POJOs.
+SurrealDB [`datetime`](../../../query-language/language-primitives/data-types/datetimes.md) values map to Java's `java.time.ZonedDateTime`. The SDK handles conversion automatically when deserialising query results into [`Value`](value.md) objects or POJOs.
 
 ---
 

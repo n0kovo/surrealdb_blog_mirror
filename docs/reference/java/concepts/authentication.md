@@ -42,7 +42,7 @@ You can configure authentication in your SurrealDB database using the [`DEFINE U
 
 ## Signing in as a system user
 
-[System users](../../../learn/security/authentication/authentication.md#system-user) are defined with the [`DEFINE USER`](../../query-language/statements/define/user.md) statement and have access at the root, namespace, or database level. Use the corresponding [credential class](../api/types/index.md) to sign in.
+[System users](../../../learn/security/authentication/authentication.md#system-users) are defined with the [`DEFINE USER`](../../query-language/statements/define/user.md) statement and have access at the root, namespace, or database level. Use the corresponding [credential class](../api/types/index.md) to sign in.
 
 ```java
 

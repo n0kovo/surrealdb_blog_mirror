@@ -42,5 +42,5 @@ The WebSocket transport uses PHP's native stream functions and needs no extra pa
 
 ## Next steps
 
-- **[Models](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/models)** — Describe your first table as a model.
-- **[Connections](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/connections)** — Register the SDK executor Surqlize runs queries through.
+- **[Models](models.md)** — Describe your first table as a model.
+- **[Connections](connections.md)** — Register the SDK executor Surqlize runs queries through.

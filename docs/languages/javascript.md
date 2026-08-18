@@ -42,7 +42,7 @@ This method accepts a connection string and a set of options, including namespac
 - **HTTP** (`http://`, `https://`) for short-lived stateless connections (e.g. server-side rendering applications)
 - **Embedded** engines using the [WebAssembly engine](../reference/javascript/engines/wasm.md) or [Node.js engine](../reference/javascript/engines/node.md)
 
-This approach is suitable for connecting to a SurrealDB instance as a [system user](../learn/security/authentication/authentication.md#system-user), for example when connecting from a server-side application.
+This approach is suitable for connecting to a SurrealDB instance as a [system user](../learn/security/authentication/authentication.md#system-users), for example when connecting from a server-side application.
 
 ```ts
 const db = new Surreal();

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Installation
 
-Install the integration with [Composer](https://getcomposer.org/download/). It requires PHP `8.4` or later and Laravel `11`, `12`, or `13`, and pulls in the alpha [SDK](../../v2/index.md) and [Surqlize ORM](https://surrealdb.com/docs/reference/php/ecosystem/surqlize).
+Install the integration with [Composer](https://getcomposer.org/download/). It requires PHP `8.4` or later and Laravel `11`, `12`, or `13`, and pulls in the alpha [SDK](../../v2/index.md) and [Surqlize ORM](../../libraries/surqlize/index.md).
 
 ## Install the package
 

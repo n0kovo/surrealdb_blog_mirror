@@ -36,7 +36,7 @@ The Java SDK provides methods for executing raw [SurrealQL](../../query-language
 
 ## Running a query
 
-The [`.query()`](../api/core/surreal.md#query) method executes one or more SurrealQL statements and returns a [`Response`](../api/core/response.md). Use [`.take(int)`](../api/core/response.md#take) to extract the result of a specific statement by its zero-based index, or `.take(Class, int)` to deserialize the result into a typed Java object.
+The [`.query()`](../api/core/surreal.md#query) method executes one or more SurrealQL statements and returns a [`Response`](../api/core/response.md). Use [`.take(int)`](../api/core/response.md#take) to extract the result of a specific statement by its zero-based index, or `.take(Class, int)` to deserialise the result into a typed Java object.
 
 ```java
 Response response = db.query("SELECT * FROM users; SELECT * FROM posts;");
@@ -64,7 +64,7 @@ Always prefer [`.queryBind()`](../api/core/surreal.md#query-bind) over string co
 
 ## Working with query responses
 
-The [`Response`](../api/core/response.md) object contains the results of all statements in the query. Use [`.take(int)`](../api/core/response.md#take) to get a raw [`Value`](../api/values/value.md), or `.take(Class, int)` to deserialize into a POJO. The `.size()` method returns the number of statement results.
+The [`Response`](../api/core/response.md) object contains the results of all statements in the query. Use [`.take(int)`](../api/core/response.md#take) to get a raw [`Value`](../api/values/value.md), or `.take(Class, int)` to deserialise into a POJO. The `.size()` method returns the number of statement results.
 
 ```java
 Response response = db.query(

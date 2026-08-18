@@ -522,4 +522,4 @@ const result = await db.select(new Table('users'))
 
 - [SurrealQueryable.select()](../core/surreal-queryable.md#select) - Method that returns SelectPromise
 - [Query overview](index.md) - All query builder classes
-- [Expression builders](../utilities/index.md#expr) - Building complex conditions
+- [Expression builders](../utilities/expr.md) - Building complex conditions

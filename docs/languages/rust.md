@@ -122,7 +122,7 @@ async fn main() -> surrealdb::Result<()> {
 
 ### Selecting records
 
-The [`select`](../reference/rust/methods/select.md) method retrieves all records from a table. Deserialize the result into a `Vec` of a struct that derives `SurrealValue`.
+The [`select`](../reference/rust/methods/select.md) method retrieves all records from a table. Deserialise the result into a `Vec` of a struct that derives `SurrealValue`.
 
 ```rust
 // Select all people records
@@ -132,7 +132,7 @@ dbg!(people);
 
 ### Running SurrealQL queries
 
-For more advanced use cases, you can use the [`query`](../reference/rust/methods/query.md) method to run [SurrealQL](../reference/query-language/index.md) statements directly. Use [`.bind()`](../reference/query-language/language-primitives/parameters.md) to safely pass dynamic values, and [`.take()`](../reference/rust/methods/query.md) to transform a query result into anything that can be deserialized, in this case a `Value`.
+For more advanced use cases, you can use the [`query`](../reference/rust/methods/query.md) method to run [SurrealQL](../reference/query-language/index.md) statements directly. Use [`.bind()`](../reference/query-language/language-primitives/parameters.md) to safely pass dynamic values, and [`.take()`](../reference/rust/methods/query.md) to transform a query result into anything that can be deserialised, in this case a `Value`.
 
 ```rust
 use surrealdb::types::Value;

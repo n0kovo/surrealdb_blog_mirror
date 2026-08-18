@@ -11,7 +11,7 @@ This page shows how Snowflake data types map to their SurrealQL equivalents, the
 
 ## Data types
 
-The following chart shows Snowflake data types along with the equivalent or near-equivalent [SurrealQL data type](https://surrealdb.com/docs/reference/query-language/datamodel) for each. Surreal Sync reads values through the Snowflake SQL REST API, which returns every cell as a string together with the column's logical type, and converts each one using that type.
+The following chart shows Snowflake data types along with the equivalent or near-equivalent [SurrealQL data type](../../../reference/query-language/language-primitives/data-types/index.md) for each. Surreal Sync reads values through the Snowflake SQL REST API, which returns every cell as a string together with the column's logical type, and converts each one using that type.
 
 | Snowflake Data Type | SurrealDB Mapping | Notes |
 | ------------------- | ----------------- | ----- |

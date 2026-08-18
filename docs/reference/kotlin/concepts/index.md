@@ -23,8 +23,8 @@ _Auto-generated index — 10 pages._
   Subscribe to real-time changes with live queries in the SurrealDB Kotlin SDK.
 - [Multiple sessions](multiple-sessions.md)
   Isolate authentication and state across concurrent sessions with the SurrealDB Kotlin SDK.
-- [Serialization](serialization.md)
-  Encode and decode records using kotlinx.serialization with the SurrealDB Kotlin SDK.
+- [Serialisation](serialization.md)
+  Encode and decode records using kotlinx.serialisation with the SurrealDB Kotlin SDK.
 - [Transactions](transactions.md)
   Group operations into atomic transactions with the SurrealDB Kotlin SDK.
 - [Value types](value-types.md)

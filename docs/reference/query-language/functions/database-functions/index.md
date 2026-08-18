@@ -518,7 +518,7 @@ RETURN [math::pi, math::tau, math::e];
 
 ## Aggregate functions
 
-A few functions can be used not just on their own but with a [`GROUP BY`](https://surrealdb.com/docs/reference/query-language/clauses/group-by) clause including as part of a [pre-computed table view](../../statements/define/table.md#pre-computed-table-views).
+A few functions can be used not just on their own but with a [`GROUP BY`](../../clauses/group.md) clause including as part of a [pre-computed table view](../../statements/define/table.md#pre-computed-table-views).
 
 These functions are:
 

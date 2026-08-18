@@ -257,7 +257,7 @@ The `.update()` method replaces the entire content of a record or all records in
 
 ## Upserting records
 
-The `.upsert()` method creates a record if it does not already exist, or replaces it entirely if it does. This combines the behavior of `.create()` and `.update()` in a single operation.
+The `.upsert()` method creates a record if it does not already exist, or replaces it entirely if it does. This combines the behaviour of `.create()` and `.update()` in a single operation.
 
 	
 **Synchronous**

@@ -252,7 +252,7 @@ You can set the permissions for a custom function using the `PERMISSIONS` clause
 - `WHERE @condition`: Permissions are granted to the function based on the specified condition.
 
 > [!NOTE]
-> The examples below use the [`Surreal Deal Store`](https://surrealdb.com/docs/start#surreal-deal-store---there-is-a-lot-in-store-for-you-recommended) dataset.
+> The examples below use the [`Surreal Deal Store`](../../../../explore/tutorials/demos/surreal-deal-store.md) dataset.
 
 ### Using the `FULL` permission
 

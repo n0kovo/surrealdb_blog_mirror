@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Schema commands
 
-The integration adds two Artisan commands for managing your [Surqlize schema](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/schema). Both read the model list from `config('surqlize.models')`.
+The integration adds two Artisan commands for managing your [Surqlize schema](../../libraries/surqlize/schema.md). Both read the model list from `config('surqlize.models')`.
 
 ## Dumping the schema
 
@@ -48,6 +48,6 @@ php artisan surqlize:schema-apply --connection=analytics
 
 ## Learn more
 
-- [Schema](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/schema) for defining tables and fields
+- [Schema](../../libraries/surqlize/schema.md) for defining tables and fields
 - [Configuration](configuration.md#orm-configuration) for the model list
-- [Surqlize CLI](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/code-generation-and-cli) for the framework-agnostic commands
+- [Surqlize CLI](../../libraries/surqlize/code-generation-and-cli.md) for the framework-agnostic commands

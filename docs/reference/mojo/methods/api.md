@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `api()`
 
-Calls a custom API handler defined on the database with [`DEFINE API`](https://surrealdb.com/docs/surrealql/statements/define/api).
+Calls a custom API handler defined on the database with [`DEFINE API`](../../query-language/statements/define/api.md).
 
 ```python title="Method Syntax"
 client.api(path, method, session, txn)

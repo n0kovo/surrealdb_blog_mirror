@@ -80,5 +80,5 @@ You can tune how big each reserved batch is, where counting starts, and how long
 ## Where to read more
 
 * [`DEFINE SEQUENCE`](../../../reference/query-language/statements/define/sequence.md) — full statement reference.
-* [Sequence functions](../../../reference/query-language/functions/database-functions/sequence.md) — `sequence::next` / `sequence::nextval` and related usage.
+* [Sequence functions](../../../reference/query-language/functions/database-functions/sequence.md) — `sequence::nextval` and related usage.
 * [Transactions](transactions.md) — how commits and rollbacks interact with ordinary writes.

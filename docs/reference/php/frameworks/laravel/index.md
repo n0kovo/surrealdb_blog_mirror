@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Laravel integration
 
-The [Laravel integration](https://github.com/surrealdb/surrealdb.laravel) connects SurrealDB to a Laravel application. It wires [version 2 of the SDK](../../v2/index.md) and the [Surqlize ORM](https://surrealdb.com/docs/reference/php/ecosystem/surqlize) into Laravel's config, service container, facades, and Artisan commands.
+The [Laravel integration](https://github.com/surrealdb/surrealdb.laravel) connects SurrealDB to a Laravel application. It wires [version 2 of the SDK](../../v2/index.md) and the [Surqlize ORM](../../libraries/surqlize/index.md) into Laravel's config, service container, facades, and Artisan commands.
 
 Query execution and the database protocol are delegated to the SDK. Models, query compilation, graph relations, and schema definitions are delegated to Surqlize. The integration adds the Laravel glue: publishable config, container bindings, facades, schema commands, and testing helpers.
 
@@ -31,5 +31,5 @@ It does not replace Laravel's SQL database. SurrealDB runs alongside your existi
 ## Sources
 
 - [GitHub repository](https://github.com/surrealdb/surrealdb.laravel)
-- [Surqlize ORM](https://surrealdb.com/docs/reference/php/ecosystem/surqlize) for models and queries
+- [Surqlize ORM](../../libraries/surqlize/index.md) for models and queries
 - [PHP SDK v2](../../v2/index.md) for the underlying client

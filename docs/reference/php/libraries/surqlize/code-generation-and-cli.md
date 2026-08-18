@@ -93,7 +93,7 @@ vendor/bin/surqlize generate:fields surqlize.config.php
 
 ### schema:apply {#schema-apply}
 
-Applies the [schema](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/schema) definitions for the configured models through the configured executor.
+Applies the [schema](schema.md) definitions for the configured models through the configured executor.
 
 ```bash
 vendor/bin/surqlize schema:apply surqlize.config.php
@@ -109,6 +109,6 @@ vendor/bin/surqlize memory:footprint --iterations=5000 --output=memory-report.js
 
 ## Learn more
 
-- [Querying](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/querying) for the typed callbacks adapters support
-- [Schema](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/schema) for the definitions `schema:apply` runs
+- [Querying](querying.md) for the typed callbacks adapters support
+- [Schema](schema.md) for the definitions `schema:apply` runs
 - [Laravel integration](../../frameworks/laravel/schema-commands.md) for the Artisan schema commands

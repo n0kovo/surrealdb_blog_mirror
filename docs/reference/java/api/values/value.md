@@ -88,7 +88,7 @@ Converts the value to a Java POJO. The target class must have a public no-argume
         <tr>
             <td>`type` *[required]*</td>
             <td>`Class&lt;T&gt;`</td>
-            <td>The target class to deserialize into.</td>
+            <td>The target class to deserialise into.</td>
         </tr>
     </tbody>
 </table>
@@ -182,7 +182,7 @@ array.iterator(clazz)
         <tr>
             <td>`clazz` *[required]*</td>
             <td>`Class&lt;T&gt;`</td>
-            <td>The class to deserialize each element into.</td>
+            <td>The class to deserialise each element into.</td>
         </tr>
     </tbody>
 </table>
@@ -219,7 +219,7 @@ array.synchronizedIterator(clazz)
         <tr>
             <td>`clazz` *[required]*</td>
             <td>`Class&lt;T&gt;`</td>
-            <td>The class to deserialize each element into.</td>
+            <td>The class to deserialise each element into.</td>
         </tr>
     </tbody>
 </table>
@@ -354,4 +354,4 @@ entry.getValue()
 
 - [Value types](../../concepts/value-types.md) — Type mapping overview
 - [RecordId](record-id.md) — Record identifiers
-- [SurrealQL data model](https://surrealdb.com/docs/reference/query-language/datamodel) — SurrealDB data types and structures
+- [SurrealQL data model](../../../query-language/language-primitives/data-types/index.md) — SurrealDB data types and structures

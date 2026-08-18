@@ -7,9 +7,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `REBUILD` statement
 
-The `REBUILD` statement is used to rebuild indexes in SurrealDB. It is usually used in relation to a specified [Index](define/indexes.md) to optimize performance. It is useful to rebuild indexes because sometimes [HNSW](define/indexes.md#hnsw-hierarchical-navigable-small-world) index performance can degrade due to frequent updates.
+The `REBUILD` statement is used to rebuild indexes in SurrealDB. It is usually used in relation to a specified [Index](define/indexes.md) to optimise performance. It is useful to rebuild indexes because sometimes [HNSW](define/indexes.md#hnsw-hierarchical-navigable-small-world) index performance can degrade due to frequent updates.
 
-Rebuilding the index will ensure the index is fully optimized.
+Rebuilding the index will ensure the index is fully optimised.
 
 > [!NOTE]
 > By default, `REBUILD INDEX` waits until the rebuild finishes before the statement returns (the same behaviour as `DEFINE INDEX` without `CONCURRENTLY`). Adding `CONCURRENTLY` on the rebuild statement will cause it to return immediately, after which progress can be monitored via [`INFO FOR INDEX`](info.md#index-information). Whether the index was originally created with `CONCURRENTLY` does not affect rebuilds. See the [`CONCURRENTLY` clause](define/indexes.md#using-concurrently-clause) on `DEFINE INDEX` for the same blocking vs non-blocking distinction when creating an index.

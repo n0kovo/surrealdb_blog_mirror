@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Formatters
 
-The [string::is_datetime](../functions/database-functions/string.md#stringisdatetime) and [time::format](../functions/database-functions/time.md#timeformat) functions in SurrealQL accept certain text formats for date/time formatting. The possible formats are listed below.
+The [string::is_datetime](../functions/database-functions/string.md#stringis_datetime) and [time::format](../functions/database-functions/time.md#timeformat) functions in SurrealQL accept certain text formats for date/time formatting. The possible formats are listed below.
 
 ### Date formatters
 

@@ -261,4 +261,4 @@ $geojson = $line->toGeoJson();
 ## See also
 
 - [Data types concept](../concepts/data-types.md) for the type mapping and guidance
-- [SurrealQL data model](https://surrealdb.com/docs/reference/query-language/datamodel) for the database type system
+- [SurrealQL data model](../../../query-language/language-primitives/data-types/index.md) for the database type system

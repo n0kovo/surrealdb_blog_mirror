@@ -39,7 +39,7 @@ DEFINE TABLE IF NOT EXISTS creator SCHEMAFULL
           AND $access = "creator_access";
 
 DEFINE FIELD IF NOT EXISTS email ON TABLE creator TYPE string
-    ASSERT string::is::email($value);
+    ASSERT string::is_email($value);
 DEFINE FIELD IF NOT EXISTS first_name ON TABLE creator TYPE string;
 DEFINE FIELD IF NOT EXISTS last_name ON TABLE creator TYPE string;
 DEFINE FIELD IF NOT EXISTS password ON TABLE creator TYPE string 
@@ -71,7 +71,7 @@ DEFINE TABLE IF NOT EXISTS member SCHEMAFULL
           AND $access = "creator_access");
         
 DEFINE FIELD IF NOT EXISTS email ON TABLE member TYPE string
-    ASSERT string::is::email($value);
+    ASSERT string::is_email($value);
 DEFINE FIELD IF NOT EXISTS first_name ON TABLE member TYPE string;
 DEFINE FIELD IF NOT EXISTS last_name ON TABLE member TYPE string;
 DEFINE FIELD IF NOT EXISTS password ON TABLE member TYPE string 
@@ -171,7 +171,7 @@ DEFINE TABLE invitation SCHEMAFULL
 DEFINE FIELD creator
   ON invitation TYPE record<creator> VALUE $auth READONLY;
 DEFINE FIELD email
-  ON invitation TYPE string ASSERT string::is::email($value);
+  ON invitation TYPE string ASSERT string::is_email($value);
 DEFINE FIELD invite_token ON invitation TYPE string;
 DEFINE FIELD resource ON invitation TYPE record<resource>;
 DEFINE FIELD expires_at ON invitation TYPE datetime;
@@ -200,7 +200,7 @@ LET $inv = CREATE invitation CONTENT {
     email: $email,
     invite_token: $invite_token,
     resource: $resource,
-    expires_at: time::now() + duration::from::days($days)
+    expires_at: time::now() + duration::from_days($days)
 };
 RETURN $inv;
 COMMIT TRANSACTION;

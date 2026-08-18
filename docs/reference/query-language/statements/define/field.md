@@ -202,7 +202,7 @@ As the output shows, the `.` enclosed inside backticks in the last field results
 
 ## Defining data types
 
-The `DEFINE FIELD` statement allows you to set the data type of a field. For a full list of supported data types, see [Data types](https://surrealdb.com/docs/reference/query-language/datamodel).
+The `DEFINE FIELD` statement allows you to set the data type of a field. For a full list of supported data types, see [Data types](../../language-primitives/data-types/index.md).
 
 When defining nested fields, if both the parent and the nested fields have types defined, those types must agree. Mismatching types are rejected to prevent impossible schema states.
 
@@ -1295,4 +1295,4 @@ CREATE user SET name = 'Ada';
 
 A field that is a record link (type `record`, `option<record>`, `array<record<person>>`, and so on) can be defined as a `REFERENCE`. If this clause is used, any linked to record will be able to define a field of its own of type `references` which will be aware of the incoming links.
 
-For more information, see [the page in the datamodel section on references](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/references).
+For more information, see [the page in the datamodel section on references](../../language-primitives/record-references.md).

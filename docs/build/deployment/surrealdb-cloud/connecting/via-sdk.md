@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Connect via SDK
 
-Once you have created a SurrealDB Cloud Instance, you can connect to it using any of the [available SDKs](https://surrealdb.com/docs/start). This allows you to interact with your SurrealDB Cloud Instance programmatically.
+Once you have created a SurrealDB Cloud Instance, you can connect to it using any of the [available SDKs](/docs#sdks). This allows you to interact with your SurrealDB Cloud Instance programmatically.
 
 ![Open in SDK](../../../../assets/img/image/cloud/open-in-sdk.png)
  
@@ -48,7 +48,7 @@ The `connect` method takes your SurrealDB Cloud connection string as an argument
 If you are using a system user option of the root authentication, you can also fill in the **username** and **password** details to sign in to your SurrealDB Cloud Instance.
 
 > [!NOTE]
->If you are using a non-root user, depending on the access method you have created, you will need to fill in the `access` details to sign in to your SurrealDB Cloud Instance. Please refer to the [documentation for your specific SDK](https://surrealdb.com/docs/start) for more information.
+>If you are using a non-root user, depending on the access method you have created, you will need to fill in the `access` details to sign in to your SurrealDB Cloud Instance. Please refer to the [documentation for your specific SDK](/docs#sdks) for more information.
 
 Below are examples of how you can connect to your Instance using the SurrealDB SDK:
 
@@ -224,4 +224,4 @@ $db->create("project", [
 
 ## Next steps
 
-Learn more about the [SurrealDB SDKs](https://surrealdb.com/docs/start) in the SurrealDB documentation.
+Learn more about the [SurrealDB SDKs](/docs#sdks) in the SurrealDB documentation.

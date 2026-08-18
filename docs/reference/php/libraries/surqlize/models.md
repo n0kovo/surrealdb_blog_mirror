@@ -37,11 +37,11 @@ Surqlize describes a model through attributes in the `Surqlize\Attributes` names
 | `#[Table('user')]` | class | Maps the model to a table |
 | `#[Id]` | property | Marks the record id property (a `RecordId`) |
 | `#[Cast(Address::class)]` | property | Hydrates a nested value as another model |
-| `#[Schema(UserSchema::class)]` | class | Links the model to a [schema](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/schema) definition |
-| `#[Search(analyzer: 'english')]` | property | Marks a [full-text search](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/search-vector-geometry) field |
-| `#[Vector(dimension: 3)]` | property | Marks a [vector](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/search-vector-geometry) field and its dimension |
-| `#[Geometry]` | property | Marks a [geometry](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/search-vector-geometry) field |
-| `#[Edge('has_address', in: User::class, out: Address::class)]` | class | Defines a graph [edge](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/edges-and-graph) model |
+| `#[Schema(UserSchema::class)]` | class | Links the model to a [schema](schema.md) definition |
+| `#[Search(analyzer: 'english')]` | property | Marks a [full-text search](search-vector-geometry.md) field |
+| `#[Vector(dimension: 3)]` | property | Marks a [vector](search-vector-geometry.md) field and its dimension |
+| `#[Geometry]` | property | Marks a [geometry](search-vector-geometry.md) field |
+| `#[Edge('has_address', in: User::class, out: Address::class)]` | class | Defines a graph [edge](edges-and-graph.md) model |
 
 The `#[Vector]` attribute also accepts a `distance` (default `cosine`), `#[Geometry]` accepts a `type` (default `geometry`), and `#[Search]` accepts an optional `analyzer`.
 
@@ -85,15 +85,15 @@ Extending `Model` provides static query entry points and instance data operation
 | `query()` | Start `SELECT *` for the table |
 | `selectValue()` | Start a `SELECT VALUE` query |
 | `fields()` | Resolve the model's typed field set |
-| `relate()` | Start a model-first [relation](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/edges-and-graph) builder |
-| `create()`, `createQuery()`, `upsert()`, `save()`, `delete()` | [Persist](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/mutations) a record |
+| `relate()` | Start a model-first [relation](edges-and-graph.md) builder |
+| `create()`, `createQuery()`, `upsert()`, `save()`, `delete()` | [Persist](mutations.md) a record |
 | `all()`, `find()`, `findOrFail()`, `count()`, `exists()`, `refresh()` | Read or reload records |
 | `toArray()` | Serialise the initialised properties to an array |
 
-These are covered in [Querying](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/querying) and [Mutations](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/mutations).
+These are covered in [Querying](querying.md) and [Mutations](mutations.md).
 
 ## Learn more
 
-- [Connections](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/connections) to register the executor models run through
-- [Querying](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/querying) for the typed query builder
-- [Schema](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/schema) to define tables and fields in the database
+- [Connections](connections.md) to register the executor models run through
+- [Querying](querying.md) for the typed query builder
+- [Schema](schema.md) to define tables and fields in the database

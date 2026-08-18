@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Data manipulation
 
-The Java SDK provides dedicated methods for common CRUD operations on records and tables. These methods offer a structured alternative to writing raw [SurrealQL](../../query-language/index.md), with built-in type safety through Java generics and POJO deserialization.
+The Java SDK provides dedicated methods for common CRUD operations on records and tables. These methods offer a structured alternative to writing raw [SurrealQL](../../query-language/index.md), with built-in type safety through Java generics and POJO deserialisation.
 
 ## API references
 
@@ -127,7 +127,7 @@ Use [`.insertRelation()`](../api/core/surreal.md#insert-relation) to insert grap
 
 The [`.update()`](../api/core/surreal.md#update) method modifies existing records. You specify the update strategy using the [`UpType`](../api/types/index.md#up-type) enum:
 
-| UpType | Behavior |
+| UpType | Behaviour |
 |---|---|
 | `UpType.CONTENT` | Replaces the entire record with the new content |
 | `UpType.MERGE` | Merges new fields into the existing record |

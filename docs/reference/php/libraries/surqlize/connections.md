@@ -59,5 +59,5 @@ $user = User::find('tobie', executor: $otherDb);
 ## Learn more
 
 - [PHP SDK v2](../../v2/index.md) for connecting the underlying client
-- [Querying](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/querying) for running queries through the executor
-- [Transactions](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/transactions) for batching queries atomically
+- [Querying](querying.md) for running queries through the executor
+- [Transactions](transactions.md) for batching queries atomically

@@ -113,4 +113,4 @@ $line = new GeometryLine(
 ## Learn more
 
 - [Data types API reference](../api/data-types.md) for every value class and its methods
-- [SurrealQL data model](https://surrealdb.com/docs/reference/query-language/datamodel) for the database type system
+- [SurrealQL data model](../../../query-language/language-primitives/data-types/index.md) for the database type system

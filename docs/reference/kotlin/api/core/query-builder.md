@@ -205,4 +205,4 @@ val result = client.query(a)
 
 - [SurrealClient API reference](surreal-client.md) for the CRUD methods
 - [Data manipulation](../../concepts/data-manipulation.md) for the concepts
-- [Serialization](../../concepts/serialization.md) for `awaitAs`
+- [Serialisation](../../concepts/serialization.md) for `awaitAs`

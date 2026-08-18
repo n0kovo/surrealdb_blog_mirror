@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The Swift SDK exposes its functionality through the `SurrealHTTPClient` and `SurrealWebSocketClient` types, which share the same API. This page lists the methods available on a connected client.
 
-## Initialization methods
+## Initialisation methods
 
 <table>
     <thead>

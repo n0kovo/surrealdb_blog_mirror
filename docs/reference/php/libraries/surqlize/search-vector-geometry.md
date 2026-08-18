@@ -89,6 +89,6 @@ The helper also provides `inside()`, `intersects()`, and `containsGeometry()` pr
 
 ## Learn more
 
-- [Models](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/models) for the `#[Search]`, `#[Vector]`, and `#[Geometry]` attributes
-- [Schema](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/schema) to define search analysers and vector indexes
-- [Querying](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/querying) for the query builder these helpers plug into
+- [Models](models.md) for the `#[Search]`, `#[Vector]`, and `#[Geometry]` attributes
+- [Schema](schema.md) to define search analysers and vector indexes
+- [Querying](querying.md) for the query builder these helpers plug into

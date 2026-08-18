@@ -22,7 +22,7 @@ Another option for connecting data is using [record links](../language-primitive
 - Graph relations allow you to store data alongside the relationship.
 - Graph relations have their own syntax that makes it easy to build and visualise edge queries.
 
-Graph relations offer built-in bidirectional querying and referential integrity. Record links also offer these two advantages if they are defined inside a [`DEFINE FIELD`](define/field.md) statement using the `REFERENCES` clause. For more information, see [the page on record references](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/references).
+Graph relations offer built-in bidirectional querying and referential integrity. Record links also offer these two advantages if they are defined inside a [`DEFINE FIELD`](define/field.md) statement using the `REFERENCES` clause. For more information, see [the page on record references](../language-primitives/record-references.md).
 
 ### Statement syntax
 

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Vector embeddings
 
-The quickest way to retrieve vector embeddings is to use the [fastembed crate](../../../build/integrations/embeddings-providers/fastembed.md#language-specific-examples), which does not require a user key or calling into an external service.
+The quickest way to retrieve vector embeddings is to use the [fastembed crate](../../../build/integrations/embeddings-providers/fastembed.md#language-specific-example), which does not require a user key or calling into an external service.
 
 The following blog posts include runnable examples using vector embeddings via the Rust SDK.
 

@@ -39,11 +39,11 @@ We are working on a migration tool to help you move your existing on-premises in
 
 SurrealDB Cloud supports the following programming languages:
 
-- [JavaScript/TypeScript](https://surrealdb.com/docs/reference/javascript/overview)
+- [JavaScript/TypeScript](../../../../reference/javascript/index.md)
 - [Python](../../../../reference/python/index.md)
 - [Go](../../../../reference/golang/index.md)
 - [Java](../../../../reference/java/index.md)
-- [Rust](https://surrealdb.com/docs/reference/rust/overview)
+- [Rust](../../../../reference/rust/index.md)
 - [PHP](../../../../reference/php/index.md)
 - [.NET](../../../../reference/dotnet/index.md)
 

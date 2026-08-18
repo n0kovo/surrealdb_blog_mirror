@@ -16,4 +16,4 @@ _Auto-generated index — 4 pages._
 - [Table](table.md)
   The Table type refers to a table by name in the SurrealDB Kotlin SDK.
 - [Value (JSON model)](value.md)
-  How the SurrealDB Kotlin SDK models values using kotlinx.serialization JSON types.
+  How the SurrealDB Kotlin SDK models values using kotlinx.serialisation JSON types.

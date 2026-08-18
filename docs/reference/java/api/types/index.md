@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Java types {#java-types}
 
-The SDK provides several supporting types for authentication, update operations, and relation modeling. These types are used as parameters to methods on the [`Surreal`](../core/surreal.md) class.
+The SDK provides several supporting types for authentication, update operations, and relation modelling. These types are used as parameters to methods on the [`Surreal`](../core/surreal.md) class.
 
 **Source:** [surrealdb.java](https://github.com/surrealdb/surrealdb.java)
 

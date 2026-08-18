@@ -111,7 +111,7 @@ SurrealQL allows you to describe data with specific data types. These data types
         </tr>
         <tr>
             <td scope="row" data-label="Type">
-                [`object`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/object)
+                [`object`](objects.md)
             </td>
             <td scope="row" data-label="Description">
                 Store formatted objects containing values of any supported type including nested objects or arrays.

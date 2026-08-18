@@ -127,4 +127,4 @@ client
 - [Query builder reference](../api/core/query-builder.md) for every builder method and expression helper
 - [Executing queries](executing-queries.md) for raw SurrealQL
 - [Value types](value-types.md) for `Table`, `RecordId`, and the JSON model
-- [Serialization](serialization.md) for decoding into your own types
+- [Serialisation](serialization.md) for decoding into your own types

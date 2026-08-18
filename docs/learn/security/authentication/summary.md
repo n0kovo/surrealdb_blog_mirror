@@ -43,21 +43,21 @@ SurrealDB enforces table and field permissions for record users. Those permissio
 SurrealDB internally uses JWTs to perform and manage authentication for both system and record users. It also supports accepting tokens issued by third party authentication providers in order to authenticate as a system user on any level as well as a record user for an application. This ensures that advanced authentication features not present in SurrealDB can be integrated through a third party provider. This integration is simple and reliable thanks to JSON Web Key Set (JWKS) support implemented by SurrealDB.
 - [Statement: DEFINE ACCESS ... TYPE JWT](../../../reference/query-language/statements/define/access/jwt.md)
 - [Statement: DEFINE ACCESS ... TYPE RECORD ... WITH JWT](../../../reference/query-language/statements/define/access/record.md#with-json-web-token)
-- [Tutorial: Integrate Auth0 as an authentication provider](https://surrealdb.com/docs/tutorials/integrate-auth0-as-authentication-provider)
-- [Tutorial: Integrate AWS Cognito as an authentication provider](https://surrealdb.com/docs/tutorials/integrate-aws-cognito-as-authentication-provider)
+- [Tutorial: Integrate Auth0 as an authentication provider](../../../explore/tutorials/tutorials/auth0-integration.md)
+- [Tutorial: Integrate AWS Cognito as an authentication provider](../../../explore/tutorials/tutorials/aws-cognito-integration.md)
 - [Security Best Practices: JSON Web Tokens](../best-practices/security-best-practices.md#json-web-tokens)
 - [Security Best Practices: Expiration](../best-practices/security-best-practices.md#expiration)
 
 ### Custom authentication
-SurrealDB allows record users to authenticate using a token that can be issued by a third party or SurrealDB itself after successful authentication. When verifying these tokens, custom logic can be implemented using SurrealQL to abort authentication while returning a custom error if certain conditions are not met. This logic can be used to implement various kinds of token auditing and revocation mechanisms. Additionally, tokens issued by SurrealDB can be customized to be signed with specific keys or using a specific algorithms so that other services can rely on the authentication provided by SurrealDB.
+SurrealDB allows record users to authenticate using a token that can be issued by a third party or SurrealDB itself after successful authentication. When verifying these tokens, custom logic can be implemented using SurrealQL to abort authentication while returning a custom error if certain conditions are not met. This logic can be used to implement various kinds of token auditing and revocation mechanisms. Additionally, tokens issued by SurrealDB can be customised to be signed with specific keys or using a specific algorithms so that other services can rely on the authentication provided by SurrealDB.
 - [Statement: DEFINE ACCESS ... TYPE RECORD ... AUTHENTICATE](../../../reference/query-language/statements/define/access/record.md#with-authenticate-clause)
 - [Statement: DEFINE ACCESS ... TYPE RECORD ... WITH ISSUER](../../../reference/query-language/statements/define/access/record.md#with-issuer)
 - [Security Best Practices: Expiration](../best-practices/security-best-practices.md#expiration)
 
 ### Parametrized queries
-SurrealDB is usually queried through [multiple SDKs](https://surrealdb.com/docs/reference/rest-api/sdks) and a powerful [RPC interface](https://surrealdb.com/docs/reference/rest-api/rpc). The default query method for both of those interfaces is designed to accept query logic and variables separately to prevent query injection attacks like SQL injection. This separation ensures that user-controlled inputs are not mixed with any business logic defined in SurrealQL.
-- [Interfaces: RPC (Query Method)](https://surrealdb.com/docs/reference/rest-api/rpc#query)
-- [Interfaces: Rust SDK (Query Method)](https://surrealdb.com/docs/reference/rust/setup#query)
+SurrealDB is usually queried through [multiple SDKs](/docs#sdks) and a powerful [RPC interface](../../../reference/rest-api/rpc-protocol.md). The default query method for both of those interfaces is designed to accept query logic and variables separately to prevent query injection attacks like SQL injection. This separation ensures that user-controlled inputs are not mixed with any business logic defined in SurrealQL.
+- [Interfaces: RPC (Query Method)](../../../reference/rest-api/rpc-protocol.md#query)
+- [Interfaces: Rust SDK (Query Method)](../../../reference/rust/methods/query.md)
 - [Security Best Practices: Query Safety](../best-practices/security-best-practices.md#query-safety)
 
 ### Sessions
@@ -66,7 +66,7 @@ SurrealDB accepts persistent connections through its RPC interface in the form o
 - [Statements: DEFINE USER (Duration)](../../../reference/query-language/statements/define/user.md#duration)
 - [Statements: DEFINE ACCESS (Duration)](../../../reference/query-language/statements/define/access/index.md#duration)
 - [Security Best Practices: Expiration](../best-practices/security-best-practices.md#expiration)
-- [Interfaces: RPC (Authenticate)](https://surrealdb.com/docs/reference/rest-api/rpc#authenticate)
+- [Interfaces: RPC (Authenticate)](../../../reference/rest-api/rpc-protocol.md#authenticate)
 
 ### Cryptographic functions
 SurrealDB provides a series of cryptographic functions that can be called from within SurrealQL in order to implement modern and robust security practices in your application. This includes state of the art password hashing algorithms such as Argon2, Bcrypt, Scrypt and PBKDF2. Traditional hashing algorithms like SHA-256 and SHA-512 are also provided for other applications such as integrity verification.

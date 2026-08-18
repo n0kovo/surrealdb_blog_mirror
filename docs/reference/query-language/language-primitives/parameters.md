@@ -543,7 +543,7 @@ SELECT
 
 ### $reference
 
-This parameter represents the reference in question inside an [`ON DELETE`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/references#specifying-deletion-behaviour) clause for record references.
+This parameter represents the reference in question inside an [`ON DELETE`](record-references.md#specifying-deletion-behaviour) clause for record references.
 
 ### $request
 

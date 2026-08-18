@@ -12,10 +12,10 @@ In SurrealQL, clauses can be used to alter the way a query is executed. They are
 - [`EXPLAIN`](explain.md): Explain the query plan.
 - [`FETCH`](fetch.md): Fetch all the fields of related records.
 - [`FROM`](from.md): Specify the table(s) or other target(s) to query from.
-- [`GROUP`](https://surrealdb.com/docs/reference/query-language/clauses/group-by): Group the results by a set of fields.
+- [`GROUP`](group.md): Group the results by a set of fields.
 - [`LIMIT`](limit.md): Limit the number of results.
 - [`OMIT`](omit.md): Omit related records.
-- [`ORDER`](https://surrealdb.com/docs/reference/query-language/clauses/order-by): Specify the sort order of the results.
+- [`ORDER`](order.md): Specify the sort order of the results.
 - [`SPLIT`](split.md): Split the results into a set of subqueries.
 - [`START`](start.md): Return the results of a query starting from a certain point.
 - [`WHERE`](where.md): Specify a condition that acts as a filter.

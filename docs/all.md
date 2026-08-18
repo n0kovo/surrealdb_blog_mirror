@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1063 pages_  
+_1066 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -926,6 +926,8 @@ _1063 pages_
   The SurrealDB SDK for Java enables simple and advanced querying of a remote or embedded database.
 - [Installation](reference/java/installation.md)
   The SurrealDB SDK for Java is available on Maven Central and can be installed using Gradle or Maven.
+- [Core classes](reference/javascript/api/core/index.md)
+  The connection, session, transaction, and query execution classes that make up the SDK's core surface.
 - [SurrealApi](reference/javascript/api/core/surreal-api.md)
   The SurrealApi class provides methods for invoking user-defined API endpoints in SurrealDB.
 - [SurrealQueryable](reference/javascript/api/core/surreal-queryable.md)
@@ -938,12 +940,16 @@ _1063 pages_
   The Surreal class is the main entry point for connecting to and interacting with a SurrealDB instance.
 - [Errors](reference/javascript/api/errors/index.md)
   Error classes for handling different types of failures in the SDK.
+- [API reference](reference/javascript/api/index.md)
+  Complete reference for the JavaScript SDK's classes, query builders, data types, and errors.
 - [ApiPromise](reference/javascript/api/queries/api-promise.md)
   ApiPromise provides methods for executing user-defined API calls.
 - [CreatePromise](reference/javascript/api/queries/create-promise.md)
   CreatePromise provides chainable methods for configuring CREATE operations.
 - [DeletePromise](reference/javascript/api/queries/delete-promise.md)
   DeletePromise provides chainable methods for configuring DELETE operations.
+- [Query builders](reference/javascript/api/queries/index.md)
+  The chainable builder classes returned by the SDK's query methods.
 - [InsertPromise](reference/javascript/api/queries/insert-promise.md)
   InsertPromise provides chainable methods for configuring INSERT operations.
 - [LivePromise](reference/javascript/api/queries/live-promise.md)
@@ -1063,7 +1069,7 @@ _1063 pages_
 - [Table](reference/kotlin/api/values/table.md)
   The Table type refers to a table by name in the SurrealDB Kotlin SDK.
 - [Value (JSON model)](reference/kotlin/api/values/value.md)
-  How the SurrealDB Kotlin SDK models values using kotlinx.serialization JSON types.
+  How the SurrealDB Kotlin SDK models values using kotlinx.serialisation JSON types.
 - [Authentication](reference/kotlin/concepts/authentication.md)
   Sign up, sign in, and manage authentication tokens with the SurrealDB Kotlin SDK.
 - [Connecting to SurrealDB](reference/kotlin/concepts/connecting-to-surrealdb.md)
@@ -1078,8 +1084,8 @@ _1063 pages_
   Subscribe to real-time changes with live queries in the SurrealDB Kotlin SDK.
 - [Multiple sessions](reference/kotlin/concepts/multiple-sessions.md)
   Isolate authentication and state across concurrent sessions with the SurrealDB Kotlin SDK.
-- [Serialization](reference/kotlin/concepts/serialization.md)
-  Encode and decode records using kotlinx.serialization with the SurrealDB Kotlin SDK.
+- [Serialisation](reference/kotlin/concepts/serialization.md)
+  Encode and decode records using kotlinx.serialisation with the SurrealDB Kotlin SDK.
 - [Transactions](reference/kotlin/concepts/transactions.md)
   Group operations into atomic transactions with the SurrealDB Kotlin SDK.
 - [Value types](reference/kotlin/concepts/value-types.md)
@@ -1207,7 +1213,7 @@ _1063 pages_
 - [Authentication](reference/php/v1/concepts/authentication.md)
   Learn how to authenticate users and secure the database with the SurrealDB PHP SDK.
 - [Connecting to SurrealDB](reference/php/v1/concepts/connecting.md)
-  Initialize the SurrealDB PHP SDK, connect to an instance, and select a namespace and database.
+  Initialise the SurrealDB PHP SDK, connect to an instance, and select a namespace and database.
 - [Data types](reference/php/v1/concepts/data-types.md)
   The SurrealDB SDK for PHP enables simple and advanced querying of a remote database.
 - [Executing queries](reference/php/v1/concepts/executing-queries.md)
@@ -1593,7 +1599,7 @@ _1063 pages_
 - [DEFINE FUNCTION](reference/query-language/statements/define/function.md)
   The DEFINE FUNCTION statement allows you to define custom functions that can be reused throughout a database.
 - [DEFINE INDEX](reference/query-language/statements/define/indexes.md)
-  SurrealDB uses indexes to help optimize query performance. An index can consist of one or more fields in a table and can enforce a uniqueness constraint — including HNSW and DISKANN vector indexes.
+  SurrealDB uses indexes to help optimise query performance. An index can consist of one or more fields in a table and can enforce a uniqueness constraint — including HNSW and DISKANN vector indexes.
 - [DEFINE MODULE](reference/query-language/statements/define/module.md)
   A DEFINE MODULE statement can be used to define a module through which Surrealism extension functions can be called.
 - [DEFINE NAMESPACE](reference/query-language/statements/define/namespace.md)
@@ -1669,9 +1675,9 @@ _1063 pages_
 - [Concurrency](reference/rust/concepts/concurrency.md)
   Multiple threads or asynchronous tasks can be used to speed up queries to a SurrealDB database
 - [Fetching linked records](reference/rust/concepts/fetch.md)
-  All the fields of a SurrealDB linked record can be fetched and deserialized into a Rust type
+  All the fields of a SurrealDB linked record can be fetched and deserialised into a Rust type
 - [Flexible typing](reference/rust/concepts/flexible-typing.md)
-  The Rust SDK for SurrealDB offers methods for working with types without deserialization
+  The Rust SDK for SurrealDB offers methods for working with types without deserialisation
 - [SDK Concepts](reference/rust/concepts/index.md)
   The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
 - [Live queries](reference/rust/concepts/live.md)

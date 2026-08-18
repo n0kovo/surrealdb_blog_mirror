@@ -429,7 +429,7 @@ RETURN {1, 2, 3}.find(4);
 -- NONE
 ```
 
-The `set::find` function is most useful when a [closure](../../language-primitives/data-types/closures.md) is passed in, which allows for customized searching.
+The `set::find` function is most useful when a [closure](../../language-primitives/data-types/closures.md) is passed in, which allows for customised searching.
 
 ```surql
 /**

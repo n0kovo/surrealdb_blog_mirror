@@ -27,7 +27,7 @@ What Spectron is built to do, what it is not, and how retrieval, traces, and tim
 
 - **[What is Spectron?](https://surrealdb.com/docs/spectron/welcome/what-is-spectron)** – product positioning in one pass.
 - **[Why agentic memory?](https://surrealdb.com/docs/spectron/welcome/why-agentic-memory)** – where naive context and pure-vector shortcuts fail.
-- **[The accuracy promise](https://surrealdb.com/docs/spectron/accuracy-promise)** – provenance, reconciliation, and auditability.
+- **[The accuracy promise](https://surrealdb.com/docs/spectron/welcome/accuracy-promise)** – provenance, reconciliation, and auditability.
 - **[How it works](https://surrealdb.com/docs/spectron/welcome/how-it-works)** – end-to-end path from a turn to stored, retrievable state.
 
 **Quickstarts**

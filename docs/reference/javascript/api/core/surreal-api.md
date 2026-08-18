@@ -574,7 +574,7 @@ await db.api().get('/posts');
 
 ### 3. Use prefixes for namespacing
 
-Use path prefixes to organize related endpoints:
+Use path prefixes to organise related endpoints:
 
 ```ts
 const usersApi = db.api("/users");

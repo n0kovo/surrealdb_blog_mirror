@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Duration {#duration}
 
-SurrealDB [`duration`](../../../query-language/language-primitives/data-types/datetimes.md#durations-and-datetimes) values map to Java's `java.time.Duration`. The SDK handles conversion automatically when deserializing query results into [`Value`](value.md) objects or POJOs.
+SurrealDB [`duration`](../../../query-language/language-primitives/data-types/datetimes.md#durations-and-datetimes) values map to Java's `java.time.Duration`. The SDK handles conversion automatically when deserialising query results into [`Value`](value.md) objects or POJOs.
 
 ---
 

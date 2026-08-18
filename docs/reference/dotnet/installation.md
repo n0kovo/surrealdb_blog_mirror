@@ -43,9 +43,9 @@ Here is an example within Visual Studio:
 
 ![Visual Studio NuGet Package Manager](../../assets/img/dotnet-nuget-search.png)
 
-## Initialize the SDK
+## Initialise the SDK
 
-The SDK's initialization may vary depending on the context of your project.
+The SDK's initialisation may vary depending on the context of your project.
 
-The de facto initialization method is to create and [consume a SurrealDbClient created manually](core/create-a-new-connection.md).
+The de facto initialisation method is to create and [consume a SurrealDbClient created manually](core/create-a-new-connection.md).
 Most .NET projects provide a way to configure services using [Dependency Injection](core/dependency-injection.md), which is the recommended way to use the SDK in your application.

@@ -32,7 +32,7 @@ cargo add tokio --features macros,rt-multi-thread
 
 ## Connect to SurrealDB
 
-Open `src/main.rs` and replace everything in there with the following code to try out some basic operations using the SurrealDB SDK with an embedded database. Look at [integrations to connect to a database](https://surrealdb.com/docs/reference/rust/overview).
+Open `src/main.rs` and replace everything in there with the following code to try out some basic operations using the SurrealDB SDK with an embedded database. Look at [integrations to connect to a database](index.md).
 
 ```rust
 use serde::{Deserialize, Serialize};

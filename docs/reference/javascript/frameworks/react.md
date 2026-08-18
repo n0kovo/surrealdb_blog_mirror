@@ -14,7 +14,7 @@ This guide walks you through setting up a connection provider and executing quer
 ## Prerequisites
 
 - A basic understanding of React
-- A running [SurrealDB instance](https://surrealdb.com/docs/start)
+- A running [SurrealDB instance](../../../running/overview.md)
 - The [JavaScript SDK installed](../installation.md) in your project
 
 ## Installing dependencies
@@ -43,7 +43,7 @@ Follow the [installation guide](../installation.md) for more information on how 
 
 ## Creating the connection provider
 
-We recommend initializing the SDK in a [Context Provider](https://react.dev/learn/passing-data-deeply-with-context) so the `Surreal` client is accessible anywhere in your component tree. The provider below manages the connection lifecycle, tracks connection status via TanStack Query, and cleans up on unmount.
+We recommend initialising the SDK in a [Context Provider](https://react.dev/learn/passing-data-deeply-with-context) so the `Surreal` client is accessible anywhere in your component tree. The provider below manages the connection lifecycle, tracks connection status via TanStack Query, and cleans up on unmount.
 
 The `params` prop accepts the same options as [`.connect()`](../concepts/connecting-to-surrealdb.md#connection-options), including `namespace`, `database`, and [`authentication`](../concepts/authentication.md#providing-credentials-on-connect).
 
@@ -222,8 +222,8 @@ export function useAuth() {
 
 ## Learn more
 
-- [Connecting to SurrealDB](../concepts/connecting-to-surrealdb.md) for connection protocols and reconnection behavior
+- [Connecting to SurrealDB](../concepts/connecting-to-surrealdb.md) for connection protocols and reconnection behaviour
 - [Authentication](../concepts/authentication.md) for signing in, signing up, and token management
 - [Executing queries](../concepts/executing-queries.md) for query builders and raw SurrealQL
 - [Live queries](../concepts/live-queries.md) for real-time subscriptions
-- [JavaScript SDK API reference](https://surrealdb.com/docs/reference/javascript/api) for the complete method reference
+- [JavaScript SDK API reference](../api/index.md) for the complete method reference

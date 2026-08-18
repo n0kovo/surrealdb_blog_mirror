@@ -11,7 +11,7 @@ This page details some MongoDB data types and their SurrealQL equivalents, follo
 
 ## Data types
 
-The following chart shows MongoDB data types along with the equivalent or near-equivalent [SurrealQL data type](https://surrealdb.com/docs/reference/query-language/datamodel) for each.
+The following chart shows MongoDB data types along with the equivalent or near-equivalent [SurrealQL data type](../../../reference/query-language/language-primitives/data-types/index.md) for each.
 
 |     MongoDB Data Type     |        BSON Type        |                                          JSON Extended Format v2                                           | SurrealDB Mapping |
 | ------------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------- |

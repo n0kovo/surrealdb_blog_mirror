@@ -1,11 +1,11 @@
 ---
 position: 8
-title: Serialization
-description: Encode and decode records using kotlinx.serialization with the SurrealDB Kotlin SDK.
+title: Serialisation
+description: Encode and decode records using kotlinx.serialisation with the SurrealDB Kotlin SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/kotlin/concepts/serialization.mdx"
 ---
 
-# Serialization
+# Serialisation
 
 The Kotlin SDK uses [`kotlinx.serialization`](https://github.com/Kotlin/kotlinx.serialization) as its data model. Payloads are sent and received as JSON, so you work with [`JsonElement`](value-types.md) values directly, or decode them into your own [`@Serializable`](https://kotlinlang.org/api/kotlinx.serialization/kotlinx-serialization-core/kotlinx.serialization/-serializable/) types.
 
@@ -76,4 +76,4 @@ val client = SurrealClient(
 - [Value types](value-types.md) for `Table`, `RecordId`, and the JSON model
 - [Executing queries](executing-queries.md) for `queryAs`
 - [Query builder reference](../api/core/query-builder.md) for `awaitAs`
-- [kotlinx.serialization](https://kotlinlang.org/docs/serialization.html) for the underlying library
+- [kotlinx.serialisation](https://kotlinlang.org/docs/serialization.html) for the underlying library

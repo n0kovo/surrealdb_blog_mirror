@@ -11,7 +11,7 @@ This page details some common PostgreSQL patterns and their SurrealQL equivalent
 
 ## Data types
 
-The following chart shows PostgreSQL data types along with the equivalent or near-equivalent [SurrealQL data type](https://surrealdb.com/docs/reference/query-language/datamodel) for each.
+The following chart shows PostgreSQL data types along with the equivalent or near-equivalent [SurrealQL data type](../../../reference/query-language/language-primitives/data-types/index.md) for each.
 
 | PostgreSQL Data Type | Wire Protocol Type |            SQL Representation            | SurrealDB Mapping |                            Notes                             |
 | -------------------- | ------------------ | ---------------------------------------- | ----------------- | ------------------------------------------------------------ |

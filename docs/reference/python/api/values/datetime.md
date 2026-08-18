@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `Datetime` {#datetime}
 
-A `Datetime` wraps an ISO 8601 datetime string for use with SurrealDB's `datetime` type. It preserves the original string representation through serialization and deserialization.
+A `Datetime` wraps an ISO 8601 datetime string for use with SurrealDB's `datetime` type. It preserves the original string representation through serialisation and deserialisation.
 
 ```python title="Import"
 from surrealdb import Datetime

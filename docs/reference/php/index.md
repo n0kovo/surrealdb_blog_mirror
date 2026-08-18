@@ -23,7 +23,7 @@ The SDK ships in two lines. Version 1.x is the current stable release and uses d
 
 ## Ecosystem
 
-- **[Surqlize (ORM)](https://surrealdb.com/docs/reference/php/ecosystem/surqlize)** — An object-relational mapper with attribute-driven models, a typed query builder, and graph relations.
+- **[Surqlize (ORM)](libraries/surqlize/index.md)** — An object-relational mapper with attribute-driven models, a typed query builder, and graph relations.
 
 ## Frameworks
 

@@ -107,7 +107,7 @@ Every labelled family carries `outcome` plus the resolved tenant context (`names
     <tbody>
         <tr>
             <td scope="row" data-label="Key">`outcome`</td>
-            <td scope="row" data-label="Values">`success`, `error`, `cancelled`</td>
+            <td scope="row" data-label="Values">`success`, `error`, `canceled`</td>
         </tr>
         <tr>
             <td scope="row" data-label="Key">`statement_type`</td>

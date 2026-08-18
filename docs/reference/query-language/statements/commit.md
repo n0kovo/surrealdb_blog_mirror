@@ -75,7 +75,7 @@ The following two options can be used at any point if a transaction must be canc
 * [CANCEL](cancel.md) to manually cancel the transaction.
 * [THROW](throw.md) to cancel a transaction with an optional error message. THROW is the only way to cancel a transaction based on a condition, such as inside an [IF..ELSE](if-else.md) block.
 
-In addition, a `RETURN` statement can be used to return early from a successful transaction. This is often used in order to return a customized output.
+In addition, a `RETURN` statement can be used to return early from a successful transaction. This is often used in order to return a customised output.
 
 ```surql
 /**[test]

@@ -326,7 +326,7 @@ try {
 }
 ```
 
-### Performance optimization
+### Performance optimisation
 
 ```ts
 // Don't wait for deleted data if not needed

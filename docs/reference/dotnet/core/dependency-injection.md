@@ -77,7 +77,7 @@ app.Run();
 
 > [!NOTE]
 > In this example, we use a [Connection String](connection-strings.md) to configure services.
-> This is the most convenient way to initialize the `SurrealDbClient` in your application.
+> This is the most convenient way to initialise the `SurrealDbClient` in your application.
 > You can always choose to construct a Connection String manually via a `SurrealDbOptionsBuilder` and pass it to the `AddSurreal()` method.
 
 ## Consume the SurrealDB client/session

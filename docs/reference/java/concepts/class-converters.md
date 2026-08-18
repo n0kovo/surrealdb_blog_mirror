@@ -13,9 +13,9 @@ The Java SDK includes a built-in class conversion system that automatically maps
 
 Class conversion happens in two directions:
 
-- **Serialization** — When you pass a Java object to a method like [`.create()`](../api/core/surreal.md#create), [`.insert()`](../api/core/surreal.md#insert), or [`.update()`](../api/core/surreal.md#update), the SDK reads the object's public fields and converts them into a SurrealDB object. Field names become object keys, and field values are converted to the corresponding SurrealDB types.
+- **Serialisation** — When you pass a Java object to a method like [`.create()`](../api/core/surreal.md#create), [`.insert()`](../api/core/surreal.md#insert), or [`.update()`](../api/core/surreal.md#update), the SDK reads the object's public fields and converts them into a SurrealDB object. Field names become object keys, and field values are converted to the corresponding SurrealDB types.
 
-- **Deserialization** — When you call a typed method like `db.select(Person.class, ...)` or use `Value.get(Person.class)`, the SDK creates a new instance of your class and populates its public fields from the SurrealDB object, matching by field name.
+- **Deserialisation** — When you call a typed method like `db.select(Person.class, ...)` or use `Value.get(Person.class)`, the SDK creates a new instance of your class and populates its public fields from the SurrealDB object, matching by field name.
 
 ```java
 public class Person {
@@ -42,7 +42,7 @@ Optional<Person> result = db.select(Person.class,
 
 For a Java class to work with the converter, it must satisfy two rules:
 
-1. **Public no-argument constructor** — The SDK needs to instantiate the class during deserialization.
+1. **Public no-argument constructor** — The SDK needs to instantiate the class during deserialisation.
 2. **Public fields** — Fields are matched by name to SurrealDB object keys. Private fields, getters, and setters are not used by the converter.
 
 ```java
@@ -132,9 +132,9 @@ The resulting SurrealDB record contains a nested object:
 
 ## Temporal types
 
-SurrealDB [`datetime`](../../query-language/language-primitives/data-types/datetimes.md) values represent an absolute point in time. When serializing Java objects, the SDK accepts `Instant`, `ZonedDateTime`, `OffsetDateTime`, `LocalDateTime`, and `java.util.Date` fields. When deserializing SurrealDB `datetime` values back into POJOs, the same types are supported; `ZonedDateTime` is the usual choice when you need the stored instant with its offset.
+SurrealDB [`datetime`](../../query-language/language-primitives/data-types/datetimes.md) values represent an absolute point in time. When serialising Java objects, the SDK accepts `Instant`, `ZonedDateTime`, `OffsetDateTime`, `LocalDateTime`, and `java.util.Date` fields. When deserialising SurrealDB `datetime` values back into POJOs, the same types are supported; `ZonedDateTime` is the usual choice when you need the stored instant with its offset.
 
-> Note: `LocalDateTime` does not contain a time zone or offset. The SDK interprets `LocalDateTime` values as UTC during serialization. If the value represents a user's local wall-clock time in a specific region, prefer `ZonedDateTime` or `OffsetDateTime` so the intended instant is explicit.
+> Note: `LocalDateTime` does not contain a time zone or offset. The SDK interprets `LocalDateTime` values as UTC during serialisation. If the value represents a user's local wall-clock time in a specific region, prefer `ZonedDateTime` or `OffsetDateTime` so the intended instant is explicit.
 
 [`duration`](../../query-language/language-primitives/data-types/datetimes.md#durations-and-datetimes) fields map to `java.time.Duration` in your POJOs.
 
@@ -162,7 +162,7 @@ task.timeout = Duration.ofMinutes(30);
 db.create(new RecordId("task", "build"), task);
 ```
 
-Use `ZonedDateTime` fields when you want the full stored instant (recommended for most read paths). `Instant`, `OffsetDateTime`, and `LocalDateTime` also work on deserialization:
+Use `ZonedDateTime` fields when you want the full stored instant (recommended for most read paths). `Instant`, `OffsetDateTime`, and `LocalDateTime` also work on deserialisation:
 
 ```java
 
@@ -351,4 +351,4 @@ See [Error handling](error-handling.md) for more on the exception hierarchy.
 - [Value API reference](../api/values/value.md) for the `Value.get(Class)` method
 - [Response API reference](../api/core/response.md) for typed response extraction
 - [Java Types reference](../api/types/index.md) for `Relation`, `InsertRelation`, and other SDK types
-- [Error handling](error-handling.md) for serialization error details
+- [Error handling](error-handling.md) for serialisation error details

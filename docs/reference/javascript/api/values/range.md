@@ -163,7 +163,7 @@ console.log(halfOpen.toString()); // '1..10'
 
 ### `.toJSON()` {#tojson}
 
-Serialize for JSON.
+Serialise for JSON.
 
 ```ts title="Syntax"
 range.toJSON()

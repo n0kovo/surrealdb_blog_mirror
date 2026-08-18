@@ -1,33 +1,30 @@
 ---
-title: Queries
-generated: stub
+position: 1
+title: Query builders
+description: "The chainable builder classes returned by the SDK's query methods."
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/queries/index.mdx"
 ---
 
-# Queries
+# Query builders
 
-_Auto-generated index — 11 pages._
+Query methods on a session or transaction return a builder rather than a plain promise. Each builder exposes chainable methods for configuring the operation, and is awaited to execute it.
 
-## Pages
+## Builders
 
-- [ApiPromise](api-promise.md)
-  ApiPromise provides methods for executing user-defined API calls.
-- [CreatePromise](create-promise.md)
-  CreatePromise provides chainable methods for configuring CREATE operations.
-- [DeletePromise](delete-promise.md)
-  DeletePromise provides chainable methods for configuring DELETE operations.
-- [InsertPromise](insert-promise.md)
-  InsertPromise provides chainable methods for configuring INSERT operations.
-- [LivePromise](live-promise.md)
-  LivePromise variants for managing real-time live query subscriptions.
-- [Query](query.md)
-  Query class for executing raw SurrealQL with streaming and batch processing support.
-- [RelatePromise](relate-promise.md)
-  RelatePromise provides chainable methods for configuring RELATE operations for graph relationships.
-- [RunPromise](run-promise.md)
-  RunPromise provides methods for executing SurrealDB functions and SurrealML models.
-- [SelectPromise](select-promise.md)
-  SelectPromise provides chainable methods for configuring SELECT queries.
-- [UpdatePromise](update-promise.md)
-  UpdatePromise provides chainable methods for configuring UPDATE operations.
-- [UpsertPromise](upsert-promise.md)
-  UpsertPromise provides chainable methods for configuring UPSERT operations (insert or replace).
+- [**SelectPromise**](select-promise.md) - Configures `SELECT` queries.
+- [**CreatePromise**](create-promise.md) - Configures `CREATE` operations.
+- [**UpdatePromise**](update-promise.md) - Configures `UPDATE` operations.
+- [**UpsertPromise**](upsert-promise.md) - Configures `UPSERT` operations (insert or replace).
+- [**InsertPromise**](insert-promise.md) - Configures `INSERT` operations.
+- [**DeletePromise**](delete-promise.md) - Configures `DELETE` operations.
+- [**RelatePromise**](relate-promise.md) - Configures `RELATE` operations for graph relationships.
+- [**Query**](query.md) - Executes raw SurrealQL, with streaming and batch processing support.
+- [**LivePromise**](live-promise.md) - Manages real-time live query subscriptions.
+- [**RunPromise**](run-promise.md) - Executes SurrealDB functions and SurrealML models.
+- [**ApiPromise**](api-promise.md) - Executes user-defined API calls.
+
+## See also
+
+- [Core classes](../core/index.md) - The classes these builders are created from
+- [Executing queries](../../concepts/executing-queries.md) - Conceptual overview with examples
+- [SurrealQL statements](../../../query-language/statements/overview.md) - The query language reference

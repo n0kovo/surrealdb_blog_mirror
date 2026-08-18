@@ -25,7 +25,7 @@ This guide will cover the most general case, in which SurrealDB is the only back
 
 This guide assumes the following:
 
-- You have a [fresh instance of SurrealDB running.](https://surrealdb.com/docs/start)
+- You have a [fresh instance of SurrealDB running.](../../../running/overview.md)
 
 - You can [use a local Docker container](../../../running/docker.md) without volumes for the purposes of this guide.
 
@@ -170,7 +170,7 @@ DEFINE FIELD picture ON user TYPE string;
 
 #### Defining a token verification method in SurrealDB
 
-Next, we should configure SurrealDB so that it can verify tokens sent to it through the [HTTP REST API](../../../reference/rest-api/http-protocol.md) via the “Authorization” header or through any of the [SDKs](https://surrealdb.com/docs/start) via the “Authenticate” methods.
+Next, we should configure SurrealDB so that it can verify tokens sent to it through the [HTTP REST API](../../../reference/rest-api/http-protocol.md) via the “Authorization” header or through any of the [SDKs](/docs#sdks) via the “Authenticate” methods.
 
 To do that, we will leverage the JWKS support in SurrealDB in order to define a token verification mechanism pointing to a JWKS object served by Auth0. This JWKS object can be found in a [dedicated endpoint for your Auth0 domain](https://auth0.com/docs/secure/tokens/json-web-tokens/locate-json-web-key-sets). Pointing to a JWKS file ensures that token verification will work even after [rotating the signing keys](https://auth0.com/docs/get-started/tenant-settings/signing-keys/rotate-signing-keys) and that tokens signed with revoked keys will no longer be accepted by SurrealDB. To understand how revocation is handled by SurrealDB, read the [JSON Web Key Set documentation](../../../reference/query-language/statements/define/access/jwt.md#json-web-key-set-jwks) under `DEFINE ACCESS ... TYPE JWT`.
 
@@ -224,7 +224,7 @@ It is important to not that [validating the audience of the token is a requireme
 
 #### Defining a token verification method in SurrealDB
 
-Next, we should configure SurrealDB so that it can verify tokens sent to it through the [HTTP REST API](../../../reference/rest-api/http-protocol.md) via the “Authorization” header or through any of the [SDKs](https://surrealdb.com/docs/start) via the “Authenticate” methods.
+Next, we should configure SurrealDB so that it can verify tokens sent to it through the [HTTP REST API](../../../reference/rest-api/http-protocol.md) via the “Authorization” header or through any of the [SDKs](/docs#sdks) via the “Authenticate” methods.
 
 To do that, we will leverage the JWKS support in SurrealDB in order to define a token verification mechanism pointing to a JWKS object served by Auth0. This JWKS object can be found in a [dedicated endpoint for your Auth0 domain](https://auth0.com/docs/secure/tokens/json-web-tokens/locate-json-web-key-sets).
 

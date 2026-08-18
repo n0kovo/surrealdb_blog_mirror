@@ -43,7 +43,7 @@ Transactions require a WebSocket connection (`ws://` or `wss://`) and SurrealDB 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Method"><a href="/docs/reference/golang/api/core/transaction#isclosed">`tx.IsClosed()`</a></td>
-			<td scope="row" data-label="Description">Returns whether the transaction has been committed or canceled</td>
+			<td scope="row" data-label="Description">Returns whether the transaction has been committed or cancelled</td>
 		</tr>
 	</tbody>
 </table>

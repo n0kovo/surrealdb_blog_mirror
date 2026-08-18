@@ -31,7 +31,7 @@ This page covers how to identify and handle each error type, and which errors ar
 		</tr>
 		<tr>
 			<td scope="row" data-label="Error type"><a href="/docs/reference/golang/api/errors#rpcerror">`RPCError`</a></td>
-			<td scope="row" data-label="Description">RPC error (deprecated in favor of ServerError on v3)</td>
+			<td scope="row" data-label="Description">RPC error (deprecated in favour of ServerError on v3)</td>
 		</tr>
 	</tbody>
 </table>
@@ -91,7 +91,7 @@ The SDK defines several [sentinel errors](../api/errors/index.md#sentinel-errors
 | `constants.ErrSessionsNotSupported` | Sessions require a WebSocket connection |
 | `constants.ErrTransactionsNotSupported` | Interactive transactions require a WebSocket connection |
 | `constants.ErrSessionClosed` | The session has been detached |
-| `constants.ErrTransactionClosed` | The transaction has been committed or canceled |
+| `constants.ErrTransactionClosed` | The transaction has been committed or cancelled |
 
 Check for these using `errors.Is`:
 

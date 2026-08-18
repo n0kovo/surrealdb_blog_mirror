@@ -78,4 +78,4 @@ $fake->assertQuerySent('SELECT * FROM user');
 
 - [Container and facades](container-and-facades.md) for the facade testing helpers
 - [Queries and transactions](queries-and-transactions.md) for the queries under test
-- [Surqlize connections](https://surrealdb.com/docs/reference/php/ecosystem/surqlize/connections) for executor injection
+- [Surqlize connections](../../libraries/surqlize/connections.md) for executor injection

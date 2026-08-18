@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Value types
 
-The Java SDK maps SurrealDB data types to native Java types where possible and provides custom classes for types that have no direct Java equivalent. You can work with results as untyped [`Value`](../api/values/value.md) objects or pass a `Class<T>` to SDK methods for automatic deserialization into POJOs.
+The Java SDK maps SurrealDB data types to native Java types where possible and provides custom classes for types that have no direct Java equivalent. You can work with results as untyped [`Value`](../api/values/value.md) objects or pass a `Class<T>` to SDK methods for automatic deserialisation into POJOs.
 
 ## API references
 
@@ -107,7 +107,7 @@ Person person = value.get(Person.class);
 
 ## Using POJOs for type-safe access
 
-Instead of working with raw [`Value`](../api/values/value.md) objects, you can pass a `Class<T>` to most SDK methods to get automatic deserialization. POJOs need a public no-argument constructor, and their fields map directly to SurrealDB object keys.
+Instead of working with raw [`Value`](../api/values/value.md) objects, you can pass a `Class<T>` to most SDK methods to get automatic deserialisation. POJOs need a public no-argument constructor, and their fields map directly to SurrealDB object keys.
 
 ```java
 public class Person {
@@ -173,4 +173,4 @@ Iterator<Value> safeIterator = items.synchronizedIterator();
 - [Table API reference](../api/values/table.md) for table name values
 - [Range API reference](../api/values/range.md) for range values
 - [Data manipulation](data-manipulation.md) for using types with CRUD operations
-- [SurrealQL data model](https://surrealdb.com/docs/reference/query-language/datamodel) for the full list of SurrealDB data types
+- [SurrealQL data model](../../query-language/language-primitives/data-types/index.md) for the full list of SurrealDB data types

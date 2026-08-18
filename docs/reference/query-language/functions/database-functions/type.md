@@ -218,7 +218,7 @@ RETURN type::array(1..=3);
 -- [1, 2, 3]
 ```
 
-This is the equivalent of using [`<array>`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#array) to cast a value to an array.
+This is the equivalent of using [`<array>`](../../language-primitives/casting.md#array) to cast a value to an array.
 
 ## `type::bool`
 
@@ -243,7 +243,7 @@ RETURN type::bool("true");
 -- true
 ```
 
-This is the equivalent of using [`<bool>`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#bool) to cast a value to a boolean.
+This is the equivalent of using [`<bool>`](../../language-primitives/casting.md#bool) to cast a value to a boolean.
 
   
 
@@ -270,7 +270,7 @@ RETURN type::bytes("A few bytes");
 -- b"4120666577206279746573"
 ```
 
-This is the equivalent of using [`<bytes>`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting) to cast a value to bytes.
+This is the equivalent of using [`<bytes>`](../../language-primitives/casting.md) to cast a value to bytes.
 
   
 
@@ -296,7 +296,7 @@ RETURN type::datetime("2022-04-27T18:12:27+00:00");
 -- d'2022-04-27T18:12:27Z'
 ```
 
-This is the equivalent of using [`<datetime>`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#datetime) to cast a value to a datetime.
+This is the equivalent of using [`<datetime>`](../../language-primitives/casting.md#datetime) to cast a value to a datetime.
 
   
 
@@ -323,7 +323,7 @@ RETURN type::decimal("12345");
 -- 12345dec
 ```
 
-This is the equivalent of using [`<decimal>`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#decimal) to cast a value to a decimal.
+This is the equivalent of using [`<decimal>`](../../language-primitives/casting.md#decimal) to cast a value to a decimal.
 
   
 
@@ -349,7 +349,7 @@ RETURN type::duration("4h");
 -- 4h
 ```
 
-This is the equivalent of using [`<duration>`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#duration) to cast a value to a duration.
+This is the equivalent of using [`<duration>`](../../language-primitives/casting.md#duration) to cast a value to a duration.
 
   
 
@@ -632,7 +632,7 @@ RETURN type::float("12345");
 
 -- 12345f
 ```
-This is the equivalent of using [`<float>`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#float) to cast a value to a float.
+This is the equivalent of using [`<float>`](../../language-primitives/casting.md#float) to cast a value to a float.
 
   
 
@@ -657,7 +657,7 @@ RETURN type::int("12345");
 
 -- 12345
 ```
-This is the equivalent of using [`<int>`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#int) to cast a value to a int.
+This is the equivalent of using [`<int>`](../../language-primitives/casting.md#int) to cast a value to a int.
 
   
 
@@ -683,7 +683,7 @@ RETURN type::number("12345");
 -- 12345
 ```
 
-This is the equivalent of using [`<number>`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#number) to cast a value to a number.
+This is the equivalent of using [`<number>`](../../language-primitives/casting.md#number) to cast a value to a number.
 
   
 
@@ -730,7 +730,7 @@ RETURN type::point([ 51.509865, -0.118092 ]);
 
 ## `type::range`
 
-The `type::range` function converts a value into a [range](../../language-primitives/data-types/ranges.md). It accepts a single argument, either a range or an array with two values. If the argument is an array, it will be converted into a range, similar to [casting](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting).
+The `type::range` function converts a value into a [range](../../language-primitives/data-types/ranges.md). It accepts a single argument, either a range or an array with two values. If the argument is an array, it will be converted into a range, similar to [casting](../../language-primitives/casting.md).
 
 ```surql title="API DEFINITION"
 type::range(range|array) -> range<record>
@@ -898,7 +898,7 @@ RETURN type::string(12345);
 -- '12345'
 ```
 
-This is the equivalent of using [`<string>`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#string) to cast a value to a string.
+This is the equivalent of using [`<string>`](../../language-primitives/casting.md#string) to cast a value to a string.
 
   
 
@@ -959,7 +959,7 @@ type::string_lossy(<bytes>[ 83,
 'SurrealDB'
 ```
 
-This is similar to using [`<string>`](https://surrealdb.com/docs/reference/query-language/language-primitives/data-types/casting#string) to cast a value to a string, except that an input of bytes will not fail.
+This is similar to using [`<string>`](../../language-primitives/casting.md#string) to cast a value to a string, except that an input of bytes will not fail.
 
   
 

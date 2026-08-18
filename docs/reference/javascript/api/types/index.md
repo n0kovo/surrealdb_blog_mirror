@@ -45,7 +45,7 @@ interface DriverOptions {
 **Properties:**
 - `engines` - Custom engine factories for different protocols
 - `codecs` - Custom codec factories for encoding/decoding
-- `codecOptions` - Options for codec behavior
+- `codecOptions` - Options for codec behaviour
 - `websocketImpl` - Custom WebSocket implementation
 - `fetchImpl` - Custom fetch implementation
 
@@ -82,7 +82,7 @@ interface ConnectOptions {
 - `authentication` - Authentication details or provider function
 - `versionCheck` - Enable version compatibility checking (default: true)
 - `invalidateOnExpiry` - Invalidate session on token expiry (default: false)
-- `reconnect` - Reconnection behavior configuration (default: true)
+- `reconnect` - Reconnection behaviour configuration (default: true)
 - `retry` - Connection-wide default for retrying queries on write conflict (default: disabled)
 
 **Example:**
@@ -110,7 +110,7 @@ await db.connect('ws://localhost:8000', {
 
 ### `ReconnectOptions` {#reconnectoptions}
 
-Configuration for automatic reconnection behavior.
+Configuration for automatic reconnection behaviour.
 
 ```ts
 interface ReconnectOptions {

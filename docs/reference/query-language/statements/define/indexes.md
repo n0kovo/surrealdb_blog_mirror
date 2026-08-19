@@ -396,7 +396,7 @@ When defining a vector index with [HNSW](#hnsw-hierarchical-navigable-small-worl
 - `I16`: Represents 16-bit signed integers.
 
 > [!NOTE]
-> In SurrealDB the default type for vectors is `F64`.
+> In SurrealDB the default type for vectors is `F32`.
 
 *Since v3.1.0*
 

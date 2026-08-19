@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 9
 title: Upgrades & patching
 description: "Upgrade SurrealDB safely: binary replacement, surreal fix for major versions, migrations, and cluster rolling upgrades."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/self-hosted/upgrades-and-patching.mdx"

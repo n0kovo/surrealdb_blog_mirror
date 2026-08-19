@@ -9,7 +9,7 @@ _Auto-generated index — 0 pages and 13 sub-sections._
 
 ## Sub-sections
 
-- **[CLI Reference](cli/index.md)** — Reference documentation for the SurrealDB command-line interface and the SurrealQL formatter.
+- **[CLI Tools](cli/index.md)** — Reference for the three SurrealDB command-line tools: surrealctl for the control plane, surreal for the data plane, and surqlfmt for formatting SurrealQL.
 - **[.NET SDK](dotnet/index.md)** — The SurrealDB SDK for .NET provides a number of methods for interacting with your SurrealDB database.
 - **[Go SDK](golang/index.md)** — The SurrealDB SDK for Go enables simple and advanced querying of a remote database from server-side applications.
 - **[Java SDK](java/index.md)** — The SurrealDB SDK for Java enables simple and advanced querying of a remote or embedded database.

@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-08-18 06:35 UTC_
+_Last updated: 2026-08-19 06:36 UTC_
 
 ## Stats
 
-- **Total posts:** 258
+- **Total posts:** 259
 - **First post:** 2022-07-20
-- **Latest post:** 2026-08-13
+- **Latest post:** 2026-08-18
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-08-18 06:35 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 63 posts
+- [2026](posts/years/2026.md) — 64 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -32,12 +32,14 @@ _Last updated: 2026-08-18 06:35 UTC_
 - [company](posts/categories/company.md) — 41 posts
 - [engineering](posts/categories/engineering.md) — 46 posts
 - [events](posts/categories/events.md) — 7 posts
-- [featured](posts/categories/featured.md) — 112 posts
+- [featured](posts/categories/featured.md) — 113 posts
 - [releases](posts/categories/releases.md) — 53 posts
 - [tutorials](posts/categories/tutorials.md) — 99 posts
 
 ## Latest posts
 
+- **2026-08-18** · [SurrealDB University's newest course: Schema internals and migrations](posts/2026/08/surrealdb-universitys-newest-course-schema-internals-and-migrations-2.md)  
+  `featured` — SurrealDB University's newest course teaches you about schema internals and migrations.
 - **2026-08-13** · [Graph engineering is missing a graph](posts/2026/08/graph-engineering-is-missing-a-graph.md)  
   `featured` `engineering` `ai` — Graph engineering is suddenly everywhere, but most takes stop at the diagram. The harder half is the context graph underneath: whether relations, vectors, documents and memory sit under one consistency boundary, and whether anything understood the data before it became a graph.
 - **2026-08-12** · [Announcing the Swift SDK for SurrealDB](posts/2026/08/announcing-the-swift-sdk-for-surrealdb.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-08-18 06:35 UTC_
   `featured` `releases` `tutorials` `ai` — The SurrealMCP server is now fully managed. Add one URL to Claude, Cursor, or any other AI tool, sign in with your Surreal ID, and your assistant can deploy, query, and look after your SurrealDB Cloud account alongside you.
 - **2026-08-04** · [Agent memory needs three clocks: tri-temporal belief history in Spectron](posts/2026/08/spectron-insights-how-tri-temporal-belief-history-works.md)  
   `engineering` — Why tri-temporal belief history is needed for agent memory to properly simulate human memory and how to work with Spectron to best use it.
-- **2026-07-30** · [Embedding models comparison: OpenAI, Google, Qwen, Nomic, Jina, BAAI](posts/2026/07/embedding-models-comparison.md)  
-  `ai` — A practical guide to eight embedding models — text-embedding-3-small\/large, gemini-embedding-001, embeddinggemma-300m, qwen3-embedding, nomic-embed-text-v2-moe, jina-embeddings-v5-text-small, and BGE-M3.

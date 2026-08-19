@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-08-18T06:35:53.576349+00:00",
-  "count": 258,
+  "generated_at": "2026-08-19T06:36:56.094958+00:00",
+  "count": 259,
   "posts": [
+    {
+      "slug": "surrealdb-universitys-newest-course-schema-internals-and-migrations-2",
+      "title": "SurrealDB University's newest course: Schema internals and migrations",
+      "summary": "SurrealDB University's newest course teaches you about schema internals and migrations.",
+      "publishDate": "2026-08-18T09:04:31.000Z",
+      "categories": [
+        "featured"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/886gp5mvtajdc1ouj0f8kul9.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-universitys-newest-course-schema-internals-and-migrations-2",
+      "local_path": "2026/08/surrealdb-universitys-newest-course-schema-internals-and-migrations-2.md"
+    },
     {
       "slug": "graph-engineering-is-missing-a-graph",
       "title": "Graph engineering is missing a graph",

@@ -11,7 +11,7 @@ This page details a number of ways that you can build an AI agent. As the number
 
 ## Setup
 
-You can run SurrealDB locally or start with a [free SurrealDB Cloud account](../../../manage/cloud/index.md).
+You can run SurrealDB locally or start with a [free SurrealDB Cloud account](../../../manage/instances/index.md).
 
 For local, you have two options:
 

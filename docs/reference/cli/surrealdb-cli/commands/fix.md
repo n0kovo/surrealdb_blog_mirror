@@ -5,53 +5,40 @@ description: A command to convert SurrealDB version 1.x data into a usable forma
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/fix.mdx"
 ---
 
-# Fix command
+Convert data written by SurrealDB 1.x into the storage format used by 2.0 and above.
 
-> [!NOTE: BEFORE YOU START]
-> Make sure you’ve [installed SurrealDB](../../../../running/installation/index.md) — it should only take a second!
+> [!NOTE]
+> **Before you start** — make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
 
-## Command options 
+<Synopsis>
+surreal fix [OPTIONS] [PATH]
+</Synopsis>
 
-<table>
-    <thead>
-        <tr>
-            <th>Arguments</th>
-            <th>Description</th>
-        </tr>
-    </thead>  
-    <tbody>
-        <tr>
-            <td>
-                `-e` / `--log`
-               <label label="optional" />
-            </td>
-            <td>
-            Sets the logging level during the command
-            </td>
-        </tr>
-    </tbody>
-</table>
+<OptionsTable
+    title="Arguments"
+    options={[
+        {
+            "name": "[PATH]",
+            "default": "memory",
+            "env": "SURREAL_PATH",
+            "description": "Path to the existing data to convert to the 2.x storage format, for example `surrealkv://mydatabase.db`."
+        }
+    ]}
+/>
 
-## Positional argument
-
-<table>
-    <thead>
-        <tr>
-            <th>Arguments</th>
-            <th>Description</th>
-        </tr>
-    </thead>  
-    <tbody>
-        <tr>
-            <td>
-                `file`
-            </td>
-            <td>
-                Sets the path to the existing data to convert to 2.x storage format
-            </td>
-        </tr>
-    </tbody>
-</table>
+<OptionsTable
+    title="Options"
+    options={[
+        {
+            "name": "--log",
+            "short": "-l",
+            "value": "<LOG>",
+            "default": "info",
+            "env": "SURREAL_LOG",
+            "description": "The logging level for the command-line tool. Possible values: `none`, `full`, `error`, `warn`, `info`, `debug`, `trace`."
+        }
+    ]}
+/>
 
 ## Example usage
 
@@ -65,18 +52,17 @@ surreal fix rocksdb:somedatabase
 
 ## Using environment variables
 
->[!IMPORTANT]
-> Most of the flags mentioned in the command output above also mention a corresponding [environment variables](../environment-variables.md#command-environment-variables). 
->
-> For example, the `--log` flag can be configured with the `SURREAL_LOG` environment variable instead. 
+> [!IMPORTANT]
+> Most of the flags above have a corresponding [environment variable](../environment-variables.md#command-environment-variables).
+> For example, the `--log` flag can be configured with the `SURREAL_LOG` environment variable instead.
 
-When using the `surreal fix` command, you can also use environment variables to set the values for the command-line flags. 
+When using the `surreal fix` command, you can also use environment variables to set the values for the command-line flags.
 
 For more on the environment variables available for CLI commands or SurrealDB instances in general, see the [environment variables](../environment-variables.md#command-environment-variables) page.
 
 ## Command help
 
-To see the help information and usage instructions, in a terminal run the `surreal fix --help` command without any further arguments. This command gives general information on the arguments, inputs, and additional options for the export command.
+To see the help information and usage instructions, in a terminal run the `surreal fix --help` command without any further arguments. This command gives general information on the arguments, inputs, and additional options for the `fix` command.
 
 ```bash
 surreal fix --help
@@ -84,7 +70,7 @@ surreal fix --help
 
 The output of the above command:
 
-```
+```text
 Fix database storage issues
 
 Usage: surreal fix [OPTIONS] [PATH]

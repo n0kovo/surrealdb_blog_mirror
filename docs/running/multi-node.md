@@ -9,10 +9,10 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 Multi-node SurrealDB requires **shared distributed storage** — a backend that every query node can reach with transactional consistency. A single RocksDB file on one server (or one Kubernetes pod) is **not** a multi-node cluster; it is the [single-node, on-disk](file-backed.md) model.
 
-For managed production clusters, see the [Scale](https://surrealdb.com/pricing/scale) plan on [SurrealDB Cloud](../build/deployment/surrealdb-cloud/what-is-surrealdb-cloud.md), which runs on **SurrealDS**. For self-hosted SurrealDS on Kubernetes, use [SurrealDB Enterprise](https://surrealdb.com/enterprise); see also the [Amazon EKS](../build/deployment/self-hosted/amazon-eks.md), [Google GKE](../build/deployment/self-hosted/google-gke.md), and [Azure AKS](../build/deployment/self-hosted/azure-aks.md) option pages.
+For managed production clusters, see the [Scale](https://surrealdb.com/pricing/scale) plan on [managed instances](../manage/instances/index.md), which runs on distributed storage with replication and consensus. For self-hosted multi-node clusters on Kubernetes, use [SurrealDB Enterprise](https://surrealdb.com/enterprise); see also the [Managed Kubernetes](../manage/self-hosted/managed-kubernetes.md) option page for Amazon EKS, Google GKE, and Azure AKS.
 
 > [!IMPORTANT]
-> The section below uses **TiKV** only as a local open-source playground for experimenting with multi-node connectivity. It is **not** the storage engine behind Cloud Scale or Enterprise SurrealDS deployments, and it is not recommended for production HA.
+> The section below uses **TiKV** only as a local open-source playground for experimenting with multi-node connectivity. It is **not** the storage engine behind Cloud Scale or Enterprise deployments, and it is not recommended for production HA.
 
 ## Local development
 

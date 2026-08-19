@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 Most powerful features — scripting, functions, network access — are disabled by default and must be explicitly enabled by an administrator per use case.
 
 > [!IMPORTANT]
-> Capabilities can be enabled and configured in SurrealDB Cloud. This is done by clicking on the "Configure instance" button in the SurrealDB Cloud dashboard. Learn more about capabilities in SurrealDB Cloud [in the Cloud documentation](../../../build/deployment/surrealdb-cloud/getting-started/create-an-instance.md#configure-an-instance).
+> Capabilities are configured per instance from **Instance settings** in [SurrealDB Studio](https://app.surrealdb.com). See [Configure an instance](../../../manage/instances/configure.md) for the available settings.
 
 When a query wants to use a capability that is not allowed, SurrealDB will reject it.
 

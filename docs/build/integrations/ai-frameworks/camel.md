@@ -11,7 +11,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 ## Setup
 
-You can run SurrealDB locally or start with a [free SurrealDB Cloud account](../../../manage/cloud/index.md).
+You can run SurrealDB locally or start with a [free SurrealDB Cloud account](../../../manage/instances/index.md).
 
 For local, two options:
 

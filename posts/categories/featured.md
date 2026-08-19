@@ -1,8 +1,10 @@
 # Category: featured
 
-_112 posts_  
+_113 posts_  
 [← Index](../../README.md)
 
+- **2026-08-18** · [SurrealDB University's newest course: Schema internals and migrations](../2026/08/surrealdb-universitys-newest-course-schema-internals-and-migrations-2.md)  
+  `featured` — SurrealDB University's newest course teaches you about schema internals and migrations.
 - **2026-08-13** · [Graph engineering is missing a graph](../2026/08/graph-engineering-is-missing-a-graph.md)  
   `featured` `engineering` `ai` — Graph engineering is suddenly everywhere, but most takes stop at the diagram. The harder half is the context graph underneath: whether relations, vectors, documents and memory sit under one consistency boundary, and whether anything understood the data before it became a graph.
 - **2026-08-10** · [Introducing SurrealDB Studio](../2026/08/introducing-surrealdb-studio.md)  

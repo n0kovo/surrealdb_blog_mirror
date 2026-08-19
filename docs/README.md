@@ -1,12 +1,12 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-08-18 06:35 UTC_
+_Last updated: 2026-08-19 06:36 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
 ## Stats
 
-- **Total pages:** 1066
+- **Total pages:** 1074
 
 ## Browse
 
@@ -32,7 +32,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Running
 
-- **[Deployment](build/deployment/index.md)** — Cloud, edge, and on-premises. — _34 pages_
+- **Deployment** — Cloud, edge, and on-premises. _(not mirrored)_
 - **[Embedding SurrealDB](build/embedding/index.md)** — Native and WebAssembly embedding. — _7 pages_
 
 ### Ecosystem
@@ -48,8 +48,8 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Hosting
 
-- **[SurrealDB Cloud](manage/cloud/index.md)** — Hosted instances and Cloud console. — _12 pages_
-- **[Self-hosted](manage/self-hosted/index.md)** — Clusters, backups, your infrastructure. — _5 pages_
+- **SurrealDB Cloud** — Hosted instances and Cloud console. _(not mirrored)_
+- **[Self-hosted](manage/self-hosted/index.md)** — Clusters, backups, your infrastructure. — _9 pages_
 
 ### Operations
 
@@ -69,7 +69,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 ## Reference
 
 - **[Query language](reference/query-language/index.md)** — Syntax, statements, and builtins. — _147 pages_
-- **[CLI tools](reference/cli/index.md)** — CLI install, backup, and ops. — _18 pages_
+- **[CLI tools](reference/cli/index.md)** — CLI install, backup, and ops. — _35 pages_
 - **[REST API](reference/rest-api/index.md)** — HTTP API for queries and admin. — _5 pages_
 
 ## More content

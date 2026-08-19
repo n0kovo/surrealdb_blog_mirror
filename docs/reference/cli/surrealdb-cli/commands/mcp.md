@@ -5,8 +5,6 @@ description: "Start SurrealDB's Model Context Protocol server over stdio for loc
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/mcp.mdx"
 ---
 
-# MCP command
-
 *Since v3.1.0*
 
 The `surreal mcp` subcommand starts the built-in [Model Context Protocol](https://modelcontextprotocol.io) server on **stdio**, suitable for Cursor, VS Code, Claude Desktop, and other MCP clients. It opens an embedded datastore at the path you pass (default `memory`) and runs every tool call with owner-level access.
@@ -15,6 +13,56 @@ For HTTP-based clients against a running server, use [`surreal start`](start.md)
 
 > [!WARNING]
 > Stdio MCP is intended for a trusted operator on the same machine. Do not expose this process to untrusted users — there is no per-call HTTP authentication surface to re-bind credentials.
+
+<Synopsis>
+surreal mcp [OPTIONS] [PATH]
+</Synopsis>
+
+<OptionsTable
+    title="Arguments"
+    options={[
+        {
+            "name": "[PATH]",
+            "default": "memory",
+            "env": "SURREAL_PATH",
+            "description": "Database path for the embedded datastore."
+        }
+    ]}
+/>
+
+<OptionsTable
+    title="Options"
+    options={[
+        {
+            "name": "--ns",
+            "value": "<NAMESPACE>",
+            "env": "SURREAL_MCP_NS",
+            "description": "Initial namespace."
+        },
+        {
+            "name": "--db",
+            "value": "<DATABASE>",
+            "env": "SURREAL_MCP_DB",
+            "description": "Initial database."
+        },
+        {
+            "name": "--username",
+            "short": "-u",
+            "value": "<USERNAME>",
+            "env": "SURREAL_USER",
+            "description": "Root username. Requires `--password`, and applies only if no root user exists yet."
+        },
+        {
+            "name": "--password",
+            "short": "-p",
+            "value": "<PASSWORD>",
+            "env": "SURREAL_PASS",
+            "description": "Root password."
+        }
+    ]}
+/>
+
+Database tuning flags from `surreal start` are also available via the shared `dbs` option group (see `surreal mcp --help`).
 
 ## Usage
 
@@ -27,18 +75,6 @@ Optional root credentials apply only when no root user exists yet (same semantic
 ```bash
 surreal mcp -u root -p secret --ns main --db main memory
 ```
-
-## Options
-
-| Argument / flag | Environment | Description |
-| --- | --- | --- |
-| `path` (positional) | `SURREAL_PATH` | Database path (`memory` by default) |
-| `--ns` | `SURREAL_MCP_NS` | Initial namespace |
-| `--db` | `SURREAL_MCP_DB` | Initial database |
-| `-u` / `--username` | `SURREAL_USER` | Root username (requires `--password`; only if no root exists) |
-| `-p` / `--password` | `SURREAL_PASS` | Root password |
-
-Database tuning flags from `surreal start` are also available via the shared `dbs` option group (see `surreal mcp --help`).
 
 ## Limits
 

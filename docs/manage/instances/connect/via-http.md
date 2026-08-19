@@ -1,0 +1,55 @@
+---
+position: 5
+title: Via HTTP
+description: Query an instance with cURL or any HTTP client, and the request size limits that apply per endpoint.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/connect/via-http.mdx"
+---
+
+# Connect via HTTP
+
+Instances serve the [HTTP API](../../../reference/rest-api/index.md), so anything that speaks HTTP can query them.
+
+That includes cURL, Postman, a serverless function, and a language without an SDK.
+
+To get the URL, open the instance in [SurrealDB Studio](https://app.surrealdb.com), select **Connect**, then select **HTTP cURL**.
+
+![The Connect menu in SurrealDB Studio with HTTP cURL selected, showing a generated cURL command containing the instance endpoint and its namespace and database headers.](../../../assets/img/image/cloud/open-in-http.png)
+
+> [!NOTE]
+> The generated command is cURL, but the URL and headers work in any HTTP client. Paste them into Postman or your own code unchanged.
+
+## Send a query
+
+Post SurrealQL to `/sql`. Name the namespace and database in headers, and authenticate with a bearer token:
+
+```bash title="Run a query over HTTP"
+curl -X POST "https://<endpoint>/sql" \
+  -H "Surreal-NS: main" \
+  -H "Surreal-DB: main" \
+  -H "Authorization: Bearer <token>" \
+  -H "Accept: application/json" \
+  -d "SELECT * FROM person LIMIT 10;"
+```
+
+The response is a JSON array with one result object per statement in the request.
+
+## Request size limits
+
+Instances run the SurrealDB defaults for request size, and those defaults differ per endpoint.
+
+| Endpoint | Limit |
+| --- | --- |
+| `/sql` | 1 MiB |
+| `/rpc` | 4 MiB |
+| `/import` | 4 GiB |
+| WebSocket message | 128 MiB |
+
+A request over the cap is rejected with `413 Payload Too Large`. The 1 MiB cap on `/sql` is the one large queries tend to reach first.
+
+If a payload does not fit, you have three options:
+
+- **Use an SDK.** Most, including [Rust](../../../reference/rust/index.md) and [JavaScript](../../../reference/javascript/index.md), default to the WebSocket engine and its 128 MiB per message.
+- **Stay on HTTP but change endpoint.** Send the query through [`POST /rpc`](../../../reference/rest-api/rpc-protocol.md), which accepts 4 MiB.
+- **Load bulk data through import.** [`POST /import`](../../../reference/rest-api/http-protocol.md#import) accepts up to 4 GiB per request. See [Import and export](../import-and-export.md#size-limits).
+
+The full table is in [request size limits](../../../reference/rest-api/http-protocol.md#request-size-limits). A self-hosted server sets these caps with environment variables. Instances run the defaults.

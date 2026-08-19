@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1066 pages_  
+_1074 pages_  
 [← Index](README.md)
 
 - [Architecture](architecture.md)
@@ -21,74 +21,6 @@ _1066 pages_
   Prompts that show what an assistant can do with the SurrealDB MCP Server, from deploying an instance to querying its data.
 - [SurrealDB MCP Server](build/ai-agents/mcp/index.md)
   Connect Claude, Cursor, and other AI tools to your SurrealDB Cloud account with a single URL.
-- [Deployment](build/deployment/index.md)
-  Deployment models for SurrealDB — managed cloud, single-node RocksDB, multi-node clusters, and embedded runtimes — and how to choose between them.
-- [Amazon EKS](build/deployment/self-hosted/amazon-eks.md)
-  Options for running SurrealDB on Amazon Elastic Kubernetes Service — managed Scale, Enterprise SurrealDS, or single-node RocksDB.
-- [Azure AKS](build/deployment/self-hosted/azure-aks.md)
-  Options for running SurrealDB on Azure Kubernetes Service — managed Scale, Enterprise SurrealDS, or single-node RocksDB.
-- [Docker](build/deployment/self-hosted/docker.md)
-  A tutorial to run SurrealDB from within Docker.
-- [Google GKE](build/deployment/self-hosted/google-gke.md)
-  Options for running SurrealDB on Google Kubernetes Engine — managed Scale, Enterprise SurrealDS, or single-node RocksDB.
-- [Kubernetes](build/deployment/self-hosted/kubernetes.md)
-  Deploy SurrealDB to Kubernetes with RocksDB on a persistent volume.
-- [Self-hosted deployment](build/deployment/self-hosted/overview.md)
-  Getting started with SurrealDB is quick and easy. Follow these tutorials for deploying SurrealDB in different environments.
-- [Billing](build/deployment/surrealdb-cloud/billing-and-support/billing.md)
-  Overview of SurrealDB Cloud billing and its flexible pricing models.
-- [FAQs](build/deployment/surrealdb-cloud/billing-and-support/faqs.md)
-  If you have questions about SurrealDB Cloud, you can find answers here. This document provides a comprehensive understanding of SurrealDB Cloud, whether you are a beginner getting started with SurrealDB Cloud or an experienced user looking for specific information.
-- [Billing & support](build/deployment/surrealdb-cloud/billing-and-support/index.md)
-  In this section you will explore the billing and support options for SurrealDB Cloud.
-- [Referrals](build/deployment/surrealdb-cloud/billing-and-support/referrals.md)
-  Referrals program for SurrealDB Cloud. In this section, we will explore the SurrealDB Cloud referral program and how it works.
-- [Support](build/deployment/surrealdb-cloud/billing-and-support/support.md)
-  Support offered by SurrealDB Cloud.
-- [Connecting to Cloud](build/deployment/surrealdb-cloud/connecting/index.md)
-  In this section you will explore the connection options for SurrealDB Cloud instances. You can connect to your Instance using the SurrealDB Cloud CLI or any of the supported SDKs.
-- [Via CLI](build/deployment/surrealdb-cloud/connecting/via-cli.md)
-  Connect to your SurrealDB Cloud instance using the CLI and run queries.
-- [Via HTTP](build/deployment/surrealdb-cloud/connecting/via-http.md)
-  Connect to your SurrealDB Cloud instance using the HTTP API and run queries.
-- [Via SDK](build/deployment/surrealdb-cloud/connecting/via-sdk.md)
-  Connect to your SurrealDB Cloud Instance using any of the available SDKs.
-- [Via SurrealDB Studio](build/deployment/surrealdb-cloud/connecting/via-studio.md)
-  Query your SurrealDB Cloud instance using SurrealDB Studio.
-- [Create an account](build/deployment/surrealdb-cloud/getting-started/create-an-account.md)
-  To get started with SurrealDB Cloud, you need to create an account. You can use your email address, a passkey, Google, or GitHub to create an account.
-- [Create an instance](build/deployment/surrealdb-cloud/getting-started/create-an-instance.md)
-  In this section, you will learn how to create an Instance in SurrealDB Cloud.
-- [Create an organisation](build/deployment/surrealdb-cloud/getting-started/create-an-organisation.md)
-  In this section, you will learn how to create an Organisation in SurrealDB Cloud.
-- [Getting started with Cloud](build/deployment/surrealdb-cloud/getting-started/index.md)
-  SurrealDB Cloud is a cloud-based platform that provides a comprehensive suite of tools and services to help you build, manage, and deploy your database.
-- [Connect VPC to SurrealDB Cloud](build/deployment/surrealdb-cloud/operations/aws-privatelink.md)
-  Use AWS PrivateLink to connect your AWS VPC to SurrealDB Cloud over a private network path, without traffic traversing the public internet.
-- [Data export and backup](build/deployment/surrealdb-cloud/operations/data-export-and-backup.md)
-  Managed backups and in-platform restore for SurrealDB Cloud instances, plus logical export for portable data.
-- [Cloud operations](build/deployment/surrealdb-cloud/operations/index.md)
-  In this section you will explore the advanced topics for navigating SurrealDB Cloud in SurrealDB Studio.
-- [Logs](build/deployment/surrealdb-cloud/operations/logs.md)
-  Learn how to view the logs of your SurrealDB Cloud Instance. 
-- [Metrics](build/deployment/surrealdb-cloud/operations/metrics.md)
-  Learn how to monitor the metrics of your SurrealDB Cloud Instance. 
-- [Migrating data](build/deployment/surrealdb-cloud/operations/migrating-data.md)
-  SurrealDB Cloud is a hosted version of SurrealDB, providing a fully managed, scalable, and secure database solution. This guide will help you migrate your existing SurrealDB instance to SurrealDB Cloud.
-- [Monitoring overview](build/deployment/surrealdb-cloud/operations/monitoring-overview.md)
-  In this section you will learn how to monitor your SurrealDB Cloud Instance. 
-- [Network access](build/deployment/surrealdb-cloud/operations/network-access.md)
-  SurrealDB Cloud provides a number of network capabilities to help you secure your database and data.
-- [Scaling](build/deployment/surrealdb-cloud/operations/scaling.md)
-  Resize Cloud instances, add replicas, and use metrics to decide when to scale SurrealDB Cloud.
-- [Cloud tooling](build/deployment/surrealdb-cloud/tooling/index.md)
-  In this section you will explore the advanced topics for navigating SurrealDB Cloud in SurrealDB Studio.
-- [Search and shortcuts](build/deployment/surrealdb-cloud/tooling/search-and-shortcuts.md)
-  In this section, you will learn about the search and shortcuts in SurrealDB Studio as it relates to the SurrealDB Cloud dashboard.
-- [SurrealQL editors](build/deployment/surrealdb-cloud/tooling/surrealql-editors.md)
-  SurrealQL editor shortcuts in SurrealDB Studio when working with SurrealDB Cloud for indentation, comments, multi-cursor edits, run query, record inspection, and JSON formatting for values.
-- [What is SurrealDB Cloud?](build/deployment/surrealdb-cloud/what-is-surrealdb-cloud.md)
-  SurrealDB Cloud redefines the database experience, offering the power and flexibility of SurrealDB without the pain of managing infrastructure. Focus on building tomorrow's applications. Let us take care of the rest.
 - [.NET](build/embedding/by-language/dotnet.md)
   The documentation for embedding SurrealDB within .NET has been moved to the .NET SDK documentation.
 - [Golang](build/embedding/by-language/golang.md)
@@ -199,6 +131,10 @@ _1066 pages_
   SurrealML enables machine learning models to be greatly simplified, ensuring reproducibility and consistency in machine learning pipelines.
 - [Introduction](explore/studio/index.md)
   SurrealDB Studio is the official visual interface for SurrealDB.
+- [Search and shortcuts](explore/studio/search-and-shortcuts.md)
+  The SurrealDB Studio command palette and its keyboard shortcuts.
+- [SurrealQL editors](explore/studio/surrealql-editors.md)
+  SurrealQL editor shortcuts in SurrealDB Studio for indentation, comments, multi-cursor edits, running queries, record inspection, and JSON formatting.
 - [Blink note-taking app](explore/tutorials/demos/blink.md)
   Blink—a Notion-style workspace demo built with SurrealDB and WebAssembly.
 - [Kai G AI demos](explore/tutorials/demos/kaig-ai-demos.md)
@@ -580,30 +516,6 @@ _1066 pages_
   This page provides some troubleshooting advice to support users in addressing issues either caused by or involved in the usage of specific security features provided by SurrealDB.
 - [Security](learn/security/index.md)
   Learn how to secure your SurrealDB deployment with authentication, authorization, and security best practices.
-- [Architecture](manage/cloud/architecture.md)
-  How SurrealDB Cloud is built — Start single-node and Scale multi-node topologies on SurrealDS.
-- [AWS Marketplace](manage/cloud/aws-marketplace.md)
-  Subscribe to SurrealDB Cloud through AWS Marketplace, link billing to your AWS account, and provision instances.
-- [Backups & recovery](manage/cloud/backups-and-recovery.md)
-  Automated backups, retention policy configuration, and in-platform restore for SurrealDB Cloud.
-- [Billing & support](manage/cloud/billing-and-support.md)
-  Plans, payment methods, invoices, and how to get help with SurrealDB Cloud.
-- [High availability](manage/cloud/high-availability.md)
-  How fault tolerance and availability differ between SurrealDB Cloud Start and Scale plans.
-- [Cloud management](manage/cloud/index.md)
-  Manage your SurrealDB Cloud deployment: instances, networking, backups, billing, and team access.
-- [Instance management](manage/cloud/instance-management.md)
-  Create, pause, resume, and delete SurrealDB Cloud instances; choose types and regions.
-- [Monitoring & logs](manage/cloud/monitoring-and-logs.md)
-  Dashboards, metrics, and logs for observing SurrealDB Cloud instances.
-- [Network access](manage/cloud/network-access.md)
-  Secure SurrealDB Cloud connectivity with IP restrictions, VPC integration, and PrivateLink.
-- [Organisations & users](manage/cloud/organisations-and-users.md)
-  Organisations, team members, and roles in SurrealDB Cloud.
-- [Patches & upgrades](manage/cloud/patches-and-upgrades.md)
-  Change the SurrealDB version on Cloud instances and what to expect during platform-managed upgrades.
-- [Scaling](manage/cloud/scaling.md)
-  Resize SurrealDB Cloud instances and plan capacity for growing workloads.
 - [Distributed live queries](manage/enterprise/capabilities/distributed-live-queries.md)
   Enterprise Edition distributed live queries across cluster nodes, and how they differ from single-node live queries.
 - [Installation](manage/enterprise/index.md)
@@ -630,12 +542,46 @@ _1066 pages_
   SurrealDB Enterprise Edition support tiers: Standard, Premium, and Mission-Critical coverage and escalation.
 - [Upgrading from Community](manage/enterprise/upgrading-from-community.md)
   SurrealDB Enterprise Edition: features, licensing, security, and support.
+- [Architecture](manage/instances/architecture.md)
+  The single-node and multi-node topologies behind the Start and Scale plans, and what each one means for growth and recovery.
+- [Backups and recovery](manage/instances/backups.md)
+  Automated snapshots, retention tiers, and restoring a snapshot into a new instance.
+- [Configure an instance](manage/instances/configure.md)
+  Instance settings in SurrealDB Studio: capabilities, compute and storage, pausing, and deletion.
+- [Connect to an instance](manage/instances/connect/index.md)
+  The four routes to an instance: SurrealDB Studio, the CLI, a client SDK, and the HTTP API. Includes where to find the connection details.
+- [Via CLI](manage/instances/connect/via-cli.md)
+  Open an interactive SurrealQL shell against an instance with surreal sql, and where to get the token.
+- [Via HTTP](manage/instances/connect/via-http.md)
+  Query an instance with cURL or any HTTP client, and the request size limits that apply per endpoint.
+- [Via SDK](manage/instances/connect/via-sdk.md)
+  Connect to an instance from application code, including the credentials each SDK needs and how to create them.
+- [Via SurrealDB Studio](manage/instances/connect/via-studio.md)
+  Select a namespace and database, then query an instance from the SurrealDB Studio query view.
+- [Create an instance](manage/instances/create.md)
+  Deploy an instance from SurrealDB Studio: choose a plan, instance type, region, version, name, starting data, and storage.
+- [High availability](manage/instances/high-availability.md)
+  What a Start instance and a Scale cluster each survive, and how to plan for the failures they do not.
+- [Import and export](manage/instances/import-and-export.md)
+  Move data in and out of an instance with surreal export and surreal import, including size limits and partial-import behaviour.
+- [Instances](manage/instances/index.md)
+  What an instance is, how the Start and Scale plans differ, and where each operational task is documented.
+- [Monitoring](manage/instances/monitoring.md)
+  The instance dashboard, the metrics groups and log filters in SurrealDB Studio, and how they relate to the full observability surface.
+- [Network access](manage/instances/network-access.md)
+  Control which outbound destinations queries may reach, using the network access capability and its allow and deny patterns.
+- [Private connectivity](manage/instances/private-connectivity.md)
+  Reach an instance from your AWS VPC over AWS PrivateLink, and set the public, private, or dual access mode.
+- [Scaling](manage/instances/scaling.md)
+  When to resize an instance, what scales on each plan, and how to confirm a resize solved the bottleneck.
+- [Versions and upgrades](manage/instances/versions-and-upgrades.md)
+  Change the SurrealDB release an instance runs, and what happens to the instance during the upgrade.
 - [Audit logging](manage/observability/audit-logging.md)
   The Enterprise audit log pipeline: events captured, record shape, rotation, hash chaining, redaction and pipeline self-metrics.
 - [Configuration reference](manage/observability/configuration.md)
   Every observability, audit log and slow-query log environment variable, plus recommended configurations for local, production and multi-tenant deployments.
 - [Enterprise observability](manage/observability/enterprise-observability.md)
-  Metrics, logs, and traces in SurrealDB Enterprise versus Community — OTLP opt-ins, audit and slow-query pipelines, and SurrealDS cluster instruments.
+  Metrics, logs, and traces in SurrealDB Enterprise versus Community — OTLP opt-ins, audit and slow-query pipelines, and cluster instruments.
 - [Observability](manage/observability/index.md)
   Logging, Prometheus pull, OTLP push, Enterprise pipelines, metric catalogues, and Tokio console — production visibility for SurrealDB Community and Enterprise.
 - [Logging](manage/observability/logging.md)
@@ -650,6 +596,22 @@ _1066 pages_
   OTLP push export — metrics, logs, traces, intervals, backward-compatible instruments, and differences before and after SurrealDB 3.1.
 - [Tokio console](manage/observability/tokio-console.md)
   Inspect SurrealDB’s async runtime with the Tokio console — tasks, polls, and bottlenecks separate from OpenTelemetry metrics and traces.
+- [AWS Marketplace](manage/organisations/aws-marketplace.md)
+  Subscribe through AWS Marketplace so charges appear on your AWS bill, and link the subscription to an organisation.
+- [Billing](manage/organisations/billing.md)
+  Organisation-level billing details, payment methods, discount codes, invoices, and the usage that produces them.
+- [FAQs](manage/organisations/faqs.md)
+  Common questions about managed instances: getting started, limits, security, pricing, legal terms, and troubleshooting.
+- [Organisations](manage/organisations/index.md)
+  The container for instances, members, usage, and billing, and what each section of the organisation view holds.
+- [Members and roles](manage/organisations/members-and-roles.md)
+  Invite people to an organisation, track pending invitations, and choose between the Owner, Admin, and Member roles.
+- [Referrals](manage/organisations/referrals.md)
+  Share a referral link to earn credits and rewards when someone signs up through it.
+- [Accounts and sign-in](manage/organisations/sign-in.md)
+  Create an account with Google, GitHub, email, or a passkey, and sign in to manage organisations and instances.
+- [Support](manage/organisations/support.md)
+  Community help, paid support plans, raising a ticket, and what Surreal Sidekick can answer.
 - [embed_schema! macro](manage/schema-migration/embed-schema-macro.md)
   The embed_schema! macro bakes your .surql schema files into the Rust binary at compile time, so schema is always in sync with the application that ships it.
 - [Existing databases](manage/schema-migration/getting-started/existing-databases.md)
@@ -682,22 +644,76 @@ _1066 pages_
   Create and restore SurrealQL backups with the CLI, plan backup strategies, and prepare for disaster recovery.
 - [Configuration](manage/self-hosted/configuration.md)
   Configure a self-hosted SurrealDB server: CLI options, environment variables, storage, networking, auth, and TLS.
-- [Self-hosted management](manage/self-hosted/index.md)
-  Operate a self-hosted SurrealDB deployment: configuration, backups, monitoring, and upgrades.
+- [Deployment models](manage/self-hosted/deployment-models.md)
+  Deployment models for SurrealDB — managed instances, single-node RocksDB, multi-node clusters, and embedded runtimes — and how to choose between them.
+- [Docker](manage/self-hosted/docker.md)
+  A tutorial to run SurrealDB from within Docker.
+- [Self-hosted](manage/self-hosted/index.md)
+  Deploy and operate SurrealDB on your own infrastructure: deployment models, containers, configuration, backups, monitoring, and upgrades.
+- [Kubernetes](manage/self-hosted/kubernetes.md)
+  Deploy SurrealDB to Kubernetes with RocksDB on a persistent volume.
+- [Managed Kubernetes](manage/self-hosted/managed-kubernetes.md)
+  Options for running SurrealDB on Amazon EKS, Google GKE, and Azure AKS — managed Scale, self-hosted Enterprise clusters, or single-node RocksDB.
 - [Monitoring & observability](manage/self-hosted/monitoring-and-observability.md)
   Health checks, OpenTelemetry metrics and traces, audit logs and slow-query logs, and integration with common observability stacks.
 - [Upgrades & patching](manage/self-hosted/upgrades-and-patching.md)
   Upgrade SurrealDB safely: binary replacement, surreal fix for major versions, migrations, and cluster rolling upgrades.
-- [SurrealQL Formatter](reference/cli/formatter/overview.md)
+- [Authentication](manage/surrealctl/authentication.md)
+  Choose between a login session and a personal access token, store credentials safely, and authenticate an unattended run.
+- [surrealctl](manage/surrealctl/index.md)
+  The control-plane CLI: what surrealctl does, when to reach for it instead of SurrealDB Studio or the surreal binary, and a sixty-second quickstart.
+- [Install](manage/surrealctl/install.md)
+  Install surrealctl on macOS, Linux, or Windows, verify the download, sign in for the first time, and keep the binary up to date.
+- [Instances](manage/surrealctl/instances.md)
+  Deploy, find, connect to, scale, pause, back up, and delete instances with the surrealctl instance commands.
+- [Organisations](manage/surrealctl/organisations.md)
+  Select an organisation, manage members and invitations, check roles, and read usage and spend from the command line.
+- [Scripting](manage/surrealctl/scripting.md)
+  Drive surrealctl from CI and shell scripts: the JSON contract, exit codes for control flow, unattended runs, and waiting semantics.
+- [SurrealQL formatter](reference/cli/formatter/overview.md)
   The surqlfmt command automatically formats SurrealQL files for consistent style and readability.
-- [CLI Reference](reference/cli/index.md)
-  Reference documentation for the SurrealDB command-line interface and the SurrealQL formatter.
+- [CLI Tools](reference/cli/index.md)
+  Reference for the three SurrealDB command-line tools: surrealctl for the control plane, surreal for the data plane, and surqlfmt for formatting SurrealQL.
+- [Authentication](reference/cli/surrealctl/authentication.md)
+  How surrealctl signs in, the difference between a login session and a personal access token, what a token cannot do, and where credentials are stored on disk.
+- [auth](reference/cli/surrealctl/commands/auth.md)
+  Reference for surrealctl auth — signing in, signing out, inspecting the stored credential, renewing it, and listing what it is permitted to do.
+- [catalog](reference/cli/surrealctl/commands/catalog.md)
+  Reference for surrealctl catalog — the platform-wide lists of regions, instance types, storage types, SurrealDB versions and billing countries.
+- [config](reference/cli/surrealctl/commands/config.md)
+  Reference for surrealctl config — listing, reading, setting and clearing configuration values, printing the file path, and opening it in an editor.
+- [context](reference/cli/surrealctl/commands/context.md)
+  Reference for surrealctl context — showing what an invocation resolved, switching between profiles, and listing the profiles that are configured.
+- [Overview](reference/cli/surrealctl/commands/index.md)
+  A map of every surrealctl command group and leaf command, with links to the page documenting each one.
+- [instance](reference/cli/surrealctl/commands/instance.md)
+  Reference for surrealctl instance — creating, scaling, pausing and deleting instances, reading logs, metrics and endpoints, minting tokens, and managing capabilities and backups.
+- [invite](reference/cli/surrealctl/commands/invite.md)
+  Reference for surrealctl invite — listing an organisation's pending invitations, sending one, and withdrawing one.
+- [Other commands](reference/cli/surrealctl/commands/misc.md)
+  Reference for the surrealctl leaf commands — whoami, api, open, status, version and completion.
+- [org](reference/cli/surrealctl/commands/org.md)
+  Reference for surrealctl org — listing and creating organisations, renaming and archiving them, remembering a default, and reading roles, permissions, usage, spend and plans.
+- [spectron](reference/cli/surrealctl/commands/spectron.md)
+  Reference for surrealctl spectron — managing Spectron contexts, API keys, scoped keys, access tokens, principals and grants, packages, and the scope and provider catalogues.
+- [team](reference/cli/surrealctl/commands/team.md)
+  Reference for surrealctl team — listing organisation members, inspecting one, inviting someone, changing a role, and ending a membership.
+- [token](reference/cli/surrealctl/commands/token.md)
+  Reference for surrealctl token — listing, creating and revoking personal access tokens, and browsing the scopes a token can be granted.
+- [Global flags](reference/cli/surrealctl/global-flags.md)
+  The sixteen flags every surrealctl command accepts, the environment variable behind each one, the precedence chain that resolves them, and the duration syntax.
+- [Long-running operations](reference/cli/surrealctl/long-running-operations.md)
+  How surrealctl waits for an instance to settle — the wait flags, which commands wait by default, the polling schedule, rate-limit handling, and exit code 10.
+- [Output and exit codes](reference/cli/surrealctl/output-and-exit-codes.md)
+  The surrealctl --json contract, the stdout and stderr split, NDJSON streams, the shared list presentation flags, the secret and confirmation guards, and every exit code.
+- [Overview](reference/cli/surrealctl/overview.md)
+  What surrealctl is, where the control plane ends and the SurrealDB CLI begins, the command grammar, and how this reference is organised.
 - [export](reference/cli/surrealdb-cli/commands/export.md)
   A command to export data from a SurrealDB database server into a SurrealQL file format.
 - [fix](reference/cli/surrealdb-cli/commands/fix.md)
   A command to convert SurrealDB version 1.x data into a usable format for versions 2.0 and above.
 - [help](reference/cli/surrealdb-cli/commands/help.md)
-  A command to display all possible top-level commands and arguments used in the the SurrealDB binary.
+  A command to display all possible top-level commands and arguments used in the SurrealDB binary.
 - [import](reference/cli/surrealdb-cli/commands/import.md)
   A command that imports a file in SurrealQL format into a local or remote SurrealDB database server.
 - [Overview](reference/cli/surrealdb-cli/commands/index.md)

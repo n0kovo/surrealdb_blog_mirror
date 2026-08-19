@@ -5,99 +5,90 @@ description: A command that imports a file in SurrealQL format into a local or r
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/import.mdx"
 ---
 
-# Import command
+Import a SurrealQL script into an existing database, on a local or remote server.
 
-> [!NOTE: BEFORE YOU START]
-> Make sure you’ve [installed SurrealDB](../../../../running/installation/index.md) — it should only take a second!
+> [!NOTE]
+> **Before you start** — make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
 
-## Command options 
+<Synopsis>
+surreal import [OPTIONS] --namespace <NAMESPACE> --database <DATABASE> <FILE>
+</Synopsis>
 
-<table>
-    <thead>
-        <tr>
-            <th>Arguments</th>
-            <th>Description</th>
-        </tr>
-    </thead>  
-    <tbody>
-        <tr>
-            <td>
-                `-e` / `--endpoint`
-               <label label="optional" />
-            </td>
-            <td>
-                Sets the url of the database server to connect to. Defaults to http://127.0.0.1:8000 if not specified
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `-u` / `--user`
-                <label label="required" />
-            </td>
-            <td>
-                Sets master username for the database
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `-p` / `--pass`
-                <label label="required" />
-            </td>
-            <td>
-                Sets master password for the database
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `-t` / `--token`
-               <label label="optional" />
-            </td>
-            <td>
-                Sets the authentication token to use when connecting to the server. Connect to SurrealDB using a JWT instead of user credentials
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `--ns`
-                <label label="required" />
-            </td>
-            <td>
-                Sets the desired namespace in which to import data
-            </td>
-        </tr>
-        <tr>
-            <td>
-                `--db`
-                <label label="required" />
-            </td>
-            <td>
-                Sets the desired database into which to import data
-            </td>
-        </tr>
-    </tbody>
-</table>
+<OptionsTable
+    title="Arguments"
+    options={[
+        {
+            "name": "<FILE>",
+            "required": true,
+            "description": "Path to the SurrealQL file to import."
+        }
+    ]}
+/>
 
-## Positional argument
+<OptionsTable
+    title="Options"
+    options={[
+        {
+            "name": "--endpoint",
+            "short": "-e",
+            "value": "<ENDPOINT>",
+            "default": "http://localhost:8000",
+            "description": "Database endpoint to import to. Alias: `--conn`."
+        },
+        {
+            "name": "--username",
+            "short": "-u",
+            "value": "<USERNAME>",
+            "env": "SURREAL_USER",
+            "description": "Database authentication username to use when connecting. Alias: `--user`."
+        },
+        {
+            "name": "--password",
+            "short": "-p",
+            "value": "<PASSWORD>",
+            "env": "SURREAL_PASS",
+            "description": "Database authentication password to use when connecting. Alias: `--pass`."
+        },
+        {
+            "name": "--token",
+            "short": "-t",
+            "value": "<TOKEN>",
+            "env": "SURREAL_TOKEN",
+            "description": "Authentication token in JWT format, used instead of a username and password."
+        },
+        {
+            "name": "--auth-level",
+            "value": "<AUTH_LEVEL>",
+            "default": "root",
+            "env": "SURREAL_AUTH_LEVEL",
+            "description": "Level on which the authenticating user is defined. Possible values: `root`, `namespace` (`ns`), `database` (`db`)."
+        },
+        {
+            "name": "--namespace",
+            "value": "<NAMESPACE>",
+            "env": "SURREAL_NAMESPACE",
+            "required": true,
+            "description": "The namespace to import into. Alias: `--ns`."
+        },
+        {
+            "name": "--database",
+            "value": "<DATABASE>",
+            "env": "SURREAL_DATABASE",
+            "required": true,
+            "description": "The database to import into. Alias: `--db`."
+        },
+        {
+            "name": "--log",
+            "short": "-l",
+            "value": "<LOG>",
+            "default": "info",
+            "env": "SURREAL_LOG",
+            "description": "The logging level for the command-line tool. Possible values: `none`, `full`, `error`, `warn`, `info`, `debug`, `trace`."
+        }
+    ]}
+/>
 
-<table>
-    <thead>
-        <tr>
-            <th>Arguments</th>
-            <th>Description</th>
-        </tr>
-    </thead>  
-    <tbody>
-        <tr>
-            <td>
-                `file`
-                <label label="required" />
-            </td>
-            <td>
-            Sets the path to the file to import
-            </td>
-        </tr>
-    </tbody>
-</table>
+Authenticate with either `--username` and `--password`, or with `--token`. Neither is needed against a server started with `--unauthenticated`.
 
 ## Example usage
 
@@ -110,7 +101,7 @@ surreal import --endpoint http://localhost:8000 --user root --pass secret \
 
 Using token-based authentication:
 
-```bash 
+```bash
 surreal import --endpoint http://localhost:8000 --token <token> --ns main \
   --db main downloads/surreal_deal_v1.surql
 ```
@@ -134,14 +125,17 @@ A good practice before importing for the first time is to use the [`surreal vali
 
 ## Using environment variables
 
-When using the `surreal import` command, you can also use environment variables to set the values for the command-line flags. 
+When using the `surreal import` command, you can also use environment variables to set the values for the command-line flags.
 
->[!IMPORTANT]
-> Most of the flags mentioned in the command output above also mention a corresponding [environment variables](../environment-variables.md#command-environment-variables). 
->
-> For example, the `--username` flag can be configured with the `SURREAL_USER` environment variable instead. 
+> [!IMPORTANT]
+> Most of the flags above have a corresponding [environment variable](../environment-variables.md#command-environment-variables).
+> For example, the `--username` flag can be configured with the `SURREAL_USER` environment variable instead.
 
 For more on the environment variables available for CLI commands or SurrealDB instances in general, see the [environment variables](../environment-variables.md#command-environment-variables) page.
+
+## Managing a Cloud instance
+
+To import into a SurrealDB Cloud instance by name, [`surrealctl`](../../surrealctl/overview.md) resolves the endpoint and credentials for you and then runs this command. The size limits and partial-import behaviour described above apply there too.
 
 ## OPTION IMPORT
 
@@ -163,7 +157,7 @@ surreal import --help
 
 The output of the above command:
 
-```
+```text
 Import a SurrealQL script into an existing database
 
 Usage: surreal import [OPTIONS] --namespace <NAMESPACE> --database <DATABASE> <FILE>

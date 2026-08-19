@@ -11,7 +11,7 @@ Every environment variable that controls the observability surface. Variables ma
 
 *Since v3.1.0*
 
-The audit log, slow-query log and SurrealDS configuration surfaces are new in SurrealDB 3.1.
+The audit log, slow-query log and cluster configuration surfaces are new in SurrealDB 3.1.
 
 ## How to read this page
 
@@ -255,14 +255,14 @@ Controls the [Enterprise slow-query log pipeline](slow-query-logging.md). Settin
     </tbody>
 </table>
 
-## SurrealDS networking, consensus and storage
+## Cluster networking, consensus and storage
 
 <Edition value="enterprise" />
 
 > [!NOTE]
-> **SurrealDS** is SurrealDB's distributed storage engine for highly available, horizontally scalable clusters. The `SURREAL_DS_*` variables below apply when that runtime is deployed — on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) or in self-hosted Enterprise installations.
+> The `SURREAL_DS_*` variables below apply to multi-node clusters, which use distributed storage with replication and consensus — on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) or in self-hosted Enterprise installations.
 
-A short list of the SurrealDS networking, consensus and storage-memory knobs that operators routinely tune in response to a metric signal. For a product overview, see [SurrealDS](https://surrealdb.com/platform/surrealds). The complete `SURREAL_DS_*` reference is part of the Enterprise Kubernetes deployment guide.
+A short list of the cluster networking, consensus and storage-memory knobs that operators routinely tune in response to a metric signal. The complete `SURREAL_DS_*` reference is part of the Enterprise Kubernetes deployment guide.
 
 <table>
     <thead>

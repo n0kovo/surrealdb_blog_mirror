@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 For server log output (stderr, files, JSON, sockets, slow-query lines), see [Logging](logging.md).
 
-Use the tabs below depending on your server version. For OTLP (push), process intervals, and legacy SemConv instruments on the wire, see [Telemetry (OTLP)](telemetry.md). For SurrealDS metrics, audit and slow-query file sinks, and OTLP log export opt-ins, see [Enterprise observability](enterprise-observability.md).
+Use the tabs below depending on your server version. For OTLP (push), process intervals, and legacy SemConv instruments on the wire, see [Telemetry (OTLP)](telemetry.md). For cluster metrics, audit and slow-query file sinks, and OTLP log export opt-ins, see [Enterprise observability](enterprise-observability.md).
 
 **Before SurrealDB 3.1**
 
@@ -32,7 +32,7 @@ SurrealDB exposes a single, unified observability surface backed by OpenTelemetr
 - **Prometheus (pull)** — text exposition at `GET /metrics` (scrapers call your server). The usual path if you already run Prometheus.
 - **OTLP (push)** — when `SURREAL_TELEMETRY_PROVIDER=otlp` is set, the process pushes metrics, traces, and (when enabled) log records to a collector.
 
-**SurrealDB Enterprise** can additionally attach durable **audit** and **slow-query** pipelines and **SurrealDS** cluster metrics when SurrealDS is the storage backend (Cloud Scale or self-hosted Enterprise); OTLP export of audit and slow-query **log** records is **opt-in** per pipeline. See [Enterprise observability](enterprise-observability.md).
+**SurrealDB Enterprise** can additionally attach durable **audit** and **slow-query** pipelines and **cluster** metrics when distributed storage is the backend (Cloud Scale or self-hosted Enterprise); OTLP export of audit and slow-query **log** records is **opt-in** per pipeline. See [Enterprise observability](enterprise-observability.md).
 
 For OTLP configuration, push intervals, process gauges, and backward-compatible HTTP/RPC instruments, see [Telemetry (OTLP)](telemetry.md).
 

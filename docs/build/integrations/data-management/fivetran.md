@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Fivetran
 
-This guide will help you connect SurrealDB to Fivetran. The Fivetran integration is available through their [partner-built program](https://fivetran.com/docs/partner-built-program). For support with self-hosted SurrealDB destinations, please contact [SurrealDB Support](/contact). For SurrealDB Cloud related questions, reach out to [SurrealDB Cloud Support](../../deployment/surrealdb-cloud/billing-and-support/support.md).
+This guide will help you connect SurrealDB to Fivetran. The Fivetran integration is available through their [partner-built program](https://fivetran.com/docs/partner-built-program). For support with self-hosted SurrealDB destinations, please contact [SurrealDB Support](/contact). For SurrealDB Cloud related questions, reach out to [SurrealDB Cloud Support](../../../manage/organisations/support.md).
 
 ## Prerequisites
 To connect SurrealDB to Fivetran, you need the following:

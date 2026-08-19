@@ -74,6 +74,6 @@ If write skew matters for your workload, encode the invariant inside the transac
 | **Atomicity** | A transaction’s statements commit together or roll back together. |
 | **Consistency** | Schema, permissions, and statement semantics apply on every commit; you define business invariants in SurrealQL and application code. |
 | **Isolation** | Snapshot isolation on all storage backends; write–write conflicts abort on commit. |
-| **Durability** | Committed data persists according to your storage engine and sync settings — see [File-backed storage](running/file-backed.md) and [Deployment](build/deployment/index.md). |
+| **Durability** | Committed data persists according to your storage engine and sync settings — see [File-backed storage](running/file-backed.md) and [Deployment models](manage/self-hosted/deployment-models.md). |
 
 Some features deliberately step outside the triggering transaction’s ACID boundary — for example, [`ASYNC` events](reference/query-language/statements/define/event.md#async-events) run after commit in a separate transaction. Use them only when that trade-off is acceptable.

@@ -1,5 +1,5 @@
 ---
-position: 3
+position: 8
 title: Monitoring & observability
 description: Health checks, OpenTelemetry metrics and traces, audit logs and slow-query logs, and integration with common observability stacks.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/self-hosted/monitoring-and-observability.mdx"

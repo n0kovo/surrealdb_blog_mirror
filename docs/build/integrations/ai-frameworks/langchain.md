@@ -22,7 +22,7 @@ In this guide, we'll walk through how to use SurrealDB as a vector store for Lan
 
 ## Setup
 
-You can run SurrealDB locally or start with a [free SurrealDB Cloud account](../../../manage/cloud/index.md).
+You can run SurrealDB locally or start with a [free SurrealDB Cloud account](../../../manage/instances/index.md).
 
 For local, two options:
 

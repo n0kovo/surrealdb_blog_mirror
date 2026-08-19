@@ -19,7 +19,7 @@ Both paths can run together or independently; each is controlled with environmen
 1. [Logging](logging.md) — stderr, JSON, files, sockets, and line-based slow-query logging (no metrics stack required).
 2. [Observability (metrics and Prometheus)](observability.md) — `GET /metrics`, naming, migration from pre-3.1 series, the public allowlist, and behaviour common to **Community and Enterprise**.
 3. [Telemetry (OTLP)](telemetry.md) — push export, intervals, and backward-compatible instruments on the wire.
-4. [Enterprise observability](enterprise-observability.md) — SurrealDS cluster metrics, audit and slow-query file pipelines, pipeline self-metrics, and OTLP log export opt-ins.
+4. [Enterprise observability](enterprise-observability.md) — cluster metrics, audit and slow-query file pipelines, pipeline self-metrics, and OTLP log export opt-ins.
 5. [Metrics reference](metrics.md) — full catalogue, labels, alert hints, and the 3.0 → 3.1 migration table.
 6. [Configuration](configuration.md) — every telemetry, audit, and slow-query environment variable.
 7. [Audit logging](audit-logging.md) and [Slow-query logging](slow-query-logging.md) — Enterprise pipeline references.
@@ -33,7 +33,7 @@ The `surrealdb.*` metric namespace, the `PUBLIC_METRICS` allowlist, the audit-lo
 
 ## Editions at a glance
 
-The Community server publishes the full set of primary signal families. The Enterprise composer adds the SurrealDS cluster metrics, the audit and slow-query log pipelines (with their own self-metrics), and the reserved per-tenant rollup scope.
+The Community server publishes the full set of primary signal families. The Enterprise composer adds the distributed-storage cluster metrics, the audit and slow-query log pipelines (with their own self-metrics), and the reserved per-tenant rollup scope.
 
 <table>
     <thead>
@@ -65,9 +65,9 @@ The Community server publishes the full set of primary signal families. The Ente
             <td scope="row" data-label="Enterprise"><Edition value="enterprise" /></td>
         </tr>
         <tr>
-            <td scope="row" data-label="Capability">SurrealDS cluster metrics (`surrealdb.ds.*`)</td>
+            <td scope="row" data-label="Capability">Cluster metrics (`surrealdb.ds.*`)</td>
             <td scope="row" data-label="Community">—</td>
-            <td scope="row" data-label="Enterprise"><Edition value="enterprise" /> (when DS runtime is deployed)</td>
+            <td scope="row" data-label="Enterprise"><Edition value="enterprise" /> (when the distributed storage runtime is deployed)</td>
         </tr>
         <tr>
             <td scope="row" data-label="Capability">Audit log records (file sink + optional OTel logs)</td>
@@ -151,7 +151,7 @@ Audit and slow-query records flow over OTLP **only when explicitly opted in** pe
 - **Public metrics allowlist (`PUBLIC_METRICS`).** Six low-sensitivity gauges are safe to expose anonymously; the rest require root credentials.
 - **Audit log pipeline.** <Edition value="enterprise" /> Durable NDJSON file sink with size-based rotation, tunable fsync cadence, optional hash chaining for tamper-evidence, and three-pass redaction.
 - **Slow-query log pipeline.** <Edition value="enterprise" /> Mirrors the audit pipeline, with a configurable duration threshold and the slow-query counter metric.
-- **SurrealDS cluster metrics.** <Edition value="enterprise" /> Around thirty instruments covering network, consensus, view changes, recovery and garbage collection when SurrealDS is deployed (SurrealDB Cloud Scale or self-hosted Enterprise).
+- **Cluster metrics (`surrealdb.ds.*`).** <Edition value="enterprise" /> Around thirty instruments covering network, consensus, view changes, recovery and garbage collection when distributed storage is deployed (SurrealDB Cloud Scale or self-hosted Enterprise).
 - **OpenTelemetry alignment.** Standard semantic-convention attribute keys (`http.request.method`, `http.route`, `http.response.status_code`, `db.namespace`, `db.user`) replace ad-hoc keys.
 
 ## Where to go next
@@ -159,13 +159,13 @@ Audit and slow-query records flow over OTLP **only when explicitly opted in** pe
 - **[Logging](logging.md)** — Log level, text or JSON format, files, sockets, and line-based slow-query logging.
 - **[Metrics and Prometheus](observability.md)** — Pull scraping, naming, multi-tenant guidance, and version-specific tabs before and after 3.1.
 - **[Telemetry (OTLP)](telemetry.md)** — Push export, intervals, process gauges, and legacy instruments on the wire.
-- **[Enterprise observability](enterprise-observability.md)** — SurrealDS metrics, audit and slow-query pipelines, and OTLP log export opt-ins.
+- **[Enterprise observability](enterprise-observability.md)** — Cluster metrics, audit and slow-query pipelines, and OTLP log export opt-ins.
 - **[Metrics reference](metrics.md)** — Access paths, label catalogue, every metric grouped by signal family, and the 3.0 → 3.1 migration table.
 - **[Configuration reference](configuration.md)** — All telemetry, audit log and slow-query log environment variables, plus recommended configurations for local, production and multi-tenant deployments.
 - **[Audit logging](audit-logging.md)** — Enterprise audit log pipeline: events captured, record shape, rotation, hash chaining and redaction.
 - **[Slow-query logging](slow-query-logging.md)** — Enterprise slow-query log pipeline: how a query qualifies, record shape and pipeline self-metrics.
 - **[Tokio console](tokio-console.md)** — Optional Tokio runtime debugging — tasks, poll times, and scheduling alongside metrics and traces.
-- **[Cloud monitoring](../../build/deployment/surrealdb-cloud/operations/monitoring-overview.md)** — The built-in monitoring dashboard, log retention and metrics views for SurrealDB Cloud instances.
+- **[Instance monitoring](../instances/monitoring.md)** — The built-in monitoring dashboard, log retention and metrics views for managed instances.
 - **[Self-hosted monitoring](../self-hosted/monitoring-and-observability.md)** — Pairing the `/health` endpoint, Prometheus and Grafana with the observability surface for a self-hosted deployment.
 
 ## Structured logs versus audit and slow-query records

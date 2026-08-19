@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 6
 title: Configuration
 description: "Configure a self-hosted SurrealDB server: CLI options, environment variables, storage, networking, auth, and TLS."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/self-hosted/configuration.mdx"
@@ -13,7 +13,7 @@ Review the command reference whenever you upgrade, as defaults and supported fla
 
 Equivalent settings are often available as [environment variables](../../reference/cli/surrealdb-cli/environment-variables.md), which suits containers, systemd units, and secret managers. Prefer one coherent source of truth (file, env, or flags) so configuration does not diverge silently across hosts.
 
-**Storage engines** are selected by the path on [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md). For most self-hosted servers, use **RocksDB** (`rocksdb://…`) for on-disk production data. The default **`memory`** backend (SurrealMX) suits development and tests as well as solutions that make use of its Redis-like persistent storage, while the optional **SurrealKV** (`surrealkv://…`, beta) is an alternative single-node disk engine with a smaller tuning surface. Capacity planning, backups, and versioning options differ by engine — see the [Deployment](../../build/deployment/index.md) and [Run a single-node, on-disk server](../../running/file-backed.md) pages for more.
+**Storage engines** are selected by the path on [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md). For most self-hosted servers, use **RocksDB** (`rocksdb://…`) for on-disk production data. The default **`memory`** backend (SurrealMX) suits development and tests as well as solutions that make use of its Redis-like persistent storage, while the optional **SurrealKV** (`surrealkv://…`, beta) is an alternative single-node disk engine with a smaller tuning surface. Capacity planning, backups, and versioning options differ by engine — see the [Deployment models](deployment-models.md) and [Run a single-node, on-disk server](../../running/file-backed.md) pages for more.
 
 **Bind address and port** determine where clients and operators reach the server. Restrict admin interfaces to trusted networks, use a load balancer or service mesh for TLS termination if that matches your platform, and document ports for HTTP, WebSocket, and any separate metrics endpoints you expose.
 

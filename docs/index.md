@@ -48,7 +48,7 @@ SurrealDB offers official SDKs for popular languages, supporting queries, authen
 
 SurrealDB offers flexible deployment options to suit your infrastructure requirements. You can run the database as a fully managed cloud service, self-host it on your own servers, deploy it within containers, or embed it directly into your application.
 
-- **[SurrealDB Cloud](manage/cloud/index.md)** — Provision and manage cloud-hosted SurrealDB instances with automatic scaling and backups.
+- **[Managed instances](manage/instances/index.md)** — Provision and manage cloud-hosted SurrealDB instances with automatic scaling and backups.
 - **[Self-hosted](manage/self-hosted/index.md)** — Install and run SurrealDB on your own infrastructure with full control over configuration.
 - **[Embedding](build/embedding/index.md)** — Embed SurrealDB directly into your application as an in-process database engine.
 - **[Docker](running/docker.md)** — Run SurrealDB in a Docker container for rapid setup and consistent environments.

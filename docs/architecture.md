@@ -18,7 +18,7 @@ This flexibility enables SurrealDB to run wherever your application needs it:
 - Embedded directly inside desktop, mobile, browser, or edge applications
 - On a single server for production simplicity
 - Across distributed cloud-native clusters for high availability and horizontal scale
-- In fully managed environments such as [SurrealDB Cloud](build/deployment/surrealdb-cloud/what-is-surrealdb-cloud.md)
+- In fully managed environments such as [managed instances](manage/instances/index.md)
 
 The result is a unified database platform that supports local-first, edge-native, and globally distributed architectures using the same developer experience everywhere.
 
@@ -43,7 +43,7 @@ The storage layer handles persistence and durability. It determines deployment c
 | Single-node / embedded | [SurrealKV](https://github.com/surrealdb/surrealkv) (beta) |
 | In-memory server or embedded | [SurrealMX](https://github.com/surrealdb/surrealmx) |
 | Browser persistence | [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) |
-| Distributed multi-node | [SurrealDS](https://surrealdb.com/platform/surrealds) on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) and self-hosted Enterprise |
+| Distributed multi-node | Shared distributed storage on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) and self-hosted Enterprise |
 
 Each storage engine must support transactional read and write of individual keys and key ranges so the query layer can offer consistent semantics across deployment models.
 
@@ -51,12 +51,12 @@ Each storage engine must support transactional read and write of individual keys
 
 SurrealDB supports:
 
-- **Managed deployment** through [SurrealDB Cloud](build/deployment/surrealdb-cloud/what-is-surrealdb-cloud.md) — from single-node **Start** instances to multi-node **Scale** clusters on SurrealDS
+- **Managed deployment** through [managed instances](manage/instances/index.md) — from single-node **Start** instances to multi-node **Scale** clusters on distributed storage
 - **Single-node self-hosted** deployments through RocksDB (and optionally SurrealKV while in beta)
-- **Multi-node self-hosted** deployment on Kubernetes ([EKS](build/deployment/self-hosted/amazon-eks.md), [GKE](build/deployment/self-hosted/google-gke.md), [AKS](build/deployment/self-hosted/azure-aks.md)) or managed multi-node tiers on [SurrealDB Cloud](build/deployment/surrealdb-cloud/what-is-surrealdb-cloud.md)
+- **Multi-node self-hosted** deployment on [managed Kubernetes](manage/self-hosted/managed-kubernetes.md) (EKS, GKE, AKS) or managed multi-node tiers on [managed instances](manage/instances/index.md)
 - **Embedded** deployments:
   - In-memory through SurrealMX
   - Persistent through RocksDB or SurrealKV
   - In the browser through IndexedDB
 
-For deployment options, storage trade-offs, and how to choose a model, see [Deployment](build/deployment/index.md). For isolation guarantees and concurrency behaviour, see [Transactions and isolation](transactions-and-isolation.md).
+For deployment options, storage trade-offs, and how to choose a model, see [Deployment models](manage/self-hosted/deployment-models.md). For isolation guarantees and concurrency behaviour, see [Transactions and isolation](transactions-and-isolation.md).

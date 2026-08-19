@@ -5,16 +5,17 @@ description: A list of the available environment variables used when running Sur
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/environment-variables.mdx"
 ---
 
-# Environment variables
-
 Environment variables can be used to tailor the behaviour of a running SurrealDB instance.
 
-Environment variables are divided into four types: 
+Environment variables are divided into four types:
 
 * **SurrealDB environment variables**: environment variables that pertain to the overall running of a SurrealDB server. Example: `SURREAL_DEFAULT_DATABASE`. Includes an [operator and internal config](#operator-and-internal-config) subsection for advanced settings.
 * **Command environment variables**: environment variables that can be used in lieu of a command flag. Example: `SURREAL_CAPS_ALLOW_ALL=true surreal start`, equivalent to `surreal start --allow-all`.
 * **Storage backend environment variables**: environment variables that pertain to a certain storage backend. Example: `SURREAL_SURREALKV_MAX_SEGMENT_SIZE`.
-* **SurrealDB Cloud environment variables**: environment variables that are set via the [Configure instance](../../../build/deployment/surrealdb-cloud/getting-started/create-an-instance.md#configure-an-instance) sidebar for a SurrealDB Cloud instance.
+* **SurrealDB Cloud environment variables**: environment variables that are set via the [Configure instance](../../../manage/instances/configure.md) sidebar for a SurrealDB Cloud instance.
+
+> [!IMPORTANT]
+> Every variable on this page belongs to the `surreal` binary and starts with `SURREAL_`. The [`surrealctl`](../surrealctl/overview.md) control-plane tool reads `SURREALCTL_*` variables instead, and the two prefixes are kept apart deliberately: a database credential such as `SURREAL_TOKEN` is not a control-plane credential, and must not be sent to the SurrealDB Cloud API.
 
 Many environment variables have a maximum value equivalent to the greatest possible `usize`, which is an unsigned integer with a number of bytes depending on the target that the database runs on. For most systems this will be 64 bits, leading to a maximum size of 18_446_744_073_709_551_615 (2<sup>64</sup>), while for 32 bits the maximum will be 4_294_967_296 (2<sup>32</sup>).
 
@@ -1427,6 +1428,14 @@ surreal start --allow-all true
       <td scope="row" data-label="Notes">The maximum duration that a set of statements can run for.</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_READINESS_HEARTBEAT_MAX_AGE`*Since v3.3.0*</td>
+      <td scope="row" data-label="Command arg">`readiness-heartbeat-max-age`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">Three times `node-membership-refresh-interval` (9s)</td>
+      <td scope="row" data-label="Allowed values">A duration</td>
+      <td scope="row" data-label="Notes">How stale this node's cluster heartbeat may get before `/ready` reports the node unhealthy. When unset, it is derived as three times `node-membership-refresh-interval`. Startup warns if the configured value reaches 30s — the interval after which peers archive an unresponsive node and collect its live queries — because a node reported ready after the cluster has written it off keeps taking traffic. The value is not clamped.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_RECLAIM_INTERVAL`*Since v3.2.0*</td>
       <td scope="row" data-label="Command arg">`reclaim-interval`</td>
       <td scope="row" data-label="Command">`start`</td>
@@ -1870,7 +1879,7 @@ The available environment variables for configuring a RocksDB instance are:
 ### TiKV environment variables
 
 > [!IMPORTANT]
-> These variables apply when SurrealDB is started with a `tikv://` endpoint for **local Community experimentation**. They are not the configuration surface for production multi-node HA. Prefer **[SurrealDS](https://surrealdb.com/platform/surrealds)** via [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) or [SurrealDB Enterprise](https://surrealdb.com/enterprise). See [Run a multi-node cluster](../../../running/multi-node.md).
+> These variables apply when SurrealDB is started with a `tikv://` endpoint for **local Community experimentation**. They are not the configuration surface for production multi-node HA. Prefer a managed cluster on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) or a self-hosted cluster with [SurrealDB Enterprise](https://surrealdb.com/enterprise). See [Run a multi-node cluster](../../../running/multi-node.md).
 
 <table>
   <thead>
@@ -1955,4 +1964,4 @@ The available environment variables for configuring a RocksDB instance are:
 
 ## SurrealDB Cloud environment variables
 
-Instances on SurrealDB Cloud are not started with a CLI command or environment variables. Instead, they can be set on the [Configure Instance](../../../build/deployment/surrealdb-cloud/getting-started/create-an-instance.md#configure-an-instance) panel.
+Instances on SurrealDB Cloud are not started with a CLI command or environment variables. Instead, they can be set from [SurrealDB Studio](../../../manage/instances/configure.md) or with [`surrealctl`](../surrealctl/overview.md).

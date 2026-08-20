@@ -356,7 +356,7 @@ _259 posts_
 - **2024-02-06** · [v1.2.0-beta.1 is live! 🎉](2024/02/v1-2-0-beta-1-is-live.md)  
   `releases` — This new release comes with bug fixes, performance improvements, and feature updates to string methods, support for READONLY fields and type support for subfields.
 - **2024-02-01** · [We're hiring](2024/02/were-hiring.md)  
-  `company` — We're hiring! Join SurrealDB as we continue to shape the future of database technology! We're on the lookout for exceptional individuals - those who are passionate about their craft and equally passionate about the team they work with to develop and promote groundbreaking technology.
+  `company` — SurrealDB is on the lookout for exceptional individuals - those who are passionate about their craft and team to develop and promote groundbreaking technology.
 - **2024-01-29** · [Beyond SQL joins: Exploring SurrealDB's multi-model relationships](2024/01/beyond-sql-joins-exploring-surrealdbs-multi-model-relationships.md)  
   `tutorials` — Can't join? No worries, we can relate.
 - **2024-01-23** · [VART: A persistent data structure for snapshot isolation](2024/01/vart-a-persistent-data-structure-for-snapshot-isolation.md)  
@@ -424,23 +424,23 @@ _259 posts_
 - **2023-06-08** · [Announcing Developer Office Hours](2023/06/announcing-developer-office-hours.md)  
   `community` — We're kicking off Developer Office Hours! 🎉 Starting June 9th, we'll be hosting this on Discord every Friday.
 - **2023-06-02** · [Announcing SurrealDB World](2023/06/announcing-surrealdb-world.md)  
-  `events` — Over the past six months, we have been forging ahead with SurrealDB, and now we are delighted to announce SurrealDB World conference, which will take place on September 13 2023 in London, UK.
+  `events` — We have been forging ahead with SurrealDB and are now delighted to announce SurrealDB World conference to take place on September 13 2023 in London, UK.
 - **2023-05-31** · [Thank you GitHub for the feature!](2023/05/thank-you-github-for-the-feature.md)  
-  `community` `company` — Thank you GitHub for the feature on the Maintainer Month Library! 🎉 As part of our efforts to celebrate #MaintainerMonth 2023, we had a chat with one of our maintainers here at SurrealDB, Rushmore Mushambi.
+  `community` `company` — Thanks to GitHub for the feature on the Maintainer Month Library! During #MaintainerMonth 2023, we spoke with SurrealDB maintainer Rushmore Mushambi.
 - **2023-05-29** · [Maintainer Month 2023: Behind the scenes with Yusuke Kuoka](2023/05/maintainer-month-2023-behind-the-scenes-with-yusuke-kuoka.md)  
-  `community` — Hi! I’m Yusuke, and I’m a Senior Software Engineer at SurrealDB. It’s #MaintainerMonth, so I’d like to explain why I became a ‘maintainer’, tell you about my journey so far, and then give you a glimpse of my life as a maintainer.
+  `community` — Senior Software Engineer Yusuke at SurrealDB explains his journey so far and why he became a maintainer.
 - **2023-05-26** · [Rounding up May with SurrealDB Social](2023/05/rounding-up-may-with-surrealdb-social.md)  
-  `events` — Whether you've just discovered SurrealDB or are an early adopter, you're invited to our monthly tech meetup SurrealDB Social at Huckletree, Oxford Circus. This month’s focus is on Live Queries, with talks from Hugh Kaznowski and CEO Tobie Morgan Hitchcock.
+  `events` — This month’s SurrealDB Social which focused on Live Queries, with talks from Hugh Kaznowski and CEO Tobie Morgan Hitchcock.
 - **2023-05-25** · [Maintainer Month 2023: Behind the scenes with Rushmore Mushambi](2023/05/maintainer-month-2023-behind-the-scenes-with-rushmore-mushambi.md)  
-  `community` — Hi everyone. My name is Feranmi Okafor. I'm a Social Media Manager at SurrealDB. As part of our efforts to celebrate #MaintainerMonth 2023, we had a quick chat with one of our maintainers here at SurrealDB.
+  `community` — A post featuring a quick chat with one of our maintainers at SurrealDB as part of our efforts to celebrate #MaintainerMonth 2023.
 - **2023-05-16** · [Live Queries with Tobie & Hugh](2023/05/live-queries-with-tobie-hugh.md)  
   `tutorials` — This week we're focusing on live queries, with co-founder Tobie Morgan Hitchcock and Senior Software Engineer Hugh Kaznowski.
 - **2023-05-11** · [The life-changing magic of SurrealDB record IDs](2023/05/the-life-changing-magic-of-surrealdb-record-ids.md)  
-  `engineering` `tutorials` — At SurrealDB, we are all about doing things that spark joy for developers. One of those things that constantly surprises and delights is the humble record ID, which we discussed in our live stream.
+  `engineering` `tutorials` — At SurrealDB, we are all about doing things that spark joy for developers. One of those things that constantly surprises and delights is the humble record ID.
 - **2023-05-06** · [SurrealDB Giveaway](2023/05/surrealdb-giveaway.md)  
   `community` — We are utterly blown away! Thank you so, so much to the SurrealDB and dev communities for your amazing support since our launch in August.
 - **2023-05-05** · [Getting started with the SurrealDB Go Driver](2023/05/getting-started-with-the-surrealdb-go-driver.md)  
-  `tutorials` — In our Beta 9 release, we updated our Go driver. In this tutorial, we will learn to build a simple SurrealDB URL shortener using the Go driver. A URL shortener is a very simple yet powerful tool that can help you be more productive.
+  `tutorials` — In our Beta 9 release, we updated our Go driver. In this tutorial, we will learn to build a simple SurrealDB URL shortener using the Go driver.
 - **2023-05-01** · [SurrealDB Scalability](2023/05/surrealdb-scalability.md)  
   `engineering` — SurrealDB is a multi-paradigm database that allows you to perform document, graph, temporal, spatial, and text operations within an ACID environment. The SurrealDB service is a compute layer that processes queries and operates on a storage layer. As of writing, our storage layer is predominantly RocksDB.
 - **2023-04-25** · [All About SurrealQL](2023/04/all-about-surrealql.md)  
@@ -448,15 +448,15 @@ _259 posts_
 - **2023-04-25** · [Clustered SurrealDB for 1.0.0-beta9](2023/04/clustered-surrealdb-for-1-0-0-beta9.md)  
   `tutorials` — In this post, I will show you how to set up a distributed SurrealDB cluster that shares a distributed TiKV cluster. This architecture allows you to scale your operations to improve writes and reads and seamlessly continue operations during failures.
 - **2023-04-21** · [The ultimate beginners guide to databases](2023/04/the-ultimate-beginners-guide-to-databases.md)  
-  `tutorials` — It is our belief that developers should be able to build secure, modern, collaborative applications without needing to build complicated backend APIs and database layers, and without being forced into using a single data model or cloud platform.
+  `tutorials` — SurrealDB believes that developers should be able to build applications without complicated backend APIs, or being forced into using a single data model.
 - **2023-04-12** · [Behind the scenes of the exciting beta 9 release](2023/04/behind-the-scenes-of-the-exciting-beta-9-release.md)  
-  `tutorials` — Our team has been working very hard on the new release, which introduces a ton of new features, bug fixes and performance improvements you can see here...
+  `tutorials` — Our team has been working hard on the new release, which introduces a ton of new features, bug fixes and performance improvements you can see here...
 - **2023-03-30** · [Understanding SurrealQL and how it is different from PostgreSQL](2023/03/understanding-surrealql-and-how-it-is-different-from-postgresql.md)  
-  `tutorials` — In this article, we will explore the similarities and differences between PostgreSQL and SurrealQL. We will also see how SurrealQL can overcome some of the limitations that relational databases have.
+  `tutorials` — An exploration of the similarities and differences between PostgreSQL and SurrealQL, and how SurrealQL overcomes the limitations found in relational databases.
 - **2023-02-08** · [An introduction to SurrealDB](2023/02/an-introduction-to-surrealdb.md)  
-  `tutorials` — If you are reading this, you may be wondering how to get started with this fantastic product you just discovered, SurrealDB. It's a database that does many routine things, so you can focus on what matters to you - processing your data.
+  `tutorials` — SurrealDB is a database that does many routine things, so you can focus on what matters to you - processing your data.
 - **2023-02-06** · [SurrealDB Social X Swingers](2023/02/surrealdb-social-x-swingers.md)  
-  `events` — The room was buzzing at our first SurrealDB Social held at Swingers Crazy Golf in central London, as we had the opportunity to connect with members of our SurrealDB community face-to-face! We had Surrealers travel in from around the UK, as well as Europe and even the US.
+  `events` — The first SurrealDB Social was held at Swingers Crazy Golf in central London, giving the opportunity to connect with members of the SurrealDB community.
 - **2023-02-06** · [First New York SurrealDB Social](2023/02/first-new-york-surrealdb-social.md)  
   `events` — We’re throwing our first New York SurrealDB Social on Tuesday 14 March, 6-10PM EST, at Swingers (35 W 29th St, New York, NY 10001)!
 - **2023-02-05** · [New 'Awesome SurrealDB' repo!](2023/02/new-awesome-surrealdb-repo.md)  
@@ -520,4 +520,4 @@ _259 posts_
 - **2022-07-20** · [Dreaming of something better](2022/07/dreaming-of-something-better.md)  
   `company` `featured` — WE ARE LIVE!!! After 7 years of conceptualising, planning, designing and developing, our #opensource scalable cloud graph database SurrealDB is now in open beta to the world!
 - **2022-07-20** · [Release v1.0.0-beta.2](2022/07/release-v1-0-0-beta-2.md)  
-  `releases` — Improve command-line logging output, enable new <code>--log<\/code> argument for specifying server log level, hide default randomly-generated server password, and more...
+  `releases` — SurrealDB 1.0.0-beta.2 adds a <code>--log<\/code> argument for setting server log verbosity, and stops printing the generated root password at startup.

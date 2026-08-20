@@ -36,11 +36,11 @@ _35 posts_
 - **2023-06-08** · [Announcing Developer Office Hours](../2023/06/announcing-developer-office-hours.md)  
   `community` — We're kicking off Developer Office Hours! 🎉 Starting June 9th, we'll be hosting this on Discord every Friday.
 - **2023-05-31** · [Thank you GitHub for the feature!](../2023/05/thank-you-github-for-the-feature.md)  
-  `community` `company` — Thank you GitHub for the feature on the Maintainer Month Library! 🎉 As part of our efforts to celebrate #MaintainerMonth 2023, we had a chat with one of our maintainers here at SurrealDB, Rushmore Mushambi.
+  `community` `company` — Thanks to GitHub for the feature on the Maintainer Month Library! During #MaintainerMonth 2023, we spoke with SurrealDB maintainer Rushmore Mushambi.
 - **2023-05-29** · [Maintainer Month 2023: Behind the scenes with Yusuke Kuoka](../2023/05/maintainer-month-2023-behind-the-scenes-with-yusuke-kuoka.md)  
-  `community` — Hi! I’m Yusuke, and I’m a Senior Software Engineer at SurrealDB. It’s #MaintainerMonth, so I’d like to explain why I became a ‘maintainer’, tell you about my journey so far, and then give you a glimpse of my life as a maintainer.
+  `community` — Senior Software Engineer Yusuke at SurrealDB explains his journey so far and why he became a maintainer.
 - **2023-05-25** · [Maintainer Month 2023: Behind the scenes with Rushmore Mushambi](../2023/05/maintainer-month-2023-behind-the-scenes-with-rushmore-mushambi.md)  
-  `community` — Hi everyone. My name is Feranmi Okafor. I'm a Social Media Manager at SurrealDB. As part of our efforts to celebrate #MaintainerMonth 2023, we had a quick chat with one of our maintainers here at SurrealDB.
+  `community` — A post featuring a quick chat with one of our maintainers at SurrealDB as part of our efforts to celebrate #MaintainerMonth 2023.
 - **2023-05-06** · [SurrealDB Giveaway](../2023/05/surrealdb-giveaway.md)  
   `community` — We are utterly blown away! Thank you so, so much to the SurrealDB and dev communities for your amazing support since our launch in August.
 - **2023-02-05** · [New 'Awesome SurrealDB' repo!](../2023/02/new-awesome-surrealdb-repo.md)  

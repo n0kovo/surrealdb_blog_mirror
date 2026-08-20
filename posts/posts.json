@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T06:36:56.094958+00:00",
+  "generated_at": "2026-08-20T06:38:49.934039+00:00",
   "count": 259,
   "posts": [
     {
@@ -2462,7 +2462,7 @@
     {
       "slug": "were-hiring",
       "title": "We're hiring",
-      "summary": "We're hiring! Join SurrealDB as we continue to shape the future of database technology! We're on the lookout for exceptional individuals - those who are passionate about their craft and equally passionate about the team they work with to develop and promote groundbreaking technology.",
+      "summary": "SurrealDB is on the lookout for exceptional individuals - those who are passionate about their craft and team to develop and promote groundbreaking technology.",
       "publishDate": "2024-02-01T00:00:00.000Z",
       "categories": [
         "company"
@@ -2914,7 +2914,7 @@
     {
       "slug": "announcing-surrealdb-world",
       "title": "Announcing SurrealDB World",
-      "summary": "Over the past six months, we have been forging ahead with SurrealDB, and now we are delighted to announce SurrealDB World conference, which will take place on September 13 2023 in London, UK.",
+      "summary": "We have been forging ahead with SurrealDB and are now delighted to announce SurrealDB World conference to take place on September 13 2023 in London, UK.",
       "publishDate": "2023-06-02T00:00:00.000Z",
       "categories": [
         "events"
@@ -2927,7 +2927,7 @@
     {
       "slug": "thank-you-github-for-the-feature",
       "title": "Thank you GitHub for the feature!",
-      "summary": "Thank you GitHub for the feature on the Maintainer Month Library! 🎉\nAs part of our efforts to celebrate #MaintainerMonth 2023, we had a chat with one of our maintainers here at SurrealDB, Rushmore Mushambi.",
+      "summary": "Thanks to GitHub for the feature on the Maintainer Month Library! During #MaintainerMonth 2023, we spoke with SurrealDB maintainer Rushmore Mushambi.",
       "publishDate": "2023-05-31T00:00:00.000Z",
       "categories": [
         "community",
@@ -2941,7 +2941,7 @@
     {
       "slug": "maintainer-month-2023-behind-the-scenes-with-yusuke-kuoka",
       "title": "Maintainer Month 2023: Behind the scenes with Yusuke Kuoka",
-      "summary": "Hi! I’m Yusuke, and I’m a Senior Software Engineer at SurrealDB. It’s #MaintainerMonth, so I’d like to explain why I became a ‘maintainer’, tell you about my journey so far, and then give you a glimpse of my life as a maintainer.",
+      "summary": "Senior Software Engineer Yusuke at SurrealDB explains his journey so far and why he became a maintainer.",
       "publishDate": "2023-05-29T00:00:00.000Z",
       "categories": [
         "community"
@@ -2954,7 +2954,7 @@
     {
       "slug": "rounding-up-may-with-surrealdb-social",
       "title": "Rounding up May with SurrealDB Social",
-      "summary": "Whether you've just discovered SurrealDB or are an early adopter, you're invited to our monthly tech meetup SurrealDB Social at Huckletree, Oxford Circus. This month’s focus is on Live Queries, with talks from Hugh Kaznowski and CEO Tobie Morgan Hitchcock.",
+      "summary": "This month’s SurrealDB Social which focused on Live Queries, with talks from Hugh Kaznowski and CEO Tobie Morgan Hitchcock.",
       "publishDate": "2023-05-26T00:00:00.000Z",
       "categories": [
         "events"
@@ -2967,7 +2967,7 @@
     {
       "slug": "maintainer-month-2023-behind-the-scenes-with-rushmore-mushambi",
       "title": "Maintainer Month 2023: Behind the scenes with Rushmore Mushambi",
-      "summary": "Hi everyone. My name is Feranmi Okafor. I'm a Social Media Manager at SurrealDB. As part of our efforts to celebrate #MaintainerMonth 2023, we had a quick chat with one of our maintainers here at SurrealDB.",
+      "summary": "A post featuring a quick chat with one of our maintainers at SurrealDB as part of our efforts to celebrate #MaintainerMonth 2023.",
       "publishDate": "2023-05-25T00:00:00.000Z",
       "categories": [
         "community"
@@ -2993,7 +2993,7 @@
     {
       "slug": "the-life-changing-magic-of-surrealdb-record-ids",
       "title": "The life-changing magic of SurrealDB record IDs",
-      "summary": "At SurrealDB, we are all about doing things that spark joy for developers. One of those things that constantly surprises and delights is the humble record ID, which we discussed in our live stream.",
+      "summary": "At SurrealDB, we are all about doing things that spark joy for developers. One of those things that constantly surprises and delights is the humble record ID.",
       "publishDate": "2023-05-11T00:00:00.000Z",
       "categories": [
         "engineering",
@@ -3020,7 +3020,7 @@
     {
       "slug": "getting-started-with-the-surrealdb-go-driver",
       "title": "Getting started with the SurrealDB Go Driver",
-      "summary": "In our Beta 9 release, we updated our Go driver. In this tutorial, we will learn to build a simple SurrealDB URL shortener using the Go driver. A URL shortener is a very simple yet powerful tool that can help you be more productive.",
+      "summary": "In our Beta 9 release, we updated our Go driver. In this tutorial, we will learn to build a simple SurrealDB URL shortener using the Go driver.",
       "publishDate": "2023-05-05T00:00:00.000Z",
       "categories": [
         "tutorials"
@@ -3072,7 +3072,7 @@
     {
       "slug": "the-ultimate-beginners-guide-to-databases",
       "title": "The ultimate beginners guide to databases",
-      "summary": "It is our belief that developers should be able to build secure, modern, collaborative applications without needing to build complicated backend APIs and database layers, and without being forced into using a single data model or cloud platform.",
+      "summary": "SurrealDB believes that developers should be able to build applications without complicated backend APIs, or being forced into using a single data model.",
       "publishDate": "2023-04-21T00:00:00.000Z",
       "categories": [
         "tutorials"
@@ -3085,7 +3085,7 @@
     {
       "slug": "behind-the-scenes-of-the-exciting-beta-9-release",
       "title": "Behind the scenes of the exciting beta 9 release",
-      "summary": "Our team has been working very hard on the new release, which introduces a ton of new features, bug fixes and performance improvements you can see here...",
+      "summary": "Our team has been working hard on the new release, which introduces a ton of new features, bug fixes and performance improvements you can see here...",
       "publishDate": "2023-04-12T00:00:00.000Z",
       "categories": [
         "tutorials"
@@ -3098,7 +3098,7 @@
     {
       "slug": "understanding-surrealql-and-how-it-is-different-from-postgresql",
       "title": "Understanding SurrealQL and how it is different from PostgreSQL",
-      "summary": "In this article, we will explore the similarities and differences between PostgreSQL and SurrealQL. We will also see how SurrealQL can overcome some of the limitations that relational databases have.",
+      "summary": "An exploration of the similarities and differences between PostgreSQL and SurrealQL, and how SurrealQL overcomes the limitations found in relational databases.",
       "publishDate": "2023-03-30T00:00:00.000Z",
       "categories": [
         "tutorials"
@@ -3111,7 +3111,7 @@
     {
       "slug": "an-introduction-to-surrealdb",
       "title": "An introduction to SurrealDB",
-      "summary": "If you are reading this, you may be wondering how to get started with this fantastic product you just discovered, SurrealDB. It's a database that does many routine things, so you can focus on what matters to you - processing your data.",
+      "summary": "SurrealDB is a database that does many routine things, so you can focus on what matters to you - processing your data.",
       "publishDate": "2023-02-08T00:00:00.000Z",
       "categories": [
         "tutorials"
@@ -3124,7 +3124,7 @@
     {
       "slug": "surrealdb-social-x-swingers",
       "title": "SurrealDB Social X Swingers",
-      "summary": "The room was buzzing at our first SurrealDB Social held at Swingers Crazy Golf in central London, as we had the opportunity to connect with members of our SurrealDB community face-to-face! We had Surrealers travel in from around the UK, as well as Europe and even the US.",
+      "summary": "The first SurrealDB Social was held at Swingers Crazy Golf in central London, giving the opportunity to connect with members of the SurrealDB community.",
       "publishDate": "2023-02-06T00:00:00.000Z",
       "categories": [
         "events"
@@ -3542,7 +3542,7 @@
     {
       "slug": "release-v1-0-0-beta-2",
       "title": "Release v1.0.0-beta.2",
-      "summary": "Improve command-line logging output, enable new <code>--log<\\/code> argument for specifying server log level, hide default randomly-generated server password, and more...",
+      "summary": "SurrealDB 1.0.0-beta.2 adds a <code>--log<\\/code> argument for setting server log verbosity, and stops printing the generated root password at startup.",
       "publishDate": "2022-07-20T00:00:00.000Z",
       "categories": [
         "releases"

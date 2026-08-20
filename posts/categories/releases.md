@@ -108,4 +108,4 @@ _53 posts_
 - **2022-07-21** · [Documentation is live](../2022/07/documentation-is-live.md)  
   `company` `releases` — We’re happy to announce that our SurrealDB Documentation is LIVE! Installation, setup, datatypes, querying, connectivity, advanced functionality. It's all here.
 - **2022-07-20** · [Release v1.0.0-beta.2](../2022/07/release-v1-0-0-beta-2.md)  
-  `releases` — Improve command-line logging output, enable new <code>--log<\/code> argument for specifying server log level, hide default randomly-generated server password, and more...
+  `releases` — SurrealDB 1.0.0-beta.2 adds a <code>--log<\/code> argument for setting server log verbosity, and stops printing the generated root password at startup.

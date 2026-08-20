@@ -62,7 +62,7 @@ _41 posts_
 - **2024-03-13** · [Why we are betting on Rust](../2024/03/why-we-are-betting-on-rust.md)  
   `engineering` `company` — The best way to predict the future is to create it.
 - **2024-02-01** · [We're hiring](../2024/02/were-hiring.md)  
-  `company` — We're hiring! Join SurrealDB as we continue to shape the future of database technology! We're on the lookout for exceptional individuals - those who are passionate about their craft and equally passionate about the team they work with to develop and promote groundbreaking technology.
+  `company` — SurrealDB is on the lookout for exceptional individuals - those who are passionate about their craft and team to develop and promote groundbreaking technology.
 - **2024-01-12** · [Introducing our new monthly release schedule](../2024/01/introducing-our-new-monthly-release-schedule.md)  
   `releases` `company` — We are excited to announce a change in our product release schedule, with a regular monthly release cycle, allowing developers and organisations to build on top of SurrealDB, with predictable timelines for software improvements and fixes.
 - **2024-01-09** · [Introducing Nightly and Beta Rust Crates](../2024/01/introducing-nightly-and-beta-rust-crates.md)  
@@ -74,7 +74,7 @@ _41 posts_
 - **2023-09-14** · [Announcing SurrealDB 1.0](../2023/09/announcing-surrealdb-1-0.md)  
   `releases` `company` — At SurrealDB World, we’re excited to launch SurrealDB 1.0, a revolution in the database technology landscape. With this stable release, we're not just introducing a database; we're redefining the essence of how databases function and integrate with your projects.
 - **2023-05-31** · [Thank you GitHub for the feature!](../2023/05/thank-you-github-for-the-feature.md)  
-  `community` `company` — Thank you GitHub for the feature on the Maintainer Month Library! 🎉 As part of our efforts to celebrate #MaintainerMonth 2023, we had a chat with one of our maintainers here at SurrealDB, Rushmore Mushambi.
+  `community` `company` — Thanks to GitHub for the feature on the Maintainer Month Library! During #MaintainerMonth 2023, we spoke with SurrealDB maintainer Rushmore Mushambi.
 - **2023-01-04** · [We are thrilled to announce our $6M Seed round led by FirstMark Capital and Matt Turck!](../2023/01/we-are-thrilled-to-announce-our-6m-seed-round-led-by-firstmark-capital-and-matt-turck.md)  
   `company` — Matt and FirstMark deeply share our vision, and we are truly humbled to have them with us on this journey.
 - **2022-11-25** · [We are hiring!](../2022/11/we-are-hiring.md)  

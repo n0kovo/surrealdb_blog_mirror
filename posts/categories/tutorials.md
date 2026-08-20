@@ -184,20 +184,20 @@ _99 posts_
 - **2023-05-16** · [Live Queries with Tobie & Hugh](../2023/05/live-queries-with-tobie-hugh.md)  
   `tutorials` — This week we're focusing on live queries, with co-founder Tobie Morgan Hitchcock and Senior Software Engineer Hugh Kaznowski.
 - **2023-05-11** · [The life-changing magic of SurrealDB record IDs](../2023/05/the-life-changing-magic-of-surrealdb-record-ids.md)  
-  `engineering` `tutorials` — At SurrealDB, we are all about doing things that spark joy for developers. One of those things that constantly surprises and delights is the humble record ID, which we discussed in our live stream.
+  `engineering` `tutorials` — At SurrealDB, we are all about doing things that spark joy for developers. One of those things that constantly surprises and delights is the humble record ID.
 - **2023-05-05** · [Getting started with the SurrealDB Go Driver](../2023/05/getting-started-with-the-surrealdb-go-driver.md)  
-  `tutorials` — In our Beta 9 release, we updated our Go driver. In this tutorial, we will learn to build a simple SurrealDB URL shortener using the Go driver. A URL shortener is a very simple yet powerful tool that can help you be more productive.
+  `tutorials` — In our Beta 9 release, we updated our Go driver. In this tutorial, we will learn to build a simple SurrealDB URL shortener using the Go driver.
 - **2023-04-25** · [All About SurrealQL](../2023/04/all-about-surrealql.md)  
   `tutorials` — This week's SurrealDB Stream focused on SurrealQL with co-founder Tobie Morgan Hitchcock, Data Evangelist Alexander Fridriksson and Software Engineer Micha de Vries: Why is SurrealQL a SQL-like language vs a custom language like MongoQL or Cypher?
 - **2023-04-25** · [Clustered SurrealDB for 1.0.0-beta9](../2023/04/clustered-surrealdb-for-1-0-0-beta9.md)  
   `tutorials` — In this post, I will show you how to set up a distributed SurrealDB cluster that shares a distributed TiKV cluster. This architecture allows you to scale your operations to improve writes and reads and seamlessly continue operations during failures.
 - **2023-04-21** · [The ultimate beginners guide to databases](../2023/04/the-ultimate-beginners-guide-to-databases.md)  
-  `tutorials` — It is our belief that developers should be able to build secure, modern, collaborative applications without needing to build complicated backend APIs and database layers, and without being forced into using a single data model or cloud platform.
+  `tutorials` — SurrealDB believes that developers should be able to build applications without complicated backend APIs, or being forced into using a single data model.
 - **2023-04-12** · [Behind the scenes of the exciting beta 9 release](../2023/04/behind-the-scenes-of-the-exciting-beta-9-release.md)  
-  `tutorials` — Our team has been working very hard on the new release, which introduces a ton of new features, bug fixes and performance improvements you can see here...
+  `tutorials` — Our team has been working hard on the new release, which introduces a ton of new features, bug fixes and performance improvements you can see here...
 - **2023-03-30** · [Understanding SurrealQL and how it is different from PostgreSQL](../2023/03/understanding-surrealql-and-how-it-is-different-from-postgresql.md)  
-  `tutorials` — In this article, we will explore the similarities and differences between PostgreSQL and SurrealQL. We will also see how SurrealQL can overcome some of the limitations that relational databases have.
+  `tutorials` — An exploration of the similarities and differences between PostgreSQL and SurrealQL, and how SurrealQL overcomes the limitations found in relational databases.
 - **2023-02-08** · [An introduction to SurrealDB](../2023/02/an-introduction-to-surrealdb.md)  
-  `tutorials` — If you are reading this, you may be wondering how to get started with this fantastic product you just discovered, SurrealDB. It's a database that does many routine things, so you can focus on what matters to you - processing your data.
+  `tutorials` — SurrealDB is a database that does many routine things, so you can focus on what matters to you - processing your data.
 - **2022-08-03** · [Why use SurrealDB?](../2022/08/why-use-surrealdb.md)  
   `tutorials` — SurrealDB is an innovative NewSQL cloud database, suitable for serverless applications, jamstack applications, single-page applications, and traditional applications. It is unmatched in its versatility and financial value, with the ability for deployment on cloud, on-premise, embedded, and edge computing environments.

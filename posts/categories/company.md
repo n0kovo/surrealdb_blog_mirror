@@ -64,15 +64,15 @@ _41 posts_
 - **2024-02-01** · [We're hiring](../2024/02/were-hiring.md)  
   `company` — SurrealDB is on the lookout for exceptional individuals - those who are passionate about their craft and team to develop and promote groundbreaking technology.
 - **2024-01-12** · [Introducing our new monthly release schedule](../2024/01/introducing-our-new-monthly-release-schedule.md)  
-  `releases` `company` — We are excited to announce a change in our product release schedule, with a regular monthly release cycle, allowing developers and organisations to build on top of SurrealDB, with predictable timelines for software improvements and fixes.
+  `releases` `company` — A new regular monthly release cycle for SurrealDB, allowing developers and organisations to build on it with predictable timelines for improvements and fixes.
 - **2024-01-09** · [Introducing Nightly and Beta Rust Crates](../2024/01/introducing-nightly-and-beta-rust-crates.md)  
   `releases` `engineering` `company` — We are pleased to announce two additional Rust crates, surrealdb-nightly and surrealdb-beta. These crates are designed to complement the surrealdb crate.
 - **2023-12-05** · [Introducing the New SurrealDB Documentation on Docusaurus!](../2023/12/introducing-the-new-surrealdb-documentation-on-docusaurus.md)  
-  `company` — We are excited to announce the new SurrealDB documentation. At SurrealDB, we are constantly looking for ways to improve the experience of developers on our platform which has brought us to rethinking our documentation platform.
+  `company` — We are excited to announce the new SurrealDB documentation to improve the experience of developers on our platform.
 - **2023-10-02** · [SurrealDB World 2023 - A Recap](../2023/10/surrealdb-world-2023--a-recap.md)  
-  `events` `company` — Two weeks ago at SurrealDB World 2023, our first-ever user conference, we launched SurrealDB 1.0! We were thrilled to see an amazing response to the event, with over 300 people attending in person and more than 2,000 online.
+  `events` `company` — SurrealDB's first-ever user conference SurrealDB World 2023 was held shortly after the launch of SurrealDB 1.0. Over 300 attended in person and 2,000 online.
 - **2023-09-14** · [Announcing SurrealDB 1.0](../2023/09/announcing-surrealdb-1-0.md)  
-  `releases` `company` — At SurrealDB World, we’re excited to launch SurrealDB 1.0, a revolution in the database technology landscape. With this stable release, we're not just introducing a database; we're redefining the essence of how databases function and integrate with your projects.
+  `releases` `company` — At SurrealDB World we launched SurrealDB 1.0, a revolution in the tech landscape that redefines how databases function and integrate with your projects.
 - **2023-05-31** · [Thank you GitHub for the feature!](../2023/05/thank-you-github-for-the-feature.md)  
   `community` `company` — Thanks to GitHub for the feature on the Maintainer Month Library! During #MaintainerMonth 2023, we spoke with SurrealDB maintainer Rushmore Mushambi.
 - **2023-01-04** · [We are thrilled to announce our $6M Seed round led by FirstMark Capital and Matt Turck!](../2023/01/we-are-thrilled-to-announce-our-6m-seed-round-led-by-firstmark-capital-and-matt-turck.md)  

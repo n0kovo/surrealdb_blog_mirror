@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T06:38:49.934039+00:00",
+  "generated_at": "2026-08-21T06:38:44.128960+00:00",
   "count": 259,
   "posts": [
     {
@@ -2475,7 +2475,7 @@
     {
       "slug": "beyond-sql-joins-exploring-surrealdbs-multi-model-relationships",
       "title": "Beyond SQL joins: Exploring SurrealDB's multi-model relationships",
-      "summary": "Can't join? No worries, we can relate.",
+      "summary": "Can't join? No worries, we can relate. In this post we explore SurrealDB's multi-model relationships.",
       "publishDate": "2024-01-29T00:00:00.000Z",
       "categories": [
         "tutorials"
@@ -2488,7 +2488,7 @@
     {
       "slug": "vart-a-persistent-data-structure-for-snapshot-isolation",
       "title": "VART: A persistent data structure for snapshot isolation",
-      "summary": "The blog introduces VART, an Immutable Versioned Adaptive Radix Trie, designed for snapshot isolation in databases (surrealKV), exploring isolation levels, concurrency control.",
+      "summary": "An introduction to VART (Immutable Versioned Adaptive Radix Trie), made for snapshot isolation in databases (SurrealKV).",
       "publishDate": "2024-01-23T00:00:00.000Z",
       "categories": [
         "engineering"
@@ -2514,7 +2514,7 @@
     {
       "slug": "introducing-our-new-monthly-release-schedule",
       "title": "Introducing our new monthly release schedule",
-      "summary": "We are excited to announce a change in our product release schedule, with a regular monthly release cycle, allowing developers and organisations to build on top of SurrealDB, with predictable timelines for software improvements and fixes.",
+      "summary": "A new regular monthly release cycle for SurrealDB, allowing developers and organisations to build on it with predictable timelines for improvements and fixes.",
       "publishDate": "2024-01-12T00:00:00.000Z",
       "categories": [
         "releases",
@@ -2528,7 +2528,7 @@
     {
       "slug": "live-queries-in-rust",
       "title": "Live queries in Rust",
-      "summary": "SurrealDB comes with a LIVE SELECT statement that allows you to listen for creations, updates and deletions to specific records you are interested in or entire tables.",
+      "summary": "Use SurrealDB's LIVE SELECT statement that allows you to listen for creations, updates and deletions to specific records you are interested in or entire tables.",
       "publishDate": "2024-01-10T00:00:00.000Z",
       "categories": [
         "tutorials",
@@ -2542,7 +2542,7 @@
     {
       "slug": "release-v1-1-0",
       "title": "Release v1.1.0",
-      "summary": "We're excited to announce SurrealDB v1.1.0, with many performance improvements, bug fixes, and new features, and native machine learning computation, right within the database.",
+      "summary": "SurrealDB v1.1.0 brings many performance improvements, bug fixes, and new features, and native machine learning computation, right within the database.",
       "publishDate": "2024-01-09T00:00:00.000Z",
       "categories": [
         "releases"
@@ -2570,7 +2570,7 @@
     {
       "slug": "crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy",
       "title": "Crafting our full-text search in SurrealDB: A journey beyond Lucene and Tantivy",
-      "summary": "How SurrealDB built its own ACID-compliant full-text search engine instead of integrating Lucene or Tantivy, delivering a unified query experience without external dependencies.",
+      "summary": "SurrealDB's own ACID-compliant full-text search engine is a unified query experience without external dependencies instead of integrating Lucene or Tantivy.",
       "publishDate": "2023-12-18T00:00:00.000Z",
       "categories": [
         "engineering"
@@ -2583,7 +2583,7 @@
     {
       "slug": "what-is-surrealml-a-getting-started-guide",
       "title": "What is SurrealML: A getting started guide",
-      "summary": "The developer community has made great strides in building open-source machine-learning packages that save machine-learning models. However, there are still areas of this pipeline that are not fully complete.",
+      "summary": "The developer community has made great strides in open-source machine-learning packages. However, there are still areas that are not fully complete.",
       "publishDate": "2023-12-12T00:00:00.000Z",
       "categories": [
         "tutorials",
@@ -2597,7 +2597,7 @@
     {
       "slug": "introducing-the-new-surrealdb-documentation-on-docusaurus",
       "title": "Introducing the New SurrealDB Documentation on Docusaurus!",
-      "summary": "We are excited to announce the new SurrealDB documentation. At SurrealDB, we are constantly looking for ways to improve the experience of developers on our platform which has brought us to rethinking our documentation platform.",
+      "summary": "We are excited to announce the new SurrealDB documentation to improve the experience of developers on our platform.",
       "publishDate": "2023-12-05T00:00:00.000Z",
       "categories": [
         "company"
@@ -2610,7 +2610,7 @@
     {
       "slug": "how-i-built-a-saas-powered-by-surrealdb-recorded-live-at-surrealdb-social",
       "title": "How I built a SaaS powered by SurrealDB (recorded live at SurrealDB Social)",
-      "summary": "Join Software Engineer Micha de Vries as he explores his journey as a developer and dives into a practical application of SurrealDB, showcasing his SaaS product PlayrBase, built almost entirely with SurrealDB.",
+      "summary": "Hear from Software Engineer Micha de Vries on his journey as a developer and a showcase of his SaaS product PlayrBase, built almost entirely with SurrealDB.",
       "publishDate": "2023-11-30T00:00:00.000Z",
       "categories": [
         "tutorials"
@@ -2676,7 +2676,7 @@
     {
       "slug": "how-to-handle-big-data-properly-with-surrealdb",
       "title": "How to handle big data properly with SurrealDB",
-      "summary": "Join SurrealDB's co-founder and CEO, Tobie Morgan Hitchcock, and Software Engineer Micha de Vries as we dive into how to handle big data properly with SurrealDB. Ask questions, leave comments, and get involved.",
+      "summary": "Join SurrealDB's co-founder and CEO, Tobie Morgan Hitchcock, and Software Engineer Micha de Vries who dive into how to handle big data properly with SurrealDB.",
       "publishDate": "2023-11-02T00:00:00.000Z",
       "categories": [
         "tutorials"
@@ -2702,7 +2702,7 @@
     {
       "slug": "surrealdb-world-2023--a-recap",
       "title": "SurrealDB World 2023 - A Recap",
-      "summary": "Two weeks ago at SurrealDB World 2023, our first-ever user conference, we launched SurrealDB 1.0! We were thrilled to see an amazing response to the event, with over 300 people attending in person and more than 2,000 online.",
+      "summary": "SurrealDB's first-ever user conference SurrealDB World 2023 was held shortly after the launch of SurrealDB 1.0. Over 300 attended in person and 2,000 online.",
       "publishDate": "2023-10-02T00:00:00.000Z",
       "categories": [
         "events",
@@ -2716,7 +2716,7 @@
     {
       "slug": "announcing-surrealdb-1-0",
       "title": "Announcing SurrealDB 1.0",
-      "summary": "At SurrealDB World, we’re excited to launch SurrealDB 1.0, a revolution in the database technology landscape. With this stable release, we're not just introducing a database; we're redefining the essence of how databases function and integrate with your projects.",
+      "summary": "At SurrealDB World we launched SurrealDB 1.0, a revolution in the tech landscape that redefines how databases function and integrate with your projects.",
       "publishDate": "2023-09-14T00:00:00.000Z",
       "categories": [
         "releases",
@@ -2769,7 +2769,7 @@
     {
       "slug": "record-ids-expressions-and-graphs",
       "title": "Record IDs, Expressions and Graphs",
-      "summary": "Join us for our 10th live stream as we talk practically about how record IDs help us with connecting data through record links and graph relations and how it can be used to simplify your CRUD operations through simple and advanced expressions.",
+      "summary": "Join us for our 10th live stream as we talk practically about how record IDs help us with connecting data through record links and graph relations.",
       "publishDate": "2023-08-01T00:00:00.000Z",
       "categories": [
         "tutorials"
@@ -2782,7 +2782,7 @@
     {
       "slug": "what-are-multi-model-databases",
       "title": "What are multi-model databases?",
-      "summary": "In today's digital age, staying connected is easier than ever. Social media platforms allow us to remain connected with loved ones, meet new people, and stay updated on world news...",
+      "summary": "A talk about the intriguing world of databases and where different data models co-exist, much like trains within a bustling metro station.",
       "publishDate": "2023-07-24T00:00:00.000Z",
       "categories": [
         "engineering",
@@ -2796,7 +2796,7 @@
     {
       "slug": "all-about-python",
       "title": "All About Python",
-      "summary": "This stream is all about Python, where we'll cover the why and the how of using it with SurrealDB. You'll learn all about the design decisions for the Rust rewrite and see demos of how to get up and running as well as deploying a Flask app in Docker.",
+      "summary": "A strema about Python, the why and the how of using it with SurrealDB, design decisions for the Rust rewrite and demos of how to get up and running.",
       "publishDate": "2023-07-18T00:00:00.000Z",
       "categories": [
         "tutorials"

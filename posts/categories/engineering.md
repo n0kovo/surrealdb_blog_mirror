@@ -76,17 +76,17 @@ _46 posts_
 - **2024-03-13** · [Why we are betting on Rust](../2024/03/why-we-are-betting-on-rust.md)  
   `engineering` `company` — The best way to predict the future is to create it.
 - **2024-01-23** · [VART: A persistent data structure for snapshot isolation](../2024/01/vart-a-persistent-data-structure-for-snapshot-isolation.md)  
-  `engineering` — The blog introduces VART, an Immutable Versioned Adaptive Radix Trie, designed for snapshot isolation in databases (surrealKV), exploring isolation levels, concurrency control.
+  `engineering` — An introduction to VART (Immutable Versioned Adaptive Radix Trie), made for snapshot isolation in databases (SurrealKV).
 - **2024-01-10** · [Live queries in Rust](../2024/01/live-queries-in-rust.md)  
-  `tutorials` `engineering` — SurrealDB comes with a LIVE SELECT statement that allows you to listen for creations, updates and deletions to specific records you are interested in or entire tables.
+  `tutorials` `engineering` — Use SurrealDB's LIVE SELECT statement that allows you to listen for creations, updates and deletions to specific records you are interested in or entire tables.
 - **2024-01-09** · [Introducing Nightly and Beta Rust Crates](../2024/01/introducing-nightly-and-beta-rust-crates.md)  
   `releases` `engineering` `company` — We are pleased to announce two additional Rust crates, surrealdb-nightly and surrealdb-beta. These crates are designed to complement the surrealdb crate.
 - **2023-12-18** · [Crafting our full-text search in SurrealDB: A journey beyond Lucene and Tantivy](../2023/12/crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy.md)  
-  `engineering` — How SurrealDB built its own ACID-compliant full-text search engine instead of integrating Lucene or Tantivy, delivering a unified query experience without external dependencies.
+  `engineering` — SurrealDB's own ACID-compliant full-text search engine is a unified query experience without external dependencies instead of integrating Lucene or Tantivy.
 - **2023-12-12** · [What is SurrealML: A getting started guide](../2023/12/what-is-surrealml-a-getting-started-guide.md)  
-  `tutorials` `engineering` — The developer community has made great strides in building open-source machine-learning packages that save machine-learning models. However, there are still areas of this pipeline that are not fully complete.
+  `tutorials` `engineering` — The developer community has made great strides in open-source machine-learning packages. However, there are still areas that are not fully complete.
 - **2023-07-24** · [What are multi-model databases?](../2023/07/what-are-multi-model-databases.md)  
-  `engineering` `tutorials` — In today's digital age, staying connected is easier than ever. Social media platforms allow us to remain connected with loved ones, meet new people, and stay updated on world news...
+  `engineering` `tutorials` — A talk about the intriguing world of databases and where different data models co-exist, much like trains within a bustling metro station.
 - **2023-06-20** · [JavaScript Library with Micha & Tobie](../2023/06/javascript-library-with-micha-tobie.md)  
   `tutorials` `engineering` — This week we're focusing on SurrealDB's JavaScript Library. Join Micha and Tobie as they chat about recent updates and highlights, and showcase how to use live queries and the WASM library.
 - **2023-05-11** · [The life-changing magic of SurrealDB record IDs](../2023/05/the-life-changing-magic-of-surrealdb-record-ids.md)  

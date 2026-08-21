@@ -82,13 +82,13 @@ _53 posts_
 - **2024-02-06** · [v1.2.0-beta.1 is live! 🎉](../2024/02/v1-2-0-beta-1-is-live.md)  
   `releases` — This new release comes with bug fixes, performance improvements, and feature updates to string methods, support for READONLY fields and type support for subfields.
 - **2024-01-12** · [Introducing our new monthly release schedule](../2024/01/introducing-our-new-monthly-release-schedule.md)  
-  `releases` `company` — We are excited to announce a change in our product release schedule, with a regular monthly release cycle, allowing developers and organisations to build on top of SurrealDB, with predictable timelines for software improvements and fixes.
+  `releases` `company` — A new regular monthly release cycle for SurrealDB, allowing developers and organisations to build on it with predictable timelines for improvements and fixes.
 - **2024-01-09** · [Release v1.1.0](../2024/01/release-v1-1-0.md)  
-  `releases` — We're excited to announce SurrealDB v1.1.0, with many performance improvements, bug fixes, and new features, and native machine learning computation, right within the database.
+  `releases` — SurrealDB v1.1.0 brings many performance improvements, bug fixes, and new features, and native machine learning computation, right within the database.
 - **2024-01-09** · [Introducing Nightly and Beta Rust Crates](../2024/01/introducing-nightly-and-beta-rust-crates.md)  
   `releases` `engineering` `company` — We are pleased to announce two additional Rust crates, surrealdb-nightly and surrealdb-beta. These crates are designed to complement the surrealdb crate.
 - **2023-09-14** · [Announcing SurrealDB 1.0](../2023/09/announcing-surrealdb-1-0.md)  
-  `releases` `company` — At SurrealDB World, we’re excited to launch SurrealDB 1.0, a revolution in the database technology landscape. With this stable release, we're not just introducing a database; we're redefining the essence of how databases function and integrate with your projects.
+  `releases` `company` — At SurrealDB World we launched SurrealDB 1.0, a revolution in the tech landscape that redefines how databases function and integrate with your projects.
 - **2023-09-04** · [What's new for developers in SurrealDB Beta 10](../2023/09/whats-new-for-developers-in-surrealdb-beta-10.md)  
   `releases` — Hello Developers! After months of hard work, we're excited to roll out v1.0.0-beta.10. Here's what's new!
 - **2022-10-01** · [Release v1.0.0-beta.8](../2022/10/release-v1-0-0-beta-8.md)  

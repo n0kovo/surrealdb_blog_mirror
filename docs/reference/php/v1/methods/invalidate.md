@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 12
 title: invalidate
 description: Invalidate the authentication for the current connection using the invalidate method in the SurrealDB PHP SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/invalidate.mdx"

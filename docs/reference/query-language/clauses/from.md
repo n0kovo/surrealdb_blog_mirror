@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 3
 title: FROM
 description: The `FROM` clause is used to specify the table or view to query.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/clauses/from.mdx"

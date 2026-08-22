@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 4
 title: OpenAI
 description: This section contains information about the OpenAI embeddings feature of SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/embeddings-providers/openai.mdx"

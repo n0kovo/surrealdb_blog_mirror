@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 2
 title: React
 description: The SurrealDB SDK for JavaScript can be used in React applications to interact with your SurrealDB instance.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/frameworks/react.mdx"

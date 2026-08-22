@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 6
 title: Table
 description: The Table type represents a SurrealDB table name used to scope data operations to an entire table.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/golang/api/values/table.mdx"

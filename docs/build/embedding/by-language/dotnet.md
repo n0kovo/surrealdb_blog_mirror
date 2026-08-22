@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 1
 title: .NET
 description: The documentation for embedding SurrealDB within .NET has been moved to the .NET SDK documentation.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/embedding/by-language/dotnet.mdx"

@@ -1,5 +1,5 @@
 ---
-position: 6
+position: 3
 title: Geometry
 description: The Go SDK provides typed geometry types for all SurrealDB geometry values including points, lines, polygons, and collections.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/golang/api/values/geometry.mdx"

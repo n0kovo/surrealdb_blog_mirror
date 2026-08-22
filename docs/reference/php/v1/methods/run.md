@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 18
 title: run
 description: The run method in the SurrealDB PHP SDK allows you to execute a defined SurrealQL function on the remote database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/run.mdx"

@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 4
 title: SolidJS
 description: The SurrealDB SDK for JavaScript can be used in SolidJS applications to interact with your SurrealDB instance.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/frameworks/solidjs.mdx"

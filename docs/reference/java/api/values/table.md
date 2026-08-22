@@ -1,5 +1,5 @@
 ---
-position: 7
+position: 8
 title: Table
 description: SurrealDB table values map to Java strings via Value methods.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/java/api/values/table.mdx"

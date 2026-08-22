@@ -1,5 +1,5 @@
 ---
-position: 7
+position: 4
 title: Geometry
 description: GeoJSON-compatible geometry types for spatial data.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/python/api/values/geometry.mdx"

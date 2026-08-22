@@ -1,5 +1,5 @@
 ---
-position: 6
+position: 4
 title: Escape functions
 description: Functions for escaping identifiers and values in SurrealQL queries.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/utilities/escape.mdx"

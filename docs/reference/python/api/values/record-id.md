@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 6
 title: RecordID
 description: Record identifier with table name and ID components.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/python/api/values/record-id.mdx"

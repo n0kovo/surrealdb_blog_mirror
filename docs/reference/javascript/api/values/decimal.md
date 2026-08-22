@@ -1,5 +1,5 @@
 ---
-position: 5
+position: 3
 title: Decimal
 description: Arbitrary precision decimal numbers for financial and scientific calculations.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/values/decimal.mdx"

@@ -1,5 +1,5 @@
 ---
-position: 3
+position: 7
 title: Table
 description: Table name wrapper for type-safe table references.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/python/api/values/table.mdx"

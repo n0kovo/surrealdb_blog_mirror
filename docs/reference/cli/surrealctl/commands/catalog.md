@@ -1,5 +1,5 @@
 ---
-position: 8
+position: 3
 title: catalog
 description: Reference for surrealctl catalog — the platform-wide lists of regions, instance types, storage types, SurrealDB versions and billing countries.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/catalog.mdx"

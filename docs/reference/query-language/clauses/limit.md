@@ -1,5 +1,5 @@
 ---
-position: 6
+position: 5
 title: LIMIT
 description: The `LIMIT` clause is used to limit the number of records returned by a query.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/clauses/limit.mdx"

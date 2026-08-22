@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 2
 title: Datetime
 description: Datetime wrapper for SurrealDB datetime values.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/python/api/values/datetime.mdx"

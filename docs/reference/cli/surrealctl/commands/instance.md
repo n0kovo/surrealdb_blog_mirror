@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 6
 title: instance
 description: Reference for surrealctl instance — creating, scaling, pausing and deleting instances, reading logs, metrics and endpoints, minting tokens, and managing capabilities and backups.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/instance.mdx"

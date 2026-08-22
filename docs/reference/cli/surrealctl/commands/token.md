@@ -1,5 +1,5 @@
 ---
-position: 7
+position: 11
 title: token
 description: Reference for surrealctl token — listing, creating and revoking personal access tokens, and browsing the scopes a token can be granted.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/token.mdx"

@@ -1,5 +1,5 @@
 ---
-position: 5
+position: 4
 title: GROUP
 description: The `GROUP` clause is used to group records by one or more columns.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/clauses/group.mdx"

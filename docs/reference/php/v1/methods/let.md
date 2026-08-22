@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 13
 title: let
 description: Assign parameters to a query using the let method in the SurrealDB PHP SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/let.mdx"

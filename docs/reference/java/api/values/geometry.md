@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 5
 title: Geometry
 description: The Geometry class represents SurrealDB geometric data types.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/java/api/values/geometry.mdx"

@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 1
 title: Expo
 description: The SurrealDB SDK for JavaScript can be used in Expo applications to connect to a remote SurrealDB instance from Android and iOS.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/frameworks/expo.mdx"

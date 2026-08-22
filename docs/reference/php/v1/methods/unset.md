@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 23
 title: unset
 description: The ->unset() method for the SurrealDB SDK for PHP removes a parameter from the connection.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/unset.mdx"

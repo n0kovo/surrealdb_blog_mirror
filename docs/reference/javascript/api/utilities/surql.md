@@ -1,5 +1,5 @@
 ---
-position: 3
+position: 7
 title: surql
 description: Tagged template for composing parameterised SurrealQL queries.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/utilities/surql.mdx"

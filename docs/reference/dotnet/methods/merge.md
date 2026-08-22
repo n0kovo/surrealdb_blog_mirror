@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 17
 title: Merge
 description: The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/dotnet/methods/merge.mdx"

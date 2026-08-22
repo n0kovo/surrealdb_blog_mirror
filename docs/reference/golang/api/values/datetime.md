@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 1
 title: CustomDateTime
 description: The CustomDateTime type wraps time.Time with SurrealDB-compatible CBOR encoding at nanosecond precision.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/golang/api/values/datetime.mdx"

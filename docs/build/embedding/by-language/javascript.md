@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 3
 title: JavaScript
 description: Embedding SurrealDB in JavaScript
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/embedding/by-language/javascript.mdx"

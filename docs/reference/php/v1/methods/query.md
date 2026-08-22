@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 16
 title: query
 description: The ->query() method for the SurrealDB SDK for PHP runs a set of SurrealQL statements against the database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/query.mdx"

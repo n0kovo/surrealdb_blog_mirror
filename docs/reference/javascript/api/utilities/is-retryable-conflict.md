@@ -1,5 +1,5 @@
 ---
-position: 7
+position: 6
 title: isRetryableConflict
 description: Default predicate used to detect retryable write conflicts.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/utilities/is-retryable-conflict.mdx"

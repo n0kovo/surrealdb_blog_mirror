@@ -1,5 +1,5 @@
 ---
-position: 5
+position: 2
 title: Datetime
 description: "SurrealDB datetime values map to Java's ZonedDateTime class."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/java/api/values/datetime.mdx"

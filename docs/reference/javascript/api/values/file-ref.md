@@ -1,5 +1,5 @@
 ---
-position: 9
+position: 5
 title: FileRef
 description: The FileRef class represents a reference to a file stored in SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/values/file-ref.mdx"

@@ -28,7 +28,7 @@ To create an organisation from a terminal, run `surrealctl org create`. `surreal
 
 The overview page shows everything the organisation holds. The sidebar leads into each area.
 
-![The overview page for the Acme Corp organisation in SurrealDB Studio, listing the api-production, api-staging and analytics-eu instances with a Deploy new instance button, the support-agent and research-agent Spectron contexts below them, and a Resources panel linking to documentation, SurrealDB University, AI agents and community, with a sidebar holding Overview, Instances, Contexts, Connections, Team, Billing, Support, Usage and Settings.](../../assets/img/surrealdb/manage/studio-overview.webp)
+![The overview page for the Acme Corp organisation in SurrealDB Studio, listing the api-production, api-staging and analytics-eu instances with a Deploy new instance button, the support-agent and research-agent Agent Memory contexts below them, and a Resources panel linking to documentation, SurrealDB University, AI agents and community, with a sidebar holding Overview, Instances, Contexts, Connections, Team, Billing, Support, Usage and Settings.](../../assets/img/surrealdb/manage/studio-overview.webp)
 
 | Section | What it holds |
 | --- | --- |
@@ -39,7 +39,7 @@ The overview page shows everything the organisation holds. The sidebar leads int
 | **Support** | [Support plans and tickets](support.md). |
 | **Settings** | The organisation name and its id. |
 
-**Contexts** and **Connections** hold [Spectron](https://surrealdb.com/docs/spectron) resources rather than database instances. They use the same organisation for access and billing.
+**Contexts** and **Connections** hold [SurrealDB Agent Memory](https://surrealdb.com/docs/agent-memory) resources rather than database instances. They use the same organisation for access and billing.
 
 Your role decides what you see. A member without billing permissions does not see the **Billing** section. See [Members and roles](members-and-roles.md).
 

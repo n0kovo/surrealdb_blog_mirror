@@ -1,5 +1,5 @@
 ---
-position: 3
+position: 2
 title: DateTime
 description: Datetime values with nanosecond precision for time-based operations.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/values/datetime.mdx"

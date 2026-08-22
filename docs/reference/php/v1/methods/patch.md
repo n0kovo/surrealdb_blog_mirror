@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 15
 title: patch
 description: The ->patch() method for the SurrealDB SDK for PHP applies JSON patch changes to records in the database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/patch.mdx"

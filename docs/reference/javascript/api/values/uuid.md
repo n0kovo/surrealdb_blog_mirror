@@ -1,5 +1,5 @@
 ---
-position: 6
+position: 10
 title: Uuid
 description: Universally unique identifiers for generating unique IDs.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/values/uuid.mdx"

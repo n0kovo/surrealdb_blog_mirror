@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 5
 title: RecordID
 description: The RecordID type represents a SurrealDB record identifier consisting of a table name and an ID value.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/golang/api/values/record-id.mdx"

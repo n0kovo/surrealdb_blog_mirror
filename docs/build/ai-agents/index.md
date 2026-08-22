@@ -17,7 +17,7 @@ SurrealDB connects to AI tooling in three places: the assistant you write code w
 
 **[AI frameworks](ai-frameworks.md)** — Use SurrealDB from the agent library you already have. LangChain, LlamaIndex, CrewAI, PydanticAI, Agno, and others connect through maintained integrations for vector stores, memory, and retrieval.
 
-**[Spectron](https://surrealdb.com/docs/spectron)** — A memory and knowledge layer for agents, running in front of SurrealDB. Use it when an agent needs to remember across sessions, and to keep straight what was said, what is true now, and what used to be true, without designing that model yourself.
+**[SurrealDB Agent Memory](https://surrealdb.com/docs/agent-memory)** — A memory and knowledge layer for agents, running in front of SurrealDB. Use it when an agent needs to remember across sessions, and to keep straight what was said, what is true now, and what used to be true, without designing that model yourself.
 
 ## What the database gives an agent
 

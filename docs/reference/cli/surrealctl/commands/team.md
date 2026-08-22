@@ -1,5 +1,5 @@
 ---
-position: 5
+position: 10
 title: team
 description: Reference for surrealctl team — listing organisation members, inspecting one, inviting someone, changing a role, and ending a membership.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/team.mdx"

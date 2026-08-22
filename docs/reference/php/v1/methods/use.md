@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 26
 title: use
 description: The ->use() method for the SurrealDB SDK for PHP switches to a specific namespace and database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/use.mdx"

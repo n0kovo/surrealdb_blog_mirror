@@ -1,5 +1,5 @@
 ---
-position: 8
+position: 6
 title: Geometry
 description: Geometric and spatial data types for location-based applications.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/values/geometry.mdx"

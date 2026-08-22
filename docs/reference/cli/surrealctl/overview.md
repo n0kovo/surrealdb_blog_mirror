@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # surrealctl
 
-`surrealctl` manages SurrealDB Cloud from the command line. It creates and scales instances, reads logs and metrics, manages organisation members and invitations, mints credentials, and drives Spectron contexts — all through the SurrealDB API at `https://api.surrealdb.com`.
+`surrealctl` manages SurrealDB Cloud from the command line. It creates and scales instances, reads logs and metrics, manages organisation members and invitations, mints credentials, and drives SurrealDB Agent Memory contexts — all through the SurrealDB API at `https://api.surrealdb.com`.
 
 This reference is for operators, CI pipelines and agents. Every command emits machine-readable JSON on request, keeps its data payload on stdout, and returns an exit code precise enough to branch on.
 
@@ -75,7 +75,7 @@ The command pages document every flag, argument and refusal, one page per group:
 | [`invite`](commands/invite.md) | Manage organisation invitations |
 | [`token`](commands/token.md) | Manage personal access tokens |
 | [`catalog`](commands/catalog.md) | Browse the platform catalogues |
-| [`spectron`](commands/spectron.md) | Manage Spectron contexts, keys and principals |
+| [`spectron`](commands/spectron.md) | Manage SurrealDB Agent Memory contexts, keys and principals |
 | [`config`](commands/config.md) | Read and write configuration |
 | [`context`](commands/context.md) | Inspect and switch profiles |
 | [`whoami`, `api`, `open`, `status`, `version`, `completion`](commands/misc.md) | Identity, the raw API escape hatch, and diagnostics |

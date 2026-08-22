@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 4
 title: Python
 description: The documentation for embedding SurrealDB within Python has been moved to the Python SDK documentation.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/embedding/by-language/python.mdx"

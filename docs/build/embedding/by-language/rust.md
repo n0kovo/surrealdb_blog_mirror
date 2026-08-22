@@ -1,5 +1,5 @@
 ---
-position: 3
+position: 5
 title: Rust
 description: Embedding SurrealDB in Rust
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/embedding/by-language/rust.mdx"

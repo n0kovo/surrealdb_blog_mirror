@@ -1,5 +1,5 @@
 ---
-position: 5
+position: 2
 title: CustomDuration
 description: The CustomDuration type wraps time.Duration with SurrealDB-compatible CBOR encoding and human-readable formatting.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/golang/api/values/duration.mdx"

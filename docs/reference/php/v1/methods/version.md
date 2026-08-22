@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 27
 title: version
 description: The version method in the SurrealDB PHP SDK retrieves the current version of a remote database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/version.mdx"

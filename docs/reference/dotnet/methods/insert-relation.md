@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 10
 title: InsertRelation
 description: The .NET SDK for SurrealDB enables you to insert a relation between two records.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/dotnet/methods/insert-relation.mdx"

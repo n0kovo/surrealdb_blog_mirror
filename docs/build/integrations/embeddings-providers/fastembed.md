@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 2
 title: Fastembed
 description: This section contains information about using Fastembed to retrieve embeddings to store in SurrealDB
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/embeddings-providers/fastembed.mdx"

@@ -3,6 +3,256 @@
 _1074 pages_  
 [← Index](README.md)
 
+- [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
+  Repository scoped sessions and MCP.
+- [Customer support agent](agent-memory/cookbooks/build/customer-support-agent.md)
+  Ticket-linked memory with authoritative knowledge policies.
+- [Long-running research agent](agent-memory/cookbooks/build/long-running-research-agent.md)
+  Sessions across days with reflection.
+- [Multi-agent shared memory](agent-memory/cookbooks/build/multi-agent-shared-memory.md)
+  Supervisors, reflection, and shared scopes.
+- [Personal AI assistant](agent-memory/cookbooks/build/personal-ai-assistant.md)
+  End-user scoped memory with profiles and preferences.
+- [Overview](agent-memory/cookbooks/index.md)
+  Opinionated recipes and migration guides.
+- [Migrate from LangMem](agent-memory/cookbooks/migrate/from-langmem.md)
+  Moving LangChain memory to SurrealDB Agent Memory.
+- [Migrate from Mem0](agent-memory/cookbooks/migrate/from-mem0.md)
+  Mapping concepts and incremental migration.
+- [Migrate from a vector store](agent-memory/cookbooks/migrate/from-vector-store.md)
+  From chunk-only search to structured memory.
+- [Migrate from Zep](agent-memory/cookbooks/migrate/from-zep.md)
+  Mapping Zep concepts to SurrealDB Agent Memory's unified graph.
+- [Adding memory to an existing app](agent-memory/cookbooks/patterns/adding-memory-to-existing-app.md)
+  Introduce turns without replacing your LLM client.
+- [Event-driven game client](agent-memory/cookbooks/patterns/event-driven-game-client.md)
+  Pipe RPG or simulation events into SurrealDB Agent Memory with epistemic labels and careful extraction.
+- [Historical and archaeological data](agent-memory/cookbooks/patterns/historical-and-archaeological-data.md)
+  Ingest fragmentary primary sources, ask questions the corpus can answer, and prove the answers came from the corpus.
+- [Knowledge-grounded agents](agent-memory/cookbooks/patterns/knowledge-grounded-agents.md)
+  Combine authoritative knowledge retrieval with experiential memory.
+- [Reflection loops](agent-memory/cookbooks/patterns/reflection-loops.md)
+  Scheduled or triggered reflect jobs.
+- [Spoiler-safe narrative memory](agent-memory/cookbooks/patterns/spoiler-safe-narrative-memory.md)
+  Ingest full canon; answer only as far as the user has read or watched.
+- [Stateful workflows](agent-memory/cookbooks/patterns/stateful-workflows.md)
+  Diff-friendly state for workflow UIs.
+- [User memory in chat](agent-memory/cookbooks/patterns/user-memory-in-chat.md)
+  Per-user scopes and profile injection.
+- [Coherence, retrieval, and cost tiers](agent-memory/index/architecture/coherence-retrieval-and-tiers.md)
+  Five coherence dimensions, hybrid structural retrieval, and the four-tier query ladder.
+- [Eight pillars and six categories](agent-memory/index/architecture/eight-pillars-and-categories.md)
+  The primitives SurrealDB Agent Memory operationalises – pillars of agent memory and typed experiential sub-stores.
+- [Agent Memory glossary](agent-memory/index/architecture/glossary.md)
+  Alphabetical definitions of terms used across SurrealDB Agent Memory architecture and memory docs.
+- [Principles and goals](agent-memory/index/architecture/principles-and-goals.md)
+  What SurrealDB Agent Memory is built to do – and what it deliberately is not.
+- [Surface, models, and security](agent-memory/index/architecture/surface-security-and-models.md)
+  HTTP ingest and read verbs, integrations, model hooks, and security properties.
+- [Traces and memory evolution](agent-memory/index/architecture/traces-and-evolution.md)
+  Graph-resident traces, reflection, elaboration, consolidation, and semantic response reuse.
+- [Tri-temporal model](agent-memory/index/architecture/tri-temporal-model.md)
+  System time, known time, and valid time – supersession, aging, and explicit forget.
+- [Overview](agent-memory/index/index.md)
+  Principles, architecture, quickstarts, and mental model for SurrealDB Agent Memory – memory and knowledge for AI agents on SurrealDB.
+- [Bulk import](agent-memory/index/ingest/authoritative/bulk-import.md)
+  Importing large quantities of documents or knowledge nodes into SurrealDB Agent Memory.
+- [Structured fact ingest](agent-memory/index/ingest/authoritative/knowledge-nodes.md)
+  Uploading structured facts alongside documents.
+- [Multimodal content](agent-memory/index/ingest/authoritative/multimodal-content.md)
+  Ingesting images, audio, and video into the SurrealDB Agent Memory knowledge layer.
+- [Uploading documents](agent-memory/index/ingest/authoritative/uploading-documents.md)
+  How to ingest documents into the SurrealDB Agent Memory knowledge layer.
+- [Storing memories](agent-memory/index/ingest/experiential/remember.md)
+  Ingesting facts and conversations into the unified substrate.
+- [Memory & knowledge](agent-memory/index/memory-and-knowledge.md)
+  Ingest, retrieve, reason, and tune agent memory on SurrealDB Agent Memory's unified substrate.
+- [Contexts and scope](agent-memory/index/mental-model/contexts-and-scope.md)
+  How Contexts isolate tenants and how scope tags partition memory within a Context.
+- [Memory categories](agent-memory/index/mental-model/memory-categories.md)
+  Episodic raw turns plus five extracted experiential categories – identity, knowledge, context, instructions, uncertainty.
+- [Supersession, decay, and forget](agent-memory/index/mental-model/memory-lifecycle.md)
+  Three mechanisms for how beliefs change, fade, and are removed.
+- [Provenance and traceability](agent-memory/index/mental-model/provenance-and-traceability.md)
+  The source object on every record – kinds, spans, trust, derivation, and traces.
+- [Sessions and turns](agent-memory/index/mental-model/sessions-and-turns.md)
+  How conversations map to sessions, turns, and provenance.
+- [Unified substrate and authority](agent-memory/index/mental-model/two-layer-architecture.md)
+  One SurrealDB graph for authoritative and experiential knowledge – provenance and reconciliation, not two silos.
+- [Forgetting memories](agent-memory/index/operations/forget.md)
+  How to retire or permanently erase memories — default forget, purge, and scoped erasure.
+- [Profiles](agent-memory/index/operations/profiles.md)
+  Auto-maintained entity profiles aggregated from memory and knowledge.
+- [Reflection](agent-memory/index/operations/reflect.md)
+  Synthesise insights from patterns across stored memories.
+- [Embedded library quickstart](agent-memory/index/quickstarts/embedded.md)
+  Integration surfaces for SurrealDB Agent Memory.
+- [Hosted quickstart](agent-memory/index/quickstarts/hosted.md)
+  Get up and running with SurrealDB Agent Memory on SurrealDB Cloud in five minutes.
+- [Agent Memory on SurrealDB Cloud](agent-memory/index/quickstarts/surrealdb-cloud.md)
+  How SurrealDB Agent Memory contexts, authentication, and APIs work on SurrealDB Cloud.
+- [Authority when pillars meet](agent-memory/index/reasoning/authority-hierarchy.md)
+  How the Authoritative and Experiential pillars interact – reconciliation, uncertainty, and resolves_to.
+- [Cross-layer linking](agent-memory/index/reasoning/cross-layer-linking.md)
+  How authoritative documents and experiential facts relate in the unified graph.
+- [Extraction pipeline](agent-memory/index/reasoning/extraction-pipeline.md)
+  How SurrealDB Agent Memory classifies and extracts structured memory from conversation turns.
+- [Instructions and uncertainties](agent-memory/index/reasoning/instructions-and-uncertainties.md)
+  How SurrealDB Agent Memory captures behavioural directives and tracks ambiguous or contradictory information.
+- [Reconciliation and supersession](agent-memory/index/reasoning/reconciliation-and-supersession.md)
+  How SurrealDB Agent Memory deduplicates entities, detects conflicts, and tracks corrections with full history.
+- [Temporal validity](agent-memory/index/reasoning/temporal-validity.md)
+  How SurrealDB Agent Memory tracks when facts were true using valid_from and valid_until.
+- [Graph traversal](agent-memory/index/retrieve/graph-traversal.md)
+  Structural edges in the knowledge layer and how retrieval uses them.
+- [Hybrid search](agent-memory/index/retrieve/hybrid-search.md)
+  Using vector, BM25, and graph-density retrieval modes in SurrealDB Agent Memory.
+- [Keywords and BM25](agent-memory/index/retrieve/keywords-and-bm25.md)
+  Using keyword extraction and full-text search in SurrealDB Agent Memory's knowledge layer.
+- [Recalling memories](agent-memory/index/retrieve/recall.md)
+  Unified retrieval over facts and document passages.
+- [Adding turns](agent-memory/index/sessions/adding-turns.md)
+  How to add conversation turns and interpret the structured extraction result.
+- [Chat sessions](agent-memory/index/sessions/chat-sessions.md)
+  Using chat() for conversation loops managed by SurrealDB Agent Memory.
+- [Creating sessions](agent-memory/index/sessions/creating-sessions.md)
+  How to create and manage conversation sessions in SurrealDB Agent Memory.
+- [State and diffs](agent-memory/index/sessions/state-and-diffs.md)
+  Reading structured memory state and tracking what changed between turns.
+- [Caching and invalidation](agent-memory/index/tuning/caching-and-invalidation.md)
+  How SurrealDB Agent Memory's semantic response cache works and how to manage memory lifecycle.
+- [Models per stage](agent-memory/index/tuning/models-per-stage.md)
+  Configure which LLM is used for each processing stage in SurrealDB Agent Memory.
+- [Extraction vocabulary](agent-memory/index/tuning/ontology-grounding.md)
+  How SurrealDB Agent Memory keeps entity names, attribute keys, and relation labels consistent across extractions.
+- [The accuracy promise](agent-memory/index/welcome/accuracy-promise.md)
+  Defensible correctness – provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
+- [How it works in five minutes](agent-memory/index/welcome/how-it-works.md)
+  From a message to structured substrate state – extraction, reconciliation, traces, and tiered reads.
+- [What is SurrealDB Agent Memory?](agent-memory/index/welcome/what-is-surrealdb-agent-memory.md)
+  SurrealDB Agent Memory as a memory and knowledge layer – one SurrealDB substrate, provenance-first, trace-aware, tri-temporal.
+- [Why agentic memory?](agent-memory/index/welcome/why-agentic-memory.md)
+  Why conversational agents need structured memory beyond plain retrieval.
+- [Cloudflare Workers AI](agent-memory/integrations/ai-sdks/cloudflare-workers-ai.md)
+  Using SurrealDB Agent Memory from a Cloudflare Worker alongside Workers AI models.
+- [TanStack AI](agent-memory/integrations/ai-sdks/tanstack-ai.md)
+  Adding SurrealDB Agent Memory to a TanStack AI application.
+- [Vercel AI SDK](agent-memory/integrations/ai-sdks/vercel-ai-sdk.md)
+  SurrealDB Agent Memory for the Vercel AI SDK, via language-model middleware and a tool set.
+- [n8n](agent-memory/integrations/automation/n8n.md)
+  Using SurrealDB and SurrealDB Agent Memory from n8n workflows.
+- [Zo Computer](agent-memory/integrations/automation/zo-computer.md)
+  Adding SurrealDB Agent Memory to a Zo Computer skill.
+- [Agno](agent-memory/integrations/frameworks/agno.md)
+  Adding persistent memory to Agno agents with the SurrealDB Agent Memory SDK.
+- [AutoGen](agent-memory/integrations/frameworks/autogen.md)
+  Adding persistent memory to Microsoft AutoGen agents with the SurrealDB Agent Memory SDK.
+- [Camel AI](agent-memory/integrations/frameworks/camel-ai.md)
+  Adding persistent memory to Camel AI agents with the SurrealDB Agent Memory SDK.
+- [CrewAI](agent-memory/integrations/frameworks/crewai.md)
+  CrewAI integration for SurrealDB Agent Memory, with memory tools and automatic per-task memory.
+- [Eve](agent-memory/integrations/frameworks/eve.md)
+  SurrealDB Agent Memory for Eve agents, via auto-memory middleware and a tool pack.
+- [Google ADK](agent-memory/integrations/frameworks/google-adk.md)
+  SurrealDB Agent Memory as tools for Google's Agent Development Kit.
+- [Hermes Agent](agent-memory/integrations/frameworks/hermes.md)
+  SurrealDB Agent Memory as a memory provider for the Hermes Agent.
+- [LangChain](agent-memory/integrations/frameworks/langchain.md)
+  LangChain and LangGraph integration for SurrealDB Agent Memory, with retrievers, agent tools, and a LangGraph store.
+- [LlamaIndex](agent-memory/integrations/frameworks/llamaindex.md)
+  Adding persistent memory to LlamaIndex agents with the SurrealDB Agent Memory SDK.
+- [Mastra](agent-memory/integrations/frameworks/mastra.md)
+  SurrealDB Agent Memory as a memory provider and tools for Mastra, plus the SurrealDB storage adapter.
+- [OpenAI Agents SDK](agent-memory/integrations/frameworks/openai-agents.md)
+  SurrealDB Agent Memory for agents built with the OpenAI Agents SDK.
+- [OpenClaw](agent-memory/integrations/frameworks/openclaw.md)
+  OpenClaw plugin that backs agent memory with SurrealDB Agent Memory.
+- [Pydantic AI](agent-memory/integrations/frameworks/pydantic-ai.md)
+  SurrealDB Agent Memory for Pydantic AI, via a toolset, auto-recall processor, and persistence helpers.
+- [Strands Agents](agent-memory/integrations/frameworks/strands-agents.md)
+  SurrealDB Agent Memory as tools for the Strands Agents SDK.
+- [Overview](agent-memory/integrations/index.md)
+  Connecting SurrealDB Agent Memory to your stack – SDKs, MCP server, AI SDKs, agent frameworks, voice tools, and automation.
+- [Antigravity](agent-memory/integrations/mcp-server/coding-assistants/antigravity.md)
+  Installing SurrealDB Agent Memory as an MCP server in Google Antigravity.
+- [Claude](agent-memory/integrations/mcp-server/coding-assistants/claude-desktop-and-code.md)
+  Connecting SurrealDB Agent Memory to Claude Code, Cowork, and Claude Desktop.
+- [Codex](agent-memory/integrations/mcp-server/coding-assistants/codex.md)
+  Installing SurrealDB Agent Memory as an MCP server in the OpenAI Codex CLI.
+- [Cursor](agent-memory/integrations/mcp-server/coding-assistants/cursor.md)
+  Installing SurrealDB Agent Memory as an MCP server in Cursor.
+- [JetBrains](agent-memory/integrations/mcp-server/coding-assistants/jetbrains.md)
+  Installing SurrealDB Agent Memory as an MCP server in JetBrains IDEs (IntelliJ IDEA, PyCharm, WebStorm, Rider, and more).
+- [OpenCode](agent-memory/integrations/mcp-server/coding-assistants/opencode.md)
+  Installing SurrealDB Agent Memory as an MCP server in OpenCode.
+- [VS Code](agent-memory/integrations/mcp-server/coding-assistants/vscode.md)
+  Installing SurrealDB Agent Memory as an MCP server in VS Code.
+- [Windsurf](agent-memory/integrations/mcp-server/coding-assistants/windsurf.md)
+  Installing SurrealDB Agent Memory as an MCP server in Windsurf.
+- [Zed](agent-memory/integrations/mcp-server/coding-assistants/zed.md)
+  Installing SurrealDB Agent Memory as an MCP server in the Zed editor.
+- [Installing the MCP server](agent-memory/integrations/mcp-server/install.md)
+  Connect SurrealDB Agent Memory to Claude, Cursor, Windsurf, VS Code, and other MCP clients.
+- [MCP tools reference](agent-memory/integrations/mcp-server/tools-reference.md)
+  Complete reference for all seven SurrealDB Agent Memory MCP tools.
+- [AgentOps](agent-memory/integrations/observability/agentops.md)
+  Using SurrealDB Agent Memory in an agent instrumented by AgentOps.
+- [Respan](agent-memory/integrations/observability/respan.md)
+  Using SurrealDB Agent Memory alongside Respan tracing and the Respan LLM gateway.
+- [Dart SDK](agent-memory/integrations/sdks/dart.md)
+  Using SurrealDB Agent Memory from Dart and Flutter applications.
+- [Elixir SDK](agent-memory/integrations/sdks/elixir.md)
+  Using SurrealDB Agent Memory from Elixir applications.
+- [Go SDK](agent-memory/integrations/sdks/go.md)
+  Using SurrealDB Agent Memory from Go applications and agents.
+- [Haskell SDK](agent-memory/integrations/sdks/haskell.md)
+  Using SurrealDB Agent Memory from Haskell applications.
+- [JavaScript and TypeScript SDK](agent-memory/integrations/sdks/javascript-and-typescript.md)
+  Using SurrealDB Agent Memory from JavaScript and TypeScript applications.
+- [Kotlin SDK](agent-memory/integrations/sdks/kotlin.md)
+  Using SurrealDB Agent Memory from Kotlin applications and agents on JVM, Android, and iOS.
+- [Python SDK](agent-memory/integrations/sdks/python.md)
+  Using SurrealDB Agent Memory from Python applications and agents.
+- [Swift SDK](agent-memory/integrations/sdks/swift.md)
+  Using SurrealDB Agent Memory from Swift applications and agents.
+- [Embedded library](agent-memory/integrations/surfaces/embedded-library.md)
+  In-process integration surfaces.
+- [Filesystem view](agent-memory/integrations/surfaces/filesystem-view.md)
+  Accessing SurrealDB Agent Memory's knowledge layer as a virtual filesystem.
+- [REST API](agent-memory/integrations/surfaces/rest.md)
+  Accessing SurrealDB Agent Memory directly via its HTTP REST API.
+- [ElevenLabs](agent-memory/integrations/voice/elevenlabs.md)
+  Giving an ElevenLabs Conversational AI agent memory with SurrealDB Agent Memory.
+- [LiveKit](agent-memory/integrations/voice/livekit.md)
+  Adding SurrealDB Agent Memory to a LiveKit voice agent.
+- [Agent guide (AGENTS.md)](agent-memory/reference/agents.md)
+  Instructions for coding agents integrating with SurrealDB Agent Memory — copy into Cursor rules or skills.
+- [CLI](agent-memory/reference/cli.md)
+  Command-line interface reference.
+- [Configuration](agent-memory/reference/configuration.md)
+  Context config, models, and limits.
+- [Data model and schema](agent-memory/reference/data-model-and-schema.md)
+  Tables, relations, and indexes in SurrealDB.
+- [Errors](agent-memory/reference/errors.md)
+  Error codes and troubleshooting.
+- [Glossary](agent-memory/reference/glossary.md)
+  Terminology used across SurrealDB Agent Memory docs.
+- [Overview](agent-memory/reference/index.md)
+  Complete API and configuration reference for SurrealDB Agent Memory.
+- [Management API](agent-memory/reference/management-api.md)
+  Contexts, keys, and operator lifecycle.
+- [MCP tools](agent-memory/reference/mcp-tools.md)
+  Tool payloads and ACL alignment.
+- [REST API](agent-memory/reference/rest-api.md)
+  End-user HTTP endpoints on the unified SurrealDB Agent Memory substrate.
+- [JavaScript SDK reference](agent-memory/reference/sdk-javascript.md)
+  Package layout and configuration for @surrealdb/spectron.
+- [Kotlin SDK reference](agent-memory/reference/sdk-kotlin.md)
+  Package layout, configuration, and error model for the SurrealDB Agent Memory Kotlin client.
+- [Python SDK reference](agent-memory/reference/sdk-python.md)
+  Package layout and configuration for the SurrealDB Agent Memory client in surrealdb.
+- [Swift SDK reference](agent-memory/reference/sdk-swift.md)
+  Package layout and configuration for the SurrealDB Agent Memory Swift client.
 - [Architecture](architecture.md)
   How SurrealDB separates compute from storage, and how that design supports embedded, single-node, distributed, and managed deployments.
 - [Agent Skills](build/ai-agents/agent-skills.md)
@@ -695,7 +945,7 @@ _1074 pages_
 - [org](reference/cli/surrealctl/commands/org.md)
   Reference for surrealctl org — listing and creating organisations, renaming and archiving them, remembering a default, and reading roles, permissions, usage, spend and plans.
 - [spectron](reference/cli/surrealctl/commands/spectron.md)
-  Reference for surrealctl spectron — managing Spectron contexts, API keys, scoped keys, access tokens, principals and grants, packages, and the scope and provider catalogues.
+  Reference for surrealctl spectron — managing SurrealDB Agent Memory contexts, API keys, scoped keys, access tokens, principals and grants, packages, and the scope and provider catalogues.
 - [team](reference/cli/surrealctl/commands/team.md)
   Reference for surrealctl team — listing organisation members, inspecting one, inviting someone, changing a role, and ending a membership.
 - [token](reference/cli/surrealctl/commands/token.md)
@@ -1852,256 +2102,6 @@ _1074 pages_
   Try SurrealDB in the browser with the SurrealDB Studio Sandbox—no install and no account required.
 - [Sample queries](sample-queries.md)
   Learn how to get started with SurrealDB
-- [Overview](spectron/agent-memory/index.md)
-  Ingest, retrieve, reason, and tune agent memory on Spectron's unified SurrealDB substrate.
-- [Bulk import](spectron/agent-memory/ingest/authoritative/bulk-import.md)
-  Importing large quantities of documents or knowledge nodes into Spectron.
-- [Structured fact ingest](spectron/agent-memory/ingest/authoritative/knowledge-nodes.md)
-  Uploading structured facts alongside documents.
-- [Multimodal content](spectron/agent-memory/ingest/authoritative/multimodal-content.md)
-  Ingesting images, audio, and video into the Spectron knowledge layer.
-- [Uploading documents](spectron/agent-memory/ingest/authoritative/uploading-documents.md)
-  How to ingest documents into the Spectron knowledge layer.
-- [Storing memories](spectron/agent-memory/ingest/experiential/remember.md)
-  Ingesting facts and conversations into the unified substrate.
-- [Forgetting memories](spectron/agent-memory/operations/forget.md)
-  How to retire or permanently erase memories — default forget, purge, and scoped erasure.
-- [Profiles](spectron/agent-memory/operations/profiles.md)
-  Auto-maintained entity profiles aggregated from memory and knowledge.
-- [Reflection](spectron/agent-memory/operations/reflect.md)
-  Synthesise insights from patterns across stored memories.
-- [Authority when pillars meet](spectron/agent-memory/reasoning/authority-hierarchy.md)
-  How the Authoritative and Experiential pillars interact – reconciliation, uncertainty, and resolves_to.
-- [Cross-layer linking](spectron/agent-memory/reasoning/cross-layer-linking.md)
-  How authoritative documents and experiential facts relate in the unified graph.
-- [Extraction pipeline](spectron/agent-memory/reasoning/extraction-pipeline.md)
-  How Spectron classifies and extracts structured memory from conversation turns.
-- [Instructions and uncertainties](spectron/agent-memory/reasoning/instructions-and-uncertainties.md)
-  How Spectron captures behavioural directives and tracks ambiguous or contradictory information.
-- [Reconciliation and supersession](spectron/agent-memory/reasoning/reconciliation-and-supersession.md)
-  How Spectron deduplicates entities, detects conflicts, and tracks corrections with full history.
-- [Temporal validity](spectron/agent-memory/reasoning/temporal-validity.md)
-  How Spectron tracks when facts were true using valid_from and valid_until.
-- [Graph traversal](spectron/agent-memory/retrieve/graph-traversal.md)
-  Structural edges in the knowledge layer and how retrieval uses them.
-- [Hybrid search](spectron/agent-memory/retrieve/hybrid-search.md)
-  Using vector, BM25, and graph-density retrieval modes in Spectron.
-- [Keywords and BM25](spectron/agent-memory/retrieve/keywords-and-bm25.md)
-  Using keyword extraction and full-text search in Spectron's knowledge layer.
-- [Recalling memories](spectron/agent-memory/retrieve/recall.md)
-  Unified retrieval over facts and document passages.
-- [Adding turns](spectron/agent-memory/sessions/adding-turns.md)
-  How to add conversation turns and interpret the structured extraction result.
-- [Chat sessions](spectron/agent-memory/sessions/chat-sessions.md)
-  Using chat() for Spectron-managed conversation loops.
-- [Creating sessions](spectron/agent-memory/sessions/creating-sessions.md)
-  How to create and manage conversation sessions in Spectron.
-- [State and diffs](spectron/agent-memory/sessions/state-and-diffs.md)
-  Reading structured memory state and tracking what changed between turns.
-- [Caching and invalidation](spectron/agent-memory/tuning/caching-and-invalidation.md)
-  How Spectron's semantic response cache works and how to manage memory lifecycle.
-- [Models per stage](spectron/agent-memory/tuning/models-per-stage.md)
-  Configure which LLM is used for each processing stage in Spectron.
-- [Extraction vocabulary](spectron/agent-memory/tuning/ontology-grounding.md)
-  How Spectron keeps entity names, attribute keys, and relation labels consistent across extractions.
-- [Coding agent with project memory](spectron/cookbooks/build/coding-agent-with-project-memory.md)
-  Repository scoped sessions and MCP.
-- [Customer support agent](spectron/cookbooks/build/customer-support-agent.md)
-  Ticket-linked memory with authoritative knowledge policies.
-- [Long-running research agent](spectron/cookbooks/build/long-running-research-agent.md)
-  Sessions across days with reflection.
-- [Multi-agent shared memory](spectron/cookbooks/build/multi-agent-shared-memory.md)
-  Supervisors, reflection, and shared scopes.
-- [Personal AI assistant](spectron/cookbooks/build/personal-ai-assistant.md)
-  End-user scoped memory with profiles and preferences.
-- [Overview](spectron/cookbooks/index.md)
-  Opinionated recipes and migration guides.
-- [Migrate from LangMem](spectron/cookbooks/migrate/from-langmem.md)
-  Moving LangChain memory to Spectron.
-- [Migrate from Mem0](spectron/cookbooks/migrate/from-mem0.md)
-  Mapping concepts and incremental migration.
-- [Migrate from a vector store](spectron/cookbooks/migrate/from-vector-store.md)
-  From chunk-only search to structured memory.
-- [Migrate from Zep](spectron/cookbooks/migrate/from-zep.md)
-  Mapping Zep concepts to Spectron's unified graph.
-- [Adding memory to an existing app](spectron/cookbooks/patterns/adding-memory-to-existing-app.md)
-  Introduce turns without replacing your LLM client.
-- [Event-driven game client](spectron/cookbooks/patterns/event-driven-game-client.md)
-  Pipe RPG or simulation events into Spectron with epistemic labels and careful extraction.
-- [Historical and archaeological data](spectron/cookbooks/patterns/historical-and-archaeological-data.md)
-  Ingest fragmentary primary sources, ask questions the corpus can answer, and prove the answers came from the corpus.
-- [Knowledge-grounded agents](spectron/cookbooks/patterns/knowledge-grounded-agents.md)
-  Combine authoritative knowledge retrieval with experiential memory.
-- [Reflection loops](spectron/cookbooks/patterns/reflection-loops.md)
-  Scheduled or triggered reflect jobs.
-- [Spoiler-safe narrative memory](spectron/cookbooks/patterns/spoiler-safe-narrative-memory.md)
-  Ingest full canon; answer only as far as the user has read or watched.
-- [Stateful workflows](spectron/cookbooks/patterns/stateful-workflows.md)
-  Diff-friendly state for workflow UIs.
-- [User memory in chat](spectron/cookbooks/patterns/user-memory-in-chat.md)
-  Per-user scopes and profile injection.
-- [Coherence, retrieval, and cost tiers](spectron/index/architecture/coherence-retrieval-and-tiers.md)
-  Five coherence dimensions, hybrid structural retrieval, and the four-tier query ladder.
-- [Eight pillars and six categories](spectron/index/architecture/eight-pillars-and-categories.md)
-  The primitives Spectron operationalises – pillars of agent memory and typed experiential sub-stores.
-- [Spectron glossary](spectron/index/architecture/glossary.md)
-  Alphabetical definitions of terms used across Spectron architecture and memory docs.
-- [Principles and goals](spectron/index/architecture/principles-and-goals.md)
-  What Spectron is built to do – and what it deliberately is not.
-- [Surface, models, and security](spectron/index/architecture/surface-security-and-models.md)
-  HTTP ingest and read verbs, integrations, model hooks, and security properties.
-- [Traces and memory evolution](spectron/index/architecture/traces-and-evolution.md)
-  Graph-resident traces, reflection, elaboration, consolidation, and semantic response reuse.
-- [Tri-temporal model](spectron/index/architecture/tri-temporal-model.md)
-  System time, known time, and valid time – supersession, aging, and explicit forget.
-- [Overview](spectron/index/index.md)
-  Principles, architecture, quickstarts, and mental model for Spectron – memory and knowledge for AI agents on SurrealDB.
-- [Contexts and scope](spectron/index/mental-model/contexts-and-scope.md)
-  How Contexts isolate tenants and how scope tags partition memory within a Context.
-- [Memory categories](spectron/index/mental-model/memory-categories.md)
-  Episodic raw turns plus five extracted experiential categories – identity, knowledge, context, instructions, uncertainty.
-- [Supersession, decay, and forget](spectron/index/mental-model/memory-lifecycle.md)
-  Three mechanisms for how beliefs change, fade, and are removed.
-- [Provenance and traceability](spectron/index/mental-model/provenance-and-traceability.md)
-  The source object on every record – kinds, spans, trust, derivation, and traces.
-- [Sessions and turns](spectron/index/mental-model/sessions-and-turns.md)
-  How conversations map to sessions, turns, and provenance.
-- [Unified substrate and authority](spectron/index/mental-model/two-layer-architecture.md)
-  One SurrealDB graph for authoritative and experiential knowledge – provenance and reconciliation, not two silos.
-- [Embedded library quickstart](spectron/index/quickstarts/embedded.md)
-  Integration surfaces for Spectron.
-- [Hosted quickstart](spectron/index/quickstarts/hosted.md)
-  Get up and running with Spectron on SurrealDB Cloud in five minutes.
-- [Spectron on SurrealDB Cloud](spectron/index/quickstarts/surrealdb-cloud.md)
-  How Spectron contexts, authentication, and APIs work on SurrealDB Cloud.
-- [The accuracy promise](spectron/index/welcome/accuracy-promise.md)
-  Defensible correctness – provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
-- [How it works in five minutes](spectron/index/welcome/how-it-works.md)
-  From a message to structured substrate state – extraction, reconciliation, traces, and tiered reads.
-- [What is Spectron?](spectron/index/welcome/what-is-spectron.md)
-  Spectron as a memory and knowledge layer – one SurrealDB substrate, provenance-first, trace-aware, tri-temporal.
-- [Why agentic memory?](spectron/index/welcome/why-agentic-memory.md)
-  Why conversational agents need structured memory beyond plain retrieval.
-- [Cloudflare Workers AI](spectron/integrations/ai-sdks/cloudflare-workers-ai.md)
-  Using Spectron memory from a Cloudflare Worker alongside Workers AI models.
-- [TanStack AI](spectron/integrations/ai-sdks/tanstack-ai.md)
-  Adding Spectron memory to a TanStack AI application.
-- [Vercel AI SDK](spectron/integrations/ai-sdks/vercel-ai-sdk.md)
-  Spectron memory for the Vercel AI SDK, via language-model middleware and a tool set.
-- [n8n](spectron/integrations/automation/n8n.md)
-  Using SurrealDB and Spectron from n8n workflows.
-- [Zo Computer](spectron/integrations/automation/zo-computer.md)
-  Adding Spectron memory to a Zo Computer skill.
-- [Agno](spectron/integrations/frameworks/agno.md)
-  Adding Spectron memory to Agno agents with the Spectron SDK.
-- [AutoGen](spectron/integrations/frameworks/autogen.md)
-  Adding Spectron memory to Microsoft AutoGen agents with the Spectron SDK.
-- [Camel AI](spectron/integrations/frameworks/camel-ai.md)
-  Adding Spectron memory to Camel AI agents with the Spectron SDK.
-- [CrewAI](spectron/integrations/frameworks/crewai.md)
-  CrewAI integration for Spectron, with memory tools and automatic per-task memory.
-- [Eve](spectron/integrations/frameworks/eve.md)
-  Spectron memory for Eve agents, via auto-memory middleware and a tool pack.
-- [Google ADK](spectron/integrations/frameworks/google-adk.md)
-  Spectron memory as tools for Google's Agent Development Kit.
-- [Hermes Agent](spectron/integrations/frameworks/hermes.md)
-  Spectron memory provider for the Hermes Agent.
-- [LangChain](spectron/integrations/frameworks/langchain.md)
-  LangChain and LangGraph integration for Spectron, with retrievers, agent tools, and a LangGraph store.
-- [LlamaIndex](spectron/integrations/frameworks/llamaindex.md)
-  Adding Spectron memory to LlamaIndex agents with the Spectron SDK.
-- [Mastra](spectron/integrations/frameworks/mastra.md)
-  Spectron memory provider and tools for Mastra, plus the SurrealDB storage adapter.
-- [OpenAI Agents SDK](spectron/integrations/frameworks/openai-agents.md)
-  Spectron memory for agents built with the OpenAI Agents SDK.
-- [OpenClaw](spectron/integrations/frameworks/openclaw.md)
-  OpenClaw plugin that backs agent memory with Spectron.
-- [Pydantic AI](spectron/integrations/frameworks/pydantic-ai.md)
-  Spectron memory for Pydantic AI, via a toolset, auto-recall processor, and persistence helpers.
-- [Strands Agents](spectron/integrations/frameworks/strands-agents.md)
-  Spectron memory as tools for the Strands Agents SDK.
-- [Overview](spectron/integrations/index.md)
-  Connecting Spectron to your stack – SDKs, MCP server, AI SDKs, agent frameworks, voice tools, and automation.
-- [Antigravity](spectron/integrations/mcp-server/coding-assistants/antigravity.md)
-  Installing Spectron as an MCP server in Google Antigravity.
-- [Claude](spectron/integrations/mcp-server/coding-assistants/claude-desktop-and-code.md)
-  Connecting Spectron to Claude Code, Cowork, and Claude Desktop.
-- [Codex](spectron/integrations/mcp-server/coding-assistants/codex.md)
-  Installing Spectron as an MCP server in the OpenAI Codex CLI.
-- [Cursor](spectron/integrations/mcp-server/coding-assistants/cursor.md)
-  Installing Spectron as an MCP server in Cursor.
-- [JetBrains](spectron/integrations/mcp-server/coding-assistants/jetbrains.md)
-  Installing Spectron as an MCP server in JetBrains IDEs (IntelliJ IDEA, PyCharm, WebStorm, Rider, and more).
-- [OpenCode](spectron/integrations/mcp-server/coding-assistants/opencode.md)
-  Installing Spectron as an MCP server in OpenCode.
-- [VS Code](spectron/integrations/mcp-server/coding-assistants/vscode.md)
-  Installing Spectron as an MCP server in VS Code.
-- [Windsurf](spectron/integrations/mcp-server/coding-assistants/windsurf.md)
-  Installing Spectron as an MCP server in Windsurf.
-- [Zed](spectron/integrations/mcp-server/coding-assistants/zed.md)
-  Installing Spectron as an MCP server in the Zed editor.
-- [Installing the MCP server](spectron/integrations/mcp-server/install.md)
-  Connect Spectron to Claude, Cursor, Windsurf, VS Code, and other MCP clients.
-- [MCP tools reference](spectron/integrations/mcp-server/tools-reference.md)
-  Complete reference for all seven Spectron MCP tools.
-- [AgentOps](spectron/integrations/observability/agentops.md)
-  Using Spectron memory in an agent instrumented by AgentOps.
-- [Respan](spectron/integrations/observability/respan.md)
-  Using Spectron memory alongside Respan tracing and the Respan LLM gateway.
-- [Dart SDK](spectron/integrations/sdks/dart.md)
-  Using Spectron from Dart and Flutter applications.
-- [Elixir SDK](spectron/integrations/sdks/elixir.md)
-  Using Spectron from Elixir applications.
-- [Go SDK](spectron/integrations/sdks/go.md)
-  Using Spectron from Go applications and agents.
-- [Haskell SDK](spectron/integrations/sdks/haskell.md)
-  Using Spectron from Haskell applications.
-- [JavaScript and TypeScript SDK](spectron/integrations/sdks/javascript-and-typescript.md)
-  Using Spectron from JavaScript and TypeScript applications.
-- [Kotlin SDK](spectron/integrations/sdks/kotlin.md)
-  Using Spectron from Kotlin applications and agents on JVM, Android, and iOS.
-- [Python SDK](spectron/integrations/sdks/python.md)
-  Using Spectron from Python applications and agents.
-- [Swift SDK](spectron/integrations/sdks/swift.md)
-  Using Spectron from Swift applications and agents.
-- [Embedded library](spectron/integrations/surfaces/embedded-library.md)
-  In-process integration surfaces.
-- [Filesystem view](spectron/integrations/surfaces/filesystem-view.md)
-  Accessing Spectron's knowledge layer as a virtual filesystem.
-- [REST API](spectron/integrations/surfaces/rest.md)
-  Accessing Spectron directly via its HTTP REST API.
-- [ElevenLabs](spectron/integrations/voice/elevenlabs.md)
-  Giving an ElevenLabs Conversational AI agent memory with Spectron.
-- [LiveKit](spectron/integrations/voice/livekit.md)
-  Adding Spectron memory to a LiveKit voice agent.
-- [Agent guide (AGENTS.md)](spectron/reference/agents.md)
-  Instructions for coding agents integrating with Spectron — copy into Cursor rules or skills.
-- [CLI](spectron/reference/cli.md)
-  Command-line interface reference.
-- [Configuration](spectron/reference/configuration.md)
-  Context config, models, and limits.
-- [Data model and schema](spectron/reference/data-model-and-schema.md)
-  Tables, relations, and indexes in SurrealDB.
-- [Errors](spectron/reference/errors.md)
-  Error codes and troubleshooting.
-- [Glossary](spectron/reference/glossary.md)
-  Terminology used across Spectron docs.
-- [Overview](spectron/reference/index.md)
-  Complete API and configuration reference for Spectron.
-- [Management API](spectron/reference/management-api.md)
-  Contexts, keys, and operator lifecycle.
-- [MCP tools](spectron/reference/mcp-tools.md)
-  Tool payloads and ACL alignment.
-- [REST API](spectron/reference/rest-api.md)
-  End-user HTTP endpoints on the unified Spectron substrate.
-- [JavaScript SDK reference](spectron/reference/sdk-javascript.md)
-  Package layout and configuration for @surrealdb/spectron.
-- [Kotlin SDK reference](spectron/reference/sdk-kotlin.md)
-  Package layout, configuration, and error model for the Spectron Kotlin client.
-- [Python SDK reference](spectron/reference/sdk-python.md)
-  Package layout and configuration for the Spectron client in surrealdb.
-- [Swift SDK reference](spectron/reference/sdk-swift.md)
-  Package layout and configuration for the Spectron Swift client.
 - [Transactions and isolation](transactions-and-isolation.md)
   How SurrealDB transactions work, the isolation guarantees they provide under concurrency, and what application developers should plan for.
 - [What is SurrealDB](what-is-surrealdb.md)

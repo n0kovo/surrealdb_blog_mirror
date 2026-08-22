@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 5
 title: expr
 description: Type-safe expression builder for constructing SurrealQL conditions.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/utilities/expr.mdx"

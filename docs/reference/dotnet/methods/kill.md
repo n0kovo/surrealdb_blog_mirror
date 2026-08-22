@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 12
 title: Kill
 description: The .NET SDK for SurrealDB enables you to kill a running live query.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/dotnet/methods/kill.mdx"

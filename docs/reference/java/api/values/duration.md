@@ -1,5 +1,5 @@
 ---
-position: 6
+position: 3
 title: Duration
 description: "SurrealDB duration values map to Java's Duration class."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/java/api/values/duration.mdx"

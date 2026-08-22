@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 1
 title: EXPLAIN
 description: The `EXPLAIN` clause is used to explain the plan used for a query.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/clauses/explain.mdx"

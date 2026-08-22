@@ -1,5 +1,5 @@
 ---
-position: 3
+position: 2
 title: FETCH
 description: The `FETCH` clause is used to fetch records from a table.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/clauses/fetch.mdx"

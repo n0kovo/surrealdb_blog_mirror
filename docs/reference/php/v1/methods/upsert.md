@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 25
 title: upsert
 description: The upsert method in the SurrealDB PHP SDK allows you to create or update a record in a table.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/upsert.mdx"

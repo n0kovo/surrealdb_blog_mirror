@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 3
 title: Table
 description: The Table type refers to a table by name in the SurrealDB Kotlin SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/kotlin/api/values/table.mdx"

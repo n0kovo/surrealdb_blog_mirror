@@ -1,5 +1,5 @@
 ---
-position: 6
+position: 5
 title: Range
 description: Range type with inclusive and exclusive bound support.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/python/api/values/range.mdx"

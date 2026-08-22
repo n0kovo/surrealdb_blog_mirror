@@ -1,5 +1,5 @@
 ---
-position: 8
+position: 6
 title: Range
 description: SurrealDB range values are accessed through Value methods for start and end bounds.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/java/api/values/range.mdx"

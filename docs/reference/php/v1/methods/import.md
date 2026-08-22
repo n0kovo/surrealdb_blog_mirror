@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 8
 title: import
 description: Import data into an existing database using the import method with the SurrealDB PHP SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/import.mdx"

@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 17
 title: queryRaw
 description: The queryRaw method in the SurrealDB PHP SDK allows you to execute raw SQL queries and return the raw RPC response.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/query-raw.mdx"

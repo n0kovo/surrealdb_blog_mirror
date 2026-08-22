@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 19
 title: select
 description: The ->select() method for the SurrealDB SDK for PHP selects all or specific records from the database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/select.mdx"

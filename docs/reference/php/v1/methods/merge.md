@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 14
 title: merge
 description: The ->merge() method for the SurrealDB SDK for PHP merges record data with the specified data.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/merge.mdx"

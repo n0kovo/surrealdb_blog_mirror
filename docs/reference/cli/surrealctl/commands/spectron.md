@@ -1,13 +1,13 @@
 ---
 position: 9
 title: spectron
-description: Reference for surrealctl spectron — managing Spectron contexts, API keys, scoped keys, access tokens, principals and grants, packages, and the scope and provider catalogues.
+description: Reference for surrealctl spectron — managing SurrealDB Agent Memory contexts, API keys, scoped keys, access tokens, principals and grants, packages, and the scope and provider catalogues.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/spectron.mdx"
 ---
 
 # spectron
 
-`surrealctl spectron` manages [Spectron](https://surrealdb.com/docs/spectron): contexts, the API keys and access tokens that reach them, and the principals and grants that decide what those credentials may do.
+`surrealctl spectron` manages [SurrealDB Agent Memory](https://surrealdb.com/docs/agent-memory): contexts, the API keys and access tokens that reach them, and the principals and grants that decide what those credentials may do.
 
 <Synopsis>
 surrealctl spectron <COMMAND> [OPTIONS]
@@ -15,7 +15,7 @@ surrealctl spectron <COMMAND> [OPTIONS]
 
 | Sub-command | Purpose |
 | --- | --- |
-| [`context`](#spectron-context-list) | Manage Spectron contexts |
+| [`context`](#spectron-context-list) | Manage SurrealDB Agent Memory contexts |
 | [`key`](#spectron-key-list) | Manage a context's API keys |
 | [`scoped-key`](#spectron-scoped-key-create) | Mint keys attenuated below a principal |
 | [`access-token`](#spectron-access-token-create) | Mint short-lived access tokens |
@@ -28,7 +28,7 @@ surrealctl spectron <COMMAND> [OPTIONS]
 | [`config`](#spectron-config) | Show a context's configuration |
 
 > [!NOTE]
-> Every route in this group answers `501` on a deployment that does not have Spectron. That is reported as `not_available` and exits `9` — deliberately not a failure, because nothing is broken. It cannot be predicted locally, so the first Spectron command you run is how you find out.
+> Every route in this group answers `501` on a deployment that does not have SurrealDB Agent Memory. That is reported as `not_available` and exits `9` — deliberately not a failure, because nothing is broken. It cannot be predicted locally, so the first SurrealDB Agent Memory command you run is how you find out.
 
 ## Naming a context
 
@@ -67,7 +67,7 @@ A malformed grant is a usage error, exit `2`, and the message repeats the expect
 
 ## surrealctl spectron context list {#spectron-context-list}
 
-List the Spectron contexts in an organisation.
+List the SurrealDB Agent Memory contexts in an organisation.
 
 <Synopsis>
 surrealctl spectron context list [OPTIONS]
@@ -89,7 +89,7 @@ production  ready   aws-use1  6a2k9lqzt4v8bn3m1x5c
 
 ## surrealctl spectron context get {#spectron-context-get}
 
-Show one Spectron context.
+Show one SurrealDB Agent Memory context.
 
 <Synopsis>
 surrealctl spectron context get [OPTIONS] [CONTEXT]
@@ -113,7 +113,7 @@ surrealctl spectron context get research
 
 ## surrealctl spectron context create {#spectron-context-create}
 
-Create a Spectron context.
+Create a SurrealDB Agent Memory context.
 
 <Synopsis>
 surrealctl spectron context create [OPTIONS] --region <REGION> <NAME>
@@ -150,7 +150,7 @@ Region slugs come from [`catalog regions`](catalog.md#catalog-regions).
 
 ## surrealctl spectron context update {#spectron-context-update}
 
-Rename a Spectron context.
+Rename a SurrealDB Agent Memory context.
 
 <Synopsis>
 surrealctl spectron context update [OPTIONS] --name <NAME> [CONTEXT]
@@ -184,7 +184,7 @@ surrealctl spectron context update research --name "Research and development"
 
 ## surrealctl spectron context delete {#spectron-context-delete}
 
-Delete a Spectron context.
+Delete a SurrealDB Agent Memory context.
 
 <Synopsis>
 surrealctl spectron context delete [OPTIONS] [CONTEXT]
@@ -234,7 +234,7 @@ This command takes no positional arguments.
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -276,7 +276,7 @@ surrealctl spectron key create [OPTIONS] <NAME>
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -322,7 +322,7 @@ surrealctl spectron key delete [OPTIONS] <KEY>
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -364,7 +364,7 @@ surrealctl spectron key rotate [OPTIONS] <KEY>
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -415,7 +415,7 @@ surrealctl spectron scoped-key create [OPTIONS] --principal <REF> <NAME>
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -455,7 +455,7 @@ This command takes no positional arguments.
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -482,7 +482,7 @@ This command takes no positional arguments.
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -529,7 +529,7 @@ surrealctl spectron principal create [OPTIONS] --kind <KIND> <NAME>
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -579,7 +579,7 @@ surrealctl spectron principal update [OPTIONS] <PRINCIPAL>
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -619,7 +619,7 @@ surrealctl spectron principal delete [OPTIONS] <PRINCIPAL>
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -671,7 +671,7 @@ surrealctl spectron principal grants set [OPTIONS] <PRINCIPAL>
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -815,7 +815,7 @@ This command takes no positional arguments.
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -844,7 +844,7 @@ This command takes no positional arguments.
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -873,7 +873,7 @@ This command takes no positional arguments.
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -900,7 +900,7 @@ This command takes no positional arguments.
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -929,7 +929,7 @@ This command takes no positional arguments.
         {
             "name": "--context",
             "value": "<REF>",
-            "description": "The Spectron context, by id or name. Defaults to the only one."
+            "description": "The SurrealDB Agent Memory context, by id or name. Defaults to the only one."
         }
     ]}
 />
@@ -944,7 +944,7 @@ Not to be confused with [`surrealctl config`](config.md), which reads and writes
 
 ## Related pages
 
-- [Spectron documentation](https://surrealdb.com/docs/spectron) — what contexts, principals and grants are for
+- [SurrealDB Agent Memory documentation](https://surrealdb.com/docs/agent-memory) — what contexts, principals and grants are for
 - [`org` commands](org.md) — the organisation that owns a context
 - [Output and exit codes](../output-and-exit-codes.md#the-secret-guard) — the secret guard every minting command applies
 - [Overview](../overview.md) — the rest of the reference

@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 6
 title: export
 description: Export data from a local or remote database using the export method with the SurrealDB PHP SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/export.mdx"

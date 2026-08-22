@@ -1,5 +1,5 @@
 ---
-position: 6
+position: 7
 title: invite
 description: "Reference for surrealctl invite — listing an organisation's pending invitations, sending one, and withdrawing one."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/invite.mdx"

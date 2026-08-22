@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 3
 title: connect
 description: Connect to a local or remote database endpoint using the connect method in the SurrealDB PHP SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/connect.mdx"

@@ -1,5 +1,5 @@
 ---
-position: 7
+position: 9
 title: Table
 description: Type-safe table references for query operations.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/values/table.mdx"

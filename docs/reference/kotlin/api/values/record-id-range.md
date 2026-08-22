@@ -1,5 +1,5 @@
 ---
-position: 3
+position: 2
 title: RecordIdRange
 description: The RecordIdRange type targets a range of records within a table in the SurrealDB Kotlin SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/kotlin/api/values/record-id-range.mdx"

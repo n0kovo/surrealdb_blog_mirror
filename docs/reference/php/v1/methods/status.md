@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 22
 title: status
 description: The status method in the SurrealDB PHP SDK retrieves the current status of a remote database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/status.mdx"

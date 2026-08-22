@@ -1,5 +1,5 @@
 ---
-position: 26
+position: 25
 title: use_defaults
 description: The .use_defaults() method for the SurrealDB Rust SDK selects the default namespace and database for this connection, if the server and client are configured to provide one.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/rust/methods/use-defaults.mdx"

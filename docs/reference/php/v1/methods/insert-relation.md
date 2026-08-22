@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 11
 title: insertRelation
 description: Insert one or multiple relations in the database using the insertRelation method with the SurrealDB PHP SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/insert-relation.mdx"

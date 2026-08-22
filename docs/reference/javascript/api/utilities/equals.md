@@ -1,5 +1,5 @@
 ---
-position: 5
+position: 3
 title: equals
 description: Deep equality comparison for SurrealDB values and JavaScript types.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/utilities/equals.mdx"

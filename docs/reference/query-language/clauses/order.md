@@ -1,5 +1,5 @@
 ---
-position: 8
+position: 7
 title: ORDER
 description: The `ORDER` clause specifies the sort order of the records in a table.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/clauses/order.mdx"

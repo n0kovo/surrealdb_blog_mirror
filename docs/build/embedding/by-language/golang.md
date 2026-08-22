@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 2
 title: Golang
 description: The documentation for embedding SurrealDB within Go can be found in the Go SDK and surrealdb.c.go documentation.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/embedding/by-language/golang.mdx"

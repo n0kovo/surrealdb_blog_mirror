@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 7
 title: RecordId
 description: The RecordId class represents a SurrealDB record identifier consisting of a table name and an ID value.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/java/api/values/record-id.mdx"

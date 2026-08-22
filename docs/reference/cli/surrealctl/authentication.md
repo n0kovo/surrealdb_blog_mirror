@@ -104,7 +104,7 @@ The scope vocabulary is shared with the Cloud MCP tools:
 | `write:cloud-instances` | Create, update and delete instances |
 | `write:cloud-organization` | Change organisation settings and membership |
 | `write:cloud-billing` | Change billing details |
-| `write:cloud-spectron` | Manage Spectron contexts and keys |
+| `write:cloud-spectron` | Manage SurrealDB Agent Memory contexts and keys |
 
 Two commands answer two different questions. [`token scopes`](commands/token.md#token-scopes) is the catalogue of what *can* be granted; [`auth scopes`](commands/auth.md#auth-scopes) is what the credential in hand *carries*. One is the menu, the other is the receipt.
 

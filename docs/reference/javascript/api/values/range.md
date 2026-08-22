@@ -1,5 +1,5 @@
 ---
-position: 10
+position: 7
 title: Range
 description: Generic range values for numeric, datetime, and other ordered types.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/values/range.mdx"

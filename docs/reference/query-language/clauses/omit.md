@@ -1,5 +1,5 @@
 ---
-position: 7
+position: 6
 title: OMIT
 description: "The `OMIT` clause is used to omit fields from the result set "
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/clauses/omit.mdx"

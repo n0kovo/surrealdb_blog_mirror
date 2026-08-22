@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 7
 title: health
 description: Check the storage layer health of a local or remote database using the health method with the SurrealDB PHP SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/health.mdx"

@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 20
 title: signin
 description: The ->signin() method for the SurrealDB SDK for PHP signs in to a specific access method.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/signin.mdx"

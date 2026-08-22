@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 2
 title: BoundQuery
 description: Parameterised query class for safe query composition.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/utilities/bound-query.mdx"

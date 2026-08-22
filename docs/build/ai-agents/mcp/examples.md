@@ -73,9 +73,9 @@ It works out which instances are idle from their usage, tells you what it plans 
 
 ## Give an agent long-term memory
 
-> Set up a Spectron context for this project in Frankfurt, then remember that we settled on event sourcing for the orders service.
+> Set up a SurrealDB Agent Memory context for this project in Frankfurt, then remember that we settled on event sourcing for the orders service.
 
-The assistant creates the [Spectron](https://surrealdb.com/docs/spectron) context, registers a scope path for the project, and stores the decision in it.
+The assistant creates the [SurrealDB Agent Memory](https://surrealdb.com/docs/agent-memory) context, registers a scope path for the project, and stores the decision in it.
 
 > What do we already know about the orders service?
 

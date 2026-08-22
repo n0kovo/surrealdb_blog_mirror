@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 8
 title: RecordId
 description: Type-safe record identifiers with table name and ID components.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/api/values/record-id.mdx"

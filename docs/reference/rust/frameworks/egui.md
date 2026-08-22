@@ -1,5 +1,5 @@
 ---
-position: 5
+position: 4
 title: Egui
 description: The SDK for Rust allows SurrealDB to be used as the storage backend for an Egui visual app
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/rust/frameworks/egui.mdx"

@@ -15,7 +15,7 @@ The SurrealDB documentation contains a large number of guides, each designed to 
 - **[Schema management](learn/schema-management/index.md)** — Learn how to shape data in SurrealDB using tables, fields, indexes, events, functions, and more.
 - **[Data models](learn/data-models/index.md)** — Store and query document, graph, vector, time-series, and geospatial data with SurrealDB.
 - **[Security](learn/security/index.md)** — Learn how to strengthen your SurrealDB deployment with best security practices.
-- **[Spectron](https://surrealdb.com/docs/spectron)** — Learn how to use Spectron, the memory context for AI agents.
+- **[SurrealDB Agent Memory](https://surrealdb.com/docs/agent-memory)** — Learn how to use SurrealDB Agent Memory, the memory context for AI agents.
 - **[Extensions](learn/extensions/index.md)** — Learn how to extend SurrealDB with custom modules and WASM plugins.
 
 ## Features

@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 15
 title: LiveRawQuery
 description: The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/dotnet/methods/live-raw-query.mdx"

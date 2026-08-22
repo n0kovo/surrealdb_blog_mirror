@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 21
 title: signup
 description: The ->signup() method for the SurrealDB SDK for PHP signs up to a specific access method.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/methods/signup.mdx"

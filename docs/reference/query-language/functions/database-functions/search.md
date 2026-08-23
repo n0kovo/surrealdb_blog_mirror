@@ -435,5 +435,5 @@ SELECT id, title, search::score(1) AS score FROM book
 
 ## See also
 
-- [Representations and codecs](../../../../learn/querying/concepts-and-guides/representations-and-codecs.md) — `search::analyze` as an offline preview of analyzer tokenization
+- [Representations and codecs](../../../../learn/querying/concepts-and-guides/representations-and-codecs.md) - `search::analyze` as an offline preview of analyzer tokenization
 - [`DEFINE ANALYZER`](../../statements/define/analyzer.md)

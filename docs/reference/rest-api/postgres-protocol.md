@@ -12,7 +12,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 > [!NOTE]
 > The name “Postgres protocol” describes the **transport** layer, not the query dialect. Support for ANSI SQL is not yet present.
 
-The Postgres wire protocol listener lets **any Postgres client** — `psql`, JDBC, `tokio-postgres`, Npgsql, and similar tools — connect to SurrealDB on a TCP port and run queries. The server speaks **Postgres protocol v3.0** (simple and extended query flows, prepared statements, interactive transactions, cancellation, optional TLS). 
+The Postgres wire protocol listener lets **any Postgres client** - `psql`, JDBC, `tokio-postgres`, Npgsql, and similar tools - connect to SurrealDB on a TCP port and run queries. The server speaks **Postgres protocol v3.0** (simple and extended query flows, prepared statements, interactive transactions, cancellation, optional TLS). 
 
 ANSI SQL is **not yet supported** over the Postgres wire protocol. Clients can currently send SurrealQL by default, or ISO GQL when the session dialect is chosen.
 
@@ -41,7 +41,7 @@ The following chart shows features currently available, along with those that ar
 | Session `USE` / `LET` persistence | `LIVE` queries over Postgres |
 | Interactive `BEGIN` / `COMMIT` / `ROLLBACK` | GQL inside an open interactive transaction |
 | Dialect switch: SurrealQL (default) or ISO GQL | Full static typing for every `prepare` shape |
-| SCRAM-SHA-256 auth over SASL (when the user has SCRAM verifier material — see [Authentication](#authentication)) | |
+| SCRAM-SHA-256 auth over SASL (when the user has SCRAM verifier material - see [Authentication](#authentication)) | |
 | Positional parameters (`$1` → `$_1` rewrite) | |
 | Typed result columns inferred from values | |
 | TLS via existing `--web-crt` / `--web-key` | |
@@ -74,7 +74,7 @@ The startup parameter **`database`** selects namespace and database as **`ns/db`
 
 ## Authentication
 
-The Postgres listener supports two authentication mechanisms. Clients that offer [SCRAM-SHA-256](https://datatracker.ietf.org/doc/html/rfc7677) (most modern drivers and `psql`) use SASL challenge–response auth when the user has SCRAM verifier material stored. Otherwise the server falls back to the Postgres **cleartext password** message and verifies against the existing Argon2 hash via **`iam::verify::basic`**.
+The Postgres listener supports two authentication mechanisms. Clients that offer [SCRAM-SHA-256](https://datatracker.ietf.org/doc/html/rfc7677) (most modern drivers and `psql`) use SASL challenge - response auth when the user has SCRAM verifier material stored. Otherwise the server falls back to the Postgres **cleartext password** message and verifies against the existing Argon2 hash via **`iam::verify::basic`**.
 
 **MD5** (legacy Postgres auth) is not supported.
 
@@ -109,7 +109,7 @@ Start a local instance and connect (see [Start the listener](#start-the-listener
 psql "host=127.0.0.1 port=5432 user=root password=secret dbname=main/main"
 ```
 
-Seed some data — these statements are SurrealQL, but familiar if you know SQL:
+Seed some data - these statements are SurrealQL, but familiar if you know SQL:
 
 ```sql
 CREATE person:ada SET name = 'Ada', age = 36, city = 'London';
@@ -131,7 +131,7 @@ UPDATE person SET age += 1 WHERE city = 'London';
 DELETE person WHERE age < 18;
 ```
 
-When something fails, check the error message and compare with the [SurrealQL reference](../query-language/index.md) — the fix is usually a small syntax or model difference (record IDs, graph syntax, functions), not the connection itself.
+When something fails, check the error message and compare with the [SurrealQL reference](../query-language/index.md) - the fix is usually a small syntax or model difference (record IDs, graph syntax, functions), not the connection itself.
 
 Switch namespace or database on the same connection:
 
@@ -154,7 +154,7 @@ Many BI products (Metabase, Superset, Grafana Postgres data sources, and similar
 | BI workflow | Works now? | Notes |
 | --- | --- | --- |
 | **Native / custom SQL** query editor | Yes | Write **SurrealQL** in the tool’s SQL box. This is the main BI path today. |
-| **`psql`-style exploration** | Yes | Ad hoc SELECT, GROUP BY, filters — good for learning SurrealQL. |
+| **`psql`-style exploration** | Yes | Ad hoc SELECT, GROUP BY, filters - good for learning SurrealQL. |
 | **Drag-and-drop chart builder** | Limited | Tools that auto-generate SQL expect ANSI SQL and often query `information_schema` or `pg_catalog`. |
 | **Schema browser / table picker** | No | [`pg_catalog` emulation](#included-features) is not yet available. |
 | **Paste arbitrary Postgres SQL** | No | No SQL-to-SurrealQL translation yet. Similar-looking SELECTs may work; Postgres-specific syntax will not. |
@@ -176,7 +176,7 @@ SELECT * FROM person;
 
 ### ISO GQL (optional dialect)
 
-GQL is **not** the default and is **not** what most Postgres users expect from a “Postgres” port. It is available so the **same connection** can run [ISO GQL](../../learn/querying/gql/overview.md) when you opt in — the same engine as [`POST /gql`](http-protocol.md#gql), with results encoded as Postgres rows instead of JSON.
+GQL is **not** the default and is **not** what most Postgres users expect from a “Postgres” port. It is available so the **same connection** can run [ISO GQL](../../learn/querying/gql/overview.md) when you opt in - the same engine as [`POST /gql`](http-protocol.md#gql), with results encoded as Postgres rows instead of JSON.
 
 **When GQL over Postgres is useful:**
 
@@ -224,7 +224,7 @@ Result shape follows Postgres tabular conventions:
 
 Drivers using **Parse / Bind / Execute** (extended protocol) get a hybrid typing model:
 
-- **Driver-prepared** statements (no eager execute) advertise a single **`jsonb`** column — SurrealDB has no static schema for arbitrary prepared SurrealQL.
+- **Driver-prepared** statements (no eager execute) advertise a single **`jsonb`** column - SurrealDB has no static schema for arbitrary prepared SurrealQL.
 - **`prepare_typed` / portal describe** paths that execute eagerly return **true typed columns** matching the result.
 
 Postgres positional parameters **`$1`, `$2`, …** are rewritten to SurrealQL **`$_1`, `$_2`, …** (lexer-safe, comment-aware) and bound as **`_1`, `_2`, …** in the session.
@@ -239,9 +239,9 @@ Standalone **`BEGIN`**, **`COMMIT`**, and **`ROLLBACK`** open an interactive tra
 
 Connections are gated like other query surfaces:
 
-- **`RouteTarget::Postgres`** — controlled via [`--allow-http`](../cli/surrealdb-cli/commands/start.md) / [`--deny-http`](../cli/surrealdb-cli/commands/start.md) with the route name **`postgres`** (the capability helper is shared with HTTP route names).
-- **Arbitrary query** — subject to [`--allow-arbitrary-query`](../../learn/security/authorization/capabilities.md#arbitrary-queries) / [`--deny-arbitrary-query`](../../learn/security/authorization/capabilities.md#arbitrary-queries) for `guest`, `record`, and `system` users.
-- **GQL** — requires [`--allow-experimental gql`](../cli/surrealdb-cli/commands/start.md#experimental-capabilities) in addition to the above.
+- **`RouteTarget::Postgres`** - controlled via [`--allow-http`](../cli/surrealdb-cli/commands/start.md) / [`--deny-http`](../cli/surrealdb-cli/commands/start.md) with the route name **`postgres`** (the capability helper is shared with HTTP route names).
+- **Arbitrary query** - subject to [`--allow-arbitrary-query`](../../learn/security/authorization/capabilities.md#arbitrary-queries) / [`--deny-arbitrary-query`](../../learn/security/authorization/capabilities.md#arbitrary-queries) for `guest`, `record`, and `system` users.
+- **GQL** - requires [`--allow-experimental gql`](../cli/surrealdb-cli/commands/start.md#experimental-capabilities) in addition to the above.
 
 Authentication is described in [Authentication](#authentication). Resource limits include a connection cap, startup/auth timeout, message size limits, and prepared-statement / portal caps.
 

@@ -79,5 +79,5 @@ try {
 ## Learn more
 
 - [Transaction reference](../api/core/transaction.md) for the full API
-- [Multiple sessions](multiple-sessions.md) — transactions run within a session
+- [Multiple sessions](multiple-sessions.md) - transactions run within a session
 - [SurrealQL transactions](../../query-language/language-primitives/transactions.md) for transaction semantics

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # surrealctl
 
-`surrealctl` is the command-line interface for the SurrealDB Cloud control plane. Use it to sign in, create and list instances, scale them, pause and resume them, read logs and metrics, manage organisation members, and mint tokens — from a terminal, a shell script, or a CI job.
+`surrealctl` is the command-line interface for the SurrealDB Cloud control plane. Use it to sign in, create and list instances, scale them, pause and resume them, read logs and metrics, manage organisation members, and mint tokens - from a terminal, a shell script, or a CI job.
 
 This page covers what the tool is for and gets you through a first session. It is written for operators and developers who already have a SurrealDB Cloud account. For exhaustive flag detail, see the [`surrealctl` reference](../../reference/cli/surrealctl/overview.md).
 
@@ -20,15 +20,15 @@ SurrealDB ships two command-line tools, and they divide along a clear line.
 | `surrealctl` | Control plane | Which instances exist, what they run, what they cost, who may reach them |
 | [`surreal`](../../reference/cli/surrealdb-cli/overview.md) | Data plane | Queries, imports, exports, and running a server yourself |
 
-The two are siblings, not competitors. `surrealctl` never speaks SurrealQL. When you run `surrealctl instance sql`, it resolves the instance, mints a database token, and hands off to the `surreal` binary — the same binary you would run by hand, with the endpoint and credentials already filled in. The same applies to `surrealctl instance import` and `surrealctl instance export`.
+The two are siblings, not competitors. `surrealctl` never speaks SurrealQL. When you run `surrealctl instance sql`, it resolves the instance, mints a database token, and hands off to the `surreal` binary - the same binary you would run by hand, with the endpoint and credentials already filled in. The same applies to `surrealctl instance import` and `surrealctl instance export`.
 
 That is the whole boundary. Three commands cross it; nothing else needs `surreal`.
 
 ## When to use which tool
 
-- **[SurrealDB Studio](https://app.surrealdb.com)** — sign-up, browsing data, billing pages, and anything you do once. The browser is the fastest route for one-off work.
-- **`surrealctl`** — anything you want to repeat, script, schedule, or review in a pull request. Provisioning, scaling, pausing an environment overnight, pulling logs into a report, granting a colleague a role.
-- **`surreal`** — schema, queries, and data. Also a local server for development.
+- **[SurrealDB Studio](https://app.surrealdb.com)** - sign-up, browsing data, billing pages, and anything you do once. The browser is the fastest route for one-off work.
+- **`surrealctl`** - anything you want to repeat, script, schedule, or review in a pull request. Provisioning, scaling, pausing an environment overnight, pulling logs into a report, granting a colleague a role.
+- **`surreal`** - schema, queries, and data. Also a local server for development.
 
 `surrealctl` and Studio talk to the same API, so a change made in one shows up in the other.
 
@@ -54,7 +54,7 @@ For installation instructions, see [Install](install.md).
 
 ## Output that scripts can read
 
-Every command that returns a document takes `--json`, and every command sends its data payload to stdout and everything else — progress, prompts, warnings, errors — to stderr.
+Every command that returns a document takes `--json`, and every command sends its data payload to stdout and everything else - progress, prompts, warnings, errors - to stderr.
 
 ```bash title="Machine-readable output"
 surrealctl instance list --json | jq -r '.[] | select(.state == "ready") | .name'
@@ -94,9 +94,9 @@ Three things `surrealctl` will not do, so you do not go looking for them.
 
 ## Topics
 
-- [Install](install.md) — get the binary, sign in, and confirm the setup.
-- [Authentication](authentication.md) — login sessions, personal access tokens, and where credentials live.
-- [Instances](instances.md) — create, connect, scale, pause, back up, and delete.
-- [Organisations](organisations.md) — members, roles, invitations, tokens, usage, and spend.
-- [Scripting](scripting.md) — `--json`, exit codes, and unattended runs.
-- [`surrealctl` reference](../../reference/cli/surrealctl/overview.md) — every command, flag, and default.
+- [Install](install.md) - get the binary, sign in, and confirm the setup.
+- [Authentication](authentication.md) - login sessions, personal access tokens, and where credentials live.
+- [Instances](instances.md) - create, connect, scale, pause, back up, and delete.
+- [Organisations](organisations.md) - members, roles, invitations, tokens, usage, and spend.
+- [Scripting](scripting.md) - `--json`, exit codes, and unattended runs.
+- [`surrealctl` reference](../../reference/cli/surrealctl/overview.md) - every command, flag, and default.

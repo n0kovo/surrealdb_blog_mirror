@@ -57,6 +57,6 @@ try (Surreal db = new Surreal()) {
 
 ## See also
 
-- [Value types](../../concepts/value-types.md) — Type mapping overview
-- [Value](value.md) — The Value class reference
-- [SurrealQL tables](../../../query-language/statements/define/table.md) — Table definitions in SurrealDB
+- [Value types](../../concepts/value-types.md) - Type mapping overview
+- [Value](value.md) - The Value class reference
+- [SurrealQL tables](../../../query-language/statements/define/table.md) - Table definitions in SurrealDB

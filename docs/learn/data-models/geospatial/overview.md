@@ -17,10 +17,10 @@ In this section, you’ll learn how to think like a geospatial database user: re
 
 - Coordinate reference systems (CRS): Coordinates can be stored in different projections. A common choice is WGS84 for latitude and longitude (EPSG:4326), used by GPS. Other systems exist for local or projected coordinates.
 
-- Geometry types: Including points, linestrings, polygons, and multi-variants—see [Geometry types](geometry-types.md).
+- Geometry types: Including points, linestrings, polygons, and multi-variants - see [Geometry types](geometry-types.md).
 
-- Spatial relationships: Operations such as contains, intersects, within, touches, or disjoint—see [Spatial queries](spatial-queries.md).
+- Spatial relationships: Operations such as contains, intersects, within, touches, or disjoint - see [Spatial queries](spatial-queries.md).
 
-- Distance and proximity: Measuring distance between geometries, buffers, and geohash-style encodings—see [Distance and proximity](distance-and-proximity.md).
+- Distance and proximity: Measuring distance between geometries, buffers, and geohash-style encodings - see [Distance and proximity](distance-and-proximity.md).
 
 For reference types and function signatures, see [Geometries](../../../reference/query-language/language-primitives/data-types/geometries.md) and [Geo functions](../../../reference/query-language/functions/database-functions/geo.md).

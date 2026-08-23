@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Transactions
 
-Interactive transactions let you group multiple operations into an atomic unit. Unlike text-based transactions (`BEGIN TRANSACTION; ... COMMIT;` — see the [query builder](query-builder.md#building-text-based-transactions) for composing those), interactive transactions allow you to execute statements one at a time, inspect results, and conditionally decide whether to commit or cancel.
+Interactive transactions let you group multiple operations into an atomic unit. Unlike text-based transactions (`BEGIN TRANSACTION; ... COMMIT;` - see the [query builder](query-builder.md#building-text-based-transactions) for composing those), interactive transactions allow you to execute statements one at a time, inspect results, and conditionally decide whether to commit or cancel.
 
 Transactions require a WebSocket connection (`ws://` or `wss://`) and SurrealDB v3 or later.
 

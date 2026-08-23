@@ -77,6 +77,6 @@ try (Surreal db = new Surreal()) {
 
 ## See also
 
-- [Value types](../../concepts/value-types.md) — Type mapping overview
-- [Value](value.md) — The Value class reference
-- [SurrealQL durations](../../../query-language/language-primitives/data-types/datetimes.md#durations-and-datetimes) — Duration types in SurrealDB
+- [Value types](../../concepts/value-types.md) - Type mapping overview
+- [Value](value.md) - The Value class reference
+- [SurrealQL durations](../../../query-language/language-primitives/data-types/datetimes.md#durations-and-datetimes) - Duration types in SurrealDB

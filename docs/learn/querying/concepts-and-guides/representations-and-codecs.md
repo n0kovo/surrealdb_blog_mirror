@@ -27,9 +27,9 @@ Many SurrealDB built-ins do the same broad job: take a value in **representation
 
 **Reversible codecs** for wire formats and storage:
 
-- [`encoding::json::encode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingjsonencode) / [`decode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingjsondecode) — JSON text
-- [`encoding::cbor::encode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingcborencode) / [`decode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingcbordecode) — [CBOR](../../../reference/rest-api/cbor-protocol.md) bytes
-- [`encoding::base64::encode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingbase64encode) / [`decode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingbase64decode) — Base64 text for binary payloads
+- [`encoding::json::encode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingjsonencode) / [`decode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingjsondecode) - JSON text
+- [`encoding::cbor::encode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingcborencode) / [`decode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingcbordecode) - [CBOR](../../../reference/rest-api/cbor-protocol.md) bytes
+- [`encoding::base64::encode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingbase64encode) / [`decode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingbase64decode) - Base64 text for binary payloads
 
 Typical uses: [`DEFINE API`](../../../reference/query-language/statements/define/api.md) request bodies, file bucket payloads, and SDK interchange. Round-trip is the mental model.
 
@@ -45,7 +45,7 @@ Related one-way or format-specific helpers elsewhere include `string::html::enco
 
 ## Text analysis (`search::analyze`)
 
-[`search::analyze`](../../../reference/query-language/functions/database-functions/search.md#searchanalyze) runs a named [`DEFINE ANALYZER`](../../../reference/query-language/statements/define/analyzer.md) pipeline on a string and returns an array of tokens. It is **lossy** (stemming, filtering) and mirrors what full-text indexing does — useful for debugging analyzers before you index.
+[`search::analyze`](../../../reference/query-language/functions/database-functions/search.md#searchanalyze) runs a named [`DEFINE ANALYZER`](../../../reference/query-language/statements/define/analyzer.md) pipeline on a string and returns an array of tokens. It is **lossy** (stemming, filtering) and mirrors what full-text indexing does - useful for debugging analyzers before you index.
 
 The "format" here is not JSON or CBOR; it is whatever pipeline you defined on the analyzer.
 
@@ -56,11 +56,11 @@ search::analyze("demo_blank", "SurrealDB graph queries");
 -- ['SurrealDB', 'graph', 'queries']
 ```
 
-Compare the tokens above with what you get after adding `FILTERS lowercase, snowball(english)` — the same input string produces a different token list, which is why `search::analyze` is handy when tuning an analyzer before you create a [`FULLTEXT`](../../../reference/query-language/statements/define/indexes.md) index.
+Compare the tokens above with what you get after adding `FILTERS lowercase, snowball(english)` - the same input string produces a different token list, which is why `search::analyze` is handy when tuning an analyzer before you create a [`FULLTEXT`](../../../reference/query-language/statements/define/indexes.md) index.
 
 ## Structured parsing (`parse::*`)
 
-[`parse::url::*`](../../../reference/query-language/functions/database-functions/parse.md) and [`parse::email::*`](../../../reference/query-language/functions/database-functions/parse.md) extract one component from a structured string. There is no round-trip — you get a field value, not a reassembled URL.
+[`parse::url::*`](../../../reference/query-language/functions/database-functions/parse.md) and [`parse::email::*`](../../../reference/query-language/functions/database-functions/parse.md) extract one component from a structured string. There is no round-trip - you get a field value, not a reassembled URL.
 
 ```surql
 {
@@ -92,7 +92,7 @@ value::patch($before, $patch);
 [`eval::surql`](../../../reference/query-language/functions/database-functions/eval.md#evalsurql) and [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) parse and **execute** query text in the caller's transaction. That is fundamentally different from encoding:
 
 - Input is **executable** SurrealQL or [ISO GQL](../gql/overview.md), not a static wire format.
-- **Denied by default** — requires [`allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) and the [arbitrary-query](../../security/authorization/capabilities.md#arbitrary-queries) gate.
+- **Denied by default** - requires [`allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) and the [arbitrary-query](../../security/authorization/capabilities.md#arbitrary-queries) gate.
 - Nested writes affect the caller's transaction; transaction-control statements are rejected.
 
 Use `eval::*` when the query string is only known at runtime. Prefer [`DEFINE FUNCTION`](../../../reference/query-language/statements/define/function.md), [`DEFINE API`](../../../reference/query-language/statements/define/api.md), or normal client queries when the shape of the work is fixed at deploy time.
@@ -104,10 +104,10 @@ eval::surql($template, { greeting: 'Hello', name: 'world' });
 -- 'Hello, world'
 ```
 
-For [ISO GQL](../gql/overview.md) strings, use `eval::gql` instead — same bindings object, plus [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries). See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) for setup and examples.
+For [ISO GQL](../gql/overview.md) strings, use `eval::gql` instead - same bindings object, plus [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries). See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) for setup and examples.
 
 ## See also
 
 - [Database functions catalogue](../../../reference/query-language/functions/database-functions/index.md)
-- [Parameterised queries](parameterised-queries.md) — `$parameters` at the SurrealQL layer (contrast with `eval` bindings)
+- [Parameterised queries](parameterised-queries.md) - `$parameters` at the SurrealQL layer (contrast with `eval` bindings)
 - [Capabilities](../../security/authorization/capabilities.md)

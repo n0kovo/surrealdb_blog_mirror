@@ -50,12 +50,12 @@ try (Surreal db = new Surreal()) {
 
 ## Receiving notifications
 
-Call [`.next()`](../api/core/live-stream.md#next) on the `LiveStream` to block until the next notification arrives. It returns an `Optional<LiveNotification>` — the optional is empty if the stream has been closed.
+Call [`.next()`](../api/core/live-stream.md#next) on the `LiveStream` to block until the next notification arrives. It returns an `Optional<LiveNotification>` - the optional is empty if the stream has been closed.
 
 Each [`LiveNotification`](../api/core/live-stream.md#live-notification) provides:
-- `.getAction()` — the type of change: `CREATE`, `UPDATE`, or `DELETE`
-- `.getValue()` — the record data as a [`Value`](../api/values/value.md)
-- `.getQueryId()` — the unique identifier of the live query
+- `.getAction()` - the type of change: `CREATE`, `UPDATE`, or `DELETE`
+- `.getValue()` - the record data as a [`Value`](../api/values/value.md)
+- `.getQueryId()` - the unique identifier of the live query
 
 ```java
 LiveStream stream = db.selectLive("users");

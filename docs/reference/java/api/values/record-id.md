@@ -406,7 +406,7 @@ List<Value> results = db.select(range);
 
 ## See also
 
-- [Value](value.md) — The Value class reference
-- [Surreal](../core/surreal.md) — Connection and method reference
-- [Data manipulation](../../concepts/data-manipulation.md) — Working with records
-- [SurrealQL record IDs](../../../query-language/language-primitives/data-types/record-ids.md) — Record identifier formats and types
+- [Value](value.md) - The Value class reference
+- [Surreal](../core/surreal.md) - Connection and method reference
+- [Data manipulation](../../concepts/data-manipulation.md) - Working with records
+- [SurrealQL record IDs](../../../query-language/language-primitives/data-types/record-ids.md) - Record identifier formats and types

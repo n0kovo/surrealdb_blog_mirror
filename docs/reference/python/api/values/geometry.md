@@ -105,7 +105,7 @@ line = GeometryLine([
 
 ## `GeometryPolygon` {#geometrypolygon}
 
-A polygon defined by one or more linear rings. The first ring is the exterior boundary; any subsequent rings are interior holes. Rings must be closed — the first and last point must be identical, following the GeoJSON specification.
+A polygon defined by one or more linear rings. The first ring is the exterior boundary; any subsequent rings are interior holes. Rings must be closed - the first and last point must be identical, following the GeoJSON specification.
 
 ### Constructor {#polygon-constructor}
 
@@ -341,6 +341,6 @@ with Surreal("ws://localhost:8000") as db:
 
 ## See also
 
-- [Data types](index.md) — All SDK data types
-- [RecordID](record-id.md) — Record identifier
-- [SurrealQL Geometry Functions](../../../query-language/functions/database-functions/geo.md) — Geospatial query functions
+- [Data types](index.md) - All SDK data types
+- [RecordID](record-id.md) - Record identifier
+- [SurrealQL Geometry Functions](../../../query-language/functions/database-functions/geo.md) - Geospatial query functions

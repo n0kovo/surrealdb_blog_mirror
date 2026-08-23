@@ -142,5 +142,5 @@ with Surreal("ws://localhost:8000") as db:
 
 ## See also
 
-- [Data types](index.md) — All SDK data types
-- [RecordID](record-id.md) — Record identifier
+- [Data types](index.md) - All SDK data types
+- [RecordID](record-id.md) - Record identifier

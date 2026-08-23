@@ -40,7 +40,7 @@ surrealctl auth logout          # remove this profile's stored credentials
 `auth logout` revokes the refresh token at the identity provider on a best-effort basis. A failed revocation prints a warning and still removes the credential from this machine. Logging out when nothing is signed in succeeds and still prints a document, so a teardown script does not fail on its second run.
 
 > [!NOTE]
-> `auth scopes` returns an empty list for a login session. Identity scopes are not the authorisation model for a session — your role in the organisation is. Run `surrealctl org permissions` to see what you may do.
+> `auth scopes` returns an empty list for a login session. Identity scopes are not the authorisation model for a session - your role in the organisation is. Run `surrealctl org permissions` to see what you may do.
 
 ## Personal access tokens
 
@@ -96,7 +96,7 @@ surrealctl token delete ci-nightly-report
 
 ## What a personal access token cannot do
 
-**It cannot manage personal access tokens.** All four `token` verbs — `list`, `create`, `delete`, and `scopes` — refuse a personal access token. The refusal is local, costs no requests, and exits `4`. A leaked token must not be able to mint its own replacements, nor revoke the one you would use to clean up after it.
+**It cannot manage personal access tokens.** All four `token` verbs - `list`, `create`, `delete`, and `scopes` - refuse a personal access token. The refusal is local, costs no requests, and exits `4`. A leaked token must not be able to mint its own replacements, nor revoke the one you would use to clean up after it.
 
 ```text
 Managing personal access tokens needs an interactive login session, so nothing was sent.
@@ -159,8 +159,8 @@ Five scopes exist: `read:cloud`, `write:cloud-instances`, `write:cloud-organizat
 
 Two commands report on them, and they answer different questions.
 
-- `surrealctl token scopes` — the catalogue of scopes a token can be granted. This one is the menu.
-- `surrealctl auth scopes` — what the credential in your hand carries. This one is the receipt.
+- `surrealctl token scopes` - the catalogue of scopes a token can be granted. This one is the menu.
+- `surrealctl auth scopes` - what the credential in your hand carries. This one is the receipt.
 
 ## Profiles
 
@@ -179,7 +179,7 @@ Each profile stores its own credential, so switching profiles switches identity.
 
 Credentials live in `credentials.json`, mode `0600`, beside `config.toml` in the configuration directory described in [Install](install.md#where-surrealctl-keeps-its-files). `config.toml` holds no secrets and is safe to commit.
 
-`surrealctl` uses a file rather than the operating system keyring, deliberately. macOS keychain access is bound to the requesting binary's code signature, so a CLI re-prompts for permission after every upgrade — unanswerable inside a CI job. Headless Linux and containers have no secret service at all. There is no keyring backend.
+`surrealctl` uses a file rather than the operating system keyring, deliberately. macOS keychain access is bound to the requesting binary's code signature, so a CLI re-prompts for permission after every upgrade - unanswerable inside a CI job. Headless Linux and containers have no secret service at all. There is no keyring backend.
 
 Credential writes take an exclusive advisory lock and re-read under it, so two `surrealctl` processes racing to renew the same session cannot invalidate each other's tokens. Readers take no lock. If a run reports that another `surrealctl` is updating credentials, retry in a moment.
 
@@ -199,6 +199,6 @@ To see which requests are being made and which configuration layer won each valu
 
 ## Next steps
 
-- [Instances](instances.md) — everyday instance work.
-- [Scripting](scripting.md) — exit codes, `--json`, and unattended runs.
-- [Members and roles](../organisations/members-and-roles.md) — what a role permits in an organisation.
+- [Instances](instances.md) - everyday instance work.
+- [Scripting](scripting.md) - exit codes, `--json`, and unattended runs.
+- [Members and roles](../organisations/members-and-roles.md) - what a role permits in an organisation.

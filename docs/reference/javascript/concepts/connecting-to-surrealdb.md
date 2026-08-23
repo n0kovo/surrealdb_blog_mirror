@@ -126,7 +126,7 @@ await db.connect('ws://localhost:8000', {
 });
 ```
 
-This sets the connection-wide default. It can be overridden per call with `.retry()` on a [`query()`](executing-queries.md) or on [mutation methods](executing-queries.md) like `.create()` and `.delete()` — including when called on a [transaction](transactions.md), since it exposes the same query methods.
+This sets the connection-wide default. It can be overridden per call with `.retry()` on a [`query()`](executing-queries.md) or on [mutation methods](executing-queries.md) like `.create()` and `.delete()` - including when called on a [transaction](transactions.md), since it exposes the same query methods.
 
 ```ts
 const [n] = await db

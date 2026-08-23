@@ -61,7 +61,7 @@ api::invoke("/test", {
 
 The path string in `DEFINE API` can be static, or it can capture pieces of the URL.
 
-A segment like `"/users/:id"` binds one path component—anything in that slot shows up on `$request.params`. A trailing pattern with `*` instead of `:` matches everything from that point—handy for nested paths or file-like routes.
+A segment like `"/users/:id"` binds one path component - anything in that slot shows up on `$request.params`. A trailing pattern with `*` instead of `:` matches everything from that point - handy for nested paths or file-like routes.
 
 ```surql
 DEFINE API OVERWRITE "/test/:anything_goes" FOR get THEN {
@@ -77,7 +77,7 @@ api::invoke("/test/same_here");
 api::invoke("/test/but/this/wont/match");
 ```
 
-Here the first two calls hit the handler; the third does not, because `:anything_goes` only covers a single segment—extra slashes mean “no matching route”, which surfaces as a 404-style result from `api::invoke`.
+Here the first two calls hit the handler; the third does not, because `:anything_goes` only covers a single segment - extra slashes mean “no matching route”, which surfaces as a 404-style result from `api::invoke`.
 
 To accept multiple trailing segments, switch the capture to the `*` form:
 
@@ -103,6 +103,6 @@ Built-in helpers such as `api::timeout` sit in the `MIDDLEWARE` list before your
 
 ## Where to read more
 
-* [`DEFINE API`](../../../reference/query-language/statements/define/api.md) — full statement reference, including `PERMISSIONS`.
-* [API functions](../../../reference/query-language/functions/database-functions/api.md) — `api::invoke` and related helpers.
-* [Custom functions](../concepts-and-guides/custom-functions.md) — how `fn::` functions fit into larger designs.
+* [`DEFINE API`](../../../reference/query-language/statements/define/api.md) - full statement reference, including `PERMISSIONS`.
+* [API functions](../../../reference/query-language/functions/database-functions/api.md) - `api::invoke` and related helpers.
+* [Custom functions](../concepts-and-guides/custom-functions.md) - how `fn::` functions fit into larger designs.

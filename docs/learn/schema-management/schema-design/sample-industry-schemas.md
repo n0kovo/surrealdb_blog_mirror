@@ -382,7 +382,7 @@ RELATE purchase_order:450001 -> ordered_from -> vendor:welding;
 CREATE po_line:line10 SET
     purchase_order = purchase_order:450001,
     line_number = 10,
-    description = "Structural welding — pipe rack",
+    description = "Structural welding - pipe rack",
     amount_cents = 18500000,
     wbs = wbs_element:pad3_civil;
 RELATE po_line:line10 -> charges -> wbs_element:pad3_civil;
@@ -1171,7 +1171,7 @@ CREATE note:[encounter:one, time::now()] SET author = "Dr. Leung", content = "Pa
 
 ## Related SurrealQL statements
 
-- [SurrealKit schema migration](../../../manage/schema-migration/index.md) — official CLI for versioning and applying schema from `.surql` files
+- [SurrealKit schema migration](../../../manage/schema-migration/index.md) - official CLI for versioning and applying schema from `.surql` files
 - [DEFINE TABLE](../../../reference/query-language/statements/define/table.md)
 - [DEFINE FIELD](../../../reference/query-language/statements/define/field.md)
 - [RELATE](../../../reference/query-language/statements/relate.md)

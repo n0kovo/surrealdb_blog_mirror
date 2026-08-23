@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 Start a SurrealQL REPL in your terminal, with pipe support for one-shot queries.
 
 > [!NOTE]
-> **Before you start** — make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
 
 <Synopsis>
 surreal sql [OPTIONS]
@@ -98,7 +98,7 @@ surreal sql [OPTIONS]
     ]}
 />
 
-`surreal sql` also accepts the capability flags shown under `Capabilities` in the [command help](#command-help) — `--allow-all`, `--allow-funcs`, `--deny-net`, and the rest. Where they take effect depends on how you connect; see [Capabilities and remote connections](#capabilities-and-remote-connections).
+`surreal sql` also accepts the capability flags shown under `Capabilities` in the [command help](#command-help) - `--allow-all`, `--allow-funcs`, `--deny-net`, and the rest. Where they take effect depends on how you connect; see [Capabilities and remote connections](#capabilities-and-remote-connections).
 
 ## Using environment variables
 
@@ -154,12 +154,12 @@ Both `surreal sql` and [`surreal start`](start.md) accept the same capability fl
 > [!NOTE]
 > `grpc://` and `grpcs://` endpoints are accepted from SurrealDB 3.3.0. The server always mounts the gRPC transport, and the `surreal` binary now ships the client, so `surreal sql --endpoint grpc://127.0.0.1:8000` connects without a custom build. On earlier versions the endpoint was rejected as an invalid connection string or an invalid URI.
 
-When you use `surreal sql` against a **running instance**, flags on the REPL command do **not** change what the server allows at execution time. Configure [`surreal start`](start.md) (or the server's environment variables) instead — including for [`eval::*`](../../../query-language/functions/database-functions/eval.md), arbitrary-query gates, and experimental features such as Surrealism.
+When you use `surreal sql` against a **running instance**, flags on the REPL command do **not** change what the server allows at execution time. Configure [`surreal start`](start.md) (or the server's environment variables) instead - including for [`eval::*`](../../../query-language/functions/database-functions/eval.md), arbitrary-query gates, and experimental features such as Surrealism.
 
 Capability flags on `surreal sql` still matter in two cases:
 
-- **Embedded storage** — there is no separate server; pass the flags on `surreal sql` directly.
-- **REPL syntax validation** — the client uses its capability set when checking whether a line parses before you submit it. That can affect experimental syntax in the prompt; it is **not** the security boundary for remote execution.
+- **Embedded storage** - there is no separate server; pass the flags on `surreal sql` directly.
+- **REPL syntax validation** - the client uses its capability set when checking whether a line parses before you submit it. That can affect experimental syntax in the prompt; it is **not** the security boundary for remote execution.
 
 ## Experimental capabilities
 
@@ -170,7 +170,7 @@ Capability flags on `surreal sql` still matter in two cases:
 
 To use experimental capabilities, set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` [environment variable](../environment-variables.md) to the experimental capability you want to allow.
 
-For **embedded** `surreal sql` (for example `surreal sql memory`), set the variable or flag on the REPL command. For a **remote** server, set it on [`surreal start`](start.md#experimental-capabilities) instead — see [Capabilities and remote connections](#capabilities-and-remote-connections).
+For **embedded** `surreal sql` (for example `surreal sql memory`), set the variable or flag on the REPL command. For a **remote** server, set it on [`surreal start`](start.md#experimental-capabilities) instead - see [Capabilities and remote connections](#capabilities-and-remote-connections).
 
 For example, to use [Surrealism](../../../../learn/extensions/plugins/overview.md) extensions in an embedded session:
 
@@ -194,7 +194,7 @@ SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism,files surreal sql ...
 surreal sql -e [CONNECTION_STRING] --allow-experimental surrealism,files
 ```
 
-The current experimental targets are `files` and `surrealism`. The legacy tag `gql` is still accepted for compatibility but has no effect from 3.3.0 — [ISO GQL](../../../../learn/querying/gql/overview.md) is enabled by default.
+The current experimental targets are `files` and `surrealism`. The legacy tag `gql` is still accepted for compatibility but has no effect from 3.3.0 - [ISO GQL](../../../../learn/querying/gql/overview.md) is enabled by default.
 
 | Example feature/statement | Tag |
 | --- | --- |

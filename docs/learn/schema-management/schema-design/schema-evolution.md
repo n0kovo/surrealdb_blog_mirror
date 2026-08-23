@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 Production databases rarely stay still, and in SurrealDB they tend to move from less to more strict over time as you become more aware of the expected behaviour of your database. Some examples of schema changes are tightening a table from schemaless to schemafull, changing permissions, or preparing an index for removal. SurrealDB's `ALTER` statement is the lever for mutating definitions in place without always rewriting a full `DEFINE` block.
 
-When you are ready to version and apply those changes across environments (for example from CI or with reviewed rollouts), use [SurrealKit schema migration](../../../manage/schema-migration/index.md) — the official `.surql`-based workflow documented in the **Manage** section.
+When you are ready to version and apply those changes across environments (for example from CI or with reviewed rollouts), use [SurrealKit schema migration](../../../manage/schema-migration/index.md) - the official `.surql`-based workflow documented in the **Manage** section.
 
 For a wholesale replacement, you can always use `DEFINE` with the `OVERWRITE` clause.
 
@@ -49,4 +49,4 @@ DEFINE TABLE IF EXISTS writer;
 
 * [`ALTER` overview](../../../reference/query-language/statements/alter/overview.md)
 * [Schema best practices](schema-best-practices.md)
-* [SurrealKit schema migration](../../../manage/schema-migration/index.md) — sync and rollout workflows for schema files
+* [SurrealKit schema migration](../../../manage/schema-migration/index.md) - sync and rollout workflows for schema files

@@ -1,7 +1,7 @@
 ---
 position: 6
 title: instance
-description: Reference for surrealctl instance — creating, scaling, pausing and deleting instances, reading logs, metrics and endpoints, minting tokens, and managing capabilities and backups.
+description: Reference for surrealctl instance - creating, scaling, pausing and deleting instances, reading logs, metrics and endpoints, minting tokens, and managing capabilities and backups.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/instance.mdx"
 ---
 
@@ -301,7 +301,7 @@ surrealctl instance update [OPTIONS] [INSTANCE]
     ]}
 />
 
-There is no single update route on the API — each field has its own — so one invocation is several requests. They are applied in a fixed order and stop at the first failure:
+There is no single update route on the API - each field has its own - so one invocation is several requests. They are applied in a fixed order and stop at the first failure:
 
 1. `--type`
 2. `--compute-units`
@@ -337,7 +337,7 @@ Nothing to update. Pass at least one of --type, --compute-units, --storage, --ve
 - `--compute-units` outside the current type's range, when `--type` is not also being changed:
 
 ```text
-`shared-1` accepts 1–2 compute units; 8 is outside that.
+`shared-1` accepts 1-2 compute units; 8 is outside that.
 ```
 
 ## surrealctl instance delete {#instance-delete}
@@ -403,7 +403,7 @@ The delete route answers with no body, so the emitted document is synthesised:
 }
 ```
 
-While waiting, a `404` is the success condition — there is nothing left to fetch.
+While waiting, a `404` is the success condition - there is nothing left to fetch.
 
 ## surrealctl instance pause {#instance-pause}
 
@@ -535,7 +535,7 @@ There is no `--wait` or `--no-wait` here, because a watch is nothing but a wait.
 | --- | --- |
 | `ready` | The instance is running and healthy |
 | `paused` | The instance is deliberately stopped |
-| `deleted` | The instance is gone — a `404` while polling is what finishes this one |
+| `deleted` | The instance is gone - a `404` while polling is what finishes this one |
 
 ```bash title="Pick up a create started in an earlier CI job"
 surrealctl instance watch api
@@ -620,7 +620,7 @@ surrealctl instance endpoint production --json
 }
 ```
 
-A private-only instance produces a warning on stderr rather than a refusal — the endpoint is still correct, it is simply not reachable from where you are.
+A private-only instance produces a warning on stderr rather than a refusal - the endpoint is still correct, it is simply not reachable from where you are.
 
 ## surrealctl instance token {#instance-token}
 
@@ -650,7 +650,7 @@ surrealctl instance token [OPTIONS] [INSTANCE]
     ]}
 />
 
-This is a *database* token — the credential a SurrealDB client authenticates with. It is not a [personal access token](token.md), which authenticates against the control plane.
+This is a *database* token - the credential a SurrealDB client authenticates with. It is not a [personal access token](token.md), which authenticates against the control plane.
 
 ```bash title="Copy it to the clipboard"
 surrealctl instance token production | pbcopy
@@ -661,7 +661,7 @@ SURREAL_TOKEN=$(surrealctl instance token production) \
     surreal sql --endpoint "$(surrealctl instance endpoint production)" --namespace app --database main
 ```
 
-**Refusals.** Printing a credential into a terminal's scrollback is refused, exit `2`, and the check happens *before* the token is minted — so a forgotten `--reveal` never costs a credential nobody can recover:
+**Refusals.** Printing a credential into a terminal's scrollback is refused, exit `2`, and the check happens *before* the token is minted - so a forgotten `--reveal` never costs a credential nobody can recover:
 
 ```text
 Refusing to print a database token to a terminal, where it would stay in your scrollback.
@@ -689,7 +689,7 @@ surrealctl instance jwks [OPTIONS] [INSTANCE]
     ]}
 />
 
-Also accepts the [list presentation flags](../output-and-exit-codes.md#list-presentation-flags). Column ids are the JWK member names — `kid`, `kty`, `alg` and `use`, with `crv` under `--wide` — so a member the key type does not carry renders as missing rather than empty.
+Also accepts the [list presentation flags](../output-and-exit-codes.md#list-presentation-flags). Column ids are the JWK member names - `kid`, `kty`, `alg` and `use`, with `crv` under `--wide` - so a member the key type does not carry renders as missing rather than empty.
 
 ```bash title="Inspect the keys"
 surrealctl instance jwks production
@@ -990,7 +990,7 @@ surrealctl instance logs production --follow --json | jq -r '.timestamp + " " + 
 
 `--level` is a display filter applied on this side, and a note reports how many lines were hidden. `--json` still carries every line the API sent. `--limit` takes from the start of the window, matching its meaning elsewhere.
 
-`--follow` polls with a moving start time at a fixed five-second interval — there is no streaming endpoint and no interval flag. Under `--follow --json`, each new line is written as newline-delimited JSON on stdout; in text mode a table is printed per batch, with the header only on the first.
+`--follow` polls with a moving start time at a fixed five-second interval - there is no streaming endpoint and no interval flag. Under `--follow --json`, each new line is written as newline-delimited JSON on stdout; in text mode a table is printed per batch, with the header only on the first.
 
 ## surrealctl instance usage {#instance-usage}
 
@@ -1010,7 +1010,7 @@ surrealctl instance usage [OPTIONS] [INSTANCE]
     ]}
 />
 
-Accepts the [list presentation flags](../output-and-exit-codes.md#list-presentation-flags) and nothing else — this route takes no query parameters at all. Column ids are `instance_id`, `metric_type`, `compute_hours`, `disk_used_bytes`, `period_start` and `period_end`, with `instance_type` and `source` under `--wide`.
+Accepts the [list presentation flags](../output-and-exit-codes.md#list-presentation-flags) and nothing else - this route takes no query parameters at all. Column ids are `instance_id`, `metric_type`, `compute_hours`, `disk_used_bytes`, `period_start` and `period_end`, with `instance_type` and `source` under `--wide`.
 
 ```bash
 surrealctl instance usage production
@@ -1069,7 +1069,7 @@ An instance has at least 1 compute unit; 0 was given.
 An instance has at least 1GB of storage; 0 was given.
 ```
 
-This is the one place the API does not use integer minor units — the cost is a number in a named currency — and `--json` keeps the raw value.
+This is the one place the API does not use integer minor units - the cost is a number in a named currency - and `--json` keeps the raw value.
 
 ## surrealctl instance capabilities get {#instance-capabilities-get}
 
@@ -1095,7 +1095,7 @@ This command has no options of its own.
 surrealctl instance capabilities get production
 ```
 
-Under `--json` the nested capabilities object is emitted, not the whole instance — so it can be diffed against another instance directly.
+Under `--json` the nested capabilities object is emitted, not the whole instance - so it can be diffed against another instance directly.
 
 ```bash title="Compare two instances"
 diff <(surrealctl instance capabilities get staging --json) \
@@ -1110,7 +1110,7 @@ Change an instance's capability configuration.
 surrealctl instance capabilities set [OPTIONS] [INSTANCE]
 </Synopsis>
 
-The capabilities route is a full replacement, so this command reads the current configuration, applies the flags given here, shows what would change, and asks before writing. A list flag **replaces** that list rather than adding to it, and anything not named is left exactly as it is — including capabilities this build does not know about.
+The capabilities route is a full replacement, so this command reads the current configuration, applies the flags given here, shows what would change, and asks before writing. A list flag **replaces** that list rather than adding to it, and anything not named is left exactly as it is - including capabilities this build does not know about.
 
 <OptionsTable
     title="Arguments"
@@ -1309,7 +1309,7 @@ The route answers with no body, so the document is synthesised:
 }
 ```
 
-A replayed request is a second snapshot, so this call is never retried automatically. Requesting a backup while one is already queued is reported as a conflict, exit `6`, rather than as a rate limit — the condition is "one is already running", not "you are asking too often".
+A replayed request is a second snapshot, so this call is never retried automatically. Requesting a backup while one is already queued is reported as a conflict, exit `6`, rather than as a rate limit - the condition is "one is already running", not "you are asking too often".
 
 Poll [`instance backup list`](#instance-backup-list) to see the snapshot appear.
 
@@ -1337,7 +1337,7 @@ This command has no options of its own.
 surrealctl instance backup policy get production
 ```
 
-The answer reports each retention tier, how often snapshots are taken, and which tiers this organisation's plan allows you to change — which is what [`backup policy set`](#instance-backup-policy-set) will accept.
+The answer reports each retention tier, how often snapshots are taken, and which tiers this organisation's plan allows you to change - which is what [`backup policy set`](#instance-backup-policy-set) will accept.
 
 ## surrealctl instance backup policy set {#instance-backup-policy-set}
 
@@ -1435,9 +1435,9 @@ A backup every 5 hours is not offered on this plan. Choose one of: 6, 12, 24.
 
 ## Related pages
 
-- [Long-running operations](../long-running-operations.md) — `--wait`, `--no-wait`, polling and exit code `10`
-- [`org` commands](org.md) — the organisation that owns these instances
-- [`catalog` commands](catalog.md) — the type, region and version slugs `create` and `update` expect
-- [Installation](../../../../manage/surrealctl/install.md#the-surreal-handoff) — how `sql`, `import` and `export` find the `surreal` binary
-- [Overview](../overview.md) — the rest of the reference
-- [SurrealDB CLI](../../surrealdb-cli/overview.md) — the data plane: `surreal sql`, `surreal import`, `surreal export`
+- [Long-running operations](../long-running-operations.md) - `--wait`, `--no-wait`, polling and exit code `10`
+- [`org` commands](org.md) - the organisation that owns these instances
+- [`catalog` commands](catalog.md) - the type, region and version slugs `create` and `update` expect
+- [Installation](../../../../manage/surrealctl/install.md#the-surreal-handoff) - how `sql`, `import` and `export` find the `surreal` binary
+- [Overview](../overview.md) - the rest of the reference
+- [SurrealDB CLI](../../surrealdb-cli/overview.md) - the data plane: `surreal sql`, `surreal import`, `surreal export`

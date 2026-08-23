@@ -90,6 +90,6 @@ It recalls what has been stored for that project and answers from it, so a decis
 
 ## Next steps
 
-- [SurrealDB MCP Server](index.md) — what each group of tools does, and how signing in works
-- [Agent Skills](../agent-skills.md) — teach your assistant idiomatic SurrealQL to go with these tools
-- [Embedded MCP](embedded.md) — the same data tools against a database you run yourself
+- [SurrealDB MCP Server](index.md) - what each group of tools does, and how signing in works
+- [Agent Skills](../agent-skills.md) - teach your assistant idiomatic SurrealQL to go with these tools
+- [Embedded MCP](embedded.md) - the same data tools against a database you run yourself

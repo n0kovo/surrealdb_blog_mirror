@@ -405,8 +405,8 @@ Holds a namespace and database pair.
 
 ## See also
 
-- [Surreal](../core/surreal.md) — Connection and method reference
-- [Authentication](../../concepts/authentication.md) — Authentication concepts and patterns
-- [Data manipulation](../../concepts/data-manipulation.md) — CRUD operation patterns
-- [DEFINE USER](../../../query-language/statements/define/user.md) — System user definition for root, namespace, and database credentials
-- [DEFINE ACCESS](../../../query-language/statements/define/access/index.md) — Access method definition for record-level authentication
+- [Surreal](../core/surreal.md) - Connection and method reference
+- [Authentication](../../concepts/authentication.md) - Authentication concepts and patterns
+- [Data manipulation](../../concepts/data-manipulation.md) - CRUD operation patterns
+- [DEFINE USER](../../../query-language/statements/define/user.md) - System user definition for root, namespace, and database credentials
+- [DEFINE ACCESS](../../../query-language/statements/define/access/index.md) - Access method definition for record-level authentication

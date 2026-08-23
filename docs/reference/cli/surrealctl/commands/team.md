@@ -1,13 +1,13 @@
 ---
 position: 10
 title: team
-description: Reference for surrealctl team — listing organisation members, inspecting one, inviting someone, changing a role, and ending a membership.
+description: Reference for surrealctl team - listing organisation members, inspecting one, inviting someone, changing a role, and ending a membership.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/team.mdx"
 ---
 
 # team
 
-`surrealctl team` manages organisation members: the people who already belong. Invitations that have been sent but not accepted live in [`invite`](invite.md), and `team list` deliberately does not fold them in — a pending invitation is not a member.
+`surrealctl team` manages organisation members: the people who already belong. Invitations that have been sent but not accepted live in [`invite`](invite.md), and `team list` deliberately does not fold them in - a pending invitation is not a member.
 
 <Synopsis>
 surrealctl team <COMMAND> [OPTIONS]
@@ -22,7 +22,7 @@ surrealctl teams <COMMAND> [OPTIONS]
 | [`update`](#team-update) | Change a member's role | |
 | [`remove`](#team-remove) | End someone's membership of an organisation | `rm` |
 
-Two verbs here break the house grammar on purpose. `remove` is not `delete`, because `delete` invites the reading that the *person* is deleted rather than their membership. `invite` exists because sending one is how a team gains a member and no house verb covers it — and it shares [`invite create`](invite.md#invite-create)'s implementation rather than copying it.
+Two verbs here break the house grammar on purpose. `remove` is not `delete`, because `delete` invites the reading that the *person* is deleted rather than their membership. `invite` exists because sending one is how a team gains a member and no house verb covers it - and it shares [`invite create`](invite.md#invite-create)'s implementation rather than copying it.
 
 The API has no route for a single member, so `get`, `update` and `remove` fetch the member list and match locally, by id or username, with did-you-mean suggestions when nothing matches.
 
@@ -115,9 +115,9 @@ surrealctl team invite [OPTIONS] --role <ROLE> <EMAIL>
 surrealctl team invite dee@acme.example --role member
 ```
 
-The answer is the invitation, not a member — the person appears in [`team list`](#team-list) only once they accept. Track it in the meantime with [`invite list`](invite.md#invite-list).
+The answer is the invitation, not a member - the person appears in [`team list`](#team-list) only once they accept. Track it in the meantime with [`invite list`](invite.md#invite-list).
 
-**Refusals**, exit `2`, before any request. The address validator is deliberately shallow — an `@` with something either side and no internal whitespace — because the API is the authority on deliverability:
+**Refusals**, exit `2`, before any request. The address validator is deliberately shallow - an `@` with something either side and no internal whitespace - because the API is the authority on deliverability:
 
 ```text
 `dee.acme.example` is not an email address: it has no `@`.
@@ -129,7 +129,7 @@ The role vocabulary is per organisation, so only an empty value is refused local
 A role cannot be empty. Run `surrealctl org roles` to see the ones this organization defines.
 ```
 
-A role the API rejects as invalid is annotated with a pointer to [`org roles`](org.md#org-roles) — but only for that class of error, never for a 403 or a rate limit, where the role is not the problem.
+A role the API rejects as invalid is annotated with a pointer to [`org roles`](org.md#org-roles) - but only for that class of error, never for a 403 or a rate limit, where the role is not the problem.
 
 ## surrealctl team update {#team-update}
 
@@ -209,8 +209,8 @@ This ends a membership. It does not delete the person's SurrealDB account, and i
 
 ## Related pages
 
-- [`invite` commands](invite.md) — pending invitations
-- [`org roles`](org.md#org-roles) — the roles this organisation defines
-- [`org permissions`](org.md#org-permissions) — what a role lets you do
-- [Overview](../overview.md) — the rest of the reference
-- [SurrealDB CLI](../../surrealdb-cli/overview.md) — database users, which are a separate concept from organisation members
+- [`invite` commands](invite.md) - pending invitations
+- [`org roles`](org.md#org-roles) - the roles this organisation defines
+- [`org permissions`](org.md#org-permissions) - what a role lets you do
+- [Overview](../overview.md) - the rest of the reference
+- [SurrealDB CLI](../../surrealdb-cli/overview.md) - database users, which are a separate concept from organisation members

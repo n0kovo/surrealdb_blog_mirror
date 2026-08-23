@@ -94,7 +94,7 @@ surrealctl invite delete ada@example.com
     ]}
 />
 
-`surrealctl team invite` and `surrealctl invite create` are the same command under two names — use whichever reads better where you are. If the API rejects the role, the error points you back at `org roles`.
+`surrealctl team invite` and `surrealctl invite create` are the same command under two names - use whichever reads better where you are. If the API rejects the role, the error points you back at `org roles`.
 
 `invite delete` withdraws an invitation, by the email address it was sent to or by its code. The confirmation names the address.
 
@@ -137,7 +137,7 @@ surrealctl org plans                  # the plans available to this organisation
 In text output, `org spend` prints a total on stderr. The total is computed before `--limit` is applied, so it is always the whole bill even when the table is trimmed.
 
 > [!IMPORTANT]
-> Under `--json`, money stays in integer minor units — cents, or millicents where the API uses them. Do not treat `amount` as a decimal. Divide before you display.
+> Under `--json`, money stays in integer minor units - cents, or millicents where the API uses them. Do not treat `amount` as a decimal. Divide before you display.
 
 ```bash title="Total spend for a month, in whole currency units"
 surrealctl org spend --period 03-2026 --json | jq '[.[].amount] | add / 100'
@@ -202,6 +202,6 @@ done
 
 ## Next steps
 
-- [Scripting](scripting.md) — exit codes, `--json`, and unattended runs.
-- [Instances](instances.md) — the instance lifecycle from the command line.
-- [Organisations](../organisations/index.md) — the same concepts in SurrealDB Studio.
+- [Scripting](scripting.md) - exit codes, `--json`, and unattended runs.
+- [Instances](instances.md) - the instance lifecycle from the command line.
+- [Organisations](../organisations/index.md) - the same concepts in SurrealDB Studio.

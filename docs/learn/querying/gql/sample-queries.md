@@ -13,14 +13,14 @@ The examples below use the same **person / knows / city** seed graph as the GQL 
 
 ## Prerequisites
 
-Start a local instance with GQL enabled and load the seed graph — see [GQL via HTTP](via-http.md#load-sample-data).
+Start a local instance with GQL enabled and load the seed graph - see [GQL via HTTP](via-http.md#load-sample-data).
 
 You can run the GQL examples in either of these ways:
 
 | Approach | How |
 | --- | --- |
-| **HTTP** | cURL to `POST /gql` (shown in each GQL tab) — GQL is on by default from 3.3.0; on 3.2.x use `--allow-experimental gql` |
-| **REPL** | [`eval::gql("…")`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) in `surreal sql` or SurrealDB Studio — also needs [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) on the process that runs the engine (embedded `surreal sql`, or `surreal start` for remote) |
+| **HTTP** | cURL to `POST /gql` (shown in each GQL tab) - GQL is on by default from 3.3.0; on 3.2.x use `--allow-experimental gql` |
+| **REPL** | [`eval::gql("…")`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) in `surreal sql` or SurrealDB Studio - also needs [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) on the process that runs the engine (embedded `surreal sql`, or `surreal start` for remote) |
 
 Example REPL equivalent for the first query:
 
@@ -203,4 +203,4 @@ ORDER BY name;
 
 ## What to try next
 
-The language-test corpus under `language-tests/tests/opengql/` in the SurrealDB repository covers variable-length quantifiers (`->{1,3}`, `->*`), path search (`ALL SHORTEST`, `SHORTEST k`), multi-pattern comma joins, and [mutations](mutations.md). Variable-length and path patterns have no single-line SurrealQL equivalent — they are the main reason to reach for GQL for reads; mutations are the ISO-native way to change graph data in the same program as `MATCH`.
+The language-test corpus under `language-tests/tests/opengql/` in the SurrealDB repository covers variable-length quantifiers (`->{1,3}`, `->*`), path search (`ALL SHORTEST`, `SHORTEST k`), multi-pattern comma joins, and [mutations](mutations.md). Variable-length and path patterns have no single-line SurrealQL equivalent - they are the main reason to reach for GQL for reads; mutations are the ISO-native way to change graph data in the same program as `MATCH`.

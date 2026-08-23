@@ -1,7 +1,7 @@
 ---
 position: 5
 title: context
-description: Reference for surrealctl context — showing what an invocation resolved, switching between profiles, and listing the profiles that are configured.
+description: Reference for surrealctl context - showing what an invocation resolved, switching between profiles, and listing the profiles that are configured.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/context.mdx"
 ---
 
@@ -46,7 +46,7 @@ Config          /Users/ana/.config/surrealctl/config.toml
 Store           /Users/ana/.config/surrealctl/credentials.json
 ```
 
-The command resolves through the **same chain every other command uses**, including the interactive picker when several organisations are available and nothing has chosen — so what it reports is genuinely what the next command will do, not an approximation of it.
+The command resolves through the **same chain every other command uses**, including the interactive picker when several organisations are available and nothing has chosen - so what it reports is genuinely what the next command will do, not an approximation of it.
 
 A failure to resolve an organisation is reported as *part of the answer* rather than as an error: the profile, the API base and both file paths are still printed, followed by a note and the hint `surrealctl org use <name>`.
 
@@ -126,13 +126,13 @@ work      yes     acme          https://api.surrealdb.com
 surrealctl context list --wide
 ```
 
-The profile in force is always listed, even when the file has no entry for it — so `--profile scratch context list` shows `scratch`. The order is stable between runs.
+The profile in force is always listed, even when the file has no entry for it - so `--profile scratch context list` shows `scratch`. The order is stable between runs.
 
 ## Related pages
 
-- [Global flags](../global-flags.md#the-precedence-chain) — the chain `context show` reports on
-- [`config` commands](config.md) — the values a profile holds
-- [`org use`](org.md#org-use) — remembering an organisation within a profile
-- [`auth` commands](auth.md) — signing a profile in
-- [Overview](../overview.md) — the rest of the reference
-- [SurrealDB CLI](../../surrealdb-cli/overview.md) — for working with the data inside an instance
+- [Global flags](../global-flags.md#the-precedence-chain) - the chain `context show` reports on
+- [`config` commands](config.md) - the values a profile holds
+- [`org use`](org.md#org-use) - remembering an organisation within a profile
+- [`auth` commands](auth.md) - signing a profile in
+- [Overview](../overview.md) - the rest of the reference
+- [SurrealDB CLI](../../surrealdb-cli/overview.md) - for working with the data inside an instance

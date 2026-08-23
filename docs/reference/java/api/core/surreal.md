@@ -1083,11 +1083,11 @@ boolean success = db.importSql("/tmp/backup.surql");
 
 ## See also
 
-- [Transaction](transaction.md) — Transaction reference
-- [Response](response.md) — Query response reference
-- [LiveStream](live-stream.md) — Live query reference
-- [Connecting to SurrealDB](../../concepts/connecting-to-surrealdb.md) — Connection protocols and patterns
-- [Authentication](../../concepts/authentication.md) — Authentication concepts
-- [SurrealQL](../../../query-language/index.md) — Query language reference
-- [DEFINE USER](../../../query-language/statements/define/user.md) — System user configuration
-- [DEFINE ACCESS](../../../query-language/statements/define/access/index.md) — Record access method configuration
+- [Transaction](transaction.md) - Transaction reference
+- [Response](response.md) - Query response reference
+- [LiveStream](live-stream.md) - Live query reference
+- [Connecting to SurrealDB](../../concepts/connecting-to-surrealdb.md) - Connection protocols and patterns
+- [Authentication](../../concepts/authentication.md) - Authentication concepts
+- [SurrealQL](../../../query-language/index.md) - Query language reference
+- [DEFINE USER](../../../query-language/statements/define/user.md) - System user configuration
+- [DEFINE ACCESS](../../../query-language/statements/define/access/index.md) - Record access method configuration

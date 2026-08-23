@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 Convert data written by SurrealDB 1.x into the storage format used by 2.0 and above.
 
 > [!NOTE]
-> **Before you start** — make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
 
 <Synopsis>
 surreal fix [OPTIONS] [PATH]

@@ -50,13 +50,13 @@ try (Surreal db = new Surreal()) {
     db.connect("ws://localhost:8000");
     db.useNs("surrealdb").useDb("docs");
 
-    // Root user — full access to the entire instance
+    // Root user - full access to the entire instance
     db.signin(new RootCredential("root", "root"));
 
-    // Namespace user — access to all databases in the namespace
+    // Namespace user - access to all databases in the namespace
     db.signin(new NamespaceCredential("tobie", "123456", "surrealdb"));
 
-    // Database user — access to a single database
+    // Database user - access to a single database
     db.signin(new DatabaseCredential("tobie", "123456", "surrealdb", "docs"));
 }
 ```
@@ -109,7 +109,7 @@ db.authenticate(accessToken);
 
 ## Authenticating with a bearer token
 
-If you have a bearer key — for example, one defined with a bearer access method — use [`BearerCredential`](../api/types/index.md#bearer-credential) to authenticate.
+If you have a bearer key - for example, one defined with a bearer access method - use [`BearerCredential`](../api/types/index.md#bearer-credential) to authenticate.
 
 ```java
 

@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Introduction
-description: SurrealML stores and runs trained ML models in SurrealDB—train in Python, then load and infer with sklearn or PyTorch.
+description: SurrealML stores and runs trained ML models in SurrealDB - train in Python, then load and infer with sklearn or PyTorch.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/explore/ml-models/index.mdx"
 ---
 

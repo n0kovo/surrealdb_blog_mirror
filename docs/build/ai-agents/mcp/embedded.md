@@ -21,7 +21,7 @@ Both publish the **same data tools**. What differs is how your editor connects a
 | --- | --- | --- |
 | **How it works** | Your editor spawns SurrealDB as a child process; MCP runs over stdin and stdout | You run a server; the editor connects to `http://…/mcp` |
 | **Database** | Embedded in the MCP process (default `memory`, or a local file path) | The same instance your app, CLI, or SurrealDB Studio uses |
-| **Authentication** | Owner-level access on every tool call — no login step | Normal SurrealDB auth (Bearer JWT, HTTP Basic, …) |
+| **Authentication** | Owner-level access on every tool call - no login step | Normal SurrealDB auth (Bearer JWT, HTTP Basic, …) |
 | **Best for** | Learning MCP, solo local development, quickest editor setup | Shared databases, teams, remote instances, production patterns |
 | **Editor config** | `command` and `args` in MCP settings | `url` and auth headers |
 
@@ -228,8 +228,8 @@ Full tables live under [Environment variables](../../../reference/cli/surrealdb-
 
 ## Next steps
 
-- [SurrealDB MCP Server](index.md) — the hosted server for SurrealDB Cloud instances
-- [Example usages](examples.md) — prompts to try once an assistant is connected
-- [`surreal mcp` CLI reference](../../../reference/cli/surrealdb-cli/commands/mcp.md) — flags and environment variables
-- [Agent Skills](../agent-skills.md) — installable SurrealQL and SDK skills for coding agents
-- [AI frameworks](../../integrations/ai-frameworks/overview.md) — using SurrealDB from LangChain, CrewAI, and others
+- [SurrealDB MCP Server](index.md) - the hosted server for SurrealDB Cloud instances
+- [Example usages](examples.md) - prompts to try once an assistant is connected
+- [`surreal mcp` CLI reference](../../../reference/cli/surrealdb-cli/commands/mcp.md) - flags and environment variables
+- [Agent Skills](../agent-skills.md) - installable SurrealQL and SDK skills for coding agents
+- [AI frameworks](../../integrations/ai-frameworks/overview.md) - using SurrealDB from LangChain, CrewAI, and others

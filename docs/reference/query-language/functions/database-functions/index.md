@@ -11,8 +11,8 @@ Database functions are SurrealQL's built-in, namespaced helpers (`string::split(
 
 SurrealQL also supports other kinds of callable logic:
 
-- [JavaScript functions](../../scripting/overview.md) — embedded scripts when the JavaScript runtime is enabled; see the scripting docs for definitions, context, and limits.
-- [SurrealML functions](../../../../explore/ml-models/index.md) — helpers used with SurrealML.
+- [JavaScript functions](../../scripting/overview.md) - embedded scripts when the JavaScript runtime is enabled; see the scripting docs for definitions, context, and limits.
+- [SurrealML functions](../../../../explore/ml-models/index.md) - helpers used with SurrealML.
 
 Several function families transform values across representation boundaries (JSON, CBOR, tokens, runtime query strings). See [Representations and codecs](../../../../learn/querying/concepts-and-guides/representations-and-codecs.md) for when to use each.
 
@@ -500,9 +500,9 @@ type::is_record(person:one);
 
 Some modules expose constants (fixed values) as well as functions. Consts use the same `module::name` path syntax as for functions, but omit parentheses because they access direct values instead of a function to be called.
 
-- **[Math](math.md#math-constants)** — numeric constants (π, e, τ, infinities, and related values).
-- **[Time](time.md#time-constants)** — `time::epoch`, `time::minimum`, and `time::maximum`.
-- **[Duration](duration.md#duration-constants)** — `duration::max`.
+- **[Math](math.md#math-constants)** - numeric constants (π, e, τ, infinities, and related values).
+- **[Time](time.md#time-constants)** - `time::epoch`, `time::minimum`, and `time::maximum`.
+- **[Duration](duration.md#duration-constants)** - `duration::max`.
 
 ```surql
 RETURN [math::pi, math::tau, math::e];

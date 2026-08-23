@@ -13,9 +13,9 @@ The Java SDK includes a built-in class conversion system that automatically maps
 
 Class conversion happens in two directions:
 
-- **Serialisation** — When you pass a Java object to a method like [`.create()`](../api/core/surreal.md#create), [`.insert()`](../api/core/surreal.md#insert), or [`.update()`](../api/core/surreal.md#update), the SDK reads the object's public fields and converts them into a SurrealDB object. Field names become object keys, and field values are converted to the corresponding SurrealDB types.
+- **Serialisation** - When you pass a Java object to a method like [`.create()`](../api/core/surreal.md#create), [`.insert()`](../api/core/surreal.md#insert), or [`.update()`](../api/core/surreal.md#update), the SDK reads the object's public fields and converts them into a SurrealDB object. Field names become object keys, and field values are converted to the corresponding SurrealDB types.
 
-- **Deserialisation** — When you call a typed method like `db.select(Person.class, ...)` or use `Value.get(Person.class)`, the SDK creates a new instance of your class and populates its public fields from the SurrealDB object, matching by field name.
+- **Deserialisation** - When you call a typed method like `db.select(Person.class, ...)` or use `Value.get(Person.class)`, the SDK creates a new instance of your class and populates its public fields from the SurrealDB object, matching by field name.
 
 ```java
 public class Person {
@@ -42,8 +42,8 @@ Optional<Person> result = db.select(Person.class,
 
 For a Java class to work with the converter, it must satisfy two rules:
 
-1. **Public no-argument constructor** — The SDK needs to instantiate the class during deserialisation.
-2. **Public fields** — Fields are matched by name to SurrealDB object keys. Private fields, getters, and setters are not used by the converter.
+1. **Public no-argument constructor** - The SDK needs to instantiate the class during deserialisation.
+2. **Public fields** - Fields are matched by name to SurrealDB object keys. Private fields, getters, and setters are not used by the converter.
 
 ```java
 public class Product {
@@ -331,7 +331,7 @@ Typed conversion is available across most SDK methods. Any method that accepts a
 
 ## Handling conversion errors
 
-When the SDK cannot convert a value to the target class — for example, because a field type is incompatible or the class is missing a no-argument constructor — it throws a [`SerializationException`](../api/errors/index.md#serialization-exception). You can catch this specifically or handle it as part of the general [`SurrealException`](../api/errors/index.md) hierarchy.
+When the SDK cannot convert a value to the target class - for example, because a field type is incompatible or the class is missing a no-argument constructor - it throws a [`SerializationException`](../api/errors/index.md#serialization-exception). You can catch this specifically or handle it as part of the general [`SurrealException`](../api/errors/index.md) hierarchy.
 
 ```java
 try {

@@ -16,7 +16,7 @@ Custom middleware functions are ordinary [user-defined functions](../../../refer
 
 You can add extra parameters after those two;such  values are supplied when you attach the function to `DEFINE API` (for example passing in `time::now()` to return the time at which a request was processed).
 
-The function must return an object—that is the response object passed to the next middleware or returned to the client. Names like `$req` and `$next` are only conventions; what matters is the order of arguments and that you actually call `$next($req)` when you want the pipeline to proceed.
+The function must return an object - that is the response object passed to the next middleware or returned to the client. Names like `$req` and `$next` are only conventions; what matters is the order of arguments and that you actually call `$next($req)` when you want the pipeline to proceed.
 
 ## Starting from a handler with no middleware
 
@@ -132,5 +132,5 @@ Possible output:
 
 ## See also
 
-* [Managing APIs](managing-apis.md) — defining routes, path captures, and `$request`.
-* [Custom functions](../concepts-and-guides/custom-functions.md) — patterns for `fn::` definitions used in middleware.
+* [Managing APIs](managing-apis.md) - defining routes, path captures, and `$request`.
+* [Custom functions](../concepts-and-guides/custom-functions.md) - patterns for `fn::` definitions used in middleware.

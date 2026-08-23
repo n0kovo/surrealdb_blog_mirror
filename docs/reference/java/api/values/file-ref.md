@@ -61,6 +61,6 @@ try (Surreal db = new Surreal()) {
 
 ## See also
 
-- [Value types](../../concepts/value-types.md) — Type mapping overview
-- [Value](value.md) — The Value class reference
-- [SurrealQL files](../../../query-language/language-primitives/data-types/files.md) — File storage in SurrealDB
+- [Value types](../../concepts/value-types.md) - Type mapping overview
+- [Value](value.md) - The Value class reference
+- [SurrealQL files](../../../query-language/language-primitives/data-types/files.md) - File storage in SurrealDB

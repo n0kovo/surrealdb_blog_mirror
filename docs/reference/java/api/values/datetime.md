@@ -37,7 +37,7 @@ value.getDateTime()
 
 ## POJO mapping
 
-When using typed methods, datetime fields in your POJO should be declared as `ZonedDateTime` for reads unless you need a narrower type (`Instant`, `OffsetDateTime`, or `LocalDateTime`). When writing records, you can also use those types plus `java.util.Date` — see [Class converters](../../concepts/class-converters.md#temporal-types).
+When using typed methods, datetime fields in your POJO should be declared as `ZonedDateTime` for reads unless you need a narrower type (`Instant`, `OffsetDateTime`, or `LocalDateTime`). When writing records, you can also use those types plus `java.util.Date` - see [Class converters](../../concepts/class-converters.md#temporal-types).
 
 ```java
 
@@ -77,6 +77,6 @@ try (Surreal db = new Surreal()) {
 
 ## See also
 
-- [Value types](../../concepts/value-types.md) — Type mapping overview
-- [Value](value.md) — The Value class reference
-- [SurrealQL datetimes](../../../query-language/language-primitives/data-types/datetimes.md) — Datetime types in SurrealDB
+- [Value types](../../concepts/value-types.md) - Type mapping overview
+- [Value](value.md) - The Value class reference
+- [SurrealQL datetimes](../../../query-language/language-primitives/data-types/datetimes.md) - Datetime types in SurrealDB

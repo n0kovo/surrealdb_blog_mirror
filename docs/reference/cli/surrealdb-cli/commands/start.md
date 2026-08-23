@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 The start command starts a SurrealDB server in memory, on disk, or in a distributed setup.
 
 > [!NOTE]
-> **Before you start** — make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
 
 <Synopsis>
 surreal start [OPTIONS] [PATH]
@@ -120,7 +120,7 @@ surreal start [OPTIONS] [PATH]
     ]}
 />
 
-`surreal start` has more options than any other subcommand, and the table above covers the ones described on this page. The remaining groups — database tuning, datastore TLS, HTTP server, capabilities, and logging — are listed in full in the [command help](#command-help) below, and mapped to their variables on the [environment variables](../environment-variables.md) page.
+`surreal start` has more options than any other subcommand, and the table above covers the ones described on this page. The remaining groups - database tuning, datastore TLS, HTTP server, capabilities, and logging - are listed in full in the [command help](#command-help) below, and mapped to their variables on the [environment variables](../environment-variables.md) page.
 
 Two of the flags above are documented in more detail elsewhere: `--postgres-bind` exposes the [Postgres wire protocol](../../../rest-api/postgres-protocol.md), and the `--durable-*` flags are explained under [Durable HTTP RPC sessions](#durable-http-rpc-sessions). The `Forwarded` value for `--client-ip` reads the RFC 7239 `Forwarded` header. *Since v3.1.0*
 
@@ -131,7 +131,7 @@ Two of the flags above are documented in more detail elsewhere: `--postgres-bind
 
 In the `surreal start` command, the path argument is used to specify the location of the database. If no argument is given, the default of `memory` for storage [in memory](../../../../running/in-memory.md) is assumed.
 
-Arguments for persistent backends are a combination of the backend name, a `:` or `://`, and an address or filename — for example `surrealkv://mydb` or `rocksdb:database`. The available backends are:
+Arguments for persistent backends are a combination of the backend name, a `:` or `://`, and an address or filename - for example `surrealkv://mydb` or `rocksdb:database`. The available backends are:
 
 - `memory` (or no argument) for in-memory storage
 - `rocksdb` for RocksDB
@@ -356,7 +356,7 @@ surreal start --allow-experimental surrealism,files
 ```
 
 > [!NOTE]
-> Experimental capabilities are enforced on the **server** for remote clients. If you use [`surreal sql`](sql.md) against `ws://` or `http://`, configure flags here — not only on the REPL. See [Capabilities and remote connections](sql.md#capabilities-and-remote-connections).
+> Experimental capabilities are enforced on the **server** for remote clients. If you use [`surreal sql`](sql.md) against `ws://` or `http://`, configure flags here - not only on the REPL. See [Capabilities and remote connections](sql.md#capabilities-and-remote-connections).
 
 > [!NOTE]
 > From **3.3.0**, [ISO GQL](../../../../learn/querying/gql/overview.md) is enabled by default and no longer uses an experimental capability. The legacy tag `gql` is still accepted for compatibility but has no effect. On **3.2.x**, use `--allow-experimental gql`.

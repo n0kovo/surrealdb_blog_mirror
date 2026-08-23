@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Coding agent with project memory
 
-This guide shows how to build a coding assistant – similar to an in-editor AI agent – that uses SurrealDB Agent Memory via MCP to remember coding conventions, past decisions, team preferences, and ongoing work across sessions.
+This guide shows how to build a coding assistant - similar to an in-editor AI agent - that uses SurrealDB Agent Memory via MCP to remember coding conventions, past decisions, team preferences, and ongoing work across sessions.
 
 ## What the agent remembers
 
@@ -25,7 +25,7 @@ Without persistent memory, every new session starts from scratch. With SurrealDB
 
 ## Installing the MCP server
 
-SurrealDB Agent Memory serves MCP at `/mcp` on your instance (SurrealDB Cloud: your context host from SurrealDB Studio **API keys**; self-hosted: your server's base URL). Install it into your editor with [`install-mcp`](https://github.com/supermemoryai/install-mcp) — the `/mcp` URL is the first argument, auth goes through `--header`, and `--oauth no` skips the OAuth prompt:
+SurrealDB Agent Memory serves MCP at `/mcp` on your instance (SurrealDB Cloud: your context host from SurrealDB Studio **API keys**; self-hosted: your server's base URL). Install it into your editor with [`install-mcp`](https://github.com/supermemoryai/install-mcp) - the `/mcp` URL is the first argument, auth goes through `--header`, and `--oauth no` skips the OAuth prompt:
 
 ```bash
 # Install for Cursor

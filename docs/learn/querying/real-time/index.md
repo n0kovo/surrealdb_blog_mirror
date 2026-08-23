@@ -10,7 +10,7 @@ _Auto-generated index — 3 pages._
 ## Pages
 
 - [Changefeeds](changefeeds.md)
-  Replaying table changes over time with changefeeds and SHOW CHANGES—useful for sync, pipelines, and external systems.
+  Replaying table changes over time with changefeeds and SHOW CHANGES - useful for sync, pipelines, and external systems.
 - [Live queries](live-queries.md)
   Subscribing to inserts, updates, and deletes with LIVE SELECT so clients stay in sync over a persistent connection.
 - [Real-time best practices](real-time-best-practices.md)

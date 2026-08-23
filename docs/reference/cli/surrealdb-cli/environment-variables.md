@@ -33,7 +33,7 @@ Environment variables that set a size in bytes, such as `SURREAL_HTTP_MAX_SQL_BO
 | `g`, `gb`, `gib` | 1024<sup>3</sup> |
 
 > [!WARNING]
-> A value that cannot be parsed is discarded and the default is used instead — the server does not fail to start. On 2.x these variables take a raw byte count only, so a suffixed value such as `16MiB` is silently ignored there and the default remains in effect.
+> A value that cannot be parsed is discarded and the default is used instead - the server does not fail to start. On 2.x these variables take a raw byte count only, so a suffixed value such as `16MiB` is silently ignored there and the default remains in effect.
 
 ## SurrealDB environment variables
 
@@ -106,7 +106,7 @@ These environment variables can be used to configure a SurrealDB server to confi
       <td scope="row" data-label="Env var">`SURREAL_HNSW_CACHE_SIZE`</td>
       <td scope="row" data-label="Default">268,435,456 (256 MiB)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The maximum total size, in bytes, of the HNSW vector cache, shared across all HNSW indexes in the process. This bounds the cached element <em>vectors</em> used for distance computation — it is not a cap on total HNSW memory: the adjacency graph is loaded into resident memory on first use and stays there, outside this budget. Contrast `SURREAL_DISKANN_CACHE_SIZE`, which does page graph structure.</td>
+      <td scope="row" data-label="Notes">The maximum total size, in bytes, of the HNSW vector cache, shared across all HNSW indexes in the process. This bounds the cached element <em>vectors</em> used for distance computation - it is not a cap on total HNSW memory: the adjacency graph is loaded into resident memory on first use and stays there, outside this budget. Contrast `SURREAL_DISKANN_CACHE_SIZE`, which does page graph structure.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_DISKANN_CACHE_SIZE`*Since v3.1.0*</td>
@@ -135,7 +135,7 @@ Server-side filesystem access for features that read paths from disk (notably th
       <td scope="row" data-label="Env var">`SURREAL_FILE_ALLOWLIST`</td>
       <td scope="row" data-label="Default">none (deny all)</td>
       <td scope="row" data-label="Allowed values">Colon-separated paths on Unix; semicolon-separated on Windows</td>
-      <td scope="row" data-label="Notes">Directories the server may read when an analyzer uses `mapper('&lt;path&gt;')`. An empty or unset value denies every path. Each dictionary file must resolve under one of the listed directories. See <a href="/docs/reference/query-language/statements/define/analyzer#mapperpath">DEFINE ANALYZER — mapper</a>.</td>
+      <td scope="row" data-label="Notes">Directories the server may read when an analyzer uses `mapper('&lt;path&gt;')`. An empty or unset value denies every path. Each dictionary file must resolve under one of the listed directories. See <a href="/docs/reference/query-language/statements/define/analyzer#mapperpath">DEFINE ANALYZER - mapper</a>.</td>
     </tr>
   <tr>
       <td scope="row" data-label="Env var">`SURREAL_BUCKET_FOLDER_ALLOWLIST`</td>
@@ -478,7 +478,7 @@ Resource limits for [ISO GQL](../../../learn/querying/gql/overview.md) `MATCH` e
       <td scope="row" data-label="Env var">`SURREAL_TRANSACTION_MAX_WRITE_KEYS`*Since v3.2.4*</td>
       <td scope="row" data-label="Default">0 (disabled)</td>
       <td scope="row" data-label="Allowed values">A `u64`; `0` disables</td>
-      <td scope="row" data-label="Notes">Maximum number of key writes a single statement transaction may buffer before it is aborted and rolled back. Cascaded deletes, full-text index maintenance, graph-edge cleanup, and commit-time changefeed / live-query events all count toward the limit; each range delete counts as one write. Tripping the guard poisons the transaction so an explicit client `COMMIT` cannot persist a partial statement. Internal maintenance transactions (index builds, compaction, GC) are not bounded. On TiKV, range deletes may expand further inside the storage layer — size distributed clusters with both this limit and `SURREAL_TIKV_DELR_MAX_KEYS` in mind. Scale / multi-node deployments often use a limit in the 50,000–100,000 range; leave at `0` for typical single-node use.</td>
+      <td scope="row" data-label="Notes">Maximum number of key writes a single statement transaction may buffer before it is aborted and rolled back. Cascaded deletes, full-text index maintenance, graph-edge cleanup, and commit-time changefeed / live-query events all count toward the limit; each range delete counts as one write. Tripping the guard poisons the transaction so an explicit client `COMMIT` cannot persist a partial statement. Internal maintenance transactions (index builds, compaction, GC) are not bounded. On TiKV, range deletes may expand further inside the storage layer - size distributed clusters with both this limit and `SURREAL_TIKV_DELR_MAX_KEYS` in mind. Scale / multi-node deployments often use a limit in the 50,000-100,000 range; leave at `0` for typical single-node use.</td>
     </tr>
   </tbody>
 </table>
@@ -763,7 +763,7 @@ Resource limits for [ISO GQL](../../../learn/querying/gql/overview.md) `MATCH` e
 
 *Since v3.2.0*
 
-These settings are for operators, benchmarks, and advanced debugging — not typical application configuration. They are documented so core contributors and self-hosted deployments can find configuration options that already exist in the engine. Changing them can affect performance, reproducibility, or live-query behaviour; leave defaults in place unless you have a specific reason to tune them.
+These settings are for operators, benchmarks, and advanced debugging - not typical application configuration. They are documented so core contributors and self-hosted deployments can find configuration options that already exist in the engine. Changing them can affect performance, reproducibility, or live-query behaviour; leave defaults in place unless you have a specific reason to tune them.
 
 <table>
   <thead>
@@ -992,7 +992,7 @@ surreal start --allow-all true
       <td scope="row" data-label="Command">`start`, `sql`</td>
       <td scope="row" data-label="Default">none (denied for all subjects)</td>
       <td scope="row" data-label="Allowed values">guest, record, system (comma-separated)</td>
-      <td scope="row" data-label="Notes">Allow `eval::surql` and `eval::gql` for listed subject groups. Not enabled by `--allow-all`. Still subject to <a href="/docs/learn/security/authorization/capabilities#arbitrary-queries">arbitrary-query</a> restrictions — `--deny-arbitrary-query` blocks `eval` for that subject even when eval is allowed here. For remote clients, set on the `start` process only. See <a href="/docs/reference/cli/surrealdb-cli/commands/sql#capabilities-and-remote-connections">Capabilities and remote connections</a>.</td>
+      <td scope="row" data-label="Notes">Allow `eval::surql` and `eval::gql` for listed subject groups. Not enabled by `--allow-all`. Still subject to <a href="/docs/learn/security/authorization/capabilities#arbitrary-queries">arbitrary-query</a> restrictions - `--deny-arbitrary-query` blocks `eval` for that subject even when eval is allowed here. For remote clients, set on the `start` process only. See <a href="/docs/reference/cli/surrealdb-cli/commands/sql#capabilities-and-remote-connections">Capabilities and remote connections</a>.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_EXPERIMENTAL`</td>
@@ -1433,7 +1433,7 @@ surreal start --allow-all true
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">Three times `node-membership-refresh-interval` (9s)</td>
       <td scope="row" data-label="Allowed values">A duration</td>
-      <td scope="row" data-label="Notes">How stale this node's cluster heartbeat may get before `/ready` reports the node unhealthy. When unset, it is derived as three times `node-membership-refresh-interval`. Startup warns if the configured value reaches 30s — the interval after which peers archive an unresponsive node and collect its live queries — because a node reported ready after the cluster has written it off keeps taking traffic. The value is not clamped.</td>
+      <td scope="row" data-label="Notes">How stale this node's cluster heartbeat may get before `/ready` reports the node unhealthy. When unset, it is derived as three times `node-membership-refresh-interval`. Startup warns if the configured value reaches 30s - the interval after which peers archive an unresponsive node and collect its live queries - because a node reported ready after the cluster has written it off keeps taking traffic. The value is not clamped.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_RECLAIM_INTERVAL`*Since v3.2.0*</td>
@@ -1771,7 +1771,7 @@ The available environment variables for configuring a RocksDB instance are:
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_TARGET_FILE_SIZE_BASE`</td>
       <td scope="row" data-label="Default">67,108,864 (64 MiB)</td>
-      <td scope="row" data-label="Allowed values">—</td>
+      <td scope="row" data-label="Allowed values">-</td>
       <td scope="row" data-label="Notes">The target file size for compaction in bytes.</td>
     </tr>
     <tr>

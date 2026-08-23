@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Value (JSON model) {#value}
 
-The Kotlin SDK models all data — beyond the dedicated [record types](record-id.md) — using [`kotlinx.serialization`](../../concepts/serialization.md) JSON types. Read methods return a [`JsonElement`](https://kotlinlang.org/api/kotlinx.serialization/kotlinx-serialization-json/kotlinx.serialization.json/-json-element/); write methods accept a [`JsonObject`](https://kotlinlang.org/api/kotlinx.serialization/kotlinx-serialization-json/kotlinx.serialization.json/-json-object/).
+The Kotlin SDK models all data - beyond the dedicated [record types](record-id.md) - using [`kotlinx.serialization`](../../concepts/serialization.md) JSON types. Read methods return a [`JsonElement`](https://kotlinlang.org/api/kotlinx.serialization/kotlinx-serialization-json/kotlinx.serialization.json/-json-element/); write methods accept a [`JsonObject`](https://kotlinlang.org/api/kotlinx.serialization/kotlinx-serialization-json/kotlinx.serialization.json/-json-object/).
 
 **Source:** [surrealdb.kotlin](https://github.com/surrealdb/surrealdb.kotlin)
 

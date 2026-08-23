@@ -13,9 +13,9 @@ Most fields are stored: you write a value and it stays on the record until you c
 
 * `VALUE` on a field sets what gets stored (often normalising input); it runs on write, not on every read in the same way a computed field does.
 * `COMPUTED` stores an expression, as opposed to set data.
-* You cannot mark `id` or nested paths (for example `meta.score`) as computed—only top-level field names.
+* You cannot mark `id` or nested paths (for example `meta.score`) as computed - only top-level field names.
 
-For everything else about field definitions—types, `ASSERT`, `DEFAULT`, permissions—see [Fields and validation](../tables-and-fields/fields-and-validation.md) and the [`DEFINE FIELD`](../../../reference/query-language/statements/define/field.md) reference.
+For everything else about field definitions - types, `ASSERT`, `DEFAULT`, permissions - see [Fields and validation](../tables-and-fields/fields-and-validation.md) and the [`DEFINE FIELD`](../../../reference/query-language/statements/define/field.md) reference.
 
 ## Example: always-fresh timestamp on read
 
@@ -34,7 +34,7 @@ The second `SELECT` should show a new `accessed_at` each time, because the expre
 
 ## Record references
 
-A stored field can hold a [record link](../../../reference/query-language/language-primitives/record-links.md)—a record ID that points at another record—often declared with `record<table>` or `option<record<table>>`, and optionally with [`REFERENCE`](../../../reference/query-language/statements/define/field.md) so deletes on the target record are handled predictably. A computed field does not store a link itself (the `REFERENCE` clause applies to stored fields only), but the expression may traverse link fields already on the record and read fields from the related record.
+A stored field can hold a [record link](../../../reference/query-language/language-primitives/record-links.md) - a record ID that points at another record - often declared with `record<table>` or `option<record<table>>`, and optionally with [`REFERENCE`](../../../reference/query-language/statements/define/field.md) so deletes on the target record are handled predictably. A computed field does not store a link itself (the `REFERENCE` clause applies to stored fields only), but the expression may traverse link fields already on the record and read fields from the related record.
 
 In the example below, `book.author` stores `person:ada`, while `author_name` is derived from that link. If you change the person’s `name`, the next read of the book shows the updated label without writing back to `book`.
 
@@ -70,6 +70,6 @@ Computed fields may not always be the best option. They should not be used when:
 
 ## See also
 
-* [Closures](closures.md) — small anonymous functions in expressions.
-* [Record links](../../../reference/query-language/language-primitives/record-links.md) — storing and traversing record IDs.
-* [Reactive patterns](../events-and-triggers/reactive-patterns.md) — when updates should flow from writes instead of reads.
+* [Closures](closures.md) - small anonymous functions in expressions.
+* [Record links](../../../reference/query-language/language-primitives/record-links.md) - storing and traversing record IDs.
+* [Reactive patterns](../events-and-triggers/reactive-patterns.md) - when updates should flow from writes instead of reads.

@@ -1,7 +1,7 @@
 ---
 position: 2
 title: SurrealDB Studio Sandbox
-description: Try SurrealDB in the browser with the SurrealDB Studio Sandbox—no install and no account required.
+description: Try SurrealDB in the browser with the SurrealDB Studio Sandbox - no install and no account required.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/running/sandbox.mdx"
 ---
 
@@ -14,6 +14,6 @@ The fastest way to try SurrealDB is to open [SurrealDB Studio](https://app.surre
 
 ## Next steps
 
-When you want **persistent** data but still do not want to install SurrealDB locally, use **[SurrealDB Cloud](cloud.md)**—a free instance only needs an email to get started.
+When you want **persistent** data but still do not want to install SurrealDB locally, use **[SurrealDB Cloud](cloud.md)** - a free instance only needs an email to get started.
 
 When you are ready to run SurrealDB on your own machine, continue with **[Installation](installation/index.md)**.

@@ -54,7 +54,7 @@ val people: List<Person> = client.select(Table("person")).awaitAs()
 
 ### `.compile()` {#compile}
 
-Compiles the builder to a `BoundQuery` without executing it — useful for inspection or composing with [`.query()`](surreal-client.md#query).
+Compiles the builder to a `BoundQuery` without executing it - useful for inspection or composing with [`.query()`](surreal-client.md#query).
 
 ```kotlin title="Method Syntax"
 builder.compile()

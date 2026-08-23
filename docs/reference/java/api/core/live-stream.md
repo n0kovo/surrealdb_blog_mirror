@@ -65,7 +65,7 @@ Returns the type of action that triggered the notification.
 notification.getAction()
 ```
 
-**Returns:** `String` — one of `"CREATE"`, `"UPDATE"`, or `"DELETE"`
+**Returns:** `String` - one of `"CREATE"`, `"UPDATE"`, or `"DELETE"`
 
 ```java title="Example"
 String action = notification.getAction();
@@ -126,6 +126,6 @@ try (Surreal db = new Surreal()) {
 
 ## See also
 
-- [Surreal](surreal.md) — Connection and method reference
-- [Live queries](../../concepts/live-queries.md) — Live query concepts and patterns
-- [SurrealQL LIVE SELECT](../../../query-language/statements/live-select.md) — Live query syntax
+- [Surreal](surreal.md) - Connection and method reference
+- [Live queries](../../concepts/live-queries.md) - Live query concepts and patterns
+- [SurrealQL LIVE SELECT](../../../query-language/statements/live-select.md) - Live query syntax

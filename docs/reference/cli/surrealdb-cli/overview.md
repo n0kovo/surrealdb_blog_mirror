@@ -83,6 +83,6 @@ main/main> SELECT * FROM person WHERE age > 25;
 
 ## Next steps
 
-- [CLI commands](commands/index.md) — every subcommand, with its arguments and options.
-- [Environment variables](environment-variables.md) — the `SURREAL_*` variables that mirror the flags on this page.
-- [surrealctl](../surrealctl/overview.md) — managing organisations and Cloud instances from the command line.
+- [CLI commands](commands/index.md) - every subcommand, with its arguments and options.
+- [Environment variables](environment-variables.md) - the `SURREAL_*` variables that mirror the flags on this page.
+- [surrealctl](../surrealctl/overview.md) - managing organisations and Cloud instances from the command line.

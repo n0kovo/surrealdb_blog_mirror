@@ -23,7 +23,7 @@ val table = Table("person")
 val record = RecordId("person", "ada")
 ```
 
-When these are bound into a query, the SDK renders them with the appropriate SurrealDB casting functions — `type::table(name)` for a [`Table`](../api/values/table.md) and `type::record(table, id)` for a [`RecordId`](../api/values/record-id.md) — so values are always passed safely.
+When these are bound into a query, the SDK renders them with the appropriate SurrealDB casting functions - `type::table(name)` for a [`Table`](../api/values/table.md) and `type::record(table, id)` for a [`RecordId`](../api/values/record-id.md) - so values are always passed safely.
 
 ## The JSON value model
 

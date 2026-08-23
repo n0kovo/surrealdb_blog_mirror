@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Capabilities
 
-Most powerful features — scripting, functions, network access — are disabled by default and must be explicitly enabled by an administrator per use case.
+Most powerful features - scripting, functions, network access - are disabled by default and must be explicitly enabled by an administrator per use case.
 
 > [!IMPORTANT]
 > Capabilities are configured per instance from **Instance settings** in [SurrealDB Studio](https://app.surrealdb.com). See [Configure an instance](../../../manage/instances/configure.md) for the available settings.
@@ -112,7 +112,7 @@ List of options for allowing capabilities:
                 --allow-experimental
             </td>
             <td colspan="2" scope="row" data-label="Description">
-                Allow the usage of one or more experimental features. Possible values are `files`, `surrealism`, and `mutable_permissions`, separated by a comma. See <a href="/docs/reference/cli/surrealdb-cli/commands/start#experimental-capabilities">experimental capabilities</a> for which tag enables each feature. From 3.3.0 a server enables `mutable_permissions` on its own; name it in `--deny-experimental` to turn it off. (The legacy tag `gql` is still accepted for compatibility but is unused from 3.3.0 — GQL is on by default.)
+                Allow the usage of one or more experimental features. Possible values are `files`, `surrealism`, and `mutable_permissions`, separated by a comma. See <a href="/docs/reference/cli/surrealdb-cli/commands/start#experimental-capabilities">experimental capabilities</a> for which tag enables each feature. From 3.3.0 a server enables `mutable_permissions` on its own; name it in `--deny-experimental` to turn it off. (The legacy tag `gql` is still accepted for compatibility but is unused from 3.3.0 - GQL is on by default.)
             </td>
             <td scope="row" data-label="Default">
                 None
@@ -375,10 +375,10 @@ Unlike most capabilities, **eval is denied for every subject by default**, inclu
 surreal start --allow-eval-query
 ```
 
-Arbitrary queries are **allowed by default** on the server, so you do not need `--allow-arbitrary-query` for eval unless you have restricted arbitrary queries (for example with `--deny-arbitrary-query` or `--deny-all`). If a subject is denied arbitrary queries — a common pattern alongside [`DEFINE API`](../../../reference/query-language/statements/define/api.md) — **`eval` is denied for that subject too**, even when `--allow-eval-query` includes them. `eval` cannot bypass arbitrary-query lockdown.
+Arbitrary queries are **allowed by default** on the server, so you do not need `--allow-arbitrary-query` for eval unless you have restricted arbitrary queries (for example with `--deny-arbitrary-query` or `--deny-all`). If a subject is denied arbitrary queries - a common pattern alongside [`DEFINE API`](../../../reference/query-language/statements/define/api.md) - **`eval` is denied for that subject too**, even when `--allow-eval-query` includes them. `eval` cannot bypass arbitrary-query lockdown.
 
-Deny rules at the same specificity prevail over allow rules. A record user calling an owner-defined function that invokes `eval` is still checked as `record` — auth limiting never escalates the subject.
+Deny rules at the same specificity prevail over allow rules. A record user calling an owner-defined function that invokes `eval` is still checked as `record` - auth limiting never escalates the subject.
 
-Configure `--allow-eval-query` on **`surreal start`** when clients connect to a remote instance. It is not required on `surreal sql` for remote connections — only for [embedded REPL sessions](../../../reference/cli/surrealdb-cli/commands/sql.md#capabilities-and-remote-connections).
+Configure `--allow-eval-query` on **`surreal start`** when clients connect to a remote instance. It is not required on `surreal sql` for remote connections - only for [embedded REPL sessions](../../../reference/cli/surrealdb-cli/commands/sql.md#capabilities-and-remote-connections).
 
 `eval::gql` does not need an experimental capability from **3.3.0** (on **3.2.x**, also allow `gql`). See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) and [Representations and codecs](../../querying/concepts-and-guides/representations-and-codecs.md).

@@ -62,5 +62,5 @@ LIVE SELECT * FROM type::table($table) WHERE location == $location;
 ## Where to read more
 
 * [`LIVE SELECT` reference](../../../reference/query-language/statements/live-select.md)
-* [Changefeeds](changefeeds.md) — replay and `SHOW CHANGES`
-* [Real-time best practices](real-time-best-practices.md) — wider event-driven patterns
+* [Changefeeds](changefeeds.md) - replay and `SHOW CHANGES`
+* [Real-time best practices](real-time-best-practices.md) - wider event-driven patterns

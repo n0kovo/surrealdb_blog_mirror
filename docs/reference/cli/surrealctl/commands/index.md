@@ -31,7 +31,7 @@ Plural spellings of the group nouns work, and so do two verb aliases. Nothing el
 | --- | --- |
 | `orgs`, `instances`, `teams`, `invites`, `tokens`, `contexts` | The singular group |
 | `ls` | `list` |
-| `rm` | `delete` — and `team remove` |
+| `rm` | `delete` - and `team remove` |
 | `doctor` | `status` |
 
 ## Reading these pages
@@ -43,7 +43,7 @@ Usage blocks are notation, not commands: `<NAME>` is a value you must supply, `[
 Flags shared across many commands are documented once:
 
 - The [global flags](../global-flags.md), accepted everywhere.
-- The [list presentation flags](../output-and-exit-codes.md#list-presentation-flags) — `--columns`, `--wide`, `--no-header`, `--sort`, `--reverse` and `--limit` — carried by every list-shaped command.
-- The [wait flags](../long-running-operations.md#the-wait-flags) — `--wait`, `--no-wait` and `--wait-timeout` — carried by five `instance` commands.
+- The [list presentation flags](../output-and-exit-codes.md#list-presentation-flags) - `--columns`, `--wide`, `--no-header`, `--sort`, `--reverse` and `--limit` - carried by every list-shaped command.
+- The [wait flags](../long-running-operations.md#the-wait-flags) - `--wait`, `--no-wait` and `--wait-timeout` - carried by five `instance` commands.
 
 For queries, imports, exports and running a server, use the [`surreal` CLI](../../surrealdb-cli/overview.md) instead. See the [overview](../overview.md) for where that boundary sits.

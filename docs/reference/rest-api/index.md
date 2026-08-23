@@ -11,10 +11,10 @@ Any language or tool capable of making HTTP requests can interact with SurrealDB
 
 ## What the API provides
 
-- **Query execution** — send SurrealQL statements over HTTP and receive results as JSON.
-- **Authentication** — sign in, sign up, and manage tokens via dedicated endpoints.
-- **CRUD operations** — create, read, update, and delete records using RESTful conventions.
-- **Health and status** — check whether the server is running and accepting connections.
+- **Query execution** - send SurrealQL statements over HTTP and receive results as JSON.
+- **Authentication** - sign in, sign up, and manage tokens via dedicated endpoints.
+- **CRUD operations** - create, read, update, and delete records using RESTful conventions.
+- **Health and status** - check whether the server is running and accepting connections.
 
 ## Protocol details
 
@@ -24,6 +24,6 @@ The full HTTP protocol reference, including request and response formats, authen
 
 If you prefer a richer client experience, SurrealDB also supports:
 
-- **WebSocket protocol** — persistent connections with real-time capabilities.
-- **[Postgres wire protocol](postgres-protocol.md)** — connect with `psql`, JDBC, and other Postgres clients, then run SurrealQL or ISO GQL with tabular typed results.
-- **Official SDKs** — language-specific clients for [JavaScript](../../languages/javascript.md), [Python](../../languages/python.md), [Rust](../../languages/rust.md), [Go](../../languages/golang.md), [Java](../../languages/java.md), [.NET](../../languages/dotnet.md), and [PHP](../../languages/php.md).
+- **WebSocket protocol** - persistent connections with real-time capabilities.
+- **[Postgres wire protocol](postgres-protocol.md)** - connect with `psql`, JDBC, and other Postgres clients, then run SurrealQL or ISO GQL with tabular typed results.
+- **Official SDKs** - language-specific clients for [JavaScript](../../languages/javascript.md), [Python](../../languages/python.md), [Rust](../../languages/rust.md), [Go](../../languages/golang.md), [Java](../../languages/java.md), [.NET](../../languages/dotnet.md), and [PHP](../../languages/php.md).

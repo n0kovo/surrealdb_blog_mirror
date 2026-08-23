@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 This guide deploys SurrealDB to a local [KIND](https://kind.sigs.k8s.io/) cluster (Kubernetes in Docker) with **RocksDB** on a persistent volume. That is a **single-node** topology: one SurrealDB pod owns the database file. See [Deployment models](deployment-models.md#single-node-rocksdb).
 
-For **multi-node HA**, use the managed [Scale plan](https://surrealdb.com/pricing/scale) or [SurrealDB Enterprise](https://surrealdb.com/enterprise) on managed Kubernetes — see [Managed Kubernetes](managed-kubernetes.md). Do not use TiKV for production HA.
+For **multi-node HA**, use the managed [Scale plan](https://surrealdb.com/pricing/scale) or [SurrealDB Enterprise](https://surrealdb.com/enterprise) on managed Kubernetes - see [Managed Kubernetes](managed-kubernetes.md). Do not use TiKV for production HA.
 
 ## Requirements
 
@@ -28,7 +28,7 @@ kubectl get ns
 
 ## Deploy SurrealDB
 
-Use the [SurrealDB Helm chart](https://github.com/surrealdb/helm-charts) with a **ReadWriteOnce** persistent volume. Keep **`replicaCount: 1`** — multiple pods must not share one RocksDB file.
+Use the [SurrealDB Helm chart](https://github.com/surrealdb/helm-charts) with a **ReadWriteOnce** persistent volume. Keep **`replicaCount: 1`** - multiple pods must not share one RocksDB file.
 
 ### 1. Add the Helm repository
 
@@ -112,6 +112,6 @@ ns/db> SELECT * FROM record;
 
 ## Next steps
 
-- [Docker](docker.md) — single-node RocksDB without Kubernetes
-- [Run a single-node, on-disk server](../../running/file-backed.md) — CLI startup options for RocksDB and SurrealKV
-- [Deployment models](deployment-models.md) — managed, single-node, and highly available options
+- [Docker](docker.md) - single-node RocksDB without Kubernetes
+- [Run a single-node, on-disk server](../../running/file-backed.md) - CLI startup options for RocksDB and SurrealKV
+- [Deployment models](deployment-models.md) - managed, single-node, and highly available options

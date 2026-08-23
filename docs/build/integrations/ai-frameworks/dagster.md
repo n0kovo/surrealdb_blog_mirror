@@ -13,7 +13,7 @@ Dagster is a powerful tool for building data pipelines and workflows. It is a po
 
 ```bash title="Install"
 pip install dagster surrealdb openai  # or swap out OpenAI for any embedder
-# optional – launch a local SurrealDB daemon
+# optional - launch a local SurrealDB daemon
 docker run -p 8000:8000 surrealdb/surrealdb:latest \
        start --user root --pass secret file:/data/db
 ```
@@ -27,7 +27,7 @@ from typing import List, Sequence, Optional
 _EMBED_DIM = 1536  # match your embedder
 
 def embed(text: str) -> List[float]:
-    """Tiny helper – replace with your preferred model."""
+    """Tiny helper - replace with your preferred model."""
     import openai
     resp = openai.Embedding.create(
         model="text-embedding-3-small",
@@ -58,7 +58,7 @@ class SurrealResource:
         self.user = cfg.user
         self.password = cfg.password
 
-    # — helpers ----------------------------------------------------------
+    # - helpers ----------------------------------------------------------
     def _ensure_table(self, table: str):
         with Surreal(self.url) as db:
             db.signin({"username": self.user, "password": self.password})
@@ -79,7 +79,7 @@ class SurrealResource:
                 }
             )
 
-    # — public API -------------------------------------------------------
+    # - public API -------------------------------------------------------
     def add(self, collection_name: str, documents: Sequence[str]):
         self._ensure_table(collection_name)
         with Surreal(self.url) as db:

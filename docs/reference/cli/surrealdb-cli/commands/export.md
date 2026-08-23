@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 Export an existing database as a SurrealQL script, either to a file or to stdout.
 
 > [!NOTE]
-> **Before you start** — make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
 
 <Synopsis>
 surreal export [OPTIONS] --namespace <NAMESPACE> --database <DATABASE> [FILE]

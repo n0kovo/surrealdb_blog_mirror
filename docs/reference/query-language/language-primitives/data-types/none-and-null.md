@@ -1,7 +1,7 @@
 ---
 position: 11
 title: None and Null
-description: None means a missing field; null means an empty stored value—how SurrealDB distinguishes them in SurrealQL.
+description: None means a missing field; null means an empty stored value - how SurrealDB distinguishes them in SurrealQL.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/language-primitives/data-types/none-and-null.mdx"
 ---
 

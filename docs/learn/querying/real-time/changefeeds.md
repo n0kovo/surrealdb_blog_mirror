@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Changefeeds
-description: Replaying table changes over time with changefeeds and SHOW CHANGES—useful for sync, pipelines, and external systems.
+description: Replaying table changes over time with changefeeds and SHOW CHANGES - useful for sync, pipelines, and external systems.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/real-time/changefeeds.mdx"
 ---
 

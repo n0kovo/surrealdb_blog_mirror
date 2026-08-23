@@ -11,6 +11,6 @@ SurrealDB provides a layered security model that covers how users and systems pr
 
 This section is organised into three areas:
 
-- [Authentication](authentication/overview.md) — signing in with credentials, record-based access, and third-party identity providers.
-- [Authorization](authorization/permissions-and-row-level-security.md) — controlling access at the table, field, and row level with the `PERMISSIONS` clause and JWTs.
-- [Best practices](best-practices/security-best-practices.md) — guidance on secure configuration, token handling, network exposure, and common pitfalls.
+- [Authentication](authentication/overview.md) - signing in with credentials, record-based access, and third-party identity providers.
+- [Authorization](authorization/permissions-and-row-level-security.md) - controlling access at the table, field, and row level with the `PERMISSIONS` clause and JWTs.
+- [Best practices](best-practices/security-best-practices.md) - guidance on secure configuration, token handling, network exposure, and common pitfalls.

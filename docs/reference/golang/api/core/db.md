@@ -211,7 +211,7 @@ token, err := db.SignIn(ctx, authData)
     </tbody>
 </table>
 
-**Returns:** `(string, error)` — the JWT token string
+**Returns:** `(string, error)` - the JWT token string
 
 #### Examples
 
@@ -259,7 +259,7 @@ tokens, err := db.SignInWithRefresh(ctx, authData)
     </tbody>
 </table>
 
-**Returns:** `(*Tokens, error)` — see [`Tokens`](../types/index.md#tokens)
+**Returns:** `(*Tokens, error)` - see [`Tokens`](../types/index.md#tokens)
 
 #### Examples
 
@@ -307,7 +307,7 @@ token, err := db.SignUp(ctx, authData)
     </tbody>
 </table>
 
-**Returns:** `(string, error)` — the JWT token string
+**Returns:** `(string, error)` - the JWT token string
 
 ### `.SignUpWithRefresh()` {#signupwithrefresh}
 
@@ -317,7 +317,7 @@ Signs up using a `TYPE RECORD` access method with `WITH REFRESH` enabled. Surrea
 tokens, err := db.SignUpWithRefresh(ctx, authData)
 ```
 
-**Returns:** `(*Tokens, error)` — see [`Tokens`](../types/index.md#tokens)
+**Returns:** `(*Tokens, error)` - see [`Tokens`](../types/index.md#tokens)
 
 ### `.Authenticate()` {#authenticate}
 
@@ -456,7 +456,7 @@ Creates a new session on the WebSocket connection. Sessions are only supported o
 session, err := db.Attach(ctx)
 ```
 
-**Returns:** `(*Session, error)` — see [`Session`](session.md)
+**Returns:** `(*Session, error)` - see [`Session`](session.md)
 
 ### `.Begin()` {#begin}
 
@@ -466,7 +466,7 @@ Starts a new interactive transaction on the default session. Transactions are on
 tx, err := db.Begin(ctx)
 ```
 
-**Returns:** `(*Transaction, error)` — see [`Transaction`](transaction.md)
+**Returns:** `(*Transaction, error)` - see [`Transaction`](transaction.md)
 
 ---
 
@@ -519,7 +519,7 @@ results, err := surrealdb.Query[TResult](ctx, s, sql, vars)
     </tbody>
 </table>
 
-**Returns:** `(*[]QueryResult[TResult], error)` — see [`QueryResult`](../types/index.md#queryresult)
+**Returns:** `(*[]QueryResult[TResult], error)` - see [`QueryResult`](../types/index.md#queryresult)
 
 #### Examples
 

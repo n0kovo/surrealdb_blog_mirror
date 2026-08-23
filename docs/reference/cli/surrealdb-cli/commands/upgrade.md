@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 Replace the installed `surreal` executable with another version: the latest stable release, a specific version, or a pre-release build.
 
 > [!NOTE]
-> **Before you start** — make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
 
 <Synopsis>
 surreal upgrade [OPTIONS]

@@ -71,6 +71,6 @@ try (Surreal db = new Surreal()) {
 
 ## See also
 
-- [Value types](../../concepts/value-types.md) — Type mapping overview
-- [Value](value.md) — The Value class reference
-- [RecordIdRange](record-id.md#record-id-range) — Range-based CRUD operations
+- [Value types](../../concepts/value-types.md) - Type mapping overview
+- [Value](value.md) - The Value class reference
+- [RecordIdRange](record-id.md#record-id-range) - Range-based CRUD operations

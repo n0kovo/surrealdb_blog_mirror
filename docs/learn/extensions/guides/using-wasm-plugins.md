@@ -36,6 +36,6 @@ If you upgrade the module archive, repeat upload and module definition steps (or
 
 ## Further reading
 
-- [Surrealism overview](../plugins/overview.md) — how compilation, buckets, and modules fit together.
-- [`DEFINE BUCKET` reference](../../../reference/query-language/statements/define/bucket.md) — file storage for WASM.
-- [`DEFINE MODULE` reference](../../../reference/query-language/statements/define/module.md) — registering Surrealism functions.
+- [Surrealism overview](../plugins/overview.md) - how compilation, buckets, and modules fit together.
+- [`DEFINE BUCKET` reference](../../../reference/query-language/statements/define/bucket.md) - file storage for WASM.
+- [`DEFINE MODULE` reference](../../../reference/query-language/statements/define/module.md) - registering Surrealism functions.

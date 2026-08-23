@@ -1,7 +1,7 @@
 ---
 position: 11
 title: token
-description: Reference for surrealctl token — listing, creating and revoking personal access tokens, and browsing the scopes a token can be granted.
+description: Reference for surrealctl token - listing, creating and revoking personal access tokens, and browsing the scopes a token can be granted.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/token.mdx"
 ---
 
@@ -60,7 +60,7 @@ nightly export     6a2k9lqzt4v8bn3m1x5c  read:cloud              3 days ago    n
 surrealctl token list --json | jq -r '.[] | .label + " " + .expires_at'
 ```
 
-Only the label, the id, the scopes and the timestamps are stored — the secret itself exists once, at creation. A token with no expiry carries the `9999-12-31T23:59:59Z` sentinel under `--json`.
+Only the label, the id, the scopes and the timestamps are stored - the secret itself exists once, at creation. A token with no expiry carries the `9999-12-31T23:59:59Z` sentinel under `--json`.
 
 ## surrealctl token create {#token-create}
 
@@ -116,7 +116,7 @@ surrealctl token create "nightly export" \
     | tail -1 > /run/secrets/surrealctl
 ```
 
-Output is a detail view with the secret stripped, then a success line, then **the bare secret as the last line on stdout** — so `| tail -1` is the whole capture recipe. The footer names the token's id rather than its label, because a label may contain spaces.
+Output is a detail view with the secret stripped, then a success line, then **the bare secret as the last line on stdout** - so `| tail -1` is the whole capture recipe. The footer names the token's id rather than its label, because a label may contain spaces.
 
 > [!WARNING]
 > This is the one command in the whole CLI with no `--json` form. Passing `--json` is a usage error, exit `2`, raised before anything is minted.
@@ -215,9 +215,9 @@ This is the menu. [`auth scopes`](auth.md#auth-scopes) is the receipt: what the 
 
 ## Related pages
 
-- [Authentication](../authentication.md#personal-access-tokens) — how a token is supplied, and what it cannot do
-- [`auth` commands](auth.md) — signing in with a login session
-- [`instance token`](instance.md#instance-token) — database tokens, which are a different credential
-- [Output and exit codes](../output-and-exit-codes.md#the-secret-guard) — the secret guard
-- [Overview](../overview.md) — the rest of the reference
-- [SurrealDB CLI](../../surrealdb-cli/overview.md) — for working with the data inside an instance
+- [Authentication](../authentication.md#personal-access-tokens) - how a token is supplied, and what it cannot do
+- [`auth` commands](auth.md) - signing in with a login session
+- [`instance token`](instance.md#instance-token) - database tokens, which are a different credential
+- [Output and exit codes](../output-and-exit-codes.md#the-secret-guard) - the secret guard
+- [Overview](../overview.md) - the rest of the reference
+- [SurrealDB CLI](../../surrealdb-cli/overview.md) - for working with the data inside an instance

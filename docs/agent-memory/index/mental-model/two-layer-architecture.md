@@ -1,15 +1,15 @@
 ---
 position: 1
 title: Unified substrate and authority
-description: One SurrealDB graph for authoritative and experiential knowledge – provenance and reconciliation, not two silos.
+description: One SurrealDB graph for authoritative and experiential knowledge - provenance and reconciliation, not two silos.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/mental-model/two-layer-architecture.mdx"
 ---
 
 # Unified substrate and authority
 
-SurrealDB Agent Memory stores **authoritative** and **experiential** knowledge in **one** SurrealDB graph — the **eight pillars** in practice, especially Authoritative and Experiential, expressed as records and edges, not two separate databases.
+SurrealDB Agent Memory stores **authoritative** and **experiential** knowledge in **one** SurrealDB graph - the **eight pillars** in practice, especially Authoritative and Experiential, expressed as records and edges, not two separate databases.
 
-> **One multi-model SurrealDB substrate** – documents, turns, entities, attributes, relations, embeddings, traces, and (where enabled) geometry – with **provenance** explaining *which stream* produced a record and **reconciliation** deciding how streams combine.
+> **One multi-model SurrealDB substrate** - documents, turns, entities, attributes, relations, embeddings, traces, and (where enabled) geometry - with **provenance** explaining *which stream* produced a record and **reconciliation** deciding how streams combine.
 
 “Layers” are still a useful **pedagogical** picture for **authority**: curated organisational truth versus conversational input. **Physically**, however, both streams are records and edges in the **same** database, updated under **ACID** transactions.
 
@@ -17,10 +17,10 @@ SurrealDB Agent Memory stores **authoritative** and **experiential** knowledge i
 
 | Stream | Typical `source.kind` | What it holds | Default trust |
 | --- | --- | --- | --- |
-| **Authoritative** | `document` (and operator `upsert`) | Manuals, policies, product data, repos, structured exports | High – vetted sources |
-| **Experiential** | `turn`, plus `reflect`, `elaboration`, `consolidation`, … | What users and agents said; synthesised or background-minted facts | Lower – must earn promotion |
+| **Authoritative** | `document` (and operator `upsert`) | Manuals, policies, product data, repos, structured exports | High - vetted sources |
+| **Experiential** | `turn`, plus `reflect`, `elaboration`, `consolidation`, … | What users and agents said; synthesised or background-minted facts | Lower - must earn promotion |
 
-Retrieval, elaboration, and consolidation see **one** `entity` / `relation` graph. Hybrid rankers fuse vectors, BM25, graph structure, keyword bridges, geo predicates, and trace-derived features without cross-store joins — so questions like “semantically close to X, mentioning Y, linked to entity Z, valid as of last March” stay **one query** over one engine, not four databases stitched after the fact.
+Retrieval, elaboration, and consolidation see **one** `entity` / `relation` graph. Hybrid rankers fuse vectors, BM25, graph structure, keyword bridges, geo predicates, and trace-derived features without cross-store joins - so questions like “semantically close to X, mentioning Y, linked to entity Z, valid as of last March” stay **one query** over one engine, not four databases stitched after the fact.
 
 ## How authority is enforced
 
@@ -42,4 +42,4 @@ That is how the **Authoritative** pillar wins over casual assertions: **authorit
 
 - [Eight pillars and six categories](https://surrealdb.com/docs/agent-memory/architecture/eight-pillars-and-categories)
 - [Principles and goals](https://surrealdb.com/docs/agent-memory/architecture/principles-and-goals)
-- [Authority when pillars meet](https://surrealdb.com/docs/agent-memory/reasoning/authority-hierarchy) – how curated and experiential streams interact in APIs today
+- [Authority when pillars meet](https://surrealdb.com/docs/agent-memory/reasoning/authority-hierarchy) - how curated and experiential streams interact in APIs today

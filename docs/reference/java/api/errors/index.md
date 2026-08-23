@@ -377,6 +377,6 @@ try {
 
 ## See also
 
-- [Surreal](../core/surreal.md) — Connection and method reference
-- [Error handling](../../concepts/error-handling.md) — Error handling concepts and patterns
-- [SurrealQL THROW](../../../query-language/statements/throw.md) — Throwing custom errors from queries
+- [Surreal](../core/surreal.md) - Connection and method reference
+- [Error handling](../../concepts/error-handling.md) - Error handling concepts and patterns
+- [SurrealQL THROW](../../../query-language/statements/throw.md) - Throwing custom errors from queries

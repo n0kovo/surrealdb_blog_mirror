@@ -1,7 +1,7 @@
 ---
 position: 4
 title: config
-description: Reference for surrealctl config — listing, reading, setting and clearing configuration values, printing the file path, and opening it in an editor.
+description: Reference for surrealctl config - listing, reading, setting and clearing configuration values, printing the file path, and opening it in an editor.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/config.mdx"
 ---
 
@@ -22,7 +22,7 @@ surrealctl config <COMMAND> [OPTIONS]
 | [`path`](#config-path) | Print the path to the configuration file | |
 | [`edit`](#config-edit) | Open the configuration file in your editor | |
 
-Every verb works on **one profile** — whichever `--profile`, `SURREALCTL_PROFILE` and the file's own `active_profile` settle on — and each one says which profile it touched.
+Every verb works on **one profile** - whichever `--profile`, `SURREALCTL_PROFILE` and the file's own `active_profile` settle on - and each one says which profile it touched.
 
 ## The keys
 
@@ -36,7 +36,7 @@ Five keys are recognised. Each is outranked by an environment variable, and by a
 | `plain` | Boolean | Always disable tables, spinners and relative times | `SURREALCTL_PLAIN` |
 | `surreal_binary` | Text | Path to the `surreal` binary for `sql`, `import` and `export` | `SURREALCTL_SURREAL_BINARY` |
 
-The persisted context — what [`org use`](org.md#org-use) records — is **not** reachable from here. There is no `config set context.org`. The two live in separate tables of the same file so that `org use` never overwrites an `org` value you set by hand, and the hand-written one wins.
+The persisted context - what [`org use`](org.md#org-use) records - is **not** reachable from here. There is no `config set context.org`. The two live in separate tables of the same file so that `org use` never overwrites an `org` value you set by hand, and the hand-written one wins.
 
 ```toml title="config.toml"
 active_profile = "work"
@@ -75,7 +75,7 @@ plain                    no   Always disable tables, spinners and relative times
 surreal_binary           no   Path to the `surreal` binary for sql/import/export
 ```
 
-Every key is listed whether or not it is set, and the `set` column is what distinguishes a configured value from a default. Only a key this profile has actually set carries a value, so an unset key — `api` above, which falls back to the built-in default — has an empty `value` cell. A note on stderr reports the profile and the file path.
+Every key is listed whether or not it is set, and the `set` column is what distinguishes a configured value from a default. Only a key this profile has actually set carries a value, so an unset key - `api` above, which falls back to the built-in default - has an empty `value` cell. A note on stderr reports the profile and the file path.
 
 ## surrealctl config get {#config-get}
 
@@ -156,7 +156,7 @@ surrealctl --profile staging config set org contoso
 warning: SURREALCTL_JSON is set and takes precedence over this. Unset it for the configured value to apply.
 ```
 
-**Refusals**, exit `2`: an unrecognised key, or a value the key's type rejects — a non-boolean for `json`, or a URL with a path for `api`.
+**Refusals**, exit `2`: an unrecognised key, or a value the key's type rejects - a non-boolean for `json`, or a URL with a path for `api`.
 
 ## surrealctl config unset {#config-unset}
 
@@ -225,18 +225,18 @@ This command takes no positional arguments and no options of its own.
 surrealctl config edit
 ```
 
-The file is opened with `$EDITOR`. Editing it by hand is supported — [`config list`](#config-list) will show whatever you wrote, and unknown keys survive — but a file written by a newer `surrealctl` is refused rather than migrated:
+The file is opened with `$EDITOR`. Editing it by hand is supported - [`config list`](#config-list) will show whatever you wrote, and unknown keys survive - but a file written by a newer `surrealctl` is refused rather than migrated:
 
 ```text
 was written by a newer surrealctl (file version 2, this build understands 1).
-Refusing to touch it — upgrade surrealctl, or point --config elsewhere.
+Refusing to touch it - upgrade surrealctl, or point --config elsewhere.
 ```
 
 ## Related pages
 
-- [Global flags](../global-flags.md) — the flags and environment variables these keys sit beneath
-- [`context` commands](context.md) — switching between profiles
-- [`org use`](org.md#org-use) — remembering an organisation within a profile
-- [Authentication](../authentication.md#where-credentials-are-stored) — the credential file beside this one
-- [Overview](../overview.md) — the rest of the reference
-- [SurrealDB CLI](../../surrealdb-cli/overview.md) — for working with the data inside an instance
+- [Global flags](../global-flags.md) - the flags and environment variables these keys sit beneath
+- [`context` commands](context.md) - switching between profiles
+- [`org use`](org.md#org-use) - remembering an organisation within a profile
+- [Authentication](../authentication.md#where-credentials-are-stored) - the credential file beside this one
+- [Overview](../overview.md) - the rest of the reference
+- [SurrealDB CLI](../../surrealdb-cli/overview.md) - for working with the data inside an instance

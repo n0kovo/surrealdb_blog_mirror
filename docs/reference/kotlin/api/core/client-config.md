@@ -26,7 +26,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
         <tr>
             <td>`url` *[required]*</td>
             <td>`String`</td>
-            <td>—</td>
+            <td>-</td>
             <td>The connection URL. The scheme (`ws`/`wss`/`http`/`https`) selects the transport.</td>
         </tr>
         <tr>

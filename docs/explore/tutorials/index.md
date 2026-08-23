@@ -9,5 +9,5 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/e
 
 Learn SurrealDB by working through practical examples. Whether you prefer a guided walkthrough or exploring a ready-made application, the resources here will help you put concepts into practice.
 
-- [Demos](demos/overview.md) — sample applications and datasets you can clone, import, or run locally to see SurrealDB in action.
-- [Tutorials](tutorials/overview.md) — step-by-step guides covering topics such as authentication integrations, real-time applications, AI-powered features, and more.
+- [Demos](demos/overview.md) - sample applications and datasets you can clone, import, or run locally to see SurrealDB in action.
+- [Tutorials](tutorials/overview.md) - step-by-step guides covering topics such as authentication integrations, real-time applications, AI-powered features, and more.

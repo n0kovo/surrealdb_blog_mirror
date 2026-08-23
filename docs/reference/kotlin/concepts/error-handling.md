@@ -45,7 +45,7 @@ try {
 
 ## Feature support errors
 
-Calling a feature that the current transport does not support — for example a [live query](live-queries.md) over HTTP — throws [`SurrealFeatureNotSupportedException`](../api/errors/index.md#feature-not-supported). Guard against this with [`.supports()`](../api/core/surreal-client.md#supports).
+Calling a feature that the current transport does not support - for example a [live query](live-queries.md) over HTTP - throws [`SurrealFeatureNotSupportedException`](../api/errors/index.md#feature-not-supported). Guard against this with [`.supports()`](../api/core/surreal-client.md#supports).
 
 ```kotlin
 

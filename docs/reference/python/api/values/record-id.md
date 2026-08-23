@@ -167,6 +167,6 @@ See the [Data types overview](index.md#recordidtype) for details.
 
 ## See also
 
-- [Data types](index.md) — All SDK data types
-- [Table](table.md) — Table name wrapper
-- [Surreal](../core/surreal.md) — Connection and query methods
+- [Data types](index.md) - All SDK data types
+- [Table](table.md) - Table name wrapper
+- [Surreal](../core/surreal.md) - Connection and query methods

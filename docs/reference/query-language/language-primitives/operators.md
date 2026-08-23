@@ -1631,7 +1631,7 @@ SELECT id FROM pts WHERE point <|10,40|> [2,3,4,5];
 
 ### Combining a KNN search with a filter
 
-A KNN search over an indexed field can be combined with additional `WHERE` conditions. When the vector field is indexed (HNSW or DISKANN), such a condition is pushed into the index search and evaluated *during* the graph traversal, so non-matching candidates are rejected before they occupy one of the `K` slots — rather than being filtered out after the neighbours have been retrieved.
+A KNN search over an indexed field can be combined with additional `WHERE` conditions. When the vector field is indexed (HNSW or DISKANN), such a condition is pushed into the index search and evaluated *during* the graph traversal, so non-matching candidates are rejected before they occupy one of the `K` slots - rather than being filtered out after the neighbours have been retrieved.
 
 You can confirm this by using the [`EXPLAIN`](../statements/explain.md) clause after a query to see its plan. Here, the condition appears as a `predicate` attribute on the `KnnScan` operator in  the output. See [Filtering through vector search](../../../learn/data-models/vector-search/similarity-search.md#how-the-filter-is-applied) for a worked example.
 

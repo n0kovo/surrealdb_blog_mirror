@@ -126,7 +126,7 @@ A record access user authenticates against a [`DEFINE ACCESS`](../../query-langu
 		})
 		```
 
-All examples above use the synchronous API. The async variant works the same way — prefix each call with `await`.
+All examples above use the synchronous API. The async variant works the same way - prefix each call with `await`.
 
 ## Signing up users
 
@@ -176,7 +176,7 @@ You must provide the `namespace`, `database`, and `access` fields, along with an
 
 ## Authenticating with an existing token
 
-If you already have a JWT token — for example, one returned from a previous `.signin()` or stored in a cookie — you can authenticate the connection directly with `.authenticate()`.
+If you already have a JWT token - for example, one returned from a previous `.signin()` or stored in a cookie - you can authenticate the connection directly with `.authenticate()`.
 
 	
 **Synchronous**

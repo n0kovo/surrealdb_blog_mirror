@@ -197,7 +197,7 @@ async function withRetry<T>(fn: () => Promise<T>, maxRetries = 3): Promise<T> {
 const users = await withRetry(() => db.select(new Table('users')));
 ```
 
-For the specific case of write conflicts under concurrent load, prefer the SDK's built-in [`.retry()`](../api/queries/query.md#retry) over a hand-rolled loop — it applies exponential backoff and only replays work known to be safely retryable.
+For the specific case of write conflicts under concurrent load, prefer the SDK's built-in [`.retry()`](../api/queries/query.md#retry) over a hand-rolled loop - it applies exponential backoff and only replays work known to be safely retryable.
 
 ```ts
 const [n] = await db

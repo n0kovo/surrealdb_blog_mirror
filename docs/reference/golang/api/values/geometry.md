@@ -32,7 +32,7 @@ CBOR tag: 88
 
 #### Methods
 
-- `.GetCoordinates()` — returns `[2]float64{Longitude, Latitude}`
+- `.GetCoordinates()` - returns `[2]float64{Longitude, Latitude}`
 
 #### Examples
 

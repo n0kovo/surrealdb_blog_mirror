@@ -329,7 +329,7 @@ DEFINE FUNCTION OVERWRITE fn::price_with_tax($price: number) {
 };
 ```
 
-The check resolves calls against the stored function bodies, so it also follows a call several functions deep. A write reached through something that cannot be resolved at definition time — [`eval::surql()`](../../functions/database-functions/eval.md#evalsurql), a JavaScript function, or a closure that arrives as data — is still accepted, and the write is refused when the field or guard is evaluated.
+The check resolves calls against the stored function bodies, so it also follows a call several functions deep. A write reached through something that cannot be resolved at definition time - [`eval::surql()`](../../functions/database-functions/eval.md#evalsurql), a JavaScript function, or a closure that arrives as data - is still accepted, and the write is refused when the field or guard is evaluated.
 
 > [!NOTE]
 > These checks are relaxed under `OPTION IMPORT`, so an [export](../../../cli/surrealdb-cli/commands/export.md) taken before the rules existed still restores.

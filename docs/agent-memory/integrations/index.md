@@ -1,7 +1,7 @@
 ---
 position: 0
 title: Overview
-description: Connecting SurrealDB Agent Memory to your stack – SDKs, MCP server, AI SDKs, agent frameworks, voice tools, and automation.
+description: Connecting SurrealDB Agent Memory to your stack - SDKs, MCP server, AI SDKs, agent frameworks, voice tools, and automation.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/integrations/index.mdx"
 ---
 

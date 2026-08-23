@@ -9,10 +9,10 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 SurrealDB Agent Memory runs as a **horizontally scalable service** in front of SurrealDB. Integrate through:
 
-- **HTTP** — `/api/v1/{context_id}/...` ([REST API](../../integrations/surfaces/rest.md))
-- **MCP** — `/mcp` on the same port
-- **Generated SDKs** — Python (`surrealdb`) and TypeScript (`@surrealdb/spectron`)
-- **Harness adapters** — LangChain, Vercel AI SDK, OpenAI Agents, n8n, Claude Code hook ([Integrations](../../integrations/index.md))
+- **HTTP** - `/api/v1/{context_id}/...` ([REST API](../../integrations/surfaces/rest.md))
+- **MCP** - `/mcp` on the same port
+- **Generated SDKs** - Python (`surrealdb`) and TypeScript (`@surrealdb/spectron`)
+- **Harness adapters** - LangChain, Vercel AI SDK, OpenAI Agents, n8n, Claude Code hook ([Integrations](../../integrations/index.md))
 
 ## In-process library
 

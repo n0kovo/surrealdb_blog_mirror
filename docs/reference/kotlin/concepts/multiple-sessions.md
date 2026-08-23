@@ -65,4 +65,4 @@ client.closeSession(tenantA)
 
 - [Session reference](../api/core/session.md) for the session API
 - [Authentication](authentication.md) for per-session credentials
-- [Transactions](transactions.md) — transactions run within a session
+- [Transactions](transactions.md) - transactions run within a session

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Instructions and uncertainties
 
-Not everything in a turn is a fact about the world. Some statements tell the agent **how to behave**; others cannot be interpreted confidently. SurrealDB Agent Memory stores these as **instructions** and **uncertainties** — separate from ordinary attributes.
+Not everything in a turn is a fact about the world. Some statements tell the agent **how to behave**; others cannot be interpreted confidently. SurrealDB Agent Memory stores these as **instructions** and **uncertainties** - separate from ordinary attributes.
 
 ## Instructions
 
@@ -22,7 +22,7 @@ Instructions are **active constraints** the agent should honour on subsequent tu
 
 ### Revoking instructions
 
-When a user reverses a directive (“stop using bullet points”), SurrealDB Agent Memory **deactivates** the matching instruction rather than deleting it. History of what was asked — and when it was revoked — remains available for audit.
+When a user reverses a directive (“stop using bullet points”), SurrealDB Agent Memory **deactivates** the matching instruction rather than deleting it. History of what was asked - and when it was revoked - remains available for audit.
 
 ### Using instructions in your agent
 
@@ -53,7 +53,7 @@ An **uncertainty** is recorded when extraction cannot commit to a single interpr
 
 Common triggers:
 
-- A statement followed by a contradictory correction (“I'm CEO — well, co-CEO, it's complicated”)
+- A statement followed by a contradictory correction (“I'm CEO - well, co-CEO, it's complicated”)
 - Ambiguous references when several entities are in scope
 - A claim that contradicts existing memory with no clear winner
 - Temporal references that cannot be resolved to a date
@@ -86,4 +86,4 @@ SurrealDB Agent Memory may still write a **tentative** attribute when extraction
 - [Extraction pipeline](https://surrealdb.com/docs/agent-memory/reasoning/extraction-pipeline)
 - [Authority when pillars meet](https://surrealdb.com/docs/agent-memory/reasoning/authority-hierarchy)
 - [Profiles](https://surrealdb.com/docs/agent-memory/operations/profiles)
-- [REST API — state and profile](../../reference/rest-api.md)
+- [REST API - state and profile](../../reference/rest-api.md)

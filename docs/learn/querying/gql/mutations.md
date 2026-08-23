@@ -1,7 +1,7 @@
 ---
 position: 4
 title: Mutations
-description: ISO GQL data-modifying statements — INSERT, SET, REMOVE, and DELETE — on the /gql endpoint.
+description: ISO GQL data-modifying statements - INSERT, SET, REMOVE, and DELETE - on the /gql endpoint.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/gql/mutations.mdx"
 ---
 
@@ -9,17 +9,17 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 *Since v3.2.0*
 
-ISO GQL on SurrealDB supports the four **data-modifying** statements from the standard — **`INSERT`**, **`SET`**, **`REMOVE`**, and **`DELETE`** — in addition to read-only `MATCH … RETURN` queries. Mutations run on the same [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) endpoint and through [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) (which still needs [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries)).
+ISO GQL on SurrealDB supports the four **data-modifying** statements from the standard - **`INSERT`**, **`SET`**, **`REMOVE`**, and **`DELETE`** - in addition to read-only `MATCH … RETURN` queries. Mutations run on the same [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) endpoint and through [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) (which still needs [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries)).
 
 > [!NOTE]
-> From **3.3.0**, GQL is enabled by default. On **3.2.x**, enable it with [`--allow-experimental gql`](../../../reference/cli/surrealdb-cli/commands/start.md#experimental-capabilities). Mutation-bearing queries open a **write transaction** — the same permissions, field validation, events, indexes, references, and live-query behaviour as native SurrealQL `CREATE` / `UPDATE` / `DELETE` / `RELATE` apply.
+> From **3.3.0**, GQL is enabled by default. On **3.2.x**, enable it with [`--allow-experimental gql`](../../../reference/cli/surrealdb-cli/commands/start.md#experimental-capabilities). Mutation-bearing queries open a **write transaction** - the same permissions, field validation, events, indexes, references, and live-query behaviour as native SurrealQL `CREATE` / `UPDATE` / `DELETE` / `RELATE` apply.
 
 ## Linear programs
 
 A GQL query is a **linear program**: an ordered sequence of `MATCH` / `OPTIONAL` read clauses and data-modifying statements, in **any interleaving**, optionally ending in `RETURN`.
 
 - The **binding table** threads through every step in textual order.
-- A **`MATCH` or `OPTIONAL` after a mutation** re-scans **live** (post-write) state in the same transaction — a clause after `SET` or `DELETE` sees updated or removed records; a clause after `INSERT` sees created records and may bind variables the `INSERT` introduced.
+- A **`MATCH` or `OPTIONAL` after a mutation** re-scans **live** (post-write) state in the same transaction - a clause after `SET` or `DELETE` sees updated or removed records; a clause after `INSERT` sees created records and may bind variables the `INSERT` introduced.
 - **`RETURN` is optional** when the query mutates. Read-only queries must still end with `RETURN`.
 - A mutation-only query (no `RETURN`) returns an **empty** result.
 
@@ -27,7 +27,7 @@ The examples below assume that [the following seed data](via-http.md#load-sample
 
 ### Via `eval::gql`
 
-The same mutation strings work in the REPL when both **`gql`** and **`eval`** are allowed — see [Try without HTTP](via-http.md#try-without-http--evalgql):
+The same mutation strings work in the REPL when both **`gql`** and **`eval`** are allowed - see [Try without HTTP](via-http.md#try-without-http--evalgql):
 
 ```surql
 eval::gql("MATCH (n:person WHERE n.name = 'A') SET n.age = 99 RETURN n.age AS age");
@@ -42,12 +42,12 @@ Update properties on a bound node or edge.
 MATCH (n:person WHERE n.name = 'A') SET n.age = 99 RETURN n.age AS age
 ```
 
-- **`SET a.p = v`** — set one property.
-- **`SET a = { … }`** — replace all **user** properties (a `CONTENT`-style replace). Properties absent from the map are dropped. The record `id`, and an edge's `in` / `out`, are preserved.
+- **`SET a.p = v`** - set one property.
+- **`SET a = { … }`** - replace all **user** properties (a `CONTENT`-style replace). Properties absent from the map are dropped. The record `id`, and an edge's `in` / `out`, are preserved.
 
 Setting reserved keys **`id`**, **`in`**, or **`out`** is rejected on both the per-property form (`SET a.id = …`) and the object form.
 
-**`SET a:Label`** is rejected — a SurrealDB record belongs to exactly one table; labels are immutable.
+**`SET a:Label`** is rejected - a SurrealDB record belongs to exactly one table; labels are immutable.
 
 ## `REMOVE`
 
@@ -67,8 +67,8 @@ Delete a matched node or edge.
 MATCH (n:person WHERE n.name = 'A') DETACH DELETE n
 ```
 
-- **`NODETACH DELETE`** (ISO default) — errors if the node still has connected edges.
-- **`DETACH DELETE`** — deletes the node and cascades connected edges. Bound edge variables for cascaded edges become `null` in a trailing `RETURN`.
+- **`NODETACH DELETE`** (ISO default) - errors if the node still has connected edges.
+- **`DETACH DELETE`** - deletes the node and cascades connected edges. Bound edge variables for cascaded edges become `null` in a trailing `RETURN`.
 
 A deleted binding becomes **`null`** in post-mutation projections.
 
@@ -76,13 +76,13 @@ A deleted binding becomes **`null`** in post-mutation projections.
 
 Create nodes and edges. Each new node requires a **label** (table name).
 
-**Leading insert** (no preceding `MATCH`) — runs once:
+**Leading insert** (no preceding `MATCH`) - runs once:
 
 ```gql
 INSERT (p:person {name: 'Z', age: 1}) RETURN p.name AS name
 ```
 
-**After `MATCH`** — runs **once per binding row**. Relate existing endpoints or create new nodes:
+**After `MATCH`** - runs **once per binding row**. Relate existing endpoints or create new nodes:
 
 ```gql
 MATCH (a:person WHERE a.name = 'A')
@@ -134,6 +134,6 @@ Parse and semantic errors return the same error envelope as read queries.
 
 ## Next steps
 
-- [GQL overview](overview.md) — capabilities, wire surfaces, and syntax differences from openCypher
-- [Sample queries](sample-queries.md) — read-only pattern examples
-- [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) — HTTP headers and response envelope
+- [GQL overview](overview.md) - capabilities, wire surfaces, and syntax differences from openCypher
+- [Sample queries](sample-queries.md) - read-only pattern examples
+- [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) - HTTP headers and response envelope

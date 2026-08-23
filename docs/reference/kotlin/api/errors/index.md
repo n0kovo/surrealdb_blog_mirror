@@ -48,7 +48,7 @@ A subclass of [`SurrealRpcException`](#rpc) raised when authentication fails (fo
 
 ## `SurrealFeatureNotSupportedException` {#feature-not-supported}
 
-Raised when a feature is invoked that the current transport does not support — for example a [live query](../../concepts/live-queries.md) or [transaction](../../concepts/transactions.md) over HTTP. Extends the base [`SurrealException`](#surreal-exception). Guard against it with [`.supports()`](../core/surreal-client.md#supports).
+Raised when a feature is invoked that the current transport does not support - for example a [live query](../../concepts/live-queries.md) or [transaction](../../concepts/transactions.md) over HTTP. Extends the base [`SurrealException`](#surreal-exception). Guard against it with [`.supports()`](../core/surreal-client.md#supports).
 
 ```kotlin title="Example"
 

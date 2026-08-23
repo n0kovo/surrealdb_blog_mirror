@@ -12,7 +12,7 @@ The `surreal mcp` subcommand starts the built-in [Model Context Protocol](https:
 For HTTP-based clients against a running server, use [`surreal start`](start.md) and connect to the **`/mcp`** endpoint instead. See [When to use `surreal mcp` vs `surreal start`](../../../../build/ai-agents/mcp/embedded.md#when-to-use-surreal-mcp-vs-surreal-start) for the comparison, and [Embedded MCP](../../../../build/ai-agents/mcp/embedded.md) for transports, editor setup, and security.
 
 > [!WARNING]
-> Stdio MCP is intended for a trusted operator on the same machine. Do not expose this process to untrusted users — there is no per-call HTTP authentication surface to re-bind credentials.
+> Stdio MCP is intended for a trusted operator on the same machine. Do not expose this process to untrusted users - there is no per-call HTTP authentication surface to re-bind credentials.
 
 <Synopsis>
 surreal mcp [OPTIONS] [PATH]

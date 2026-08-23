@@ -1,7 +1,7 @@
 ---
 position: 2
 title: auth
-description: Reference for surrealctl auth — signing in, signing out, inspecting the stored credential, renewing it, and listing what it is permitted to do.
+description: Reference for surrealctl auth - signing in, signing out, inspecting the stored credential, renewing it, and listing what it is permitted to do.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/auth.mdx"
 ---
 
@@ -230,7 +230,7 @@ write:cloud-instances
 
 The single column is `scope`.
 
-**Refusals.** With nothing signed in, this exits `3` — a script asking "what may this credential do" and getting an empty list would read it as "nothing is permitted" rather than "nothing is signed in".
+**Refusals.** With nothing signed in, this exits `3` - a script asking "what may this credential do" and getting an empty list would read it as "nothing is permitted" rather than "nothing is signed in".
 
 On a login session the list is empty, and a sentence on stderr points at [`org permissions`](org.md#org-permissions): identity scopes are not an authorisation model, and your role in the organisation is what decides what you may do.
 
@@ -238,8 +238,8 @@ For the catalogue of scopes a token *can* be granted, use [`token scopes`](token
 
 ## Related pages
 
-- [Authentication](../authentication.md) — the credential model, login flows and credential storage
-- [`token` commands](token.md) — creating and revoking personal access tokens
-- [`context` commands](context.md) — switching between profiles
-- [Overview](../overview.md) — the rest of the reference
-- [SurrealDB CLI](../../surrealdb-cli/overview.md) — database-level authentication, which these credentials do not cover
+- [Authentication](../authentication.md) - the credential model, login flows and credential storage
+- [`token` commands](token.md) - creating and revoking personal access tokens
+- [`context` commands](context.md) - switching between profiles
+- [Overview](../overview.md) - the rest of the reference
+- [SurrealDB CLI](../../surrealdb-cli/overview.md) - database-level authentication, which these credentials do not cover

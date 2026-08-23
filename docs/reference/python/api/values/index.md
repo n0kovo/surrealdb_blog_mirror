@@ -62,16 +62,16 @@ Tokens = str
 
 ## Custom types
 
-- [`RecordID`](record-id.md) — Record identifier with table name and ID components
-- [`Table`](table.md) — Table name wrapper for type-safe references
-- [`Datetime`](datetime.md) — Datetime wrapper for SurrealDB datetime values
-- [`Duration`](duration.md) — Duration with nanosecond precision and unit conversion
-- [`Range`](range.md) — Range type with inclusive and exclusive bounds
-- [`Geometry`](geometry.md) — GeoJSON-compatible geometry types for spatial data
+- [`RecordID`](record-id.md) - Record identifier with table name and ID components
+- [`Table`](table.md) - Table name wrapper for type-safe references
+- [`Datetime`](datetime.md) - Datetime wrapper for SurrealDB datetime values
+- [`Duration`](duration.md) - Duration with nanosecond precision and unit conversion
+- [`Range`](range.md) - Range type with inclusive and exclusive bounds
+- [`Geometry`](geometry.md) - GeoJSON-compatible geometry types for spatial data
 
 ---
 
 ## See also
 
-- [Surreal](../core/surreal.md) — Connection and query methods
-- [Errors](../errors/index.md) — Error classes reference
+- [Surreal](../core/surreal.md) - Connection and query methods
+- [Errors](../errors/index.md) - Error classes reference

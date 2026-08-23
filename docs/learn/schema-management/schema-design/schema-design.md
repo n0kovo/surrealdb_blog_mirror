@@ -59,4 +59,4 @@ INFO FOR DB;
 * [Tables](../tables-and-fields/tables.md) and [fields](../tables-and-fields/fields-and-validation.md)
 * [Schema best practices](schema-best-practices.md)
 * [Schema evolution](schema-evolution.md)
-* [SurrealKit schema migration](../../../manage/schema-migration/index.md) — manage `.surql` schema files and apply them with sync or rollouts
+* [SurrealKit schema migration](../../../manage/schema-migration/index.md) - manage `.surql` schema files and apply them with sync or rollouts

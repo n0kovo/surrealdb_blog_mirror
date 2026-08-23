@@ -1,7 +1,7 @@
 ---
 position: 0
 title: Observability
-description: Logging, Prometheus pull, OTLP push, Enterprise pipelines, metric catalogues, and Tokio console — production visibility for SurrealDB Community and Enterprise.
+description: Logging, Prometheus pull, OTLP push, Enterprise pipelines, metric catalogues, and Tokio console - production visibility for SurrealDB Community and Enterprise.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/observability/index.mdx"
 ---
 
@@ -9,21 +9,21 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 SurrealDB exposes **logging**, **metrics**, **traces**, and (with **SurrealDB Enterprise**) durable **audit** and **slow-query** record pipelines through one OpenTelemetry-oriented surface. Signals can leave the process in two complementary ways:
 
-- **Pull** — scrapers call `GET /metrics` (Prometheus text exposition).
-- **Push** — the server exports metrics, logs, and traces over **OTLP** to a collector when `SURREAL_TELEMETRY_PROVIDER=otlp`.
+- **Pull** - scrapers call `GET /metrics` (Prometheus text exposition).
+- **Push** - the server exports metrics, logs, and traces over **OTLP** to a collector when `SURREAL_TELEMETRY_PROVIDER=otlp`.
 
 Both paths can run together or independently; each is controlled with environment variables documented on the [configuration reference](configuration.md).
 
 **Suggested reading order**
 
-1. [Logging](logging.md) — stderr, JSON, files, sockets, and line-based slow-query logging (no metrics stack required).
-2. [Observability (metrics and Prometheus)](observability.md) — `GET /metrics`, naming, migration from pre-3.1 series, the public allowlist, and behaviour common to **Community and Enterprise**.
-3. [Telemetry (OTLP)](telemetry.md) — push export, intervals, and backward-compatible instruments on the wire.
-4. [Enterprise observability](enterprise-observability.md) — cluster metrics, audit and slow-query file pipelines, pipeline self-metrics, and OTLP log export opt-ins.
-5. [Metrics reference](metrics.md) — full catalogue, labels, alert hints, and the 3.0 → 3.1 migration table.
-6. [Configuration](configuration.md) — every telemetry, audit, and slow-query environment variable.
-7. [Audit logging](audit-logging.md) and [Slow-query logging](slow-query-logging.md) — Enterprise pipeline references.
-8. [Tokio console](tokio-console.md) — optional async-runtime debugging alongside metrics and traces.
+1. [Logging](logging.md) - stderr, JSON, files, sockets, and line-based slow-query logging (no metrics stack required).
+2. [Observability (metrics and Prometheus)](observability.md) - `GET /metrics`, naming, migration from pre-3.1 series, the public allowlist, and behaviour common to **Community and Enterprise**.
+3. [Telemetry (OTLP)](telemetry.md) - push export, intervals, and backward-compatible instruments on the wire.
+4. [Enterprise observability](enterprise-observability.md) - cluster metrics, audit and slow-query file pipelines, pipeline self-metrics, and OTLP log export opt-ins.
+5. [Metrics reference](metrics.md) - full catalogue, labels, alert hints, and the 3.0 → 3.1 migration table.
+6. [Configuration](configuration.md) - every telemetry, audit, and slow-query environment variable.
+7. [Audit logging](audit-logging.md) and [Slow-query logging](slow-query-logging.md) - Enterprise pipeline references.
+8. [Tokio console](tokio-console.md) - optional async-runtime debugging alongside metrics and traces.
 
 **Pull** means scrapers call your server. **Push** means the server opens an export connection to a collector. From SurrealDB 3.1 onward, both paths share the same instruments. Canonical prose also ships in-tree: [`doc/OBSERVABILITY.md`](https://github.com/surrealdb/surrealdb/blob/main/doc/OBSERVABILITY.md) and [`doc/TELEMETRY.md`](https://github.com/surrealdb/surrealdb/blob/main/doc/TELEMETRY.md); the Enterprise distribution extends `doc/OBSERVABILITY.md` with **[C]** / **[E]** catalogue markers.
 
@@ -66,32 +66,32 @@ The Community server publishes the full set of primary signal families. The Ente
         </tr>
         <tr>
             <td scope="row" data-label="Capability">Cluster metrics (`surrealdb.ds.*`)</td>
-            <td scope="row" data-label="Community">—</td>
+            <td scope="row" data-label="Community">-</td>
             <td scope="row" data-label="Enterprise"><Edition value="enterprise" /> (when the distributed storage runtime is deployed)</td>
         </tr>
         <tr>
             <td scope="row" data-label="Capability">Audit log records (file sink + optional OTel logs)</td>
-            <td scope="row" data-label="Community">—</td>
+            <td scope="row" data-label="Community">-</td>
             <td scope="row" data-label="Enterprise"><Edition value="enterprise" /></td>
         </tr>
         <tr>
             <td scope="row" data-label="Capability">Slow-query log records (file sink + optional OTel logs)</td>
-            <td scope="row" data-label="Community">—</td>
+            <td scope="row" data-label="Community">-</td>
             <td scope="row" data-label="Enterprise"><Edition value="enterprise" /></td>
         </tr>
         <tr>
             <td scope="row" data-label="Capability">Hash-chained, tamper-evident records</td>
-            <td scope="row" data-label="Community">—</td>
+            <td scope="row" data-label="Community">-</td>
             <td scope="row" data-label="Enterprise"><Edition value="enterprise" /></td>
         </tr>
         <tr>
             <td scope="row" data-label="Capability">Three-pass redaction (literal, identifier, regex)</td>
-            <td scope="row" data-label="Community">—</td>
+            <td scope="row" data-label="Community">-</td>
             <td scope="row" data-label="Enterprise"><Edition value="enterprise" /></td>
         </tr>
         <tr>
             <td scope="row" data-label="Capability">Per-tenant rollup scope (`surrealdb.tenant`) <em>(reserved)</em></td>
-            <td scope="row" data-label="Community">—</td>
+            <td scope="row" data-label="Community">-</td>
             <td scope="row" data-label="Enterprise"><Edition value="enterprise" /></td>
         </tr>
     </tbody>
@@ -109,10 +109,10 @@ The `/metrics` endpoint is mounted by default. Anonymous scrapers receive only t
 # Start the server (Community example)
 surreal start --user root --pass secret
 
-# Anonymous scrape — public allowlist only
+# Anonymous scrape - public allowlist only
 curl http://127.0.0.1:8000/metrics
 
-# Operator scrape — full surface, including labelled families
+# Operator scrape - full surface, including labelled families
 curl -u root:secret http://127.0.0.1:8000/metrics
 ```
 
@@ -146,7 +146,7 @@ Audit and slow-query records flow over OTLP **only when explicitly opted in** pe
 
 *Since v3.1.0*
 
-- A reworked metric namespace — every instrument is now `surrealdb.*`, grouped by signal family (statement, query, transaction, RPC, …). Names from 3.0 are mapped in the [migration table](metrics.md#migration-from-30).
+- A reworked metric namespace - every instrument is now `surrealdb.*`, grouped by signal family (statement, query, transaction, RPC, …). Names from 3.0 are mapped in the [migration table](metrics.md#migration-from-30).
 - **Dual access paths.** Prometheus pull on `/metrics` and OTLP push run side-by-side. Both pipelines can be toggled independently.
 - **Public metrics allowlist (`PUBLIC_METRICS`).** Six low-sensitivity gauges are safe to expose anonymously; the rest require root credentials.
 - **Audit log pipeline.** <Edition value="enterprise" /> Durable NDJSON file sink with size-based rotation, tunable fsync cadence, optional hash chaining for tamper-evidence, and three-pass redaction.
@@ -164,12 +164,12 @@ Audit and slow-query records flow over OTLP **only when explicitly opted in** pe
 - **[Configuration reference](configuration.md)** — All telemetry, audit log and slow-query log environment variables, plus recommended configurations for local, production and multi-tenant deployments.
 - **[Audit logging](audit-logging.md)** — Enterprise audit log pipeline: events captured, record shape, rotation, hash chaining and redaction.
 - **[Slow-query logging](slow-query-logging.md)** — Enterprise slow-query log pipeline: how a query qualifies, record shape and pipeline self-metrics.
-- **[Tokio console](tokio-console.md)** — Optional Tokio runtime debugging — tasks, poll times, and scheduling alongside metrics and traces.
+- **[Tokio console](tokio-console.md)** — Optional Tokio runtime debugging - tasks, poll times, and scheduling alongside metrics and traces.
 - **[Instance monitoring](../instances/monitoring.md)** — The built-in monitoring dashboard, log retention and metrics views for managed instances.
 - **[Self-hosted monitoring](../self-hosted/monitoring-and-observability.md)** — Pairing the `/health` endpoint, Prometheus and Grafana with the observability surface for a self-hosted deployment.
 
 ## Structured logs versus audit and slow-query records
 
-Server **structured logs** (levels, format, files, sockets, and the `--slow-log-*` line-based slow-query helpers) are configured on [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md) and in the [environment variables](../../reference/cli/surrealdb-cli/environment-variables.md) catalogue — see [Logging](logging.md). That stream is separate from the **Enterprise audit** and **slow-query** NDJSON pipelines, which have their own sinks and optional OTel log export — see [Audit logging](audit-logging.md) and [Slow-query logging](slow-query-logging.md).
+Server **structured logs** (levels, format, files, sockets, and the `--slow-log-*` line-based slow-query helpers) are configured on [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md) and in the [environment variables](../../reference/cli/surrealdb-cli/environment-variables.md) catalogue - see [Logging](logging.md). That stream is separate from the **Enterprise audit** and **slow-query** NDJSON pipelines, which have their own sinks and optional OTel log export - see [Audit logging](audit-logging.md) and [Slow-query logging](slow-query-logging.md).
 
 For async runtime introspection (tasks, poll histograms), use the [Tokio console](tokio-console.md) on trusted hosts only; it complements OTLP and `/metrics`, it does not replace them.

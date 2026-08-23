@@ -9,8 +9,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 SurrealDB Agent Memory serves MCP (Streamable HTTP) at **`/mcp`** on the same host and port as the REST API. Point any MCP client at that endpoint:
 
-- **SurrealDB Cloud** — your context host from SurrealDB Studio **API keys** with `/mcp` appended, for example `https://abc123.spectron.cloud/mcp`.
-- **Self-hosted** — your server's base URL plus `/mcp`, for example `http://localhost:9090/mcp`.
+- **SurrealDB Cloud** - your context host from SurrealDB Studio **API keys** with `/mcp` appended, for example `https://abc123.spectron.cloud/mcp`.
+- **Self-hosted** - your server's base URL plus `/mcp`, for example `http://localhost:9090/mcp`.
 
 Authentication uses **`Authorization: Bearer`**, the same as REST. Each key is bound to one Context, so `context_id` is optional on every tool call. The tools map to the unified substrate: `remember`, `recall`, `context`, `reflect`, `forget`, `upload`, `inspect`.
 
@@ -25,7 +25,7 @@ npx install-mcp https://<your-context-host>/mcp \
   --oauth no
 ```
 
-Use this for `cursor`, `vscode`, `windsurf`, `zed`, and `opencode`. **Claude** (Code, Cowork, Desktop) and **Codex** have a dedicated SurrealDB plugin — see the [Claude](coding-assistants/claude-desktop-and-code.md) and [Codex](coding-assistants/codex.md) guides. JetBrains and Antigravity use the manual configuration below.
+Use this for `cursor`, `vscode`, `windsurf`, `zed`, and `opencode`. **Claude** (Code, Cowork, Desktop) and **Codex** have a dedicated SurrealDB plugin - see the [Claude](coding-assistants/claude-desktop-and-code.md) and [Codex](coding-assistants/codex.md) guides. JetBrains and Antigravity use the manual configuration below.
 
 ## Manual configuration
 
@@ -44,7 +44,7 @@ Any MCP client can be configured by hand:
 }
 ```
 
-Some clients use a different key or shape — `serverUrl` in Windsurf and Antigravity, a `servers` object with a `type` field in VS Code. The per-client guides show each one.
+Some clients use a different key or shape - `serverUrl` in Windsurf and Antigravity, a `servers` object with a `type` field in VS Code. The per-client guides show each one.
 
 ## Per-client guides
 

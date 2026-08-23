@@ -94,11 +94,11 @@ These functions can be used when working with and manipulating text and string v
     </tr>
     <tr>
       <td><a href="#stringdistancedamerau_levenshtein">`string::distance::damerau_levenshtein()`</a></td>
-      <td>Returns the Damerau–Levenshtein distance between two strings</td>
+      <td>Returns the Damerau - Levenshtein distance between two strings</td>
     </tr>
     <tr>
       <td><a href="#stringdistancenormalizeddamerau_levenshtein">`string::distance::normalized_damerau_levenshtein()`</a></td>
-      <td>Returns the normalised Damerau–Levenshtein distance between two strings</td>
+      <td>Returns the normalised Damerau - Levenshtein distance between two strings</td>
     </tr>    
     <tr>
       <td><a href="#stringdistancehamming">`string::distance::hamming()`</a></td>

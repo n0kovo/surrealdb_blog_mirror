@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Executing queries
 
-The [`.query()`](../api/core/surreal-client.md#query) family runs raw [SurrealQL](../../query-language/index.md) and is the foundation of the SDK — the [CRUD builders](data-manipulation.md) compile to SurrealQL and dispatch through it. Queries can be supplied as a string with a [`JsonObject`](value-types.md) of bound parameters, or built with the [`surql`](#building-queries) DSL.
+The [`.query()`](../api/core/surreal-client.md#query) family runs raw [SurrealQL](../../query-language/index.md) and is the foundation of the SDK - the [CRUD builders](data-manipulation.md) compile to SurrealQL and dispatch through it. Queries can be supplied as a string with a [`JsonObject`](value-types.md) of bound parameters, or built with the [`surql`](#building-queries) DSL.
 
 ## API references
 

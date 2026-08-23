@@ -101,7 +101,7 @@ Starts a new interactive transaction within this session.
 tx, err := session.Begin(ctx)
 ```
 
-**Returns:** `(*Transaction, error)` — see [`Transaction`](transaction.md)
+**Returns:** `(*Transaction, error)` - see [`Transaction`](transaction.md)
 
 Returns [`ErrSessionClosed`](../errors/index.md#sentinel-errors) if the session has been detached.
 

@@ -17,13 +17,13 @@ Every SurrealDB transaction runs under **snapshot isolation**. When a transactio
 
 SurrealDB does not offer weaker isolation levels. You cannot downgrade to read committed or read uncommitted.
 
-On commit, the engine checks for **write–write conflicts**. If two concurrent transactions modified the same key, the later commit fails with a transaction conflict error and must be retried. There is no silent last-writer-wins merge at the storage layer.
+On commit, the engine checks for **write - write conflicts**. If two concurrent transactions modified the same key, the later commit fails with a transaction conflict error and must be retried. There is no silent last-writer-wins merge at the storage layer.
 
 These semantics apply across deployment models and storage backends: embedded and server, single-node and distributed, RocksDB, SurrealKV, SurrealMX, and browser IndexedDB. The query layer enforces the same isolation contract regardless of which engine persists the keys underneath.
 
 ## What you get in practice
 
-Snapshot isolation with write–write conflict detection on commit gives you strong protection against the anomalies most application developers worry about:
+Snapshot isolation with write - write conflict detection on commit gives you strong protection against the anomalies most application developers worry about:
 
 | Anomaly | Protected? | Notes |
 | --- | --- | --- |
@@ -51,11 +51,11 @@ If any statement in the transaction fails, or you [CANCEL](reference/query-langu
 
 Client SDKs expose the same model through transaction handles. See the transactions guide for your language under [SDKs](languages/javascript.md).
 
-## Write–write conflicts and retries
+## Write - write conflicts and retries
 
 When a commit fails because another transaction wrote the same key first, SurrealDB returns a **transaction conflict** error. Your application (or client retry logic) should run the transaction again.
 
-This is normal under concurrent load, not a sign of data corruption. At scale, rising conflict rates show up in metrics such as `surrealdb_transaction_conflicts_total` — see [Observability](manage/observability/metrics.md) for monitoring guidance.
+This is normal under concurrent load, not a sign of data corruption. At scale, rising conflict rates show up in metrics such as `surrealdb_transaction_conflicts_total` - see [Observability](manage/observability/metrics.md) for monitoring guidance.
 
 Design tip: keep transactions short and touch the fewest keys necessary. Long-running transactions that overlap on hot keys see more conflicts.
 
@@ -73,7 +73,7 @@ If write skew matters for your workload, encode the invariant inside the transac
 | --- | --- |
 | **Atomicity** | A transaction’s statements commit together or roll back together. |
 | **Consistency** | Schema, permissions, and statement semantics apply on every commit; you define business invariants in SurrealQL and application code. |
-| **Isolation** | Snapshot isolation on all storage backends; write–write conflicts abort on commit. |
-| **Durability** | Committed data persists according to your storage engine and sync settings — see [File-backed storage](running/file-backed.md) and [Deployment models](manage/self-hosted/deployment-models.md). |
+| **Isolation** | Snapshot isolation on all storage backends; write - write conflicts abort on commit. |
+| **Durability** | Committed data persists according to your storage engine and sync settings - see [File-backed storage](running/file-backed.md) and [Deployment models](manage/self-hosted/deployment-models.md). |
 
-Some features deliberately step outside the triggering transaction’s ACID boundary — for example, [`ASYNC` events](reference/query-language/statements/define/event.md#async-events) run after commit in a separate transaction. Use them only when that trade-off is acceptable.
+Some features deliberately step outside the triggering transaction’s ACID boundary - for example, [`ASYNC` events](reference/query-language/statements/define/event.md#async-events) run after commit in a separate transaction. Use them only when that trade-off is acceptable.

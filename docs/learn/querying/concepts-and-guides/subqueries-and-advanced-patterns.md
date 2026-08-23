@@ -55,8 +55,8 @@ Patterns such as appending a new comment id to a record are covered in [record r
 
 In nested contexts, SurrealDB predefines:
 
-- **`$this`** — the current record in the **inner** scope.
-- **`$parent`** — the current record in the **enclosing** scope.
+- **`$this`** - the current record in the **inner** scope.
+- **`$parent`** - the current record in the **enclosing** scope.
 
 They let an inner `SELECT` relate its `WHERE` clause to the record being processed outside.
 
@@ -77,11 +77,11 @@ SELECT
 FROM person;
 ```
 
-Full detail: [Reserved variables — `$parent`, `$this`](../../../reference/query-language/language-primitives/parameters.md#parent-this).
+Full detail: [Reserved variables - `$parent`, `$this`](../../../reference/query-language/language-primitives/parameters.md#parent-this).
 
 ## Latest record per group
 
-A common pattern is to return the **most recently modified record** for each distinct value of a field — the equivalent of a `ROW_NUMBER() OVER (PARTITION BY … ORDER BY …)` window in SQL. In SurrealQL you can combine [`GROUP BY`](../../../reference/query-language/clauses/group.md), [`.map()`](../../../reference/query-language/functions/database-functions/array.md#arraymap), and a nested [`SELECT`](../../../reference/query-language/statements/select.md):
+A common pattern is to return the **most recently modified record** for each distinct value of a field - the equivalent of a `ROW_NUMBER() OVER (PARTITION BY … ORDER BY …)` window in SQL. In SurrealQL you can combine [`GROUP BY`](../../../reference/query-language/clauses/group.md), [`.map()`](../../../reference/query-language/functions/database-functions/array.md#arraymap), and a nested [`SELECT`](../../../reference/query-language/statements/select.md):
 
 ```surql
 CREATE person:1 SET role = "user", modified_at = d'1970-01-01';

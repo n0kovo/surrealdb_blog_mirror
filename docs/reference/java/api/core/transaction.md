@@ -111,7 +111,7 @@ try (Surreal db = new Surreal()) {
 
 ## See also
 
-- [Surreal](surreal.md) — Connection and method reference
-- [Response](response.md) — Query response reference
-- [Transactions](../../concepts/transactions.md) — Transaction concepts and patterns
-- [SurrealQL BEGIN](../../../query-language/statements/begin.md) — Server-side transaction syntax
+- [Surreal](surreal.md) - Connection and method reference
+- [Response](response.md) - Query response reference
+- [Transactions](../../concepts/transactions.md) - Transaction concepts and patterns
+- [SurrealQL BEGIN](../../../query-language/statements/begin.md) - Server-side transaction syntax

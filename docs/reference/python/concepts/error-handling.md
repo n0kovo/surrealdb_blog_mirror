@@ -163,7 +163,7 @@ db = Surreal("ws://localhost:8000")
 try:
     db.select("users")
 except ConnectionUnavailableError:
-    print("Not connected — call db.connect() first")
+    print("Not connected - call db.connect() first")
 ```
 
 An [`UnsupportedFeatureError`](../api/errors/index.md#unsupportedfeatureerror) is raised when you attempt to use a feature that requires a specific connection type. For example, sessions and transactions require a WebSocket connection.

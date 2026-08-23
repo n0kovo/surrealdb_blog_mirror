@@ -351,7 +351,7 @@ DEFINE FIELD user ON TABLE post TYPE option<record<user>>;
 
 ### Flexible data types
 
-On a `SCHEMAFULL` table, every `object` is schemafull by default, meaning that only fields you define with nested `DEFINE FIELD` statements are allowed. The `FLEXIBLE` field clause relaxes that rule for a single field. It must appear immediately after `TYPE`, and it applies to **every `object` reachable in that field's type** — including objects inside `array<object>`, `option<object>`, union arms, and object literals.
+On a `SCHEMAFULL` table, every `object` is schemafull by default, meaning that only fields you define with nested `DEFINE FIELD` statements are allowed. The `FLEXIBLE` field clause relaxes that rule for a single field. It must appear immediately after `TYPE`, and it applies to **every `object` reachable in that field's type** - including objects inside `array<object>`, `option<object>`, union arms, and object literals.
 
 `FLEXIBLE` is not part of the type expression. Writing `TYPE object FLEXIBLE` declares a field of type `object`, then sets the field's flexible flag. The same applies to `TYPE array<object> FLEXIBLE`: the stored type is `array<object>`, and each object element accepts arbitrary keys.
 
@@ -792,7 +792,7 @@ DEFINE FIELD view_count ON article COMPUTED fn::record_view();
 
 The same rule holds when the function changes rather than the field: `DEFINE FUNCTION` and `ALTER FUNCTION` refuse a body that starts to write while a computed field still depends on it. See [Functions that other definitions require to stay read-only](function.md#functions-that-other-definitions-require-to-stay-read-only).
 
-A write that cannot be resolved when the field is defined — one reached through [`eval::surql()`](../../functions/database-functions/eval.md#evalsurql), a JavaScript function, or a closure that arrives as data — is still accepted at definition time. The write is refused when the field is read.
+A write that cannot be resolved when the field is defined - one reached through [`eval::surql()`](../../functions/database-functions/eval.md#evalsurql), a JavaScript function, or a closure that arrives as data - is still accepted at definition time. The write is refused when the field is read.
 
 > [!NOTE]
 > These checks are relaxed under `OPTION IMPORT`, so an [export](../../../cli/surrealdb-cli/commands/export.md) taken before the rules existed still restores.
@@ -836,7 +836,7 @@ The record user can read `article`, so the row is returned. They cannot read `au
 ```
 
 > [!NOTE]
-> For record and anonymous readers the narrowing is skipped altogether, because a system user's ceiling cannot narrow them any further. Auth limiting never escalates the reader — see [Capabilities](../../../../learn/security/authorization/capabilities.md).
+> For record and anonymous readers the narrowing is skipped altogether, because a system user's ceiling cannot narrow them any further. Auth limiting never escalates the reader - see [Capabilities](../../../../learn/security/authorization/capabilities.md).
 
 ### A computed field's own select permission is enforced everywhere
 

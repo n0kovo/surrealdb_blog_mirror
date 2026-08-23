@@ -15,7 +15,7 @@ The audit log, slow-query log and cluster configuration surfaces are new in Surr
 
 ## How to read this page
 
-- **Default** is the value used when the variable is unset. Cells marked `—` are required when the surrounding feature is enabled.
+- **Default** is the value used when the variable is unset. Cells marked ` - ` are required when the surrounding feature is enabled.
 - **Edition** identifies which builds register the variable. Variables marked <Edition value="enterprise" /> are no-ops on a Community binary.
 - All variables can be set via environment, a `.env` file loaded by the deployment, or the orchestrator's secret store.
 
@@ -106,7 +106,7 @@ Controls the [Enterprise audit log pipeline](audit-logging.md). Setting `SURREAL
         </tr>
         <tr>
             <td scope="row" data-label="Variable">`SURREAL_AUDIT_FILE_PATH`</td>
-            <td scope="row" data-label="Default">—</td>
+            <td scope="row" data-label="Default">-</td>
             <td scope="row" data-label="Purpose">Required when `SURREAL_AUDIT_SINK=file`. Parent directory must exist; startup fails loudly if it doesn't. File is opened with mode `0600` on Unix.</td>
         </tr>
         <tr>
@@ -127,7 +127,7 @@ Controls the [Enterprise audit log pipeline](audit-logging.md). Setting `SURREAL
         <tr>
             <td scope="row" data-label="Variable">`SURREAL_AUDIT_HASH_CHAIN`</td>
             <td scope="row" data-label="Default">`false`</td>
-            <td scope="row" data-label="Purpose">Adds `prev_hash` / `hash` SHA-256 fields to every record for tamper-evidence. <strong>Requires `SURREAL_AUDIT_FSYNC_EVERY=1`</strong> — startup fails otherwise.</td>
+            <td scope="row" data-label="Purpose">Adds `prev_hash` / `hash` SHA-256 fields to every record for tamper-evidence. <strong>Requires `SURREAL_AUDIT_FSYNC_EVERY=1`</strong> - startup fails otherwise.</td>
         </tr>
         <tr>
             <td scope="row" data-label="Variable">`SURREAL_AUDIT_INCLUDE_SQL`</td>
@@ -146,12 +146,12 @@ Controls the [Enterprise audit log pipeline](audit-logging.md). Setting `SURREAL
         </tr>
         <tr>
             <td scope="row" data-label="Variable">`SURREAL_AUDIT_REDACT_TABLES`</td>
-            <td scope="row" data-label="Default">—</td>
+            <td scope="row" data-label="Default">-</td>
             <td scope="row" data-label="Purpose">Comma-separated identifier tokens replaced with `***` in captured SQL.</td>
         </tr>
         <tr>
             <td scope="row" data-label="Variable">`SURREAL_AUDIT_REDACT_REGEX`</td>
-            <td scope="row" data-label="Default">—</td>
+            <td scope="row" data-label="Default">-</td>
             <td scope="row" data-label="Purpose"><strong>Semicolon-separated</strong> regex patterns applied to captured SQL. Each pattern is compiled at startup; an invalid pattern fails startup.</td>
         </tr>
         <tr>
@@ -189,7 +189,7 @@ Controls the [Enterprise slow-query log pipeline](slow-query-logging.md). Settin
         </tr>
         <tr>
             <td scope="row" data-label="Variable">`SURREAL_SLOW_QUERY_FILE_PATH`</td>
-            <td scope="row" data-label="Default">—</td>
+            <td scope="row" data-label="Default">-</td>
             <td scope="row" data-label="Purpose">Required when the sink is `file`.</td>
         </tr>
         <tr>
@@ -214,7 +214,7 @@ Controls the [Enterprise slow-query log pipeline](slow-query-logging.md). Settin
         </tr>
         <tr>
             <td scope="row" data-label="Variable">`SURREAL_SLOW_QUERY_THRESHOLD_MS`</td>
-            <td scope="row" data-label="Default">—</td>
+            <td scope="row" data-label="Default">-</td>
             <td scope="row" data-label="Purpose">Duration threshold above which a statement is captured. Required when the sink is enabled.</td>
         </tr>
         <tr>
@@ -230,16 +230,16 @@ Controls the [Enterprise slow-query log pipeline](slow-query-logging.md). Settin
         <tr>
             <td scope="row" data-label="Variable">`SURREAL_SLOW_QUERY_OVERFLOW`</td>
             <td scope="row" data-label="Default">`drop`</td>
-            <td scope="row" data-label="Purpose"><strong>Default differs from audit</strong> — slow-query records are triage data, so dropping is preferred over busy-yielding the executor.</td>
+            <td scope="row" data-label="Purpose"><strong>Default differs from audit</strong> - slow-query records are triage data, so dropping is preferred over busy-yielding the executor.</td>
         </tr>
         <tr>
             <td scope="row" data-label="Variable">`SURREAL_SLOW_QUERY_REDACT_TABLES`</td>
-            <td scope="row" data-label="Default">—</td>
+            <td scope="row" data-label="Default">-</td>
             <td scope="row" data-label="Purpose">Same syntax as the audit equivalent.</td>
         </tr>
         <tr>
             <td scope="row" data-label="Variable">`SURREAL_SLOW_QUERY_REDACT_REGEX`</td>
-            <td scope="row" data-label="Default">—</td>
+            <td scope="row" data-label="Default">-</td>
             <td scope="row" data-label="Purpose">Same syntax as the audit equivalent.</td>
         </tr>
         <tr>
@@ -260,7 +260,7 @@ Controls the [Enterprise slow-query log pipeline](slow-query-logging.md). Settin
 <Edition value="enterprise" />
 
 > [!NOTE]
-> The `SURREAL_DS_*` variables below apply to multi-node clusters, which use distributed storage with replication and consensus — on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) or in self-hosted Enterprise installations.
+> The `SURREAL_DS_*` variables below apply to multi-node clusters, which use distributed storage with replication and consensus - on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) or in self-hosted Enterprise installations.
 
 A short list of the cluster networking, consensus and storage-memory knobs that operators routinely tune in response to a metric signal. The complete `SURREAL_DS_*` reference is part of the Enterprise Kubernetes deployment guide.
 
@@ -310,14 +310,14 @@ A short list of the cluster networking, consensus and storage-memory knobs that 
         </tr>
         <tr>
             <td scope="row" data-label="Variable">`SURREAL_DS_ROCKSDB_MAX_WRITE_BUFFER_NUMBER`*Since v3.1.1*</td>
-            <td scope="row" data-label="Default">Derived from detected memory (`2`–`32`)</td>
+            <td scope="row" data-label="Default">Derived from detected memory (`2`-`32`)</td>
             <td scope="row" data-label="Trigger">RSS pressure during sustained write phases. The memtable ceiling is this value multiplied by `SURREAL_DS_ROCKSDB_WRITE_BUFFER_SIZE` and by the four heavy column families, so it is the knob to cap first when headroom is tight.</td>
         </tr>
     </tbody>
 </table>
 
 > [!NOTE]
-> `SURREAL_DS_ROCKSDB_*` applies only when a node's store path selects the RocksDB durable backend. Memtable and block-cache memory are accounted together, and an undersized write budget presents as write latency rather than errors — but the operative limits are the per-column-family memtable count and the L0 compaction trigger, not the combined ceiling. `SURREAL_DS_ROCKSDB_WRITE_BUFFER_SIZE` sets the per-column-family memtable size; the complete reference is in the Enterprise Kubernetes deployment guide.
+> `SURREAL_DS_ROCKSDB_*` applies only when a node's store path selects the RocksDB durable backend. Memtable and block-cache memory are accounted together, and an undersized write budget presents as write latency rather than errors - but the operative limits are the per-column-family memtable count and the L0 compaction trigger, not the combined ceiling. `SURREAL_DS_ROCKSDB_WRITE_BUFFER_SIZE` sets the per-column-family memtable size; the complete reference is in the Enterprise Kubernetes deployment guide.
 
 ## Recommended configurations
 
@@ -359,7 +359,7 @@ SURREAL_TELEMETRY_PROVIDER=otlp
 OTEL_EXPORTER_OTLP_ENDPOINT=https://collector.internal:4317
 OTEL_METRIC_EXPORT_INTERVAL=30000
 
-# Audit log (Enterprise) — durable, hash-chained
+# Audit log (Enterprise) - durable, hash-chained
 SURREAL_AUDIT_SINK=file
 SURREAL_AUDIT_FILE_PATH=/var/log/surrealdb/audit.log
 SURREAL_AUDIT_FSYNC_EVERY=1
@@ -368,7 +368,7 @@ SURREAL_AUDIT_INCLUDE_SQL=true
 SURREAL_AUDIT_REDACT_LITERALS=true
 SURREAL_AUDIT_OVERFLOW=block
 
-# Slow-query log (Enterprise) — best-effort triage data
+# Slow-query log (Enterprise) - best-effort triage data
 SURREAL_SLOW_QUERY_SINK=file
 SURREAL_SLOW_QUERY_FILE_PATH=/var/log/surrealdb/slow-query.log
 SURREAL_SLOW_QUERY_THRESHOLD_MS=250
@@ -410,9 +410,9 @@ SURREAL_AUDIT_OVERFLOW=block           # already the default; explicit for clari
 
 Plus alerts on:
 
-- `surrealdb_audit_dropped` — any non-zero rate is a lost record.
-- `surrealdb_audit_append_errors` — any non-zero rate is a lost record.
-- `surrealdb_audit_queue_depth` sustained above ~50% of `SURREAL_AUDIT_QUEUE_CAPACITY` — the sink is falling behind.
+- `surrealdb_audit_dropped` - any non-zero rate is a lost record.
+- `surrealdb_audit_append_errors` - any non-zero rate is a lost record.
+- `surrealdb_audit_queue_depth` sustained above ~50% of `SURREAL_AUDIT_QUEUE_CAPACITY` - the sink is falling behind.
 
 For the full pipeline details (record shape, rotation, hash chain, redaction) see the [Audit logging](audit-logging.md) reference.
 

@@ -51,9 +51,9 @@ A sealed class emitted on the client's [`connectionEvents`](../core/surreal-clie
         <tr><th>Variant</th><th>Payload</th><th>Description</th></tr>
     </thead>
     <tbody>
-        <tr><td>`Connecting`</td><td>—</td><td>A connection attempt has started.</td></tr>
-        <tr><td>`Connected`</td><td>—</td><td>The connection is established.</td></tr>
-        <tr><td>`Disconnected`</td><td>—</td><td>The connection has dropped.</td></tr>
+        <tr><td>`Connecting`</td><td>-</td><td>A connection attempt has started.</td></tr>
+        <tr><td>`Connected`</td><td>-</td><td>The connection is established.</td></tr>
+        <tr><td>`Disconnected`</td><td>-</td><td>The connection has dropped.</td></tr>
         <tr><td>`Reconnecting`</td><td>`attempt: Int`, `delayMillis: Long`</td><td>A reconnect is scheduled.</td></tr>
         <tr><td>`Error`</td><td>`cause: Throwable`</td><td>A connection error occurred.</td></tr>
     </tbody>

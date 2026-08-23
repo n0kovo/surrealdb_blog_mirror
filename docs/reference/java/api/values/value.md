@@ -352,6 +352,6 @@ entry.getValue()
 
 ## See also
 
-- [Value types](../../concepts/value-types.md) — Type mapping overview
-- [RecordId](record-id.md) — Record identifiers
-- [SurrealQL data model](../../../query-language/language-primitives/data-types/index.md) — SurrealDB data types and structures
+- [Value types](../../concepts/value-types.md) - Type mapping overview
+- [RecordId](record-id.md) - Record identifiers
+- [SurrealQL data model](../../../query-language/language-primitives/data-types/index.md) - SurrealDB data types and structures

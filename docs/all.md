@@ -42,19 +42,19 @@ _1074 pages_
 - [Coherence, retrieval, and cost tiers](agent-memory/index/architecture/coherence-retrieval-and-tiers.md)
   Five coherence dimensions, hybrid structural retrieval, and the four-tier query ladder.
 - [Eight pillars and six categories](agent-memory/index/architecture/eight-pillars-and-categories.md)
-  The primitives SurrealDB Agent Memory operationalises – pillars of agent memory and typed experiential sub-stores.
+  The primitives SurrealDB Agent Memory operationalises - pillars of agent memory and typed experiential sub-stores.
 - [Agent Memory glossary](agent-memory/index/architecture/glossary.md)
   Alphabetical definitions of terms used across SurrealDB Agent Memory architecture and memory docs.
 - [Principles and goals](agent-memory/index/architecture/principles-and-goals.md)
-  What SurrealDB Agent Memory is built to do – and what it deliberately is not.
+  What SurrealDB Agent Memory is built to do - and what it deliberately is not.
 - [Surface, models, and security](agent-memory/index/architecture/surface-security-and-models.md)
   HTTP ingest and read verbs, integrations, model hooks, and security properties.
 - [Traces and memory evolution](agent-memory/index/architecture/traces-and-evolution.md)
   Graph-resident traces, reflection, elaboration, consolidation, and semantic response reuse.
 - [Tri-temporal model](agent-memory/index/architecture/tri-temporal-model.md)
-  System time, known time, and valid time – supersession, aging, and explicit forget.
+  System time, known time, and valid time - supersession, aging, and explicit forget.
 - [Overview](agent-memory/index/index.md)
-  Principles, architecture, quickstarts, and mental model for SurrealDB Agent Memory – memory and knowledge for AI agents on SurrealDB.
+  Principles, architecture, quickstarts, and mental model for SurrealDB Agent Memory - memory and knowledge for AI agents on SurrealDB.
 - [Bulk import](agent-memory/index/ingest/authoritative/bulk-import.md)
   Importing large quantities of documents or knowledge nodes into SurrealDB Agent Memory.
 - [Structured fact ingest](agent-memory/index/ingest/authoritative/knowledge-nodes.md)
@@ -70,17 +70,17 @@ _1074 pages_
 - [Contexts and scope](agent-memory/index/mental-model/contexts-and-scope.md)
   How Contexts isolate tenants and how scope tags partition memory within a Context.
 - [Memory categories](agent-memory/index/mental-model/memory-categories.md)
-  Episodic raw turns plus five extracted experiential categories – identity, knowledge, context, instructions, uncertainty.
+  Episodic raw turns plus five extracted experiential categories - identity, knowledge, context, instructions, uncertainty.
 - [Supersession, decay, and forget](agent-memory/index/mental-model/memory-lifecycle.md)
   Three mechanisms for how beliefs change, fade, and are removed.
 - [Provenance and traceability](agent-memory/index/mental-model/provenance-and-traceability.md)
-  The source object on every record – kinds, spans, trust, derivation, and traces.
+  The source object on every record - kinds, spans, trust, derivation, and traces.
 - [Sessions and turns](agent-memory/index/mental-model/sessions-and-turns.md)
   How conversations map to sessions, turns, and provenance.
 - [Unified substrate and authority](agent-memory/index/mental-model/two-layer-architecture.md)
-  One SurrealDB graph for authoritative and experiential knowledge – provenance and reconciliation, not two silos.
+  One SurrealDB graph for authoritative and experiential knowledge - provenance and reconciliation, not two silos.
 - [Forgetting memories](agent-memory/index/operations/forget.md)
-  How to retire or permanently erase memories — default forget, purge, and scoped erasure.
+  How to retire or permanently erase memories - default forget, purge, and scoped erasure.
 - [Profiles](agent-memory/index/operations/profiles.md)
   Auto-maintained entity profiles aggregated from memory and knowledge.
 - [Reflection](agent-memory/index/operations/reflect.md)
@@ -92,7 +92,7 @@ _1074 pages_
 - [Agent Memory on SurrealDB Cloud](agent-memory/index/quickstarts/surrealdb-cloud.md)
   How SurrealDB Agent Memory contexts, authentication, and APIs work on SurrealDB Cloud.
 - [Authority when pillars meet](agent-memory/index/reasoning/authority-hierarchy.md)
-  How the Authoritative and Experiential pillars interact – reconciliation, uncertainty, and resolves_to.
+  How the Authoritative and Experiential pillars interact - reconciliation, uncertainty, and resolves_to.
 - [Cross-layer linking](agent-memory/index/reasoning/cross-layer-linking.md)
   How authoritative documents and experiential facts relate in the unified graph.
 - [Extraction pipeline](agent-memory/index/reasoning/extraction-pipeline.md)
@@ -126,11 +126,11 @@ _1074 pages_
 - [Extraction vocabulary](agent-memory/index/tuning/ontology-grounding.md)
   How SurrealDB Agent Memory keeps entity names, attribute keys, and relation labels consistent across extractions.
 - [The accuracy promise](agent-memory/index/welcome/accuracy-promise.md)
-  Defensible correctness – provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
+  Defensible correctness - provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
 - [How it works in five minutes](agent-memory/index/welcome/how-it-works.md)
-  From a message to structured substrate state – extraction, reconciliation, traces, and tiered reads.
+  From a message to structured substrate state - extraction, reconciliation, traces, and tiered reads.
 - [What is SurrealDB Agent Memory?](agent-memory/index/welcome/what-is-surrealdb-agent-memory.md)
-  SurrealDB Agent Memory as a memory and knowledge layer – one SurrealDB substrate, provenance-first, trace-aware, tri-temporal.
+  SurrealDB Agent Memory as a memory and knowledge layer - one SurrealDB substrate, provenance-first, trace-aware, tri-temporal.
 - [Why agentic memory?](agent-memory/index/welcome/why-agentic-memory.md)
   Why conversational agents need structured memory beyond plain retrieval.
 - [Cloudflare Workers AI](agent-memory/integrations/ai-sdks/cloudflare-workers-ai.md)
@@ -172,7 +172,7 @@ _1074 pages_
 - [Strands Agents](agent-memory/integrations/frameworks/strands-agents.md)
   SurrealDB Agent Memory as tools for the Strands Agents SDK.
 - [Overview](agent-memory/integrations/index.md)
-  Connecting SurrealDB Agent Memory to your stack – SDKs, MCP server, AI SDKs, agent frameworks, voice tools, and automation.
+  Connecting SurrealDB Agent Memory to your stack - SDKs, MCP server, AI SDKs, agent frameworks, voice tools, and automation.
 - [Antigravity](agent-memory/integrations/mcp-server/coding-assistants/antigravity.md)
   Installing SurrealDB Agent Memory as an MCP server in Google Antigravity.
 - [Claude](agent-memory/integrations/mcp-server/coding-assistants/claude-desktop-and-code.md)
@@ -226,7 +226,7 @@ _1074 pages_
 - [LiveKit](agent-memory/integrations/voice/livekit.md)
   Adding SurrealDB Agent Memory to a LiveKit voice agent.
 - [Agent guide (AGENTS.md)](agent-memory/reference/agents.md)
-  Instructions for coding agents integrating with SurrealDB Agent Memory — copy into Cursor rules or skills.
+  Instructions for coding agents integrating with SurrealDB Agent Memory - copy into Cursor rules or skills.
 - [CLI](agent-memory/reference/cli.md)
   Command-line interface reference.
 - [Configuration](agent-memory/reference/configuration.md)
@@ -260,7 +260,7 @@ _1074 pages_
 - [AI frameworks](build/ai-agents/ai-frameworks.md)
   Framework integrations that let AI and machine learning libraries use SurrealDB for vectors, memory, and pipelines.
 - [AI agents](build/ai-agents/index.md)
-  The ways SurrealDB fits into AI tooling — MCP servers, Agent Skills, and framework integrations — and what the database gives an agent.
+  The ways SurrealDB fits into AI tooling - MCP servers, Agent Skills, and framework integrations - and what the database gives an agent.
 - [MCP in Claude](build/ai-agents/mcp/claude.md)
   Add the SurrealDB MCP Server to Claude Code, Claude Desktop, or the Claude app.
 - [MCP in Cursor](build/ai-agents/mcp/cursor.md)
@@ -374,7 +374,7 @@ _1074 pages_
 - [Concepts](concepts.md)
   This page gives details about some of the core concepts of SurrealDB, including the intended use cases, design choices, and overarching features.
 - [Introduction](explore/ml-models/index.md)
-  SurrealML stores and runs trained ML models in SurrealDB—train in Python, then load and infer with sklearn or PyTorch.
+  SurrealML stores and runs trained ML models in SurrealDB - train in Python, then load and infer with sklearn or PyTorch.
 - [Computation](explore/ml-models/surrealml/computation.md)
   SurrealML enables machine learning models to be greatly simplified, ensuring reproducibility and consistency in machine learning pipelines.
 - [Storage](explore/ml-models/surrealml/storage.md)
@@ -386,7 +386,7 @@ _1074 pages_
 - [SurrealQL editors](explore/studio/surrealql-editors.md)
   SurrealQL editor shortcuts in SurrealDB Studio for indentation, comments, multi-cursor edits, running queries, record inspection, and JSON formatting.
 - [Blink note-taking app](explore/tutorials/demos/blink.md)
-  Blink—a Notion-style workspace demo built with SurrealDB and WebAssembly.
+  Blink - a Notion-style workspace demo built with SurrealDB and WebAssembly.
 - [Kai G AI demos](explore/tutorials/demos/kaig-ai-demos.md)
   A collection of AI demo applications built with SurrealDB, showcasing RAG, agents, and knowledge graph patterns.
 - [Overview](explore/tutorials/demos/overview.md)
@@ -671,9 +671,9 @@ _1074 pages_
 - [Middleware](learn/querying/custom-apis/middleware.md)
   Chaining custom functions before your API handler so you can share logic on DEFINE API routes.
 - [Mutations](learn/querying/gql/mutations.md)
-  ISO GQL data-modifying statements — INSERT, SET, REMOVE, and DELETE — on the /gql endpoint.
+  ISO GQL data-modifying statements - INSERT, SET, REMOVE, and DELETE - on the /gql endpoint.
 - [Overview](learn/querying/gql/overview.md)
-  Query SurrealDB graph data with ISO GQL — a Cypher-like graph pattern language over HTTP and RPC.
+  Query SurrealDB graph data with ISO GQL - a Cypher-like graph pattern language over HTTP and RPC.
 - [Sample queries](learn/querying/gql/sample-queries.md)
   Compare common GQL graph patterns against similar SurrealQL queries on the same seed graph.
 - [Via HTTP](learn/querying/gql/via-http.md)
@@ -689,11 +689,11 @@ _1074 pages_
 - [Via SurrealDB Studio](learn/querying/graphql/via-studio.md)
   In this section, you will explore querying SurrealDB using SurrealDB Studio.
 - [Querying](learn/querying/index.md)
-  Query SurrealDB with SurrealQL, SDKs or GraphQL—SQL-like syntax with graphs, links and practical querying tips.
+  Query SurrealDB with SurrealQL, SDKs or GraphQL - SQL-like syntax with graphs, links and practical querying tips.
 - [Performance best practices](learn/querying/performance/performance-best-practices.md)
   This guide outlines some key performance best practices for using SurrealDB. While SurrealDB offers powerful and flexible features to support you in meeting your desired performance standards, the use that you make of those features will ultimately determine whether or not you meet them.
 - [Changefeeds](learn/querying/real-time/changefeeds.md)
-  Replaying table changes over time with changefeeds and SHOW CHANGES—useful for sync, pipelines, and external systems.
+  Replaying table changes over time with changefeeds and SHOW CHANGES - useful for sync, pipelines, and external systems.
 - [Live queries](learn/querying/real-time/live-queries.md)
   Subscribing to inserts, updates, and deletes with LIVE SELECT so clients stay in sync over a persistent connection.
 - [Real-time best practices](learn/querying/real-time/real-time-best-practices.md)
@@ -831,9 +831,9 @@ _1074 pages_
 - [Configuration reference](manage/observability/configuration.md)
   Every observability, audit log and slow-query log environment variable, plus recommended configurations for local, production and multi-tenant deployments.
 - [Enterprise observability](manage/observability/enterprise-observability.md)
-  Metrics, logs, and traces in SurrealDB Enterprise versus Community — OTLP opt-ins, audit and slow-query pipelines, and cluster instruments.
+  Metrics, logs, and traces in SurrealDB Enterprise versus Community - OTLP opt-ins, audit and slow-query pipelines, and cluster instruments.
 - [Observability](manage/observability/index.md)
-  Logging, Prometheus pull, OTLP push, Enterprise pipelines, metric catalogues, and Tokio console — production visibility for SurrealDB Community and Enterprise.
+  Logging, Prometheus pull, OTLP push, Enterprise pipelines, metric catalogues, and Tokio console - production visibility for SurrealDB Community and Enterprise.
 - [Logging](manage/observability/logging.md)
   Server log levels, text and JSON formats, file and socket output, slow-query logging, and OpenTelemetry log levels.
 - [Metrics reference](manage/observability/metrics.md)
@@ -843,9 +843,9 @@ _1074 pages_
 - [Slow-query logging](manage/observability/slow-query-logging.md)
   The Enterprise slow-query log pipeline: how a query qualifies, record shape, rotation, hash chaining, redaction and pipeline self-metrics.
 - [Telemetry (OTLP)](manage/observability/telemetry.md)
-  OTLP push export — metrics, logs, traces, intervals, backward-compatible instruments, and differences before and after SurrealDB 3.1.
+  OTLP push export - metrics, logs, traces, intervals, backward-compatible instruments, and differences before and after SurrealDB 3.1.
 - [Tokio console](manage/observability/tokio-console.md)
-  Inspect SurrealDB’s async runtime with the Tokio console — tasks, polls, and bottlenecks separate from OpenTelemetry metrics and traces.
+  Inspect SurrealDB’s async runtime with the Tokio console - tasks, polls, and bottlenecks separate from OpenTelemetry metrics and traces.
 - [AWS Marketplace](manage/organisations/aws-marketplace.md)
   Subscribe through AWS Marketplace so charges appear on your AWS bill, and link the subscription to an organisation.
 - [Billing](manage/organisations/billing.md)
@@ -895,7 +895,7 @@ _1074 pages_
 - [Configuration](manage/self-hosted/configuration.md)
   Configure a self-hosted SurrealDB server: CLI options, environment variables, storage, networking, auth, and TLS.
 - [Deployment models](manage/self-hosted/deployment-models.md)
-  Deployment models for SurrealDB — managed instances, single-node RocksDB, multi-node clusters, and embedded runtimes — and how to choose between them.
+  Deployment models for SurrealDB - managed instances, single-node RocksDB, multi-node clusters, and embedded runtimes - and how to choose between them.
 - [Docker](manage/self-hosted/docker.md)
   A tutorial to run SurrealDB from within Docker.
 - [Self-hosted](manage/self-hosted/index.md)
@@ -903,7 +903,7 @@ _1074 pages_
 - [Kubernetes](manage/self-hosted/kubernetes.md)
   Deploy SurrealDB to Kubernetes with RocksDB on a persistent volume.
 - [Managed Kubernetes](manage/self-hosted/managed-kubernetes.md)
-  Options for running SurrealDB on Amazon EKS, Google GKE, and Azure AKS — managed Scale, self-hosted Enterprise clusters, or single-node RocksDB.
+  Options for running SurrealDB on Amazon EKS, Google GKE, and Azure AKS - managed Scale, self-hosted Enterprise clusters, or single-node RocksDB.
 - [Monitoring & observability](manage/self-hosted/monitoring-and-observability.md)
   Health checks, OpenTelemetry metrics and traces, audit logs and slow-query logs, and integration with common observability stacks.
 - [Upgrades & patching](manage/self-hosted/upgrades-and-patching.md)
@@ -927,33 +927,33 @@ _1074 pages_
 - [Authentication](reference/cli/surrealctl/authentication.md)
   How surrealctl signs in, the difference between a login session and a personal access token, what a token cannot do, and where credentials are stored on disk.
 - [auth](reference/cli/surrealctl/commands/auth.md)
-  Reference for surrealctl auth — signing in, signing out, inspecting the stored credential, renewing it, and listing what it is permitted to do.
+  Reference for surrealctl auth - signing in, signing out, inspecting the stored credential, renewing it, and listing what it is permitted to do.
 - [catalog](reference/cli/surrealctl/commands/catalog.md)
-  Reference for surrealctl catalog — the platform-wide lists of regions, instance types, storage types, SurrealDB versions and billing countries.
+  Reference for surrealctl catalog - the platform-wide lists of regions, instance types, storage types, SurrealDB versions and billing countries.
 - [config](reference/cli/surrealctl/commands/config.md)
-  Reference for surrealctl config — listing, reading, setting and clearing configuration values, printing the file path, and opening it in an editor.
+  Reference for surrealctl config - listing, reading, setting and clearing configuration values, printing the file path, and opening it in an editor.
 - [context](reference/cli/surrealctl/commands/context.md)
-  Reference for surrealctl context — showing what an invocation resolved, switching between profiles, and listing the profiles that are configured.
+  Reference for surrealctl context - showing what an invocation resolved, switching between profiles, and listing the profiles that are configured.
 - [Overview](reference/cli/surrealctl/commands/index.md)
   A map of every surrealctl command group and leaf command, with links to the page documenting each one.
 - [instance](reference/cli/surrealctl/commands/instance.md)
-  Reference for surrealctl instance — creating, scaling, pausing and deleting instances, reading logs, metrics and endpoints, minting tokens, and managing capabilities and backups.
+  Reference for surrealctl instance - creating, scaling, pausing and deleting instances, reading logs, metrics and endpoints, minting tokens, and managing capabilities and backups.
 - [invite](reference/cli/surrealctl/commands/invite.md)
-  Reference for surrealctl invite — listing an organisation's pending invitations, sending one, and withdrawing one.
+  Reference for surrealctl invite - listing an organisation's pending invitations, sending one, and withdrawing one.
 - [Other commands](reference/cli/surrealctl/commands/misc.md)
-  Reference for the surrealctl leaf commands — whoami, api, open, status, version and completion.
+  Reference for the surrealctl leaf commands - whoami, api, open, status, version and completion.
 - [org](reference/cli/surrealctl/commands/org.md)
-  Reference for surrealctl org — listing and creating organisations, renaming and archiving them, remembering a default, and reading roles, permissions, usage, spend and plans.
+  Reference for surrealctl org - listing and creating organisations, renaming and archiving them, remembering a default, and reading roles, permissions, usage, spend and plans.
 - [spectron](reference/cli/surrealctl/commands/spectron.md)
-  Reference for surrealctl spectron — managing SurrealDB Agent Memory contexts, API keys, scoped keys, access tokens, principals and grants, packages, and the scope and provider catalogues.
+  Reference for surrealctl spectron - managing SurrealDB Agent Memory contexts, API keys, scoped keys, access tokens, principals and grants, packages, and the scope and provider catalogues.
 - [team](reference/cli/surrealctl/commands/team.md)
-  Reference for surrealctl team — listing organisation members, inspecting one, inviting someone, changing a role, and ending a membership.
+  Reference for surrealctl team - listing organisation members, inspecting one, inviting someone, changing a role, and ending a membership.
 - [token](reference/cli/surrealctl/commands/token.md)
-  Reference for surrealctl token — listing, creating and revoking personal access tokens, and browsing the scopes a token can be granted.
+  Reference for surrealctl token - listing, creating and revoking personal access tokens, and browsing the scopes a token can be granted.
 - [Global flags](reference/cli/surrealctl/global-flags.md)
   The sixteen flags every surrealctl command accepts, the environment variable behind each one, the precedence chain that resolves them, and the duration syntax.
 - [Long-running operations](reference/cli/surrealctl/long-running-operations.md)
-  How surrealctl waits for an instance to settle — the wait flags, which commands wait by default, the polling schedule, rate-limit handling, and exit code 10.
+  How surrealctl waits for an instance to settle - the wait flags, which commands wait by default, the polling schedule, rate-limit handling, and exit code 10.
 - [Output and exit codes](reference/cli/surrealctl/output-and-exit-codes.md)
   The surrealctl --json contract, the stdout and stderr split, NDJSON streams, the shared list presentation flags, the secret and confirmation guards, and every exit code.
 - [Overview](reference/cli/surrealctl/overview.md)
@@ -1745,7 +1745,7 @@ _1074 pages_
 - [Literals](reference/query-language/language-primitives/data-types/literals.md)
   A value that may have multiple representations or formats.
 - [None and Null](reference/query-language/language-primitives/data-types/none-and-null.md)
-  None means a missing field; null means an empty stored value—how SurrealDB distinguishes them in SurrealQL.
+  None means a missing field; null means an empty stored value - how SurrealDB distinguishes them in SurrealQL.
 - [Numbers](reference/query-language/language-primitives/data-types/numbers.md)
   In SurrealDB, numbers can be one of three types - 64-bit integers, 64-bit floating point numbers, or 128-bit decimal numbers.
 - [Objects](reference/query-language/language-primitives/data-types/objects.md)
@@ -1865,7 +1865,7 @@ _1074 pages_
 - [DEFINE FUNCTION](reference/query-language/statements/define/function.md)
   The DEFINE FUNCTION statement allows you to define custom functions that can be reused throughout a database.
 - [DEFINE INDEX](reference/query-language/statements/define/indexes.md)
-  SurrealDB uses indexes to help optimise query performance. An index can consist of one or more fields in a table and can enforce a uniqueness constraint — including HNSW and DISKANN vector indexes.
+  SurrealDB uses indexes to help optimise query performance. An index can consist of one or more fields in a table and can enforce a uniqueness constraint - including HNSW and DISKANN vector indexes.
 - [DEFINE MODULE](reference/query-language/statements/define/module.md)
   A DEFINE MODULE statement can be used to define a module through which Surrealism extension functions can be called.
 - [DEFINE NAMESPACE](reference/query-language/statements/define/namespace.md)
@@ -2077,7 +2077,7 @@ _1074 pages_
 - [use](reference/swift/methods/use.md)
   The use() method for the SurrealDB Swift SDK switches to a specific namespace and database.
 - [SurrealDB Cloud](running/cloud.md)
-  Get a free managed SurrealDB instance with an email sign-in—persistent data without installing the server yourself.
+  Get a free managed SurrealDB instance with an email sign-in - persistent data without installing the server yourself.
 - [Docker](running/docker.md)
   Use this tutorial to get started with SurrealDB from within Docker.
 - [File-backed](running/file-backed.md)
@@ -2097,9 +2097,9 @@ _1074 pages_
 - [Multi-node](running/multi-node.md)
   Run SurrealDB against distributed storage for horizontally scalable, highly available clusters.
 - [Overview](running/overview.md)
-  Ways to run SurrealDB—from a browser sandbox to a managed cloud instance to installing on your own hardware.
+  Ways to run SurrealDB - from a browser sandbox to a managed cloud instance to installing on your own hardware.
 - [SurrealDB Studio Sandbox](running/sandbox.md)
-  Try SurrealDB in the browser with the SurrealDB Studio Sandbox—no install and no account required.
+  Try SurrealDB in the browser with the SurrealDB Studio Sandbox - no install and no account required.
 - [Sample queries](sample-queries.md)
   Learn how to get started with SurrealDB
 - [Transactions and isolation](transactions-and-isolation.md)

@@ -16,8 +16,8 @@ If you are new to FTS in SurrealDB, read the [overview](overview.md) first. This
 Roughly, processing flows like this:
 
 1. Optional `FUNCTION`: transforms the raw input string once (for example normalising punctuation or stripping markup) via a [user-defined function](../../../reference/query-language/statements/define/function.md) that accepts and returns a `string`.
-2. Tokenizers — split the string into tokens (words, symbols, or other chunks) using one or more built-in tokenizers.
-3. Filters — transform each token (lowercase, strip accents, stem, n-grams, and so on).
+2. Tokenizers - split the string into tokens (words, symbols, or other chunks) using one or more built-in tokenizers.
+3. Filters - transform each token (lowercase, strip accents, stem, n-grams, and so on).
 
 The same analyzer is used when indexing and matching queries, so spending time here pays off for relevance and performance.
 
@@ -42,7 +42,7 @@ RETURN search::analyze("words", "hello   world");
 
 Once you are happy with the tokens, you attach the analyzer name to a full-text index and query with `@@` (covered on [Search indexes](search-indexes.md) and [Scoring and ranking](scoring-and-ranking.md)).
 
-## Step 1 — Choose how to split text (tokenizers)
+## Step 1 - Choose how to split text (tokenizers)
 
 Tokenizers answer: *where are the boundaries between tokens?* Some examples of tokenizers are `blank`, `camel`, and `class`.
 
@@ -57,7 +57,7 @@ DEFINE ANALYZER example_class TOKENIZERS class;
 search::analyze("example_class", "123abc!XYZ");
 ```
 
-## Step 2 — Normalise and enrich tokens (filters)
+## Step 2 - Normalise and enrich tokens (filters)
 
 Filters answer: *what should each token look like before indexing?*
 
@@ -87,7 +87,7 @@ search::analyze("example_ngram", "apple banana");
 
 The `mapper(path)` filter rewrites tokens using a tab-separated file: canonical form first, variant second, one pair per line. That supports lemmatisation beyond what stemming alone catches, or normalising arbitrary phrasing (for example mapping multilingual error strings to a single code).
 
-The server reads the dictionary from the **host filesystem** when you define the analyzer. Configure [`SURREAL_FILE_ALLOWLIST`](../../../reference/cli/surrealdb-cli/environment-variables.md#file-config) so the path lies under an allowed directory, without which no filesystem paths are permitted. See [DEFINE ANALYZER — `mapper(path)`](../../../reference/query-language/statements/define/analyzer.md#mapperpath) for startup examples.
+The server reads the dictionary from the **host filesystem** when you define the analyzer. Configure [`SURREAL_FILE_ALLOWLIST`](../../../reference/cli/surrealdb-cli/environment-variables.md#file-config) so the path lies under an allowed directory, without which no filesystem paths are permitted. See [DEFINE ANALYZER - `mapper(path)`](../../../reference/query-language/statements/define/analyzer.md#mapperpath) for startup examples.
 
 Point `path` at a dictionary file under your allowlist. Here is a very short example dictionary:
 
@@ -111,8 +111,8 @@ RETURN [
 
 ## Next steps
 
-- [Search indexes](search-indexes.md) — attach `FULLTEXT ANALYZER` to a field.
-- [Scoring and ranking](scoring-and-ranking.md) — `@@`, BM25, `search::score`, and highlights.
+- [Search indexes](search-indexes.md) - attach `FULLTEXT ANALYZER` to a field.
+- [Scoring and ranking](scoring-and-ranking.md) - `@@`, BM25, `search::score`, and highlights.
 - Reference: [`DEFINE ANALYZER`](../../../reference/query-language/statements/define/analyzer.md), [`DEFINE INDEX`](../../../reference/query-language/statements/define/indexes.md), [Search functions](../../../reference/query-language/functions/database-functions/search.md).
 
 ### Updating or creating analyzers safely

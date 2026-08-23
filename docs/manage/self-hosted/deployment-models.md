@@ -1,13 +1,13 @@
 ---
 position: 2
 title: Deployment models
-description: Deployment models for SurrealDB — managed instances, single-node RocksDB, multi-node clusters, and embedded runtimes — and how to choose between them.
+description: Deployment models for SurrealDB - managed instances, single-node RocksDB, multi-node clusters, and embedded runtimes - and how to choose between them.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/self-hosted/deployment-models.mdx"
 ---
 
 # Deployment models
 
-SurrealDB separates the query engine (compute) from the underlying storage layer. The same SurrealQL, APIs, and client SDKs work across embedded devices, single-node servers, distributed clusters, and [managed instances](../instances/index.md) — so you can change how the database runs without rewriting application code.
+SurrealDB separates the query engine (compute) from the underlying storage layer. The same SurrealQL, APIs, and client SDKs work across embedded devices, single-node servers, distributed clusters, and [managed instances](../instances/index.md) - so you can change how the database runs without rewriting application code.
 
 This page explains the available deployment options, storage engines, and how to choose the right architecture for your workload. For how the compute and storage layers interact, see [Architecture](../../architecture.md).
 
@@ -132,17 +132,17 @@ In distributed deployments:
 
 This architecture enables zero-downtime scaling, resilient clusters, high-throughput workloads, geographically distributed applications, and (as Scale features roll out) database branching, instant replication and recovery, and lower storage costs at scale.
 
-For managed multi-node clusters, use the [Scale](https://surrealdb.com/pricing/scale) plan on a [managed instance](../instances/index.md). For self-hosted multi-node clusters on Kubernetes, use [SurrealDB Enterprise](https://surrealdb.com/enterprise); the [Managed Kubernetes](managed-kubernetes.md) page summarises options per cloud. For a local Community playground against open-source distributed storage (TiKV), see [Run a multi-node cluster](../../running/multi-node.md) — that path is not the storage engine behind Scale or Enterprise clusters.
+For managed multi-node clusters, use the [Scale](https://surrealdb.com/pricing/scale) plan on a [managed instance](../instances/index.md). For self-hosted multi-node clusters on Kubernetes, use [SurrealDB Enterprise](https://surrealdb.com/enterprise); the [Managed Kubernetes](managed-kubernetes.md) page summarises options per cloud. For a local Community playground against open-source distributed storage (TiKV), see [Run a multi-node cluster](../../running/multi-node.md) - that path is not the storage engine behind Scale or Enterprise clusters.
 
 ### Features
 
-**Horizontal scalability** — Scale query and storage nodes independently.
+**Horizontal scalability** - Scale query and storage nodes independently.
 
-**Fault tolerance** — Replication and consensus allow clusters to tolerate node failures.
+**Fault tolerance** - Replication and consensus allow clusters to tolerate node failures.
 
-**Distributed ACID transactions** — Strong transactional guarantees across distributed infrastructure.
+**Distributed ACID transactions** - Strong transactional guarantees across distributed infrastructure.
 
-**Large-scale storage** — Designed for very large datasets and high-concurrency production workloads.
+**Large-scale storage** - Designed for very large datasets and high-concurrency production workloads.
 
 ### Best for
 
@@ -165,24 +165,24 @@ For language-specific setup, see [Embedding SurrealDB](../../build/embedding/ind
 
 ### Supported runtimes
 
-SurrealDB supports embedded operation in Rust, Go, JavaScript / TypeScript, WebAssembly, Python, and .NET. Capabilities vary by SDK and storage backend — check the embedding guide for your language.
+SurrealDB supports embedded operation in Rust, Go, JavaScript / TypeScript, WebAssembly, Python, and .NET. Capabilities vary by SDK and storage backend - check the embedding guide for your language.
 
 ### Storage options
 
-**In-memory (SurrealMX)** — Default in-memory backend since SurrealDB 3.0, with optional snapshots or append-only persistence and support for versioned queries. See [Run a single-node, in-memory server](../../running/in-memory.md).
+**In-memory (SurrealMX)** - Default in-memory backend since SurrealDB 3.0, with optional snapshots or append-only persistence and support for versioned queries. See [Run a single-node, in-memory server](../../running/in-memory.md).
 
-**RocksDB** — Persistent on-disk storage with mature tuning for write-heavy, SSD-backed server workloads. See [File-backed storage](../../running/file-backed.md).
+**RocksDB** - Persistent on-disk storage with mature tuning for write-heavy, SSD-backed server workloads. See [File-backed storage](../../running/file-backed.md).
 
-**SurrealKV** — Same beta engine as single-node server deployments; aimed at embedded and local-first in-process workloads where smaller resident memory and simple operational behaviour matter most.
+**SurrealKV** - Same beta engine as single-node server deployments; aimed at embedded and local-first in-process workloads where smaller resident memory and simple operational behaviour matter most.
 
-**IndexedDB (browser)** — Browser-native persistence with binary serialisation for PWAs and local-first web apps. See [Embedding SurrealDB](../../build/embedding/index.md) and the [Wasm engine](../../reference/javascript/engines/wasm.md).
+**IndexedDB (browser)** - Browser-native persistence with binary serialisation for PWAs and local-first web apps. See [Embedding SurrealDB](../../build/embedding/index.md) and the [Wasm engine](../../reference/javascript/engines/wasm.md).
 
 ## Choosing the right deployment model
 
 **Use a managed instance when**
 
 - You want managed infrastructure instead of operating clusters yourself
-- You need production-ready HA quickly — especially on the **Scale** plan for multi-node fault tolerance
+- You need production-ready HA quickly - especially on the **Scale** plan for multi-node fault tolerance
 - Your team prefers building applications over provisioning servers, Kubernetes, replication, and upgrade runbooks
 
 **Use single-node deployments with RocksDB when**

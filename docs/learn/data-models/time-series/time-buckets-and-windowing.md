@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Time buckets and windowing
 
-Time series analytics almost always relies on windows: “per minute”, “last 24 hours”, “calendar month”. In SurrealDB you express these ideas with ordinary SurrealQL—filtering on timestamps or on components of [complex record IDs](iot-and-telemetry-patterns.md), and grouping with functions such as `time::day()` where appropriate.
+Time series analytics almost always relies on windows: “per minute”, “last 24 hours”, “calendar month”. In SurrealDB you express these ideas with ordinary SurrealQL - filtering on timestamps or on components of [complex record IDs](iot-and-telemetry-patterns.md), and grouping with functions such as `time::day()` where appropriate.
 
 ## Time buckets
 
@@ -15,7 +15,7 @@ A bucket is a fixed or sliding interval that groups raw events into summaries: c
 
 When you design buckets, choose the grain that matches how people consume the data (operations often want 1-minute or 5-minute data; executives may only need daily rollups).
 
-**Example — hourly energy readings:** [`time::floor()`](../../../reference/query-language/functions/database-functions/time.md#timefloor) snaps each `ts` down to the start of a duration (here `1h`), and [`GROUP BY`](../../../reference/query-language/clauses/group.md) collapses every row in that window into one aggregate.
+**Example - hourly energy readings:** [`time::floor()`](../../../reference/query-language/functions/database-functions/time.md#timefloor) snaps each `ts` down to the start of a duration (here `1h`), and [`GROUP BY`](../../../reference/query-language/clauses/group.md) collapses every row in that window into one aggregate.
 
 ```surql
 CREATE measurement SET ts = d"2025-04-10T09:15:00Z", kwh = 1.2;

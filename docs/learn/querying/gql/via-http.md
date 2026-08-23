@@ -13,7 +13,7 @@ The **`POST /gql`** endpoint accepts a **raw GQL query** in the request body (no
 
 ## Start SurrealDB with GQL
 
-From **3.3.0**, start a normal instance — ISO GQL is on by default:
+From **3.3.0**, start a normal instance - ISO GQL is on by default:
 
 ```bash
 surreal start --log info --user root --pass secret memory
@@ -32,7 +32,7 @@ surreal start --log info --user root --pass secret memory
 ```
 
 > [!NOTE]
-> This is **not** [GraphQL](../graphql/overview.md) — use [`POST /graphql`](../../../reference/rest-api/http-protocol.md#graphql) for GraphQL queries.
+> This is **not** [GraphQL](../graphql/overview.md) - use [`POST /graphql`](../../../reference/rest-api/http-protocol.md#graphql) for GraphQL queries.
 ## Load sample data
 
 Use [`POST /sql`](../../../reference/rest-api/http-protocol.md) with namespace **`main`** and database **`main`** (set via headers below):
@@ -94,9 +94,9 @@ Parse errors return **HTTP 400** with an error payload.
 
 ## Mutations
 
-The same endpoint accepts **data-modifying** GQL — `INSERT`, `SET`, `REMOVE`, and `DELETE` — interleaved with `MATCH` / `OPTIONAL` in one query. Mutation-bearing requests run in a **write transaction** and enforce the same permissions as SurrealQL writes.
+The same endpoint accepts **data-modifying** GQL - `INSERT`, `SET`, `REMOVE`, and `DELETE` - interleaved with `MATCH` / `OPTIONAL` in one query. Mutation-bearing requests run in a **write transaction** and enforce the same permissions as SurrealQL writes.
 
-Example — update a property and return the new value:
+Example - update a property and return the new value:
 
 ```bash
 curl -sS -X POST -u "root:secret" \
@@ -135,7 +135,7 @@ With parameters:
 }
 ```
 
-## Try without HTTP — `eval::gql`
+## Try without HTTP - `eval::gql`
 
 If you prefer the CLI or SurrealDB Studio over cURL, run GQL through [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) inside SurrealQL. You still need [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries), as `eval::*` is denied by default even under `--allow-all`. From 3.3.0 you do not need `--allow-experimental gql` as well (required on 3.2.x only).
 
@@ -149,7 +149,7 @@ eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");
 surreal sql --user root --pass secret --allow-eval-query
 ```
 
-**Two processes (remote):** enable eval on **`surreal start`**, then connect with `surreal sql` as usual — capability flags on the client do not turn on `eval` for a remote engine.
+**Two processes (remote):** enable eval on **`surreal start`**, then connect with `surreal sql` as usual - capability flags on the client do not turn on `eval` for a remote engine.
 
 ```bash
 surreal start --user root --pass secret --allow-eval-query

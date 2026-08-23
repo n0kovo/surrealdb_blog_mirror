@@ -1,13 +1,13 @@
 ---
 position: 8
 title: org
-description: Reference for surrealctl org — listing and creating organisations, renaming and archiving them, remembering a default, and reading roles, permissions, usage, spend and plans.
+description: Reference for surrealctl org - listing and creating organisations, renaming and archiving them, remembering a default, and reading roles, permissions, usage, spend and plans.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/org.mdx"
 ---
 
 # org
 
-`surrealctl org` manages organisations. An organisation owns instances, members and billing, and almost every other command needs to know which one you mean — so this group is usually the second one you reach for after [`auth`](auth.md).
+`surrealctl org` manages organisations. An organisation owns instances, members and billing, and almost every other command needs to know which one you mean - so this group is usually the second one you reach for after [`auth`](auth.md).
 
 <Synopsis>
 surrealctl org <COMMAND> [OPTIONS]
@@ -38,7 +38,7 @@ List the organisations you belong to.
 surrealctl org list [OPTIONS]
 </Synopsis>
 
-This command takes no positional arguments — it lists everything you can see.
+This command takes no positional arguments - it lists everything you can see.
 
 <OptionsTable
     title="Options"
@@ -253,7 +253,7 @@ surrealctl org use
 surrealctl org use --clear
 ```
 
-The choice is written to the `[profile.<name>.context]` table of `config.toml`, which sits below a hand-written `org` key in the [precedence chain](../global-flags.md#the-precedence-chain) — so setting `org` yourself is never overwritten by this command.
+The choice is written to the `[profile.<name>.context]` table of `config.toml`, which sits below a hand-written `org` key in the [precedence chain](../global-flags.md#the-precedence-chain) - so setting `org` yourself is never overwritten by this command.
 
 **Refusals.** Omitting `[ORG]` in a non-interactive session exits `2` and names the flags that would have settled it. The command warns when `SURREALCTL_ORG` is set, because the variable outranks what it just wrote.
 
@@ -414,9 +414,9 @@ This is the organisation-scoped answer, and the one to trust before an [`instanc
 
 ## Related pages
 
-- [`instance` commands](instance.md) — the instances an organisation owns
-- [`team` commands](team.md) — its members
-- [`catalog` commands](catalog.md) — platform-wide regions, types and versions
-- [Global flags](../global-flags.md) — `--org` and the precedence chain
-- [Overview](../overview.md) — the rest of the reference
-- [SurrealDB CLI](../../surrealdb-cli/overview.md) — for working with the data inside an instance
+- [`instance` commands](instance.md) - the instances an organisation owns
+- [`team` commands](team.md) - its members
+- [`catalog` commands](catalog.md) - platform-wide regions, types and versions
+- [Global flags](../global-flags.md) - `--org` and the precedence chain
+- [Overview](../overview.md) - the rest of the reference
+- [SurrealDB CLI](../../surrealdb-cli/overview.md) - for working with the data inside an instance

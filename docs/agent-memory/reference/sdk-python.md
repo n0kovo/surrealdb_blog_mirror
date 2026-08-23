@@ -18,7 +18,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 | Import | `from surrealdb import Spectron, AsyncSpectron` |
 | Submodule | `surrealdb.spectron` (models, namespaces, errors) |
 
-On PyPI, **`spectron`** is a different project. Install **`surrealdb`** for SurrealDB and SurrealDB Agent Memory — not `pip install spectron`.
+On PyPI, **`spectron`** is a different project. Install **`surrealdb`** for SurrealDB and SurrealDB Agent Memory - not `pip install spectron`.
 
 ## Constructor
 

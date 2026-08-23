@@ -27,7 +27,7 @@ RecordIdRange(table, start, end, includeEnd)
         <tr><th>Parameter</th><th>Type</th><th>Default</th><th>Description</th></tr>
     </thead>
     <tbody>
-        <tr><td>`table` *[required]*</td><td>`String`</td><td>—</td><td>The table name.</td></tr>
+        <tr><td>`table` *[required]*</td><td>`String`</td><td>-</td><td>The table name.</td></tr>
         <tr><td>`start`</td><td>`String?`</td><td>`null`</td><td>The inclusive start ID, or `null` for unbounded.</td></tr>
         <tr><td>`end`</td><td>`String?`</td><td>`null`</td><td>The end ID, or `null` for unbounded.</td></tr>
         <tr><td>`includeEnd`</td><td>`Boolean`</td><td>`false`</td><td>Whether the `end` ID is inclusive.</td></tr>

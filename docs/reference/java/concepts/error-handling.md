@@ -50,12 +50,12 @@ The Java SDK provides a structured exception hierarchy for handling errors from 
 
 [`SurrealException`](../api/errors/index.md#surreal-exception) is the base class for all exceptions thrown by the SDK. It extends `RuntimeException`, so exceptions are unchecked. [`ServerException`](../api/errors/index.md#server-exception) extends `SurrealException` and represents errors returned by the SurrealDB server. Specific exception types extend `ServerException` for common error categories.
 
-- [`SurrealException`](../api/errors/index.md#surreal-exception) — base for all SDK errors
-  - [`ServerException`](../api/errors/index.md#server-exception) — base for server-returned errors
-    - [`NotFoundException`](../api/errors/index.md#not-found-exception) — resource not found
-    - [`NotAllowedException`](../api/errors/index.md#not-allowed-exception) — operation not permitted
-    - [`QueryException`](../api/errors/index.md#query-exception) — query execution failed
-    - [`AlreadyExistsException`](../api/errors/index.md#already-exists-exception) — resource already exists
+- [`SurrealException`](../api/errors/index.md#surreal-exception) - base for all SDK errors
+  - [`ServerException`](../api/errors/index.md#server-exception) - base for server-returned errors
+    - [`NotFoundException`](../api/errors/index.md#not-found-exception) - resource not found
+    - [`NotAllowedException`](../api/errors/index.md#not-allowed-exception) - operation not permitted
+    - [`QueryException`](../api/errors/index.md#query-exception) - query execution failed
+    - [`AlreadyExistsException`](../api/errors/index.md#already-exists-exception) - resource already exists
 
 ## Catching server errors
 
@@ -77,9 +77,9 @@ try {
 
 [`ServerException`](../api/errors/index.md#server-exception) provides methods for inspecting the error returned by the server.
 
-- `.getKind()` — returns the error kind as a `String`
-- `.getKindEnum()` — returns the error kind as an [`ErrorKind`](../api/errors/index.md#error-kind) enum value
-- `.getDetails()` — returns additional error details
+- `.getKind()` - returns the error kind as a `String`
+- `.getKindEnum()` - returns the error kind as an [`ErrorKind`](../api/errors/index.md#error-kind) enum value
+- `.getDetails()` - returns additional error details
 
 The [`ErrorKind`](../api/errors/index.md#error-kind) enum includes: `VALIDATION`, `CONFIGURATION`, `THROWN`, `QUERY`, `SERIALIZATION`, `NOT_ALLOWED`, `NOT_FOUND`, `ALREADY_EXISTS`, `CONNECTION`, `INTERNAL`, and `UNKNOWN`.
 
@@ -97,9 +97,9 @@ try {
 
 Server errors can have nested causes. [`ServerException`](../api/errors/index.md#server-exception) provides methods for walking the cause chain to find a specific error type.
 
-- `.getServerCause()` — returns the underlying `ServerException` cause, if any
-- `.hasKind(kind)` — checks whether this error or any cause matches the given `ErrorKind`
-- `.findCause(kind)` — searches the cause chain and returns the first `ServerException` matching the given `ErrorKind`
+- `.getServerCause()` - returns the underlying `ServerException` cause, if any
+- `.hasKind(kind)` - checks whether this error or any cause matches the given `ErrorKind`
+- `.findCause(kind)` - searches the cause chain and returns the first `ServerException` matching the given `ErrorKind`
 
 ```java
 try {

@@ -101,7 +101,7 @@ client.reset()
 
 ## Automatic authentication and token renewal
 
-The client can authenticate automatically on connect and after reconnects, and renew tokens shortly before they expire. Provide a `credentialProvider` and enable `autoAuthenticate` on your [`SurrealClientConfig`](../api/core/client-config.md). The provider returns a [`SurrealAuthInput`](../api/core/client-config.md#surreal-auth-input) — either a `SignIn` with credentials or an existing `Token`.
+The client can authenticate automatically on connect and after reconnects, and renew tokens shortly before they expire. Provide a `credentialProvider` and enable `autoAuthenticate` on your [`SurrealClientConfig`](../api/core/client-config.md). The provider returns a [`SurrealAuthInput`](../api/core/client-config.md#surreal-auth-input) - either a `SignIn` with credentials or an existing `Token`.
 
 ```kotlin
 

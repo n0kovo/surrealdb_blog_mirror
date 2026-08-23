@@ -24,12 +24,12 @@ The server is hosted for you, so there is nothing to install and nothing to keep
 
 ## What you can do
 
-- **Deploy and manage instances** — create an instance, pause one you are not using, resize it as traffic grows, or upgrade it to a newer version of SurrealDB.
-- **Work with your data** — ask a question in plain language and let the assistant write and run the SurrealQL, or have it create tables and seed records while you build.
-- **Look into problems** — pull up instance status, metrics, and logs next to the query you were just writing.
-- **Manage your team** — invite people to an organisation, change what they can do, and withdraw invitations.
-- **Keep an eye on cost** — check usage and invoices, and estimate what an instance will cost before you create it.
-- **Give agents long-term memory** — create and manage [SurrealDB Agent Memory](https://surrealdb.com/docs/agent-memory) contexts, then store and recall memories from them.
+- **Deploy and manage instances** - create an instance, pause one you are not using, resize it as traffic grows, or upgrade it to a newer version of SurrealDB.
+- **Work with your data** - ask a question in plain language and let the assistant write and run the SurrealQL, or have it create tables and seed records while you build.
+- **Look into problems** - pull up instance status, metrics, and logs next to the query you were just writing.
+- **Manage your team** - invite people to an organisation, change what they can do, and withdraw invitations.
+- **Keep an eye on cost** - check usage and invoices, and estimate what an instance will cost before you create it.
+- **Give agents long-term memory** - create and manage [SurrealDB Agent Memory](https://surrealdb.com/docs/agent-memory) contexts, then store and recall memories from them.
 
 ## Connect your AI tool
 
@@ -167,8 +167,8 @@ Clients often let you auto-approve tools to save clicks. Reserve that for the re
 
 ## Next steps
 
-- [MCP in Claude](claude.md) — set it up in Claude Code, Claude Desktop, or the Claude app
-- [MCP in Cursor](cursor.md) — set it up in Cursor
-- [Example usages](examples.md) — prompts that show what the server can do
-- [Embedded MCP](embedded.md) — the MCP server inside SurrealDB, for databases you run yourself
-- [Agent Skills](../agent-skills.md) — teach your assistant SurrealQL and SDK patterns to go with these tools
+- [MCP in Claude](claude.md) - set it up in Claude Code, Claude Desktop, or the Claude app
+- [MCP in Cursor](cursor.md) - set it up in Cursor
+- [Example usages](examples.md) - prompts that show what the server can do
+- [Embedded MCP](embedded.md) - the MCP server inside SurrealDB, for databases you run yourself
+- [Agent Skills](../agent-skills.md) - teach your assistant SurrealQL and SDK patterns to go with these tools

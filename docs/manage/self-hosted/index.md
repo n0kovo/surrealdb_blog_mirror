@@ -20,13 +20,13 @@ For initial installation, see the [installation guide](../../running/installatio
 | [Kubernetes](kubernetes.md) | Single SurrealDB pod with RocksDB on a persistent volume |
 | [Managed Kubernetes](managed-kubernetes.md) | Paths on Amazon EKS, Google GKE, and Azure AKS |
 
-Most self-hosted workloads use **RocksDB** on disk — one SurrealDB process per database file.
+Most self-hosted workloads use **RocksDB** on disk - one SurrealDB process per database file.
 
 ## Operating a self-hosted instance
 
-- [Configuration](configuration.md) — server startup options, environment variables, and storage engine selection.
-- [Backups and recovery](backups-and-recovery.md) — export and import commands, backup strategies, and disaster recovery.
-- [Monitoring and observability](monitoring-and-observability.md) — health endpoints, metrics, and tracing integration.
-- [Upgrades and patching](upgrades-and-patching.md) — version upgrades, the `surreal fix` migration tool, and compatibility notes.
+- [Configuration](configuration.md) - server startup options, environment variables, and storage engine selection.
+- [Backups and recovery](backups-and-recovery.md) - export and import commands, backup strategies, and disaster recovery.
+- [Monitoring and observability](monitoring-and-observability.md) - health endpoints, metrics, and tracing integration.
+- [Upgrades and patching](upgrades-and-patching.md) - version upgrades, the `surreal fix` migration tool, and compatibility notes.
 
 Once an instance is running, the [Observability](../observability/index.md) section covers the built-in metrics, audit logs and slow-query logs you can scrape over Prometheus or push over OTLP for production monitoring.

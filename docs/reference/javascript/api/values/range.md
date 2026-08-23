@@ -24,9 +24,9 @@ The `Range` class provides generic range values for representing inclusive or ex
 
 Bounds are represented using `BoundIncluded` and `BoundExcluded` classes:
 
-- `new BoundIncluded(value)` — The bound includes the value
-- `new BoundExcluded(value)` — The bound excludes the value
-- `undefined` — Unbounded (no limit)
+- `new BoundIncluded(value)` - The bound includes the value
+- `new BoundExcluded(value)` - The bound excludes the value
+- `undefined` - Unbounded (no limit)
 
 **Type:** `Bound<T> = BoundIncluded<T> | BoundExcluded<T> | undefined`
 
@@ -91,7 +91,7 @@ const halfOpen = new Range(
 
 The beginning bound of the range.
 
-**Type:** `Bound<Beg>` — A `BoundIncluded<Beg>`, `BoundExcluded<Beg>`, or `undefined`
+**Type:** `Bound<Beg>` - A `BoundIncluded<Beg>`, `BoundExcluded<Beg>`, or `undefined`
 
 ```ts
 const range = new Range(
@@ -109,7 +109,7 @@ console.log(range.begin instanceof BoundIncluded); // true
 
 The ending bound of the range.
 
-**Type:** `Bound<End>` — A `BoundIncluded<End>`, `BoundExcluded<End>`, or `undefined`
+**Type:** `Bound<End>` - A `BoundIncluded<End>`, `BoundExcluded<End>`, or `undefined`
 
 ```ts
 const range = new Range(

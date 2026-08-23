@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Global flags
 
-Sixteen flags are accepted by every `surrealctl` command. They may appear anywhere on the command line — before the group, between the group and the verb, or after the verb — so all three of these are the same invocation:
+Sixteen flags are accepted by every `surrealctl` command. They may appear anywhere on the command line - before the group, between the group and the verb, or after the verb - so all three of these are the same invocation:
 
 ```bash
 surrealctl --json instance list
@@ -164,7 +164,7 @@ The effective per-request timeout is never shorter than 21 seconds, because the 
 
 ## The precedence chain
 
-Every value that can come from more than one place is resolved once, before the command runs, in this order — highest first:
+Every value that can come from more than one place is resolved once, before the command runs, in this order - highest first:
 
 1. A command-line flag
 2. An environment variable
@@ -286,8 +286,8 @@ Five values can be persisted per profile with [`config set`](commands/config.md#
 
 ## Related pages
 
-- [Output and exit codes](output-and-exit-codes.md) — what `--json`, `--plain` and `--quiet` actually produce
-- [`config` commands](commands/config.md) — reading and writing the configuration file
-- [`context` commands](commands/context.md) — switching profiles
-- [Overview](overview.md) — the rest of the reference
-- [SurrealDB CLI](../surrealdb-cli/overview.md) — the data plane, and its own [environment variables](../surrealdb-cli/environment-variables.md): the `SURREAL_*` set this CLI never reads
+- [Output and exit codes](output-and-exit-codes.md) - what `--json`, `--plain` and `--quiet` actually produce
+- [`config` commands](commands/config.md) - reading and writing the configuration file
+- [`context` commands](commands/context.md) - switching profiles
+- [Overview](overview.md) - the rest of the reference
+- [SurrealDB CLI](../surrealdb-cli/overview.md) - the data plane, and its own [environment variables](../surrealdb-cli/environment-variables.md): the `SURREAL_*` set this CLI never reads

@@ -186,5 +186,5 @@ db.create("tasks", {
 
 ## See also
 
-- [Data types](index.md) — All SDK data types
-- [Datetime](datetime.md) — Datetime wrapper
+- [Data types](index.md) - All SDK data types
+- [Datetime](datetime.md) - Datetime wrapper

@@ -10,7 +10,7 @@ Manage and execute WASM modules, including [Surrealism](../../../../learn/extens
 *Since v3.0.0*
 
 > [!NOTE]
-> **Before you start** — make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
 
 <Synopsis>
 surreal module [OPTIONS] <COMMAND>
@@ -270,5 +270,5 @@ Logging:
 
 ## Further reading
 
-- [Surrealism extensions overview](../../../../learn/extensions/plugins/overview.md) — end-to-end workflow
-- [Creating custom modules](../../../../learn/extensions/guides/creating-custom-modules.md) — attributes, `surrealism.toml`, and attached filesystems
+- [Surrealism extensions overview](../../../../learn/extensions/plugins/overview.md) - end-to-end workflow
+- [Creating custom modules](../../../../learn/extensions/guides/creating-custom-modules.md) - attributes, `surrealism.toml`, and attached filesystems

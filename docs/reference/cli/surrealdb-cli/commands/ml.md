@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 Manage SurrealML models within an existing database. The command has two subcommands: one imports a trained model into a database, the other exports a model that is already stored there.
 
 > [!NOTE]
-> **Before you begin** — make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+> **Before you begin** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
 
 <Synopsis>
 surreal ml [OPTIONS] <COMMAND>

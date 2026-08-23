@@ -1,7 +1,7 @@
 ---
 position: 3
 title: catalog
-description: Reference for surrealctl catalog — the platform-wide lists of regions, instance types, storage types, SurrealDB versions and billing countries.
+description: Reference for surrealctl catalog - the platform-wide lists of regions, instance types, storage types, SurrealDB versions and billing countries.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/catalog.mdx"
 ---
 
@@ -24,7 +24,7 @@ surrealctl catalog <COMMAND> [OPTIONS]
 These are nouns rather than `list` verbs, because a catalogue has exactly one thing you can do with it. None takes a positional argument, none takes `--org`, and none carries any flag beyond the [list presentation flags](../output-and-exit-codes.md#list-presentation-flags).
 
 > [!IMPORTANT]
-> These lists are **global**. What an organisation may actually deploy is narrower, and [`org plans`](org.md#org-plans) is the organisation-scoped answer — the one to trust before a create.
+> These lists are **global**. What an organisation may actually deploy is narrower, and [`org plans`](org.md#org-plans) is the organisation-scoped answer - the one to trust before a create.
 
 ## surrealctl catalog regions {#catalog-regions}
 
@@ -73,7 +73,7 @@ surrealctl catalog instance-types --sort price_hour
 
 The `slug` is what `--type` accepts. Prices stay in integer minor units under `--json`.
 
-The `enabled` column is left unset here, because whether a type is available to you is a property of your organisation's plan rather than of the platform — check [`org plans`](org.md#org-plans), or price a specific combination with [`instance estimate`](instance.md#instance-estimate).
+The `enabled` column is left unset here, because whether a type is available to you is a property of your organisation's plan rather than of the platform - check [`org plans`](org.md#org-plans), or price a specific combination with [`instance estimate`](instance.md#instance-estimate).
 
 ## surrealctl catalog storage-types {#catalog-storage-types}
 
@@ -113,7 +113,7 @@ surrealctl catalog instance-versions
 surrealctl catalog instance-versions --limit 1 --no-header
 ```
 
-The API's own order is newest-first and is left alone. `--sort version` sorts as strings, so `3.10.0` would come before `3.9.0` — prefer the default order when you want the newest release.
+The API's own order is newest-first and is left alone. `--sort version` sorts as strings, so `3.10.0` would come before `3.9.0` - prefer the default order when you want the newest release.
 
 An empty list should not happen, and says so:
 
@@ -141,8 +141,8 @@ surrealctl catalog billing-countries --json | jq -e '.[] | select(.code == "IE")
 
 ## Related pages
 
-- [`instance create`](instance.md#instance-create) — where these slugs are used
-- [`org plans`](org.md#org-plans) — the organisation-scoped subset
-- [`instance estimate`](instance.md#instance-estimate) — pricing a type and region before committing to it
-- [Overview](../overview.md) — the rest of the reference
-- [SurrealDB CLI](../../surrealdb-cli/overview.md) — for working with the data inside an instance
+- [`instance create`](instance.md#instance-create) - where these slugs are used
+- [`org plans`](org.md#org-plans) - the organisation-scoped subset
+- [`instance estimate`](instance.md#instance-estimate) - pricing a type and region before committing to it
+- [Overview](../overview.md) - the rest of the reference
+- [SurrealDB CLI](../../surrealdb-cli/overview.md) - for working with the data inside an instance

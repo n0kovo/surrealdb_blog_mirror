@@ -13,9 +13,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/e
 
 The repository includes demos covering:
 
-- **Retrieval-augmented generation (RAG)** — embedding documents into SurrealDB's vector indexes and using similarity search to ground LLM responses in real data.
-- **AI agents** — autonomous agents that read from and write to SurrealDB as part of their tool-use loop.
-- **Knowledge graphs** — building and querying graph structures that give AI models structured context.
+- **Retrieval-augmented generation (RAG)** - embedding documents into SurrealDB's vector indexes and using similarity search to ground LLM responses in real data.
+- **AI agents** - autonomous agents that read from and write to SurrealDB as part of their tool-use loop.
+- **Knowledge graphs** - building and querying graph structures that give AI models structured context.
 
 ## Getting started
 

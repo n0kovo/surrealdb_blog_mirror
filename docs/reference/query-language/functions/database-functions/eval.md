@@ -12,7 +12,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 > [!NOTE]
 > `eval::*` is **denied for every subject by default**, including under [`--allow-all`](../../../../learn/security/authorization/capabilities.md). You must explicitly enable it with [`--allow-eval-query`](../../../../learn/security/authorization/capabilities.md#eval-queries) **and** satisfy the [arbitrary-query](../../../../learn/security/authorization/capabilities.md#arbitrary-queries) gate for the same subject. See [Security](#security) below.
 
-The `eval::*` functions run a **query supplied as a string** inside the **caller's open transaction and session context**. They are intended for workloads where the query text is only known at runtime — for example, analytical queries stored in a table, where you want to blend [ISO GQL](../../../../learn/querying/gql/overview.md) and SurrealQL in one transaction, or to learn SurrealQL or rewrite existing queries from another graph database.
+The `eval::*` functions run a **query supplied as a string** inside the **caller's open transaction and session context**. They are intended for workloads where the query text is only known at runtime - for example, analytical queries stored in a table, where you want to blend [ISO GQL](../../../../learn/querying/gql/overview.md) and SurrealQL in one transaction, or to learn SurrealQL or rewrite existing queries from another graph database.
 
 <table>
   <thead>
@@ -43,7 +43,7 @@ Evaluates an [ISO GQL](../../../../learn/querying/gql/overview.md) query string.
 eval::gql(query: string, bindings: option<object>) -> any
 ```
 
-`eval::gql` runs on the streaming query engine. Queries that include GQL **mutations** (`INSERT`, `SET`, `REMOVE`, `DELETE`) participate in the caller's write transaction — see [GQL mutations](../../../../learn/querying/gql/mutations.md). From **3.3.0**, GQL itself needs no experimental flag; you still need `--allow-eval-query`. On **3.2.x**, also pass `--allow-experimental gql`.
+`eval::gql` runs on the streaming query engine. Queries that include GQL **mutations** (`INSERT`, `SET`, `REMOVE`, `DELETE`) participate in the caller's write transaction - see [GQL mutations](../../../../learn/querying/gql/mutations.md). From **3.3.0**, GQL itself needs no experimental flag; you still need `--allow-eval-query`. On **3.2.x**, also pass `--allow-experimental gql`.
 
 Enable eval on the server, for example:
 
@@ -76,7 +76,7 @@ INSERT RELATION INTO knows [
 | `(n:person)` | Rows in table `person` bound to variable `n` |
 | `-[k:knows]->` | Directed edges in relation table `knows` (`in` / `out` record IDs) |
 | `n.name` | Field `name` on the bound record |
-| `$min` | Parameter — pass via the optional `bindings` object |
+| `$min` | Parameter - pass via the optional `bindings` object |
 
 ### Match nodes by label
 
@@ -109,7 +109,7 @@ eval::gql(
 
 ### Optional match
 
-`OPTIONAL MATCH` keeps every anchor row from the preceding `MATCH` even when the optional pattern misses — similar to a left outer join.
+`OPTIONAL MATCH` keeps every anchor row from the preceding `MATCH` even when the optional pattern misses - similar to a left outer join.
 
 ```surql
 eval::gql(
@@ -140,7 +140,7 @@ eval::gql(
 In ISO GQL on SurrealDB, variable-length hops are a **postfix quantifier on the edge**, not Cypher's `*1..3` inside the brackets:
 
 ```surql
--- From A, who is reachable in 1–2 `knows` hops (staying on `:person` nodes)?
+-- From A, who is reachable in 1-2 `knows` hops (staying on `:person` nodes)?
 eval::gql(
 	"MATCH (a:person)-[:knows]->{1,2}(b:person) WHERE a.name = 'A' RETURN a.name AS source, b.name AS target ORDER BY target"
 );
@@ -170,11 +170,11 @@ Bindings are **isolated** from the caller's scope (same as `eval::surql`); only 
 > [!NOTE]
 > When a GQL query returns a single record, `eval::gql` yields that record as an object; multiple records are returned as an array.
 
-For more patterns — path search (`ALL SHORTEST`), comma-separated joins, and side-by-side SurrealQL — see [Sample GQL and SurrealQL queries](../../../../learn/querying/gql/sample-queries.md).
+For more patterns - path search (`ALL SHORTEST`), comma-separated joins, and side-by-side SurrealQL - see [Sample GQL and SurrealQL queries](../../../../learn/querying/gql/sample-queries.md).
 
 ## `eval::surql`
 
-Evaluates a **single** SurrealQL statement and returns its value. To run several statements, wrap them in a block `{ ... }` — the block's final value is returned.
+Evaluates a **single** SurrealQL statement and returns its value. To run several statements, wrap them in a block `{ ... }` - the block's final value is returned.
 
 ```surql title="API DEFINITION"
 eval::surql(query: string, bindings: option<object>) -> any
@@ -202,7 +202,7 @@ SELECT name FROM person;
 -- [{ name: 'A' }]
 ```
 
-The evaluated query runs in an **isolated scope**: parameters visible at the call site are not inherited — only keys you pass in the bindings object are bound.
+The evaluated query runs in an **isolated scope**: parameters visible at the call site are not inherited - only keys you pass in the bindings object are bound.
 
 ```surql
 LET $secret = 42;
@@ -216,24 +216,24 @@ eval::surql("RETURN $secret ?? 'isolated'");
 
 The following are rejected inside `eval::*`:
 
-- **Transaction and session control** — `BEGIN`, `CANCEL`, `COMMIT`, `USE`, `LIVE`, `KILL`, `OPTION`, `SHOW`, and access statements.
-- **Bare multi-statement SurrealQL** in `eval::surql` — use `{ ... }` instead of semicolon-separated top-level statements.
-- **Protected binding names** — caller bindings cannot overwrite reserved parameters such as `$session`.
-- **Excessive nesting** — recursive `eval` calls share the engine's computation depth limit.
+- **Transaction and session control** - `BEGIN`, `CANCEL`, `COMMIT`, `USE`, `LIVE`, `KILL`, `OPTION`, `SHOW`, and access statements.
+- **Bare multi-statement SurrealQL** in `eval::surql` - use `{ ... }` instead of semicolon-separated top-level statements.
+- **Protected binding names** - caller bindings cannot overwrite reserved parameters such as `$session`.
+- **Excessive nesting** - recursive `eval` calls share the engine's computation depth limit.
 
 ### Security
 
-Every `eval::*` call is checked against the **current execution auth** (guest, record, or system). Auth limiting in [`DEFINE FUNCTION`](../../statements/define/function.md) bodies never **raises** the subject — a record-scoped caller that invokes an owner-defined function which calls `eval` is still evaluated as `record`.
+Every `eval::*` call is checked against the **current execution auth** (guest, record, or system). Auth limiting in [`DEFINE FUNCTION`](../../statements/define/function.md) bodies never **raises** the subject - a record-scoped caller that invokes an owner-defined function which calls `eval` is still evaluated as `record`.
 
 All of the following must pass:
 
 | Gate | Purpose |
 | --- | --- |
 | [`allow-funcs` / `deny-funcs`](../../../../learn/security/authorization/capabilities.md) | The `eval` function family must be permitted |
-| [`deny-arbitrary-query`](../../../../learn/security/authorization/capabilities.md#arbitrary-queries) (and related allow rules) | `eval` counts as an arbitrary query — denied subjects cannot use `eval` to bypass `/sql` or API lockdown |
+| [`deny-arbitrary-query`](../../../../learn/security/authorization/capabilities.md#arbitrary-queries) (and related allow rules) | `eval` counts as an arbitrary query - denied subjects cannot use `eval` to bypass `/sql` or API lockdown |
 | [`allow-eval-query` / `deny-eval-query`](../../../../learn/security/authorization/capabilities.md#eval-queries) | Dedicated opt-in for `eval::surql` and `eval::gql` |
 
-`eval` cannot grant a subject more query power than arbitrary-query policy allows — including when called from inside a `DEFINE FUNCTION` or [`DEFINE API`](../../statements/define/api.md) handler. You do **not** need `--allow-arbitrary-query` for eval on a default server; you **do** need `--allow-eval-query`.
+`eval` cannot grant a subject more query power than arbitrary-query policy allows - including when called from inside a `DEFINE FUNCTION` or [`DEFINE API`](../../statements/define/api.md) handler. You do **not** need `--allow-arbitrary-query` for eval on a default server; you **do** need `--allow-eval-query`.
 
 From **3.3.0**, `eval::gql` does not require the experimental `gql` capability (still required on **3.2.x**).
 
@@ -246,10 +246,10 @@ From **3.3.0**, `eval::gql` does not require the experimental `gql` capability (
 When the REPL connects over `ws://`, `http://`, or similar, pass capability flags on **`surreal start`** only. The same flags on `surreal sql` do not enable or disable `eval` at runtime.
 
 ```bash
-# Terminal 1 — start the server with eval enabled for system users
+# Terminal 1 - start the server with eval enabled for system users
 surreal start --user root --pass secret --allow-eval-query
 
-# Terminal 2 — no --allow-eval-query needed on the client
+# Terminal 2 - no --allow-eval-query needed on the client
 surreal sql -e ws://localhost:8000 --user root --pass secret
 ```
 
@@ -275,6 +275,6 @@ See [`SURREAL_CAPS_ALLOW_EVAL_QUERY`](../../../cli/surrealdb-cli/environment-var
 
 ## See also
 
-- [Representations and codecs](../../../../learn/querying/concepts-and-guides/representations-and-codecs.md) — when to use `eval::*` versus encode, parse, or analyse functions
-- [GQL overview](../../../../learn/querying/gql/overview.md) — ISO GQL on the wire and via `eval::gql`
-- [Capabilities](../../../../learn/security/authorization/capabilities.md) — full capability model
+- [Representations and codecs](../../../../learn/querying/concepts-and-guides/representations-and-codecs.md) - when to use `eval::*` versus encode, parse, or analyse functions
+- [GQL overview](../../../../learn/querying/gql/overview.md) - ISO GQL on the wire and via `eval::gql`
+- [Capabilities](../../../../learn/security/authorization/capabilities.md) - full capability model

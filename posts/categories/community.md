@@ -64,12 +64,12 @@ _35 posts_
 - **2022-09-06** · [Getting started with SurrealDB](../2022/09/getting-started-with-surrealdb.md)  
   `community` — Thank you very much to Chris Hay, CTO at IBM iX for his excellent, thorough video on SurrealDB. We are looking forward to the sequel!
 - **2022-08-24** · [No. 1 GitHub trending repository!](../2022/08/no-1-github-trending-repository.md)  
-  `community` — Absolutely shocked and honoured to reach the No. 1 trending public repository on GitHub worldwide. Thank you to everyone who has shown interest in SurrealDB and helped us reach 2500 GitHub stars!
+  `community` — Absolutely shocked and honoured that SurrealDB has made reach the No. 1 trending public repository on GitHub worldwide, along with 2500 stars in total.
 - **2022-08-22** · [No. 1 on Reddit's Programming subreddit 🔥 'Hot' list](../2022/08/no-1-on-reddits-programming-subreddit--hot-list.md)  
-  `community` — Thank you for all the comments, feedback and support on the SurrealDB post on Reddit's 4.5 million member-strong Programming subreddit. We are honoured to have made No. 1 on the 🔥 'Hot' list.
+  `community` — Thank you for the comments, feedback and support on the SurrealDB post on the 4.5 million+ member Programming subreddit, where we were No. 1 on the 'Hot' list.
 - **2022-08-22** · [Honoured to be #4 on the front page of Hacker News](../2022/08/honoured-to-be-4-on-the-front-page-of-hacker-news.md)  
   `community` — Wow!!! We really can't believe this!!! We are absolutely buzzing to make it onto the front page of Hacker News, and to get to number 4, no less! 😍
-- **2022-08-20** · [SurrealDB on Reddit Rust](../2022/08/surrealdb-on-reddit-rust.md)  
+- **2022-08-20** · [SurrealDB post on Rust subreddit](../2022/08/surrealdb-on-reddit-rust.md)  
   `community` — Thank you for all the comments, feedback and support on the SurrealDB post on Reddit's Rust subreddit. We are honoured to have made the 🔥 'Hot' list.
-- **2022-08-05** · [Thank you!](../2022/08/thank-you.md)  
+- **2022-08-05** · [Thank you! SurrealDB now past 100 stars](../2022/08/thank-you.md)  
   `community` — Thank you to our SurrealDB stargazers for helping us pass 100 GitHub stars! It’s early days, but we greatly appreciate it!

@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1074 pages_  
+_1075 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -534,6 +534,8 @@ _1074 pages_
 - [Use SurrealDB with LangChain](labs/use-surrealdb-with-langchain.md)
   Reference integration for using SurrealDB with LangChain.
 - [Using SurrealDB to prove football statistics.](labs/using-surrealdb-to-prove-football-statistics.md)
+- [VentStream: Real-time CDC sync into SurrealDB](labs/ventstream.md)
+  Stream PostgreSQL, MySQL, MongoDB, and Neo4j into SurrealDB in real time.
 - [Community SDKs](languages/community.md)
   Community-maintained and experimental SurrealDB clients for languages beyond the official SDKs.
 - [.NET](languages/dotnet.md)

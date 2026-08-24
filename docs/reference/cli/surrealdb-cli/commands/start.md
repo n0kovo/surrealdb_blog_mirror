@@ -365,10 +365,6 @@ surreal start --allow-experimental surrealism,files
 | --- | --- |
 | [DEFINE BUCKET](../../../query-language/statements/define/bucket.md) | `files` |
 | [DEFINE MODULE](../../../query-language/statements/define/module.md) | `surrealism` |
-| [Writes inside create, update, and delete permission clauses](../../../query-language/statements/define/table.md#writes-inside-a-permission-clause) | `mutable_permissions` |
-
-> [!NOTE]
-> `mutable_permissions` does not work like the tags above. From 3.3.0 a server enables it on its own, so you never pass it to `--allow-experimental`. Name it in `--deny-experimental` or `SURREAL_CAPS_DENY_EXPERIMENTAL` to turn it off. Embedded engines still have it off by default and must allow it explicitly.
 
 ## Further examples
 

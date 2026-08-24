@@ -79,9 +79,9 @@ _41 posts_
   `company` — Matt and FirstMark deeply share our vision, and we are truly humbled to have them with us on this journey.
 - **2022-11-25** · [We are hiring!](../2022/11/we-are-hiring.md)  
   `company` — We are a startup with an ambitious mission to build the ultimate multi-model database for tomorrow’s applications. We are seeking to hire the best - people who care deeply about the work they do, and care about the people with whom they create and promote the product.
-- **2022-08-04** · [Indie Hackers launch](../2022/08/indie-hackers-launch.md)  
+- **2022-08-04** · [Indie Hackers launch post on SurrealDB](../2022/08/indie-hackers-launch.md)  
   `company` — Thank you for all the comments, feedback and support on our SurrealDB 'launch' post on IndieHackers.com. We are honoured to have made the 'Popular' list!
-- **2022-07-21** · [Documentation is live](../2022/07/documentation-is-live.md)  
+- **2022-07-21** · [Documentation for SurrealDB is now live](../2022/07/documentation-is-live.md)  
   `company` `releases` — We’re happy to announce that our SurrealDB Documentation is LIVE! Installation, setup, datatypes, querying, connectivity, advanced functionality. It's all here.
-- **2022-07-20** · [Dreaming of something better](../2022/07/dreaming-of-something-better.md)  
-  `company` `featured` — WE ARE LIVE!!! After 7 years of conceptualising, planning, designing and developing, our #opensource scalable cloud graph database SurrealDB is now in open beta to the world!
+- **2022-07-20** · [Dreaming of something better: SurrealDB is now live](../2022/07/dreaming-of-something-better.md)  
+  `company` `featured` — After 7 years of conceptualising, planning, designing and developing, our source available cloud graph database SurrealDB is now in open beta to the world!

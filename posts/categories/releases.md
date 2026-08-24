@@ -97,15 +97,15 @@ _53 posts_
   `releases` — The easiest and preferred way to get going with SurrealDB on Windows is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions...
 - **2022-08-29** · [Release v1.0.0-beta.7](../2022/08/release-v1-0-0-beta-7.md)  
   `releases` — Add support for Objects and Arrays as Record IDs, add support for querying records using Record ID ranges, add SQL <code>session<\/code> functions for retrieving session variables, make <code>--ns<\/code> and <code>--db<\/code> arguments optional in command-line REPL, and much more.
-- **2022-08-13** · [Release v1.0.0-beta.6](../2022/08/release-v1-0-0-beta-6.md)  
-  `releases` — Add command-line SurrealQL REPL for quick querying of a database, log username at server startup when root authentication is enabled, enable SurrealDB server to be configured using environment variables, implement config definition key and value caching within a transaction, and much more.
-- **2022-08-01** · [Release v1.0.0-beta.5](../2022/08/release-v1-0-0-beta-5.md)  
+- **2022-08-13** · [Release v1.0.0-beta.6: New CLI REPL, env var configs](../2022/08/release-v1-0-0-beta-6.md)  
+  `releases` — Add CLI SurrealQL REPL, log username at startup, allow env var configs for SurrealDB server, config definition key and value caching within a transaction.
+- **2022-08-01** · [Release v1.0.0-beta.5: HTTP response compression and improved CLI commands](../2022/08/release-v1-0-0-beta-5.md)  
   `releases` — Temporarily disable HTTP response compression, improve <code>surreal import<\/code> and <code>surreal export<\/code> cli commands, and more...
-- **2022-07-28** · [Release v1.0.0-beta.4](../2022/07/release-v1-0-0-beta-4.md)  
+- **2022-07-28** · [Release v1.0.0-beta.4: strict mode and default table permissions](../2022/07/release-v1-0-0-beta-4.md)  
   `releases` — Add new strict mode to SurrealDB server, ensure default table permissions are set to <code>NONE<\/code> not <code>FULL<\/code>, and more...
-- **2022-07-24** · [Release v1.0.0-beta.3](../2022/07/release-v1-0-0-beta-3.md)  
-  `releases` — Log root authentication configuration status on server startup, ensure CORS headers are set on all HTTP responses even when request fails with an error, and more...
-- **2022-07-21** · [Documentation is live](../2022/07/documentation-is-live.md)  
+- **2022-07-24** · [Release v1.0.0-beta.3: Durations and root auth config](../2022/07/release-v1-0-0-beta-3.md)  
+  `releases` — Log root authentication configuration status on server startup, ensure CORS headers are set on all HTTP responses even when request fails with an error, more...
+- **2022-07-21** · [Documentation for SurrealDB is now live](../2022/07/documentation-is-live.md)  
   `company` `releases` — We’re happy to announce that our SurrealDB Documentation is LIVE! Installation, setup, datatypes, querying, connectivity, advanced functionality. It's all here.
-- **2022-07-20** · [Release v1.0.0-beta.2](../2022/07/release-v1-0-0-beta-2.md)  
+- **2022-07-20** · [Release v1.0.0-beta.2: Server log verbosity and startup output](../2022/07/release-v1-0-0-beta-2.md)  
   `releases` — SurrealDB 1.0.0-beta.2 adds a <code>--log<\/code> argument for setting server log verbosity, and stops printing the generated root password at startup.

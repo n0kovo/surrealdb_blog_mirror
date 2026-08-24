@@ -227,5 +227,5 @@ _113 posts_
   `company` `featured` — London, United Kingdom June 18, 2024, SurrealDB, the ultimate multi-model database, today announced a $20 million investment round led by FirstMark and Georgian with participation from Crew Capital and Alumni Ventures. This latest round of funding brings SurrealDB’s total to $26 million.
 - **2024-05-01** · [Surrealist 2.0](../2024/05/surrealist-2-0.md)  
   `releases` `featured` — An important part of each database is the ability to easily and effortlessly control each aspect of the database. While this may appear trivial at first, it actually encompasses a wide set of different tasks. For this reason Surrealist has officially joined SurrealDB as the official management interface.
-- **2022-07-20** · [Dreaming of something better](../2022/07/dreaming-of-something-better.md)  
-  `company` `featured` — WE ARE LIVE!!! After 7 years of conceptualising, planning, designing and developing, our #opensource scalable cloud graph database SurrealDB is now in open beta to the world!
+- **2022-07-20** · [Dreaming of something better: SurrealDB is now live](../2022/07/dreaming-of-something-better.md)  
+  `company` `featured` — After 7 years of conceptualising, planning, designing and developing, our source available cloud graph database SurrealDB is now in open beta to the world!

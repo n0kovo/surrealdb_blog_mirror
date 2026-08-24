@@ -199,5 +199,5 @@ _99 posts_
   `tutorials` — An exploration of the similarities and differences between PostgreSQL and SurrealQL, and how SurrealQL overcomes the limitations found in relational databases.
 - **2023-02-08** · [An introduction to SurrealDB](../2023/02/an-introduction-to-surrealdb.md)  
   `tutorials` — SurrealDB is a database that does many routine things, so you can focus on what matters to you - processing your data.
-- **2022-08-03** · [Why use SurrealDB?](../2022/08/why-use-surrealdb.md)  
-  `tutorials` — SurrealDB is an innovative NewSQL cloud database, suitable for serverless applications, jamstack applications, single-page applications, and traditional applications. It is unmatched in its versatility and financial value, with the ability for deployment on cloud, on-premise, embedded, and edge computing environments.
+- **2022-08-03** · [Why use SurrealDB? The benefits explained](../2022/08/why-use-surrealdb.md)  
+  `tutorials` — SurrealDB is an innovative NewSQL cloud database, suitable for single page, traditional, serverless, and jamstack applications.

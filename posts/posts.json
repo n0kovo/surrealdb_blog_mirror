@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T06:34:19.377815+00:00",
+  "generated_at": "2026-08-24T06:50:24.114997+00:00",
   "count": 259,
   "posts": [
     {
@@ -3358,7 +3358,7 @@
     {
       "slug": "no-1-github-trending-repository",
       "title": "No. 1 GitHub trending repository!",
-      "summary": "Absolutely shocked and honoured to reach the No. 1 trending public repository on GitHub worldwide. Thank you to everyone who has shown interest in SurrealDB and helped us reach 2500 GitHub stars!",
+      "summary": "Absolutely shocked and honoured that SurrealDB has made reach the No. 1 trending public repository on GitHub worldwide, along with 2500 stars in total.",
       "publishDate": "2022-08-24T00:00:00.000Z",
       "categories": [
         "community"
@@ -3371,7 +3371,7 @@
     {
       "slug": "no-1-on-reddits-programming-subreddit--hot-list",
       "title": "No. 1 on Reddit's Programming subreddit 🔥 'Hot' list",
-      "summary": "Thank you for all the comments, feedback and support on the SurrealDB post on Reddit's 4.5 million member-strong Programming subreddit. We are honoured to have made No. 1 on the 🔥 'Hot' list.",
+      "summary": "Thank you for the comments, feedback and support on the SurrealDB post on the 4.5 million+ member Programming subreddit, where we were No. 1 on the 'Hot' list.",
       "publishDate": "2022-08-22T00:00:00.000Z",
       "categories": [
         "community"
@@ -3396,7 +3396,7 @@
     },
     {
       "slug": "surrealdb-on-reddit-rust",
-      "title": "SurrealDB on Reddit Rust",
+      "title": "SurrealDB post on Rust subreddit",
       "summary": "Thank you for all the comments, feedback and support on the SurrealDB post on Reddit's Rust subreddit. We are honoured to have made the 🔥 'Hot' list.",
       "publishDate": "2022-08-20T00:00:00.000Z",
       "categories": [
@@ -3409,8 +3409,8 @@
     },
     {
       "slug": "release-v1-0-0-beta-6",
-      "title": "Release v1.0.0-beta.6",
-      "summary": "Add command-line SurrealQL REPL for quick querying of a database, log username at server startup when root authentication is enabled, enable SurrealDB server to be configured using environment variables, implement config definition key and value caching within a transaction, and much more.",
+      "title": "Release v1.0.0-beta.6: New CLI REPL, env var configs",
+      "summary": "Add CLI SurrealQL REPL, log username at startup, allow env var configs for SurrealDB server, config definition key and value caching within a transaction.",
       "publishDate": "2022-08-13T00:00:00.000Z",
       "categories": [
         "releases"
@@ -3422,7 +3422,7 @@
     },
     {
       "slug": "thank-you",
-      "title": "Thank you!",
+      "title": "Thank you! SurrealDB now past 100 stars",
       "summary": "Thank you to our SurrealDB stargazers for helping us pass 100 GitHub stars! It’s early days, but we greatly appreciate it!",
       "publishDate": "2022-08-05T00:00:00.000Z",
       "categories": [
@@ -3435,7 +3435,7 @@
     },
     {
       "slug": "indie-hackers-launch",
-      "title": "Indie Hackers launch",
+      "title": "Indie Hackers launch post on SurrealDB",
       "summary": "Thank you for all the comments, feedback and support on our SurrealDB 'launch' post on IndieHackers.com. We are honoured to have made the 'Popular' list!",
       "publishDate": "2022-08-04T00:00:00.000Z",
       "categories": [
@@ -3448,7 +3448,7 @@
     },
     {
       "slug": "client-libraries-live",
-      "title": "Client libraries live!",
+      "title": "SurrealDB client libraries are now live!",
       "summary": "We’re happy to announce that initial server side documentation for Node.js, Golang and Deno, along with client side documentation for JavaScript is LIVE!",
       "publishDate": "2022-08-04T00:00:00.000Z",
       "categories": [
@@ -3461,8 +3461,8 @@
     },
     {
       "slug": "why-use-surrealdb",
-      "title": "Why use SurrealDB?",
-      "summary": "SurrealDB is an innovative NewSQL cloud database, suitable for serverless applications, jamstack applications, single-page applications, and traditional applications. It is unmatched in its versatility and financial value, with the ability for deployment on cloud, on-premise, embedded, and edge computing environments.",
+      "title": "Why use SurrealDB? The benefits explained",
+      "summary": "SurrealDB is an innovative NewSQL cloud database, suitable for single page, traditional, serverless, and jamstack applications.",
       "publishDate": "2022-08-03T00:00:00.000Z",
       "categories": [
         "tutorials"
@@ -3474,7 +3474,7 @@
     },
     {
       "slug": "release-v1-0-0-beta-5",
-      "title": "Release v1.0.0-beta.5",
+      "title": "Release v1.0.0-beta.5: HTTP response compression and improved CLI commands",
       "summary": "Temporarily disable HTTP response compression, improve <code>surreal import<\\/code> and <code>surreal export<\\/code> cli commands, and more...",
       "publishDate": "2022-08-01T00:00:00.000Z",
       "categories": [
@@ -3487,7 +3487,7 @@
     },
     {
       "slug": "release-v1-0-0-beta-4",
-      "title": "Release v1.0.0-beta.4",
+      "title": "Release v1.0.0-beta.4: strict mode and default table permissions",
       "summary": "Add new strict mode to SurrealDB server, ensure default table permissions are set to <code>NONE<\\/code> not <code>FULL<\\/code>, and more...",
       "publishDate": "2022-07-28T00:00:00.000Z",
       "categories": [
@@ -3500,8 +3500,8 @@
     },
     {
       "slug": "release-v1-0-0-beta-3",
-      "title": "Release v1.0.0-beta.3",
-      "summary": "Log root authentication configuration status on server startup, ensure CORS headers are set on all HTTP responses even when request fails with an error, and more...",
+      "title": "Release v1.0.0-beta.3: Durations and root auth config",
+      "summary": "Log root authentication configuration status on server startup, ensure CORS headers are set on all HTTP responses even when request fails with an error, more...",
       "publishDate": "2022-07-24T00:00:00.000Z",
       "categories": [
         "releases"
@@ -3513,7 +3513,7 @@
     },
     {
       "slug": "documentation-is-live",
-      "title": "Documentation is live",
+      "title": "Documentation for SurrealDB is now live",
       "summary": "We’re happy to announce that our SurrealDB Documentation is LIVE! Installation, setup, datatypes, querying, connectivity, advanced functionality. It's all here.",
       "publishDate": "2022-07-21T00:00:00.000Z",
       "categories": [
@@ -3527,8 +3527,8 @@
     },
     {
       "slug": "dreaming-of-something-better",
-      "title": "Dreaming of something better",
-      "summary": "WE ARE LIVE!!! After 7 years of conceptualising, planning, designing and developing, our #opensource scalable cloud graph database SurrealDB is now in open beta to the world!",
+      "title": "Dreaming of something better: SurrealDB is now live",
+      "summary": "After 7 years of conceptualising, planning, designing and developing, our source available cloud graph database SurrealDB is now in open beta to the world!",
       "publishDate": "2022-07-20T00:00:00.000Z",
       "categories": [
         "company",
@@ -3541,7 +3541,7 @@
     },
     {
       "slug": "release-v1-0-0-beta-2",
-      "title": "Release v1.0.0-beta.2",
+      "title": "Release v1.0.0-beta.2: Server log verbosity and startup output",
       "summary": "SurrealDB 1.0.0-beta.2 adds a <code>--log<\\/code> argument for setting server log verbosity, and stops printing the generated root password at startup.",
       "publishDate": "2022-07-20T00:00:00.000Z",
       "categories": [

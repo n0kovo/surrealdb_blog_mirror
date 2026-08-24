@@ -93,5 +93,5 @@ _46 posts_
   `engineering` `tutorials` — At SurrealDB, we are all about doing things that spark joy for developers. One of those things that constantly surprises and delights is the humble record ID.
 - **2023-05-01** · [SurrealDB Scalability](../2023/05/surrealdb-scalability.md)  
   `engineering` — SurrealDB is a multi-paradigm database that allows you to perform document, graph, temporal, spatial, and text operations within an ACID environment. The SurrealDB service is a compute layer that processes queries and operates on a storage layer. As of writing, our storage layer is predominantly RocksDB.
-- **2022-08-04** · [Client libraries live!](../2022/08/client-libraries-live.md)  
+- **2022-08-04** · [SurrealDB client libraries are now live!](../2022/08/client-libraries-live.md)  
   `engineering` — We’re happy to announce that initial server side documentation for Node.js, Golang and Deno, along with client side documentation for JavaScript is LIVE!

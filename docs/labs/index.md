@@ -5,7 +5,7 @@ generated: stub
 
 # Labs
 
-_Auto-generated index — 76 pages._
+_Auto-generated index — 77 pages._
 
 ## Pages
 
@@ -116,3 +116,5 @@ _Auto-generated index — 76 pages._
 - [Use SurrealDB with LangChain](use-surrealdb-with-langchain.md)
   Reference integration for using SurrealDB with LangChain.
 - [Using SurrealDB to prove football statistics.](using-surrealdb-to-prove-football-statistics.md)
+- [VentStream: Real-time CDC sync into SurrealDB](ventstream.md)
+  Stream PostgreSQL, MySQL, MongoDB, and Neo4j into SurrealDB in real time.

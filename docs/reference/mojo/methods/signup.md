@@ -13,7 +13,7 @@ Creates a new record-access account from CBOR-encoded credentials and signs in.
 client.signup(credentials_cbor, session)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -34,7 +34,7 @@ client.signup(credentials_cbor, session)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 from surrealdb import CborCodec
@@ -54,7 +54,7 @@ var resp = client.signup(codec.encode_map(pairs))
 > [!NOTE]
 > `signup` operates on a stateful session, which is provided by the WebSocket transport. WebSocket support is rolling out.
 
-### See also
+## See also
 
 - [Authentication](../concepts/authentication.md)
 - [`signin()`](signin.md)

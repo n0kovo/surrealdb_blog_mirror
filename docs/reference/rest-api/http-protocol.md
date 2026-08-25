@@ -921,7 +921,7 @@ curl -X GET -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Acc
 This HTTP RESTful endpoint creates a record in a specific table in the database.
 
 > [!NOTE]
-> This HTTP endpoint expects the HTTP body to be a **single inert value** (parsed with the SurrealQL value grammar and bound to **`$data`** in the translated statement). Literals, `$param` references, and constants are allowed; function calls, statements, and parenthesised executable forms are rejected. The body is not executed as a script. Use [`/sql`](http-protocol.md#post-sql) or RPC when you need to run queries in the request body. JSON-shaped objects such as `{ name: "Billy" }` are valid SurrealQL values and are the usual choice on the wire.
+> This HTTP endpoint expects the HTTP body to be a **single inert value** (parsed with the SurrealQL value grammar and bound to **`$data`** in the translated statement). Literals, `$param` references, and constants are allowed; function calls, statements, and parenthesised executable forms are rejected. The body is not executed as a script. Use [`/sql`](http-protocol.md#sql) or RPC when you need to run queries in the request body. JSON-shaped objects such as `{ name: "Billy" }` are valid SurrealQL values and are the usual choice on the wire.
 
 ### Headers
 
@@ -1006,7 +1006,7 @@ curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Ac
 This HTTP RESTful endpoint updates all records in a specific table in the database.
 
 > [!NOTE]
-> This HTTP endpoint expects the HTTP body to be a **single inert value** (SurrealQL literal / object syntax; not an executable statement). Use [`/sql`](http-protocol.md#post-sql) or RPC to run SurrealQL in the request body.
+> This HTTP endpoint expects the HTTP body to be a **single inert value** (SurrealQL literal / object syntax; not an executable statement). Use [`/sql`](http-protocol.md#sql) or RPC to run SurrealQL in the request body.
 
 ### Headers
 
@@ -1099,7 +1099,7 @@ curl -X PUT -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Acc
 This HTTP RESTful endpoint modifies all records in a specific table in the database.
 
 > [!NOTE]
-> This HTTP endpoint expects the HTTP body to be a **single inert value** (SurrealQL literal / object syntax; not an executable statement). Use [`/sql`](http-protocol.md#post-sql) or RPC to run SurrealQL in the request body.
+> This HTTP endpoint expects the HTTP body to be a **single inert value** (SurrealQL literal / object syntax; not an executable statement). Use [`/sql`](http-protocol.md#sql) or RPC to run SurrealQL in the request body.
 
 ### Headers
 
@@ -1434,7 +1434,7 @@ curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H "Ac
 This HTTP RESTful endpoint updates a specific record in a table in the database.
 
 > [!NOTE]
-> This HTTP endpoint expects the HTTP body to be a **single inert value** (SurrealQL literal / object syntax; not an executable statement). Use [`/sql`](http-protocol.md#post-sql) or RPC to run SurrealQL in the request body.
+> This HTTP endpoint expects the HTTP body to be a **single inert value** (SurrealQL literal / object syntax; not an executable statement). Use [`/sql`](http-protocol.md#sql) or RPC to run SurrealQL in the request body.
 
 ### Headers
 
@@ -1498,7 +1498,7 @@ UPDATE type::record($table, $id) CONTENT $data;
 This HTTP RESTful endpoint modifies a specific record in a table in the database.
 
 > [!NOTE]
-> This HTTP endpoint expects the HTTP body to be a **single inert value** (SurrealQL literal / object syntax; not an executable statement). Use [`/sql`](http-protocol.md#post-sql) or RPC to run SurrealQL in the request body.
+> This HTTP endpoint expects the HTTP body to be a **single inert value** (SurrealQL literal / object syntax; not an executable statement). Use [`/sql`](http-protocol.md#sql) or RPC to run SurrealQL in the request body.
 
 ### Headers
 

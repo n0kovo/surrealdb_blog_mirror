@@ -13,7 +13,7 @@ Starts a session-scoped transaction and returns a handle. The handle buffers sta
 client.begin_transaction(session)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -30,7 +30,7 @@ client.begin_transaction(session)
     </tbody>
 </table>
 
-### Handle methods
+## Handle methods
 
 The returned handle exposes:
 
@@ -39,7 +39,7 @@ The returned handle exposes:
 - `commit()` to run the buffered statements atomically.
 - `cancel()` to discard them.
 
-### Example usage
+## Example usage
 
 ```python
 var txn = client.begin_transaction()
@@ -51,7 +51,7 @@ txn.commit()
 > [!NOTE]
 > Session transactions run over a stateful WebSocket session. WebSocket support is rolling out. For atomic transactions over HTTP, use [`transaction_multi()`](transaction-multi.md).
 
-### See also
+## See also
 
 - [Transactions](../concepts/transactions.md)
 - [`transaction_multi()`](transaction-multi.md)

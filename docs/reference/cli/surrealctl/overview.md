@@ -1,6 +1,6 @@
 ---
 position: 1
-title: Overview
+title: surrealctl reference
 description: What surrealctl is, where the control plane ends and the SurrealDB CLI begins, the command grammar, and how this reference is organised.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/overview.mdx"
 ---

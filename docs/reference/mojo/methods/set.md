@@ -13,7 +13,7 @@ Assigns a value to a parameter for the connection, so you can reference it as `$
 client.set(name, value_cbor, session)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -38,7 +38,7 @@ client.set(name, value_cbor, session)
     </tbody>
 </table>
 
-### Convenience wrappers
+## Convenience wrappers
 
 For common scalar types, the SDK provides wrappers that encode the value for you:
 
@@ -46,7 +46,7 @@ For common scalar types, the SDK provides wrappers that encode the value for you
 - `set_int(name, value, session)`
 - `set_bool(name, value, session)`
 
-### Example usage
+## Example usage
 
 ```python
 client.set_string("name", "Chiru")
@@ -64,6 +64,6 @@ var codec = CborCodec()
 client.set("name", codec.encode_text("Chiru"))
 ```
 
-### See also
+## See also
 
 - [`unset()`](unset.md)

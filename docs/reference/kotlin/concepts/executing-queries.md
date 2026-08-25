@@ -28,7 +28,7 @@ The [`.query()`](../api/core/surreal-client.md#query) family runs raw [SurrealQL
 			<td scope="row" data-label="Description">Runs SurrealQL and decodes the result to `T`</td>
 		</tr>
 		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/reference/kotlin/api/core/surreal-client#query-result">`client.queryResult(sql, vars)`</a></td>
+			<td scope="row" data-label="Method"><a href="/docs/reference/kotlin/api/core/surreal-client#query">`client.queryResult(sql, vars)`</a></td>
 			<td scope="row" data-label="Description">Runs SurrealQL and returns a `Result`</td>
 		</tr>
 		<tr>

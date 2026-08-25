@@ -13,7 +13,7 @@ _1075 pages_
   Supervisors, reflection, and shared scopes.
 - [Personal AI assistant](agent-memory/cookbooks/build/personal-ai-assistant.md)
   End-user scoped memory with profiles and preferences.
-- [Overview](agent-memory/cookbooks/index.md)
+- [Cookbooks](agent-memory/cookbooks/index.md)
   Opinionated recipes and migration guides.
 - [Migrate from LangMem](agent-memory/cookbooks/migrate/from-langmem.md)
   Moving LangChain memory to SurrealDB Agent Memory.
@@ -53,7 +53,7 @@ _1075 pages_
   Graph-resident traces, reflection, elaboration, consolidation, and semantic response reuse.
 - [Tri-temporal model](agent-memory/index/architecture/tri-temporal-model.md)
   System time, known time, and valid time - supersession, aging, and explicit forget.
-- [Overview](agent-memory/index/index.md)
+- [Agent Memory](agent-memory/index/index.md)
   Principles, architecture, quickstarts, and mental model for SurrealDB Agent Memory - memory and knowledge for AI agents on SurrealDB.
 - [Bulk import](agent-memory/index/ingest/authoritative/bulk-import.md)
   Importing large quantities of documents or knowledge nodes into SurrealDB Agent Memory.
@@ -171,7 +171,7 @@ _1075 pages_
   SurrealDB Agent Memory for Pydantic AI, via a toolset, auto-recall processor, and persistence helpers.
 - [Strands Agents](agent-memory/integrations/frameworks/strands-agents.md)
   SurrealDB Agent Memory as tools for the Strands Agents SDK.
-- [Overview](agent-memory/integrations/index.md)
+- [Agent Memory integrations](agent-memory/integrations/index.md)
   Connecting SurrealDB Agent Memory to your stack - SDKs, MCP server, AI SDKs, agent frameworks, voice tools, and automation.
 - [Antigravity](agent-memory/integrations/mcp-server/coding-assistants/antigravity.md)
   Installing SurrealDB Agent Memory as an MCP server in Google Antigravity.
@@ -237,7 +237,7 @@ _1075 pages_
   Error codes and troubleshooting.
 - [Glossary](agent-memory/reference/glossary.md)
   Terminology used across SurrealDB Agent Memory docs.
-- [Overview](agent-memory/reference/index.md)
+- [Agent Memory reference](agent-memory/reference/index.md)
   Complete API and configuration reference for SurrealDB Agent Memory.
 - [Management API](agent-memory/reference/management-api.md)
   Contexts, keys, and operator lifecycle.
@@ -313,7 +313,7 @@ _1075 pages_
   A complete walkthrough for building a code-generating AI agent that recommends grocery items by querying SurrealDB's HNSW vector index.
 - [Getting started](build/integrations/authentication/better-auth/getting-started.md)
   Install the @surrealdb/better-auth adapter, connect to SurrealDB, configure the adapter, and generate your Better Auth schema.
-- [Overview](build/integrations/authentication/better-auth/overview.md)
+- [Better Auth](build/integrations/authentication/better-auth/overview.md)
   Use SurrealDB as the database behind Better Auth with the @surrealdb/better-auth adapter, including schema generation, transactions, and support for all Better Auth plugins.
 - [Plugins](build/integrations/authentication/better-auth/plugins.md)
   Use any Better Auth plugin with the SurrealDB adapter and call the SurrealQL helper functions generated for the organisation plugin.
@@ -389,7 +389,7 @@ _1075 pages_
   Blink - a Notion-style workspace demo built with SurrealDB and WebAssembly.
 - [Kai G AI demos](explore/tutorials/demos/kaig-ai-demos.md)
   A collection of AI demo applications built with SurrealDB, showcasing RAG, agents, and knowledge graph patterns.
-- [Overview](explore/tutorials/demos/overview.md)
+- [Demos](explore/tutorials/demos/overview.md)
   Sample applications and datasets you can clone, import, or run locally to explore SurrealDB without a long-form walkthrough.
 - [Surreal Deal Store](explore/tutorials/demos/surreal-deal-store.md)
   To quickly test out SurrealDB and SurrealQL functionality, we've included demo data which you can download and import into SurrealDB.
@@ -417,7 +417,7 @@ _1075 pages_
   In this tutorial, you will learn how to query the SurrealDB RESTful HTTP API endpoints using Postman.
 - [Build a minimal LangChain chatbot](explore/tutorials/tutorials/minimal-langchain.md)
   This tutorial shows how to build a minimal LangChain chatbot with both vector and graph.
-- [Overview](explore/tutorials/tutorials/overview.md)
+- [Tutorials](explore/tutorials/tutorials/overview.md)
   Step-by-step tutorials and walkthroughs for specific tasks with SurrealDB: integrations, real-time apps, AI patterns, and more.
 - [Implement semantic search in Rust](explore/tutorials/tutorials/semantic-search-in-rust.md)
   In this guide, you'll learn how to implement semantic search in Rust using either Mistral AI or OpenAI via their Rust crates.
@@ -674,7 +674,7 @@ _1075 pages_
   Chaining custom functions before your API handler so you can share logic on DEFINE API routes.
 - [Mutations](learn/querying/gql/mutations.md)
   ISO GQL data-modifying statements - INSERT, SET, REMOVE, and DELETE - on the /gql endpoint.
-- [Overview](learn/querying/gql/overview.md)
+- [GQL](learn/querying/gql/overview.md)
   Query SurrealDB graph data with ISO GQL - a Cypher-like graph pattern language over HTTP and RPC.
 - [Sample queries](learn/querying/gql/sample-queries.md)
   Compare common GQL graph patterns against similar SurrealQL queries on the same seed graph.
@@ -936,7 +936,7 @@ _1075 pages_
   Reference for surrealctl config - listing, reading, setting and clearing configuration values, printing the file path, and opening it in an editor.
 - [context](reference/cli/surrealctl/commands/context.md)
   Reference for surrealctl context - showing what an invocation resolved, switching between profiles, and listing the profiles that are configured.
-- [Overview](reference/cli/surrealctl/commands/index.md)
+- [surrealctl commands](reference/cli/surrealctl/commands/index.md)
   A map of every surrealctl command group and leaf command, with links to the page documenting each one.
 - [instance](reference/cli/surrealctl/commands/instance.md)
   Reference for surrealctl instance - creating, scaling, pausing and deleting instances, reading logs, metrics and endpoints, minting tokens, and managing capabilities and backups.
@@ -958,7 +958,7 @@ _1075 pages_
   How surrealctl waits for an instance to settle - the wait flags, which commands wait by default, the polling schedule, rate-limit handling, and exit code 10.
 - [Output and exit codes](reference/cli/surrealctl/output-and-exit-codes.md)
   The surrealctl --json contract, the stdout and stderr split, NDJSON streams, the shared list presentation flags, the secret and confirmation guards, and every exit code.
-- [Overview](reference/cli/surrealctl/overview.md)
+- [surrealctl reference](reference/cli/surrealctl/overview.md)
   What surrealctl is, where the control plane ends and the SurrealDB CLI begins, the command grammar, and how this reference is organised.
 - [export](reference/cli/surrealdb-cli/commands/export.md)
   A command to export data from a SurrealDB database server into a SurrealQL file format.
@@ -968,7 +968,7 @@ _1075 pages_
   A command to display all possible top-level commands and arguments used in the SurrealDB binary.
 - [import](reference/cli/surrealdb-cli/commands/import.md)
   A command that imports a file in SurrealQL format into a local or remote SurrealDB database server.
-- [Overview](reference/cli/surrealdb-cli/commands/index.md)
+- [SurrealDB CLI commands](reference/cli/surrealdb-cli/commands/index.md)
   How the SurrealDB CLI is organised into subcommands, with links to each command’s flags and examples.
 - [isready](reference/cli/surrealdb-cli/commands/isready.md)
   A command that determines whether a SurrealDB server has started and is able to accept connections.
@@ -1025,69 +1025,69 @@ _1075 pages_
 - [Installation](reference/dotnet/installation.md)
   In this section, you will learn how to install the .NET SDK in your project.
 - [Authenticate](reference/dotnet/methods/authenticate.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Authenticates the current connection with a JWT token.
 - [Connect](reference/dotnet/methods/connect.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Connects the client to the underlying endpoint, also improving performance to avoid cold starts.
 - [Create](reference/dotnet/methods/create.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Creates a record in the database with the SurrealDB .NET SDK.
 - [Delete](reference/dotnet/methods/delete.md)
   The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
 - [Export](reference/dotnet/methods/export.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Export the database as a SurrealQL script.
 - [Health](reference/dotnet/methods/health.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Checks the status of the database server and storage engine.
 - [Import](reference/dotnet/methods/import.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Imports data into a SurrealDB database with the SurrealDB .NET SDK.
 - [SDK methods](reference/dotnet/methods/index.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  The .NET SDK for SurrealDB has a single SurrealDB class that provides methods for querying a remote SurrealDB database.
 - [Info](reference/dotnet/methods/info.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  This method returns the record of an authenticated scope user.
 - [InsertRelation](reference/dotnet/methods/insert-relation.md)
   The .NET SDK for SurrealDB enables you to insert a relation between two records.
 - [Insert](reference/dotnet/methods/insert.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Inserts one or multiple records in the database.
 - [Invalidate](reference/dotnet/methods/invalidate.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Invalidates the authentication for the current connection.
 - [Kill](reference/dotnet/methods/kill.md)
   The .NET SDK for SurrealDB enables you to kill a running live query.
 - [ListenLive](reference/dotnet/methods/listen_live.md)
   The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
 - [LiveQuery](reference/dotnet/methods/live-query.md)
-  The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
+  Initiate a live query from a SurrealQL statement.
 - [LiveRawQuery](reference/dotnet/methods/live-raw-query.md)
-  The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
+  Initiate a live query from a SurrealQL statement, based on a raw SurrealQL query.
 - [LiveTable](reference/dotnet/methods/live-table.md)
-  The .NET SDK for SurrealDB enables you to listen for changes to records in a table.
+  Initiate a live query from a table with the SurrealDB .NET SDK.
 - [Merge](reference/dotnet/methods/merge.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Modifies all records in a table, or a specific record.
 - [Patch](reference/dotnet/methods/patch.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Applies JSON Patch changes to all records, or a specific record, in the database.
 - [Query](reference/dotnet/methods/query.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Runs a set of SurrealQL statements against the database.
 - [RawQuery](reference/dotnet/methods/raw-query.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Runs a set of SurrealQL statements against the database, based on a raw SurrealQL query.
 - [Relate](reference/dotnet/methods/relate.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Creates a relation between records with the SurrealDB .NET SDK.
 - [Run](reference/dotnet/methods/run.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Runs a SurrealQL function with the SurrealDB .NET SDK.
 - [Select](reference/dotnet/methods/select.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Selects all records in a table, or a specific record, from the database.
 - [Set](reference/dotnet/methods/set.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Assigns a value as a parameter for this connection.
 - [SignIn](reference/dotnet/methods/signin.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Signs in to a root, namespace, database or scope user.
 - [SignUp](reference/dotnet/methods/signup.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Signs up to a specific authentication scope / access method.
 - [Unset](reference/dotnet/methods/unset.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Removes a parameter for this connection.
 - [Update](reference/dotnet/methods/update.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Updates all records in a table, or a specific record, in the database.
 - [Upsert](reference/dotnet/methods/upsert.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Creates or updates a specific record with the SurrealDB .NET SDK.
 - [Use](reference/dotnet/methods/use.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Switch to a specific namespace and database.
 - [Version](reference/dotnet/methods/version.md)
-  The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+  Retrieves the version of the SurrealDB instance.
 - [DB](reference/golang/api/core/db.md)
   The DB struct is the main entry point for connecting to and interacting with a SurrealDB instance from Go.
 - [Session](reference/golang/api/core/session.md)
@@ -1444,7 +1444,7 @@ _1075 pages_
   Configure the SurrealDB Laravel integration with environment variables, authentication modes, multiple named connections, and the ORM model list.
 - [Container and facades](reference/php/frameworks/laravel/container-and-facades.md)
   The service providers, container bindings, and the SurrealDB, Surreal, and Surqlize facades the Laravel integration registers.
-- [Overview](reference/php/frameworks/laravel/index.md)
+- [Laravel](reference/php/frameworks/laravel/index.md)
   The Laravel integration wires the SurrealDB PHP SDK and the Surqlize ORM into Laravel's config, service container, facades, and Artisan commands.
 - [Installation](reference/php/frameworks/laravel/installation.md)
   Install the SurrealDB Laravel integration with Composer and publish the SDK and ORM configuration files.
@@ -1454,7 +1454,7 @@ _1075 pages_
   Dump and apply your Surqlize schema in a Laravel application with the surqlize:schema-dump and surqlize:schema-apply Artisan commands.
 - [Testing](reference/php/frameworks/laravel/testing.md)
   Test SurrealDB code in Laravel with the fake query executor, query assertions, and the trait that resets Surqlize's global state between tests.
-- [Overview](reference/php/index.md)
+- [PHP SDK](reference/php/index.md)
   The SurrealDB SDK for PHP lets you query a remote SurrealDB instance from any PHP application, with a stable v1 release and a v2 rewrite in alpha.
 - [Code generation and CLI](reference/php/libraries/surqlize/code-generation-and-cli.md)
   Generate typed field adapters for Surqlize models and run the Surqlize CLI for field generation, schema application, and memory reports.
@@ -1462,7 +1462,7 @@ _1075 pages_
   Register an SDK executor with Surqlize's ConnectionManager, and inject a per-query executor when you need more than one connection.
 - [Edges and graph](reference/php/libraries/surqlize/edges-and-graph.md)
   Model SurrealDB graph relations in Surqlize with edge models, traverse them in a SELECT, and create them with RELATE.
-- [Overview](reference/php/libraries/surqlize/index.md)
+- [Surqlize](reference/php/libraries/surqlize/index.md)
   Surqlize is an object-relational mapper for SurrealDB in PHP, built on version 2 of the SDK, with attribute-driven models, a typed query builder, graph relations, and schema tooling.
 - [Installation](reference/php/libraries/surqlize/installation.md)
   Install Surqlize with Composer, including the alpha v2 SurrealDB PHP SDK it depends on.
@@ -1486,7 +1486,7 @@ _1075 pages_
   The SurrealDB SDK for PHP enables simple and advanced querying of a remote database.
 - [Executing queries](reference/php/v1/concepts/executing-queries.md)
   Interact with the database and perform CRUD operations using version 1 of the SurrealDB PHP SDK.
-- [Overview](reference/php/v1/index.md)
+- [PHP SDK v1](reference/php/v1/index.md)
   Version 1 is the current stable release of the SurrealDB PHP SDK, with direct RPC-style methods for querying a remote database.
 - [Installation](reference/php/v1/installation.md)
   Install version 1 of the SurrealDB PHP SDK with Composer.
@@ -1578,7 +1578,7 @@ _1075 pages_
   Run multiple independent sessions over a single WebSocket connection with version 2 of the PHP SDK, each with its own namespace, variables, and authentication.
 - [Transactions](reference/php/v2/concepts/transactions.md)
   Run multiple statements atomically with version 2 of the PHP SDK, using a SurrealQL transaction block or explicit transaction handles.
-- [Overview](reference/php/v2/index.md)
+- [PHP SDK v2](reference/php/v2/index.md)
   Version 2 of the SurrealDB SDK for PHP is a rewrite with a fluent query builder, typed credentials, and a PSR-based transport layer.
 - [Installation](reference/php/v2/installation.md)
   Install version 2 of the SurrealDB PHP SDK with Composer, including a PSR-18 HTTP client.
@@ -1807,29 +1807,29 @@ _1075 pages_
 - [ALTER CONFIG](reference/query-language/statements/alter/config.md)
   The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
 - [ALTER DATABASE](reference/query-language/statements/alter/database.md)
-  The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+  The ALTER DATABASE statement can be used to modify the database.
 - [ALTER EVENT](reference/query-language/statements/alter/event.md)
-  The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+  The ALTER EVENT statement can be used to modify an existing defined event.
 - [ALTER FIELD](reference/query-language/statements/alter/field.md)
-  The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+  The ALTER FIELD statement is used to change or entirely drop clauses of a defined field on a table.
 - [ALTER FUNCTION](reference/query-language/statements/alter/function.md)
-  The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+  The ALTER FUNCTION statement can be used to modify an existing defined function.
 - [ALTER INDEX](reference/query-language/statements/alter/indexes.md)
-  The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+  The ALTER INDEX statement is used to alter a defined index on a table.
 - [ALTER NAMESPACE](reference/query-language/statements/alter/namespace.md)
-  The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
-- [Overview](reference/query-language/statements/alter/overview.md)
-  The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+  The ALTER NAMESPACE statement can be used to modify the namespace.
+- [ALTER](reference/query-language/statements/alter/overview.md)
+  The ALTER statement can be used to change the behaviour of database resources.
 - [ALTER PARAM](reference/query-language/statements/alter/param.md)
-  The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+  The ALTER PARAM statement can be used to modify an existing defined param.
 - [ALTER SEQUENCE](reference/query-language/statements/alter/sequence.md)
-  The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+  The ALTER SEQUENCE statement is used to modify a defined sequence.
 - [ALTER SYSTEM](reference/query-language/statements/alter/system.md)
-  The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+  The ALTER SYSTEM statement is used to alter the entire datastore.
 - [ALTER TABLE](reference/query-language/statements/alter/table.md)
   The ALTER TABLE statement is used to alter a defined table.
 - [ALTER USER](reference/query-language/statements/alter/user.md)
-  The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+  The ALTER USER statement can be used to modify an existing defined database user.
 - [BEGIN](reference/query-language/statements/begin.md)
   The BEGIN statement starts a single transaction in which run multiple statements can be run, either succeeding as a whole, or failing.
 - [BREAK](reference/query-language/statements/break.md)
@@ -1872,7 +1872,7 @@ _1075 pages_
   A DEFINE MODULE statement can be used to define a module through which Surrealism extension functions can be called.
 - [DEFINE NAMESPACE](reference/query-language/statements/define/namespace.md)
   The DEFINE NAMESPACE statement can be used to setup namespaces, which can contain multiple databases.
-- [Overview](reference/query-language/statements/define/overview.md)
+- [DEFINE](reference/query-language/statements/define/overview.md)
   DEFINE declares SurrealDB schema: namespaces, tables, fields, indexes, functions, events and access in SurrealQL.
 - [DEFINE PARAM](reference/query-language/statements/define/param.md)
   The DEFINE PARAM statement allows you to define global (database-wide) parameters that are available to every client.
@@ -1967,11 +1967,11 @@ _1075 pages_
 - [Egui](reference/rust/frameworks/egui.md)
   The SDK for Rust allows SurrealDB to be used as the storage backend for an Egui visual app
 - [Crates](reference/rust/frameworks/index.md)
-  The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
+  The following pages each contain a tutorial that walks through the setting up of a web server (for Actix, Axum, and Rocket) or a UI (for Egui) that uses SurrealDB as its storage backend.
 - [Rocket](reference/rust/frameworks/rocket.md)
   The SDK for Rust allows SurrealDB to be used as the storage backend for a Rocket web server
 - [Rust SDK](reference/rust/index.md)
-  The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
+  The SurrealDB SDK for Rust enables you to interact with SurrealDB from client-side, server-side applications, systems, APIs, embedded systems, and IoT devices.
 - [authenticate](reference/rust/methods/authenticate.md)
   The .authenticate() method for the SurrealDB Rust SDK authenticates the current connection with a JWT token.
 - [begin](reference/rust/methods/begin.md)
@@ -1991,7 +1991,7 @@ _1075 pages_
 - [import](reference/rust/methods/import.md)
   The .import() method for the SurrealDB Rust SDK restores the database from a file.
 - [SDK methods](reference/rust/methods/index.md)
-  The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
+  Most methods in the SurrealDB SDK involve either working with or creating an instance of the Surreal struct, which serves as the database client instance for embedded or remote databases.
 - [init](reference/rust/methods/init.md)
   The .init() method for the SurrealDB Rust SDK initializes a new unconnected instance.
 - [insert](reference/rust/methods/insert.md)
@@ -2098,7 +2098,7 @@ _1075 pages_
   Use this tutorial to install SurrealDB on Windows using the SurrealDB install script, or using third-party package managers like Chocolatey or Scoop.
 - [Multi-node](running/multi-node.md)
   Run SurrealDB against distributed storage for horizontally scalable, highly available clusters.
-- [Overview](running/overview.md)
+- [Running SurrealDB](running/overview.md)
   Ways to run SurrealDB - from a browser sandbox to a managed cloud instance to installing on your own hardware.
 - [SurrealDB Studio Sandbox](running/sandbox.md)
   Try SurrealDB in the browser with the SurrealDB Studio Sandbox - no install and no account required.

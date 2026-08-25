@@ -23,7 +23,7 @@ LIVE SELECT * FROM person;
 -- u'b1f1d115-ad0f-460d-8cbf-dbc7ce48851c'
 ```
 
-Message layout on the wire is described in the [live query / WebSocket protocol](../../../reference/rest-api/rpc-protocol.md#live-websocket-only) section.
+Message layout on the wire is described in the [live query / WebSocket protocol](../../../reference/rest-api/rpc-protocol.md#live) section.
 
 ## DIFF mode
 

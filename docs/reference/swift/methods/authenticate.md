@@ -13,7 +13,7 @@ Authenticates the current connection with a previously issued JWT access token.
 try await client.authenticate(token)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -35,7 +35,7 @@ try await client.authenticate(token)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 try await client.authenticate(tokens.access)

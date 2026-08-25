@@ -53,15 +53,15 @@ _41 posts_
   `releases` `featured` `company` — Powerful new features introduce advanced stability, performance, security and data management capabilities to build enterprise-ready applications
 - **2024-09-17** · [Challenge accepted: announcing SurrealDB 2.0](../2024/09/challenge-accepted-announcing-surrealdb-2-0.md)  
   `releases` `featured` `company` — With the massive community adoption that followed came massive expectations and challenges to live up to these expectations.
-- **2024-06-24** · [Celebrating milestones and looking forward](../2024/06/celebrating-milestones-and-looking-forward.md)  
-  `company` `featured` — Last week was awesome for our team at SurrealDB! It feels like the perfect time to pause and reflect on the whirlwind of achievements, all of which signal exciting times ahead for our company. We are incredibly proud to share some major milestones we've hit, and we want to extend our deepest gratitude to everyone who has been part of this journey to date.
+- **2024-06-24** · [Celebrating SurrealDB milestones and looking forward](../2024/06/celebrating-milestones-and-looking-forward.md)  
+  `company` `featured` — SurrealDB is incredibly proud to share some major milestones, and we want to extend our deepest gratitude to everyone who has been part of this journey to date.
 - **2024-06-17** · [SurrealDB Raises $20M to Disrupt Database Tech; Introduces New Cloud Beta Access](../2024/06/surrealdb-raises-20m-to-disrupt-database-tech-introduces-new-cloud-beta-access.md)  
   `company` `featured` — London, United Kingdom June 18, 2024, SurrealDB, the ultimate multi-model database, today announced a $20 million investment round led by FirstMark and Georgian with participation from Crew Capital and Alumni Ventures. This latest round of funding brings SurrealDB’s total to $26 million.
-- **2024-04-23** · [The Surrealist journey](../2024/04/the-surrealist-journey.md)  
-  `company` — Interacting with a database is not an easy job. You’ll often find yourself needing to query patterns in your data, testing whether your queries have the intended outcome, or carefully designing a schema to suit your application. This was a natural hurdle I ran into when first adopting SurrealDB into my workflow, and is exactly why I built Surrealist.
-- **2024-03-13** · [Why we are betting on Rust](../2024/03/why-we-are-betting-on-rust.md)  
-  `engineering` `company` — The best way to predict the future is to create it.
-- **2024-02-01** · [We're hiring](../2024/02/were-hiring.md)  
+- **2024-04-23** · [The Surrealist journey and the developer who made it](../2024/04/the-surrealist-journey.md)  
+  `company` — How Julian Mills got into programming, encountered SurrealDB for the first time, and built Surrealist to improve the experience and adopt it into his workflow.
+- **2024-03-13** · [Why SurrealDB is betting on Rust](../2024/03/why-we-are-betting-on-rust.md)  
+  `engineering` `company` — The best way to predict the future is to create it. For a database company, this means choosing Rust and all the benefits it provides.
+- **2024-02-01** · [Hiring at SurrealDB, the database for tomorrow's technology](../2024/02/were-hiring.md)  
   `company` — SurrealDB is on the lookout for exceptional individuals - those who are passionate about their craft and team to develop and promote groundbreaking technology.
 - **2024-01-12** · [Introducing our new monthly release schedule](../2024/01/introducing-our-new-monthly-release-schedule.md)  
   `releases` `company` — A new regular monthly release cycle for SurrealDB, allowing developers and organisations to build on it with predictable timelines for improvements and fixes.
@@ -71,14 +71,14 @@ _41 posts_
   `company` — We are excited to announce the new SurrealDB documentation to improve the experience of developers on our platform.
 - **2023-10-02** · [SurrealDB World 2023 - A Recap](../2023/10/surrealdb-world-2023--a-recap.md)  
   `events` `company` — SurrealDB's first-ever user conference SurrealDB World 2023 was held shortly after the launch of SurrealDB 1.0. Over 300 attended in person and 2,000 online.
-- **2023-09-14** · [Announcing SurrealDB 1.0](../2023/09/announcing-surrealdb-1-0.md)  
+- **2023-09-14** · [Announcing SurrealDB 1.0 at SurrealDB World](../2023/09/announcing-surrealdb-1-0.md)  
   `releases` `company` — At SurrealDB World we launched SurrealDB 1.0, a revolution in the tech landscape that redefines how databases function and integrate with your projects.
 - **2023-05-31** · [Thank you GitHub for the feature!](../2023/05/thank-you-github-for-the-feature.md)  
   `community` `company` — Thanks to GitHub for the feature on the Maintainer Month Library! During #MaintainerMonth 2023, we spoke with SurrealDB maintainer Rushmore Mushambi.
-- **2023-01-04** · [We are thrilled to announce our $6M Seed round led by FirstMark Capital and Matt Turck!](../2023/01/we-are-thrilled-to-announce-our-6m-seed-round-led-by-firstmark-capital-and-matt-turck.md)  
+- **2023-01-04** · [SurrealDB $6M Seed round led by FirstMark Capital and Matt Turck!](../2023/01/we-are-thrilled-to-announce-our-6m-seed-round-led-by-firstmark-capital-and-matt-turck.md)  
   `company` — Matt and FirstMark deeply share our vision, and we are truly humbled to have them with us on this journey.
-- **2022-11-25** · [We are hiring!](../2022/11/we-are-hiring.md)  
-  `company` — We are a startup with an ambitious mission to build the ultimate multi-model database for tomorrow’s applications. We are seeking to hire the best - people who care deeply about the work they do, and care about the people with whom they create and promote the product.
+- **2022-11-25** · [We are hiring! Come work at SurrealDB](../2022/11/we-are-hiring.md)  
+  `company` — SurrealDB is seeking to hire the best - people who care deeply about the work they do, and care about the people with whom they create and promote the product.
 - **2022-08-04** · [Indie Hackers launch post on SurrealDB](../2022/08/indie-hackers-launch.md)  
   `company` — Thank you for all the comments, feedback and support on our SurrealDB 'launch' post on IndieHackers.com. We are honoured to have made the 'Popular' list!
 - **2022-07-21** · [Documentation for SurrealDB is now live](../2022/07/documentation-is-live.md)  

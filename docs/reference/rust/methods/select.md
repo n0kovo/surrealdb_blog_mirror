@@ -15,7 +15,7 @@ Selects all records in a table, or a specific record, from the database.
 db.select(resource)
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -35,7 +35,7 @@ db.select(resource)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```rust
 // Select all records from a table
@@ -45,7 +45,7 @@ let person: Option<Person> = db.select(("person",
     "h5wxrf2ewk8xjxosxtyc")).await?;
 ```
 
-### Example usage: Retrieve unique id of a record
+## Example usage: Retrieve unique id of a record
 
 ```rust
 use surrealdb::Surreal;
@@ -88,7 +88,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### Restrict records with `.range()`
+## Restrict records with `.range()`
 
 When selecting all records in a table (not a single record id), you can restrict results to a record-id range by chaining [`.range(...)`](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Select.html#method.range-1). The argument implements [`Into<RecordIdKeyRange>`](https://docs.rs/surrealdb/latest/surrealdb/types/struct.RecordIdKeyRange.html): strings and tuples such as `"a"..="z"` or `(Bound::Included(x), Bound::Excluded(y))` express inclusive or exclusive bounds on the table’s record keys.
 
@@ -118,18 +118,18 @@ async fn main() {
 }
 ```
 
-### Translated query
+## Translated query
 This function will run the following query in the database:
 
 ```surql
 SELECT * FROM $resource;
 ```
 
-### See also
+## See also
 
 * [.select() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.select)
 * [`Select::range`](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Select.html#method.range-1)
-* [Live queries (`select().live()`)](select-live.md); alternatively [`query()`](query.md#live-select-stream) with `LIVE SELECT` and [`.stream()`](https://docs.rs/surrealdb/latest/surrealdb/method/query/struct.IndexedResults.html#method.stream)
+* [Live queries (`select().live()`)](select-live.md); alternatively [`query()`](query.md#live-select-stream) with `LIVE SELECT` and [`.stream()`](https://docs.rs/surrealdb/latest/surrealdb/struct.IndexedResults.html#method.stream)
 
 **2.x**
 
@@ -139,7 +139,7 @@ Selects all records in a table, or a specific record, from the database.
 db.select(resource)
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -159,7 +159,7 @@ db.select(resource)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```rust
 // Select all records from a table
@@ -169,7 +169,7 @@ let person: Option<Person> = db.select(("person",
     "h5wxrf2ewk8xjxosxtyc")).await?;
 ```
 
-### Example usage: retrieve unique id of a record
+## Example usage: retrieve unique id of a record
 
 ```rust
 use serde::Deserialize;
@@ -212,13 +212,13 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### Translated query
+## Translated query
 This function will run the following query in the database:
 
 ```surql
 SELECT * FROM $resource;
 ```
 
-### See also
+## See also
 
 * [.select() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.select)

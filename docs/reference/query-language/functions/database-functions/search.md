@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Search functions
 
-These functions are used in conjunction with the [`@@` operator (the 'matches' operator)](../../language-primitives/operators.md#matches) to either collect the relevance score or highlight the searched keywords within the content.
+These functions are used in conjunction with the [`@@` operator (the 'matches' operator)](../../language-primitives/operators.md#matches-a-idmatchesa) to either collect the relevance score or highlight the searched keywords within the content.
 
 <table>
   <thead>

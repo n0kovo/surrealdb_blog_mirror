@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 These snippets are starting points that are realistic enough to learn from, short enough to paste into SurrealDB Studio or to lift into [SurrealKit](../../../manage/schema-migration/index.md) `.surql` schema files and then reshape. They mix **tables**, **relations**, **computed** fields, **events**, and **indexes** the way a real app might.
 
 > [!NOTE]
-> Many fields use [`COMPUTED`](../../../reference/query-language/statements/define/field.md#computed-fields) (SurrealDB 3.0.0 onward). On older versions, replace with a [`future`](../../../reference/query-language/language-primitives/data-types/futures.md) and `VALUE { … }` as in the futures documentation.
+> Many fields use [`COMPUTED`](../../../reference/query-language/statements/define/field.md#restrictions-on-computed-fields) (SurrealDB 3.0.0 onward). On older versions, replace with a [`future`](../../../reference/query-language/language-primitives/data-types/futures.md) and `VALUE { … }` as in the futures documentation.
 
 ## Adding to this page
 
@@ -22,7 +22,7 @@ You can also [get in touch](/contact) with us if you'd like a sample schema that
 
 ### Project planning
 
-A comprehensive project management schema that demonstrates activity scheduling, milestone tracking, and dependency management using [graph relationships](../../data-models/graph/overview.md). This schema shows how to model complex project workflows with interdependent tasks and progress tracking using [`COMPUTED` fields](../../../reference/query-language/statements/define/field.md#computed-fields) for calculated values.
+A comprehensive project management schema that demonstrates activity scheduling, milestone tracking, and dependency management using [graph relationships](../../data-models/graph/overview.md). This schema shows how to model complex project workflows with interdependent tasks and progress tracking using [`COMPUTED` fields](../../../reference/query-language/statements/define/field.md#restrictions-on-computed-fields) for calculated values.
 
 ```surql
 -- Activities in a project schedule
@@ -518,7 +518,7 @@ SELECT ->account->eur.total FROM customer:one;
 
 ### Other bank-customer schema
 
-Traditional bank-customer schema with advanced features including [record references](../../../reference/query-language/language-primitives/record-links.md#record-references), automated cent handling through [events](../../../reference/query-language/statements/define/event.md), and historical interest rate tracking. Demonstrates event-driven data validation, [parameter usage](../../../reference/query-language/statements/define/param.md), and complex relationship management with reference fields.
+Traditional bank-customer schema with advanced features including [record references](../../../reference/query-language/language-primitives/record-references.md), automated cent handling through [events](../../../reference/query-language/statements/define/event.md), and historical interest rate tracking. Demonstrates event-driven data validation, [parameter usage](../../../reference/query-language/statements/define/param.md), and complex relationship management with reference fields.
 
 ```surql
 DEFINE PARAM $CURRENCIES VALUE ["EUR", "JPY", "USD", "CAD"];
@@ -974,7 +974,7 @@ CREATE log:[unit:drone1, time::now()] SET message = "Recon sweep complete", stat
 
 ### People, products and commerce
 
-E-commerce platform schema with customer profiles, product catalog, and shopping cart management. Features flexible address storage, multi-currency support, and comprehensive timestamp tracking. Demonstrates modern e-commerce data modelling with [flexible object fields](../../../reference/query-language/language-primitives/data-types/objects.md#flexible-objects) and relationship management.
+E-commerce platform schema with customer profiles, product catalog, and shopping cart management. Features flexible address storage, multi-currency support, and comprehensive timestamp tracking. Demonstrates modern e-commerce data modelling with [flexible object fields](../../../reference/query-language/language-primitives/data-types/objects.md#extending-objects-and-removing-fields) and relationship management.
 
 ```surql
 -- Person / customer profile

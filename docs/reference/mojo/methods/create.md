@@ -13,7 +13,7 @@ Creates a record in the database. This is a convenience wrapper that runs `CREAT
 client.create(thing, content_json, session, txn)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -42,13 +42,13 @@ client.create(thing, content_json, session, txn)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 var resp = client.create("person", '{ "name": "Chiru", "age": 30 }')
 ```
 
-### Translated query
+## Translated query
 
 ```surql
 CREATE $thing CONTENT $content_json;

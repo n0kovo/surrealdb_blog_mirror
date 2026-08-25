@@ -1,7 +1,7 @@
 ---
 position: 15
 title: ALTER SYSTEM
-description: The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+description: The ALTER SYSTEM statement is used to alter the entire datastore.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/alter/system.mdx"
 ---
 

@@ -24,7 +24,7 @@ Surrealism works by using the following steps:
 * Use the `surreal module build` command to build the module.
 * In SurrealDB, [allow access to module files](../../../reference/query-language/statements/define/bucket.md) and [define a module](../../../reference/query-language/statements/define/module.md) to access the functions.
 
-![A flowchart showing the steps involved to turn regular Rust code into a compiled WASM binary that can be accessed from a running SurrealDB instance.](../../../assets/img/surrealdb/extension/surrealism_flow.png)
+![A flowchart showing the steps involved to turn regular Rust code into a compiled WASM binary that can be accessed from a running SurrealDB instance.](../../../assets/img/surrealdb/extension/surrealism_flow-light.png)
 
 ## What is available in Surrealism
 

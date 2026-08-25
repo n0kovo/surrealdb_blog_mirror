@@ -106,7 +106,7 @@ CREATE person:one;
 
 The table name and ID together form the full [record ID](../language-primitives/data-types/record-ids.md) which can be used to query the created data or by using the [`SELECT`](select.md) statement. See the [record ID](../language-primitives/data-types/record-ids.md) page to learn more about what counts as a valid record identifier.
 
-The default random ID can be generated in different ways (such as a ULID) using the [built-in ID generation functions](../language-primitives/data-types/record-ids.md#generating-record-ids).
+The default random ID can be generated in different ways (such as a ULID) using the [built-in ID generation functions](../language-primitives/data-types/record-ids.md#types-of-record-ids).
 
 It is also possible to specify the ID of the record you want to create using a string or any of the supported formats for [record IDs](../language-primitives/data-types/record-ids.md).
 
@@ -175,15 +175,23 @@ Multiple records or even multiple record types can be created by separating tabl
 /**[test]
 
 [[test.results]]
+value = "[{ created_at: d'2025-10-08T02:18:52.928229Z', id: townsperson:0jkw66fganx0eqdkimgd }, { created_at: d'2025-10-08T02:18:52.932072Z', id: cat:yw43e5ycrdq8mpzx7zq3 }, { created_at: d'2025-10-08T02:18:52.934887Z', id: dog:z4yq39x2hj79jl43v57x }]"
+skip-datetime = true 
+skip-record-id-key = true
+
+[[test.results]]
 value = "[{ created_at: d'2025-10-08T02:18:52.928229Z', id: townsperson:0jkw66fganx0eqdkimgd, name: 'Just a townsperson' }, { created_at: d'2025-10-08T02:18:52.932072Z', id: cat:yw43e5ycrdq8mpzx7zq3, name: 'Just a cat' }, { created_at: d'2025-10-08T02:18:52.934887Z', id: dog:z4yq39x2hj79jl43v57x, name: 'Just a dog' }]"
 skip-datetime = true 
 skip-record-id-key = true
 
 */
 
--- Note: record::tb(id) returns just the table name portion of a record ID
+-- Note: record::tb(id) returns just the table name portion of a record ID.
+-- The id is not yet bound while CREATE is still evaluating its fields, so
+-- the records are created first and named in a following UPDATE.
 CREATE townsperson, cat, dog SET
-    created_at = time::now(),
+    created_at = time::now();
+UPDATE townsperson, cat, dog SET
     name = "Just a " + record::tb(id);
 ```
 

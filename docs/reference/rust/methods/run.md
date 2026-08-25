@@ -15,7 +15,7 @@ Runs a SurrealQL function.
 db.run(function)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -36,7 +36,7 @@ db.run(function)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 Calling an existing SurrealQL function:
 
@@ -150,7 +150,7 @@ Runs a SurrealQL function.
 db.run(function)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -171,7 +171,7 @@ db.run(function)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 Calling an existing SurrealQL function:
 
@@ -261,6 +261,6 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.run() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.run)

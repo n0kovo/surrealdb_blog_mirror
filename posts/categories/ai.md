@@ -92,7 +92,7 @@ _48 posts_
 - **2025-06-17** · [RAG can be Rigged](../2025/06/rag-can-be-rigged.md)  
   `featured` `engineering` `ai` — Building a smart knowledge agent with SurrealDB and Rig.rs
 - **2025-04-02** · [Cooking up faster RAG using in-database embeddings in SurrealDB](../2025/04/cooking-up-faster-rag-using-in-database-embeddings-in-surrealdb.md)  
-  `engineering` `ai` — Speed up RAG pipelines by running embedding models directly inside SurrealDB. Eliminate external API latency with in-database vector embeddings for faster retrieval-augmented generation.
+  `engineering` `ai` — Speed up RAG pipelines by running embedding models inside SurrealDB.Eliminate API latency with in-database vector embeddings for retrieval-augmented generation.
 - **2025-03-26** · [Beyond black boxes - building customisable and secure RAG systems for financial services](../2025/03/beyond-black-boxes--building-customisable-and-secure-rag-systems-for-financial-services.md)  
   `engineering` `ai` — This isn’t just another RAG blog post - it tackles the specific challenges financial services data teams face when building systems in regulated, data-sensitive environments.
 - **2025-02-21** · [Automating knowledge graphs with SurrealDB and Gemini](../2025/02/automating-knowledge-graphs-with-surrealdb-and-gemini.md)  

@@ -1,7 +1,7 @@
 ---
 position: 8
 title: ALTER EVENT
-description: The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+description: The ALTER EVENT statement can be used to modify an existing defined event.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/alter/event.mdx"
 ---
 

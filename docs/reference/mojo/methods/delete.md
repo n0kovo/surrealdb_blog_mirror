@@ -13,7 +13,7 @@ Deletes all records in a table, or a specific record. This is a convenience wrap
 client.delete(thing, session, txn)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -38,7 +38,7 @@ client.delete(thing, session, txn)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 # Delete a specific record
@@ -48,7 +48,7 @@ var resp = client.delete("person:chiru")
 var cleared = client.delete("person")
 ```
 
-### Translated query
+## Translated query
 
 ```surql
 DELETE $thing;

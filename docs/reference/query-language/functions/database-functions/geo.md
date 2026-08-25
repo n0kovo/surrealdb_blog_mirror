@@ -42,7 +42,7 @@ These functions can be used when working with and analysing geospatial data.
       <td scope="row" data-label="Description">Encodes a geometry point into a geohash</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Function"><a href="#geoisvalid">`geo::is_valid()`</a></td>
+      <td scope="row" data-label="Function"><a href="#geois_valid">`geo::is_valid()`</a></td>
       <td scope="row" data-label="Description">Determines if a geometry type is a geography type</td>
     </tr>
   </tbody>

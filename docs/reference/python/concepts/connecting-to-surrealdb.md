@@ -22,11 +22,11 @@ This page covers how to create, configure, and manage connections to a SurrealDB
 	</thead>
 	<tbody>
 		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/reference/python/api/core/surreal#surreal">`Surreal(url)`</a></td>
+			<td scope="row" data-label="Method"><a href="/docs/reference/python/api/core/surreal#surreal-sync">`Surreal(url)`</a></td>
 			<td scope="row" data-label="Description">Creates a synchronous connection based on the URL scheme</td>
 		</tr>
 		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/reference/python/api/core/surreal#surreal">`AsyncSurreal(url)`</a></td>
+			<td scope="row" data-label="Method"><a href="/docs/reference/python/api/core/surreal#surreal-sync">`AsyncSurreal(url)`</a></td>
 			<td scope="row" data-label="Description">Creates an asynchronous connection based on the URL scheme</td>
 		</tr>
 		<tr>

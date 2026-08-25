@@ -1,7 +1,7 @@
 ---
 position: 30
 title: Use
-description: The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+description: Switch to a specific namespace and database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/dotnet/methods/use.mdx"
 ---
 
@@ -13,7 +13,7 @@ Switch to a specific namespace and database.
 await db.Use(ns, db)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -53,7 +53,7 @@ await db.Use(ns, db)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```csharp
 await db.Use("main", "main");

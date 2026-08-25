@@ -13,7 +13,7 @@ Wraps a list of statements in `BEGIN TRANSACTION;` and `COMMIT TRANSACTION;` and
 client.transaction_multi(statements, session)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -34,7 +34,7 @@ client.transaction_multi(statements, session)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 from std.collections import List
@@ -47,7 +47,7 @@ var resp = client.transaction_multi(stmts)
 
 If any statement fails, the whole transaction is rolled back.
 
-### See also
+## See also
 
 - [Transactions](../concepts/transactions.md)
 - [`begin_transaction()`](begin-transaction.md)

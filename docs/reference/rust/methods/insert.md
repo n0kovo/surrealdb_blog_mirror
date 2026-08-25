@@ -14,7 +14,7 @@ db.insert(resource).content(data);
 db.insert(resource).relation(data);
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -51,7 +51,7 @@ db.insert(resource).relation(data);
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 Inserting a record with a specific ID:
 
@@ -249,7 +249,7 @@ RELATE [person:jaime, person:tobie]->founded->company:surrealdb;
 SELECT ->founded->company FROM person;
 ```
 
-### See also
+## See also
 
 * [.insert() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.insert)
 
@@ -260,7 +260,7 @@ db.insert(resource).content(data);
 db.insert(resource).relation(data);
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -297,7 +297,7 @@ db.insert(resource).relation(data);
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 Inserting a record with a specific ID:
 
@@ -558,6 +558,6 @@ RELATE [person:jaime, person:tobie]->founded->company:surrealdb;
 SELECT ->founded->company FROM person;
 ```
 
-### See also
+## See also
 
 * [.insert() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.insert)

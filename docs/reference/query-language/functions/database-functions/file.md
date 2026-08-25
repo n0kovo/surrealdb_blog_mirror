@@ -9,6 +9,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 These functions can be used to work with files.
 
+> [!NOTE]
+> Files support is currently experimental and subject to change. To use these functions and `f"..."` file pointers, either pass `--allow-experimental files` when [starting the database](../../../cli/surrealdb-cli/commands/start.md) or set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable to `files`. On a server without the flag, file syntax is rejected at parse time.
+
 <table>
   <thead>
     <tr>
@@ -66,7 +69,7 @@ These functions can be used to work with files.
       <td scope="row" data-label="Description">Renames a file</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Function"><a href="#filerename_if_available">`file::rename_if_not_exists()`</a></td>
+      <td scope="row" data-label="Function"><a href="#filerename_if_not_exists">`file::rename_if_not_exists()`</a></td>
       <td scope="row" data-label="Description">Renames a file if the new name is not already in use</td>
     </tr>
   </tbody>

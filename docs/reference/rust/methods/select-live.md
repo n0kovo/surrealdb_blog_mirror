@@ -11,13 +11,13 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 Initiate live queries for a live stream of notifications.
 
-You can achieve the same live subscription by running `LIVE SELECT` inside [`query()`](query.md#live-select-stream) and consuming results with [`IndexedResults::stream`](https://docs.rs/surrealdb/latest/surrealdb/method/query/struct.IndexedResults.html#method.stream). This can be useful when one or more live statements are part of a larger batch or if you prefer to use raw SurrealQL.
+You can achieve the same live subscription by running `LIVE SELECT` inside [`query()`](query.md#live-select-stream) and consuming results with [`IndexedResults::stream`](https://docs.rs/surrealdb/latest/surrealdb/struct.IndexedResults.html#method.stream). This can be useful when one or more live statements are part of a larger batch or if you prefer to use raw SurrealQL.
 
 ```rust title="Method Syntax"
 db.select(resource).live()
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -37,7 +37,7 @@ db.select(resource).live()
     </tbody>
 </table>
 
-### Example usage: Listen for live updates
+## Example usage: Listen for live updates
 
 The following example requires adding the `futures` crate with `cargo add futures` in order to work with the results of the async stream. Once run, the program will continue to wait and listen for events for the `person` table to happen.
 
@@ -106,7 +106,7 @@ Received notification: Ok(Notification { query_id: Uuid(ab57b7f9-00b1-47e8-8f29-
 Received notification: Ok(Notification { query_id: Uuid(ab57b7f9-00b1-47e8-8f29-9d11d0572264), action: Delete, data: Person { id: RecordId { table: Table("person"), key: String("pbpm2xhmaofyne383455") } } })
 ```
 
-### See also
+## See also
 
 * [.live() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Select.html#method.live)
 * [`query()` with streaming `LIVE SELECT`](query.md#live-select-stream)
@@ -119,7 +119,7 @@ Initiate live queries for a live stream of notifications.
 db.select(resource).live()
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -139,7 +139,7 @@ db.select(resource).live()
     </tbody>
 </table>
 
-### Example usage: Listen for live updates
+## Example usage: Listen for live updates
 
 The following example requires adding the `futures` crate with `cargo add futures` in order to work with the results of the async stream. Once run, the program will continue to wait and listen for events for the `person` table to happen.
 
@@ -207,6 +207,6 @@ Received notification: Ok(Notification { query_id: b55d31dc-e657-4a6b-a32b-f5abe
 Received notification: Ok(Notification { query_id: b55d31dc-e657-4a6b-a32b-f5abed4ef459, action: Delete, data: Person { id: RecordId { table: "person", key: String("334mabva9ibitsypabm5") } } })
 ```
 
-### See also
+## See also
 
 * [.live() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Select.html#method.live)

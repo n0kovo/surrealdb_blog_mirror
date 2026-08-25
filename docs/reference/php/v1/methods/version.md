@@ -13,7 +13,7 @@ This method retrieves the current version of a remote database.
 $db->version();
 ```
 
-### Example usage
+## Example usage
 ```php
 try {
 	$version = $db->version();

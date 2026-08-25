@@ -1,7 +1,7 @@
 ---
 position: 21
 title: Relate
-description: The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+description: Creates a relation between records with the SurrealDB .NET SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/dotnet/methods/relate.mdx"
 ---
 
@@ -13,7 +13,7 @@ Creates a relation between records.
 await db.Relate(table, @in, @out, data)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -71,7 +71,7 @@ await db.Relate(table, @in, @out, data)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```csharp
 var data = new WroteRelation { CreatedAt = DateTime.UtcNow,

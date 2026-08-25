@@ -1,6 +1,6 @@
 ---
 position: 1
-title: Overview
+title: DEFINE
 description: "DEFINE declares SurrealDB schema: namespaces, tables, fields, indexes, functions, events and access in SurrealQL."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/define/overview.mdx"
 ---
@@ -67,7 +67,7 @@ DEFINE [
 
 The [INFO](../info.md) statement can be used to see which definition statements currently exist in a database connection. All `DEFINE` statements can be followed up with a `COMMENT`.
 
-### Comments on definitions
+## Comments on definitions
 
 A `COMMENT` is stored with the definition and returned by [`INFO`](../info.md) (and by schema tools such as MCP `info` / `list`). Short, concrete comments help people and agents alike: they explain what a table or field is for, how values should be compared, and which graph edges or record-ID conventions matter.
 

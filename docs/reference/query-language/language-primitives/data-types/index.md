@@ -46,7 +46,7 @@ SurrealQL allows you to describe data with specific data types. These data types
         </tr>
         <tr>
             <td scope="row" data-label="Type">
-                <a href="#bytes">[`bytes`](bytes.md)</a>
+                <a href="/docs/reference/query-language/language-primitives/data-types/bytes">[`bytes`](bytes.md)</a>
             </td>
             <td scope="row" data-label="Description">
                 Stores a value in a byte array.
@@ -86,7 +86,7 @@ SurrealQL allows you to describe data with specific data types. These data types
         </tr>
         <tr>
             <td scope="row" data-label="Type">
-                <a href="#geometry">`geometry`</a>
+                <a href="/docs/reference/query-language/language-primitives/data-types/geometries">`geometry`</a>
             </td>
             <td scope="row" data-label="Description">
                 <a href="https://www.rfc-editor.org/rfc/rfc7946" target="_blank" rel="noopener noreferrer" title="Link to RFC 7946">RFC 7946</a> compliant data type for storing geometry in the <a href="https://geojson.org/" target="_blank" rel="noopener noreferrer" title="Link to the GeoJson website">GeoJson format</a>.

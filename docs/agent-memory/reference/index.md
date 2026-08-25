@@ -1,6 +1,6 @@
 ---
 position: 0
-title: Overview
+title: Agent Memory reference
 description: Complete API and configuration reference for SurrealDB Agent Memory.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/reference/index.mdx"
 ---

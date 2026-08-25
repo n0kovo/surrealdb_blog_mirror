@@ -13,7 +13,7 @@ Connects to a local or remote database endpoint.
 $db->connect($host, $options)
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -48,7 +48,7 @@ $db->connect($host, $options)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 There are several ways to connect to a database endpoint. You can connect to a local or remote endpoint, specify a namespace and database pair to use, authenticate with an existing token, authenticate using a pair of credentials, or use advanced custom logic to prepare the connection to the database.
 

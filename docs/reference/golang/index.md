@@ -14,7 +14,7 @@ The SurrealDB SDK for Go enables you to interact with SurrealDB from server-side
 
 > [!NOTE]
 > The latest version of the SDK is *(latest)*.
-> The SDK works with SurrealDB versions `v2.0.0` to *(latest)*, ensuring compatibility with the latest version.
+> The SDK works with SurrealDB versions `v2.0.0` and later, including the current release, *(latest)*.
 
 ## Getting started
 

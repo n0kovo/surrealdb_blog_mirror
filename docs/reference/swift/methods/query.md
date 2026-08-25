@@ -13,7 +13,7 @@ Runs a query built with the [query DSL](../concepts/query-dsl.md), either a quer
 try await client.query(query)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -35,7 +35,7 @@ try await client.query(query)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 // Using a query macro

@@ -61,45 +61,45 @@ _53 posts_
   `releases` `featured` — We are excited to announce the latest major iteration of Surrealist
 - **2024-09-17** · [Challenge accepted: announcing SurrealDB 2.0](../2024/09/challenge-accepted-announcing-surrealdb-2-0.md)  
   `releases` `featured` `company` — With the massive community adoption that followed came massive expectations and challenges to live up to these expectations.
-- **2024-09-02** · [Surrealist 3.0 beta](../2024/09/surrealist-3-0-beta.md)  
+- **2024-09-02** · [Introducing Surrealist 3.0 beta](../2024/09/surrealist-3-0-beta.md)  
   `releases` — We are thrilled to announce that the first beta release for Surrealist 3.0 is now available.
 - **2024-06-14** · [Surrealist just got better - Update now!](../2024/06/surrealist-just-got-better--update-now.md)  
   `releases` — This article dives into the Surrealist 2.1.2 release, highlights some technical changes, and explains why you will have to download this release manually
 - **2024-06-13** · [Our new demo dataset has a lot in store for you!](../2024/06/our-new-demo-dataset-has-a-lot-in-store-for-you.md)  
-  `releases` `tutorials` — But Wait, There's More!
-- **2024-06-04** · [What's new in Surrealist 2.1](../2024/06/whats-new-in-surrealist-2-1.md)  
-  `releases` — Explore the key features of the Surrealist 2.1 release
-- **2024-05-14** · [v1.5.0 is live!🎉](../2024/05/v1-5-0-is-live.md)  
-  `releases` — This new release comes with performance updates and new additions to Vector Search
-- **2024-05-01** · [Surrealist 2.0](../2024/05/surrealist-2-0.md)  
-  `releases` `featured` — An important part of each database is the ability to easily and effortlessly control each aspect of the database. While this may appear trivial at first, it actually encompasses a wide set of different tasks. For this reason Surrealist has officially joined SurrealDB as the official management interface.
-- **2024-04-22** · [Introducing Surrealist](../2024/04/introducing-surrealist.md)  
+  `releases` `tutorials` — SurrealDB 2.0-alpha comes with a number of exciting updates but also a new and improved demo dataset.
+- **2024-06-04** · [What's new in Surrealist 2.1, SurrealDB's graphical interface](../2024/06/whats-new-in-surrealist-2-1.md)  
+  `releases` — An announcement of the 2.1 release for Surrealist, the graphical UI for SurrealDB, and the key features that have been added.
+- **2024-05-14** · [SurrealDB v1.5.0 is now live!🎉](../2024/05/v1-5-0-is-live.md)  
+  `releases` — The new v1.5.0 SurrealDB release comes with performance updates and new additions to Vector Search.
+- **2024-05-01** · [Introducing Surrealist 2.0, the graphical UI for SurrealDB](../2024/05/surrealist-2-0.md)  
+  `releases` `featured` — We are pleased to announce that Surrealist has officially joined SurrealDB as its official management interface.
+- **2024-04-22** · [Introducing Surrealist and what it means for SurrealDB](../2024/04/introducing-surrealist.md)  
   `releases` — Dive into why this mobile software development company chose to migrate to our multi-model database.
-- **2024-04-09** · [v1.4.0 is live! 🎉](../2024/04/v1-4-0-is-live.md)  
+- **2024-04-09** · [SurrealDB's newest version v1.4.0 is live! 🎉](../2024/04/v1-4-0-is-live.md)  
   `releases` — This new release comes with bug fixes, performance improvements, and feature updates to -insert thing-
-- **2024-03-12** · [v1.3.0 is live! 🎉](../2024/03/v1-3-0-is-live.md)  
+- **2024-03-12** · [SurrealDB's newest version v1.3.0 is live! 🎉](../2024/03/v1-3-0-is-live.md)  
   `releases` — This new release comes with bug fixes, performance improvements, and feature updates to our define & remove statements and KNN syntax.
-- **2024-02-06** · [v1.2.0-beta.1 is live! 🎉](../2024/02/v1-2-0-beta-1-is-live.md)  
-  `releases` — This new release comes with bug fixes, performance improvements, and feature updates to string methods, support for READONLY fields and type support for subfields.
+- **2024-02-06** · [SurrealDB v1.2.0-beta.1 is live! 🎉](../2024/02/v1-2-0-beta-1-is-live.md)  
+  `releases` — The 1.2.0-beta.1 release comes with bug fixes, performance improvements, updates to string methods, support for READONLY fields and type support for subfields.
 - **2024-01-12** · [Introducing our new monthly release schedule](../2024/01/introducing-our-new-monthly-release-schedule.md)  
   `releases` `company` — A new regular monthly release cycle for SurrealDB, allowing developers and organisations to build on it with predictable timelines for improvements and fixes.
-- **2024-01-09** · [Release v1.1.0](../2024/01/release-v1-1-0.md)  
+- **2024-01-09** · [Announcing SurrealDB release v1.1.0](../2024/01/release-v1-1-0.md)  
   `releases` — SurrealDB v1.1.0 brings many performance improvements, bug fixes, and new features, and native machine learning computation, right within the database.
 - **2024-01-09** · [Introducing Nightly and Beta Rust Crates](../2024/01/introducing-nightly-and-beta-rust-crates.md)  
   `releases` `engineering` `company` — We are pleased to announce two additional Rust crates, surrealdb-nightly and surrealdb-beta. These crates are designed to complement the surrealdb crate.
-- **2023-09-14** · [Announcing SurrealDB 1.0](../2023/09/announcing-surrealdb-1-0.md)  
+- **2023-09-14** · [Announcing SurrealDB 1.0 at SurrealDB World](../2023/09/announcing-surrealdb-1-0.md)  
   `releases` `company` — At SurrealDB World we launched SurrealDB 1.0, a revolution in the tech landscape that redefines how databases function and integrate with your projects.
 - **2023-09-04** · [What's new for developers in SurrealDB Beta 10](../2023/09/whats-new-for-developers-in-surrealdb-beta-10.md)  
   `releases` — Hello Developers! After months of hard work, we're excited to roll out v1.0.0-beta.10. Here's what's new!
-- **2022-10-01** · [Release v1.0.0-beta.8](../2022/10/release-v1-0-0-beta-8.md)  
+- **2022-10-01** · [Release v1.0.0-beta.8: New features and bug fixes](../2022/10/release-v1-0-0-beta-8.md)  
   `releases` — We know you've been waiting for it! And SurrealDB's beta 8 is finally here!
 - **2022-09-02** · [Just released SurrealDB for Windows!](../2022/09/just-released-surrealdb-for-windows.md)  
-  `releases` — The easiest and preferred way to get going with SurrealDB on Windows is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions...
-- **2022-08-29** · [Release v1.0.0-beta.7](../2022/08/release-v1-0-0-beta-7.md)  
-  `releases` — Add support for Objects and Arrays as Record IDs, add support for querying records using Record ID ranges, add SQL <code>session<\/code> functions for retrieving session variables, make <code>--ns<\/code> and <code>--db<\/code> arguments optional in command-line REPL, and much more.
+  `releases` — SurrealDB and its command-line tool can now be installed for Windows using a single iwr command in your terminal.
+- **2022-08-29** · [Release v1.0.0-beta.7: complex record IDs and record ranges](../2022/08/release-v1-0-0-beta-7.md)  
+  `releases` — Support for complex Record IDs, add support for Record ID ranges, add SQL session functions for session variables, make --ns and --db arguments optional
 - **2022-08-13** · [Release v1.0.0-beta.6: New CLI REPL, env var configs](../2022/08/release-v1-0-0-beta-6.md)  
   `releases` — Add CLI SurrealQL REPL, log username at startup, allow env var configs for SurrealDB server, config definition key and value caching within a transaction.
-- **2022-08-01** · [Release v1.0.0-beta.5: HTTP response compression and improved CLI commands](../2022/08/release-v1-0-0-beta-5.md)  
+- **2022-08-01** · [Release v1.0.0-beta.5: HTTP response compression and CLI commands](../2022/08/release-v1-0-0-beta-5.md)  
   `releases` — Temporarily disable HTTP response compression, improve <code>surreal import<\/code> and <code>surreal export<\/code> cli commands, and more...
 - **2022-07-28** · [Release v1.0.0-beta.4: strict mode and default table permissions](../2022/07/release-v1-0-0-beta-4.md)  
   `releases` — Add new strict mode to SurrealDB server, ensure default table permissions are set to <code>NONE<\/code> not <code>FULL<\/code>, and more...

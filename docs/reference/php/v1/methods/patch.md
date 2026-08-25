@@ -16,7 +16,7 @@ $db->patch($thing, $data, $diff)
 > [!NOTE]
 > This function patches the current document / record data with the specified JSON Patch data.
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -65,7 +65,7 @@ $db->patch($thing, $data, $diff)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 ```php
 // Update all records in a table
 $people = $db->patch('person', [
@@ -83,7 +83,7 @@ $person = $db->patch(new RecordId('person', 'tobie'), [
 ]);
 ```
 
-### Translated query
+## Translated query
 This function will run the following query in the database.
 
 ```surql

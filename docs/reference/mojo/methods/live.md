@@ -13,7 +13,7 @@ Starts a live query on a table and returns the query id as a string. Notificatio
 client.live_query(table, session)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -34,7 +34,7 @@ client.live_query(table, session)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 var query_id = client.live_query("person")
@@ -49,7 +49,7 @@ To get the full `RpcResponse` instead of just the query id, use `live_raw(table,
 > [!NOTE]
 > Live queries run over a stateful WebSocket session. WebSocket support is rolling out. On the HTTP transport, the engine reports `live_queries=False` and the SDK raises an `UnsupportedFeatureError`.
 
-### See also
+## See also
 
 - [Live queries](../concepts/live-queries.md)
 - [`kill()`](kill.md)

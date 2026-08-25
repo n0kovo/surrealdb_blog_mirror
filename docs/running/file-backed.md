@@ -85,7 +85,7 @@ At a high level, SurrealKV provides:
 
 Parameters such as `versioned` and `sync` control versioning and durability. See [Supported parameters for SurrealKV](../reference/cli/surrealdb-cli/commands/start.md#supported-parameters-for-surrealkv) and [SurrealKV environment variables](../reference/cli/surrealdb-cli/environment-variables.md#surrealkv-environment-variables).
 
-# SurrealKV performance characteristics and trade-offs
+## SurrealKV performance characteristics and trade-offs
 
 ## Strengths
 
@@ -102,3 +102,50 @@ Parameters such as `versioned` and `sync` control versioning and durability. See
 ## Performance implications
 
 SurrealKV tends to work well for write-heavy workloads, prefix-based access patterns, and time-series or versioned data where append-heavy writes and ordered keys are common. Point lookups are typically efficient, though they may involve checking multiple levels of on-disk data structures. Large range scans can require reading across multiple SSTables and levels, which may increase I/O without careful compaction and schema design. As with most LSM-based systems, performance can degrade in severely memory- or disk-constrained environments without tuning.
+
+## Run your first query
+
+With the server running, open a second terminal and connect to it with the [`surreal sql`](../reference/cli/surrealdb-cli/commands/sql.md) command. This starts a SurrealQL REPL against the server, using the credentials from the step above.
+
+```bash
+surreal sql --endpoint http://localhost:8000 --username root --password secret --namespace main --database main --pretty
+```
+
+Create a record. There is no need to define the table first, because SurrealDB creates it on the first write.
+
+```surql
+CREATE person:tobie SET name = "Tobie", city = "London";
+```
+
+```surql title="Output"
+[
+	{
+		city: 'London',
+		id: person:tobie,
+		name: 'Tobie'
+	}
+]
+```
+
+Select it back to confirm the round trip.
+
+```surql
+SELECT name, city FROM person;
+```
+
+```surql title="Output"
+[
+	{
+		city: 'London',
+		name: 'Tobie'
+	}
+]
+```
+
+When you finish, exit the REPL with `Ctrl+C`. The record persists on disk, so it is still there the next time you start the server against the same path.
+
+## Next steps
+
+- Query from your application with an [SDK](../languages/javascript.md) - each language guide starts with a connect-and-query walkthrough.
+- Try SurrealQL without a server in the [Studio Sandbox](sandbox.md).
+- Learn the query language, starting with the [`SELECT` statement](../reference/query-language/statements/select.md).

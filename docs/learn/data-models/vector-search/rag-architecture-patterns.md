@@ -48,7 +48,7 @@ For citations, persist enough metadata to map a chunk back to a human-readable s
 - [Hybrid search](hybrid-search.md)
 - [Full-text search overview](../full-text-search/overview.md)
 - [Embedding pipelines](embedding-pipelines.md)
-- [Vector functions](../../../reference/query-language/functions/database-functions/vector.md#vector-functions)
+- [Vector functions](../../../reference/query-language/functions/database-functions/vector.md)
 - [Vector search indexes](../../../reference/query-language/statements/define/indexes.md#vector-search-indexes)
 - [FastEmbed and embeddings integrations](../../../build/integrations/embeddings-providers/fastembed.md)
 - [YouTube: Vector search intro](https://www.youtube.com/watch?v=MqddPmgKSCs)

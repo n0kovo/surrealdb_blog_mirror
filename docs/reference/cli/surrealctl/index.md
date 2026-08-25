@@ -9,7 +9,7 @@ _Auto-generated index — 5 pages and 1 sub-section._
 
 ## Sub-sections
 
-- **[Overview](commands/index.md)** — A map of every surrealctl command group and leaf command, with links to the page documenting each one.
+- **[surrealctl commands](commands/index.md)** — A map of every surrealctl command group and leaf command, with links to the page documenting each one.
 
 ## Pages
 
@@ -21,5 +21,5 @@ _Auto-generated index — 5 pages and 1 sub-section._
   How surrealctl waits for an instance to settle - the wait flags, which commands wait by default, the polling schedule, rate-limit handling, and exit code 10.
 - [Output and exit codes](output-and-exit-codes.md)
   The surrealctl --json contract, the stdout and stderr split, NDJSON streams, the shared list presentation flags, the secret and confirmation guards, and every exit code.
-- [Overview](overview.md)
+- [surrealctl reference](overview.md)
   What surrealctl is, where the control plane ends and the SurrealDB CLI begins, the command grammar, and how this reference is organised.

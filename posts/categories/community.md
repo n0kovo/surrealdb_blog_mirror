@@ -21,17 +21,17 @@ _35 posts_
   `community` `featured` — We have made some improvements to the documentation user experience learn more
 - **2025-01-24** · [Making your own PR to the SurrealDB source code](../2025/01/making-your-own-pr-to-the-surrealdb-source-code.md)  
   `community` — Making a small PR to the SurrealDB source code is easier than you think, even if you come from another programming language.
-- **2024-05-09** · [Why SurrealDB is the Future of Database Technology - An In-Depth Look](../2024/05/why-surrealdb-is-the-future-of-database-technology--an-in-depth-look.md)  
-  `community` `tutorials` — The people who are crazy enough to think that they can change the world, are the ones who do
+- **2024-05-09** · [Why SurrealDB is the future of Database Technology](../2024/05/why-surrealdb-is-the-future-of-database-technology--an-in-depth-look.md)  
+  `community` `tutorials` — The people who are crazy enough to think that they can change the world, are the ones who do.
 - **2024-04-15** · [ELI5 - Why SurrealDB, explained through building with LEGO](../2024/04/eli5--why-surrealdb-explained-through-building-with-lego.md)  
-  `community` `tutorials` — Can databases inspire a sense of child-like play?
+  `community` `tutorials` — Can databases inspire a sense of child-like play? They can if the database is SurrealDB.
 - **2024-03-09** · [Introducing SurrealDB's custom emoji pack](../2024/03/introducing-surrealdbs-custom-emoji-pack.md)  
   `community` — If the Internet has enabled us to communicate beyond boundaries in real-time, emojis helped it by making them the universal language of expression.
-- **2024-03-08** · [From medical doctor to rust developer - interview with our new Senior Clinical Research Fellow](../2024/03/from-medical-doctor-to-rust-developer--interview-with-our-new-senior-clinical-research-fellow.md)  
-  `community` — Read about her journey and why she is using SurrealDB for her current research.
+- **2024-03-08** · [Interview with senior clinical research fellow Caroline Morton](../2024/03/from-medical-doctor-to-rust-developer--interview-with-our-new-senior-clinical-research-fellow.md)  
+  `community` — Read about Dr Caroline Morton's journey from medical doctor to Rust developer and why she is using SurrealDB for her current research.
 - **2023-11-14** · [How Rust gave SurrealDB an edge in the database world](../2023/11/how-rust-gave-surrealdb-an-edge-in-the-database-world.md)  
   `tutorials` `community` — Join Senior Software Engineer, Maxwell Flitton, as he shines a light on how Rust and Async Rust gave SurrealDB an edge in the database world.
-- **2023-06-26** · [We're now on Instagram!](../2023/06/were-now-on-instagram.md)  
+- **2023-06-26** · [SurrealDB is now on Instagram!](../2023/06/were-now-on-instagram.md)  
   `community` — It’s been a crazy 9 months, and we have lots of awesome photos to share with you from our journey so far!
 - **2023-06-08** · [Announcing Developer Office Hours](../2023/06/announcing-developer-office-hours.md)  
   `community` — We're kicking off Developer Office Hours! 🎉 Starting June 9th, we'll be hosting this on Discord every Friday.
@@ -41,23 +41,23 @@ _35 posts_
   `community` — Senior Software Engineer Yusuke at SurrealDB explains his journey so far and why he became a maintainer.
 - **2023-05-25** · [Maintainer Month 2023: Behind the scenes with Rushmore Mushambi](../2023/05/maintainer-month-2023-behind-the-scenes-with-rushmore-mushambi.md)  
   `community` — A post featuring a quick chat with one of our maintainers at SurrealDB as part of our efforts to celebrate #MaintainerMonth 2023.
-- **2023-05-06** · [SurrealDB Giveaway](../2023/05/surrealdb-giveaway.md)  
+- **2023-05-06** · [Get some swag from SurrealDB's mid-2023 giveaway](../2023/05/surrealdb-giveaway.md)  
   `community` — We are utterly blown away! Thank you so, so much to the SurrealDB and dev communities for your amazing support since our launch in August.
-- **2023-02-05** · [New 'Awesome SurrealDB' repo!](../2023/02/new-awesome-surrealdb-repo.md)  
+- **2023-02-05** · [New 'Awesome SurrealDB' repo!!](../2023/02/new-awesome-surrealdb-repo.md)  
   `community` — We have created an 'Awesome SurrealDB' repo. Please suggest any libraries, tools, tutorials or videos there by submitting a pull request!
 - **2022-12-13** · [Get your hands on our first ever SurrealDB stickers!](../2022/12/get-your-hands-on-our-first-ever-surrealdb-stickers.md)  
   `community` — Want to get your hands on our first ever limited-edition SurrealDB stickers 🌈❄️👀 We would love to learn how you are using SurrealDB!
 - **2022-09-17** · [Beyond Surreal? A closer look at NewSQL Relational Data.](../2022/09/beyond-surreal-a-closer-look-at-newsql-relational-data.md)  
   `community` — Thank you very much Fireship once again for another brilliant video on SurrealDB! We really, really appreciate it!
-- **2022-09-17** · [#2 on Hacker News](../2022/09/2-on-hacker-news.md)  
+- **2022-09-17** · [SurrealDB reaches #2 on Hacker News](../2022/09/2-on-hacker-news.md)  
   `community` — #2 on Hacker News... There won't be much sleep once again for Jaime and Tobie this weekend! Thank you once again for all the support over the past 3 weeks!
-- **2022-09-17** · [10,000 thank yous!](../2022/09/10000-thank-yous.md)  
-  `community` — ⭐ 10,000 GitHub stars in 4 weeks! We are utterly blown away! Thank you so, so much to the SurrealDB and dev communities for your amazing support! This is only the start of the SurrealDB journey! We have so much more to come! ⭐
-- **2022-09-16** · [Thank you Fireship!](../2022/09/thank-you-fireship.md)  
+- **2022-09-17** · [10,000 thank yous! SurrealDB reaches 10,000 stars on GitHub](../2022/09/10000-thank-yous.md)  
+  `community` — ⭐ 10,000 GitHub stars in 4 weeks! We are utterly blown away! Thank you so, so much to the SurrealDB and dev communities for your amazing support!⭐
+- **2022-09-16** · [Thank you Fireship for featuring SurrealDB!](../2022/09/thank-you-fireship.md)  
   `community` — Thank you very much Fireship for the 📹 video on SurrealDB! We really appreciate it!
 - **2022-09-16** · [We think we have broken GitHub...](../2022/09/we-think-we-have-broken-github.md)  
-  `community` — Thank you once again for all the love and support over the last 24 hours! SurrealDB is currently the No. 1 📈 AND No. 2 📈 trending public repository on GitHub worldwide! We think we have broken GitHub 😵!
-- **2022-09-12** · [5000 thank yous](../2022/09/5000-thank-yous.md)  
+  `community` — Thank you once again for all the love and support as SurrealDB is currently the No. 1 AND No. 2 trending public repository on GitHub worldwide!
+- **2022-09-12** · [5000 thank yous as SurrealDB reaches 5000 GitHub stars](../2022/09/5000-thank-yous.md)  
   `community` — ⭐ 5000 GitHub stars in 3 weeks! Wow! We are blown away! Thank you, thank you, thank you to the SurrealDB and dev communities for your amazing support! ⭐
 - **2022-09-10** · [Rust Powered Database SurrealDB (It's Pretty Ambitious)](../2022/09/rust-powered-database-surrealdb-its-pretty-ambitious.md)  
   `community` — Thank you very much to Code to the Moon for the YouTube video tour of the query language and capabilities of SurrealDB!

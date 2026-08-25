@@ -13,7 +13,7 @@ This method returns the authenticated record user.
 $db->info()
 ```
 
-### Example usage
+## Example usage
 ```php
 $user = $db->info();
 ```

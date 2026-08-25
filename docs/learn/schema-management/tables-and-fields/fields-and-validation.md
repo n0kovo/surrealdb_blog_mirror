@@ -223,7 +223,7 @@ SLEEP 1s;
 SELECT * FROM ONLY user:one;
 ```
 
-To create a field that is calculated each time it is accessed, a [`computed field`](../../../reference/query-language/statements/define/field.md#computed-fields) can be used.
+To create a field that is calculated each time it is accessed, a [`computed field`](../../../reference/query-language/statements/define/field.md#restrictions-on-computed-fields) can be used.
 
 ```surql
 DEFINE FIELD accessed_at ON TABLE user COMPUTED time::now();

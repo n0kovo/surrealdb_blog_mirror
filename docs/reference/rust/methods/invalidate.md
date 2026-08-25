@@ -15,7 +15,7 @@ db.invalidate()
 
 **3.x**
 
-### Example usage
+## Example usage
 
 Note: the following example uses the `ureq` crate with the `json` feature to first send a request to the database's [`/signup`](../../rest-api/http-protocol.md#signup) endpoint which returns a token. The `reqwest` crate and others can be used here instead.
 
@@ -104,7 +104,7 @@ IndexedResults { results: {0: (DbResultStats { execution_time: Some(26.458µs), 
 Error: Error { code: -32002, message: "Anonymous access not allowed: Not enough permissions to perform this action", details: NotAllowed(Some(Auth(NotAllowed { actor: "anonymous", action: "process", resource: "query" }))) }
 ```
 
-### Revoking a refresh token (`.refresh(token)`)
+## Revoking a refresh token (`.refresh(token)`)
 
 [`db.invalidate()`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.invalidate) normally clears the whole session. To revoke only the refresh token carried inside a [`Token`](https://docs.rs/surrealdb/latest/surrealdb/opt/auth/struct.Token.html) (without invalidating the entire session), call [`.refresh(token)`](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Invalidate.html#method.refresh) on the invalidate builder, then await:
 
@@ -118,14 +118,14 @@ db.invalidate().refresh(token).await?;
 
 Use this when you need to drop refresh capability for a specific token pair while leaving other session state intact.
 
-### See also
+## See also
 
 * [.invalidate() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.invalidate)
 * [`Invalidate::refresh` on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Invalidate.html#method.refresh)
 
 **2.x**
 
-### Example usage
+## Example usage
 
 Note: the following example uses the `ureq` crate with the `json` feature to first send a request to the database's [`/signup`](../../rest-api/http-protocol.md#signup) endpoint which returns a token. The `reqwest` crate and others can be used here instead.
 
@@ -196,6 +196,6 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.invalidate() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.invalidate)

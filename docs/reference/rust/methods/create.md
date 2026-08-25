@@ -15,7 +15,7 @@ Creates one or more records in the database.
 db.create(resource).content(data)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -45,7 +45,7 @@ db.create(resource).content(data)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```rust
 use surrealdb::engine::any::connect;
@@ -97,7 +97,7 @@ Creates one or more records in the database.
 db.create(resource).content(data)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -127,7 +127,7 @@ db.create(resource).content(data)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```rust
 use serde::{Deserialize, Serialize};
@@ -172,13 +172,13 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### Translated query
+## Translated query
 This function will run the following query in the database:
 
 ```surql
 CREATE $resource CONTENT $data;
 ```
 
-### See also
+## See also
 
 * [.create() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.create)

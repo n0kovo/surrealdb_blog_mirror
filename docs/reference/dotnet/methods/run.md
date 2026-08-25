@@ -1,7 +1,7 @@
 ---
 position: 22
 title: Run
-description: The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+description: Runs a SurrealQL function with the SurrealDB .NET SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/dotnet/methods/run.mdx"
 ---
 
@@ -13,7 +13,7 @@ Runs a [SurrealQL function](../../query-language/functions/database-functions/in
 await db.Run(name, version, args)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -62,7 +62,7 @@ await db.Run(name, version, args)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```csharp
 DateTime now = await db.Run<DateTime>("time::now");

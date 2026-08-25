@@ -16,7 +16,7 @@ Subscribes to changes on a table and returns an `AsyncStream<LiveEvent<T>>` of e
 try await client.live(query)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -38,7 +38,7 @@ try await client.live(query)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 let stream = try await client.live(SurrealDSL.live(Person.self))

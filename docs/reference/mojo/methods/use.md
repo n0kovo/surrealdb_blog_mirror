@@ -13,7 +13,7 @@ Switches the connection to a specific namespace and database.
 client.use(namespace, database, session)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -38,7 +38,7 @@ client.use(namespace, database, session)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 client.use("test", "test")

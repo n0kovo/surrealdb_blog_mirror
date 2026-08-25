@@ -18,15 +18,15 @@ Besides basic JavaScript utilities and [classes for SurrealQL types](type-conver
   </thead>
   <tbody>
     <tr>
-      <td><a href="#fetch">`async fetch(resource, options)`</a></td>
+      <td><a href="#async-fetchresource-options">`async fetch(resource, options)`</a></td>
       <td>Full fledged fetch implementation closely matching the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">official specification</a>.</td>
     </tr>
     <tr>
-      <td><a href="#query">`async query(surql)`</a></td>
+      <td><a href="#async-querysurql">`async query(surql)`</a></td>
       <td>Run SurrealQL subqueries from within the embedded scripting functions.</td>
     </tr>
     <tr>
-      <td><a href="#value">`async value(variable)`</a></td>
+      <td><a href="#async-valuevariable">`async value(variable)`</a></td>
       <td>Retrieve values for SurrealQL variables from within the embedded scripting functions.</td>
     </tr>
   </tbody>

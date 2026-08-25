@@ -52,7 +52,7 @@ _46 posts_
 - **2025-06-02** · [Three ways to model data relationships in SurrealDB](../2025/06/three-ways-to-model-data-relationships-in-surrealdb.md)  
   `featured` `engineering` — In a recent SurrealDB Stream, we cracked open a foundational part of SurrealDB’s power: relationship modelling. From traditional record-to-record links to bidirectional references and Graph Edge metadata, we explored the many ways you can model connected data - clearly, scalably, and with performance in mind.
 - **2025-04-02** · [Cooking up faster RAG using in-database embeddings in SurrealDB](../2025/04/cooking-up-faster-rag-using-in-database-embeddings-in-surrealdb.md)  
-  `engineering` `ai` — Speed up RAG pipelines by running embedding models directly inside SurrealDB. Eliminate external API latency with in-database vector embeddings for faster retrieval-augmented generation.
+  `engineering` `ai` — Speed up RAG pipelines by running embedding models inside SurrealDB.Eliminate API latency with in-database vector embeddings for retrieval-augmented generation.
 - **2025-03-26** · [Beyond black boxes - building customisable and secure RAG systems for financial services](../2025/03/beyond-black-boxes--building-customisable-and-secure-rag-systems-for-financial-services.md)  
   `engineering` `ai` — This isn’t just another RAG blog post - it tackles the specific challenges financial services data teams face when building systems in regulated, data-sensitive environments.
 - **2025-03-25** · [Revolutionising decentralised discovery with SurrealDB and confidential computing](../2025/03/revolutionising-decentralised-discovery-with-surrealdb-and-confidential-computing.md)  
@@ -61,37 +61,37 @@ _46 posts_
   `engineering` `ai` — This is the release you've been waiting for
 - **2025-02-05** · [How we improved the Python SDK for our 1.0 stable version](../2025/02/how-we-improved-the-python-sdk-for-our-1-0-stable-version.md)  
   `engineering` — We've released our 1.0 stable version of our Python SDK
-- **2024-08-28** · [Building a retrieval-augmented generation (RAG) app with OpenAI and SurrealDB](../2024/08/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb.md)  
+- **2024-08-28** · [Building a RAG app with OpenAI and SurrealDB](../2024/08/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb.md)  
   `engineering` `tutorials` — We'll build an assistant that can answer questions based on Wikipedia information, using the GPT Turbo model from OpenAI
 - **2024-08-20** · [It’s about time: time series in SurrealDB](../2024/08/its-about-time-time-series-in-surrealdb.md)  
-  `engineering` `tutorials` — What is time anyway
+  `engineering` `tutorials` — The types of time series data in SurrealDB and how to efficiently structure and query this data using SurrealQL.
 - **2024-07-25** · [Moving from full-text search to vector search in SurrealDB](../2024/07/moving-from-full-text-search-to-vector-search-in-surrealdb.md)  
   `engineering` — If you know exactly what you’re searching for Full-Text Search would be the way to go but when you want your search to understand you, Vector Search might be right for you.
-- **2024-07-16** · [Real-time data science: Orchestrating insights with the right ensemble](../2024/07/real-time-data-science-orchestrating-insights-with-the-right-ensemble.md)  
+- **2024-07-16** · [Orchestrating real-time data insights with the right ensemble](../2024/07/real-time-data-science-orchestrating-insights-with-the-right-ensemble.md)  
   `engineering` `tutorials` — Building real-time analytics leveraging OLAP, multi-model databases and workload isolation.
 - **2024-05-17** · [Introducing Surreal<Any>: Dynamic Support for any Engine in Rust](../2024/05/introducing-surrealany-dynamic-support-for-any-engine-in-rust.md)  
   `engineering` `tutorials` — Understand what is a `Surreal<Any>` engine and how you can use it in your Rust code.
-- **2024-03-15** · [Understanding CBOR](../2024/03/understanding-cbor.md)  
+- **2024-03-15** · [Understanding the CBOR data serialisation format](../2024/03/understanding-cbor.md)  
   `engineering` `tutorials` — JSON is the popular kid in school, but CBOR is the new kid who's smaller, faster, and has more tricks up its sleeve!
-- **2024-03-13** · [Why we are betting on Rust](../2024/03/why-we-are-betting-on-rust.md)  
-  `engineering` `company` — The best way to predict the future is to create it.
+- **2024-03-13** · [Why SurrealDB is betting on Rust](../2024/03/why-we-are-betting-on-rust.md)  
+  `engineering` `company` — The best way to predict the future is to create it. For a database company, this means choosing Rust and all the benefits it provides.
 - **2024-01-23** · [VART: A persistent data structure for snapshot isolation](../2024/01/vart-a-persistent-data-structure-for-snapshot-isolation.md)  
   `engineering` — An introduction to VART (Immutable Versioned Adaptive Radix Trie), made for snapshot isolation in databases (SurrealKV).
-- **2024-01-10** · [Live queries in Rust](../2024/01/live-queries-in-rust.md)  
+- **2024-01-10** · [SurrealDB live queries in Rust](../2024/01/live-queries-in-rust.md)  
   `tutorials` `engineering` — Use SurrealDB's LIVE SELECT statement that allows you to listen for creations, updates and deletions to specific records you are interested in or entire tables.
 - **2024-01-09** · [Introducing Nightly and Beta Rust Crates](../2024/01/introducing-nightly-and-beta-rust-crates.md)  
   `releases` `engineering` `company` — We are pleased to announce two additional Rust crates, surrealdb-nightly and surrealdb-beta. These crates are designed to complement the surrealdb crate.
-- **2023-12-18** · [Crafting our full-text search in SurrealDB: A journey beyond Lucene and Tantivy](../2023/12/crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy.md)  
+- **2023-12-18** · [Full-text search in SurrealDB: Going beyond Lucene and Tantivy](../2023/12/crafting-our-full-text-search-in-surrealdb-a-journey-beyond-lucene-and-tantivy.md)  
   `engineering` — SurrealDB's own ACID-compliant full-text search engine is a unified query experience without external dependencies instead of integrating Lucene or Tantivy.
 - **2023-12-12** · [What is SurrealML: A getting started guide](../2023/12/what-is-surrealml-a-getting-started-guide.md)  
   `tutorials` `engineering` — The developer community has made great strides in open-source machine-learning packages. However, there are still areas that are not fully complete.
 - **2023-07-24** · [What are multi-model databases?](../2023/07/what-are-multi-model-databases.md)  
   `engineering` `tutorials` — A talk about the intriguing world of databases and where different data models co-exist, much like trains within a bustling metro station.
 - **2023-06-20** · [JavaScript Library with Micha & Tobie](../2023/06/javascript-library-with-micha-tobie.md)  
-  `tutorials` `engineering` — This week we're focusing on SurrealDB's JavaScript Library. Join Micha and Tobie as they chat about recent updates and highlights, and showcase how to use live queries and the WASM library.
+  `tutorials` `engineering` — This week focuses on SurrealDB's JavaScript Library. Join Micha and Tobie for a chat on recent updates and how to use live queries and the WASM library.
 - **2023-05-11** · [The life-changing magic of SurrealDB record IDs](../2023/05/the-life-changing-magic-of-surrealdb-record-ids.md)  
   `engineering` `tutorials` — At SurrealDB, we are all about doing things that spark joy for developers. One of those things that constantly surprises and delights is the humble record ID.
-- **2023-05-01** · [SurrealDB Scalability](../2023/05/surrealdb-scalability.md)  
-  `engineering` — SurrealDB is a multi-paradigm database that allows you to perform document, graph, temporal, spatial, and text operations within an ACID environment. The SurrealDB service is a compute layer that processes queries and operates on a storage layer. As of writing, our storage layer is predominantly RocksDB.
+- **2023-05-01** · [SurrealDB Scalability: the details](../2023/05/surrealdb-scalability.md)  
+  `engineering` — SurrealDB allows you to perform document, graph, temporal, spatial, and text operations within an ACID environment, predominantly persisting data on RocksDB.
 - **2022-08-04** · [SurrealDB client libraries are now live!](../2022/08/client-libraries-live.md)  
   `engineering` — We’re happy to announce that initial server side documentation for Node.js, Golang and Deno, along with client side documentation for JavaScript is LIVE!

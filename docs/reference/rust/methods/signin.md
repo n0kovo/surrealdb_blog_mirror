@@ -15,7 +15,7 @@ Signs in to a specific access method for an already signed up record user.
 db.signin(credentials)
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -35,7 +35,7 @@ db.signin(credentials)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```rust
 // Use the following statement to set up the access
@@ -82,7 +82,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.signin() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.signin)
 
@@ -94,7 +94,7 @@ Signs in to a specific access method for an already signed up record user.
 db.signin(credentials)
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -114,7 +114,7 @@ db.signin(credentials)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```rust
 // Use the following statement to set up the access
@@ -158,6 +158,6 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.signin() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.signin)

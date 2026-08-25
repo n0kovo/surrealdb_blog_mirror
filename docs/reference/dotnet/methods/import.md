@@ -1,7 +1,7 @@
 ---
 position: 7
 title: Import
-description: The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+description: Imports data into a SurrealDB database with the SurrealDB .NET SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/dotnet/methods/import.mdx"
 ---
 
@@ -14,7 +14,7 @@ To use this method, you need to be connected to a SurrealDB instance that is ver
 await db.Import(string)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -45,7 +45,7 @@ await db.Import(string)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```csharp
 string input = 

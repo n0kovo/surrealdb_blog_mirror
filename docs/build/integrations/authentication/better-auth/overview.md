@@ -1,6 +1,6 @@
 ---
 position: 0
-title: Overview
+title: Better Auth
 description: Use SurrealDB as the database behind Better Auth with the @surrealdb/better-auth adapter, including schema generation, transactions, and support for all Better Auth plugins.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/authentication/better-auth/overview.mdx"
 ---

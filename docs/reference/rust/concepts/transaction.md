@@ -203,11 +203,11 @@ async fn main() -> surrealdb::Result<()> {
 
 **2.x**
 
-# Manual transactions
+## Manual transactions
 
 While every query in SurrealDB is run [inside its own transaction](../../query-language/language-primitives/transactions.md), manual transactions made up of multiple statements can be used via the [BEGIN](../../query-language/statements/begin.md) and [COMMIT](../../query-language/statements/commit.md) keywords.
 
-The [`.query()`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.query) method can take any number of statements, returning a [`Response`](https://docs.rs/surrealdb/latest/surrealdb/struct.Response.html) that contains the results of each of them. In addition, the same method before being called returns [a struct](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Query.html) that also allows [the same `.query()` method](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Query.html#method.query) to be called on it, chaining the new query onto the existing query. This can help greatly with readability, as the example code below shows.
+The [`.query()`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.query) method can take any number of statements, returning a [`Response`](https://docs.rs/surrealdb/latest/surrealdb/struct.IndexedResults.html) that contains the results of each of them. In addition, the same method before being called returns [a struct](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Query.html) that also allows [the same `.query()` method](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Query.html#method.query) to be called on it, chaining the new query onto the existing query. This can help greatly with readability, as the example code below shows.
 
 ## Getting started
 

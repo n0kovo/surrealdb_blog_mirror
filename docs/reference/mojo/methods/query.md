@@ -13,7 +13,7 @@ Runs one or more SurrealQL statements against the database and returns an `RpcRe
 client.query(query, bindings_json, session, txn)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -42,7 +42,7 @@ client.query(query, bindings_json, session, txn)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 var resp = client.query("SELECT * FROM person WHERE age > 18;")
@@ -57,6 +57,6 @@ else:
 > [!NOTE]
 > A dedicated API for passing arbitrary CBOR bindings is on the roadmap. Today, CBOR connections support the default `"{}"`, while JSON-RPC connections accept raw JSON strings via `bindings_json`.
 
-### See also
+## See also
 
 - [Executing queries](../concepts/executing-queries.md)

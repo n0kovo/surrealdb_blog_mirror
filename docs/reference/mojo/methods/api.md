@@ -13,7 +13,7 @@ Calls a custom API handler defined on the database with [`DEFINE API`](../../que
 client.api(path, method, session, txn)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -42,7 +42,7 @@ client.api(path, method, session, txn)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 var resp = client.api("/users", "GET")

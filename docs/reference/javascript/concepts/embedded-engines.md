@@ -109,7 +109,7 @@ await db.connect('mem://');
 await db.connect('surrealkv://./data');
 ```
 
-To enable [versioned storage](../../query-language/statements/select.md#version) for temporal queries, append `?versioned=true` to the connection string:
+To enable [versioned storage](../../query-language/statements/select.md#the-version-clause) for temporal queries, append `?versioned=true` to the connection string:
 
 ```ts
 await db.connect('surrealkv://./data?versioned=true');

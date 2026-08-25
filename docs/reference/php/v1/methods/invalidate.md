@@ -13,7 +13,7 @@ Invalidates the authentication for the current connection.
 $db->invalidate()
 ```
 
-### Example usage
+## Example usage
 ```php
 $db->invalidate();
 ```

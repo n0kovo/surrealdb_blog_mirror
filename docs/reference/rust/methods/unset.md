@@ -15,7 +15,7 @@ Removes a parameter from this connection.
 db.unset(key)
 ```
 
-### Example usage
+## Example usage
 
 ```rust
 use surrealdb::Surreal;
@@ -59,7 +59,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.unset() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.unset)
 
@@ -71,7 +71,7 @@ Removes a parameter from this connection.
 db.unset(key)
 ```
 
-### Example usage
+## Example usage
 
 ```rust
 use serde::Serialize;
@@ -115,6 +115,6 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.unset() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.unset)

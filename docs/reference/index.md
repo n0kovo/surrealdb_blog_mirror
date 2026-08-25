@@ -16,9 +16,9 @@ _Auto-generated index — 0 pages and 13 sub-sections._
 - **[JavaScript SDK](javascript/index.md)** — The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
 - **[Kotlin SDK](kotlin/index.md)** — The SurrealDB SDK for Kotlin is a coroutine-based, Kotlin Multiplatform client for querying a remote SurrealDB instance.
 - **[Mojo SDK](mojo/index.md)** — The SurrealDB SDK for Mojo enables simple and advanced querying of a remote database over HTTP, HTTPS, and WebSocket.
-- **[Overview](php/index.md)** — The SurrealDB SDK for PHP lets you query a remote SurrealDB instance from any PHP application, with a stable v1 release and a v2 rewrite in alpha.
+- **[PHP SDK](php/index.md)** — The SurrealDB SDK for PHP lets you query a remote SurrealDB instance from any PHP application, with a stable v1 release and a v2 rewrite in alpha.
 - **[Python SDK](python/index.md)** — The SurrealDB SDK for Python enables simple and advanced querying of a remote or embedded database.
 - **[SurrealQL](query-language/index.md)** — Reference for SurrealQL, SurrealDB's query language: statements, clauses, functions, and language primitives.
 - **[REST API](rest-api/index.md)** — SurrealDB exposes an HTTP-based REST API for executing queries, managing authentication, and performing CRUD operations.
-- **[Rust SDK](rust/index.md)** — The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
+- **[Rust SDK](rust/index.md)** — The SurrealDB SDK for Rust enables you to interact with SurrealDB from client-side, server-side applications, systems, APIs, embedded systems, and IoT devices.
 - **[Swift SDK](swift/index.md)** — The SurrealDB SDK for Swift enables simple and advanced querying of a remote database from Apple-platform and server-side Swift applications.

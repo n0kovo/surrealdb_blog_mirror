@@ -1,6 +1,6 @@
 ---
 position: 1
-title: Overview
+title: PHP SDK v2
 description: Version 2 of the SurrealDB SDK for PHP is a rewrite with a fluent query builder, typed credentials, and a PSR-based transport layer.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v2/index.mdx"
 ---

@@ -61,7 +61,7 @@ Some examples of query statements are:
 
 The following flowchart can be used to get a sense of when it makes sense to use `CREATE`, `INSERT`, `UPDATE`, `UPSERT`, and `RELATE`.
 
-![A flowchart that explains in which cases to use the statements create, insert, update, insert, and relate.](../../../assets/img/surrealql/statements/statement_flowchart.png)
+![A flowchart that explains in which cases to use the statements CREATE, INSERT, UPDATE, UPSERT, and RELATE.](../../../assets/img/surrealql/statements/statement_flowchart-light.png)
 
 ## Statement parameters
 

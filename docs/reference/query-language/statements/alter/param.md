@@ -1,7 +1,7 @@
 ---
 position: 13
 title: ALTER PARAM
-description: The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+description: The ALTER PARAM statement can be used to modify an existing defined param.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/alter/param.mdx"
 ---
 

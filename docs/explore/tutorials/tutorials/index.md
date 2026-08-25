@@ -31,7 +31,7 @@ _Auto-generated index — 13 pages._
   In this tutorial, you will learn how to query the SurrealDB RESTful HTTP API endpoints using Postman.
 - [Build a minimal LangChain chatbot](minimal-langchain.md)
   This tutorial shows how to build a minimal LangChain chatbot with both vector and graph.
-- [Overview](overview.md)
+- [Tutorials](overview.md)
   Step-by-step tutorials and walkthroughs for specific tasks with SurrealDB: integrations, real-time apps, AI patterns, and more.
 - [Implement semantic search in Rust](semantic-search-in-rust.md)
   In this guide, you'll learn how to implement semantic search in Rust using either Mistral AI or OpenAI via their Rust crates.

@@ -15,7 +15,7 @@ Connects to a local or remote database endpoint.
 Surreal::new::<T>(address)
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -35,9 +35,9 @@ Surreal::new::<T>(address)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
-#### Basic example
+### Basic example
 
 ```rust
 use surrealdb::engine::remote::ws::Ws;
@@ -50,7 +50,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-#### Configuring the database
+### Configuring the database
 
 The `new()` function takes an argument of [`impl IntoEndpoint`](https://docs.rs/surrealdb/latest/surrealdb/opt/trait.IntoEndpoint.html#foreign-impls), which is implemented not only for strings and string-like structs like [`PathBuf`](https://doc.rust-lang.org/std/path/struct.PathBuf.html) and [`SocketAddr`](https://doc.rust-lang.org/std/net/enum.SocketAddr.html), but also a tuple of one of these types for the address along with a second [`Config`](https://docs.rs/surrealdb/latest/surrealdb/opt/struct.Config.html) struct for the configuration.
 
@@ -74,7 +74,7 @@ async fn main() -> Result<(), Error> {
 }
 ```
 
-##### Config options
+#### Config options
 
 `Config` is a builder with methods that can be chained. `Config::new()` and `Config::default()` are equivalent starting points.
 
@@ -175,7 +175,7 @@ Err(Error { code: -32602, message: "Function 'http::get' is not allowed to be ex
 
 Note that the `Capabilities` methods that take a function or network target parse their argument, so they return a `Result`. The pairs come in two shapes: `allow_function` / `deny_function` take `&mut self`, while `with_function_allowed` / `with_function_denied` consume and return the value, which is what makes them chainable.
 
-#### Using a backend with versioning
+### Using a backend with versioning
 
 To make a new connection that includes SurrealKV versioning, add the "kv-surrealkv" feature flag to the `surrealdb` dependency in `Cargo.toml`, add the path to the folder containing the database inside `new()`, and call the `.versioned()` method. Versioning is also available with the memory backend.
 
@@ -197,7 +197,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.new() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.new)
 
@@ -209,7 +209,7 @@ Connects to a local or remote database endpoint.
 Surreal::new::<T>(address)
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -229,9 +229,9 @@ Surreal::new::<T>(address)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
-#### Basic example
+### Basic example
 
 ```rust
 use surrealdb::engine::remote::ws::Ws;
@@ -244,7 +244,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-#### Configuring the database
+### Configuring the database
 
 The `new()` function takes an argument of [`impl IntoEndpoint`](https://docs.rs/surrealdb/latest/surrealdb/opt/trait.IntoEndpoint.html#foreign-impls), which is implemented not only for strings and string-like structs like [`PathBuf`](https://doc.rust-lang.org/std/path/struct.PathBuf.html) and [`SocketAddr`](https://doc.rust-lang.org/std/net/enum.SocketAddr.html), but also a tuple of one of these types for the address along with a second [`Config`](https://docs.rs/surrealdb/latest/surrealdb/opt/struct.Config.html) struct for the configuration.
 
@@ -265,7 +265,7 @@ async fn main() -> Result<(), Error> {
 }
 ```
 
-#### Using SurrealKV with versioning
+### Using SurrealKV with versioning
 
 To make a new connection that includes SurrealKV versioning, add the `kv-surrealkv` feature flag to the `surrealdb` dependency in `Cargo.toml`, add the path to the folder containing the database inside `new()`, and call the `.versioned()` method.
 
@@ -280,6 +280,6 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.new() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.new)

@@ -13,7 +13,7 @@ Stops a running live query, using the query id returned by [`live_query()`](live
 client.kill(query_id, session)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -34,7 +34,7 @@ client.kill(query_id, session)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 var query_id = client.live_query("person")
@@ -45,7 +45,7 @@ client.kill(query_id)
 > [!NOTE]
 > Live queries run over a stateful WebSocket session. WebSocket support is rolling out. On the HTTP transport, the SDK raises an `UnsupportedFeatureError`.
 
-### See also
+## See also
 
 - [Live queries](../concepts/live-queries.md)
 - [`live_query()`](live.md)

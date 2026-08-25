@@ -13,7 +13,7 @@ If you have completed the introduction, you would have stored your ML model in a
 
 A `.surml` file is essentially a header, with weights stored in the ONNX format. Interacting with the file takes the following form:
 
-![SurrealML Storage Schema](../../../assets/img/image/light/surrealml-storage-schema.png)
+![Diagram of the SurrealML storage flow: Python and Rust programs reach the Rust ML core, which reads the SURML file's metadata and ONNX model and executes it through the ONNX runtime library.](../../../assets/img/image/light/surrealml-storage-schema.png)
 
   
 

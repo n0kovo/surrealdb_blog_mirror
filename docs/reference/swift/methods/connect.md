@@ -13,7 +13,7 @@ Connects the client to the endpoint it was configured with.
 try await client.connect()
 ```
 
-### Example usage
+## Example usage
 
 ```swift
 let client = try SurrealHTTPClient(endpoint: "http://localhost:8000")

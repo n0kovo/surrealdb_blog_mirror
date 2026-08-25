@@ -13,7 +13,7 @@ Removes a parameter previously assigned with [`set()`](set.md).
 client.unset(name, session)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -34,7 +34,7 @@ client.unset(name, session)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 client.unset("name")

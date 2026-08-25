@@ -130,6 +130,8 @@ In distributed deployments:
 - The storage layer manages replication, consensus, fault tolerance, and distributed transactions
 - Object-storage backing (rolling out on Scale) places transactional data in commodity object storage while frequently accessed data stays on local disk
 
+![Diagram of a multi-node cluster: requests to [instance-id].surreal.cloud fan out across three nodes, all backed by centralised storage on AWS S3.](../../assets/img/image/cloud/light/cloud-multi-node-light.png)
+
 This architecture enables zero-downtime scaling, resilient clusters, high-throughput workloads, geographically distributed applications, and (as Scale features roll out) database branching, instant replication and recovery, and lower storage costs at scale.
 
 For managed multi-node clusters, use the [Scale](https://surrealdb.com/pricing/scale) plan on a [managed instance](../instances/index.md). For self-hosted multi-node clusters on Kubernetes, use [SurrealDB Enterprise](https://surrealdb.com/enterprise); the [Managed Kubernetes](managed-kubernetes.md) page summarises options per cloud. For a local Community playground against open-source distributed storage (TiKV), see [Run a multi-node cluster](../../running/multi-node.md) - that path is not the storage engine behind Scale or Enterprise clusters.

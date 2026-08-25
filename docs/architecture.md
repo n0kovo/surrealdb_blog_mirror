@@ -11,7 +11,7 @@ SurrealDB is built around a flexible architecture that separates the query engin
 
 Because compute and storage are decoupled, SurrealDB can scale seamlessly as applications grow. You can start with an embedded or single-node deployment during development, then move to distributed multi-node clusters without changing application code or queries.
 
-![SurrealDB distributed deployment](assets/img/image/cloud/light/enterprise-multi-node-light.png)
+![Diagram of SurrealDB's layered architecture: clients connect through [client].surrealdb.com to multiple compute nodes, all backed by centralised storage on AWS S3.](assets/img/image/cloud/light/architecture-light.png)
 
 This flexibility enables SurrealDB to run wherever your application needs it:
 

@@ -15,7 +15,7 @@ Deletes all records in a table, or a specific record, from the database.
 db.delete(resource)
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -35,7 +35,7 @@ db.delete(resource)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```rust
 use surrealdb::engine::any::connect;
@@ -72,7 +72,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### Restrict records with `.range()`
+## Restrict records with `.range()`
 
 For deletes targeting every record in a table, chain [`.range(...)`](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Delete.html#method.range-1) so only record IDs inside the [`RecordIdKeyRange`](https://docs.rs/surrealdb/latest/surrealdb/types/struct.RecordIdKeyRange.html) are removed.
 
@@ -110,7 +110,7 @@ Deletes all records in a table, or a specific record, from the database.
 db.delete(resource)
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -130,7 +130,7 @@ db.delete(resource)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```rust
 use serde::{Deserialize, Serialize};
@@ -168,7 +168,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### Translated query
+## Translated query
 
 While SurrealQL's `DELETE` statement returns an empty array by default, this function translates into a query that adds a `RETURN BEFORE` clause to return the deleted items.
 
@@ -176,6 +176,6 @@ While SurrealQL's `DELETE` statement returns an empty array by default, this fun
 DELETE FROM $resource RETURN BEFORE;
 ```
 
-### See also
+## See also
 
 * [.delete() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.delete)

@@ -73,7 +73,7 @@ val created: Person = client
 
 ### Selecting records
 
-The [`.select()`](../reference/kotlin/api/core/surreal-client.md#select) builder retrieves records from a table or a single record by its [`RecordId`](../reference/kotlin/api/values/record-id.md). Refine it with [`.where()`](../reference/kotlin/api/core/query-builder.md#where) using the [expression helpers](../reference/kotlin/api/core/query-builder.md#expressions).
+The [`.select()`](../reference/kotlin/api/core/surreal-client.md#select) builder retrieves records from a table or a single record by its [`RecordId`](../reference/kotlin/api/values/record-id.md). Refine it with [`.where()`](../reference/kotlin/api/core/query-builder.md) using the [expression helpers](../reference/kotlin/api/core/query-builder.md#expressions).
 
 ```kotlin
 

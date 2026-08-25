@@ -13,7 +13,7 @@ Creates a record if it does not exist, or updates it if it does. This is a conve
 client.upsert(thing, content_json, session, txn)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -42,13 +42,13 @@ client.upsert(thing, content_json, session, txn)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 var resp = client.upsert("person:chiru", '{ "name": "Chiru", "age": 31 }')
 ```
 
-### Translated query
+## Translated query
 
 ```surql
 UPSERT $thing CONTENT $content_json;

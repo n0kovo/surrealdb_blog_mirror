@@ -1,7 +1,7 @@
 ---
 position: 12
 title: ALTER NAMESPACE
-description: The ALTER statement can be used to change authentication access and behaviour, global parameters, table configurations, table events, schema definitions, and indexes.
+description: The ALTER NAMESPACE statement can be used to modify the namespace.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/alter/namespace.mdx"
 ---
 

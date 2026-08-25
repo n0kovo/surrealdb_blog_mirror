@@ -487,11 +487,11 @@ await db.relate(from, edgeId, to, metadata);
 await db.update(edgeId).merge({ updated_at: DateTime.now() });
 ```
 
-As of SurrealDB 3.1.5, when the edge ID already exists, `INSERT RELATION` returns an error unless you use `ON DUPLICATE KEY UPDATE`. See [Explicit edge record IDs](../../../query-language/statements/relate.md#explicit-edge-record-ids) for more details.
+As of SurrealDB 3.1.5, when the edge ID already exists, `INSERT RELATION` returns an error unless you use `ON DUPLICATE KEY UPDATE`. See [Explicit edge record IDs](../../../query-language/statements/relate.md#handling-duplicate-edge-record-ids) for more details.
 
 ## See also
 
 - [SurrealQueryable.relate()](../core/surreal-queryable.md#relate) - Method that returns RelatePromise
 - [Graph relationships](../../../query-language/statements/relate.md) - SurrealQL RELATE documentation
-- [RecordId](../values/index.md#recordid) - Record identifier type
+- [RecordId](../values/index.md#custom-data-type-classes) - Record identifier type
 - [Query overview](index.md) - All query builder classes

@@ -13,7 +13,7 @@ Signs in to the database with CBOR-encoded credentials. On success, the returned
 client.signin(credentials_cbor, session)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -34,7 +34,7 @@ client.signin(credentials_cbor, session)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 from surrealdb import CborCodec
@@ -51,7 +51,7 @@ var resp = client.signin(codec.encode_map(pairs))
 > [!NOTE]
 > `signin` operates on a stateful session, which is provided by the WebSocket transport. WebSocket support is rolling out. Over HTTP, supply credentials with the `access_token` field on `ConnectOptions`.
 
-### See also
+## See also
 
 - [Authentication](../concepts/authentication.md)
 - [`signup()`](signup.md)

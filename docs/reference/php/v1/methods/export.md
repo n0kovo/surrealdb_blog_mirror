@@ -16,7 +16,7 @@ Exports data from a table.
 $db->export($username, $password);
 ```
 
-### Arguments
+## Arguments
 
 <table>
 	<thead>
@@ -54,7 +54,7 @@ $db->export($username, $password);
 	</tbody>
 </table>
 
-### Example
+## Example
 
 ```php title="Example"
 

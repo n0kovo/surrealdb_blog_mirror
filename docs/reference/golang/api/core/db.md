@@ -472,7 +472,7 @@ tx, err := db.Begin(ctx)
 
 ## Query functions
 
-These are top-level generic functions that accept [`*DB`](#db), [`*Session`](session.md), or [`*Transaction`](transaction.md) as the `s` parameter.
+These are top-level generic functions that accept [`*DB`](#constructors), [`*Session`](session.md), or [`*Transaction`](transaction.md) as the `s` parameter.
 
 ### `Query` {#query}
 
@@ -571,7 +571,7 @@ err := surrealdb.QueryRaw(ctx, s, queries)
 
 ## Data functions
 
-These are top-level generic functions that accept [`*DB`](#db), [`*Session`](session.md), or [`*Transaction`](transaction.md) as the `s` parameter.
+These are top-level generic functions that accept [`*DB`](#constructors), [`*Session`](session.md), or [`*Transaction`](transaction.md) as the `s` parameter.
 
 ### `Select` {#select}
 

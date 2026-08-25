@@ -13,7 +13,7 @@ Creates a record in the database, either with an auto-generated id or a specific
 try await client.create(content)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -44,7 +44,7 @@ try await client.create(content)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 // Create with an auto-generated id

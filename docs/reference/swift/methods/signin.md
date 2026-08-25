@@ -13,7 +13,7 @@ Signs this connection in to a specific authentication level and returns the issu
 let tokens = try await client.signin(credentials)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -35,7 +35,7 @@ let tokens = try await client.signin(credentials)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 // Root user

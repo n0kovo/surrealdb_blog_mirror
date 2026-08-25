@@ -1,6 +1,6 @@
 ---
 position: 1
-title: Overview
+title: PHP SDK
 description: The SurrealDB SDK for PHP lets you query a remote SurrealDB instance from any PHP application, with a stable v1 release and a v2 rewrite in alpha.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/index.mdx"
 ---

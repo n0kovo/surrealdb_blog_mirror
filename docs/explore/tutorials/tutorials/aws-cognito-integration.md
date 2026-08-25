@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/e
 
 This guide will cover using [AWS Cognito](https://aws.amazon.com/cognito/) as the authentication provider for client-side web applications using SurrealDB as the only backend.
 
-Depending on the version of SurrealDB that you are on: `v1.x` or `v2.x`, you may have different options available with respect to using [Scope](../../../reference/query-language/statements/define/scope.md) and [Token](../../../reference/query-language/statements/define/token.md) or [DEFINE ACCESS](../../../reference/query-language/statements/define/access/index.md) methods for integrating Auth0 as an authentication provider.
+This guide uses [`DEFINE ACCESS`](../../../reference/query-language/statements/define/access/index.md), the method for every current version of SurrealDB. The tabs also carry the older [Scope](../../../reference/query-language/statements/define/scope.md) and [Token](../../../reference/query-language/statements/define/token.md) statements for readers still on `v1.x` - both were removed in later versions.
 
 In this guide you will learn how to:
 
@@ -106,7 +106,7 @@ export { handler };
 ```
 
   
-**Using Scope and Token**
+**Using Scope and Token (1.x only)**
 
 ```js
   const handler = async (event) => {
@@ -214,7 +214,7 @@ In order to allow SurrealDB to establish a connection with AWS Cognito to downlo
 For the strongest security, provide your specific Cognito user pool domain when starting SurrealDB with `--allow-net`. For example: `--allow-net cognito-idp.eu-west-1.amazonaws.com`.
 
   
-**Using Scope and Token**
+**Using Scope and Token (1.x only)**
 
 #### Defining a token verification method in SurrealDB
 

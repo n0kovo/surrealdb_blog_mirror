@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 UUIDs represent UUID v4 and v7 values. They can be obtained via either the:
 - [`rand::uuid::*` functions](../../functions/database-functions/rand.md#randuuidv4)
 - [casted from strings](../casting.md#uuid)
-- or via [string prefixes](strings.md#uuid)
+- or via [string prefixes](strings.md#uuid-literal-values-with-the-u-prefix)
 
 > [!NOTE]
 > SurrealDB does not eagerly convert a string into a UUID. An implicit `u` prefix or cast using `<uuid>` is required instead.

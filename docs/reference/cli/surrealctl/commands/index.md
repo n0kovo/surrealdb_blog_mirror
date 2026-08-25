@@ -1,6 +1,6 @@
 ---
 position: 1
-title: Overview
+title: surrealctl commands
 description: A map of every surrealctl command group and leaf command, with links to the page documenting each one.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/commands/index.mdx"
 ---

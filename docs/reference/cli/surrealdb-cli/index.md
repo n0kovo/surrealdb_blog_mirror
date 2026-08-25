@@ -9,7 +9,7 @@ _Auto-generated index — 2 pages and 1 sub-section._
 
 ## Sub-sections
 
-- **[Overview](commands/index.md)** — How the SurrealDB CLI is organised into subcommands, with links to each command’s flags and examples.
+- **[SurrealDB CLI commands](commands/index.md)** — How the SurrealDB CLI is organised into subcommands, with links to each command’s flags and examples.
 
 ## Pages
 

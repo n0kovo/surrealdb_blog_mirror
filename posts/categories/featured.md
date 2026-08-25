@@ -178,7 +178,7 @@ _113 posts_
 - **2025-04-15** · [Introducing Teams and Organisations in SurrealDB Cloud](../2025/04/introducing-teams-and-organisations-in-surreal-cloud.md)  
   `featured` `releases` — Whether you're a startup of two or an enterprise of thousands, SurrealDB Cloud now scales with your team.
 - **2025-04-10** · [What's a database anyway?? A blog post for kids](../2025/04/whats-a-database-anyway-a-blog-post-for-kids.md)  
-  `tutorials` `featured` — An easy explanation for children of what a database is.
+  `tutorials` `featured` — An easy explanation for children of what a database is, and why databases are useful.
 - **2025-03-26** · [What's new in Surrealist 3.3](../2025/03/whats-new-in-surrealist-3-3.md)  
   `releases` `featured` — Explore the key features of the Surrealist 3.3 release
 - **2025-03-25** · [Tips and tricks on using the Rust SDK](../2025/03/tips-and-tricks-on-using-the-rust-sdk.md)  
@@ -221,11 +221,11 @@ _113 posts_
   `releases` `featured` — We are excited to announce the latest major iteration of Surrealist
 - **2024-09-17** · [Challenge accepted: announcing SurrealDB 2.0](../2024/09/challenge-accepted-announcing-surrealdb-2-0.md)  
   `releases` `featured` `company` — With the massive community adoption that followed came massive expectations and challenges to live up to these expectations.
-- **2024-06-24** · [Celebrating milestones and looking forward](../2024/06/celebrating-milestones-and-looking-forward.md)  
-  `company` `featured` — Last week was awesome for our team at SurrealDB! It feels like the perfect time to pause and reflect on the whirlwind of achievements, all of which signal exciting times ahead for our company. We are incredibly proud to share some major milestones we've hit, and we want to extend our deepest gratitude to everyone who has been part of this journey to date.
+- **2024-06-24** · [Celebrating SurrealDB milestones and looking forward](../2024/06/celebrating-milestones-and-looking-forward.md)  
+  `company` `featured` — SurrealDB is incredibly proud to share some major milestones, and we want to extend our deepest gratitude to everyone who has been part of this journey to date.
 - **2024-06-17** · [SurrealDB Raises $20M to Disrupt Database Tech; Introduces New Cloud Beta Access](../2024/06/surrealdb-raises-20m-to-disrupt-database-tech-introduces-new-cloud-beta-access.md)  
   `company` `featured` — London, United Kingdom June 18, 2024, SurrealDB, the ultimate multi-model database, today announced a $20 million investment round led by FirstMark and Georgian with participation from Crew Capital and Alumni Ventures. This latest round of funding brings SurrealDB’s total to $26 million.
-- **2024-05-01** · [Surrealist 2.0](../2024/05/surrealist-2-0.md)  
-  `releases` `featured` — An important part of each database is the ability to easily and effortlessly control each aspect of the database. While this may appear trivial at first, it actually encompasses a wide set of different tasks. For this reason Surrealist has officially joined SurrealDB as the official management interface.
+- **2024-05-01** · [Introducing Surrealist 2.0, the graphical UI for SurrealDB](../2024/05/surrealist-2-0.md)  
+  `releases` `featured` — We are pleased to announce that Surrealist has officially joined SurrealDB as its official management interface.
 - **2022-07-20** · [Dreaming of something better: SurrealDB is now live](../2022/07/dreaming-of-something-better.md)  
   `company` `featured` — After 7 years of conceptualising, planning, designing and developing, our source available cloud graph database SurrealDB is now in open beta to the world!

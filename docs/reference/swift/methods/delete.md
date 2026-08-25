@@ -13,7 +13,7 @@ Deletes matching records of a model's table, or a single record by id.
 try await client.delete(Model.self, where: predicate)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -53,7 +53,7 @@ try await client.delete(Model.self, where: predicate)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 // Delete matching records

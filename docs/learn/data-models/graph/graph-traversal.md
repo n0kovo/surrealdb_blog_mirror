@@ -226,7 +226,7 @@ UPDATE person:1;
 ]
 ```
 
-A [computed field](../../../reference/query-language/statements/define/field.md#computed-fields) is recomputed on read:
+A [computed field](../../../reference/query-language/statements/define/field.md#restrictions-on-computed-fields) is recomputed on read:
 
 ```surql
 DEFINE FIELD employers ON TABLE person COMPUTED <-employs<-company;

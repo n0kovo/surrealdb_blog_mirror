@@ -13,7 +13,7 @@ Applies a JSON Patch to all records in a table, or a specific record. This is a 
 client.patch(thing, patch_json, session, txn)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -42,13 +42,13 @@ client.patch(thing, patch_json, session, txn)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 var resp = client.patch("person:chiru", '[{ "op": "replace", "path": "/age", "value": 31 }]')
 ```
 
-### Translated query
+## Translated query
 
 ```surql
 UPDATE $thing PATCH $patch_json;

@@ -14,7 +14,7 @@ try await client.update(Model.self, content: content,
     where: predicate)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -63,7 +63,7 @@ try await client.update(Model.self, content: content,
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 // Update matching records

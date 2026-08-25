@@ -100,7 +100,7 @@ _99 posts_
 - **2025-06-03** · [Enhance your musical skills with Surrealist's Graph View](../2025/06/enhance-your-musical-skills-with-surrealists-graph-view.md)  
   `tutorials` `featured` — Did you know that Surrealist's Graph Visualisation tool can even make you into a better musician? Let's find out how.
 - **2025-04-10** · [What's a database anyway?? A blog post for kids](../2025/04/whats-a-database-anyway-a-blog-post-for-kids.md)  
-  `tutorials` `featured` — An easy explanation for children of what a database is.
+  `tutorials` `featured` — An easy explanation for children of what a database is, and why databases are useful.
 - **2025-03-25** · [Tips and tricks on using the Rust SDK](../2025/03/tips-and-tricks-on-using-the-rust-sdk.md)  
   `tutorials` `featured` — In this article we are going to explore some tips and tricks for using the Rust SDK.
 - **2025-03-24** · [Data analysis using graph traversal, recursion, and shortest path](../2025/03/data-analysis-using-graph-traversal-recursion-and-shortest-path.md)  
@@ -113,27 +113,27 @@ _99 posts_
   `tutorials` `featured` — Have you ever wondered how to find someone or something that’s most like you, whether it’s a roommate, someone who shares your Christmas traditions, or even a celebrity? Vector search is the answer. It’s a modern way to find matches based on multiple preferences at once, and tools like SurrealDB make it incredibly easy to use. Let’s explore what vector search is and how it works, step by step.
 - **2025-01-31** · [Enhancing retrieval-augmented generation with SurrealDB](../2025/01/enhancing-retrieval-augmented-generation-with-surrealdb.md)  
   `tutorials` `featured` `ai` — GraphRAG: Enhancing Retrieval-Augmented Generation with SurrealDB, Gemini and DeepSeek
-- **2024-08-28** · [Building a retrieval-augmented generation (RAG) app with OpenAI and SurrealDB](../2024/08/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb.md)  
+- **2024-08-28** · [Building a RAG app with OpenAI and SurrealDB](../2024/08/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb.md)  
   `engineering` `tutorials` — We'll build an assistant that can answer questions based on Wikipedia information, using the GPT Turbo model from OpenAI
 - **2024-08-20** · [It’s about time: time series in SurrealDB](../2024/08/its-about-time-time-series-in-surrealdb.md)  
-  `engineering` `tutorials` — What is time anyway
-- **2024-07-16** · [Real-time data science: Orchestrating insights with the right ensemble](../2024/07/real-time-data-science-orchestrating-insights-with-the-right-ensemble.md)  
+  `engineering` `tutorials` — The types of time series data in SurrealDB and how to efficiently structure and query this data using SurrealQL.
+- **2024-07-16** · [Orchestrating real-time data insights with the right ensemble](../2024/07/real-time-data-science-orchestrating-insights-with-the-right-ensemble.md)  
   `engineering` `tutorials` — Building real-time analytics leveraging OLAP, multi-model databases and workload isolation.
 - **2024-06-13** · [Our new demo dataset has a lot in store for you!](../2024/06/our-new-demo-dataset-has-a-lot-in-store-for-you.md)  
-  `releases` `tutorials` — But Wait, There's More!
+  `releases` `tutorials` — SurrealDB 2.0-alpha comes with a number of exciting updates but also a new and improved demo dataset.
 - **2024-05-17** · [Introducing Surreal<Any>: Dynamic Support for any Engine in Rust](../2024/05/introducing-surrealany-dynamic-support-for-any-engine-in-rust.md)  
   `engineering` `tutorials` — Understand what is a `Surreal<Any>` engine and how you can use it in your Rust code.
-- **2024-05-09** · [Why SurrealDB is the Future of Database Technology - An In-Depth Look](../2024/05/why-surrealdb-is-the-future-of-database-technology--an-in-depth-look.md)  
-  `community` `tutorials` — The people who are crazy enough to think that they can change the world, are the ones who do
+- **2024-05-09** · [Why SurrealDB is the future of Database Technology](../2024/05/why-surrealdb-is-the-future-of-database-technology--an-in-depth-look.md)  
+  `community` `tutorials` — The people who are crazy enough to think that they can change the world, are the ones who do.
 - **2024-04-15** · [ELI5 - Why SurrealDB, explained through building with LEGO](../2024/04/eli5--why-surrealdb-explained-through-building-with-lego.md)  
-  `community` `tutorials` — Can databases inspire a sense of child-like play?
-- **2024-03-26** · [Exploring the AI revolution](../2024/03/exploring-the-ai-revolution.md)  
+  `community` `tutorials` — Can databases inspire a sense of child-like play? They can if the database is SurrealDB.
+- **2024-03-26** · [SurrealDB's talk on Exploring the AI revolution](../2024/03/exploring-the-ai-revolution.md)  
   `tutorials` — Looking to keep up-to-date with what's next in Generative AI and LLMs? We've got you covered.
 - **2024-03-25** · [Document-Style Relationships in SurrealDB](../2024/03/document-style-relationships-in-surrealdb.md)  
-  `tutorials` — Your feedback matters! We’re introducing short-form video tutorials.
+  `tutorials` — We’re introducing short-form video tutorials at SurrealDB. We’ll be putting out a video a week, starting with a 3-part series on relationships in SurrealDB.
 - **2024-03-17** · [How to simplify your tech stack](../2024/03/how-to-simplify-your-tech-stack.md)  
   `tutorials` — Oscar Merry talks about powering a social podcasting app, Fountain, using SurrealDB.
-- **2024-03-15** · [Understanding CBOR](../2024/03/understanding-cbor.md)  
+- **2024-03-15** · [Understanding the CBOR data serialisation format](../2024/03/understanding-cbor.md)  
   `engineering` `tutorials` — JSON is the popular kid in school, but CBOR is the new kid who's smaller, faster, and has more tricks up its sleeve!
 - **2024-02-21** · [Thinking Inside The Box: Relational Style Joins in SurrealDB](../2024/02/thinking-inside-the-box-relational-style-joins-in-surrealdb.md)  
   `tutorials` — SurrealDB's relational style joins exist in a superposition. The only way to know for sure is by looking at this blog post.
@@ -141,15 +141,15 @@ _99 posts_
   `tutorials` — Can't join? No worries, we can relate. In this post we explore SurrealDB's multi-model relationships.
 - **2024-01-14** · [Integrate Auth0 as an Authentication provider](../2024/01/integrate-auth0-as-an-authentication-provider.md)  
   `tutorials` — This guide will cover using Auth0 as the authentication provider for single-page web applications using SurrealDB as the only backend.
-- **2024-01-10** · [Live queries in Rust](../2024/01/live-queries-in-rust.md)  
+- **2024-01-10** · [SurrealDB live queries in Rust](../2024/01/live-queries-in-rust.md)  
   `tutorials` `engineering` — Use SurrealDB's LIVE SELECT statement that allows you to listen for creations, updates and deletions to specific records you are interested in or entire tables.
 - **2023-12-12** · [What is SurrealML: A getting started guide](../2023/12/what-is-surrealml-a-getting-started-guide.md)  
   `tutorials` `engineering` — The developer community has made great strides in open-source machine-learning packages. However, there are still areas that are not fully complete.
-- **2023-11-30** · [How I built a SaaS powered by SurrealDB (recorded live at SurrealDB Social)](../2023/11/how-i-built-a-saas-powered-by-surrealdb-recorded-live-at-surrealdb-social.md)  
+- **2023-11-30** · [How I built a SaaS powered by SurrealDB](../2023/11/how-i-built-a-saas-powered-by-surrealdb-recorded-live-at-surrealdb-social.md)  
   `tutorials` — Hear from Software Engineer Micha de Vries on his journey as a developer and a showcase of his SaaS product PlayrBase, built almost entirely with SurrealDB.
-- **2023-11-30** · [Deploy SurrealDB to Kubernetes with GitOps - Ryota Sawada (recorded live at SurrealDB Social)](../2023/11/deploy-surrealdb-to-kubernetes-with-gitops--ryota-sawada-recorded-live-at-surrealdb-social.md)  
-  `tutorials` — Community Spotlight talk by Ryota Sawada. When trying out SurrealDB on your local machine for the first time, it is extremely simple to get started with its excellent CLI.
-- **2023-11-20** · [Unlocking Streaming Data Magic with SurrealDB: Live Queries and Change Feeds](../2023/11/unlocking-streaming-data-magic-with-surrealdb-live-queries-and-change-feeds.md)  
+- **2023-11-30** · [Deploy SurrealDB to Kubernetes with GitOps - Ryota Sawada](../2023/11/deploy-surrealdb-to-kubernetes-with-gitops--ryota-sawada-recorded-live-at-surrealdb-social.md)  
+  `tutorials` — Community Spotlight talk by Ryota Sawada. SurrealDB's excellent CLI makes it simple to get started when trying out SurrealDB on your machine for the first time.
+- **2023-11-20** · [Unlock SurrealDB streaming data magic: Live queries + changefeeds](../2023/11/unlocking-streaming-data-magic-with-surrealdb-live-queries-and-change-feeds.md)  
   `tutorials` — In this article, you will learn what streaming means with SurrealDB. We will also cover some patterns addressing how users can use streaming in practice.
 - **2023-11-14** · [How Rust gave SurrealDB an edge in the database world](../2023/11/how-rust-gave-surrealdb-an-edge-in-the-database-world.md)  
   `tutorials` `community` — Join Senior Software Engineer, Maxwell Flitton, as he shines a light on how Rust and Async Rust gave SurrealDB an edge in the database world.
@@ -157,47 +157,47 @@ _99 posts_
   `tutorials` — When it comes to managing and retrieving vast amounts of textual data, the ability to perform efficient and accurate searches is paramount.
 - **2023-11-02** · [How to handle big data properly with SurrealDB](../2023/11/how-to-handle-big-data-properly-with-surrealdb.md)  
   `tutorials` — Join SurrealDB's co-founder and CEO, Tobie Morgan Hitchcock, and Software Engineer Micha de Vries who dive into how to handle big data properly with SurrealDB.
-- **2023-10-13** · [Surreal Stickies 2.0: Adding Graph Relations, Live Queries, and Authentication](../2023/10/surreal-stickies-2-0-adding-graph-relations-live-queries-and-authentication.md)  
+- **2023-10-13** · [Surreal Stickies 2.0: Graph, live queries, and authentication](../2023/10/surreal-stickies-2-0-adding-graph-relations-live-queries-and-authentication.md)  
   `tutorials` — Welcome back to the second instalment of our tutorial series on building a notes app with Next.js, Tailwind, and SurrealDB.
 - **2023-08-29** · [Data Modelling and Performance](../2023/08/data-modelling-and-performance.md)  
-  `tutorials` — As SurrealDB is a multi-model database, you have a lot of options for how to model your data. In this stream, we'll take a practical look into different approaches to data modelling and discuss use cases, pros, cons and performance implications.
-- **2023-08-15** · [Questions from the Community](../2023/08/questions-from-the-community.md)  
-  `tutorials` — For this stream we’ll cover a variety of topics raised by our community including data modelling in SurrealDB, performance, transactions and more. It’s also your opportunity to ask questions live during the stream.
+  `tutorials` — SurrealDB is a multi-model database with options for how to model data. This stream looks at approaches to data models, pros, cons and performance implications.
+- **2023-08-15** · [Questions from the SurrealDB community](../2023/08/questions-from-the-community.md)  
+  `tutorials` — A SurrealDB stream covering topics raised by our community including data modelling, performance, and transactions, along with live questions from users.
 - **2023-08-01** · [Record IDs, Expressions and Graphs](../2023/08/record-ids-expressions-and-graphs.md)  
   `tutorials` — Join us for our 10th live stream as we talk practically about how record IDs help us with connecting data through record links and graph relations.
 - **2023-07-24** · [What are multi-model databases?](../2023/07/what-are-multi-model-databases.md)  
   `engineering` `tutorials` — A talk about the intriguing world of databases and where different data models co-exist, much like trains within a bustling metro station.
-- **2023-07-18** · [All About Python](../2023/07/all-about-python.md)  
-  `tutorials` — A strema about Python, the why and the how of using it with SurrealDB, design decisions for the Rust rewrite and demos of how to get up and running.
-- **2023-07-04** · [Full-Text Search Indexing](../2023/07/full-text-search-indexing.md)  
+- **2023-07-18** · [SurrealDB's stream all about Python](../2023/07/all-about-python.md)  
+  `tutorials` — A stream about Python, the why and the how of using it with SurrealDB, design decisions for the Rust rewrite and demos of how to get up and running.
+- **2023-07-04** · [Learn about SurrealDB's full-text search indexing](../2023/07/full-text-search-indexing.md)  
   `tutorials` — Join Senior Software Engineer, Emmanuel Keller and co-founder and CEO Tobie Morgan Hitchcock as we dive into the innovative roadmap of SurrealDB.
 - **2023-06-27** · [Tutorial: Build a Notes App with Next.js, Tailwind and SurrealDB](../2023/06/tutorial-build-a-notes-app-with-next-js-tailwind-and-surrealdb.md)  
   `tutorials` — In this guide, you'll learn how to implement a simple full-stack note-taking application called Surreal Stickies.
 - **2023-06-20** · [JavaScript Library with Micha & Tobie](../2023/06/javascript-library-with-micha-tobie.md)  
-  `tutorials` `engineering` — This week we're focusing on SurrealDB's JavaScript Library. Join Micha and Tobie as they chat about recent updates and highlights, and showcase how to use live queries and the WASM library.
-- **2023-06-19** · [WebSocket Protocol Guide](../2023/06/websocket-protocol-guide.md)  
-  `tutorials` — We've published a WebSocket Protocol Guide! This allows for easy bi-directional communication with SurrealDB. If you're excited about Live Queries, check this out!
-- **2023-06-16** · [Installing SurrealDB](../2023/06/installing-surrealdb.md)  
-  `tutorials` — Installed SurrealDB yet? Here's a guide to get started.
-- **2023-06-15** · [Deploy to Kubernetes](../2023/06/deploy-to-kubernetes.md)  
-  `tutorials` — Our guide for deploying to Kubernetes is live! Learn more here...
+  `tutorials` `engineering` — This week focuses on SurrealDB's JavaScript Library. Join Micha and Tobie for a chat on recent updates and how to use live queries and the WASM library.
+- **2023-06-19** · [SurrealDB's WebSocket protocol guide](../2023/06/websocket-protocol-guide.md)  
+  `tutorials` — We've published a WebSocket Protocol Guide allowing for easy bi-directional communication with SurrealDB. If you're excited about Live Queries, check this out!
+- **2023-06-16** · [Installing and getting started with SurrealDB](../2023/06/installing-surrealdb.md)  
+  `tutorials` — Installed SurrealDB yet? Here's a guide to get started that walks you through step by step to install SurrealDB using Linux, Windows, or Docker.
+- **2023-06-15** · [Deploying SurrealDB to Kubernetes](../2023/06/deploy-to-kubernetes.md)  
+  `tutorials` — Our guide for deploying to Kubernetes is live! Learn more at the SurrealDB docs
 - **2023-05-16** · [Live Queries with Tobie & Hugh](../2023/05/live-queries-with-tobie-hugh.md)  
   `tutorials` — This week we're focusing on live queries, with co-founder Tobie Morgan Hitchcock and Senior Software Engineer Hugh Kaznowski.
 - **2023-05-11** · [The life-changing magic of SurrealDB record IDs](../2023/05/the-life-changing-magic-of-surrealdb-record-ids.md)  
   `engineering` `tutorials` — At SurrealDB, we are all about doing things that spark joy for developers. One of those things that constantly surprises and delights is the humble record ID.
 - **2023-05-05** · [Getting started with the SurrealDB Go Driver](../2023/05/getting-started-with-the-surrealdb-go-driver.md)  
   `tutorials` — In our Beta 9 release, we updated our Go driver. In this tutorial, we will learn to build a simple SurrealDB URL shortener using the Go driver.
-- **2023-04-25** · [All About SurrealQL](../2023/04/all-about-surrealql.md)  
-  `tutorials` — This week's SurrealDB Stream focused on SurrealQL with co-founder Tobie Morgan Hitchcock, Data Evangelist Alexander Fridriksson and Software Engineer Micha de Vries: Why is SurrealQL a SQL-like language vs a custom language like MongoQL or Cypher?
+- **2023-04-25** · [All about SurrealQL: why is it SQL-like?](../2023/04/all-about-surrealql.md)  
+  `tutorials` — A stream on SurrealQL with Tobie Morgan Hitchcock, Alexander Fridriksson and Micha de Vries: Why is SurrealQL SQL-like and not custom like MongoQL or Cypher?
 - **2023-04-25** · [Clustered SurrealDB for 1.0.0-beta9](../2023/04/clustered-surrealdb-for-1-0-0-beta9.md)  
-  `tutorials` — In this post, I will show you how to set up a distributed SurrealDB cluster that shares a distributed TiKV cluster. This architecture allows you to scale your operations to improve writes and reads and seamlessly continue operations during failures.
+  `tutorials` — A post by Hugh Kaznowski on using SurrealDB to scale your operations to improve writes and reads and seamlessly continue operations during failures.
 - **2023-04-21** · [The ultimate beginners guide to databases](../2023/04/the-ultimate-beginners-guide-to-databases.md)  
   `tutorials` — SurrealDB believes that developers should be able to build applications without complicated backend APIs, or being forced into using a single data model.
 - **2023-04-12** · [Behind the scenes of the exciting beta 9 release](../2023/04/behind-the-scenes-of-the-exciting-beta-9-release.md)  
   `tutorials` — Our team has been working hard on the new release, which introduces a ton of new features, bug fixes and performance improvements you can see here...
 - **2023-03-30** · [Understanding SurrealQL and how it is different from PostgreSQL](../2023/03/understanding-surrealql-and-how-it-is-different-from-postgresql.md)  
   `tutorials` — An exploration of the similarities and differences between PostgreSQL and SurrealQL, and how SurrealQL overcomes the limitations found in relational databases.
-- **2023-02-08** · [An introduction to SurrealDB](../2023/02/an-introduction-to-surrealdb.md)  
+- **2023-02-08** · [An introduction to SurrealDB and how it works](../2023/02/an-introduction-to-surrealdb.md)  
   `tutorials` — SurrealDB is a database that does many routine things, so you can focus on what matters to you - processing your data.
 - **2022-08-03** · [Why use SurrealDB? The benefits explained](../2022/08/why-use-surrealdb.md)  
   `tutorials` — SurrealDB is an innovative NewSQL cloud database, suitable for single page, traditional, serverless, and jamstack applications.

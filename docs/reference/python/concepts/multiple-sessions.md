@@ -33,7 +33,7 @@ This page covers how to create sessions, isolate their scope, authenticate indep
 			<td scope="row" data-label="Description">Closes the session and detaches it from the connection</td>
 		</tr>
 		<tr>
-			<td scope="row" data-label="Method"><a href="/docs/reference/python/api/core/surreal-session#use">`session.use(namespace, database)`</a></td>
+			<td scope="row" data-label="Method"><a href="/docs/reference/python/api/core/surreal-session#inherited-methods">`session.use(namespace, database)`</a></td>
 			<td scope="row" data-label="Description">Switches the session to a specific namespace and database</td>
 		</tr>
 	</tbody>

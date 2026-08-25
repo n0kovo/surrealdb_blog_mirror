@@ -107,7 +107,7 @@ In the SurrealDB type system, values can be converted to other values efficientl
         </tr>
         <tr>
             <td scope="row" data-label="Type">
-                <a href="#set">`&lt;set&gt;`</a>
+                <a href="#set-and-sett">`&lt;set&gt;`</a>
             </td>
             <td scope="row" data-label="Description">
                 Casts the subsequent value into a set

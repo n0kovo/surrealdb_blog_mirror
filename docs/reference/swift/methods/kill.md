@@ -13,7 +13,7 @@ Kills a running [live query](live.md) by its id, ending the associated `AsyncStr
 try await client.kill(liveQueryID: id)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -35,7 +35,7 @@ try await client.kill(liveQueryID: id)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 try await client.kill(liveQueryID: event.queryID)

@@ -1,7 +1,7 @@
 ---
 position: 26
 title: SignUp
-description: The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+description: Signs up to a specific authentication scope / access method.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/dotnet/methods/signup.mdx"
 ---
 
@@ -13,7 +13,7 @@ Signs up to a specific authentication scope / access method.
 await db.SignUp(credentials)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -44,7 +44,7 @@ await db.SignUp(credentials)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```csharp
 // With Record Access

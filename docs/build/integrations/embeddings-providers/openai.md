@@ -151,7 +151,7 @@ This keeps the SurrealDB side simple while you experiment with different quantis
 
 **Rust**
 
-# Semantic search using SurrealDB
+## Semantic search using SurrealDB
 
 ## Intro
 

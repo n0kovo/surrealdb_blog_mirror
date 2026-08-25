@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Rust SDK
-description: The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
+description: The SurrealDB SDK for Rust enables you to interact with SurrealDB from client-side, server-side applications, systems, APIs, embedded systems, and IoT devices.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/rust/index.mdx"
 ---
 
@@ -14,7 +14,7 @@ The SurrealDB SDK for Rust enables you to interact with SurrealDB from client-si
 
 > [!NOTE]
 > The latest version of the SDK is *(latest)*.
-> The SDK works with SurrealDB versions `v2.0.0` to *(latest)*, ensuring compatibility with the latest version.
+> The SDK works with SurrealDB versions `v2.0.0` and later, including the current release, *(latest)*.
 
 ## Getting started
 

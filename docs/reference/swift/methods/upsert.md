@@ -13,7 +13,7 @@ Creates matching records if they do not exist, or updates them if they do.
 try await client.upsert(Model.self, content: content, where: predicate)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -53,7 +53,7 @@ try await client.upsert(Model.self, content: content, where: predicate)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 let upserted = try await client.upsert(

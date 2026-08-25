@@ -14,7 +14,7 @@ try await client.select(Model.self, where: predicate, limit: limit,
     start: start)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -63,7 +63,7 @@ try await client.select(Model.self, where: predicate, limit: limit,
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 // Select all records

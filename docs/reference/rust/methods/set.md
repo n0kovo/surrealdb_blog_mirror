@@ -24,7 +24,7 @@ LET $name = {
 };
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -53,7 +53,7 @@ LET $name = {
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```rust
 use surrealdb::Surreal;
@@ -100,7 +100,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.set() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.set)
 
@@ -121,7 +121,7 @@ LET $name = {
 };
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -150,7 +150,7 @@ LET $name = {
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```rust
 use serde::Serialize;
@@ -197,6 +197,6 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.set() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.set)

@@ -13,7 +13,7 @@ Signs a new record-access user up and returns the issued tokens.
 let tokens = try await client.signup(credentials)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -35,7 +35,7 @@ let tokens = try await client.signup(credentials)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 let tokens = try await client.signup(.accessRecord(

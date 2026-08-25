@@ -80,7 +80,7 @@ val ada: Person = client
 
 ## Selecting records
 
-Refine a [`select`](../api/core/query-builder.md#select-query) with [`.where()`](../api/core/query-builder.md#where), [`.limit()`](../api/core/query-builder.md#limit), [`.start()`](../api/core/query-builder.md#start), [`.fetch()`](../api/core/query-builder.md#fetch), and others, using the [expression helpers](../api/core/query-builder.md#expressions).
+Refine a [`select`](../api/core/query-builder.md#select-query) with [`.where()`](../api/core/query-builder.md), [`.limit()`](../api/core/query-builder.md), [`.start()`](../api/core/query-builder.md), [`.fetch()`](../api/core/query-builder.md), and others, using the [expression helpers](../api/core/query-builder.md#expressions).
 
 ```kotlin
 
@@ -93,7 +93,7 @@ val adults: List<Person> = client
 
 ## Updating and merging
 
-Use [`.update()`](../api/core/surreal-client.md#update) to replace record content, [`.merge()`](../api/core/surreal-client.md#merge) to merge data, or [`.upsert()`](../api/core/surreal-client.md#upsert) to create or update. Control the returned payload with [`.returnMode()`](../api/core/query-builder.md#return-mode).
+Use [`.update()`](../api/core/surreal-client.md#update) to replace record content, [`.merge()`](../api/core/surreal-client.md#merge) to merge data, or [`.upsert()`](../api/core/surreal-client.md#upsert) to create or update. Control the returned payload with [`.returnMode()`](../api/core/query-builder.md#return-mode-type).
 
 ```kotlin
 

@@ -13,7 +13,7 @@ Switches the connection to a specific namespace and database.
 try await client.use(namespace: ns, database: db)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -44,7 +44,7 @@ try await client.use(namespace: ns, database: db)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 try await client.use(namespace: "myapp", database: "mydb")

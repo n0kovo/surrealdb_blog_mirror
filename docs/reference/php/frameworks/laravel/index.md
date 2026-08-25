@@ -1,6 +1,6 @@
 ---
 position: 1
-title: Overview
+title: Laravel
 description: "The Laravel integration wires the SurrealDB PHP SDK and the Surqlize ORM into Laravel's config, service container, facades, and Artisan commands."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/frameworks/laravel/index.mdx"
 ---

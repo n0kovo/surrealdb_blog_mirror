@@ -1,6 +1,6 @@
 ---
 position: 1
-title: Overview
+title: Cookbooks
 description: Opinionated recipes and migration guides.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/cookbooks/index.mdx"
 ---

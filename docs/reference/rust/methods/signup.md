@@ -15,7 +15,7 @@ Signs up as a record user (formerly known as a scope user) to a specific access 
 db.signup(credentials)
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -35,7 +35,7 @@ db.signup(credentials)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```rust
 // Use the following statement to set up the access
@@ -79,7 +79,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.signup() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.signup)
 
@@ -91,7 +91,7 @@ Signs up as a record user (formerly known as a scope user) to a specific access 
 db.signup(credentials)
 ```
 
-### Arguments
+## Arguments
 <table>
     <thead>
         <tr>
@@ -111,7 +111,7 @@ db.signup(credentials)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```rust
 // Use the following statement to set up the access
@@ -155,6 +155,6 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.signup() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.signup)

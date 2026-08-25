@@ -96,7 +96,7 @@ Here is the result:
 
 ## The Rust code
 
-The code below that shows an example of `FETCH` is another example related to classes and students. Note that in one part it passes a [`Resource`](https://docs.rs/surrealdb/latest/surrealdb/opt/enum.Resource.html) into the [`create`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.create) method in order to return a [`Value`](https://docs.rs/surrealdb/latest/surrealdb/struct.Value.html) and thus not have to specify a return type to deserialise into. For more information on this technique, see [the page on flexible typing](flexible-typing.md).
+The code below that shows an example of `FETCH` is another example related to classes and students. Note that in one part it passes a [`Resource`](https://docs.rs/surrealdb/latest/surrealdb/opt/enum.Resource.html) into the [`create`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.create) method in order to return a [`Value`](https://docs.rs/surrealdb/latest/surrealdb/types/enum.Value.html) and thus not have to specify a return type to deserialise into. For more information on this technique, see [the page on flexible typing](flexible-typing.md).
 
 ```rust
 use surrealdb::{
@@ -299,7 +299,7 @@ Here is the result:
 
 ## The Rust code
 
-The code below that shows an example of `FETCH` is another example related to classes and students. Note that in one part it passes a [`Resource`](https://docs.rs/surrealdb/latest/surrealdb/opt/enum.Resource.html) into the [`create`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.create) method in order to return a [`Value`](https://docs.rs/surrealdb/latest/surrealdb/struct.Value.html) and thus not have to specify a return type to deserialise into. For more information on this technique, see [the page on flexible typing](flexible-typing.md).
+The code below that shows an example of `FETCH` is another example related to classes and students. Note that in one part it passes a [`Resource`](https://docs.rs/surrealdb/latest/surrealdb/opt/enum.Resource.html) into the [`create`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.create) method in order to return a [`Value`](https://docs.rs/surrealdb/latest/surrealdb/types/enum.Value.html) and thus not have to specify a return type to deserialise into. For more information on this technique, see [the page on flexible typing](flexible-typing.md).
 
 ```rust
 use serde::{Deserialize, Serialize};

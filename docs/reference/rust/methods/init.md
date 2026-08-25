@@ -14,7 +14,7 @@ This is typically used to create a global, static instance of the client.
 Surreal::init()
 ```
 
-### Example usage
+## Example usage
 
 ```rust
 use std::sync::LazyLock;
@@ -51,6 +51,6 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.init() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.init)

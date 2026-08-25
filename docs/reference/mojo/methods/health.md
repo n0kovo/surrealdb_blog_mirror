@@ -13,11 +13,11 @@ Runs a health check to verify that the server is reachable and accepting command
 client.health()
 ```
 
-### Arguments
+## Arguments
 
 This method takes no arguments.
 
-### Example usage
+## Example usage
 
 ```python
 client.health()

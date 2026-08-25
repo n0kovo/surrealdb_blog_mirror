@@ -15,7 +15,7 @@ Authenticates the current connection with a JWT token.
 db.authenticate(token)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -36,7 +36,7 @@ db.authenticate(token)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 Note: the following example uses the `ureq` crate with the `json` feature to first send a request to the database's [`/signup`](../../rest-api/http-protocol.md#signup) endpoint which returns a token. The `reqwest` crate and others can be used here instead.
 
@@ -118,7 +118,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### Refreshing a session (`.refresh()`)
+## Refreshing a session (`.refresh()`)
 
 When the server issues a token that includes a **refresh** component, you can obtain a new access token without signing in again. Build the usual [`db.authenticate(token)`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.authenticate) future, then call [`.refresh()`](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Authenticate.html#method.refresh). The inner future runs the refresh command and returns a new [`Token`](https://docs.rs/surrealdb/latest/surrealdb/opt/auth/struct.Token.html). If the token has no refresh material, the SDK returns an error (`Missing refresh token`).
 
@@ -310,7 +310,7 @@ async fn main() -> Result<(), Error> {
 }
 ```
 
-### See also
+## See also
 
 * [`Authenticate::refresh` on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Authenticate.html#method.refresh)
 
@@ -322,7 +322,7 @@ Authenticates the current connection with a JWT token.
 db.authenticate(token)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -343,7 +343,7 @@ db.authenticate(token)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 Note: the following example uses the `ureq` crate with the `json` feature to first send a request to the database's [`/signup`](../../rest-api/http-protocol.md#signup) endpoint which returns a token. The `reqwest` crate and others can be used here instead.
 
@@ -412,6 +412,6 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.authenticate() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.authenticate)

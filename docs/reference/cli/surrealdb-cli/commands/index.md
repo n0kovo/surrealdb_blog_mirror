@@ -1,6 +1,6 @@
 ---
 position: 1
-title: Overview
+title: SurrealDB CLI commands
 description: How the SurrealDB CLI is organised into subcommands, with links to each command’s flags and examples.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/index.mdx"
 ---

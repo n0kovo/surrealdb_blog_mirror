@@ -23,7 +23,7 @@ _Auto-generated index — 7 pages and 1 sub-section._
   For the purposes of getting started with SurrealDB quickly, we will start an in-memory database which does not persist data on shutdown.
 - [Multi-node](multi-node.md)
   Run SurrealDB against distributed storage for horizontally scalable, highly available clusters.
-- [Overview](overview.md)
+- [Running SurrealDB](overview.md)
   Ways to run SurrealDB - from a browser sandbox to a managed cloud instance to installing on your own hardware.
 - [SurrealDB Studio Sandbox](sandbox.md)
   Try SurrealDB in the browser with the SurrealDB Studio Sandbox - no install and no account required.

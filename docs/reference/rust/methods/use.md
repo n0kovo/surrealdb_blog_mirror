@@ -13,7 +13,7 @@ Switch to a specific namespace and database.
 db.use_ns(ns).use_db(db)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -43,7 +43,7 @@ db.use_ns(ns).use_db(db)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 ```rust
 use surrealdb::engine::remote::ws::Ws;
 use surrealdb::Surreal;
@@ -56,7 +56,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.use_db() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.use_db)
 * [.use_ns() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.use_ns)

@@ -403,7 +403,7 @@ val all: List<Person> = client.select(Table("person")).awaitAs()
 
 ### `.create(what)` {#create}
 
-Returns a [`CreateQuery`](query-builder.md#create-query) for inserting a record.
+Returns a [`CreateQuery`](query-builder.md#content-builders) for inserting a record.
 
 ```kotlin title="Method Syntax"
 client.create(what)

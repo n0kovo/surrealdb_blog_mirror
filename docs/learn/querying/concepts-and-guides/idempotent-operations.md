@@ -56,7 +56,7 @@ DEFINE INDEX only_one ON likes FIELDS in, out UNIQUE;
 
 Alternatively, from version 3.1.5, you can supply an explicit edge record ID in the `RELATE` path (for example `->likes:[person:one, post:one]->`) or in an [`INSERT RELATION`](../../../reference/query-language/statements/insert.md#insert-relation-tables) statement.
 
-A duplicate explicit ID on `INSERT RELATION` returns an error unless you add `ON DUPLICATE KEY UPDATE`. For more, see [Explicit edge record IDs](../../../reference/query-language/statements/relate.md#explicit-edge-record-ids).
+A duplicate explicit ID on `INSERT RELATION` returns an error unless you add `ON DUPLICATE KEY UPDATE`. For more, see [Explicit edge record IDs](../../../reference/query-language/statements/relate.md#handling-duplicate-edge-record-ids).
 
 ## Non-idempotent examples
 

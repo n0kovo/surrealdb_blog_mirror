@@ -27,7 +27,7 @@ Because there is a single node, there is no failover inside the instance. [Backu
 
 The **Scale** plan runs a cluster of three compute nodes or more over distributed storage. Each node runs in a different availability zone within the region, backed by its own disk.
 
-![Diagram of the multi-node topology: three SurrealDB compute nodes, each in a separate availability zone with its own storage volume, coordinating through a shared distributed storage layer.](../../assets/img/image/cloud/light/enterprise-multi-node-light.png)
+![Diagram of the multi-node topology: three SurrealDB compute nodes connected to a shared storage cluster of distributed storage nodes.](../../assets/img/image/cloud/light/enterprise-multi-node-light.png)
 
 Data is replicated continuously between nodes, and every node serves reads, writes, and queries. The storage layer handles replication, quorum consensus, and distributed transactions. A query therefore does not need to know which node holds which data.
 

@@ -13,7 +13,7 @@ Executes a raw SurrealQL string with bound parameters and returns one [`RPCQuery
 try await client.queryRaw(sql, bindings: bindings)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -44,7 +44,7 @@ try await client.queryRaw(sql, bindings: bindings)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```swift
 let results: [RPCQueryResult] = try await client.queryRaw(

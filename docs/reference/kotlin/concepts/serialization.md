@@ -45,7 +45,7 @@ val ada: Person = client.decode(element)
 
 ## Building payloads
 
-When writing data, build a [`JsonObject`](value-types.md) with [`buildJsonObject`](https://kotlinlang.org/api/kotlinx.serialization/kotlinx-serialization-json/kotlinx.serialization.json/build-json-object.html), or encode a serializable instance with the client's [`json`](../api/core/surreal-client.md#json) instance.
+When writing data, build a [`JsonObject`](value-types.md) with [`buildJsonObject`](https://kotlinlang.org/api/kotlinx.serialization/kotlinx-serialization-json/kotlinx.serialization.json/build-json-object.html), or encode a serializable instance with the client's [`json`](../api/core/surreal-client.md) instance.
 
 ```kotlin
 
@@ -55,7 +55,7 @@ client.create(com.surrealdb.kotlin.query.Table("person")).content(data).await()
 
 ## Customising the JSON format
 
-The [`json`](../api/core/client-config.md#json) field on [`SurrealClientConfig`](../api/core/client-config.md) lets you supply a custom [`Json`](https://kotlinlang.org/api/kotlinx.serialization/kotlinx-serialization-json/kotlinx.serialization.json/-json/) instance, for example to register contextual serializers or change null handling. The default ignores unknown keys and is lenient.
+The [`json`](../api/core/client-config.md#fields) field on [`SurrealClientConfig`](../api/core/client-config.md) lets you supply a custom [`Json`](https://kotlinlang.org/api/kotlinx.serialization/kotlinx-serialization-json/kotlinx.serialization.json/-json/) instance, for example to register contextual serializers or change null handling. The default ignores unknown keys and is lenient.
 
 ```kotlin
 

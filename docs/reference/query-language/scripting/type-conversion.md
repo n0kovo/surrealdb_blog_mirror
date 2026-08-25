@@ -24,7 +24,7 @@ CREATE user:test SET created_at = function() {
 ]
 ```
 
-In addition, a number of special classes are included within the JavaScript functions for the additional types which are not built into JavaScript. These enable the creation of [`duration`](../language-primitives/data-types/datetimes.md#durations-and-datetimes) values, [`record`](../language-primitives/data-types/record-ids.md) ids, and [`UUID`](../language-primitives/data-types/strings.md#uuid) values from within JavaScript.
+In addition, a number of special classes are included within the JavaScript functions for the additional types which are not built into JavaScript. These enable the creation of [`duration`](../language-primitives/data-types/datetimes.md#durations-and-datetimes) values, [`record`](../language-primitives/data-types/record-ids.md) ids, and [`UUID`](../language-primitives/data-types/strings.md#uuid-literal-values-with-the-u-prefix) values from within JavaScript.
 
 Any values of these types passed into embedded scripting functions are also represented with these special classes.
 

@@ -13,7 +13,7 @@ Invalidates the current session and clears the stored token.
 client.invalidate(session)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -30,13 +30,13 @@ client.invalidate(session)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 client.invalidate()
 ```
 
-### See also
+## See also
 
 - [Authentication](../concepts/authentication.md)
 - [`authenticate()`](authenticate.md)

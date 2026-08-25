@@ -13,7 +13,7 @@ Authenticates the current connection with a token, and stores it on the client f
 client.authenticate(token, session)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -34,13 +34,13 @@ client.authenticate(token, session)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 client.authenticate("eyJhbGciOi...")
 ```
 
-### See also
+## See also
 
 - [Authentication](../concepts/authentication.md)
 - [`invalidate()`](invalidate.md)

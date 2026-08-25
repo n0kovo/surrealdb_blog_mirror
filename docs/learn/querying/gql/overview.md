@@ -1,6 +1,6 @@
 ---
 position: 1
-title: Overview
+title: GQL
 description: Query SurrealDB graph data with ISO GQL - a Cypher-like graph pattern language over HTTP and RPC.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/gql/overview.mdx"
 ---

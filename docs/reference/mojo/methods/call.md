@@ -13,7 +13,7 @@ Runs a SurrealQL function, built-in or custom, and returns its result.
 client.call(fn_name, args, session, txn)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -42,7 +42,7 @@ client.call(fn_name, args, session, txn)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 from surrealdb import CborCodec

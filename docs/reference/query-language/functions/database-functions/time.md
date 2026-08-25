@@ -124,7 +124,7 @@ time::yday();
       <td scope="row" data-label="Description">Extracts the year as a number from a datetime or current datetime</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Function"><a href="#timeisleap_year">`time::is_leap_year()`</a></td>
+      <td scope="row" data-label="Function"><a href="#timeis_leap_year">`time::is_leap_year()`</a></td>
       <td scope="row" data-label="Description">Checks if given datetime is a leap year</td>
     </tr>
     <tr>

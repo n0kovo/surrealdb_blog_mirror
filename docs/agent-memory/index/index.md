@@ -1,6 +1,6 @@
 ---
 position: 0
-title: Overview
+title: Agent Memory
 description: Principles, architecture, quickstarts, and mental model for SurrealDB Agent Memory - memory and knowledge for AI agents on SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/index.mdx"
 ---

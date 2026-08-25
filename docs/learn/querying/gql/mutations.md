@@ -27,9 +27,9 @@ The examples below assume that [the following seed data](via-http.md#load-sample
 
 ### Via `eval::gql`
 
-The same mutation strings work in the REPL when both **`gql`** and **`eval`** are allowed - see [Try without HTTP](via-http.md#try-without-http--evalgql):
+The same mutation strings work in the REPL when both **`gql`** and **`eval`** are allowed - see [Try without HTTP](via-http.md#try-without-http---evalgql):
 
-```surql
+```cypher
 eval::gql("MATCH (n:person WHERE n.name = 'A') SET n.age = 99 RETURN n.age AS age");
 -- { age: 99 }
 ```

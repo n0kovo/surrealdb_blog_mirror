@@ -137,3 +137,50 @@ surreal start --user root --pass secret --bind 0.0.0.0:8080 memory
 ```
 
 For details on the different commands available, visit the [CLI tool documentation](../reference/cli/surrealdb-cli/overview.md).
+
+## Run your first query
+
+With the server running, open a second terminal and connect to it with the [`surreal sql`](../reference/cli/surrealdb-cli/commands/sql.md) command. This starts a SurrealQL REPL against the server, using the credentials from the step above.
+
+```bash
+surreal sql --endpoint http://localhost:8000 --username root --password secret --namespace main --database main --pretty
+```
+
+Create a record. There is no need to define the table first, because SurrealDB creates it on the first write.
+
+```surql
+CREATE person:tobie SET name = "Tobie", city = "London";
+```
+
+```surql title="Output"
+[
+	{
+		city: 'London',
+		id: person:tobie,
+		name: 'Tobie'
+	}
+]
+```
+
+Select it back to confirm the round trip.
+
+```surql
+SELECT name, city FROM person;
+```
+
+```surql title="Output"
+[
+	{
+		city: 'London',
+		name: 'Tobie'
+	}
+]
+```
+
+When you finish, exit the REPL with `Ctrl+C`. Data in an in-memory server is lost on shutdown unless you enable the persistence options above.
+
+## Next steps
+
+- Query from your application with an [SDK](../languages/javascript.md) - each language guide starts with a connect-and-query walkthrough.
+- Try SurrealQL without a server in the [Studio Sandbox](sandbox.md).
+- Learn the query language, starting with the [`SELECT` statement](../reference/query-language/statements/select.md).

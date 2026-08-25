@@ -7,13 +7,13 @@ _7 posts_
   `featured` `ai` `events` — Key takeaways from SurrealDB Stream #34 with PolyAI CTO & co-founder Shawn Wen on the hard parts of shipping context-aware voice agents: latency budgets, knowledge governance, and operational trust.
 - **2023-10-02** · [SurrealDB World 2023 - A Recap](../2023/10/surrealdb-world-2023--a-recap.md)  
   `events` `company` — SurrealDB's first-ever user conference SurrealDB World 2023 was held shortly after the launch of SurrealDB 1.0. Over 300 attended in person and 2,000 online.
-- **2023-06-02** · [Announcing SurrealDB World](../2023/06/announcing-surrealdb-world.md)  
+- **2023-06-02** · [Announcing the SurrealDB World conference](../2023/06/announcing-surrealdb-world.md)  
   `events` — We have been forging ahead with SurrealDB and are now delighted to announce SurrealDB World conference to take place on September 13 2023 in London, UK.
 - **2023-05-26** · [Rounding up May with SurrealDB Social](../2023/05/rounding-up-may-with-surrealdb-social.md)  
   `events` — This month’s SurrealDB Social which focused on Live Queries, with talks from Hugh Kaznowski and CEO Tobie Morgan Hitchcock.
-- **2023-02-06** · [SurrealDB Social X Swingers](../2023/02/surrealdb-social-x-swingers.md)  
+- **2023-02-06** · [SurrealDB Social X Swingers in central London](../2023/02/surrealdb-social-x-swingers.md)  
   `events` — The first SurrealDB Social was held at Swingers Crazy Golf in central London, giving the opportunity to connect with members of the SurrealDB community.
 - **2023-02-06** · [First New York SurrealDB Social](../2023/02/first-new-york-surrealdb-social.md)  
   `events` — We’re throwing our first New York SurrealDB Social on Tuesday 14 March, 6-10PM EST, at Swingers (35 W 29th St, New York, NY 10001)!
-- **2023-01-11** · [First London SurrealDB Social](../2023/01/first-london-surrealdb-social.md)  
+- **2023-01-11** · [First London SurrealDB Social at Swingers West End](../2023/01/first-london-surrealdb-social.md)  
   `events` — We're throwing our first SurrealDB Social in London on Wednesday 25 January, 6-9PM GMT, at Swingers West End!

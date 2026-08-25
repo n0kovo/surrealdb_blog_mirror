@@ -13,7 +13,7 @@ Invalidates the authentication for the current connection.
 try await client.invalidate()
 ```
 
-### Example usage
+## Example usage
 
 ```swift
 try await client.invalidate()

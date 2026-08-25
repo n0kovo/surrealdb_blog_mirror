@@ -18,7 +18,7 @@ Dumps the database contents to a file.
 db.export(target)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -39,7 +39,7 @@ db.export(target)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 The `.export()` method can be used to save the contents of a database to a file.
 
@@ -125,7 +125,7 @@ DEFINE TABLE person TYPE ANY SCHEMALESS PERMISSIONS NONE;
 INSERT [ { id: person:bgq0b0rblnozrufizdjm } ];
 ```
 
-### Export configuration
+## Export configuration
 
 The [`Export`](https://docs.rs/surrealdb/2/surrealdb/method/struct.Export.html) struct has a method called `.with_config()` that gives access to the configuration parameters for the export. These can be chained one after another inside a single line of code. The majority of these functions take a single `bool`:
 
@@ -184,7 +184,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.export() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.export)
 
@@ -199,7 +199,7 @@ Dumps the database contents to a file.
 db.export(target)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -220,7 +220,7 @@ db.export(target)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 The `.export()` method can be used to save the contents of a database to a file.
 
@@ -306,7 +306,7 @@ DEFINE TABLE person TYPE ANY SCHEMALESS PERMISSIONS NONE;
 INSERT [ { id: person:bgq0b0rblnozrufizdjm } ];
 ```
 
-### Export configuration
+## Export configuration
 
 The [`Export`](https://docs.rs/surrealdb/2/surrealdb/method/struct.Export.html) struct has a method called `.with_config()` that gives access to the configuration parameters for the export. These can be chained one after another inside a single line of code. The majority of these functions take a single `bool`:
 
@@ -365,6 +365,6 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.export() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.export)

@@ -13,7 +13,7 @@ Connects to a database endpoint. The URL scheme selects the transport (`http`, `
 client.connect(endpoint, connect_options)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -34,7 +34,7 @@ client.connect(endpoint, connect_options)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 from surrealdb import AsyncSurrealClient, ConnectOptions
@@ -54,6 +54,6 @@ def main():
 
 `connect()` returns a `Bool`.
 
-### See also
+## See also
 
 - [Connecting to SurrealDB](../concepts/connecting-to-surrealdb.md)

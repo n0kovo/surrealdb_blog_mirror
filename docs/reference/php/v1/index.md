@@ -1,6 +1,6 @@
 ---
 position: 1
-title: Overview
+title: PHP SDK v1
 description: Version 1 is the current stable release of the SurrealDB PHP SDK, with direct RPC-style methods for querying a remote database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/php/v1/index.mdx"
 ---

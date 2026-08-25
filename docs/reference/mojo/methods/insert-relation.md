@@ -13,7 +13,7 @@ Inserts one or more relation records into a table. This is a convenience wrapper
 client.insert_relation(table, data_json, session, txn)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -42,7 +42,7 @@ client.insert_relation(table, data_json, session, txn)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 var resp = client.insert_relation(
@@ -51,7 +51,7 @@ var resp = client.insert_relation(
 )
 ```
 
-### Translated query
+## Translated query
 
 ```surql
 INSERT RELATION INTO $table $data_json;

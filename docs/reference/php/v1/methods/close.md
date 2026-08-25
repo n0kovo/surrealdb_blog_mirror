@@ -13,7 +13,7 @@ Closes the persistent connection to the database.
 $db->close()
 ```
 
-### Example usage
+## Example usage
 ```php
 $db->close();
 ```

@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 SurrealDB supports multiple query interfaces: [SurrealQL](../what-is-surrealql.md) for full-featured database queries, [GraphQL](../../graphql/overview.md) for schema-driven access, and any of the [available SDKs](/docs#sdks) for language-native integration.
 
-# SurrealQL
+## SurrealQL
 
 [SurrealQL](../../../../reference/query-language/index.md) is our powerful database query language that closely resembles traditional SQL but comes with unique differences and improvements.
 
@@ -75,9 +75,9 @@ SurrealDB also supports RPC, allowing you to interact with the database programm
 
 2. **Execute the RPC call**: Run your script to send the RPC request and receive the response from SurrealDB.
 
-# GraphQL
+## GraphQL
 
-SurrealDB also supports GraphQL, allowing you to interact with the database using the familiar syntax. Currently, you can use the [GraphQL integration via SurrealDB Studio](../../graphql/via-studio.md), our intuitive user interface specifically designed for SurrealDB, or [over HTTP](../../graphql/via-http.md) via a GraphQL Client such as [GraphiQL](https://github.com/graphql/graphiql) or [Postman](../../graphql/via-http.md#postman) at the `localhost:8000/graphql` endpoint.
+SurrealDB also supports GraphQL, allowing you to interact with the database using the familiar syntax. Currently, you can use the [GraphQL integration via SurrealDB Studio](../../graphql/via-studio.md), our intuitive user interface specifically designed for SurrealDB, or [over HTTP](../../graphql/via-http.md) via a GraphQL Client such as [GraphiQL](https://github.com/graphql/graphiql) or [Postman](../../../../explore/tutorials/tutorials/http-via-postman.md) at the `localhost:8000/graphql` endpoint.
 
 With SurrealDB Studio, you can easily connect to any SurrealDB instance, execute queries in real time, explore your tables, and design your schemas - all in one place.
 

@@ -13,7 +13,7 @@ Selects all records in a table, or a specific record. This is a convenience wrap
 client.select(thing, session, txn)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -38,7 +38,7 @@ client.select(thing, session, txn)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 # Select every record in a table
@@ -48,7 +48,7 @@ var people = client.select("person")
 var chiru = client.select("person:chiru")
 ```
 
-### Translated query
+## Translated query
 
 ```surql
 SELECT * FROM $thing;

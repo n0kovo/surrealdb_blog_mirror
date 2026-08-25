@@ -9,13 +9,13 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/e
 
 This guide will cover using [Auth0](https://auth0.com/) as the authentication provider for single-page web applications using SurrealDB as the only backend.
 
-Depending on the version of SurrealDB that you are on: `v1.x` or `v2.x`, you may have different options available with respect to using [Scope](../../../reference/query-language/statements/define/scope.md) and [Token](../../../reference/query-language/statements/define/token.md) or [DEFINE ACCESS](../../../reference/query-language/statements/define/access/index.md) methods to you for integrating Auth0 as an authentication provider.
+This guide uses [`DEFINE ACCESS`](../../../reference/query-language/statements/define/access/index.md), the method for every current version of SurrealDB. The tabs also carry the older [Scope](../../../reference/query-language/statements/define/scope.md) and [Token](../../../reference/query-language/statements/define/token.md) statements for readers still on `v1.x` - both were removed in later versions.
 
 In this guide you will learn how to:
 
 - Configure Auth0 to issue tokens that can be used with SurrealDB.
 - Configure SurrealDB to accept tokens issued by Auth0.
-- Define user-level authorization using SurrealDB [record users](../../../learn/security/authentication/authentication.md#record-users) or [scopes](../../../reference/query-language/statements/define/scope.md) if you are on `v1.x`.
+- Define user-level authorization using SurrealDB [record users](../../../learn/security/authentication/authentication.md#record-users).
 - Authenticate users with Auth0 in a single-page application.
 - Retrieve and update information from SurrealDB using the authenticated user.
 
@@ -102,7 +102,7 @@ exports.onExecutePostLogin = async (event, api) => {
 };
 ```
 
-**Using Scope and Token**
+**Using Scope and Token (1.x only)**
 
 ```js
 exports.onExecutePostLogin = async (event, api) => {
@@ -220,7 +220,7 @@ It is important to not that [validating the audience of the token is a requireme
 > In order to allow SurrealDB to establish a connection with Auth0 to download the JWKS object, you will require running it with the network <a href="/docs/learn/security/authorization/capabilities">capability</a>. For the strongest security, provide your specific Auth0 domain when starting SurrealDB with `--allow-net`. For example: `--allow-net example.eu.auth0.com`.
 
   
-**Using Scope and Token**
+**Using Scope and Token (1.x only)**
 
 #### Defining a token verification method in SurrealDB
 
@@ -396,7 +396,7 @@ DEFINE ACCESS auth0 ON DATABASE TYPE RECORD
 ```
 
   
-**Using Scope and Token**
+**Using Scope and Token (1.x only)**
 
 ```surql
 -- Define the secret to verify tokens issued by Auth0 for our \

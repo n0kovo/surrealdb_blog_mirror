@@ -20,10 +20,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; gap: 0.5rem;">
-					<a href="#and">
+					<a href="#-or-and">
 						`&&`
 					</a>
-					<a href="#and">
+					<a href="#-or-and">
 						`AND`
 					</a>
 				</span>
@@ -35,10 +35,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; gap: 0.5rem;">
-					<a href="#or">
+					<a href="#-or-or">
 						`||`
 					</a>
-					<a href="#or">
+					<a href="#-or-or">
 						`OR`
 					</a>
 				</span>
@@ -49,7 +49,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#not">
+				<a href="#">
 					`!`
 				</a>
 			</td>
@@ -59,7 +59,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#not_not">
+				<a href="#-1">
 					`!!`
 				</a>
 			</td>
@@ -69,7 +69,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#nco">
+				<a href="#-2">
 					`??`
 				</a>
 			</td>
@@ -79,7 +79,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#tco">
+				<a href="#-3">
 					`?:`
 				</a>
 			</td>
@@ -90,10 +90,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; gap: 0.5rem;">
-					<a href="#equal">
+					<a href="#-or-is">
 						`=`
 					</a>
-					<a href="#equal">
+					<a href="#-or-is">
 						`IS`
 					</a>
 				</span>
@@ -105,10 +105,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; gap: 0.5rem;">
-					<a href="#notequal">
+					<a href="#-or-is-not">
 						`!=`
 					</a>
-					<a href="#notequal">
+					<a href="#-or-is-not">
 						`IS NOT`
 					</a>
 				</span>
@@ -119,7 +119,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#exact">
+				<a href="#-4">
 					`==`
 				</a>
 			</td>
@@ -129,7 +129,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#anyequal">
+				<a href="#-5">
 					`?=`
 				</a>
 			</td>
@@ -139,7 +139,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#allequal">
+				<a href="#-6">
 					`*=`
 				</a>
 			</td>
@@ -149,7 +149,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#match">
+				<a href="#---">
 					`~`
 				</a>
 			</td>
@@ -159,7 +159,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#match">
+				<a href="#---">
 					`!~`
 				</a>
 			</td>
@@ -169,7 +169,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#match">
+				<a href="#---">
 					`?~`
 				</a>
 			</td>
@@ -180,7 +180,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#match">
+				<a href="#---">
 					`*~`
 				</a>
 			</td>
@@ -191,7 +191,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#lessthan">
+				<a href="#-7">
 					`&lt;`
 				</a>
 			</td>
@@ -201,7 +201,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#lessthanorequal">
+				<a href="#-8">
 					`&lt;=`
 				</a>
 			</td>
@@ -211,7 +211,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#greaterthan">
+				<a href="#-9">
 					`&gt;`
 				</a>
 			</td>
@@ -221,7 +221,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#greaterthanorequal">
+				<a href="#-10">
 					`&gt;=`
 				</a>
 			</td>
@@ -232,7 +232,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#add">
+				<a href="#-11">
 					`+`
 				</a>
 			</td>
@@ -242,7 +242,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#sub">
+				<a href="#-">
 					`-`
 				</a>
 			</td>
@@ -253,10 +253,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; gap: 0.5rem;">
-					<a href="#mul">
+					<a href="#-or-">
 						`*`
 					</a>
-					<a href="#mul">
+					<a href="#-or-">
 						`×`
 					</a>
 				</span>
@@ -268,10 +268,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; gap: 0.5rem;">
-					<a href="#div">
+					<a href="#-or--1">
 						`/`
 					</a>
-					<a href="#div">
+					<a href="#-or--1">
 						`÷`
 					</a>
 				</span>
@@ -282,7 +282,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		</tr>
 		<tr>
 			<td scope="row" data-label="Operator">
-				<a href="#pow">
+				<a href="#-12">
 					`**`
 				</a>
 			</td>
@@ -293,10 +293,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; flex-direction: column; gap: 0.5rem;">
-					<a href="#contains">
+					<a href="#contains-or-">
 						`CONTAINS`
 					</a>
-					<a href="#contains">
+					<a href="#contains-or-">
 						`∋`
 					</a>
 				</span>
@@ -308,10 +308,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; flex-direction: column; gap: 0.5rem;">
-					<a href="#containsnot">
+					<a href="#containsnot-or-">
 						`CONTAINSNOT`
 					</a>
-					<a href="#containsnot">
+					<a href="#containsnot-or-">
 						`∌`
 					</a>
 				</span>
@@ -323,10 +323,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; flex-direction: column; gap: 0.5rem;">
-					<a href="#containsall">
+					<a href="#containsall-or-">
 						`CONTAINSALL`
 					</a>
-					<a href="#containsall">
+					<a href="#containsall-or-">
 						`⊇`
 					</a>
 				</span>
@@ -338,10 +338,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; flex-direction: column; gap: 0.5rem;">
-					<a href="#containsany">
+					<a href="#containsany-or-">
 						`CONTAINSANY`
 					</a>
-					<a href="#containsany">
+					<a href="#containsany-or-">
 						`⊃`
 					</a>
 				</span>
@@ -353,10 +353,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; flex-direction: column; gap: 0.5rem;">
-					<a href="#containsnone">
+					<a href="#containsnone-or-">
 						`CONTAINSNONE`
 					</a>
-					<a href="#containsnone">
+					<a href="#containsnone-or-">
 						`⊅`
 					</a>
 				</span>
@@ -368,13 +368,13 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
-					<a href="#inside">
+					<a href="#inside-or--or-in">
 						`INSIDE`
 					</a>
-					<a href="#inside">
+					<a href="#inside-or--or-in">
 						`IN`
 					</a>
-					<a href="#inside">
+					<a href="#inside-or--or-in">
 						`∈`
 					</a>
 				</span>
@@ -386,13 +386,13 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
-					<a href="#notinside">
+					<a href="#notinside-or--or-not-in">
 						`NOTINSIDE`
 					</a>
-					<a href="#notinside">
+					<a href="#notinside-or--or-not-in">
 						`NOT IN`
 					</a>
-					<a href="#notinside">
+					<a href="#notinside-or--or-not-in">
 						`∉`
 					</a>
 				</span>
@@ -404,10 +404,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
-					<a href="#allinside">
+					<a href="#allinside-or-">
 						`ALLINSIDE`
 					</a>
-					<a href="#allinside">
+					<a href="#allinside-or-">
 						`⊆`
 					</a>
 				</span>
@@ -419,10 +419,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
-					<a href="#anyinside">
+					<a href="#anyinside-or-">
 						`ANYINSIDE`
 					</a>
-					<a href="#anyinside">
+					<a href="#anyinside-or-">
 						`⊂`
 					</a>
 				</span>
@@ -434,10 +434,10 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 		<tr>
 			<td scope="row" data-label="Operator">
 				<span style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
-					<a href="#noneinside">
+					<a href="#noneinside-or-">
 					`NONEINSIDE`
 					</a>
-					<a href="#noneinside">
+					<a href="#noneinside-or-">
 						`⊄`
 					</a>
 				</span>
@@ -506,8 +506,7 @@ A variety of operators in SurrealQL allow for complex manipulation of data, and 
 	</tbody>
 </table>
 
-## `&&` or `AND` <a id="and"></a>
-
+## `&&` or `AND`
 The `and` operator checks whether both of two values are [truthy](data-types/values.md#values-and-truthiness).
 
 ```surql
@@ -525,8 +524,7 @@ SELECT * FROM 10 AND 20 AND 30;
 
   
 
-## `||` or `OR` <a id="or"></a>
-
+## `||` or `OR`
 The `or` operator checks whether either of two values are [truthy](data-types/values.md#values-and-truthiness).
 
 ```surql
@@ -544,8 +542,7 @@ SELECT * FROM 0 OR false OR 10;
 
   
 
-## `!` <a id="not"></a>
-
+## `!`
 The `not` operator reverses the truthiness of a value.
 
 ```surql
@@ -568,8 +565,7 @@ SELECT * FROM !"Has a value";
 
   
 
-## `!!` <a id="not_not"></a>
-
+## `!!`
 The `not not` operator is simply an application of the `!` operator twice. It can be used to determines the truthiness of a value.
 
 ```surql
@@ -584,8 +580,7 @@ SELECT * FROM !!"Has a value";
 -- true
 ```
 
-## `??` <a id="nco"></a>
-
+## `??`
 The `null coalescing operator` checks whether either of two values are [truthy](data-types/values.md#values-and-truthiness) and not `NONE` or `NULL`.
 
 ```surql
@@ -603,8 +598,7 @@ SELECT * FROM NULL ?? 0 ?? false ?? 10;
 
   
 
-## `?:` <a id="tco"></a>
-
+## `?:`
 The `truthy coalescing operator` checks whether either of two values are [truthy](data-types/values.md#values-and-truthiness).
 
 ```surql
@@ -622,8 +616,7 @@ SELECT * FROM NULL ?: 0 ?: false ?: 10;
 
   
 
-## `=` or `IS` <a id="equal"></a>
-
+## `=` or `IS`
 The `equal` operator checks whether two values are equal.
 
 ```surql
@@ -723,8 +716,7 @@ SELECT * FROM { this: "object" } = { another: "object" };
 
   
 
-## `!=` or `IS NOT` <a id="notequal"></a>
-
+## `!=` or `IS NOT`
 The `not equal` operator checks whether two values are not equal.
 
 ```surql
@@ -765,8 +757,7 @@ SELECT * FROM [1, 2, 3] != [3, 4, 5];
 
   
 
-## `==` <a id="exact"></a>
-
+## `==`
 The `exact` operator checks whether two values are exact. This operator also checks that each value has the same type.
 
 ```surql
@@ -807,8 +798,7 @@ SELECT * FROM true == "true";
 
   
 
-## `?=` <a id="anyequal"></a>
-
+## `?=`
 The `any equal` operator checks whether any value in an array equals another value.
 
 ```surql
@@ -825,8 +815,7 @@ SELECT * FROM [10, 15, 20] ?= 10;
 
   
 
-## `*=` <a id="allequal"></a>
-
+## `*=`
 The `all equal` operator checks whether all values in an array equals another value.
 
 ```surql
@@ -843,8 +832,7 @@ SELECT * FROM [10, 10, 10] *= 10;
 
   
 
-## `~` `?~` `!~` `*~` <a id="match"></a>
-
+## `~` `?~` `!~` `*~`
 These operators used to compare two values for equality using fuzzy matching. They have been removed since 3.0 to avoid implicitly preferring one algorithm over another, as the type of fuzzy matching to use will depend on each individual case.
 
 Please use the `string::similarity::*` functions instead:
@@ -868,8 +856,7 @@ string::similarity::smithwaterman("test text", "Test") > $threshold;
 
   
 
-## `<` <a id="lessthan"></a>
-
+## `<`
 The `less than` operator checks whether a value is less than another value.
 
 ```surql
@@ -886,8 +873,7 @@ SELECT * FROM 10 < 15;
 
   
 
-## `<=` <a id="lessthanorequal"></a>
-
+## `<=`
 The `less than or equal` operator checks whether a value is less than or equal to another value.
 
 ```surql
@@ -904,8 +890,7 @@ SELECT * FROM 10 <= 15;
 
   
 
-## `>` <a id="greaterthan"></a>
-
+## `>`
 The `greater than` operator checks whether a value is less than another value.
 
 ```surql
@@ -922,8 +907,7 @@ SELECT * FROM 15 > 10;
 
   
 
-## `>=` <a id="greaterthanorequal"></a>
-
+## `>=`
 The `greater than or equal` operator checks whether a value is less than or equal to another value.
 
 ```surql
@@ -940,8 +924,7 @@ SELECT * FROM 15 >= 10;
 
   
 
-## `+` <a id="add"></a>
-
+## `+`
 The `add` operator adds two values together.
 
 ```surql
@@ -982,8 +965,7 @@ SELECT * FROM 13h + 30m;
 
   
 
-## `-` <a id="sub"></a>
-
+## `-`
 The `subtract` operator subtracts a value from another value.
 
 ```surql
@@ -1012,8 +994,7 @@ SELECT * FROM 2m - 1m;
 
   
 
-## `*` or `×` <a id="mul"></a>
-
+## `*` or `×`
 The `multiply` operator multiplies a value by another value.
 
 ```surql
@@ -1030,8 +1011,7 @@ SELECT * FROM 20 * 2;
 
   
 
-## `/` or `÷` <a id="div"></a>
-
+## `/` or `÷`
 The `divide` operator divides a value by another value.
 
 ```surql
@@ -1048,8 +1028,7 @@ SELECT * FROM 20 / 2;
 
   
 
-## `**` <a id="pow"></a>
-
+## `**`
 The `power` operator raises a base value by another value.
 
 ```surql
@@ -1066,8 +1045,7 @@ SELECT * FROM 20 ** 3;
 
   
 
-## `CONTAINS` or `∋` <a id="contains"></a>
-
+## `CONTAINS` or `∋`
 The `contains` operator checks whether a value contains another value.
 
 ```surql
@@ -1116,8 +1094,7 @@ SELECT * FROM {
 
   
 
-## `CONTAINSNOT` or `∌` <a id="containsnot"></a>
-
+## `CONTAINSNOT` or `∌`
 The `not contains` operator checks whether a value does not contain another value.
 
 ```surql
@@ -1166,8 +1143,7 @@ SELECT * FROM {
 
   
 
-## `CONTAINSALL` or `⊇` <a id="containsall"></a>
-
+## `CONTAINSALL` or `⊇`
 The `contains all` operator checks whether a value contains all of multiple values.
 
 ```surql
@@ -1184,8 +1160,7 @@ SELECT * FROM [10, 20, 30] CONTAINSALL [10, 20, 10];
 
   
 
-## `CONTAINSANY` or `⊃` <a id="containsany"></a>
-
+## `CONTAINSANY` or `⊃`
 The `contains any` operator checks whether a value contains any of multiple values.
 
 ```surql
@@ -1202,8 +1177,24 @@ SELECT * FROM [10, 20, 30] CONTAINSANY [10, 15, 25];
 
   
 
-## `INSIDE` or `∈` or `IN` <a id="inside"></a>
+## `CONTAINSNONE` or `⊅`
+The `contains none` operator checks whether a value contains none of multiple values.
 
+```surql
+/**[test]
+
+[[test.results]]
+value = "[true]"
+
+*/
+
+SELECT * FROM [10, 20, 30] CONTAINSNONE [15, 25, 35];
+-- true
+```
+
+  
+
+## `INSIDE` or `∈` or `IN`
 The `inside` operator checks whether a value is contained within another value.
 
 ```surql
@@ -1292,8 +1283,7 @@ CREATE city:riga SET name = "Riga", country = "Latvia", population = 605273;
 
   
 
-## `NOTINSIDE` or `∉` or `NOT IN` <a id="notinside"></a>
-
+## `NOTINSIDE` or `∉` or `NOT IN`
 The `not inside` operator checks whether a value is not contained within another value.
 
 ```surql
@@ -1342,8 +1332,7 @@ SELECT * FROM (-0.518092, 53.509865) NOTINSIDE {
 
   
 
-## `ALLINSIDE` or `⊆` <a id="allinside"></a>
-
+## `ALLINSIDE` or `⊆`
 The `all inside` operator checks whether all of multiple values are contained within another value.
 
 ```surql
@@ -1360,8 +1349,7 @@ SELECT * FROM [10, 20, 10] ALLINSIDE [10, 20, 30];
 
   
 
-## `ANYINSIDE` or `⊂` <a id="anyinside"></a>
-
+## `ANYINSIDE` or `⊂`
 The `any inside` operator checks whether any of multiple values are contained within another value.
 
 ```surql
@@ -1378,8 +1366,7 @@ SELECT * FROM [10, 15, 25] ANYINSIDE [10, 20, 30];
 
   
 
-## `NONEINSIDE` or `⊄` <a id="noneinside"></a>
-
+## `NONEINSIDE` or `⊄`
 The `none inside` operator checks whether none of multiple values are contained within another value.
 
 ```surql
@@ -1396,8 +1383,7 @@ SELECT * FROM [15, 25, 35] NONEINSIDE [10, 20, 30];
 
   
 
-## `OUTSIDE` <a id="outside"></a>
-
+## `OUTSIDE`
 The `outside` operator checks whether a geometry value is outside another geometry value.
 
 ```surql
@@ -1422,8 +1408,7 @@ SELECT * FROM (-0.518092, 53.509865) OUTSIDE {
 
   
 
-## `INTERSECTS` <a id="intersects"></a>
-
+## `INTERSECTS`
 The `intersects` operator checks whether a geometry value intersects another geometry value.
 
 ```surql
@@ -1455,8 +1440,7 @@ SELECT * FROM {
 
   
 
-## `MATCHES` <a id="matches"></a>
-
+## `MATCHES`
 The `matches` operator checks whether the terms are found in a full-text indexed field.
 
 ```surql

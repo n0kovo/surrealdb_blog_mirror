@@ -13,7 +13,7 @@ Merges data into all records in a table, or a specific record, leaving unspecifi
 client.merge(thing, data_json, session, txn)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -42,13 +42,13 @@ client.merge(thing, data_json, session, txn)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```python
 var resp = client.merge("person:chiru", '{ "age": 31 }')
 ```
 
-### Translated query
+## Translated query
 
 ```surql
 UPDATE $thing MERGE $data_json;

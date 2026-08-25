@@ -18,7 +18,7 @@ Restores the database from a file.
 db.import(source)
 ```
 
-### Example usage
+## Example usage
 
 The following example assumes the presence of a file called `backup.surql` in the same directory as the current project. To quickly create it, copy and paste [the example for the .export() method](export.md).
 
@@ -40,7 +40,7 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.import() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.import)
 
@@ -55,7 +55,7 @@ Restores the database from a file.
 db.import(source)
 ```
 
-### Example usage
+## Example usage
 
 ```rust
 use surrealdb::engine::any::connect;
@@ -75,6 +75,6 @@ async fn main() -> surrealdb::Result<()> {
 }
 ```
 
-### See also
+## See also
 
 * [.import() method on Docs.rs](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.import)

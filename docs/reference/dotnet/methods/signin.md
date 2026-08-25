@@ -1,7 +1,7 @@
 ---
 position: 25
 title: SignIn
-description: The .NET SDK for SurrealDB enables simple and advanced querying of a remote or embedded database.
+description: Signs in to a root, namespace, database or scope user.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/dotnet/methods/signin.mdx"
 ---
 
@@ -13,7 +13,7 @@ Signs in to a root, namespace, database or scope user.
 await db.SignIn(credentials)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -44,7 +44,7 @@ await db.SignIn(credentials)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 **Root user**
 

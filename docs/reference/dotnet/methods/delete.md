@@ -11,7 +11,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 await db.Delete(resource)
 ```
 
-### Arguments
+## Arguments
 
 <table>
     <thead>
@@ -42,7 +42,7 @@ await db.Delete(resource)
     </tbody>
 </table>
 
-### Example usage
+## Example usage
 
 ```csharp
 // Delete all records from a table

@@ -964,7 +964,7 @@ value = "[{ importance: 10, message: 'I need some help with this query...' }, { 
 
  [
     { importance: 10,
-      message: "I need some help with this query..." }
+      message: "I need some help with this query..." },
     { importance: 0, message: "TEST Is this thing on?" },
     { importance: 5, message: "I have an idea. What if we..."},
     { importance: 100,
@@ -1081,7 +1081,7 @@ value = "[0, 3]"
 
  [
     { importance: 10,
-      message: "I need some help with this query..." }
+      message: "I need some help with this query..." },
     { importance: 0, message: "TEST Is this thing on?" },
     { importance: 5, message: "I have an idea. What if we..."},
     { importance: 100,

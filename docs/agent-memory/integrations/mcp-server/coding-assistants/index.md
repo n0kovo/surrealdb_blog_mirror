@@ -5,7 +5,7 @@ generated: stub
 
 # Coding Assistants
 
-_Auto-generated index — 9 pages._
+_Auto-generated index — 10 pages._
 
 ## Pages
 
@@ -17,6 +17,8 @@ _Auto-generated index — 9 pages._
   Installing SurrealDB Agent Memory as an MCP server in the OpenAI Codex CLI.
 - [Cursor](cursor.md)
   Installing SurrealDB Agent Memory as an MCP server in Cursor.
+- [JetBrains Air](jetbrains-air.md)
+  Installing SurrealDB Agent Memory as an MCP server in JetBrains Air.
 - [JetBrains](jetbrains.md)
   Installing SurrealDB Agent Memory as an MCP server in JetBrains IDEs (IntelliJ IDEA, PyCharm, WebStorm, Rider, and more).
 - [OpenCode](opencode.md)

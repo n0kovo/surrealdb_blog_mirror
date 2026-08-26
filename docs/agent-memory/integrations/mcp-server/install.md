@@ -25,7 +25,7 @@ npx install-mcp https://<your-context-host>/mcp \
   --oauth no
 ```
 
-Use this for `cursor`, `vscode`, `windsurf`, `zed`, and `opencode`. **Claude** (Code, Cowork, Desktop) and **Codex** have a dedicated SurrealDB plugin - see the [Claude](coding-assistants/claude-desktop-and-code.md) and [Codex](coding-assistants/codex.md) guides. JetBrains and Antigravity use the manual configuration below.
+Use this for `cursor`, `vscode`, `windsurf`, `zed`, and `opencode`. **Claude** (Code, Cowork, Desktop) and **Codex** have a dedicated SurrealDB plugin - see the [Claude](coding-assistants/claude-desktop-and-code.md) and [Codex](coding-assistants/codex.md) guides. JetBrains IDEs, JetBrains Air, and Antigravity use the manual configuration below.
 
 ## Manual configuration
 
@@ -52,6 +52,12 @@ Some clients use a different key or shape - `serverUrl` in Windsurf and Antigrav
 - [Cursor](coding-assistants/cursor.md)
 - [VS Code](coding-assistants/vscode.md)
 - [Windsurf](coding-assistants/windsurf.md)
+- [Codex](coding-assistants/codex.md)
+- [Antigravity](coding-assistants/antigravity.md)
+- [OpenCode](coding-assistants/opencode.md)
+- [JetBrains](coding-assistants/jetbrains.md)
+- [JetBrains Air](coding-assistants/jetbrains-air.md)
+- [Zed](coding-assistants/zed.md)
 
 ## MCP vs SDK
 

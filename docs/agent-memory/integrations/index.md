@@ -21,7 +21,7 @@ npx install-mcp https://<your-context-host>/mcp \
   --header "Authorization: Bearer <your-api-key>" --oauth no
 ```
 
-→ [MCP server install](mcp-server/install.md) · Per-client guides: [Claude](mcp-server/coding-assistants/claude-desktop-and-code.md) · [Cursor](mcp-server/coding-assistants/cursor.md) · [VS Code](mcp-server/coding-assistants/vscode.md) · [JetBrains](mcp-server/coding-assistants/jetbrains.md) · [Zed](mcp-server/coding-assistants/zed.md) · [Windsurf](mcp-server/coding-assistants/windsurf.md) · [Codex](mcp-server/coding-assistants/codex.md) · [Antigravity](mcp-server/coding-assistants/antigravity.md) · [OpenCode](mcp-server/coding-assistants/opencode.md)
+→ [MCP server install](mcp-server/install.md) · Per-client guides: [Claude](mcp-server/coding-assistants/claude-desktop-and-code.md) · [Cursor](mcp-server/coding-assistants/cursor.md) · [VS Code](mcp-server/coding-assistants/vscode.md) · [JetBrains](mcp-server/coding-assistants/jetbrains.md) · [JetBrains Air](mcp-server/coding-assistants/jetbrains-air.md) · [Zed](mcp-server/coding-assistants/zed.md) · [Windsurf](mcp-server/coding-assistants/windsurf.md) · [Codex](mcp-server/coding-assistants/codex.md) · [Antigravity](mcp-server/coding-assistants/antigravity.md) · [OpenCode](mcp-server/coding-assistants/opencode.md)
 
 ## SDKs
 

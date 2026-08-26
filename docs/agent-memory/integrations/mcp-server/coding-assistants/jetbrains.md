@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # JetBrains
 
-JetBrains AI Assistant supports MCP servers across the IDE suite: IntelliJ IDEA, PyCharm, WebStorm, GoLand, Rider, and the others. Installing SurrealDB Agent Memory gives the assistant persistent memory across sessions, so it can recall previous decisions and project context without you repeating them.
+JetBrains AI Assistant supports MCP servers across the IDE suite: IntelliJ IDEA, PyCharm, WebStorm, GoLand, Rider, and the others. Installing SurrealDB Agent Memory gives the assistant persistent memory across sessions, so it can recall previous decisions and project context without you repeating them. For the standalone [JetBrains Air](jetbrains-air.md) app, follow that guide instead - it configures MCP in a different place.
 
 For integration rules your agent should follow (auth, scope, endpoints, common mistakes), see **[Agent guide (AGENTS.md)](../../../reference/agents.md)**.
 

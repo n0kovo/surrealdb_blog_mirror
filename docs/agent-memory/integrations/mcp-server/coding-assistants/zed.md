@@ -1,5 +1,5 @@
 ---
-position: 9
+position: 10
 title: Zed
 description: Installing SurrealDB Agent Memory as an MCP server in the Zed editor.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/integrations/mcp-server/coding-assistants/zed.mdx"

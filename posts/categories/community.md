@@ -3,16 +3,16 @@
 _35 posts_  
 [← Index](../../README.md)
 
-- **2026-07-08** · [Detecting connections as they form: An introduction to streaming graph pattern matching](../2026/07/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2.md)  
+- **2026-07-08** · [Detecting connections as they form: streaming graph patterns](../2026/07/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2.md)  
   `community` — Guest author Cyril Scetbon on streaming graph pattern matching: detecting when a pattern is satisfied in real time, incrementally, as new edges are added.
 - **2026-04-27** · [Building compounding memory with knowledge graphs and agentic RAG](../2026/04/building-compounding-memory-with-knowledge-graphs-and-agentic-rag.md)  
-  `community` `ai` — Synapse, a memory-first reflection agent, helps users track therapy journal patterns. It structures insights into a knowledge graph, revealing patterns and answering questions based on context.
+  `community` `ai` — Synapse, a memory-first reflection agent, helps users track therapy journal patterns. It structures insights into a knowledge graph to revealing patterns.
 - **2025-10-09** · [Bring your own knowledge base: Agent Studio meets SurrealDB](../2025/10/bring-your-own-knowledge-base-agent-studio-meets-surrealdb.md)  
-  `featured` `ai` `community` — How Agent Studio from PolyAI integrates with SurrealDB
-- **2025-09-30** · [From Knowledge Graph Generation to RAG for Stablecoin Regulatory Intelligence](../2025/09/from-knowledge-graph-generation-to-rag-for-stablecoin-regulatory-intelligence.md)  
-  `featured` `ai` `community` — We’re excited to share this community-written deep dive by Sugi Venugeethan into Stablebridge, a project tackling the complex world of stablecoin regulation. This article explores how knowledge graphs, RAG systems, and SurrealDB can be combined to connect it all together. It’s a practical look into knowledge graph generation to advanced retrieval methodologies - showcasing both challenges and breakthroughs along the way.
+  `featured` `ai` `community` — How the RAG provider Agent Studio from PolyAI integrates with SurrealDB.
+- **2025-09-30** · [From Knowledge Graph to RAG for Stablecoin Regulatory Intel](../2025/09/from-knowledge-graph-generation-to-rag-for-stablecoin-regulatory-intelligence.md)  
+  `featured` `ai` `community` — We’re excited to share this community-written deep dive by Sugi Venugeethan into Stablebridge, a project tackling the complex world of stablecoin regulation.
 - **2025-09-17** · [Research paper - Bridging Analytics and Semantics with SurrealDB](../2025/09/research-paper--bridging-analytics-and-semantics-with-surrealdb.md)  
-  `featured` `community` — We’re excited to highlight new research from two members of the SurrealDB community: “Bridging Analytics and Semantics: A Hybrid Database Approach to Retrieval-Augmented Generation”, now published on Zenodo.
+  `featured` `community` — New research from two SurrealDB members: “Bridging Analytics and Semantics: A Hybrid Database Approach to Retrieval-Augmented Generation”, published on Zenodo.
 - **2025-08-20** · [Enforcing XOR (Either\/Or) Fields in SurrealDB](../2025/08/enforcing-xor-eitheror-fields-in-surrealdb.md)  
   `featured` `tutorials` `community` — What to do in your schema when a record should contain one of two possible fields, but not both or neither?
 - **2025-02-04** · [Powering Drug Trial Innovation with SurrealDB](../2025/02/powering-drug-trial-innovation-with-surrealdb.md)  

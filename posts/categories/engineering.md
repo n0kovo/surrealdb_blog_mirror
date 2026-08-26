@@ -4,63 +4,63 @@ _46 posts_
 [← Index](../../README.md)
 
 - **2026-08-13** · [Graph engineering is missing a graph](../2026/08/graph-engineering-is-missing-a-graph.md)  
-  `featured` `engineering` `ai` — Graph engineering is suddenly everywhere, but most takes stop at the diagram. The harder half is the context graph underneath: whether relations, vectors, documents and memory sit under one consistency boundary, and whether anything understood the data before it became a graph.
+  `featured` `engineering` `ai` — Graph engineering stops at the diagram. The harder half is the context graph underneath: whether relations, vectors and memory share one consistency boundary.
 - **2026-08-11** · [Testing known time in Spectron on a 2,200-year corpus](../2026/08/hi.md)  
   `engineering` — How to use asOf in Spectron to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.
 - **2026-08-06** · [Integrating Ultima VII with Spectron, part II: the testing](../2026/08/integrating-ultima-vii-with-spectron-part-ii-the-testing.md)  
-  `engineering` — How Ultima VII through Exult was integrated with Spectron via some changes to the Exult code to emit events in a certain way and a Rust app built using egui to stand in between the game and Spectron.
-- **2026-08-04** · [Agent memory needs three clocks: tri-temporal belief history in Spectron](../2026/08/spectron-insights-how-tri-temporal-belief-history-works.md)  
+  `engineering` — How Ultima VII was integrated with Spectron via changes to the Exult code to emit certain events and a Rust app using egui between the game and Spectron.
+- **2026-08-04** · [Agent memory needs three clocks: tri-temporal belief history](../2026/08/spectron-insights-how-tri-temporal-belief-history-works.md)  
   `engineering` — Why tri-temporal belief history is needed for agent memory to properly simulate human memory and how to work with Spectron to best use it.
 - **2026-07-30** · [Integrating Ultima VII with Spectron, part I: the game](../2026/07/using-ultima-vii-to-test-spectron-part-i-the-game.md)  
   `engineering` — Why Ultima VII through the Exult open-source game engine ended up being the perfect testing platform for SurrealDB's memory layer Spectron.
 - **2026-06-19** · [Deterministic simulation testing and its use at SurrealDB](../2026/06/deterministic-simulation-testing-and-its-use-at-surrealdb.md)  
   `engineering` — How deterministic simulation works from easy to complex scenarios, and its ussage at SurrealDB's transactional key-value store and embedded key-value engine.
-- **2026-06-11** · [Fuzz testing for SurrealDB: using randomised input to find bugs before users do](../2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md)  
+- **2026-06-11** · [Fuzz testing for SurrealDB: finding bugs before users do](../2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md)  
   `engineering` — A good choice to complement unit and integration tests, fuzz testing lets you use semi-random data to discover obscure bugs before users do.
-- **2026-05-29** · [SurrealDB 3.x by the numbers](../2026/05/surrealdb-3-x-by-the-numbers.md)  
+- **2026-05-29** · [SurrealDB 3.x by the numbers: benchmarks and comparisons](../2026/05/surrealdb-3-x-by-the-numbers.md)  
   `engineering` `company` `featured` — Fresh SurrealDB 3.x benchmarks: 141k ops\/s CRUD, scans 164× faster than 2.x, and head-to-head numbers vs. Postgres, Mongo, Neo4j, and Redis.
-- **2026-04-22** · [New SurrealDB docs search using hybrid search and HNSW\/BM25 reranking](../2026/04/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search.md)  
-  `engineering` `tutorials` — How SurrealDB has implemented documentation search using hybrid search (full-text and vector hybrid search and reranking with HNSW and BM25 indexes), plus a simplified example to show the same pattern in just a few queries.
-- **2026-03-19** · [Exponential cost traps in database architectures: how SurrealDB breaks the cycle](../2026/03/exponential-cost-traps-in-database-architectures-how-surrealdb-breaks-the-cycle.md)  
-  `featured` `engineering` — SurrealDB offers a consolidated solution to store data once and querying it across models to reduce overall costs, particularly in storage-heavy environments where cloud block storage is in use.
-- **2026-03-04** · [OpenAI’s Postgres Architecture: A Brilliant Fix for a Billion-Dollar Mistake](../2026/03/openais-postgres-architecture-a-brilliant-fix-for-a-billion-dollar-mistake.md)  
-  `featured` `engineering` — OpenAI engineered an impressive PostgreSQL scaling strategy, but this article argues it is a cautionary tale and explains why distributed-first architectures can avoid many of the same pitfalls.
-- **2026-02-25** · [File support in SurrealDB 3.0](../2026/02/file-support-in-surrealdb-3-0.md)  
-  `featured` `engineering` `tutorials` — SurrealDB 3.0 includes experimental file support that allows you to create, update, and delete files regardless of whether the database itself saves its data persistently or not.
+- **2026-04-22** · [New SurrealDB docs search with hybrid search and reranking](../2026/04/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search.md)  
+  `engineering` `tutorials` — How SurrealDB implemented documentation search using hybrid search: full-text and vector hybrid search and reranking with HNSW and BM25 indexes.
+- **2026-03-19** · [Exponential cost traps in database architectures](../2026/03/exponential-cost-traps-in-database-architectures-how-surrealdb-breaks-the-cycle.md)  
+  `featured` `engineering` — Polyglot database sprawl grows costs faster than traffic. Storing data once in SurrealDB cuts block-storage spend by roughly two thirds.
+- **2026-03-04** · [OpenAI’s brilliant fix for a billion-dollar Postgres mistake](../2026/03/openais-postgres-architecture-a-brilliant-fix-for-a-billion-dollar-mistake.md)  
+  `featured` `engineering` — OpenAI engineered an impressive PostgreSQL scaling strategy that ended up as a cautionary tale. How distributed-first architectures can avoid the same pitfalls.
+- **2026-02-25** · [File support in SurrealDB 3.0: buckets and file pointers](../2026/02/file-support-in-surrealdb-3-0.md)  
+  `featured` `engineering` `tutorials` — Define a bucket, then create, read, rename and delete files through SurrealQL file pointers - held in memory or on disk, alongside your records.
 - **2026-02-25** · [Introducing JavaScript SDK 2.0](../2026/02/introducing-javascript-sdk-2-0.md)  
-  `engineering` `releases` — The most significant update to the JavaScript SDK to date: SurrealDB 3.0 support, multi-session support, automatic token refreshing, a redesigned live query API, and a new query builder pattern.
+  `engineering` `releases` — A large update to the SurrealDB JavaScript SDK: 3.0 and multi-session support, automatic token refreshing, new live query API, and a new query builder pattern.
 - **2026-02-18** · [Custom API Endpoints: streamlining your architecture](../2026/02/custom-api-endpoints-streamlining-your-architecture.md)  
-  `featured` `engineering` `tutorials` — Custom API endpoints allow developers to define database behaviours, set up middleware, and create custom API endpoints directly within the familiar SurrealQL query language.
+  `featured` `engineering` `tutorials` — Declare HTTP endpoints, middleware and response bodies in SurrealQL with DEFINE API, and let clients call the database without a middleware tier.
 - **2026-02-17** · [SurrealDB 3.0 benchmarks: a new foundation for performance](../2026/02/surrealdb-3-0-benchmarks-a-new-foundation-for-performance.md)  
   `featured` `engineering` — SurrealDB 3.0 introduces a new benchmarking foundation that showcases its improved, production-ready performance and the architectural advancements driving it.
-- **2025-09-03** · [Power up your AI workflows: the official SurrealDB x n8n node is here](../2025/09/power-up-your-ai-workflows-the-official-surrealdb-x-n8n-node-is-here.md)  
-  `featured` `tutorials` `engineering` `ai` — We've shipped the official SurrealDB node for n8n. It's a first-party, production-ready integration that lets you query, create, update, upsert, and delete data in SurrealDB from any n8n workflow - and it also runs as an AI tool inside n8n's Agent nodes.
+- **2025-09-03** · [Power your AI workflows with the official SurrealDB x n8n node](../2025/09/power-up-your-ai-workflows-the-official-surrealdb-x-n8n-node-is-here.md)  
+  `featured` `tutorials` `engineering` `ai` — The SurrealDB node for n8n is a 1st-party, production-ready integration that lets you query, create, update,, and delete SurrealDB data from any n8n workflow
 - **2025-07-09** · [Make a medical chatbot using GraphRAG with SurrealDB + LangChain](../2025/07/make-a-medical-chatbot-using-graphrag-with-surrealdb-langchain.md)  
   `featured` `engineering` `ai` — Build a medical chatbot with GraphRAG, SurrealDB, and LangChain using Rust.
 - **2025-07-07** · [Semantic search in Rust with SurrealDB and Mistral AI](../2025/07/semantic-search-in-rust-with-surrealdb-and-mistral-ai.md)  
   `featured` `engineering` `ai` — SurrealDB's built-in vector search capabilities make it a perfect match for semantic search using Mistral AI
 - **2025-07-01** · [Announcing our official LangChain integration](../2025/07/announcing-our-official-langchain-integration.md)  
-  `engineering` `featured` `ai` — We’re thrilled to announce that SurrealDB now has an official integration with LangChain, one of the most popular frameworks for building powerful LLM-driven applications.
+  `engineering` `featured` `ai` — We’re thrilled to announce SurrealDB's official integration with LangChain, one of the most popular frameworks for building powerful LLM-driven applications.
 - **2025-06-26** · [Semantic search with SurrealDB and OpenAI](../2025/06/semantic-search-with-surrealdb-and-openai.md)  
   `featured` `engineering` `ai` — SurrealDB's built-in vector search capabilities make it a perfect match for semantic search using OpenAI
 - **2025-06-23** · [Seamless data ingestion with the Airbyte connector](../2025/06/seamless-data-ingestion-with-the-airbyte-connector.md)  
   `engineering` `featured` — Today, we’re excited to announce official support for Airbyte, the leading open-source data integration platform.
-- **2025-06-17** · [RAG can be Rigged](../2025/06/rag-can-be-rigged.md)  
-  `featured` `engineering` `ai` — Building a smart knowledge agent with SurrealDB and Rig.rs
+- **2025-06-17** · [RAG can be Rigged: building a context-aware agent that just works](../2025/06/rag-can-be-rigged.md)  
+  `featured` `engineering` `ai` — Building a smart knowledge agent with SurrealDB and Rig.rs: a context-aware support agent that just works.
 - **2025-06-11** · [Seamless data ingestion with the Fivetran connector](../2025/06/seamless-data-ingestion-with-the-fivetran-connector.md)  
   `featured` `engineering` — Today, we’re excited to announce official support for Fivetran, the industry leader in automated, fully-managed data pipelines.
 - **2025-06-02** · [Three ways to model data relationships in SurrealDB](../2025/06/three-ways-to-model-data-relationships-in-surrealdb.md)  
-  `featured` `engineering` — In a recent SurrealDB Stream, we cracked open a foundational part of SurrealDB’s power: relationship modelling. From traditional record-to-record links to bidirectional references and Graph Edge metadata, we explored the many ways you can model connected data - clearly, scalably, and with performance in mind.
+  `featured` `engineering` — A SurrealDB Stream focused on relationship modelling, from traditional record-to-record links to bidirectional references and Graph Edge metadata.
 - **2025-04-02** · [Cooking up faster RAG using in-database embeddings in SurrealDB](../2025/04/cooking-up-faster-rag-using-in-database-embeddings-in-surrealdb.md)  
   `engineering` `ai` — Speed up RAG pipelines by running embedding models inside SurrealDB.Eliminate API latency with in-database vector embeddings for retrieval-augmented generation.
-- **2025-03-26** · [Beyond black boxes - building customisable and secure RAG systems for financial services](../2025/03/beyond-black-boxes--building-customisable-and-secure-rag-systems-for-financial-services.md)  
-  `engineering` `ai` — This isn’t just another RAG blog post - it tackles the specific challenges financial services data teams face when building systems in regulated, data-sensitive environments.
-- **2025-03-25** · [Revolutionising decentralised discovery with SurrealDB and confidential computing](../2025/03/revolutionising-decentralised-discovery-with-surrealdb-and-confidential-computing.md)  
-  `engineering` `featured` — ndex Network enables secure, decentralised discovery by unifying public and private data using SurrealDB and TEEs.
+- **2025-03-26** · [Beyond black boxes: customisable and secure financial RAG systems](../2025/03/beyond-black-boxes--building-customisable-and-secure-rag-systems-for-financial-services.md)  
+  `engineering` `ai` — A blog post that tackles the specific challenges financial services data teams face when building systems in regulated, data-sensitive environments.
+- **2025-03-25** · [Revolutionising decentralised discovery with SurrealDB](../2025/03/revolutionising-decentralised-discovery-with-surrealdb-and-confidential-computing.md)  
+  `engineering` `featured` — Index Network enables secure, decentralised discovery by unifying public and private data using SurrealDB and TEEs.
 - **2025-02-21** · [Automating knowledge graphs with SurrealDB and Gemini](../2025/02/automating-knowledge-graphs-with-surrealdb-and-gemini.md)  
-  `engineering` `ai` — This is the release you've been waiting for
+  `engineering` `ai` — How to use SurrealDB with Gemini to automate knowledge graphs to move beyond simple storage and retrieval.
 - **2025-02-05** · [How we improved the Python SDK for our 1.0 stable version](../2025/02/how-we-improved-the-python-sdk-for-our-1-0-stable-version.md)  
-  `engineering` — We've released our 1.0 stable version of our Python SDK
+  `engineering` — We've released our 1.0 stable version of our Python SDK including a consistent interface for WebSockets and HTTP requests.
 - **2024-08-28** · [Building a RAG app with OpenAI and SurrealDB](../2024/08/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb.md)  
   `engineering` `tutorials` — We'll build an assistant that can answer questions based on Wikipedia information, using the GPT Turbo model from OpenAI
 - **2024-08-20** · [It’s about time: time series in SurrealDB](../2024/08/its-about-time-time-series-in-surrealdb.md)  

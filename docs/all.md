@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1075 pages_  
+_1076 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -181,6 +181,8 @@ _1075 pages_
   Installing SurrealDB Agent Memory as an MCP server in the OpenAI Codex CLI.
 - [Cursor](agent-memory/integrations/mcp-server/coding-assistants/cursor.md)
   Installing SurrealDB Agent Memory as an MCP server in Cursor.
+- [JetBrains Air](agent-memory/integrations/mcp-server/coding-assistants/jetbrains-air.md)
+  Installing SurrealDB Agent Memory as an MCP server in JetBrains Air.
 - [JetBrains](agent-memory/integrations/mcp-server/coding-assistants/jetbrains.md)
   Installing SurrealDB Agent Memory as an MCP server in JetBrains IDEs (IntelliJ IDEA, PyCharm, WebStorm, Rider, and more).
 - [OpenCode](agent-memory/integrations/mcp-server/coding-assistants/opencode.md)

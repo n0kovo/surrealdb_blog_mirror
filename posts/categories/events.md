@@ -3,8 +3,8 @@
 _7 posts_  
 [← Index](../../README.md)
 
-- **2025-12-17** · [PolyAI on building context-aware voice agents: latency, knowledge bases, and what actually ships](../2025/12/polyai-on-building-context-aware-voice-agents-latency-knowledge-bases-and-what-actually-ships.md)  
-  `featured` `ai` `events` — Key takeaways from SurrealDB Stream #34 with PolyAI CTO & co-founder Shawn Wen on the hard parts of shipping context-aware voice agents: latency budgets, knowledge governance, and operational trust.
+- **2025-12-17** · [PolyAI on building context-aware voice agents on SurrealDB Stream](../2025/12/polyai-on-building-context-aware-voice-agents-latency-knowledge-bases-and-what-actually-ships.md)  
+  `featured` `ai` `events` — SurrealDB Stream with PolyAI CTO Shawn Wen on the hard parts of context-aware voice agents: latency budgets, knowledge governance, and operational trust.
 - **2023-10-02** · [SurrealDB World 2023 - A Recap](../2023/10/surrealdb-world-2023--a-recap.md)  
   `events` `company` — SurrealDB's first-ever user conference SurrealDB World 2023 was held shortly after the launch of SurrealDB 1.0. Over 300 attended in person and 2,000 online.
 - **2023-06-02** · [Announcing the SurrealDB World conference](../2023/06/announcing-surrealdb-world.md)  

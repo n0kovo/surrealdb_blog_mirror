@@ -3,82 +3,82 @@
 _99 posts_  
 [← Index](../../README.md)
 
-- **2026-08-05** · [Chat with your meeting notes: a CocoIndex knowledge graph and a text-to-SurrealQL agent](../2026/08/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent.md)  
-  `tutorials` `ai` — A folder of Markdown meeting notes becomes a self-maintaining knowledge graph in SurrealDB — and the text-to-SurrealQL prompt is not a string in the repo, it is a function call against the live database. Built with CocoIndex and Pydantic AI, fenced in by a database role rather than a regex.
+- **2026-08-05** · [Chat with your meeting notes: CocoIndex graph with SurrealQL](../2026/08/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent.md)  
+  `tutorials` `ai` — A folder of Markdown meeting notes becomes a self-maintaining knowledge graph in SurrealDB with CocoIndex and Pydantic AI, fenced in by a database role.
 - **2026-08-05** · [Empower your agents with the new SurrealDB MCP](../2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  
-  `featured` `releases` `tutorials` `ai` — The SurrealMCP server is now fully managed. Add one URL to Claude, Cursor, or any other AI tool, sign in with your Surreal ID, and your assistant can deploy, query, and look after your SurrealDB Cloud account alongside you.
-- **2026-07-29** · [One database for the whole claim: agentic claims triage on SurrealDB](../2026/07/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb.md)  
-  `ai` `tutorials` — An AI agent triaging an insurance claim needs semantic, graph, and document data at once. Do it in one SurrealDB database — vector recall of similar past claims plus graph fraud-ring detection, fused in a single function. Schema, seed data, and queries included.
-- **2026-07-27** · [Even a jailbroken LLM can't exceed its database permissions — here's how](../2026/07/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how.md)  
-  `ai` `tutorials` — AI agents that write their own database queries can be talked into rewriting, deleting, or leaking your data with a single polite request, with no jailbreak required. No system-prompt rule can reliably stop that. SurrealDB's role-based access control can, because it lives in the data layer the LLM can't reach.
-- **2026-07-23** · [One graph for the whole maison: modelling luxury retail on SurrealDB](../2026/07/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb.md)  
+  `featured` `releases` `tutorials` `ai` — The SurrealMCP server lets you add one URL to any AI tool, sign in with your Surreal ID, and deploy, query, and look after your SurrealDB Cloud account.
+- **2026-07-29** · [One database for the whole claim: agentic claims on SurrealDB](../2026/07/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb.md)  
+  `ai` `tutorials` — An AI agent triaging insurance claims needs semantic, graph, and document data. Do it in one SurrealDB database.
+- **2026-07-27** · [Even a jailbroken LLM can't exceed its database permissions](../2026/07/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how.md)  
+  `ai` `tutorials` — AI agents an be talked into modifying your data with a single polite request. SurrealDB's role-based access control lives in the data layer the LLM can't reach.
+- **2026-07-23** · [One graph for the whole maison: luxury retail on SurrealDB](../2026/07/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb.md)  
   `tutorials` — How a high-end fashion house can model clients, artisans, products, and waitlists as one graph — with vector recommendations and full-text search built in.
 - **2026-07-21** · [Modelling a financial services enterprise ontology in SurrealDB](../2026/07/modelling-a-financial-services-enterprise-ontology-in-surrealdb.md)  
   `ai` `tutorials` — Model a financial services ontology in SurrealDB: map ownership, custody, and transactions as a graph and resolve beneficial-ownership chains in one query.
-- **2026-07-15** · [Graph traversals and time travel: incident response in one query language](../2026/07/your-asset-inventory-is-a-graph-query-it-like-one.md)  
+- **2026-07-15** · [Temporal graph traversal: incident response in one query language](../2026/07/your-asset-inventory-is-a-graph-query-it-like-one.md)  
   `tutorials` — Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.
-- **2026-07-14** · [One query, not two stores: how vector + graph in SurrealDB makes agents more accurate](../2026/07/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate.md)  
-  `ai` `tutorials` — Vector search and graph traversal in a single SurrealDB query — no fusion code, no two-store sync. How single-engine hybrid retrieval makes RAG agents more accurate.
+- **2026-07-14** · [One query, not two stores: how SurrealDB makes agents accurate](../2026/07/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate.md)  
+  `ai` `tutorials` — Vector search and graph traversal in a single SurrealDB query. How single-engine hybrid retrieval makes RAG agents more accurate.
 - **2026-07-09** · [Generating embeddings inside SurrealQL with a custom function](../2026/07/generating-embeddings-inside-surrealql-with-a-custom-function.md)  
   `ai` `tutorials` — Define a custom SurrealQL function to call any embedding API, then run semantic search, graph traversal and field shaping in one query
 - **2026-07-01** · [Bring SurrealDB to your Replit Agent](../2026/07/bring-surrealdb-to-your-replit-agent.md)  
   `tutorials` `ai` `featured` — SurrealDB's MCP server lets Replit Agent build apps directly on a database you own, reading your schema and querying live data.
 - **2026-06-23** · [Social graphs for activity-tracking apps](../2026/06/social-graphs-for-activity-tracking-apps.md)  
-  `tutorials` — Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in a single query.
+  `tutorials` — Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in one query.
 - **2026-06-22** · [Build apps on your data with SurrealDB and Lovable](../2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md)  
-  `tutorials` `featured` `ai` — Connect SurrealDB to Lovable using the Model Context Protocol (MCP), so the Lovable Agent can read your schema, query your live data, and build a working application on top of it without you writing any glue code.
+  `tutorials` `featured` `ai` — Connect SurrealDB to Lovable using the Model Context Protocol (MCP) to read your schema, query your live data, and build a working application on top of it.
 - **2026-06-12** · [Organizations and Teams for your SurrealDB App](../2026/06/organizations-and-teams-for-your-surrealdb-app.md)  
   `tutorials` — Bootstrapping multi-tenant orgs, roles, permissions, and the functions that enforce them - straight from SurrealKit templates.
-- **2026-05-22** · [Using SurrealDB to understand how Buffalo buffalo buffalo Buffalo buffalo](../2026/05/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo.md)  
-  `tutorials` — Using SurrealDB and Surrealist's graph visualisation to not just understand but also see how Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo works.
+- **2026-05-22** · [Use SurrealDB to see how Buffalo buffalo buffalo Buffalo buffalo](../2026/05/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo.md)  
+  `tutorials` — Using SurrealDB and Studio's graph visualisation to not just understand but also see how Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo works.
 - **2026-05-19** · [Agentic retrieval for structured data with text-to-surql](../2026/05/agentic-retrieval-for-structured-data-with-text-to-surql.md)  
-  `ai` `tutorials` — RAG pipelines usually focus on unstructured content (chunks + vectors\/BM25), but structured data introduces a different retrieval problem: you need to pull exact rows and aggregates from tables, not just “similar passages.” This article explains an agentic pattern for structured retrieval using text-to-SurrealQL: give an LLM agent a single database-aware tool that converts natural-language questions into valid SurrealQL, executes the query in SurrealDB, and returns deterministic, auditable results.
+  `ai` `tutorials` — An agentic pattern overview for structured retrieval that gives an LLM agent a database-aware tool that converts natural-language questions into valid SurrealQL
 - **2026-05-07** · [Schema migrations in SurrealDB: A local dev workflow](../2026/05/schema-migrations-in-surrealdb-a-local-dev-workflow.md)  
-  `tutorials` `featured` `releases` — Managing schema changes in SurrealDB shouldn't slow down your local development. This post walks through a practical migration workflow that keeps your database in sync as your project evolves.
-- **2026-04-22** · [New SurrealDB docs search using hybrid search and HNSW\/BM25 reranking](../2026/04/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search.md)  
-  `engineering` `tutorials` — How SurrealDB has implemented documentation search using hybrid search (full-text and vector hybrid search and reranking with HNSW and BM25 indexes), plus a simplified example to show the same pattern in just a few queries.
-- **2026-03-25** · [SurrealMX: In-memory storage with time travel and persistent storage](../2026/03/surrealmx-in-memory-storage-with-time-travel-and-persistent-storage.md)  
-  `featured` `tutorials` — SurrealMX lets you use in-memory storage along with optional time travel versioned queries and two types of persistent storage with a large number of configurations to balance performance with durability.
-- **2026-03-02** · [How to use Surrealism to build your own custom SurrealDB extensions](../2026/03/how-to-use-surrealism-to-build-your-own-custom-surrealdb-extensions.md)  
-  `featured` `tutorials` — Surrealism lets you build your own custom plugins, WASM functions that you can build and compile to their own binaries that can be called directly from the database
-- **2026-02-25** · [File support in SurrealDB 3.0](../2026/02/file-support-in-surrealdb-3-0.md)  
-  `featured` `engineering` `tutorials` — SurrealDB 3.0 includes experimental file support that allows you to create, update, and delete files regardless of whether the database itself saves its data persistently or not.
+  `tutorials` `featured` `releases` — Managing schema changes in SurrealDB shouldn't slow down your development. Practical migration workflows keep your database in sync as your project evolves.
+- **2026-04-22** · [New SurrealDB docs search with hybrid search and reranking](../2026/04/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search.md)  
+  `engineering` `tutorials` — How SurrealDB implemented documentation search using hybrid search: full-text and vector hybrid search and reranking with HNSW and BM25 indexes.
+- **2026-03-25** · [SurrealMX: In-memory storage with time travel and persistence](../2026/03/surrealmx-in-memory-storage-with-time-travel-and-persistent-storage.md)  
+  `featured` `tutorials` — SurrealMX uses in-memory storage along with time travel queries and two types of persistent storage with configurations to balance performance with durability.
+- **2026-03-02** · [How to use Surrealism to build your own SurrealDB extensions](../2026/03/how-to-use-surrealism-to-build-your-own-custom-surrealdb-extensions.md)  
+  `featured` `tutorials` — Surrealism lets you build your own custom plugins, WASM functions that you can compile to their own binaries that are called directly from the database
+- **2026-02-25** · [File support in SurrealDB 3.0: buckets and file pointers](../2026/02/file-support-in-surrealdb-3-0.md)  
+  `featured` `engineering` `tutorials` — Define a bucket, then create, read, rename and delete files through SurrealQL file pointers - held in memory or on disk, alongside your records.
 - **2026-02-18** · [Custom API Endpoints: streamlining your architecture](../2026/02/custom-api-endpoints-streamlining-your-architecture.md)  
-  `featured` `engineering` `tutorials` — Custom API endpoints allow developers to define database behaviours, set up middleware, and create custom API endpoints directly within the familiar SurrealQL query language.
+  `featured` `engineering` `tutorials` — Declare HTTP endpoints, middleware and response bodies in SurrealQL with DEFINE API, and let clients call the database without a middleware tier.
 - **2026-02-05** · [How to build a knowledge graph for AI](../2026/02/how-to-build-a-knowledge-graph-for-ai.md)  
   `featured` `tutorials` `ai` — What is a knowledge graph and how can it be used to enhance AI agents?
 - **2026-01-29** · [Knowledge Graph RAG: two query patterns for smarter AI agents](../2026/01/knowledge-graph-rag-two-query-patterns-for-smarter-ai-agents.md)  
   `featured` `tutorials` `ai` — A post that walks through two powerful SurrealQL query patterns that demonstrate how to retrieve context from a knowledge graph to feed AI agents.
 - **2026-01-27** · [A look at SurrealQL and how it differs from PostgreSQL](../2026/01/a-look-at-surrealql-and-how-it-differs-from-postgresql.md)  
-  `featured` `tutorials` — In this article, we will explore the similarities and differences between PostgreSQL and SurrealQL. We will also see how SurrealQL can overcome some of the limitations that relational databases have.
+  `featured` `tutorials` — Explore the similarities and differences between PostgreSQL and SurrealQL, and see how SurrealQL can overcome limitations that relational databases have.
 - **2025-12-18** · [Learning through building: SurrealDB University's newest tutorial](../2025/12/learning-through-building-surrealdb-universitys-newest-tutorial.md)  
-  `featured` `tutorials` — Now you can learn SurrealDB by building your own database that takes advantage of its multi-model capabilities to store and query over 100 of the world's most popular movies.
+  `featured` `tutorials` — Learn SurrealDB by building your own database that uses its multi-model capabilities to store and query over 100 of the world's most popular movies.
 - **2025-10-29** · [Exploring the new SurrealDB integration with Agno](../2025/10/exploring-the-new-surrealdb-integration-with-agno.md)  
-  `featured` `tutorials` `ai` — SurrealDB's built-in capabilities comprising graph queries, geolocational data and recursive queries make it the perfect fit to identify malevolent entities involved in organised influence campaigns.
+  `featured` `tutorials` `ai` — Introducing the new SurrealDB integration with Agno along with examples from the Agno Cookbook.
 - **2025-10-10** · [Using SurrealDB to Expose Organised Influence Campaigns](../2025/10/using-surrealdb-to-expose-organised-influence-campaigns.md)  
-  `featured` `tutorials` — SurrealDB's built-in capabilities comprising graph queries, geolocational data and recursive queries make it the perfect fit to identify malevolent entities involved in organised influence campaigns.
-- **2025-09-11** · [Using historical books to create structured knowledge graphs in SurrealDB](../2025/09/using-historical-books-to-create-structured-knowledge-graphs-in-surrealdb.md)  
+  `featured` `tutorials` — SurrealDB's graph queries, geolocational data and recursive queries make it the perfect fit to find malevolent entities in organised influence campaigns.
+- **2025-09-11** · [Using historical books for SurrealDB structured knowledge graphs](../2025/09/using-historical-books-to-create-structured-knowledge-graphs-in-surrealdb.md)  
   `featured` `tutorials` — PDF scans of old historical books can be brought to life with LLM models and then stored and queried in a structured form using SurrealQL.
-- **2025-09-03** · [Power up your AI workflows: the official SurrealDB x n8n node is here](../2025/09/power-up-your-ai-workflows-the-official-surrealdb-x-n8n-node-is-here.md)  
-  `featured` `tutorials` `engineering` `ai` — We've shipped the official SurrealDB node for n8n. It's a first-party, production-ready integration that lets you query, create, update, upsert, and delete data in SurrealDB from any n8n workflow - and it also runs as an AI tool inside n8n's Agent nodes.
+- **2025-09-03** · [Power your AI workflows with the official SurrealDB x n8n node](../2025/09/power-up-your-ai-workflows-the-official-surrealdb-x-n8n-node-is-here.md)  
+  `featured` `tutorials` `engineering` `ai` — The SurrealDB node for n8n is a 1st-party, production-ready integration that lets you query, create, update,, and delete SurrealDB data from any n8n workflow
 - **2025-08-27** · [Multi-tool agent with SurrealMCP and Agno](../2025/08/multi-tool-agent-with-surrealmcp-and-agno.md)  
   `featured` `tutorials` `ai` — Using SurrealMCP and Agno, this is how you can build a “researcher” agent that finds information on the web, structures the data, and stores it in SurrealDB.
 - **2025-08-22** · [Using unstructured data to create knowledge graphs in SurrealDB](../2025/08/using-unstructured-data-to-create-knowledge-graphs-in-surrealdb.md)  
   `featured` `tutorials` `ai` — There are many ways to give structure to unstructured data so that it can be used systematically in a database.
 - **2025-08-21** · [From legacy to leverage - unlocking financial data with SurrealDB](../2025/08/from-legacy-to-leverage--unlocking-financial-data-with-surrealdb.md)  
-  `featured` `tutorials` — SurrealDB helps financial institutions unlock the value of legacy transactional data by transforming it into connected, intelligent, and monetisable insights that power compliance, customer personalisation, and entirely new revenue streams.
+  `featured` `tutorials` — SurrealDB helps financial institutions unlock the value of legacy transactional data by transforming it into connected, intelligent, and monetisable insights.
 - **2025-08-20** · [Enforcing XOR (Either\/Or) Fields in SurrealDB](../2025/08/enforcing-xor-eitheror-fields-in-surrealdb.md)  
   `featured` `tutorials` `community` — What to do in your schema when a record should contain one of two possible fields, but not both or neither?
 - **2025-08-18** · [Ten tips and tricks for your SurrealDB queries](../2025/08/ten-tips-and-tricks-for-your-surrealdb-queries.md)  
   `featured` `tutorials` — SurrealQL queries are expressive and powerful, and the more you know the more you can make your queries work for you.
 - **2025-08-11** · [Multi-model RAG with LangChain](../2025/08/multi-model-rag-with-langchain.md)  
-  `featured` `tutorials` `ai` — A practical walkthrough of building a multi-model RAG pipeline with LangChain and SurrealDB, combining vector search with lightweight graph retrieval over chat conversations.
-- **2025-08-07** · [Hybrid vector + text Search in the terminal with SurrealDB and Ratatui](../2025/08/hybrid-vector-text-search-in-the-terminal-with-surrealdb-and-ratatui.md)  
+  `featured` `tutorials` `ai` — A walkthrough of a multi-model RAG pipeline with LangChain and SurrealDB, combining vector search with lightweight graph retrieval over chat conversations.
+- **2025-08-07** · [Terminal hybrid vector + text search with SurrealDB and Ratatui](../2025/08/hybrid-vector-text-search-in-the-terminal-with-surrealdb-and-ratatui.md)  
   `featured` `tutorials` `ai` — Building an AI-native UI for the terminal that demonstrates newly added hybrid search that combines vector with full-text queries into a single result.
 - **2025-08-06** · [Migrate your data directly to SurrealDB using Surreal Sync](../2025/08/migrate-your-data-directly-to-surrealdb-using-surreal-sync.md)  
   `featured` `company` `tutorials` — The Surreal Sync command-line tool lets you migrate your data from three sources into SurrealDB with a single terminal command.
-- **2025-07-30** · [Beyond basic RAG: Building a multi-cycle reasoning engine on SurrealDB](../2025/07/beyond-basic-rag-building-a-multi-cycle-reasoning-engine-on-surrealdb.md)  
-  `tutorials` `featured` `ai` — Standard RAG models operate on single shot principle. The Reflexion RAG Engine overcomes this through a multi-cycle, self-correcting architecture powered by SurrealDB.
+- **2025-07-30** · [Beyond basic RAG: a multi-cycle reasoning engine on SurrealDB](../2025/07/beyond-basic-rag-building-a-multi-cycle-reasoning-engine-on-surrealdb.md)  
+  `tutorials` `featured` `ai` — Standard RAG models operate on single shots. The Reflexion RAG Engine overcomes this through a multi-cycle, self-correcting architecture powered by SurrealDB.
 - **2025-07-29** · [Building an AI-native multi-model UI with SurrealDB](../2025/07/building-an-ai-native-multi-model-ui-with-surrealdb.md)  
   `featured` `tutorials` `ai` — Schema definition in SurrealDB is a powerful thing, and the more you know the more you can make your schema work for you.
 - **2025-07-22** · [Two new ways to keep an eye on your SurrealDB database](../2025/07/two-new-ways-to-keep-an-eye-on-your-surrealdb-database.md)  
@@ -86,17 +86,17 @@ _99 posts_
 - **2025-07-15** · [Ten more tips and tricks for your database schema](../2025/07/ten-more-tips-and-tricks-for-your-database-schema.md)  
   `featured` `tutorials` — Schema definition in SurrealDB is a powerful thing, and the more you know the more you can make your schema work for you.
 - **2025-07-04** · [Minimal LangChain chatbot example with vector and graph](../2025/07/minimal-langchain-chatbot-example-with-vector-and-graph.md)  
-  `featured` `tutorials` `ai` — Want to build a chatbot that understands context? This blog post breaks it down with a minimal LangChain example. Learn how to use vector stores and graphs to generate intelligent, natural language answers.
+  `featured` `tutorials` `ai` — Build a chatbot that understands context with a minimal LangChain example that uses vector stores and graphs to generate intelligent, natural language answers.
 - **2025-06-30** · [Make a GenAI chatbot using GraphRAG with SurrealDB + LangChain](../2025/06/make-a-genai-chatbot-using-graphrag-with-surrealdb-langchain.md)  
   `featured` `tutorials` `ai` — Build a GenAI chatbot with GraphRAG, SurrealDB, and LangChain for accurate, graph-enhanced LLM responses; code examples provided.
 - **2025-06-24** · [Building real-time AI pipelines in SurrealDB](../2025/06/building-real-time-ai-pipelines-in-surrealdb.md)  
   `tutorials` `featured` `ai` — Say goodbye to complex ETL pipelines with SurrealDB's multi-model approach.
 - **2025-06-20** · [What are knowledge graphs and why is everyone talking about them?](../2025/06/what-are-knowledge-graphs-and-why-is-everyone-talking-about-them.md)  
-  `tutorials` `featured` `ai` — Knowledge graphs provide the structured memory AI agents need for grounded, context-aware reasoning. Learn how this decades-old concept became essential infrastructure for modern AI systems.
-- **2025-06-17** · [How to simplify a Graph RAG architecture using Amazon Bedrock and SurrealDB](../2025/06/how-to-simplify-a-graph-rag-architecture-using-amazon-bedrock-and-surrealdb.md)  
-  `featured` `tutorials` `ai` — A typical RAG pipeline forces developers to juggle a vector store, a document store, a graph store (for relationships), plus an LLM endpoint, and to keep them all consistent. SurrealDB and Amazon Bedrock put an end to that sprawl.
+  `tutorials` `featured` `ai` — Knowledge graphs provide the structured memory AI agents need for context-aware reasoning. Learn how this decades-old concept became essential infrastructure.
+- **2025-06-17** · [How to simplify Graph RAG using Amazon Bedrock and SurrealDB](../2025/06/how-to-simplify-a-graph-rag-architecture-using-amazon-bedrock-and-surrealdb.md)  
+  `featured` `tutorials` `ai` — A typical RAG pipeline forces you to juggle a vector store, a document store, a graph store, plus an LLM endpoint. SurrealDB and Amazon Bedrock end that sprawl.
 - **2025-06-17** · [Ten tips and tricks for your database schema](../2025/06/ten-tips-and-tricks-for-your-database-schema.md)  
-  `featured` `tutorials` — Schema definition in SurrealDB is a powerful thing.
+  `featured` `tutorials` — Schema definition in SurrealDB is a powerful thing, and after reading this post you'll know ten new ways to define your own.
 - **2025-06-03** · [Enhance your musical skills with Surrealist's Graph View](../2025/06/enhance-your-musical-skills-with-surrealists-graph-view.md)  
   `tutorials` `featured` — Did you know that Surrealist's Graph Visualisation tool can even make you into a better musician? Let's find out how.
 - **2025-04-10** · [What's a database anyway?? A blog post for kids](../2025/04/whats-a-database-anyway-a-blog-post-for-kids.md)  
@@ -104,13 +104,13 @@ _99 posts_
 - **2025-03-25** · [Tips and tricks on using the Rust SDK](../2025/03/tips-and-tricks-on-using-the-rust-sdk.md)  
   `tutorials` `featured` — In this article we are going to explore some tips and tricks for using the Rust SDK.
 - **2025-03-24** · [Data analysis using graph traversal, recursion, and shortest path](../2025/03/data-analysis-using-graph-traversal-recursion-and-shortest-path.md)  
-  `tutorials` `featured` — Whether you're building intelligent applications, modelling complex relationships, or looking to optimise performance, SurrealDB's graph capabilities open up exciting new possibilities.
+  `tutorials` `featured` — Whether you're building intelligent applications, modelling relationships, or optimising performance, SurrealDB's graph capabilities open up new possibilities.
 - **2025-03-13** · [Visualising your data with Surrealist's Graph view](../2025/03/visualising-your-data-with-surrealists-graph-view.md)  
   `tutorials` `featured` — We as humans love visual data, and the new graph view for Surrealist provides exactly this.
 - **2025-03-06** · [Building smarter product recommendations with SurrealDB](../2025/03/building-smarter-product-recommendations-with-surrealdb.md)  
-  `tutorials` `featured` — Blog post inspired by your reading history
+  `tutorials` `featured` — Personalised experiences can make or break the conversion of a visitor into a customer, which is why recommendation engines are no longer a luxury.
 - **2025-02-27** · [Find your celebrity soulmate with the magic of vector search](../2025/02/find-your-celebrity-soulmate-with-the-magic-of-vector-search.md)  
-  `tutorials` `featured` — Have you ever wondered how to find someone or something that’s most like you, whether it’s a roommate, someone who shares your Christmas traditions, or even a celebrity? Vector search is the answer. It’s a modern way to find matches based on multiple preferences at once, and tools like SurrealDB make it incredibly easy to use. Let’s explore what vector search is and how it works, step by step.
+  `tutorials` `featured` — Ever wondered how to find someone that’s most like you, whether it’s a roommate or even a celebrity? Vector search is the answer.
 - **2025-01-31** · [Enhancing retrieval-augmented generation with SurrealDB](../2025/01/enhancing-retrieval-augmented-generation-with-surrealdb.md)  
   `tutorials` `featured` `ai` — GraphRAG: Enhancing Retrieval-Augmented Generation with SurrealDB, Gemini and DeepSeek
 - **2024-08-28** · [Building a RAG app with OpenAI and SurrealDB](../2024/08/building-a-retrieval-augmented-generation-app-with-openai-and-surrealdb.md)  

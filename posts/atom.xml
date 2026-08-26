@@ -4,13 +4,22 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-08-18T09:04:31Z</updated>
+  <updated>2026-08-25T12:01:56Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
   <entry>
+    <id>https://surrealdb.com/blog/how-cobrainer-built-graph-based-agent-memory-on-one-engine</id>
+    <title>How Cobrainer built graph-based agent memory on one engine</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/how-cobrainer-built-graph-based-agent-memory-on-one-engine" type="text/html" />
+    <published>2026-08-25T12:01:56Z</published>
+    <updated>2026-08-25T12:01:56Z</updated>
+    <summary type="text">Cobrainer runs graph-based agent memory and a Rust-native agentic graph RAG on SurrealDB, replacing a separate vector store and search engine.</summary>
+    <category term="company" />
+  </entry>
+  <entry>
     <id>https://surrealdb.com/blog/surrealdb-universitys-newest-course-schema-internals-and-migrations-2</id>
-    <title>SurrealDB University's newest course: Schema internals and migrations</title>
+    <title>SurrealDB University's newest course on schemas</title>
     <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-universitys-newest-course-schema-internals-and-migrations-2" type="text/html" />
     <published>2026-08-18T09:04:31Z</published>
     <updated>2026-08-18T09:04:31Z</updated>
@@ -23,7 +32,7 @@
     <link rel="alternate" href="https://surrealdb.com/blog/graph-engineering-is-missing-a-graph" type="text/html" />
     <published>2026-08-13T13:36:49Z</published>
     <updated>2026-08-13T13:36:49Z</updated>
-    <summary type="text">Graph engineering is suddenly everywhere, but most takes stop at the diagram. The harder half is the context graph underneath: whether relations, vectors, documents and memory sit under one consistency boundary, and whether anything understood the data before it became a graph.</summary>
+    <summary type="text">Graph engineering stops at the diagram. The harder half is the context graph underneath: whether relations, vectors and memory share one consistency boundary.</summary>
     <category term="featured" />
     <category term="engineering" />
     <category term="ai" />
@@ -48,11 +57,11 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/introducing-surrealdb-studio</id>
-    <title>Introducing SurrealDB Studio</title>
+    <title>Introducing SurrealDB Studio and what it means for you</title>
     <link rel="alternate" href="https://surrealdb.com/blog/introducing-surrealdb-studio" type="text/html" />
     <published>2026-08-10T18:03:04Z</published>
     <updated>2026-08-10T18:03:04Z</updated>
-    <summary type="text">Introducing SurrealDB Studio: the new app for working with your SurrealDB instances and Spectron contexts, and the most powerful way to interact with your data yet.</summary>
+    <summary type="text">Introducing SurrealDB Studio: the new app for working with your SurrealDB instances and Spectron contexts, and the most powerful way to interact with your data.</summary>
     <category term="featured" />
     <category term="releases" />
   </entry>
@@ -62,26 +71,26 @@
     <link rel="alternate" href="https://surrealdb.com/blog/integrating-ultima-vii-with-spectron-part-ii-the-testing" type="text/html" />
     <published>2026-08-06T04:09:56Z</published>
     <updated>2026-08-06T04:09:56Z</updated>
-    <summary type="text">How Ultima VII through Exult was integrated with Spectron via some changes to the Exult code to emit events in a certain way and a Rust app built using egui to stand in between the game and Spectron.</summary>
+    <summary type="text">How Ultima VII was integrated with Spectron via changes to the Exult code to emit certain events and a Rust app using egui between the game and Spectron.</summary>
     <category term="engineering" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent</id>
-    <title>Chat with your meeting notes: a CocoIndex knowledge graph and a text-to-SurrealQL agent</title>
+    <title>Chat with your meeting notes: CocoIndex graph with SurrealQL</title>
     <link rel="alternate" href="https://surrealdb.com/blog/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent" type="text/html" />
     <published>2026-08-05T16:16:16Z</published>
     <updated>2026-08-05T16:16:16Z</updated>
-    <summary type="text">A folder of Markdown meeting notes becomes a self-maintaining knowledge graph in SurrealDB — and the text-to-SurrealQL prompt is not a string in the repo, it is a function call against the live database. Built with CocoIndex and Pydantic AI, fenced in by a database role rather than a regex.</summary>
+    <summary type="text">A folder of Markdown meeting notes becomes a self-maintaining knowledge graph in SurrealDB with CocoIndex and Pydantic AI, fenced in by a database role.</summary>
     <category term="tutorials" />
     <category term="ai" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/announcing-snowflake-integration-for-surrealdb-from-data-warehouse-to-context-layer</id>
-    <title>Announcing the Snowflake integration for SurrealDB: from data warehouse to context layer</title>
+    <title>Announcing the Snowflake integration for SurrealDB</title>
     <link rel="alternate" href="https://surrealdb.com/blog/announcing-snowflake-integration-for-surrealdb-from-data-warehouse-to-context-layer" type="text/html" />
     <published>2026-08-05T15:36:30Z</published>
     <updated>2026-08-05T15:36:30Z</updated>
-    <summary type="text">SurrealDB now imports Snowflake tables directly. Move warehouse data into a context layer where facts, relationships, vectors and agent memory live in one engine.</summary>
+    <summary type="text">SurrealDB imports Snowflake tables directly. Move warehouse data into a context layer where facts, relationships, vectors and agent memory live in one engine.</summary>
     <category term="releases" />
   </entry>
   <entry>
@@ -90,7 +99,7 @@
     <link rel="alternate" href="https://surrealdb.com/blog/surrealmcp-a-managed-mcp-server-for-ai-agents" type="text/html" />
     <published>2026-08-05T14:01:36Z</published>
     <updated>2026-08-05T14:01:36Z</updated>
-    <summary type="text">The SurrealMCP server is now fully managed. Add one URL to Claude, Cursor, or any other AI tool, sign in with your Surreal ID, and your assistant can deploy, query, and look after your SurrealDB Cloud account alongside you.</summary>
+    <summary type="text">The SurrealMCP server lets you add one URL to any AI tool, sign in with your Surreal ID, and deploy, query, and look after your SurrealDB Cloud account.</summary>
     <category term="featured" />
     <category term="releases" />
     <category term="tutorials" />
@@ -98,7 +107,7 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/spectron-insights-how-tri-temporal-belief-history-works</id>
-    <title>Agent memory needs three clocks: tri-temporal belief history in Spectron</title>
+    <title>Agent memory needs three clocks: tri-temporal belief history</title>
     <link rel="alternate" href="https://surrealdb.com/blog/spectron-insights-how-tri-temporal-belief-history-works" type="text/html" />
     <published>2026-08-04T21:01:26Z</published>
     <updated>2026-08-04T21:01:26Z</updated>
@@ -107,11 +116,11 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/embedding-models-comparison</id>
-    <title>Embedding models comparison: OpenAI, Google, Qwen, Nomic, Jina, BAAI</title>
+    <title>Embedding models comparison: OpenAI, Google, Qwen, Nomic, more</title>
     <link rel="alternate" href="https://surrealdb.com/blog/embedding-models-comparison" type="text/html" />
     <published>2026-07-30T17:54:00Z</published>
     <updated>2026-07-30T17:54:00Z</updated>
-    <summary type="text">A practical guide to eight embedding models — text-embedding-3-small\/large, gemini-embedding-001, embeddinggemma-300m, qwen3-embedding, nomic-embed-text-v2-moe, jina-embeddings-v5-text-small, and BGE-M3.</summary>
+    <summary type="text">A practical guide to eight embedding models — text-embedding-3-small\/large, gemini-embedding-001, embeddinggemma-300m, qwen3-embedding, and more.</summary>
     <category term="ai" />
   </entry>
   <entry>
@@ -125,27 +134,27 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb</id>
-    <title>One database for the whole claim: agentic claims triage on SurrealDB</title>
+    <title>One database for the whole claim: agentic claims on SurrealDB</title>
     <link rel="alternate" href="https://surrealdb.com/blog/one-database-for-the-whole-claim-agentic-claims-triage-on-surrealdb" type="text/html" />
     <published>2026-07-29T10:19:00Z</published>
     <updated>2026-07-29T10:19:00Z</updated>
-    <summary type="text">An AI agent triaging an insurance claim needs semantic, graph, and document data at once. Do it in one SurrealDB database — vector recall of similar past claims plus graph fraud-ring detection, fused in a single function. Schema, seed data, and queries included.</summary>
+    <summary type="text">An AI agent triaging insurance claims needs semantic, graph, and document data. Do it in one SurrealDB database.</summary>
     <category term="ai" />
     <category term="tutorials" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how</id>
-    <title>Even a jailbroken LLM can't exceed its database permissions — here's how</title>
+    <title>Even a jailbroken LLM can't exceed its database permissions</title>
     <link rel="alternate" href="https://surrealdb.com/blog/even-a-jailbroken-llm-cant-exceed-its-database-permissions-heres-how" type="text/html" />
     <published>2026-07-27T09:59:00Z</published>
     <updated>2026-07-27T09:59:00Z</updated>
-    <summary type="text">AI agents that write their own database queries can be talked into rewriting, deleting, or leaking your data with a single polite request, with no jailbreak required. No system-prompt rule can reliably stop that. SurrealDB's role-based access control can, because it lives in the data layer the LLM can't reach.</summary>
+    <summary type="text">AI agents an be talked into modifying your data with a single polite request. SurrealDB's role-based access control lives in the data layer the LLM can't reach.</summary>
     <category term="ai" />
     <category term="tutorials" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb</id>
-    <title>One graph for the whole maison: modelling luxury retail on SurrealDB</title>
+    <title>One graph for the whole maison: luxury retail on SurrealDB</title>
     <link rel="alternate" href="https://surrealdb.com/blog/one-graph-for-the-whole-maison-modeling-luxury-retail-on-surrealdb" type="text/html" />
     <published>2026-07-23T13:11:00Z</published>
     <updated>2026-07-23T13:11:00Z</updated>
@@ -164,7 +173,7 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/your-asset-inventory-is-a-graph-query-it-like-one</id>
-    <title>Graph traversals and time travel: incident response in one query language</title>
+    <title>Temporal graph traversal: incident response in one query language</title>
     <link rel="alternate" href="https://surrealdb.com/blog/your-asset-inventory-is-a-graph-query-it-like-one" type="text/html" />
     <published>2026-07-15T13:04:00Z</published>
     <updated>2026-07-15T13:04:00Z</updated>
@@ -173,11 +182,11 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate</id>
-    <title>One query, not two stores: how vector + graph in SurrealDB makes agents more accurate</title>
+    <title>One query, not two stores: how SurrealDB makes agents accurate</title>
     <link rel="alternate" href="https://surrealdb.com/blog/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate" type="text/html" />
     <published>2026-07-14T13:02:06Z</published>
     <updated>2026-07-14T13:02:06Z</updated>
-    <summary type="text">Vector search and graph traversal in a single SurrealDB query — no fusion code, no two-store sync. How single-engine hybrid retrieval makes RAG agents more accurate.</summary>
+    <summary type="text">Vector search and graph traversal in a single SurrealDB query. How single-engine hybrid retrieval makes RAG agents more accurate.</summary>
     <category term="ai" />
     <category term="tutorials" />
   </entry>
@@ -193,7 +202,7 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2</id>
-    <title>Detecting connections as they form: An introduction to streaming graph pattern matching</title>
+    <title>Detecting connections as they form: streaming graph patterns</title>
     <link rel="alternate" href="https://surrealdb.com/blog/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2" type="text/html" />
     <published>2026-07-08T09:48:41Z</published>
     <updated>2026-07-08T09:48:41Z</updated>
@@ -202,11 +211,11 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale</id>
-    <title>Introducing Scale: SurrealDB Cloud, built for high availability and scale </title>
+    <title>Introducing SurrealDB Cloud Scale: high availability</title>
     <link rel="alternate" href="https://surrealdb.com/blog/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale" type="text/html" />
     <published>2026-07-02T11:48:20Z</published>
     <updated>2026-07-02T11:48:20Z</updated>
-    <summary type="text">SurrealDB Cloud now has a production-grade tier: Scale. Built for workloads that can't go down, Scale delivers highly-available, fault-tolerant clusters across multiple availability zones with horizontal scaling - powered by SurrealDS, SurrealDB's Gen 3 distributed storage engine with compute–storage separation and leaderless quorum consensus. On the roadmap: object-storage backing, cross-region replication, instant recovery, and instant branching.</summary>
+    <summary type="text">Scale is SurrealDB Cloud's production tier: highly-available, fault-tolerant clusters across multiple availability zones, powered by SurrealDS.</summary>
     <category term="featured" />
     <category term="releases" />
   </entry>
@@ -227,7 +236,7 @@
     <link rel="alternate" href="https://surrealdb.com/blog/social-graphs-for-activity-tracking-apps" type="text/html" />
     <published>2026-06-23T10:32:13Z</published>
     <updated>2026-06-23T10:32:13Z</updated>
-    <summary type="text">Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in a single query.</summary>
+    <summary type="text">Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in one query.</summary>
     <category term="tutorials" />
   </entry>
   <entry>
@@ -236,7 +245,7 @@
     <link rel="alternate" href="https://surrealdb.com/blog/build-apps-on-your-data-with-surrealdb-and-lovable" type="text/html" />
     <published>2026-06-22T19:33:58Z</published>
     <updated>2026-06-22T19:33:58Z</updated>
-    <summary type="text">Connect SurrealDB to Lovable using the Model Context Protocol (MCP), so the Lovable Agent can read your schema, query your live data, and build a working application on top of it without you writing any glue code.</summary>
+    <summary type="text">Connect SurrealDB to Lovable using the Model Context Protocol (MCP) to read your schema, query your live data, and build a working application on top of it.</summary>
     <category term="tutorials" />
     <category term="featured" />
     <category term="ai" />
@@ -247,7 +256,7 @@
     <link rel="alternate" href="https://surrealdb.com/blog/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex" type="text/html" />
     <published>2026-06-22T08:38:22Z</published>
     <updated>2026-06-22T08:38:22Z</updated>
-    <summary type="text">Announcing the native SurrealDB connector for CocoIndex — build a continuously-fresh document store, knowledge graph, and vector index in a single database, from one declarative pipeline.</summary>
+    <summary type="text">CocoIndex now ships a native SurrealDB connector: one declarative pipeline drives a document store, knowledge graph and vector index in one database.</summary>
     <category term="releases" />
   </entry>
   <entry>
@@ -261,7 +270,7 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/whats-new-in-surrealist-3-9</id>
-    <title>What's new in Surrealist 3.9</title>
+    <title>What's new in Surrealist 3.9 for SurrealDB users</title>
     <link rel="alternate" href="https://surrealdb.com/blog/whats-new-in-surrealist-3-9" type="text/html" />
     <published>2026-06-16T23:58:55Z</published>
     <updated>2026-06-16T23:58:55Z</updated>
@@ -280,7 +289,7 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do</id>
-    <title>Fuzz testing for SurrealDB: using randomised input to find bugs before users do</title>
+    <title>Fuzz testing for SurrealDB: finding bugs before users do</title>
     <link rel="alternate" href="https://surrealdb.com/blog/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do" type="text/html" />
     <published>2026-06-11T07:26:28Z</published>
     <updated>2026-06-11T07:26:28Z</updated>
@@ -293,21 +302,21 @@
     <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-is-now-available-on-nebius-ai-cloud-marketplace" type="text/html" />
     <published>2026-06-09T09:23:40Z</published>
     <updated>2026-06-09T09:23:40Z</updated>
-    <summary type="text">SurrealDB is now available on the Nebius AI Cloud Marketplace.</summary>
+    <summary type="text">Deploy SurrealDB alongside your GPU compute on Nebius, with a unified document, graph and vector layer for agent memory.</summary>
     <category term="releases" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai</id>
-    <title>Context layers, semantic layers, and knowledge graphs: the modern data architecture for AI</title>
+    <title>Context layers, semantic layers, and knowledge graphs for AI</title>
     <link rel="alternate" href="https://surrealdb.com/blog/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai" type="text/html" />
     <published>2026-06-05T17:49:44Z</published>
     <updated>2026-06-05T17:49:44Z</updated>
-    <summary type="text">Three concepts AI teams constantly confuse: a context layer assembles the right data into an LLM prompt at query time, a semantic layer maps raw data to business meaning, and a knowledge graph stores entities and their relationships. Most teams build all three by stitching together separate graph, vector, and relational systems - creating sync problems, higher latency, and rising costs. SurrealDB's multi-model architecture handles all three natively, letting a single SurrealQL query run vector search, graph traversal, and document retrieval in one round trip</summary>
+    <summary type="text">What each layer does, why fragmented stacks break them, and how one SurrealQL query runs vector search, graph traversal, and document retrieval together.</summary>
     <category term="company" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/surrealdb-3-x-by-the-numbers</id>
-    <title>SurrealDB 3.x by the numbers</title>
+    <title>SurrealDB 3.x by the numbers: benchmarks and comparisons</title>
     <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-3-x-by-the-numbers" type="text/html" />
     <published>2026-05-29T13:45:37Z</published>
     <updated>2026-05-29T13:45:37Z</updated>
@@ -328,11 +337,11 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo</id>
-    <title>Using SurrealDB to understand how Buffalo buffalo buffalo Buffalo buffalo</title>
+    <title>Use SurrealDB to see how Buffalo buffalo buffalo Buffalo buffalo</title>
     <link rel="alternate" href="https://surrealdb.com/blog/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo" type="text/html" />
     <published>2026-05-22T13:38:14Z</published>
     <updated>2026-05-22T13:38:14Z</updated>
-    <summary type="text">Using SurrealDB and Surrealist's graph visualisation to not just understand but also see how Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo works.</summary>
+    <summary type="text">Using SurrealDB and Studio's graph visualisation to not just understand but also see how Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo works.</summary>
     <category term="tutorials" />
   </entry>
   <entry>
@@ -341,7 +350,7 @@
     <link rel="alternate" href="https://surrealdb.com/blog/agentic-retrieval-for-structured-data-with-text-to-surql" type="text/html" />
     <published>2026-05-19T13:47:30Z</published>
     <updated>2026-05-19T13:47:30Z</updated>
-    <summary type="text">RAG pipelines usually focus on unstructured content (chunks + vectors\/BM25), but structured data introduces a different retrieval problem: you need to pull exact rows and aggregates from tables, not just “similar passages.” This article explains an agentic pattern for structured retrieval using text-to-SurrealQL: give an LLM agent a single database-aware tool that converts natural-language questions into valid SurrealQL, executes the query in SurrealDB, and returns deterministic, auditable results.</summary>
+    <summary type="text">An agentic pattern overview for structured retrieval that gives an LLM agent a database-aware tool that converts natural-language questions into valid SurrealQL</summary>
     <category term="ai" />
     <category term="tutorials" />
   </entry>
@@ -351,7 +360,7 @@
     <link rel="alternate" href="https://surrealdb.com/blog/what-chunk-strategies-exist-and-how-to-choose-one" type="text/html" />
     <published>2026-05-12T10:56:54Z</published>
     <updated>2026-05-12T10:56:54Z</updated>
-    <summary type="text">If you've decided to chunk your documents for a RAG pipeline or semantic search system, the next question hits almost immediately: which chunking strategy should I use?</summary>
+    <summary type="text">If you've decided to chunk documents for a RAG pipeline or semantic search system, the next question hits immediately: which chunking strategy should I use?</summary>
     <category term="ai" />
   </entry>
   <entry>
@@ -360,7 +369,7 @@
     <link rel="alternate" href="https://surrealdb.com/blog/what-is-the-recommended-chunk-size" type="text/html" />
     <published>2026-05-08T10:55:33Z</published>
     <updated>2026-05-08T10:55:33Z</updated>
-    <summary type="text">If you're building a RAG (Retrieval-Augmented Generation) pipeline, a semantic search system, or any AI application that reads from a vector store, one question comes up almost immediately: what chunk size should I use?</summary>
+    <summary type="text">What chunk size to one when building a RAG (Retrieval-Augmented Generation) pipeline, a semantic search system, or AI app that reads from a vector store?</summary>
     <category term="ai" />
   </entry>
   <entry>
@@ -369,18 +378,18 @@
     <link rel="alternate" href="https://surrealdb.com/blog/schema-migrations-in-surrealdb-a-local-dev-workflow" type="text/html" />
     <published>2026-05-07T11:30:00Z</published>
     <updated>2026-05-07T11:30:00Z</updated>
-    <summary type="text">Managing schema changes in SurrealDB shouldn't slow down your local development. This post walks through a practical migration workflow that keeps your database in sync as your project evolves.</summary>
+    <summary type="text">Managing schema changes in SurrealDB shouldn't slow down your development. Practical migration workflows keep your database in sync as your project evolves.</summary>
     <category term="tutorials" />
     <category term="featured" />
     <category term="releases" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/kreuzberg-surrealdb-from-unstructured-documents-to-hybrid-retrieval</id>
-    <title>Kreuzberg &amp; SurrealDB: from unstructured documents to hybrid retrieval</title>
+    <title>Kreuzberg &amp; SurrealDB: unstructured docs to hybrid search</title>
     <link rel="alternate" href="https://surrealdb.com/blog/kreuzberg-surrealdb-from-unstructured-documents-to-hybrid-retrieval" type="text/html" />
     <published>2026-04-30T11:20:48Z</published>
     <updated>2026-04-30T11:20:48Z</updated>
-    <summary type="text">SurrealDB now integrates with Kreuzberg to ingest, chunk, and search unstructured documents across 88+ formats - with built-in keyword, semantic, and hybrid search with reranking.</summary>
+    <summary type="text">SurrealDB integrates with Kreuzberg to ingest and chunk unstructured documents across 88+ formats, then run keyword, semantic, or hybrid search with reranking.</summary>
     <category term="releases" />
   </entry>
   <entry>
@@ -389,7 +398,7 @@
     <link rel="alternate" href="https://surrealdb.com/blog/hybrid-search-inside-surrealdb" type="text/html" />
     <published>2026-04-30T11:03:59Z</published>
     <updated>2026-04-30T11:03:59Z</updated>
-    <summary type="text">How I fused vector and keyword retrieval in a single query</summary>
+    <summary type="text">How Júlia Sala-Bayo and Archie Marshall fused vector and keyword retrieval in a single query.</summary>
     <category term="ai" />
   </entry>
   <entry>
@@ -398,23 +407,23 @@
     <link rel="alternate" href="https://surrealdb.com/blog/building-compounding-memory-with-knowledge-graphs-and-agentic-rag" type="text/html" />
     <published>2026-04-27T12:44:03Z</published>
     <updated>2026-04-27T12:44:03Z</updated>
-    <summary type="text">Synapse, a memory-first reflection agent, helps users track therapy journal patterns. It structures insights into a knowledge graph, revealing patterns and answering questions based on context.</summary>
+    <summary type="text">Synapse, a memory-first reflection agent, helps users track therapy journal patterns. It structures insights into a knowledge graph to revealing patterns.</summary>
     <category term="community" />
     <category term="ai" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search</id>
-    <title>New SurrealDB docs search using hybrid search and HNSW\/BM25 reranking</title>
+    <title>New SurrealDB docs search with hybrid search and reranking</title>
     <link rel="alternate" href="https://surrealdb.com/blog/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search" type="text/html" />
     <published>2026-04-22T01:24:06Z</published>
     <updated>2026-04-22T01:24:06Z</updated>
-    <summary type="text">How SurrealDB has implemented documentation search using hybrid search (full-text and vector hybrid search and reranking with HNSW and BM25 indexes), plus a simplified example to show the same pattern in just a few queries.</summary>
+    <summary type="text">How SurrealDB implemented documentation search using hybrid search: full-text and vector hybrid search and reranking with HNSW and BM25 indexes.</summary>
     <category term="engineering" />
     <category term="tutorials" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/whats-new-in-surrealist-3-8</id>
-    <title>What's new in Surrealist 3.8</title>
+    <title>What's new in Surrealist 3.8 for SurrealDB users</title>
     <link rel="alternate" href="https://surrealdb.com/blog/whats-new-in-surrealist-3-8" type="text/html" />
     <published>2026-04-21T10:58:01Z</published>
     <updated>2026-04-21T10:58:01Z</updated>
@@ -424,41 +433,41 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/graph-rag-does-not-need-a-graph-database-it-needs-a-database-that-does-everything</id>
-    <title>Graph RAG does not need a graph database. It needs a database that does everything.</title>
+    <title>Graph RAG does not need a graph database</title>
     <link rel="alternate" href="https://surrealdb.com/blog/graph-rag-does-not-need-a-graph-database-it-needs-a-database-that-does-everything" type="text/html" />
     <published>2026-04-17T15:58:41Z</published>
     <updated>2026-04-17T15:58:41Z</updated>
-    <summary type="text">Graph RAG is the right idea. Using relationships between entities to scope and improve retrieval produces better results than vector similarity alone. What matters in production is whether graph traversal, vector search, full-text search, and structured filters compose in a single atomic statement.</summary>
+    <summary type="text">Graph RAG is the right idea, but what matters is whether graph traversal, vector and full-text search, and filters compose in a single atomic statement.</summary>
     <category term="featured" />
     <category term="ai" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/how-to-get-near-perfect-deterministic-accuracy-from-your-ai-agents</id>
-    <title>How to get near-perfect, deterministic accuracy from your AI agents</title>
+    <title>How to get near-perfect, deterministic accuracy from your agents</title>
     <link rel="alternate" href="https://surrealdb.com/blog/how-to-get-near-perfect-deterministic-accuracy-from-your-ai-agents" type="text/html" />
     <published>2026-03-28T00:00:00Z</published>
     <updated>2026-03-28T00:00:00Z</updated>
-    <summary type="text">Agent accuracy problems are almost always retrieval problems, not model problems. Scope-first retrieval and reasoning and retrieval graph feedback loops close the gap to 99%+.</summary>
+    <summary type="text">Agent accuracy problems are almost always retrieval, not model problems. Scope-first retrieval and reasoning and retrieval graph feedback loops close the gap.</summary>
     <category term="featured" />
     <category term="ai" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/surrealmx-in-memory-storage-with-time-travel-and-persistent-storage</id>
-    <title>SurrealMX: In-memory storage with time travel and persistent storage</title>
+    <title>SurrealMX: In-memory storage with time travel and persistence</title>
     <link rel="alternate" href="https://surrealdb.com/blog/surrealmx-in-memory-storage-with-time-travel-and-persistent-storage" type="text/html" />
     <published>2026-03-25T00:00:00Z</published>
     <updated>2026-03-25T00:00:00Z</updated>
-    <summary type="text">SurrealMX lets you use in-memory storage along with optional time travel versioned queries and two types of persistent storage with a large number of configurations to balance performance with durability.</summary>
+    <summary type="text">SurrealMX uses in-memory storage along with time travel queries and two types of persistent storage with configurations to balance performance with durability.</summary>
     <category term="featured" />
     <category term="tutorials" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/exponential-cost-traps-in-database-architectures-how-surrealdb-breaks-the-cycle</id>
-    <title>Exponential cost traps in database architectures: how SurrealDB breaks the cycle</title>
+    <title>Exponential cost traps in database architectures</title>
     <link rel="alternate" href="https://surrealdb.com/blog/exponential-cost-traps-in-database-architectures-how-surrealdb-breaks-the-cycle" type="text/html" />
     <published>2026-03-19T00:00:00Z</published>
     <updated>2026-03-19T00:00:00Z</updated>
-    <summary type="text">SurrealDB offers a consolidated solution to store data once and querying it across models to reduce overall costs, particularly in storage-heavy environments where cloud block storage is in use.</summary>
+    <summary type="text">Polyglot database sprawl grows costs faster than traffic. Storing data once in SurrealDB cuts block-storage spend by roughly two thirds.</summary>
     <category term="featured" />
     <category term="engineering" />
   </entry>
@@ -468,7 +477,7 @@
     <link rel="alternate" href="https://surrealdb.com/blog/where-surrealdb-fits-in-your-stack" type="text/html" />
     <published>2026-03-12T00:00:00Z</published>
     <updated>2026-03-12T00:00:00Z</updated>
-    <summary type="text">By consolidating databases into one platform, SurrealDB enables applications with multi-model capabilities, blending relational queries, graph traversals, vector search, time-series and geospatial analysis without the overhead of disparate tools.</summary>
+    <summary type="text">Which databases SurrealDB replaces in a polyglot stack, which it does not, and the ROI of consolidating onto one multi-model engine.</summary>
     <category term="featured" />
   </entry>
   <entry>
@@ -477,18 +486,8 @@
     <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-is-now-available-on-aws-marketplace" type="text/html" />
     <published>2026-03-11T00:00:00Z</published>
     <updated>2026-03-11T00:00:00Z</updated>
-    <summary type="text">You can now deploy SurrealDB directly into your AWS environment with streamlined procurement, simplified billing, and faster time to production - all through your existing AWS environment.</summary>
+    <summary type="text">Deploy SurrealDB Cloud through your existing AWS account, with consolidated billing and faster security and procurement approval.</summary>
     <category term="featured" />
     <category term="company" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/openais-postgres-architecture-a-brilliant-fix-for-a-billion-dollar-mistake</id>
-    <title>OpenAI’s Postgres Architecture: A Brilliant Fix for a Billion-Dollar Mistake</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/openais-postgres-architecture-a-brilliant-fix-for-a-billion-dollar-mistake" type="text/html" />
-    <published>2026-03-04T00:00:00Z</published>
-    <updated>2026-03-04T00:00:00Z</updated>
-    <summary type="text">OpenAI engineered an impressive PostgreSQL scaling strategy, but this article argues it is a cautionary tale and explains why distributed-first architectures can avoid many of the same pitfalls.</summary>
-    <category term="featured" />
-    <category term="engineering" />
   </entry>
 </feed>

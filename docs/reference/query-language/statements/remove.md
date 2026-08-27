@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 The `REMOVE` statement is used to remove resources such as databases, tables, indexes, events and more.
 Similar to an SQL DROP statement.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

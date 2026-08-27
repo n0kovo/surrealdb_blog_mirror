@@ -8,10 +8,10 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 # Managed Kubernetes
 
 > [!IMPORTANT]
-> Production **multi-node** SurrealDB uses shared distributed storage with replication and consensus - not TiKV. For managed HA, use the [Scale plan](https://surrealdb.com/pricing/scale). Self-hosted multi-node clusters on Kubernetes are available with [SurrealDB Enterprise](https://surrealdb.com/enterprise).
+> Production **multi-node** SurrealDB uses shared distributed storage with replication and consensus. For managed HA, use the [Scale plan](https://surrealdb.com/pricing/scale). Self-hosted multi-node clusters on Kubernetes are available with [SurrealDB Enterprise](https://surrealdb.com/enterprise).
 
 > [!NOTE]
-> For a **single-node RocksDB** deployment on Kubernetes - including a cluster you create with EKS, GKE, or AKS - start with [Deploy on Kubernetes](kubernetes.md). For a local open-source distributed-storage playground only, see [Run a multi-node cluster](../../running/multi-node.md).
+> For a **single-node RocksDB** deployment on Kubernetes - including a cluster you create with EKS, GKE, or AKS - start with [Deploy on Kubernetes](kubernetes.md). For how the multi-node model works in general, see [Run a multi-node cluster](../../running/multi-node.md).
 
 ## The managed control planes
 
@@ -27,14 +27,9 @@ Each of the three major clouds offers a managed Kubernetes control plane. The co
 
 | Goal | Path |
 | --- | --- |
-| Managed multi-node HA (recommended for most teams) | A managed [Scale](../instances/index.md) cluster - no TiKV or TiDB operator to run |
+| Managed multi-node HA (recommended for most teams) | A managed [Scale](../instances/index.md) cluster, with the storage layer operated for you |
 | Self-hosted multi-node HA on EKS, GKE, or AKS | [SurrealDB Enterprise](https://surrealdb.com/enterprise) with distributed storage (operator and runbooks shipped with Enterprise) |
 | Single SurrealDB pod, RocksDB on a volume | [Deploy on Kubernetes](kubernetes.md) on a cluster you manage |
-| Local experiment with Community `tikv://` | [Run a multi-node cluster](../../running/multi-node.md) (not Scale or Enterprise storage) |
-
-## Why not TiKV for production HA
-
-Older guides walked through the [TiDB operator](https://github.com/pingcap/tidb-operator) and a TiKV cluster as the shared store behind SurrealDB on managed Kubernetes. That path is **not** the storage engine behind Scale or Enterprise deployments. Prefer a Scale or Enterprise cluster for production HA; keep TiKV for local Community experimentation only.
 
 ## Next steps
 

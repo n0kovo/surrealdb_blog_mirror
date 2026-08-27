@@ -11,13 +11,13 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 Start a running database using the following command:
 
-```
+```bash
 surreal start --user root --pass secret 
 ```
 
 To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open up the CLI:
 
-```
+```bash
 surrealdb % surreal sql --user root --pass secret --pretty
 ```
 
@@ -191,7 +191,7 @@ async fn main() -> surrealdb::Result<()> {
 
 Here is the final output:
 
-```
+```text
 Students = [StudentClasses { id: RecordId { table: "student", key: String("jane") }, name: "Jane Doe", classes: [DanceClass { id: RecordId { table: "dance", key: String("dc101") }, name: "Introduction to Dancing", created_at: Datetime(2025-11-06T02:15:05.116807Z) }], created_at: Datetime(2025-11-06T02:15:05.117644Z) }]
 ```
 
@@ -199,13 +199,13 @@ Students = [StudentClasses { id: RecordId { table: "student", key: String("jane"
 
 Start a running database using the following command:
 
-```
+```bash
 surreal start --user root --pass secret 
 ```
 
 To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open up the CLI:
 
-```
+```bash
 surrealdb % surreal sql --user root --pass secret --ns namespace --db database --pretty
 ```
 
@@ -395,6 +395,6 @@ async fn main() -> surrealdb::Result<()> {
 
 Here is the final output:
 
-```
+```text
 Students = [StudentClasses { id: RecordId { table: "student", key: String("jane") }, name: "Jane Doe", classes: [DanceClass { id: RecordId { table: "dance", key: String("dc101") }, name: "Introduction to Dancing", created_at: Datetime(2025-11-06T02:15:05.116807Z) }], created_at: Datetime(2025-11-06T02:15:05.117644Z) }]
 ```

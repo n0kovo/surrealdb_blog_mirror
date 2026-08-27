@@ -24,7 +24,7 @@ function surql(
 ): BoundQuery
 ```
 
-#### Parameters
+### Parameters
 <table>
     <thead>
         <tr>
@@ -47,7 +47,7 @@ function surql(
     </tbody>
 </table>
 
-#### Returns
+### Returns
 `BoundQuery` - Parameterised query with automatic bindings
 
 ## How it works

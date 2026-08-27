@@ -14,7 +14,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The `EXPLAIN` statement is used to display the query planner for a statement.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

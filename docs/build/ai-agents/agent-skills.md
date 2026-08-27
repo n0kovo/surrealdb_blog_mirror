@@ -47,12 +47,13 @@ A comprehensive reference for the SurrealQL query language, including syntax, sc
 npx skills add surrealdb/agent-skills --skill surrealql
 ```
 
-> [!NOTE: Useful for]
-> - Authoring SurrealQL queries
-> - Defining and maintaining schemas
-> - Navigating graph relationships and working with record IDs
-> - Transitioning from traditional SQL to SurrealQL
-> - Configuring live queries for real-time data
+> [!NOTE]
+> Useful for:
+> · Authoring SurrealQL queries
+> · Defining and maintaining schemas
+> · Navigating graph relationships and working with record IDs
+> · Transitioning from traditional SQL to SurrealQL
+> · Configuring live queries for real-time data
 
 ### SurrealDB Vector
 
@@ -62,11 +63,12 @@ Covers vector search in SurrealDB, including creating HNSW indexes, running KNN 
 npx skills add surrealdb/agent-skills --skill surrealdb-vector
 ```
 
-> [!NOTE: Useful for]
-> - Setting up HNSW vector indexes on tables
-> - Running KNN queries with distance operators
-> - Implementing semantic search, RAG pipelines, or recommendation engines
-> - Fine-tuning HNSW parameters (EFC, M, M0, distance function, type)
+> [!NOTE]
+> Useful for:
+> · Setting up HNSW vector indexes on tables
+> · Running KNN queries with distance operators
+> · Implementing semantic search, RAG pipelines, or recommendation engines
+> · Fine-tuning HNSW parameters (EFC, M, M0, distance function, type)
 
 ### SurrealDB Python
 
@@ -76,11 +78,12 @@ Guidance for using the SurrealDB Python SDK in both client/server mode (WebSocke
 npx skills add surrealdb/agent-skills --skill surrealdb-python
 ```
 
-> [!NOTE: Useful for]
-> - Connecting to SurrealDB from Python applications
-> - Working with the `surrealdb` package (synchronous and asynchronous)
-> - Running SurrealDB embedded in Python without a separate server
-> - Performing CRUD operations from Python code
+> [!NOTE]
+> Useful for:
+> · Connecting to SurrealDB from Python applications
+> · Working with the `surrealdb` package (synchronous and asynchronous)
+> · Running SurrealDB embedded in Python without a separate server
+> · Performing CRUD operations from Python code
 
 ## Discovering community skills
 

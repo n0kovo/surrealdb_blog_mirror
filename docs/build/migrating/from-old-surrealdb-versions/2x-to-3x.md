@@ -481,7 +481,7 @@ LET $val = 10;  // LET is now required
 ```
 
 **Error Message**:
-```
+```text
 Parse error: Parameter declarations without `let` are deprecated.
 Replace with `let $val = ...` to keep the previous behavior.
 ```

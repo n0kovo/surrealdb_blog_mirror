@@ -151,7 +151,7 @@ The key value returned in the grant object is the bearer key, which can be used 
 
 Here are some examples on how to do that using the JavaScript SDK or a raw HTTP request.
 
-#### JavaScript SDK
+### JavaScript SDK
 
 ```js
 const db = new Surreal();
@@ -174,7 +174,7 @@ db.signin({
 });
 ```
 
-#### HTTP request
+### HTTP request
 
 ```bash
 curl -X POST \

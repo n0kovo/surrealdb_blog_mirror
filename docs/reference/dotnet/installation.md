@@ -5,10 +5,10 @@ description: In this section, you will learn how to install the .NET SDK in your
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/dotnet/installation.mdx"
 ---
 
+# Installation
+
 export const value = await fetchNugetVersion();
 export const packageReferenceXml = `<PackageReference Include="SurrealDb.Net" Version="${value}" />`;
-
-# Installation
 
 Before you can use this SDK in your .NET applications regardless of your environment, you need to install and import it into your project.
 This guide will walk you through the process of installing and importing the SDK into your project.

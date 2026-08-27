@@ -12,7 +12,7 @@ The `CREATE` statement can be used to add a record to the database. If the recor
 > [!NOTE]
 > This statement can not be used to create graph relationships. For that, use the [`RELATE`](relate.md) statement.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

@@ -32,7 +32,7 @@ In addition to the variety of methods provided by the SDKs to perform data queri
 async db.query<T>(query, vars)
 ```
 
-#### Arguments
+### Arguments
 <table>
     <thead>
         <tr>
@@ -62,7 +62,7 @@ async db.query<T>(query, vars)
     </tbody>
 </table>
 
-#### Example usage
+### Example usage
 ```ts
 type Person = {
 	id: string;
@@ -92,7 +92,7 @@ With `.query_raw()`, you will get back the raw RPC response. In contrast to the 
 $db->query($query, $vars)
 ```
 
-#### Arguments
+### Arguments
 <table>
     <thead>
         <tr>
@@ -122,7 +122,7 @@ $db->query($query, $vars)
     </tbody>
 </table>
 
-#### Example usage
+### Example usage
 ```php
 // Assign the variable on the connection
 $result = db->query(
@@ -143,7 +143,7 @@ $people = $result[1]->result;
 db.query(sql, vars)
 ```
 
-#### Arguments
+### Arguments
 <table>
     <thead>
         <tr>
@@ -173,7 +173,7 @@ db.query(sql, vars)
     </tbody>
 </table>
 
-#### Example usage
+### Example usage
 ```python
 # Assign the variable on the connection
 result = await db.query('CREATE person; SELECT * FROM type::table($tb)', {
@@ -191,7 +191,7 @@ result[1]['result']
 await db.Query(sql)
 ```
 
-#### Arguments
+### Arguments
 <table>
     <thead>
         <tr>
@@ -222,7 +222,7 @@ await db.Query(sql)
 </table>
   
 
-#### Example usage
+### Example usage
 
 ```csharp
 // Execute query with params
@@ -244,7 +244,7 @@ var people = result.GetValue<List<Person>>(1);
 await db.RawQuery(sql, params)
 ```
 
-#### Arguments
+### Arguments
 <table>
     <thead>
         <tr>
@@ -283,7 +283,7 @@ await db.RawQuery(sql, params)
     </tbody>
 </table>
 
-#### Example usage
+### Example usage
 ```csharp
 // Assign the variable on the connection
 var @params = new Dictionary<string, object> { { "table", "person" } };
@@ -302,7 +302,7 @@ var people = result.GetValue<List<Person>>(1);
 db.Query(sql, vars)
 ```
 
-#### Arguments
+### Arguments
 <table>
     <thead>
         <tr>
@@ -332,7 +332,7 @@ db.Query(sql, vars)
     </tbody>
 </table>
 
-#### Example usage
+### Example usage
 ```go
 // Assign the variable on the connection
 result, err := db.Query("CREATE person; SELECT * FROM type::table($tb);", map[string]string{
@@ -346,7 +346,7 @@ result, err := db.Query("CREATE person; SELECT * FROM type::table($tb);", map[st
 db.query(sql).bind(vars)
 ```
 
-#### Arguments
+### Arguments
 <table>
     <thead>
         <tr>
@@ -376,7 +376,7 @@ db.query(sql).bind(vars)
     </tbody>
 </table>
 
-#### Example usage
+### Example usage
 ```rust
 // Run some queries
 let sql = "

@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The `THROW` statement can be used to throw an error in a place where something unexpected is happening. Execution of the query will be aborted and the error will be returned to the client. While a string is most commonly seen after a `THROW` statement, any [value](../language-primitives/data-types/values.md) at all can be used as error output.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

@@ -12,7 +12,7 @@ Events allow you to define custom logic that is executed when a record is create
 > [!NOTE]
 > Events are a side effect of other operations and thus are not triggered when data is [imported](../../../cli/surrealdb-cli/commands/import.md).
 
-### Key concepts
+## Key concepts
 
 - **Events**: Triggered after changes (create, update, delete) to records in a table.
 * **$event**: A preset parameter containing the type of event as a string, will always be one of "CREATE", "UPDATE", or "DELETE".

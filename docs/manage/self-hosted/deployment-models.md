@@ -134,7 +134,7 @@ In distributed deployments:
 
 This architecture enables zero-downtime scaling, resilient clusters, high-throughput workloads, geographically distributed applications, and (as Scale features roll out) database branching, instant replication and recovery, and lower storage costs at scale.
 
-For managed multi-node clusters, use the [Scale](https://surrealdb.com/pricing/scale) plan on a [managed instance](../instances/index.md). For self-hosted multi-node clusters on Kubernetes, use [SurrealDB Enterprise](https://surrealdb.com/enterprise); the [Managed Kubernetes](managed-kubernetes.md) page summarises options per cloud. For a local Community playground against open-source distributed storage (TiKV), see [Run a multi-node cluster](../../running/multi-node.md) - that path is not the storage engine behind Scale or Enterprise clusters.
+For managed multi-node clusters, use the [Scale](https://surrealdb.com/pricing/scale) plan on a [managed instance](../instances/index.md). For self-hosted multi-node clusters on Kubernetes, use [SurrealDB Enterprise](https://surrealdb.com/enterprise); the [Managed Kubernetes](managed-kubernetes.md) page summarises options per cloud. See [Run a multi-node cluster](../../running/multi-node.md) for how the model itself works.
 
 ### Features
 

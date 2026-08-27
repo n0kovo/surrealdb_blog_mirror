@@ -128,16 +128,57 @@ With a DISKANN index defined on `point`, the same `<|K, EF|>` approximate form a
 
 **WHERE statement**
 
-| Query                   | HNSW index | DISKANN index |
-| ----------------------- | ---------- | --------------- |
-| `<|2|>`               | uses distance function defined in index | same when the index distance matches |
-| `<|2, EUCLIDEAN|>`    | brute force method | brute force method |
-| `<|2, COSINE|>`       | brute force method | brute force method |
-| `<|2, MANHATTAN|>`    | brute force method | brute force method |
-| `<|2, MINKOWSKI, 3|>` | brute force method (third param is [𝑝](#notes)) | brute force method |
-| `<|2, CHEBYSHEV|>`    | brute force method | brute force method |
-| `<|2, HAMMING|>`      | brute force method | brute force method |
-| `<|2, 10|>`           | second param is effort* | same approximate form - second value bounds the candidate list |
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Query</th>
+            <th scope="col">HNSW index</th>
+            <th scope="col">DISKANN index</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="row" data-label="Query">`&lt;|2|>`</td>
+            <td scope="row" data-label="HNSW index">uses distance function defined in index</td>
+            <td scope="row" data-label="DISKANN index">same when the index distance matches</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Query">`&lt;|2, EUCLIDEAN|>`</td>
+            <td scope="row" data-label="HNSW index">brute force method</td>
+            <td scope="row" data-label="DISKANN index">brute force method</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Query">`&lt;|2, COSINE|>`</td>
+            <td scope="row" data-label="HNSW index">brute force method</td>
+            <td scope="row" data-label="DISKANN index">brute force method</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Query">`&lt;|2, MANHATTAN|>`</td>
+            <td scope="row" data-label="HNSW index">brute force method</td>
+            <td scope="row" data-label="DISKANN index">brute force method</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Query">`&lt;|2, MINKOWSKI, 3|>`</td>
+            <td scope="row" data-label="HNSW index">brute force method (third param is <a href="#notes">𝑝</a>)</td>
+            <td scope="row" data-label="DISKANN index">brute force method</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Query">`&lt;|2, CHEBYSHEV|>`</td>
+            <td scope="row" data-label="HNSW index">brute force method</td>
+            <td scope="row" data-label="DISKANN index">brute force method</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Query">`&lt;|2, HAMMING|>`</td>
+            <td scope="row" data-label="HNSW index">brute force method</td>
+            <td scope="row" data-label="DISKANN index">brute force method</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Query">`&lt;|2, 10|>`</td>
+            <td scope="row" data-label="HNSW index">second param is effort*</td>
+            <td scope="row" data-label="DISKANN index">same approximate form - second value bounds the candidate list</td>
+        </tr>
+    </tbody>
+</table>
 
 \* **effort** - for HNSW and DISKANN, the second number in `<|K, N|>` tells the engine how far to search along the graph. Both algorithms are approximate and may miss some vectors.
 

@@ -11,7 +11,7 @@ The `USE` statement specifies a namespace and / or a database to use for the sub
 
 Ensure that your database and namespace exist and you have [started your database](../../cli/surrealdb-cli/commands/start.md) before using the Sql command option.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

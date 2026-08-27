@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The `INSERT` statement can be used to insert or update data into the database, using the same statement syntax as the traditional SQL Insert statement.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

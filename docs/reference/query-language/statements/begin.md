@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 Each statement within SurrealDB is run within its own transaction by default. The `BEGIN` statement can be used to modify this behaviour by running a group of statements inside a single transaction, either succeeding as a whole, or failing. Once all of the statements within a transaction succeed, then all of the data modifications can be made permanent by finalizing the transaction with a [COMMIT](commit.md) statement at the end. If any statement within a transaction encounters an error or the transaction is manually cancelled ([CANCEL](cancel.md)), then any data modification made within the transaction is rolled back, and will not become a permanent part of the database.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

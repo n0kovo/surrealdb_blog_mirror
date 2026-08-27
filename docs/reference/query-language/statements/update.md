@@ -15,7 +15,7 @@ The `UPDATE` statement can be used to update existing records in the database. I
 > [!NOTE]
 > `UPDATE` does not create records that do not exist. To update a record and create it if it does not exist, use the [`UPSERT`](upsert.md) statement.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

@@ -19,7 +19,7 @@ surrealkit init
 
 This creates a `database/` directory with the following layout:
 
-```
+```text
 database/
 ├── schema/
 ├── seed/

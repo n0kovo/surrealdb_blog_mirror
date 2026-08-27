@@ -15,13 +15,13 @@ A [`LIVE SELECT`](../../query-language/statements/live-select.md) statement crea
 
 Start a running database using the following command:
 
-```
+```bash
 surreal start --user root --pass secret 
 ```
 
 To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open up the CLI:
 
-```
+```bash
 surrealdb % surreal sql --user root --pass secret --pretty
 ```
 
@@ -177,13 +177,13 @@ A [`LIVE SELECT`](../../query-language/statements/live-select.md) statement crea
 
 Start a running database using the following command:
 
-```
+```bash
 surreal start --user root --pass secret 
 ```
 
 To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open up the CLI:
 
-```
+```bash
 surrealdb % surreal sql --user root --pass secret --ns namespace --db database --pretty
 ```
 

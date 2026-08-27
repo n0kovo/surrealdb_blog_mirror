@@ -9,9 +9,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 Besides [full-text search](overview.md), SurrealDB offers many tools for comparing, ordering, and matching strings: sorting with `COLLATE` / `NUMERIC`, substring checks, distance and similarity scores, regex, and ad-hoc string helpers. This page summarises those options so you can pick the right tool next to your FTS indexes and analyzers.
 
-### Comparing and sorting text
+## Comparing and sorting text
 
-#### In SELECT queries
+### In SELECT queries
 
 The following example shows a few records created from an array of strings in an order that is sorted to the human eye: lowest to highest numbers, then A to Z.
 
@@ -62,11 +62,11 @@ SELECT VALUE val FROM data ORDER BY val COLLATE NUMERIC;
 ['1', '2', '11', 'Ábaco', 'kitty', 'Zoo']
 ```
 
-#### Sorting functions
+### Sorting functions
 
 The functions [`array::sort_natural()`, `array::sort_lexical()`, and `array::sort_natural_lexical()`](../../../reference/query-language/functions/database-functions/array.md) can be used on ad-hoc data to return the same output as the `COLLATE` and `NUMERIC` clauses in a [`SELECT` statement](../../../reference/query-language/statements/select.md).
 
-### Contains functions and operators
+## Contains functions and operators
 
 The most basic way to see if one string is contained inside another is to use the `IN` operator, or the [`string::contains()` function](../../../reference/query-language/functions/database-functions/string.md#stringcontains).
 
@@ -100,7 +100,7 @@ Because strings are essentially arrays of characters, these operators work with 
 ["kin", "someotherstring"] ANYINSIDE "Rumplestiltskin";
 ```
 
-### Equality and fuzzy equality
+## Equality and fuzzy equality
 
 SurrealDB offers quite a few algorithms inside the [string functions module](../../../reference/query-language/functions/database-functions/string.md) for distance or similarity comparison. They are:
 
@@ -156,7 +156,7 @@ string::distance::hamming("United", "Unitéd");
 string::distance::hamming("United", "uNITED");
 ```
 
-### Regex matching
+## Regex matching
 
 The `string::matches()` function can be used to perform regex matching on a string.
 
@@ -167,7 +167,7 @@ string::matches("Cat", "[HC]at");
 string::matches("Hat", "[HC]at");
 ```
 
-### Other string functions
+## Other string functions
 
 SurrealDB has a large number of [string functions](../../../reference/query-language/functions/database-functions/string.md) that can be used manually to refine string searching, such as `string::lowercase()`, `string::starts_with()`, and `string::ends_with()`.
 

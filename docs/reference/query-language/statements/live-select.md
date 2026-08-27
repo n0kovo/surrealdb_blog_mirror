@@ -19,7 +19,7 @@ In practical terms, when you execute a `LIVE SELECT` query, it triggers an ongoi
 > [!IMPORTANT]
 > Currently, `LIVE SELECT` is only supported in single-node deployments, with multi-node support being actively developed.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

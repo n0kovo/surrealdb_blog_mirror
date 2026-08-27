@@ -260,7 +260,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 Example output:
 
-```
+```text
 Signing in as user Emmett and password Izaiah
 New user created!
 
@@ -542,7 +542,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 Example output:
 
-```
+```text
 Signing in as user Emmett and password Izaiah
 New user created!
 

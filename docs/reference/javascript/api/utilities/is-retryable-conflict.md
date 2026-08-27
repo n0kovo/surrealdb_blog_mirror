@@ -21,7 +21,7 @@ The `isRetryableConflict()` function is the default predicate used by [`.retry()
 function isRetryableConflict(error: Error): boolean
 ```
 
-#### Parameters
+### Parameters
 <table>
     <thead>
         <tr>
@@ -39,7 +39,7 @@ function isRetryableConflict(error: Error): boolean
     </tbody>
 </table>
 
-#### Returns
+### Returns
 `boolean` - `true` if the error looks like a retryable write conflict (its message contains "conflict" or "can be retried"), `false` otherwise
 
 ## Overriding the default predicate

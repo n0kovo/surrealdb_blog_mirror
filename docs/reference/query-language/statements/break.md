@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The BREAK statement can be used to break out of a loop, such as inside one created by the [FOR statement](for.md).
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

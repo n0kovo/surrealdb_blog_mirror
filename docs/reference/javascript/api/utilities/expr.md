@@ -31,7 +31,7 @@ The `expr()` function creates type-safe SurrealQL expressions using standalone o
 function expr(expression: ExprLike): BoundQuery
 ```
 
-#### Parameters
+### Parameters
 <table>
     <thead>
         <tr>
@@ -49,7 +49,7 @@ function expr(expression: ExprLike): BoundQuery
     </tbody>
 </table>
 
-#### Returns
+### Returns
 `BoundQuery` - Compiled query with bindings
 
 ## Comparison operators

@@ -21,7 +21,7 @@ The `FileRef` class represents a reference to a file stored in SurrealDB. File r
 new FileRef(bucket: string, key: string)
 ```
 
-#### Parameters
+### Parameters
 <table>
     <thead>
         <tr>
@@ -44,7 +44,7 @@ new FileRef(bucket: string, key: string)
     </tbody>
 </table>
 
-#### Example
+### Example
 
 ```ts
 const fileRef = new FileRef('avatars', 'profile-photo.png');

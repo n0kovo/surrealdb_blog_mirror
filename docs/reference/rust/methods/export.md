@@ -99,7 +99,7 @@ async fn main() -> surrealdb::Result<()> {
 
 The output for the above sample should look like the following.
 
-```
+```surql
 -- ------------------------------
 
 -- OPTION
@@ -280,7 +280,7 @@ async fn main() -> surrealdb::Result<()> {
 
 The output for the above sample should look like the following.
 
-```
+```surql
 -- ------------------------------
 
 -- OPTION

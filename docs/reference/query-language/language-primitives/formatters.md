@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The [string::is_datetime](../functions/database-functions/string.md#stringis_datetime) and [time::format](../functions/database-functions/time.md#timeformat) functions in SurrealQL accept certain text formats for date/time formatting. The possible formats are listed below.
 
-### Date formatters
+## Date formatters
 
 <table>
 <thead>
@@ -138,7 +138,7 @@ The [string::is_datetime](../functions/database-functions/string.md#stringis_dat
 </tbody>
 </table>
 
-### Time formatters
+## Time formatters
 
 <table>
 <thead>
@@ -267,7 +267,7 @@ The [string::is_datetime](../functions/database-functions/string.md#stringis_dat
 </tbody>
 </table>
 
-### Timezones formatters
+## Timezones formatters
 
 <table>
   <thead>
@@ -296,7 +296,7 @@ The [string::is_datetime](../functions/database-functions/string.md#stringis_dat
   </tbody>
 </table>
 
-### Date & time formatters
+## Date & time formatters
 
 <table>
 <thead>
@@ -325,7 +325,7 @@ The [string::is_datetime](../functions/database-functions/string.md#stringis_dat
 </tbody>
 </table>
 
-### Other formatters
+## Other formatters
 
 <table>
 <thead>

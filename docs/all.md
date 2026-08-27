@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1076 pages_  
+_1084 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -255,6 +255,22 @@ _1076 pages_
   Package layout and configuration for the SurrealDB Agent Memory client in surrealdb.
 - [Swift SDK reference](agent-memory/reference/sdk-swift.md)
   Package layout and configuration for the SurrealDB Agent Memory Swift client.
+- [Claude Code](agents/claude-code.md)
+  Set up Claude Code for SurrealDB with the hosted MCP server and the official Agent Skills.
+- [Codex](agents/codex.md)
+  Set up the OpenAI Codex CLI for SurrealDB with the hosted MCP server and the official Agent Skills.
+- [Cursor](agents/cursor.md)
+  Set up Cursor for SurrealDB with the hosted MCP server and the official Agent Skills.
+- [GitHub Copilot](agents/github-copilot.md)
+  Set up GitHub Copilot agent mode for SurrealDB with the hosted MCP server and the official Agent Skills.
+- [Agent setup](agents/index.md)
+  Connect your agents to SurrealDB with Agent Skills and MCP.
+- [Visual Studio Code](agents/vscode.md)
+  Set up Visual Studio Code for SurrealDB with the hosted MCP server and the official Agent Skills.
+- [Windsurf](agents/windsurf.md)
+  Set up Windsurf for SurrealDB with the hosted MCP server and the official Agent Skills.
+- [Zed](agents/zed.md)
+  Set up the Zed editor for SurrealDB with the hosted MCP server and the official Agent Skills.
 - [Architecture](architecture.md)
   How SurrealDB separates compute from storage, and how that design supports embedded, single-node, distributed, and managed deployments.
 - [Agent Skills](build/ai-agents/agent-skills.md)

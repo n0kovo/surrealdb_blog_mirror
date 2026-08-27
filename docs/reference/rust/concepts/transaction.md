@@ -5,9 +5,9 @@ description: Use SurrealQL BEGIN and COMMIT in queries, or the Rust SDK `begin` 
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/rust/concepts/transaction.mdx"
 ---
 
-**3.x**
-
 # Manual transactions
+
+**3.x**
 
 While every query in SurrealDB is run [inside its own transaction](../../query-language/language-primitives/transactions.md), manual transactions made up of multiple statements can be used via the [BEGIN](../../query-language/statements/begin.md) and [COMMIT](../../query-language/statements/commit.md) keywords.
 
@@ -15,13 +15,13 @@ While every query in SurrealDB is run [inside its own transaction](../../query-l
 
 Start a running database using the following command:
 
-```
+```bash
 surreal start --user root --pass secret 
 ```
 
 To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open a connection in the CLI:
 
-```
+```bash
 surreal sql --user root --pass secret --pretty
 ```
 
@@ -144,7 +144,7 @@ async fn main() -> surrealdb::Result<()> {
 
 The output will look like this.
 
-```
+```text
 NONE
 [{ balance: 135605.16f, id: account:one }]
 [{ balance: 91031.31f, id: account:two }]
@@ -213,13 +213,13 @@ The [`.query()`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#
 
 Start a running database using the following command:
 
-```
+```bash
 surreal start --user root --pass secret 
 ```
 
 To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open a connection in the CLI:
 
-```
+```bash
 surreal sql --user root --pass secret --ns main --db main --pretty
 ```
 

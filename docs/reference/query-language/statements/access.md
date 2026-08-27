@@ -18,7 +18,7 @@ By default, the `ACCESS` statement will default to referencing access methods de
 
 Operations that either create, revoke or purge access grants using the `ACCESS` statement will be logged in the server as long as it is running with the `INFO` level (the default) or any higher verbosity level. These logs are identified by the `surrealdb_core::sql::statements::access` prefix.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**
@@ -93,7 +93,7 @@ ACCESS @name [ ON [ ROOT | NAMESPACE | DATABASE ] ]
 	GRANT [ FOR USER @name | FOR RECORD @record ]
 ```
 
-#### Example: grant for automation using system user
+### Example: grant for automation using system user
 
 ```surql
 -- Define system user for automation
@@ -129,7 +129,7 @@ NONE
 }
 ```
 
-#### Example: grant for end-user using record user
+### Example: grant for end-user using record user
 
 ```surql
 -- Create record representing a user
@@ -181,7 +181,7 @@ ACCESS @name [ ON [ ROOT | NAMESPACE | DATABASE ] ]
 	SHOW [ GRANT @id | ALL | WHERE @expression ] 
 ```
 
-#### Example: Showing the details of a specific grant
+### Example: Showing the details of a specific grant
 
 ```surql
 -- Create record representing a user
@@ -244,7 +244,7 @@ ACCESS api SHOW GRANT JdvDFKMCVYoM;
 }
 ```
 
-#### Example: Showing the details of all grants for users of a certain name
+### Example: Showing the details of all grants for users of a certain name
 
 Since the `subject` attribute of grants associated with a record is a record identifier, it can be used as a [record link](../language-primitives/record-links.md) in order to access any record fields. This can be used to filter grants associated with record users matching certain conditions based on arbitrary data.
 
@@ -347,7 +347,7 @@ ACCESS @name [ ON [ ROOT | NAMESPACE | DATABASE ] ]
 ]
 ```
 
-#### Example: Revoking a specific grant
+### Example: Revoking a specific grant
 
 ```surql
 -- Create record representing a user
@@ -414,7 +414,7 @@ ACCESS api REVOKE GRANT NJ2I2d7OXxN9;
 ]
 ```
 
-#### Example: Revoking all grants for users of a certain name
+### Example: Revoking all grants for users of a certain name
 
 Since the `subject` attribute of grants associated with a record is a record identifier, it can be used as a [record link](../language-primitives/record-links.md) in order to access any record fields. This can be used to filter grants associated with record users matching certain conditions based on arbitrary data.
 
@@ -523,7 +523,7 @@ ACCESS @name [ ON [ ROOT | NAMESPACE | DATABASE ] ]
 ]
 ```
 
-#### Example: Purging grants that have been expired
+### Example: Purging grants that have been expired
 
 ```surql
 /**[test]
@@ -536,7 +536,7 @@ value = "[]"
 ACCESS api PURGE EXPIRED;
 ```
 
-#### Example: Purging grants that have been revoked for more than 90 days
+### Example: Purging grants that have been revoked for more than 90 days
 
 ```surql
 /**[test]
@@ -549,7 +549,7 @@ value = "[]"
 ACCESS api PURGE REVOKED FOR 90d;
 ```
 
-#### Example: Purging all grants that have been invalid for more than a year
+### Example: Purging all grants that have been invalid for more than a year
 
 ```surql
 /**[test]

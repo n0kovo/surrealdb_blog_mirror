@@ -14,7 +14,7 @@ Rebuilding the index will ensure the index is fully optimised.
 > [!NOTE]
 > By default, `REBUILD INDEX` waits until the rebuild finishes before the statement returns (the same behaviour as `DEFINE INDEX` without `CONCURRENTLY`). Adding `CONCURRENTLY` on the rebuild statement will cause it to return immediately, after which progress can be monitored via [`INFO FOR INDEX`](info.md#index-information). Whether the index was originally created with `CONCURRENTLY` does not affect rebuilds. See the [`CONCURRENTLY` clause](define/indexes.md#using-concurrently-clause) on `DEFINE INDEX` for the same blocking vs non-blocking distinction when creating an index.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

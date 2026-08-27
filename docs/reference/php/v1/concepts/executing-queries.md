@@ -61,7 +61,7 @@ The [`update`](../methods/update.md) method will replace the entire record with 
 			"age" => 31
 		]);
 		```
-		You can find more information about updating a record using the update method [here](../../../query-language/statements/update.md).
+		You can find more information about updating a record using the update method in [the `UPDATE` statement reference](../../../query-language/statements/update.md).
 
 	
 **merge**
@@ -72,7 +72,7 @@ The [`merge`](../../../query-language/statements/update.md#merge-clause) method 
 			"age" => 31
 		]);
 		```
-		You can find more information about updating a record using the merge method [here](../../../rest-api/rpc-protocol.md#merge).
+		You can find more information about updating a record using the merge method in [the RPC protocol reference](../../../rest-api/rpc-protocol.md#merge).
 
 	
 **patch**
@@ -85,7 +85,7 @@ The [`patch`](../methods/patch.md) method will update a field in a single or mul
 			"value" => "writing"
 		]);
 		```
-		You can find more information about updating a record using the patch method [here](../../../query-language/statements/update.md).
+		You can find more information about updating a record using the patch method in [the `UPDATE` statement reference](../../../query-language/statements/update.md).
 
 ## Deleting records
 

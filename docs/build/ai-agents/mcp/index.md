@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 The SurrealDB MCP Server connects AI tools to your SurrealDB Cloud account. Add one URL to Claude, Cursor, or any other MCP client, sign in with your Surreal ID, and your assistant can work on your databases alongside you: deploy an instance, query the data inside it, look into why something is slow, and keep track of what it all costs.
 
-```
+```text
 https://mcp.surrealdb.com
 ```
 

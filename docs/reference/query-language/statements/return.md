@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The `RETURN` statement can be used to return an implicit value or the result of a query, and to set the return value for a transaction, block, or function.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

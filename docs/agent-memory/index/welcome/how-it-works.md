@@ -15,7 +15,7 @@ For pillars, categories, hybrid retrieval, trace feedback, and tri-temporal sema
 
 ## End-to-end write path
 
-```
+```text
 User message (or uploaded file)
         │
         ▼

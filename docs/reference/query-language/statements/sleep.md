@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The `SLEEP` statement is used to introduce a delay or pause in the execution of a query or a batch of queries for a specific amount of time.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

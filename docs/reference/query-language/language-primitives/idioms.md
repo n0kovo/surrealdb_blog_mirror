@@ -1505,7 +1505,7 @@ RELATE person:acquaintance3->knows->person:star;
 
 This representation of this small network of friends allows us to visualise the issues that these three algorithms solve. Using `+path` will output all of the possible paths from `person:you`, `+collect` will collect all of the records in this network, and `+shortest=person:star` will find the shortest path.
 
-```
+```text
 ‎
 								  ┌───────►  person:friend1  
      ┌───►person:acquaintance1    │                                                                    

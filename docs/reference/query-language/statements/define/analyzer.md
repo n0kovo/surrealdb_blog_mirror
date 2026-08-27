@@ -228,7 +228,7 @@ DEFINE ANALYZER example_edgengram TOKENIZERS class FILTERS
 search::analyze("example_edgengram", "apple banana");
 ```
 
-```
+```text
 [
 	'a',
 	'ap',
@@ -300,7 +300,7 @@ Dictionary File Structure: The file specified in the mapper parameter must follo
 
 Example file format:
 
-```
+```text
 drive	driven
 drive	drives
 drive	driving

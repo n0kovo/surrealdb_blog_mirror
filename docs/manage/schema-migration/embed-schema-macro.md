@@ -46,7 +46,7 @@ async fn main() -> anyhow::Result<()> {
 
 Given a `database/schema/` directory with these files:
 
-```
+```text
 database/schema/
 ├── users.surql
 └── orders.surql

@@ -73,7 +73,7 @@ With this scope, all memory stored during sessions for `my-repo` is isolated fro
 
 At the beginning of each coding session, the agent should call `context` to load relevant context before it responds to the first user message:
 
-```
+```text
 Tool: context
 Arguments: {
   "query": "project conventions and active work for my-repo",
@@ -89,7 +89,7 @@ This returns a markdown context block of what SurrealDB Agent Memory knows about
 
 When a significant decision is made during a session, use `remember` to persist it:
 
-```
+```text
 Tool: remember
 Arguments: {
   "text": "We decided to use Zod for runtime validation because it integrates with our existing TypeScript types and provides better error messages than Yup.",
@@ -99,7 +99,7 @@ Arguments: {
 
 For team preferences and conventions, the agent can store these automatically when it identifies a standing directive in the conversation:
 
-```
+```text
 User: \
   "Always use named exports in this project, never default exports."
 
@@ -116,7 +116,7 @@ Arguments: {
 
 When the user asks a question that might be answered by project documentation ingested into authoritative knowledge, use `recall`:
 
-```
+```text
 Tool: recall
 Arguments: {
   "query": "What is the authentication flow for the API?",
@@ -146,7 +146,7 @@ Here is what a typical coding session looks like with SurrealDB Agent Memory MCP
 
 **Session start**
 
-```
+```text
 Tool: context
 → Returns: ongoing work, conventions, decisions, preferences
 
@@ -156,7 +156,7 @@ Tool: recall (query = user's first message)
 
 **During the session**
 
-```
+```text
 User: "How should I handle errors in the new payment module?"
 
 Tool: recall
@@ -168,7 +168,7 @@ Agent: "Based on this project's conventions, you should use Result<T, Error>…"
 
 **When a decision is made**
 
-```
+```text
 User: "Let's use Stripe's webhook library directly rather than wrapping it."
 
 Tool: remember
@@ -180,7 +180,7 @@ Arguments: {
 
 **Session end (optional)**
 
-```
+```text
 Tool: reflect
 Arguments: {
   "query": "What was decided and what needs follow-up?",

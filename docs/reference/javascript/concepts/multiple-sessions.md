@@ -60,7 +60,7 @@ await session.signin({
 const users = await session.select(new Table('users'));
 ```
 
-Sessions support all the same query methods as the main `Surreal` instance, including `.query()`, `.select()`, `.create()`, `.update()`, `.delete()`, and [more](executing-queries.md).
+Sessions support all the same query methods as the main `Surreal` instance, including `.query()`, `.select()`, `.create()`, `.update()`, `.delete()`, and [the rest of the query methods](executing-queries.md).
 
 ## Forking an existing session
 

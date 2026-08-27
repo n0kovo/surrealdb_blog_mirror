@@ -26,8 +26,48 @@ Bear in mind that table and field permissions only apply to [record users](../..
 DEFINE ACCESS [ OVERWRITE | IF NOT EXISTS ] @name
   ON [ ROOT | NAMESPACE | DATABASE ]
   TYPE JWT [ ALGORITHM @algorithm KEY @key | URL @url ]
+  [ AUDIENCE @audience, .. ]
   [ AUTHENTICATE @expression ]
   [ DURATION FOR SESSION @duration ]
+```
+
+## Audience validation
+
+*Since v3.3.0*
+
+The `AUDIENCE` clause lists the values accepted for a token's `aud` claim. A token verified against the access method must carry an `aud` claim that intersects the list, and is rejected otherwise.
+
+```surql
+DEFINE ACCESS token_name ON DATABASE TYPE JWT
+  ALGORITHM HS512 KEY "sNSYneezcr8kqphfOC6NwwraUHJCVAt0XjsRSNmssBaBRh3WyMa9TRfq8ST7fsqu"
+  AUDIENCE "surrealdb-api";
+```
+
+Several values can be listed, which suits a token issued for more than one service, or a migration between audience names.
+
+```surql
+DEFINE ACCESS token_name ON DATABASE TYPE JWT
+  ALGORITHM HS512 KEY "sNSYneezcr8kqphfOC6NwwraUHJCVAt0XjsRSNmssBaBRh3WyMa9TRfq8ST7fsqu"
+  AUDIENCE "surrealdb-api", "surrealdb-internal";
+```
+
+The clause works the same way with a remote JWKS object, where it sits before the `WITH ISSUER` clause.
+
+```surql
+DEFINE ACCESS token_name ON DATABASE TYPE JWT
+  URL "https://example.com/.well-known/jwks.json"
+  AUDIENCE "surrealdb-api";
+```
+
+Where the clause is omitted the `aud` claim is not checked, which is the behaviour of an access method defined without it.
+
+> [!IMPORTANT]
+> An issuer that serves more than one application typically mints tokens with a distinct `aud` value per application. Without `AUDIENCE`, a token minted for a different application by the same issuer verifies successfully here, because the signature is valid. Setting the clause confines an access method to the tokens actually intended for it.
+
+Audience values are configuration rather than secrets, so unlike a key they are shown in full by [`INFO`](../../info.md).
+
+```surql title="Output"
+DEFINE ACCESS token_name ON DATABASE TYPE JWT ALGORITHM HS512 KEY '[REDACTED]' AUDIENCE 'surrealdb-api' WITH ISSUER KEY '[REDACTED]' DURATION FOR TOKEN 1h, FOR SESSION NONE
 ```
 
 ## Verification types
@@ -299,7 +339,7 @@ The database token payload should at least include the following claims when use
 
 The `AUTHENTICATE` clause allows you to define a custom expression that will be executed when the token is verified. This expression will be executed in the context of the token, allowing you to perform additional checks on the token claims before the token is accepted. If the expression returns any value or throws any error, the token will be rejected.
 
-#### Example: JWT user authentication with issuer and audience check
+### Example: JWT user authentication with issuer and audience check
 
 This example sets up additional token verification logic for a system user on a database using JSON Web Tokens (JWT) to authenticate. In this example, the HS512 algorithm is used to sign the token. The `AUTHENTICATE` block contains conditions to verify the token's validity: it checks that the issuer (`iss`) of the token is "surrealdb-test" and throws an error if it is not. Similarly, it checks that the audience of the token (defined in the `aud` claim, which can be provided either as an array of strings or a single string) includes "surrealdb-test" and throws an error if it does not. If both checks pass, the token is considered valid. The session duration is set to 2 hours.
 

@@ -46,7 +46,7 @@ Structured diff: entities, attributes, relations, instructions, uncertainties, c
 
 ### Example
 
-```
+```text
 Tool: remember
 Input: {
   "text": "I just got promoted to VP of Engineering and I'm moving to Singapore next month.",
@@ -75,7 +75,7 @@ Unified search over experiential facts and document passages. Returns ranked hit
 
 ### Example
 
-```
+```text
 Tool: recall
 Input: {
   "query": "What role does Alice have?",
@@ -156,7 +156,7 @@ Upload a document (base64). Processing is asynchronous - poll with `inspect` or 
 
 ### Example
 
-```
+```text
 Tool: upload
 Input: {
   "bytes_base64": "aGVsbG8=",
@@ -183,7 +183,7 @@ Look up an entity, trace, or document by typed reference.
 
 ### Example
 
-```
+```text
 Tool: inspect
 Input: {
   "ref": "document:01hx9…"

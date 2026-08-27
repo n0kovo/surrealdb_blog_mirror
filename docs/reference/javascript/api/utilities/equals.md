@@ -21,7 +21,7 @@ The `equals()` function performs deep equality comparison for values, including 
 function equals(x: unknown, y: unknown): boolean
 ```
 
-#### Parameters
+### Parameters
 <table>
     <thead>
         <tr>
@@ -44,7 +44,7 @@ function equals(x: unknown, y: unknown): boolean
     </tbody>
 </table>
 
-#### Returns
+### Returns
 `boolean` - `true` if values are deeply equal, `false` otherwise
 
 ## What it compares

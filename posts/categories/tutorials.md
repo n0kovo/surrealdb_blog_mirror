@@ -1,8 +1,10 @@
 # Category: tutorials
 
-_99 posts_  
+_100 posts_  
 [← Index](../../README.md)
 
+- **2026-08-27** · [Building a filesystem-based agent memory on SurrealDB](../2026/08/agent-memory-is-a-filesystem-building-one-on-surrealdb.md)  
+  `tutorials` `ai` — Give an AI agent persistent memory as a filesystem in SurrealDB: computed file paths, fused full-text and vector search, and RBAC in a single PERMISSIONS clause
 - **2026-08-05** · [Chat with your meeting notes: CocoIndex graph with SurrealQL](../2026/08/chat-with-your-meeting-notes-a-cocoindex-knowledge-graph-and-a-text-to-surrealql-agent.md)  
   `tutorials` `ai` — A folder of Markdown meeting notes becomes a self-maintaining knowledge graph in SurrealDB with CocoIndex and Pydantic AI, fenced in by a database role.
 - **2026-08-05** · [Empower your agents with the new SurrealDB MCP](../2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  

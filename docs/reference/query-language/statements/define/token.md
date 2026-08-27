@@ -5,10 +5,10 @@ description: SurrealDB can work with third-party authentication providers such a
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/define/token.mdx"
 ---
 
+# `DEFINE TOKEN` statement
+
 > [!WARNING]
 > This statement was deprecated in favour of [`DEFINE ACCESS ... TYPE JWT`](access/jwt.md) and [`DEFINE ACCESS ... TYPE RECORD ... WITH JWT`](access/record.md) in SurrealDB versions 2.x, and has been removed as of SurrealDB 3.0. Learn more in [define access documentation](access/index.md).
-
-# `DEFINE TOKEN` statement
 
 SurrealDB can work with third-party authentication providers such as OpenID Connect providers, OAuth providers and other trusted parties providing JWT (JSON Web Tokens, also referred to in this page as “tokens”). Let's say that your provider issues your client (e.g. a user or a service) a JWT once it has authenticated. By using the DEFINE TOKEN statement, you can set the public key or shared secret that will be used to verify the authenticity of the token.
 

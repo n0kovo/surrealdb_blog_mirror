@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 This guide deploys SurrealDB to a local [KIND](https://kind.sigs.k8s.io/) cluster (Kubernetes in Docker) with **RocksDB** on a persistent volume. That is a **single-node** topology: one SurrealDB pod owns the database file. See [Deployment models](deployment-models.md#single-node-rocksdb).
 
-For **multi-node HA**, use the managed [Scale plan](https://surrealdb.com/pricing/scale) or [SurrealDB Enterprise](https://surrealdb.com/enterprise) on managed Kubernetes - see [Managed Kubernetes](managed-kubernetes.md). Do not use TiKV for production HA.
+For **multi-node HA**, use the managed [Scale plan](https://surrealdb.com/pricing/scale) or [SurrealDB Enterprise](https://surrealdb.com/enterprise) on managed Kubernetes - see [Managed Kubernetes](managed-kubernetes.md).
 
 ## Requirements
 

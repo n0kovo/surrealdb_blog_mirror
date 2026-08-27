@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 SurrealDB is a multi-model database designed to simplify building modern applications. It combines the capabilities of traditional relational databases, document stores, graph databases, and more into a single, unified platform. Whether you are building real-time applications, working with complex data relationships, or deploying AI-powered workflows, SurrealDB provides the tools you need without requiring multiple database systems.
 
+<AgentBanner />
+
 ## Learn
 
 The SurrealDB documentation contains a large number of guides, each designed to address different aspects of database management and application development.

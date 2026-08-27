@@ -16,7 +16,7 @@ For doing metrics in SurrealDB you can choose one or combine:
 - **Drop tables**
 - **Custom events**
 
-#### Pre-computed table views
+### Pre-computed table views
 
 Our [pre-computed table views](../../../reference/query-language/statements/define/table.md#pre-computed-table-views) are most similar to event-based, incrementally updating, materialised views. Practically, this means our downsampled metrics will always be up to date as it incrementally updates in near real-time when we add more records to the sensor_readings table.
 
@@ -54,7 +54,7 @@ For real-time visualisation of our metrics we can then use [Live Queries](../../
 LIVE SELECT * FROM daily_measurements_by_location;
 ```
 
-#### Drop tables
+### Drop tables
 
 [Drop tables](../../../reference/query-language/statements/define/table.md#example-usage) are pretty unique tables that drop all writes once they have been written. A view can be defined on a table whether it is a `DROP` table or not, but `DROP` is recommended if you have no reason to directly query the table that provides the data for the aggregated view.
 
@@ -69,7 +69,7 @@ These tables can be very useful in a time series context if you want to capture 
 
 When combining drop tables, table views and live queries, you have a very easy-to-set up, event-based and real-time solution from capturing events, creating metrics, dropping stale data and live selects for visualisation.
 
-#### Custom events
+### Custom events
 
 If you have something even more bespoke in mind, you can even [create your own event triggers](../../../reference/query-language/statements/define/event.md) based on when a record is created, updated or deleted. You can include any valid SurrealQL inside the event.
 

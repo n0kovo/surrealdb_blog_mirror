@@ -25,7 +25,7 @@ SurrealDB Agent Memory is a hosted service reached over HTTP with a Bearer key, 
 
 **Recall before the agent runs** with an HTTP Request node calling `context`:
 
-```
+```text
 POST https://api.spectron.example/api/v1/acme-prod/context
 Authorization: Bearer <your-api-key>
 Content-Type: application/json
@@ -41,7 +41,7 @@ Feed the returned context block into the AI Agent node's system prompt.
 
 **Store the turn afterwards** with an HTTP Request node calling `facts/batch`:
 
-```
+```text
 POST https://api.spectron.example/api/v1/acme-prod/facts/batch
 Authorization: Bearer <your-api-key>
 Content-Type: application/json

@@ -142,7 +142,7 @@ This action should be saved and added to the “Login” flow in the “Actions 
 
 **Using DEFINE ACCESS**
 
-#### Defining permissions and fields in SurrealDB
+### Defining permissions and fields in SurrealDB
 
 For this simple example, we will create a single table named “user”, where any user that authenticates through Auth0 using your application will be granted complete permissions over their data. For this to work as intended, we will need to ensure that the email address is unique between users and that users are granted permissions to access their own record as long as they authenticated with the access method that we will define.
 
@@ -168,7 +168,7 @@ DEFINE FIELD nickname ON user TYPE string;
 DEFINE FIELD picture ON user TYPE string;
 ```
 
-#### Defining a token verification method in SurrealDB
+### Defining a token verification method in SurrealDB
 
 Next, we should configure SurrealDB so that it can verify tokens sent to it through the [HTTP REST API](../../../reference/rest-api/http-protocol.md) via the “Authorization” header or through any of the [SDKs](/docs#sdks) via the “Authenticate” methods.
 
@@ -222,7 +222,7 @@ It is important to not that [validating the audience of the token is a requireme
   
 **Using Scope and Token (1.x only)**
 
-#### Defining a token verification method in SurrealDB
+### Defining a token verification method in SurrealDB
 
 Next, we should configure SurrealDB so that it can verify tokens sent to it through the [HTTP REST API](../../../reference/rest-api/http-protocol.md) via the “Authorization” header or through any of the [SDKs](/docs#sdks) via the “Authenticate” methods.
 
@@ -254,7 +254,7 @@ In the example above, replace the placeholder with the domain value defined for 
 > [!IMPORTANT]
 > In order to allow SurrealDB to establish a connection with Auth0 to download the JWKS object, you will require running it with the network <a href="/docs/learn/security/authorization/capabilities">capability</a>. For the strongest security, provide your specific Auth0 domain when starting SurrealDB with `--allow-net`. For example: `--allow-net example.eu.auth0.com`.
 
-#### Defining authorization criteria in SurrealDB
+### Defining authorization criteria in SurrealDB
 For this simple example, we will create a single table named “user”, where any user that authenticates through Auth0 using your application with a verified email address will be able to register, view and update their data. For this to work as intended, we will need to verify some information in the token claims.
 
 ```surql

@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-08-26 06:40 UTC_
+_Last updated: 2026-08-27 17:16 UTC_
 
 ## Stats
 
-- **Total posts:** 260
+- **Total posts:** 261
 - **First post:** 2022-07-20
-- **Latest post:** 2026-08-25
+- **Latest post:** 2026-08-27
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-08-26 06:40 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 65 posts
+- [2026](posts/years/2026.md) — 66 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -27,17 +27,19 @@ _Last updated: 2026-08-26 06:40 UTC_
 
 ### By category
 
-- [ai](posts/categories/ai.md) — 48 posts
+- [ai](posts/categories/ai.md) — 49 posts
 - [community](posts/categories/community.md) — 35 posts
 - [company](posts/categories/company.md) — 42 posts
 - [engineering](posts/categories/engineering.md) — 46 posts
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 113 posts
 - [releases](posts/categories/releases.md) — 53 posts
-- [tutorials](posts/categories/tutorials.md) — 99 posts
+- [tutorials](posts/categories/tutorials.md) — 100 posts
 
 ## Latest posts
 
+- **2026-08-27** · [Building a filesystem-based agent memory on SurrealDB](posts/2026/08/agent-memory-is-a-filesystem-building-one-on-surrealdb.md)  
+  `tutorials` `ai` — Give an AI agent persistent memory as a filesystem in SurrealDB: computed file paths, fused full-text and vector search, and RBAC in a single PERMISSIONS clause
 - **2026-08-25** · [How Cobrainer built graph-based agent memory on one engine](posts/2026/08/how-cobrainer-built-graph-based-agent-memory-on-one-engine.md)  
   `company` — Cobrainer runs graph-based agent memory and a Rust-native agentic graph RAG on SurrealDB, replacing a separate vector store and search engine.
 - **2026-08-18** · [SurrealDB University's newest course on schemas](posts/2026/08/surrealdb-universitys-newest-course-schema-internals-and-migrations-2.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-08-26 06:40 UTC_
   `tutorials` `ai` — A folder of Markdown meeting notes becomes a self-maintaining knowledge graph in SurrealDB with CocoIndex and Pydantic AI, fenced in by a database role.
 - **2026-08-05** · [Announcing the Snowflake integration for SurrealDB](posts/2026/08/announcing-snowflake-integration-for-surrealdb-from-data-warehouse-to-context-layer.md)  
   `releases` — SurrealDB imports Snowflake tables directly. Move warehouse data into a context layer where facts, relationships, vectors and agent memory live in one engine.
-- **2026-08-05** · [Empower your agents with the new SurrealDB MCP](posts/2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  
-  `featured` `releases` `tutorials` `ai` — The SurrealMCP server lets you add one URL to any AI tool, sign in with your Surreal ID, and deploy, query, and look after your SurrealDB Cloud account.

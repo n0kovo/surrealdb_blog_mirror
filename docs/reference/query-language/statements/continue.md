@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The CONTINUE statement can be used to skip an iteration of a loop, like within the [FOR statement](for.md).
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

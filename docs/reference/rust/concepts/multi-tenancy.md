@@ -5,9 +5,9 @@ description: Multi-tenancy was introduced in SurrealDB 3.0, allowing multiple co
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/rust/concepts/multi-tenancy.mdx"
 ---
 
-*Since v3.0.0*
-
 # Multi-tenancy
+
+*Since v3.0.0*
 
 Multi-tenancy was introduced in SurrealDB 3.0, allowing each tenant to operate inside its own isolated namespace and database.
 

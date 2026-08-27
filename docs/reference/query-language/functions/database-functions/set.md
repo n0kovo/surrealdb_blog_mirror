@@ -5,9 +5,9 @@ description: These functions can be used when working with, and manipulating set
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/set.mdx"
 ---
 
-*Since v3.0.0*
-
 # Set functions
+
+*Since v3.0.0*
 
 These functions can be used when working with, and manipulating sets of data.
 

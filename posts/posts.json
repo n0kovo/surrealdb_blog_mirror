@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-08-26T06:40:55.593526+00:00",
-  "count": 260,
+  "generated_at": "2026-08-27T17:16:29.373820+00:00",
+  "count": 261,
   "posts": [
+    {
+      "slug": "agent-memory-is-a-filesystem-building-one-on-surrealdb",
+      "title": "Building a filesystem-based agent memory on SurrealDB",
+      "summary": "Give an AI agent persistent memory as a filesystem in SurrealDB: computed file paths, fused full-text and vector search, and RBAC in a single PERMISSIONS clause",
+      "publishDate": "2026-08-27T10:27:03.000Z",
+      "categories": [
+        "tutorials",
+        "ai"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/sykmlwmhs36q9liup419r8r2.auto",
+      "source": "https://surrealdb.com/blog/agent-memory-is-a-filesystem-building-one-on-surrealdb",
+      "local_path": "2026/08/agent-memory-is-a-filesystem-building-one-on-surrealdb.md"
+    },
     {
       "slug": "how-cobrainer-built-graph-based-agent-memory-on-one-engine",
       "title": "How Cobrainer built graph-based agent memory on one engine",
@@ -11,7 +25,7 @@
         "company"
       ],
       "readTime": null,
-      "imageUrl": "https://cdn.surrealdb.com/jap94xlft9t9h91iiiq701mv.auto",
+      "imageUrl": "https://cdn.surrealdb.com/th5woqr5qi3oh0e1ozc9146l.auto",
       "source": "https://surrealdb.com/blog/how-cobrainer-built-graph-based-agent-memory-on-one-engine",
       "local_path": "2026/08/how-cobrainer-built-graph-based-agent-memory-on-one-engine.md"
     },

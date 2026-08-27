@@ -1,0 +1,64 @@
+---
+position: 2
+title: Claude Code
+description: Set up Claude Code for SurrealDB with the hosted MCP server and the official Agent Skills.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/agents/claude-code.mdx"
+---
+
+# Claude Code
+
+[Claude Code](https://claude.com/claude-code) is Anthropic's terminal coding agent. With the SurrealDB MCP server connected it can deploy and manage your Cloud instances and query the data inside them, and with the skills installed the SurrealQL it writes matches how the database actually behaves.
+
+## Add the MCP server
+
+```bash
+claude mcp add --transport http surrealdb https://mcp.surrealdb.com
+```
+
+Add `--scope project` to write the entry to `.mcp.json` in the repository instead of your global configuration. The file holds no credentials, so it is safe to commit; everyone who opens the project signs in as themselves.
+
+## Sign in
+
+Run `/mcp` inside Claude Code, choose **surrealdb**, and approve the connection in the browser window that opens. Until you sign in, only the sign-in tool works.
+
+If you are running somewhere without a browser, create a [personal access token](../build/ai-agents/mcp/index.md#signing-in) and pass it as a header instead:
+
+```bash
+claude mcp add --transport http surrealdb https://mcp.surrealdb.com \
+  --header "Authorization: Bearer <your-token>"
+```
+
+## Install the Agent Skills
+
+Run this in your project root:
+
+```bash
+npx skills add surrealdb/agent-skills
+```
+
+Claude Code reads the installed skills automatically and picks one up when a task calls for it.
+
+## Check it worked
+
+```bash
+claude mcp list
+```
+
+**surrealdb** should be listed as connected.
+
+## Try it
+
+> Show me the SurrealDB instances in my organisation, and tell me which of them are paused.
+
+Claude lists your organisations, picks the one you meant, and reports each instance with its state.
+
+## Remove it
+
+```bash
+claude mcp remove surrealdb
+```
+
+## Next steps
+
+- [MCP in Claude](../build/ai-agents/mcp/claude.md) — Claude Desktop and the Claude app, and troubleshooting
+- [Example usages](../build/ai-agents/mcp/examples.md) — more prompts to try

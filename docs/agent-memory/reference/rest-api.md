@@ -44,7 +44,7 @@ The same `Idempotency-Key` (scoped to context + principal) within 24 hours retur
 
 ## Base URL
 
-```
+```text
 https://<host>/api/v1/{context_id}
 ```
 

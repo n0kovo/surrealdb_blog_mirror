@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The `DELETE` statement can be used to delete records from the database.
 
-### Statement syntax
+## Statement syntax
 
   
 **SurrealQL Syntax**

@@ -98,7 +98,7 @@ for doc in results:
     print(f"{doc.page_content} [{doc.metadata}]")
 ```
 
-```
+```text
 The Vector Search feature of SurrealDB... [{'source': 'https://surrealdb.com'}]
 ```
 
@@ -115,7 +115,7 @@ retriever = vector_store.as_retriever(
 retriever.invoke(query)
 ```
 
-```
+```text
 [Document(id='4', metadata={'source': 'https://surrealdb.com'}, page_content='The Vector Search feature of SurrealDB...')]
 ```
 

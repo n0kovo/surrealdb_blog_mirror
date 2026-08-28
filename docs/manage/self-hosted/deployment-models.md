@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 SurrealDB separates the query engine (compute) from the underlying storage layer. The same SurrealQL, APIs, and client SDKs work across embedded devices, single-node servers, distributed clusters, and [managed instances](../instances/index.md) - so you can change how the database runs without rewriting application code.
 
-This page explains the available deployment options, storage engines, and how to choose the right architecture for your workload. For how the compute and storage layers interact, see [Architecture](../../architecture.md).
+This page explains the available deployment options, storage engines, and how to choose the right architecture for your workload. For how the compute and storage layers interact, see [Architecture](../../learn/data-models/architecture.md).
 
 ## Deployment models summary
 

@@ -24,7 +24,7 @@ You need:
 
 - An account. See [Accounts and sign-in](../../organisations/sign-in.md).
 - A running instance. See [Create an instance](../create.md).
-- A **namespace** and a **database** to work in. SurrealDB needs both to know where a query runs. See [system structure](../../../concepts.md#system-structure).
+- A **namespace** and a **database** to work in. SurrealDB needs both to know where a query runs. See [system structure](../../../learn/data-models/architecture.md#system-structure).
 - Credentials, unless you connect from SurrealDB Studio, which authenticates with your own session.
 
 ## Finding the connection details

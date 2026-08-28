@@ -38,7 +38,7 @@ Learn more about starting a connection in the [SurrealDB Studio documentation](.
 
 ### Setting a namespace and database
 
-Before you can start writing queries, you need to set the [namespace and database](../../../concepts.md#namespaces-and-databases) you want to use. For example, you can set the namespace to `test` and the database to `test`. This will set the namespace and database for the current connection.
+Before you can start writing queries, you need to set the [namespace and database](../../data-models/architecture.md#namespaces-and-databases) you want to use. For example, you can set the namespace to `test` and the database to `test`. This will set the namespace and database for the current connection.
 
 Additionally, you can start [a serving in SurrealDB Studio](../../../explore/studio/index.md) which also enables GraphQL automatically, starting a server on `http://localhost:8000` by default for a root user with username and password `root`.
 

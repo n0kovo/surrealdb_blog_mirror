@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 # Embedding in .NET
 
 SurrealDB is designed to be run in many different ways and in many environments.
-Due to the [separation of the storage and compute](../../architecture.md) layers, SurrealDB can be run in embedded mode, from within a number of different language environments.
+Due to the [separation of the storage and compute](../../learn/data-models/architecture.md) layers, SurrealDB can be run in embedded mode, from within a number of different language environments.
 In .NET, SurrealDB can be run as an [in-memory database](#memory-provider), or it can persist data using a [file-based storage engine](#file-providers). 
 
 ## Memory provider

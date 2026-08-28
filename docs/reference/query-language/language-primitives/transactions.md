@@ -200,5 +200,5 @@ SELECT * FROM account;
 
 ## See also
 
-* [Transactions and isolation](../../../transactions-and-isolation.md)
+* [Transactions](../../../learn/querying/concepts-and-guides/transactions.md)
 * [Using transactions to test code for errors](../../../learn/querying/concepts-and-guides/testing.md#using-manual-transactions-for-testing)

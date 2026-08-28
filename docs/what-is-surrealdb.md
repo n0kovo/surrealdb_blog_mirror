@@ -1,61 +1,138 @@
 ---
 position: 1
 title: What is SurrealDB
-description: The purpose of this document is to provide you with a comprehensive understanding of SurrealDB. Whether you are a beginner getting started with SurrealDB or an experienced user looking for specific information, this overview will serve as a valuable resource.
+description: SurrealDB is a multi-model database written in Rust. This page covers what it stores, how it runs, and what SurrealDB Agent Memory adds for AI agents.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/what-is-surrealdb.mdx"
 ---
 
-# SurrealDB
+# What is SurrealDB
 
-SurrealDB is a [multi-model database](/blog/what-are-multi-model-databases) built in Rust designed to unify multiple data models into a single, powerful engine. It combines [document](learn/data-models/document/overview.md), [graph](learn/data-models/graph/overview.md), [time-series](learn/data-models/time-series/overview.md), [relational](explore/tutorials/tutorials/define-a-schema.md), [geospatial](learn/data-models/geospatial/overview.md) and key-value data types into one query language, [SurrealQL](reference/query-language/index.md), with powerful search and retrieval ([vector](learn/data-models/vector-search/overview.md), [full-text](learn/data-models/full-text-search/overview.md), hybrid), and [real-time and event-driven capabilities](learn/querying/real-time/real-time-best-practices.md), enabling developers to build applications faster and more efficiently.
+SurrealDB is a [multi-model database](/blog/what-are-multi-model-databases) written in Rust. One engine stores documents, graphs, vectors, text, time series, geospatial values and relational tables, and one query language reads and writes across all of them inside a single transaction.
 
-```surql title="Sample SurrealQL query"
-SELECT
-  ->purchased->product AS history,
-  ->reviewed->product[WHERE
-    vector::similarity::cosine(
-      embedding, [0.1, 0.5, 0.3, 0.9]
-    ) > 0.8
-  ] AS relevant,
-  ->prefs[WHERE valid_at <= time::now()] AS prefs
-FROM ONLY user:ic7c1frczl1tw552yl4u;
-```
+The platform has two products, and both run on the same engine:
 
-Common SurrealDB use cases include AI agents, knowledge graphs, real-time apps (e.g. recommendation engines, fraud detection systems), and any other type of application requiring multiple data types. SurrealDB can also be used as a backend-as-a-service (BaaS) thanks to its support for direct user authentication. Given that it’s a single Rust binary, SurrealDB can also run embedded (in‐app), in the browser (via WebAssembly), in the edge, as single backend node, or in a distributed cluster.
+- **SurrealDB** is the database. You design the schema, and you choose how strictly to define it.
+- **[SurrealDB Agent Memory](https://surrealdb.com/docs/agent-memory)** is a memory and knowledge layer for AI agents, built on top of that database.
 
-SurrealDB is source-available (see the code [here on GitHub](https://github.com/surrealdb/surrealdb)) and is also available as a cloud managed service through [SurrealDB Cloud](manage/instances/index.md).
+This page covers the main capabilities of both. If you would rather start writing queries, go to [Sample queries](sample-queries.md). If you want to run the database first, go to [Running SurrealDB](running/overview.md).
 
-## Differentiators and advantages
-- **Native multi-model:** combines document, graph, time-series, relational, geospatial and key-value data models natively into SurrealQL, without workarounds or added complexity.
-- **AI native:** purpose-built for AI and context-aware applications with integrated search and retrieval (vector, full-text, hybrid) that blend semantic, graph, and relational intelligence.
-- **Real-time and event-driven:** built-in real-time subscriptions, event triggers, and streaming updates power reactive, real-time experiences - no need for extra layers like [Kafka](https://github.com/surrealdb/surreal-sync/blob/main/docs/kafka.md).
-- **Powerful developer experience:** SurrealQL is intuitive and combines the best ideas from SQL, NoSQL and graph within a single native syntax. Start schemaless and then make your schema as strictly defined as you like.
-- **Rust-powered performance:** high efficiency, memory safety, type safety and concurrency with a single Rust binary.
-- **Test and performance coverage:** Internal Rust testing and [in-house Rust testing suite](https://github.com/surrealdb/surrealdb/tree/main/language-tests) confirm thousands of database output assertions on each pull request, along with a [crud-bench](https://github.com/surrealdb/crud-bench) run to display performance results for each prospective change to the code.
-- **Native ACID compliance:** [snapshot isolation](transactions-and-isolation.md) on every transaction, with immediate consistency after a commit, and [locked reads](transactions-and-isolation.md#locked-reads-with-for-update) when a decision rests on a record the transaction does not write. Opt in to eventual consistency in certain cases if desired.
-- **Deployment flexibility:** single Rust binary and storage/compute separation allow SurrealDB to run embedded (in‐app), in the browser (via WebAssembly) or as a traditional back-end in a single node or in a highly-scalable distributed cluster.
-- **Secure by design:** built-in security with RBAC, record-level permissions, fine-grained access controls, JWT authentication, multi-tenant isolation and built-in compliance (SOC 2, ISO 27001) keep data protected by default.
+## One engine for every data model
 
-More information can be found in our [features page](/features).
+Most applications hold more than one shape of data. A product catalogue is document-shaped, its recommendations are graph-shaped, its search spans text and vectors, and its billing is relational. SurrealDB serves all of those shapes from one engine, so a query can cross from a document to a graph edge to a vector index and back.
 
-## Enterprise case studies
+![Diagram of SurrealDB: SurrealQL, GraphQL and REST or RPC interfaces feed into a single SurrealDB engine written in Rust, which holds document, graph, vector, full-text, relational, time-series, geospatial and key-value models inside one ACID transaction.](assets/img/surrealdb/overview/one-engine-many-models-light.png)
 
-SurrealDB is being used at scale in production by small and large organisations, such as:
+| Model | What it gives you |
+| --- | --- |
+| [Document](learn/data-models/document/overview.md) | Records with nested objects and arrays, at any depth. |
+| [Graph](learn/data-models/graph/overview.md) | Typed edges between records, recursive traversal, and data stored on the edge itself. |
+| [Vector](learn/data-models/vector-search/overview.md) | HNSW indexes with cosine, Euclidean and Manhattan distance. |
+| [Full-text](learn/data-models/full-text-search/overview.md) | Configurable analysers, BM25 scoring and highlighting. |
+| [Time series](learn/data-models/time-series/overview.md) | Ordered record IDs and range reads over time windows. |
+| [Geospatial](learn/data-models/geospatial/overview.md) | GeoJSON-style points, lines, polygons and collections. |
+| [Relational](explore/tutorials/tutorials/define-a-schema.md) | Defined tables, typed fields, assertions and views. |
+
+Because the models share one storage layer, a write that touches a record, its relations and its embeddings commits together. See [Architecture](learn/data-models/architecture.md) for how the engine is put together.
+
+## One query language
+
+[SurrealQL](learn/querying/surrealql/what-is-surrealql.md) keeps the shape of SQL and adds the traversals, similarity functions and nested access the other models need. If you already write `SELECT`, `CREATE`, `UPDATE` and `DELETE`, you can start straight away, then pick up arrow syntax for graph paths and dot notation for nested fields.
+
+Schema strictness is yours to set. A schemaless table accepts any record, which suits early development. A [schemafull](learn/data-models/document/schema-modes.md) table stores only the fields you define, with types and assertions enforced on write. You can tighten a table later without rewriting the data.
+
+Three other interfaces reach the same data. [GraphQL](learn/querying/graphql/overview.md) schemas are generated from your tables, the [REST API](reference/rest-api/index.md) covers queries and key-value access over HTTP, and [`DEFINE API`](reference/query-language/statements/define/api.md) publishes your own HTTP endpoints written in SurrealQL.
+
+## Search and retrieval in one query
+
+Retrieval for AI applications usually needs more than one signal. SurrealDB runs those signals together:
+
+- **Vector similarity** over HNSW indexes, for meaning.
+- **Full-text search** with BM25 scoring, for wording.
+- **Graph traversal** across typed edges, for connection.
+- **[Hybrid search](learn/data-models/vector-search/hybrid-search.md)** that fuses text and vector results with reciprocal rank fusion.
+
+A single statement can find semantically similar documents, walk to the entities they mention, and filter on a structured field, without a second store or a second round trip. This is the basis of the [RAG and Graph RAG patterns](learn/data-models/vector-search/rag-architecture-patterns.md) documented for SurrealDB.
+
+## Real-time by default
+
+[Live queries](learn/querying/real-time/live-queries.md) let a client subscribe to a filtered set of records and receive changes as they happen. [Table events](reference/query-language/statements/define/event.md) fire on create, update and delete, and [`ASYNC` events](reference/query-language/statements/define/event.md#async-events) run after commit for work that should not hold up the write.
+
+The database is your event source and your source of truth at once, which keeps reactive features close to the data they react to.
+
+## ACID transactions across every model
+
+Each statement runs in its own transaction by default, and [`BEGIN`](reference/query-language/statements/begin.md) starts a manual transaction spanning as many statements, tables and models as you need. Every transaction runs under [snapshot isolation](learn/querying/concepts-and-guides/transactions.md#snapshot-isolation), the one isolation level SurrealDB offers, with write conflicts detected at commit.
+
+The guarantee holds on every storage engine and every deployment model, from an embedded in-memory database to a distributed cluster. See [Transactions](learn/querying/concepts-and-guides/transactions.md) for the isolation semantics and the retry behaviour they imply.
+
+## Runs where your application runs
+
+SurrealDB ships as a single Rust binary and separates compute from storage. The same database therefore runs inside your application, on one server, or across a cluster.
+
+![Four deployment models side by side: embedded in an application, a single node with disk persistence, a distributed set of compute nodes on shared storage, and a managed deployment run by SurrealDB Cloud. All four share the same SurrealQL, SDKs and transaction guarantees.](assets/img/surrealdb/overview/deployment-models-light.png)
+
+- **[Embedded](build/embedding/index.md)** in a Rust, Go, JavaScript, Python or .NET application, in memory or on disk, and in the browser through WebAssembly and IndexedDB.
+- **[Single node](running/file-backed.md)** on RocksDB, which suits development and smaller production workloads.
+- **[Distributed](manage/self-hosted/deployment-models.md)** across many compute nodes on shared storage, with automatic sharding and read replicas.
+- **[Managed](manage/instances/index.md)** on SurrealDB Cloud, which runs the infrastructure, the backups and the scaling for you.
+
+Moving between them does not change your queries. See [Deployment models](manage/self-hosted/deployment-models.md) for the trade-offs of each.
+
+## Secure and multi-tenant by design
+
+SurrealDB can sit behind a backend service or accept connections straight from a frontend, because access control reaches down to individual fields.
+
+- **[Namespaces and databases](learn/data-models/architecture.md#system-structure)** separate organisations, teams and environments, with no limit on either.
+- **[Role-based access](reference/query-language/statements/define/access/index.md)** applies at root, namespace and database level.
+- **[Record access](reference/query-language/statements/define/access/record.md)** authenticates your end users against your own tables.
+- **[Table and field permissions](learn/security/index.md)** decide what each subject may read and write.
+- **JWT and third-party authentication** cover the common OAuth providers and signing algorithms.
+
+Encryption in transit and at rest, audit logging, SOC 2 Type 2, ISO 27001, Cyber Essentials Plus and GDPR compliance apply to the managed service. See [Security](learn/security/index.md) for the full picture.
+
+## Memory for AI agents
+
+An agent starts each session with nothing. SurrealDB Agent Memory gives it durable memory instead: a layer that turns conversations, documents and connected systems into structured, time-aware facts, then retrieves them on demand.
+
+![Diagram of SurrealDB Agent Memory: conversations, documents and systems feed a memory layer offering typed memory, a knowledge graph, hybrid recall and time and provenance tracking. The agent reads from and writes to that layer, and everything is stored in one SurrealDB database.](assets/img/surrealdb/overview/agent-memory-layer-light.png)
+
+The layer is built around six ideas:
+
+- **[Typed memory](https://surrealdb.com/docs/agent-memory/memory-and-knowledge)** distinguishes episodes, identity, knowledge, context, instructions and uncertainty.
+- **A knowledge graph** stores entities as nodes and typed relationships as edges.
+- **Hybrid recall** fuses meaning, wording, connection and recency in one ranker.
+- **Tiered queries** keep cheap questions cheap.
+- **[Provenance and time](https://surrealdb.com/docs/agent-memory/mental-model/two-layer-architecture)** record where each fact came from and when it held, so a superseded belief is end-dated rather than overwritten.
+- **Autonomous understanding** improves the memory between conversations through reflection and consolidation.
+
+Every read, decision and write commits inside one SurrealDB transaction, so documents, relations, embeddings and retrieval traces stay consistent with each other. Start with [What is SurrealDB Agent Memory?](https://surrealdb.com/docs/agent-memory/welcome/what-is-surrealdb-agent-memory).
+
+## Extend the database itself
+
+Logic that belongs next to the data can live in the database:
+
+- **[Custom functions](learn/querying/concepts-and-guides/custom-functions.md)** in SurrealQL, for repeated or complicated expressions.
+- **[JavaScript functions](reference/query-language/scripting/overview.md)**, each running in its own isolated context.
+- **[WebAssembly modules](learn/extensions/index.md)** written in Rust, compiled to WASM and loaded at runtime.
+- **[SurrealML](explore/ml-models/index.md)** models trained in PyTorch, TensorFlow or Sklearn and executed through an ONNX runtime.
+- **[Buckets](reference/query-language/statements/define/bucket.md)** for files on disk, in memory, or in S3, Google Cloud Storage and Azure Blob Storage.
+- **[MCP](agents/index.md)** for connecting coding agents such as Claude Code, Cursor and VS Code directly to a database.
+
+## In production
+
+SurrealDB runs at scale in organisations including:
 
 - **Samsung Ads**, for knowledge graphs in advertising analytics.
-- **SiteForge**, to reduce its development cycle, queries, and backend API usage.
-- **Verizon**, for its generative AI assistant utilised by field technicians.
-- **Tencent**, for infrastructure monitoring, having consolidated 9 tools into one.
-- **PolyAI**, for low-latency, customer-controlled RAG across voice AI experiences.
+- **Verizon**, for a generative AI assistant used by field technicians.
+- **Tencent**, for infrastructure monitoring, after consolidating nine tools into one.
+- **PolyAI**, for low-latency RAG across voice AI experiences.
+- **SiteForge**, to shorten its development cycle and reduce backend API usage.
 
-More companies and an overview of the benefits provided by SurrealDB can be found in our [case studies page](/casestudies).
+More detail is on the [case studies page](/casestudies), and the complete capability list is on the [features page](/features).
 
-## Use cases
+## Where next
 
-SurrealDB is ideal for any application, in particular data intensive applications that require multiple data systems, such as:
-
-- **AI agents:** building Generative AI systems leveraging a single unstructured and structured data layer with vector, graph and real-time capabilities for RAG, Graph RAG, and agent memory.
-- **Knowledge graphs:** turning unstructured data into structured, queryable data with a flexible multi-model approach including support for graph relationships.
-- **Real-time analytics:** fraud detection systems, recommendation engines and log analytics.
-- **Embedded & edge computing:** SurrealDB is a single lightweight Rust binary and can be embedded in industrial environments, run in-memory or in browser.
-- **Backend-as-a-Service:** with support for end-user authentication, SurrealDB can also be used as a BaaS for web applications, if desired.
+- **[Sample queries](sample-queries.md)** — Run your first SurrealQL queries against a live instance.
+- **[Running SurrealDB](running/overview.md)** — Start the database in memory, on disk, in Docker, or in the browser.
+- **[Architecture](learn/data-models/architecture.md)** — How the engine separates compute from storage, and how a database is structured.
+- **[Agent Memory](https://surrealdb.com/docs/agent-memory)** — Give your agents durable, queryable memory built from your own data.

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T17:16:29.373820+00:00",
+  "generated_at": "2026-08-28T18:08:59.550641+00:00",
   "count": 261,
   "posts": [
     {
@@ -303,7 +303,7 @@
     },
     {
       "slug": "introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale",
-      "title": "Introducing SurrealDB Cloud Scale: high availability",
+      "title": "Introducing SurrealDB Cloud Scale: fault-tolerant and scalable",
       "summary": "Scale is SurrealDB Cloud's production tier: highly-available, fault-tolerant clusters across multiple availability zones, powered by SurrealDS.",
       "publishDate": "2026-07-02T11:48:20.000Z",
       "categories": [

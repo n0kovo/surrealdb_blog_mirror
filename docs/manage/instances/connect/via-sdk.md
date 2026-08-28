@@ -20,7 +20,7 @@ To get a snippet with the endpoint already filled in, select **Connect** on the 
 An SDK needs three things:
 
 - **The endpoint** of the instance, from the **Connect** menu.
-- **A namespace and a database**, which tell SurrealDB where the query runs. A prompt to create them appears at the top of the dashboard if the instance has none. See [system structure](../../../concepts.md#system-structure).
+- **A namespace and a database**, which tell SurrealDB where the query runs. A prompt to create them appears at the top of the dashboard if the instance has none. See [system structure](../../../learn/data-models/architecture.md#system-structure).
 - **Credentials**, unless the connection is anonymous. Studio authenticates with your own session, but application code needs a user or an access method defined on the instance.
 
 ## Create credentials

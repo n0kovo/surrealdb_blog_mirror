@@ -11,7 +11,7 @@ _53 posts_
   `releases` — SurrealDB imports Snowflake tables directly. Move warehouse data into a context layer where facts, relationships, vectors and agent memory live in one engine.
 - **2026-08-05** · [Empower your agents with the new SurrealDB MCP](../2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  
   `featured` `releases` `tutorials` `ai` — The SurrealMCP server lets you add one URL to any AI tool, sign in with your Surreal ID, and deploy, query, and look after your SurrealDB Cloud account.
-- **2026-07-02** · [Introducing SurrealDB Cloud Scale: high availability](../2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  
+- **2026-07-02** · [Introducing SurrealDB Cloud Scale: fault-tolerant and scalable](../2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  
   `featured` `releases` — Scale is SurrealDB Cloud's production tier: highly-available, fault-tolerant clusters across multiple availability zones, powered by SurrealDS.
 - **2026-06-22** · [A living knowledge layer for your agents: SurrealDB + CocoIndex](../2026/06/a-living-knowledge-layer-for-your-agents-surrealdb-cocoindex.md)  
   `releases` — CocoIndex now ships a native SurrealDB connector: one declarative pipeline drives a document store, knowledge graph and vector index in one database.

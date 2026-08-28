@@ -220,7 +220,7 @@ SHOW CHANGES FOR TABLE original_tb SINCE 0;
 Note the following when working with the versionstamps of a changefeed:
 
 * Changefeeds defined on tables are implemented via a single `CHANGEFEED` on the database level. As such, `SHOW CHANGES FOR TABLE sometable` will only show versionstamps in sequential order if `sometable` is the database's only table.
-* The `versionstamp` output above is due to an extra two bytes needed for more detailed ordering needed in the FoundationDB distributed [SurrealDB backend](../../../architecture.md). To turn these versionstamps into a normal sequence of numbers, a right shift of sixteen bits (`>> 16`) can be used.
+* The `versionstamp` output above is due to an extra two bytes needed for more detailed ordering needed in the FoundationDB distributed [SurrealDB backend](../../../learn/data-models/architecture.md). To turn these versionstamps into a normal sequence of numbers, a right shift of sixteen bits (`>> 16`) can be used.
 * A `SINCE <number` greater than the current sequential number will return an empty array.
 * `SINCE <time>` needs to be a datetime after which the `CHANGEFEED` was defined.
 

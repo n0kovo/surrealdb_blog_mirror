@@ -11,7 +11,7 @@ This page explains the two topologies an instance can run on, and what each one 
 
 The plan you choose when you [create an instance](create.md) selects the topology.
 
-Instances build on [the layered architecture of SurrealDB](../../architecture.md), which separates storage from compute. That separation lets an instance grow, replicate, and recover without you sharding or resharding the database yourself.
+Instances build on [the layered architecture of SurrealDB](../../learn/data-models/architecture.md), which separates storage from compute. That separation lets an instance grow, replicate, and recover without you sharding or resharding the database yourself.
 
 ## Start: single node
 
@@ -27,7 +27,7 @@ Because there is a single node, there is no failover inside the instance. [Backu
 
 The **Scale** plan runs a cluster of three compute nodes or more over distributed storage. Each node runs in a different availability zone within the region, backed by its own disk.
 
-![Diagram of the multi-node topology: three SurrealDB compute nodes connected to a shared storage cluster of distributed storage nodes.](../../assets/img/image/cloud/light/enterprise-multi-node-light.png)
+![Diagram of the multi-node topology: three SurrealDB compute nodes, each in its own availability zone and backed by its own storage disk, split into a compute layer and a storage layer.](../../assets/img/image/cloud/light/enterprise-multi-node-light.png)
 
 Data is replicated continuously between nodes, and every node serves reads, writes, and queries. The storage layer handles replication, quorum consensus, and distributed transactions. A query therefore does not need to know which node holds which data.
 

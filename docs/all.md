@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1084 pages_  
+_1082 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -271,8 +271,6 @@ _1084 pages_
   Set up Windsurf for SurrealDB with the hosted MCP server and the official Agent Skills.
 - [Zed](agents/zed.md)
   Set up the Zed editor for SurrealDB with the hosted MCP server and the official Agent Skills.
-- [Architecture](architecture.md)
-  How SurrealDB separates compute from storage, and how that design supports embedded, single-node, distributed, and managed deployments.
 - [Agent Skills](build/ai-agents/agent-skills.md)
   Official SurrealDB agent skills for use in agentic coding workflows.
 - [AI frameworks](build/ai-agents/ai-frameworks.md)
@@ -389,8 +387,6 @@ _1084 pages_
   Map data and concepts from other databases to SurrealDB using Surreal Sync, the CLI import or SDKs.
 - [Migrating to SurrealDB](build/migrating/index.md)
   Moving data into SurrealDB from other databases, older SurrealDB releases, or files and streams.
-- [Concepts](concepts.md)
-  This page gives details about some of the core concepts of SurrealDB, including the intended use cases, design choices, and overarching features.
 - [Introduction](explore/ml-models/index.md)
   SurrealML stores and runs trained ML models in SurrealDB - train in Python, then load and infer with sklearn or PyTorch.
 - [Computation](explore/ml-models/surrealml/computation.md)
@@ -576,6 +572,8 @@ _1084 pages_
   Connect to SurrealDB and run your first queries with the Rust SDK.
 - [Swift](languages/swift.md)
   Connect to SurrealDB and run your first queries with the Swift SDK.
+- [Architecture](learn/data-models/architecture.md)
+  How SurrealDB separates compute from storage, how every data model maps onto one storage engine, and how namespaces, databases and tables are structured.
 - [Common patterns](learn/data-models/document/common-patterns.md)
   Map document-database concepts to SurrealDB, compare SurrealQL with MongoDB-style operations, and find resources for CRUD and migration.
 - [Nested objects and arrays](learn/data-models/document/nested-objects-and-arrays.md)
@@ -683,7 +681,7 @@ _1084 pages_
 - [Testing](learn/querying/concepts-and-guides/testing.md)
   This page details a number of ways that SurrealDB can be tested.
 - [Transactions](learn/querying/concepts-and-guides/transactions.md)
-  SurrealDB transactions: default per-statement scope and manual BEGIN, COMMIT and CANCEL for atomic multi-step changes.
+  How SurrealDB transactions work: the default per-statement scope, manual BEGIN, COMMIT and CANCEL, and the snapshot isolation guarantees that apply under concurrency.
 - [Working with types](learn/querying/concepts-and-guides/working-with-types.md)
   Tips for working with data types in SurrealDB, including arrays, type safety, typed LET statements, and chaining array functions.
 - [Managing APIs](learn/querying/custom-apis/managing-apis.md)
@@ -2122,7 +2120,5 @@ _1084 pages_
   Try SurrealDB in the browser with the SurrealDB Studio Sandbox - no install and no account required.
 - [Sample queries](sample-queries.md)
   Learn how to get started with SurrealDB
-- [Transactions and isolation](transactions-and-isolation.md)
-  How SurrealDB transactions work, the isolation guarantees they provide under concurrency, and what application developers should plan for.
 - [What is SurrealDB](what-is-surrealdb.md)
-  The purpose of this document is to provide you with a comprehensive understanding of SurrealDB. Whether you are a beginner getting started with SurrealDB or an experienced user looking for specific information, this overview will serve as a valuable resource.
+  SurrealDB is a multi-model database written in Rust. This page covers what it stores, how it runs, and what SurrealDB Agent Memory adds for AI agents.

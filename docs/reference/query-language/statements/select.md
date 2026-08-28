@@ -824,7 +824,7 @@ SELECT * FROM person
 
 *Since v3.3.0*
 
-Inside a transaction, a plain `SELECT` reads a consistent [snapshot](../../../transactions-and-isolation.md#snapshot-isolation), but the transaction can still commit successfully even if the records it read were modified by another transaction in the meantime. When later writes depend on a value that was only read, this allows the transaction to commit decisions based on stale data.
+Inside a transaction, a plain `SELECT` reads a consistent [snapshot](../../../learn/querying/concepts-and-guides/transactions.md#snapshot-isolation), but the transaction can still commit successfully even if the records it read were modified by another transaction in the meantime. When later writes depend on a value that was only read, this allows the transaction to commit decisions based on stale data.
 
 The `FOR UPDATE` clause registers each selected record for commit-time conflict detection: the enclosing transaction will only commit if none of those records were modified by another transaction after the snapshot was taken. If a concurrent modification is detected, `COMMIT` fails with a transaction conflict error, and the transaction can be retried.
 

@@ -11,7 +11,7 @@ _113 posts_
   `featured` `releases` — Introducing SurrealDB Studio: the new app for working with your SurrealDB instances and Spectron contexts, and the most powerful way to interact with your data.
 - **2026-08-05** · [Empower your agents with the new SurrealDB MCP](../2026/08/surrealmcp-a-managed-mcp-server-for-ai-agents.md)  
   `featured` `releases` `tutorials` `ai` — The SurrealMCP server lets you add one URL to any AI tool, sign in with your Surreal ID, and deploy, query, and look after your SurrealDB Cloud account.
-- **2026-07-02** · [Introducing SurrealDB Cloud Scale: high availability](../2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  
+- **2026-07-02** · [Introducing SurrealDB Cloud Scale: fault-tolerant and scalable](../2026/07/introducing-scale-surrealdb-cloud-built-for-high-availability-and-scale.md)  
   `featured` `releases` — Scale is SurrealDB Cloud's production tier: highly-available, fault-tolerant clusters across multiple availability zones, powered by SurrealDS.
 - **2026-07-01** · [Bring SurrealDB to your Replit Agent](../2026/07/bring-surrealdb-to-your-replit-agent.md)  
   `tutorials` `ai` `featured` — SurrealDB's MCP server lets Replit Agent build apps directly on a database you own, reading your schema and querying live data.

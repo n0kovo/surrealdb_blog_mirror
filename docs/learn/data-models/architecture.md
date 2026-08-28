@@ -1,0 +1,135 @@
+---
+position: 1
+title: Architecture
+description: How SurrealDB separates compute from storage, how every data model maps onto one storage engine, and how namespaces, databases and tables are structured.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/data-models/architecture.mdx"
+---
+
+# Architecture
+
+SurrealDB separates the query engine (compute) from the storage layer. The engine speaks one query language and exposes one API, while the storage layer decides how data is persisted, replicated and scaled. Because the two are decoupled, the same database, queries and SDK calls work from an embedded edge application through to a distributed cloud cluster.
+
+![Diagram of SurrealDB's layered architecture: clients connect through [client].surrealdb.com to multiple compute nodes, all backed by centralised storage on AWS S3.](../../assets/img/image/cloud/light/architecture-light.png)
+
+This page describes the two layers, how the [data models](index.md) share a single store, and how a SurrealDB deployment is organised.
+
+## Query layer
+
+The query layer handles client requests and coordinates work against storage:
+
+- Parses and executes [SurrealQL](../../reference/query-language/index.md)
+- Authenticates connections and sessions, for example through `SIGNIN` and access methods
+- Enforces table- and field-level `PERMISSIONS` as records are read and written
+- Plans index-backed queries, updates index entries on writes, and coordinates [transactions](../querying/concepts-and-guides/transactions.md) against storage
+
+Incoming SurrealQL passes through a parser, an executor that groups statements into transactions, an iterator that plans data access and fetches keys from storage, and a document processor that applies permissions and persists changes through the storage API.
+
+Every transaction runs under snapshot isolation with write conflict detection on commit, whichever storage backend sits underneath. A [`SELECT ... FOR UPDATE`](../../reference/query-language/statements/select.md#the-for-update-clause) read extends that detection to records the transaction reads without writing.
+
+## Storage layer
+
+The storage layer handles persistence and durability. It determines deployment characteristics such as scalability, temporal versioning, replication and fault tolerance. SurrealDB integrates with several engines depending on how you run the database:
+
+| Concern | Typical engine |
+| --- | --- |
+| Single-node production | [RocksDB](https://rocksdb.org/) (recommended for single node) |
+| Single-node or embedded | [SurrealKV](https://github.com/surrealdb/surrealkv) (beta) |
+| In-memory server or embedded | [SurrealMX](https://github.com/surrealdb/surrealmx) |
+| Browser persistence | [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) |
+| Distributed multi-node | Shared distributed storage on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) and self-hosted Enterprise |
+
+Each engine must support transactional read and write of individual keys and key ranges. That is the whole contract, which is why the query layer can offer identical semantics across every deployment model.
+
+## One store for every data model
+
+SurrealDB is a document database at its core. Each record is a document held on a key-value engine, and it can carry arbitrary nested objects and arrays.
+
+The other models come from how those keys are laid out rather than from separate subsystems:
+
+- **[Record IDs](../../reference/query-language/language-primitives/data-types/record-ids.md)** sort in a defined order, so a range read over a table returns records in that order. This is what makes [time-series](time-series/overview.md) access a range scan rather than a scan-and-filter.
+- **Graph edges** are records of their own, created with [`RELATE`](../../reference/query-language/statements/relate.md). Traversal reads the edge table by key, so a [graph query](graph/overview.md) stays a series of key lookups.
+- **Indexes** for [vector](vector-search/overview.md) and [full-text](full-text-search/overview.md) search are index entries in the same store, maintained by the query layer as records change.
+
+One consequence matters for application design: a write that touches a document, its edges and its index entries is one transaction against one store, so those parts cannot drift apart.
+
+## System structure
+
+SurrealDB is a multi-tenant platform. Resources nest in four levels, and each level has its own [`DEFINE`](../../reference/query-language/statements/define/overview.md) statement:
+
+| Level | Statement | Purpose |
+| --- | --- | --- |
+| [Namespace](../../reference/query-language/statements/define/namespace.md) | `DEFINE NAMESPACE` | Isolation for an organisation, department or team. No limit on the number of namespaces. |
+| [Database](../../reference/query-language/statements/define/database.md) | `DEFINE DATABASE` | The unit that holds data. Each database has its own tables, indexes, schema, settings and permissions. No limit per namespace. |
+| [Table](../../reference/query-language/statements/define/table.md) | `DEFINE TABLE` | A collection of records. Called a collection in some other systems. |
+| [Field](../../reference/query-language/statements/define/field.md) | `DEFINE FIELD` | A typed field on a table, with optional assertions and permissions. |
+
+A row or document in SurrealDB is called a **record**, and a column is called a **field**. Records are [created](../../reference/query-language/statements/create.md), [read](../../reference/query-language/statements/select.md), [updated](../../reference/query-language/statements/update.md) and [deleted](../../reference/query-language/statements/delete.md), with further statements for common patterns: [`UPSERT`](../../reference/query-language/statements/upsert.md) writes a record whether or not it already exists, and [`RELATE`](../../reference/query-language/statements/relate.md) links two records through an edge table.
+
+### Namespaces and databases
+
+A namespace is the outer container. It holds databases and nothing else, which makes it the natural boundary in multi-tenant deployments where separate applications or teams share one instance or cluster. Permissions and access methods can be granted at namespace level rather than per database.
+
+A database sits inside a namespace and is where data lives: tables, records, indexes, events, functions and access methods. Most work happens here.
+
+Both are defined with a unique name and an optional comment. The [`USE`](../../reference/query-language/statements/use.md) statement switches the session from one namespace or database to another.
+
+```surql
+DEFINE NAMESPACE dev_namespace COMMENT "Internal use only: do not use in prod";
+USE NAMESPACE dev_namespace;
+-- Now inside 'dev_namespace', define a database within it
+DEFINE DATABASE dev_db_1 COMMENT "First of many dev databases";
+```
+
+Multiple [access](../../reference/query-language/statements/define/access/index.md) methods can be defined on a namespace or a database. The [record](../../reference/query-language/statements/define/access/record.md) access method authenticates your end users against your own tables, down to field level.
+
+### Inspecting a deployment
+
+The [`INFO`](../../reference/query-language/statements/info.md) statement reports what exists at each level:
+
+- `INFO FOR ROOT`: namespaces, root users, and system information such as allocated memory and physical cores.
+- `INFO FOR NAMESPACE`: the namespace's databases, users and access methods.
+- `INFO FOR DATABASE`: the database's tables, users, accesses, functions, analysers and more.
+
+Each resource is reported as the `DEFINE` statement that would recreate it, which makes the output a readable snapshot of the schema:
+
+```surql title="Abridged output of INFO FOR DATABASE"
+{
+	accesses: {  },
+	analyzers: {
+		blank_snowball: 'DEFINE ANALYZER blank_snowball TOKENIZERS BLANK FILTERS LOWERCASE, SNOWBALL(ENGLISH)'
+	},
+	functions: {
+		pound_to_usd: 'DEFINE FUNCTION fn::pound_to_usd($price: number) -> float { $price * 1.26f } PERMISSIONS FULL'
+	},
+	tables: {
+		order: 'DEFINE TABLE order TYPE RELATION IN person OUT product SCHEMAFULL PERMISSIONS NONE',
+		user: 'DEFINE TABLE user TYPE ANY SCHEMALESS PERMISSIONS NONE'
+	},
+	users: {
+		Boris: "DEFINE USER Boris ON DATABASE PASSHASH '[REDACTED]' ROLES VIEWER DURATION FOR TOKEN 1h, FOR SESSION NONE"
+	}
+}
+```
+
+Further `INFO` statements report the state of individual tables, users and indexes.
+
+## Deployment models
+
+The separation of compute from storage gives four ways to run the same database:
+
+- **Embedded**, in memory through SurrealMX, on disk through RocksDB or SurrealKV, or in the browser through IndexedDB.
+- **Single-node self-hosted**, on RocksDB, or on SurrealKV while it is in beta.
+- **Multi-node self-hosted**, on [managed Kubernetes](../../manage/self-hosted/managed-kubernetes.md) such as EKS, GKE or AKS.
+- **Managed**, through [managed instances](../../manage/instances/index.md), from single-node **Start** instances to multi-node **Scale** clusters on distributed storage.
+
+Development can begin on an embedded or single-node deployment and move to a cluster later without changing application code or queries.
+
+For storage trade-offs and how to choose a model, see [Deployment models](../../manage/self-hosted/deployment-models.md).
+
+## Where SurrealDB sits in your stack
+
+SurrealDB works as a conventional database behind a backend service, using the SDKs for Go, Python, Rust, C, Java, .NET, Node.js or PHP.
+
+It can also serve a frontend directly. Table-, record- and field-level permissions, combined with [record access](../../reference/query-language/statements/define/access/record.md) authentication, let a browser or mobile client connect to the database and still only see the data it is entitled to. The JavaScript SDK, WebAssembly and the framework integrations for React, Next.js, Vue, Svelte and others support this arrangement.
+
+Both approaches use the same query language and the same permission model, so a project can start with one and add the other later.

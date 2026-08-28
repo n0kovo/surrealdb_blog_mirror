@@ -34,6 +34,6 @@ _Auto-generated index — 14 pages._
 - [Testing](testing.md)
   This page details a number of ways that SurrealDB can be tested.
 - [Transactions](transactions.md)
-  SurrealDB transactions: default per-statement scope and manual BEGIN, COMMIT and CANCEL for atomic multi-step changes.
+  How SurrealDB transactions work: the default per-statement scope, manual BEGIN, COMMIT and CANCEL, and the snapshot isolation guarantees that apply under concurrency.
 - [Working with types](working-with-types.md)
   Tips for working with data types in SurrealDB, including arrays, type safety, typed LET statements, and chaining array functions.

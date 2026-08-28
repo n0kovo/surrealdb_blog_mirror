@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # Run a single-node, on-disk server
 
-A single node of SurrealDB can be run with data persisted to the filesystem. This configuration can be done using either RocksDB or SurrealKV as the backend. Both use the same [transaction and isolation semantics](../transactions-and-isolation.md) as every other SurrealDB deployment.
+A single node of SurrealDB can be run with data persisted to the filesystem. This configuration can be done using either RocksDB or SurrealKV as the backend. Both use the same [transaction and isolation semantics](../learn/querying/concepts-and-guides/transactions.md) as every other SurrealDB deployment.
 
 **RocksDB**
 
@@ -74,7 +74,7 @@ A number of parameters can be used on startup such as `sync` to set when to flus
 
 At a high level, SurrealKV provides:
 
-- MVCC-backed concurrent reads and writes on disk (isolation semantics are defined by the [query layer](../transactions-and-isolation.md), not by the engine alone).
+- MVCC-backed concurrent reads and writes on disk (isolation semantics are defined by the [query layer](../learn/data-models/architecture.md#query-layer), not by the engine alone).
 - Durability options (immediate vs eventual flush semantics) aligned with how you configure sync behaviour.
 - Built-in versioning for historical / temporal queries in SurrealDB when you opt in. See [versioned startup](../reference/cli/surrealdb-cli/commands/start.md#supported-parameters-for-surrealkv) and the [`VERSION` clause](../reference/query-language/statements/select.md#the-version-clause) for details.
 - LSM structure: writes batch into memtables and flush to SSTables.

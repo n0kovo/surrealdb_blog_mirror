@@ -261,7 +261,7 @@ The `string::capitalize` function capitalizes the first letter of each word in a
 string::capitalize(string) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 string::capitalize("how to cook for forty humans");
@@ -278,7 +278,7 @@ The `string::concat` function concatenates values together into a single string.
 ```surql title="API DEFINITION"
 string::concat(value, ...) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -288,7 +288,7 @@ value = "'this is a test'"
 
 */
 
-RETURN string::concat('this', ' ', 'is', ' ', 'a', ' ', 'test');
+string::concat('this', ' ', 'is', ' ', 'a', ' ', 'test');
 
 -- 'this is a test'
 ```
@@ -319,7 +319,7 @@ The `string::contains` function checks whether a string contains another string.
 ```surql title="API DEFINITION"
 string::contains(string, $predicate: string) -> bool
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -329,7 +329,7 @@ value = "true"
 
 */
 
-RETURN string::contains('abcdefg', 'cde');
+string::contains('abcdefg', 'cde');
 
 -- true
 ```
@@ -346,7 +346,7 @@ The `string::ends_with` function checks whether a string ends with another strin
 ```surql title="API DEFINITION"
 string::ends_with(string, $other: string) -> bool
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -356,7 +356,7 @@ value = "true"
 
 */
 
-RETURN string::ends_with('some test', 'test');
+string::ends_with('some test', 'test');
 
 -- true
 ```
@@ -373,7 +373,7 @@ If you want to join an array of strings use [`array::join`](array.md#arrayjoin).
 string::join($delimiter: value, value...) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -383,7 +383,7 @@ value = "'a, list, of, items'"
 
 */
 
-RETURN string::join(', ', 'a', 'list', 'of', 'items');
+string::join(', ', 'a', 'list', 'of', 'items');
 
 -- "a, list, of, items"
 ```
@@ -398,7 +398,7 @@ The `string::len` function returns the length of a given string in characters.
 string::len(string) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -408,7 +408,7 @@ value = "14"
 
 */
 
-RETURN string::len('this is a test');
+string::len('this is a test');
 
 -- 14
 ```
@@ -423,7 +423,7 @@ The `string::lowercase` function converts a string to lowercase.
 string::lowercase(string) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -433,7 +433,7 @@ value = "'this is a test'"
 
 */
 
-RETURN string::lowercase('THIS IS A TEST');
+string::lowercase('THIS IS A TEST');
 
 -- 'this is a test'
 ```
@@ -448,7 +448,7 @@ The `string::matches` function performs a regex match on a string.
 string::matches(string, $match_with: string|regex) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -493,7 +493,7 @@ The `string::repeat` function repeats a string a number of times. The repeat cou
 string::repeat(string, $times: number) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -503,7 +503,7 @@ value = "'testtesttest'"
 
 */
 
-RETURN string::repeat('test', 3);
+string::repeat('test', 3);
 
 -- 'testtesttest'
 ```
@@ -528,7 +528,7 @@ string::replace(string, $from: string, $to: string) -> string
 string::replace(string, $from: string|regex, $to: string) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -538,7 +538,7 @@ value = "'this is awesome'"
 
 */
 
-RETURN string::replace('this is a test', 'a test', 'awesome');
+string::replace('this is a test', 'a test', 'awesome');
 
 -- 'this is awesome'
 ```
@@ -553,7 +553,7 @@ value = "'Mny lnggs nly s cnsnnts n thr wrtng'"
 
 */
 
-RETURN string::replace('Many languages only use consonants in their writing', <regex>'a|e|i|o|u', '');
+string::replace('Many languages only use consonants in their writing', <regex>'a|e|i|o|u', '');
 ```
 
 ```surql title="Output"
@@ -569,7 +569,7 @@ The `string::reverse`  function reverses a string.
 ```surql title="API DEFINITION"
 string::reverse(string) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -579,7 +579,7 @@ value = "'tset a si siht'"
 
 */
 
-RETURN string::reverse('this is a test');
+string::reverse('this is a test');
 
 -- 'tset a si siht'
 ```
@@ -594,10 +594,10 @@ The `string::slice` function extracts and returns a section of a string.
 string::slice(string, $from: number, $to: number) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN string::slice('this is a test', 10, 4);
+string::slice('this is a test', 10, 4);
 
 "test"
 ```
@@ -611,7 +611,7 @@ The `string::slug`  function converts a string into a human and URL-friendly str
 ```surql title="API DEFINITION"
 string::slug(string) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -621,7 +621,7 @@ value = "'surrealdb-cloud-has-launched-ai_native_database-awesome'"
 
 */
 
-RETURN string::slug('SurrealDB Cloud has launched!!! #ai_native_database #awesome');
+string::slug('SurrealDB Cloud has launched!!! #ai_native_database #awesome');
 
 -- 'surrealdb-cloud-has-launched-ai_native_database-awesome'
 ```
@@ -636,7 +636,7 @@ The `string::split` function splits a string by a given delimiter.
 string::split(string, $delimiter: string) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -646,7 +646,7 @@ value = "['this', 'is', 'a', 'list']"
 
 */
 
-RETURN string::split('this, is, a, list', ', ');
+string::split('this, is, a, list', ', ');
 
 -- ['this', 'is', 'a', 'list']
 ```
@@ -664,7 +664,7 @@ The `string::starts_with` function checks whether a string starts with another s
 string::starts_with(string, $predicate: string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -674,7 +674,7 @@ value = "true"
 
 */
 
-RETURN string::starts_with('some test', 'some');
+string::starts_with('some test', 'some');
 
 -- true
 ```
@@ -689,7 +689,7 @@ The `string::trim` function removes whitespace from the start and end of a strin
 string::trim(string) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -699,7 +699,7 @@ value = "'this is a test'"
 
 */
 
-RETURN string::trim('    this is a test    ');
+string::trim('    this is a test    ');
 
 -- 'this is a test'
 ```
@@ -714,7 +714,7 @@ The `string::uppercase` function converts a string to uppercase.
 string::uppercase(string) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -724,7 +724,7 @@ value = "'THIS IS A TEST'"
 
 */
 
-RETURN string::uppercase('this is a test');
+string::uppercase('this is a test');
 
 -- 'THIS IS A TEST'
 ```
@@ -737,7 +737,7 @@ The `string::words` function splits a string into an array of separate words.
 string::words(string) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -747,7 +747,7 @@ value = "['this', 'is', 'a', 'test']"
 
 */
 
-RETURN string::words('this is a test');
+string::words('this is a test');
 
 -- ['this', 'is', 'a', 'test']
 ```
@@ -1110,7 +1110,7 @@ The `string::html::encode` function encodes special characters into HTML entitie
 ```surql title="API DEFINITION"
 string::html::encode(string) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1120,7 +1120,7 @@ value = "'&lt;h1&gt;Safe&#32;Title&lt;&#47;h1&gt;&lt;script&gt;alert(&apos;XSS&a
 
 */
 
-RETURN string::html::encode("<h1>Safe Title</h1><script>alert('XSS')</script><p>Safe paragraph. Not safe <span onload='logout()'>event</span>.</p>");
+string::html::encode("<h1>Safe Title</h1><script>alert('XSS')</script><p>Safe paragraph. Not safe <span onload='logout()'>event</span>.</p>");
 
 -- '&lt;h1&gt;Safe&#32;Title&lt;&#47;h1&gt;&lt;script&gt;alert(&apos;XSS&apos;)&lt;&#47;script&gt;&lt;p&gt;Safe&#32;paragraph.&#32;Not&#32;safe&#32;&lt;span&#32;onload&#61;&apos;logout()&apos;&gt;event&lt;&#47;span&gt;.&lt;&#47;p&gt;'
 ```
@@ -1134,7 +1134,7 @@ The `string::html::sanitize` function sanitizes HTML code to prevent the most da
 ```surql title="API DEFINITION"
 string::html::sanitize(string) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1144,7 +1144,7 @@ value = "'<h1>Safe Title</h1><p>Safe paragraph. Not safe <span>event</span>.</p>
 
 */
 
-RETURN string::html::sanitize("<h1>Safe Title</h1><script>alert('XSS')</script><p>Safe paragraph. Not safe <span onload='logout()'>event</span>.</p>");
+string::html::sanitize("<h1>Safe Title</h1><script>alert('XSS')</script><p>Safe paragraph. Not safe <span onload='logout()'>event</span>.</p>");
 
 -- '<h1>Safe Title</h1><p>Safe paragraph. Not safe <span>event</span>.</p>'
 ```
@@ -1161,7 +1161,7 @@ The `string::is_alphanum` function checks whether a value has only alphanumeric 
 string::is_alphanum(string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1171,7 +1171,7 @@ value = "true"
 
 */
 
-RETURN string::is_alphanum("ABC123");
+string::is_alphanum("ABC123");
 
 -- true
 ```
@@ -1188,7 +1188,7 @@ The `string::is_alpha` function checks whether a value has only alpha characters
 ```surql title="API DEFINITION"
 string::is_alpha(string) -> bool
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1198,7 +1198,7 @@ value = "true"
 
 */
 
-RETURN string::is_alpha("ABCDEF");
+string::is_alpha("ABCDEF");
 
 -- true
 ```
@@ -1215,7 +1215,7 @@ The `string::is_ascii` function checks whether a value has only ascii characters
 ```surql title="API DEFINITION"
 string::is_ascii(string) -> bool
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1228,7 +1228,7 @@ value = "false"
 
 */
 
-RETURN string::is_ascii("ABC123"); -- true
+string::is_ascii("ABC123"); -- true
 '𓀀'.is_ascii(); -- false
 ```
 
@@ -1265,10 +1265,10 @@ value = "false"
 
 */
 
-RETURN string::is_datetime("2015-09-05 23:56:04", "%Y-%m-%d %H:%M:%S");
+string::is_datetime("2015-09-05 23:56:04", "%Y-%m-%d %H:%M:%S");
 -- true
 
-RETURN string::is_datetime("1970-01-01", "%Y-%m-%d %H:%M:%S");
+string::is_datetime("1970-01-01", "%Y-%m-%d %H:%M:%S");
 -- false
 ```
 
@@ -1282,7 +1282,7 @@ value = "true"
 
 */
 
-RETURN string::is_datetime("5sep2024pm012345.6789", "%d%b%Y%p%I%M%S%.f");
+string::is_datetime("5sep2024pm012345.6789", "%d%b%Y%p%I%M%S%.f");
 ```
 
 ```surql title="Response"
@@ -1297,7 +1297,7 @@ value = "false"
 
 */
 
-RETURN string::is_datetime("23:56:00 2015-09-05", "%Y-%m-%d %H:%M");
+string::is_datetime("23:56:00 2015-09-05", "%Y-%m-%d %H:%M");
 ```
 
 ```surql title="Response"
@@ -1318,7 +1318,7 @@ The `string::is_domain` function checks whether a value is a domain.
 ```surql title="API DEFINITION"
 string::is_domain(string) -> bool
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1328,7 +1328,7 @@ value = "true"
 
 */
 
-RETURN string::is_domain("surrealdb.com");
+string::is_domain("surrealdb.com");
 
 -- true
 ```
@@ -1346,7 +1346,7 @@ The `string::is_email` function checks whether a value is an email.
 string::is_email(string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1356,7 +1356,7 @@ value = "true"
 
 */
 
-RETURN string::is_email("info@surrealdb.com");
+string::is_email("info@surrealdb.com");
 
 -- true
 ```
@@ -1374,7 +1374,7 @@ The `string::is_hexadecimal` function checks whether a value is hexadecimal.
 string::is_hexadecimal(string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1384,7 +1384,7 @@ value = "true"
 
 */
 
-RETURN string::is_hexadecimal("ff009e");
+string::is_hexadecimal("ff009e");
 
 -- true
 ```
@@ -1402,7 +1402,7 @@ The `string::is_ip` function checks whether a value is an IP address.
 string::is_ip(string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1412,7 +1412,7 @@ value = "true"
 
 */
 
-RETURN string::is_ip("192.168.0.1");
+string::is_ip("192.168.0.1");
 
 -- true
 ```
@@ -1430,7 +1430,7 @@ The `string::is_ipv4` function checks whether a value is an IP v4 address.
 string::is_ipv4(string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1440,7 +1440,7 @@ value = "true"
 
 */
 
-RETURN string::is_ipv4("192.168.0.1");
+string::is_ipv4("192.168.0.1");
 
 -- true
 ```
@@ -1458,7 +1458,7 @@ The `string::is_ipv6` function checks whether a value is an IP v6 address.
 string::is_ipv6(string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1468,7 +1468,7 @@ value = "true"
 
 */
 
-RETURN string::is_ipv6("2001:0db8:85a3:0000:0000:8a2e:0370:7334");
+string::is_ipv6("2001:0db8:85a3:0000:0000:8a2e:0370:7334");
 
 -- true
 ```
@@ -1486,7 +1486,7 @@ The `string::is_latitude` function checks whether a value is a latitude value.
 string::is_latitude(string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1496,7 +1496,7 @@ value = "true"
 
 */
 
-RETURN string::is_latitude("-0.118092");
+string::is_latitude("-0.118092");
 
 -- true
 ```
@@ -1514,7 +1514,7 @@ The `string::is_longitude` function checks whether a value is a longitude value.
 string::is_longitude(string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1524,7 +1524,7 @@ value = "true"
 
 */
 
-RETURN string::is_longitude("51.509865");
+string::is_longitude("51.509865");
 
 -- true
 ```
@@ -1541,7 +1541,7 @@ The `string::is_numeric` function checks whether a value has only numeric charac
 ```surql title="API DEFINITION"
 string::is_numeric(string) -> bool
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1551,7 +1551,7 @@ value = "true"
 
 */
 
-RETURN string::is_numeric("1484091748");
+string::is_numeric("1484091748");
 
 -- true
 ```
@@ -1569,7 +1569,7 @@ The `string::is_semver` function checks whether a value matches a semver version
 string::is_semver(string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1579,7 +1579,7 @@ value = "true"
 
 */
 
-RETURN string::is_semver("1.0.0");
+string::is_semver("1.0.0");
 
 -- true
 ```
@@ -1597,7 +1597,7 @@ The `string::is_ulid` function checks whether a string is a ULID.
 string::is_ulid(string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1607,7 +1607,7 @@ value = "true"
 
 */
 
-RETURN string::is_ulid("01JCJB3TPQ50XTG32WM088NKJD");
+string::is_ulid("01JCJB3TPQ50XTG32WM088NKJD");
 
 -- true
 ```
@@ -1625,7 +1625,7 @@ The `string::is_url` function checks whether a value is a valid URL.
 string::is_url(string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1635,7 +1635,7 @@ value = "true"
 
 */
 
-RETURN string::is_url("https://surrealdb.com");
+string::is_url("https://surrealdb.com");
 
 -- true
 ```
@@ -1675,11 +1675,11 @@ value = "false"
 
 */
 
-RETURN string::is_record("person:test");           -- true
-RETURN string::is_record("person:test", "person"); -- true
-RETURN string::is_record("person:test", type::table("personn")); -- false
-RETURN string::is_record("person:test", "other");  -- false
-RETURN string::is_record("not a record id");       -- false
+string::is_record("person:test");           -- true
+string::is_record("person:test", "person"); -- true
+string::is_record("person:test", type::table("personn")); -- false
+string::is_record("person:test", "other");  -- false
+string::is_record("not a record id");       -- false
 ```
 
   
@@ -1695,7 +1695,7 @@ The `string::is_uuid` function checks whether a string is a UUID.
 string::is_uuid(string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1705,7 +1705,7 @@ value = "true"
 
 */
 
-RETURN string::is_uuid("018a6680-bef9-701b-9025-e1754f296a0f");
+string::is_uuid("018a6680-bef9-701b-9025-e1754f296a0f");
 
 -- true
 ```
@@ -1722,7 +1722,7 @@ A value of `-1` indicates the first version is lower than the second, `0` indica
 string::semver::compare(string, $other: string) -> 1|0|-1
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1738,11 +1738,11 @@ value = "1"
 
 */
 
-RETURN string::semver::compare("1.0.0", "1.3.5");
+string::semver::compare("1.0.0", "1.3.5");
 -- Returns -1
-RETURN string::semver::compare("1.0.0", "1.0.0");
+string::semver::compare("1.0.0", "1.0.0");
 -- Returns 0
-RETURN string::semver::compare("3.0.0-beta.4", "2.6.0");
+string::semver::compare("3.0.0-beta.4", "2.6.0");
 -- Returns 1
 ```
 
@@ -1756,7 +1756,7 @@ The `string::semver::major` function extracts the major number out of a semver s
 string::semver::major(string) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1766,7 +1766,7 @@ value = "3"
 
 */
 
-RETURN string::semver::major("3.2.6");
+string::semver::major("3.2.6");
 
 -- 3
 ```
@@ -1781,7 +1781,7 @@ The `string::semver::minor` function extracts the minor number out of a semver s
 string::semver::minor(string) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1791,7 +1791,7 @@ value = "2"
 
 */
 
-RETURN string::semver::minor("3.2.6");
+string::semver::minor("3.2.6");
 
 -- 2
 ```
@@ -1806,7 +1806,7 @@ The `string::semver::patch` function extracts the patch number out of a semver s
 string::semver::patch(string) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1816,7 +1816,7 @@ value = "6"
 
 */
 
-RETURN string::semver::patch("3.2.6");
+string::semver::patch("3.2.6");
 
 -- 6
 ```
@@ -1831,7 +1831,7 @@ The `string::semver::inc::major` function increments the major number of a semve
 string::semver::inc::major(string) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1841,7 +1841,7 @@ value = "'2.0.0'"
 
 */
 
-RETURN string::semver::inc::major("1.2.3");
+string::semver::inc::major("1.2.3");
 
 -- '2.0.0'
 ```
@@ -1856,7 +1856,7 @@ The `string::semver::inc::minor` function increments the minor number of a semve
 string::semver::inc::minor(string) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1866,7 +1866,7 @@ value = "'1.3.0'"
 
 */
 
-RETURN string::semver::inc::minor("1.2.3");
+string::semver::inc::minor("1.2.3");
 
 -- '1.3.0'
 ```
@@ -1881,7 +1881,7 @@ The `string::semver::inc::patch` function increments the patch number of a semve
 string::semver::inc::patch(string) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1891,7 +1891,7 @@ value = "'1.2.4'"
 
 */
 
-RETURN string::semver::inc::patch("1.2.3");
+string::semver::inc::patch("1.2.3");
 
 -- '1.2.4'
 ```
@@ -1906,7 +1906,7 @@ The `string::semver::set::major` function sets the major number of a semver stri
 string::semver::set::major(string, $major: number) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1916,7 +1916,7 @@ value = "'9.2.3'"
 
 */
 
-RETURN string::semver::set::major("1.2.3", 9);
+string::semver::set::major("1.2.3", 9);
 
 -- '9.2.3'
 ```
@@ -1930,7 +1930,7 @@ The `string::semver::set::minor` function sets the minor number of a semver stri
 ```surql title="API DEFINITION"
 string::semver::set::minor(string, $minor: number) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1940,7 +1940,7 @@ value = "'1.9.3'"
 
 */
 
-RETURN string::semver::set::minor("1.2.3", 9);
+string::semver::set::minor("1.2.3", 9);
 
 -- '1.9.3'
 ```
@@ -1955,7 +1955,7 @@ The `string::semver::set::patch` function sets the patch number of a semver stri
 string::semver::set::patch(string, $patch: number) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1965,7 +1965,7 @@ value = "'1.2.9'"
 
 */
 
-RETURN string::semver::set::patch("1.2.3", 9);
+string::semver::set::patch("1.2.3", 9);
 
 -- '1.2.9'
 ```
@@ -1992,9 +1992,9 @@ value = "47"
 */
 
 -- returns 51
-RETURN string::similarity::fuzzy("DB", "DB");
+string::similarity::fuzzy("DB", "DB");
 -- returns 47
-RETURN string::similarity::fuzzy("DB", "db");
+string::similarity::fuzzy("DB", "db");
 ```
 
 The similarity score is not based on a single score such as 1 to 100, but is built up over the course of the algorithm used to compare one string to another and will be higher for longer strings. As a result, similarity can only be compared from a single string to a number of possible matches, but not multiple strings to a number of possible matches.

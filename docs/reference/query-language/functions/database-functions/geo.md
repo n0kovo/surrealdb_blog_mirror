@@ -61,7 +61,7 @@ The `geo::area` function calculates the area of a geometry in square metres.
 geo::area(geometry) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement for four approximate points found on a map for the US state of Wyoming which has an area of 253,340 km<sup>2</sup> and a mostly rectangular shape. Note: the doubled square brackets are because the function takes an array of an array to allow for more complex types such as MultiPolygon.
+The following example shows this function, and its output for four approximate points found on a map for the US state of Wyoming which has an area of 253,340 km<sup>2</sup> and a mostly rectangular shape. Note: the doubled square brackets are because the function takes an array of an array to allow for more complex types such as MultiPolygon.
 
 ![A map of Wyoming in the United States with four approximate points on each corner used to approximate its total surface area in SurrealDB's geo area function.](../../../../assets/img/image/light/geo-wyoming.png)
 
@@ -72,7 +72,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "253317731850.3478f"
 
 */
-RETURN geo::area({
+geo::area({
   type: "Polygon",
   coordinates: [[
     [-111.0690, 45.0032],
@@ -96,7 +96,7 @@ If the argument is not a geometry type, then an error will be returned.
 error = "Incorrect arguments for function geo::area(). Argument 1 was the wrong type. Expected `geometry` but found `12345`"
 
 */
-RETURN geo::area(12345);
+geo::area(12345);
 
 -- 'Incorrect arguments for function geo::area(). Argument 1 was the wrong type. Expected `geometry` but found `12345`'
 ```
@@ -113,7 +113,7 @@ The `geo::bearing` function calculates the bearing between two geolocation point
 geo::bearing($from: point, $to: point) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -157,7 +157,7 @@ The `geo::centroid` function calculates the centroid between multiple geolocatio
 ```surql title="API DEFINITION"
 geo::centroid(geometry) -> number
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement. Note: the doubled square brackets are because the function takes an array of an array to allow for more complex types such as MultiPolygon.
+The following example shows this function, and its output. Note: the doubled square brackets are because the function takes an array of an array to allow for more complex types such as MultiPolygon.
 
 ```surql
 /**[test]
@@ -166,7 +166,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "(13.483896437936192, 47.07117241195589)"
 
 */
-RETURN geo::centroid({
+geo::centroid({
   type: "Polygon",
   coordinates: [[
     [-0.03921743611083, 51.88106875736589], -- London
@@ -195,7 +195,7 @@ The `geo::distance` function calculates the haversine distance, in metres, betwe
 geo::distance($from: point, $to: point) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -230,7 +230,7 @@ The `geo::hash::decode` function converts a geohash into a geolocation point.
 ```surql title="API DEFINITION"
 geo::hash::decode(point) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -239,7 +239,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "(51.50986494496465, -0.11809204705059528)"
 
 */
-RETURN geo::hash::decode("mpuxk4s24f51");
+geo::hash::decode("mpuxk4s24f51");
 ```
 
 ```surql title="Response"
@@ -262,7 +262,7 @@ The function accepts a second argument, which determines the accuracy and granul
 geo::hash::encode(point, $granularity: number) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -271,7 +271,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "'mpuxk4s24f51'"
 
 */
-RETURN geo::hash::encode( (51.509865, -0.118092) );
+geo::hash::encode( (51.509865, -0.118092) );
 
 -- 'mpuxk4s24f51'
 ```
@@ -286,7 +286,7 @@ value = "'mpuxk'"
 
 */
 
-RETURN geo::hash::encode( (51.509865, -0.118092), 5 );
+geo::hash::encode( (51.509865, -0.118092), 5 );
 
 -- 'mpuxk'
 ```
@@ -306,7 +306,7 @@ each `Point` coordinates are in the range of -180° to 180° for longitude and -
 geo::is_valid(geometry) -> bool
 ```
 
-The following examples show this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following examples show this function, and its output:
 
 ```surql title="A valid geography point"
 /**[test]
@@ -315,7 +315,7 @@ The following examples show this function, and its output, when used in a [`RETU
 value = "true"
 
 */ 
-RETURN geo::is_valid( (51.509865, -0.118092) );
+geo::is_valid( (51.509865, -0.118092) );
 
 -- true
 ```
@@ -327,7 +327,7 @@ RETURN geo::is_valid( (51.509865, -0.118092) );
 value = "false"
 
 */ 
-RETURN geo::is_valid( (-181.0, -0.118092) );
+geo::is_valid( (-181.0, -0.118092) );
 
 -- false
 ```

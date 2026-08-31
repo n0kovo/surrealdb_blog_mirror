@@ -118,7 +118,7 @@ The `duration::days` function counts how many days fit into a duration.
 duration::days(duration) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -128,7 +128,7 @@ value = "21"
 
 */
 
-RETURN duration::days(3w);
+duration::days(3w);
 
 -- 21
 ```
@@ -143,7 +143,7 @@ The `duration::hours` function counts how many hours fit into a duration.
 duration::hours(duration) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 
@@ -153,7 +153,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "504"
 
 */
-RETURN duration::hours(3w);
+duration::hours(3w);
 
 -- 504
 ```
@@ -215,7 +215,7 @@ The `duration::micros` function counts how many microseconds fit into a duration
 duration::micros(duration) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -224,7 +224,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "1814400000000"
 
 */
-RETURN duration::micros(3w);
+duration::micros(3w);
 
 -- 1814400000000
 ```
@@ -239,7 +239,7 @@ The `duration::millis` function counts how many milliseconds fit into a duration
 duration::millis(duration) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -248,7 +248,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "1814400000"
 
 */
-RETURN duration::millis(3w);
+duration::millis(3w);
 
 -- 1814400000
 ```
@@ -263,7 +263,7 @@ The `duration::mins` function counts how many minutes fit into a duration.
 duration::mins(duration) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -272,7 +272,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "30240"
 
 */
-RETURN duration::mins(3w);
+duration::mins(3w);
 
 -- 30240
 ```
@@ -287,7 +287,7 @@ The `duration::nanos` function counts how many nanoseconds fit into a duration.
 duration::nanos(duration) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -296,7 +296,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "1814400000000000"
 
 */
-RETURN duration::nanos(3w);
+duration::nanos(3w);
 
 -- 1814400000000000
 ```
@@ -311,7 +311,7 @@ The `duration::secs` function counts how many seconds fit into a duration.
 duration::secs(duration) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -320,7 +320,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "1814400"
 
 */
-RETURN duration::secs(3w);
+duration::secs(3w);
 
 -- 1814400
 ```
@@ -335,7 +335,7 @@ The `duration::weeks` function counts how many weeks fit into a duration.
 duration::weeks(duration) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 
@@ -345,7 +345,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "3"
 
 */
-RETURN duration::weeks(3w);
+duration::weeks(3w);
 
 -- 3
 ```
@@ -360,7 +360,7 @@ The `duration::years` function counts how many years fit into a duration.
 duration::years(duration) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 
@@ -370,7 +370,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "5"
 
 */
-RETURN duration::years(300w);
+duration::years(300w);
 
 -- 5
 ```
@@ -385,7 +385,7 @@ The `duration::from_days` function counts how many years fit into a duration. Th
 duration::from_days(number) -> duration
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 
@@ -395,7 +395,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "3d"
 
 */
-RETURN duration::from_days(3);
+duration::from_days(3);
 
 -- 3d
 ```
@@ -410,7 +410,7 @@ The `duration::from_hours` function converts a numeric amount of hours into a du
 duration::from_hours(number) -> duration
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -420,7 +420,7 @@ value = "3h"
 
 */
 
-RETURN duration::from_hours(3);
+duration::from_hours(3);
 
 -- 3h
 ```
@@ -435,7 +435,7 @@ The `duration::from_micros` function converts a numeric amount of microseconds i
 duration::from_micros(number) -> duration
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -444,7 +444,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "3µs"
 
 */
-RETURN duration::from_micros(3);
+duration::from_micros(3);
 
 -- 3μs
 ```
@@ -459,7 +459,7 @@ The `duration::from_millis` function converts a numeric amount of milliseconds i
 duration::from_millis(number) -> duration
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -469,7 +469,7 @@ value = "3ms"
 
 */
 
-RETURN duration::from_millis(3);
+duration::from_millis(3);
 
 -- 3ms
 ```
@@ -484,7 +484,7 @@ The `duration::from_mins` function converts a numeric amount of minutes into a d
 duration::from_mins(number) -> duration
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -494,7 +494,7 @@ value = "3m"
 
 */
 
-RETURN duration::from_mins(3);
+duration::from_mins(3);
 
 -- 3m
 ```
@@ -509,7 +509,7 @@ The `duration::from_nanos` function converts a numeric amount of nanoseconds int
 duration::from_nanos(number) -> duration
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -518,7 +518,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "3ns"
 
 */
-RETURN duration::from_nanos(3);
+duration::from_nanos(3);
 
 -- 3ns
 ```
@@ -533,7 +533,7 @@ The `duration::from_secs` function converts a numeric amount of seconds into a d
 duration::from_secs(number) -> duration
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -542,7 +542,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "3s"
 
 */
-RETURN duration::from_secs(3);
+duration::from_secs(3);
 
 -- 3s
 ```
@@ -557,7 +557,7 @@ The `duration::from_weeks` function converts a numeric amount of weeks into a du
 duration::from_weeks(number) -> duration
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -566,7 +566,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "3w"
 
 */
-RETURN duration::from_weeks(3);
+duration::from_weeks(3);
 
 -- 3w
 ```

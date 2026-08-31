@@ -79,10 +79,10 @@ The rand function generates a random [`float`](../../language-primitives/data-ty
 rand() -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN rand();
+rand();
 
 0.7062321084863658
 ```
@@ -115,10 +115,10 @@ The rand::bool function generates a random [`boolean`](../../language-primitives
 rand::bool() -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN rand::bool();
+rand::bool();
 
 true
 ```
@@ -174,7 +174,7 @@ rand::enum(['one', 'two', 3, 4.15385, 'five', true]);
 As nested values are not combined at greater levels of depth, the following example will return either `[8, 9]` or `[10, 11]`, but never an individual number.
 
 ```surql
-RETURN rand::enum([
+rand::enum([
     [8,9],
     [10,11]
 ]);
@@ -196,16 +196,16 @@ If two numbers are provided, the function generates a random [`float`](../../lan
 rand::float($from: number, $to: number) -> float
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN rand::float();
+rand::float();
 
 0.7812733136200293
 ```
 
 ```surql
-RETURN rand::float(10, 15);
+rand::float(10, 15);
 
 11.305355983514927
 ```
@@ -235,22 +235,22 @@ If a second number is provided, the function generates a random id with a length
 rand::id($min_len: int, $max_len: int) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql title="Default 20-char random id"
-RETURN rand::id();
+rand::id();
 
 '4uqmrmtjhtjeg77et0dl'
 ```
 
 ```surql title="A 10-char random id"
-RETURN rand::id(10);
+rand::id(10);
 
 'f3b6cjh0nt'
 ```
 
 ```surql title="A random id with a length between 1 and 9 chars"
-RETURN rand::id(1, 9);
+rand::id(1, 9);
 
 '894bqt4lp'
 ```
@@ -292,16 +292,16 @@ If two numbers are provided, the function generates a random int between them (i
 rand::int($from: int, $to: int) -> int
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN rand::int();
+rand::int();
 
 6841551695902514727
 ```
 
 ```surql
-RETURN rand::int(10, 15);
+rand::int(10, 15);
 
 13
 ```
@@ -328,22 +328,22 @@ If two numbers are provided, the function generates a random string with a lengt
 rand::string($from: int, $to: int) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN rand::string();
+rand::string();
 
 "N8Q86mklN6U7kv0A2XCRh5UlpQMSvdoT"
 ```
 
 ```surql
-RETURN rand::string(15);
+rand::string(15);
 
 "aSCtrfJj4pSJ7Xq"
 ```
 
 ```surql
-RETURN rand::string(10, 15);
+rand::string(10, 15);
 
 "rEUWFUMcx0YH"
 ```
@@ -362,11 +362,11 @@ rand::time($from: datetime|number, $to: datetime|number) -> datetime
 The `rand::time` function generates a random [`datetime`](../../language-primitives/data-types/datetimes.md), either a completely random datetime when no arguments are passed in, or between two bounds. With two arguments, the first is the **earliest** bound and the second is the **latest** (each may be a unix timestamp or a `datetime`).
 
 ```surql
-RETURN rand::time();
+rand::time();
 
 -- d'1327-07-12T01:00:32Z'
 
-RETURN rand::time(198371, 1223138713);
+rand::time(198371, 1223138713);
 
 -- d'1991-01-13T23:27:17Z'
 ```
@@ -376,7 +376,7 @@ RETURN rand::time(198371, 1223138713);
 This function can take two datetimes, returning a random datetime in between the least and greatest of the two.
 
 ```surql
-RETURN rand::time(d'1970-01-01', d'2000-01-01');
+rand::time(d'1970-01-01', d'2000-01-01');
 
 -- d'1999-05-29T17:02:16Z"
 ```
@@ -386,7 +386,7 @@ RETURN rand::time(d'1970-01-01', d'2000-01-01');
 Either of the arguments of this function can be either a number or a datetime.
 
 ```surql
-RETURN rand::time(0, d'1990-01-01');
+rand::time(0, d'1990-01-01');
 
 -- d'1986-11-17T15:06:01Z'
 ```
@@ -402,10 +402,10 @@ rand::uuid() -> uuid
 rand::uuid(datetime) -> uuid
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN rand::uuid();
+rand::uuid();
 
 [u"e20b2836-e689-4643-998d-b17a16800323"]
 ```
@@ -413,7 +413,7 @@ RETURN rand::uuid();
 The `rand::uuid` function can also generate a random UUID from a datetime.
 
 ```surql
-RETURN rand::uuid(d"2021-09-07T04:27:53Z");
+rand::uuid(d"2021-09-07T04:27:53Z");
 ```
 
 Note that a UUID has a precision of one millisecond, and thus one converted back to a datetime will truncate nanosecond precision.
@@ -441,10 +441,10 @@ The `rand::uuid::v4` function generates a random version 4 UUID.
 rand::uuid::v4() -> uuid
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN rand::uuid::v4();
+rand::uuid::v4();
 
 [u"4def23a5-a847-4934-8dad-c64ccc48921b"]
 ```
@@ -460,20 +460,20 @@ rand::ulid() -> uuid
 rand::ulid(datetime) -> uuid
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN rand::ulid();
+rand::ulid();
 
 [u"01H9QDG81Q7SB33RXB7BEZBK7G"]
 ```
 
 The `rand::ulid` function can also generate a random ULID from a datetime type.
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN rand::ulid(d"2021-09-07T04:27:53Z");
+rand::ulid(d"2021-09-07T04:27:53Z");
 ```
 
 Note that a ULID has a precision of one millisecond, and thus one converted back to a datetime will truncate nanosecond precision.

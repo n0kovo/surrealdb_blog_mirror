@@ -203,7 +203,7 @@ The `type::array` function converts a value into an array.
 type::array(array|range) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -213,7 +213,7 @@ value = "[1, 2, 3]"
 
 */
 
-RETURN type::array(1..=3);
+type::array(1..=3);
 
 -- [1, 2, 3]
 ```
@@ -228,7 +228,7 @@ The `type::bool` function converts a value into a boolean.
 type::bool(bool|string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -238,7 +238,7 @@ value = "true"
 
 */
 
-RETURN type::bool("true");
+type::bool("true");
 
 -- true
 ```
@@ -255,7 +255,7 @@ The `type::bytes` function converts a value into bytes.
 type::bytes(bytes|string) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -265,7 +265,7 @@ value = "b"4120666577206279746573""
 
 */
 
-RETURN type::bytes("A few bytes");
+type::bytes("A few bytes");
 
 -- b"4120666577206279746573"
 ```
@@ -281,7 +281,7 @@ The `type::datetime` function converts a value into a datetime.
 ```surql title="API DEFINITION"
 type::datetime(datetime|string) -> datetime
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -291,7 +291,7 @@ value = "d'2022-04-27T18:12:27Z'"
 
 */
 
-RETURN type::datetime("2022-04-27T18:12:27+00:00");
+type::datetime("2022-04-27T18:12:27+00:00");
 
 -- d'2022-04-27T18:12:27Z'
 ```
@@ -308,7 +308,7 @@ The `type::decimal` function converts a value into a decimal.
 type::decimal(decimal|float|int|number|string) -> decimal
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -318,7 +318,7 @@ value = "12345dec"
 
 */
 
-RETURN type::decimal("12345");
+type::decimal("12345");
 
 -- 12345dec
 ```
@@ -334,7 +334,7 @@ The `type::duration` function converts a value into a duration.
 ```surql title="API DEFINITION"
 type::duration(duration|string) -> duration
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -344,7 +344,7 @@ value = "4h"
 
 */
 
-RETURN type::duration("4h");
+type::duration("4h");
 
 -- 4h
 ```
@@ -618,7 +618,7 @@ The `type::float` function converts a value into a float.
 type::float(decimal|float|int|number|string) -> float
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -628,7 +628,7 @@ value = "12345f"
 
 */
 
-RETURN type::float("12345");
+type::float("12345");
 
 -- 12345f
 ```
@@ -643,7 +643,7 @@ The `type::int` function converts a value into an integer.
 ```surql title="API DEFINITION"
 type::int(decimal|float|int|number|string) -> int
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -653,7 +653,7 @@ value = "12345"
 
 */
 
-RETURN type::int("12345");
+type::int("12345");
 
 -- 12345
 ```
@@ -668,7 +668,7 @@ The `type::number` function converts a value into a number.
 ```surql title="API DEFINITION"
 type::number(decimal|float|int|number|string) -> number
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -678,7 +678,7 @@ value = "12345"
 
 */
 
-RETURN type::number("12345");
+type::number("12345");
 
 -- 12345
 ```
@@ -711,7 +711,7 @@ The `type::point` function converts a value into a geometry point.
 type::point(array|point) -> point
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -721,7 +721,7 @@ value = "(51.509865, -0.118092)"
 
 */
 
-RETURN type::point([ 51.509865, -0.118092 ]);
+type::point([ 51.509865, -0.118092 ]);
 
 -- (51.509865, -0.118092)
 ```
@@ -736,7 +736,7 @@ The `type::range` function converts a value into a [range](../../language-primit
 type::range(range|array) -> range<record>
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -752,13 +752,13 @@ error = "Could not cast into `range` using input `[1, 9, 4]`"
 
 */
 
-RETURN type::range([1, 2]);
+type::range([1, 2]);
 -- 1..2
 
-RETURN type::range(1..10);
+type::range(1..10);
 -- 1..10
 
-RETURN type::range([1,9,4]);
+type::range([1,9,4]);
 -- 'Expected a range but cannot convert [1, 9, 4] into a range'
 ```
 
@@ -777,7 +777,7 @@ The `type::record` function converts a value into a record pointer definition.
 type::record($table: any, $key: any) -> record
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 LET $tb = "person";
@@ -883,7 +883,7 @@ The `type::string` function converts any value except `NONE`, `NULL`, and `bytes
 type::string(any) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -893,7 +893,7 @@ value = "'12345'"
 
 */
 
-RETURN type::string(12345);
+type::string(12345);
 
 -- '12345'
 ```
@@ -912,7 +912,7 @@ The `type::string_lossy` function converts any value except `NONE`, `NULL`, and 
 type::string(any) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -970,7 +970,7 @@ The `type::table` function converts a value into a table name.
 ```surql title="API DEFINITION"
 type::table(record|string) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -980,7 +980,7 @@ value = "[person, cat]"
 
 */
 
-RETURN [
+[
   type::table("person"),
   type::table(cat:one)
 ];
@@ -1004,7 +1004,7 @@ value = "`dog:two`"
 
 */
 
-RETURN [
+[
   type::table(cat:one),
   type::table("dog"),
   type::table("dog:two"),
@@ -1029,7 +1029,7 @@ The `type::uuid` function converts a value into a UUID.
 type::uuid(string|uuid) -> uuid
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1039,7 +1039,7 @@ value = "u'0191f946-936f-7223-bef5-aebbc527ad80'"
 
 */
 
-RETURN type::uuid("0191f946-936f-7223-bef5-aebbc527ad80");
+type::uuid("0191f946-936f-7223-bef5-aebbc527ad80");
 
 -- u'0191f946-936f-7223-bef5-aebbc527ad80'
 ```
@@ -1056,7 +1056,7 @@ The `type::is_array` function checks if the passed value is of type `array`.
 type::is_array(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1066,7 +1066,7 @@ value = "true"
 
 */
 
-RETURN type::is_array([ 'a', 'b', 'c' ]);
+type::is_array([ 'a', 'b', 'c' ]);
 
 -- true
 ```
@@ -1084,7 +1084,7 @@ The `type::is_bool` function checks if the passed value is of type `bool`.
 type::is_bool(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1094,7 +1094,7 @@ value = "true"
 
 */
 
-RETURN type::is_bool(true);
+type::is_bool(true);
 
 -- true
 ```
@@ -1112,7 +1112,7 @@ The `type::is_bytes` function checks if the passed value is of type `bytes`.
 type::is_bytes(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1122,7 +1122,7 @@ value = "false"
 
 */
 
-RETURN type::is_bytes("I am not bytes");
+type::is_bytes("I am not bytes");
 
 -- false
 ```
@@ -1140,7 +1140,7 @@ The `type::is_collection` function checks if the passed value is of type `collec
 type::is_collection(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1150,7 +1150,7 @@ value = "false"
 
 */
 
-RETURN type::is_collection("I am not a collection");
+type::is_collection("I am not a collection");
 
 -- false
 ```
@@ -1167,7 +1167,7 @@ The `type::is_datetime` function checks if the passed value is of type `datetime
 ```surql title="API DEFINITION"
 type::is_datetime(any) -> bool
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1177,7 +1177,7 @@ value = "true"
 
 */
 
-RETURN type::is_datetime(time::now());
+type::is_datetime(time::now());
 
 -- true
 ```
@@ -1195,7 +1195,7 @@ The `type::is_decimal` function checks if the passed value is of type `decimal`.
 type::is_decimal(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1205,7 +1205,7 @@ value = "true"
 
 */
 
-RETURN type::is_decimal(<decimal>
+type::is_decimal(<decimal>
   13.5719384719384719385639856394139476937756394756);
 
 -- true
@@ -1223,7 +1223,7 @@ The `type::is_duration` function checks if the passed value is of type `duration
 ```surql title="API DEFINITION"
 type::is_duration(any) -> bool
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1233,7 +1233,7 @@ value = "false"
 
 */
 
-RETURN type::is_duration('1970-01-01T00:00:00');
+type::is_duration('1970-01-01T00:00:00');
 
 -- false
 ```
@@ -1250,7 +1250,7 @@ The `type::is_float` function checks if the passed value is of type ` float`.
 ```surql title="API DEFINITION"
 type::is_float(any) -> bool
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1260,7 +1260,7 @@ value = "true"
 
 */
 
-RETURN type::is_float(<float> 41.5);
+type::is_float(<float> 41.5);
 
 -- true
 ```
@@ -1277,7 +1277,7 @@ The `type::is_geometry` function checks if the passed value is of type `geometry
 ```surql title="API DEFINITION"
 type::is_geometry(any) -> bool
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1287,7 +1287,7 @@ value = "true"
 
 */
 
-RETURN type::is_geometry((-0.118092, 51.509865));
+type::is_geometry((-0.118092, 51.509865));
 
 -- true
 ```
@@ -1304,7 +1304,7 @@ The `type::is_int` function checks if the passed value is of type `int`.
 ```surql title="API DEFINITION"
 type::is_int(any) -> bool
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1314,7 +1314,7 @@ value = "true"
 
 */
 
-RETURN type::is_int(<int> 123);
+type::is_int(<int> 123);
 
 -- true
 ```
@@ -1332,7 +1332,7 @@ The `type::is_line` function checks if the passed value is of type `line`.
 type::is_line(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1342,7 +1342,7 @@ value = "false"
 
 */
 
-RETURN type::is_line("I am not a line");
+type::is_line("I am not a line");
 
 -- false
 ```
@@ -1359,7 +1359,7 @@ The `type::is_none` function checks if the passed value is of type `none`.
 ```surql title="API DEFINITION"
 type::is_none(any) -> bool
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1369,7 +1369,7 @@ value = "true"
 
 */
 
-RETURN type::is_none(NONE);
+type::is_none(NONE);
 
 -- true
 ```
@@ -1387,7 +1387,7 @@ The `type::is_null` function checks if the passed value is of type `null`.
 type::is_null(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1397,7 +1397,7 @@ value = "true"
 
 */
 
-RETURN type::is_null(NULL);
+type::is_null(NULL);
 
 -- true
 ```
@@ -1415,7 +1415,7 @@ The `type::is_multiline` function checks if the passed value is of type `multili
 type::is_multiline(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1425,7 +1425,7 @@ value = "false"
 
 */
 
-RETURN type::is_multiline("I am not a multiline");
+type::is_multiline("I am not a multiline");
 
 -- false
 ```
@@ -1443,7 +1443,7 @@ The `type::is_multipoint` function checks if the passed value is of type `multip
 type::is_multipoint(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1453,7 +1453,7 @@ value = "false"
 
 */
 
-RETURN type::is_multipoint("I am not a multipoint");
+type::is_multipoint("I am not a multipoint");
 
 -- false
 ```
@@ -1471,7 +1471,7 @@ The `type::is_multipolygon` function checks if the passed value is of type `mult
 type::is_multipolygon(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1481,7 +1481,7 @@ value = "false"
 
 */
 
-RETURN type::is_multipolygon("I am not a multipolygon");
+type::is_multipolygon("I am not a multipolygon");
 
 -- false
 ```
@@ -1499,7 +1499,7 @@ The `type::is_number` function checks if the passed value is of type `number`.
 type::is_number(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1509,7 +1509,7 @@ value = "true"
 
 */
 
-RETURN type::is_number(123);
+type::is_number(123);
 
 -- true
 ```
@@ -1527,7 +1527,7 @@ The `type::is_object` function checks if the passed value is of type `object`.
 type::is_object(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1537,7 +1537,7 @@ value = "true"
 
 */
 
-RETURN type::is_object({ hello: 'world' });
+type::is_object({ hello: 'world' });
 
 -- true
 ```
@@ -1555,7 +1555,7 @@ The `type::is_point` function checks if the passed value is of type `point`.
 type::is_point(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1565,7 +1565,7 @@ value = "true"
 
 */
 
-RETURN type::is_point((-0.118092, 51.509865));
+type::is_point((-0.118092, 51.509865));
 
 -- true
 ```
@@ -1583,7 +1583,7 @@ The `type::is_polygon` function checks if the passed value is of type `polygon`.
 type::is_polygon(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1593,7 +1593,7 @@ value = "false"
 
 */
 
-RETURN type::is_polygon("I am not a polygon");
+type::is_polygon("I am not a polygon");
 
 -- false
 ```
@@ -1639,7 +1639,7 @@ The `type::is_record` function checks if the passed value is of type `record`.
 type::is_record(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1649,7 +1649,7 @@ value = "true"
 
 */
 
-RETURN type::is_record(user:tobie);
+type::is_record(user:tobie);
 
 -- true
 ```
@@ -1664,7 +1664,7 @@ value = "false"
 
 */
 
-RETURN type::is_record(user:tobie, 'test');
+type::is_record(user:tobie, 'test');
 
 -- false
 ```
@@ -1682,7 +1682,7 @@ The `type::is_string` function checks if the passed value is of type `string`.
 type::is_string(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1692,7 +1692,7 @@ value = "true"
 
 */
 
-RETURN type::is_string("abc");
+type::is_string("abc");
 
 -- true
 ```
@@ -1710,7 +1710,7 @@ The `type::is_uuid` function checks if the passed value is of type `uuid`.
 type::is_uuid(any) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1720,7 +1720,7 @@ value = "true"
 
 */
 
-RETURN type::is_uuid(u"018a6680-bef9-701b-9025-e1754f296a0f");
+type::is_uuid(u"018a6680-bef9-701b-9025-e1754f296a0f");
 
 -- true
 ```

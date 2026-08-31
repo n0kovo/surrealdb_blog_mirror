@@ -5,7 +5,7 @@ generated: stub
 
 # Surrealql
 
-_Auto-generated index — 3 pages and 1 sub-section._
+_Auto-generated index — 4 pages and 1 sub-section._
 
 ## Sub-sections
 
@@ -13,6 +13,8 @@ _Auto-generated index — 3 pages and 1 sub-section._
 
 ## Pages
 
+- [Sample queries](sample-queries.md)
+  Runnable SurrealQL examples for CREATE, SELECT, UPDATE and DELETE, each editable in an embedded SurrealDB Studio.
 - [Statements and values](statements-and-values.md)
   SurrealQL statements grouped as resource definitions, control flow with transactions, and CRUD-style query operations.
 - [What is SurrealQL?](what-is-surrealql.md)

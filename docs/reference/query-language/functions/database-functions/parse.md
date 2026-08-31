@@ -63,7 +63,7 @@ The `parse::email::host` function parses and returns an email host from a valid 
 ```surql title="API DEFINITION"
 parse::email::host(string) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -73,7 +73,7 @@ value = "'surrealdb.com'"
 
 */
 
-RETURN parse::email::host("info@surrealdb.com");
+parse::email::host("info@surrealdb.com");
 
 -- 'surrealdb.com'
 ```
@@ -88,7 +88,7 @@ The `parse::email::user` function parses and returns an email username from a va
 parse::email::user(string) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -98,7 +98,7 @@ value = "'info'"
 
 */
 
-RETURN parse::email::user("info@surrealdb.com");
+parse::email::user("info@surrealdb.com");
 
 -- "info"
 ```
@@ -113,7 +113,7 @@ This function is similar to `parse::url::host` only that it will return `null` i
 ```surql title="API DEFINITION"
 parse::url::domain(string) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -126,8 +126,8 @@ value = 'NONE'
 
 */
 
-RETURN parse::url::domain("https://surrealdb.com:80/features?some=option#fragment");
-RETURN parse::url::domain("http://127.0.0.1/index.html");
+parse::url::domain("https://surrealdb.com:80/features?some=option#fragment");
+parse::url::domain("http://127.0.0.1/index.html");
 ```
 
 ```surql title="Response"
@@ -145,7 +145,7 @@ The `parse::url::fragment` function parses and returns the fragment from a valid
 ```surql title="API DEFINITION"
 parse::url::fragment(string) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -155,7 +155,7 @@ value = "'fragment'"
 
 */
 
-RETURN parse::url::fragment("https://surrealdb.com:80/features?some=option#fragment");
+parse::url::fragment("https://surrealdb.com:80/features?some=option#fragment");
 
 -- 'fragment'
 ```
@@ -169,7 +169,7 @@ The `parse::url::host` function parses and returns the hostname from a valid URL
 ```surql title="API DEFINITION"
 parse::url::host(string) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -182,8 +182,8 @@ value = "'127.0.0.1'"
 
 */
 
-RETURN parse::url::host("https://surrealdb.com:80/features?some=option#fragment");
-RETURN parse::url::host("http://127.0.0.1/index.html");
+parse::url::host("https://surrealdb.com:80/features?some=option#fragment");
+parse::url::host("http://127.0.0.1/index.html");
 ```
 
 ```surql title="Response"
@@ -201,7 +201,7 @@ The `parse::url::path`  function parses and returns the path from a valid URL.
 ```surql title="API DEFINITION"
 parse::url::path(string) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -211,7 +211,7 @@ value = "'/features'"
 
 */
 
-RETURN parse::url::path("https://surrealdb.com:80/features?some=option#fragment");
+parse::url::path("https://surrealdb.com:80/features?some=option#fragment");
 
 -- '/features'
 ```
@@ -226,7 +226,7 @@ The `parse::url::port` function parses and returns the port from a valid URL.
 parse::url::port(string) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -236,7 +236,7 @@ value = "80"
 
 */
 
-RETURN parse::url::port("https://surrealdb.com:80/features?some=option#fragment");
+parse::url::port("https://surrealdb.com:80/features?some=option#fragment");
 
 -- 80
 ```
@@ -251,7 +251,7 @@ The `parse::url::scheme` function parses and returns the scheme from a valid URL
 parse::url::scheme(string) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -261,7 +261,7 @@ value = "'https'"
 
 */
 
-RETURN parse::url::scheme("https://surrealdb.com:80/features?some=option#fragment");
+parse::url::scheme("https://surrealdb.com:80/features?some=option#fragment");
 
 -- 'https'
 ```
@@ -275,7 +275,7 @@ The `parse::url::query` function parses and returns the query from a valid URL.
 ```surql title="API DEFINITION"
 parse::url::query(string) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -285,7 +285,7 @@ value = "'some=option'"
 
 */
 
-RETURN parse::url::query("https://surrealdb.com:80/features?some=option#fragment");
+parse::url::query("https://surrealdb.com:80/features?some=option#fragment");
 
 -- 'some=option'
 ```

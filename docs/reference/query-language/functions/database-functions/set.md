@@ -126,7 +126,7 @@ The `set::add` function adds an item to a set only if it does not already exist.
 set::add(set, $new_val: value) -> set
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**
@@ -136,7 +136,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "{'one', 'three', 'two'}"
 
 */
-RETURN set::add({"one", "two"}, "three");
+set::add({"one", "two"}, "three");
 -- {'one', 'three', 'two'}
 ```
 
@@ -154,10 +154,10 @@ value = "{1, 2, 3, 4, 5}"
 
 */
 
-RETURN {1, 2}.add([2, 3, 4]);
+{1, 2}.add([2, 3, 4]);
 -- {1, 2, 3, 4}
 
-RETURN {1, 2, 3}.add({3, 4, 5});
+{1, 2, 3}.add({3, 4, 5});
 -- {1, 2, 3, 4, 5}
 ```
 
@@ -171,7 +171,7 @@ set::all(set, $predicate: value) -> bool
 set::all(set, $predicate: closure) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**
@@ -185,9 +185,9 @@ value = "true"
 
 */
 
-RETURN set::all({ 1, 2, 3, NONE, 'SurrealDB', 5 });
+set::all({ 1, 2, 3, NONE, 'SurrealDB', 5 });
 -- false
-RETURN {'all', 'clear'}.all();
+{'all', 'clear'}.all();
 -- true
 ```
 
@@ -208,13 +208,13 @@ value = "false"
 
 */
 
-RETURN {'same',}.all('same');
+{'same',}.all('same');
 -- true
 
-RETURN {"What's", 'it', 'got', 'in', 'its', 'pocketses??'}.all(|$s| $s.len() > 1);
+{"What's", 'it', 'got', 'in', 'its', 'pocketses??'}.all(|$s| $s.len() > 1);
 -- true
 
-RETURN {1, 2, 'SurrealDB'}.all(|$var| $var.is_string());
+{1, 2, 'SurrealDB'}.all(|$var| $var.is_string());
 -- false
 ```
 
@@ -241,10 +241,10 @@ value = "true"
 value = "false"
 
 */
-RETURN set::any({ 1, 2, 3, NONE, 'SurrealDB', 5 });
+set::any({ 1, 2, 3, NONE, 'SurrealDB', 5 });
 -- true
 
-RETURN {'', 0, NONE, NULL, [], {}}.any();
+{'', 0, NONE, NULL, [], {}}.any();
 -- false
 ```
 
@@ -265,13 +265,13 @@ value = "false"
 
 */
 
-RETURN {'same', 'different'}.any('same');
+{'same', 'different'}.any('same');
 -- true
 
-RETURN {'ant', 'bear', 'cat'}.any(|$s| $s.len() > 3);
+{'ant', 'bear', 'cat'}.any(|$s| $s.len() > 3);
 -- true
 
-RETURN {1, 2, 3}.any(|$num| $num > 10);
+{1, 2, 3}.any(|$num| $num > 10);
 -- false
 ```
 
@@ -285,7 +285,7 @@ Because sets are ordered, the position of the item is based on the set's sorted 
 set::at(set, $index: int) -> any
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**
@@ -296,7 +296,7 @@ value = "2"
 
 */
 
-RETURN set::at({3, 1, 2}, 1);
+set::at({3, 1, 2}, 1);
 -- 2
 ```
 
@@ -314,10 +314,10 @@ value = "NONE"
 
 */
 
-RETURN {1, 2, 3}.at(-1);
+{1, 2, 3}.at(-1);
 -- 3
 
-RETURN {1, 2, 3}.at(-4);
+{1, 2, 3}.at(-4);
 -- NONE
 ```
 
@@ -409,7 +409,7 @@ set::find(set, $predicate: value) -> value | NONE
 set::find(set, $predicate: closure) -> value | NONE
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**
@@ -422,10 +422,10 @@ value = "'b'"
 value = "NONE"
 
 */
-RETURN set::find({'a', 'b', 'c'}, 'b');
+set::find({'a', 'b', 'c'}, 'b');
 -- 'b'
 
-RETURN {1, 2, 3}.find(4);
+{1, 2, 3}.find(4);
 -- NONE
 ```
 
@@ -465,7 +465,7 @@ Because sets are ordered, this returns the least value in the set's sorted order
 set::first(set) -> any
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**
@@ -476,7 +476,7 @@ value = "1"
 
 */
 
-RETURN set::first({ 3, 1, 2 });
+set::first({ 3, 1, 2 });
 -- 1
 ```
 
@@ -603,7 +603,7 @@ value = "'1 + 2 + 3'"
 
 */
 
-RETURN set::join({3, 1, 2}, ' + ');
+set::join({3, 1, 2}, ' + ');
 -- '1 + 2 + 3'
 ```
 
@@ -617,7 +617,7 @@ Because sets are ordered, this returns the greatest value in the set's sorted or
 set::last(set) -> any
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**
@@ -628,7 +628,7 @@ value = "3"
 
 */
 
-RETURN set::last({ 3, 1, 2 });
+set::last({ 3, 1, 2 });
 -- 3
 ```
 
@@ -695,7 +695,7 @@ The `set::max` function returns the greatest value from a set of values.
 set::max(set) -> any
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**
@@ -706,7 +706,7 @@ value = "2"
 
 */
 
-RETURN set::max({0, 1, 2});
+set::max({0, 1, 2});
 -- 2
 ```
 
@@ -720,7 +720,7 @@ The `set::min` function returns the least value from a set of values.
 set::min(set) -> any
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**
@@ -731,7 +731,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "0"
 */
 
-RETURN set::min({0, 1, 2});
+set::min({0, 1, 2});
 -- 0
 ```
 
@@ -829,10 +829,10 @@ value = "{1}"
 
 */
 
-RETURN {1, 2, 3, 4}.remove([2, 3]);
+{1, 2, 3, 4}.remove([2, 3]);
 -- {1, 4}
 
-RETURN {1, 2, 3, 4}.remove({2, 3, 4});
+{1, 2, 3, 4}.remove({2, 3, 4});
 -- {1,}
 ```
 
@@ -849,7 +849,7 @@ set::slice(set, $start: int, $end: int) -> set
 set::slice(set, $range: range<int>) -> set
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**
@@ -863,10 +863,10 @@ value = "{3, 4, 5}"
 
 */
 
-RETURN set::slice({4, 1, 3, 2}, 1, 3);
+set::slice({4, 1, 3, 2}, 1, 3);
 -- {2, 3}
 
-RETURN {1, 2, 3, 4, 5}.slice(-3..);
+{1, 2, 3, 4, 5}.slice(-3..);
 -- {3, 4, 5}
 ```
 

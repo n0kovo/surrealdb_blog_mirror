@@ -406,7 +406,7 @@ value = "73"
 
 */
 
-RETURN [76, 83, 69, 73][$];
+[76, 83, 69, 73][$];
 ```
 
 ```surql title="Output"
@@ -479,7 +479,7 @@ SELECT *, name.uppercase() FROM person;
 
 In the example above, `uppercase()` is a method called on `person.name` to convert it to uppercase. Although this method is called as `.uppercase()`, it is actually the [`string::uppercase()`](../functions/database-functions/string.md#stringuppercase) function that is called.
 
-SurrealDB will automatically recognize that the idiom part `.uppercase()` refers to the `string::uppercase()` function and call this function when the query is executed. What this means is that the following two queries are equivilent:
+SurrealDB will automatically recognize that the idiom part `.uppercase()` refers to the `string::uppercase()` function and call this function when the query is executed. What this means is that the following two queries are equivalent:
 
 ```surql title="Using method chaining"
 SELECT *, name.uppercase() FROM person;
@@ -771,7 +771,6 @@ value = "[{ id: planet:earth, name: 'Earth', orbits: [star:sun] }]"
 value = "[{ id: planet:earth, name: 'Earth', orbits: [star:sun] }]"
 */
 
-, [{ id: planet:earth, name: 'Earth', orbits: [star:sun] }]]
 CREATE star:sun SET name = "The Sun";
 CREATE planet:earth SET name = "Earth";
 RELATE planet:earth->orbits->star:sun;

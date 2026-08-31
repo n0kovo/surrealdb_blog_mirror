@@ -505,7 +505,7 @@ Some modules expose constants (fixed values) as well as functions. Consts use th
 - **[Duration](duration.md#duration-constants)** - `duration::max`.
 
 ```surql
-RETURN [math::pi, math::tau, math::e];
+[math::pi, math::tau, math::e];
 ```
 
 ```surql title="Response"

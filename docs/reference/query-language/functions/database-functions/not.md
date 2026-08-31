@@ -40,7 +40,7 @@ value = "false"
 
 */
 
-RETURN not("I speak the truth");
+not("I speak the truth");
 -- false
 ```
 
@@ -54,7 +54,7 @@ value = "[true, true, true, true, true]"
 
 */
 
-RETURN [
+[
     not(""),
     not(false),
     not([]),
@@ -73,7 +73,7 @@ value = "[true, true, true, true, true]"
 
 */
 
-RETURN [
+[
     not(not("I have value")),
     not(not(true)),
     not(not(["value!"])),
@@ -92,7 +92,7 @@ value = "[true, true, true, true, true]"
 
 */
 
-RETURN [
+[
     !!"I have value",
     !!true,
     !!["value!"],

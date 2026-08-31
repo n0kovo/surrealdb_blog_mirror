@@ -31,11 +31,11 @@ The `sleep` function delays or pauses the execution of a query or a set of state
 ```surql title="API DEFINITION"
 sleep(duration) -> none
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN sleep(1s);
-RETURN sleep(500ms);
+sleep(1s);
+sleep(500ms);
 ```
 
 SurrealDB also has a [SLEEP statement](../../statements/sleep.md) statement that accepts a datetime; however, the `sleep` function can be used in more dynamic ways such as the following example that simulates a 100ms delay between each record in a query.

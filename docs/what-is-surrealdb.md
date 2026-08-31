@@ -14,7 +14,7 @@ The platform has two products, and both run on the same engine:
 - **SurrealDB** is the database. You design the schema, and you choose how strictly to define it.
 - **[SurrealDB Agent Memory](https://surrealdb.com/docs/agent-memory)** is a memory and knowledge layer for AI agents, built on top of that database.
 
-This page covers the main capabilities of both. If you would rather start writing queries, go to [Sample queries](sample-queries.md). If you want to run the database first, go to [Running SurrealDB](running/overview.md).
+This page covers the main capabilities of both. If you would rather start writing queries, go to [Sample queries](learn/querying/surrealql/sample-queries.md). If you want to run the database first, go to [Running SurrealDB](running/overview.md).
 
 ## One engine for every data model
 
@@ -132,7 +132,7 @@ More detail is on the [case studies page](/casestudies), and the complete capabi
 
 ## Where next
 
-- **[Sample queries](sample-queries.md)** — Run your first SurrealQL queries against a live instance.
+- **[Sample queries](learn/querying/surrealql/sample-queries.md)** — Run your first SurrealQL queries against a live instance.
 - **[Running SurrealDB](running/overview.md)** — Start the database in memory, on disk, in Docker, or in the browser.
 - **[Architecture](learn/data-models/architecture.md)** — How the engine separates compute from storage, and how a database is structured.
 - **[Agent Memory](https://surrealdb.com/docs/agent-memory)** — Give your agents durable, queryable memory built from your own data.

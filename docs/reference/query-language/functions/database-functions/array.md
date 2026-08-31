@@ -260,7 +260,7 @@ The `array::add` function adds an item to an array only if it doesn't exist.
 array::add(array, $new_val: value) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -270,7 +270,7 @@ value = "['one', 'two', 'three']"
 
 */
 
-RETURN array::add(["one", "two"], "three");
+array::add(["one", "two"], "three");
 
 -- ['one', 'two', 'three']
 ```
@@ -295,7 +295,7 @@ array::all(array, $predicate: value) -> bool
 array::all(array, $predicate: closure) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -308,10 +308,10 @@ value = "true"
 
 */
 
-RETURN array::all([ 1, 2, 3, NONE, 'SurrealDB', 5 ]);
+array::all([ 1, 2, 3, NONE, 'SurrealDB', 5 ]);
 -- false
 
-RETURN ["all", "clear"].all();
+["all", "clear"].all();
 -- true
 ```
 
@@ -331,7 +331,7 @@ value = "false"
 
 */
 
-RETURN ["same", "same", "same"].all("same");
+["same", "same", "same"].all("same");
 -- true
 
 [
@@ -380,7 +380,7 @@ value = "false"
 
 */
 
-RETURN array::any([ 1, 2, 3, NONE, 'SurrealDB', 5 ]);
+array::any([ 1, 2, 3, NONE, 'SurrealDB', 5 ]);
 -- true
 
 ["", 0, NONE, NULL, [], {}].any();
@@ -403,7 +403,7 @@ value = "true"
 
 */
 
-RETURN ["same", "same?", "Dude, same!"].any("same");
+["same", "same?", "Dude, same!"].any("same");
 -- true
 
 [
@@ -450,7 +450,7 @@ The `array::at` function returns the value at the specified index, or in reverse
 array::at(array, $index: int) -> any
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -460,7 +460,7 @@ value = "'r'"
 
 */
 
-RETURN array::at(['s', 'u', 'r', 'r', 'e', 'a', 'l'], 2);
+array::at(['s', 'u', 'r', 'r', 'e', 'a', 'l'], 2);
 
 -- 'r'
 ```
@@ -475,7 +475,7 @@ value = "'e'"
 
 */
 
-RETURN array::at(['s', 'u', 'r', 'r', 'e', 'a', 'l'], -3);
+array::at(['s', 'u', 'r', 'r', 'e', 'a', 'l'], -3);
 
 -- 'e'
 ```
@@ -490,7 +490,7 @@ The `array::append` function appends a value to the end of an array.
 array::append(array, $new_val: value) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -500,7 +500,7 @@ value = "[1, 2, 3, 4, 5]"
 
 */
 
-RETURN array::append([1, 2, 3, 4], 5);
+array::append([1, 2, 3, 4], 5);
 
 -- [1, 2, 3, 4, 5]
 ```
@@ -516,7 +516,7 @@ If one array is shorter than the other it is considered null and thus false.
 array::boolean_and($lh: array, $rh: array)
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -535,7 +535,7 @@ value = "true"
 
 */
 
-RETURN array::boolean_and(["true",
+array::boolean_and(["true",
   "false",
   1,
   1],
@@ -560,7 +560,7 @@ value = "false"
 
 */
 
-RETURN array::boolean_and([true, true], [false]);
+array::boolean_and([true, true], [false]);
 
 -- [ false, false ]
 ```
@@ -576,7 +576,7 @@ It takes two arrays and if one array is shorter than the other or missing, the o
 array::boolean_or($lh: array, $rh: array)
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -595,7 +595,7 @@ value = "true"
 
 */
 
-RETURN array::boolean_or([false,
+array::boolean_or([false,
   true,
   false,
   true],
@@ -617,7 +617,7 @@ The `array::boolean_xor` function performs the [XOR bitwise operations](https://
 array::boolean_xor($lh: array, $rh: array)
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -636,7 +636,7 @@ value = "false"
 
 */
 
-RETURN array::boolean_xor([false,
+array::boolean_xor([false,
   true,
   false,
   true],
@@ -659,7 +659,7 @@ It takes in one array and it returns false if its single operand can be converte
 array::boolean_not(array)
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -677,7 +677,7 @@ value = "true"
 value = "false"
 
 */
-RETURN array::boolean_not([ false, true, 0, 1 ]);
+array::boolean_not([ false, true, 0, 1 ]);
 
 -- [true, false, true, false]
 ```
@@ -692,7 +692,7 @@ The `array::combine` function combines all values from two arrays together, retu
 array::combine(array, $other: array) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -702,7 +702,7 @@ value = "[[[1, 2], [1, 3], [2, 2], [2, 3]]]"
 
 */
 
-RETURN array::combine([1, 2], [2, 3]);
+array::combine([1, 2], [2, 3]);
 
 -- [ [1, 2], [1, 3], [2, 2], [2, 3] ]
 ```
@@ -717,7 +717,7 @@ The `array::complement` function returns the complement of two arrays, returning
 array::complement(array, $other: array) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -727,7 +727,7 @@ value = "[1, 2]"
 
 */
 
-RETURN array::complement([1, 2, 3, 4], [3, 4, 5, 6]);
+array::complement([1, 2, 3, 4], [3, 4, 5, 6]);
 
 -- [1, 2]
 ```
@@ -742,7 +742,7 @@ The `array::concat` function merges an array with one or more arrays, returning 
 array::concat(array, $other: array, ..) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -752,10 +752,10 @@ value = "[1, 2, 3, 4, 3, 4, 5, 6]"
 
 */
 
-RETURN array::concat([1, 2, 3, 4], [3, 4, 5, 6]);
+array::concat([1, 2, 3, 4], [3, 4, 5, 6]);
 -- [1, 2, 3, 4, 3, 4, 5, 6]
 
-RETURN [1,2].concat([3,4], [4,3])
+[1,2].concat([3,4], [4,3])
 -- [1, 2, 3, 4, 4, 3]
 ```
 
@@ -769,7 +769,7 @@ value = "[1, 2, 3, 4, 3, 4, 5, 6]"
 
 */
 
-RETURN [1, 2, 3, 4] + [3, 4, 5, 6];
+[1, 2, 3, 4] + [3, 4, 5, 6];
 
 -- [ 1, 2, 3, 4, 3, 4, 5, 6 ]
 ```
@@ -784,7 +784,7 @@ The `array::clump` function returns the original array split into sub-arrays of 
 array::clump(array, $size: int) -> array
 ```
 
-The following examples show this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following examples show this function, and its output:
 
 ```surql
 /**[test]
@@ -820,7 +820,7 @@ The `array::difference` function determines the difference between two arrays, r
 array::difference(array, $other: array) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -830,7 +830,7 @@ value = "[1, 2, 5, 6]"
 
 */
 
-RETURN array::difference([1, 2, 3, 4], [3, 4, 5, 6]);
+array::difference([1, 2, 3, 4], [3, 4, 5, 6]);
 
 -- [ 1, 2, 5, 6 ]
 ```
@@ -845,7 +845,7 @@ The `array::distinct` function calculates the unique values in an array, returni
 array::distinct(array) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -855,7 +855,7 @@ value = "[1, 2, 3, 4]"
 
 */
 
-RETURN array::distinct([ 1, 2, 1, 3, 3, 4 ]);
+array::distinct([ 1, 2, 1, 3, 3, 4 ]);
 
 -- [ 1, 2, 3, 4 ]
 ```
@@ -876,7 +876,7 @@ The function also accepts a third and a fourth parameter which allows you to rep
 array::fill(array, $with: any, $start: int, $end: int) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -886,7 +886,7 @@ value = "[10, 10, 10, 10, 10]"
 
 */
 
-RETURN array::fill([ 1, 2, 3, 4, 5 ], 10);
+array::fill([ 1, 2, 3, 4, 5 ], 10);
 
 -- [ 10, 10, 10, 10, 10 ]
 ```
@@ -901,7 +901,7 @@ value = "[1, 10, 3, 4, 5]"
 
 */
 
-RETURN array::fill([ 1, NONE, 3, 4, 5 ], 10, 1, 2);
+array::fill([ 1, NONE, 3, 4, 5 ], 10, 1, 2);
 
 -- [ 1, 10, 3, 4, 5 ]
 ```
@@ -916,7 +916,7 @@ value = "[1, 2, 10, 4, 5]"
 
 */
 
-RETURN array::fill([ 1, 2, NONE, 4, 5 ], 10, -3, -2);
+array::fill([ 1, 2, NONE, 4, 5 ], 10, -3, -2);
 
 -- [ 1, 2, 10, 4, 5 ]
 ```
@@ -932,7 +932,7 @@ array::filter(array, $predicate: value) -> array
 array::filter(array, $predicate: closure) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -945,10 +945,10 @@ value = "[true, true, true]"
 
 */
 
-RETURN array::filter([ 1, 2, 1, 3, 3, 4 ], 1);
+array::filter([ 1, 2, 1, 3, 3, 4 ], 1);
 -- [ 1, 1 ]
 
-RETURN [true, false, false, false, true, true].filter(true);
+[true, false, false, false, true, true].filter(true);
 -- [ true, true, true ]
 ```
 
@@ -1049,7 +1049,7 @@ array::filter_index(array, $predicate: value) -> array
 array::filter_index(array, $predicate: closure) -> array
 ```
 
-The following examples show this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following examples show this function, and its output:
 
 ```surql
 /**[test]
@@ -1062,10 +1062,10 @@ value = "[0, 1, 3, 4]"
 
 */
 
-RETURN array::filter_index(['a', 'b', 'c', 'b', 'a'], 'b');
+array::filter_index(['a', 'b', 'c', 'b', 'a'], 'b');
 -- [ 1, 3 ]
 
-RETURN [0, 0, 1, 0, 0, 5, 1].filter_index(0);
+[0, 0, 1, 0, 0, 5, 1].filter_index(0);
 -- [ 0, 1, 3, 4 ]
 ```
 
@@ -1104,7 +1104,7 @@ array::find(array, $predicate: value)   -> value | NONE
 array::find(array, $predicate: closure) -> value | NONE
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1117,10 +1117,10 @@ value = "NONE"
 
 */
 
-RETURN array::find(['a', 'b', 'c', 'b', 'a'], 'b');
+array::find(['a', 'b', 'c', 'b', 'a'], 'b');
 -- b
 
-RETURN [1, 2, 3].find(4);
+[1, 2, 3].find(4);
 -- [NONE]
 ```
 
@@ -1138,7 +1138,7 @@ value = "{ intelligence: 15, name: 'Mardine', strength: 10 }"
 */
 
 -- Find one number 3 or greater
-RETURN [1, 2, 5].find(|$num| $num >= 3);
+[1, 2, 5].find(|$num| $num >= 3);
 
 -- Find the first adventurer good enough for the task
 [
@@ -1174,7 +1174,7 @@ array::find_index(array, $predicate: value)   -> number | NONE
 array::find_index(array, $predicate: closure) -> number | NONE
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1187,10 +1187,10 @@ value = "NONE"
 
 */
 
-RETURN array::find_index(['a', 'b', 'c', 'b', 'a'], 'b');
+array::find_index(['a', 'b', 'c', 'b', 'a'], 'b');
 -- 1
 
-RETURN [1, 2, 3].find_index(4);
+[1, 2, 3].find_index(4);
 -- NONE
 ```
 
@@ -1204,7 +1204,7 @@ value = "2"
 
 */
 
-RETURN [1, 2, 3].find_index(|$num| $num > 2);
+[1, 2, 3].find_index(|$num| $num > 2);
 -- 2
 ```
 
@@ -1232,7 +1232,7 @@ The `array::first` function returns the first value from an array.
 array::first(array) -> any
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1242,7 +1242,7 @@ value = "'s'"
 
 */
 
-RETURN array::first([ 's', 'u', 'r', 'r', 'e', 'a', 'l' ]);
+array::first([ 's', 'u', 'r', 'r', 'e', 'a', 'l' ]);
 
 -- 's'
 ```
@@ -1257,7 +1257,7 @@ The `array::flatten` function flattens an array of arrays, returning a new array
 array::flatten(array) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1267,7 +1267,7 @@ value = "[1, 2, 3, 4, 'SurrealDB', 5, 6, [7, 8]]"
 
 */
 
-RETURN array::flatten([ [1,
+array::flatten([ [1,
   2],
   [3,
   4],
@@ -1456,7 +1456,7 @@ The `array::group` function flattens and returns the unique items in an array.
 array::group(array) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1466,7 +1466,7 @@ value = "[1, 2, 3, 4, 5, 6, 7, 8, 9]"
 
 */
 
-RETURN array::group([1,
+array::group([1,
   2,
   3,
   4,
@@ -1539,7 +1539,7 @@ The `array::intersect` function calculates the values which intersect two arrays
 array::intersect(array, $other: array) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1549,7 +1549,7 @@ value = [3, 4]""
 
 */
 
-RETURN array::intersect([1, 2, 3, 4], [3, 4, 5, 6]);
+array::intersect([1, 2, 3, 4], [3, 4, 5, 6]);
 
 -- [ 3, 4 ]
 ```
@@ -1564,7 +1564,7 @@ The `array::is_empty` function checks whether the array contains values.
 array::is_empty(array) -> bool
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql title="An array that contain values"
 /**[test]
@@ -1574,7 +1574,7 @@ value = "false"
 
 */
 
-RETURN array::is_empty([1, 2, 3, 4]);
+array::is_empty([1, 2, 3, 4]);
 
 -- false
 ```
@@ -1587,7 +1587,7 @@ value = "true"
 
 */
 
-RETURN array::is_empty([]);
+array::is_empty([]);
 
 -- true
 ```
@@ -1602,7 +1602,7 @@ The `array::join` function takes an array and a string as parameters and returns
 array::join(array, $concat_with: string) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1612,7 +1612,7 @@ value = "'again and again and again'"
 
 */
 
-RETURN array::join(["again", "again", "again"], " and ");
+array::join(["again", "again", "again"], " and ");
 
 -- "again and again and again"
 ```
@@ -1627,7 +1627,7 @@ The `array::last` function returns the last value from an array. You can also us
 array::last(array) -> any
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1637,7 +1637,7 @@ value = "'l'"
 
 */
 
-RETURN array::last([ 's', 'u', 'r', 'r', 'e', 'a', 'l' ]);
+array::last([ 's', 'u', 'r', 'r', 'e', 'a', 'l' ]);
 
 -- 'l'
 ```
@@ -1652,7 +1652,7 @@ The `array::len` function calculates the length of an array, returning a number.
 array::len(array) -> number
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1662,7 +1662,7 @@ value = "9"
 
 */
 
-RETURN array::len([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
+array::len([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
 
 -- 9
 ```
@@ -1682,7 +1682,7 @@ When one or both of the compared elements are not truthy, the resulting element 
 array::logical_and($lh: array, $rh: array)
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1701,7 +1701,7 @@ value = "false"
 
 */
 
-RETURN array::logical_and([true,
+array::logical_and([true,
   false,
   true,
   false],
@@ -1726,7 +1726,7 @@ value = "NULL"
 
 */
 
-RETURN array::logical_and([0, 1], [])
+array::logical_and([0, 1], [])
 
 -- [ 0, NULL ]
 ```
@@ -1747,7 +1747,7 @@ When both of the compared elements are not truthy, the resulting element will ha
 array::logical_or($lh: array, $rh: array)
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -1766,7 +1766,7 @@ value = "false"
 
 */
 
-RETURN array::logical_or([true,
+array::logical_or([true,
   false,
   true,
   false],
@@ -1781,7 +1781,7 @@ RETURN array::logical_or([true,
 If one of the arrays is empty, the first array is returned.
 
 ```surql
-RETURN array::logical_or([0, 1], []);
+array::logical_or([0, 1], []);
 
 [ 0, 1 ]
 ```
@@ -1804,7 +1804,7 @@ When neither of the compared elements are truthy, the resulting element will hav
 array::logical_xor($lh: array, $rh: array)
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 
@@ -1824,7 +1824,7 @@ value = "false"
 
 */
 
-RETURN array::logical_xor([true,
+array::logical_xor([true,
   false,
   true,
   false],
@@ -1847,7 +1847,7 @@ value = "[0, 1]"
 
 */
 
-RETURN array::logical_xor([0, 1], [])
+array::logical_xor([0, 1], [])
 
 -- [ 0, 1 ]
 ```
@@ -1997,7 +1997,7 @@ The `array::max` function returns the greatest value from an array of values.
 array::max(array<any>) -> any
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 
@@ -2007,7 +2007,7 @@ value = "2"
 
 */
 
-RETURN array::max([0, 1, 2]);
+array::max([0, 1, 2]);
 
 -- 2
 ```
@@ -2042,7 +2042,7 @@ The `array::matches` function returns an array of booleans indicating which elem
 array::matches(array, $predicate: value) -> array<bool>
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 
@@ -2059,7 +2059,7 @@ value = "false"
 
 */
 
-RETURN array::matches([0, 1, 2], 1);
+array::matches([0, 1, 2], 1);
 
 -- [false, true, false]
 ```
@@ -2078,7 +2078,7 @@ value = "true"
 
 */
 
-RETURN array::matches([{id: r"ohno:0"},
+array::matches([{id: r"ohno:0"},
   {id: r"ohno:1"}],
   {id: r"ohno:1"});
 
@@ -2095,7 +2095,7 @@ The `array::min` function returns the least value from an array of values.
 array::min(array<any>) -> any
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 
@@ -2105,7 +2105,7 @@ value = "0"
 
 */
 
-RETURN array::min([0, 1, 2]);
+array::min([0, 1, 2]);
 
 -- 0
 ```
@@ -2139,7 +2139,7 @@ The `array::pop` function removes a value from the end of an array and returns i
 array::pop(array) -> value
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2149,7 +2149,7 @@ value = "4"
 
 */
 
-RETURN array::pop([ 1, 2, 3, 4 ]);
+array::pop([ 1, 2, 3, 4 ]);
 
 -- 4
 ```
@@ -2164,7 +2164,7 @@ The `array::prepend` function prepends a value to the beginning of an array.
 array::prepend(array, $new_val: value) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2174,7 +2174,7 @@ value = "[5, 1, 2, 3, 4]"
 
 */
 
-RETURN array::prepend([1, 2, 3, 4], 5);
+array::prepend([1, 2, 3, 4], 5);
 
 -- [ 5, 1, 2, 3, 4 ]
 ```
@@ -2189,7 +2189,7 @@ The `array::push` function appends a value to the end of an array.
 array::push(array, $new_val: value) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2199,7 +2199,7 @@ value = "[1, 2, 3, 4, 5]"
 
 */
 
-RETURN array::push([1, 2, 3, 4], 5);
+array::push([1, 2, 3, 4], 5);
 
 -- [ 1, 2, 3, 4, 5 ]
 ```
@@ -2216,7 +2216,7 @@ array::range($start: int, $end: int) -> array
 array::range(range) -> array;
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2226,7 +2226,7 @@ value = "[1, 2, 3, 4, 5, 6, 7, 8, 9]"
 
 */
 
-RETURN array::range(1, 10);
+array::range(1, 10);
 
 -- [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 ```
@@ -2239,7 +2239,7 @@ value = "[1, 2, 3, 4, 5]"
 
 */
 
-RETURN array::range(1..=5);
+array::range(1..=5);
 
 [ 1, 2, 3, 4, 5 ]
 ```
@@ -2361,7 +2361,7 @@ The `array::remove` function removes an item from a specific position in an arra
 array::remove(array, $index: number) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2371,7 +2371,7 @@ value = "[1, 2, 4, 5]"
 
 */
 
-RETURN array::remove([1, 2, 3, 4, 5], 2);
+array::remove([1, 2, 3, 4, 5], 2);
 
 -- [ 1, 2, 4, 5 ]
 ```
@@ -2386,7 +2386,7 @@ value = "[1, 2, 3, 5]"
 
 */
 
-RETURN array::remove([1, 2, 3, 4, 5], -2);
+array::remove([1, 2, 3, 4, 5], -2);
 
 -- [ 1, 2, 3, 5 ]
 ```
@@ -2401,7 +2401,7 @@ The `array::repeat` function creates an array of a given size contain the specif
 array::repeat(any, $count: int) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2411,7 +2411,7 @@ value = "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
 
 */
 
-RETURN array::repeat(1, 10);
+array::repeat(1, 10);
 
 -- [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
 ```
@@ -2424,7 +2424,7 @@ value = "['hello', 'hello']"
 
 */
 
-RETURN array::repeat("hello", 2);
+array::repeat("hello", 2);
 
 -- [ "hello", "hello" ]
 ```
@@ -2439,7 +2439,7 @@ The `array::reverse` function reverses the sorting order of an array.
 array::reverse(array) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2449,7 +2449,7 @@ value = "[5, 4, 3, 2, 1]"
 
 */
 
-RETURN array::reverse([ 1, 2, 3, 4, 5 ]);
+array::reverse([ 1, 2, 3, 4, 5 ]);
 
 -- [ 5, 4, 3, 2, 1 ]
 ```
@@ -2489,7 +2489,7 @@ The `array::shuffle` function randomly shuffles the items of an array.
 array::shuffle(array) -> array
 ```
 
-The following example shows this function, and its possible output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its possible output:
 
 ```surql
 /**[test]
@@ -2499,7 +2499,7 @@ value = "[3, 5, 4, 1, 2]"
 
 */
 
-RETURN array::shuffle([ 1, 2, 3, 4, 5 ]);
+array::shuffle([ 1, 2, 3, 4, 5 ]);
 
 -- [ 2, 1, 4, 3, 5 ]
 ```
@@ -2516,7 +2516,7 @@ array::slice(array, $start: int, $len: int) -> array
 array::slice(array, $slice: range) -> array;
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2526,7 +2526,7 @@ value = "[2, 3]"
 
 */
 
-RETURN array::slice([ 1, 2, 3, 4, 5 ], 1, 3);
+array::slice([ 1, 2, 3, 4, 5 ], 1, 3);
 
 -- [2, 3]
 ```
@@ -2541,7 +2541,7 @@ value = "[2, 3, 4]"
 
 */
 
-RETURN array::slice([ 1, 2, 3, 4, 5 ], 1, -1);
+array::slice([ 1, 2, 3, 4, 5 ], 1, -1);
 
 [ 2, 3, 4 ]
 ```
@@ -2556,7 +2556,7 @@ value = "[3, 4, 5]"
 
 */
 
-RETURN array::slice([ 1, 2, 3, 4, 5 ], 2);
+array::slice([ 1, 2, 3, 4, 5 ], 2);
 
 -- [ 3, 4, 5 ]
 ```
@@ -2571,7 +2571,7 @@ value = "[4, 5]"
 
 */
 
-RETURN array::slice([ 1, 2, 3, 4, 5 ], -2);
+array::slice([ 1, 2, 3, 4, 5 ], -2);
 
 -- [ 4, 5 ]
 ```
@@ -2579,7 +2579,7 @@ RETURN array::slice([ 1, 2, 3, 4, 5 ], -2);
 The following example shows how you can use this function with a negative position, and a length of the slice:
 
 ```surql
-RETURN array::slice([ 1, 2, 3, 4, 5 ], -3, 2);
+array::slice([ 1, 2, 3, 4, 5 ], -3, 2);
 
 [ 3, 4 ]
 ```
@@ -2621,7 +2621,7 @@ The function also accepts a second string parameter which determines the sorting
 array::sort(array, $order: string) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2631,7 +2631,7 @@ value = "[NULL, 0, 1, 1, 2, 3, 3, 4, 'something']"
 
 */
 
-RETURN array::sort([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
+array::sort([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
 
 -- [ null, 0, 1, 1, 2, 3, 3, 4, "something" ]
 ```
@@ -2644,7 +2644,7 @@ value = "['something', 4, 3, 3, 2, 1, 1, 0, NULL]"
 
 */
 
-RETURN array::sort([1, 2, 1, null, "something", 3, 3, 4, 0], false);
+array::sort([1, 2, 1, null, "something", 3, 3, 4, 0], false);
 
 -- [ "something", 4, 3, 3, 2, 1, 1, 9, null ]
 ```
@@ -2657,7 +2657,7 @@ value = "[NULL, 0, 1, 1, 2, 3, 3, 4, 'something']"
 
 */
 
-RETURN array::sort([1, 2, 1, null, "something", 3, 3, 4, 0], "asc");
+array::sort([1, 2, 1, null, "something", 3, 3, 4, 0], "asc");
 
 -- [ null, 0, 1, 1, 2, 3, 3, 4, "something" ]
 ```
@@ -2670,7 +2670,7 @@ value = "['something', 4, 3, 3, 2, 1, 1, 0, NULL]"
 
 */
 
-RETURN array::sort([1, 2, 1, null, "something", 3, 3, 4, 0], "desc");
+array::sort([1, 2, 1, null, "something", 3, 3, 4, 0], "desc");
 
 [ "something", 4, 3, 3, 2, 1, 1, 9, null ]
 ```
@@ -2834,7 +2834,7 @@ The `array::sort::asc` function is a shorthand convenience function for the `arr
 array::sort::asc(array) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2844,7 +2844,7 @@ value = "[NULL, 0, 1, 1, 2, 3, 3, 4, 'something']"
 
 */
 
-RETURN array::sort::asc([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
+array::sort::asc([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
 
 -- [ null, 0, 1, 1, 2, 3, 3, 4, "something" ]
 ```
@@ -2859,7 +2859,7 @@ The `array::sort::desc` function is a shorthand convenience function for the `ar
 array::sort::desc(array) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2869,7 +2869,7 @@ value = "['something', 4, 3, 3, 2, 1, 1, 0, NULL]"
 
 */
 
-RETURN array::sort::desc([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
+array::sort::desc([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
 
 -- [ "something", 4, 3, 3, 2, 1, 1, 9, null ]
 ```
@@ -2884,7 +2884,7 @@ The `array::swap` function swaps two values of an array based on indexes.
 array::swap(array, $from: int, $to: int) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2894,7 +2894,7 @@ value = "["What's", 'it', 'got', 'in', 'its', 'pocketses?']"
 
 */
 
-RETURN array::swap(["What's",
+array::swap(["What's",
   "its",
   "got",
   "in",
@@ -2925,7 +2925,7 @@ value = "[5, 2, 3, 4, 1]"
 
 */
 
-RETURN array::swap([ 1, 2, 3, 4, 5 ], 0, -1);
+array::swap([ 1, 2, 3, 4, 5 ], 0, -1);
 
 -- [ 5, 2, 3, 4, 1 ]
 ```
@@ -2940,7 +2940,7 @@ error = "'Incorrect arguments for function array::swap(). Argument 1 is out of r
 
 */
 
-RETURN array::swap([0, 1], 100, 1000000);
+array::swap([0, 1], 100, 1000000);
 ```
 
 ```surql title="Output"
@@ -2957,7 +2957,7 @@ The `array::transpose` function is used to perform 2d array transposition. It is
 array::transpose(array<array>) -> array<array>
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -2967,7 +2967,7 @@ value = "[[0, 2], [1, 3]]"
 
 */
 
-RETURN array::transpose([[0, 1], [2, 3]]);
+array::transpose([[0, 1], [2, 3]]);
 
 -- [ [0, 2], [1, 3] ]
 ```
@@ -2992,7 +2992,7 @@ value = "[['🟦', '⬜', '🟧'], ['🟥', '🟦', '🟧'], ['🟩', '🟨', '�
 
 */
 
-RETURN array::transpose([
+array::transpose([
     ['🟦', '🟥', '🟩'],
     ['⬜', '🟦', '🟨'],
     ['🟧', '🟧', '🟥']
@@ -3164,7 +3164,7 @@ The `array::union` function combines two arrays together, removing duplicate val
 array::union(array, $other: array) -> array
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -3174,7 +3174,7 @@ value = "[1, 2, 6, 3, 4, 5]"
 
 */
 
-RETURN array::union([1, 2, 1, 6], [1, 3, 4, 5, 6]);
+array::union([1, 2, 1, 6], [1, 3, 4, 5, 6]);
 
 -- [ 1, 2, 6, 3, 4, 5 ]
 ```
@@ -3190,7 +3190,7 @@ array::windows(array, $window_size: int) -> array
 
 The `array::windows` function returns a number of arrays of length `size` created by moving one index at a time down the original array. The arrays returned are guaranteed to be of length `size`. As a result, the function will return an empty array if the length of the original array is not large enough to create a single output array.
 
-The following examples show this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following examples show this function, and its output:
 
 ```surql
 /**[test]

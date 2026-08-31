@@ -82,7 +82,7 @@ The `encoding::base64::decode()` function decodes a string into bytes.
 encoding::base64::decode(string) -> bytes
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -91,7 +91,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "b"32333233""
 
 */
-RETURN encoding::base64::decode("MjMyMw");
+encoding::base64::decode("MjMyMw");
 
 -- b"32333233"
 ```
@@ -105,7 +105,7 @@ You can also verify that the output of the encoded value matches the original va
 value = "true"
 
 */
-RETURN encoding::base64::decode("aGVsbG8") = <bytes>"hello";
+encoding::base64::decode("aGVsbG8") = <bytes>"hello";
 
 -- true
 ```
@@ -129,7 +129,7 @@ encoding::base64::encode(bytes) -> string
 encoding::base64::encode(bytes, $pad_output: option<bool>) -> string
 ```
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
 /**[test]
@@ -138,7 +138,7 @@ The following example shows this function, and its output, when used in a [`RETU
 value = "''"
 
 */
-RETURN encoding::base64::encode(<bytes>"");
+encoding::base64::encode(<bytes>"");
 
 -- ''
 ```
@@ -150,7 +150,7 @@ RETURN encoding::base64::encode(<bytes>"");
 value = "'MjMyMw'"
 
 */
-RETURN encoding::base64::encode(<bytes>"2323");
+encoding::base64::encode(<bytes>"2323");
 
 -- 'MjMyMw'
 ```
@@ -162,7 +162,7 @@ RETURN encoding::base64::encode(<bytes>"2323");
 value = "'aGVsbG8'"
 
 */
-RETURN encoding::base64::encode(<bytes>"hello");
+encoding::base64::encode(<bytes>"hello");
 
 -- 'aGVsbG8'
 ```
@@ -176,7 +176,7 @@ You can pass `true` as the second argument to enable padded base64 outputs:
 value = "''"
 
 */
-RETURN encoding::base64::encode(<bytes>"", true);
+encoding::base64::encode(<bytes>"", true);
 
 -- ""
 ```
@@ -191,7 +191,7 @@ value = "'MjMyMw=='"
 value = "'MjMyMw=='"
 
 */
-RETURN encoding::base64::encode(<bytes>"2323", true);
+encoding::base64::encode(<bytes>"2323", true);
 
 "MjMyMw=="
 ```
@@ -206,7 +206,7 @@ value = "'aGVsbG8='"
 value = "'aGVsbG8='"
 
 */
-RETURN encoding::base64::encode(<bytes>"hello", true);
+encoding::base64::encode(<bytes>"hello", true);
 
 "aGVsbG8="
 ```

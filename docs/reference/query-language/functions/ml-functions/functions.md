@@ -50,10 +50,10 @@ Here, we are using the key mappings in the header of the `.surml` file uploaded 
 in the object passed into the `ml::` function in the correct order. If there are any normalisation parameters in the header
 of the `.surml` file, these will also be applied.
 
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql 
-RETURN ml::house-price-prediction<0.0.1>({squarefoot: 500.0, num_floors: 1.0});
+ml::house-price-prediction<0.0.1>({squarefoot: 500.0, num_floors: 1.0});
 
 250000
 ```

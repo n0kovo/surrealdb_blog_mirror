@@ -38,10 +38,10 @@ The `meta::id` function extracts and returns the identifier from a SurrealDB Rec
 ```surql title="API DEFINITION"
 meta::id(record) -> value
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN meta::id(person:tobie);
+meta::id(person:tobie);
 
 "tobie"
 ```
@@ -55,10 +55,10 @@ The `meta::tb` function extracts and returns the table name from a SurrealDB Rec
 ```surql title="API DEFINITION"
 meta::tb(record) -> string
 ```
-The following example shows this function, and its output, when used in a [`RETURN`](../../statements/return.md) statement:
+The following example shows this function, and its output:
 
 ```surql
-RETURN meta::tb(person:tobie);
+meta::tb(person:tobie);
 
 "person"
 ```
@@ -66,7 +66,7 @@ RETURN meta::tb(person:tobie);
 The equivalent [`record::tb`](record.md#recordtb) function can also be called using the path `record::table`.
 
 ```surql
-RETURN record::table(person:tobie);
+record::table(person:tobie);
 
 "person"
 ```

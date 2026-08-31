@@ -51,7 +51,7 @@ session::ns();
 -- Current database
 session::db();
 -- Session ID
-RETURN session::id();
+session::id();
 ```
 
 ## Using session context in queries

@@ -784,7 +784,7 @@ DEFINE FIELD view_count ON article COMPUTED (UPDATE stats:articles SET views += 
 The check covers the whole expression, including subqueries, blocks and closures, and it follows calls to [custom functions](function.md). A body that calls a function which writes is refused, and the error names the function.
 
 ```surql
-DEFINE FUNCTION fn::record_view() { CREATE view_log SET at = time::now(); RETURN 1; };
+DEFINE FUNCTION fn::record_view() -> int { CREATE view_log SET at = time::now(); RETURN 1; };
 
 -- Refused: fn::record_view() writes
 DEFINE FIELD view_count ON article COMPUTED fn::record_view();

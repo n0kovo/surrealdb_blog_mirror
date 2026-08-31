@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 These snippets are starting points that are realistic enough to learn from, short enough to paste into SurrealDB Studio or to lift into [SurrealKit](../../../manage/schema-migration/index.md) `.surql` schema files and then reshape. They mix **tables**, **relations**, **computed** fields, **events**, and **indexes** the way a real app might.
 
 > [!NOTE]
-> Many fields use [`COMPUTED`](../../../reference/query-language/statements/define/field.md#restrictions-on-computed-fields) (SurrealDB 3.0.0 onward). On older versions, replace with a [`future`](../../../reference/query-language/language-primitives/data-types/futures.md) and `VALUE { … }` as in the futures documentation.
+> Many fields use [`COMPUTED`](../../../reference/query-language/statements/define/field.md#computed-fields) (SurrealDB 3.0.0 onward). On older versions, replace with a [`future`](../../../reference/query-language/language-primitives/data-types/futures.md) and `VALUE { … }` as in the futures documentation.
 
 ## Adding to this page
 
@@ -22,12 +22,12 @@ You can also [get in touch](/contact) with us if you'd like a sample schema that
 
 ### Project planning
 
-A comprehensive project management schema that demonstrates activity scheduling, milestone tracking, and dependency management using [graph relationships](../../data-models/graph/overview.md). This schema shows how to model complex project workflows with interdependent tasks and progress tracking using [`COMPUTED` fields](../../../reference/query-language/statements/define/field.md#restrictions-on-computed-fields) for calculated values.
+A comprehensive project management schema that demonstrates activity scheduling, milestone tracking, and dependency management using [graph relationships](../../data-models/graph/overview.md). This schema shows how to model complex project workflows with interdependent tasks and progress tracking using [`COMPUTED` fields](../../../reference/query-language/statements/define/field.md#computed-fields) for calculated values.
 
 ```surql
--- Activities in a project schedule
 DEFINE TABLE project;
 
+-- Activities in a project schedule
 DEFINE TABLE activity SCHEMAFULL;
 DEFINE FIELD name         ON activity TYPE string;
 DEFINE FIELD description  ON activity TYPE option<string>;
@@ -139,7 +139,7 @@ LIVE SELECT * FROM alert;
 
 ### Risk management
 
-Project risk assessment and mitigation tracking schema. Features temporal risk modelling with active/inactive periods, probability-impact calculations, and automated risk scoring using [futures](../../../reference/query-language/statements/define/field.md#futures). Demonstrates [unique constraints](../../../reference/query-language/statements/define/indexes.md#unique-index) and complex mathematical aggregations across related records.
+Project risk assessment and mitigation tracking schema. Features temporal risk modeling with active/inactive periods, probability-impact calculations, and automated risk scoring using [futures](../../../reference/query-language/statements/define/field.md#futures). Demonstrates [unique constraints](../../../reference/query-language/statements/define/indexes.md#unique-indexes) and complex mathematical aggregations across related records.
 
 ```surql
 DEFINE TABLE risk SCHEMAFULL;
@@ -382,7 +382,7 @@ RELATE purchase_order:450001 -> ordered_from -> vendor:welding;
 CREATE po_line:line10 SET
     purchase_order = purchase_order:450001,
     line_number = 10,
-    description = "Structural welding - pipe rack",
+    description = "Structural welding — pipe rack",
     amount_cents = 18500000,
     wbs = wbs_element:pad3_civil;
 RELATE po_line:line10 -> charges -> wbs_element:pad3_civil;
@@ -424,7 +424,7 @@ ORDER BY due_date;
 
 ### HSSE (health, safety, security, environment) incidents
 
-Incident reporting and investigation schema using [graph relationships](../../data-models/graph/overview.md). Models safety events as edges between employees and projects with severity classification and role identification. Demonstrates graph-style data modelling for complex incident tracking and analysis.
+Incident reporting and investigation schema using [graph relationships](../../data-models/graph/overview.md). Models safety events as edges between employees and projects with severity classification and role identification. Demonstrates graph-style data modeling for complex incident tracking and analysis.
 
 ```surql
 -- Projects and employees (nodes)
@@ -470,7 +470,7 @@ SELECT id, <-incident[WHERE severity = "moderate"]<-employee FROM project;
 
 ### General bank schema (graph schema)
 
-Multi-currency banking system using [graph relationships](../../data-models/graph/overview.md). Demonstrates polymorphic account types (JPY, EUR, CAD, USD) with different field structures, customer-bank relationships, and [unique constraint enforcement](../../../reference/query-language/statements/define/indexes.md#unique-index). Shows how to model complex financial relationships with type-specific behaviours.
+Multi-currency banking system using [graph relationships](../../data-models/graph/overview.md). Demonstrates polymorphic account types (JPY, EUR, CAD, USD) with different field structures, customer-bank relationships, and [unique constraint enforcement](../../../reference/query-language/statements/define/indexes.md#unique-indexes). Shows how to model complex financial relationships with type-specific behaviors.
 
 ```surql
 DEFINE TABLE bank SCHEMAFULL;
@@ -518,7 +518,7 @@ SELECT ->account->eur.total FROM customer:one;
 
 ### Other bank-customer schema
 
-Traditional bank-customer schema with advanced features including [record references](../../../reference/query-language/language-primitives/record-references.md), automated cent handling through [events](../../../reference/query-language/statements/define/event.md), and historical interest rate tracking. Demonstrates event-driven data validation, [parameter usage](../../../reference/query-language/statements/define/param.md), and complex relationship management with reference fields.
+Traditional bank-customer schema with advanced features including [record references](../../../reference/query-language/language-primitives/record-links.md#record-references), automated cent handling through [events](../../../reference/query-language/statements/define/event.md), and historical interest rate tracking. Demonstrates event-driven data validation, [parameter usage](../../../reference/query-language/statements/define/param.md), and complex relationship management with reference fields.
 
 ```surql
 DEFINE PARAM $CURRENCIES VALUE ["EUR", "JPY", "USD", "CAD"];
@@ -583,17 +583,19 @@ DEFINE FIELD to       ON transfer TYPE record<customer>;
 DEFINE FIELD amount   ON transfer TYPE int;
 DEFINE FIELD ts       ON transfer TYPE datetime DEFAULT time::now();
 
-DEFINE FUNCTION fn::send_money($from: record<customer>, $to: record<customer>, $amount: int) {
+DEFINE FUNCTION fn::send_money($from: record<customer>, $to: record<customer>, $amount: int) -> record<transfer> {
 -- Use manual transaction for all statements so all changes are rolled back
 -- if something is wrong
     BEGIN;
-    If $amount < 1 {
+    IF $amount < 1 {
         THROW "Can't send less than 1 ";
     };
     UPDATE $from SET amount -= $amount;
     UPDATE $to SET amount += $amount;
-    CREATE transfer SET from = $from, to = $to, amount = $amount;
+    LET $tx = CREATE ONLY transfer SET from = $from, to = $to, amount = $amount;
     COMMIT;
+-- Return the transfer record as a receipt the caller can use
+    $tx.id
 };
 
 CREATE customer:one SET amount = 100, credit_level = 0;
@@ -640,7 +642,7 @@ FOR $loan IN SELECT * FROM loan {
     UPDATE $loan SET balance = <int>math::round(balance * $update_rate);
 };
 
-DEFINE FUNCTION fn::repayment_amount($loan: record<loan>) {
+DEFINE FUNCTION fn::repayment_amount($loan: record<loan>) -> float {
     LET $P = $loan.principal;
     LET $annual = $loan.interest_rate / 100;
     LET $r = $annual / 12;              -- Monthly interest rate
@@ -762,7 +764,7 @@ SELECT id, ->sent->account FROM account;
 
 ### Characters and quests
 
-RPG game system with character progression, inventory management, and quest tracking. Features polymorphic item effects, character statistics, and complex game state management. Demonstrates flexible data modelling for gaming applications with rich object structures and [relationship tracking](../../data-models/graph/overview.md).
+RPG game system with character progression, inventory management, and quest tracking. Features polymorphic item effects, character statistics, and complex game state management. Demonstrates flexible data modeling for gaming applications with rich object structures and [relationship tracking](../../data-models/graph/overview.md).
 
 ```surql
 -- Characters controlled by players
@@ -917,7 +919,7 @@ LIVE SELECT * FROM telemetry WHERE id[0] = component:two;
 
 ### Missions and tasks
 
-Military mission management system with unit tracking and operational logging. Features hierarchical command structure, real-time status updates, and comprehensive audit trails. Demonstrates complex organisational modelling, [geospatial tracking](../../../reference/query-language/language-primitives/data-types/geometries.md#point), and mission-critical data management patterns.
+Military mission management system with unit tracking and operational logging. Features hierarchical command structure, real-time status updates, and comprehensive audit trails. Demonstrates complex organisational modeling, [geospatial tracking](../../../reference/query-language/language-primitives/data-types/geometries.md#point), and mission-critical data management patterns.
 
 ```surql
 -- Mission-level directive
@@ -974,7 +976,7 @@ CREATE log:[unit:drone1, time::now()] SET message = "Recon sweep complete", stat
 
 ### People, products and commerce
 
-E-commerce platform schema with customer profiles, product catalog, and shopping cart management. Features flexible address storage, multi-currency support, and comprehensive timestamp tracking. Demonstrates modern e-commerce data modelling with [flexible object fields](../../../reference/query-language/language-primitives/data-types/objects.md#extending-objects-and-removing-fields) and relationship management.
+E-commerce platform schema with customer profiles, product catalog, and shopping cart management. Features flexible address storage, multi-currency support, and comprehensive timestamp tracking. Demonstrates modern e-commerce data modeling with [flexible object fields](../../../reference/query-language/language-primitives/data-types/objects.md#flexible-objects) and relationship management.
 
 ```surql
 -- Person / customer profile
@@ -1033,7 +1035,7 @@ DEFINE FIELD time.updated_at ON cart TYPE datetime VALUE time::now();
 
 ### Orders, reviews, reports
 
-Order processing and analytics system with review management and business intelligence. Features order lifecycle tracking, automated analytics tables, and [full-text search](../../../reference/query-language/statements/define/analyzer.md) capabilities. Demonstrates complex aggregations, [materialized views](../../../reference/query-language/statements/define/table.md#pre-computed-table-views), and search optimisation for e-commerce applications.
+Order processing and analytics system with review management and business intelligence. Features order lifecycle tracking, automated analytics tables, and [full-text search](../../../reference/query-language/statements/define/analyzer.md) capabilities. Demonstrates complex aggregations, [materialized views](../../../reference/query-language/statements/define/table.md#pre-computed-table-views), and search optimization for e-commerce applications.
 
 ```surql
 
@@ -1060,7 +1062,7 @@ DEFINE FIELD time.created_at ON review TYPE datetime DEFAULT time::now();
 DEFINE FIELD time.updated_at ON review TYPE datetime VALUE time::now();
 
 -- Indexes and analytics
-DEFINE FUNCTION fn::number_of_unfulfilled_orders() {
+DEFINE FUNCTION fn::number_of_unfulfilled_orders() -> array<{ count: int }> {
   RETURN (SELECT count() FROM order
     WHERE order_status NOTINSIDE ["processed", "shipped"] GROUP ALL);
 };
@@ -1094,7 +1096,7 @@ DEFINE INDEX review_content ON review FIELDS review_text FULLTEXT ANALYZER blank
 
 ### Patient records and encounters
 
-Healthcare management system with patient records, encounter tracking, and clinical data management. Features vital signs [time-series data](../../data-models/time-series/overview.md), medication tracking, and automated encounter lifecycle management using [events](../../../reference/query-language/statements/define/event.md). Demonstrates healthcare data modelling with temporal data, clinical workflows, and medical record compliance patterns.
+Healthcare management system with patient records, encounter tracking, and clinical data management. Features vital signs [time-series data](../../data-models/time-series/overview.md), medication tracking, and automated encounter lifecycle management using [events](../../../reference/query-language/statements/define/event.md). Demonstrates healthcare data modeling with temporal data, clinical workflows, and medical record compliance patterns.
 
 ```surql
 -- Patient record
@@ -1171,7 +1173,7 @@ CREATE note:[encounter:one, time::now()] SET author = "Dr. Leung", content = "Pa
 
 ## Related SurrealQL statements
 
-- [SurrealKit schema migration](../../../manage/schema-migration/index.md) - official CLI for versioning and applying schema from `.surql` files
+- [SurrealKit schema migration](../../../manage/schema-migration/index.md) — official CLI for versioning and applying schema from `.surql` files
 - [DEFINE TABLE](../../../reference/query-language/statements/define/table.md)
 - [DEFINE FIELD](../../../reference/query-language/statements/define/field.md)
 - [RELATE](../../../reference/query-language/statements/relate.md)

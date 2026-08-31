@@ -726,6 +726,8 @@ _1082 pages_
   Query SurrealDB programmatically using one of the official SDKs available for Rust, JavaScript, Python, Go, Java, .NET, and PHP.
 - [Via SurrealDB Studio](learn/querying/surrealql/executing-queries/via-studio.md)
   In this section, you will explore SurrealQL queries using SurrealDB Studio, the official query editor for SurrealDB. SurrealDB Studio is a powerful tool that allows you to write, execute, and visualise SurrealQL queries in real-time.
+- [Sample queries](learn/querying/surrealql/sample-queries.md)
+  Runnable SurrealQL examples for CREATE, SELECT, UPDATE and DELETE, each editable in an embedded SurrealDB Studio.
 - [Statements and values](learn/querying/surrealql/statements-and-values.md)
   SurrealQL statements grouped as resource definitions, control flow with transactions, and CRUD-style query operations.
 - [What is SurrealQL?](learn/querying/surrealql/what-is-surrealql.md)
@@ -2118,7 +2120,5 @@ _1082 pages_
   Ways to run SurrealDB - from a browser sandbox to a managed cloud instance to installing on your own hardware.
 - [SurrealDB Studio Sandbox](running/sandbox.md)
   Try SurrealDB in the browser with the SurrealDB Studio Sandbox - no install and no account required.
-- [Sample queries](sample-queries.md)
-  Learn how to get started with SurrealDB
 - [What is SurrealDB](what-is-surrealdb.md)
   SurrealDB is a multi-model database written in Rust. This page covers what it stores, how it runs, and what SurrealDB Agent Memory adds for AI agents.

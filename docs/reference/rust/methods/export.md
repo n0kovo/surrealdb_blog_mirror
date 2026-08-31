@@ -163,7 +163,7 @@ async fn main() -> surrealdb::Result<()> {
 
     db.query(
         "
-    DEFINE FUNCTION fn::get_cats() { RETURN SELECT * FROM cat };
+    DEFINE FUNCTION fn::get_cats() -> array<object> { RETURN SELECT * FROM cat };
     DEFINE TABLE person SCHEMAFULL;
     DEFINE FIELD name ON person TYPE string;
     DEFINE FIELD age ON person TYPE int;
@@ -344,7 +344,7 @@ async fn main() -> surrealdb::Result<()> {
 
     db.query(
         "
-    DEFINE FUNCTION fn::get_cats() { RETURN SELECT * FROM cat };
+    DEFINE FUNCTION fn::get_cats() -> array<object> { RETURN SELECT * FROM cat };
     DEFINE TABLE person SCHEMAFULL;
     DEFINE FIELD name ON person TYPE string;
     DEFINE FIELD age ON person TYPE int;

@@ -1,8 +1,10 @@
 # Category: company
 
-_42 posts_  
+_43 posts_  
 [← Index](../../README.md)
 
+- **2026-09-01** · [SurrealDB Cloud is now available in São Paulo, Brazil](../2026/09/surrealdb-cloud-is-now-available-in-so-paulo.md)  
+  `releases` `company` — SurrealDB Cloud now runs in São Paulo: in-region latency for Latin America, Brazilian data residency, and faster agent workloads.
 - **2026-08-25** · [How Cobrainer built graph-based agent memory on one engine](../2026/08/how-cobrainer-built-graph-based-agent-memory-on-one-engine.md)  
   `company` — Cobrainer runs graph-based agent memory and a Rust-native agentic graph RAG on SurrealDB, replacing a separate vector store and search engine.
 - **2026-06-05** · [Context layers, semantic layers, and knowledge graphs for AI](../2026/06/context-layers-semantic-layers-and-knowledge-graphs-the-modern-data-architecture-for-ai.md)  

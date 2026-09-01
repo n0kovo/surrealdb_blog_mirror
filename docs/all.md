@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1082 pages_  
+_1083 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -1968,14 +1968,16 @@ _1082 pages_
   The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
 - [Live queries](reference/rust/concepts/live.md)
   The Rust SDK for SurrealDB allows changes to tables in real time to be observed
-- [Multi-tenancy in 3.0](reference/rust/concepts/multi-tenancy.md)
-  Multi-tenancy was introduced in SurrealDB 3.0, allowing multiple connections to be used simultaneously in the Rust SDK.
-- [Types after 3.0](reference/rust/concepts/rust-after-3.0.md)
-  Many structural changes were implemented in SurrealDB 3.0, bringing large improvements to working with types in the Rust SDK.
+- [Multi-tenancy](reference/rust/concepts/multi-tenancy.md)
+  Multi-tenancy in the Rust SDK allows multiple connections to be used simultaneously, each tenant operating inside its own isolated namespace and database.
+- [SurrealValue attributes](reference/rust/concepts/surrealvalue-attributes.md)
+  Reference for the #[surreal(...)] attributes used with the SurrealValue derive, covering renaming, defaults, flattening and enum tagging.
 - [Manual transactions](reference/rust/concepts/transaction.md)
   Use SurrealQL BEGIN and COMMIT in queries, or the Rust SDK `begin` / `commit` / `cancel` transaction handle, and check per-statement results before committing
 - [Vector embeddings](reference/rust/concepts/vector-embeddings.md)
   Many crates are available to work with vector embeddings via the SurrealDB Rust SDK.
+- [Working with types](reference/rust/concepts/working-with-types.md)
+  The surrealdb-types crate provides the SurrealValue trait, the kind! macro and the value constructors used to move data between Rust and SurrealDB.
 - [Embedding](reference/rust/embedding.md)
   In Rust, SurrealDB can be run as an in-memory database, it can persist data using a file-based storage engine, or on a distributed cluster.
 - [Actix](reference/rust/frameworks/actix.md)

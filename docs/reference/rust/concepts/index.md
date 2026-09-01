@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Concepts
 
-In this section, we will go over the core concepts of the SurrealDB SDK for Rust. You will learn how to connect to a SurrealDB instance, manage authentication, and interact with the database.
+This section covers the core concepts of the SurrealDB SDK for Rust: connecting to an instance, managing authentication, and working with data and types.
 
 - [Fetching linked records](fetch.md)
 - [Manual transactions](transaction.md)
@@ -15,3 +15,7 @@ In this section, we will go over the core concepts of the SurrealDB SDK for Rust
 - [Live queries](live.md)
 - [Authenticating users](authenticating-users.md)
 - [Improving performance with concurrency](concurrency.md)
+- [Vector embeddings](vector-embeddings.md)
+- [Working with types](working-with-types.md)
+- [SurrealValue attributes](surrealvalue-attributes.md)
+- [Multi-tenancy](multi-tenancy.md)

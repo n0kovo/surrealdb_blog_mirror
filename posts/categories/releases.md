@@ -1,8 +1,10 @@
 # Category: releases
 
-_53 posts_  
+_54 posts_  
 [← Index](../../README.md)
 
+- **2026-09-01** · [SurrealDB Cloud is now available in São Paulo, Brazil](../2026/09/surrealdb-cloud-is-now-available-in-so-paulo.md)  
+  `releases` `company` — SurrealDB Cloud now runs in São Paulo: in-region latency for Latin America, Brazilian data residency, and faster agent workloads.
 - **2026-08-12** · [Announcing the Swift SDK for SurrealDB](../2026/08/announcing-the-swift-sdk-for-surrealdb.md)  
   `releases` — The first alpha of the official Swift SDK for SurrealDB is here, with async\/await, type-safe models, live queries, and Swift Package Manager support.
 - **2026-08-10** · [Introducing SurrealDB Studio and what it means for you](../2026/08/introducing-surrealdb-studio.md)  

@@ -127,7 +127,7 @@ INSERT [ { id: person:bgq0b0rblnozrufizdjm } ];
 
 ## Export configuration
 
-The [`Export`](https://docs.rs/surrealdb/2/surrealdb/method/struct.Export.html) struct has a method called `.with_config()` that gives access to the configuration parameters for the export. These can be chained one after another inside a single line of code. The majority of these functions take a single `bool`:
+The [`Export`](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Export.html) struct has a method called `.with_config()` that gives access to the configuration parameters for the export. These can be chained one after another inside a single line of code. The majority of these functions take a single `bool`:
 
 * `.versions()`: whether to include [version information](../../query-language/statements/select.md#the-version-clause) for the SurrealKV storage backend
 * `.accesses()`: whether to include [`DEFINE ACCESS` statements](../../query-language/statements/define/access/record.md)

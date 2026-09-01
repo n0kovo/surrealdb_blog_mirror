@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-08-31T12:35:08.692243+00:00",
-  "count": 261,
+  "generated_at": "2026-09-01T11:01:20.206250+00:00",
+  "count": 262,
   "posts": [
+    {
+      "slug": "surrealdb-cloud-is-now-available-in-so-paulo",
+      "title": "SurrealDB Cloud is now available in São Paulo, Brazil",
+      "summary": "SurrealDB Cloud now runs in São Paulo: in-region latency for Latin America, Brazilian data residency, and faster agent workloads.",
+      "publishDate": "2026-09-01T09:23:20.000Z",
+      "categories": [
+        "releases",
+        "company"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/cz858xfu3xtzdx34ep2f5rme.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-cloud-is-now-available-in-so-paulo",
+      "local_path": "2026/09/surrealdb-cloud-is-now-available-in-so-paulo.md"
+    },
     {
       "slug": "agent-memory-is-a-filesystem-building-one-on-surrealdb",
       "title": "Building a filesystem-based agent memory on SurrealDB",

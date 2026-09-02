@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Configure an instance
 
-Change the settings of a running instance from **Instance settings** in [SurrealDB Studio](https://app.surrealdb.com).
+Change the settings of a running instance from **Instance settings** in [SurrealDB Studio](https://studio.surrealdb.com).
 
 To open the settings, select the instance, then select **Instance settings** on the dashboard or **Settings** in the sidebar.
 

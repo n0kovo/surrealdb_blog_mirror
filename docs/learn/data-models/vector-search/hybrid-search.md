@@ -85,3 +85,6 @@ LET $ft = SELECT id, search::score(1) as score FROM test
 -- Fuse with Reciprocal Rank Fusion (k defaults to 60 if omitted)
 search::rrf([$vs, $ft], 2, 60);
 ```
+
+> [!NOTE]
+> On a small dataset the lexical half of a hybrid query can contribute membership without contributing order. BM25 clamps the weight of any term appearing in half or more of the indexed documents to zero, so `search::score` returns `0` for every match and the `ORDER BY score DESC` above has nothing to sort on. Reciprocal rank fusion then folds in an arbitrary ordering of the matched rows. See [why a score can be 0](../full-text-search/scoring-and-ranking.md#why-a-score-can-be-0).

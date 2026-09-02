@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Create an instance
 
-Deploy an instance from [SurrealDB Studio](https://app.surrealdb.com) in seven steps.
+Deploy an instance from [SurrealDB Studio](https://studio.surrealdb.com) in seven steps.
 
 Deployment takes a few minutes. You can change everything afterwards except the instance name and the region.
 
@@ -59,13 +59,19 @@ Complete the three fields in the **Instance details** form.
 
 **Name** identifies the instance in the organisation and in every connection string. You cannot change it later, so use a name that stays meaningful: `api-production`, `api-staging`, or `analytics-eu`.
 
-**Region** determines the latency to your clients and where the data resides. You cannot change it later either. Deploy into the same region as your application stack where you can. Instances are currently available in:
+**Region** determines the latency to your clients and where the data resides, and it sets which cloud provider runs the instance. You cannot change it later either. Deploy into the same region as your application stack where you can. Instances are currently available in:
 
-- AWS US East (N. Virginia)
-- AWS US West (Oregon)
-- AWS Europe (Ireland)
+| Provider | Region |
+| --- | --- |
+| AWS | US East (N. Virginia) |
+| AWS | US West (Oregon) |
+| AWS | Europe (Ireland) |
+| AWS | AP South (Mumbai) |
+| Azure | Europe (Germany) |
+| Azure | US East 2 (Virginia) |
+| Azure | South America (Brazil) |
 
-The region selector shows what is available to your organisation, and that list is the authoritative one. [AWS PrivateLink](private-connectivity.md) is offered in a subset of regions.
+The region selector shows what is available to your organisation, and that list is the authoritative one. [AWS PrivateLink](private-connectivity.md) is offered in a subset of AWS regions.
 
 **Version** sets the SurrealDB release the instance runs. Take the latest stable release unless you have a reason not to. You can upgrade an older release later from **Settings → Version**. See [Versions and upgrades](versions-and-upgrades.md).
 

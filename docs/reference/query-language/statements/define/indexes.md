@@ -372,7 +372,7 @@ DEFINE INDEX userNameIndex ON TABLE user COLUMNS name FULLTEXT ANALYZER example_
 
 - `SEARCH` or `FULLTEXT`: By using the `SEARCH` keyword, you enable full-text search on the specified column.
 - `ANALYZER ascii`: Uses a custom [analyzer](analyzer.md) called `example_ascii` which uses the class tokenizier and `ascii` filter to analysing the text input.
-- `BM25`: Ranking algorithm used for relevance scoring.
+- `BM25`: Ranking algorithm used for relevance scoring. BM25 weighs a term by how rare it is, and clamps that weight to zero for any term appearing in half or more of the indexed documents, which makes [`search::score`](../../functions/database-functions/search.md#searchscore) return `0` for it. See [why a score can be 0](../../../../learn/data-models/full-text-search/scoring-and-ranking.md#why-a-score-can-be-0).
 - `HIGHLIGHTS`: Allows keyword highlighting in search results output when using the [`search::highlight`](../../functions/database-functions/search.md#searchhighlight) function
 - `FIELDS`: a full-text search index can only be used on one field at a time. To use full-text search on more than one field, use a separate `DEFINE INDEX` statement for each one.
 
@@ -405,7 +405,7 @@ When defining a vector index with [HNSW](#hnsw-hierarchical-navigable-small-worl
 For example, to define a vector index with 64-bit signed integers, you can use the following query:
 
 ```surql
-DEFINE INDEX idx_mtree_embedding
+DEFINE INDEX idx_hnsw_embedding
   ON Document FIELDS items.embedding HNSW DIMENSION 4 TYPE I64;
 ```
 

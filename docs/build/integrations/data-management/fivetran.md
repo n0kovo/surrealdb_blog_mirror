@@ -37,7 +37,7 @@ Before proceeding with either option, ensure you have:
 ### Option 2: SurrealDB Cloud
 
 1. Ensure your SurrealDB instance is up and running and accessible via Internet.
-2. Browse the [Instances page](https://app.surrealdb.com/cloud/instances) and select your chosen instance.
+2. Browse the [Instances page](https://studio.surrealdb.com/cloud/instances) and select your chosen instance.
 3. Click **Connect with Surreal CLI** and locate the `surreal sql --endpoint wss://YOUR_INSTANCE_HOSTNAME --token YOUR_TOKEN` command.
 4. Run the command, and set up your own [`ACCESS`](../../../reference/query-language/statements/define/access/index.md) or [`USER`](../../../reference/query-language/statements/define/user.md). The example below works for testing purposes:
 

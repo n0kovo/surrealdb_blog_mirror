@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # SurrealDB Studio Sandbox
 
-The fastest way to try SurrealDB is to open [SurrealDB Studio](https://app.surrealdb.com/) in the browser and use the **Sandbox** connection. You can run queries, explore the data model, and use features such as the SurrealQL and GraphQL editors without installing anything on your computer.
+The fastest way to try SurrealDB is to open [SurrealDB Studio](https://studio.surrealdb.com/) in the browser and use the **Sandbox** connection. You can run queries, explore the data model, and use features such as the SurrealQL and GraphQL editors without installing anything on your computer.
 
 > [!NOTE]
 > Sandbox data is **not persistent**: it is reset when the session ends or the sandbox is cleared. It is ideal for learning and ad hoc experiments, not for data you need to keep.

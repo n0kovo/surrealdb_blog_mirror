@@ -433,6 +433,9 @@ SELECT id, title, search::score(1) AS score FROM book
 ]
 ```
 
+> [!NOTE]
+> This function returns `0` for a term that appears in half or more of the indexed documents, because BM25 clamps the inverse document frequency of such a term to zero. Small datasets meet that condition easily, so every score can come back as `0` while matching itself still works. See [why a score can be 0](../../../../learn/data-models/full-text-search/scoring-and-ranking.md#why-a-score-can-be-0).
+
 ## See also
 
 - [Representations and codecs](../../../../learn/querying/concepts-and-guides/representations-and-codecs.md) - `search::analyze` as an offline preview of analyzer tokenization

@@ -7,13 +7,13 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Versions and upgrades
 
-Change the SurrealDB release an instance runs from **Instance settings → Version** in [SurrealDB Studio](https://app.surrealdb.com).
+Change the SurrealDB release an instance runs from **Instance settings → Version** in [SurrealDB Studio](https://studio.surrealdb.com).
 
 You pick the release when you [create the instance](create.md). The running image is then replaced for you, so there are no binaries to swap and no rolling restart to orchestrate yourself.
 
 ## Changing the version
 
-1. Open the instance in [SurrealDB Studio](https://app.surrealdb.com).
+1. Open the instance in [SurrealDB Studio](https://studio.surrealdb.com).
 2. Go to **Instance settings → Version**.
 3. Select the release you want. Each entry links to its release notes.
 4. Apply the change.

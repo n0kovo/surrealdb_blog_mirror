@@ -618,8 +618,6 @@ SELECT
     ORDER BY distance;
 ```
 
-Another option is to use the [MTREE](../../../reference/query-language/language-primitives/operators.md#mtree-index-method) index method.
-
 ### Generate OpenAI embeddings
 
 At this point, you will need an [OpenAI API key](https://platform.openai.com/api-keys) to interact with the OpenAI API. You can still check the code to see if it works if you don't have a key, and you will get as far as this error message.

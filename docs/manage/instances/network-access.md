@@ -25,7 +25,7 @@ That default matters. An instance with unrestricted outbound access lets a query
 
 Network access is one of the [instance capabilities](configure.md#capabilities), so it lives with the rest of them.
 
-1. Open the instance in [SurrealDB Studio](https://app.surrealdb.com).
+1. Open the instance in [SurrealDB Studio](https://studio.surrealdb.com).
 2. Go to **Instance settings → Capabilities**.
 3. Find **Network access** in the granular configuration list.
 4. Choose its default: **Allowed by default** or **Denied by default**.
@@ -45,8 +45,6 @@ Review the list when the application changes. Rules outlive the feature that nee
 You can export both the default and the exception lists as JSON from the same tab, which is how you keep staging and production consistent. `surrealctl instance capabilities` reads and writes the same configuration from a terminal. See [surrealctl instances](../surrealctl/instances.md).
 
 ## Additional resources
-
-<YouTube code="EUp5PxbzvV4?si=ezt6HhQuhhqHu9tU" />
 
 - **[Capabilities](../../learn/security/authorization/capabilities.md):** the full capability model and every flag it covers.
 - **[Configure an instance](configure.md#capabilities):** the other capabilities on the same tab.

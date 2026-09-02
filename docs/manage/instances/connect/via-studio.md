@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Connect via SurrealDB Studio
 
-Query an instance from [SurrealDB Studio](https://app.surrealdb.com) without setting up a client.
+Query an instance from [SurrealDB Studio](https://studio.surrealdb.com) without setting up a client.
 
 Studio is already connected to your instances, so signing in is the whole authentication step. Use it to explore data, write a query, and check the effect of a schema change.
 

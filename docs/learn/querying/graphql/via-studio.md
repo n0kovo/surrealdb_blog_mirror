@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # GraphQL via SurrealDB Studio
 
-The GraphQL query view in [SurrealDB Studio](https://app.surrealdb.com/query) provides syntax highlighting, query validation, and real-time execution, with results displayed as the JSON structure returned by GraphQL.
+The GraphQL query view in [SurrealDB Studio](https://studio.surrealdb.com/query) provides syntax highlighting, query validation, and real-time execution, with results displayed as the JSON structure returned by GraphQL.
 
 ## Getting started
 

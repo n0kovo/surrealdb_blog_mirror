@@ -7,11 +7,11 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # SurrealQL via SurrealDB Studio
 
-The [SurrealDB Studio](https://app.surrealdb.com/query) query editor provides syntax highlighting, query validation, and real-time execution. Query results are displayed in a tabular format, making it easy to analyse and visualise data.
+The [SurrealDB Studio](https://studio.surrealdb.com/query) query editor provides syntax highlighting, query validation, and real-time execution. Query results are displayed in a tabular format, making it easy to analyse and visualise data.
 
 ## Getting started
 
-To get started with SurrealQL in SurrealDB Studio, go to the [SurrealDB Studio Query Editor](https://app.surrealdb.com/query) and start writing your SurrealQL queries. You can use the query editor to write queries, execute them, and view the results in real-time.
+To get started with SurrealQL in SurrealDB Studio, go to the [SurrealDB Studio Query Editor](https://studio.surrealdb.com/query) and start writing your SurrealQL queries. You can use the query editor to write queries, execute them, and view the results in real-time.
 
 ### Setting up a connection
 

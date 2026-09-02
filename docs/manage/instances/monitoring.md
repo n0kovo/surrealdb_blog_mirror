@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 Every instance reports its own resource use and activity, with no agent to install and no scrape target to configure.
 
-The at-a-glance view is the instance **Dashboard**. The detail is under **Metrics & logs** in the instance sidebar of [SurrealDB Studio](https://app.surrealdb.com).
+The at-a-glance view is the instance **Dashboard**. The detail is under **Metrics & logs** in the instance sidebar of [SurrealDB Studio](https://studio.surrealdb.com).
 
 ## The instance dashboard
 

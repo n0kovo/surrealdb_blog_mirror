@@ -11,7 +11,7 @@ Instances serve the [HTTP API](../../../reference/rest-api/index.md), so anythin
 
 That includes cURL, Postman, a serverless function, and a language without an SDK.
 
-To get the URL, open the instance in [SurrealDB Studio](https://app.surrealdb.com), select **Connect**, then select **HTTP cURL**.
+To get the URL, open the instance in [SurrealDB Studio](https://studio.surrealdb.com), select **Connect**, then select **HTTP cURL**.
 
 ![The Connect menu in SurrealDB Studio with HTTP cURL selected, showing a generated cURL command containing the instance endpoint and its namespace and database headers.](../../../assets/img/image/cloud/open-in-http.png)
 

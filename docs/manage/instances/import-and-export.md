@@ -18,7 +18,7 @@ Use them for four cases:
 
 [Backups](backups.md) cover the recover-this-instance case instead, and you cannot download them.
 
-Both commands come from the [SurrealDB CLI](../../reference/cli/surrealdb-cli/overview.md), which you install once and point at any instance. The connection URL, namespace, and database are on the **Connect** menu of the instance in [SurrealDB Studio](https://app.surrealdb.com).
+Both commands come from the [SurrealDB CLI](../../reference/cli/surrealdb-cli/overview.md), which you install once and point at any instance. The connection URL, namespace, and database are on the **Connect** menu of the instance in [SurrealDB Studio](https://studio.surrealdb.com).
 
 ## Exporting
 

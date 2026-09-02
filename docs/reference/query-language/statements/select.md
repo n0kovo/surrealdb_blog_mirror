@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The `SELECT` statement can be used for selecting and querying data in a database. Each SELECT statement supports selecting from multiple targets, which can include tables, records, edges, subqueries, parameters, arrays, objects, and other values.
 
-In the [Learn more](#learn-more) section, you can find a video that explains how to use the `SELECT` statement to retrieve and query data from SurrealDB.
+The [Learn more](#learn-more) section has a video on selecting across document-style relationships.
 
 ## Statement syntax
 
@@ -1144,7 +1144,6 @@ For more examples, see the [graph clauses](relate.md#graph-clauses) section of t
 
 ## Learn more
 
-To learn more about using the `SELECT` statement to retrieve data from SurrealDB, check out this explainer video:
+This explainer video covers selecting across document-style relationships, including record links and nested data:
 
-<iframe width="100%" src="https://www.youtube.com/embed/TyX45cyZ-W0?si=S9M59afDEiqxeC5d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-style={{aspectRatio: 1.7, paddingTop: '20px'}} allowfullscreen></iframe>
+<YouTube code="TyX45cyZ-W0" />

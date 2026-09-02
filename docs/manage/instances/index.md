@@ -11,11 +11,9 @@ An instance is a SurrealDB deployment that SurrealDB runs for you.
 
 That covers provisioning, high availability, patching, backups, and version upgrades. You choose a plan, a size, and a region, then connect your application.
 
-Every instance belongs to an [organisation](../organisations/index.md), which also holds members, usage, and billing. You operate instances from [SurrealDB Studio](https://app.surrealdb.com), or from a terminal with [`surrealctl`](../surrealctl/instances.md). To run and operate the server yourself, see [Self-hosted](../self-hosted/index.md).
+Every instance belongs to an [organisation](../organisations/index.md), which also holds members, usage, and billing. You operate instances from [SurrealDB Studio](https://studio.surrealdb.com), or from a terminal with [`surrealctl`](../surrealctl/instances.md). To run and operate the server yourself, see [Self-hosted](../self-hosted/index.md).
 
-<Button label="Open SurrealDB Studio" href="https://app.surrealdb.com" variant="surreal" />
-
-<YouTube code="S04qOKkVcmE?si=6tOcQyeXPTzcR8JS" />
+<Button label="Open SurrealDB Studio" href="https://studio.surrealdb.com" variant="surreal" />
 
 ## Plans
 

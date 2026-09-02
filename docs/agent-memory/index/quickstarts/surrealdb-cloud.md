@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Agent Memory on SurrealDB Cloud
 
-SurrealDB Agent Memory on **SurrealDB Cloud** is a managed data plane per **context**, orchestrated by the **SurrealDB Cloud API** and surfaced in **[SurrealDB Studio](https://app.surrealdb.com)**.
+SurrealDB Agent Memory on **SurrealDB Cloud** is a managed data plane per **context**, orchestrated by the **SurrealDB Cloud API** and surfaced in **[SurrealDB Studio](https://studio.surrealdb.com)**.
 
 ## Two planes
 

@@ -17,11 +17,11 @@ A SurrealDB deployment that SurrealDB operates. SurrealDB handles provisioning, 
 
 ### How do I get started?
 
-[Create an account](sign-in.md) at [app.surrealdb.com](https://app.surrealdb.com), [create an organisation](index.md), and [deploy an instance](../instances/create.md). The free instance type needs no payment details.
+[Create an account](sign-in.md) at [studio.surrealdb.com](https://studio.surrealdb.com), [create an organisation](index.md), and [deploy an instance](../instances/create.md). The free instance type needs no payment details.
 
 ### Which cloud platforms can I deploy to?
 
-AWS, in the regions listed in [Create an instance](../instances/create.md). Support for further cloud providers is planned.
+AWS and Microsoft Azure, in the regions listed in [Create an instance](../instances/create.md). You choose the provider and the region together when you deploy, and neither can be changed afterwards.
 
 ### Which programming languages can I use?
 
@@ -109,7 +109,7 @@ In return, SurrealDB:
 
 ### How do I configure user authentication?
 
-Connect to the instance, then [define users](../../reference/query-language/statements/define/user.md) or [access methods](../../reference/query-language/statements/define/access/index.md) at root, namespace, or database level. Those credentials work across every interface: the [HTTP API](../../reference/rest-api/index.md), the [CLI](../../reference/cli/surrealdb-cli/overview.md), the SDKs, and [SurrealDB Studio](https://app.surrealdb.com). See [Connect via SDK](../instances/connect/via-sdk.md#create-credentials).
+Connect to the instance, then [define users](../../reference/query-language/statements/define/user.md) or [access methods](../../reference/query-language/statements/define/access/index.md) at root, namespace, or database level. Those credentials work across every interface: the [HTTP API](../../reference/rest-api/index.md), the [CLI](../../reference/cli/surrealdb-cli/overview.md), the SDKs, and [SurrealDB Studio](https://studio.surrealdb.com). See [Connect via SDK](../instances/connect/via-sdk.md#create-credentials).
 
 ### Can I use my own encryption keys?
 

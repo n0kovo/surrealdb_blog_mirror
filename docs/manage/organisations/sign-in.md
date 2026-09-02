@@ -7,11 +7,11 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Accounts and sign-in
 
-One account gets you into [SurrealDB Studio](https://app.surrealdb.com), where you manage [organisations](index.md) and [instances](../instances/index.md).
+One account gets you into [SurrealDB Studio](https://studio.surrealdb.com), where you manage [organisations](index.md) and [instances](../instances/index.md).
 
 An account needs no payment details. The free instance type carries no charge, so you can deploy before you add a payment method.
 
-To create an account or to sign in, open [app.surrealdb.com](https://app.surrealdb.com) and continue to the authentication page.
+To create an account or to sign in, open [studio.surrealdb.com](https://studio.surrealdb.com) and continue to the authentication page.
 
 ## Choose a sign-in method
 
@@ -48,7 +48,7 @@ With email:
 
 ## Sign in
 
-1. Open [app.surrealdb.com](https://app.surrealdb.com).
+1. Open [studio.surrealdb.com](https://studio.surrealdb.com).
 2. Select the method you registered with: **Continue with Google**, **Continue with GitHub**, **Sign in with Email**, or **Continue with Passkey**.
 3. Complete any two-factor step the provider asks for.
 

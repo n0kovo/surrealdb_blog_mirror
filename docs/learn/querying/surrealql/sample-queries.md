@@ -20,7 +20,7 @@ The following example demonstrates how to create a record in the `category` tabl
   
  
 
-[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=%7B%60%0A%09%09CREATE%20category%20SET%0A%09%09%09name%20%3D%20%27Technology%27%2C%0A%09%09%09created_at%20%3D%20time%3A%3Anow%28%29%3B%0A%09%60%7D)
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=%09%09CREATE%20category%20SET%0A%09%09%09name%20%3D%20%27Technology%27%2C%0A%09%09%09created_at%20%3D%20time%3A%3Anow%28%29%3B%0A%09)
 
 After executing this statement, the `category` record is created in the database, and a randomly generated unique id known as a [Record ID](../../../reference/query-language/language-primitives/data-types/record-ids.md) is assigned to it. This ID represents the primary key of our record, and can be used to reference the record in future queries.
 
@@ -28,13 +28,13 @@ When creating records, you can also explicitly set the record ID. This can be us
 
   
 
-[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=%7B%60%0A%09%09CREATE%20person%3Ajohn%20SET%0A%09%09%09first%20%3D%20%27John%27%2C%0A%09%09%09last%20%3D%20%27Adams%27%2C%0A%09%09%09age%20%3D%2029%2C%0A%09%09%09admin%20%3D%20true%2C%0A%09%09%09signup_at%20%3D%20time%3A%3Anow%28%29%3B%0A%09%60%7D)
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=%09%09CREATE%20person%3Ajohn%20SET%0A%09%09%09first%20%3D%20%27John%27%2C%0A%09%09%09last%20%3D%20%27Adams%27%2C%0A%09%09%09age%20%3D%2029%2C%0A%09%09%09admin%20%3D%20true%2C%0A%09%09%09signup_at%20%3D%20time%3A%3Anow%28%29%3B%0A%09)
 
 SurrealDB also supports subqueries, used in the following example to populate the `category` field of the `article` record with the ID of the `Technology` category.
 
   
 
-[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=%7B%60%0A%09%09CREATE%20article%20SET%0A%09%09%09created_at%20%3D%20time%3A%3Anow%28%29%2C%0A%09%09%09author%20%3D%20person%3Ajohn%2C%0A%09%09%09title%20%3D%20%27Lorem%20ipsum%20dolor%27%2C%0A%09%09%09text%20%3D%20%27Donec%20eleifend%2C%20nunc%20vitae%20commodo%20accumsan%2C%20mauris%20est%20fringilla.%27%2C%0A%09%09%09category%20%3D%20SELECT%20VALUE%20id%20FROM%20ONLY%20category%20WHERE%20name%20%3D%20%27Technology%27%20LIMIT%201%3B%0A%09%60%7D)
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=%09%09CREATE%20article%20SET%0A%09%09%09created_at%20%3D%20time%3A%3Anow%28%29%2C%0A%09%09%09author%20%3D%20person%3Ajohn%2C%0A%09%09%09title%20%3D%20%27Lorem%20ipsum%20dolor%27%2C%0A%09%09%09text%20%3D%20%27Donec%20eleifend%2C%20nunc%20vitae%20commodo%20accumsan%2C%20mauris%20est%20fringilla.%27%2C%0A%09%09%09category%20%3D%20SELECT%20VALUE%20id%20FROM%20ONLY%20category%20WHERE%20name%20%3D%20%27Technology%27%20LIMIT%201%3B%0A%09)
 
 ### Querying data with SELECT
 
@@ -44,7 +44,7 @@ For example, in addition to selecting records from a single table, you can also 
 
   
 
-[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=%7B%60%0A%09%09--%20Select%20all%20records%20from%20a%20table%0A%09%09SELECT%20%2A%20FROM%20article%3B%0A%0A%09%09--%20Select%20records%20from%20multiple%20tables%0A%09%09SELECT%20%2A%20FROM%20category%2C%20person%3B%0A%0A%09%09--%20Selecting%20specific%20records%0A%09%09SELECT%20%2A%20FROM%20person%3Ajohn%3B%0A%09%60%7D)
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=%09%09--%20Select%20all%20records%20from%20a%20table%0A%09%09SELECT%20%2A%20FROM%20article%3B%0A%09%09--%20Select%20records%20from%20multiple%20tables%0A%09%09SELECT%20%2A%20FROM%20category%2C%20person%3B%0A%09%09--%20Selecting%20specific%20records%0A%09%09SELECT%20%2A%20FROM%20person%3Ajohn%3B%0A%09)
 
 The [SELECT statement](../../../reference/query-language/statements/select.md) can filter on fields, resolve the contents of a record link, and reach data through a Record ID directly, with no JOIN planning or indexes needed.
 

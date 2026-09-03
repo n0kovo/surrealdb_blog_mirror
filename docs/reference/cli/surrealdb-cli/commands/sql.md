@@ -223,19 +223,19 @@ For a one-shot query without staying in the REPL, pipe SurrealQL into `surreal s
 **Bash**
 
 ```bash
-echo 'INFO FOR DB;' | surreal sql --endpoint http://localhost:8000 --username root --password root --namespace main --database main --pretty --hide-welcome
+echo 'INFO FOR DB;' | surreal sql --endpoint http://localhost:8000 --username root --password secret --namespace main --database main --pretty --hide-welcome
 ```
 
 **PowerShell**
 
 ```powershell
-'INFO FOR DB;' | surreal sql --endpoint http://localhost:8000 --username root --password root --namespace main --database main --pretty --hide-welcome
+'INFO FOR DB;' | surreal sql --endpoint http://localhost:8000 --username root --password secret --namespace main --database main --pretty --hide-welcome
 ```
 
 You can also pipe a file:
 
 ```bash
-cat myfile.surql | surreal sql --endpoint http://localhost:8000 --username root --password root --namespace main --database main
+cat myfile.surql | surreal sql --endpoint http://localhost:8000 --username root --password secret --namespace main --database main
 ```
 
 ## Connecting to a Cloud instance

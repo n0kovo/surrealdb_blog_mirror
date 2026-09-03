@@ -33,7 +33,7 @@ defer { Task { await client.close() } }
 After connecting, use [`signin`](../reference/swift/concepts/authentication.md) to authenticate and [`use`](../reference/swift/concepts/connecting.md) to select the namespace and database you want to work with. Most operations require both.
 
 ```swift
-let tokens = try await client.signin(.root(username: "root", password: "root"))
+let tokens = try await client.signin(.root(username: "root", password: "secret"))
 try await client.use(namespace: "myapp", database: "mydb")
 ```
 

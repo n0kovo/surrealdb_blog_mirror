@@ -9,6 +9,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The Java SDK provides a structured exception hierarchy for handling errors from the database and SDK. All exceptions extend [`SurrealException`](../api/errors/index.md#surreal-exception), which is an unchecked exception. Server-returned errors are represented as [`ServerException`](../api/errors/index.md#server-exception) subclasses with typed error details.
 
+The error kinds, wire codes and structured shape behind these are documented once in [Errors](../../rest-api/errors.md), which applies to every SDK and protocol.
+
 ## API references
 
 <table>

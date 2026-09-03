@@ -63,7 +63,7 @@ A root user has full access to the SurrealDB instance. Only `username` and `pass
 
 		tokens = db.signin({
 		    "username": "root",
-		    "password": "root",
+		    "password": "secret",
 		})
 		```
 

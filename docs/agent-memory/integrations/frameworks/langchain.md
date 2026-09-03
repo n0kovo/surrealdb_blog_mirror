@@ -114,7 +114,7 @@ await store.search(["Person"], { query: "who is tobie?", limit: 5 }); // → rec
 ```typescript
 
 const store = await VectorStore.initialize(new OpenAIEmbeddings(), {
-    surreal: { url: "ws://localhost:8000", username: "root", password: "root", namespace: "app", database: "rag" },
+    surreal: { url: "ws://localhost:8000", username: "root", password: "secret", namespace: "app", database: "rag" },
     tableName: "documents",
     dimensions: 1536,
 });

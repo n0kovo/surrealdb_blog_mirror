@@ -170,7 +170,7 @@ await db.connect('ws://localhost:8000', {
     database: 'my_database',
     authentication: {
         username: 'root',
-        password: 'root'
+        password: 'secret'
     }
 });
 ```
@@ -662,7 +662,7 @@ await db.connect('ws://localhost:8000', {
     database: 'my_database',
     authentication: {
         username: 'root',
-        password: 'root'
+        password: 'secret'
     }
 });
 

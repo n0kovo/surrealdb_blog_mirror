@@ -50,7 +50,7 @@ Document model databases are designed to store data in a flexible, nested struct
 
 For example, if you wanted to associate a `person` with an `article` they wrote, you could assign the person's ID to the `author` field of the article document. This binds the `person` and `article` together, allowing you to query the `article` by the `person`'s ID.
 
-[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=CREATE+article+SET%0A%09created_at+%3D+time%3A%3Anow%28%29%2C%0A%09author+%3D+person%3Ajohn%2C%0A%09title+%3D+%27Lorem+ipsum+dolor%27%2C%0A%09text+%3D+%27Donec+eleifend%2C+nunc+vitae+commodo+accumsan%2C+mauris+est+fringilla.%27%3B%0A%0ACREATE+person%3Ajohn+SET%0A%09name.first+%3D+%27John%27%2C%0A%09name.last+%3D+%27Adams%27%2C%0A%09name.full+%3D+string%3A%3Ajoin%28%27+%27%2C+name.first%2C+name.last%29%2C%0A%09age+%3D+29%2C%0A%09admin+%3D+true%2C%0A%09signup_at+%3D+time%3A%3Anow%28%29%0A%3B)
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=CREATE%20article%20SET%0A%09created_at%20%3D%20time%3A%3Anow%28%29%2C%0A%09author%20%3D%20person%3Ajohn%2C%0A%09title%20%3D%20%27Lorem%20ipsum%20dolor%27%2C%0A%09text%20%3D%20%27Donec%20eleifend%2C%20nunc%20vitae%20commodo%20accumsan%2C%20mauris%20est%20fringilla.%27%3B%0ACREATE%20person%3Ajohn%20SET%0A%09name.first%20%3D%20%27John%27%2C%0A%09name.last%20%3D%20%27Adams%27%2C%0A%09name.full%20%3D%20string%3A%3Ajoin%28%27%20%27%2C%20name.first%2C%20name.last%29%2C%0A%09age%20%3D%2029%2C%0A%09admin%20%3D%20true%2C%0A%09signup_at%20%3D%20time%3A%3Anow%28%29%0A%3B)
 
 ## Retrieving documents
 

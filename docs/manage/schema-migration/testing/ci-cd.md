@@ -44,7 +44,7 @@ jobs:
           --health-retries 10
         env:
           SURREAL_USER: root
-          SURREAL_PASS: root
+          SURREAL_PASS: secret
     steps:
       - uses: actions/checkout@v4
       - uses: surrealdb/surrealkit-action@v1
@@ -52,7 +52,7 @@ jobs:
           command: test
           host: http://localhost:8000
           user: root
-          pass: root
+          pass: secret
           args: --fail-fast --json-out results.json
 ```
 

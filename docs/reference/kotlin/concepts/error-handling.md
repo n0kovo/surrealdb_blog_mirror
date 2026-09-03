@@ -9,6 +9,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 Networked operations on the SDK throw a [`SurrealException`](../api/errors/index.md) on failure, or you can use the [`Result` variants](executing-queries.md#result-variants) to handle failures functionally without exceptions.
 
+The error kinds, wire codes and structured shape behind these are documented once in [Errors](../../rest-api/errors.md), which applies to every SDK and protocol.
+
 ## Exception hierarchy
 
 All SDK exceptions extend the sealed base [`SurrealException`](../api/errors/index.md).

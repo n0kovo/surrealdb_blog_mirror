@@ -49,7 +49,7 @@ On an async connection you can also `await` the builder directly, which is the s
 
 		with Surreal("ws://localhost:8000") as db:
 		    db.use("surrealdb", "docs")
-		    db.signin({"username": "root", "password": "root"})
+		    db.signin({"username": "root", "password": "secret"})
 
 		    statements = db.query("SELECT * FROM users").execute()
 		    print(statements)  # [[{...}, {...}]] - one entry, one statement
@@ -66,7 +66,7 @@ On an async connection you can also `await` the builder directly, which is the s
 
 		async with AsyncSurreal("ws://localhost:8000") as db:
 		    await db.use("surrealdb", "docs")
-		    await db.signin({"username": "root", "password": "root"})
+		    await db.signin({"username": "root", "password": "secret"})
 
 		    statements = await db.query("SELECT * FROM users").execute()
 		    print(statements)  # [[{...}, {...}]] - one entry, one statement

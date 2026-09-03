@@ -86,7 +86,7 @@ from surrealdb import Surreal, RecordID
 
 with Surreal("ws://localhost:8000") as db:
     db.use("my_ns", "my_db")
-    db.signin({"username": "root", "password": "root"})
+    db.signin({"username": "root", "password": "secret"})
 
     db.create(RecordID("users", "tobie"), {
         "name": "Tobie",
@@ -128,7 +128,7 @@ from surrealdb import Surreal, Duration
 
 with Surreal("ws://localhost:8000") as db:
     db.use("my_ns", "my_db")
-    db.signin({"username": "root", "password": "root"})
+    db.signin({"username": "root", "password": "secret"})
 
     db.create("tasks", {
         "title": "Backup",
@@ -156,7 +156,7 @@ from surrealdb import Surreal, Datetime
 
 with Surreal("ws://localhost:8000") as db:
     db.use("my_ns", "my_db")
-    db.signin({"username": "root", "password": "root"})
+    db.signin({"username": "root", "password": "secret"})
 
     db.create("events", {
         "title": "Launch",
@@ -193,7 +193,7 @@ from surrealdb.data.types.range import BoundIncluded
 
 with Surreal("ws://localhost:8000") as db:
     db.use("my_ns", "my_db")
-    db.signin({"username": "root", "password": "root"})
+    db.signin({"username": "root", "password": "secret"})
 
     events = db.query(
         "SELECT * FROM events WHERE year IN $range",
@@ -214,7 +214,7 @@ from surrealdb import Surreal, GeometryPoint
 
 with Surreal("ws://localhost:8000") as db:
     db.use("my_ns", "my_db")
-    db.signin({"username": "root", "password": "root"})
+    db.signin({"username": "root", "password": "secret"})
 
     db.create("locations", {
         "name": "London",

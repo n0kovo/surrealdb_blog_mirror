@@ -1,5 +1,5 @@
 ---
-position: 11
+position: 12
 title: Pydantic AI
 description: This section contains information about the Pydantic AI framework and how to integrate it with SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/ai-frameworks/pydantic-ai.mdx"
@@ -81,7 +81,7 @@ THIS_DIR = Path(__file__).parent
 SURREALDB_NS = 'pydantic_ai_examples'
 SURREALDB_DB = 'rag_surrealdb'
 SURREALDB_USER = 'root'
-SURREALDB_PASS = 'root'
+SURREALDB_PASS = 'secret'
 
 embedder = Embedder('openai:text-embedding-3-small')
 agent = Agent('openai:gpt-5.2')

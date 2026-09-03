@@ -4,10 +4,20 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-09-01T09:23:20Z</updated>
+  <updated>2026-09-02T16:20:38Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/surrealdb-cloud-is-now-available-in-frankfurt-germany</id>
+    <title>SurrealDB Cloud is now available in Frankfurt, Germany</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/surrealdb-cloud-is-now-available-in-frankfurt-germany" type="text/html" />
+    <published>2026-09-02T16:20:38Z</published>
+    <updated>2026-09-02T16:20:38Z</updated>
+    <summary type="text">SurrealDB Cloud now runs in Frankfurt, Germany: lower latency across continental Europe, German and EU data residency, and a shorter round trip for agents.</summary>
+    <category term="releases" />
+    <category term="company" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/surrealdb-cloud-is-now-available-in-so-paulo</id>
     <title>SurrealDB Cloud is now available in São Paulo, Brazil</title>
@@ -480,15 +490,5 @@
     <summary type="text">SurrealMX uses in-memory storage along with time travel queries and two types of persistent storage with configurations to balance performance with durability.</summary>
     <category term="featured" />
     <category term="tutorials" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/exponential-cost-traps-in-database-architectures-how-surrealdb-breaks-the-cycle</id>
-    <title>Exponential cost traps in database architectures</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/exponential-cost-traps-in-database-architectures-how-surrealdb-breaks-the-cycle" type="text/html" />
-    <published>2026-03-19T00:00:00Z</published>
-    <updated>2026-03-19T00:00:00Z</updated>
-    <summary type="text">Polyglot database sprawl grows costs faster than traffic. Storing data once in SurrealDB cuts block-storage spend by roughly two thirds.</summary>
-    <category term="featured" />
-    <category term="engineering" />
   </entry>
 </feed>

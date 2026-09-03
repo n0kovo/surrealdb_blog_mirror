@@ -9,6 +9,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 Version 2 of the PHP SDK throws typed exceptions for different failures. They all extend `SurrealException`, which in turn extends PHP's `RuntimeException`. This lets you catch SDK errors broadly or target a specific failure with an `instanceof` check or a `catch` type.
 
+The error kinds, wire codes and structured shape behind these are documented once in [Errors](../../../rest-api/errors.md), which applies to every SDK and protocol.
+
 ## Common exceptions
 
 All exceptions live in the `SurrealDB\SDK\Exceptions` namespace.

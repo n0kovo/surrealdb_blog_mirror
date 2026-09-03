@@ -29,7 +29,7 @@ Overall, the `FETCH` clause in SurrealQL is a powerful tool for optimising data 
 
 The following example shows querying using `FETCH` or `.*` compared to selecting individual fields of a related record.
 
-[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=%0A%09%09--%20Fetch%20all%20fields%20from%20author%20and%20category%0A%09%09SELECT%20%0A%09%09%09title%2C%20%0A%09%09%09category%2C%20%0A%09%09%09author%0A%09%09FROM%20article%0A%09%09FETCH%20author%2C%20category%3B%0A%0A%09%09--%20Use%20.%2A%20syntax%20to%20do%20the%20same%0A%09%09SELECT%20%0A%09%09%09title%2C%20%0A%09%09%09category.%2A%2C%20%0A%09%09%09author.%2A%0A%09%09FROM%20article%3B)
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=%0A%09%09--%20Fetch%20all%20fields%20from%20author%20and%20category%0A%09%09SELECT%20%0A%09%09%09title%2C%20%0A%09%09%09category%2C%20%0A%09%09%09author%0A%09%09FROM%20article%0A%09%09FETCH%20author%2C%20category%3B%0A%09%09--%20Use%20.%2A%20syntax%20to%20do%20the%20same%0A%09%09SELECT%20%0A%09%09%09title%2C%20%0A%09%09%09category.%2A%2C%20%0A%09%09%09author.%2A%0A%09%09FROM%20article%3B)
 
 ## Without the `FETCH` clause
 

@@ -54,7 +54,7 @@ Pass a Mastra `storage` to keep durable verbatim threads, messages, and working 
 
 ```typescript
 
-const store = new SurrealDBStore({ id: "spectron-demo", url: "ws://localhost:8000", username: "root", password: "root" });
+const store = new SurrealDBStore({ id: "spectron-demo", url: "ws://localhost:8000", username: "root", password: "secret" });
 await store.init();
 
 const memory = new SpectronMemory({
@@ -100,7 +100,7 @@ const store = new SurrealDBStore({
     id: "my-store",
     url: "ws://localhost:8000",
     username: "root",
-    password: "root",
+    password: "secret",
     namespace: "mastra",
     database: "my_app",
 });

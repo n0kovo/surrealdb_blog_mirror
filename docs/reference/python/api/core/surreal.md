@@ -335,14 +335,14 @@ db.signin(vars)
 ```python title="Root signin (sync)"
 token = db.signin({
     "username": "root",
-    "password": "root",
+    "password": "secret",
 })
 ```
 
 ```python title="Root signin (async)"
 token = await db.signin({
     "username": "root",
-    "password": "root",
+    "password": "secret",
 })
 ```
 
@@ -1453,7 +1453,7 @@ from surrealdb import Surreal
 
 with Surreal("ws://localhost:8000") as db:
     db.use("my_namespace", "my_database")
-    db.signin({"username": "root", "password": "root"})
+    db.signin({"username": "root", "password": "secret"})
     users = db.select("users")
 ```
 
@@ -1464,7 +1464,7 @@ from surrealdb import AsyncSurreal
 
 async with AsyncSurreal("ws://localhost:8000") as db:
     await db.use("my_namespace", "my_database")
-    await db.signin({"username": "root", "password": "root"})
+    await db.signin({"username": "root", "password": "secret"})
     users = await db.select("users")
 ```
 
@@ -1477,7 +1477,7 @@ from surrealdb import Surreal, RecordID
 
 with Surreal("ws://localhost:8000") as db:
     db.use("shop", "inventory")
-    db.signin({"username": "root", "password": "root"})
+    db.signin({"username": "root", "password": "secret"})
 
     db.create("products", {"name": "Laptop", "price": 999.99})
     db.create("products", {"name": "Mouse", "price": 29.99})
@@ -1502,7 +1502,7 @@ from surrealdb import AsyncSurreal, RecordID
 async def main():
     async with AsyncSurreal("ws://localhost:8000") as db:
         await db.use("shop", "inventory")
-        await db.signin({"username": "root", "password": "root"})
+        await db.signin({"username": "root", "password": "secret"})
 
         await db.create("products", {"name": "Laptop", "price": 999.99})
 

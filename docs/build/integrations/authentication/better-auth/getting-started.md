@@ -61,7 +61,7 @@ await db.connect('ws://localhost:8000/rpc', {
     database: 'production',
     authentication: {
         username: 'root',
-        password: 'root',
+        password: 'secret',
     },
 });
 
@@ -104,7 +104,7 @@ Then apply it to your SurrealDB instance:
 ```bash
 surreal import --conn http://localhost:8000 \
     --ns myapp --db production \
-    --user root --pass root \
+    --user root --pass secret \
     schema.surql
 ```
 

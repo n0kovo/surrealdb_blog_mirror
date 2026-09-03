@@ -51,7 +51,7 @@ Call `.new_session()` on an existing connection to create a new session. The asy
 
 		with Surreal("ws://localhost:8000") as db:
 		    db.use("surrealdb", "docs")
-		    db.signin({"username": "root", "password": "root"})
+		    db.signin({"username": "root", "password": "secret"})
 
 		    session = db.new_session()
 		```
@@ -64,7 +64,7 @@ Call `.new_session()` on an existing connection to create a new session. The asy
 
 		async with AsyncSurreal("ws://localhost:8000") as db:
 		    await db.use("surrealdb", "docs")
-		    await db.signin({"username": "root", "password": "root"})
+		    await db.signin({"username": "root", "password": "secret"})
 
 		    session = await db.new_session()
 		```
@@ -115,7 +115,7 @@ Each session can authenticate as a different user. This is useful when you need 
 ```python
 		session_admin = db.new_session()
 		session_admin.use("surrealdb", "docs")
-		session_admin.signin({"username": "root", "password": "root"})
+		session_admin.signin({"username": "root", "password": "secret"})
 
 		session_user = db.new_session()
 		session_user.use("surrealdb", "docs")
@@ -140,7 +140,7 @@ Each session can authenticate as a different user. This is useful when you need 
 ```python
 		session_admin = await db.new_session()
 		await session_admin.use("surrealdb", "docs")
-		await session_admin.signin({"username": "root", "password": "root"})
+		await session_admin.signin({"username": "root", "password": "secret"})
 
 		session_user = await db.new_session()
 		await session_user.use("surrealdb", "docs")

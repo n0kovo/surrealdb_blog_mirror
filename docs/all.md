@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1083 pages_  
+_1087 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -315,12 +315,16 @@ _1083 pages_
   This section contains information about the Dagster framework and how to integrate it with SurrealDB.
 - [Google Agent](build/integrations/ai-frameworks/google-agent.md)
   Google Agent is a framework for building and deploying agents.
+- [Hermes](build/integrations/ai-frameworks/hermes.md)
+  Give a Hermes agent a persistent filesystem in SurrealDB, as a toolset it calls explicitly and as a memory provider that files and recalls every turn.
 - [Kreuzberg](build/integrations/ai-frameworks/kreuzberg.md)
   Integrate Kreuzberg document intelligence extraction pipelines with SurrealDB.
 - [LangChain](build/integrations/ai-frameworks/langchain.md)
   Use SurrealDB native vector indexes as a drop-in vector store for LangChain.
 - [LlamaIndex](build/integrations/ai-frameworks/llamaindex.md)
   Use SurrealDB’s native HNSW vector index as the backing store for a Llama Index `VectorStoreIndex`.
+- [Mastra](build/integrations/ai-frameworks/mastra.md)
+  Use SurrealDB as the storage backend for Mastra agents, covering conversation memory, workflow snapshots, scores, observability spans, and native vector search.
 - [AI framework integrations](build/integrations/ai-frameworks/overview.md)
   This section contains information about the different frameworks that can be used to integrate with SurrealDB.
 - [Pydantic AI](build/integrations/ai-frameworks/pydantic-ai.md)
@@ -1948,6 +1952,8 @@ _1083 pages_
   The USE statement specifies a namespace and / or a database to use for the subsequent SurrealQL statements when switching between namespaces and databases.
 - [CBOR protocol](reference/rest-api/cbor-protocol.md)
   SurrealDB supports a number of methods for connecting to the database and performing data queries.
+- [Errors](reference/rest-api/errors.md)
+  Every error SurrealDB returns carries a kind, a wire code, optional structured details and an optional cause, in the same shape across every protocol and SDK.
 - [HTTP protocol](reference/rest-api/http-protocol.md)
   The HTTP endpoints enable selection and modification of data, along with custom SurrealQL queries, using traditional RESTful HTTP endpoints.
 - [REST API](reference/rest-api/index.md)
@@ -1960,6 +1966,8 @@ _1083 pages_
   The Rust SDK for SurrealDB supports a number of methods for authenticating users and securing the database.
 - [Concurrency](reference/rust/concepts/concurrency.md)
   Multiple threads or asynchronous tasks can be used to speed up queries to a SurrealDB database
+- [Error handling](reference/rust/concepts/error-handling.md)
+  Every fallible method in the Rust SDK returns a surrealdb::Error, which carries a kind you can match on along with structured details and a cause chain.
 - [Fetching linked records](reference/rust/concepts/fetch.md)
   All the fields of a SurrealDB linked record can be fetched and deserialised into a Rust type
 - [Flexible typing](reference/rust/concepts/flexible-typing.md)

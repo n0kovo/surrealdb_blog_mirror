@@ -218,7 +218,7 @@ token, err := db.SignIn(ctx, authData)
 ```go title="Root signin"
 token, err := db.SignIn(ctx, surrealdb.Auth{
     Username: "root",
-    Password: "root",
+    Password: "secret",
 })
 ```
 

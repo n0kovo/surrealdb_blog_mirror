@@ -14,6 +14,7 @@ Available integrations:
 - [CrewAI](../integrations/ai-frameworks/crewai.md)
 - [Dagster](../integrations/ai-frameworks/dagster.md)
 - [Google Agent Development Kit](../integrations/ai-frameworks/google-agent.md)
+- [Hermes](../integrations/ai-frameworks/hermes.md)
 - [LangChain](../integrations/ai-frameworks/langchain.md)
 - [LlamaIndex](../integrations/ai-frameworks/llamaindex.md)
 - [PydanticAI](../integrations/ai-frameworks/pydantic-ai.md)

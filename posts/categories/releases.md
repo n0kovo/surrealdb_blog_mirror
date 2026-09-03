@@ -1,8 +1,10 @@
 # Category: releases
 
-_54 posts_  
+_55 posts_  
 [← Index](../../README.md)
 
+- **2026-09-02** · [SurrealDB Cloud is now available in Frankfurt, Germany](../2026/09/surrealdb-cloud-is-now-available-in-frankfurt-germany.md)  
+  `releases` `company` — SurrealDB Cloud now runs in Frankfurt, Germany: lower latency across continental Europe, German and EU data residency, and a shorter round trip for agents.
 - **2026-09-01** · [SurrealDB Cloud is now available in São Paulo, Brazil](../2026/09/surrealdb-cloud-is-now-available-in-so-paulo.md)  
   `releases` `company` — SurrealDB Cloud now runs in São Paulo: in-region latency for Latin America, Brazilian data residency, and faster agent workloads.
 - **2026-08-12** · [Announcing the Swift SDK for SurrealDB](../2026/08/announcing-the-swift-sdk-for-surrealdb.md)  

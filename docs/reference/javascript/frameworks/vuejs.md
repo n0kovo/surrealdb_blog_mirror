@@ -145,7 +145,7 @@ provideSurreal({
         database: "docs",
         authentication: {
             username: "root",
-            password: "root",
+            password: "secret",
         },
     },
 });

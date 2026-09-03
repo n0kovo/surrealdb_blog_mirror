@@ -41,6 +41,10 @@ SurrealDB integrates with popular AI and data frameworks, enabling you to levera
             <td>A framework for building and deploying intelligent agents in Google Cloud with SurrealDB vector storage for RAG.</td>
         </tr>
         <tr>
+            <td><a href="/docs/build/integrations/ai-frameworks/hermes">Hermes</a></td>
+            <td>Nous Research's terminal agent, given a persistent filesystem in SurrealDB as a toolset and as a memory provider.</td>
+        </tr>
+        <tr>
             <td><a href="/docs/build/integrations/ai-frameworks/kreuzberg">Kreuzberg</a></td>
             <td>A polyglot document intelligence framework to extract text, metadata, images, and structured information from documents (PDFs,images, etc.).</td>
         </tr>
@@ -51,6 +55,10 @@ SurrealDB integrates with popular AI and data frameworks, enabling you to levera
         <tr>
             <td><a href="/docs/build/integrations/ai-frameworks/llamaindex">Llama Index</a></td>
             <td>A framework for building RAG pipelines with SurrealDB's native HNSW vector index as the backing store.</td>
+        </tr>
+        <tr>
+            <td><a href="/docs/build/integrations/ai-frameworks/mastra">Mastra</a></td>
+            <td>A TypeScript agent framework with SurrealDB as a storage backend for conversation memory, workflow snapshots, and vector search.</td>
         </tr>
         <tr>
             <td><a href="/docs/build/integrations/ai-frameworks/pydantic-ai">Pydantic AI</a></td>

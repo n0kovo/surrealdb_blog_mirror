@@ -65,7 +65,7 @@ from surrealdb import Surreal, Table
 db = Surreal("ws://localhost:8000")
 db.connect()
 db.use("my_ns", "my_db")
-db.signin({"username": "root", "password": "root"})
+db.signin({"username": "root", "password": "secret"})
 
 users = db.select(Table("users"))
 ```

@@ -51,7 +51,7 @@ To create a transaction, first open a session with `.new_session()` on the conne
 
 		with Surreal("ws://localhost:8000") as db:
 		    db.use("surrealdb", "docs")
-		    db.signin({"username": "root", "password": "root"})
+		    db.signin({"username": "root", "password": "secret"})
 
 		    session = db.new_session()
 		    session.use("surrealdb", "docs")
@@ -67,7 +67,7 @@ To create a transaction, first open a session with `.new_session()` on the conne
 
 		async with AsyncSurreal("ws://localhost:8000") as db:
 		    await db.use("surrealdb", "docs")
-		    await db.signin({"username": "root", "password": "root"})
+		    await db.signin({"username": "root", "password": "secret"})
 
 		    session = await db.new_session()
 		    await session.use("surrealdb", "docs")
@@ -169,7 +169,7 @@ Use a `try`/`except` block to ensure that a transaction is cancelled if any oper
 
 		with Surreal("ws://localhost:8000") as db:
 		    db.use("surrealdb", "docs")
-		    db.signin({"username": "root", "password": "root"})
+		    db.signin({"username": "root", "password": "secret"})
 
 		    session = db.new_session()
 		    session.use("surrealdb", "docs")
@@ -193,7 +193,7 @@ Use a `try`/`except` block to ensure that a transaction is cancelled if any oper
 
 		async with AsyncSurreal("ws://localhost:8000") as db:
 		    await db.use("surrealdb", "docs")
-		    await db.signin({"username": "root", "password": "root"})
+		    await db.signin({"username": "root", "password": "secret"})
 
 		    session = await db.new_session()
 		    await session.use("surrealdb", "docs")

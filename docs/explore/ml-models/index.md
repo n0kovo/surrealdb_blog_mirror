@@ -183,7 +183,7 @@ services:
     command: start
     environment:
       - SURREAL_USER=root
-      - SURREAL_PASS=root
+      - SURREAL_PASS=secret
       - SURREAL_LOG=trace
     ports:
       - 8000:8000

@@ -56,7 +56,7 @@ An in-memory database runs entirely in RAM and does not persist data between pro
 
 		with Surreal("mem://") as db:
 		    db.use("main", "main")
-		    db.signin({"username": "root", "password": "root"})
+		    db.signin({"username": "root", "password": "secret"})
 		    db.create("users", {"name": "Alice", "age": 30})
 		    print(db.select("users"))
 		```
@@ -69,7 +69,7 @@ An in-memory database runs entirely in RAM and does not persist data between pro
 
 		async with AsyncSurreal("mem://") as db:
 		    await db.use("main", "main")
-		    await db.signin({"username": "root", "password": "root"})
+		    await db.signin({"username": "root", "password": "secret"})
 		    await db.create("users", {"name": "Alice", "age": 30})
 		    print(await db.select("users"))
 		```
@@ -88,7 +88,7 @@ The `file://` and `surrealkv://` schemes persist data to a directory on disk. Th
 
 		with Surreal("surrealkv://data/mydb") as db:
 		    db.use("app", "main")
-		    db.signin({"username": "root", "password": "root"})
+		    db.signin({"username": "root", "password": "secret"})
 		    db.create("settings", {"theme": "dark", "lang": "en"})
 		```
 
@@ -100,7 +100,7 @@ The `file://` and `surrealkv://` schemes persist data to a directory on disk. Th
 
 		async with AsyncSurreal("file://data/mydb") as db:
 		    await db.use("app", "main")
-		    await db.signin({"username": "root", "password": "root"})
+		    await db.signin({"username": "root", "password": "secret"})
 		    await db.create("settings", {"theme": "dark", "lang": "en"})
 		```
 

@@ -1,8 +1,10 @@
 # All Posts
 
-_262 posts_  
+_263 posts_  
 [← Index](../README.md)
 
+- **2026-09-02** · [SurrealDB Cloud is now available in Frankfurt, Germany](2026/09/surrealdb-cloud-is-now-available-in-frankfurt-germany.md)  
+  `releases` `company` — SurrealDB Cloud now runs in Frankfurt, Germany: lower latency across continental Europe, German and EU data residency, and a shorter round trip for agents.
 - **2026-09-01** · [SurrealDB Cloud is now available in São Paulo, Brazil](2026/09/surrealdb-cloud-is-now-available-in-so-paulo.md)  
   `releases` `company` — SurrealDB Cloud now runs in São Paulo: in-region latency for Latin America, Brazilian data residency, and faster agent workloads.
 - **2026-08-27** · [Building a filesystem-based agent memory on SurrealDB](2026/08/agent-memory-is-a-filesystem-building-one-on-surrealdb.md)  
@@ -448,7 +450,7 @@ _262 posts_
 - **2023-05-05** · [Getting started with the SurrealDB Go Driver](2023/05/getting-started-with-the-surrealdb-go-driver.md)  
   `tutorials` — In our Beta 9 release, we updated our Go driver. In this tutorial, we will learn to build a simple SurrealDB URL shortener using the Go driver.
 - **2023-05-01** · [SurrealDB Scalability: the details](2023/05/surrealdb-scalability.md)  
-  `engineering` — SurrealDB allows you to perform document, graph, temporal, spatial, and text operations within an ACID environment, predominantly persisting data on RocksDB.
+  `engineering` — SurrealDB scales with separate compute and storage layers, a cost-based query planner, and distributed deployments on SurrealDB Cloud Scale and Enterprise.
 - **2023-04-25** · [All about SurrealQL: why is it SQL-like?](2023/04/all-about-surrealql.md)  
   `tutorials` — A stream on SurrealQL with Tobie Morgan Hitchcock, Alexander Fridriksson and Micha de Vries: Why is SurrealQL SQL-like and not custom like MongoQL or Cypher?
 - **2023-04-25** · [Clustered SurrealDB for 1.0.0-beta9](2023/04/clustered-surrealdb-for-1-0-0-beta9.md)  

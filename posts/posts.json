@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-09-02T10:32:23.002206+00:00",
-  "count": 262,
+  "generated_at": "2026-09-03T10:36:59.767318+00:00",
+  "count": 263,
   "posts": [
+    {
+      "slug": "surrealdb-cloud-is-now-available-in-frankfurt-germany",
+      "title": "SurrealDB Cloud is now available in Frankfurt, Germany",
+      "summary": "SurrealDB Cloud now runs in Frankfurt, Germany: lower latency across continental Europe, German and EU data residency, and a shorter round trip for agents.",
+      "publishDate": "2026-09-02T16:20:38.000Z",
+      "categories": [
+        "releases",
+        "company"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/e3w85d9m6olov7iy2heokcur.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-cloud-is-now-available-in-frankfurt-germany",
+      "local_path": "2026/09/surrealdb-cloud-is-now-available-in-frankfurt-germany.md"
+    },
     {
       "slug": "surrealdb-cloud-is-now-available-in-so-paulo",
       "title": "SurrealDB Cloud is now available in São Paulo, Brazil",
@@ -3074,7 +3088,7 @@
     {
       "slug": "surrealdb-scalability",
       "title": "SurrealDB Scalability: the details",
-      "summary": "SurrealDB allows you to perform document, graph, temporal, spatial, and text operations within an ACID environment, predominantly persisting data on RocksDB.",
+      "summary": "SurrealDB scales with separate compute and storage layers, a cost-based query planner, and distributed deployments on SurrealDB Cloud Scale and Enterprise.",
       "publishDate": "2023-05-01T00:00:00.000Z",
       "categories": [
         "engineering"

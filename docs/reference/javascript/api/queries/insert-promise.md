@@ -291,6 +291,28 @@ const users = await db.insert(new Table('users'), [
 ]);
 ```
 
+### Insert a record link
+
+A field typed as a record link needs a [`RecordId`](../values/record-id.md) instance, built from the table name and the id as separate arguments. A string that looks like a record ID stays a string, so the insert fails with `Expected record<company> but found 'company:acme'`.
+
+```ts
+
+// Schema: DEFINE FIELD company ON job TYPE record<company>;
+await db.insert(new Table('job'), {
+    description: 'Hello World',
+    company: new RecordId('company', 'acme')
+});
+```
+
+Where the id arrives as a single string, convert it inside the query with [`type::record()`](../../../query-language/functions/database-functions/type.md#typerecord) instead:
+
+```ts
+await db.query(
+    'INSERT INTO job { description: $description, company: type::record($company) }',
+    { description: 'Hello World', company: 'company:acme' }
+);
+```
+
 ### Ignore duplicates
 
 ```ts

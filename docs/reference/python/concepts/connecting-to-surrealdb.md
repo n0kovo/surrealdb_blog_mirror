@@ -168,7 +168,7 @@ Python's context manager protocol (`with` / `async with`) provides a convenient 
 
 		with Surreal("ws://localhost:8000") as db:
 		    db.use("surrealdb", "docs")
-		    db.signin({"username": "root", "password": "root"})
+		    db.signin({"username": "root", "password": "secret"})
 		    results = db.select("users")
 		```
 
@@ -180,7 +180,7 @@ Python's context manager protocol (`with` / `async with`) provides a convenient 
 
 		async with AsyncSurreal("ws://localhost:8000") as db:
 		    await db.use("surrealdb", "docs")
-		    await db.signin({"username": "root", "password": "root"})
+		    await db.signin({"username": "root", "password": "secret"})
 		    results = await db.select("users")
 		```
 

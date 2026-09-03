@@ -54,7 +54,7 @@ export function connectToSurreal() {
         database: "getting_started",
         authentication: {
             username: "root",
-            password: "root",
+            password: "secret",
         },
     });
 }

@@ -34,7 +34,7 @@ We have added a new Connection String called `SurrealDB` with the default config
     }
   },
   "ConnectionStrings": {
-    "SurrealDB": "Server=http://127.0.0.1:8000;Namespace=test;Database=test;Username=root;Password=root"
+    "SurrealDB": "Server=http://127.0.0.1:8000;Namespace=test;Database=test;Username=root;Password=secret"
   }
 }
 ```

@@ -9,6 +9,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The Go SDK uses Go's standard `error` interface and the `errors.As` / `errors.Is` functions for error handling. Errors fall into three main categories: structured [server errors](../api/errors/index.md#servererror) from SurrealDB, per-statement [query errors](../api/errors/index.md#queryerror), and transport-level failures.
 
+The error kinds, wire codes and structured shape behind these are documented once in [Errors](../../rest-api/errors.md), which applies to every SDK and protocol.
+
 This page covers how to identify and handle each error type, and which errors are safe to retry.
 
 ## API references

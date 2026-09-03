@@ -275,7 +275,7 @@ surreal start -u root -p secret surrealkv+versioned://mydb
 When starting a SurrealDB instance, authentication is enabled by default, and your user credentials will be required to connect. If you are starting a new instance, the user credentials you use to run the `start` command will [define a new root user](../../../query-language/statements/define/user.md#roles) with the [`OWNER`](../../../query-language/statements/define/user.md#roles) role.
 
 ```bash
-surreal start --user root --password root
+surreal start --user root --password secret
 ```
 
 ## Enabling capabilities

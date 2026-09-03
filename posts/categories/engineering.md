@@ -92,6 +92,6 @@ _46 posts_
 - **2023-05-11** · [The life-changing magic of SurrealDB record IDs](../2023/05/the-life-changing-magic-of-surrealdb-record-ids.md)  
   `engineering` `tutorials` — At SurrealDB, we are all about doing things that spark joy for developers. One of those things that constantly surprises and delights is the humble record ID.
 - **2023-05-01** · [SurrealDB Scalability: the details](../2023/05/surrealdb-scalability.md)  
-  `engineering` — SurrealDB allows you to perform document, graph, temporal, spatial, and text operations within an ACID environment, predominantly persisting data on RocksDB.
+  `engineering` — SurrealDB scales with separate compute and storage layers, a cost-based query planner, and distributed deployments on SurrealDB Cloud Scale and Enterprise.
 - **2022-08-04** · [SurrealDB client libraries are now live!](../2022/08/client-libraries-live.md)  
   `engineering` — We’re happy to announce that initial server side documentation for Node.js, Golang and Deno, along with client side documentation for JavaScript is LIVE!

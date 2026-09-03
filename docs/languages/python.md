@@ -51,7 +51,7 @@ Supported connection protocols include:
 		db = Surreal("ws://localhost:8000")
 		db.connect()
 		db.use("company_name", "project_name")
-		db.signin({"username": "root", "password": "root"})
+		db.signin({"username": "root", "password": "secret"})
 		```
 
 	
@@ -63,7 +63,7 @@ Supported connection protocols include:
 		db = AsyncSurreal("ws://localhost:8000")
 		await db.connect()
 		await db.use("company_name", "project_name")
-		await db.signin({"username": "root", "password": "root"})
+		await db.signin({"username": "root", "password": "secret"})
 		```
 
 You can also use a context manager to automatically close the connection when you are done.
@@ -74,7 +74,7 @@ You can also use a context manager to automatically close the connection when yo
 ```python
 		with Surreal("ws://localhost:8000") as db:
 		    db.use("company_name", "project_name")
-		    db.signin({"username": "root", "password": "root"})
+		    db.signin({"username": "root", "password": "secret"})
 		```
 
 	
@@ -83,7 +83,7 @@ You can also use a context manager to automatically close the connection when yo
 ```python
 		async with AsyncSurreal("ws://localhost:8000") as db:
 		    await db.use("company_name", "project_name")
-		    await db.signin({"username": "root", "password": "root"})
+		    await db.signin({"username": "root", "password": "secret"})
 		```
 
 ## 3. Inserting data into SurrealDB

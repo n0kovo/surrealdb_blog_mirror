@@ -149,7 +149,7 @@ var session = await db.CreateSession();
 // Use the session independently
 await session.Use("my_namespace", "my_database");
 await session.SignIn(new RootAuth { Username = "root",
-    Password = "root" });
+    Password = "secret" });
 ```
 
   

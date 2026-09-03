@@ -19,3 +19,4 @@ This section covers the core concepts of the SurrealDB SDK for Rust: connecting 
 - [Working with types](working-with-types.md)
 - [SurrealValue attributes](surrealvalue-attributes.md)
 - [Multi-tenancy](multi-tenancy.md)
+- [Error handling](error-handling.md)

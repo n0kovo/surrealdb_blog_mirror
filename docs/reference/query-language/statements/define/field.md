@@ -1293,6 +1293,6 @@ CREATE user SET name = 'Ada';
 
 *Since v2.2.0*
 
-A field that is a record link (type `record`, `option<record>`, `array<record<person>>`, and so on) can be defined as a `REFERENCE`. If this clause is used, any linked to record will be able to define a field of its own of type `references` which will be aware of the incoming links.
+A field that is a record link (type `record`, `option<record>`, `array<record<person>>`, and so on) can be defined as a `REFERENCE`. If this clause is used, any linked to record will be able to define a computed field of its own using the `<~` syntax, which will be aware of the incoming links.
 
 For more information, see [the page in the datamodel section on references](../../language-primitives/record-references.md).

@@ -49,7 +49,7 @@ defer session.Detach(ctx)
 
 _, err = session.SignIn(ctx, surrealdb.Auth{
 	Username: "root",
-	Password: "root",
+	Password: "secret",
 })
 if err != nil {
 	log.Fatal(err)

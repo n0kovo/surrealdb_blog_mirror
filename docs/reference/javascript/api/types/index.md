@@ -92,7 +92,7 @@ await db.connect('ws://localhost:8000', {
     database: 'my_database',
     authentication: {
         username: 'root',
-        password: 'root'
+        password: 'secret'
     },
     reconnect: {
         attempts: 10,
@@ -231,7 +231,7 @@ interface RootAuth {
 ```ts
 await db.signin({
     username: 'root',
-    password: 'root'
+    password: 'secret'
 });
 ```
 

@@ -1,8 +1,10 @@
 # Category: company
 
-_43 posts_  
+_44 posts_  
 [← Index](../../README.md)
 
+- **2026-09-02** · [SurrealDB Cloud is now available in Frankfurt, Germany](../2026/09/surrealdb-cloud-is-now-available-in-frankfurt-germany.md)  
+  `releases` `company` — SurrealDB Cloud now runs in Frankfurt, Germany: lower latency across continental Europe, German and EU data residency, and a shorter round trip for agents.
 - **2026-09-01** · [SurrealDB Cloud is now available in São Paulo, Brazil](../2026/09/surrealdb-cloud-is-now-available-in-so-paulo.md)  
   `releases` `company` — SurrealDB Cloud now runs in São Paulo: in-region latency for Latin America, Brazilian data residency, and faster agent workloads.
 - **2026-08-25** · [How Cobrainer built graph-based agent memory on one engine](../2026/08/how-cobrainer-built-graph-based-agent-memory-on-one-engine.md)  

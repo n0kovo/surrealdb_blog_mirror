@@ -138,7 +138,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                     database: "docs",
                     authentication: {
                         username: "root",
-                        password: "root",
+                        password: "secret",
                     },
                 }}
             >

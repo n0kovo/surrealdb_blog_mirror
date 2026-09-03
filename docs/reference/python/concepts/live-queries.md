@@ -51,7 +51,7 @@ The `.live()` method registers a live query on a table and returns a UUID that i
 
 		with Surreal("ws://localhost:8000") as db:
 		    db.use("surrealdb", "docs")
-		    db.signin({"username": "root", "password": "root"})
+		    db.signin({"username": "root", "password": "secret"})
 
 		    query_uuid = db.live("users")
 		```
@@ -64,7 +64,7 @@ The `.live()` method registers a live query on a table and returns a UUID that i
 
 		async with AsyncSurreal("ws://localhost:8000") as db:
 		    await db.use("surrealdb", "docs")
-		    await db.signin({"username": "root", "password": "root"})
+		    await db.signin({"username": "root", "password": "secret"})
 
 		    query_uuid = await db.live("users")
 		```
@@ -89,7 +89,7 @@ The `action` field is one of `"CREATE"`, `"UPDATE"`, or `"DELETE"`, and the `res
 
 		with Surreal("ws://localhost:8000") as db:
 		    db.use("surrealdb", "docs")
-		    db.signin({"username": "root", "password": "root"})
+		    db.signin({"username": "root", "password": "secret"})
 
 		    query_uuid = db.live("users")
 
@@ -106,7 +106,7 @@ The `action` field is one of `"CREATE"`, `"UPDATE"`, or `"DELETE"`, and the `res
 
 		async with AsyncSurreal("ws://localhost:8000") as db:
 		    await db.use("surrealdb", "docs")
-		    await db.signin({"username": "root", "password": "root"})
+		    await db.signin({"username": "root", "password": "secret"})
 
 		    query_uuid = await db.live("users")
 
@@ -147,7 +147,7 @@ This approach is useful when you need the filtering capabilities of SurrealQL, s
 
 		with Surreal("ws://localhost:8000") as db:
 		    db.use("surrealdb", "docs")
-		    db.signin({"username": "root", "password": "root"})
+		    db.signin({"username": "root", "password": "secret"})
 
 		    query_uuid = db.query("LIVE SELECT * FROM users WHERE age > 18").first()
 
@@ -164,7 +164,7 @@ This approach is useful when you need the filtering capabilities of SurrealQL, s
 
 		async with AsyncSurreal("ws://localhost:8000") as db:
 		    await db.use("surrealdb", "docs")
-		    await db.signin({"username": "root", "password": "root"})
+		    await db.signin({"username": "root", "password": "secret"})
 
 		    query_uuid = await db.query("LIVE SELECT * FROM users WHERE age > 18").first()
 

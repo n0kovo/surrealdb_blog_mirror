@@ -5,7 +5,7 @@ generated: stub
 
 # Ai Frameworks
 
-_Auto-generated index — 12 pages._
+_Auto-generated index — 14 pages._
 
 ## Pages
 
@@ -21,12 +21,16 @@ _Auto-generated index — 12 pages._
   This section contains information about the Dagster framework and how to integrate it with SurrealDB.
 - [Google Agent](google-agent.md)
   Google Agent is a framework for building and deploying agents.
+- [Hermes](hermes.md)
+  Give a Hermes agent a persistent filesystem in SurrealDB, as a toolset it calls explicitly and as a memory provider that files and recalls every turn.
 - [Kreuzberg](kreuzberg.md)
   Integrate Kreuzberg document intelligence extraction pipelines with SurrealDB.
 - [LangChain](langchain.md)
   Use SurrealDB native vector indexes as a drop-in vector store for LangChain.
 - [LlamaIndex](llamaindex.md)
   Use SurrealDB’s native HNSW vector index as the backing store for a Llama Index `VectorStoreIndex`.
+- [Mastra](mastra.md)
+  Use SurrealDB as the storage backend for Mastra agents, covering conversation memory, workflow snapshots, scores, observability spans, and native vector search.
 - [AI framework integrations](overview.md)
   This section contains information about the different frameworks that can be used to integrate with SurrealDB.
 - [Pydantic AI](pydantic-ai.md)

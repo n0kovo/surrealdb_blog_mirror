@@ -417,7 +417,7 @@ While it is an approximate technique, it offers a high-performance balance betwe
 > [!NOTE]
 > Keep in mind the in-memory nature of HNSW when considering system resource allocation.
 
-[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=CREATE+pts%3A3+SET+point+%3D+%5B8%2C9%2C10%2C11%5D%3B%0A%0ADEFINE+INDEX+mt_pts+ON+pts+FIELDS+point+HNSW+DIMENSION+4+DIST+EUCLIDEAN+EFC+150+M+12%3B%0A%0A%2F%2F+See+output+for+info+on+EFC%2CM%2CMO+AND+LM+%0AINFO+FOR+TABLE+pts%3B%0A%0ASELECT+id+FROM+pts+WHERE+point+%3C%7C10%2C40%7C%3E+%5B2%2C3%2C4%2C5%5D%3B&orientation=horizontal)
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=CREATE%20pts%3A3%20SET%20point%20%3D%20%5B8%2C9%2C10%2C11%5D%3B%0ADEFINE%20INDEX%20mt_pts%20ON%20pts%20FIELDS%20point%20HNSW%20DIMENSION%204%20DIST%20EUCLIDEAN%20EFC%20150%20M%2012%3B%0A//%20See%20output%20for%20info%20on%20EFC%2CM%2CMO%20AND%20LM%20%0AINFO%20FOR%20TABLE%20pts%3B%0ASELECT%20id%20FROM%20pts%20WHERE%20point%20%3C%7C10%2C40%7C%3E%20%5B2%2C3%2C4%2C5%5D%3B)
 
 In the example above, you may notice the `EFC` and `M` parameters. These are optional to your query but are parameters of the [HNSW algorithm](https://arxiv.org/abs/1603.09320) and can be used to tune the index for better performance.
 
@@ -499,7 +499,7 @@ Brute Force currently supports [Euclidean](../../functions/database-functions/ve
 
 In the example below, the query searches for points closest to the vector `[2,3,4,5]` and uses [vector functions](../../functions/database-functions/vector.md) to calculate the distance between two points, indicated by `<|2|>`.
 
-[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=CREATE+pts%3A1+SET+point+%3D+%5B1%2C2%2C3%2C4%5D%3B%0ACREATE+pts%3A2+SET+point+%3D+%5B4%2C5%2C6%2C7%5D%3B%0ACREATE+pts%3A3+SET+point+%3D+%5B8%2C9%2C10%2C11%5D%3B%0ALET+%24pt+%3D+%5B2%2C3%2C4%2C5%5D%3B%0ASELECT+id%2C+vector%3A%3Adistance%3A%3Aeuclidean%28point%2C+%24pt%29+AS+dist+FROM+pts+WHERE+point+%3C%7C2%2CEUCLIDEAN%7C%3E+%24pt%3B%0ASELECT+id+FROM+pts+WHERE+point+%3C%7C2%7C%3E+%24pt+EXPLAIN%3B&orientation=horizontal)
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=CREATE%20pts%3A1%20SET%20point%20%3D%20%5B1%2C2%2C3%2C4%5D%3B%0ACREATE%20pts%3A2%20SET%20point%20%3D%20%5B4%2C5%2C6%2C7%5D%3B%0ACREATE%20pts%3A3%20SET%20point%20%3D%20%5B8%2C9%2C10%2C11%5D%3B%0ALET%20%24pt%20%3D%20%5B2%2C3%2C4%2C5%5D%3B%0ASELECT%20id%2C%20vector%3A%3Adistance%3A%3Aeuclidean%28point%2C%20%24pt%29%20AS%20dist%20FROM%20pts%20WHERE%20point%20%3C%7C2%2CEUCLIDEAN%7C%3E%20%24pt%3B%0ASELECT%20id%20FROM%20pts%20WHERE%20point%20%3C%7C2%7C%3E%20%24pt%20EXPLAIN%3B)
 
 ## Verifying Index Utilization in Queries
 

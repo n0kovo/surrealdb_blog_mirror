@@ -194,6 +194,41 @@ fn::age_and_name(2);
 "Couldn't find user number 2!"
 ```
 
+## Transactional behaviour
+
+A function body runs as a single transaction, without `BEGIN` or `COMMIT` appearing in the definition. It commits when the body finishes, and rolls back if anything inside it fails.
+
+An error rolls the whole body back, whether it is a [`THROW`](../throw.md) or a statement that fails on its own:
+
+```surql
+DEFINE FUNCTION fn::place_order($item: record<product>, $quantity: int) -> record<order> {
+    LET $order = CREATE ONLY order SET item = $item, quantity = $quantity;
+    IF $item.stock < $quantity {
+        THROW "Insufficient stock for " + <string>$item;
+    };
+    UPDATE $item SET stock -= $quantity;
+    RETURN $order.id;
+};
+
+fn::place_order(product:keyboard, 500);
+
+-- No order exists: the THROW rolled the whole body back, so no order
+-- is left behind reserving stock that was never decremented
+SELECT VALUE id FROM order;
+```
+
+An early `RETURN` is not a failure, so the body commits and the work already done is kept:
+
+```surql
+DEFINE FUNCTION fn::ship_order($order: record<order>) -> record<shipment> {
+    LET $shipment = CREATE ONLY shipment SET order = $order, carrier = 'DHL';
+    RETURN $shipment.id;                          -- the caller only wants the id
+    UPDATE $order SET status = 'shipped';         -- never runs
+};
+```
+
+Calling a function from inside a manual transaction makes its statements part of that transaction rather than a nested one, so a failure inside the function aborts the caller's transaction too. See [Transactions](../../../../learn/querying/concepts-and-guides/transactions.md#implicit-transactions).
+
 ## Recursive functions
 
 A function is able to call itself, making it a recursive function. One example of a recursive function is the one below which creates a relation between each and every record passed in.
@@ -258,7 +293,7 @@ You can set the permissions for a custom function using the `PERMISSIONS` clause
 
 The `FULL` permission grants all users access to the function. The following example defines a function that fetches all products from the `product` table and grants the function full permissions to access the data to all users.
 
-[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=--+Define+a+function+to+fetch+all+products.+All+users+can+access+this+function%0ADEFINE+FUNCTION+fn%3A%3AfetchAllProducts%28%29+%7B%0A%09RETURN+%28SELECT+*+FROM+product+LIMIT+10%29%3B%0A%7D+PERMISSIONS+FULL%3B%0A%0A--+Returns%3A+The+first+10+products+in+the+product+table%0ARETURN+fn%3A%3AfetchAllProducts%28%29%3B&dataset=surreal-deal-store&orientation=horizontal)
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=--%20Define%20a%20function%20to%20fetch%20all%20products.%20All%20users%20can%20access%20this%20function%0ADEFINE%20FUNCTION%20fn%3A%3AfetchAllProducts%28%29%20%7B%0A%09RETURN%20%28SELECT%20%2A%20FROM%20product%20LIMIT%2010%29%3B%0A%7D%20PERMISSIONS%20FULL%3B%0A--%20Returns%3A%20The%20first%2010%20products%20in%20the%20product%20table%0ARETURN%20fn%3A%3AfetchAllProducts%28%29%3B)
 
 ### Using the `NONE` permission
 

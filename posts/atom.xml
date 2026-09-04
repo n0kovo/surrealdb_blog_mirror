@@ -4,10 +4,30 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-09-02T16:20:38Z</updated>
+  <updated>2026-09-03T11:54:36Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/why-does-my-vector-search-return-nothing-when-i-add-a-filter-2</id>
+    <title>Why does my vector search return nothing when I add a filter?</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/why-does-my-vector-search-return-nothing-when-i-add-a-filter-2" type="text/html" />
+    <published>2026-09-03T11:54:36Z</published>
+    <updated>2026-09-03T11:54:36Z</updated>
+    <summary type="text">A filter applied after an HNSW walk can only remove rows, so a selective one comes back empty. Three measured SurrealDB fixes, plus the schema that avoids them.</summary>
+    <category term="ai" />
+    <category term="tutorials" />
+  </entry>
+  <entry>
+    <id>https://surrealdb.com/blog/announcing-the-mastra-integration-for-surrealdb-and-agent-memory</id>
+    <title>Announcing the Mastra integration for SurrealDB and Agent Memory</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/announcing-the-mastra-integration-for-surrealdb-and-agent-memory" type="text/html" />
+    <published>2026-09-03T11:21:37Z</published>
+    <updated>2026-09-03T11:21:37Z</updated>
+    <summary type="text">One package gives Mastra agents a single database for conversations, workflow state, observability and vectors, plus managed memory that extracts and semantically recalls facts.</summary>
+    <category term="releases" />
+    <category term="ai" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/surrealdb-cloud-is-now-available-in-frankfurt-germany</id>
     <title>SurrealDB Cloud is now available in Frankfurt, Germany</title>
@@ -209,6 +229,7 @@
     <updated>2026-07-15T13:04:00Z</updated>
     <summary type="text">Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.</summary>
     <category term="tutorials" />
+    <category term="ai" />
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate</id>
@@ -470,25 +491,5 @@
     <summary type="text">Graph RAG is the right idea, but what matters is whether graph traversal, vector and full-text search, and filters compose in a single atomic statement.</summary>
     <category term="featured" />
     <category term="ai" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/how-to-get-near-perfect-deterministic-accuracy-from-your-ai-agents</id>
-    <title>How to get near-perfect, deterministic accuracy from your agents</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/how-to-get-near-perfect-deterministic-accuracy-from-your-ai-agents" type="text/html" />
-    <published>2026-03-28T00:00:00Z</published>
-    <updated>2026-03-28T00:00:00Z</updated>
-    <summary type="text">Agent accuracy problems are almost always retrieval, not model problems. Scope-first retrieval and reasoning and retrieval graph feedback loops close the gap.</summary>
-    <category term="featured" />
-    <category term="ai" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/surrealmx-in-memory-storage-with-time-travel-and-persistent-storage</id>
-    <title>SurrealMX: In-memory storage with time travel and persistence</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/surrealmx-in-memory-storage-with-time-travel-and-persistent-storage" type="text/html" />
-    <published>2026-03-25T00:00:00Z</published>
-    <updated>2026-03-25T00:00:00Z</updated>
-    <summary type="text">SurrealMX uses in-memory storage along with time travel queries and two types of persistent storage with configurations to balance performance with durability.</summary>
-    <category term="featured" />
-    <category term="tutorials" />
   </entry>
 </feed>

@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 The SurrealDB SDK for C# and .NET enables you to interact with SurrealDB from server-side applications, systems, and APIs, allowing you to integrate SurrealDB into your website or application backend, and serve dynamic content to your users. You can use the .NET SDK to interact with your SurrealDB database instances, or to run SurrealDB as an embedded database within your C# application, with functionality for executing queries, managing data, running database functions, authenticating to the database, building user signup and authentication functionality, and subscribing to data changes with live queries. When connecting to remote database instances, connections automatically reconnect when terminated.
 
 > [!IMPORTANT]
-> The SDK requires either .NET version `6.0` or greater or .NET Standard `2.1` or higher.
+> The SDK requires either .NET version `8.0` or greater or .NET Standard `2.1` or higher.
 > The SDK is available as a [NuGet package](https://www.nuget.org/packages/SurrealDb.Net).
 
 > [!NOTE]

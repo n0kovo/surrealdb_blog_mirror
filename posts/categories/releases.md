@@ -1,8 +1,10 @@
 # Category: releases
 
-_55 posts_  
+_56 posts_  
 [← Index](../../README.md)
 
+- **2026-09-03** · [Announcing the Mastra integration for SurrealDB and Agent Memory](../2026/09/announcing-the-mastra-integration-for-surrealdb-and-agent-memory.md)  
+  `releases` `ai` — One package gives Mastra agents a single database for conversations, workflow state, observability and vectors, plus managed memory that extracts and semantically recalls facts.
 - **2026-09-02** · [SurrealDB Cloud is now available in Frankfurt, Germany](../2026/09/surrealdb-cloud-is-now-available-in-frankfurt-germany.md)  
   `releases` `company` — SurrealDB Cloud now runs in Frankfurt, Germany: lower latency across continental Europe, German and EU data residency, and a shorter round trip for agents.
 - **2026-09-01** · [SurrealDB Cloud is now available in São Paulo, Brazil](../2026/09/surrealdb-cloud-is-now-available-in-so-paulo.md)  

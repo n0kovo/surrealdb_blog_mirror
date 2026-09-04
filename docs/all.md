@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1087 pages_  
+_1088 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -225,6 +225,8 @@ _1087 pages_
   Accessing SurrealDB Agent Memory directly via its HTTP REST API.
 - [ElevenLabs](agent-memory/integrations/voice/elevenlabs.md)
   Giving an ElevenLabs Conversational AI agent memory with SurrealDB Agent Memory.
+- [Gradium](agent-memory/integrations/voice/gradium.md)
+  Building a Gradium voice agent with long-term memory using LiveKit Agents and SurrealDB Agent Memory.
 - [LiveKit](agent-memory/integrations/voice/livekit.md)
   Adding SurrealDB Agent Memory to a LiveKit voice agent.
 - [Agent guide (AGENTS.md)](agent-memory/reference/agents.md)

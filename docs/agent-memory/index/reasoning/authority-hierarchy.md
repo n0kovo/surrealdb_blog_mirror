@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Authority when pillars meet
 
-SurrealDB Agent Memory’s memory model is built around **eight pillars** - not a flat “two layers” split. Two pillars matter most for day-to-day behaviour:
+SurrealDB Agent Memory’s memory model is built around eight pillars. Two matter most for day-to-day behaviour:
 
 - **[Authoritative](https://surrealdb.com/docs/agent-memory/architecture/eight-pillars-and-categories)** - curated artefacts: manuals, policies, product data, structured uploads. Higher default **trust**.
 - **[Experiential](https://surrealdb.com/docs/agent-memory/architecture/eight-pillars-and-categories)** - conversation and everything derived from it (reflection, elaboration, consolidation, …), including identity, knowledge, context, instructions, and uncertainties.

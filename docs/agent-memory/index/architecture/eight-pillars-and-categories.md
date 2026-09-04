@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Eight pillars and six categories
 
-SurrealDB Agent Memory’s design is expressed as **primitives** the memory layer must support - not as a flat checklist of unrelated features. The primitives mirror habits of human memory: **trust some sources more than others** (authoritative versus experiential), **link ideas that belong together** (elaboration), **notice patterns over time** (consolidation), and **admit when you are not sure** (calibration and uncertainty). You can read the pillars as engineering requirements; you can also read them as “what would we need if an agent were to remember like someone who prefers to err on the side of caution?”
+SurrealDB Agent Memory’s design is expressed as primitives the memory layer must support. They follow habits of human memory: trust some sources more than others (authoritative versus experiential), link ideas that belong together (elaboration), notice patterns over time (consolidation), and admit when you are not sure (calibration and uncertainty). You can read the pillars as engineering requirements; you can also read them as “what would we need if an agent were to remember like someone who prefers to err on the side of caution?”
 
 ## Eight pillars of agent memory
 

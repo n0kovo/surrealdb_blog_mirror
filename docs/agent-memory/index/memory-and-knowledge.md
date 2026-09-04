@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Memory & knowledge
 
-SurrealDB Agent Memory stores **authoritative** and **experiential** material in **one** SurrealDB graph - the **Authoritative** and **Experiential** pillars from [Eight pillars and six categories](https://surrealdb.com/docs/agent-memory/architecture/eight-pillars-and-categories). This section is organised by **what you do** (ingest, retrieve, reason, tune), not by two separate products.
+SurrealDB Agent Memory stores authoritative and experiential material in one SurrealDB graph - the Authoritative and Experiential pillars from [Eight pillars and six categories](https://surrealdb.com/docs/agent-memory/architecture/eight-pillars-and-categories). This section is organised by what you do (ingest, retrieve, reason, tune), not by two separate products.
 
 - **Authoritative** - manuals, policies, product data, structured uploads (`source.kind = "document"`, higher default trust).
 - **Experiential** - conversation, sessions, and derived facts (`source.kind = "turn"`, reflections, elaborations, consolidations).

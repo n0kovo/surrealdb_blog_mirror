@@ -10,8 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 [ElevenLabs Conversational AI](https://elevenlabs.io/docs/conversational-ai/overview) runs the voice agent on ElevenLabs' side and reaches your systems through **server tools** (webhooks it calls mid-conversation) and **post-call webhooks** (fired when a conversation ends). SurrealDB Agent Memory sits behind both: a server tool for recall during the call, and a post-call webhook to store the transcript. There is no dedicated adapter. You expose a small HTTP endpoint that forwards to SurrealDB Agent Memory.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
+> `Spectron` was the project name for SurrealDB Agent Memory. The npm package keeps the legacy name (`@surrealdb/spectron`).
 
 > [!NOTE]
 > This is an integration guide. It shows the two webhook shapes ElevenLabs calls and how each maps to SurrealDB Agent Memory; wire them to your own hosting.
@@ -22,16 +21,16 @@ Add a [server tool](https://elevenlabs.io/docs/conversational-ai/customization/t
 
 ```typescript
 
-const spectron = new Spectron({
-    endpoint: process.env.SPECTRON_ENDPOINT!,
-    context: process.env.SPECTRON_CONTEXT!,
-    apiKey: process.env.SPECTRON_API_KEY!,
+const memory = new AgentMemory({
+    endpoint: process.env.AGENT_MEMORY_ENDPOINT!,
+    context: process.env.AGENT_MEMORY_CONTEXT!,
+    apiKey: process.env.AGENT_MEMORY_API_KEY!,
 });
 
 // POST /tools/recall (configured as an ElevenLabs server tool)
 export async function POST(request: Request) {
     const { query, user_id } = await request.json();
-    const block = await spectron.context(query, {
+    const block = await memory.context(query, {
         scope: [`org/acme/user/${user_id}`],
         k: 8,
     });
@@ -57,7 +56,7 @@ export async function POST(request: Request) {
         content: t.message,
     }));
 
-    await spectron.rememberMany(turns, {
+    await memory.rememberMany(turns, {
         scope: [`org/acme/user/${userId}`],
     });
 
@@ -70,7 +69,7 @@ export async function POST(request: Request) {
 
 ## Scope per caller
 
-Both endpoints scope to the caller with a slash path such as `["org/acme/user/alice"]`, derived from the dynamic variable or conversation metadata. Register paths with `spectron scopes create` before first use.
+Both endpoints scope to the caller with a slash path such as `["org/acme/user/alice"]`, derived from the dynamic variable or conversation metadata. Register paths with `agent-memory scopes create` before first use.
 
 ## Next steps
 

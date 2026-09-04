@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Migrating from Mem0
 
-This guide maps Mem0 concepts to their SurrealDB Agent Memory equivalents and walks through an incremental migration strategy that lets you run both systems in parallel during transition.
+This guide maps Mem0 concepts to their SurrealDB Agent Memory equivalents, then an incremental migration that can run both systems in parallel.
 
 > [!NOTE]
 > `Spectron` was the project name for SurrealDB Agent Memory. These type names

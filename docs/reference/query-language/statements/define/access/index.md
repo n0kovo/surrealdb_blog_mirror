@@ -88,6 +88,14 @@ When used in a [`DEFINE ACCESS ... TYPE JWT`](jwt.md), the `AUTHENTICATE` clause
 
 In both cases, the clause expects nothing to be returned and will otherwise fail with a generic error. The `THROW` statement can be called to return a custom error to the end user.
 
+### Privileges inside the clause
+
+`SIGNIN`, `SIGNUP` and `AUTHENTICATE` clauses are evaluated with a session scoped to the level the access method is defined on, and with the Editor role. An access method defined `ON DATABASE` evaluates its clauses as a Database Editor, one defined `ON NAMESPACE` as a Namespace Editor, and one defined `ON ROOT` as a Root Editor.
+
+The clause therefore reaches only the namespace or database that owns the access method. A statement inside it that targets another namespace fails, whatever role the user who defined the access method holds.
+
+The Editor role is a system role, so table and field `PERMISSIONS` clauses do not apply to lookups made inside these clauses. A `SELECT` against a record table behaves the same whether or not that table restricts record users.
+
 ## Using `IF NOT EXISTS` clause
 
 The `IF NOT EXISTS` clause can be used to define an access method only if it does not already exist. If the access method already exists, the `DEFINE ACCESS` statement will return an error.

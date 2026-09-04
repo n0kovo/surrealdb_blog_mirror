@@ -75,7 +75,7 @@ Frameworks without a dedicated package integrate directly through the SDK: [Agno
 
 Give voice agents memory that persists across calls.
 
-→ [ElevenLabs](voice/elevenlabs.md) · [LiveKit](voice/livekit.md)
+→ [ElevenLabs](voice/elevenlabs.md) · [LiveKit](voice/livekit.md) · [Gradium](voice/gradium.md)
 
 ## Automation
 

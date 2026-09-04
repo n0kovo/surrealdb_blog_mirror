@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Provenance and traceability
 
-SurrealDB Agent Memory’s accuracy story depends on one invariant: **no fact-bearing record is anonymous**. Provenance is a **structured field**, not an afterthought in application logs.
+SurrealDB Agent Memory’s accuracy story depends on one invariant: no fact-bearing record is anonymous. Provenance is a structured field, not an afterthought in application logs.
 
 ## The `source` object (conceptual)
 
@@ -27,7 +27,7 @@ Some JSON examples in the docs show a flat `source_turn` field - that is the con
 
 ## Why spans matter
 
-`source.span` stores **character positions** in the originating turn or document passage. Citations are **stored data**, not best-effort model prose. That powers “jump to quote” in UIs and defensible audit; tiered reads are described in [Coherence, retrieval, and cost tiers](https://surrealdb.com/docs/agent-memory/architecture/coherence-retrieval-and-tiers).
+`source.span` stores character positions in the originating turn or document passage. Citations are stored data, not best-effort model prose. That is what “jump to quote” in UIs is built on; tiered reads are described in [Coherence, retrieval, and cost tiers](https://surrealdb.com/docs/agent-memory/architecture/coherence-retrieval-and-tiers).
 
 ## Multiple sources, one audit trail
 

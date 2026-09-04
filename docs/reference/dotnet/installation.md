@@ -7,9 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Installation
 
-export const value = await fetchNugetVersion();
-export const packageReferenceXml = `<PackageReference Include="SurrealDb.Net" Version="${value}" />`;
-
 Before you can use this SDK in your .NET applications regardless of your environment, you need to install and import it into your project.
 This guide will walk you through the process of installing and importing the SDK into your project.
 
@@ -18,7 +15,7 @@ This guide will walk you through the process of installing and importing the SDK
 - Create a new project using your favorite IDE (Visual Studio, JetBrains Rider, etc...) 
 - or use an existing template from the `dotnet new` command.
 
-Once ready, add the SurrealDB SDK to your dependencies:
+Once ready, add the SurrealDB SDK to your dependencies.
 
   
 **.NET CLI**
@@ -30,11 +27,8 @@ dotnet add package SurrealDb.Net
   
 **PackageReference**
 
-<pre>
-  <code class="language-xml">
-    {packageReferenceXml}
-  </code>
-</pre>
+*(latest)*'
+/>
 
   
 

@@ -1,8 +1,12 @@
 # All Posts
 
-_263 posts_  
+_265 posts_  
 [← Index](../README.md)
 
+- **2026-09-03** · [Why does my vector search return nothing when I add a filter?](2026/09/why-does-my-vector-search-return-nothing-when-i-add-a-filter-2.md)  
+  `ai` `tutorials` — A filter applied after an HNSW walk can only remove rows, so a selective one comes back empty. Three measured SurrealDB fixes, plus the schema that avoids them.
+- **2026-09-03** · [Announcing the Mastra integration for SurrealDB and Agent Memory](2026/09/announcing-the-mastra-integration-for-surrealdb-and-agent-memory.md)  
+  `releases` `ai` — One package gives Mastra agents a single database for conversations, workflow state, observability and vectors, plus managed memory that extracts and semantically recalls facts.
 - **2026-09-02** · [SurrealDB Cloud is now available in Frankfurt, Germany](2026/09/surrealdb-cloud-is-now-available-in-frankfurt-germany.md)  
   `releases` `company` — SurrealDB Cloud now runs in Frankfurt, Germany: lower latency across continental Europe, German and EU data residency, and a shorter round trip for agents.
 - **2026-09-01** · [SurrealDB Cloud is now available in São Paulo, Brazil](2026/09/surrealdb-cloud-is-now-available-in-so-paulo.md)  
@@ -44,7 +48,7 @@ _263 posts_
 - **2026-07-21** · [Modelling a financial services enterprise ontology in SurrealDB](2026/07/modelling-a-financial-services-enterprise-ontology-in-surrealdb.md)  
   `ai` `tutorials` — Model a financial services ontology in SurrealDB: map ownership, custody, and transactions as a graph and resolve beneficial-ownership chains in one query.
 - **2026-07-15** · [Temporal graph traversal: incident response in one query language](2026/07/your-asset-inventory-is-a-graph-query-it-like-one.md)  
-  `tutorials` — Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.
+  `tutorials` `ai` — Model your security assets as a graph in SurrealDB and use the VERSION clause to time-travel through incidents. Schemas, seed data, and queries included.
 - **2026-07-14** · [One query, not two stores: how SurrealDB makes agents accurate](2026/07/one-query-not-two-stores-how-vector-graph-in-surrealdb-makes-agents-more-accurate.md)  
   `ai` `tutorials` — Vector search and graph traversal in a single SurrealDB query. How single-engine hybrid retrieval makes RAG agents more accurate.
 - **2026-07-09** · [Generating embeddings inside SurrealQL with a custom function](2026/07/generating-embeddings-inside-surrealql-with-a-custom-function.md)  

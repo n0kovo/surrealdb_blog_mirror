@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1088 pages_  
+_1089 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -884,10 +884,12 @@ _1088 pages_
   Invite people to an organisation, track pending invitations, and choose between the Owner, Admin, and Member roles.
 - [Referrals](manage/organisations/referrals.md)
   Share a referral link to earn credits and rewards when someone signs up through it.
+- [Two-step verification](manage/organisations/security.md)
+  Add an authenticator app to your SurrealDB account, and keep a recovery code for when it is unavailable.
 - [Accounts and sign-in](manage/organisations/sign-in.md)
-  Create an account with Google, GitHub, email, or a passkey, and sign in to manage organisations and instances.
+  Create an account with Google, GitHub, or an email address, and sign in to manage organisations and instances.
 - [Support](manage/organisations/support.md)
-  Community help, paid support plans, raising a ticket, and what Surreal Sidekick can answer.
+  Community help, paid support plans, and raising a ticket.
 - [embed_schema! macro](manage/schema-migration/embed-schema-macro.md)
   The embed_schema! macro bakes your .surql schema files into the Rust binary at compile time, so schema is always in sync with the application that ships it.
 - [Existing databases](manage/schema-migration/getting-started/existing-databases.md)

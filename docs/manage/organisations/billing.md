@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 5
 title: Billing
 description: Organisation-level billing details, payment methods, discount codes, invoices, and the usage that produces them.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/organisations/billing.mdx"

@@ -1,5 +1,5 @@
 ---
-position: 6
+position: 7
 title: AWS Marketplace
 description: Subscribe through AWS Marketplace so charges appear on your AWS bill, and link the subscription to an organisation.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/organisations/aws-marketplace.mdx"

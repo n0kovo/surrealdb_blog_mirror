@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 SurrealDB Agent Memory connects to [Pydantic AI](https://ai.pydantic.dev) through the framework's own extension points, so an agent can remember facts across runs, recall them when relevant, and keep a durable record of its conversations.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 Package: **`spectron-pydantic-ai`** (PyPI). It gives you three surfaces, usable on their own or together:
 
 - **Memory tools** (`SpectronToolset`): expose `recall`, `context`, `remember`, and more as tools the agent calls when it decides to.

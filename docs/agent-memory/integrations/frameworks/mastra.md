@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 `@surrealdb/mastra-ai` is the SurrealDB integration for [Mastra](https://mastra.ai). It ships two things that can be used separately or together: a **storage adapter** backed by a SurrealDB instance you run, and an **SurrealDB Agent Memory** memory provider backed by the hosted agent memory service.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 ## Requirements
 
 - Bun 1+ or Node.js 22+
@@ -43,9 +40,9 @@ const agent = new Agent({
     instructions: "You are a helpful assistant with long-term memory.",
     model: anthropic("claude-sonnet-4-5"),
     memory: new SpectronMemory({
-        endpoint: process.env.SPECTRON_ENDPOINT!,
+        endpoint: process.env.AGENT_MEMORY_ENDPOINT!,
         context: process.env.SPECTRON_CONTEXT!,
-        apiKey: process.env.SPECTRON_API_KEY!,
+        apiKey: process.env.AGENT_MEMORY_API_KEY!,
     }),
 });
 ```
@@ -58,9 +55,9 @@ const store = new SurrealDBStore({ id: "spectron-demo", url: "ws://localhost:800
 await store.init();
 
 const memory = new SpectronMemory({
-    endpoint: process.env.SPECTRON_ENDPOINT!,
+    endpoint: process.env.AGENT_MEMORY_ENDPOINT!,
     context: process.env.SPECTRON_CONTEXT!,
-    apiKey: process.env.SPECTRON_API_KEY!,
+    apiKey: process.env.AGENT_MEMORY_API_KEY!,
     storage: store, // durable verbatim history; omit to keep it in-process
 });
 ```
@@ -71,10 +68,10 @@ Let an agent call SurrealDB Agent Memory explicitly to store, recall, forget, fe
 
 ```typescript
 
-const client = new Spectron({
-    endpoint: process.env.SPECTRON_ENDPOINT!,
+const client = new AgentMemory({
+    endpoint: process.env.AGENT_MEMORY_ENDPOINT!,
     context: process.env.SPECTRON_CONTEXT!,
-    apiKey: process.env.SPECTRON_API_KEY!,
+    apiKey: process.env.AGENT_MEMORY_API_KEY!,
 });
 
 const agent = new Agent({

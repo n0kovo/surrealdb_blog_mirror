@@ -1,5 +1,5 @@
 ---
-position: 11
+position: 12
 title: module
 description: A command used to compile, manage and execute Surrealism plugin modules.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/module.mdx"

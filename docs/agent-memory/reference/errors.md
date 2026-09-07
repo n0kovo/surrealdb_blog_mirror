@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 SurrealDB Agent Memory uses standard HTTP status codes and follows [RFC 7807 Problem Details](https://www.rfc-editor.org/rfc/rfc7807) for all error responses.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 ## Error response format
 
 All errors return a JSON body with the following fields:
@@ -212,13 +209,13 @@ Only the delta-seconds form is emitted. A client that encounters the HTTP-date f
 | `SpectronAPIError` | Other non-2xx | Generic API failure (includes 400, 409, 429, 5xx) |
 
 ```python
-from surrealdb import SpectronNotFoundError, SpectronAPIError
+from surrealdb.memory import MemoryNotFoundError, MemoryAPIError
 
 try:
     doc = await client.documents.get("document:nonexistent")
-except SpectronNotFoundError as e:
+except MemoryNotFoundError as e:
     print(f"Document not found: {e.message}")
-except SpectronAPIError as e:
+except MemoryAPIError as e:
     if e.status_code == 429:
         print(f"Rate limit exceeded: {e.body}")
 ```

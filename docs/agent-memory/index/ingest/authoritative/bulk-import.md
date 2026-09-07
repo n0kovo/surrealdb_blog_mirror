@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 When populating a new Context or migrating from an existing system, you typically need to ingest many documents or knowledge nodes at once. SurrealDB Agent Memory's ingestion pipeline is designed for concurrent usage, and both the document upload endpoint and the triple-write path on `/facts` support high-throughput ingestion patterns.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 ## Uploading many documents
 
 `POST /api/v1/{context_id}/documents` accepts one document per request. For bulk uploads, issue multiple requests concurrently and track their status independently.
@@ -20,9 +17,9 @@ When populating a new Context or migrating from an existing system, you typicall
 ### Concurrent upload pattern
 
 ```python
-from surrealdb import Spectron
+from surrealdb.memory import Memory
 
-memory = Spectron(context="acme-prod",
+memory = Memory(context="acme-prod",
     api_key=os.environ["SPECTRON_API_KEY"])
 
 files = [
@@ -47,8 +44,8 @@ print(f"Queued {len(doc_ids)} documents")
 
 ```javascript
 
-const memory = new Spectron({ context: "acme-prod",
-    apiKey: process.env.SPECTRON_API_KEY });
+const memory = new AgentMemory({ context: "acme-prod",
+    apiKey: process.env.AGENT_MEMORY_API_KEY });
 
 const files = [
     { path: "returns-policy.pdf", title: "Returns Policy" },

@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 [AgentOps](https://www.agentops.ai/) monitors AI agents: session replay, LLM cost tracking, and tool-call telemetry across most agent frameworks. It is complementary to SurrealDB Agent Memory: AgentOps observes the run; SurrealDB Agent Memory provides the memory. This guide uses both together with the [Python SDK](../sdks/python.md) (`surrealdb`).
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 ## Installation
 
 > [!NOTE]
@@ -36,12 +33,12 @@ export SPECTRON_API_KEY="sk-spec-..."
 
 ```python
 from openai import OpenAI
-from surrealdb import Spectron
+from surrealdb.memory import Memory
 
 agentops.init(os.environ["AGENTOPS_API_KEY"])
 
 llm = OpenAI()
-memory = Spectron(
+memory = Memory(
     endpoint=os.environ["SPECTRON_ENDPOINT"],
     context=os.environ["SPECTRON_CONTEXT"],
     api_key=os.environ["SPECTRON_API_KEY"],

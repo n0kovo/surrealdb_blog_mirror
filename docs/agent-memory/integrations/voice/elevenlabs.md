@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 [ElevenLabs Conversational AI](https://elevenlabs.io/docs/conversational-ai/overview) runs the voice agent on ElevenLabs' side and reaches your systems through **server tools** (webhooks it calls mid-conversation) and **post-call webhooks** (fired when a conversation ends). SurrealDB Agent Memory sits behind both: a server tool for recall during the call, and a post-call webhook to store the transcript. There is no dedicated adapter. You expose a small HTTP endpoint that forwards to SurrealDB Agent Memory.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. The npm package keeps the legacy name (`@surrealdb/spectron`).
-
-> [!NOTE]
 > This is an integration guide. It shows the two webhook shapes ElevenLabs calls and how each maps to SurrealDB Agent Memory; wire them to your own hosting.
 
 ## Recall as a server tool

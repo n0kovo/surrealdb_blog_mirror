@@ -8,9 +8,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 # Vercel AI SDK
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 `@surrealdb/spectron-vercel-ai` integrates SurrealDB Agent Memory with the [Vercel AI SDK](https://ai-sdk.dev). Keep using your own model provider (`@ai-sdk/openai`, `@ai-sdk/anthropic`, and so on) with `generateText` / `streamText`, and let SurrealDB Agent Memory transparently:
 
 - **inject** relevant long-term memory (and the user's profile) into the prompt before generation, and
@@ -23,7 +20,7 @@ The API is `createSpectron()` → `.middleware()` / `.tools()`.
 ## Installation
 
 ```bash
-npm i @surrealdb/spectron-vercel-ai ai @surrealdb/spectron
+npm i @surrealdb/spectron-vercel-ai ai @surrealdb/memory
 # plus your model provider, e.g.
 npm i @ai-sdk/openai
 ```
@@ -47,7 +44,7 @@ const spectron = createSpectron({ defaultScopes: "user/tobie" });
 
 // Or pass config / a preconstructed client explicitly:
 const spectron = createSpectron({
-    client: new Spectron({ endpoint, apiKey, context }),
+    client: new AgentMemory({ endpoint, apiKey, context }),
 });
 ```
 
@@ -125,7 +122,7 @@ spectron.middleware({ scopes: ["team/eng", "user/x"] }); // OR of two
 
 ## Direct client access
 
-`spectron.client` is the underlying `@surrealdb/spectron` client for anything not wrapped here: documents, sessions, entities, `chat`, and so on. See the [JavaScript SDK](../sdks/javascript-and-typescript.md) for the full surface.
+`spectron.client` is the underlying `@surrealdb/memory` client for anything not wrapped here: documents, sessions, entities, `chat`, and so on. See the [JavaScript SDK](../sdks/javascript-and-typescript.md) for the full surface.
 
 ## Next steps
 

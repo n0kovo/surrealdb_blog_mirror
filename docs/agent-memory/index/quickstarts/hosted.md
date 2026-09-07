@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 This guide takes you from a blank terminal to your first **remember** and **recall** calls against **SurrealDB Agent Memory on SurrealDB Cloud**. Cloud runs the SurrealDB Agent Memory data plane, SurrealDB, and object store per context - you do not provision infrastructure yourself.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 > [!NOTE]
 > SurrealDB Agent Memory contexts are created in **[SurrealDB Studio](https://studio.surrealdb.com)** (organisation → **Contexts**). See [SurrealDB Agent Memory on SurrealDB Cloud](https://surrealdb.com/docs/agent-memory/quickstarts/surrealdb-cloud) for context setup and API keys. This page assumes you already have a **context host**, **context id**, and **API key** from the **API keys** view.
 
@@ -98,7 +95,7 @@ curl -sS "$SPECTRON_URL/api/v1/$SPECTRON_CONTEXT_ID/chat" \
 
 ## SDKs
 
-Official clients: **`surrealdb`** (Python, includes `Spectron` / `AsyncSpectron`) and **`@surrealdb/spectron`** (TypeScript). Point them at `endpoint: process.env.SPECTRON_URL` (your context host). See [Integrations](../../integrations/index.md).
+Official clients: **`surrealdb[memory]`** (Python, provides `Memory` / `AsyncMemory`) and **`@surrealdb/memory`** (TypeScript). Point them at `endpoint: process.env.SPECTRON_URL` (your context host). See [Integrations](../../integrations/index.md).
 
 ## Next steps
 

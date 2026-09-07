@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1089 pages_  
+_1090 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -250,7 +250,7 @@ _1089 pages_
 - [REST API](agent-memory/reference/rest-api.md)
   End-user HTTP endpoints on the unified SurrealDB Agent Memory substrate.
 - [JavaScript SDK reference](agent-memory/reference/sdk-javascript.md)
-  Package layout and configuration for @surrealdb/spectron.
+  Package layout and configuration for @surrealdb/memory.
 - [Kotlin SDK reference](agent-memory/reference/sdk-kotlin.md)
   Package layout, configuration, and error model for the SurrealDB Agent Memory Kotlin client.
 - [Python SDK reference](agent-memory/reference/sdk-python.md)
@@ -990,6 +990,8 @@ _1089 pages_
   A command to export data from a SurrealDB database server into a SurrealQL file format.
 - [fix](reference/cli/surrealdb-cli/commands/fix.md)
   A command to convert SurrealDB version 1.x data into a usable format for versions 2.0 and above.
+- [format](reference/cli/surrealdb-cli/commands/format.md)
+  A command to reformat a SurrealQL file to a consistent style, printing the result or writing it back in place.
 - [help](reference/cli/surrealdb-cli/commands/help.md)
   A command to display all possible top-level commands and arguments used in the SurrealDB binary.
 - [import](reference/cli/surrealdb-cli/commands/import.md)

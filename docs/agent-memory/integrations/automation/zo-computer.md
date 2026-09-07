@@ -15,9 +15,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 ## Installation
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 Add the dependency to your skill and set the connection details as environment variables in Zo:
 
 ```bash
@@ -43,9 +40,9 @@ SPECTRON_API_KEY=sk-spec-...
 Expose three functions a Zo workflow can call: store a turn, ask a question of memory, and fetch a context block for a prompt:
 
 ```python
-from surrealdb import Spectron
+from surrealdb.memory import Memory
 
-memory = Spectron(
+memory = Memory(
     endpoint=os.environ["SPECTRON_ENDPOINT"],
     context=os.environ["SPECTRON_CONTEXT"],
     api_key=os.environ["SPECTRON_API_KEY"],

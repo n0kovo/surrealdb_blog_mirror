@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 SurrealDB Agent Memory exposes its memory operations as [Strands Agents](https://strandsagents.com) tools, so any Strands agent can store and retrieve long-term memory with a single line of setup.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 Package: **`spectron-strands-agents`** (PyPI). It pulls in `strands-agents` and `surrealdb` (which provides the SurrealDB Agent Memory client).
 
 ```python
@@ -52,7 +49,7 @@ export SPECTRON_CONTEXT="acme-prod"
 You can also pass the values directly, or hand in a client you already have:
 
 ```python
-from surrealdb import Spectron
+from surrealdb.memory import Memory
 from spectron_strands import spectron_tools
 
 # From explicit arguments.
@@ -63,7 +60,7 @@ tools = spectron_tools(
 )
 
 # Or reuse an existing client.
-client = Spectron(context="acme-prod", endpoint="...", api_key="...")
+client = Memory(context="acme-prod", endpoint="...", api_key="...")
 tools = spectron_tools(client=client)
 ```
 

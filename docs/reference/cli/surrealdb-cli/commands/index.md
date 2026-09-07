@@ -17,6 +17,7 @@ surreal [OPTIONS] <COMMAND>
 | [`sql`](sql.md) | Open an interactive SurrealQL shell or run queries from scripts. |
 | [`export`](export.md) | Dump a database to SurrealQL. |
 | [`fix`](fix.md) | Apply data or schema fixes offline. |
+| [`format`](format.md) *Since v3.3.0* | Reformat a SurrealQL file to a consistent style. |
 | [`help`](help.md) | Show help for the CLI or a subcommand. |
 | [`import`](import.md) | Load SurrealQL from a file into a database. |
 | [`isready`](isready.md) | Health check for readiness probes. |

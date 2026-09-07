@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 The SurrealDB Agent Memory client ships in the [`surrealdb`](https://github.com/surrealdb/surrealdb.dart) package on pub, as a standalone import that does not depend on the database driver. It works in any Dart project and on every Flutter target (Android, iOS, web, and desktop).
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 ## Installation
 
 Add the package to `pubspec.yaml`:
@@ -34,14 +31,14 @@ Import the SurrealDB Agent Memory entry point directly. The client is pinned to 
 
 ```dart
 
-final client = Spectron(
-  endpoint: 'https://api.spectron.example',
+final client = AgentMemory(
+  endpoint: 'https://api.memory.example',
   context: 'acme-prod',
   apiKey: 'sp-your-key',
 );
 ```
 
-Importing `package:surrealdb/spectron.dart` pulls in only the SurrealDB Agent Memory client, not the SurrealDB database driver.
+Importing `package:surrealdb/memory.dart` pulls in only the SurrealDB Agent Memory client, not the SurrealDB database driver.
 
 ## Remember, recall, and chat
 

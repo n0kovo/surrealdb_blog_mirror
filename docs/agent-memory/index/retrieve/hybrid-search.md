@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 SurrealDB Agent Memory exposes four retrieval modes for **document passages** (`POST .../documents/query`) and for the **unified** read path (`POST .../query`, which also ranks experiential facts). Each mode trades coverage, precision, and computational cost differently. See [Recalling memories](https://surrealdb.com/docs/agent-memory/retrieve/recall) for unified recall; this page focuses on mode selection and graph-density signals.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 ## Answer size vs search breadth
 
 **`k`** (and **`limit`** on `/query`) controls how many hits are returned after fusion - the **answer size**. Default **10**, maximum **50** (`SPECTRON_MAX_QUERY_K`, clamp-down only).
@@ -82,9 +79,9 @@ Responses may report `hybrid_graph` on individual hits when several signals comb
 ## Basic query
 
 ```python
-from surrealdb import Spectron
+from surrealdb.memory import Memory
 
-memory = Spectron(context="acme-prod", api_key=os.environ["SPECTRON_API_KEY"])
+memory = Memory(context="acme-prod", api_key=os.environ["SPECTRON_API_KEY"])
 
 hits = await memory.documents.query(
     query="what is the return window for unopened items?",
@@ -100,7 +97,7 @@ for hit in hits:
 
 ```javascript
 
-const memory = new Spectron({ context: "acme-prod", apiKey: process.env.SPECTRON_API_KEY });
+const memory = new AgentMemory({ context: "acme-prod", apiKey: process.env.AGENT_MEMORY_API_KEY });
 
 const hits = await memory.documents.query({
     query: "what is the return window for unopened items?",

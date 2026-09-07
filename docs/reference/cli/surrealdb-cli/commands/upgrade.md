@@ -1,5 +1,5 @@
 ---
-position: 12
+position: 13
 title: upgrade
 description: A command to change the current version of SurrealDB to another one, including the latest version, specified version, or nightly.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/upgrade.mdx"

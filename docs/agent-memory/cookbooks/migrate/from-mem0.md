@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 This guide maps Mem0 concepts to their SurrealDB Agent Memory equivalents, then an incremental migration that can run both systems in parallel.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 ## Concept mapping
 
 | Mem0 concept | SurrealDB Agent Memory equivalent | Notes |
@@ -42,9 +39,9 @@ results = m.search("What are Alice's food preferences?", user_id="alice")
 
 **SurrealDB Agent Memory:**
 ```python
-from surrealdb import AsyncSpectron
+from surrealdb.memory import AsyncMemory
 
-client = AsyncSpectron(
+client = AsyncMemory(
     context="dev",
     endpoint="http://localhost:9090",
     api_key="sk-...",
@@ -69,10 +66,10 @@ const results = await m.search("food preferences", { user_id: "alice" });
 **SurrealDB Agent Memory:**
 ```javascript
 
-const client = new Spectron({
-  endpoint: process.env.SPECTRON_ENDPOINT!,
+const client = new AgentMemory({
+  endpoint: process.env.AGENT_MEMORY_ENDPOINT!,
   context: "dev",
-  apiKey: process.env.SPECTRON_API_KEY!,
+  apiKey: process.env.AGENT_MEMORY_API_KEY!,
 });
 
 await client.remember("I prefer vegetarian food.", { scopes: ["user/alice"] });

@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 LangMem is LangChain's in-process memory library, typically backed by a local vector store or an in-memory store. This guide covers the concept mapping and migration path to SurrealDB Agent Memory.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 ## Concept mapping
 
 | LangMem concept | SurrealDB Agent Memory equivalent | Notes |
@@ -52,9 +49,9 @@ results = await memory.asearch("communication style")
 ### SurrealDB Agent Memory equivalent
 
 ```python
-from surrealdb import AsyncSpectron
+from surrealdb.memory import AsyncMemory
 
-client = AsyncSpectron(
+client = AsyncMemory(
     context="dev",
     endpoint="https://spectron.example.com",
     api_key="sk-...",
@@ -90,12 +87,12 @@ SurrealDB Agent Memory ships a LangChain memory adapter (planned). Until it is r
 
 ```python
 from langchain_core.messages import SystemMessage
-from surrealdb import AsyncSpectron
+from surrealdb.memory import AsyncMemory
 
-client = AsyncSpectron(context="dev", endpoint="...", api_key="...")
+client = AsyncMemory(context="dev", endpoint="...", api_key="...")
 
 class SpectronMemory:
-    def __init__(self, client: AsyncSpectron, scope: list[str]):
+    def __init__(self, client: AsyncMemory, scope: list[str]):
         self.client = client
         self.scope = scope
 
@@ -127,7 +124,7 @@ If you are using the older LangChain `ConversationBufferMemory` or similar in-co
 memory = ConversationBufferMemory()
 chain = ConversationChain(llm=llm, memory=memory)
 
-# After: Spectron-based
+# After: Memory-based
 async with client.sessions.create(scopes=[f"user/{user_id}"]) as session:
     # At turn start, recall relevant context
     context = await client.recall(user_message, k=5)

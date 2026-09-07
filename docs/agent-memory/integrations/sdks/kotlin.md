@@ -7,12 +7,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Kotlin SDK
 
-The SurrealDB Agent Memory client for Kotlin ships inside the [SurrealDB Kotlin SDK](../../../reference/kotlin/index.md); there is no separate package. It lives in the `com.surrealdb.kotlin.spectron` package and talks to SurrealDB Agent Memory's HTTP API directly, independently of the SurrealDB RPC engine. Like the rest of the Kotlin SDK, it is [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) (JVM, Android, iOS) and every method is a `suspend` function.
+The SurrealDB Agent Memory client for Kotlin ships inside the [SurrealDB Kotlin SDK](../../../reference/kotlin/index.md); there is no separate package. It lives in the `com.surrealdb.kotlin.memory` package and talks to SurrealDB Agent Memory's HTTP API directly, independently of the SurrealDB RPC engine. Like the rest of the Kotlin SDK, it is [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) (JVM, Android, iOS) and every method is a `suspend` function.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 > [!NOTE]
 > The Kotlin SDK is in early development (`0.1.0-SNAPSHOT`) and the SurrealDB Agent Memory client is not yet released. The APIs below are provisional.
 
@@ -28,14 +25,14 @@ dependencies {
 
 ## Configuration
 
-Construct a [`Spectron`](../../reference/sdk-kotlin.md) client with a context id, an API key, and your endpoint. Authentication uses the **`Authorization: Bearer`** header on every request.
+Construct a [`AgentMemory`](../../reference/sdk-kotlin.md) client with a context id, an API key, and your endpoint. Authentication uses the **`Authorization: Bearer`** header on every request.
 
 ```kotlin
 
-val memory = Spectron(
+val memory = AgentMemory(
     contextId = "acme-prod",
     apiKey = "sk-spec-...",
-    endpoint = "https://api.spectron.example",
+    endpoint = "https://api.memory.example",
 )
 ```
 
@@ -43,7 +40,7 @@ val memory = Spectron(
 | --- | --- | --- |
 | `contextId` | required | The context to operate in, e.g. `"acme-prod"`. |
 | `apiKey` | required | Bearer token. Mutable; takes effect on the next request. |
-| `endpoint` | required | Base URL, e.g. `"https://api.spectron.example"`. |
+| `endpoint` | required | Base URL, e.g. `"https://api.memory.example"`. |
 | `timeout` | `30s` | Per-request timeout. |
 | `maxRetries` | `3` | GET-only retries on 5xx and connection errors. |
 | `httpClient` | platform default | Optional Ktor `HttpClient` to inject. |
@@ -165,15 +162,15 @@ memory.documents.list(status = "ready", onBehalfOf = "alpha-bot")
 
 ## Error handling
 
-All failures throw a subclass of `SpectronException`. See the [Kotlin SDK reference](../../reference/sdk-kotlin.md#errors) for the full exception to status mapping, and [error responses](../../reference/errors.md) for the shared RFC 7807 format.
+All failures throw a subclass of `AgentMemoryException`. See the [Kotlin SDK reference](../../reference/sdk-kotlin.md#errors) for the full exception to status mapping, and [error responses](../../reference/errors.md) for the shared RFC 7807 format.
 
 ```kotlin
 
 try {
     memory.documents.get("doc:missing")
-} catch (e: SpectronNotFoundException) {
+} catch (e: AgentMemoryNotFoundException) {
     println("${e.status}: ${e.title}")
-} catch (e: SpectronRateLimitException) {
+} catch (e: AgentMemoryRateLimitException) {
     println("retry after ${e.retryAfter}")
 }
 ```

@@ -64,7 +64,7 @@ Some clients use a different key or shape - `serverUrl` in Windsurf and Antigrav
 | Situation | Use |
 | --- | --- |
 | Coding assistant with native MCP | `install-mcp` or manual `/mcp` config |
-| Application code (Python/TS) | `surrealdb` / `@surrealdb/spectron` |
+| Application code (Python/TS) | `surrealdb` / `@surrealdb/memory` |
 | Agent framework with harness adapter | `spectron-crew-ai`, `@surrealdb/spectron-vercel-ai`, … |
 | Custom infrastructure | [REST API](../../reference/rest-api.md) |
 

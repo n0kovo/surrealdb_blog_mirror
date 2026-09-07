@@ -11,7 +11,7 @@ SurrealDB Agent Memory runs as a **horizontally scalable service** in front of S
 
 - **HTTP** - `/api/v1/{context_id}/...` ([REST API](../../integrations/surfaces/rest.md))
 - **MCP** - `/mcp` on the same port
-- **Generated SDKs** - Python (`surrealdb`) and TypeScript (`@surrealdb/spectron`)
+- **Generated SDKs** - Python (`surrealdb`) and TypeScript (`@surrealdb/memory`)
 - **Harness adapters** - LangChain, Vercel AI SDK, OpenAI Agents, n8n, Claude Code hook ([Integrations](../../integrations/index.md))
 
 ## In-process library

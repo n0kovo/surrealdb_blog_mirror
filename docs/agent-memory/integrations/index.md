@@ -30,13 +30,13 @@ Call SurrealDB Agent Memory directly from application code.
 | Language | Package |
 | --- | --- |
 | Dart | `surrealdb` (import `spectron.dart`) |
-| Elixir | `:surrealdb` (`SurrealDB.Spectron`) |
+| Elixir | `:surrealdb` (`SurrealDB.Memory`) |
 | Go | `spectron` package in `surrealdb.go` |
 | Haskell | `surrealdb-spectron` |
-| JavaScript / TypeScript | `@surrealdb/spectron` |
+| JavaScript / TypeScript | `@surrealdb/memory` |
 | Kotlin | bundled in `com.surrealdb:kotlin` |
 | Python | `surrealdb` (SurrealDB Agent Memory ships inside it) |
-| Swift | `Spectron` product in `surrealdb.swift` |
+| Swift | `AgentMemory` product in `surrealdb.swift` |
 
 → [Dart](sdks/dart.md) · [Elixir](sdks/elixir.md) · [Go](sdks/go.md) · [Haskell](sdks/haskell.md) · [JavaScript & TypeScript](sdks/javascript-and-typescript.md) · [Kotlin](sdks/kotlin.md) · [Python](sdks/python.md) · [Swift](sdks/swift.md)
 
@@ -45,7 +45,7 @@ Call SurrealDB Agent Memory directly from application code.
 Drop-in memory for the popular TypeScript AI SDKs, with recall and storage wrapped around your model calls.
 
 - **Cloudflare Workers AI**: the client inside a Worker, alongside Workers AI models.
-- **TanStack AI**: the `@surrealdb/spectron` client in TanStack Start server routes.
+- **TanStack AI**: the `@surrealdb/memory` client in TanStack Start server routes.
 - **Vercel AI SDK**: `@surrealdb/spectron-vercel-ai`, via `wrapLanguageModel` middleware and a tool set.
 
 → [Cloudflare Workers AI](ai-sdks/cloudflare-workers-ai.md) · [TanStack AI](ai-sdks/tanstack-ai.md) · [Vercel AI SDK](ai-sdks/vercel-ai-sdk.md)

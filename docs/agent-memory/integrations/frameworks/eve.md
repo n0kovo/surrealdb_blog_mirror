@@ -39,7 +39,7 @@ export default spectronMemoryInstructions();
 ```
 
 ```typescript
-// agent/hooks/memory.ts: persists the conversation back to Spectron
+// agent/hooks/memory.ts: persists the conversation back to AgentMemory
 export default spectronMemoryHook();
 ```
 

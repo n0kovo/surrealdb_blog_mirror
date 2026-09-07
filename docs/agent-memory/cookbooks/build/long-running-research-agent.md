@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 Research agents accumulate findings across many sessions, often spanning days or weeks. This guide shows how to structure sessions and use reflection to distil growing memory into durable, queryable knowledge.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 ## The challenge
 
 A research agent that works on a topic over multiple sessions faces a core tension:
@@ -43,9 +40,9 @@ Day 3 session → profile → load context → research → reflect → updated 
 ### Starting a session
 
 ```python
-from surrealdb import AsyncSpectron
+from surrealdb.memory import AsyncMemory
 
-client = AsyncSpectron(
+client = AsyncMemory(
     context="acme-prod",
     endpoint="https://spectron.example.com",
     api_key="sk-...",
@@ -66,10 +63,10 @@ Continue from where we left off."""
 
 ```javascript
 
-const client = new Spectron({
-    endpoint: process.env.SPECTRON_ENDPOINT!,
+const client = new AgentMemory({
+    endpoint: process.env.AGENT_MEMORY_ENDPOINT!,
     context: "acme-prod",
-    apiKey: process.env.SPECTRON_API_KEY!,
+    apiKey: process.env.AGENT_MEMORY_API_KEY!,
 });
 
 const session = await client.sessions.create({

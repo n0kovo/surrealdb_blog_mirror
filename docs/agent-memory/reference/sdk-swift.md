@@ -8,22 +8,19 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 # Swift SDK reference
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 | Item | Value |
 | --- | --- |
 | Package | `surrealdb.swift` |
-| Product | `Spectron` |
-| Install | `.product(name: "Spectron", package: "surrealdb.swift")` |
-| Import | `import Spectron` |
+| Product | `AgentMemory` |
+| Install | `.product(name: "AgentMemory", package: "surrealdb.swift")` |
+| Import | `import AgentMemory` |
 
 ## Configuration
 
 ```swift
-let memory = try Spectron(
+let memory = try AgentMemory(
     context: "acme-prod",
-    endpoint: "https://api.spectron.example",
+    endpoint: "https://api.memory.example",
     apiKey: "sk-spec-..."
 )
 ```
@@ -61,7 +58,7 @@ Full tables: [REST API](rest-api.md).
 
 ## Errors
 
-All failures throw `SpectronError` with fields `status`, `title`, `detail`, `retryAfter`, `typeURI`, `instance` and `extensions`. The `kind` maps to `.base`, `.auth`, `.scope`, `.notFound`, `.validation`, `.rateLimit` or `.server`. See [Errors](errors.md).
+All failures throw `AgentMemoryError` with fields `status`, `title`, `detail`, `retryAfter`, `typeURI`, `instance` and `extensions`. The `kind` maps to `.base`, `.auth`, `.scope`, `.notFound`, `.validation`, `.rateLimit` or `.server`. See [Errors](errors.md).
 
 ## User guide
 

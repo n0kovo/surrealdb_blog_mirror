@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 Most teams do not rebuild their application to add memory. This guide covers the minimal integration path: intercepting existing LLM calls to extract memory, injecting context before those calls, and gradually expanding the integration without disrupting what already works.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 ## The minimal integration
 
 SurrealDB Agent Memory's minimum viable integration is two operations around your existing LLM call:
@@ -23,9 +20,9 @@ SurrealDB Agent Memory's minimum viable integration is two operations around you
 No sessions are required for the first pass. You keep your existing data model and LLM client; SurrealDB Agent Memory sits beside them as the memory layer.
 
 ```python
-from surrealdb import Spectron
+from surrealdb.memory import Memory
 
-memory = Spectron(context="my-app", api_key="sk-...")
+memory = Memory(context="my-app", api_key="sk-...")
 
 CONTEXT_ID = "my-app"
 DEFAULT_SCOPE = ["org/my-org"]  # Start with a single scope
@@ -57,7 +54,7 @@ async def call_llm_with_memory(user_message: str,
 
 ```typescript
 
-const memory = new Spectron({ context: "my-app", apiKey: "sk-..." });
+const memory = new AgentMemory({ context: "my-app", apiKey: "sk-..." });
 
 const DEFAULT_SCOPE = ["org/my-org"];
 

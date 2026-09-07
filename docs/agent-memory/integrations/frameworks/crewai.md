@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 SurrealDB Agent Memory gives [CrewAI](https://www.crewai.com/) agents persistent, provenance-first memory. The integration offers two approaches that compose: tools an agent calls explicitly, and automatic memory that recalls before each task, writes back after it, and consolidates when the crew finishes, without changing your agents or tasks.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 Package: **`spectron-crew-ai`** (PyPI). It pulls in CrewAI and the SurrealDB SDK (`surrealdb` v3, which bundles SurrealDB Agent Memory).
 
 ## Requirements

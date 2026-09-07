@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 This page is written for **coding agents** (Cursor, Claude Code, Copilot, and similar) building on SurrealDB Agent Memory. Humans can read it too, but the tone is imperative: what to do, what not to do, and where the sharp edges are.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 **Use it as a Cursor skill:** copy this file into `.cursor/rules/spectron.mdc`, add it as a project rule, or save it under `.cursor/skills/spectron/SKILL.md` with a short `description` in the frontmatter so the agent loads it when working on SurrealDB Agent Memory integrations.
 
 Full product docs can be found at [SurrealDB Agent Memory documentation](https://surrealdb.com/docs/agent-memory). This guide is the minimum viable canon for “vibe coding” without reading all of it.
@@ -172,17 +169,17 @@ See [Cursor](../integrations/mcp-server/coding-assistants/cursor.md).
 Prefer an official SDK over raw HTTP when available:
 
 ```python
-from surrealdb import Spectron
+from surrealdb.memory import Memory
 
-memory = Spectron(context="acme-prod",
+memory = Memory(context="acme-prod",
     api_key=os.environ["SPECTRON_API_KEY"])
 await memory.sessions.create(scopes=["org/acme/user/alice"])
 ```
 
 ```javascript
 
-const memory = new Spectron({ context: "acme-prod",
-    apiKey: process.env.SPECTRON_API_KEY });
+const memory = new AgentMemory({ context: "acme-prod",
+    apiKey: process.env.AGENT_MEMORY_API_KEY });
 ```
 
 Model assignment is **per Context** for LLM stages; **embedding is deployment-fixed** - do not try to set `models.embedding` in config patches.

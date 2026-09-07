@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 This guide covers building a personal AI assistant that learns from every conversation and retains that knowledge across sessions. The assistant accumulates user preferences, biographical facts, current projects, and behavioural instructions. It injects relevant context automatically at the start of each new session so the experience feels continuous.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 ## What you are building
 
 - A single-user Context scoped by `user_id`.
@@ -25,9 +22,9 @@ This guide covers building a personal AI assistant that learns from every conver
 Each conversation is a new session. The scope ties the session to the user so all extracted facts are associated with them.
 
 ```python
-from surrealdb import Spectron
+from surrealdb.memory import Memory
 
-memory = Spectron(context="assistant", api_key="sk-...")
+memory = Memory(context="assistant", api_key="sk-...")
 
 async def start_conversation(user_id: str):
     session = await memory.sessions.create(
@@ -38,7 +35,7 @@ async def start_conversation(user_id: str):
 
 ```typescript
 
-const memory = new Spectron({ context: "assistant", apiKey: "sk-..." });
+const memory = new AgentMemory({ context: "assistant", apiKey: "sk-..." });
 
 async function startConversation(userId: string) {
     const session = await memory.sessions.create({

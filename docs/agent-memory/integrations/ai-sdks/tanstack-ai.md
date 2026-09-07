@@ -7,19 +7,16 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # TanStack AI
 
-[`@tanstack/ai`](https://tanstack.com/ai) is a type-safe, provider-agnostic AI SDK for streaming chat, tool calling, and agents. SurrealDB Agent Memory adds long-term memory to a `chat()` call: recall relevant context before a generation, then store the exchange afterwards. There is no dedicated adapter. The [JavaScript SDK](../sdks/javascript-and-typescript.md) (`@surrealdb/spectron`) runs in any server handler that calls `chat()`.
+[`@tanstack/ai`](https://tanstack.com/ai) is a type-safe, provider-agnostic AI SDK for streaming chat, tool calling, and agents. SurrealDB Agent Memory adds long-term memory to a `chat()` call: recall relevant context before a generation, then store the exchange afterwards. There is no dedicated adapter. The [JavaScript SDK](../sdks/javascript-and-typescript.md) (`@surrealdb/memory`) runs in any server handler that calls `chat()`.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 > [!NOTE]
 > This is an integration guide. There is no first-party TanStack package; the code below wires the SurrealDB Agent Memory SDK into a `@tanstack/ai` handler, and you can adapt it to your server shape.
 
 ## Installation
 
 ```bash
-npm install @surrealdb/spectron @tanstack/ai @tanstack/ai-openai
+npm install @surrealdb/memory @tanstack/ai @tanstack/ai-openai
 ```
 
 SurrealDB Agent Memory holds an API key, so construct the client only on the server, never in a component or loader that ships to the browser.
@@ -31,10 +28,10 @@ Recall context, prepend it to the system prompt, generate, then store the turn:
 ```typescript
 // src/routes/api/chat.ts
 
-const spectron = new Spectron({
-    endpoint: process.env.SPECTRON_ENDPOINT!,
+const spectron = new AgentMemory({
+    endpoint: process.env.AGENT_MEMORY_ENDPOINT!,
     context: "acme-prod",
-    apiKey: process.env.SPECTRON_API_KEY!,
+    apiKey: process.env.AGENT_MEMORY_API_KEY!,
 });
 
 export async function POST(request: Request) {

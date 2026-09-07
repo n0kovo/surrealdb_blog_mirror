@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 Reflection is a reasoning operation over the memory store. Unlike retrieval, which surfaces existing facts that match a query, reflection asks SurrealDB Agent Memory to examine a set of memories and draw conclusions from them - to reason about patterns, identify trends, and synthesise insights that do not exist as explicit stored attributes.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 The result is a synthesised text insight backed by evidence citations. If `persist` is enabled, the synthesised insights are also stored as new experiential memory attributes, making them available to future queries.
 
 ## How it works
@@ -39,7 +36,7 @@ print(out.evidence)     # list of supporting memory hits
 
 ```typescript
 
-const memory = new Spectron({ context: "ctx_01jt4kx...", apiKey: "sk-..." });
+const memory = new AgentMemory({ context: "ctx_01jt4kx...", apiKey: "sk-..." });
 
 const out = await memory.reflect({
     query: "What patterns do you see in customer complaints this month?",

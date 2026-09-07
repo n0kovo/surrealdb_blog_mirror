@@ -10,9 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 This guide walks through building a customer support agent that uses SurrealDB Agent Memory for two distinct purposes: **authoritative knowledge** holds the authoritative product knowledge - FAQs, policies, and the product catalogue - and **experiential memory** holds per-customer memory accumulated over every interaction. The result is an agent that answers product questions correctly and remembers each customer's history without manual context injection.
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
-
 ## What you are building
 
 - A Context configured for extraction, holding customer, product, and ticket records.
@@ -137,14 +134,14 @@ Each customer conversation is a session scoped to that customer's `user_id`. The
 ### Initialise the client
 
 ```python
-from surrealdb import Spectron
+from surrealdb.memory import Memory
 
-memory = Spectron(context="support", api_key="sk-...")
+memory = Memory(context="support", api_key="sk-...")
 ```
 
 ```typescript
 
-const memory = new Spectron({ context: "support", apiKey: "sk-..." });
+const memory = new AgentMemory({ context: "support", apiKey: "sk-..." });
 ```
 
 ### Create a session per conversation
@@ -179,7 +176,7 @@ Use the context below to answer accurately.
     # 3. Call your LLM
     response = your_llm(system=system, user=user_message)
 
-    # 4. Record both turns so Spectron extracts memory from the exchange
+    # 4. Record both turns so Memory extracts memory from the exchange
     await memory.remember(user_message, session_id=session.id, role="user")
     await memory.remember(response, session_id=session.id, role="assistant")
 

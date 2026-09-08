@@ -41,7 +41,7 @@ const agent = new Agent({
     model: anthropic("claude-sonnet-4-5"),
     memory: new SpectronMemory({
         endpoint: process.env.AGENT_MEMORY_ENDPOINT!,
-        context: process.env.SPECTRON_CONTEXT!,
+        context: process.env.AGENT_MEMORY_CONTEXT!,
         apiKey: process.env.AGENT_MEMORY_API_KEY!,
     }),
 });
@@ -56,7 +56,7 @@ await store.init();
 
 const memory = new SpectronMemory({
     endpoint: process.env.AGENT_MEMORY_ENDPOINT!,
-    context: process.env.SPECTRON_CONTEXT!,
+    context: process.env.AGENT_MEMORY_CONTEXT!,
     apiKey: process.env.AGENT_MEMORY_API_KEY!,
     storage: store, // durable verbatim history; omit to keep it in-process
 });
@@ -70,7 +70,7 @@ Let an agent call SurrealDB Agent Memory explicitly to store, recall, forget, fe
 
 const client = new AgentMemory({
     endpoint: process.env.AGENT_MEMORY_ENDPOINT!,
-    context: process.env.SPECTRON_CONTEXT!,
+    context: process.env.AGENT_MEMORY_CONTEXT!,
     apiKey: process.env.AGENT_MEMORY_API_KEY!,
 });
 

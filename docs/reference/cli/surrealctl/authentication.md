@@ -60,8 +60,17 @@ Worth knowing when a corporate network is in the way:
 
 A token is supplied per invocation and is never persisted:
 
+**Bash**
+
 ```bash title="From the environment - the usual choice in CI"
 export SURREALCTL_TOKEN=sdbp_...
+surrealctl instance list
+```
+
+**PowerShell**
+
+```powershell title="From the environment - the usual choice in CI"
+$env:SURREALCTL_TOKEN = "sdbp_..."
 surrealctl instance list
 ```
 

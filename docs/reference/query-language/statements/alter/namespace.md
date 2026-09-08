@@ -45,7 +45,10 @@ A successful compaction will return `NONE`.
 
 ```surql
 ALTER NAMESPACE COMPACT;
--- NONE
+```
+
+```surql title="Output"
+NONE
 ```
 
 ## See also

@@ -74,8 +74,10 @@ value = "'surrealdb.com'"
 */
 
 parse::email::host("info@surrealdb.com");
+```
 
--- 'surrealdb.com'
+```surql title="Output"
+'surrealdb.com'
 ```
 
   
@@ -99,8 +101,10 @@ value = "'info'"
 */
 
 parse::email::user("info@surrealdb.com");
+```
 
--- "info"
+```surql title="Output"
+"info"
 ```
 
   
@@ -130,7 +134,7 @@ parse::url::domain("https://surrealdb.com:80/features?some=option#fragment");
 parse::url::domain("http://127.0.0.1/index.html");
 ```
 
-```surql title="Response"
+```surql title="Output"
 "surrealdb.com"
 
 NONE
@@ -156,8 +160,10 @@ value = "'fragment'"
 */
 
 parse::url::fragment("https://surrealdb.com:80/features?some=option#fragment");
+```
 
--- 'fragment'
+```surql title="Output"
+'fragment'
 ```
 
   
@@ -186,7 +192,7 @@ parse::url::host("https://surrealdb.com:80/features?some=option#fragment");
 parse::url::host("http://127.0.0.1/index.html");
 ```
 
-```surql title="Response"
+```surql title="Output"
 'surrealdb.com'
 
 '127.0.0.1'
@@ -212,8 +218,10 @@ value = "'/features'"
 */
 
 parse::url::path("https://surrealdb.com:80/features?some=option#fragment");
+```
 
--- '/features'
+```surql title="Output"
+'/features'
 ```
 
   
@@ -237,8 +245,10 @@ value = "80"
 */
 
 parse::url::port("https://surrealdb.com:80/features?some=option#fragment");
+```
 
--- 80
+```surql title="Output"
+80
 ```
 
   
@@ -262,8 +272,10 @@ value = "'https'"
 */
 
 parse::url::scheme("https://surrealdb.com:80/features?some=option#fragment");
+```
 
--- 'https'
+```surql title="Output"
+'https'
 ```
 
   
@@ -286,6 +298,8 @@ value = "'some=option'"
 */
 
 parse::url::query("https://surrealdb.com:80/features?some=option#fragment");
+```
 
--- 'some=option'
+```surql title="Output"
+'some=option'
 ```

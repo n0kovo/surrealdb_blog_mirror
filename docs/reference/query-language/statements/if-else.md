@@ -102,7 +102,7 @@ IF !type::is_datetime($badly_formatted_datetime) {
 };
 ```
 
-```surql title="Response"
+```surql title="Output"
 "An error occurred: Whoops, that isn't a real datetime"
 ```
 

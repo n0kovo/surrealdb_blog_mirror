@@ -58,3 +58,7 @@ How isolation, sessions, categories, and provenance fit together:
 - **[Integrations](../integrations/index.md)** - SDKs, MCP, framework adapters.
 - **[Cookbooks](../cookbooks/index.md)** - end-to-end patterns.
 - **[Reference](../reference/index.md)** - REST, management API, CLI, configuration, errors.
+
+## Sessions
+
+- [State and diffs](https://surrealdb.com/docs/agent-memory/sessions/state-and-diffs) - what a session holds, and how it changes between turns

@@ -43,7 +43,10 @@ A successful compaction will return `NONE`.
 
 ```surql
 ALTER DATABASE COMPACT;
--- NONE
+```
+
+```surql title="Output"
+NONE
 ```
 
 ## See also

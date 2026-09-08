@@ -29,7 +29,7 @@ Documents are ingested through the knowledge API. SurrealDB Agent Memory process
 
 client = httpx.Client(
     base_url="https://spectron.surrealdb.com/api/v1/my-context",
-    headers={"Authorization": f"Bearer {os.environ['SPECTRON_API_KEY']}"},
+    headers={"Authorization": f"Bearer {os.environ['AGENT_MEMORY_API_KEY']}"},
 )
 
 # Upload a product specification as a JSON document

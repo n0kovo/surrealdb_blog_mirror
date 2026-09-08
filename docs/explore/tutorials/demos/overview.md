@@ -12,3 +12,12 @@ This section collects **demos**: fairly complete examples you can **clone and ru
 Use demos when you want to explore behaviour, skim the code, or validate a setup quickly. For guided steps and explanations, use the [tutorials](../tutorials/overview.md) section instead.
 
 Pick a demo from the sidebar to get started.
+
+## Demos
+
+- [Blink note-taking app](blink.md) - a small app you can clone and run
+- [Kai G AI demos](kaig-ai-demos.md) - community AI demos built on SurrealDB
+
+## Full applications
+
+- [Surreal Deal Store](surreal-deal-store.md) - a complete storefront to clone and run

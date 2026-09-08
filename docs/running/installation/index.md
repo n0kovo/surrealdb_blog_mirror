@@ -28,3 +28,7 @@ You can install SurrealDB on the following operating systems:
 ## SurrealDB Cloud
 
 Running and maintaining your own database can be a time consuming task. That's why we offer [SurrealDB Cloud](../../manage/instances/index.md), a fully managed database service that allows you to focus on building your applications without worrying about the underlying infrastructure.
+
+## Nightly builds
+
+- [Nightly](nightly.md) - install an unreleased build to try changes early

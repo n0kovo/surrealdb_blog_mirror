@@ -30,10 +30,26 @@ spectron scopes create org/acme/user/alice
 
 ## CLI
 
+**Bash**
+
 ```bash
 export SPECTRON_URL=http://localhost:9090
 export SPECTRON_API_KEY=...
 export SPECTRON_CONTEXT_ID=dev
+
+spectron remember "Alice was promoted to CTO." --scope org/acme/user/alice
+
+spectron remember "The reveal happened on page 42." --scope org/acme --as-of 1886-01-01T00:00:00Z
+
+spectron remember --from-file ./transcript.jsonl --scope org/acme/user/alice --extract per_message
+```
+
+**PowerShell**
+
+```powershell
+$env:SPECTRON_URL = "http://localhost:9090"
+$env:SPECTRON_API_KEY = "..."
+$env:SPECTRON_CONTEXT_ID = "dev"
 
 spectron remember "Alice was promoted to CTO." --scope org/acme/user/alice
 

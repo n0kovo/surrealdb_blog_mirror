@@ -19,3 +19,7 @@ This section covers:
 - [Plugins](plugins/overview.md) - an overview of the plugin architecture, how plugins are discovered and loaded, and the types of extensions you can create.
 - [Guides](guides/creating-custom-modules.md) - step-by-step walkthroughs for creating custom modules, understanding the module architecture, and working with WASM plugins.
 - [Attribute reference](guides/surrealism-attribute-reference.md) - options for the `#[surrealism]` attribute used to mark functions as Surrealism functions, such as `writeable`, `comment`, `init`, and namespaced exports.
+
+## Guides
+
+- [Using WASM plugins](guides/using-wasm-plugins.md) - load and call a compiled plugin

@@ -134,7 +134,7 @@ DEFINE BUCKET my_bucket BACKEND "memory";
 INFO FOR DB;
 ```
 
-```surql title="Response"
+```surql title="Output"
 {
   accesses: {},
   analyzers: {},

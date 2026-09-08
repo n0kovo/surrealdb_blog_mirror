@@ -256,7 +256,7 @@ curl -X POST \
 	http://localhost:8000/signup
 ```
 
-```json title="Response"
+```json title="Output"
 {
 	"code":200,
 	"details":"Authentication succeeded",
@@ -274,7 +274,7 @@ curl -X POST \
 	http://localhost:8000/signin
 ```
 
-```json title="Response"
+```json title="Output"
 {
 	"code":200,
 	"details":"Authentication succeeded",

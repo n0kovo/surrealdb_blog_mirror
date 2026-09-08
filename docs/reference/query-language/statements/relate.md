@@ -142,7 +142,7 @@ CREATE person:aristotle, article:on_sleep_and_sleeplessness;
 RELATE person:aristotle->wrote->article:on_sleep_and_sleeplessness;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: wrote:bpbrj5kd7smu3ahlf55r,
@@ -158,7 +158,7 @@ There is no relationship information stored in either the `person` or `article` 
 SELECT * FROM person, article;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: person:aristotle
@@ -177,7 +177,7 @@ SELECT * FROM wrote;
 
 The structure `in -> id -> out` mirrors the record IDs from the `RELATE` statement, with the addition of the automatically generated ID for the `wrote` edge table.
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: wrote:bpbrj5kd7smu3ahlf55r,
@@ -199,7 +199,7 @@ SELECT id, ->wrote->article FROM person;
 RETURN person:aristotle->wrote->article;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -------- Query --------
 
 [
@@ -292,7 +292,7 @@ RELATE [cat:mr_meow, cat:mrs_meow]->parent_of->cat:kitten;
 
 However, the query works just fine. Instead of trying to create a single `parent_of` graph edge, it will create one for each record in the first array: one between `cat:mr_meow` and `cat:kitten`, and another between `cat:mrs_meow` and `cat:kitten`.
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: parent_of:uahudi4qr68k640fcjbg,
@@ -325,7 +325,7 @@ CREATE cat:kitten2;
 RELATE [cat:mr_meow, cat:mrs_meow]->parent_of->[cat:kitten, cat:kitten2];
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: parent_of:ysbab20nv5568ogba6ns,
@@ -383,7 +383,7 @@ RELATE person:l19zjikkw1p1h9o6ixrg->wrote->article:8nkk6uj4yprt49z7y3zm
 		metadata.location = "Tallinn";
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: wrote:rva8hentypdu8lcgwjmf,
@@ -405,7 +405,7 @@ UPDATE wrote SET
     metadata.description = record::tb(out) + ' written by ' + <string>in;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: wrote:k9d8ynbfxgb8jqjv2ob5,
@@ -445,7 +445,7 @@ RELATE person:l19zjikkw1p1h9o6ixrg->wrote->article:8nkk6uj4yprt49z7y3zm
     };
 ```
 
-```surql title="Response"
+```surql title="Output"
     {
         "id": "wrote:ctwsll49k37a7rmqz9rr",
         "in": "person:l19zjikkw1p1h9o6ixrg",
@@ -476,7 +476,7 @@ RELATE person:l19zjikkw1p1h9o6ixrg->wrote->article:8nkk6uj4yprt49z7y3zm
     SET time.written = $time;
 ```
 
-```surql title="Response"
+```surql title="Output"
 {
 	"id": "wrote:ctwsll49k37a7rmqz9rr",
 	"in": "person:l19zjikkw1p1h9o6ixrg",
@@ -503,7 +503,7 @@ skip-record-id-key = true
 RELATE ONLY person:l19zjikkw1p1h9o6ixrg->wrote->article:8nkk6uj4yprt49z7y3zm;
 ```
 
-```surql title="Response"
+```surql title="Output"
 {
 	id: wrote:k9f1rqn3oikolr1560u3,
 	in: person:l19zjikkw1p1h9o6ixrg,
@@ -635,7 +635,7 @@ skip-record-id-key = true
 RELATE person:tobie->bought->product:iphone;
 ```
 
-```surql title="Response"
+```surql title="Output"
 
 [
 	{
@@ -818,7 +818,7 @@ RELATE person:aristotle->wrote->[
 		article:on_sleep_and_sleeplessness,
 		article:on_dreams
 	]
-	// Written sometime around the year 330 BC
+	-- Written sometime around the year 330 BC
 	SET time_written = d"-0330-01-01";
 ```
 
@@ -1196,7 +1196,7 @@ In such a case, a query on the relationship makes it appear as if one city has a
 SELECT id, ->sister_of->city AS sister_cities FROM city;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: city:calgary,
@@ -1245,7 +1245,7 @@ SELECT id, array::complement(<->sister_of<->city, [id]) AS sister_cities
   FROM city;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: city:calgary,
@@ -1284,7 +1284,10 @@ With the index in place, a relation set from one record to the other now cannot 
 ```surql
 RELATE city:calgary->sister_of->city:daejeon; -- OK
 RELATE city:daejeon->sister_of->city:calgary;
--- "Database index `only_one_sister_city` already contains '[city:calgary, city:daejeon]', with record `sister_of:npab0uoxogmrvpwsvfoa`"
+```
+
+```surql title="Output"
+"Database index `only_one_sister_city` already contains '[city:calgary, city:daejeon]', with record `sister_of:npab0uoxogmrvpwsvfoa`"
 ```
 
 ### Refining the `in` and `out` fields of a relation
@@ -1395,7 +1398,7 @@ SELECT ->friends_with->cat->friends_with->cat AS friends_of_friends
 ```
 
 ```surql
-// Output without alias
+-- Output without alias
 {
 	"->friends_with": {
 		"->cat": {
@@ -1408,7 +1411,7 @@ SELECT ->friends_with->cat->friends_with->cat AS friends_of_friends
 	}
 }
 
-// Output with alias
+-- Output with alias
 {
 	friends_of_friends: [
 		cat:three
@@ -1568,7 +1571,7 @@ SELECT
  FROM person:one;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		dated_and_same_school: [
@@ -1656,7 +1659,7 @@ While it is possible to manually move three levels down this road network, it in
 SELECT ->to->city->to->city->to->city AS fourth_city FROM city:1;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		fourth_city: [
@@ -1678,7 +1681,7 @@ A traditional query to show the final road info from `city:1` to the city three 
 SELECT ->to->city->to->city->to.* AS third_journey FROM city:1;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		fourth_city: [
@@ -1708,7 +1711,7 @@ A range can be added inside the `{}` braces. The following query that uses a ran
 city:1.{1..20}->to->city;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	city:5
 ]
@@ -1724,7 +1727,7 @@ SELECT @.{1..5}.{
 } FROM city;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: city:1,
@@ -1824,7 +1827,7 @@ RELATE person:two->likes->person:one;
 person:one.{..}->likes->person;
 ```
 
-```surql title="Response"
+```surql title="Output"
 'Exceeded the idiom recursion limit of 256.'
 ```
 
@@ -1845,7 +1848,7 @@ RETURN [
 ];
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	[
 		person:1,
@@ -2133,11 +2136,11 @@ RELATE character:one->speaks_to:ulid()->character:two SET content = "Greetings, 
 RELATE character:one->speaks_to:ulid()->character:two SET content = "Can you please help me? My sheep have run amok.";
 
 SELECT
-	// Grab the latter part of the record ID, turn it into a datetime
+	-- Grab the latter part of the record ID, turn it into a datetime
     time::from_ulid(id.id()) AS at,
     content
 FROM
-    // ULID from 2025-04-25, well before today's date
+    -- ULID from 2025-04-25, well before today's date
     character:one->speaks_to:01JSNG0KZSY3HJ5QSZ7JSMQMGR..;
 ```
 

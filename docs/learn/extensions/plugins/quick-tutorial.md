@@ -175,14 +175,34 @@ The Surrealism file is ready to be used. All that is left now is to start a data
 
 Now it's time to [start the database](../../../reference/cli/surrealdb-cli/commands/start.md) with the `surreal start` command and these two env vars.
 
+**Bash**
+
 ```bash
 SURREAL_CAPS_ALLOW_EXPERIMENTAL=files,surrealism SURREAL_BUCKET_FOLDER_ALLOWLIST="/Users/my_name/my_rust_code/" surreal start --user root --pass secret
 ```
 
+**PowerShell**
+
+```powershell
+$env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "files,surrealism"
+$env:SURREAL_BUCKET_FOLDER_ALLOWLIST = "C:\Users\my_name\my_rust_code"
+surreal start --user root --pass secret
+```
+
 You can then connect through [SurrealDB Studio](../../../explore/studio/index.md) or the CLI with the [surreal sql](../../../reference/cli/surrealdb-cli/commands/sql.md) command:
+
+**Bash**
 
 ```bash
 SURREAL_CAPS_ALLOW_EXPERIMENTAL=files,surrealism SURREAL_BUCKET_FOLDER_ALLOWLIST="/Users/my_name/my_rust_code/" surreal sql --user root --pass secret
+```
+
+**PowerShell**
+
+```powershell
+$env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "files,surrealism"
+$env:SURREAL_BUCKET_FOLDER_ALLOWLIST = "C:\Users\my_name\my_rust_code"
+surreal sql --user root --pass secret
 ```
 
 We're almost there! Only two statements left and we can start accessing these functions.
@@ -219,20 +239,20 @@ And now the magic begins! Let's give the `parse_number()` function a try, now av
 
 ```surql
 mod::test::parse_number("10");
--- 10
+//- 10
 mod::test::parse_number("Hi I'm number");
--- 'Thrown error: WASM function returned error: invalid digit found in string'
+//- 'Thrown error: WASM function returned error: invalid digit found in string'
 ```
 
 Next, we can use `random_user()` to create some random users.
 
 ```surql
 CREATE user CONTENT mod::test::random_user();
--- [{ age: 18, first_name: 'Thomas', id: user:hr8ohmn36zrpv3zthhnf, last_name: 'Meier', middle_name: 'Ninon' }]
+//- [{ age: 18, first_name: 'Thomas', id: user:hr8ohmn36zrpv3zthhnf, last_name: 'Meier', middle_name: 'Ninon' }]
 CREATE user CONTENT mod::test::random_user();
--- [{ age: 13, first_name: 'Verda', id: user:zg0ucdjizdp71fzq9syc, last_name: 'Schuster', middle_name: 'Clarisse' }]
+//- [{ age: 13, first_name: 'Verda', id: user:zg0ucdjizdp71fzq9syc, last_name: 'Schuster', middle_name: 'Clarisse' }]
 CREATE user CONTENT mod::test::random_user();
--- [{ age: 45, first_name: 'Zelda', id: user:rulp2bf82twrh94ifhsh, last_name: 'Berger', middle_name: 'Noah' }]
+//- [{ age: 45, first_name: 'Zelda', id: user:rulp2bf82twrh94ifhsh, last_name: 'Berger', middle_name: 'Noah' }]
 ```
 
 That leaves us with one function left to try out, the `can_drive()` function.

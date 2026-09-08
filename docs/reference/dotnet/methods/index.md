@@ -37,7 +37,15 @@ This page lists out the methods that are available in the SurrealDB class.
             <td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/unset"> `db.Unset(key)`</a></td>
             <td scope="row" data-label="Description">Removes a parameter for this connection</td>
         </tr>
-	</tbody>
+			<tr>
+			<td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/health"> ` db.Health() `</a></td>
+			<td scope="row" data-label="Description">Checks the status of the database server and storage engine</td>
+		</tr>
+		<tr>
+			<td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/version"> ` db.Version() `</a></td>
+			<td scope="row" data-label="Description">Retrieves the version of the SurrealDB instance</td>
+		</tr>
+</tbody>
 </table>
 
 ## Query methods
@@ -82,7 +90,11 @@ This page lists out the methods that are available in the SurrealDB class.
             <td scope="row" data-label="Method"><a href="/docs/reference/dotnet/core/streaming#kill"> `db.Kill(queryUuid)`</a></td>
             <td scope="row" data-label="Description">Kill a running live query</td>
         </tr>
-    </tbody>
+    		<tr>
+			<td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/run"> ` db.Run(name, version, args) `</a></td>
+			<td scope="row" data-label="Description">Runs a SurrealQL function</td>
+		</tr>
+</tbody>
 </table>
 
 ## Mutation methods
@@ -123,7 +135,71 @@ This page lists out the methods that are available in the SurrealDB class.
             <td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/delete"> `db.Delete(thing)`</a></td>
             <td scope="row" data-label="Description">Deletes all records, or a specific record</td>
         </tr>
-    </tbody>
+    		<tr>
+			<td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/relate"> ` db.Relate(table, @in, @out, data) `</a></td>
+			<td scope="row" data-label="Description">Creates a graph relation between two records</td>
+		</tr>
+		<tr>
+			<td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/insert-relation"> ` db.InsertRelation&lt;T&gt;(table, data) `</a></td>
+			<td scope="row" data-label="Description">Inserts one or more graph relations into a table</td>
+		</tr>
+</tbody>
+</table>
+
+## Live query methods
+
+A live query streams changes as they happen. Start one from a statement or a table, listen to the stream it returns, then stop it with the query's id.
+
+<table>
+	<thead>
+		<tr>
+			<th scope="col">Method</th>
+			<th scope="col">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/live-query"> ` db.LiveQuery&lt;T&gt;(sql) `</a></td>
+			<td scope="row" data-label="Description">Initiates a live query from a SurrealQL statement</td>
+		</tr>
+		<tr>
+			<td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/live-raw-query"> ` db.LiveRawQuery&lt;T&gt;(sql, params) `</a></td>
+			<td scope="row" data-label="Description">Initiates a live query from a raw SurrealQL statement with parameters</td>
+		</tr>
+		<tr>
+			<td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/live-table"> ` db.LiveTable&lt;T&gt;(table, diff) `</a></td>
+			<td scope="row" data-label="Description">Initiates a live query on a whole table</td>
+		</tr>
+		<tr>
+			<td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/listen_live"> ` db.ListenLive&lt;T&gt;(queryUuid) `</a></td>
+			<td scope="row" data-label="Description">Listens for changes on a live query that is already running</td>
+		</tr>
+		<tr>
+			<td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/kill"> ` db.Kill(queryUuid) `</a></td>
+			<td scope="row" data-label="Description">Stops a running live query</td>
+		</tr>
+	</tbody>
+</table>
+
+## Data management methods
+
+<table>
+	<thead>
+		<tr>
+			<th scope="col">Method</th>
+			<th scope="col">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/export"> ` db.Export(options) `</a></td>
+			<td scope="row" data-label="Description">Exports the database as a SurrealQL script</td>
+		</tr>
+		<tr>
+			<td scope="row" data-label="Method"><a href="/docs/reference/dotnet/methods/import"> ` db.Import(string) `</a></td>
+			<td scope="row" data-label="Description">Imports a SurrealQL script into the database</td>
+		</tr>
+	</tbody>
 </table>
 
 ## Authentication methods

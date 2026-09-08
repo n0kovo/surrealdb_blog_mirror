@@ -41,7 +41,10 @@ value = "false"
 */
 
 not("I speak the truth");
--- false
+```
+
+```surql title="Output"
+false
 ```
 
 A value is not [truthy](../../language-primitives/data-types/values.md#values-and-truthiness) if it is NONE, NULL, false, empty, or has a value of 0. As such, all the following return `true`.

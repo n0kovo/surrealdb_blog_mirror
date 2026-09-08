@@ -254,3 +254,8 @@ What is happening here is that we are feeding the columns from the table `house_
 ```
 
 Having covered everything that we need to get up and running with SurrealML, we should explore some other concepts in more depth to get the most out of SurrealML and be able to troubleshoot problems.
+
+## In this section
+
+- [Computation](surrealml/computation.md) - where a model runs, and what the database does with it
+- [Storage](surrealml/storage.md) - how a trained model is stored and versioned

@@ -107,7 +107,7 @@ value = "NONE"
 */
 
 DEFINE FUNCTION fn::do_stuff() -> NONE {
-  // Code that should return nothing
+  -- Code that should return nothing
 };
 
 DEFINE FIELD middle_name

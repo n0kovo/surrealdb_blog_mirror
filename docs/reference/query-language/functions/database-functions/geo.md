@@ -83,7 +83,7 @@ geo::area({
 });
 ```
 
-```surql title="Response"
+```surql title="Output"
 253317731850.3478f
 ```
 
@@ -97,8 +97,10 @@ error = "Incorrect arguments for function geo::area(). Argument 1 was the wrong 
 
 */
 geo::area(12345);
+```
 
--- 'Incorrect arguments for function geo::area(). Argument 1 was the wrong type. Expected `geometry` but found `12345`'
+```surql title="Output"
+'Incorrect arguments for function geo::area(). Argument 1 was the wrong type. Expected `geometry` but found `12345`'
 ```
 
   
@@ -139,7 +141,7 @@ RETURN geo::bearing($paris, $le_puy_en_velay);
 RETURN geo::bearing($le_puy_en_velay, $paris);
 ```
 
-```surql title="Response"
+```surql title="Output"
 -- Slightly east of directly south
 164.18154786094604f
 -- Slightly west of directly north
@@ -179,7 +181,7 @@ geo::centroid({
 
 The return value is a mountainous region somewhere in Austria:
 
-```surql title="Response"
+```surql title="Output"
 (13.483896437936192, 47.07117241195589)
 ```
 
@@ -215,7 +217,7 @@ let $harare = (30.463880214538577, -17.865161568822085);
 RETURN geo::distance($london, $harare);
 ```
 
-```surql title="Response"
+```surql title="Output"
 8268604.251890703f
 ```
 
@@ -242,7 +244,7 @@ value = "(51.50986494496465, -0.11809204705059528)"
 geo::hash::decode("mpuxk4s24f51");
 ```
 
-```surql title="Response"
+```surql title="Output"
 (51.50986494496465, -0.11809204705059528)
 ```
 
@@ -272,8 +274,10 @@ value = "'mpuxk4s24f51'"
 
 */
 geo::hash::encode( (51.509865, -0.118092) );
+```
 
--- 'mpuxk4s24f51'
+```surql title="Output"
+'mpuxk4s24f51'
 ```
 
 The following example shows this function with two arguments, and its output, when used in a select statement:
@@ -287,8 +291,10 @@ value = "'mpuxk'"
 */
 
 geo::hash::encode( (51.509865, -0.118092), 5 );
+```
 
--- 'mpuxk'
+```surql title="Output"
+'mpuxk'
 ```
 
   

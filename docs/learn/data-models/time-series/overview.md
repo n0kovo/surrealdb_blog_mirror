@@ -46,3 +46,7 @@ This section helps you understand how to think like a time series database user,
 - [Time buckets and windowing](time-buckets-and-windowing.md): bucketing, retention, and window-style thinking.
 - [Aggregation queries](aggregation-queries.md): pre-computed table views, live queries, drop tables, events, and how SurrealDB compares to specialised TSDBs.
 - [IoT and telemetry patterns](iot-and-telemetry-patterns.md): sensor readings, complex record IDs, and linking metadata through record IDs.
+
+## Going further
+
+- [Using SurrealDB as a time series database](using-as-time-series-database.md) - the full pattern end to end

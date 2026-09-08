@@ -20,10 +20,20 @@ pip install llama-index
 pip install --pre surrealdb
 ```
 
+**Bash**
+
 ```bash
-export SPECTRON_ENDPOINT="https://api.spectron.example"
-export SPECTRON_CONTEXT="acme-prod"
-export SPECTRON_API_KEY="sk-spec-..."
+export AGENT_MEMORY_ENDPOINT="https://api.spectron.example"
+export AGENT_MEMORY_CONTEXT="acme-prod"
+export AGENT_MEMORY_API_KEY="sk-spec-..."
+```
+
+**PowerShell**
+
+```powershell
+$env:AGENT_MEMORY_ENDPOINT = "https://api.spectron.example"
+$env:AGENT_MEMORY_CONTEXT = "acme-prod"
+$env:AGENT_MEMORY_API_KEY = "sk-spec-..."
 ```
 
 ## Memory as tools
@@ -37,9 +47,9 @@ from llama_index.llms.openai import OpenAI
 from surrealdb.memory import Memory
 
 memory = Memory(
-    endpoint=os.environ["SPECTRON_ENDPOINT"],
-    context=os.environ["SPECTRON_CONTEXT"],
-    api_key=os.environ["SPECTRON_API_KEY"],
+    endpoint=os.environ["AGENT_MEMORY_ENDPOINT"],
+    context=os.environ["AGENT_MEMORY_CONTEXT"],
+    api_key=os.environ["AGENT_MEMORY_API_KEY"],
 )
 scope = ["org/acme/user/alice"]
 

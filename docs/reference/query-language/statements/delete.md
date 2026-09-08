@@ -116,7 +116,10 @@ value = "NONE"
 
 CREATE ONLY person:tobie;
 DELETE ONLY person:tobie;
--- NONE
+```
+
+```surql title="Output"
+NONE
 ```
 
 A record that is already gone also returns `NONE`, so the statement is safe to repeat.
@@ -138,7 +141,10 @@ value = "NONE"
 CREATE ONLY person:tobie;
 DELETE ONLY person:tobie;
 DELETE ONLY person:tobie;
--- NONE
+```
+
+```surql title="Output"
+NONE
 ```
 
   
@@ -169,7 +175,10 @@ value = "{ id: person:tobie }"
 
 CREATE ONLY person:tobie;
 DELETE ONLY person:tobie RETURN BEFORE;
--- { id: person:tobie }
+```
+
+```surql title="Output"
+{ id: person:tobie }
 ```
 
 As `ONLY` checks the output and not the target, it raises an error when a `RETURN` clause yields more than one record.

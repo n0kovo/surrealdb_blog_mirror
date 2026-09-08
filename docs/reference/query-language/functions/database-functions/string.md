@@ -265,8 +265,10 @@ The following example shows this function, and its output:
 
 ```surql
 string::capitalize("how to cook for forty humans");
+```
 
--- 'How To Cook For Forty Humans'
+```surql title="Output"
+'How To Cook For Forty Humans'
 ```
 
   
@@ -289,25 +291,30 @@ value = "'this is a test'"
 */
 
 string::concat('this', ' ', 'is', ' ', 'a', ' ', 'test');
+```
 
--- 'this is a test'
+```surql title="Output"
+'this is a test'
 ```
 
 Any values received that are not a string will be stringified before concatenation.
 
 ```surql
 string::concat(true, [], false);
--- ['true[]false']
+```
+
+```surql title="Output"
+['true[]false']
 ```
 
 Note that the stringified inputs are based on their actual computed values, and not the input tokens themselves. Even an expression can be 
 
 ```surql
 string::concat(not, actual, values);
--- ['NONENONENONE']
+//- ['NONENONENONE']
 
 string::concat(CREATE ONLY person:aeon RETURN VALUE id, ' is ', 'cool!');
--- ['person:aeon is cool!']
+//- ['person:aeon is cool!']
 ```
 
   
@@ -330,8 +337,10 @@ value = "true"
 */
 
 string::contains('abcdefg', 'cde');
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -357,8 +366,10 @@ value = "true"
 */
 
 string::ends_with('some test', 'test');
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -384,8 +395,10 @@ value = "'a, list, of, items'"
 */
 
 string::join(', ', 'a', 'list', 'of', 'items');
+```
 
--- "a, list, of, items"
+```surql title="Output"
+"a, list, of, items"
 ```
 
   
@@ -409,8 +422,10 @@ value = "14"
 */
 
 string::len('this is a test');
+```
 
--- 14
+```surql title="Output"
+14
 ```
 
   
@@ -434,8 +449,10 @@ value = "'this is a test'"
 */
 
 string::lowercase('THIS IS A TEST');
+```
 
--- 'this is a test'
+```surql title="Output"
+'this is a test'
 ```
 
   
@@ -462,8 +479,10 @@ value = "[true, true]"
   string::matches("grey", "gr(a|e)y"), 
   string::matches("gray", "gr(a|e)y")
 ];
+```
 
--- [true, true]
+```surql title="Output"
+[true, true]
 ```
 
 The second argument can be either a string or a [regex](../../language-primitives/data-types/regex.md).
@@ -474,13 +493,13 @@ LET $string = "gr(a|e)y";
 LET $regex = <regex>"gr(a|e)y";
 
 [type::of($string), type::of($regex)];
--- ['string', 'regex']
+//- ['string', 'regex']
 
 [
   string::matches($input, $string),
   string::matches($input, $regex),
 ];
--- [true, true]
+//- [true, true]
 ```
 
   
@@ -504,8 +523,10 @@ value = "'testtesttest'"
 */
 
 string::repeat('test', 3);
+```
 
--- 'testtesttest'
+```surql title="Output"
+'testtesttest'
 ```
 
   
@@ -539,8 +560,10 @@ value = "'this is awesome'"
 */
 
 string::replace('this is a test', 'a test', 'awesome');
+```
 
--- 'this is awesome'
+```surql title="Output"
+'this is awesome'
 ```
 
 As [`regexes`](../../language-primitives/data-types/regex.md) are their own data type, the second argument can also be a regex instead of a string.
@@ -580,8 +603,10 @@ value = "'tset a si siht'"
 */
 
 string::reverse('this is a test');
+```
 
--- 'tset a si siht'
+```surql title="Output"
+'tset a si siht'
 ```
 
   
@@ -622,8 +647,10 @@ value = "'surrealdb-cloud-has-launched-ai_native_database-awesome'"
 */
 
 string::slug('SurrealDB Cloud has launched!!! #ai_native_database #awesome');
+```
 
--- 'surrealdb-cloud-has-launched-ai_native_database-awesome'
+```surql title="Output"
+'surrealdb-cloud-has-launched-ai_native_database-awesome'
 ```
 
   
@@ -647,8 +674,10 @@ value = "['this', 'is', 'a', 'list']"
 */
 
 string::split('this, is, a, list', ', ');
+```
 
--- ['this', 'is', 'a', 'list']
+```surql title="Output"
+['this', 'is', 'a', 'list']
 ```
 
   
@@ -675,8 +704,10 @@ value = "true"
 */
 
 string::starts_with('some test', 'some');
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -700,8 +731,10 @@ value = "'this is a test'"
 */
 
 string::trim('    this is a test    ');
+```
 
--- 'this is a test'
+```surql title="Output"
+'this is a test'
 ```
 
   
@@ -725,8 +758,10 @@ value = "'THIS IS A TEST'"
 */
 
 string::uppercase('this is a test');
+```
 
--- 'THIS IS A TEST'
+```surql title="Output"
+'THIS IS A TEST'
 ```
 
 ## `string::words`
@@ -748,8 +783,10 @@ value = "['this', 'is', 'a', 'test']"
 */
 
 string::words('this is a test');
+```
 
--- ['this', 'is', 'a', 'test']
+```surql title="Output"
+['this', 'is', 'a', 'test']
 ```
 
 ## `string::distance::damerau_levenshtein`
@@ -800,14 +837,14 @@ LET $close     = "In a hole in the GROUND there lived a Hobbit";
 LET $different = "A narrow passage holds four hidden treasures";
 LET $short     = "Hi I'm Brian";
 
--- Returns 0
 string::distance::damerau_levenshtein($first, $same);
--- Returns 7
+//- 0
 string::distance::damerau_levenshtein($first, $close);
--- Returns 34
+//- 7
 string::distance::damerau_levenshtein($first, $different);
--- Returns 38
+//- 34
 string::distance::damerau_levenshtein($first, $short);
+//- 38
 ```
 
 ## `string::distance::normalized_damerau_levenshtein`
@@ -858,14 +895,14 @@ LET $close     = "In a hole in the GROUND there lived a Hobbit";
 LET $different = "A narrow passage holds four hidden treasures";
 LET $short     = "Hi I'm Brian";
 
--- Returns 1f
 string::distance::normalized_damerau_levenshtein($first, $same);
--- Returns 0.8409090909090909f
+//- 1f
 string::distance::normalized_damerau_levenshtein($first, $close);
--- Returns 0.2272727272727273f
+//- 0.8409090909090909f
 string::distance::normalized_damerau_levenshtein($first, $different);
--- Returns 0.13636363636363635f
+//- 0.2272727272727273f
 string::distance::normalized_damerau_levenshtein($first, $short);
+//- 0.13636363636363635f
 ```
 
 ## `string::distance::hamming`
@@ -916,14 +953,14 @@ LET $close     = "In a hole in the GROUND there lived a Hobbit";
 LET $different = "A narrow passage holds four hidden treasures";
 LET $short     = "Hi I'm Brian";
 
--- Returns 0
 string::distance::hamming($first, $same);
--- Returns 7
+//- 0
 string::distance::hamming($first, $close);
--- Returns 40
+//- 7
 string::distance::hamming($first, $different);
--- Error: strings must be of equal length
+//- 40
 string::distance::hamming($first, $short);
+//- Error: strings must be of equal length
 ```
 
 ## `string::distance::levenshtein`
@@ -974,14 +1011,14 @@ LET $close     = "In a hole in the GROUND there lived a Hobbit";
 LET $different = "A narrow passage holds four hidden treasures";
 LET $short     = "Hi I'm Brian";
 
--- Returns 0
 string::distance::levenshtein($first, $same);
--- Returns 7
+//- 0
 string::distance::levenshtein($first, $close);
--- Returns 35
+//- 7
 string::distance::levenshtein($first, $different);
--- Returns 38
+//- 35
 string::distance::levenshtein($first, $short);
+//- 38
 ```
 
 ## `string::distance::normalized_levenshtein`
@@ -1032,14 +1069,14 @@ LET $close     = "In a hole in the GROUND there lived a Hobbit";
 LET $different = "A narrow passage holds four hidden treasures";
 LET $short     = "Hi I'm Brian";
 
--- Returns 1
 string::distance::normalized_levenshtein($first, $same);
--- Returns 0.8409090909090909f
+//- 1
 string::distance::normalized_levenshtein($first, $close);
--- Returns 0.20454545454545459f
+//- 0.8409090909090909f
 string::distance::normalized_levenshtein($first, $different);
--- Returns 0.13636363636363635f
+//- 0.20454545454545459f
 string::distance::normalized_levenshtein($first, $short);
+//- 0.13636363636363635f
 ```
 
 ## `string::distance::osa`
@@ -1093,14 +1130,14 @@ LET $close     = "In a hole in the GROUND there lived a Hobbit";
 LET $different = "A narrow passage holds four hidden treasures";
 LET $short     = "Hi I'm Brian";
 
--- Returns 0
 string::distance::osa($first, $same);
--- Returns 7
+//- 0
 string::distance::osa($first, $close);
--- Returns 34
+//- 7
 string::distance::osa($first, $different);
--- Returns 38
+//- 34
 string::distance::osa($first, $short);
+//- 38
 ```
 
 ## `string::html::encode`
@@ -1121,8 +1158,10 @@ value = "'&lt;h1&gt;Safe&#32;Title&lt;&#47;h1&gt;&lt;script&gt;alert(&apos;XSS&a
 */
 
 string::html::encode("<h1>Safe Title</h1><script>alert('XSS')</script><p>Safe paragraph. Not safe <span onload='logout()'>event</span>.</p>");
+```
 
--- '&lt;h1&gt;Safe&#32;Title&lt;&#47;h1&gt;&lt;script&gt;alert(&apos;XSS&apos;)&lt;&#47;script&gt;&lt;p&gt;Safe&#32;paragraph.&#32;Not&#32;safe&#32;&lt;span&#32;onload&#61;&apos;logout()&apos;&gt;event&lt;&#47;span&gt;.&lt;&#47;p&gt;'
+```surql title="Output"
+'&lt;h1&gt;Safe&#32;Title&lt;&#47;h1&gt;&lt;script&gt;alert(&apos;XSS&apos;)&lt;&#47;script&gt;&lt;p&gt;Safe&#32;paragraph.&#32;Not&#32;safe&#32;&lt;span&#32;onload&#61;&apos;logout()&apos;&gt;event&lt;&#47;span&gt;.&lt;&#47;p&gt;'
 ```
 
   
@@ -1145,8 +1184,10 @@ value = "'<h1>Safe Title</h1><p>Safe paragraph. Not safe <span>event</span>.</p>
 */
 
 string::html::sanitize("<h1>Safe Title</h1><script>alert('XSS')</script><p>Safe paragraph. Not safe <span onload='logout()'>event</span>.</p>");
+```
 
--- '<h1>Safe Title</h1><p>Safe paragraph. Not safe <span>event</span>.</p>'
+```surql title="Output"
+'<h1>Safe Title</h1><p>Safe paragraph. Not safe <span>event</span>.</p>'
 ```
   
 
@@ -1172,8 +1213,10 @@ value = "true"
 */
 
 string::is_alphanum("ABC123");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1199,8 +1242,10 @@ value = "true"
 */
 
 string::is_alpha("ABCDEF");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1266,10 +1311,10 @@ value = "false"
 */
 
 string::is_datetime("2015-09-05 23:56:04", "%Y-%m-%d %H:%M:%S");
--- true
+//- true
 
 string::is_datetime("1970-01-01", "%Y-%m-%d %H:%M:%S");
--- false
+//- false
 ```
 
 This can be useful when validating datetimes obtained from other sources that do not use the [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) format.
@@ -1285,7 +1330,7 @@ value = "true"
 string::is_datetime("5sep2024pm012345.6789", "%d%b%Y%p%I%M%S%.f");
 ```
 
-```surql title="Response"
+```surql title="Output"
 true
 ```
 
@@ -1300,7 +1345,7 @@ value = "false"
 string::is_datetime("23:56:00 2015-09-05", "%Y-%m-%d %H:%M");
 ```
 
-```surql title="Response"
+```surql title="Output"
 false
 ```
 
@@ -1329,8 +1374,10 @@ value = "true"
 */
 
 string::is_domain("surrealdb.com");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1357,8 +1404,10 @@ value = "true"
 */
 
 string::is_email("info@surrealdb.com");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1385,8 +1434,10 @@ value = "true"
 */
 
 string::is_hexadecimal("ff009e");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1413,8 +1464,10 @@ value = "true"
 */
 
 string::is_ip("192.168.0.1");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1441,8 +1494,10 @@ value = "true"
 */
 
 string::is_ipv4("192.168.0.1");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1469,8 +1524,10 @@ value = "true"
 */
 
 string::is_ipv6("2001:0db8:85a3:0000:0000:8a2e:0370:7334");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1497,8 +1554,10 @@ value = "true"
 */
 
 string::is_latitude("-0.118092");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1525,8 +1584,10 @@ value = "true"
 */
 
 string::is_longitude("51.509865");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1552,8 +1613,10 @@ value = "true"
 */
 
 string::is_numeric("1484091748");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1580,8 +1643,10 @@ value = "true"
 */
 
 string::is_semver("1.0.0");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1608,8 +1673,10 @@ value = "true"
 */
 
 string::is_ulid("01JCJB3TPQ50XTG32WM088NKJD");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1636,8 +1703,10 @@ value = "true"
 */
 
 string::is_url("https://surrealdb.com");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1706,8 +1775,10 @@ value = "true"
 */
 
 string::is_uuid("018a6680-bef9-701b-9025-e1754f296a0f");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1739,11 +1810,11 @@ value = "1"
 */
 
 string::semver::compare("1.0.0", "1.3.5");
--- Returns -1
+//- -1
 string::semver::compare("1.0.0", "1.0.0");
--- Returns 0
+//- 0
 string::semver::compare("3.0.0-beta.4", "2.6.0");
--- Returns 1
+//- 1
 ```
 
   
@@ -1767,8 +1838,10 @@ value = "3"
 */
 
 string::semver::major("3.2.6");
+```
 
--- 3
+```surql title="Output"
+3
 ```
 
   
@@ -1792,8 +1865,10 @@ value = "2"
 */
 
 string::semver::minor("3.2.6");
+```
 
--- 2
+```surql title="Output"
+2
 ```
 
   
@@ -1817,8 +1892,10 @@ value = "6"
 */
 
 string::semver::patch("3.2.6");
+```
 
--- 6
+```surql title="Output"
+6
 ```
 
   
@@ -1842,8 +1919,10 @@ value = "'2.0.0'"
 */
 
 string::semver::inc::major("1.2.3");
+```
 
--- '2.0.0'
+```surql title="Output"
+'2.0.0'
 ```
 
   
@@ -1867,8 +1946,10 @@ value = "'1.3.0'"
 */
 
 string::semver::inc::minor("1.2.3");
+```
 
--- '1.3.0'
+```surql title="Output"
+'1.3.0'
 ```
 
   
@@ -1892,8 +1973,10 @@ value = "'1.2.4'"
 */
 
 string::semver::inc::patch("1.2.3");
+```
 
--- '1.2.4'
+```surql title="Output"
+'1.2.4'
 ```
 
   
@@ -1917,8 +2000,10 @@ value = "'9.2.3'"
 */
 
 string::semver::set::major("1.2.3", 9);
+```
 
--- '9.2.3'
+```surql title="Output"
+'9.2.3'
 ```
 
   
@@ -1941,8 +2026,10 @@ value = "'1.9.3'"
 */
 
 string::semver::set::minor("1.2.3", 9);
+```
 
--- '1.9.3'
+```surql title="Output"
+'1.9.3'
 ```
 
   
@@ -1966,8 +2053,10 @@ value = "'1.2.9'"
 */
 
 string::semver::set::patch("1.2.3", 9);
+```
 
--- '1.2.9'
+```surql title="Output"
+'1.2.9'
 ```
 
   
@@ -2060,7 +2149,7 @@ FOR $string IN $strings {
 SELECT of, score FROM comparison ORDER BY score DESC;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		of: 'SurrealDB	surrealdb',
@@ -2137,14 +2226,14 @@ LET $close     = "In a hole in the GROUND there lived a Hobbit";
 LET $different = "A narrow passage holds four hidden treasures";
 LET $short     = "Hi I'm Brian";
 
--- Returns 1
 string::similarity::jaro($first, $same);
--- Returns 0.8218673218673219f
+//- 1
 string::similarity::jaro($first, $close);
--- Returns 0.6266233766233765f
+//- 0.8218673218673219f
 string::similarity::jaro($first, $different);
--- Returns 0.4379509379509379f
+//- 0.6266233766233765f
 string::similarity::jaro($first, $short);
+//- 0.4379509379509379f
 ```
 
 ## `string::similarity::jaro_winkler`
@@ -2195,14 +2284,14 @@ LET $close     = "In a hole in the GROUND there lived a Hobbit";
 LET $different = "A narrow passage holds four hidden treasures";
 LET $short     = "Hi I'm Brian";
 
--- Returns 0
 string::similarity::jaro_winkler($first, $same);
--- Returns 0.8931203931203932f
+//- 1f
 string::similarity::jaro_winkler($first, $close);
--- Returns 0.6266233766233765f
+//- 0.8931203931203932f
 string::similarity::jaro_winkler($first, $different);
--- Returns 0.4379509379509379f
+//- 0.6266233766233765f
 string::similarity::jaro_winkler($first, $short);
+//- 0.4379509379509379f
 ```
 
 ## Method chaining
@@ -2227,7 +2316,7 @@ string::is_alphanum("MyStrongPassword123");
 "MyStrongPassword123".is_alphanum();
 ```
 
-```surql title="Response"
+```surql title="Output"
 true
 ```
 
@@ -2258,6 +2347,6 @@ string::concat(
   .concat("!!!!");
 ```
 
-```surql title="Response"
+```surql title="Output"
 "I'LL SEND YOU A CHEQUE FOR THE CATALOGUE!!!!"
 ```

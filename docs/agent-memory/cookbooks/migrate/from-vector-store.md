@@ -63,7 +63,7 @@ Ingest your exported documents into SurrealDB Agent Memory's authoritative knowl
 
 client = httpx.Client(
     base_url="https://spectron.surrealdb.com/api/v1/my-context",
-    headers={"Authorization": f"Bearer {os.environ['SPECTRON_API_KEY']}"},
+    headers={"Authorization": f"Bearer {os.environ['AGENT_MEMORY_API_KEY']}"},
 )
 
 for doc in documents:

@@ -33,7 +33,7 @@ FROM
     CREATE person SET name = "Billy";
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: person:7j4t4higwb141v1v2xum,

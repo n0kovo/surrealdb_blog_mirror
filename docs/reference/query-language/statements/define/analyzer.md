@@ -251,15 +251,19 @@ This is particularly useful for handling irregular verbs and other terms that th
 
 A `DEFINE ANALYZER` statement with `mapper('<path>')` opens the dictionary file on the **host filesystem** when the analyzer is defined. Access is gated by [`SURREAL_FILE_ALLOWLIST`](../../../cli/surrealdb-cli/environment-variables.md#file-config), without which no paths are permitted. Set one or more directories before using `mapper()`:
 
+**Bash**
+
 ```bash
-# Unix - colon-separated directories
+# Colon-separated directories
 SURREAL_FILE_ALLOWLIST="/var/surreal/dicts:/opt/wordlists" surreal start --user root --pass secret
 ```
 
+**PowerShell**
+
 ```powershell
-# Windows - semicolon-separated directories
+# Semicolon-separated directories
 $env:SURREAL_FILE_ALLOWLIST = "C:\dicts;D:\wordlists"
-surreal start --user root --pass secret memory
+surreal start --user root --pass secret
 ```
 
 The path in `mapper()` must resolve to a file **under** an allowed directory. Paths outside the allowlist are rejected at `DEFINE ANALYZER` time.

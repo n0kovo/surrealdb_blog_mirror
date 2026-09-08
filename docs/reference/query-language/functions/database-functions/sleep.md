@@ -52,7 +52,7 @@ SELECT *,
 FROM person;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		_: NONE,

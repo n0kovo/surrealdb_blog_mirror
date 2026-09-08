@@ -30,3 +30,7 @@ Most self-hosted workloads use **RocksDB** on disk - one SurrealDB process per d
 - [Upgrades and patching](upgrades-and-patching.md) - version upgrades, the `surreal fix` migration tool, and compatibility notes.
 
 Once an instance is running, the [Observability](../observability/index.md) section covers the built-in metrics, audit logs and slow-query logs you can scrape over Prometheus or push over OTLP for production monitoring.
+
+## Enterprise Edition
+
+Self-hosted clusters can run [Enterprise Edition](../enterprise/index.md), which adds distributed live queries, audit logging, FIPS-validated cryptography and support tiers on top of the same server.

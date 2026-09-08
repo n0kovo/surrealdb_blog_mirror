@@ -21,14 +21,22 @@ Codex reads MCP servers from `~/.codex/config.toml` (or `.codex/config.toml` in 
 ```toml
 [mcp_servers.spectron]
 url = "https://<your-context-host>/mcp"
-bearer_token_env_var = "SPECTRON_API_KEY"
+bearer_token_env_var = "AGENT_MEMORY_API_KEY"
 http_headers = { "X-Spectron-Context" = "acme-prod" }
 ```
 
 Then export the key so Codex can read it:
 
+**Bash**
+
 ```bash
-export SPECTRON_API_KEY="<your-api-key>"
+export AGENT_MEMORY_API_KEY="<your-api-key>"
+```
+
+**PowerShell**
+
+```powershell
+$env:AGENT_MEMORY_API_KEY = "<your-api-key>"
 ```
 
 On **SurrealDB Cloud**, use your context host from SurrealDB Studio **API keys** (not a generic shared domain). **Self-hosted:** replace the URL with your SurrealDB Agent Memory server's base URL + `/mcp`.
@@ -36,7 +44,7 @@ On **SurrealDB Cloud**, use your context host from SurrealDB Studio **API keys**
 Alternatively, add it from the terminal:
 
 ```bash
-codex mcp add spectron --url https://<your-context-host>/mcp --bearer-token-env-var SPECTRON_API_KEY
+codex mcp add spectron --url https://<your-context-host>/mcp --bearer-token-env-var AGENT_MEMORY_API_KEY
 ```
 
 > [!NOTE]
@@ -48,7 +56,7 @@ codex mcp add spectron --url https://<your-context-host>/mcp --bearer-token-env-
 codex mcp list
 ```
 
-You should see **spectron** listed. Start a Codex session and ask "What MCP tools do you have available?" Codex should report the SurrealDB Agent Memory tools. If it does not appear, check that the URL and the `SPECTRON_API_KEY` environment variable are correct.
+You should see **spectron** listed. Start a Codex session and ask "What MCP tools do you have available?" Codex should report the SurrealDB Agent Memory tools. If it does not appear, check that the URL and the `AGENT_MEMORY_API_KEY` environment variable are correct.
 
 ## Usage examples
 

@@ -30,3 +30,10 @@ Practical, end-to-end guides for building trustworthy agent memory with SurrealD
 - [From a vector store](migrate/from-vector-store.md)
 - [From Zep](migrate/from-zep.md)
 - [From LangMem](migrate/from-langmem.md)
+
+## More recipes
+
+- [Coding agent with project memory](build/coding-agent-with-project-memory.md) - an assistant that remembers a codebase between sessions
+- [Long-running research agent](build/long-running-research-agent.md) - accumulate findings across many runs
+- [Multi-agent shared memory](build/multi-agent-shared-memory.md) - several agents reading and writing one context
+- [Migrate from Mem0](migrate/from-mem0.md) - move an existing Mem0 store across

@@ -23,6 +23,20 @@ The SurrealDB SDK for Java lets you connect to [SurrealDB](/docs) from any Java 
 - **[Concepts](concepts/connecting-to-surrealdb.md)** — Guides for connecting, authenticating, querying, and working with data.
 - **[API Reference](api/core/surreal.md)** — Complete reference for the SDK's methods, types, and errors.
 
+## Concepts
+
+- [Connecting to SurrealDB](concepts/connecting-to-surrealdb.md) - open a connection over HTTP or WebSocket
+- [Authentication](concepts/authentication.md) - sign up, sign in, and authenticate with a token
+- [Multiple sessions](concepts/multiple-sessions.md) - run isolated sessions over a single connection
+- [Executing queries](concepts/executing-queries.md) - send SurrealQL and read the results back
+- [Data manipulation](concepts/data-manipulation.md) - create, select, update, upsert and delete records
+- [Value types](concepts/value-types.md) - how SurrealDB's types map onto native ones
+- [Class converters](concepts/class-converters.md) - map your own classes onto records
+- [Transactions](concepts/transactions.md) - group statements so they succeed or fail together
+- [Live queries](concepts/live-queries.md) - stream changes as they happen
+- [Error handling](concepts/error-handling.md) - what a failure looks like, and how to catch it
+- [Embedded databases](concepts/embedded-databases.md) - run SurrealDB in-process for tests and local use
+
 ## Contributing
 
 To contribute to the SDK code, submit an Issue or Pull Request in the [surrealdb.java](https://github.com/surrealdb/surrealdb.java) repository. To contribute to this documentation, submit an Issue or Pull Request in the [docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com) repository.

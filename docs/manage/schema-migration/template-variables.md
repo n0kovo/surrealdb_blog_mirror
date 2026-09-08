@@ -43,9 +43,19 @@ surrealkit rollout start my_rollout --var schema_prefix=acme
 
 ### Environment variables
 
+**Bash**
+
 ```bash
 export SURREALKIT_VAR_SCHEMA_PREFIX=acme
 export SURREALKIT_VAR_TALENT_ROLE=talent_rw
+surrealkit sync --user root --pass secret
+```
+
+**PowerShell**
+
+```powershell
+$env:SURREALKIT_VAR_SCHEMA_PREFIX = "acme"
+$env:SURREALKIT_VAR_TALENT_ROLE = "talent_rw"
 surrealkit sync --user root --pass secret
 ```
 

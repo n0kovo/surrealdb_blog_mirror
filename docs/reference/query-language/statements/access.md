@@ -105,7 +105,7 @@ DEFINE ACCESS api
 ACCESS api GRANT FOR USER automation;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -- Query 1
 NONE
 -- Query 2
@@ -141,7 +141,7 @@ DEFINE ACCESS api
 ACCESS api GRANT FOR RECORD user:1;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -- Query 1
 [
         {
@@ -193,7 +193,7 @@ DEFINE ACCESS api
 ACCESS api GRANT FOR RECORD user:1;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -- Query 1
 [
         {
@@ -226,7 +226,7 @@ NONE
 ACCESS api SHOW GRANT JdvDFKMCVYoM;
 ```
 
-```surql title="Response"
+```surql title="Output"
 {
         ac: 'api',
         creation: d'2024-12-16T16:17:24.903832476Z',
@@ -260,7 +260,7 @@ ACCESS api GRANT FOR RECORD user:1;
 ACCESS api GRANT FOR RECORD user:2;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -- Query 1
 [
         {
@@ -317,7 +317,7 @@ NONE
 ACCESS api SHOW WHERE subject.record.name = "tobie";
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
         {
                 ac: 'api',
@@ -359,7 +359,7 @@ DEFINE ACCESS api
 ACCESS api GRANT FOR RECORD user:1;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -- Query 1
 [
         {
@@ -392,7 +392,7 @@ NONE
 ACCESS api REVOKE GRANT NJ2I2d7OXxN9;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
         [
                 {
@@ -430,7 +430,7 @@ ACCESS api GRANT FOR RECORD user:1;
 ACCESS api GRANT FOR RECORD user:2;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -- Query 1
 [
         {
@@ -487,7 +487,7 @@ NONE
 ACCESS api REVOKE WHERE subject.record.name = "tobie";
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
         [
                 {

@@ -64,8 +64,10 @@ FOR $_ IN 0..1000 {
         CREATE |person:1000|;
     }
 };
+```
 
--- 'The query was not executed because it exceeded the timeout: 1ms'
+```surql title="Output"
+'The query was not executed because it exceeded the timeout: 1ms'
 ```
 
 ## COMPACT clause
@@ -84,5 +86,8 @@ A successful compaction will return `NONE`.
 
 ```surql
 ALTER SYSTEM COMPACT;
--- NONE
+```
+
+```surql title="Output"
+NONE
 ```

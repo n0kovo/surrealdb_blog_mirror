@@ -21,10 +21,20 @@ pip install --pre surrealdb
 
 Set the connection details:
 
+**Bash**
+
 ```bash
 export AGENT_MEMORY_ENDPOINT="https://memory.example.com"
 export AGENT_MEMORY_CONTEXT="acme-prod"
 export AGENT_MEMORY_API_KEY="sk-mem-..."
+```
+
+**PowerShell**
+
+```powershell
+$env:AGENT_MEMORY_ENDPOINT = "https://memory.example.com"
+$env:AGENT_MEMORY_CONTEXT = "acme-prod"
+$env:AGENT_MEMORY_API_KEY = "sk-mem-..."
 ```
 
 ## Recall before the model, store after

@@ -18,3 +18,13 @@ The learn pages here explain how and why to use these pieces together. For exact
 If you are new to SurrealDB, it helps to read [tables](tables-and-fields/tables.md) and [fields](tables-and-fields/fields-and-validation.md) first, then [indexes](indexes/index-types-and-strategies.md) and [events](events-and-triggers/defining-events.md) when you need behaviour beyond simple storage.
 
 For managing schema files across environments, synchronising locally and running phased rollouts in production, see [SurrealKit schema migration](../../manage/schema-migration/index.md).
+
+## Record IDs
+
+- [Record IDs and addressing](tables-and-fields/record-ids-and-addressing.md) - how a record id is built, and what it can address
+- [Record ID best practices](tables-and-fields/record-id-best-practices.md) - choosing ids that stay useful as data grows
+
+## Design and architecture
+
+- [Schema design](schema-design/schema-design.md) - choosing between schemafull and schemaless, and what each costs
+- [Namespace & database architecture](multi-tenancy/namespace-and-database-architecture.md) - how to lay out namespaces and databases for multiple tenants

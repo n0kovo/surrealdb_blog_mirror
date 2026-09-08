@@ -23,6 +23,23 @@ The SurrealDB SDK for JavaScript and TypeScript lets you easily connect to Surre
 - **[Concepts](concepts/connecting-to-surrealdb.md)** — Guides for connecting, authenticating, querying, and working with data.
 - **[API Reference](api/core/surreal.md)** — Complete reference for the SDK's methods, types, and errors.
 
+## Concepts
+
+- [Connecting to SurrealDB](concepts/connecting-to-surrealdb.md) - open a connection over HTTP or WebSocket
+- [Authentication](concepts/authentication.md) - sign up, sign in, and authenticate with a token
+- [Multiple sessions](concepts/multiple-sessions.md) - run isolated sessions over a single connection
+- [Executing queries](concepts/executing-queries.md) - send SurrealQL and read the results back
+- [Bound queries](concepts/bound-queries.md) - interpolate values into a query safely
+- [Value types](concepts/value-types.md) - how SurrealDB's types map onto native ones
+- [Codecs](concepts/codecs.md) - serialise and deserialise SurrealDB values
+- [Transactions](concepts/transactions.md) - group statements so they succeed or fail together
+- [Live queries](concepts/live-queries.md) - stream changes as they happen
+- [Invoking APIs](concepts/invoking-apis.md) - call API endpoints defined in the database
+- [Utilities](concepts/utilities.md) - compare, convert and escape values
+- [Error handling](concepts/error-handling.md) - what a failure looks like, and how to catch it
+- [Diagnostics](concepts/diagnostics.md) - inspect protocol-level traffic
+- [Embedded engines](concepts/embedded-engines.md) - run the database in the browser or on the server through WebAssembly
+
 ## Language and engines
 
 - **[JavaScript](installation.md)**

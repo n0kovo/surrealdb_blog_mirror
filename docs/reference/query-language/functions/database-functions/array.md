@@ -271,16 +271,20 @@ value = "['one', 'two', 'three']"
 */
 
 array::add(["one", "two"], "three");
+```
 
--- ['one', 'two', 'three']
+```surql title="Output"
+['one', 'two', 'three']
 ```
 
 If the item to add is an array, it will add each item of the array instead of the array itself as a separate value.
 
 ```surql
 [1,2,3].add([2,3,4]);
+```
 
--- [1, 2, 3, 4]
+```surql title="Output"
+[1, 2, 3, 4]
 ```
 
   
@@ -309,10 +313,10 @@ value = "true"
 */
 
 array::all([ 1, 2, 3, NONE, 'SurrealDB', 5 ]);
--- false
+//- false
 
 ["all", "clear"].all();
--- true
+//- true
 ```
 
 The `array::all` function can also be followed with a value or a [closure](../../language-primitives/data-types/closures.md) to check if all elements conform to a condition.
@@ -332,7 +336,7 @@ value = "false"
 */
 
 ["same", "same", "same"].all("same");
--- true
+//- true
 
 [
   "What's",
@@ -342,17 +346,20 @@ value = "false"
   "its",
   "pocketses??"
 ].all(|$s| $s.len() > 1);
--- true
+//- true
 
 [1, 2, "SurrealDB"].all(|$var| $var.is_string());
--- false
+//- false
 ```
 
 The `array::all` function can also be called using its alias `array::every`.
 
 ```surql
 [1, 2, 3].every(|$num| $num > 0);
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -381,10 +388,10 @@ value = "false"
 */
 
 array::any([ 1, 2, 3, NONE, 'SurrealDB', 5 ]);
--- true
+//- true
 
 ["", 0, NONE, NULL, [], {}].any();
--- false
+//- false
 ```
 
 The `array::any` function can also be followed with a value or a [closure](../../language-primitives/data-types/closures.md) to check if any elements conform to a condition.
@@ -404,7 +411,7 @@ value = "true"
 */
 
 ["same", "same?", "Dude, same!"].any("same");
--- true
+//- true
 
 [
   "What's",
@@ -414,10 +421,10 @@ value = "true"
   "its",
   "pocketses??"
 ].any(|$s| $s.len() > 15);
--- false
+//- false
 
 [1, 2, "SurrealDB"].any(|$var| $var.is_string());
--- true
+//- true
 ```
 
 The `array::any` function can also be called using the aliases `array::some` and `array::includes`.
@@ -434,10 +441,10 @@ value = "false"
 */
 
 [1, 2, 3].some(|$num| $num > 2);
--- true
+//- true
 
 [1999, 2001, 2002].includes(2000);
--- false
+//- false
 ```
 
   
@@ -461,8 +468,10 @@ value = "'r'"
 */
 
 array::at(['s', 'u', 'r', 'r', 'e', 'a', 'l'], 2);
+```
 
--- 'r'
+```surql title="Output"
+'r'
 ```
 
 You can also pass a negative index. This will perform the lookup in reverse:
@@ -476,8 +485,10 @@ value = "'e'"
 */
 
 array::at(['s', 'u', 'r', 'r', 'e', 'a', 'l'], -3);
+```
 
--- 'e'
+```surql title="Output"
+'e'
 ```
 
   
@@ -501,8 +512,10 @@ value = "[1, 2, 3, 4, 5]"
 */
 
 array::append([1, 2, 3, 4], 5);
+```
 
--- [1, 2, 3, 4, 5]
+```surql title="Output"
+[1, 2, 3, 4, 5]
 ```
 
   
@@ -543,8 +556,10 @@ array::boolean_and(["true",
   "true",
   0,
   "true"]);
+```
 
--- [true, true, false, true]
+```surql title="Output"
+[true, true, false, true]
 ```
 
 For those that take two arrays, missing elements (if one array is shorter than the other) are considered `null` and thus false.
@@ -561,8 +576,10 @@ value = "false"
 */
 
 array::boolean_and([true, true], [false]);
+```
 
--- [ false, false ]
+```surql title="Output"
+[ false, false ]
 ```
 
   
@@ -603,8 +620,10 @@ array::boolean_or([false,
   false,
   true,
   true]);
+```
 
--- [false, true, true, true]
+```surql title="Output"
+[false, true, true, true]
 ```
 
   
@@ -644,8 +663,10 @@ array::boolean_xor([false,
   false,
   true,
   true]);
+```
 
--- [false, true, true, false]
+```surql title="Output"
+[false, true, true, false]
 ```
 
   
@@ -678,8 +699,10 @@ value = "false"
 
 */
 array::boolean_not([ false, true, 0, 1 ]);
+```
 
--- [true, false, true, false]
+```surql title="Output"
+[true, false, true, false]
 ```
 
   
@@ -703,8 +726,10 @@ value = "[[[1, 2], [1, 3], [2, 2], [2, 3]]]"
 */
 
 array::combine([1, 2], [2, 3]);
+```
 
--- [ [1, 2], [1, 3], [2, 2], [2, 3] ]
+```surql title="Output"
+[ [1, 2], [1, 3], [2, 2], [2, 3] ]
 ```
 
   
@@ -728,8 +753,10 @@ value = "[1, 2]"
 */
 
 array::complement([1, 2, 3, 4], [3, 4, 5, 6]);
+```
 
--- [1, 2]
+```surql title="Output"
+[1, 2]
 ```
 
   
@@ -753,10 +780,10 @@ value = "[1, 2, 3, 4, 3, 4, 5, 6]"
 */
 
 array::concat([1, 2, 3, 4], [3, 4, 5, 6]);
--- [1, 2, 3, 4, 3, 4, 5, 6]
+//- [1, 2, 3, 4, 3, 4, 5, 6]
 
 [1,2].concat([3,4], [4,3])
--- [1, 2, 3, 4, 4, 3]
+//- [1, 2, 3, 4, 4, 3]
 ```
 
 As of SurrealDB 3.0.0, the behaviour of this function can also be achieved using the `+` operator.
@@ -770,8 +797,10 @@ value = "[1, 2, 3, 4, 3, 4, 5, 6]"
 */
 
 [1, 2, 3, 4] + [3, 4, 5, 6];
+```
 
--- [ 1, 2, 3, 4, 3, 4, 5, 6 ]
+```surql title="Output"
+[ 1, 2, 3, 4, 3, 4, 5, 6 ]
 ```
 
   
@@ -805,7 +834,7 @@ RETURN array::clump($array, 2);
 RETURN array::clump($array, 3);
 ```
 
-```surql title="Response"
+```surql title="Output"
 -- [ [ 1, 2], [3, 4] ]
 -- [ [1, 2, 3], [4] ]
 ```
@@ -831,8 +860,10 @@ value = "[1, 2, 5, 6]"
 */
 
 array::difference([1, 2, 3, 4], [3, 4, 5, 6]);
+```
 
--- [ 1, 2, 5, 6 ]
+```surql title="Output"
+[ 1, 2, 5, 6 ]
 ```
 
   
@@ -856,8 +887,10 @@ value = "[1, 2, 3, 4]"
 */
 
 array::distinct([ 1, 2, 1, 3, 3, 4 ]);
+```
 
--- [ 1, 2, 3, 4 ]
+```surql title="Output"
+[ 1, 2, 3, 4 ]
 ```
 
   
@@ -887,8 +920,10 @@ value = "[10, 10, 10, 10, 10]"
 */
 
 array::fill([ 1, 2, 3, 4, 5 ], 10);
+```
 
--- [ 10, 10, 10, 10, 10 ]
+```surql title="Output"
+[ 10, 10, 10, 10, 10 ]
 ```
 
 The following example shows how you can use this function with a starting position, and an ending position, which in this example will replace one item from the array:
@@ -902,8 +937,10 @@ value = "[1, 10, 3, 4, 5]"
 */
 
 array::fill([ 1, NONE, 3, 4, 5 ], 10, 1, 2);
+```
 
--- [ 1, 10, 3, 4, 5 ]
+```surql title="Output"
+[ 1, 10, 3, 4, 5 ]
 ```
 
 The following example shows how you can use this function with starting and ending negative positions, which in this example will replace one item from the array:
@@ -917,8 +954,10 @@ value = "[1, 2, 10, 4, 5]"
 */
 
 array::fill([ 1, 2, NONE, 4, 5 ], 10, -3, -2);
+```
 
--- [ 1, 2, 10, 4, 5 ]
+```surql title="Output"
+[ 1, 2, 10, 4, 5 ]
 ```
 
   
@@ -946,10 +985,10 @@ value = "[true, true, true]"
 */
 
 array::filter([ 1, 2, 1, 3, 3, 4 ], 1);
--- [ 1, 1 ]
+//- [ 1, 1 ]
 
 [true, false, false, false, true, true].filter(true);
--- [ true, true, true ]
+//- [ true, true, true ]
 ```
 
 The `array::filter` function can also take a [closure](../../language-primitives/data-types/closures.md) for more customised filtering.
@@ -972,7 +1011,7 @@ value = "[{ importance: 10, message: 'I need some help with this query...' }, { 
 ].filter(|$v| $v.importance > 5);
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		importance: 10,
@@ -997,8 +1036,10 @@ value = "[1, 2, 3]"
 */
 
 [1,2,3,NONE,0,"",{},[]].filter(|$v| $v);
+```
 
--- [1, 2, 3]
+```surql title="Output"
+[1, 2, 3]
 ```
 
 A more real-life example of this pattern in which only the `person` records that have been seen by another are returned:
@@ -1027,7 +1068,7 @@ FROM person)
     .filter(|$person| $person.is_seen_by);
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: person:two,
@@ -1063,10 +1104,10 @@ value = "[0, 1, 3, 4]"
 */
 
 array::filter_index(['a', 'b', 'c', 'b', 'a'], 'b');
--- [ 1, 3 ]
+//- [ 1, 3 ]
 
 [0, 0, 1, 0, 0, 5, 1].filter_index(0);
--- [ 0, 1, 3, 4 ]
+//- [ 0, 1, 3, 4 ]
 ```
 
 The `array::filter_index` function can also take a [closure](../../language-primitives/data-types/closures.md) for more customised filtering.
@@ -1089,7 +1130,7 @@ value = "[0, 3]"
 ].filter_index(|$v| $v.importance > 5);
 ```
 
-```surql title="Response"
+```surql title="Output"
 [0, 3]
 ```
 
@@ -1118,10 +1159,10 @@ value = "NONE"
 */
 
 array::find(['a', 'b', 'c', 'b', 'a'], 'b');
--- b
+//- 'b'
 
 [1, 2, 3].find(4);
--- [NONE]
+//- NONE
 ```
 
 The `array::find` function is most useful when a [closure](../../language-primitives/data-types/closures.md) is passed in which allows for customised searching.
@@ -1149,7 +1190,7 @@ value = "{ intelligence: 15, name: 'Mardine', strength: 10 }"
 ].find(|$c| $c.strength > 9 AND $c.intelligence > 9);
 ```
 
-```surql title="Response"
+```surql title="Output"
 -------- Query --------
 
 5
@@ -1188,10 +1229,10 @@ value = "NONE"
 */
 
 array::find_index(['a', 'b', 'c', 'b', 'a'], 'b');
--- 1
+//- 1
 
 [1, 2, 3].find_index(4);
--- NONE
+//- NONE
 ```
 
 The `array::find_index` function can also take a [closure](../../language-primitives/data-types/closures.md) for more customised searching.
@@ -1205,7 +1246,10 @@ value = "2"
 */
 
 [1, 2, 3].find_index(|$num| $num > 2);
--- 2
+```
+
+```surql title="Output"
+2
 ```
 
 The `array::find_index` function also be called using the alias `array::index_of`.
@@ -1219,7 +1263,10 @@ value = "3"
 */
 
 ["cat", "badger", "dog", "octopus"].index_of("octopus");
--- 3
+```
+
+```surql title="Output"
+3
 ```
 
   
@@ -1243,8 +1290,10 @@ value = "'s'"
 */
 
 array::first([ 's', 'u', 'r', 'r', 'e', 'a', 'l' ]);
+```
 
--- 's'
+```surql title="Output"
+'s'
 ```
 
   
@@ -1278,7 +1327,7 @@ array::flatten([ [1,
   8]] ]);
 ```
 
-```surql title="Response"
+```surql title="Output"
 [ 1, 2, 3, 4, 'SurrealDB', 5, 6, [7, 8] ]
 ```
 
@@ -1302,8 +1351,8 @@ value = "53"
 
 */
 
--- Returns 53
 [10,12,10,15].fold(100, |$a, $b| $a - $b);
+//- 53
 ```
 
 The function will then perform the following operation for each step of the way.
@@ -1481,8 +1530,10 @@ array::group([1,
   8,
   8,
   9]);
+```
 
--- [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+```surql title="Output"
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 ```
 
   
@@ -1507,7 +1558,10 @@ value = "[1, 2, 5, 3, 'and me']"
 */
 
 array::insert([1, 2, 3, 4], 'and me');
--- [1, 2, 3, 4, 'and me']
+```
+
+```surql title="Output"
+[1, 2, 3, 4, 'and me']
 ```
 
 If the value to append is followed by an index, this will be used as the location for the new value. A negative index can also be used to index from the end instead of from the beginning of an array.
@@ -1521,10 +1575,10 @@ value = "[1, 2, 3, 4, 5]"
 */
 
 array::insert([1, 2, 3, 4], 'and me', 0);
--- ['and me', 1, 2, 3, 4]
+//- ['and me', 1, 2, 3, 4]
 
 array::insert([1, 2, 3, 4], 'and me', -1);
--- [1, 2, 3, 'and me', 4]
+//- [1, 2, 3, 'and me', 4]
 ```
 
 A negative index can be provided to specify a position relative to the end of the array.
@@ -1550,8 +1604,10 @@ value = [3, 4]""
 */
 
 array::intersect([1, 2, 3, 4], [3, 4, 5, 6]);
+```
 
--- [ 3, 4 ]
+```surql title="Output"
+[ 3, 4 ]
 ```
 
   
@@ -1613,8 +1669,10 @@ value = "'again and again and again'"
 */
 
 array::join(["again", "again", "again"], " and ");
+```
 
--- "again and again and again"
+```surql title="Output"
+"again and again and again"
 ```
 
   
@@ -1638,8 +1696,10 @@ value = "'l'"
 */
 
 array::last([ 's', 'u', 'r', 'r', 'e', 'a', 'l' ]);
+```
 
--- 'l'
+```surql title="Output"
+'l'
 ```
 
   
@@ -1663,8 +1723,10 @@ value = "9"
 */
 
 array::len([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
+```
 
--- 9
+```surql title="Output"
+9
 ```
 
   
@@ -1709,8 +1771,10 @@ array::logical_and([true,
   true,
   false,
   false]);
+```
 
--- [ true, false, false, false ]
+```surql title="Output"
+[ true, false, false, false ]
 ```
 
 For those that take two arrays, missing elements (if one array is shorter than the other) are considered `null` and thus false.
@@ -1727,8 +1791,10 @@ value = "NULL"
 */
 
 array::logical_and([0, 1], [])
+```
 
--- [ 0, NULL ]
+```surql title="Output"
+[ 0, NULL ]
 ```
 
   
@@ -1774,8 +1840,10 @@ array::logical_or([true,
   true,
   false,
   false]);
+```
 
--- [ true, true, true, false ]
+```surql title="Output"
+[ true, true, true, false ]
 ```
 
 If one of the arrays is empty, the first array is returned.
@@ -1832,8 +1900,10 @@ array::logical_xor([true,
   true,
   false,
   false]);
+```
 
--- [ false, true, true, false ]
+```surql title="Output"
+[ false, true, true, false ]
 ```
 
 If one of the array is empty, the first array is returned.
@@ -1848,8 +1918,10 @@ value = "[0, 1]"
 */
 
 array::logical_xor([0, 1], [])
+```
 
--- [ 0, 1 ]
+```surql title="Output"
+[ 0, 1 ]
 ```
 
   
@@ -1876,7 +1948,7 @@ value = "[2, 4, 6]"
 [1, 2, 3].map(|$v| $v * 2);
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
   2,
   4,
@@ -1904,7 +1976,7 @@ value = "[{ is_even: false, value: 1 }, { is_even: true, value: 2 }, { is_even: 
 });
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		is_even: false,
@@ -1950,7 +2022,7 @@ error = ""Couldn't coerce return value from function `ANONYMOUS`: Expected `int`
 [1, 2, 3].map(|$num: int| -> int { $num + 1.1 });
 ```
 
-```surql title="Response"
+```surql title="Output"
 "Couldn 't coerce return value from function `ANONYMOUS`: Expected
   `int` but found `2.1f`"
 ```
@@ -1973,7 +2045,7 @@ value = "['0: first used in the year 876', '1: the number of moons in the sky', 
   .map(|$item, $index| <string>$index + $item);
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	'0: first used in the year 876',
 	'1: the number of moons in the sky',
@@ -2008,8 +2080,10 @@ value = "2"
 */
 
 array::max([0, 1, 2]);
+```
 
--- 2
+```surql title="Output"
+2
 ```
 
 As any value can be compared with another value, the array can be an array of any SurrealQL value.
@@ -2024,8 +2098,10 @@ value = "9.9f"
 */
 
 array::max([NONE, NULL, 9, 9.9]);
+```
 
--- 9.9f
+```surql title="Output"
+9.9f
 ```
 
 See also:
@@ -2060,8 +2136,10 @@ value = "false"
 */
 
 array::matches([0, 1, 2], 1);
+```
 
--- [false, true, false]
+```surql title="Output"
+[false, true, false]
 ```
 
 The following example shows this function when the array contains objects.
@@ -2081,8 +2159,10 @@ value = "true"
 array::matches([{id: r"ohno:0"},
   {id: r"ohno:1"}],
   {id: r"ohno:1"});
+```
 
--- [false, true]
+```surql title="Output"
+[false, true]
 ```
 
   
@@ -2106,8 +2186,10 @@ value = "0"
 */
 
 array::min([0, 1, 2]);
+```
 
--- 0
+```surql title="Output"
+0
 ```
 
 As any value can be compared with another value, the array can be an array of any SurrealQL value.
@@ -2150,8 +2232,10 @@ value = "4"
 */
 
 array::pop([ 1, 2, 3, 4 ]);
+```
 
--- 4
+```surql title="Output"
+4
 ```
 
   
@@ -2175,8 +2259,10 @@ value = "[5, 1, 2, 3, 4]"
 */
 
 array::prepend([1, 2, 3, 4], 5);
+```
 
--- [ 5, 1, 2, 3, 4 ]
+```surql title="Output"
+[ 5, 1, 2, 3, 4 ]
 ```
 
   
@@ -2200,8 +2286,10 @@ value = "[1, 2, 3, 4, 5]"
 */
 
 array::push([1, 2, 3, 4], 5);
+```
 
--- [ 1, 2, 3, 4, 5 ]
+```surql title="Output"
+[ 1, 2, 3, 4, 5 ]
 ```
 
   
@@ -2227,8 +2315,10 @@ value = "[1, 2, 3, 4, 5, 6, 7, 8, 9]"
 */
 
 array::range(1, 10);
+```
 
--- [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+```surql title="Output"
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 ```
 
 ```surql
@@ -2372,8 +2462,10 @@ value = "[1, 2, 4, 5]"
 */
 
 array::remove([1, 2, 3, 4, 5], 2);
+```
 
--- [ 1, 2, 4, 5 ]
+```surql title="Output"
+[ 1, 2, 4, 5 ]
 ```
 
 The following examples shows this function using a negative index.
@@ -2387,8 +2479,10 @@ value = "[1, 2, 3, 5]"
 */
 
 array::remove([1, 2, 3, 4, 5], -2);
+```
 
--- [ 1, 2, 3, 5 ]
+```surql title="Output"
+[ 1, 2, 3, 5 ]
 ```
 
   
@@ -2412,8 +2506,10 @@ value = "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
 */
 
 array::repeat(1, 10);
+```
 
--- [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
+```surql title="Output"
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
 ```
 
 ```surql
@@ -2425,8 +2521,10 @@ value = "['hello', 'hello']"
 */
 
 array::repeat("hello", 2);
+```
 
--- [ "hello", "hello" ]
+```surql title="Output"
+[ "hello", "hello" ]
 ```
 
   
@@ -2450,8 +2548,10 @@ value = "[5, 4, 3, 2, 1]"
 */
 
 array::reverse([ 1, 2, 3, 4, 5 ]);
+```
 
--- [ 5, 4, 3, 2, 1 ]
+```surql title="Output"
+[ 5, 4, 3, 2, 1 ]
 ```
 
   
@@ -2471,14 +2571,20 @@ A single number passed in as an argument will create an array beginning at 0 wit
 
 ```surql
 array::sequence(5);
--- [0, 1, 2, 3, 4]
+```
+
+```surql title="Output"
+[0, 1, 2, 3, 4]
 ```
 
 If a second argument is passed into this function, the first argument will be used as the starting point for the array and the second for the length.
 
 ```surql
 array::sequence(-5, 6);
--- [-5, -4, -3, -2, -1, 0]
+```
+
+```surql title="Output"
+[-5, -4, -3, -2, -1, 0]
 ```
 
 ## `array::shuffle`
@@ -2500,8 +2606,10 @@ value = "[3, 5, 4, 1, 2]"
 */
 
 array::shuffle([ 1, 2, 3, 4, 5 ]);
+```
 
--- [ 2, 1, 4, 3, 5 ]
+```surql title="Output"
+[ 2, 1, 4, 3, 5 ]
 ```
 
   
@@ -2527,8 +2635,10 @@ value = "[2, 3]"
 */
 
 array::slice([ 1, 2, 3, 4, 5 ], 1, 3);
+```
 
--- [2, 3]
+```surql title="Output"
+[2, 3]
 ```
 
 The following example shows how you can use this function with a starting position, and a negative position, which will slice off the first and last element from the array:
@@ -2557,8 +2667,10 @@ value = "[3, 4, 5]"
 */
 
 array::slice([ 1, 2, 3, 4, 5 ], 2);
+```
 
--- [ 3, 4, 5 ]
+```surql title="Output"
+[ 3, 4, 5 ]
 ```
 
 The following example shows how you can use this function with just a negative position, which will only slice from the end of the array:
@@ -2572,8 +2684,10 @@ value = "[4, 5]"
 */
 
 array::slice([ 1, 2, 3, 4, 5 ], -2);
+```
 
--- [ 4, 5 ]
+```surql title="Output"
+[ 4, 5 ]
 ```
 
 The following example shows how you can use this function with a negative position, and a length of the slice:
@@ -2595,8 +2709,10 @@ value = "['c', 'd']"
 */
 
 ['a', 'b', 'c', 'd', 'e'].slice(2..=3);
+```
 
--- [ 'c', 'd' ]
+```surql title="Output"
+[ 'c', 'd' ]
 ```
 
   
@@ -2632,8 +2748,10 @@ value = "[NULL, 0, 1, 1, 2, 3, 3, 4, 'something']"
 */
 
 array::sort([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
+```
 
--- [ null, 0, 1, 1, 2, 3, 3, 4, "something" ]
+```surql title="Output"
+[ null, 0, 1, 1, 2, 3, 3, 4, "something" ]
 ```
 
 ```surql
@@ -2645,8 +2763,10 @@ value = "['something', 4, 3, 3, 2, 1, 1, 0, NULL]"
 */
 
 array::sort([1, 2, 1, null, "something", 3, 3, 4, 0], false);
+```
 
--- [ "something", 4, 3, 3, 2, 1, 1, 9, null ]
+```surql title="Output"
+[ "something", 4, 3, 3, 2, 1, 1, 9, null ]
 ```
 
 ```surql
@@ -2658,8 +2778,10 @@ value = "[NULL, 0, 1, 1, 2, 3, 3, 4, 'something']"
 */
 
 array::sort([1, 2, 1, null, "something", 3, 3, 4, 0], "asc");
+```
 
--- [ null, 0, 1, 1, 2, 3, 3, 4, "something" ]
+```surql title="Output"
+[ null, 0, 1, 1, 2, 3, 3, 4, "something" ]
 ```
 
 ```surql
@@ -2845,8 +2967,10 @@ value = "[NULL, 0, 1, 1, 2, 3, 3, 4, 'something']"
 */
 
 array::sort::asc([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
+```
 
--- [ null, 0, 1, 1, 2, 3, 3, 4, "something" ]
+```surql title="Output"
+[ null, 0, 1, 1, 2, 3, 3, 4, "something" ]
 ```
 
   
@@ -2870,8 +2994,10 @@ value = "['something', 4, 3, 3, 2, 1, 1, 0, NULL]"
 */
 
 array::sort::desc([ 1, 2, 1, null, "something", 3, 3, 4, 0 ]);
+```
 
--- [ "something", 4, 3, 3, 2, 1, 1, 9, null ]
+```surql title="Output"
+[ "something", 4, 3, 3, 2, 1, 1, 9, null ]
 ```
 
   
@@ -2926,8 +3052,10 @@ value = "[5, 2, 3, 4, 1]"
 */
 
 array::swap([ 1, 2, 3, 4, 5 ], 0, -1);
+```
 
--- [ 5, 2, 3, 4, 1 ]
+```surql title="Output"
+[ 5, 2, 3, 4, 1 ]
 ```
 
 An error will be returned if any of the indexes are invalid that informs of range of possible indexes that can be used.
@@ -2968,8 +3096,10 @@ value = "[[0, 2], [1, 3]]"
 */
 
 array::transpose([[0, 1], [2, 3]]);
+```
 
--- [ [0, 2], [1, 3] ]
+```surql title="Output"
+[ [0, 2], [1, 3] ]
 ```
 
 The layering of the above example can be visualised as follows.
@@ -3175,8 +3305,10 @@ value = "[1, 2, 6, 3, 4, 5]"
 */
 
 array::union([1, 2, 1, 6], [1, 3, 4, 5, 6]);
+```
 
--- [ 1, 2, 6, 3, 4, 5 ]
+```surql title="Output"
+[ 1, 2, 6, 3, 4, 5 ]
 ```
 
   
@@ -3211,7 +3343,7 @@ RETURN array::windows($array, 2);
 RETURN array::windows($array, 5);
 ```
 
-```surql title="Response"
+```surql title="Output"
 [ [1, 2], [2, 3], [3, 4] ];
 [];
 ```
@@ -3269,7 +3401,7 @@ array::push(["Again", "again"], "again");
 ["Again", "again"].push("again");
 ```
 
-```surql title="Response"
+```surql title="Output"
 ["Again", "again", "again"]
 ```
 
@@ -3293,6 +3425,6 @@ array::join(array::push(["Again", "again"], "again"), " and ");
 ["Again", "again"].push("again").join(" and ");
 ```
 
-```surql title="Response"
+```surql title="Output"
 "Again and again and again"
 ```

@@ -175,11 +175,11 @@ DEFINE FIELD `nómine`.prim ON user TYPE string;
 DEFINE FIELD `nómine.prim` ON user TYPE string;
 
 CREATE user:one SET 
-	// Nested field
+	-- Nested field
     name.first = "Billy",
-	// Also nested
+	-- Also nested
     `nómine`.prim = "Billy",
-	// Not nested
+	-- Not nested
     `nómine.prim` = "Billy";
 ```
 
@@ -417,7 +417,7 @@ As of version 3.0, the statement now returns an error upon finding the first fie
 
 With `FLEXIBLE`, the field accepts any extra keys on `metadata` while still requiring `name` and a valid `metadata.user_id`.
 
-```surql title="Response"
+```surql title="Output"
 {
 	id: user:lsdk473e279oik1k484b,
 	metadata: {
@@ -545,7 +545,7 @@ UPSERT post:test SET tags += { name: 'test' };
 UPSERT post:test SET tags += { name: 'test', color: 'blue' };
 ```
 
-```surql title="Response"
+```surql title="Output"
 [{ id: post:test, tags: [] }]
 
 [{ id: post:test, tags: [{ color: 'red', name: 'test' }] }]
@@ -907,7 +907,7 @@ DEFINE FIELD some_info ON TABLE some_table TYPE string;
 INFO FOR TABLE some_table;
 ```
 
-```surql title="Response"
+```surql title="Output"
 {
 	events: {},
 	fields: {
@@ -1079,7 +1079,7 @@ DEFINE FIELD last_name
 DEFINE FIELD name      
   ON TABLE person             VALUE first_name + ' ' + last_name;
 
-// Creates a `person` with the name "bob bobson"
+-- Creates a `person` with the name "bob bobson"
 CREATE person SET first_name = "BOB", last_name = "BOBSON";
 ```
 
@@ -1151,7 +1151,7 @@ DEFINE FIELD last_name
 DEFINE FIELD full_name 
   ON TABLE person             VALUE first_name + ' ' + last_name;
 
-// Creates a `person` with `full_name` of "bob BOBSON", not "bob bobson"
+-- Creates a `person` with `full_name` of "bob BOBSON", not "bob bobson"
 CREATE person SET first_name = "Bob", last_name = "BOBSON";
 ```
 
@@ -1181,7 +1181,7 @@ CREATE order:good SET coffee = { special_order: "Venti Quadruple Ristretto Half-
 CREATE order:bad SET coffee = "small";
 ```
 
-```surql title="Response"
+```surql title="Output"
 -------- Query --------
 
 [

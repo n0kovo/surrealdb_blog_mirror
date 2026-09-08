@@ -299,8 +299,10 @@ value = "1"
 */
 
 time::day(d"2021-11-01T08:30:17+00:00");
+```
 
--- 1
+```surql title="Output"
+1
 ```
 
   
@@ -310,14 +312,14 @@ time::day(d"2021-11-01T08:30:17+00:00");
 The `time::epoch` constant returns the `datetime` for the UNIX epoch (1 January 1970).
 
 ```surql
-// Return the const
+-- Return the const
 RETURN time::epoch;
--- d'1970-01-01T00:00:00Z'
+//- d'1970-01-01T00:00:00Z'
 
-// Define field using the const
+-- Define field using the const
 DEFINE FIELD since_epoch ON event COMPUTED time::now().floor(1d) - time::epoch;
 CREATE ONLY event:one SET information = "Something happened";
--- { id: event:one, information: 'Something happened', since_epoch: 55y42w6d }
+//- { id: event:one, information: 'Something happened', since_epoch: 55y42w6d }
 ```
 
   
@@ -341,8 +343,10 @@ value = "d'2021-10-28T00:00:00Z'"
 */
 
 time::floor(d"2021-11-01T08:30:17+00:00", 1w);
+```
 
--- d'2021-10-28T00:00:00Z'
+```surql title="Output"
+d'2021-10-28T00:00:00Z'
 ```
 
 ### Implementation details
@@ -456,8 +460,10 @@ value = "8"
 */
 
 time::hour(d"2021-11-01T08:30:17+00:00");
+```
 
--- 8
+```surql title="Output"
+8
 ```
 
   
@@ -481,8 +487,10 @@ value = "d'1988-06-22T08:30:45Z'"
 */
 
 time::max([ d"1987-06-22T08:30:45Z", d"1988-06-22T08:30:45Z" ])
+```
 
--- d'1988-06-22T08:30:45Z'
+```surql title="Output"
+d'1988-06-22T08:30:45Z'
 ```
 
 See also:
@@ -560,8 +568,10 @@ value = "551349045000000"
 */
 
 time::micros(d"1987-06-22T08:30:45Z");
+```
 
--- 551349045000000
+```surql title="Output"
+551349045000000
 ```
 
   
@@ -585,8 +595,10 @@ value = "551349045000"
 */
 
 time::millis(d"1987-06-22T08:30:45Z");
+```
 
--- 551349045000
+```surql title="Output"
+551349045000
 ```
 
   
@@ -610,8 +622,10 @@ value = "d'1987-06-22T08:30:45Z'"
 */
 
 time::min([ d"1987-06-22T08:30:45Z", d"1988-06-22T08:30:45Z" ]);
+```
 
--- d'1987-06-22T08:30:45Z'
+```surql title="Output"
+d'1987-06-22T08:30:45Z'
 ```
 
 See also:
@@ -680,8 +694,10 @@ value = "30"
 */
 
 time::minute(d"2021-11-01T08:30:17+00:00");
+```
 
--- 30
+```surql title="Output"
+30
 ```
 
   
@@ -705,8 +721,10 @@ value = "11"
 */
 
 time::month(d"2021-11-01T08:30:17+00:00");
+```
 
--- 11
+```surql title="Output"
+11
 ```
 
   
@@ -732,8 +750,10 @@ value = "1635755417000000000"
 */
 
 time::nano(d"2021-11-01T08:30:17+00:00");
+```
 
--- 1635755417000000000
+```surql title="Output"
+1635755417000000000
 ```
 
   
@@ -767,8 +787,10 @@ value = "d'2021-11-04T00:00:00Z'"
 */
 
 time::round(d"2021-11-01T08:30:17+00:00", 1w);
+```
 
--- d'2021-11-04T00:00:00Z'
+```surql title="Output"
+d'2021-11-04T00:00:00Z'
 ```
 
   
@@ -792,8 +814,10 @@ value = "17"
 */
 
 time::second(d"2021-11-01T08:30:17+00:00");
+```
 
--- 17
+```surql title="Output"
+17
 ```
 
   
@@ -826,8 +850,10 @@ value = "1635755417"
 */
 
 time::unix(d"2021-11-01T08:30:17+00:00");
+```
 
--- 1635755417
+```surql title="Output"
+1635755417
 ```
 
   
@@ -851,8 +877,10 @@ value = "1"
 */
 
 time::wday(d"2021-11-01T08:30:17+00:00");
+```
 
--- 1
+```surql title="Output"
+1
 ```
 
   
@@ -876,8 +904,10 @@ value = "44"
 */
 
 time::week(d"2021-11-01T08:30:17+00:00");
+```
 
--- 44
+```surql title="Output"
+44
 ```
 
   
@@ -901,8 +931,10 @@ value = "305"
 */
 
 time::yday(d"2021-11-01T08:30:17+00:00");
+```
 
--- 305
+```surql title="Output"
+305
 ```
 
   
@@ -926,8 +958,10 @@ value = "2021"
 */
 
 time::year(d"2021-11-01T08:30:17+00:00");
+```
 
--- 2021
+```surql title="Output"
+2021
 ```
 
   
@@ -947,14 +981,14 @@ The following example shows this function, and its output:
 time::is_leap_year();
 
 time::is_leap_year(d"1987-06-22T08:30:45Z");
--- false
+//- false
 
 time::is_leap_year(d"1988-06-22T08:30:45Z");
--- true
+//- true
 
 -- Using function via method chaining
 d'2024-09-03T02:33:15.349397Z'.is_leap_year();
--- true
+//- true
 ```
 
 ## `time::from_micros`
@@ -975,8 +1009,10 @@ value = "d'1970-01-01T00:00:01Z'"
 */
 
 time::from_micros(1000000);
+```
 
--- d'1970-01-01T00:00:01Z'
+```surql title="Output"
+d'1970-01-01T00:00:01Z'
 ```
 
   
@@ -1000,8 +1036,10 @@ value = "d'1970-01-01T00:00:01Z'"
 */
 
 time::from_millis(1000);
+```
 
--- d'1970-01-01T00:00:01Z'
+```surql title="Output"
+d'1970-01-01T00:00:01Z'
 ```
 
   
@@ -1025,8 +1063,10 @@ value = "d'1970-01-01T00:00:00.001Z'"
 */
 
 time::from_nanos(1000000);
+```
 
--- d'1970-01-01T00:00:00.001Z'
+```surql title="Output"
+d'1970-01-01T00:00:00.001Z'
 ```
 
   
@@ -1049,8 +1089,10 @@ value = "d'1970-01-01T00:16:40Z'"
 */
 
 time::from_secs(1000);
+```
 
--- d'1970-01-01T00:16:40Z'
+```surql title="Output"
+d'1970-01-01T00:16:40Z'
 ```
 
   
@@ -1074,8 +1116,10 @@ value = "d'1970-01-01T00:16:40Z'"
 */
 
 time::from_unix(1000);
+```
 
--- d'1970-01-01T00:16:40Z'
+```surql title="Output"
+d'1970-01-01T00:16:40Z'
 ```
 
   
@@ -1099,8 +1143,10 @@ value = "d'2025-01-09T10:57:03.593Z'"
 */
 
 time::from_ulid("01JH5BBTK9FKTGSDXHWP5YP9TQ");
+```
 
--- d'2025-01-09T10:57:03.593Z'
+```surql title="Output"
+d'2025-01-09T10:57:03.593Z'
 ```
 
 As a ULID is only precise up to the millisecond, a conversion from a ULID to a timestamp will truncate nanosecond precision.
@@ -1137,8 +1183,10 @@ value = "d'2025-01-09T10:57:58.757Z'"
 */
 
 time::from_uuid(u'01944ab6-c1e5-7760-ab6a-127d37eb1b94');
+```
 
--- d'2025-01-09T10:57:58.757Z'
+```surql title="Output"
+d'2025-01-09T10:57:58.757Z'
 ```
 
 As a UUID is only precise up to the millisecond, a conversion from a UUID to a timestamp will truncate nanosecond precision.

@@ -28,6 +28,8 @@ The SurrealDB SDK for Rust enables you to interact with SurrealDB from client-si
 
 ## Frameworks
 
+Each framework has a worked example; the [frameworks overview](frameworks/index.md) lists them together.
+
 - **[Actix](frameworks/actix.md)**
 - **[Axum](frameworks/axum.md)**
 - **[Egui](frameworks/egui.md)**

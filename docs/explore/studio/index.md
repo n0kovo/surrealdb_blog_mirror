@@ -12,3 +12,8 @@ SurrealDB Studio is the official visual interface for managing and querying Surr
 <Button label="Visit studio.surrealdb.com" href="https://studio.surrealdb.com" variant="surreal" />
 
 Full documentation for SurrealDB Studio is coming soon.
+
+## In this section
+
+- [SurrealQL editors](surrealql-editors.md) - write and run queries against a connection
+- [Search and shortcuts](search-and-shortcuts.md) - move around Studio from the keyboard

@@ -95,7 +95,7 @@ The extraction diff from the user turn (the assistant reply is stored with `infe
 from surrealdb.memory import Memory
 
 memory = Memory(context="acme-prod",
-    api_key=os.environ["SPECTRON_API_KEY"])
+    api_key=os.environ["AGENT_MEMORY_API_KEY"])
 session = await memory.sessions.create(scopes=["org/acme/user/alice"])
 
 reply = await memory.chat("What do you know about me?", session_id=session.id)
@@ -128,7 +128,7 @@ The following pattern shows a minimal chat loop using `chat()`:
 from surrealdb.memory import Memory
 
 memory = Memory(context="acme-prod",
-    api_key=os.environ["SPECTRON_API_KEY"])
+    api_key=os.environ["AGENT_MEMORY_API_KEY"])
 session = await memory.sessions.create(scopes=["org/acme/user/alice"])
 
 while True:

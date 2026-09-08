@@ -35,7 +35,7 @@ CREATE person SET name = "Tobie " + $suffix;
 CREATE person SET name = string::join(" ", "Jaime", $suffix);
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
     {
         "id": "person:3vs17lb9eso9m7gd8mml",
@@ -62,7 +62,7 @@ $founders.{
 };
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		company: 'SurrealDB',
@@ -166,7 +166,7 @@ RETURN $my_name;
 ```surql title="Output"
 'There was a problem with the database: Parse error: Variable
   declaration without `let` is deprecated
- --> [4:1]
+ //- [4:1]
   |
 4 | $my_name = "Sypha";
   | ^^^^^^^^^^^^^^^^^^^ replace with `let $my_name = ..`
@@ -201,9 +201,9 @@ LET $nums = [
     RETURN $nums;
 };
 
--- Returns original unflattened $nums:
--- [[1,2], [3,4]]
+-- Returns the original unflattened $nums
 RETURN $nums;
+//- [[1,2], [3,4]]
 ```
 
 Even a parameter defined using a [`DEFINE PARAM`](../statements/define/param.md) statement can be shadowed.
@@ -352,7 +352,7 @@ UPDATE cat SET nicknames += "Snuggles"
   WHERE name = "Mr. Meow" RETURN $before, $after;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
     {
         "after": {
@@ -477,7 +477,7 @@ SELECT name,
     WHERE name = "User1";
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
     {
         "group_members": [
@@ -513,7 +513,7 @@ SELECT
     FROM person;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
     {
         "id": "person:hwffcckiv61ylwiw43yf",
@@ -579,7 +579,7 @@ CREATE user SET
     on_database = $session.db;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
     {
         "id": "user:wa3ajflozlqoyurc4i4v",
@@ -682,7 +682,7 @@ value = "NONE"
 
 FOR $table IN ["test_user", "test_client"] {
     DEFINE TABLE $table;
-    // Do some tests
+    -- Do some tests
     REMOVE TABLE $table;
 };
 ```
@@ -713,8 +713,8 @@ FOR $field IN (INFO FOR TABLE test).fields.keys() {
 
 ```surql
 DEFINE FUNCTION fn::get_timeout() -> duration {
-    // Do some HTTP call to get status
-    // Simulate the output with rand::enum() function
+    -- Do some HTTP call to get status
+    -- Simulate the output with rand::enum() function
     rand::enum(100ms, 1s, 5s)
 };
 

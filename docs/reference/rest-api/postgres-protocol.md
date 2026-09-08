@@ -59,8 +59,17 @@ surreal start --user root --pass secret \
 
 Environment variable equivalent:
 
+**Bash**
+
 ```bash
 export SURREAL_POSTGRES_BIND=127.0.0.1:5432
+surreal start --user root --pass secret memory
+```
+
+**PowerShell**
+
+```powershell
+$env:SURREAL_POSTGRES_BIND = "127.0.0.1:5432"
 surreal start --user root --pass secret memory
 ```
 

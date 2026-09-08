@@ -28,10 +28,20 @@ pip install spectron-hermes
 
 ## Environment
 
+**Bash**
+
 ```bash
 export SPECTRON_API_KEY="..."
 export SPECTRON_ENDPOINT="https://your-instance.spectron.dev"
 export SPECTRON_CONTEXT="my-context"
+```
+
+**PowerShell**
+
+```powershell
+$env:SPECTRON_API_KEY = "..."
+$env:SPECTRON_ENDPOINT = "https://your-instance.spectron.dev"
+$env:SPECTRON_CONTEXT = "my-context"
 ```
 
 ## Activate

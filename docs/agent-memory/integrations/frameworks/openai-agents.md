@@ -20,12 +20,24 @@ pip install spectron-openai-agents-sdk
 
 ## Environment
 
+**Bash**
+
 ```bash
 export OPENAI_API_KEY="your-openai-api-key"
 export SPECTRON_URL="https://your-spectron-endpoint"
 export SPECTRON_NAMESPACE="your-namespace"
 export SPECTRON_DATABASE="your-database"
 export SPECTRON_TOKEN="your-token"   # optional for local, unsecured instances
+```
+
+**PowerShell**
+
+```powershell
+$env:OPENAI_API_KEY = "your-openai-api-key"
+$env:SPECTRON_URL = "https://your-spectron-endpoint"
+$env:SPECTRON_NAMESPACE = "your-namespace"
+$env:SPECTRON_DATABASE = "your-database"
+$env:SPECTRON_TOKEN = "your-token"   # optional for local, unsecured instances
 ```
 
 ## Memory as function tools

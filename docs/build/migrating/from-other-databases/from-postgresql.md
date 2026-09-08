@@ -61,7 +61,7 @@ INSERT INTO product
 ```
 
 ```surql
-// SurrealQL
+-- SurrealQL
 CREATE product CONTENT {
     name: 'Shirt',
     id: 'shirt',
@@ -95,9 +95,9 @@ DEFINE FIELD name ON TABLE product TYPE string;
 DEFINE FIELD description ON TABLE product TYPE string;
 DEFINE FIELD price ON TABLE product 
     TYPE number 
-    // Only show two digits after decimal point
+    -- Only show two digits after decimal point
     VALUE math::fixed($value, 2) 
-    // Price must be within this range
+    -- Price must be within this range
     ASSERT $value IN 0..=99999999;
 DEFINE FIELD category ON TABLE product TYPE string;
 DEFINE FIELD images ON TABLE product TYPE array<string>;
@@ -139,7 +139,7 @@ SELECT * FROM product WHERE id=1;
 ```
 
 ```surql
-// SurrealQL
+-- SurrealQL
 SELECT * FROM product:shirt;
 ```
 
@@ -151,7 +151,7 @@ SELECT * FROM product WHERE id IN (1, 2, 3);
 ```
 
 ```surql
-// SurrealQL
+-- SurrealQL
 SELECT * FROM [product:1, product:2, product:3];
 ```
 
@@ -163,7 +163,7 @@ SELECT COUNT(*) FROM product;
 ```
 
 ```surql
-// SurrealQL
+-- SurrealQL
 SELECT count() FROM product GROUP ALL;
 ```
 
@@ -211,7 +211,7 @@ ORDER BY p.id;
 In SurrealQL, tables can be joined to each other via edges, such as the `bought` edge in this example.
 
 ```surql
-// Relate a 'customer' to a 'product' via 'bought'
+-- Relate a 'customer' to a 'product' via 'bought'
 RELATE customer:tobie->bought->product:iphone CONTENT {
     option: { Size: 'M', Color: 'Max' },
     quantity: 1,
@@ -248,7 +248,7 @@ WHERE p.id IN (
 ```
 
 ```surql
-// SurrealQL
+-- SurrealQL
 customer:tobie->bought->product<-bought<-customer.*;
 ```
 

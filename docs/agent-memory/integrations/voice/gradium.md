@@ -21,11 +21,22 @@ pip install --pre surrealdb
 
 Set the connection details. Create the Gradium API key in the [Gradium Studio console](https://studio.gradium.ai/platform/api-keys):
 
+**Bash**
+
 ```bash
 export GRADIUM_API_KEY="gd_..."
 export AGENT_MEMORY_ENDPOINT="https://memory.example.com"
 export AGENT_MEMORY_CONTEXT="acme-prod"
 export AGENT_MEMORY_API_KEY="sk-mem-..."
+```
+
+**PowerShell**
+
+```powershell
+$env:GRADIUM_API_KEY = "gd_..."
+$env:AGENT_MEMORY_ENDPOINT = "https://memory.example.com"
+$env:AGENT_MEMORY_CONTEXT = "acme-prod"
+$env:AGENT_MEMORY_API_KEY = "sk-mem-..."
 ```
 
 ## Recall before the model, store after

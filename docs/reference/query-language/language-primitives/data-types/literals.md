@@ -28,7 +28,7 @@ LET $nine: 9 = 9;
 LET $nine: 9 = 10;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -------- Query --------
 
 NONE
@@ -51,7 +51,7 @@ error = ""Tried to set `$nine`, but couldn't coerce value: Expected `9 | '9' | '
 LET $nine: 9 | "9" | "nine" = "Nein";
 ```
 
-```surql title="Response"
+```surql title="Output"
 "Tried to set `$nine`, but couldn't coerce value: Expected `9 | '9' | 'nine'` but found `'Nein'`"
 ```
 
@@ -116,7 +116,7 @@ CREATE information SET
 	error_info = "You shouldn't use this anymore";
 ```
 
-```surql title="Response"
+```surql title="Output"
 -------- Query --------
 
 [

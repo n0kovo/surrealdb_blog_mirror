@@ -17,8 +17,16 @@ This is a simple RAG application that uses Pydantic AI and embedded SurrealDB. T
 
 Set up your OpenAI API key:
 
+**Bash**
+
 ```bash
 export OPENAI_API_KEY=your-api-key
+```
+
+**PowerShell**
+
+```powershell
+$env:OPENAI_API_KEY = "your-api-key"
 ```
 
 Or, store it in a .env file and add `--env-file .env` to your `uv run` commands.

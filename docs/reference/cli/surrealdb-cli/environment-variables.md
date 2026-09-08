@@ -935,6 +935,8 @@ A command environment variable that takes a boolean will be set to true if the f
 
 For example, the `SURREAL_CAPS_ALLOW_ALL` environment variable is used to set whether to allow all capabilities such as scripting and allowing network access. The flag `--allow-all` is all that is needed to set to `true`. But as an environment variable, the value `true` must be included to override its default `false` value.
 
+**Bash**
+
 ```bash title="SURREAL_CAPS_ALLOW_ALL example"
 # set to default false
 surreal start
@@ -944,6 +946,27 @@ SURREAL_CAPS_ALLOW_ALL=false surreal start
 
 # Set to true
 SURREAL_CAPS_ALLOW_ALL=true surreal start
+
+# Set to true
+surreal start --allow-all
+
+# Error: only --allow-all needed to set to true
+surreal start --allow-all true
+```
+
+**PowerShell**
+
+```powershell title="SURREAL_CAPS_ALLOW_ALL example"
+# set to default false
+surreal start
+
+# Same, but implicitly shown
+$env:SURREAL_CAPS_ALLOW_ALL = "false"
+surreal start
+
+# Set to true
+$env:SURREAL_CAPS_ALLOW_ALL = "true"
+surreal start
 
 # Set to true
 surreal start --allow-all

@@ -24,11 +24,22 @@ This pulls in `google-adk` and `surrealdb` (the SurrealDB Agent Memory client sh
 
 The SurrealDB Agent Memory SDK does not read the environment itself. You pass the values in explicitly, or use `SpectronConfig.from_env()` to read them for you:
 
+**Bash**
+
 ```bash
-export SPECTRON_CONTEXT="acme-prod"
-export SPECTRON_ENDPOINT="https://api.spectron.example"
-export SPECTRON_API_KEY="sk-spec-..."
+export AGENT_MEMORY_CONTEXT="acme-prod"
+export AGENT_MEMORY_ENDPOINT="https://api.spectron.example"
+export AGENT_MEMORY_API_KEY="sk-spec-..."
 export GOOGLE_API_KEY="your-google-api-key"   # used by the ADK model
+```
+
+**PowerShell**
+
+```powershell
+$env:AGENT_MEMORY_CONTEXT = "acme-prod"
+$env:AGENT_MEMORY_ENDPOINT = "https://api.spectron.example"
+$env:AGENT_MEMORY_API_KEY = "sk-spec-..."
+$env:GOOGLE_API_KEY = "your-google-api-key"   # used by the ADK model
 ```
 
 ## Quickstart

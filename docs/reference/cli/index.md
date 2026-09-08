@@ -15,6 +15,8 @@ SurrealDB ships three command-line tools. They are installed separately and cove
 
 ## surrealctl
 
+Every subcommand has its own page under [surrealctl commands](surrealctl/commands/index.md).
+
 `surrealctl` manages SurrealDB Cloud from the command line: it signs you in, selects an organisation, and creates, scales, pauses, and deletes instances. Every command can emit JSON, so it is the scriptable path for CI pipelines and provisioning scripts.
 
 ```bash

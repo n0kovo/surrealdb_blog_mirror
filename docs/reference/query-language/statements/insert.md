@@ -286,7 +286,7 @@ INSERT INTO company {
 } RETURN DIFF;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -------- Query 1 --------
 
 [
@@ -385,7 +385,7 @@ INSERT INTO planet [
 ] RETURN VALUE temp_55_km_up;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -------- Query --------
 
 [

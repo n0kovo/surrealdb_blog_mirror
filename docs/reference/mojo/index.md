@@ -27,6 +27,18 @@ The SDK has no third-party Mojo dependencies. The transport sits on a small libc
 - **[Concepts](concepts/connecting-to-surrealdb.md)** — Guides for connecting, authenticating, querying, and working with data.
 - **[API Reference](methods/index.md)** — Complete reference for the SDK's methods, types, and errors.
 
+## Concepts
+
+- [Connecting to SurrealDB](concepts/connecting-to-surrealdb.md) - open a connection over HTTP or WebSocket
+- [Authentication](concepts/authentication.md) - sign up, sign in, and authenticate with a token
+- [Multiple sessions](concepts/multiple-sessions.md) - run isolated sessions over a single connection
+- [Executing queries](concepts/executing-queries.md) - send SurrealQL and read the results back
+- [Query builders](concepts/query-builders.md) - compose a query without writing the string yourself
+- [Value types](concepts/value-types.md) - how SurrealDB's types map onto native ones
+- [Transactions](concepts/transactions.md) - group statements so they succeed or fail together
+- [Live queries](concepts/live-queries.md) - stream changes as they happen
+- [Error handling](concepts/error-handling.md) - what a failure looks like, and how to catch it
+
 ## Choosing a client
 
 The SDK provides two clients with the same surface:

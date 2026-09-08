@@ -20,7 +20,7 @@ When populating a new Context or migrating from an existing system, you typicall
 from surrealdb.memory import Memory
 
 memory = Memory(context="acme-prod",
-    api_key=os.environ["SPECTRON_API_KEY"])
+    api_key=os.environ["AGENT_MEMORY_API_KEY"])
 
 files = [
     ("returns-policy.pdf", "Returns Policy"),

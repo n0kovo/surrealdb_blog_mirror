@@ -40,9 +40,20 @@ A combination of files and SurrealDB's [encoding functions](../../../reference/q
 
 The following example shows how this pattern might be used for temporary storage such as a user's shopping cart during a single session.
 
+**Bash**
+
 ```bash
 # Set the allowlist env var to allow the directory to be accessed
 SURREAL_BUCKET_FOLDER_ALLOWLIST="/users/your_user_name" surreal start \
+  --allow-experimental files
+```
+
+**PowerShell**
+
+```powershell
+# Set the allowlist env var to allow the directory to be accessed
+$env:SURREAL_BUCKET_FOLDER_ALLOWLIST = "C:\Users\your_user_name"
+surreal start `
   --allow-experimental files
 ```
 
@@ -72,7 +83,7 @@ fn::save_file("temp_cart_user_24567", {
 });
 
 fn::get_file("temp_cart_user_24567");
--- Returns { items: ['shirt1', 'deck_of_cards'], last_updated: d'2025-11-20T01:03:24.141080Z' }
+//- { items: ['shirt1', 'deck_of_cards'], last_updated: d'2025-11-20T01:03:24.141080Z' }
 
 -- User adds item, save over file with newer information
 fn::save_file("temp_cart_user_24567", {
@@ -81,7 +92,7 @@ fn::save_file("temp_cart_user_24567", {
 });
 
 fn::get_file("temp_cart_user_24567");
--- Returns { items: ['shirt1', 'deck_of_cards'], last_updated: d'2025-11-20T01:06:02.752429Z' }
+//- { items: ['shirt1', 'deck_of_cards'], last_updated: d'2025-11-20T01:06:02.752429Z' }
 
 -- Session is over, delete temp file
 fn::delete_file("temp_cart_user_24567");

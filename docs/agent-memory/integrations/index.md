@@ -69,7 +69,9 @@ Harness adapters expose SurrealDB Agent Memory as agent tools and add automatic 
 
 → [CrewAI](frameworks/crewai.md) · [Eve](frameworks/eve.md) · [Google ADK](frameworks/google-adk.md) · [Hermes Agent](frameworks/hermes.md) · [LangChain](frameworks/langchain.md) · [Mastra](frameworks/mastra.md) · [OpenAI Agents SDK](frameworks/openai-agents.md) · [OpenClaw](frameworks/openclaw.md) · [Pydantic AI](frameworks/pydantic-ai.md) · [Strands Agents](frameworks/strands-agents.md)
 
-Frameworks without a dedicated package integrate directly through the SDK: [Agno](frameworks/agno.md) · [AutoGen](frameworks/autogen.md) · [Camel AI](frameworks/camel-ai.md) · [LlamaIndex](frameworks/llamaindex.md)
+Frameworks without a dedicated package integrate directly through the SDK.
+
+→ [Agno](frameworks/agno.md) · [AutoGen](frameworks/autogen.md) · [Camel AI](frameworks/camel-ai.md) · [LlamaIndex](frameworks/llamaindex.md)
 
 ## Voice & realtime
 
@@ -99,3 +101,11 @@ Direct HTTP from any language. End-user routes: `/api/v1/{context_id}/…`. Mana
 ## Not shipped yet
 
 - **Embedded in-process library**: use REST or an SDK against a deployed instance ([Embedded quickstart](https://surrealdb.com/docs/agent-memory/quickstarts/embedded)).
+
+## Surfaces
+
+- [Filesystem view](surfaces/filesystem-view.md) - browse a context as though it were a filesystem
+
+## MCP tools
+
+- [MCP tools reference](mcp-server/tools-reference.md) - every tool the MCP server publishes, and what each takes

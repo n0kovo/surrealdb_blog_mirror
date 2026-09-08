@@ -35,3 +35,11 @@ CREATE person SET scores = function() {
 	}
 ]
 ```
+
+## In this section
+
+- [Arguments](arguments.md) - pass values from the surrounding query into the function
+- [Function context](function-context.md) - what `this` is bound to, and what the function inherits
+- [Type conversion](type-conversion.md) - how SurrealDB values arrive in JavaScript and come back
+- [Built-in functions](built-in-functions.md) - the JavaScript utilities and SurrealDB classes available inside a function
+- [SurrealQL functions](surrealql-functions.md) - call native SurrealQL functions from JavaScript

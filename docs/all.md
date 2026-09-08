@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1090 pages_  
+_1089 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -1712,8 +1712,6 @@ _1090 pages_
   Built-in SurrealQL database functions and constants, along with JavaScript and SurrealML functions.
 - [Math](reference/query-language/functions/database-functions/math.md)
   Built-in math functions and consts for analysing numeric data and collections.
-- [Meta](reference/query-language/functions/database-functions/meta.md)
-  These functions can be used to retrieve specific metadata from a SurrealDB Record ID.
 - [Not](reference/query-language/functions/database-functions/not.md)
   This function can be used to reverse the truthiness of a value.
 - [Object](reference/query-language/functions/database-functions/object.md)

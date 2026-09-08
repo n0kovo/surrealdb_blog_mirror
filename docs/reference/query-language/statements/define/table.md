@@ -140,7 +140,7 @@ SHOW CHANGES FOR TABLE reading SINCE d"2025-09-07T01:23:52Z" LIMIT 10;
 SHOW CHANGES FOR TABLE reading SINCE 0 LIMIT 10;
 ```
 
-```surql title="Response without INCLUDE ORIGINAL"
+```surql title="Output without INCLUDE ORIGINAL"
 [
 	{
 		changes: [
@@ -212,7 +212,7 @@ SHOW CHANGES FOR TABLE reading SINCE 0 LIMIT 10;
 ]
 ```
 
-```surql title="Response with INCLUDE ORIGINAL"
+```surql title="Output with INCLUDE ORIGINAL"
 [
 	{
 		changes: [
@@ -453,7 +453,7 @@ DEFINE FIELD last_name
 DEFINE FIELD name      
   ON TABLE person             VALUE first_name + ' ' + last_name;
 
-// Creates a `person` with the name "Bob Bobson"
+-- Creates a `person` with the name "Bob Bobson"
 CREATE person SET first_name = "Bob", last_name = "Bobson";
 ```
 
@@ -534,7 +534,7 @@ DEFINE TABLE some_other_table;
 INFO FOR DB;
 ```
 
-```surql title="Response"
+```surql title="Output"
 {
 	analyzers: {},
 	functions: {},

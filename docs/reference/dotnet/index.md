@@ -24,7 +24,7 @@ The SurrealDB SDK for C# and .NET enables you to interact with SurrealDB from se
 
 ## Learn
 
-- **[Concepts](core/create-a-new-connection.md)** — Guides for connecting, authenticating, querying, and working with data.
+- **[Concepts](core/index.md)** — Guides for connecting, authenticating, querying, and working with data.
 - **[API Reference](methods/index.md)** — Complete reference for the SDK's methods, types, and errors.
 
 ## Example projects

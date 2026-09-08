@@ -75,7 +75,7 @@ skip-record-id-key = true
 CREATE person;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
     {
         "id": "person:2vvgzt6m24s952yiy7x8"
@@ -96,7 +96,7 @@ value = "[{ id: person:one }]"
 CREATE person:one;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: person:one
@@ -156,7 +156,7 @@ CREATE person:tobie SET
 
 The above will create a new record with the ID `person:tobie` and the specified data.
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		"id": "person:tobie",
@@ -197,7 +197,7 @@ UPDATE townsperson, cat, dog SET
     name = "Just a " + record::tb(id);
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
     {
         "created_at": "2024-03-19T03:12:05.079Z",
@@ -234,7 +234,7 @@ skip-record-id-key = true
 CREATE |townsperson:3|;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: townsperson:hzkt0piy3f72xo5dl2jf
@@ -256,7 +256,7 @@ The other method is by using the `..` range syntax after the `:` instead of a si
 CREATE |townsperson:1..4|;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		id: townsperson:1
@@ -278,7 +278,7 @@ CREATE dog, |cat:2|, |townsperson:1..3| SET
     name = "Just a " + record::tb(id);
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		created_at: '2024-08-13T04:14:44.135Z',
@@ -331,7 +331,7 @@ CREATE ONLY person:tobie SET
     skills = ['Rust', 'Go', 'JavaScript'];
 ```
 
-```surql title="Response"
+```surql title="Output"
 -------- Query --------
 
 [
@@ -385,7 +385,7 @@ value = "[[{ op: 'replace', path: '', value: { age: 46, id: person:2wm77z4dn1wjh
 CREATE person SET age = 46, username = "john-smith" RETURN DIFF;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	[
 		{
@@ -455,7 +455,7 @@ CREATE |person:5|
 RETURN VALUE age;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -------- Query --------
 
 [
@@ -504,7 +504,7 @@ INFO FOR DB;
 RETURN $session;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -------- Query --------
 
 {
@@ -593,7 +593,7 @@ INFO FOR NS;
 INFO FOR DB;
 ```
 
-```surql title="Response"
+```surql title="Output"
 -------- Query --------
 
 {

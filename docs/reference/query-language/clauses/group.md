@@ -37,7 +37,6 @@ A [number of functions](../functions/database-functions/index.md#aggregate-funct
 For example, the [`math::sum()`](../functions/database-functions/math.md#mathsum) function can be used on an array of numbers to calculate their final sum.
 
 ```surql
--- Returns 30
 math::sum([
     {
         name: "Billy",
@@ -48,6 +47,7 @@ math::sum([
         money: 20
     }
 ].money);
+//- 30
 ```
 
 Attempting to use the same function inside a `SELECT` query will not work as `math::sum()` expects an array of numbers but only receives a single integer each time it is called.

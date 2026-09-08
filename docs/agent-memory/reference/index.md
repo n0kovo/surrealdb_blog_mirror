@@ -22,3 +22,7 @@ Complete technical reference for all SurrealDB Agent Memory APIs, configuration 
 - **[Data model and schema](data-model-and-schema.md)** - SurrealDB schema for Context-local tables (authoritative and experiential streams share one database).
 - **[Errors](errors.md)** - HTTP error codes and SDK exception types.
 - **[Glossary](glossary.md)** - Definitions of key terms (see also the [Architecture glossary](https://surrealdb.com/docs/agent-memory/architecture/glossary) for pillar and memory vocabulary).
+
+## SDK references
+
+- [Swift SDK reference](sdk-swift.md) - the Swift client's types and methods

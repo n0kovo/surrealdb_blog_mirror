@@ -214,8 +214,10 @@ value = "[1, 2, 3]"
 */
 
 type::array(1..=3);
+```
 
--- [1, 2, 3]
+```surql title="Output"
+[1, 2, 3]
 ```
 
 This is the equivalent of using [`<array>`](../../language-primitives/casting.md#array) to cast a value to an array.
@@ -239,8 +241,10 @@ value = "true"
 */
 
 type::bool("true");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
 This is the equivalent of using [`<bool>`](../../language-primitives/casting.md#bool) to cast a value to a boolean.
@@ -266,8 +270,10 @@ value = "b"4120666577206279746573""
 */
 
 type::bytes("A few bytes");
+```
 
--- b"4120666577206279746573"
+```surql title="Output"
+b"4120666577206279746573"
 ```
 
 This is the equivalent of using [`<bytes>`](../../language-primitives/casting.md) to cast a value to bytes.
@@ -292,8 +298,10 @@ value = "d'2022-04-27T18:12:27Z'"
 */
 
 type::datetime("2022-04-27T18:12:27+00:00");
+```
 
--- d'2022-04-27T18:12:27Z'
+```surql title="Output"
+d'2022-04-27T18:12:27Z'
 ```
 
 This is the equivalent of using [`<datetime>`](../../language-primitives/casting.md#datetime) to cast a value to a datetime.
@@ -319,8 +327,10 @@ value = "12345dec"
 */
 
 type::decimal("12345");
+```
 
--- 12345dec
+```surql title="Output"
+12345dec
 ```
 
 This is the equivalent of using [`<decimal>`](../../language-primitives/casting.md#decimal) to cast a value to a decimal.
@@ -345,8 +355,10 @@ value = "4h"
 */
 
 type::duration("4h");
+```
 
--- 4h
+```surql title="Output"
+4h
 ```
 
 This is the equivalent of using [`<duration>`](../../language-primitives/casting.md#duration) to cast a value to a duration.
@@ -578,8 +590,10 @@ value = "true"
 */
 
 type::file("my_bucket", "file_name") == f"my_bucket:/file_name";
+```
 
--- true
+```surql title="Output"
+true
 ```
 
 Once a [bucket has been defined](../../statements/define/indexes.md), operations using one of the [file functions](file.md) can be performed on the file pointer.
@@ -629,8 +643,10 @@ value = "12345f"
 */
 
 type::float("12345");
+```
 
--- 12345f
+```surql title="Output"
+12345f
 ```
 This is the equivalent of using [`<float>`](../../language-primitives/casting.md#float) to cast a value to a float.
 
@@ -654,8 +670,10 @@ value = "12345"
 */
 
 type::int("12345");
+```
 
--- 12345
+```surql title="Output"
+12345
 ```
 This is the equivalent of using [`<int>`](../../language-primitives/casting.md#int) to cast a value to a int.
 
@@ -679,8 +697,10 @@ value = "12345"
 */
 
 type::number("12345");
+```
 
--- 12345
+```surql title="Output"
+12345
 ```
 
 This is the equivalent of using [`<number>`](../../language-primitives/casting.md#number) to cast a value to a number.
@@ -722,8 +742,10 @@ value = "(51.509865, -0.118092)"
 */
 
 type::point([ 51.509865, -0.118092 ]);
+```
 
--- (51.509865, -0.118092)
+```surql title="Output"
+(51.509865, -0.118092)
 ```
 
   
@@ -753,13 +775,13 @@ error = "Could not cast into `range` using input `[1, 9, 4]`"
 */
 
 type::range([1, 2]);
--- 1..2
+//- 1..2
 
 type::range(1..10);
--- 1..10
+//- 1..10
 
 type::range([1,9,4]);
--- 'Expected a range but cannot convert [1, 9, 4] into a range'
+//- 'Expected a range but cannot convert [1, 9, 4] into a range'
 ```
 
   
@@ -826,8 +848,10 @@ If the second argument passed into `type::record` is a record ID, the latter par
 
 ```surql
 type::record("person", person:mat);
+```
 
--- person:mat
+```surql title="Output"
+person:mat
 ```
 
 The output of the above function call will thus be `person:mat`, not `person:person:mat`.
@@ -837,7 +861,10 @@ When the first argument is already a record ID and the second is a string, the s
 ```surql
 type::record(person:tobie, 'person'); -- person:tobie
 type::record(person:tobie, 'cat');
--- error: record is not in table `cat`
+```
+
+```surql title="Output"
+error: record is not in table `cat`
 ```
 
 **2.x**
@@ -862,7 +889,7 @@ The optional second argument allows an assertation that the record passed in is 
 ```surql
 type::record('person:tobie', 'person'); -- person:tobie
 type::record('person:tobie', 'cat');
--- "Expected a record<cat> but cannot convert 'person:tobie' into a
+//- "Expected a record<cat> but cannot convert 'person:tobie' into a
   record<cat>"
 ```
 
@@ -894,8 +921,10 @@ value = "'12345'"
 */
 
 type::string(12345);
+```
 
--- '12345'
+```surql title="Output"
+'12345'
 ```
 
 This is the equivalent of using [`<string>`](../../language-primitives/casting.md#string) to cast a value to a string.
@@ -984,8 +1013,10 @@ value = "[person, cat]"
   type::table("person"),
   type::table(cat:one)
 ];
+```
 
--- [person, cat]
+```surql title="Output"
+[person, cat]
 ```
 
 As of version 2.0, SurrealDB no longer eagerly parses strings into record IDs. As such, the output of the last item ("dog:two") in the following example will differ. In version 1.x, it will be eagerly parsed into a record ID after which the `dog` table name will be returned, while in later editions it will be treated as a string and converted into the table name `dog:two`. As of version 3.0, a number is no longer accepted as input, because a number on its own is not a valid table name.
@@ -1040,8 +1071,10 @@ value = "u'0191f946-936f-7223-bef5-aebbc527ad80'"
 */
 
 type::uuid("0191f946-936f-7223-bef5-aebbc527ad80");
+```
 
--- u'0191f946-936f-7223-bef5-aebbc527ad80'
+```surql title="Output"
+u'0191f946-936f-7223-bef5-aebbc527ad80'
 ```
   
 
@@ -1067,8 +1100,10 @@ value = "true"
 */
 
 type::is_array([ 'a', 'b', 'c' ]);
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1095,8 +1130,10 @@ value = "true"
 */
 
 type::is_bool(true);
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1123,8 +1160,10 @@ value = "false"
 */
 
 type::is_bytes("I am not bytes");
+```
 
--- false
+```surql title="Output"
+false
 ```
 
   
@@ -1151,8 +1190,10 @@ value = "false"
 */
 
 type::is_collection("I am not a collection");
+```
 
--- false
+```surql title="Output"
+false
 ```
 
   
@@ -1178,8 +1219,10 @@ value = "true"
 */
 
 type::is_datetime(time::now());
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1207,8 +1250,10 @@ value = "true"
 
 type::is_decimal(<decimal>
   13.5719384719384719385639856394139476937756394756);
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1234,8 +1279,10 @@ value = "false"
 */
 
 type::is_duration('1970-01-01T00:00:00');
+```
 
--- false
+```surql title="Output"
+false
 ```
 
   
@@ -1261,8 +1308,10 @@ value = "true"
 */
 
 type::is_float(<float> 41.5);
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1288,8 +1337,10 @@ value = "true"
 */
 
 type::is_geometry((-0.118092, 51.509865));
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1315,8 +1366,10 @@ value = "true"
 */
 
 type::is_int(<int> 123);
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1343,8 +1396,10 @@ value = "false"
 */
 
 type::is_line("I am not a line");
+```
 
--- false
+```surql title="Output"
+false
 ```
 
   
@@ -1370,8 +1425,10 @@ value = "true"
 */
 
 type::is_none(NONE);
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1398,8 +1455,10 @@ value = "true"
 */
 
 type::is_null(NULL);
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1426,8 +1485,10 @@ value = "false"
 */
 
 type::is_multiline("I am not a multiline");
+```
 
--- false
+```surql title="Output"
+false
 ```
 
   
@@ -1454,8 +1515,10 @@ value = "false"
 */
 
 type::is_multipoint("I am not a multipoint");
+```
 
--- false
+```surql title="Output"
+false
 ```
 
   
@@ -1482,8 +1545,10 @@ value = "false"
 */
 
 type::is_multipolygon("I am not a multipolygon");
+```
 
--- false
+```surql title="Output"
+false
 ```
 
   
@@ -1510,8 +1575,10 @@ value = "true"
 */
 
 type::is_number(123);
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1538,8 +1605,10 @@ value = "true"
 */
 
 type::is_object({ hello: 'world' });
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1566,8 +1635,10 @@ value = "true"
 */
 
 type::is_point((-0.118092, 51.509865));
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1594,8 +1665,10 @@ value = "false"
 */
 
 type::is_polygon("I am not a polygon");
+```
 
--- false
+```surql title="Output"
+false
 ```
 
 ## `type::is_range`
@@ -1621,11 +1694,11 @@ value = "true"
 */
 
 type::is_range(0..1);
--- true
+//- true
 
-// method syntax
+-- method syntax
 (0..1).is_range();
--- true
+//- true
 ```
 
 ## `type::is_record`
@@ -1650,8 +1723,10 @@ value = "true"
 */
 
 type::is_record(user:tobie);
+```
 
--- true
+```surql title="Output"
+true
 ```
 
 ### Validate a table
@@ -1693,8 +1768,10 @@ value = "true"
 */
 
 type::is_string("abc");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1721,8 +1798,10 @@ value = "true"
 */
 
 type::is_uuid(u"018a6680-bef9-701b-9025-e1754f296a0f");
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1750,6 +1829,6 @@ type::is_record(r"person:aeon", "cat");
 r"person:aeon".is_record("cat");
 ```
 
-```surql title="Response"
+```surql title="Output"
 false
 ```

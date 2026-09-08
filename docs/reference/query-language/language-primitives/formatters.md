@@ -369,7 +369,7 @@ value = "true"
 string::is_datetime("5sep2024pm012345.6789", "%d%b%Y%p%I%M%S%.f");
 ```
 
-```surql title="Response"
+```surql title="Output"
 true
 ```
 
@@ -386,7 +386,7 @@ value = "false"
 string::is_datetime("23:56:00 2015-09-05", "%Y-%m-%d %H:%M");
 ```
 
-```surql title="Response"
+```surql title="Output"
 false
 ```
 
@@ -403,6 +403,6 @@ value = "'2021-11-01'"
 time::format(d"2021-11-01T08:30:17+00:00", "%Y-%m-%d");
 ```
 
-```surql title="Response"
+```surql title="Output"
 "2021-11-01"
 ```

@@ -137,7 +137,10 @@ value = "{'one', 'three', 'two'}"
 
 */
 set::add({"one", "two"}, "three");
--- {'one', 'three', 'two'}
+```
+
+```surql title="Output"
+{'one', 'three', 'two'}
 ```
 
 A set can also be extended with the contents of an array or another set.
@@ -155,10 +158,10 @@ value = "{1, 2, 3, 4, 5}"
 */
 
 {1, 2}.add([2, 3, 4]);
--- {1, 2, 3, 4}
+//- {1, 2, 3, 4}
 
 {1, 2, 3}.add({3, 4, 5});
--- {1, 2, 3, 4, 5}
+//- {1, 2, 3, 4, 5}
 ```
 
 ## `set::all`
@@ -186,9 +189,9 @@ value = "true"
 */
 
 set::all({ 1, 2, 3, NONE, 'SurrealDB', 5 });
--- false
+//- false
 {'all', 'clear'}.all();
--- true
+//- true
 ```
 
 The `set::all` function can also be followed with a value or a [closure](../../language-primitives/data-types/closures.md) to check whether all elements conform to a condition.
@@ -209,13 +212,13 @@ value = "false"
 */
 
 {'same',}.all('same');
--- true
+//- true
 
 {"What's", 'it', 'got', 'in', 'its', 'pocketses??'}.all(|$s| $s.len() > 1);
--- true
+//- true
 
 {1, 2, 'SurrealDB'}.all(|$var| $var.is_string());
--- false
+//- false
 ```
 
 ## `set::any`
@@ -242,10 +245,10 @@ value = "false"
 
 */
 set::any({ 1, 2, 3, NONE, 'SurrealDB', 5 });
--- true
+//- true
 
 {'', 0, NONE, NULL, [], {}}.any();
--- false
+//- false
 ```
 
 The `set::any` function can also be followed with a value or a [closure](../../language-primitives/data-types/closures.md) to check whether any elements conform to a condition.
@@ -266,13 +269,13 @@ value = "false"
 */
 
 {'same', 'different'}.any('same');
--- true
+//- true
 
 {'ant', 'bear', 'cat'}.any(|$s| $s.len() > 3);
--- true
+//- true
 
 {1, 2, 3}.any(|$num| $num > 10);
--- false
+//- false
 ```
 
 ## `set::at`
@@ -297,7 +300,10 @@ value = "2"
 */
 
 set::at({3, 1, 2}, 1);
--- 2
+```
+
+```surql title="Output"
+2
 ```
 
 You can also pass in a negative index.
@@ -315,10 +321,10 @@ value = "NONE"
 */
 
 {1, 2, 3}.at(-1);
--- 3
+//- 3
 
 {1, 2, 3}.at(-4);
--- NONE
+//- NONE
 ```
 
 ## `set::complement`
@@ -329,9 +335,12 @@ The `set::complement` function returns the complement of two sets, namely a sing
 set::complement(set, $other: set) -> set
 ```
 
-```surql title="Example with output"
+```surql title="Example"
 {1, 2, 3, 4}.complement({3, 4, 5, 6});
--- {1, 2}
+```
+
+```surql title="Output"
+{1, 2}
 ```
 
 ## `set::contains`
@@ -342,9 +351,12 @@ The `set::contains` function checks to see if a value is contained within a set.
 set::contains(set, $other: value) -> bool
 ```
 
-```surql title="Example with output"
+```surql title="Example"
 {1, 2, 3}.contains(3);
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ## `set::difference`
@@ -355,9 +367,12 @@ The `set::difference` function determines the symmetric difference between two s
 set::difference(set, $other: set) -> set
 ```
 
-```surql title="Example with output"
+```surql title="Example"
 {1, 2, 3, 4}.difference({3, 4, 5, 6});
--- {1, 2, 5, 6}
+```
+
+```surql title="Output"
+{1, 2, 5, 6}
 ```
 
 ## `set::filter`
@@ -380,7 +395,10 @@ value = "{0, 1, 2, 3}"
 
 */
 {1, 2, 3, NONE, 0, '', [], {}}.filter(|$v| $v.is_int());
--- {0, 1, 2, 3}
+```
+
+```surql title="Output"
+{0, 1, 2, 3}
 ```
 
 You can also pass a value to keep only exact matches.
@@ -395,7 +413,10 @@ value = "{'a',}"
 */
 
 {'a', 'b', 'c'}.filter('a');
--- {'a',}
+```
+
+```surql title="Output"
+{'a',}
 ```
 
 ## `set::find`
@@ -423,10 +444,10 @@ value = "NONE"
 
 */
 set::find({'a', 'b', 'c'}, 'b');
--- 'b'
+//- 'b'
 
 {1, 2, 3}.find(4);
--- NONE
+//- NONE
 ```
 
 The `set::find` function is most useful when a [closure](../../language-primitives/data-types/closures.md) is passed in, which allows for customised searching.
@@ -444,7 +465,7 @@ value = "{ intelligence: 15, name: 'Mardine', strength: 10 }"
 */
 
 {1, 2, 5}.find(|$num| $num >= 3);
--- 5
+//- 5
 
 {
 	{ strength: 15, intelligence: 6, name: 'Dom the Magnificent' },
@@ -452,7 +473,7 @@ value = "{ intelligence: 15, name: 'Mardine', strength: 10 }"
 	{ strength: 20, intelligence: 3, name: 'Gub gub' },
 	{ strength: 10, intelligence: 18, name: 'Lumin695' }
 }.find(|$c| $c.strength > 9 AND $c.intelligence > 9);
--- { intelligence: 15, name: 'Mardine', strength: 10 }
+//- { intelligence: 15, name: 'Mardine', strength: 10 }
 ```
 
 ## `set::first`
@@ -477,7 +498,10 @@ value = "1"
 */
 
 set::first({ 3, 1, 2 });
--- 1
+```
+
+```surql title="Output"
+1
 ```
 
 ## `set::flatten`
@@ -540,7 +564,10 @@ value = "10"
 */
 
 {1, 2, 3, 4}.fold(0, |$acc, $val| $acc + $val);
--- 10
+```
+
+```surql title="Output"
+10
 ```
 
 Because `set::fold()` takes an explicit initial value, it is useful when the result type should differ from the type of the set values.
@@ -555,7 +582,10 @@ value = "'123'"
 */
 
 {1, 2, 3}.fold('', |$acc, $val| $acc + <string>$val);
--- '123'
+```
+
+```surql title="Output"
+'123'
 ```
 
 ## `set::intersect`
@@ -566,9 +596,12 @@ The `set::intersect` function calculates the values which intersect two sets, re
 set::intersect(set, $other: set) -> set
 ```
 
-```surql title="Example with output"
+```surql title="Example"
 {1, 2, 3, 4}.intersect({3, 4, 5, 6});
--- {3, 4}
+```
+
+```surql title="Output"
+{3, 4}
 ```
 
 ## `set::is_empty`
@@ -579,9 +612,12 @@ The `set::is_empty` function checks whether the set is empty or not.
 set::is_empty(set) -> bool
 ```
 
-```surql title="Example with output"
+```surql title="Example"
 {1, 2, 3, 4}.is_empty();
--- false
+```
+
+```surql title="Output"
+false
 ```
 
 ## `set::join`
@@ -604,7 +640,10 @@ value = "'1 + 2 + 3'"
 */
 
 set::join({3, 1, 2}, ' + ');
--- '1 + 2 + 3'
+```
+
+```surql title="Output"
+'1 + 2 + 3'
 ```
 
 ## `set::last`
@@ -629,7 +668,10 @@ value = "3"
 */
 
 set::last({ 3, 1, 2 });
--- 3
+```
+
+```surql title="Output"
+3
 ```
 
 ## `set::len`
@@ -642,9 +684,12 @@ If you want to only count [truthy](../../language-primitives/data-types/values.m
 set::len(set) -> number
 ```
 
-```surql title="Example with output"
+```surql title="Example"
 {1, 2, 1, null, 'something', 3, 3, 4, 0}.len();
--- 7
+```
+
+```surql title="Output"
+7
 ```
 
 ## `set::map`
@@ -669,7 +714,10 @@ value = "{2, 4, 6}"
 */
 
 {1, 2, 3}.map(|$v| $v * 2);
--- {2, 4, 6}
+```
+
+```surql title="Output"
+{2, 4, 6}
 ```
 
 An example of mapping several values to the same result.
@@ -684,7 +732,10 @@ value = "{false, true}"
 */
 
 {1, 2, 3}.map(|$val| $val % 2 = 0);
--- {false, true}
+```
+
+```surql title="Output"
+{false, true}
 ```
 
 ## `set::max`
@@ -707,7 +758,10 @@ value = "2"
 */
 
 set::max({0, 1, 2});
--- 2
+```
+
+```surql title="Output"
+2
 ```
 
 As any value can be compared with another value, the set can contain any SurrealQL value.
@@ -732,7 +786,10 @@ value = "0"
 */
 
 set::min({0, 1, 2});
--- 0
+```
+
+```surql title="Output"
+0
 ```
 
 As any value can be compared with another value, the set can contain any SurrealQL value.
@@ -759,7 +816,10 @@ value = "10"
 */
 
 {1, 2, 3, 4}.reduce(|$one, $two| $one + $two);
--- 10
+```
+
+```surql title="Output"
+10
 ```
 
 Another example showing `set::reduce()` used to build a string:
@@ -774,7 +834,10 @@ value = "'1234'"
 */
 
 {1, 2, 3, 4}.reduce(|$one, $two| <string>$one + <string>$two);
--- '1234'
+```
+
+```surql title="Output"
+'1234'
 ```
 
 ## `set::remove`
@@ -797,7 +860,10 @@ value = "{1, 5}"
 */
 
 {1, 2, 5}.remove(2);
--- {1, 5}
+```
+
+```surql title="Output"
+{1, 5}
 ```
 
 If the value does not exist, the untouched set will be returned.
@@ -812,7 +878,10 @@ value = "{1, 2, 5}"
 */
 
 {1, 2, 5}.remove(3);
--- {1, 2, 5}
+```
+
+```surql title="Output"
+{1, 2, 5}
 ```
 
 You can also remove the contents of an array or another set.
@@ -830,10 +899,10 @@ value = "{1}"
 */
 
 {1, 2, 3, 4}.remove([2, 3]);
--- {1, 4}
+//- {1, 4}
 
 {1, 2, 3, 4}.remove({2, 3, 4});
--- {1,}
+//- {1,}
 ```
 
 ## `set::slice`
@@ -864,10 +933,10 @@ value = "{3, 4, 5}"
 */
 
 set::slice({4, 1, 3, 2}, 1, 3);
--- {2, 3}
+//- {2, 3}
 
 {1, 2, 3, 4, 5}.slice(-3..);
--- {3, 4, 5}
+//- {3, 4, 5}
 ```
 
 ## `set::union`
@@ -878,7 +947,10 @@ The `set::union` function combines two sets together, removing duplicate values,
 set::union(set, $other: set) -> set
 ```
 
-```surql title="Example with output"
+```surql title="Example"
 {1, 2, 6}.union({1, 3, 4, 5, 6});
--- {1, 2, 3, 4, 5, 6}
+```
+
+```surql title="Output"
+{1, 2, 3, 4, 5, 6}
 ```

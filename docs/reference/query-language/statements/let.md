@@ -102,7 +102,10 @@ LET $num_type =
     ELSE IF type::is_float($num)   { "float"   };
 
 RETURN $num_type;
--- 'integer'
+```
+
+```surql title="Output"
+'integer'
 ```
 
 ## Anonymous functions

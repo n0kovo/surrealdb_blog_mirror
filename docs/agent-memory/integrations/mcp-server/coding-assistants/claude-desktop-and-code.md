@@ -26,21 +26,30 @@ Claude Code reads the plugin directly - the MCP server and the usage skill load 
 
 The SurrealDB Agent Memory MCP has no default URL. Set your instance endpoint and a bearer token before launching Claude Code, then restart:
 
+**Bash**
+
 ```bash
-export SPECTRON_MCP_URL="https://<your-spectron-instance>/mcp"
-export SPECTRON_MCP_TOKEN="<your-api-key>"
+export AGENT_MEMORY_MCP_URL="https://<your-spectron-instance>/mcp"
+export AGENT_MEMORY_MCP_TOKEN="<your-api-key>"
 ```
 
-If `SPECTRON_MCP_URL` is unset, the server will not connect. The plugin's MCP entry expands these variables:
+**PowerShell**
+
+```powershell
+$env:AGENT_MEMORY_MCP_URL = "https://<your-spectron-instance>/mcp"
+$env:AGENT_MEMORY_MCP_TOKEN = "<your-api-key>"
+```
+
+If `AGENT_MEMORY_MCP_URL` is unset, the server will not connect. The plugin's MCP entry expands these variables:
 
 ```json
 {
   "mcpServers": {
     "spectron": {
       "type": "http",
-      "url": "${SPECTRON_MCP_URL}",
+      "url": "${AGENT_MEMORY_MCP_URL}",
       "headers": {
-        "Authorization": "Bearer ${SPECTRON_MCP_TOKEN}"
+        "Authorization": "Bearer ${AGENT_MEMORY_MCP_TOKEN}"
       }
     }
   }

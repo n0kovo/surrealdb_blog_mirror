@@ -46,6 +46,10 @@ SurrealDB offers official SDKs for popular languages, supporting queries, authen
 - **[Rust](reference/rust/index.md)**
 - **[Swift](reference/swift/index.md)**
 
+Beyond the official clients above, [community SDKs](languages/community.md) cover further languages and runtimes.
+
+For mobile, the [Expo](frameworks/expo.md) and [React Native](frameworks/react-native.md) guides cover connecting from a React Native app.
+
 ## Deployment
 
 SurrealDB offers flexible deployment options to suit your infrastructure requirements. You can run the database as a fully managed cloud service, self-host it on your own servers, deploy it within containers, or embed it directly into your application.

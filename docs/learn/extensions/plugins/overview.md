@@ -41,3 +41,7 @@ The next pages walk through the workflow and APIs:
 - [Quick tutorial](quick-tutorial.md)
 - [Creating custom modules](../guides/creating-custom-modules.md)
 - [Surrealism attribute reference](../guides/surrealism-attribute-reference.md)
+
+## More examples
+
+- [Further examples](further-examples.md) - additional plugins to read through

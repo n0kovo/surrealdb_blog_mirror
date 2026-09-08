@@ -199,8 +199,17 @@ Two rules govern prompts.
 
 **`--no-input` makes any session behave as an unattended one**, even at a terminal. Use it to test a pipeline locally: if the script works with `--no-input`, it will work in CI.
 
+**Bash**
+
 ```bash
 export SURREALCTL_NO_INPUT=1
+surrealctl instance delete staging --force
+```
+
+**PowerShell**
+
+```powershell
+$env:SURREALCTL_NO_INPUT = "1"
 surrealctl instance delete staging --force
 ```
 

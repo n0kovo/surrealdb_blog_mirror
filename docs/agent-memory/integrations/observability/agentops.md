@@ -20,11 +20,22 @@ pip install agentops openai
 pip install --pre surrealdb
 ```
 
+**Bash**
+
 ```bash
 export AGENTOPS_API_KEY="..."
-export SPECTRON_ENDPOINT="https://api.spectron.example"
-export SPECTRON_CONTEXT="acme-prod"
-export SPECTRON_API_KEY="sk-spec-..."
+export AGENT_MEMORY_ENDPOINT="https://api.spectron.example"
+export AGENT_MEMORY_CONTEXT="acme-prod"
+export AGENT_MEMORY_API_KEY="sk-spec-..."
+```
+
+**PowerShell**
+
+```powershell
+$env:AGENTOPS_API_KEY = "..."
+$env:AGENT_MEMORY_ENDPOINT = "https://api.spectron.example"
+$env:AGENT_MEMORY_CONTEXT = "acme-prod"
+$env:AGENT_MEMORY_API_KEY = "sk-spec-..."
 ```
 
 ## Instrument the agent, remember with Agent Memory
@@ -39,9 +50,9 @@ agentops.init(os.environ["AGENTOPS_API_KEY"])
 
 llm = OpenAI()
 memory = Memory(
-    endpoint=os.environ["SPECTRON_ENDPOINT"],
-    context=os.environ["SPECTRON_CONTEXT"],
-    api_key=os.environ["SPECTRON_API_KEY"],
+    endpoint=os.environ["AGENT_MEMORY_ENDPOINT"],
+    context=os.environ["AGENT_MEMORY_CONTEXT"],
+    api_key=os.environ["AGENT_MEMORY_API_KEY"],
 )
 scope = ["org/acme/user/alice"]
 

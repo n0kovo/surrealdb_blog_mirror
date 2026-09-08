@@ -37,7 +37,7 @@ OpenCode reads configuration from `opencode.json` in your workspace root (or `~/
       "url": "https://<your-context-host>/mcp",
       "enabled": true,
       "headers": {
-        "Authorization": "Bearer {env:SPECTRON_API_KEY}",
+        "Authorization": "Bearer {env:AGENT_MEMORY_API_KEY}",
         "X-Spectron-Context": "acme-prod"
       }
     }
@@ -45,10 +45,18 @@ OpenCode reads configuration from `opencode.json` in your workspace root (or `~/
 }
 ```
 
-The `{env:SPECTRON_API_KEY}` syntax reads the key from the environment, keeping the secret out of the file:
+The `{env:AGENT_MEMORY_API_KEY}` syntax reads the key from the environment, keeping the secret out of the file:
+
+**Bash**
 
 ```bash
-export SPECTRON_API_KEY="<your-api-key>"
+export AGENT_MEMORY_API_KEY="<your-api-key>"
+```
+
+**PowerShell**
+
+```powershell
+$env:AGENT_MEMORY_API_KEY = "<your-api-key>"
 ```
 
 On **SurrealDB Cloud**, use your context host from SurrealDB Studio **API keys** (not a generic shared domain). **Self-hosted:** replace the URL with your SurrealDB Agent Memory server's base URL + `/mcp`.
@@ -58,7 +66,7 @@ On **SurrealDB Cloud**, use your context host from SurrealDB Studio **API keys**
 
 ## Verify the installation
 
-Start OpenCode and ask "What MCP tools do you have available?" It should report the SurrealDB Agent Memory tools. If they do not appear, check that `opencode.json` is valid JSON and that the URL and `SPECTRON_API_KEY` are correct.
+Start OpenCode and ask "What MCP tools do you have available?" It should report the SurrealDB Agent Memory tools. If they do not appear, check that `opencode.json` is valid JSON and that the URL and `AGENT_MEMORY_API_KEY` are correct.
 
 ## Usage examples
 

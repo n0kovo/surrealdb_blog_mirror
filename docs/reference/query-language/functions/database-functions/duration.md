@@ -129,8 +129,10 @@ value = "21"
 */
 
 duration::days(3w);
+```
 
--- 21
+```surql title="Output"
+21
 ```
 
   
@@ -154,8 +156,10 @@ value = "504"
 
 */
 duration::hours(3w);
+```
 
--- 504
+```surql title="Output"
+504
 ```
 
   
@@ -225,8 +229,10 @@ value = "1814400000000"
 
 */
 duration::micros(3w);
+```
 
--- 1814400000000
+```surql title="Output"
+1814400000000
 ```
 
   
@@ -249,8 +255,10 @@ value = "1814400000"
 
 */
 duration::millis(3w);
+```
 
--- 1814400000
+```surql title="Output"
+1814400000
 ```
 
   
@@ -273,8 +281,10 @@ value = "30240"
 
 */
 duration::mins(3w);
+```
 
--- 30240
+```surql title="Output"
+30240
 ```
 
   
@@ -297,8 +307,10 @@ value = "1814400000000000"
 
 */
 duration::nanos(3w);
+```
 
--- 1814400000000000
+```surql title="Output"
+1814400000000000
 ```
 
   
@@ -321,8 +333,10 @@ value = "1814400"
 
 */
 duration::secs(3w);
+```
 
--- 1814400
+```surql title="Output"
+1814400
 ```
 
   
@@ -346,8 +360,10 @@ value = "3"
 
 */
 duration::weeks(3w);
+```
 
--- 3
+```surql title="Output"
+3
 ```
 
   
@@ -371,8 +387,10 @@ value = "5"
 
 */
 duration::years(300w);
+```
 
--- 5
+```surql title="Output"
+5
 ```
 
   
@@ -396,8 +414,10 @@ value = "3d"
 
 */
 duration::from_days(3);
+```
 
--- 3d
+```surql title="Output"
+3d
 ```
 
   
@@ -421,8 +441,10 @@ value = "3h"
 */
 
 duration::from_hours(3);
+```
 
--- 3h
+```surql title="Output"
+3h
 ```
 
   
@@ -445,8 +467,10 @@ value = "3µs"
 
 */
 duration::from_micros(3);
+```
 
--- 3μs
+```surql title="Output"
+3μs
 ```
 
   
@@ -470,8 +494,10 @@ value = "3ms"
 */
 
 duration::from_millis(3);
+```
 
--- 3ms
+```surql title="Output"
+3ms
 ```
 
   
@@ -495,8 +521,10 @@ value = "3m"
 */
 
 duration::from_mins(3);
+```
 
--- 3m
+```surql title="Output"
+3m
 ```
 
   
@@ -519,8 +547,10 @@ value = "3ns"
 
 */
 duration::from_nanos(3);
+```
 
--- 3ns
+```surql title="Output"
+3ns
 ```
 
   
@@ -543,8 +573,10 @@ value = "3s"
 
 */
 duration::from_secs(3);
+```
 
--- 3s
+```surql title="Output"
+3s
 ```
 
   
@@ -567,8 +599,10 @@ value = "3w"
 
 */
 duration::from_weeks(3);
+```
 
--- 3w
+```surql title="Output"
+3w
 ```
 
   
@@ -597,7 +631,7 @@ duration::mins(2d6h);
 2d6h.mins();
 ```
 
-```surql title="Response"
+```surql title="Output"
 3240
 ```
 
@@ -621,6 +655,6 @@ duration::mins(duration::from_millis(98734234));
 duration::from_millis(98734234).mins();
 ```
 
-```surql title="Response"
+```surql title="Output"
 1645
 ```

@@ -340,6 +340,8 @@ To use experimental capabilities, set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` [env
 
 For example, to use [Surrealism](../../../../learn/extensions/plugins/overview.md) extensions, set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable to `surrealism` - or pass it in via the `--allow-experimental` flag.
 
+**Bash**
+
 ```bash
 # Allow experimental via an env var
 SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism surreal start
@@ -348,10 +350,31 @@ SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism surreal start
 surreal start --allow-experimental surrealism
 ```
 
+**PowerShell**
+
+```powershell
+# Allow experimental via an env var
+$env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "surrealism"
+surreal start
+
+# Allow experimental via a flag
+surreal start --allow-experimental surrealism
+```
+
 Multiple experimental capabilities can be enabled by separating them with a comma.
+
+**Bash**
 
 ```bash
 SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism,files surreal start
+surreal start --allow-experimental surrealism,files
+```
+
+**PowerShell**
+
+```powershell
+$env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "surrealism,files"
+surreal start
 surreal start --allow-experimental surrealism,files
 ```
 

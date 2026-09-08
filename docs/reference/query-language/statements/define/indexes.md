@@ -132,7 +132,7 @@ As we defined a `UNIQUE` index on the `email` column, a duplicate entry for that
 CREATE user:1 SET email = 'test@surrealdb.com';
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
     {
         "email": "test@surrealdb.com",
@@ -148,7 +148,7 @@ Creating another record with the same email ID will throw an error.
 CREATE user:2 SET email = 'test@surrealdb.com';
 ```
 
-```surql title="Response"
+```surql title="Output"
 Database index `userEmailIndex` already contains 'test@surrealdb.com',
 with record `user:1`
 ```
@@ -338,7 +338,7 @@ DEFINE INDEX idx2 ON person FIELD name;
 
 ```surql title="Output"
 'There was a problem with the database: Parse error: Unexpected token `FIELD`, expected Eof
- --> [1:29]
+ //- [1:29]
   |
 1 | DEFINE INDEX idx2 ON person FIELD name;
   |                             ^^^^^ 
@@ -603,7 +603,7 @@ When building an index concurrently, SurrealDB starts the index creation as a ba
 INFO FOR INDEX test ON user;
 ```
 
-```surql title="Possible response"
+```surql title="Possible output"
 -- Query
 
 {

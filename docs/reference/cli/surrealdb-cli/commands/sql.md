@@ -174,8 +174,17 @@ For **embedded** `surreal sql` (for example `surreal sql memory`), set the varia
 
 For example, to use [Surrealism](../../../../learn/extensions/plugins/overview.md) extensions in an embedded session:
 
+**Bash**
+
 ```bash
 SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism surreal sql ...
+```
+
+**PowerShell**
+
+```powershell
+$env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "surrealism"
+surreal sql ...
 ```
 
 or, using the `--allow-experimental` flag:
@@ -186,8 +195,21 @@ surreal sql -e [CONNECTION_STRING] --allow-experimental surrealism
 
 Multiple experimental capabilities can be enabled by separating them with a comma.
 
+**Bash**
+
 ```bash
 SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism,files surreal sql ...
+
+-- OR
+
+surreal sql -e [CONNECTION_STRING] --allow-experimental surrealism,files
+```
+
+**PowerShell**
+
+```powershell
+$env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "surrealism,files"
+surreal sql ...
 
 -- OR
 

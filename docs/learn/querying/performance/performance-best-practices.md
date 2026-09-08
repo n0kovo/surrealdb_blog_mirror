@@ -119,8 +119,17 @@ When building a desktop application with Tauri, ensure that the Tauri plugin log
 
 Alternatively you can disable logs at compile time when building your Tauri app:
 
+**Bash**
+
 ```bash
 TAURI_LOG_LEVEL=off cargo tauri build
+```
+
+**PowerShell**
+
+```powershell
+$env:TAURI_LOG_LEVEL = "off"
+cargo tauri build
 ```
 
 ## Performing queries

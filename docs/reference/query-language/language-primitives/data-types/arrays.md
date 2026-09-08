@@ -84,7 +84,7 @@ error = "Expected a single result output when using the ONLY keyword"
 SELECT * FROM 9;
 -- Use the `ONLY` clause to return a single item
 SELECT * FROM ONLY 9;
--- Error: array has more than one item
+-- `ONLY` errors when the array holds more than one item
 SELECT * FROM ONLY [1,9];
 ```
 
@@ -153,7 +153,7 @@ CREATE team:one SET employees = [
 ];
 ```
 
-```surql title="Response"
+```surql title="Output"
 "Couldn't coerce value for field `employees` of `team:one`:
 Expected `array<record<employee>,5>` but found a collection of length
   `6`"
@@ -188,8 +188,10 @@ value = "[1, 2]"
 */
 
 [1,2,NONE][? $this];
+```
 
--- [1, 2]
+```surql title="Output"
+[1, 2]
 ```
 
 Filtering can be repeated if desired.
@@ -251,8 +253,10 @@ value = "[3, 5]"
 
 [1,3,5].filter(|$val| $val > 2);
 [1,3,5][WHERE $this > 2];
+```
 
--- [3,5]
+```surql title="Output"
+[3,5]
 ```
 
 While the [array functions](../../functions/database-functions/array.md) section of the documentation contains the full details of each function, the following examples provide a glimpse into how they are commonly used.
@@ -268,8 +272,10 @@ value = "[2, 3, 4]"
 */
 
 [1,2,3].map(|$item| $item + 1);
+```
 
--- [2,3,4]
+```surql title="Output"
+[2,3,4]
 ```
 
 If desired, a second parameter can be passed in that holds the index of the item.

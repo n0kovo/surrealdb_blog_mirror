@@ -14,7 +14,28 @@ There are two main cases in which to use an `ALTER` statement:
 * Modifying previously defined resources. This can currently be used to modify tables and fields. For other such modifications, use the `OVERWRITE` clause in other `DEFINE` statements.
 * Modifying other resources using clauses not present in other `DEFINE` statements. Examples of this are the `PREPARE REMOVE` clause to prepare an index for removal, the `COMPACT` clause to compact the system/namespace/database/single table, and the `QUERY_TIMEOUT` clause to define or drop the query timeout for the entire datastore.
 
-Some examples of `ALTER` statements are as follows. For further details, see the individual pages for each type of `ALTER` statement.
+Each resource has its own `ALTER` statement:
+
+| Statement | Alters |
+| --- | --- |
+| [`ALTER ACCESS`](access.md) | An existing access method |
+| [`ALTER ANALYZER`](analyzer.md) | An existing analyzer |
+| [`ALTER API`](api.md) | An existing API definition |
+| [`ALTER BUCKET`](bucket.md) | An existing bucket |
+| [`ALTER CONFIG`](config.md) | Authentication access and GraphQL behaviour |
+| [`ALTER DATABASE`](database.md) | The current database |
+| [`ALTER EVENT`](event.md) | An existing event |
+| [`ALTER FIELD`](field.md) | A field's clauses, or drop them entirely |
+| [`ALTER FUNCTION`](function.md) | An existing custom function |
+| [`ALTER INDEX`](indexes.md) | An index on a table, including `PREPARE REMOVE` |
+| [`ALTER NAMESPACE`](namespace.md) | The current namespace |
+| [`ALTER PARAM`](param.md) | An existing parameter |
+| [`ALTER SEQUENCE`](sequence.md) | An existing sequence |
+| [`ALTER SYSTEM`](system.md) | The entire datastore, including `QUERY_TIMEOUT` |
+| [`ALTER TABLE`](table.md) | A table's schema, such as moving from schemaless to schemafull |
+| [`ALTER USER`](user.md) | An existing database, namespace or root user |
+
+Some examples of `ALTER` statements are as follows.
 
 ## Modify a table schema
 

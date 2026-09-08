@@ -30,10 +30,20 @@ You will use:
 
 ## Step 2 - Set environment variables
 
+**Bash**
+
 ```bash
 export SPECTRON_URL="https://<your-context-host>"
 export SPECTRON_CONTEXT_ID="<your-context-id>"
 export SPECTRON_API_KEY="sk-ctx-..."
+```
+
+**PowerShell**
+
+```powershell
+$env:SPECTRON_URL = "https://<your-context-host>"
+$env:SPECTRON_CONTEXT_ID = "<your-context-id>"
+$env:SPECTRON_API_KEY = "sk-ctx-..."
 ```
 
 Use the exact **host** from SurrealDB Studio settings or API keys - not a generic placeholder domain.

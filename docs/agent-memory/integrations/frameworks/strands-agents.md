@@ -40,10 +40,20 @@ Requires Python 3.10+.
 
 With these set, `spectron_tools()` builds the client for you:
 
+**Bash**
+
 ```bash
-export SPECTRON_ENDPOINT="https://api.spectron.example"
-export SPECTRON_API_KEY="your-bearer-token"
-export SPECTRON_CONTEXT="acme-prod"
+export AGENT_MEMORY_ENDPOINT="https://api.spectron.example"
+export AGENT_MEMORY_API_KEY="your-bearer-token"
+export AGENT_MEMORY_CONTEXT="acme-prod"
+```
+
+**PowerShell**
+
+```powershell
+$env:AGENT_MEMORY_ENDPOINT = "https://api.spectron.example"
+$env:AGENT_MEMORY_API_KEY = "your-bearer-token"
+$env:AGENT_MEMORY_CONTEXT = "acme-prod"
 ```
 
 You can also pass the values directly, or hand in a client you already have:

@@ -19,3 +19,7 @@ In this section, we will go over the core concepts of the SurrealDB SDK for .NET
 - [Connection Strings](connection-strings.md)
 - [Dependency Injection](dependency-injection.md)
 - [Logging](logging.md)
+
+## Transactions
+
+- [Transactions](transactions.md) - group statements from the .NET SDK

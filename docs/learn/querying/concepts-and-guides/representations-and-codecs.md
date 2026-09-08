@@ -38,7 +38,10 @@ LET $payload = { event: 'signup', user: 'tobie' };
 
 -- Value → JSON text → value again
 encoding::json::decode(encoding::json::encode($payload));
--- { event: 'signup', user: 'tobie' }
+```
+
+```surql title="Output"
+{ event: 'signup', user: 'tobie' }
 ```
 
 Related one-way or format-specific helpers elsewhere include `string::html::encode`, `geo::hash::encode`, and [`crypto::*`](../../../reference/query-language/functions/database-functions/crypto.md) hashes.
@@ -53,7 +56,10 @@ The "format" here is not JSON or CBOR; it is whatever pipeline you defined on th
 DEFINE ANALYZER demo_blank TOKENIZERS blank;
 
 search::analyze("demo_blank", "SurrealDB graph queries");
--- ['SurrealDB', 'graph', 'queries']
+```
+
+```surql title="Output"
+['SurrealDB', 'graph', 'queries']
 ```
 
 Compare the tokens above with what you get after adding `FILTERS lowercase, snowball(english)` - the same input string produces a different token list, which is why `search::analyze` is handy when tuning an analyzer before you create a [`FULLTEXT`](../../../reference/query-language/statements/define/indexes.md) index.
@@ -67,7 +73,10 @@ Compare the tokens above with what you get after adding `FILTERS lowercase, snow
 	domain: parse::url::domain("https://surrealdb.com/docs"),
 	user: parse::email::user("tobie@surrealdb.com"),
 };
--- { domain: 'surrealdb.com', user: 'tobie' }
+```
+
+```surql title="Output"
+{ domain: 'surrealdb.com', user: 'tobie' }
 ```
 
 ## In-value transforms (`value::*`)
@@ -80,7 +89,10 @@ LET $after = { title: 'Weekly update', status: 'published' };
 LET $patch = value::diff($before, $after);
 
 value::patch($before, $patch);
--- { title: 'Weekly update', status: 'published' }
+```
+
+```surql title="Output"
+{ title: 'Weekly update', status: 'published' }
 ```
 
 `value::diff` produced the patch; `value::patch` applied it. The same pair works when you receive patch operations from a client or a live diff stream.
@@ -101,7 +113,10 @@ Use `eval::*` when the query string is only known at runtime. Prefer [`DEFINE FU
 -- Query text from a table, config row, or user input (requires allow-eval-query)
 LET $template = "$greeting + ', ' + $name";
 eval::surql($template, { greeting: 'Hello', name: 'world' });
--- 'Hello, world'
+```
+
+```surql title="Output"
+'Hello, world'
 ```
 
 For [ISO GQL](../gql/overview.md) strings, use `eval::gql` instead - same bindings object, plus [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries). See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) for setup and examples.

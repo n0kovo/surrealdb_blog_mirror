@@ -26,8 +26,17 @@ surreal start --log info --user root --pass secret \
   --allow-experimental gql memory
 ```
 
+**Bash**
+
 ```bash
 export SURREAL_CAPS_ALLOW_EXPERIMENTAL=gql
+surreal start --log info --user root --pass secret memory
+```
+
+**PowerShell**
+
+```powershell
+$env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "gql"
 surreal start --log info --user root --pass secret memory
 ```
 

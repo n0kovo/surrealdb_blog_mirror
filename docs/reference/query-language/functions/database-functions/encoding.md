@@ -92,8 +92,10 @@ value = "b"32333233""
 
 */
 encoding::base64::decode("MjMyMw");
+```
 
--- b"32333233"
+```surql title="Output"
+b"32333233"
 ```
 
 You can also verify that the output of the encoded value matches the original value. 
@@ -106,8 +108,10 @@ value = "true"
 
 */
 encoding::base64::decode("aGVsbG8") = <bytes>"hello";
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -139,8 +143,10 @@ value = "''"
 
 */
 encoding::base64::encode(<bytes>"");
+```
 
--- ''
+```surql title="Output"
+''
 ```
 
 ```surql
@@ -151,8 +157,10 @@ value = "'MjMyMw'"
 
 */
 encoding::base64::encode(<bytes>"2323");
+```
 
--- 'MjMyMw'
+```surql title="Output"
+'MjMyMw'
 ```
 
 ```surql
@@ -163,8 +171,10 @@ value = "'aGVsbG8'"
 
 */
 encoding::base64::encode(<bytes>"hello");
+```
 
--- 'aGVsbG8'
+```surql title="Output"
+'aGVsbG8'
 ```
 
 You can pass `true` as the second argument to enable padded base64 outputs:
@@ -177,8 +187,10 @@ value = "''"
 
 */
 encoding::base64::encode(<bytes>"", true);
+```
 
--- ""
+```surql title="Output"
+""
 ```
 
 ```surql
@@ -339,7 +351,10 @@ As JSON has fewer data types tha SurrealDB, note that a round trip from SurrealQ
 
 ```surql
 encoding::json::decode(encoding::json::encode(NONE));
--- NULL
+```
+
+```surql title="Output"
+NULL
 ```
 
 If a round trip is required, a combination of JSON and CBOR functions can be used.

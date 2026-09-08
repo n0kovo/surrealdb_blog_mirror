@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 1
 title: Respan
 description: Using SurrealDB Agent Memory alongside Respan tracing and the Respan LLM gateway.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/integrations/observability/respan.mdx"
@@ -15,19 +15,22 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 ## Installation
 
 > [!NOTE]
+> `Spectron` was the project name for SurrealDB Agent Memory. These type names
+> will be renamed in a future release.
+
 ```bash
 pip install openai
 pip install --pre surrealdb
 ```
 
 ```bash
-export SPECTRON_ENDPOINT="https://api.spectron.example"
-export SPECTRON_CONTEXT="acme-prod"
-export SPECTRON_API_KEY="sk-spec-..."
+export AGENT_MEMORY_ENDPOINT="https://api.spectron.example"
+export AGENT_MEMORY_CONTEXT="acme-prod"
+export AGENT_MEMORY_API_KEY="sk-spec-..."
 export RESPAN_API_KEY="..."
 ```
 
-## Route model calls through Respan, memory through Agent Memory
+## Route model calls through Respan, memory through SurrealDB Agent Memory
 
 Point your model client's base URL at the Respan gateway so every call is traced and cost-attributed, and use the SurrealDB Agent Memory client for recall and storage. Check the [Respan docs](https://www.respan.ai/docs/documentation/overview) for the current gateway base URL:
 
@@ -41,11 +44,11 @@ llm = OpenAI(
     api_key=os.environ["RESPAN_API_KEY"],
 )
 
-# Memory is handled by Memory.
+# Memory is handled by SurrealDB Agent Memory.
 memory = Memory(
-    endpoint=os.environ["SPECTRON_ENDPOINT"],
-    context=os.environ["SPECTRON_CONTEXT"],
-    api_key=os.environ["SPECTRON_API_KEY"],
+    endpoint=os.environ["AGENT_MEMORY_ENDPOINT"],
+    context=os.environ["AGENT_MEMORY_CONTEXT"],
+    api_key=os.environ["AGENT_MEMORY_API_KEY"],
 )
 scope = ["org/acme/user/alice"]
 

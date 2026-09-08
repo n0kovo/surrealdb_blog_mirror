@@ -22,11 +22,22 @@ Below is a concise walkthrough that shows:
 
 ## Prerequisites
 
+**Bash**
+
 ```bash
 pip install google-adk google-genai surrealdb    # ADK + Gemini SDK + SurrealDB
 docker run -p 8000:8000 surrealdb/surrealdb:latest \
        start --user root --pass secret file:/data/db   # optional local DB
 export GOOGLE_API_KEY=<your-Gemini-key>
+```
+
+**PowerShell**
+
+```powershell
+pip install google-adk google-genai surrealdb    # ADK + Gemini SDK + SurrealDB
+docker run -p 8000:8000 surrealdb/surrealdb:latest `
+       start --user root --pass secret file:/data/db   # optional local DB
+$env:GOOGLE_API_KEY = "<your-Gemini-key>"
 ```
 
 ## Prepare SurrealDB (one-time DDL)

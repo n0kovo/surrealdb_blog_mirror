@@ -39,8 +39,17 @@ surreal start --lazy-surrealism
 
 Or set:
 
+**Bash**
+
 ```bash
 SURREAL_LAZY_SURREALISM=true surreal start
+```
+
+**PowerShell**
+
+```powershell
+$env:SURREAL_LAZY_SURREALISM = "true"
+surreal start
 ```
 
 ## Lifecycle

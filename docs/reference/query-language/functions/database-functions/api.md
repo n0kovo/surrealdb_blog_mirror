@@ -302,7 +302,7 @@ api::invoke("/limited", {
 });
 ```
 
-```surql title="Response"
+```surql title="Output"
 {
 	body: 'Invalid request body: The body exceeded the max payload size of 10b',
 	headers: {  },
@@ -339,7 +339,7 @@ api::invoke("/serialize_json").{
 };
 ```
 
-```surql title="Response"
+```surql title="Output"
 { 
     body: '{"message":"Hello"}', 
     headers: { "access-control-allow-origin": '*',
@@ -438,7 +438,7 @@ DEFINE API "/always_ok"
 api::invoke("/always_ok");
 ```
 
-```surql title="Response"
+```surql title="Output"
 { 
     body: {some: 'data'}, 
     context: {}, 
@@ -464,7 +464,7 @@ DEFINE API "/status/invalid-low"
 api::invoke("/status/invalid-low");
 ```
 
-```surql title="Response"
+```surql title="Output"
 'Invalid HTTP status code: 99. Must be between 100 and 599'
 ```
 

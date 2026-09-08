@@ -97,7 +97,7 @@ for hit in hits:
 
 ```javascript
 
-const memory = new AgentMemory({ context: "acme-prod", apiKey: process.env.AGENT_MEMORY_API_KEY });
+const memory = new AgentMemory({ context: "acme-prod", apiKey: process.env.SPECTRON_API_KEY });
 
 const hits = await memory.documents.query({
     query: "what is the return window for unopened items?",

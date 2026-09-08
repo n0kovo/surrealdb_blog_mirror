@@ -518,8 +518,10 @@ value = "30"
 */
 
 SELECT * FROM 10 AND 20 AND 30;
+```
 
--- 30
+```surql title="Output"
+30
 ```
 
   
@@ -536,8 +538,10 @@ value = "[10]"
 */
 
 SELECT * FROM 0 OR false OR 10;
+```
 
--- 10
+```surql title="Output"
+10
 ```
 
   
@@ -557,10 +561,10 @@ value = "[false]"
 */
 
 SELECT * FROM !(TRUE OR FALSE);
--- false
+//- false
 
 SELECT * FROM !"Has a value";
--- false
+//- false
 ```
 
   
@@ -577,7 +581,10 @@ value = "[true]"
 */
 
 SELECT * FROM !!"Has a value";
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ## `??`
@@ -592,8 +599,10 @@ value = "[0]"
 */
 
 SELECT * FROM NULL ?? 0 ?? false ?? 10;
+```
 
--- 0
+```surql title="Output"
+0
 ```
 
   
@@ -610,8 +619,10 @@ value = "[10]"
 */
 
 SELECT * FROM NULL ?: 0 ?: false ?: 10;
+```
 
--- 10
+```surql title="Output"
+10
 ```
 
   
@@ -628,7 +639,10 @@ value = "[false]"
 */
 
 SELECT * FROM true = "true";
--- false
+```
+
+```surql title="Output"
+false
 ```
 
 ```surql
@@ -640,7 +654,10 @@ value = "[false]"
 */
 
 SELECT * FROM 10 = "10";
--- false
+```
+
+```surql title="Output"
+false
 ```
 
 ```surql
@@ -652,7 +669,10 @@ value = "[true]"
 */
 
 SELECT * FROM 10 = 10.00;
--- true
+```
+
+```surql title="Output"
+true
 ```
 ```surql
 /**[test]
@@ -663,7 +683,10 @@ value = "[false]"
 */
 
 SELECT * FROM 10 = "10.3";
--- false
+```
+
+```surql title="Output"
+false
 ```
 
 ```surql
@@ -675,7 +698,10 @@ value = "[true]"
 */
 
 SELECT * FROM [1, 2, 3] = [1, 2, 3];
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -687,7 +713,10 @@ value = "[false]"
 */
 
 SELECT * FROM [1, 2, 3] = [1, 2, 3, 4];
--- false
+```
+
+```surql title="Output"
+false
 ```
 
 ```surql
@@ -699,7 +728,10 @@ value = "[true]"
 */
 
 SELECT * FROM { this: "object" } = { this: "object" };
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -711,7 +743,10 @@ value = "[false]"
 */
 
 SELECT * FROM { this: "object" } = { another: "object" };
--- false
+```
+
+```surql title="Output"
+false
 ```
 
   
@@ -728,7 +763,10 @@ value = "[true]"
 */
 
 SELECT * FROM 10 != "15";
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -740,7 +778,10 @@ value = "[true]"
 */
 
 SELECT * FROM 10 != "test";
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -752,7 +793,10 @@ value = "[true]"
 */
 
 SELECT * FROM [1, 2, 3] != [3, 4, 5];
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -769,7 +813,10 @@ value = "[true]"
 */
 
 SELECT * FROM 10 == 10;
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -781,7 +828,10 @@ value = "[false]"
 */
 
 SELECT * FROM 10 == "10";
--- false
+```
+
+```surql title="Output"
+false
 ```
 
 ```surql
@@ -793,7 +843,10 @@ value = "[false]"
 */
 
 SELECT * FROM true == "true";
--- false
+```
+
+```surql title="Output"
+false
 ```
 
   
@@ -810,7 +863,10 @@ value = "[true]"
 */
 
 SELECT * FROM [10, 15, 20] ?= 10;
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -827,7 +883,10 @@ value = ""
 */
 
 SELECT * FROM [10, 10, 10] *= 10;
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -851,7 +910,10 @@ value = "true"
 let $threshold = 10;
 
 string::similarity::smithwaterman("test text", "Test") > $threshold;
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -868,7 +930,10 @@ value = "[true]"
 */
 
 SELECT * FROM 10 < 15;
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -885,7 +950,10 @@ value = "[true]"
 */
 
 SELECT * FROM 10 <= 15;
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -902,7 +970,10 @@ value = "[true]"
 */
 
 SELECT * FROM 15 > 10;
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -919,7 +990,10 @@ value = "[true]"
 */
 
 SELECT * FROM 15 >= 10;
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -936,7 +1010,10 @@ value = "[20]"
 */
 
 SELECT * FROM 10 + 10;
--- 20
+```
+
+```surql title="Output"
+20
 ```
 
 ```surql
@@ -948,7 +1025,10 @@ value = "['test this']"
 */
 
 SELECT * FROM "test" + " " + "this";
--- "test this"
+```
+
+```surql title="Output"
+"test this"
 ```
 
 ```surql
@@ -960,7 +1040,10 @@ value = "[13h30m]"
 */
 
 SELECT * FROM 13h + 30m;
--- "13h30m"
+```
+
+```surql title="Output"
+"13h30m"
 ```
 
   
@@ -977,7 +1060,10 @@ value = "[10]"
 */
 
 SELECT * FROM 20 - 10;
--- 10
+```
+
+```surql title="Output"
+10
 ```
 
 ```surql
@@ -989,7 +1075,10 @@ value = "[1m]""
 */
 
 SELECT * FROM 2m - 1m;
--- 1m
+```
+
+```surql title="Output"
+1m
 ```
 
   
@@ -1006,7 +1095,10 @@ value = "[40]"
 */
 
 SELECT * FROM 20 * 2;
--- 40
+```
+
+```surql title="Output"
+40
 ```
 
   
@@ -1023,7 +1115,10 @@ value = "[10]"
 */
 
 SELECT * FROM 20 / 2;
--- 10
+```
+
+```surql title="Output"
+10
 ```
 
   
@@ -1040,7 +1135,10 @@ value = "[8000]"
 */
 
 SELECT * FROM 20 ** 3;
--- 8000
+```
+
+```surql title="Output"
+8000
 ```
 
   
@@ -1057,7 +1155,10 @@ value = "[true]"
 */
 
 SELECT * FROM [10, 20, 30] CONTAINS 10;
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -1069,7 +1170,10 @@ value = "[true]"
 */
 
 SELECT * FROM "this is some text" CONTAINS "text";
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -1088,8 +1192,10 @@ SELECT * FROM {
 		[-0.38314819, 51.37692386]
 	]]
 } CONTAINS (-0.118092, 51.509865);
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1106,7 +1212,10 @@ value = "[true]"
 */
 
 SELECT * FROM [10, 20, 30] CONTAINSNOT 15;
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -1118,7 +1227,10 @@ value = "[true]"
 */
 
 SELECT * FROM "this is some text" CONTAINSNOT "other";
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -1137,8 +1249,10 @@ SELECT * FROM {
 		[-0.38314819, 51.37692386]
 	]]
 } CONTAINSNOT (-0.518092, 53.509865);
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1155,7 +1269,10 @@ value = "[true]"
 */
 
 SELECT * FROM [10, 20, 30] CONTAINSALL [10, 20, 10];
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -1172,7 +1289,10 @@ value = "[true]"
 */
 
 SELECT * FROM [10, 20, 30] CONTAINSANY [10, 15, 25];
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -1189,7 +1309,10 @@ value = "[true]"
 */
 
 SELECT * FROM [10, 20, 30] CONTAINSNONE [15, 25, 35];
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -1206,7 +1329,10 @@ value = "[true]"
 */
 
 SELECT * FROM 10 INSIDE [10, 20, 30];
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -1218,7 +1344,10 @@ value = "[true]"
 */
 
 SELECT * FROM "text" INSIDE "this is some text";
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -1255,8 +1384,10 @@ value = "[true]"
     name: "Riga",
     country: "Latvia"
 };
+```
 
--- true
+```surql title="Output"
+true
 ```
 
 `IN` can also be used with a record ID as long as the ID is expanded to include the fields. Both of the following queries will return `true`.
@@ -1295,7 +1426,10 @@ value = "[true]"
 */
 
 SELECT * FROM 15 NOTINSIDE [10, 20, 30];
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -1307,7 +1441,10 @@ value = "[true]"
 */
 
 SELECT * FROM "other" NOTINSIDE "this is some text";
--- true
+```
+
+```surql title="Output"
+true
 ```
 
 ```surql
@@ -1326,8 +1463,10 @@ SELECT * FROM (-0.518092, 53.509865) NOTINSIDE {
 		[-0.38314819, 51.37692386]
 	]]
 };
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1344,7 +1483,10 @@ value = "[true]"
 */
 
 SELECT * FROM [10, 20, 10] ALLINSIDE [10, 20, 30];
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -1361,7 +1503,10 @@ value = "[true]"
 */
 
 SELECT * FROM [10, 15, 25] ANYINSIDE [10, 20, 30];
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -1378,7 +1523,10 @@ value = "[true]"
 */
 
 SELECT * FROM [15, 25, 35] NONEINSIDE [10, 20, 30];
--- true
+```
+
+```surql title="Output"
+true
 ```
 
   
@@ -1402,8 +1550,10 @@ SELECT * FROM (-0.518092, 53.509865) OUTSIDE {
 		[-0.38314819, 51.37692386]
 	]]
 };
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   
@@ -1434,8 +1584,10 @@ SELECT * FROM {
 		[-0.11123657, 51.53160074]
 	]]
 };
+```
 
--- true
+```surql title="Output"
+true
 ```
 
   

@@ -9,6 +9,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 These functions can be used to retrieve specific metadata from a SurrealDB Record ID.
 
+> [!NOTE]
+> These functions were called `meta::tb()` and `meta::id()` before 2.x. Both old names still work, so an existing query does not have to change, but `record::tb()` and `record::id()` are the names to reach for now.
+
 <table>
   <thead>
     <tr>
@@ -61,11 +64,11 @@ value = "true"
 */
 
 RETURN record::exists(r"person:tobie");
--- false
+//- false
 
 CREATE person:tobie;
 RETURN record::exists(r"person:tobie");
--- true
+//- true
 ```
 
 A longer example of `record::exists` using method syntax:
@@ -127,8 +130,10 @@ value = "'person'"
 */
 
 record::tb(person:tobie);
+```
 
--- 'person'
+```surql title="Output"
+'person'
 ```
 
 This function can also be called using the path `record::table`.
@@ -192,7 +197,7 @@ record::id(r"person:aeon");
 r"person:aeon".id();
 ```
 
-```surql title="Response"
+```surql title="Output"
 'aeon'
 ```
 
@@ -216,6 +221,6 @@ record::table(array::max([r"person:aeon", r"person:landevin"]));
 [r"person:aeon", r"person:landevin"].max().table();
 ```
 
-```surql title="Response"
+```surql title="Output"
 'person'
 ```

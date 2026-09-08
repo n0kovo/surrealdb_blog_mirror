@@ -63,7 +63,7 @@ SHOW CHANGES FOR TABLE reading SINCE 1 LIMIT 10;
 
 Assuming the datetime above matches with the one when the changefeed was established, the response for both queries will be as follows.
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		changes: [
@@ -121,7 +121,7 @@ Assuming the datetime above matches with the one when the changefeed was establi
 ]
 ```
 
-```surql title="Response if INCLUDE ORIGINAL set on changefeed"
+```surql title="Output if INCLUDE ORIGINAL set on changefeed"
 [
 	{
 		changes: [
@@ -198,7 +198,7 @@ DELETE original_tb:1;
 SHOW CHANGES FOR TABLE original_tb SINCE 0;
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		changes: [

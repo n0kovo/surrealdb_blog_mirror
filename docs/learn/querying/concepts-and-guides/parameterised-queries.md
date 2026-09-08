@@ -18,7 +18,7 @@ CREATE person SET name = "Tobie " + $suffix;
 CREATE person SET name = string::join(" ", "Jaime", $suffix);
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
     {
         "id": "person:3vs17lb9eso9m7gd8mml",
@@ -45,7 +45,7 @@ $founders.{
 };
 ```
 
-```surql title="Response"
+```surql title="Output"
 [
 	{
 		company: 'SurrealDB',

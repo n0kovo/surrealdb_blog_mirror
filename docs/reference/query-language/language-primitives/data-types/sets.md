@@ -28,7 +28,10 @@ value = "{1, 2, 6}"
 */
 
 {1, 6, 6, 2};
--- {1, 2, 6}
+```
+
+```surql title="Output"
+{1, 2, 6}
 ```
 
 To create a set with zero items or a single item, add a comma.
@@ -177,8 +180,10 @@ value = "{3, 5}"
 */
 
 {1,3,5}.filter(|$val| $val > 2);
+```
 
--- {3,5}
+```surql title="Output"
+{3,5}
 ```
 
 ## Adding sets
@@ -221,8 +226,8 @@ When the field has a [`VALUE`](../../statements/define/field.md#using-the-value-
 ```surql
 DEFINE FIELD OVERWRITE tags.* ON test TYPE string VALUE string::trim($value);
 
-UPDATE test:one SET tags += ' admin ';
 -- tags is still { 'admin', 'editor' }: the trimmed value already exists
+UPDATE test:one SET tags += ' admin ';
 ```
 
 > [!NOTE]

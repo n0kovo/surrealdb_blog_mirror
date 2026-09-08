@@ -87,7 +87,10 @@ CREATE user SET name = "Billy", metadata = {
     age: 5,
     wrong_field: "WRONG DATA"
 };
--- "Found field 'metadata.wrong_field', but no such field exists for table 'user'"
+```
+
+```surql title="Output"
+"Found field 'metadata.wrong_field', but no such field exists for table 'user'"
 ```
 
 If you have data that includes a non-defined field in such a table, you can use the destructuring operator to access the current structure and only pass on the necessary fields for the operation.
@@ -230,7 +233,7 @@ DEFINE FUNCTION fn::do_something_with_month($input: string) {
     IF !($input IN $MONTHS) {
         THROW "Some error about wrong input";
     } ELSE {
-        // do something with months here
+        -- do something with months here
     }
 };
 ```
@@ -264,7 +267,7 @@ fn::return_response({ type: "internal_error", message: "You can't do that"});
 fn::return_response(a:wrong_argument);
 ```
 
-```surql title="Response"
+```surql title="Output"
 -------- Query --------
 500
 
@@ -292,10 +295,10 @@ DEFINE FIELD parents ON person ASSERT <-parent_of<-person
 -- Is first_generation, doesn't need to indicate parents
 CREATE person:one SET first_generation = true;
 
--- Error: 
--- 'Found NONE for field `parents`, with record `person:two`,
--- but field must conform to: <-parent_of<-person OR first_generation'
 CREATE person:two;
+//- Error:
+//- 'Found NONE for field `parents`, with record `person:two`,
+//- but field must conform to: <-parent_of<-person OR first_generation'
 
 -- Give person:two a parent
 RELATE person:one->parent_of->person:two;

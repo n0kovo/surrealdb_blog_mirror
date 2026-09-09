@@ -1,8 +1,10 @@
 # Category: tutorials
 
-_101 posts_  
+_102 posts_  
 [← Index](../../README.md)
 
+- **2026-09-08** · [Multi-hop graph traversal inside SurrealDB](../2026/09/multi-hop-graph-traversal-inside-surrealdb.md)  
+  `tutorials` `ai` — Move breadth-first search into SurrealDB: recursive traversal with a depth range, predicates pushed into every hop, and what EXPLAIN says about edge indexes.
 - **2026-09-03** · [Why does my vector search return nothing when I add a filter?](../2026/09/why-does-my-vector-search-return-nothing-when-i-add-a-filter-2.md)  
   `ai` `tutorials` — A filter applied after an HNSW walk can only remove rows, so a selective one comes back empty. Three measured SurrealDB fixes, plus the schema that avoids them.
 - **2026-08-27** · [Building a filesystem-based agent memory on SurrealDB](../2026/08/agent-memory-is-a-filesystem-building-one-on-surrealdb.md)  

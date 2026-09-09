@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Connect via SDK
 
-Reach an instance from application code through one of the [SurrealDB SDKs](/docs#sdks).
+Reach an instance from application code through one of the [SurrealDB SDKs](../../../languages/index.md).
 
 This page covers what an SDK needs to connect and how to create it. The SDK reference for your language covers the API itself.
 
@@ -49,7 +49,7 @@ Root credentials reach everything on the instance. For namespace-scoped or datab
 Every SDK follows the same shape. `connect` takes the endpoint, then you select the namespace and database, then you sign in. The examples below use root credentials.
 
 > [!NOTE]
-> With a non-root user, the sign-in call also needs the `access` details for the access method you defined. The [SDK reference](/docs#sdks) for your language shows the exact call.
+> With a non-root user, the sign-in call also needs the `access` details for the access method you defined. The [SDK reference](../../../languages/index.md) for your language shows the exact call.
 
   
 **Rust**
@@ -222,6 +222,6 @@ $db->create("project", [
 
 ## Next steps
 
-- **[SDK reference](/docs#sdks):** the full API for each language, including live queries and transactions.
+- **[SDK reference](../../../languages/index.md):** the full API for each language, including live queries and transactions.
 - **[Connect via HTTP](via-http.md):** for languages without an SDK, and the request size limits that apply.
 - **[Authentication](../../../learn/security/authentication/summary.md):** choosing between system users, access methods, and record-level access.

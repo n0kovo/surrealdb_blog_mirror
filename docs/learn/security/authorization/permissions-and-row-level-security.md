@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 SurrealDB lets you declare permissions alongside your schema so access is enforced in the database, not only in application code. You attach a `PERMISSIONS` clause to [`DEFINE TABLE`](../../../reference/query-language/statements/define/table.md) and [`DEFINE FIELD`](../../../reference/query-language/statements/define/field.md) to describe which operations are allowed under which conditions.
 
-These clauses apply to [record users](../authentication/authentication.md#record-users) and to [guests](capabilities.md#guest-access) when guest access is enabled. [System users](../authentication/authentication.md#system-users) are not restricted by table or field `PERMISSIONS`, using roles instead.
+These clauses apply to [record users](../authentication/users.md#record-users) and to [guests](capabilities.md#guest-access) when guest access is enabled. [System users](../authentication/users.md#system-users) are not restricted by table or field `PERMISSIONS`, using roles instead.
 
 ## Defaults: `NONE` and `FULL`
 

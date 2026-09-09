@@ -13,7 +13,7 @@ _Auto-generated index — 5 pages and 1 sub-section._
 
 ## Pages
 
-- [Authentication](authentication.md)
+- [Authentication reference](authentication.md)
   How surrealctl signs in, the difference between a login session and a personal access token, what a token cannot do, and where credentials are stored on disk.
 - [Global flags](global-flags.md)
   The sixteen flags every surrealctl command accepts, the environment variable behind each one, the precedence chain that resolves them, and the duration syntax.

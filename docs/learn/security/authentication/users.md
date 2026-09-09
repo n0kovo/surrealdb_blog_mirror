@@ -2,10 +2,12 @@
 position: 2
 title: Users
 description: There are multiple forms of authentication built into SurrealDB, supporting server-side and client-side authentication.
-source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/security/authentication/authentication.mdx"
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/security/authentication/users.mdx"
 ---
 
 # Authentication
+
+SurrealDB has two kinds of user, and they exist for different purposes: one administers the database, the other belongs to the application built on it.
 
 - [System users](#system-users): Created by the SurrealDB administrator and used for managing and consuming the database.
 - [Record users](#record-users): Used for consuming the database within permissions logic, they allow custom signup and signin.
@@ -260,7 +262,7 @@ curl -X POST \
 
 ## Sessions
 
-Whenever authentication is performed with any kind of user against SurrealDB, a session is established between the client and the SurrealDB server with which the connection was established. These sessions exist only in memory on the server for the duration of the connection, whether it is a single request through the [HTTP REST API](../../../reference/rest-api/http-protocol.md) or through multiple requests in the same connection using the [WebSocket API](../../../reference/rest-api/rpc-protocol.md) and any of the [SDKs](/docs#sdks) that leverage it.
+Whenever authentication is performed with any kind of user against SurrealDB, a session is established between the client and the SurrealDB server with which the connection was established. These sessions exist only in memory on the server for the duration of the connection, whether it is a single request through the [HTTP REST API](../../../reference/rest-api/http-protocol.md) or through multiple requests in the same connection using the [WebSocket API](../../../reference/rest-api/rpc-protocol.md) and any of the [SDKs](../../../languages/index.md) that leverage it.
 
 ### Parameters
 

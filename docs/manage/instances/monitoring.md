@@ -1,7 +1,7 @@
 ---
 position: 11
 title: Monitoring
-description: The instance dashboard, the metrics groups and log filters in SurrealDB Studio, and how they relate to the full observability surface.
+description: The instance dashboard, metrics groups, and log filters. How each relates to the full observability surface in SurrealDB Studio.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/monitoring.mdx"
 ---
 

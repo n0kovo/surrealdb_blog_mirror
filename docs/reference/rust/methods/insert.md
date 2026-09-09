@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `insert()`
 
+`insert` adds one record or many to a table, and inserts graph edges through `.relation()`.
+
 **3.x**
 
 ```rust title="Method Syntax"

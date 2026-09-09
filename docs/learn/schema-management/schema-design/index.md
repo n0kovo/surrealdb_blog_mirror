@@ -1,19 +1,62 @@
 ---
-title: Schema Design
-generated: stub
+position: 1
+title: Schema design
+description: What DEFINE does in SurrealDB. How to inspect what you have defined.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/schema-management/schema-design/index.mdx"
 ---
 
-# Schema Design
+# Designing with `DEFINE`, `ALTER`, and `REMOVE`
 
-_Auto-generated index — 4 pages._
+Almost everything structural in SurrealDB starts with `DEFINE`: namespaces, databases, tables, fields, indexes, functions, access methods, parameters, and more. The [DEFINE overview](../../../reference/query-language/statements/define/overview.md) in the API docs shows the syntax for each statment. Each such resource also has an `ALTER` and `REMOVE` statement if you need to change or remove a definition.
 
-## Pages
+## Seeing what is defined
 
-- [Sample industry schemas](sample-industry-schemas.md)
-  Copy-paste starter schemas for energy, finance, retail, medical, and other domains.
-- [Schema best practices](schema-best-practices.md)
-  Best practices for creating schemas in SurrealDB.
-- [Schema design](schema-design.md)
-  What DEFINE does in SurrealDB and how to inspect what you have defined.
-- [Schema evolution](schema-evolution.md)
-  Changing schema over time with ALTER and related patterns.
+A schema will quickly grow to the point that it is no longer possible to keep in your head. The [`INFO`](../../../reference/query-language/statements/info.md) statement can be used to show what definitions exist. `INFO` statements can be used on a variety of resources, such as `INFO FOR DATABASE`, `INFO FOR TABLE table_name`, `INFO FOR INDEX index_name`, and so on.
+
+```surql
+DEFINE FIELD name ON TABLE person TYPE string COMMENT "Todo: add assertion for maximum length";
+INFO FOR TABLE person;
+```
+
+```surql output="Response"
+{
+	events: {},
+	fields: {
+		name: "DEFINE FIELD name ON person TYPE string COMMENT 'Todo: add assertion for maximum length' PERMISSIONS FULL"
+	},
+	indexes: {},
+	lives: {},
+	tables: {}
+}
+```
+
+Users and other global objects show up when you ask at database level:
+
+```surql
+DEFINE USER db_user ON DATABASE PASSWORD "strongpassword" ROLES OWNER;
+DEFINE TABLE person SCHEMAFULL;
+INFO FOR DB;
+```
+
+```surql output="Response"
+{
+	accesses: {},
+	analyzers: {},
+	functions: {},
+	models: {},
+	params: {},
+	tables: {
+		person: 'DEFINE TABLE person TYPE ANY SCHEMAFULL PERMISSIONS NONE'
+	},
+	users: {
+		db_user: "DEFINE USER db_user ON DATABASE PASSHASH '[REDACTED]' ROLES OWNER"
+	}
+}
+```
+
+## Where to go next
+
+* [Tables](../tables-and-fields/tables.md) and [fields](../tables-and-fields/fields-and-validation.md)
+* [Schema best practices](schema-best-practices.md)
+* [Schema evolution](schema-evolution.md)
+* [SurrealKit schema migration](../../../manage/schema-migration/index.md) - manage `.surql` schema files and apply them with sync or rollouts

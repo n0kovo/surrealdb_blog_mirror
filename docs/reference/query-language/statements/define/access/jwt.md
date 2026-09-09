@@ -11,13 +11,13 @@ A JWT access method allows accessing SurrealDB with a token signed by a trusted 
 
 SurrealDB can work with third-party authentication providers such as OpenID Connect providers, OAuth providers and other trusted parties providing JWT (JSON Web Tokens, also referred to in this page as “tokens”). Let's say that your provider issues your client (e.g. a user or a service) a JWT once it has authenticated. By using the `DEFINE ACCESS ... TYPE JWT` statement, you can set the public key or shared secret that will be used to verify the authenticity of the token.
 
-This verification is performed automatically by SurrealDB when provided with a JWT through any of its interfaces (i.e. the [HTTP REST API](../../../../rest-api/http-protocol.md) through the “Authorization” header or [any of the SDKs](/docs#sdks) through the “Authenticate” methods) before trusting the claims contained in the token and allowing SurrealQL queries to access the values of those claims.
+This verification is performed automatically by SurrealDB when provided with a JWT through any of its interfaces (i.e. the [HTTP REST API](../../../../rest-api/http-protocol.md) through the “Authorization” header or [any of the SDKs](../../../../../languages/index.md) through the “Authenticate” methods) before trusting the claims contained in the token and allowing SurrealQL queries to access the values of those claims.
 
-Bear in mind that table and field permissions only apply to [record users](../../../../../learn/security/authentication/authentication.md#record-users), which must use tokens that are verified by a `RECORD` access method. Access provided by namespace and database tokens defined in a `JWT` access method is equivalent to access from [system users](../../../../../learn/security/authentication/authentication.md#system-users), which is above fine-grained permissions. When application users will be the ones directly authenticating with JWT, defining a `RECORD` access method `WITH JWT` is most likely the right choice.
+Bear in mind that table and field permissions only apply to [record users](../../../../../learn/security/authentication/users.md#record-users), which must use tokens that are verified by a `RECORD` access method. Access provided by namespace and database tokens defined in a `JWT` access method is equivalent to access from [system users](../../../../../learn/security/authentication/users.md#system-users), which is above fine-grained permissions. When application users will be the ones directly authenticating with JWT, defining a `RECORD` access method `WITH JWT` is most likely the right choice.
 
 ## Requirements
 
-- You must be authenticated as a [system user](../../../../../learn/security/authentication/authentication.md#system-users) at the same level or higher than the level to which you want to provide JWT access.
+- You must be authenticated as a [system user](../../../../../learn/security/authentication/users.md#system-users) at the same level or higher than the level to which you want to provide JWT access.
 - [You must select a namespace or database](../../use.md) before you can define a JWT access method.
 
 ## Statement syntax
@@ -212,9 +212,9 @@ The expected claims depend on the level at which the token was defined:
 - For tokens defined `ON DATABASE`: `exp`, `ac`, `ns`, `db`.
 
 > [!NOTE]
-> An `id` claim is **not** required for `TYPE JWT`. That claim identifies a [record user](../../../../../learn/security/authentication/authentication.md#record-users) and belongs to [`DEFINE ACCESS ... TYPE RECORD ... WITH JWT`](record.md#with-json-web-token). A `TYPE JWT` token without `id` authenticates as a [system user](../../../../../learn/security/authentication/authentication.md#system-users) session.
+> An `id` claim is **not** required for `TYPE JWT`. That claim identifies a [record user](../../../../../learn/security/authentication/users.md#record-users) and belongs to [`DEFINE ACCESS ... TYPE RECORD ... WITH JWT`](record.md#with-json-web-token). A `TYPE JWT` token without `id` authenticates as a [system user](../../../../../learn/security/authentication/users.md#system-users) session.
 
-For tokens defined for [system users](../../../../../learn/security/authentication/authentication.md#system-users), the optional `rl` claim containing an array of capitalized [system user roles](../user.md#roles) (e.g. `["Viewer", "Editor", "Owner"]`) can be provided. Doing so will apply the access policy for those roles to any action made using the token. By default, sessions established with tokens without the `rl` claim will only have the `Viewer` role.
+For tokens defined for [system users](../../../../../learn/security/authentication/users.md#system-users), the optional `rl` claim containing an array of capitalized [system user roles](../user.md#roles) (e.g. `["Viewer", "Editor", "Owner"]`) can be provided. Doing so will apply the access policy for those roles to any action made using the token. By default, sessions established with tokens without the `rl` claim will only have the `Viewer` role.
 
 When calling any of the SurrealDB interfaces using a JWT, SurrealQL queries will gain access to the claims in the token through the `$token` variable. For example, if the token contains custom claims such as “name” or “email”, the values of those claims will be accessible through `$token.name` and `$token.email`.
 

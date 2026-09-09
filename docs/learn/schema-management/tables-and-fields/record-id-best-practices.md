@@ -5,6 +5,8 @@ description: How best to make a decision on what kind of record ID format to use
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/schema-management/tables-and-fields/record-id-best-practices.mdx"
 ---
 
+A record ID is chosen once and queried forever, so its format decides how easily records can be looked up, ranged over and kept unique. This page collects the tips and trade-offs for choosing one.
+
 ## Tips and best practices for record IDs
 
 This page contains a number of tips and best practices when working with record IDs in SurrealDB.

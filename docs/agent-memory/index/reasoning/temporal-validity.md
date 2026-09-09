@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Temporal validity
-description: How SurrealDB Agent Memory tracks when facts were true using valid_from and valid_until.
+description: How SurrealDB Agent Memory tracks when facts were true. Using valid_from and valid_until.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/reasoning/temporal-validity.mdx"
 ---
 

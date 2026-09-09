@@ -1,6 +1,6 @@
 ---
 position: 8
-title: Python
+title: Python quickstart
 description: Connect to SurrealDB and run your first queries with the Python SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/python.mdx"
 ---

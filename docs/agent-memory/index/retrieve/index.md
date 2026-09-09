@@ -12,8 +12,8 @@ _Auto-generated index — 4 pages._
 - [Graph traversal](graph-traversal.md)
   Structural edges in the knowledge layer and how retrieval uses them.
 - [Hybrid search](hybrid-search.md)
-  Using vector, BM25, and graph-density retrieval modes in SurrealDB Agent Memory.
+  Vector, BM25, and graph-density retrieval modes. How each mode behaves in SurrealDB Agent Memory.
 - [Keywords and BM25](keywords-and-bm25.md)
-  Using keyword extraction and full-text search in SurrealDB Agent Memory's knowledge layer.
+  Keyword extraction and full-text search. How both work in SurrealDB Agent Memory's knowledge layer.
 - [Recalling memories](recall.md)
   Unified retrieval over facts and document passages.

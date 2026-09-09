@@ -1,7 +1,7 @@
 ---
 position: 5
 title: Instructions and uncertainties
-description: How SurrealDB Agent Memory captures behavioural directives and tracks ambiguous or contradictory information.
+description: How behavioural directives are captured and tracked. Including ambiguous or contradictory information.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/reasoning/instructions-and-uncertainties.mdx"
 ---
 

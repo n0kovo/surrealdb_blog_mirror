@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Demos and tutorials
-description: Hands-on demo applications and tutorials to learn SurrealDB by building real projects.
+description: Hands-on demo applications and tutorials. Learn SurrealDB by building real projects.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/explore/tutorials/index.mdx"
 ---
 

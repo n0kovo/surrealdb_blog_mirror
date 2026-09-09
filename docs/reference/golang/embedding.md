@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Using an embedded instance
 
+The Go bindings in `surrealdb.c` let a Go program run SurrealDB in-process instead of connecting to a server. This page covers building the C library, setting up CGO, and connecting to an embedded instance.
+
 ## Setup
 
 1. Build surrealdb.c and set up CGO

@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 The `chat` endpoint lets SurrealDB Agent Memory manage the entire LLM conversation loop in a single call. Rather than recording a turn, retrieving context, calling your LLM, and recording the assistant's reply separately, you hand all of that to SurrealDB Agent Memory and receive the model's reply along with a memory diff in one response.
 
-> [!NOTE]
 ## Two integration patterns
 
 SurrealDB Agent Memory supports two ways to integrate memory into a conversation:

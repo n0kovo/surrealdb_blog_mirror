@@ -238,6 +238,6 @@ The `.invalidate()` method clears the authentication state for the current conne
 
 - [Surreal API reference](../api/core/surreal.md) for complete method signatures and parameters
 - [Tokens type reference](../api/types/index.md#tokens) for the structure of the returned tokens
-- [Authentication in SurrealDB](../../../learn/security/authentication/authentication.md) for an overview of authentication concepts
+- [Authentication in SurrealDB](../../../learn/security/authentication/users.md) for an overview of authentication concepts
 - [DEFINE ACCESS](../../query-language/statements/define/access/index.md) for defining record and JWT access methods
 - [Connecting to SurrealDB](connecting-to-surrealdb.md) for connection setup and protocol options

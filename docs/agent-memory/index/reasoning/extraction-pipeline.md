@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Extraction pipeline
-description: How SurrealDB Agent Memory classifies and extracts structured memory from conversation turns.
+description: How structured memory is extracted from conversation turns. Classification and extraction in SurrealDB Agent Memory.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/reasoning/extraction-pipeline.mdx"
 ---
 

@@ -7,7 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Vercel AI SDK
 
-> [!NOTE]
 `@surrealdb/spectron-vercel-ai` integrates SurrealDB Agent Memory with the [Vercel AI SDK](https://ai-sdk.dev). Keep using your own model provider (`@ai-sdk/openai`, `@ai-sdk/anthropic`, and so on) with `generateText` / `streamText`, and let SurrealDB Agent Memory transparently:
 
 - **inject** relevant long-term memory (and the user's profile) into the prompt before generation, and

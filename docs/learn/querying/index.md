@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Querying
-description: Query SurrealDB with SurrealQL, SDKs or GraphQL - SQL-like syntax with graphs, links and practical querying tips.
+description: "SurrealQL, the SDKs and GraphQL: SQL-like syntax for SurrealDB. Graphs, links, and practical querying tips."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/index.mdx"
 ---
 

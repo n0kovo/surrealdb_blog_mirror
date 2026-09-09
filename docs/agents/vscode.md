@@ -1,7 +1,7 @@
 ---
 position: 6
 title: Visual Studio Code
-description: Set up Visual Studio Code for SurrealDB with the hosted MCP server and the official Agent Skills.
+description: Hosted MCP server and Agent Skills setup for VS Code. Covers the servers object in mcp.json, for a workspace or globally.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/agents/vscode.mdx"
 ---
 
@@ -43,9 +43,9 @@ npx skills add surrealdb/agent-skills
 
 ## Check it worked
 
-Ask chat which SurrealDB tools it has available. If nothing appears, reload the window — VS Code reads `mcp.json` at startup.
+Ask chat which SurrealDB tools it has available. If nothing appears, reload the window - VS Code reads `mcp.json` at startup.
 
 ## Next steps
 
-- [GitHub Copilot](github-copilot.md) — the same file, with Copilot agent mode
-- [SurrealDB MCP Server](../build/ai-agents/mcp/index.md) — every tool the server publishes
+- [GitHub Copilot](github-copilot.md) - the same file, with Copilot agent mode
+- [SurrealDB MCP Server](../build/ai-agents/mcp/index.md) - every tool the server publishes

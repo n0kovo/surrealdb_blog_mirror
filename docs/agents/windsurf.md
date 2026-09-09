@@ -1,7 +1,7 @@
 ---
 position: 7
 title: Windsurf
-description: Set up Windsurf for SurrealDB with the hosted MCP server and the official Agent Skills.
+description: Hosted MCP server and Agent Skills setup for Windsurf. Windsurf uses serverUrl in mcp_config.json rather than url.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/agents/windsurf.mdx"
 ---
 
@@ -39,11 +39,11 @@ Open the Cascade panel and ask which SurrealDB tools it has access to.
 
 ## Try it
 
-> Deploy nothing yet — just tell me what a small instance in eu-west-1 would cost per month.
+> Deploy nothing yet - just tell me what a small instance in eu-west-1 would cost per month.
 
 Cascade prices the configuration and waits for your go-ahead. Creating an instance costs money, so the server never does it without one.
 
 ## Next steps
 
-- [SurrealDB MCP Server](../build/ai-agents/mcp/index.md) — every tool the server publishes
-- [Agent Skills](../build/ai-agents/agent-skills.md) — what each skill covers
+- [SurrealDB MCP Server](../build/ai-agents/mcp/index.md) - every tool the server publishes
+- [Agent Skills](../build/ai-agents/agent-skills.md) - what each skill covers

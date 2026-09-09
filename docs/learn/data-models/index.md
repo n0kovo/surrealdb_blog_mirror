@@ -1,7 +1,7 @@
 ---
 position: 0
 title: Data Models
-description: Store and query document, graph, vector, time-series, and geospatial data with SurrealDB.
+description: Store and query document, graph, vector, time-series, geospatial. All the data models SurrealDB supports, in one database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/data-models/index.mdx"
 ---
 

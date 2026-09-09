@@ -10,7 +10,7 @@ _Auto-generated index — 3 pages._
 ## Pages
 
 - [Forgetting memories](forget.md)
-  How to retire or permanently erase memories - default forget, purge, and scoped erasure.
+  Default forget, purge, and scoped erasure. How to retire or permanently erase memories.
 - [Profiles](profiles.md)
   Auto-maintained entity profiles aggregated from memory and knowledge.
 - [Reflection](reflect.md)

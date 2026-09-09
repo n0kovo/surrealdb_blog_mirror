@@ -1,7 +1,7 @@
 ---
 position: 5
 title: GitHub Copilot
-description: Set up GitHub Copilot agent mode for SurrealDB with the hosted MCP server and the official Agent Skills.
+description: Hosted MCP server and Agent Skills setup for GitHub Copilot. Copilot reads the same .vscode/mcp.json file that VS Code does.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/agents/github-copilot.mdx"
 ---
 
@@ -53,5 +53,5 @@ Open Copilot Chat in agent mode and ask which SurrealDB tools it can use. The to
 
 ## Next steps
 
-- [Visual Studio Code](vscode.md) — the same file, without Copilot
-- [SurrealDB MCP Server](../build/ai-agents/mcp/index.md) — every tool the server publishes
+- [Visual Studio Code](vscode.md) - the same file, without Copilot
+- [SurrealDB MCP Server](../build/ai-agents/mcp/index.md) - every tool the server publishes

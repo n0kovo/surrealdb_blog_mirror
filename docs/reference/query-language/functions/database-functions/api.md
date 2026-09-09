@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # API functions
 
+API functions run as middleware on a custom endpoint, altering a request before it is handled or a response before it is returned. They are passed in inside a `DEFINE API` or `DEFINE CONFIG API` statement.
+
 <table>
   <thead>
     <tr>

@@ -1,7 +1,7 @@
 ---
 position: 1
 title: surrealctl
-description: "The control-plane CLI: what surrealctl does, when to reach for it instead of SurrealDB Studio or the surreal binary, and a sixty-second quickstart."
+description: What the surrealctl control-plane CLI does. When to reach for it instead of SurrealDB Studio or the surreal binary, plus a sixty-second quickstart.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/surrealctl/index.mdx"
 ---
 

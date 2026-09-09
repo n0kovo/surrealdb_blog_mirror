@@ -1,7 +1,7 @@
 ---
 position: 1
 title: JavaScript SDK
-description: The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
+description: The official SurrealDB SDK for JavaScript. Simple and advanced querying of a remote or embedded database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/index.mdx"
 ---
 

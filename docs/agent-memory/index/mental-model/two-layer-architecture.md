@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Unified substrate and authority
-description: One SurrealDB graph for authoritative and experiential knowledge - provenance and reconciliation, not two silos.
+description: One SurrealDB graph for authoritative and experiential knowledge. Provenance and reconciliation in one place, rather than two silos.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/mental-model/two-layer-architecture.mdx"
 ---
 

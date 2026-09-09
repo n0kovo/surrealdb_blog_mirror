@@ -11,7 +11,7 @@ Defining an access method allows SurrealDB to grant access to resources using di
 
 ## Requirements
 
-- You must be authenticated as a [system user](../../../../../learn/security/authentication/authentication.md#system-users) at the same level or higher than the level on which access is defined.
+- You must be authenticated as a [system user](../../../../../learn/security/authentication/users.md#system-users) at the same level or higher than the level on which access is defined.
 
 ## Statement syntax
 
@@ -46,19 +46,19 @@ Learn more about [JWT access method in the documentation](jwt.md).
 
 ## Record access
 
-A record access method allows accessing SurrealDB as a [record user](../../../../../learn/security/authentication/authentication.md#record-users). Record users allow SurrealDB to operate as a web database by offering mechanisms to define custom signin and signup logic as well as custom table and field permissions.
+A record access method allows accessing SurrealDB as a [record user](../../../../../learn/security/authentication/users.md#record-users). Record users allow SurrealDB to operate as a web database by offering mechanisms to define custom signin and signup logic as well as custom table and field permissions.
 
 Learn more about [record access method in the documentation](record.md).
 
 ## Bearer access
 
-A bearer access method allows generating bearer grants with an associated key that can be used to access SurrealDB as a specific [system user](../../../../../learn/security/authentication/authentication.md#system-users) or [record user](../../../../../learn/security/authentication/authentication.md#record-users). Bearer grants allow other systems and software to authenticate with SurrealDB using a secure and unique credential that can be audited and revoked at any time.
+A bearer access method allows generating bearer grants with an associated key that can be used to access SurrealDB as a specific [system user](../../../../../learn/security/authentication/users.md#system-users) or [record user](../../../../../learn/security/authentication/users.md#record-users). Bearer grants allow other systems and software to authenticate with SurrealDB using a secure and unique credential that can be audited and revoked at any time.
 
 Learn more about [bearer access method in the documentation](bearer.md).
 
 ## Duration
 
-The duration clause specifies the duration of the token returned after successful authentication with the access method as well as the duration of the session established both using the access method and the aforementioned token. The difference between these concepts is explained in the [expiration documentation](../../../../../learn/security/authentication/authentication.md#expiration).
+The duration clause specifies the duration of the token returned after successful authentication with the access method as well as the duration of the session established both using the access method and the aforementioned token. The difference between these concepts is explained in the [expiration documentation](../../../../../learn/security/authentication/users.md#expiration).
 
 ```surql
 /**[test]

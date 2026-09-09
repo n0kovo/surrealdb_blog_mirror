@@ -1,7 +1,7 @@
 ---
 position: 1
 title: CLI Tools
-description: "Reference for the three SurrealDB command-line tools: surrealctl for the control plane, surreal for the data plane, and surqlfmt for formatting SurrealQL."
+description: Reference for surrealctl, surreal and surqlfmt. The control plane, the data plane, and formatting SurrealQL.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/index.mdx"
 ---
 

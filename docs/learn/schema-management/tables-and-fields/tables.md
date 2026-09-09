@@ -126,7 +126,7 @@ SELECT * FROM avg_product_review;
 
 ## Defining permissions
 
-Table `PERMISSIONS` control what [record users](../../security/authentication/authentication.md#record-users) (and [guests](../../security/authorization/capabilities.md#guest-access), when guest access is enabled) may do with records in that table. They do not restrict [system users](../../security/authentication/authentication.md#system-users) at the root, namespace, or database level, as those users are governed by roles instead.
+Table `PERMISSIONS` control what [record users](../../security/authentication/users.md#record-users) (and [guests](../../security/authorization/capabilities.md#guest-access), when guest access is enabled) may do with records in that table. They do not restrict [system users](../../security/authentication/users.md#system-users) at the root, namespace, or database level, as those users are governed by roles instead.
 
 If you omit the clause, SurrealDB will default to `PERMISSIONS NONE` which denies `SELECT`, `CREATE`, `UPDATE`, and `DELETE` for record users until you grant access explicitly. The opposite shorthand is `PERMISSIONS FULL`, which allows all four operations.
 

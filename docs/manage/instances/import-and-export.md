@@ -1,7 +1,7 @@
 ---
 position: 9
 title: Import and export
-description: Move data in and out of an instance with surreal export and surreal import, including size limits and partial-import behaviour.
+description: Move data in and out with surreal export and surreal import. Covers size limits and partial-import behaviour.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/import-and-export.mdx"
 ---
 

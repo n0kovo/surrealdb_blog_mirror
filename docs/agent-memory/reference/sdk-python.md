@@ -1,13 +1,12 @@
 ---
 position: 7
 title: Python SDK reference
-description: Package layout and configuration for the SurrealDB Agent Memory client in surrealdb.
+description: The SurrealDB Agent Memory client inside the surrealdb package. Package layout and configuration.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/reference/sdk-python.mdx"
 ---
 
 # Python SDK reference
 
-> [!NOTE]
 | Item | Value |
 | --- | --- |
 | PyPI package | [`surrealdb-memory`](https://pypi.org/project/surrealdb-memory/) (its own distribution, pulled in by the `surrealdb[memory]` extra) |

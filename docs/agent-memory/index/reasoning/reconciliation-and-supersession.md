@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Reconciliation and supersession
-description: How SurrealDB Agent Memory deduplicates entities, detects conflicts, and tracks corrections with full history.
+description: How entities are deduplicated and conflicts detected. Corrections are tracked with full history.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/reasoning/reconciliation-and-supersession.mdx"
 ---
 

@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Architecture
-description: How SurrealDB separates compute from storage, how every data model maps onto one storage engine, and how namespaces, databases and tables are structured.
+description: How SurrealDB separates compute from storage. Every data model maps onto one storage engine, and namespaces, databases and tables give the structure.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/data-models/architecture.mdx"
 ---
 

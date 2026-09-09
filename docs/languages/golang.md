@@ -1,6 +1,6 @@
 ---
 position: 2
-title: Go
+title: Go quickstart
 description: Connect to SurrealDB and run your first queries with the Go SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/golang.mdx"
 ---

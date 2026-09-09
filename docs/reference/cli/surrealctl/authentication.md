@@ -1,6 +1,6 @@
 ---
 position: 3
-title: Authentication
+title: Authentication reference
 description: How surrealctl signs in, the difference between a login session and a personal access token, what a token cannot do, and where credentials are stored on disk.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealctl/authentication.mdx"
 ---

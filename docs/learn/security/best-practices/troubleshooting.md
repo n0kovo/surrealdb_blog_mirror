@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Troubleshooting
 
+This page collects the errors that come up most often when using SurrealDB's security features, with the cause of each and how to resolve it.
+
 ## Authentication
 
 ### Invalid authentication error
@@ -59,9 +61,9 @@ A specific example for this error is the `AUTHENTICATE`, `SIGNIN` or `SIGNUP` cl
 
 #### Token expired error
 
-This error is returned when the token that is being used to authenticate a session has [expired](../authentication/authentication.md#expiration). If this token was issued by SurrealDB, this expiration defaults to an hour and can be changed using the `DURATION FOR TOKEN` clause in [`DEFINE ACCESS`](../../../reference/query-language/statements/define/access/record.md) and [`DEFINE USER`](../../../reference/query-language/statements/define/user.md). If the token was not issued by SurrealDB, this expiration will be set by the `exp` claim. 
+This error is returned when the token that is being used to authenticate a session has [expired](../authentication/users.md#expiration). If this token was issued by SurrealDB, this expiration defaults to an hour and can be changed using the `DURATION FOR TOKEN` clause in [`DEFINE ACCESS`](../../../reference/query-language/statements/define/access/record.md) and [`DEFINE USER`](../../../reference/query-language/statements/define/user.md). If the token was not issued by SurrealDB, this expiration will be set by the `exp` claim. 
 
-Note that this error will only appear when trying to authenticate the [session](../authentication/authentication.md#sessions). After authentication, the session will not expire when the token does, but rather after the independent session duration that has been defined in the `DURATION FOR SESSION` clause. By default, sessions will not expire. When using the HTTP REST API, a persistent session is not established as each request will be individually authenticated, as a consequence, requests made using an expired token will be rejected with this error.
+Note that this error will only appear when trying to authenticate the [session](../authentication/users.md#sessions). After authentication, the session will not expire when the token does, but rather after the independent session duration that has been defined in the `DURATION FOR SESSION` clause. By default, sessions will not expire. When using the HTTP REST API, a persistent session is not established as each request will be individually authenticated, as a consequence, requests made using an expired token will be rejected with this error.
 
 Although tokens accepted by SurrealDB must have some expiration, you can configure any amount of time that fits your security and usability requirements with the `DURATION FOR TOKEN` clause or by configuring the `exp` claim if you are using an external token issuer.
 

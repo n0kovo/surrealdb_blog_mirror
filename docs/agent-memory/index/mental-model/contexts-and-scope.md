@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Contexts and scope
-description: How Contexts isolate tenants and how scope tags partition memory within a Context.
+description: How scope tags partition memory, and how Contexts isolate tenants. Both operate within a Context.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/mental-model/contexts-and-scope.mdx"
 ---
 

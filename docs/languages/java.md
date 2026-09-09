@@ -1,6 +1,6 @@
 ---
 position: 3
-title: Java
+title: Java quickstart
 description: Connect to SurrealDB and run your first queries with the Java SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/java.mdx"
 ---

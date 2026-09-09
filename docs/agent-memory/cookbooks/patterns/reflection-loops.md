@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 Reflection is SurrealDB Agent Memory's mechanism for synthesising higher-order insights from accumulated memory. Unlike retrieval - which surfaces facts that already exist - reflection runs an LLM reasoning pass over a scope's memory and produces new insights that can be persisted back as experiential memory attributes. It is how SurrealDB Agent Memory moves from storing individual facts to producing understanding.
 
-> [!NOTE]
 ## What reflection does
 
 A reflection request takes a query, a scope, and optional parameters, then:

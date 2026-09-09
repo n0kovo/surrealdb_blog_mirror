@@ -1,7 +1,7 @@
 ---
 position: 4
 title: Authority when pillars meet
-description: How the Authoritative and Experiential pillars interact - reconciliation, uncertainty, and resolves_to.
+description: How the Authoritative and Experiential pillars interact. Reconciliation, uncertainty, and resolves_to.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/reasoning/authority-hierarchy.mdx"
 ---
 

@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Hosted quickstart
-description: Get up and running with SurrealDB Agent Memory on SurrealDB Cloud in five minutes.
+description: Get SurrealDB Agent Memory running in five minutes. Runs on SurrealDB Cloud, with no server to install.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/quickstarts/hosted.mdx"
 ---
 

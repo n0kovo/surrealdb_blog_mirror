@@ -282,8 +282,8 @@ The last query [can be viewed graphically](/blog/whats-new-in-surrealist-3-2#gra
 
 You can set the permissions for a custom function using the `PERMISSIONS` clause. The `PERMISSIONS` clause is mostly used to restrict who can access a function and what data they can access. It can be set to `NONE`, `FULL`, or `WHERE @condition`.
 
-- `FULL`: When Full permissions are granted [record](../../../../learn/security/authentication/authentication.md#record-users) users have access to the function. This is the default permission when not specified.
-- `NONE`: When this permission is granted, [record](../../../../learn/security/authentication/authentication.md#record-users) users have no access to the defined function.
+- `FULL`: When Full permissions are granted [record](../../../../learn/security/authentication/users.md#record-users) users have access to the function. This is the default permission when not specified.
+- `NONE`: When this permission is granted, [record](../../../../learn/security/authentication/users.md#record-users) users have no access to the defined function.
 - `WHERE @condition`: Permissions are granted to the function based on the specified condition.
 
 > [!NOTE]
@@ -297,7 +297,7 @@ The `FULL` permission grants all users access to the function. The following exa
 
 ### Using the `NONE` permission
 
-The `NONE` permission denies all [record](../../../../learn/security/authentication/authentication.md#record-users) users access to the function. The following example defines a function that fetches all products from the `product` table
+The `NONE` permission denies all [record](../../../../learn/security/authentication/users.md#record-users) users access to the function. The following example defines a function that fetches all products from the `product` table
 
 ```surql
 /**[test]

@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Creating sessions
-description: How to create and manage conversation sessions in SurrealDB Agent Memory.
+description: How to create and manage conversation sessions. Covers session lifecycle in SurrealDB Agent Memory.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/sessions/creating-sessions.mdx"
 ---
 
@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 A **session** is the fundamental unit of conversation in SurrealDB Agent Memory. It is a scoped, persistent container that groups all turns, extracted facts, and derived knowledge from a single conversational thread. Every entity, attribute, relation, instruction, and uncertainty produced by SurrealDB Agent Memory carries a reference to the session and turn it was extracted from, giving the memory layer complete provenance.
 
-> [!NOTE]
 ## Why sessions exist
 
 SurrealDB Agent Memory stores memory as a structured graph of discrete facts rather than a bag of text chunks. For that model to be useful, each fact must answer two questions:

@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 A profile is a computed view over the memory store for a given entity - typically a user. It aggregates the entity's most relevant attributes, preferences, and active instructions into a structured object that can be injected directly into an LLM system prompt.
 
-> [!NOTE]
 Profiles are not a separate store. They are assembled on demand from the same attribute, instruction, and knowledge tables that back all other SurrealDB Agent Memory operations. There is no synchronisation lag and no risk of a profile drifting out of step with the underlying data.
 
 ## Sections

@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 The SurrealDB Agent Memory client ships in the [`:surrealdb`](https://github.com/surrealdb/surrealdb.elixir) package on Hex as a typed REST client. It aims for feature parity with the JavaScript SDKs (`surrealdb` and `@surrealdb/memory`).
 
-> [!NOTE]
 ## Installation
 
 Add `:surrealdb` to your `mix.exs`:

@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `.Delete()` {#delete}
 
+`Delete` removes a single record, or every record in a table, through the .NET SDK.
+
 ```csharp title="Method Syntax"
 await db.Delete(resource)
 ```

@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Codex
-description: Set up the OpenAI Codex CLI for SurrealDB with the hosted MCP server and the official Agent Skills.
+description: Hosted MCP server and Agent Skills setup for the Codex CLI. Covers the config.toml entry, signing in, and checking it worked.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/agents/codex.mdx"
 ---
 
@@ -52,5 +52,5 @@ codex mcp list
 
 ## Next steps
 
-- [SurrealDB MCP Server](../build/ai-agents/mcp/index.md) — every tool the server publishes
-- [Agent Skills](../build/ai-agents/agent-skills.md) — what each skill covers
+- [SurrealDB MCP Server](../build/ai-agents/mcp/index.md) - every tool the server publishes
+- [Agent Skills](../build/ai-agents/agent-skills.md) - what each skill covers

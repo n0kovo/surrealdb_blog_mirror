@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Similarity search
 
+Vector search finds records by meaning rather than by the words they contain. This page runs similarity queries over an example dataset, covering the `vector::` distance and similarity helpers and how to filter KNN results with predicates.
+
 ## Vector search in SurrealDB
 
 ![What is Vector Search](../../../assets/img/image/light/VC.png)

@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Search indexes
 
+A search index makes a field searchable through an analyzer that has already been defined. This page covers defining one, why each index takes a single field, and the parse error that follows from listing several.
+
 ## Defining an index that uses an analyzer
 
 Once a search analyzer is defined, it can be applied to the fields of a table to make them searchable by [defining an index](../../../reference/query-language/statements/define/indexes.md#full-text-search-fulltext-index) that uses the `FULLTEXT ANALYZER` clause.

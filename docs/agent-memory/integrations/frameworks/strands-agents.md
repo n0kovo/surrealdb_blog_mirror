@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 SurrealDB Agent Memory exposes its memory operations as [Strands Agents](https://strandsagents.com) tools, so any Strands agent can store and retrieve long-term memory with a single line of setup.
 
-> [!NOTE]
 Package: **`spectron-strands-agents`** (PyPI). It pulls in `strands-agents` and `surrealdb` (which provides the SurrealDB Agent Memory client).
 
 ```python

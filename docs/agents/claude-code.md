@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Claude Code
-description: Set up Claude Code for SurrealDB with the hosted MCP server and the official Agent Skills.
+description: Hosted MCP server and Agent Skills setup for Claude Code. Covers the .mcp.json entry, signing in, and checking it worked.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/agents/claude-code.mdx"
 ---
 
@@ -60,5 +60,5 @@ claude mcp remove surrealdb
 
 ## Next steps
 
-- [MCP in Claude](../build/ai-agents/mcp/claude.md) — Claude Desktop and the Claude app, and troubleshooting
-- [Example usages](../build/ai-agents/mcp/examples.md) — more prompts to try
+- [MCP in Claude](../build/ai-agents/mcp/claude.md) - Claude Desktop and the Claude app, and troubleshooting
+- [Example usages](../build/ai-agents/mcp/examples.md) - more prompts to try

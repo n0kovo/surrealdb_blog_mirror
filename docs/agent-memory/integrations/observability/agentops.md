@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 [AgentOps](https://www.agentops.ai/) monitors AI agents: session replay, LLM cost tracking, and tool-call telemetry across most agent frameworks. It is complementary to SurrealDB Agent Memory: AgentOps observes the run; SurrealDB Agent Memory provides the memory. This guide uses both together with the [Python SDK](../sdks/python.md) (`surrealdb`).
 
-> [!NOTE]
 ## Installation
 
 > [!NOTE]

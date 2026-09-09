@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 This guide covers building a personal AI assistant that learns from every conversation and retains that knowledge across sessions. The assistant accumulates user preferences, biographical facts, current projects, and behavioural instructions. It injects relevant context automatically at the start of each new session so the experience feels continuous.
 
-> [!NOTE]
 ## What you are building
 
 - A single-user Context scoped by `user_id`.

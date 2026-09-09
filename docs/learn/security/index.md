@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Security
-description: Learn how to secure your SurrealDB deployment with authentication, authorization, and security best practices.
+description: Secure a SurrealDB deployment with authentication and authorisation. Plus security best practices.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/security/index.mdx"
 ---
 

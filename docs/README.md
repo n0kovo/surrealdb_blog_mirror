@@ -1,12 +1,12 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-09-08 10:30 UTC_
+_Last updated: 2026-09-09 10:42 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
 ## Stats
 
-- **Total pages:** 1089
+- **Total pages:** 1083
 
 ## Browse
 
@@ -74,5 +74,5 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ## More content
 
-- **[SDKs](languages/index.md)** — Official client SDKs for Rust, JavaScript, Python, Go, .NET, PHP, and Java. _(11 pages)_
+- **[SDKs](languages/index.md)** — Official client SDKs for Rust, JavaScript, Python, Go, .NET, PHP, and Java. _(12 pages)_
 - **[Frameworks](frameworks/index.md)** — Framework integrations and starter templates. _(2 pages)_

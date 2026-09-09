@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Configure an instance
-description: "Instance settings in SurrealDB Studio: capabilities, compute and storage, pausing, and deletion."
+description: Instance settings in SurrealDB Studio. Capabilities, compute and storage, pausing, and deletion.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/configure.mdx"
 ---
 

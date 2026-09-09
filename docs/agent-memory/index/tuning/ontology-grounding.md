@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Extraction vocabulary
-description: How SurrealDB Agent Memory keeps entity names, attribute keys, and relation labels consistent across extractions.
+description: How entity names and attribute keys stay consistent. Relation labels are grounded across extractions too.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/tuning/ontology-grounding.mdx"
 ---
 

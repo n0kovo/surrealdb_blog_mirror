@@ -1,33 +1,27 @@
 ---
-title: Languages
-generated: stub
+position: 0
+title: SDKs
+description: One official SurrealDB SDK per language. Each has a quickstart that gets you connected and a reference covering every method.
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/index.mdx"
 ---
 
-# Languages
+SurrealDB has ten official SDKs. Each speaks the same RPC protocol over WebSocket or HTTP, so the concepts carry between them: connect, select a namespace and database, sign in, then query. What differs is the idiom - types, async model and error handling follow the host language.
 
-_Auto-generated index — 11 pages._
+Every SDK page opens with a quickstart that gets you connected, and continues into a reference for each method.
 
-## Pages
+- **[Rust](rust.md)**
+- **[JavaScript](javascript.md)**
+- **[Python](python.md)**
+- **[Go](golang.md)**
+- **[.NET](dotnet.md)**
+- **[Java](java.md)**
+- **[Kotlin](kotlin.md)**
+- **[PHP](php.md)**
+- **[Swift](swift.md)**
+- **[Mojo](mojo.md)**
 
-- [Community SDKs](community.md)
-  Community-maintained and experimental SurrealDB clients for languages beyond the official SDKs.
-- [.NET](dotnet.md)
-  Connect to SurrealDB and run your first queries with the .NET SDK.
-- [Go](golang.md)
-  Connect to SurrealDB and run your first queries with the Go SDK.
-- [Java](java.md)
-  Connect to SurrealDB and run your first queries with the Java SDK.
-- [JavaScript](javascript.md)
-  Connect to SurrealDB and run your first queries with the JavaScript SDK.
-- [Kotlin](kotlin.md)
-  Connect to SurrealDB and run your first queries with the Kotlin SDK.
-- [Mojo](mojo.md)
-  Connect to SurrealDB and run your first queries with the Mojo SDK.
-- [PHP](php.md)
-  Connect to SurrealDB and run your first queries with the PHP SDK.
-- [Python](python.md)
-  Connect to SurrealDB and run your first queries with the Python SDK.
-- [Rust](rust.md)
-  Connect to SurrealDB and run your first queries with the Rust SDK.
-- [Swift](swift.md)
-  Connect to SurrealDB and run your first queries with the Swift SDK.
+[Community SDKs](community.md) cover further languages, and the [Expo](../frameworks/expo.md) and [React Native](../frameworks/react-native.md) guides cover mobile.
+
+## Choosing between the interfaces
+
+An SDK is the usual way in, but it is not the only one. The [RPC protocol](../reference/rest-api/rpc-protocol.md) keeps one connection open and is what the SDKs use themselves, so it is the interface that supports live queries. The [HTTP REST API](../reference/rest-api/http-protocol.md) opens a connection per request and suits environments where holding a socket is awkward. The [CLI](../reference/cli/index.md) covers import, export and one-off queries.

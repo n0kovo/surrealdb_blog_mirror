@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 SurrealDB Agent Memory gives [Google ADK](https://github.com/google/adk-python) agents persistent memory that survives restarts and separate conversations. The package wraps SurrealDB Agent Memory's verbs as ADK tools; it handles entity extraction, knowledge-graph storage, temporal facts, and hybrid retrieval.
 
-> [!NOTE]
 Package: **`spectron-google-adk`** (PyPI). It pulls in `google-adk` and `surrealdb`.
 
 ## Installation

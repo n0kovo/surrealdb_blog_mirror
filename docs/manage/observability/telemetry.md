@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Telemetry (OTLP)
-description: OTLP push export - metrics, logs, traces, intervals, backward-compatible instruments, and differences before and after SurrealDB 3.1.
+description: OTLP push export of metrics, logs, and traces. Intervals, backward-compatible instruments, and differences before and after SurrealDB 3.1.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/observability/telemetry.mdx"
 ---
 

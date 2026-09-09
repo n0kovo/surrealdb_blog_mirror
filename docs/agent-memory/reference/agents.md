@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Agent guide (AGENTS.md)
-description: Instructions for coding agents integrating with SurrealDB Agent Memory - copy into Cursor rules or skills.
+description: Copy these into your Cursor rules or agent skills. Instructions for coding agents integrating with SurrealDB Agent Memory.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/reference/agents.mdx"
 ---
 

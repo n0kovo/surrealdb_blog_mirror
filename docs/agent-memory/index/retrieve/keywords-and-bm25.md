@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Keywords and BM25
-description: "Using keyword extraction and full-text search in SurrealDB Agent Memory's knowledge layer."
+description: "Keyword extraction and full-text search. How both work in SurrealDB Agent Memory's knowledge layer."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/retrieve/keywords-and-bm25.mdx"
 ---
 
@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 SurrealDB Agent Memory combines two statistical retrieval mechanisms - RAKE keyword extraction and BM25 full-text search - to complement dense vector retrieval. Together, they ensure that exact terms, product identifiers, technical phrases, and domain vocabulary are reliably findable even when their embedding representation is weak.
 
-> [!NOTE]
 ## RAKE keyword extraction
 
 During document ingestion, SurrealDB Agent Memory applies RAKE (Rapid Automatic Keyword Extraction) to each document. RAKE is a statistical, language-agnostic algorithm that identifies multi-word keyphrases by exploiting word co-occurrence and word frequency without requiring a language model or training data.

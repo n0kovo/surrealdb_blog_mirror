@@ -1,6 +1,6 @@
 ---
 position: 6
-title: Mojo
+title: Mojo quickstart
 description: Connect to SurrealDB and run your first queries with the Mojo SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/mojo.mdx"
 ---

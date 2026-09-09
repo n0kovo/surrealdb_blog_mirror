@@ -571,7 +571,7 @@ The `$request` parameter may contain values at the following fields: `body`, `he
 
 Represents values from the session functions as an object.
 
-You can learn more about those values from the [security parameters](../../../learn/security/authentication/authentication.md#session) section.
+You can learn more about those values from the [security parameters](../../../learn/security/authentication/users.md#session) section.
 
 ```surql
 CREATE user SET 
@@ -593,7 +593,7 @@ CREATE user SET
 
 Represents values held inside the JWT token used for the current session.
 
-You can learn more about those values from the [security parameters](../../../learn/security/authentication/authentication.md#token) section.
+You can learn more about those values from the [security parameters](../../../learn/security/authentication/users.md#token) section.
 
 ```surql
 /**[test]

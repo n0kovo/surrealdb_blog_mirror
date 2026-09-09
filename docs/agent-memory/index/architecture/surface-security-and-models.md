@@ -1,7 +1,7 @@
 ---
 position: 6
 title: Surface, models, and security
-description: HTTP ingest and read verbs, integrations, model hooks, and security properties.
+description: HTTP ingest and read verbs, integrations, and model hooks. Security properties are covered too.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/architecture/surface-security-and-models.mdx"
 ---
 

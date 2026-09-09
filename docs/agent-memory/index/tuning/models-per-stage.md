@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Models per stage
-description: Configure which LLM is used for each processing stage in SurrealDB Agent Memory.
+description: Configure which LLM runs at each processing stage. For every stage in SurrealDB Agent Memory.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/tuning/models-per-stage.mdx"
 ---
 

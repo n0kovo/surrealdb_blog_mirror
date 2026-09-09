@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `DEFINE ACCESS ... TYPE RECORD`
 
-A record access method allows accessing SurrealDB as a [record user](../../../../../learn/security/authentication/authentication.md#record-users).
+A record access method allows accessing SurrealDB as a [record user](../../../../../learn/security/authentication/users.md#record-users).
 
 Record users allow SurrealDB to operate as a web database by offering mechanisms to define custom signin and signup logic as well as custom table and field permissions.
 
@@ -62,7 +62,7 @@ Successful authentication with a record access method results in SurrealDB gener
 
 Since the origin of the claims in the JWT is verified, those claims can be used within SurrealQL in order to provide table and field authorization through an external authenticator using OpenID Connect, OAuth or simply acting as a trusted issuer of a JWT. This can be done by leveraging table permissions to allow or disallow access depending on the values of the claims in the verified token. For example, these claims can be compared with the records in a table to only return those matching certain criteria.
 
-Bear in mind that table and field permissions only apply to [record users](../../../../../learn/security/authentication/authentication.md#record-users), which must use tokens that are verified by a `RECORD` access method. Access provided by namespace and database tokens defined in a `JWT` access method is equivalent to access from [system users](../../../../../learn/security/authentication/authentication.md#system-users), which is above fine-grained permissions. When application users will be the ones directly authenticating with JWT, defining a `RECORD` access method `WITH JWT` is most likely the right choice.
+Bear in mind that table and field permissions only apply to [record users](../../../../../learn/security/authentication/users.md#record-users), which must use tokens that are verified by a `RECORD` access method. Access provided by namespace and database tokens defined in a `JWT` access method is equivalent to access from [system users](../../../../../learn/security/authentication/users.md#system-users), which is above fine-grained permissions. When application users will be the ones directly authenticating with JWT, defining a `RECORD` access method `WITH JWT` is most likely the right choice.
 
 Reference [the JWT access method](jwt.md) documentation for additional information about how JWT tokens can be used in SurrealDB, including verification through [JWKS](jwt.md#json-web-key-set-jwks).
 

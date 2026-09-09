@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 SurrealDB Agent Memory gives agents built with the [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/) a durable, shared memory. An agent can remember across runs, recall what it needs before answering, and share memory with other agents through a common scope.
 
-> [!NOTE]
 Package: **`spectron-openai-agents-sdk`** (PyPI). Memory works two ways, and they compose: function tools the agent calls itself, and automatic memory wrapped around a run.
 
 ## Installation

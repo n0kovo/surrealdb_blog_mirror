@@ -1,7 +1,7 @@
 ---
 position: 13
 title: Private connectivity
-description: Reach an instance from your AWS VPC over AWS PrivateLink, and set the public, private, or dual access mode.
+description: Reach an instance from your AWS VPC over AWS PrivateLink. Set the public, private, or dual access mode.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/private-connectivity.mdx"
 ---
 

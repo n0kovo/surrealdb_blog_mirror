@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # Run with Docker
 
+Docker runs SurrealDB without installing the server on the host machine. This page covers starting it from the official image and choosing a version tag.
+
 ## Running the SurrealDB server using Docker
 
 To get started using Docker, you can use the `latest` tag. To view all the available versions and tags, or to use a specific tag visit the [Docker Hub](https://hub.docker.com/r/surrealdb/surrealdb) page. To start a server use the [`start`](../reference/cli/surrealdb-cli/commands/start.md) command. In Docker, SurrealDB listens on port `8000` in all interfaces by default so that the host can connect to the container in the default bridge networking mode.

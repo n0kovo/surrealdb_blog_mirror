@@ -1,13 +1,14 @@
 ---
 position: 8
 title: Swift SDK reference
-description: Package layout and configuration for the SurrealDB Agent Memory Swift client.
+description: The SurrealDB Agent Memory Swift client. Package layout and configuration.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/reference/sdk-swift.mdx"
 ---
 
 # Swift SDK reference
 
-> [!NOTE]
+The `AgentMemory` product in `surrealdb.swift` is the Swift client for SurrealDB Agent Memory. This page covers adding the package and configuring a client.
+
 | Item | Value |
 | --- | --- |
 | Package | `surrealdb.swift` |

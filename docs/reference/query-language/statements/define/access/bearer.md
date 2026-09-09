@@ -7,11 +7,11 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `DEFINE ACCESS ... TYPE BEARER`
 
-A bearer access method allows generating bearer grants with an associated key that can be used to access SurrealDB as a specific [system user](../../../../../learn/security/authentication/authentication.md#system-users) or [record user](../../../../../learn/security/authentication/authentication.md#record-users). Bearer grants allow other systems and software to authenticate with SurrealDB using a secure and unique credential that can be [audited](../../access.md#show) and [revoked](../../access.md#revoke) at any time.
+A bearer access method allows generating bearer grants with an associated key that can be used to access SurrealDB as a specific [system user](../../../../../learn/security/authentication/users.md#system-users) or [record user](../../../../../learn/security/authentication/users.md#record-users). Bearer grants allow other systems and software to authenticate with SurrealDB using a secure and unique credential that can be [audited](../../access.md#show) and [revoked](../../access.md#revoke) at any time.
 
 Allowing access to SurrealDB using a bearer access method requires creating grants associated with that access method. This can be done using the [`GRANT`](../../access.md#grant) clause of the [`ACCESS`](../../access.md) statement.
 
-After creating a grant for a subject (i.e. a [system user](../../../../../learn/security/authentication/authentication.md#system-users) or a [record user](../../../../../learn/security/authentication/authentication.md#record-users)) with a bearer access method, a bearer key will be returned. This bearer key can be used to sign in as the subject of the grant without using its password or any other credentials. As with other credentials in SurrealDB, signing in with a bearer key will return a JWT, which can be used to perform authenticated operations or establish a persistent [authenticated session](../../../../../learn/security/authentication/authentication.md). This makes bearer keys most suitable for automations and other service-to-service authentication use cases that require interacting with SurrealDB in an authenticated context by providing stronger security guarantees than passwords and removing the complexity of having to work with JWT directly.
+After creating a grant for a subject (i.e. a [system user](../../../../../learn/security/authentication/users.md#system-users) or a [record user](../../../../../learn/security/authentication/users.md#record-users)) with a bearer access method, a bearer key will be returned. This bearer key can be used to sign in as the subject of the grant without using its password or any other credentials. As with other credentials in SurrealDB, signing in with a bearer key will return a JWT, which can be used to perform authenticated operations or establish a persistent [authenticated session](../../../../../learn/security/authentication/users.md). This makes bearer keys most suitable for automations and other service-to-service authentication use cases that require interacting with SurrealDB in an authenticated context by providing stronger security guarantees than passwords and removing the complexity of having to work with JWT directly.
 
 ## Requirements
 
@@ -33,7 +33,7 @@ DEFINE ACCESS [ OVERWRITE | IF NOT EXISTS ] @name
 
 ## `FOR USER`
 
-Defining a bearer access method `FOR USER` will ensure that grants can only be created with a [system user](../../../../../learn/security/authentication/authentication.md#system-users) as its subject. This application is useful for integrations that require administering SurrealDB at the `ROOT`, `NAMESPACE` or `DATABASE` level with the roles with which the user has been defined with [`DEFINE USER`](../user.md). 
+Defining a bearer access method `FOR USER` will ensure that grants can only be created with a [system user](../../../../../learn/security/authentication/users.md#system-users) as its subject. This application is useful for integrations that require administering SurrealDB at the `ROOT`, `NAMESPACE` or `DATABASE` level with the roles with which the user has been defined with [`DEFINE USER`](../user.md). 
 
 ### Example
 
@@ -108,7 +108,7 @@ curl -X POST \
 
 ## `FOR RECORD`
 
-Defining a bearer access method `FOR RECORD` will ensure that grants can only be created with a [record user](../../../../../learn/security/authentication/authentication.md#record-users) as its subject. This application is useful for integrations that require accessing only some data in a specific SurrealDB database and in accordance with existing `PERMISSIONS` clauses. Bearer access can only be defined `FOR RECORD` if a database is selected and using `ON DATABASE`.
+Defining a bearer access method `FOR RECORD` will ensure that grants can only be created with a [record user](../../../../../learn/security/authentication/users.md#record-users) as its subject. This application is useful for integrations that require accessing only some data in a specific SurrealDB database and in accordance with existing `PERMISSIONS` clauses. Bearer access can only be defined `FOR RECORD` if a database is selected and using `ON DATABASE`.
 
 ```surql
 -- Create record representing a user

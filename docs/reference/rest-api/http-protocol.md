@@ -678,7 +678,7 @@ curl -X POST -H "Accept: application/json" -d '{"ns":"main","user":"johndoe","pa
 
 After you have defined the users permissions for the record user, you can use the `POST /signin` endpoint to sign in as a user.
 
-Using the [user credentials](../../learn/security/authentication/authentication.md#record-users) created add the following to the request body:
+Using the [user credentials](../../learn/security/authentication/users.md#record-users) created add the following to the request body:
 ```json
 {
     "ns": "main",
@@ -793,7 +793,7 @@ The above example will only work if a record access method has already been set 
 
 ### Setting up a record access method
 
-Before you sign up a new [record user](../../learn/security/authentication/authentication.md#record-users), you must first [define a record access method](../query-language/statements/define/access/record.md) for the user. The following curl command will do so on the command line using the [`POST /sql`](#sql) endpoint.
+Before you sign up a new [record user](../../learn/security/authentication/users.md#record-users), you must first [define a record access method](../query-language/statements/define/access/record.md) for the user. The following curl command will do so on the command line using the [`POST /sql`](#sql) endpoint.
 
 ```bash
 curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
@@ -2132,7 +2132,7 @@ This HTTP RESTful endpoint exports a SurrealML machine learning model from a spe
 ### Example usage
 
 > [!NOTE]
-<em> Note: </em> The `-u` in the example below is a shorthand used by curl to send an Authorization header (name and password), in this case assuming the username `root` and password `secret`. The `-o` allows the output to be written to a file.
+> The `-u` in the example below is a shorthand used by curl to send an Authorization header (name and password), in this case assuming the username `root` and password `secret`. The `-o` allows the output to be written to a file.
 
 ```bash title="Request"
 curl -X GET \

@@ -1,7 +1,7 @@
 ---
 position: 3
 title: AI frameworks
-description: Framework integrations that let AI and machine learning libraries use SurrealDB for vectors, memory, and pipelines.
+description: Framework integrations for AI and machine learning libraries. Use SurrealDB for vectors, memory, and pipelines.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/ai-agents/ai-frameworks.mdx"
 ---
 

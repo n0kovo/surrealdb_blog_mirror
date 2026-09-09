@@ -1,7 +1,7 @@
 ---
 position: 3
 title: SurrealQL editors
-description: SurrealQL editor shortcuts in SurrealDB Studio for indentation, comments, multi-cursor edits, running queries, record inspection, and JSON formatting.
+description: SurrealQL editor shortcuts in SurrealDB Studio. Indentation, comments, multi-cursor edits, running queries, record inspection, and JSON formatting.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/explore/studio/surrealql-editors.mdx"
 ---
 

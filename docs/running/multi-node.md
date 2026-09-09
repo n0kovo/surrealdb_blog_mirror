@@ -1,7 +1,7 @@
 ---
 position: 7
 title: Multi-node
-description: Run SurrealDB against distributed storage for horizontally scalable, highly available clusters.
+description: "Run SurrealDB against distributed storage: horizontally scalable. Highly available clusters."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/running/multi-node.mdx"
 ---
 

@@ -151,5 +151,5 @@ db.close();
 - [Authentication](authentication.md) for signing in and managing sessions
 - [Embedded databases](embedded-databases.md) for running SurrealDB in-process
 - [Error handling](error-handling.md) for handling connection errors
-- [SurrealDB authentication](../../../learn/security/authentication/authentication.md) for an overview of authentication concepts
+- [SurrealDB authentication](../../../learn/security/authentication/users.md) for an overview of authentication concepts
 - [DEFINE NAMESPACE](../../query-language/statements/define/namespace.md) and [DEFINE DATABASE](../../query-language/statements/define/database.md) for namespace and database configuration

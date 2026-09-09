@@ -1,7 +1,7 @@
 ---
 position: 3
 title: The accuracy promise
-description: Defensible correctness - provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
+description: Defensible correctness in SurrealDB Agent Memory. Provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/welcome/accuracy-promise.mdx"
 ---
 

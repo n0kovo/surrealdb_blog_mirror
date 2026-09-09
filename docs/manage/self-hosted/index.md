@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Self-hosted
-description: "Deploy and operate SurrealDB on your own infrastructure: deployment models, containers, configuration, backups, monitoring, and upgrades."
+description: SurrealDB deployment models on your own infrastructure. Containers, configuration, backups, monitoring, and upgrades.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/self-hosted/index.mdx"
 ---
 

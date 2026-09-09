@@ -1,6 +1,6 @@
 ---
 position: 5
-title: Kotlin
+title: Kotlin quickstart
 description: Connect to SurrealDB and run your first queries with the Kotlin SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/kotlin.mdx"
 ---

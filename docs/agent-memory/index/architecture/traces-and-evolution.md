@@ -1,11 +1,13 @@
 ---
 position: 4
 title: Traces and memory evolution
-description: Graph-resident traces, reflection, elaboration, consolidation, and semantic response reuse.
+description: Graph-resident traces, reflection, elaboration, consolidation. Also semantic response reuse.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/architecture/traces-and-evolution.mdx"
 ---
 
 # Traces and memory evolution
+
+SurrealDB Agent Memory keeps a record of what it retrieved, what it decided, and what it answered, and treats those records as memory rather than as logs. This page covers the three trace kinds, the three mechanisms that build new memory out of them, and how a prior answer can be reused while the facts behind it still hold.
 
 ## Tracing as graph-resident memory
 

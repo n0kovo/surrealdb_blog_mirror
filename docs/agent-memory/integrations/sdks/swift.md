@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 The `AgentMemory` client is shipped alongside the SurrealDB Swift SDK in the [surrealdb.swift](https://github.com/surrealdb/surrealdb.swift) package. It is a separate product that talks to the SurrealDB Agent Memory API, built on Swift async/await and `URLSession` with a swappable `HTTPClient` for testing. The client is `Sendable`.
 
-> [!NOTE]
 ## Installation
 
 Add the `AgentMemory` product to your target's dependencies:

@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 When populating a new Context or migrating from an existing system, you typically need to ingest many documents or knowledge nodes at once. SurrealDB Agent Memory's ingestion pipeline is designed for concurrent usage, and both the document upload endpoint and the triple-write path on `/facts` support high-throughput ingestion patterns.
 
-> [!NOTE]
 ## Uploading many documents
 
 `POST /api/v1/{context_id}/documents` accepts one document per request. For bulk uploads, issue multiple requests concurrently and track their status independently.

@@ -1,7 +1,7 @@
 ---
 position: 4
 title: State and diffs
-description: Reading structured memory state and tracking what changed between turns.
+description: Reading structured memory state. Also tracking what changed between turns.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/sessions/state-and-diffs.mdx"
 ---
 

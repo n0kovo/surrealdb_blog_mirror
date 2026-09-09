@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Integrations
-description: Integrations that connect SurrealDB to AI frameworks, embeddings providers, agents, and data tools.
+description: Integrations connecting SurrealDB to AI frameworks and embeddings. Also agents and data tools.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/integrations/index.mdx"
 ---
 
@@ -13,7 +13,7 @@ This section assumes a certain level of familiarity with SurrealDB itself. If mo
 
 ## Agent rules
 
-- [Agent rules](agent-rules/agent-rules.md) - rule files that teach an assistant your project's conventions
+- [Agent rules](agent-rules/index.md) - rule files that teach an assistant your project's conventions
 
 ## Authentication
 

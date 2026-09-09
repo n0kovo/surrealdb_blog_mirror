@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 The SurrealDB Agent Memory client ships as the `surrealdb-memory` package in the [SurrealDB Haskell SDK](https://github.com/surrealdb/surrealdb.haskell). It is a typed client for the SurrealDB Agent Memory platform: store and recall memories, drive the chat loop, and manage documents, entities, sessions, lifecycle, traces, principals, scopes, and keys.
 
-> [!NOTE]
 ## Installation
 
 There are no package-manager releases yet, so add the package from the repository. With cabal, in `cabal.project`:

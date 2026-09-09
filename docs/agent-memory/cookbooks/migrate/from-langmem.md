@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 LangMem is LangChain's in-process memory library, typically backed by a local vector store or an in-memory store. This guide covers the concept mapping and migration path to SurrealDB Agent Memory.
 
-> [!NOTE]
 ## Concept mapping
 
 | LangMem concept | SurrealDB Agent Memory equivalent | Notes |

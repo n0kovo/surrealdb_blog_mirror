@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Agent Memory on SurrealDB Cloud
-description: How SurrealDB Agent Memory contexts, authentication, and APIs work on SurrealDB Cloud.
+description: How contexts, authentication and the APIs work on SurrealDB Cloud. For SurrealDB Agent Memory.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/quickstarts/surrealdb-cloud.mdx"
 ---
 

@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Create an instance
-description: "Deploy an instance from SurrealDB Studio: choose a plan, instance type, region, version, name, starting data, and storage."
+description: Deploy an instance from SurrealDB Studio. Choose a plan, instance type, region, version, name, starting data, and storage.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/create.mdx"
 ---
 

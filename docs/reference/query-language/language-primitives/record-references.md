@@ -9,6 +9,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 *Since v2.2.0*
 
+A record reference is a link SurrealDB tracks in both directions, so the record being pointed at knows what points to it. This page covers adding a `REFERENCE` clause to a field, traversing references, and choosing what happens when a referenced record is deleted.
+
 ## Basic concepts
 
 Reference tracking begins by adding a `REFERENCE` clause to any `DEFINE FIELD` statement, as long as the field is a top-level field of type `record` or array of records.

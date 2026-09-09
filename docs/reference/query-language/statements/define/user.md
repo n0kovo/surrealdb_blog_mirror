@@ -199,7 +199,7 @@ It also grants view permissions for child resources that support the `PERMISSION
 
 ## Duration
 
-The duration clause specifies the duration of the token returned after successful authentication with a password or passhash as well as the duration of the session established both using a password or passhash and the aforementioned token. The difference between these concepts is explained in the [expiration](../../../../learn/security/authentication/authentication.md#expiration) documentation.
+The duration clause specifies the duration of the token returned after successful authentication with a password or passhash as well as the duration of the session established both using a password or passhash and the aforementioned token. The difference between these concepts is explained in the [expiration](../../../../learn/security/authentication/users.md#expiration) documentation.
 
 ## SCRAM credentials for Postgres clients
 

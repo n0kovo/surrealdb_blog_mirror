@@ -10,10 +10,10 @@ _Auto-generated index — 4 pages._
 ## Pages
 
 - [The accuracy promise](accuracy-promise.md)
-  Defensible correctness - provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
+  Defensible correctness in SurrealDB Agent Memory. Provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
 - [How it works in five minutes](how-it-works.md)
-  From a message to structured substrate state - extraction, reconciliation, traces, and tiered reads.
+  From a message to structured substrate state. Extraction, reconciliation, traces, and tiered reads.
 - [What is SurrealDB Agent Memory?](what-is-surrealdb-agent-memory.md)
-  SurrealDB Agent Memory as a memory and knowledge layer - one SurrealDB substrate, provenance-first, trace-aware, tri-temporal.
+  A memory and knowledge layer for AI agents. One SurrealDB substrate, provenance-first, trace-aware, and tri-temporal.
 - [Why agentic memory?](why-agentic-memory.md)
-  Why conversational agents need structured memory beyond plain retrieval.
+  Why conversational agents need structured memory. Plain retrieval is not enough on its own.

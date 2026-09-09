@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Caching and invalidation
-description: "How SurrealDB Agent Memory's semantic response cache works and how to manage memory lifecycle."
+description: How the semantic response cache works. Managing the memory lifecycle in SurrealDB Agent Memory.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/tuning/caching-and-invalidation.mdx"
 ---
 

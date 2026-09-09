@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 SurrealDB Agent Memory is not limited to conversational memory. Its entity-attribute model and temporal validity system make it a natural fit for tracking the state of long-running, multi-step agent workflows - processes that span hours or days, survive restarts, and need to avoid repeating completed steps.
 
-> [!NOTE]
 ## Why use SurrealDB Agent Memory for workflow state
 
 Traditional approaches to workflow state - Redis keys, database records, task queue metadata - require purpose-built state management. SurrealDB Agent Memory adds:

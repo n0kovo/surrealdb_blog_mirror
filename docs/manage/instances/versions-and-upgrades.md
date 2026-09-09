@@ -1,7 +1,7 @@
 ---
 position: 10
 title: Versions and upgrades
-description: Change the SurrealDB release an instance runs, and what happens to the instance during the upgrade.
+description: Change the SurrealDB release an instance runs. What happens to the instance during the upgrade.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/versions-and-upgrades.mdx"
 ---
 

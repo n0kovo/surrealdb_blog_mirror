@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Installation
-description: "Install the SurrealDB server on your machine: macOS, Windows, Linux, and nightly builds."
+description: "Install the SurrealDB server on your machine: macOS, Windows, Linux. Nightly builds are covered too."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/running/installation/index.mdx"
 ---
 

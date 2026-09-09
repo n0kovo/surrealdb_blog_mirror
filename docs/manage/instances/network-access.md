@@ -1,7 +1,7 @@
 ---
 position: 12
 title: Network access
-description: Control which outbound destinations queries may reach, using the network access capability and its allow and deny patterns.
+description: Control which outbound destinations queries may reach. Uses the network access capability and its allow and deny patterns.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/network-access.mdx"
 ---
 

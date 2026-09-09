@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Connecting to SurrealDB
-description: The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
+description: Connecting to SurrealDB from JavaScript. Remote and embedded connections with the official SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/javascript/concepts/connecting-to-surrealdb.mdx"
 ---
 
@@ -97,7 +97,7 @@ Once the connection is established, you can switch the active namespace and data
 
 #### Authentication details
 
-When connecting as a [system user](../../../learn/security/authentication/authentication.md#system-users) or [token](../../../learn/security/authentication/authentication.md#token), you can directly pass your credentials to the `authentication` option.
+When connecting as a [system user](../../../learn/security/authentication/users.md#system-users) or [token](../../../learn/security/authentication/users.md#token), you can directly pass your credentials to the `authentication` option.
 While you can also use the dedicated `.signin()` method to authenticate, passing the authentication details to the `.connect()` method is the preferred way and allows for automatic reconnecting.
 
 #### Reconnection behaviour

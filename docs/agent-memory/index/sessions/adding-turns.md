@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Adding turns
-description: How to add conversation turns and interpret the structured extraction result.
+description: How to add conversation turns. Interpreting the structured extraction result.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/sessions/adding-turns.mdx"
 ---
 

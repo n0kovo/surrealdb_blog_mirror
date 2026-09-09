@@ -84,7 +84,7 @@ ACCESS @name [ ON [ ROOT | NAMESPACE | DATABASE ] ]
 
 ## `GRANT`
 
-The `GRANT` clause creates and returns a grant for a certain subject using the specified access method. This subject can be a [system user](../../../learn/security/authentication/authentication.md#system-users) or [record user](../../../learn/security/authentication/authentication.md#record-users). Access grants can be used to access SurrealDB as that subject until they become expired or revoked.
+The `GRANT` clause creates and returns a grant for a certain subject using the specified access method. This subject can be a [system user](../../../learn/security/authentication/users.md#system-users) or [record user](../../../learn/security/authentication/users.md#record-users). Access grants can be used to access SurrealDB as that subject until they become expired or revoked.
 
 When creating a grant, a secret (e.g. a key) corresponding with the grant will be returned. This secret should be stored securely, as it will no longer be displayed by SurrealDB, instead being printed as `[REDACTED]` whenever the grant details are shown.
 

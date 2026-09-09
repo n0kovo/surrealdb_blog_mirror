@@ -1,7 +1,7 @@
 ---
 position: 4
 title: How it works in five minutes
-description: From a message to structured substrate state - extraction, reconciliation, traces, and tiered reads.
+description: From a message to structured substrate state. Extraction, reconciliation, traces, and tiered reads.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/welcome/how-it-works.mdx"
 ---
 

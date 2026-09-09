@@ -16,7 +16,7 @@ _Auto-generated index — 14 pages._
 - [Codecs](codecs.md)
   The SQON library provides codecs for serialising and deserialising SurrealDB value types over CBOR and JSON wire formats.
 - [Connecting to SurrealDB](connecting-to-surrealdb.md)
-  The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
+  Connecting to SurrealDB from JavaScript. Remote and embedded connections with the official SDK.
 - [Diagnostics](diagnostics.md)
   The JavaScript SDK provides a diagnostics API for intercepting and inspecting protocol-level communication with SurrealDB.
 - [Embedded engines](embedded-engines.md)

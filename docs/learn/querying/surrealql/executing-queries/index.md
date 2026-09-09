@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Querying data in SurrealDB
 
-SurrealDB supports multiple query interfaces: [SurrealQL](../what-is-surrealql.md) for full-featured database queries, [GraphQL](../../graphql/overview.md) for schema-driven access, and any of the [available SDKs](/docs#sdks) for language-native integration.
+SurrealDB supports multiple query interfaces: [SurrealQL](../what-is-surrealql.md) for full-featured database queries, [GraphQL](../../graphql/overview.md) for schema-driven access, and any of the [available SDKs](../../../../languages/index.md) for language-native integration.
 
 ## SurrealQL
 

@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Hybrid search
-description: Using vector, BM25, and graph-density retrieval modes in SurrealDB Agent Memory.
+description: Vector, BM25, and graph-density retrieval modes. How each mode behaves in SurrealDB Agent Memory.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/retrieve/hybrid-search.mdx"
 ---
 
@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 SurrealDB Agent Memory exposes four retrieval modes for **document passages** (`POST .../documents/query`) and for the **unified** read path (`POST .../query`, which also ranks experiential facts). Each mode trades coverage, precision, and computational cost differently. See [Recalling memories](https://surrealdb.com/docs/agent-memory/retrieve/recall) for unified recall; this page focuses on mode selection and graph-density signals.
 
-> [!NOTE]
 ## Answer size vs search breadth
 
 **`k`** (and **`limit`** on `/query`) controls how many hits are returned after fusion - the **answer size**. Default **10**, maximum **50** (`SPECTRON_MAX_QUERY_K`, clamp-down only).

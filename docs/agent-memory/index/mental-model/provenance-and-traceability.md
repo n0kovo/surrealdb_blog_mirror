@@ -1,7 +1,7 @@
 ---
 position: 5
 title: Provenance and traceability
-description: The source object on every record - kinds, spans, trust, derivation, and traces.
+description: The source object carried on every record. Kinds, spans, trust, derivation, and traces.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/mental-model/provenance-and-traceability.mdx"
 ---
 

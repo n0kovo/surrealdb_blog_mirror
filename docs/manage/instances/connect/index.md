@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Connect to an instance
-description: "The four routes to an instance: SurrealDB Studio, the CLI, a client SDK, and the HTTP API. Includes where to find the connection details."
+description: The four routes to a SurrealDB Cloud instance. SurrealDB Studio, the CLI, a client SDK, and the HTTP API, plus where to find the connection details.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/connect/index.mdx"
 ---
 

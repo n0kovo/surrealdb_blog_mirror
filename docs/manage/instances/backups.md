@@ -1,7 +1,7 @@
 ---
 position: 8
 title: Backups and recovery
-description: Automated snapshots, retention tiers, and restoring a snapshot into a new instance.
+description: Automated snapshots and retention tiers. Restoring a snapshot into a new instance.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/backups.mdx"
 ---
 

@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Storage engines
-description: What a storage engine does for SurrealDB, and how to think about choosing one.
+description: What a storage engine does for SurrealDB. How to think about choosing one.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/embedding/storage-engines.mdx"
 ---
 

@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Testing SurrealDB
 
+This page covers the ways a SurrealDB database can be tested, starting with the SDKs, which is where most testing happens.
+
 ## SDKs
 
 Database testing by users is most frequently done using an SDK, particularly for the languages in which SurrealDB can be used [in embedded mode](../../../build/embedding/index.md). This allows testing to be conducted in just a few lines of code.

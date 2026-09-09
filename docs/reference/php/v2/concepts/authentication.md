@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Authentication
 
-SurrealDB supports several levels of authentication, from [system users](../../../../learn/security/authentication/authentication.md#system-users) to fine-grained [record access](../../../../learn/security/authentication/authentication.md#record-users). Version 2 of the PHP SDK represents each level as a typed credential class, so the required fields are explicit.
+SurrealDB supports several levels of authentication, from [system users](../../../../learn/security/authentication/users.md#system-users) to fine-grained [record access](../../../../learn/security/authentication/users.md#record-users). Version 2 of the PHP SDK represents each level as a typed credential class, so the required fields are explicit.
 
 ## API references
 
@@ -217,5 +217,5 @@ $db->invalidate();
 ## Learn more
 
 - [Surreal API reference](../api/core.md) for the authentication method signatures
-- [Authentication in SurrealDB](../../../../learn/security/authentication/authentication.md) for how authentication works at the database level
+- [Authentication in SurrealDB](../../../../learn/security/authentication/users.md) for how authentication works at the database level
 - [DEFINE ACCESS](../../../query-language/statements/define/access/index.md) for defining access methods

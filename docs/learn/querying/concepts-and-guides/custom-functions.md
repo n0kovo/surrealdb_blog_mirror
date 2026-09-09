@@ -100,7 +100,7 @@ SELECT id, ->to->? FROM person;
 
 ## Permissions
 
-`PERMISSIONS` controls whether [record users](../../security/authentication/authentication.md#record-users) may invoke the function: `FULL` (typical default), `NONE`, or `WHERE` with a boolean expression (often involving `$auth`).
+`PERMISSIONS` controls whether [record users](../../security/authentication/users.md#record-users) may invoke the function: `FULL` (typical default), `NONE`, or `WHERE` with a boolean expression (often involving `$auth`).
 
 ```surql
 -- PERMISSIONS NONE: record users cannot call this (admins / root still can, depending on setup)

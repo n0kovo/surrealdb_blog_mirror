@@ -14,7 +14,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 ## Installation
 
-> [!NOTE]
 ```bash
 pip install autogen-agentchat 'autogen-ext[openai]'
 pip install --pre surrealdb

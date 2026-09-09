@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 SurrealDB Agent Memory uses standard HTTP status codes and follows [RFC 7807 Problem Details](https://www.rfc-editor.org/rfc/rfc7807) for all error responses.
 
-> [!NOTE]
 ## Error response format
 
 All errors return a JSON body with the following fields:

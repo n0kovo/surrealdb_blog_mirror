@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-09-08T10:31:21.035596+00:00",
-  "count": 265,
+  "generated_at": "2026-09-09T10:42:12.981969+00:00",
+  "count": 266,
   "posts": [
+    {
+      "slug": "multi-hop-graph-traversal-inside-surrealdb",
+      "title": "Multi-hop graph traversal inside SurrealDB",
+      "summary": "Move breadth-first search into SurrealDB: recursive traversal with a depth range, predicates pushed into every hop, and what EXPLAIN says about edge indexes.",
+      "publishDate": "2026-09-08T13:43:59.000Z",
+      "categories": [
+        "tutorials",
+        "ai"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/zmcgast89tb20zbwxie6k102.auto",
+      "source": "https://surrealdb.com/blog/multi-hop-graph-traversal-inside-surrealdb",
+      "local_path": "2026/09/multi-hop-graph-traversal-inside-surrealdb.md"
+    },
     {
       "slug": "why-does-my-vector-search-return-nothing-when-i-add-a-filter-2",
       "title": "Why does my vector search return nothing when I add a filter?",

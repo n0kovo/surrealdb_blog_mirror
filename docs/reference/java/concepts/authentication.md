@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Authentication
 
-The Java SDK supports signing in as a root, namespace, database, or [record-level user](../../../learn/security/authentication/authentication.md#record-users). After signing in, the connection is [authenticated](../../../learn/security/authentication/authentication.md) for all subsequent operations until the session is invalidated or the connection is closed.
+The Java SDK supports signing in as a root, namespace, database, or [record-level user](../../../learn/security/authentication/users.md#record-users). After signing in, the connection is [authenticated](../../../learn/security/authentication/users.md) for all subsequent operations until the session is invalidated or the connection is closed.
 
 You can configure authentication in your SurrealDB database using the [`DEFINE USER`](../../query-language/statements/define/user.md) or [`DEFINE ACCESS`](../../query-language/statements/define/access/index.md) statements.
 
@@ -42,7 +42,7 @@ You can configure authentication in your SurrealDB database using the [`DEFINE U
 
 ## Signing in as a system user
 
-[System users](../../../learn/security/authentication/authentication.md#system-users) are defined with the [`DEFINE USER`](../../query-language/statements/define/user.md) statement and have access at the root, namespace, or database level. Use the corresponding [credential class](../api/types/index.md) to sign in.
+[System users](../../../learn/security/authentication/users.md#system-users) are defined with the [`DEFINE USER`](../../query-language/statements/define/user.md) statement and have access at the root, namespace, or database level. Use the corresponding [credential class](../api/types/index.md) to sign in.
 
 ```java
 
@@ -95,7 +95,7 @@ Token token = db.signup(new RecordCredential(
 
 ## Using authentication tokens
 
-The [`.signin()`](../api/core/surreal.md#signin) and [`.signup()`](../api/core/surreal.md#signup) methods return a [`Token`](../api/types/index.md#token) object. Use `.getAccess()` to retrieve the JWT [access token](../../../learn/security/authentication/authentication.md#token) and `.getRefresh()` to retrieve the optional refresh token. You can store these tokens and use them later to re-authenticate without credentials.
+The [`.signin()`](../api/core/surreal.md#signin) and [`.signup()`](../api/core/surreal.md#signup) methods return a [`Token`](../api/types/index.md#token) object. Use `.getAccess()` to retrieve the JWT [access token](../../../learn/security/authentication/users.md#token) and `.getRefresh()` to retrieve the optional refresh token. You can store these tokens and use them later to re-authenticate without credentials.
 
 ```java
 Token token = db.signin(new RootCredential("root", "root"));
@@ -132,4 +132,4 @@ db.invalidate();
 - [DEFINE USER](../../query-language/statements/define/user.md) for configuring system users
 - [DEFINE ACCESS](../../query-language/statements/define/access/index.md) for configuring record access
 - [Security best practices](../../../learn/security/best-practices/security-best-practices.md) for token management
-- [SurrealDB authentication overview](../../../learn/security/authentication/authentication.md) for system users, record users, and token concepts
+- [SurrealDB authentication overview](../../../learn/security/authentication/users.md) for system users, record users, and token concepts

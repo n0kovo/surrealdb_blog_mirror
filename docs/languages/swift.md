@@ -1,6 +1,6 @@
 ---
 position: 10
-title: Swift
+title: Swift quickstart
 description: Connect to SurrealDB and run your first queries with the Swift SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/swift.mdx"
 ---

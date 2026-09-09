@@ -1,7 +1,7 @@
 ---
 position: 1
 title: REST API
-description: SurrealDB exposes an HTTP-based REST API for executing queries, managing authentication, and performing CRUD operations.
+description: "The SurrealDB REST API: executing queries over HTTP. Manage authentication and perform CRUD operations."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/rest-api/index.mdx"
 ---
 

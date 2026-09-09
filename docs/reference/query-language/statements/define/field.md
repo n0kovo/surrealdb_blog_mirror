@@ -921,7 +921,7 @@ INFO FOR TABLE some_table;
 
 You can set permissions on fields to control who can perform operations on them using the `PERMISSIONS` clause. The `PERMISSIONS` clause can be used to set permissions for `SELECT`, `CREATE`, and `UPDATE` operations. The `DELETE` operation only relates to records and, as such, is not available for fields.
 
-Like table permissions, field permissions apply to [record users](../../../../learn/security/authentication/authentication.md#record-users) (and guests when enabled), not to system users.
+Like table permissions, field permissions apply to [record users](../../../../learn/security/authentication/users.md#record-users) (and guests when enabled), not to system users.
 
 ```surql
 /**[test]

@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 Most teams do not rebuild their application to add memory. This guide covers the minimal integration path: intercepting existing LLM calls to extract memory, injecting context before those calls, and gradually expanding the integration without disrupting what already works.
 
-> [!NOTE]
 ## The minimal integration
 
 SurrealDB Agent Memory's minimum viable integration is two operations around your existing LLM call:

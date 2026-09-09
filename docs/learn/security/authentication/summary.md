@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Security summary
 
+This page is a starting point for the security of SurrealDB: the features the product offers, and the security practices behind how it is built. Each section links to the fuller treatment elsewhere in the documentation.
+
 > [!NOTE]
 > This page is intended to direct the reader to other more specific and comprehensive resources. Some information shown in this page may be simplified or omit information that could be relevant in a particular scenario. When available, we recommend that you consult the provided references.
 
@@ -25,13 +27,13 @@ SurrealDB is managed by system users. Such users can be defined at the root, nam
 #### Roles
 SurrealDB implements Role-Based Access Control (RBAC) for system users at any level. This means that even if a person or system needs to authenticate with a SurrealDB user at the root, namespace or database level, its access can be restricted within that level by the owner, editor and viewer roles to minimize the impact of an incident involving the user.
 - [Statement: DEFINE USER (Roles)](../../../reference/query-language/statements/define/user.md#roles)
-- [Security: Authentication (System Users)](authentication.md#system-users)
+- [Security: Authentication (System Users)](users.md#system-users)
 - [Security Best Practices: Least Privilege](../best-practices/security-best-practices.md#least-privilege)
 
 ### Record users
 SurrealDB allows the creation of users that can be easily signed up but with no access to the database aside from specifically defined permissions. This allows clients like single-page applications or mobile applications to directly connect to the database and access certain data or even run arbitrary queries. When accessing the database as a record user, users will be restricted by table and field permissions, which deny all operations by default. End users can independently sign up and sign in to use surreal following custom logic that can be defined with SurrealQL.
 - [Statement: DEFINE ACCESS ... TYPE RECORD](../../../reference/query-language/statements/define/access/record.md)
-- [Security: Authentication (Record Users)](authentication.md#record-users)
+- [Security: Authentication (Record Users)](users.md#record-users)
 
 #### Permissions
 SurrealDB enforces table and field permissions for record users. Those permissions ensure that record users can only perform explicitly defined actions over explicitly defined data. Permissions are specified when defining a table or a field and use SurrealQL syntax to establish the conditions under which the table or the field can be queried with SELECT, UPDATE, CREATE and DELETE operations individually. Tables default to `PERMISSIONS NONE`, so a record user cannot query any data unless you grant access; fields default to `PERMISSIONS FULL`.
@@ -55,14 +57,14 @@ SurrealDB allows record users to authenticate using a token that can be issued b
 - [Security Best Practices: Expiration](../best-practices/security-best-practices.md#expiration)
 
 ### Parametrized queries
-SurrealDB is usually queried through [multiple SDKs](/docs#sdks) and a powerful [RPC interface](../../../reference/rest-api/rpc-protocol.md). The default query method for both of those interfaces is designed to accept query logic and variables separately to prevent query injection attacks like SQL injection. This separation ensures that user-controlled inputs are not mixed with any business logic defined in SurrealQL.
+SurrealDB is usually queried through [multiple SDKs](../../../languages/index.md) and a powerful [RPC interface](../../../reference/rest-api/rpc-protocol.md). The default query method for both of those interfaces is designed to accept query logic and variables separately to prevent query injection attacks like SQL injection. This separation ensures that user-controlled inputs are not mixed with any business logic defined in SurrealQL.
 - [Interfaces: RPC (Query Method)](../../../reference/rest-api/rpc-protocol.md#query)
 - [Interfaces: Rust SDK (Query Method)](../../../reference/rust/methods/query.md)
 - [Security Best Practices: Query Safety](../best-practices/security-best-practices.md#query-safety)
 
 ### Sessions
 SurrealDB accepts persistent connections through its RPC interface in the form of sessions. Sessions will usually be associated with an authentication token that represents a system user or a record user. Sessions and tokens can be configured to have different expiration times. Thanks to this, tokens can be issued to last the minimum time required to mitigate the impact of an attacker stealing the token while ensuring that sessions can last as long as required for the service or application.
-- [Security: Sessions](authentication.md#sessions)
+- [Security: Sessions](users.md#sessions)
 - [Statements: DEFINE USER (Duration)](../../../reference/query-language/statements/define/user.md#duration)
 - [Statements: DEFINE ACCESS (Duration)](../../../reference/query-language/statements/define/access/index.md#duration)
 - [Security Best Practices: Expiration](../best-practices/security-best-practices.md#expiration)

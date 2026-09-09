@@ -14,7 +14,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 ## Installation
 
-> [!NOTE]
 ```bash
 pip install llama-index
 pip install --pre surrealdb

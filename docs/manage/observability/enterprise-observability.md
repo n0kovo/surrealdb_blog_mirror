@@ -1,7 +1,7 @@
 ---
 position: 4
 title: Enterprise observability
-description: Metrics, logs, and traces in SurrealDB Enterprise versus Community - OTLP opt-ins, audit and slow-query pipelines, and cluster instruments.
+description: Metrics, logs, and traces in Enterprise versus Community. OTLP opt-ins, audit and slow-query pipelines, and cluster instruments.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/observability/enterprise-observability.mdx"
 ---
 

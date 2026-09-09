@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 Research agents accumulate findings across many sessions, often spanning days or weeks. This guide shows how to structure sessions and use reflection to distil growing memory into durable, queryable knowledge.
 
-> [!NOTE]
 ## The challenge
 
 A research agent that works on a topic over multiple sessions faces a core tension:

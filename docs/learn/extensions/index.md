@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Extensions
-description: Extend SurrealDB with custom modules and WASM plugins through the Surrealism extension system.
+description: Extend SurrealDB with custom modules and WASM plugins. Done through the Surrealism extension system.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/extensions/index.mdx"
 ---
 

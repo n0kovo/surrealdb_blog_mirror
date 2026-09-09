@@ -1,7 +1,7 @@
 ---
 position: 6
 title: File-backed
-description: For the purposes of getting started with SurrealDB quickly, we will start a RocksDB database which persists data on the filesystem.
+description: Start a RocksDB database that persists data on the filesystem. The quickest way to get started with data that survives a restart.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/running/file-backed.mdx"
 ---
 

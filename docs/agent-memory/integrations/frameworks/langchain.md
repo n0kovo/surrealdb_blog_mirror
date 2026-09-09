@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 SurrealDB ships an official integration for the [LangChain.js](https://js.langchain.com) and [LangGraph.js](https://langchain-ai.github.io/langgraphjs/) ecosystems. It wraps the [`@surrealdb/memory`](https://www.npmjs.com/package/@surrealdb/memory) client so a chain or agent can retrieve from SurrealDB Agent Memory's knowledge base, expose memory as tools, and read memory through a LangGraph store.
 
-> [!NOTE]
 The integration is TypeScript. Python applications call SurrealDB Agent Memory through the [Python SDK](../sdks/python.md) or the [REST API](../surfaces/rest.md) instead.
 
 ## Packages

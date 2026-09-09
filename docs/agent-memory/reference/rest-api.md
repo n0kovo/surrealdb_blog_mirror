@@ -1,7 +1,7 @@
 ---
 position: 2
 title: REST API
-description: End-user HTTP endpoints on the unified SurrealDB Agent Memory substrate.
+description: End-user HTTP endpoints on the unified substrate. For SurrealDB Agent Memory.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/reference/rest-api.mdx"
 ---
 

@@ -7,7 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # JavaScript SDK reference
 
-> [!NOTE]
+The `@surrealdb/memory` package is the JavaScript and TypeScript client for SurrealDB Agent Memory. This page covers installing it and configuring a client.
+
 | Item | Value |
 | --- | --- |
 | npm package | `@surrealdb/memory` |

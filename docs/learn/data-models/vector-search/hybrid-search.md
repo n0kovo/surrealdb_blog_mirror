@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Hybrid search
 
+Full-text search and vector search find different things, and the two together usually rank better than either alone. This page compares them on one dataset, then fuses their rankings with `search::rrf` and related helpers.
+
 ## Vector search vs full-text search
 
 SurrealDB supports [full-text search](../full-text-search/overview.md) and Vector Search. Full-text search (FTS) involves indexing documents using an [FTS index](../../../reference/query-language/statements/define/indexes.md#full-text-search-fulltext-index) that makes use of an [analyzer](../../../reference/query-language/statements/define/analyzer.md) that breaks down text using [tokenizers](../../../reference/query-language/statements/define/analyzer.md#tokenizers) and [filters](../../../reference/query-language/statements/define/analyzer.md#filters).

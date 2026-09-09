@@ -131,7 +131,7 @@ DELETE person;
 "The table 'person' does not exist"
 ```
 
-However, statements that create a resource will not return an error unless the [database is defined](define/database.md) as `STRICT`. Instead, they will automatically define the needed table (and even use the [`$session`](../../../learn/security/authentication/authentication.md#session) parameter to define the database and namespace if necessary) so that the query will work.
+However, statements that create a resource will not return an error unless the [database is defined](define/database.md) as `STRICT`. Instead, they will automatically define the needed table (and even use the [`$session`](../../../learn/security/authentication/users.md#session) parameter to define the database and namespace if necessary) so that the query will work.
 
 Note the output of the following queries, in which the value `[]` is returned after deleting the records of a defined table to show that zero records were returned. However, the final `REMOVE TABLE` statement returns a simple `NONE` to indicate that the statement succeeded.
 

@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Principles and goals
-description: What SurrealDB Agent Memory is built to do - and what it deliberately is not.
+description: What SurrealDB Agent Memory deliberately is and is not. The goals it is built to meet.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/architecture/principles-and-goals.mdx"
 ---
 

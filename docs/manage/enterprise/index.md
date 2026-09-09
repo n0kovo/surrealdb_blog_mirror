@@ -1,37 +1,37 @@
 ---
 position: 1
-title: Installation
-description: "Install SurrealDB Enterprise Edition: obtain packages, apply your licence key, and activate the deployment."
+title: Enterprise Edition
+description: "What Enterprise Edition adds over Community: distributed live queries. S3-backed file storage, audit logging, FIPS-validated cryptography, trusted execution, and contractual support."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/enterprise/index.mdx"
 ---
 
-# Installation
+# Enterprise Edition <Edition value="enterprise" />
 
-Enterprise Edition ships as the same server with a licence key applied. Start with what the edition covers, then install and activate it.
+Enterprise Edition is the same server with a licence key applied. The binary differs, so the capabilities below exist only in an Enterprise build and are no-ops on a Community one; nothing about your schema, queries or SDK code changes when you move across.
 
-## What Enterprise Edition is
+## What the edition adds
 
-- [What EE is](overview/what-ee-is.md) - the capabilities the edition adds over Community
-- [Feature table](overview/feature-table.md) - Community and Enterprise side by side
-- [Contact & licensing](overview/contact-and-licensing.md) - sales, licence models and how to get in touch
+| Capability | What it is | Documented |
+| --- | --- | --- |
+| **Audit logging** | An identity-bound record of every authenticated action - statements, queries, transactions, RPC calls, sign-ins, sessions and HTTP requests - written to a durable NDJSON sink, with optional SHA-256 hash chaining and PII redaction. | [Audit logging](../observability/audit-logging.md) |
+| **Distributed live queries** | Live queries that resolve across every node in a cluster rather than the node holding the subscription. | Contact sales |
+| **File storage** | S3-compatible backends for file and blob objects, addressed through `DEFINE BUCKET`. | [`DEFINE BUCKET`](../../reference/query-language/statements/define/bucket.md) |
+| **FIPS mode** | FIPS 140-2 validated cryptographic modules, and the switch that enforces their use. | Contact sales |
+| **Trusted execution** | Running the server inside a trusted execution environment, with attestation. | Contact sales |
+| **Contractual support** | Support tiers with defined response times by severity, and uptime commitments. | Contact sales |
 
-## Install and licence
+## Observability is where most of it is written down
 
-- [Licensing & activation](licensing-and-activation.md) - apply a licence key and activate a deployment
-- [Upgrading from Community](upgrading-from-community.md) - what changes when you move an existing cluster across
+The Enterprise observability surface is documented in full alongside the Community one, with the Enterprise-only parts marked. Start there rather than here:
 
-## Capabilities
+- [Audit logging](../observability/audit-logging.md) - events captured, record shape, rotation, hash chaining, redaction and overflow semantics.
+- [Configuration](../observability/configuration.md#audit-log-knobs) - every audit-log environment variable, and the compliance checklist for a tamper-evident deployment.
+- [Enterprise observability](../observability/enterprise-observability.md) - the pipelines that exist only in an Enterprise build.
+- [Slow-query logging](../observability/slow-query-logging.md) - the sister pipeline for the long tail of slow queries.
 
-- [Distributed live queries](capabilities/distributed-live-queries.md) - live queries across a cluster rather than a single node
-- [File storage / S3 / blob](storage/file-storage.md) - S3-compatible backends for file and blob storage
+## Licensing and getting in touch
 
-## Security and compliance
+Licence models, pricing, support tiers and the specifics of FIPS, trusted execution and distributed live queries are handled by the SurrealDB team rather than published here. [Contact us](https://surrealdb.com/contact) to discuss an evaluation, a licence, or an upgrade from an existing Community cluster.
 
-- [Audit logging](security/audit-logging.md) - which events are captured, and the log format
-- [FIPS](security/fips.md) - FIPS 140-2 validated cryptography
-- [Trusted execution](security/trusted-execution.md) - running inside a trusted execution environment
-
-## Support
-
-- [Support tiers](support/support-tiers.md) - Standard, Premium and what each includes
-- [SLAs](support/slas.md) - uptime targets and response commitments
+> [!NOTE]
+> Moving an existing deployment to Enterprise does not migrate data. The same storage backend and the same schema are read by the Enterprise binary; the licence key is what changes.

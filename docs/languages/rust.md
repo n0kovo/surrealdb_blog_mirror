@@ -1,6 +1,6 @@
 ---
 position: 9
-title: Rust
+title: Rust quickstart
 description: Connect to SurrealDB and run your first queries with the Rust SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/rust.mdx"
 ---

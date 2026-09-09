@@ -1,7 +1,7 @@
 ---
 position: 8
 title: Zed
-description: Set up the Zed editor for SurrealDB with the hosted MCP server and the official Agent Skills.
+description: Hosted MCP server and Agent Skills setup for Zed. Covers the context_servers entry in the Zed settings file.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/agents/zed.mdx"
 ---
 
@@ -42,5 +42,5 @@ Ask the assistant panel which SurrealDB tools it can call.
 
 ## Next steps
 
-- [SurrealDB MCP Server](../build/ai-agents/mcp/index.md) — every tool the server publishes
-- [Agent Skills](../build/ai-agents/agent-skills.md) — what each skill covers
+- [SurrealDB MCP Server](../build/ai-agents/mcp/index.md) - every tool the server publishes
+- [Agent Skills](../build/ai-agents/agent-skills.md) - what each skill covers

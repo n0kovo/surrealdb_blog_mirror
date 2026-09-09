@@ -30,7 +30,7 @@ Setup connects two things: packaged knowledge of how SurrealDB behaves, and tool
 
 ## Next steps
 
-- [SurrealDB MCP Server](../build/ai-agents/mcp/index.md) — the hosted server in full, including every tool it publishes
-- [Embedded MCP](../build/ai-agents/mcp/embedded.md) — the MCP server inside SurrealDB, for databases you run yourself
-- [Agent Skills](../build/ai-agents/agent-skills.md) — what each skill covers, and how to find community skills
-- [Example usages](../build/ai-agents/mcp/examples.md) — prompts that show what an assistant can do once it is set up
+- [SurrealDB MCP Server](../build/ai-agents/mcp/index.md) - the hosted server in full, including every tool it publishes
+- [Embedded MCP](../build/ai-agents/mcp/embedded.md) - the MCP server inside SurrealDB, for databases you run yourself
+- [Agent Skills](../build/ai-agents/agent-skills.md) - what each skill covers, and how to find community skills
+- [Example usages](../build/ai-agents/mcp/examples.md) - prompts that show what an assistant can do once it is set up

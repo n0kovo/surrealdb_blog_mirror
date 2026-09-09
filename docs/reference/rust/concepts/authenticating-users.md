@@ -288,7 +288,7 @@ Each of the crates featured in the Rust SDK also use the schema above. Three of 
 * [Rocket](../frameworks/rocket.md)
 * [Egui](../frameworks/egui.md)
 
-Learn more about authentication in SurrealDB in our [security best practices](../../../learn/security/best-practices/security-best-practices.md#authentication) documentation and in the [security](../../../learn/security/authentication/authentication.md#expiration) section of the SurrealDB documentation.
+Learn more about authentication in SurrealDB in our [security best practices](../../../learn/security/best-practices/security-best-practices.md#authentication) documentation and in the [security](../../../learn/security/authentication/users.md#expiration) section of the SurrealDB documentation.
 
 **2.x**
 
@@ -570,4 +570,4 @@ Each of the crates featured in the Rust SDK also use the schema above. Three of 
 * [Rocket](../frameworks/rocket.md)
 * [Egui](../frameworks/egui.md)
 
-Learn more about authentication in SurrealDB in our [security best practices](../../../learn/security/best-practices/security-best-practices.md#authentication) documentation and in the [security](../../../learn/security/authentication/authentication.md#expiration) section of the SurrealDB documentation.
+Learn more about authentication in SurrealDB in our [security best practices](../../../learn/security/best-practices/security-best-practices.md#authentication) documentation and in the [security](../../../learn/security/authentication/users.md#expiration) section of the SurrealDB documentation.

@@ -1,7 +1,7 @@
 ---
 position: 4
 title: Cursor
-description: Set up Cursor for SurrealDB with the hosted MCP server and the official Agent Skills.
+description: Hosted MCP server and Agent Skills setup for Cursor. Covers the mcp.json entry, signing in, and checking it worked.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/agents/cursor.mdx"
 ---
 
@@ -52,5 +52,5 @@ Delete the `surrealdb` entry from `mcp.json`. Cursor stops offering the tools in
 
 ## Next steps
 
-- [MCP in Cursor](../build/ai-agents/mcp/cursor.md) — the full guide, including troubleshooting
-- [Example usages](../build/ai-agents/mcp/examples.md) — more prompts to try
+- [MCP in Cursor](../build/ai-agents/mcp/cursor.md) - the full guide, including troubleshooting
+- [Example usages](../build/ai-agents/mcp/examples.md) - more prompts to try

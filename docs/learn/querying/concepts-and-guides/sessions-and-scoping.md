@@ -5,6 +5,8 @@ description: A session stores information about the current connection.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/concepts-and-guides/sessions-and-scoping.mdx"
 ---
 
+A session holds the state a connection carries between queries: the active namespace and database, the authenticated user, and any metadata set on it. This page covers what that context contains and how it is read and changed.
+
 ## What is session context?
 
 A session stores information about the current connection, including:

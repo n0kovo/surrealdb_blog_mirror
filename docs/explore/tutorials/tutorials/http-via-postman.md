@@ -70,14 +70,14 @@ INFO FOR NS
 
 ## Defining a record user
 
-To define a [record user](../../../learn/security/authentication/authentication.md#record-users), first navigate to the `POST /sql`  endpoint and in the header of the request add the following fields:
+To define a [record user](../../../learn/security/authentication/users.md#record-users), first navigate to the `POST /sql`  endpoint and in the header of the request add the following fields:
 
 ```json
 Accept:application/json
 NS:{{namespace}}
 DB:{{database}}
 ```
-You can also [define](../../../reference/query-language/statements/define/user.md) a [system user](../../../learn/security/authentication/authentication.md#system-users) with other credentials such as Root or Database user. For this tutorial, we will be using only [record users](../../../learn/security/authentication/authentication.md#record-users).
+You can also [define](../../../reference/query-language/statements/define/user.md) a [system user](../../../learn/security/authentication/users.md#system-users) with other credentials such as Root or Database user. For this tutorial, we will be using only [record users](../../../learn/security/authentication/users.md#record-users).
 
 > [!NOTE]
 > The Namespace and Database fields are set to the value `test` by default. You can change this in the collection settings.

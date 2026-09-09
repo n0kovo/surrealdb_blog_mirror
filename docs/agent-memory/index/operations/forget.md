@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Forgetting memories
-description: How to retire or permanently erase memories - default forget, purge, and scoped erasure.
+description: Default forget, purge, and scoped erasure. How to retire or permanently erase memories.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/operations/forget.mdx"
 ---
 

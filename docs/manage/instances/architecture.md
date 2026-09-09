@@ -1,7 +1,7 @@
 ---
 position: 5
 title: Architecture
-description: The single-node and multi-node topologies behind the Start and Scale plans, and what each one means for growth and recovery.
+description: The topologies behind the Start and Scale plans. Single-node and multi-node, and what each means for growth and recovery.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/architecture.mdx"
 ---
 

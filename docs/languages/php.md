@@ -1,6 +1,6 @@
 ---
 position: 7
-title: PHP
+title: PHP quickstart
 description: Connect to SurrealDB and run your first queries with the PHP SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/php.mdx"
 ---

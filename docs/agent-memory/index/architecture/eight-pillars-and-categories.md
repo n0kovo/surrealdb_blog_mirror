@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Eight pillars and six categories
-description: The primitives SurrealDB Agent Memory operationalises - pillars of agent memory and typed experiential sub-stores.
+description: The primitives SurrealDB Agent Memory operationalises. Pillars of agent memory, and typed experiential sub-stores.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/architecture/eight-pillars-and-categories.mdx"
 ---
 

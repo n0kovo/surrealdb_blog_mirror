@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1089 pages_  
+_1083 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -40,21 +40,21 @@ _1089 pages_
 - [User memory in chat](agent-memory/cookbooks/patterns/user-memory-in-chat.md)
   Per-user scopes and profile injection.
 - [Coherence, retrieval, and cost tiers](agent-memory/index/architecture/coherence-retrieval-and-tiers.md)
-  Five coherence dimensions, hybrid structural retrieval, and the four-tier query ladder.
+  Five coherence dimensions and hybrid structural retrieval. Also covers the four-tier query ladder.
 - [Eight pillars and six categories](agent-memory/index/architecture/eight-pillars-and-categories.md)
-  The primitives SurrealDB Agent Memory operationalises - pillars of agent memory and typed experiential sub-stores.
+  The primitives SurrealDB Agent Memory operationalises. Pillars of agent memory, and typed experiential sub-stores.
 - [Agent Memory glossary](agent-memory/index/architecture/glossary.md)
-  Alphabetical definitions of terms used across SurrealDB Agent Memory architecture and memory docs.
+  Alphabetical definitions of SurrealDB Agent Memory terms. Covers the architecture and memory documentation.
 - [Principles and goals](agent-memory/index/architecture/principles-and-goals.md)
-  What SurrealDB Agent Memory is built to do - and what it deliberately is not.
+  What SurrealDB Agent Memory deliberately is and is not. The goals it is built to meet.
 - [Surface, models, and security](agent-memory/index/architecture/surface-security-and-models.md)
-  HTTP ingest and read verbs, integrations, model hooks, and security properties.
+  HTTP ingest and read verbs, integrations, and model hooks. Security properties are covered too.
 - [Traces and memory evolution](agent-memory/index/architecture/traces-and-evolution.md)
-  Graph-resident traces, reflection, elaboration, consolidation, and semantic response reuse.
+  Graph-resident traces, reflection, elaboration, consolidation. Also semantic response reuse.
 - [Tri-temporal model](agent-memory/index/architecture/tri-temporal-model.md)
-  System time, known time, and valid time - supersession, aging, and explicit forget.
+  System and valid time, supersession, ageing, and explicit forget. How known time fits alongside them.
 - [Agent Memory](agent-memory/index/index.md)
-  Principles, architecture, quickstarts, and mental model for SurrealDB Agent Memory - memory and knowledge for AI agents on SurrealDB.
+  Memory and knowledge for AI agents on SurrealDB. Principles, architecture, quickstarts, and the mental model.
 - [Bulk import](agent-memory/index/ingest/authoritative/bulk-import.md)
   Importing large quantities of documents or knowledge nodes into SurrealDB Agent Memory.
 - [Structured fact ingest](agent-memory/index/ingest/authoritative/knowledge-nodes.md)
@@ -66,21 +66,21 @@ _1089 pages_
 - [Storing memories](agent-memory/index/ingest/experiential/remember.md)
   Ingesting facts and conversations into the unified substrate.
 - [Memory & knowledge](agent-memory/index/memory-and-knowledge.md)
-  Ingest, retrieve, reason, and tune agent memory on SurrealDB Agent Memory's unified substrate.
+  Ingest, retrieve, reason, and tune agent memory. All on SurrealDB Agent Memory's unified substrate.
 - [Contexts and scope](agent-memory/index/mental-model/contexts-and-scope.md)
-  How Contexts isolate tenants and how scope tags partition memory within a Context.
+  How scope tags partition memory, and how Contexts isolate tenants. Both operate within a Context.
 - [Memory categories](agent-memory/index/mental-model/memory-categories.md)
-  Episodic raw turns plus five extracted experiential categories - identity, knowledge, context, instructions, uncertainty.
+  Episodic raw turns plus five extracted experiential categories. Identity, knowledge, context, instructions, and uncertainty.
 - [Supersession, decay, and forget](agent-memory/index/mental-model/memory-lifecycle.md)
   Three mechanisms for how beliefs change, fade, and are removed.
 - [Provenance and traceability](agent-memory/index/mental-model/provenance-and-traceability.md)
-  The source object on every record - kinds, spans, trust, derivation, and traces.
+  The source object carried on every record. Kinds, spans, trust, derivation, and traces.
 - [Sessions and turns](agent-memory/index/mental-model/sessions-and-turns.md)
   How conversations map to sessions, turns, and provenance.
 - [Unified substrate and authority](agent-memory/index/mental-model/two-layer-architecture.md)
-  One SurrealDB graph for authoritative and experiential knowledge - provenance and reconciliation, not two silos.
+  One SurrealDB graph for authoritative and experiential knowledge. Provenance and reconciliation in one place, rather than two silos.
 - [Forgetting memories](agent-memory/index/operations/forget.md)
-  How to retire or permanently erase memories - default forget, purge, and scoped erasure.
+  Default forget, purge, and scoped erasure. How to retire or permanently erase memories.
 - [Profiles](agent-memory/index/operations/profiles.md)
   Auto-maintained entity profiles aggregated from memory and knowledge.
 - [Reflection](agent-memory/index/operations/reflect.md)
@@ -88,51 +88,51 @@ _1089 pages_
 - [Embedded library quickstart](agent-memory/index/quickstarts/embedded.md)
   Integration surfaces for SurrealDB Agent Memory.
 - [Hosted quickstart](agent-memory/index/quickstarts/hosted.md)
-  Get up and running with SurrealDB Agent Memory on SurrealDB Cloud in five minutes.
+  Get SurrealDB Agent Memory running in five minutes. Runs on SurrealDB Cloud, with no server to install.
 - [Agent Memory on SurrealDB Cloud](agent-memory/index/quickstarts/surrealdb-cloud.md)
-  How SurrealDB Agent Memory contexts, authentication, and APIs work on SurrealDB Cloud.
+  How contexts, authentication and the APIs work on SurrealDB Cloud. For SurrealDB Agent Memory.
 - [Authority when pillars meet](agent-memory/index/reasoning/authority-hierarchy.md)
-  How the Authoritative and Experiential pillars interact - reconciliation, uncertainty, and resolves_to.
+  How the Authoritative and Experiential pillars interact. Reconciliation, uncertainty, and resolves_to.
 - [Cross-layer linking](agent-memory/index/reasoning/cross-layer-linking.md)
-  How authoritative documents and experiential facts relate in the unified graph.
+  How authoritative documents and experiential facts relate. Both live in the unified graph.
 - [Extraction pipeline](agent-memory/index/reasoning/extraction-pipeline.md)
-  How SurrealDB Agent Memory classifies and extracts structured memory from conversation turns.
+  How structured memory is extracted from conversation turns. Classification and extraction in SurrealDB Agent Memory.
 - [Instructions and uncertainties](agent-memory/index/reasoning/instructions-and-uncertainties.md)
-  How SurrealDB Agent Memory captures behavioural directives and tracks ambiguous or contradictory information.
+  How behavioural directives are captured and tracked. Including ambiguous or contradictory information.
 - [Reconciliation and supersession](agent-memory/index/reasoning/reconciliation-and-supersession.md)
-  How SurrealDB Agent Memory deduplicates entities, detects conflicts, and tracks corrections with full history.
+  How entities are deduplicated and conflicts detected. Corrections are tracked with full history.
 - [Temporal validity](agent-memory/index/reasoning/temporal-validity.md)
-  How SurrealDB Agent Memory tracks when facts were true using valid_from and valid_until.
+  How SurrealDB Agent Memory tracks when facts were true. Using valid_from and valid_until.
 - [Graph traversal](agent-memory/index/retrieve/graph-traversal.md)
   Structural edges in the knowledge layer and how retrieval uses them.
 - [Hybrid search](agent-memory/index/retrieve/hybrid-search.md)
-  Using vector, BM25, and graph-density retrieval modes in SurrealDB Agent Memory.
+  Vector, BM25, and graph-density retrieval modes. How each mode behaves in SurrealDB Agent Memory.
 - [Keywords and BM25](agent-memory/index/retrieve/keywords-and-bm25.md)
-  Using keyword extraction and full-text search in SurrealDB Agent Memory's knowledge layer.
+  Keyword extraction and full-text search. How both work in SurrealDB Agent Memory's knowledge layer.
 - [Recalling memories](agent-memory/index/retrieve/recall.md)
   Unified retrieval over facts and document passages.
 - [Adding turns](agent-memory/index/sessions/adding-turns.md)
-  How to add conversation turns and interpret the structured extraction result.
+  How to add conversation turns. Interpreting the structured extraction result.
 - [Chat sessions](agent-memory/index/sessions/chat-sessions.md)
   Using chat() for conversation loops managed by SurrealDB Agent Memory.
 - [Creating sessions](agent-memory/index/sessions/creating-sessions.md)
-  How to create and manage conversation sessions in SurrealDB Agent Memory.
+  How to create and manage conversation sessions. Covers session lifecycle in SurrealDB Agent Memory.
 - [State and diffs](agent-memory/index/sessions/state-and-diffs.md)
-  Reading structured memory state and tracking what changed between turns.
+  Reading structured memory state. Also tracking what changed between turns.
 - [Caching and invalidation](agent-memory/index/tuning/caching-and-invalidation.md)
-  How SurrealDB Agent Memory's semantic response cache works and how to manage memory lifecycle.
+  How the semantic response cache works. Managing the memory lifecycle in SurrealDB Agent Memory.
 - [Models per stage](agent-memory/index/tuning/models-per-stage.md)
-  Configure which LLM is used for each processing stage in SurrealDB Agent Memory.
+  Configure which LLM runs at each processing stage. For every stage in SurrealDB Agent Memory.
 - [Extraction vocabulary](agent-memory/index/tuning/ontology-grounding.md)
-  How SurrealDB Agent Memory keeps entity names, attribute keys, and relation labels consistent across extractions.
+  How entity names and attribute keys stay consistent. Relation labels are grounded across extractions too.
 - [The accuracy promise](agent-memory/index/welcome/accuracy-promise.md)
-  Defensible correctness - provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
+  Defensible correctness in SurrealDB Agent Memory. Provenance, reconciliation, tri-temporal history, traces, and inspectable substrate state.
 - [How it works in five minutes](agent-memory/index/welcome/how-it-works.md)
-  From a message to structured substrate state - extraction, reconciliation, traces, and tiered reads.
+  From a message to structured substrate state. Extraction, reconciliation, traces, and tiered reads.
 - [What is SurrealDB Agent Memory?](agent-memory/index/welcome/what-is-surrealdb-agent-memory.md)
-  SurrealDB Agent Memory as a memory and knowledge layer - one SurrealDB substrate, provenance-first, trace-aware, tri-temporal.
+  A memory and knowledge layer for AI agents. One SurrealDB substrate, provenance-first, trace-aware, and tri-temporal.
 - [Why agentic memory?](agent-memory/index/welcome/why-agentic-memory.md)
-  Why conversational agents need structured memory beyond plain retrieval.
+  Why conversational agents need structured memory. Plain retrieval is not enough on its own.
 - [Cloudflare Workers AI](agent-memory/integrations/ai-sdks/cloudflare-workers-ai.md)
   Using SurrealDB Agent Memory from a Cloudflare Worker alongside Workers AI models.
 - [TanStack AI](agent-memory/integrations/ai-sdks/tanstack-ai.md)
@@ -172,7 +172,7 @@ _1089 pages_
 - [Strands Agents](agent-memory/integrations/frameworks/strands-agents.md)
   SurrealDB Agent Memory as tools for the Strands Agents SDK.
 - [Agent Memory integrations](agent-memory/integrations/index.md)
-  Connecting SurrealDB Agent Memory to your stack - SDKs, MCP server, AI SDKs, agent frameworks, voice tools, and automation.
+  SDKs, the MCP server, AI SDKs and agent frameworks. Connecting SurrealDB Agent Memory to your stack, plus voice tools and automation.
 - [Antigravity](agent-memory/integrations/mcp-server/coding-assistants/antigravity.md)
   Installing SurrealDB Agent Memory as an MCP server in Google Antigravity.
 - [Claude](agent-memory/integrations/mcp-server/coding-assistants/claude-desktop-and-code.md)
@@ -230,7 +230,7 @@ _1089 pages_
 - [LiveKit](agent-memory/integrations/voice/livekit.md)
   Adding SurrealDB Agent Memory to a LiveKit voice agent.
 - [Agent guide (AGENTS.md)](agent-memory/reference/agents.md)
-  Instructions for coding agents integrating with SurrealDB Agent Memory - copy into Cursor rules or skills.
+  Copy these into your Cursor rules or agent skills. Instructions for coding agents integrating with SurrealDB Agent Memory.
 - [CLI](agent-memory/reference/cli.md)
   Command-line interface reference.
 - [Configuration](agent-memory/reference/configuration.md)
@@ -248,37 +248,39 @@ _1089 pages_
 - [MCP tools](agent-memory/reference/mcp-tools.md)
   Tool payloads and ACL alignment.
 - [REST API](agent-memory/reference/rest-api.md)
-  End-user HTTP endpoints on the unified SurrealDB Agent Memory substrate.
+  End-user HTTP endpoints on the unified substrate. For SurrealDB Agent Memory.
 - [JavaScript SDK reference](agent-memory/reference/sdk-javascript.md)
   Package layout and configuration for @surrealdb/memory.
 - [Kotlin SDK reference](agent-memory/reference/sdk-kotlin.md)
-  Package layout, configuration, and error model for the SurrealDB Agent Memory Kotlin client.
+  The SurrealDB Agent Memory Kotlin client. Package layout, configuration, and the error model.
 - [Python SDK reference](agent-memory/reference/sdk-python.md)
-  Package layout and configuration for the SurrealDB Agent Memory client in surrealdb.
+  The SurrealDB Agent Memory client inside the surrealdb package. Package layout and configuration.
 - [Swift SDK reference](agent-memory/reference/sdk-swift.md)
-  Package layout and configuration for the SurrealDB Agent Memory Swift client.
+  The SurrealDB Agent Memory Swift client. Package layout and configuration.
 - [Claude Code](agents/claude-code.md)
-  Set up Claude Code for SurrealDB with the hosted MCP server and the official Agent Skills.
+  Hosted MCP server and Agent Skills setup for Claude Code. Covers the .mcp.json entry, signing in, and checking it worked.
 - [Codex](agents/codex.md)
-  Set up the OpenAI Codex CLI for SurrealDB with the hosted MCP server and the official Agent Skills.
+  Hosted MCP server and Agent Skills setup for the Codex CLI. Covers the config.toml entry, signing in, and checking it worked.
 - [Cursor](agents/cursor.md)
-  Set up Cursor for SurrealDB with the hosted MCP server and the official Agent Skills.
+  Hosted MCP server and Agent Skills setup for Cursor. Covers the mcp.json entry, signing in, and checking it worked.
 - [GitHub Copilot](agents/github-copilot.md)
-  Set up GitHub Copilot agent mode for SurrealDB with the hosted MCP server and the official Agent Skills.
+  Hosted MCP server and Agent Skills setup for GitHub Copilot. Copilot reads the same .vscode/mcp.json file that VS Code does.
 - [Agent setup](agents/index.md)
   Connect your agents to SurrealDB with Agent Skills and MCP.
 - [Visual Studio Code](agents/vscode.md)
-  Set up Visual Studio Code for SurrealDB with the hosted MCP server and the official Agent Skills.
+  Hosted MCP server and Agent Skills setup for VS Code. Covers the servers object in mcp.json, for a workspace or globally.
 - [Windsurf](agents/windsurf.md)
-  Set up Windsurf for SurrealDB with the hosted MCP server and the official Agent Skills.
+  Hosted MCP server and Agent Skills setup for Windsurf. Windsurf uses serverUrl in mcp_config.json rather than url.
 - [Zed](agents/zed.md)
-  Set up the Zed editor for SurrealDB with the hosted MCP server and the official Agent Skills.
+  Hosted MCP server and Agent Skills setup for Zed. Covers the context_servers entry in the Zed settings file.
+- [Build](build.md)
+  Putting SurrealDB into an application: embedding the engine. Migrating from another database, connecting frameworks, and wiring it to AI agents.
 - [Agent Skills](build/ai-agents/agent-skills.md)
   Official SurrealDB agent skills for use in agentic coding workflows.
 - [AI frameworks](build/ai-agents/ai-frameworks.md)
-  Framework integrations that let AI and machine learning libraries use SurrealDB for vectors, memory, and pipelines.
+  Framework integrations for AI and machine learning libraries. Use SurrealDB for vectors, memory, and pipelines.
 - [AI agents](build/ai-agents/index.md)
-  The ways SurrealDB fits into AI tooling - MCP servers, Agent Skills, and framework integrations - and what the database gives an agent.
+  MCP servers, Agent Skills, and framework integrations for SurrealDB. The ways SurrealDB fits into AI tooling, and what it gives an agent.
 - [MCP in Claude](build/ai-agents/mcp/claude.md)
   Add the SurrealDB MCP Server to Claude Code, Claude Desktop, or the Claude app.
 - [MCP in Cursor](build/ai-agents/mcp/cursor.md)
@@ -288,7 +290,7 @@ _1089 pages_
 - [Example usages](build/ai-agents/mcp/examples.md)
   Prompts that show what an assistant can do with the SurrealDB MCP Server, from deploying an instance to querying its data.
 - [SurrealDB MCP Server](build/ai-agents/mcp/index.md)
-  Connect Claude, Cursor, and other AI tools to your SurrealDB Cloud account with a single URL.
+  Connect Claude, Cursor, and other AI tools to SurrealDB Cloud. One URL is all the configuration needs.
 - [.NET](build/embedding/by-language/dotnet.md)
   The documentation for embedding SurrealDB within .NET has been moved to the .NET SDK documentation.
 - [Golang](build/embedding/by-language/golang.md)
@@ -300,10 +302,10 @@ _1089 pages_
 - [Rust](build/embedding/by-language/rust.md)
   Embedding SurrealDB in Rust
 - [Embedding SurrealDB](build/embedding/index.md)
-  In this section, you will find detailed instructions on how to embed SurrealDB into your application depending on your programming language.
+  How to embed SurrealDB into your application. Detailed instructions for each supported programming language.
 - [Storage engines](build/embedding/storage-engines.md)
-  What a storage engine does for SurrealDB, and how to think about choosing one.
-- [Agent rules](build/integrations/agent-rules/agent-rules.md)
+  What a storage engine does for SurrealDB. How to think about choosing one.
+- [Agent rules](build/integrations/agent-rules/index.md)
   Agent rules for working with SurrealDB.
 - [Agno](build/integrations/ai-frameworks/agno.md)
   This section contains information about the Agno framework and how to integrate it with SurrealDB.
@@ -364,7 +366,7 @@ _1089 pages_
 - [Rust quickstart](build/integrations/embeddings-providers/rust-quickstart.md)
   This section contains information about different embedding models you can use with SurrealDB.
 - [Integrations](build/integrations/index.md)
-  Integrations that connect SurrealDB to AI frameworks, embeddings providers, agents, and data tools.
+  Integrations connecting SurrealDB to AI frameworks and embeddings. Also agents and data tools.
 - [Importing CSV data](build/migrating/from-files-and-streams/csv.md)
   SurrealDB Studio can be used to import CSV data to SurrealDB.
 - [Migrating](build/migrating/from-files-and-streams/index.md)
@@ -392,9 +394,11 @@ _1089 pages_
 - [Migrating from other databases](build/migrating/from-other-databases/overview.md)
   Map data and concepts from other databases to SurrealDB using Surreal Sync, the CLI import or SDKs.
 - [Migrating to SurrealDB](build/migrating/index.md)
-  Moving data into SurrealDB from other databases, older SurrealDB releases, or files and streams.
+  Moving data into SurrealDB from other databases, or older releases. Also from files and streams.
+- [Explore](explore.md)
+  SurrealDB Studio, video tutorials and demos, and worked examples. Machine-learning models, and the SurrealDB Labs archive.
 - [Introduction](explore/ml-models/index.md)
-  SurrealML stores and runs trained ML models in SurrealDB - train in Python, then load and infer with sklearn or PyTorch.
+  SurrealML runs trained ML models in SurrealDB: train in Python. Then load and infer with sklearn or PyTorch.
 - [Computation](explore/ml-models/surrealml/computation.md)
   SurrealML enables machine learning models to be greatly simplified, ensuring reproducibility and consistency in machine learning pipelines.
 - [Storage](explore/ml-models/surrealml/storage.md)
@@ -404,7 +408,7 @@ _1089 pages_
 - [Search and shortcuts](explore/studio/search-and-shortcuts.md)
   The SurrealDB Studio command palette and its keyboard shortcuts.
 - [SurrealQL editors](explore/studio/surrealql-editors.md)
-  SurrealQL editor shortcuts in SurrealDB Studio for indentation, comments, multi-cursor edits, running queries, record inspection, and JSON formatting.
+  SurrealQL editor shortcuts in SurrealDB Studio. Indentation, comments, multi-cursor edits, running queries, record inspection, and JSON formatting.
 - [Blink note-taking app](explore/tutorials/demos/blink.md)
   Blink - a Notion-style workspace demo built with SurrealDB and WebAssembly.
 - [Kai G AI demos](explore/tutorials/demos/kaig-ai-demos.md)
@@ -414,7 +418,7 @@ _1089 pages_
 - [Surreal Deal Store](explore/tutorials/demos/surreal-deal-store.md)
   To quickly test out SurrealDB and SurrealQL functionality, we've included demo data which you can download and import into SurrealDB.
 - [Demos and tutorials](explore/tutorials/index.md)
-  Hands-on demo applications and tutorials to learn SurrealDB by building real projects.
+  Hands-on demo applications and tutorials. Learn SurrealDB by building real projects.
 - [Integrate Auth0 with SurrealDB](explore/tutorials/tutorials/auth0-integration.md)
   Use Auth0 as the authentication provider for a single-page application backed only by SurrealDB.
 - [Integrate AWS Cognito with SurrealDB](explore/tutorials/tutorials/aws-cognito-integration.md)
@@ -446,7 +450,7 @@ _1089 pages_
 - [React Native](frameworks/react-native.md)
   Connect a React Native app to SurrealDB and run your first queries.
 - [Getting started](index.md)
-  The official documentation for SurrealDB, a multi-model database for modern applications.
+  The official documentation for SurrealDB, a multi-model database. Built for modern applications.
 - [10 schema tips for SurrealDB](labs/10-schema-tips-for-surrealdb.md)
 - [10 Tips and Tricks for SurrealDB Studio](labs/10-tips-and-tricks-for-surrealist.md)
 - [allographer](labs/allographer.md)
@@ -557,29 +561,33 @@ _1089 pages_
 - [VentStream: Real-time CDC sync into SurrealDB](labs/ventstream.md)
   Stream PostgreSQL, MySQL, MongoDB, and Neo4j into SurrealDB in real time.
 - [Community SDKs](languages/community.md)
-  Community-maintained and experimental SurrealDB clients for languages beyond the official SDKs.
-- [.NET](languages/dotnet.md)
+  Community-maintained and experimental SurrealDB clients. For languages beyond the official SDKs.
+- [.NET quickstart](languages/dotnet.md)
   Connect to SurrealDB and run your first queries with the .NET SDK.
-- [Go](languages/golang.md)
+- [Go quickstart](languages/golang.md)
   Connect to SurrealDB and run your first queries with the Go SDK.
-- [Java](languages/java.md)
+- [SDKs](languages/index.md)
+  One official SurrealDB SDK per language. Each has a quickstart that gets you connected and a reference covering every method.
+- [Java quickstart](languages/java.md)
   Connect to SurrealDB and run your first queries with the Java SDK.
-- [JavaScript](languages/javascript.md)
-  Connect to SurrealDB and run your first queries with the JavaScript SDK.
-- [Kotlin](languages/kotlin.md)
+- [JavaScript quickstart](languages/javascript.md)
+  Connect and run your first queries with the JavaScript SDK.
+- [Kotlin quickstart](languages/kotlin.md)
   Connect to SurrealDB and run your first queries with the Kotlin SDK.
-- [Mojo](languages/mojo.md)
+- [Mojo quickstart](languages/mojo.md)
   Connect to SurrealDB and run your first queries with the Mojo SDK.
-- [PHP](languages/php.md)
+- [PHP quickstart](languages/php.md)
   Connect to SurrealDB and run your first queries with the PHP SDK.
-- [Python](languages/python.md)
+- [Python quickstart](languages/python.md)
   Connect to SurrealDB and run your first queries with the Python SDK.
-- [Rust](languages/rust.md)
+- [Rust quickstart](languages/rust.md)
   Connect to SurrealDB and run your first queries with the Rust SDK.
-- [Swift](languages/swift.md)
+- [Swift quickstart](languages/swift.md)
   Connect to SurrealDB and run your first queries with the Swift SDK.
+- [Learn](learn.md)
+  How SurrealDB stores, queries and secures data: SurrealQL and schema. The document, graph, vector and time-series models, and access control.
 - [Architecture](learn/data-models/architecture.md)
-  How SurrealDB separates compute from storage, how every data model maps onto one storage engine, and how namespaces, databases and tables are structured.
+  How SurrealDB separates compute from storage. Every data model maps onto one storage engine, and namespaces, databases and tables give the structure.
 - [Common patterns](learn/data-models/document/common-patterns.md)
   Map document-database concepts to SurrealDB, compare SurrealQL with MongoDB-style operations, and find resources for CRUD and migration.
 - [Nested objects and arrays](learn/data-models/document/nested-objects-and-arrays.md)
@@ -623,7 +631,7 @@ _1089 pages_
 - [Social network patterns](learn/data-models/graph/social-network-patterns.md)
   Model follows, friendships, and interaction histories with graph edges, using weighted relations and counted edges to rank “strongest” ties in a toy social graph.
 - [Data Models](learn/data-models/index.md)
-  Store and query document, graph, vector, time-series, and geospatial data with SurrealDB.
+  Store and query document, graph, vector, time-series, geospatial. All the data models SurrealDB supports, in one database.
 - [Aggregation queries](learn/data-models/time-series/aggregation-queries.md)
   Build downsampling with pre-computed table views, live queries, drop tables, and DEFINE EVENT for anomaly detection; compare SurrealDB to specialised TSDBs.
 - [IoT and telemetry patterns](learn/data-models/time-series/iot-and-telemetry-patterns.md)
@@ -655,7 +663,7 @@ _1089 pages_
 - [Using WASM plugins](learn/extensions/guides/using-wasm-plugins.md)
   How to load a pre-built Surrealism module archive into SurrealDB, register it, inspect exports, and call functions from SurrealQL.
 - [Extensions](learn/extensions/index.md)
-  Extend SurrealDB with custom modules and WASM plugins through the Surrealism extension system.
+  Extend SurrealDB with custom modules and WASM plugins. Done through the Surrealism extension system.
 - [Further examples](learn/extensions/plugins/further-examples.md)
   Further examples of Surrealism attributes, namespaced exports, and CLI commands
 - [Surrealism plugins](learn/extensions/plugins/overview.md)
@@ -713,7 +721,7 @@ _1089 pages_
 - [Via SurrealDB Studio](learn/querying/graphql/via-studio.md)
   In this section, you will explore querying SurrealDB using SurrealDB Studio.
 - [Querying](learn/querying/index.md)
-  Query SurrealDB with SurrealQL, SDKs or GraphQL - SQL-like syntax with graphs, links and practical querying tips.
+  SurrealQL, the SDKs and GraphQL: SQL-like syntax for SurrealDB. Graphs, links, and practical querying tips.
 - [Performance best practices](learn/querying/performance/performance-best-practices.md)
   This guide outlines some key performance best practices for using SurrealDB. While SurrealDB offers powerful and flexible features to support you in meeting your desired performance standards, the use that you make of those features will ultimately determine whether or not you meet them.
 - [Changefeeds](learn/querying/real-time/changefeeds.md)
@@ -753,17 +761,17 @@ _1089 pages_
 - [Working with files](learn/schema-management/files/working-with-files.md)
   File pointers, buckets, and putting or getting bytes from SurrealDB.
 - [Schema management](learn/schema-management/index.md)
-  How to shape data in SurrealDB: tables, fields, indexes, events, tenancy, and related patterns.
+  Tables, fields, indexes and events: how to shape data in SurrealDB. Tenancy and related patterns too.
 - [Index types and strategies](learn/schema-management/indexes/index-types-and-strategies.md)
   Choosing indexes for lookups, uniqueness, full-text, vectors, and counts.
 - [Namespace & database architecture](learn/schema-management/multi-tenancy/namespace-and-database-architecture.md)
   Layering namespaces and databases for isolation, security, and strict mode.
+- [Schema design](learn/schema-management/schema-design/index.md)
+  What DEFINE does in SurrealDB. How to inspect what you have defined.
 - [Sample industry schemas](learn/schema-management/schema-design/sample-industry-schemas.md)
   Copy-paste starter schemas for energy, finance, retail, medical, and other domains.
 - [Schema best practices](learn/schema-management/schema-design/schema-best-practices.md)
   Best practices for creating schemas in SurrealDB.
-- [Schema design](learn/schema-management/schema-design/schema-design.md)
-  What DEFINE does in SurrealDB and how to inspect what you have defined.
 - [Schema evolution](learn/schema-management/schema-design/schema-evolution.md)
   Changing schema over time with ALTER and related patterns.
 - [Fields and validation](learn/schema-management/tables-and-fields/fields-and-validation.md)
@@ -774,12 +782,12 @@ _1089 pages_
   How record IDs work, ranges, and practical choices for addressing data.
 - [Tables](learn/schema-management/tables-and-fields/tables.md)
   Declaring tables: schemaless vs schemafull, relations, views, changefeeds, and permissions.
-- [Users](learn/security/authentication/authentication.md)
-  There are multiple forms of authentication built into SurrealDB, supporting server-side and client-side authentication.
-- [Introduction](learn/security/authentication/overview.md)
-  An overview of how authentication works in SurrealDB, covering system users, record users, sessions, and third-party token integration.
+- [Authentication methods](learn/security/authentication/overview.md)
+  The four ways to authenticate with SurrealDB - system users, record users, JWT access and bearer access - what each is for, and how to sign in over HTTP or from an SDK.
 - [Summary](learn/security/authentication/summary.md)
   This page summarizes some of the security features offered by SurrealDB as well as some security elements of its development process with the goal of providing a starting point to both new and experienced users who wish to know more about the security of SurrealDB.
+- [Users](learn/security/authentication/users.md)
+  There are multiple forms of authentication built into SurrealDB, supporting server-side and client-side authentication.
 - [Capabilities](learn/security/authorization/capabilities.md)
   SurrealDB is secure by default and is suitable for all database use cases. It offers powerful features like scripting, functions or network access from within your SurrealQL queries.
 - [Permissions & row-level security](learn/security/authorization/permissions-and-row-level-security.md)
@@ -791,41 +799,19 @@ _1089 pages_
 - [Troubleshooting](learn/security/best-practices/troubleshooting.md)
   This page provides some troubleshooting advice to support users in addressing issues either caused by or involved in the usage of specific security features provided by SurrealDB.
 - [Security](learn/security/index.md)
-  Learn how to secure your SurrealDB deployment with authentication, authorization, and security best practices.
-- [Distributed live queries](manage/enterprise/capabilities/distributed-live-queries.md)
-  Enterprise Edition distributed live queries across cluster nodes, and how they differ from single-node live queries.
-- [Installation](manage/enterprise/index.md)
-  Install SurrealDB Enterprise Edition: obtain packages, apply your licence key, and activate the deployment.
-- [Licensing & activation](manage/enterprise/licensing-and-activation.md)
-  Manage SurrealDB Enterprise Edition licence keys: activation, renewal, offline workflows, and entitlement checks.
-- [Contact & licensing](manage/enterprise/overview/contact-and-licensing.md)
-  Contact SurrealDB for Enterprise Edition sales, licence models, and pricing enquiries.
-- [Feature table](manage/enterprise/overview/feature-table.md)
-  Compare SurrealDB Community Edition and Enterprise Edition across security, clustering, storage, and support.
-- [What EE is](manage/enterprise/overview/what-ee-is.md)
-  An overview of SurrealDB Enterprise Edition: capabilities beyond Community Edition and typical enterprise use cases.
-- [Audit logging](manage/enterprise/security/audit-logging.md)
-  Enterprise Edition audit logging: captured events, log formats, storage, and SIEM integration.
-- [FIPS](manage/enterprise/security/fips.md)
-  FIPS 140-2 compliance in SurrealDB Enterprise Edition: validated modules and enabling FIPS mode.
-- [Trusted execution](manage/enterprise/security/trusted-execution.md)
-  Trusted execution environments (TEE) in SurrealDB Enterprise Edition: hardware requirements and attestation.
-- [File storage / S3 / blob](manage/enterprise/storage/file-storage.md)
-  Enterprise Edition file and blob storage: S3-compatible backends and DEFINE BUCKET for managed file objects.
-- [SLAs](manage/enterprise/support/slas.md)
-  Enterprise Edition service level agreements: uptime targets, response times by severity, and contractual support.
-- [Support tiers](manage/enterprise/support/support-tiers.md)
-  SurrealDB Enterprise Edition support tiers: Standard, Premium, and Mission-Critical coverage and escalation.
-- [Upgrading from Community](manage/enterprise/upgrading-from-community.md)
-  SurrealDB Enterprise Edition: features, licensing, security, and support.
+  Secure a SurrealDB deployment with authentication and authorisation. Plus security best practices.
+- [Manage](manage.md)
+  Running SurrealDB in production: managed instances and organisations. Billing, the surrealctl CLI, observability, schema migration and self-hosting.
+- [Enterprise Edition](manage/enterprise/index.md)
+  What Enterprise Edition adds over Community: distributed live queries. S3-backed file storage, audit logging, FIPS-validated cryptography, trusted execution, and contractual support.
 - [Architecture](manage/instances/architecture.md)
-  The single-node and multi-node topologies behind the Start and Scale plans, and what each one means for growth and recovery.
+  The topologies behind the Start and Scale plans. Single-node and multi-node, and what each means for growth and recovery.
 - [Backups and recovery](manage/instances/backups.md)
-  Automated snapshots, retention tiers, and restoring a snapshot into a new instance.
+  Automated snapshots and retention tiers. Restoring a snapshot into a new instance.
 - [Configure an instance](manage/instances/configure.md)
-  Instance settings in SurrealDB Studio: capabilities, compute and storage, pausing, and deletion.
+  Instance settings in SurrealDB Studio. Capabilities, compute and storage, pausing, and deletion.
 - [Connect to an instance](manage/instances/connect/index.md)
-  The four routes to an instance: SurrealDB Studio, the CLI, a client SDK, and the HTTP API. Includes where to find the connection details.
+  The four routes to a SurrealDB Cloud instance. SurrealDB Studio, the CLI, a client SDK, and the HTTP API, plus where to find the connection details.
 - [Via CLI](manage/instances/connect/via-cli.md)
   Open an interactive SurrealQL shell against an instance with surreal sql, and where to get the token.
 - [Via HTTP](manage/instances/connect/via-http.md)
@@ -835,41 +821,41 @@ _1089 pages_
 - [Via SurrealDB Studio](manage/instances/connect/via-studio.md)
   Select a namespace and database, then query an instance from the SurrealDB Studio query view.
 - [Create an instance](manage/instances/create.md)
-  Deploy an instance from SurrealDB Studio: choose a plan, instance type, region, version, name, starting data, and storage.
+  Deploy an instance from SurrealDB Studio. Choose a plan, instance type, region, version, name, starting data, and storage.
 - [High availability](manage/instances/high-availability.md)
-  What a Start instance and a Scale cluster each survive, and how to plan for the failures they do not.
+  What a Start instance and a Scale cluster each survive. How to plan for the failures they do not.
 - [Import and export](manage/instances/import-and-export.md)
-  Move data in and out of an instance with surreal export and surreal import, including size limits and partial-import behaviour.
+  Move data in and out with surreal export and surreal import. Covers size limits and partial-import behaviour.
 - [Instances](manage/instances/index.md)
-  What an instance is, how the Start and Scale plans differ, and where each operational task is documented.
+  What a SurrealDB Cloud instance is. How the Start and Scale plans differ, and where each operational task is documented.
 - [Monitoring](manage/instances/monitoring.md)
-  The instance dashboard, the metrics groups and log filters in SurrealDB Studio, and how they relate to the full observability surface.
+  The instance dashboard, metrics groups, and log filters. How each relates to the full observability surface in SurrealDB Studio.
 - [Network access](manage/instances/network-access.md)
-  Control which outbound destinations queries may reach, using the network access capability and its allow and deny patterns.
+  Control which outbound destinations queries may reach. Uses the network access capability and its allow and deny patterns.
 - [Private connectivity](manage/instances/private-connectivity.md)
-  Reach an instance from your AWS VPC over AWS PrivateLink, and set the public, private, or dual access mode.
+  Reach an instance from your AWS VPC over AWS PrivateLink. Set the public, private, or dual access mode.
 - [Scaling](manage/instances/scaling.md)
-  When to resize an instance, what scales on each plan, and how to confirm a resize solved the bottleneck.
+  When to resize an instance, and what scales on each plan. How to confirm a resize solved the bottleneck.
 - [Versions and upgrades](manage/instances/versions-and-upgrades.md)
-  Change the SurrealDB release an instance runs, and what happens to the instance during the upgrade.
+  Change the SurrealDB release an instance runs. What happens to the instance during the upgrade.
 - [Audit logging](manage/observability/audit-logging.md)
-  The Enterprise audit log pipeline: events captured, record shape, rotation, hash chaining, redaction and pipeline self-metrics.
+  The Enterprise audit log pipeline. Events captured, record shape, rotation, hash chaining, redaction, and pipeline self-metrics.
 - [Configuration reference](manage/observability/configuration.md)
-  Every observability, audit log and slow-query log environment variable, plus recommended configurations for local, production and multi-tenant deployments.
+  Every observability, audit log and slow-query log variable. Recommended configurations for local, production and multi-tenant deployments.
 - [Enterprise observability](manage/observability/enterprise-observability.md)
-  Metrics, logs, and traces in SurrealDB Enterprise versus Community - OTLP opt-ins, audit and slow-query pipelines, and cluster instruments.
+  Metrics, logs, and traces in Enterprise versus Community. OTLP opt-ins, audit and slow-query pipelines, and cluster instruments.
 - [Observability](manage/observability/index.md)
-  Logging, Prometheus pull, OTLP push, Enterprise pipelines, metric catalogues, and Tokio console - production visibility for SurrealDB Community and Enterprise.
+  Production visibility for SurrealDB Community and Enterprise. Logging, Prometheus pull, OTLP push, Enterprise pipelines, metric catalogues, and Tokio console.
 - [Logging](manage/observability/logging.md)
   Server log levels, text and JSON formats, file and socket output, slow-query logging, and OpenTelemetry log levels.
 - [Metrics reference](manage/observability/metrics.md)
   Access paths, label catalogue and the complete metric reference for SurrealDB Community and Enterprise, with a migration table from 3.0.
 - [Observability (metrics and Prometheus)](manage/observability/observability.md)
-  Unified OpenTelemetry metrics, `GET /metrics`, scraper authentication, naming, migration, and behaviour common to Community and Enterprise.
+  Unified OpenTelemetry metrics common to Community and Enterprise. The `GET /metrics` endpoint, scraper authentication, naming, and migration.
 - [Slow-query logging](manage/observability/slow-query-logging.md)
   The Enterprise slow-query log pipeline: how a query qualifies, record shape, rotation, hash chaining, redaction and pipeline self-metrics.
 - [Telemetry (OTLP)](manage/observability/telemetry.md)
-  OTLP push export - metrics, logs, traces, intervals, backward-compatible instruments, and differences before and after SurrealDB 3.1.
+  OTLP push export of metrics, logs, and traces. Intervals, backward-compatible instruments, and differences before and after SurrealDB 3.1.
 - [Tokio console](manage/observability/tokio-console.md)
   Inspect SurrealDB’s async runtime with the Tokio console - tasks, polls, and bottlenecks separate from OpenTelemetry metrics and traces.
 - [AWS Marketplace](manage/organisations/aws-marketplace.md)
@@ -879,7 +865,7 @@ _1089 pages_
 - [FAQs](manage/organisations/faqs.md)
   Common questions about managed instances: getting started, limits, security, pricing, legal terms, and troubleshooting.
 - [Organisations](manage/organisations/index.md)
-  The container for instances, members, usage, and billing, and what each section of the organisation view holds.
+  The container for instances, members, usage, and billing. What each section of the organisation view holds.
 - [Members and roles](manage/organisations/members-and-roles.md)
   Invite people to an organisation, track pending invitations, and choose between the Owner, Admin, and Member roles.
 - [Referrals](manage/organisations/referrals.md)
@@ -899,7 +885,7 @@ _1089 pages_
 - [Sync vs Rollouts](manage/schema-migration/getting-started/sync-vs-rollouts.md)
   Understand when to use SurrealKit's Sync mode for development and Rollouts mode for production, and how teams typically combine both.
 - [SurrealKit schema migration](manage/schema-migration/index.md)
-  SurrealKit is the official schema management and migration CLI for SurrealDB. Define your schema in .surql files and keep databases in sync across every environment.
+  SurrealKit is the official schema migration CLI for SurrealDB. Define your schema in .surql files and keep databases in sync across every environment.
 - [Library usage example](manage/schema-migration/library/example.md)
   Worked examples of using SurrealKit's library API for both sync and rollouts in a Rust application.
 - [Using SurrealKit as a library](manage/schema-migration/library/index.md)
@@ -927,7 +913,7 @@ _1089 pages_
 - [Docker](manage/self-hosted/docker.md)
   A tutorial to run SurrealDB from within Docker.
 - [Self-hosted](manage/self-hosted/index.md)
-  Deploy and operate SurrealDB on your own infrastructure: deployment models, containers, configuration, backups, monitoring, and upgrades.
+  SurrealDB deployment models on your own infrastructure. Containers, configuration, backups, monitoring, and upgrades.
 - [Kubernetes](manage/self-hosted/kubernetes.md)
   Deploy SurrealDB to Kubernetes with RocksDB on a persistent volume.
 - [Managed Kubernetes](manage/self-hosted/managed-kubernetes.md)
@@ -936,10 +922,10 @@ _1089 pages_
   Health checks, OpenTelemetry metrics and traces, audit logs and slow-query logs, and integration with common observability stacks.
 - [Upgrades & patching](manage/self-hosted/upgrades-and-patching.md)
   Upgrade SurrealDB safely: binary replacement, surreal fix for major versions, migrations, and cluster rolling upgrades.
-- [Authentication](manage/surrealctl/authentication.md)
+- [Authenticating surrealctl](manage/surrealctl/authentication.md)
   Choose between a login session and a personal access token, store credentials safely, and authenticate an unattended run.
 - [surrealctl](manage/surrealctl/index.md)
-  The control-plane CLI: what surrealctl does, when to reach for it instead of SurrealDB Studio or the surreal binary, and a sixty-second quickstart.
+  What the surrealctl control-plane CLI does. When to reach for it instead of SurrealDB Studio or the surreal binary, plus a sixty-second quickstart.
 - [Install](manage/surrealctl/install.md)
   Install surrealctl on macOS, Linux, or Windows, verify the download, sign in for the first time, and keep the binary up to date.
 - [Instances](manage/surrealctl/instances.md)
@@ -948,11 +934,13 @@ _1089 pages_
   Select an organisation, manage members and invitations, check roles, and read usage and spend from the command line.
 - [Scripting](manage/surrealctl/scripting.md)
   Drive surrealctl from CI and shell scripts: the JSON contract, exit codes for control flow, unattended runs, and waiting semantics.
+- [Reference](reference.md)
+  SurrealQL statements and functions, and the full API surface. The HTTP, RPC, CBOR and Postgres wire protocols, the command-line tools, and every official SDK.
 - [SurrealQL formatter](reference/cli/formatter/overview.md)
   The surqlfmt command automatically formats SurrealQL files for consistent style and readability.
 - [CLI Tools](reference/cli/index.md)
-  Reference for the three SurrealDB command-line tools: surrealctl for the control plane, surreal for the data plane, and surqlfmt for formatting SurrealQL.
-- [Authentication](reference/cli/surrealctl/authentication.md)
+  Reference for surrealctl, surreal and surqlfmt. The control plane, the data plane, and formatting SurrealQL.
+- [Authentication reference](reference/cli/surrealctl/authentication.md)
   How surrealctl signs in, the difference between a login session and a personal access token, what a token cannot do, and where credentials are stored on disk.
 - [auth](reference/cli/surrealctl/commands/auth.md)
   Reference for surrealctl auth - signing in, signing out, inspecting the stored credential, renewing it, and listing what it is permitted to do.
@@ -1049,7 +1037,7 @@ _1089 pages_
 - [Embedding](reference/dotnet/embedding.md)
   The documentation for embedding SurrealDB within .NET.
 - [.NET SDK](reference/dotnet/index.md)
-  The SurrealDB SDK for .NET provides a number of methods for interacting with your SurrealDB database.
+  The official SurrealDB SDK for .NET. Provides methods for interacting with your SurrealDB database.
 - [Installation](reference/dotnet/installation.md)
   In this section, you will learn how to install the .NET SDK in your project.
 - [Authenticate](reference/dotnet/methods/authenticate.md)
@@ -1165,7 +1153,7 @@ _1089 pages_
 - [Embedding](reference/golang/embedding.md)
   The surrealdb.c C FFI library contains Go bindings that can be used to access an embedded SurrealDB instance.
 - [Go SDK](reference/golang/index.md)
-  The SurrealDB SDK for Go enables simple and advanced querying of a remote database from server-side applications.
+  The official SurrealDB SDK for Go. Simple and advanced querying of a remote database from server-side applications.
 - [Installation](reference/golang/installation.md)
   The SurrealDB Go SDK can be installed with a single go get command.
 - [LiveStream](reference/java/api/core/live-stream.md)
@@ -1219,7 +1207,7 @@ _1089 pages_
 - [Value types](reference/java/concepts/value-types.md)
   The Java SDK maps SurrealDB data types to native Java types and provides custom classes for complex values.
 - [Java SDK](reference/java/index.md)
-  The SurrealDB SDK for Java enables simple and advanced querying of a remote or embedded database.
+  The official SurrealDB SDK for Java. Simple and advanced querying of a remote or embedded database.
 - [Installation](reference/java/installation.md)
   The SurrealDB SDK for Java is available on Maven Central and can be installed using Gradle or Maven.
 - [Core classes](reference/javascript/api/core/index.md)
@@ -1303,7 +1291,7 @@ _1089 pages_
 - [Codecs](reference/javascript/concepts/codecs.md)
   The SQON library provides codecs for serialising and deserialising SurrealDB value types over CBOR and JSON wire formats.
 - [Connecting to SurrealDB](reference/javascript/concepts/connecting-to-surrealdb.md)
-  The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
+  Connecting to SurrealDB from JavaScript. Remote and embedded connections with the official SDK.
 - [Diagnostics](reference/javascript/concepts/diagnostics.md)
   The JavaScript SDK provides a diagnostics API for intercepting and inspecting protocol-level communication with SurrealDB.
 - [Embedded engines](reference/javascript/concepts/embedded-engines.md)
@@ -1339,7 +1327,7 @@ _1089 pages_
 - [Vue.js](reference/javascript/frameworks/vuejs.md)
   The SurrealDB SDK for JavaScript can be used in Vue.js applications to interact with your SurrealDB instance.
 - [JavaScript SDK](reference/javascript/index.md)
-  The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote or embedded database.
+  The official SurrealDB SDK for JavaScript. Simple and advanced querying of a remote or embedded database.
 - [Installation](reference/javascript/installation.md)
   In this section, you will learn how to install the JavaScript SDK in your project.
 - [SurrealClientConfig](reference/kotlin/api/core/client-config.md)
@@ -1387,7 +1375,7 @@ _1089 pages_
 - [Value types](reference/kotlin/concepts/value-types.md)
   Work with record identifiers, tables, and the JSON value model in the SurrealDB Kotlin SDK.
 - [Kotlin SDK](reference/kotlin/index.md)
-  The SurrealDB SDK for Kotlin is a coroutine-based, Kotlin Multiplatform client for querying a remote SurrealDB instance.
+  The official SurrealDB SDK for Kotlin. A coroutine-based, Kotlin Multiplatform client for querying a remote instance.
 - [Installation](reference/kotlin/installation.md)
   The SurrealDB SDK for Kotlin is published to Maven Central and can be installed using Gradle or Maven.
 - [Authentication](reference/mojo/concepts/authentication.md)
@@ -1409,7 +1397,7 @@ _1089 pages_
 - [Value types](reference/mojo/concepts/value-types.md)
   The SurrealDB tagged value types that the Mojo SDK encodes and decodes.
 - [Mojo SDK](reference/mojo/index.md)
-  The SurrealDB SDK for Mojo enables simple and advanced querying of a remote database over HTTP, HTTPS, and WebSocket.
+  The official SurrealDB SDK for Mojo. Simple and advanced querying of a remote database over HTTP, HTTPS, and WebSocket.
 - [Installation](reference/mojo/installation.md)
   In this section, you will learn how to install the SurrealDB Mojo SDK and add it to your project.
 - [api](reference/mojo/methods/api.md)
@@ -1483,7 +1471,7 @@ _1089 pages_
 - [Testing](reference/php/frameworks/laravel/testing.md)
   Test SurrealDB code in Laravel with the fake query executor, query assertions, and the trait that resets Surqlize's global state between tests.
 - [PHP SDK](reference/php/index.md)
-  The SurrealDB SDK for PHP lets you query a remote SurrealDB instance from any PHP application, with a stable v1 release and a v2 rewrite in alpha.
+  The official SurrealDB SDK for PHP. Query a remote instance from any PHP application, with a stable v1 release and a v2 rewrite in alpha.
 - [Code generation and CLI](reference/php/libraries/surqlize/code-generation-and-cli.md)
   Generate typed field adapters for Surqlize models and run the Surqlize CLI for field generation, schema application, and memory reports.
 - [Connections](reference/php/libraries/surqlize/connections.md)
@@ -1659,7 +1647,7 @@ _1089 pages_
 - [Value types](reference/python/concepts/value-types.md)
   The Python SDK provides custom types for representing SurrealDB-specific values like record identifiers, durations, and geometry.
 - [Python SDK](reference/python/index.md)
-  The SurrealDB SDK for Python enables simple and advanced querying of a remote or embedded database.
+  The official SurrealDB SDK for Python. Simple and advanced querying of a remote or embedded database.
 - [Installation](reference/python/installation.md)
   In this section, you will learn how to install the Python SDK in your project.
 - [EXPLAIN](reference/query-language/clauses/explain.md)
@@ -1745,7 +1733,7 @@ _1089 pages_
 - [ML functions](reference/query-language/functions/ml-functions/functions.md)
   These functions can be used when calculating outputs from a trained machine learning model that has been uploaded to the database.
 - [SurrealQL](reference/query-language/index.md)
-  Reference for SurrealQL, SurrealDB's query language: statements, clauses, functions, and language primitives.
+  SurrealQL statements, clauses, functions and language primitives. The full reference for the SurrealDB query language.
 - [Casting](reference/query-language/language-primitives/casting.md)
   In the SurrealDB type system, values can be converted to other values efficiently.
 - [Comments](reference/query-language/language-primitives/comments.md)
@@ -1961,7 +1949,7 @@ _1089 pages_
 - [HTTP protocol](reference/rest-api/http-protocol.md)
   The HTTP endpoints enable selection and modification of data, along with custom SurrealQL queries, using traditional RESTful HTTP endpoints.
 - [REST API](reference/rest-api/index.md)
-  SurrealDB exposes an HTTP-based REST API for executing queries, managing authentication, and performing CRUD operations.
+  The SurrealDB REST API: executing queries over HTTP. Manage authentication and perform CRUD operations.
 - [Postgres wire protocol](reference/rest-api/postgres-protocol.md)
   Connect to SurrealDB with standard Postgres clients and drivers, run SurrealQL or ISO GQL, and receive tabular typed results over the Postgres v3 wire protocol.
 - [RPC protocol](reference/rest-api/rpc-protocol.md)
@@ -2003,7 +1991,7 @@ _1089 pages_
 - [Rocket](reference/rust/frameworks/rocket.md)
   The SDK for Rust allows SurrealDB to be used as the storage backend for a Rocket web server
 - [Rust SDK](reference/rust/index.md)
-  The SurrealDB SDK for Rust enables you to interact with SurrealDB from client-side, server-side applications, systems, APIs, embedded systems, and IoT devices.
+  The official SurrealDB SDK for Rust. Use SurrealDB from client-side and server-side applications, systems, APIs, embedded systems, and IoT devices.
 - [authenticate](reference/rust/methods/authenticate.md)
   The .authenticate() method for the SurrealDB Rust SDK authenticates the current connection with a JWT token.
 - [begin](reference/rust/methods/begin.md)
@@ -2075,7 +2063,7 @@ _1089 pages_
 - [Data types](reference/swift/data-types.md)
   An overview of the data types used by the SurrealDB Swift SDK, including SurrealValue and SurrealRecordID.
 - [Swift SDK](reference/swift/index.md)
-  The SurrealDB SDK for Swift enables simple and advanced querying of a remote database from Apple-platform and server-side Swift applications.
+  The official SurrealDB SDK for Swift. Simple and advanced querying of a remote database from Apple-platform and server-side Swift applications.
 - [Installation](reference/swift/installation.md)
   In this section, you will learn how to install the Swift SDK in your project.
 - [authenticate](reference/swift/methods/authenticate.md)
@@ -2111,15 +2099,15 @@ _1089 pages_
 - [use](reference/swift/methods/use.md)
   The use() method for the SurrealDB Swift SDK switches to a specific namespace and database.
 - [SurrealDB Cloud](running/cloud.md)
-  Get a free managed SurrealDB instance with an email sign-in - persistent data without installing the server yourself.
+  Get a free managed SurrealDB instance with an email sign-in. Persistent data without installing the server yourself.
 - [Docker](running/docker.md)
   Use this tutorial to get started with SurrealDB from within Docker.
 - [File-backed](running/file-backed.md)
-  For the purposes of getting started with SurrealDB quickly, we will start a RocksDB database which persists data on the filesystem.
+  Start a RocksDB database that persists data on the filesystem. The quickest way to get started with data that survives a restart.
 - [In-memory](running/in-memory.md)
-  For the purposes of getting started with SurrealDB quickly, we will start an in-memory database which does not persist data on shutdown.
+  Start an in-memory SurrealDB database. The quickest way to get started, though data does not persist on shutdown.
 - [Installation](running/installation/index.md)
-  Install the SurrealDB server on your machine: macOS, Windows, Linux, and nightly builds.
+  Install the SurrealDB server on your machine: macOS, Windows, Linux. Nightly builds are covered too.
 - [Linux](running/installation/linux.md)
   Use this tutorial to install SurrealDB on Linux or Unix operating systems using the SurrealDB install script.
 - [macOS](running/installation/macos.md)
@@ -2129,10 +2117,10 @@ _1089 pages_
 - [Windows](running/installation/windows.md)
   Use this tutorial to install SurrealDB on Windows using the SurrealDB install script, or using third-party package managers like Chocolatey or Scoop.
 - [Multi-node](running/multi-node.md)
-  Run SurrealDB against distributed storage for horizontally scalable, highly available clusters.
+  Run SurrealDB against distributed storage: horizontally scalable. Highly available clusters.
 - [Running SurrealDB](running/overview.md)
-  Ways to run SurrealDB - from a browser sandbox to a managed cloud instance to installing on your own hardware.
+  Ways to run SurrealDB, from a browser sandbox to managed cloud. Or install it on your own hardware.
 - [SurrealDB Studio Sandbox](running/sandbox.md)
-  Try SurrealDB in the browser with the SurrealDB Studio Sandbox - no install and no account required.
+  Try SurrealDB in the browser with the Studio Sandbox. No install and no account required.
 - [What is SurrealDB](what-is-surrealdb.md)
   SurrealDB is a multi-model database written in Rust. This page covers what it stores, how it runs, and what SurrealDB Agent Memory adds for AI agents.

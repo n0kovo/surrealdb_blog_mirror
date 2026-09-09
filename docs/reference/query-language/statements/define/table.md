@@ -510,7 +510,7 @@ Also note that table views are not triggered when importing data.
 
 ## Defining permissions
 
-Table `PERMISSIONS` control what [record users](../../../../learn/security/authentication/authentication.md#record-users) (and [guests](../../../../learn/security/authorization/capabilities.md#guest-access), when guest access is enabled) may do with records in that table. They do not restrict [system users](../../../../learn/security/authentication/authentication.md#system-users) at the root, namespace, or database level, as those users are governed by roles instead.
+Table `PERMISSIONS` control what [record users](../../../../learn/security/authentication/users.md#record-users) (and [guests](../../../../learn/security/authorization/capabilities.md#guest-access), when guest access is enabled) may do with records in that table. They do not restrict [system users](../../../../learn/security/authentication/users.md#system-users) at the root, namespace, or database level, as those users are governed by roles instead.
 
 If you omit the clause, SurrealDB stores `PERMISSIONS NONE`. That denies `SELECT`, `CREATE`, `UPDATE`, and `DELETE` for record users until you grant access explicitly. The opposite shorthand is `PERMISSIONS FULL`, which allows all four operations.
 

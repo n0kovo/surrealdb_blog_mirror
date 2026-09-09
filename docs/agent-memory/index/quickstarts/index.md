@@ -12,6 +12,6 @@ _Auto-generated index — 3 pages._
 - [Embedded library quickstart](embedded.md)
   Integration surfaces for SurrealDB Agent Memory.
 - [Hosted quickstart](hosted.md)
-  Get up and running with SurrealDB Agent Memory on SurrealDB Cloud in five minutes.
+  Get SurrealDB Agent Memory running in five minutes. Runs on SurrealDB Cloud, with no server to install.
 - [Agent Memory on SurrealDB Cloud](surrealdb-cloud.md)
-  How SurrealDB Agent Memory contexts, authentication, and APIs work on SurrealDB Cloud.
+  How contexts, authentication and the APIs work on SurrealDB Cloud. For SurrealDB Agent Memory.

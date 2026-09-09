@@ -1,7 +1,7 @@
 ---
 position: 6
 title: Scaling
-description: When to resize an instance, what scales on each plan, and how to confirm a resize solved the bottleneck.
+description: When to resize an instance, and what scales on each plan. How to confirm a resize solved the bottleneck.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/scaling.mdx"
 ---
 

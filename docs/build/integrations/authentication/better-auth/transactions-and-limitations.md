@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Transactions & limitations
 
+The `@surrealdb/better-auth` adapter uses transactions internally, and exposes them for operations you want to group yourself. This page covers that behaviour and the limitations that come with it.
+
 ## Transactions
 
 Transaction support is built in. Better Auth uses transactions internally for operations that need atomicity (for example, creating a session alongside a new user record), so most applications never call the transaction API directly.

@@ -1,7 +1,7 @@
 ---
 position: 4
 title: Cross-layer linking
-description: How authoritative documents and experiential facts relate in the unified graph.
+description: How authoritative documents and experiential facts relate. Both live in the unified graph.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/reasoning/cross-layer-linking.mdx"
 ---
 

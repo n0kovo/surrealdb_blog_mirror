@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 Reflection is a reasoning operation over the memory store. Unlike retrieval, which surfaces existing facts that match a query, reflection asks SurrealDB Agent Memory to examine a set of memories and draw conclusions from them - to reason about patterns, identify trends, and synthesise insights that do not exist as explicit stored attributes.
 
-> [!NOTE]
 The result is a synthesised text insight backed by evidence citations. If `persist` is enabled, the synthesised insights are also stored as new experiential memory attributes, making them available to future queries.
 
 ## How it works

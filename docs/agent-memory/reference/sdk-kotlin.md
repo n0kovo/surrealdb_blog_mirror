@@ -1,13 +1,12 @@
 ---
 position: 6
 title: Kotlin SDK reference
-description: Package layout, configuration, and error model for the SurrealDB Agent Memory Kotlin client.
+description: The SurrealDB Agent Memory Kotlin client. Package layout, configuration, and the error model.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/reference/sdk-kotlin.mdx"
 ---
 
 # Kotlin SDK reference
 
-> [!NOTE]
 | Item | Value |
 | --- | --- |
 | Package | `com.surrealdb.kotlin.memory` |

@@ -9,7 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 When multiple agents collaborate on a shared task, they need access to the same memory. SurrealDB Agent Memory's scope model makes this natural: agents that share a scope dimension (such as `project`) can all read from and write to the same experiential memory, while retaining individual isolation where needed.
 
-> [!NOTE]
 ## Patterns
 
 There are two common patterns for multi-agent memory sharing:

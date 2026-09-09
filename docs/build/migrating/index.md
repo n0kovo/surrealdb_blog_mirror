@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Migrating to SurrealDB
-description: Moving data into SurrealDB from other databases, older SurrealDB releases, or files and streams.
+description: Moving data into SurrealDB from other databases, or older releases. Also from files and streams.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/migrating/index.mdx"
 ---
 

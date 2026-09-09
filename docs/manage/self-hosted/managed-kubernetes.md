@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Managed Kubernetes
 
+SurrealDB runs on Amazon EKS, Google GKE and Azure AKS. This page covers the three deployment models available on them - managed Scale, a self-hosted Enterprise cluster, and single-node RocksDB - and which one fits.
+
 > [!IMPORTANT]
 > Production **multi-node** SurrealDB uses shared distributed storage with replication and consensus. For managed HA, use the [Scale plan](https://surrealdb.com/pricing/scale). Self-hosted multi-node clusters on Kubernetes are available with [SurrealDB Enterprise](https://surrealdb.com/enterprise).
 

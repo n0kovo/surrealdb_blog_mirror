@@ -7,6 +7,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # IoT and telemetry patterns
 
+Sensor data arrives constantly and is almost always read back by time range, which makes the record ID the main modelling decision. This page works through an IoT example covering nested fields, array-based record IDs, range queries over them, and metadata attached through record links.
+
 ## Modelling time series data in SurrealDB
 
 Let’s explore a practical example using IoT sensor data.

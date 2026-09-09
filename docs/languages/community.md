@@ -1,7 +1,7 @@
 ---
 position: 11
 title: Community SDKs
-description: Community-maintained and experimental SurrealDB clients for languages beyond the official SDKs.
+description: Community-maintained and experimental SurrealDB clients. For languages beyond the official SDKs.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/languages/community.mdx"
 ---
 

@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Why agentic memory?
-description: Why conversational agents need structured memory beyond plain retrieval.
+description: Why conversational agents need structured memory. Plain retrieval is not enough on its own.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/index/welcome/why-agentic-memory.mdx"
 ---
 

@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Schema management
-description: "How to shape data in SurrealDB: tables, fields, indexes, events, tenancy, and related patterns."
+description: "Tables, fields, indexes and events: how to shape data in SurrealDB. Tenancy and related patterns too."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/schema-management/index.mdx"
 ---
 
@@ -26,5 +26,5 @@ For managing schema files across environments, synchronising locally and running
 
 ## Design and architecture
 
-- [Schema design](schema-design/schema-design.md) - choosing between schemafull and schemaless, and what each costs
+- [Schema design](schema-design/index.md) - choosing between schemafull and schemaless, and what each costs
 - [Namespace & database architecture](multi-tenancy/namespace-and-database-architecture.md) - how to lay out namespaces and databases for multiple tenants

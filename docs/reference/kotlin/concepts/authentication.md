@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Authentication
 
-The Kotlin SDK supports the full range of SurrealDB [authentication](../../../learn/security/authentication/authentication.md) methods: root, namespace, and database users, as well as record (scoped) access. Credentials are supplied as a [`JsonObject`](value-types.md), built with [`buildJsonObject`](https://kotlinlang.org/api/kotlinx.serialization/kotlinx-serialization-json/kotlinx.serialization.json/build-json-object.html).
+The Kotlin SDK supports the full range of SurrealDB [authentication](../../../learn/security/authentication/users.md) methods: root, namespace, and database users, as well as record (scoped) access. Credentials are supplied as a [`JsonObject`](value-types.md), built with [`buildJsonObject`](https://kotlinlang.org/api/kotlinx.serialization/kotlinx-serialization-json/kotlinx.serialization.json/build-json-object.html).
 
 ## API references
 
@@ -48,7 +48,7 @@ The Kotlin SDK supports the full range of SurrealDB [authentication](../../../le
 
 ## Signing in
 
-Use [`.signin()`](../api/core/surreal-client.md#signin) with the credentials appropriate to the [level of access](../../../learn/security/authentication/authentication.md) you need. It returns the authentication token as a [`JsonElement`](value-types.md).
+Use [`.signin()`](../api/core/surreal-client.md#signin) with the credentials appropriate to the [level of access](../../../learn/security/authentication/users.md) you need. It returns the authentication token as a [`JsonElement`](value-types.md).
 
 ```kotlin
 
@@ -125,4 +125,4 @@ val client = SurrealClient(
 - [SurrealClient API reference](../api/core/surreal-client.md) for complete method signatures
 - [Client configuration](../api/core/client-config.md) for `credentialProvider` and renewal options
 - [Multiple sessions](multiple-sessions.md) for per-session authentication
-- [SurrealDB authentication](../../../learn/security/authentication/authentication.md) for an overview of authentication concepts
+- [SurrealDB authentication](../../../learn/security/authentication/users.md) for an overview of authentication concepts

@@ -1,8 +1,10 @@
 # Category: releases
 
-_56 posts_  
+_57 posts_  
 [← Index](../../README.md)
 
+- **2026-09-10** · [SurrealDB Cloud is now available on Microsoft Azure](../2026/09/surrealdb-cloud-is-now-available-on-microsoft-azure.md)  
+  `releases` `company` — SurrealDB Cloud now runs on Microsoft Azure, so teams standardised on Azure can deploy inside the cloud they have already approved.
 - **2026-09-03** · [Announcing the Mastra integration for SurrealDB and Agent Memory](../2026/09/announcing-the-mastra-integration-for-surrealdb-and-agent-memory.md)  
   `releases` `ai` — One package gives Mastra agents a single database for conversations, workflow state, observability and vectors, plus managed memory that extracts and semantically recalls facts.
 - **2026-09-02** · [SurrealDB Cloud is now available in Frankfurt, Germany](../2026/09/surrealdb-cloud-is-now-available-in-frankfurt-germany.md)  

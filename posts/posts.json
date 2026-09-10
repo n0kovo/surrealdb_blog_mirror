@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-09-09T10:42:12.981969+00:00",
-  "count": 266,
+  "generated_at": "2026-09-10T10:31:12.477399+00:00",
+  "count": 267,
   "posts": [
+    {
+      "slug": "surrealdb-cloud-is-now-available-on-microsoft-azure",
+      "title": "SurrealDB Cloud is now available on Microsoft Azure",
+      "summary": "SurrealDB Cloud now runs on Microsoft Azure, so teams standardised on Azure can deploy inside the cloud they have already approved.",
+      "publishDate": "2026-09-10T10:05:38.000Z",
+      "categories": [
+        "releases",
+        "company"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/ehrhgg9ppwlhv1cwdid950ae.auto",
+      "source": "https://surrealdb.com/blog/surrealdb-cloud-is-now-available-on-microsoft-azure",
+      "local_path": "2026/09/surrealdb-cloud-is-now-available-on-microsoft-azure.md"
+    },
     {
       "slug": "multi-hop-graph-traversal-inside-surrealdb",
       "title": "Multi-hop graph traversal inside SurrealDB",

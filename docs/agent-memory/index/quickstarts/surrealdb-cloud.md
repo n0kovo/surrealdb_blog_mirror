@@ -24,7 +24,7 @@ Customers integrate against the **context host** and **`sk-ctx-…` API keys** f
 | --- | --- |
 | **Owner** | Subscribe to SurrealDB Agent Memory plans, billing, delete contexts |
 | **Admin** | Create contexts, mint API keys, call admin proxy routes (principals, scopes, grants, usage) |
-| **Member** | Use Playground, Memory, Documents, and Scopes in SurrealDB Studio; broker a short-lived access token for SDK use |
+| **Member** | Use Workbench, Lookup, Knowledge graph, Documents, and Scopes in SurrealDB Studio; broker a short-lived access token for SDK use |
 
 Admin proxy routes return **403** for members. See [Key policy](../../reference/configuration.md#key-policy) for how self-service and Cloud-brokered keys are governed.
 
@@ -34,8 +34,10 @@ Admin proxy routes return **403** for members. See [Key policy](../../reference/
 | --- | --- |
 | Context list, deploy, billing, delete | Yes |
 | API keys + per-context endpoint | Yes |
-| Playground (live chat + memory updates) | Yes |
-| Memory explorer (entities, relations, traces) | Yes |
+| Overview (principal, access, and what lives in the context) | Yes |
+| Workbench (chat, tune retrieval, inspect what a reply recalled and learned) | Yes |
+| Lookup (ask what the context knows about one thing) | Yes |
+| Knowledge graph (everything the context knows as one navigable graph) | Yes |
 | Documents (upload, browse, search) | Yes |
 | Scopes (register and browse paths) | Yes |
 | Integration snippets (SDK, REST, MCP, frameworks) | Yes |
@@ -47,35 +49,36 @@ For terminal-first **remember** / **recall**, see [Hosted quickstart](https://su
 
 This walkthrough uses SurrealDB Studio only - no terminal and no API key. When you finish, you will have a live context that stores and recalls memory.
 
-You need the **Owner** or **Admin** role to deploy a context. Members can use the Playground, Memory, and Documents in a context that already exists.
+You need the **Owner** or **Admin** role to deploy a context. Members can use the Workbench, Lookup, and Documents in a context that already exists.
 
 ### 1. Deploy a context
 
-1. In [SurrealDB Studio](https://studio.surrealdb.com), open **Contexts** from the left sidebar.
+1. In [SurrealDB Studio](https://studio.surrealdb.com), open **Agent Memory** from the left sidebar.
 2. Click **Deploy new context** at the top of the screen.
 3. Give the context a name. Any name works.
-4. Select a region. **US West** is the region available today.
+4. Select a region.
 5. Click **Create context**. Provisioning takes a minute or two.
 
 When provisioning finishes, Studio opens the context screen. The context is ready to use.
 
-### 2. Explore in the Playground
+### 2. Explore in the Workbench
 
-The Playground is a chat surface that writes to memory as you use it.
+The Workbench is a chat surface that writes to memory as you use it.
 
-1. Open **Playground** from the left sidebar.
+1. Open **Workbench** from the left sidebar.
 2. Describe facts, entities, and relationships in plain language. SurrealDB Agent Memory extracts them and stores them.
 3. Ask SurrealDB Agent Memory a question. It answers from what it has learned.
 4. Watch the **Graph** panel on the right. It fills out as SurrealDB Agent Memory ingests your conversations and documents.
 5. Open the **Activity** panel on the right. It shows what SurrealDB Agent Memory recalls and learns from one message to the next.
 
 > [!NOTE]
-> Playground turns are durable memory in this context, and they compete with your own data at retrieval time. For a clean evaluation run, use a separate context. See [Contexts and scope](https://surrealdb.com/docs/agent-memory/mental-model/contexts-and-scope).
+> Workbench turns are durable memory in this context, and they compete with your own data at retrieval time. For a clean evaluation run, use a separate context. See [Contexts and scope](https://surrealdb.com/docs/agent-memory/mental-model/contexts-and-scope).
 
 ### 3. Add documents and inspect memory
 
 1. Open **Documents** from the left sidebar. Upload files for SurrealDB Agent Memory to ingest.
-2. Open **Memory** from the left sidebar. Review the entities SurrealDB Agent Memory stores and the traces behind your Playground messages.
+2. Open **Lookup** from the left sidebar and ask what the context knows about a topic. It answers from the facts it holds on that topic, drawn from your Workbench turns and the documents you uploaded.
+3. Open **Knowledge graph** to see everything the context knows as one navigable graph, rather than one topic at a time.
 
 Your context is now live and learning. To move from Studio to code, create an API key in the context's **API keys** view, then follow the [Hosted quickstart](https://surrealdb.com/docs/agent-memory/quickstarts/hosted).
 

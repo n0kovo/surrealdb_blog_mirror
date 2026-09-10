@@ -1,8 +1,10 @@
 # All Posts
 
-_266 posts_  
+_267 posts_  
 [← Index](../README.md)
 
+- **2026-09-10** · [SurrealDB Cloud is now available on Microsoft Azure](2026/09/surrealdb-cloud-is-now-available-on-microsoft-azure.md)  
+  `releases` `company` — SurrealDB Cloud now runs on Microsoft Azure, so teams standardised on Azure can deploy inside the cloud they have already approved.
 - **2026-09-08** · [Multi-hop graph traversal inside SurrealDB](2026/09/multi-hop-graph-traversal-inside-surrealdb.md)  
   `tutorials` `ai` — Move breadth-first search into SurrealDB: recursive traversal with a depth range, predicates pushed into every hop, and what EXPLAIN says about edge indexes.
 - **2026-09-03** · [Why does my vector search return nothing when I add a filter?](2026/09/why-does-my-vector-search-return-nothing-when-i-add-a-filter-2.md)  

@@ -409,6 +409,13 @@ Resource limits for [ISO GQL](../../../learn/querying/gql/overview.md) `MATCH` e
   <tbody>
 
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_GRAPH_INLINE_PROPS_CAP` *Since v3.3.0*</td>
+      <td scope="row" data-label="Default">64</td>
+      <td scope="row" data-label="Allowed values">A byte size</td>
+      <td scope="row" data-label="Notes">Largest encoded payload an <a href="/docs/reference/query-language/statements/define/field#using-inline-to-filter-a-traversal-during-the-scan">`INLINE`</a> field set may occupy inside a graph adjacency entry. A larger payload spills, leaving the values on the edge record only.</td>
+    </tr>
+
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_EXTERNAL_SORTING_BUFFER_LIMIT`</td>
       <td scope="row" data-label="Default">50000</td>
       <td scope="row" data-label="Allowed values">A usize</td>

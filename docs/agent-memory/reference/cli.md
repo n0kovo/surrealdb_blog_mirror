@@ -12,25 +12,25 @@ SurrealDB Agent Memory ships two binaries:
 | Binary | Role |
 | --- | --- |
 | **`spectrond`** | Server (runs in your container or cluster): `api`, `worker`, `scheduler`, `management`, `bootstrap` |
-| **`spectron`** | Client: `remember`, `recall`, `chat`, `documents`, provisioning helpers |
+| **`agent-memory`** | Client: `remember`, `recall`, `chat`, `documents`, provisioning helpers |
 
-The **`spectron`** CLI is what integrators install locally. **`spectrond`** is operated via Docker, Kubernetes, or your platform team.
+The **`agent-memory`** CLI is what integrators install locally. **`spectrond`** is operated via Docker, Kubernetes, or your platform team.
 
 > [!NOTE]
-> Both binaries carry **Spectron**, the project name SurrealDB Agent Memory was developed under. The product name changed ahead of the executables, which will be renamed in a future release.
+> The client binary is **`agent-memory`**. It was called `spectron` before the CLI rebrand; if you installed it earlier, `agent-memory upgrade` replaces it. The server binary is still **`spectrond`**, and every `SPECTRON_*` environment variable keeps its name — see [Configuration](configuration.md).
 
 ## Installing the CLI
 
 Prebuilt `spectron` binaries for macOS, Linux, and Windows are published to `download.surrealdb.com` under a version path. On macOS and Linux the install script resolves the latest version, verifies the checksum, and installs to `/usr/local/bin` (or `~/.local/bin` when that is not writable):
 
 ```bash
-curl -fsSL https://download.surrealdb.com/spectron/install.sh | sh
+curl -fsSL https://download.surrealdb.com/agent-memory/install.sh | sh
 ```
 
 Set **`SPECTRON_INSTALL_DIR`** to install somewhere else. Once installed, the CLI updates itself in place, so you do not need to re-run the script:
 
 ```bash
-spectron upgrade
+agent-memory upgrade
 ```
 
 ### Manual download
@@ -38,8 +38,8 @@ spectron upgrade
 To install by hand, resolve the current version from the pointer file, then download the archive for your platform:
 
 ```bash
-VERSION=$(curl -fsSL https://download.surrealdb.com/spectron/latest.txt)
-BASE="https://download.surrealdb.com/spectron/${VERSION}/spectron-${VERSION}"
+VERSION=$(curl -fsSL https://download.surrealdb.com/agent-memory/latest.txt)
+BASE="https://download.surrealdb.com/agent-memory/${VERSION}/agent-memory-${VERSION}"
 
 # macOS (Apple Silicon)
 curl -fsSL "${BASE}.darwin-arm64.tgz" | tar -xz && sudo mv spectron /usr/local/bin/
@@ -54,7 +54,7 @@ curl -fsSL "${BASE}.linux-amd64.tgz" | tar -xz && sudo mv spectron /usr/local/bi
 curl -fsSL "${BASE}.linux-arm64.tgz" | tar -xz && sudo mv spectron /usr/local/bin/
 ```
 
-On **Windows**, download `spectron-<version>.windows-amd64.zip` from `https://download.surrealdb.com/spectron/<version>/` (use `latest.txt` for `<version>`), extract it, and put the folder containing `spectron.exe` on `PATH`. `spectron upgrade` works on Windows once a first install is on `PATH`.
+On **Windows**, download `spectron-<version>.windows-amd64.zip` from `https://download.surrealdb.com/agent-memory/<version>/` (use `latest.txt` for `<version>`), extract it, and put the folder containing `spectron.exe` on `PATH`. `agent-memory upgrade` works on Windows once a first install is on `PATH`.
 
 ### Verifying the download
 
@@ -77,7 +77,7 @@ Most `spectron` subcommands accept:
 | `--context-id` / `-c` | `SPECTRON_CONTEXT_ID` | Context id in `/api/v1/{context_id}/...` |
 
 ```bash
-spectron login --url http://localhost:9090 \
+agent-memory login --url http://localhost:9090 \
   --api-key "$SPECTRON_API_KEY" \
   --context-id dev
 ```
@@ -86,10 +86,10 @@ Stores a named profile for later commands.
 
 ### Local config and secrets
 
-`spectron login` and `spectron config set` write profiles to `~/.config/spectron/config.toml` with owner-only permissions (`0600` on Unix). **`config set`** prints the key name, never the value. To display a stored secret:
+`agent-memory login` and `agent-memory config set` write profiles to `~/.config/spectron/config.toml` with owner-only permissions (`0600` on Unix). **`config set`** prints the key name, never the value. To display a stored secret:
 
 ```bash
-spectron config get api_key --reveal
+agent-memory config get api_key --reveal
 ```
 
 Without **`--reveal`**, `api_key` is shown as `<hidden>`.
@@ -160,12 +160,12 @@ Common flags:
 
 | Command | REST equivalent |
 | --- | --- |
-| `spectron remember "…"` | `POST /api/v1/{ctx}/facts` |
-| `spectron recall "…"` | `POST /api/v1/{ctx}/query` |
-| `spectron context "…"` | `POST /api/v1/{ctx}/context` |
-| `spectron chat [message]` | `POST /api/v1/{ctx}/chat` |
-| `spectron reflect "…"` | `POST /api/v1/{ctx}/reflect` |
-| `spectron forget "…"` | `POST /api/v1/{ctx}/forget` |
+| `agent-memory remember "…"` | `POST /api/v1/{ctx}/facts` |
+| `agent-memory recall "…"` | `POST /api/v1/{ctx}/query` |
+| `agent-memory context "…"` | `POST /api/v1/{ctx}/context` |
+| `agent-memory chat [message]` | `POST /api/v1/{ctx}/chat` |
+| `agent-memory reflect "…"` | `POST /api/v1/{ctx}/reflect` |
+| `agent-memory forget "…"` | `POST /api/v1/{ctx}/forget` |
 
 `forget` supports **`--dry-run`** to preview matches without expiring records.
 
@@ -173,15 +173,15 @@ Common flags:
 
 `recall` flags: `--limit`, `--mode hybrid|vector|bm25|graph`, `--include facts,passages`. Pass **`scope`** on the REST `/query` body - the CLI does not expose `--scope` on `recall` today.
 
-**Unsupported CLI flags (rejected with a clear error):** `remember --confidence`, `--trust`, `--location`; `recall --min-trust`; `spectron lifecycle expire --older-than` (expiry thresholds are configured per Context, not per CLI invocation). Use REST or management API where those controls exist.
+**Unsupported CLI flags (rejected with a clear error):** `remember --confidence`, `--trust`, `--location`; `recall --min-trust`; `agent-memory lifecycle expire --older-than` (expiry thresholds are configured per Context, not per CLI invocation). Use REST or management API where those controls exist.
 
 ### Documents
 
 ```bash
-spectron documents upload ./manual.pdf --scope org/acme/team/eng --label team=eng
-spectron ingest ./folder --scope org/acme/team/eng --label team=eng
-spectron documents list
-spectron recall "return policy" --include passages
+agent-memory documents upload ./manual.pdf --scope org/acme/team/eng --label team=eng
+agent-memory ingest ./folder --scope org/acme/team/eng --label team=eng
+agent-memory documents list
+agent-memory recall "return policy" --include passages
 ```
 
 `--scope` on upload narrows tagging to a path within the caller's `memory:write` region (same semantics as `remember --scope`). `--label` may be repeated for `key=value` tags stamped on the document and chunks. Omit `--scope` to use the full write region.
@@ -189,9 +189,9 @@ spectron recall "return policy" --include passages
 ### Sessions, entities, traces
 
 ```bash
-spectron sessions list
-spectron entities show Person/alice
-spectron traces show <trace_id>
+agent-memory sessions list
+agent-memory entities show Person/alice
+agent-memory traces show <trace_id>
 ```
 
 ### MCP server
@@ -219,7 +219,7 @@ URL:
 
 ```bash
 export SPECTRON_MANAGEMENT_GRPC_URL=http://127.0.0.1:9091   # spectrond speaks gRPC
-export SPECTRON_MANAGEMENT_URL=http://127.0.0.1:9090        # spectron speaks REST
+export SPECTRON_MANAGEMENT_URL=http://127.0.0.1:9090        # agent-memory speaks REST
 export SPECTRON_MANAGEMENT_API_KEY=sp-…
 
 spectrond principals create demo "Planner bot" \
@@ -230,7 +230,7 @@ spectrond principals create demo "Planner bot" \
   --api-key "$SPECTRON_MANAGEMENT_API_KEY"
 
 # thin client (reads SPECTRON_MANAGEMENT_* + SPECTRON_CONTEXT_ID from env)
-spectron principals create "Planner bot" --kind agent -c demo \
+agent-memory principals create "Planner bot" --kind agent -c demo \
   --grant memory:read=team/eng --grant memory:write=team/eng
 ```
 
@@ -238,7 +238,7 @@ spectron principals create "Planner bot" --kind agent -c demo \
 
 ```powershell
 $env:SPECTRON_MANAGEMENT_GRPC_URL = "http://127.0.0.1:9091"   # spectrond speaks gRPC
-$env:SPECTRON_MANAGEMENT_URL = "http://127.0.0.1:9090"   # spectron speaks REST
+$env:SPECTRON_MANAGEMENT_URL = "http://127.0.0.1:9090"   # agent-memory speaks REST
 $env:SPECTRON_MANAGEMENT_API_KEY = "sp-…"
 
 spectrond principals create demo "Planner bot" `
@@ -249,7 +249,7 @@ spectrond principals create demo "Planner bot" `
   --api-key "$SPECTRON_MANAGEMENT_API_KEY"
 
 # thin client (reads SPECTRON_MANAGEMENT_* + SPECTRON_CONTEXT_ID from env)
-spectron principals create "Planner bot" --kind agent -c demo `
+agent-memory principals create "Planner bot" --kind agent -c demo `
   --grant memory:read=team/eng --grant memory:write=team/eng
 ```
 
@@ -271,8 +271,8 @@ above.
 
 | Command | Description |
 | --- | --- |
-| `spectron tui` | Four-pane workbench: input, entity tree, trace timeline, inspector (`Tab` cycles panes). `--session <id>` pins a session; `--replay <path>` plays a recorded jsonl without HTTP. |
-| `spectron repl` | Interactive REPL: bare lines and **`/remember`** write facts (`infer: full`); `/recall`, `/chat`, `/inspect`, `/scope`, `/as-of`, `/upload`, `/forget`, `/record`; tab completion from prior responses. Colour is on when stdout is a terminal; pass **`--ascii`** for plain output (same flag as `spectron tui`). |
+| `agent-memory tui` | Four-pane workbench: input, entity tree, trace timeline, inspector (`Tab` cycles panes). `--session <id>` pins a session; `--replay <path>` plays a recorded jsonl without HTTP. |
+| `agent-memory repl` | Interactive REPL: bare lines and **`/remember`** write facts (`infer: full`); `/recall`, `/chat`, `/inspect`, `/scope`, `/as-of`, `/upload`, `/forget`, `/record`; tab completion from prior responses. Colour is on when stdout is a terminal; pass **`--ascii`** for plain output (same flag as `agent-memory tui`). |
 
 Scope in the REPL and TUI uses **slash paths** (`org/acme/user/alice`), matching the wire `ScopeSet`.
 
@@ -284,6 +284,6 @@ Interactive mode supports structured triple writes:
 /fact entity=Person/Alice attr=role val=CTO
 ```
 
-Uses the same triple syntax as `spectron remember --triple` (`infer=triples`).
+Uses the same triple syntax as `agent-memory remember --triple` (`infer=triples`).
 
 Run `spectron --help` for the full command tree.

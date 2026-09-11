@@ -25,8 +25,8 @@ Content-Type: application/json
 ```
 
 ```bash
-spectron sessions list
-spectron sessions show <session_id>
+agent-memory sessions list
+agent-memory sessions show <session_id>
 ```
 
 ## What is a turn?
@@ -87,8 +87,8 @@ Session-scoped **state** and **diff** endpoints support debugging what changed a
 ## CLI transcript tooling
 
 ```bash
-spectron sessions list
-spectron sessions show sess_01hw…
+agent-memory sessions list
+agent-memory sessions show sess_01hw…
 ```
 
 See [Creating sessions](https://surrealdb.com/docs/agent-memory/sessions/creating-sessions) and [Adding turns](https://surrealdb.com/docs/agent-memory/sessions/adding-turns) for operational detail aligned with the current API.

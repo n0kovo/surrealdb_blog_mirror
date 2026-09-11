@@ -33,8 +33,8 @@ _45 posts_
   `featured` `company` `tutorials` — The Surreal Sync command-line tool lets you migrate your data from three sources into SurrealDB with a single terminal command.
 - **2025-07-31** · [Does the edge need a new database?](../2025/07/does-the-edge-need-a-new-database.md)  
   `featured` `company` — As AI shifts from the cloud to the edge, it’s becoming clear that yesterday’s embedded databases weren’t built for today’s on-device intelligence.
-- **2025-07-18** · [The new era of data lakes: knowledge lakes](../2025/07/the-new-era-of-data-lakes-knowledge-lakes.md)  
-  `featured` `company` — Knowledge lakes are data lakes with a knowledge graph on top: the same storage, but with relationships and context that make the data queryable as knowledge.
+- **2025-07-18** · [The new era of data lakes: context layers](../2025/07/the-new-era-of-data-lakes-knowledge-lakes.md)  
+  `featured` `company` — Context layers are data lakes with a knowledge graph on top: the same storage, but with relationships and context that make the data queryable as knowledge.
 - **2025-07-08** · [The power of SurrealDB embedded](../2025/07/the-power-of-surrealdb-embedded.md)  
   `featured` `company` — SurrealDB embedded is a lightweight, secure, AI database built in Rust, made for offline edge apps, with rich data models, flexible schema, and performance.
 - **2025-06-27** · [The state of Agentic AI and the need for Agentic Memory](../2025/06/the-state-of-agentic-ai-and-the-need-for-agentic-memory.md)  

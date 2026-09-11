@@ -17,7 +17,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 Add the dependency to your skill and set the connection details as environment variables in Zo:
 
 ```bash
-pip install --pre surrealdb
+pip install --pre 'surrealdb[memory]'
 ```
 
 ```bash
@@ -70,7 +70,7 @@ A skill recalls context with `get_context()` before it answers, then records the
 
 ## Scope per user
 
-Each helper scopes to the Zo user with a slash path such as `user/alice`. Register paths with `spectron scopes create` before first use. On **SurrealDB Cloud**, use your context host from SurrealDB Studio **API keys** as the `AGENT_MEMORY_ENDPOINT`.
+Each helper scopes to the Zo user with a slash path such as `user/alice`. Register paths with `agent-memory scopes create` before first use. On **SurrealDB Cloud**, use your context host from SurrealDB Studio **API keys** as the `AGENT_MEMORY_ENDPOINT`.
 
 ## Next steps
 

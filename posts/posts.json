@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T10:31:12.477399+00:00",
+  "generated_at": "2026-09-11T10:32:20.457423+00:00",
   "count": 267,
   "posts": [
     {
@@ -1415,15 +1415,15 @@
     },
     {
       "slug": "the-new-era-of-data-lakes-knowledge-lakes",
-      "title": "The new era of data lakes: knowledge lakes",
-      "summary": "Knowledge lakes are data lakes with a knowledge graph on top: the same storage, but with relationships and context that make the data queryable as knowledge.",
+      "title": "The new era of data lakes: context layers",
+      "summary": "Context layers are data lakes with a knowledge graph on top: the same storage, but with relationships and context that make the data queryable as knowledge.",
       "publishDate": "2025-07-18T00:00:00.000Z",
       "categories": [
         "featured",
         "company"
       ],
       "readTime": null,
-      "imageUrl": "https://cdn.surrealdb.com/d1t1e3tgdsrs739jm7fg.auto",
+      "imageUrl": "https://cdn.surrealdb.com/6ynffq3dcxztlso9bz09kid1.auto",
       "source": "https://surrealdb.com/blog/the-new-era-of-data-lakes-knowledge-lakes",
       "local_path": "2025/07/the-new-era-of-data-lakes-knowledge-lakes.md"
     },

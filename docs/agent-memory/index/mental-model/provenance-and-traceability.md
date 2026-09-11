@@ -42,7 +42,7 @@ Extraction and reconciliation emit **`decision_trace`** nodes. Ranked reads emit
 ## Practical surfaces
 
 - HTTP: `GET /api/v1/{ctx}/traces`, `GET /api/v1/{ctx}/traces/{id}` ([REST API](../../reference/rest-api.md)).
-- CLI: `spectron inspect trace:…`, `spectron entities history …` ([Surface, models, and security](https://surrealdb.com/docs/agent-memory/architecture/surface-security-and-models)).
+- CLI: `agent-memory inspect trace:…`, `agent-memory entities history …` ([Surface, models, and security](https://surrealdb.com/docs/agent-memory/architecture/surface-security-and-models)).
 
 ## Related topics
 

@@ -65,7 +65,7 @@ curl -sS "$SPECTRON_URL/api/v1/$SPECTRON_CONTEXT_ID/query" \
   -d '{"query":"What is Alice'\''s role?","limit":10,"scope":["org/acme/user/alice"]}'
 ```
 
-The [`spectron`](../../reference/cli.md) CLI wraps the same paths (`spectron remember`, `spectron recall`, `spectron chat`).
+The [`spectron`](../../reference/cli.md) CLI wraps the same paths (`agent-memory remember`, `agent-memory recall`, `agent-memory chat`).
 
 ## Full reference
 

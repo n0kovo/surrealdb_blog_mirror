@@ -53,7 +53,7 @@ Both clients are pinned to one context and call `/api/v1/{context}/…`. Pass `c
 
 ## Scope
 
-On the wire, scope is a **ScopeSet**: an ordered array of slash-path strings (for example `["org/acme/user/alice"]`). Register paths with `spectron scopes create` before first use; see [Contexts and scope](https://surrealdb.com/docs/agent-memory/mental-model/contexts-and-scope).
+On the wire, scope is a **ScopeSet**: an ordered array of slash-path strings (for example `["org/acme/user/alice"]`). Register paths with `agent-memory scopes create` before first use; see [Contexts and scope](https://surrealdb.com/docs/agent-memory/mental-model/contexts-and-scope).
 
 The Python client accepts:
 
@@ -192,10 +192,10 @@ from surrealdb.memory import RecallResponse, RecallHit
 For agent frameworks that should auto-record every turn, SurrealDB Agent Memory ships Python adapters that build on this SDK:
 
 ```bash
-pip install spectron-crew-ai              # CrewAI
-pip install spectron-openai-agents-sdk    # OpenAI Agents SDK
-pip install spectron-strands-agents       # Strands Agents
-pip install spectron-google-adk           # Google ADK
+pip install agent-memory-crew-ai              # CrewAI
+pip install agent-memory-openai-agents-sdk    # OpenAI Agents SDK
+pip install agent-memory-strands-agents       # Strands Agents
+pip install agent-memory-google-adk           # Google ADK
 ```
 
 → [Agent frameworks](../frameworks/crewai.md)
@@ -205,8 +205,8 @@ pip install spectron-google-adk           # Google ADK
 The **`spectron`** binary exposes the same operations without the SDK:
 
 ```bash
-spectron remember "Alice was promoted to CTO."
-spectron recall "What is Alice's role?" --json
+agent-memory remember "Alice was promoted to CTO."
+agent-memory recall "What is Alice's role?" --json
 ```
 
 → [CLI reference](../../reference/cli.md) · [REST API](../../reference/rest-api.md)

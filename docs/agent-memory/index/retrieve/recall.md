@@ -9,12 +9,12 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 SurrealDB Agent Memory exposes one fused read path over the **unified substrate**: structured facts from turns and passages from documents. Use **`POST /api/v1/{context_id}/query`** for ranked hits and **`POST /api/v1/{context_id}/context`** for a pre-formatted LLM block.
 
-Register scope paths before use (`spectron scopes create org/acme/user/alice`). See [Contexts and scope](https://surrealdb.com/docs/agent-memory/mental-model/contexts-and-scope).
+Register scope paths before use (`agent-memory scopes create org/acme/user/alice`). See [Contexts and scope](https://surrealdb.com/docs/agent-memory/mental-model/contexts-and-scope).
 
 ## Ranked hits - `/query`
 
 ```bash
-spectron recall "What role does Alice have?" --json \
+agent-memory recall "What role does Alice have?" --json \
   --url "$SPECTRON_URL" \
   --api-key "$SPECTRON_API_KEY" \
   --context-id "$SPECTRON_CONTEXT_ID" \
@@ -74,7 +74,7 @@ Content-Type: application/json
 ```
 
 ```bash
-spectron context "What role does Alice have?"
+agent-memory context "What role does Alice have?"
 ```
 
 ## Session-scoped context
@@ -94,7 +94,7 @@ POST /api/v1/{context_id}/documents/query
 ```
 
 ```bash
-spectron recall "return policy" --include passages
+agent-memory recall "return policy" --include passages
 ```
 
 ## Chat (composed recall + synthesis)
@@ -104,7 +104,7 @@ POST /api/v1/{context_id}/chat
 ```
 
 ```bash
-spectron chat "Summarise what you know about Alice"
+agent-memory chat "Summarise what you know about Alice"
 ```
 
 SurrealDB Agent Memory runs recall internally, then calls the configured response model. Use `--stream` for SSE.

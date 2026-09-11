@@ -46,7 +46,7 @@ Drop-in memory for the popular TypeScript AI SDKs, with recall and storage wrapp
 
 - **Cloudflare Workers AI**: the client inside a Worker, alongside Workers AI models.
 - **TanStack AI**: the `@surrealdb/memory` client in TanStack Start server routes.
-- **Vercel AI SDK**: `@surrealdb/spectron-vercel-ai`, via `wrapLanguageModel` middleware and a tool set.
+- **Vercel AI SDK**: `@surrealdb/agent-memory-vercel-ai`, via `wrapLanguageModel` middleware and a tool set.
 
 → [Cloudflare Workers AI](ai-sdks/cloudflare-workers-ai.md) · [TanStack AI](ai-sdks/tanstack-ai.md) · [Vercel AI SDK](ai-sdks/vercel-ai-sdk.md)
 
@@ -56,16 +56,16 @@ Harness adapters expose SurrealDB Agent Memory as agent tools and add automatic 
 
 | Framework | Package | Language |
 | --- | --- | --- |
-| CrewAI | `spectron-crew-ai` | Python |
-| Eve | `@surrealdb/spectron-eve` | TypeScript |
-| Google ADK | `spectron-google-adk` | Python |
-| Hermes Agent | `spectron-hermes` | Python |
+| CrewAI | `agent-memory-crew-ai` | Python |
+| Eve | `@surrealdb/agent-memory-eve` | TypeScript |
+| Google ADK | `agent-memory-google-adk` | Python |
+| Hermes Agent | `agent-memory-hermes` | Python |
 | LangChain / LangGraph | `@surrealdb/langchain`, `@surrealdb/langgraph` | TypeScript |
 | Mastra | `@surrealdb/mastra-ai` | TypeScript |
-| OpenAI Agents SDK | `spectron-openai-agents-sdk` | Python |
-| OpenClaw | `@surrealdb/spectron-openclaw` | TypeScript |
-| Pydantic AI | `spectron-pydantic-ai` | Python |
-| Strands Agents | `spectron-strands-agents` | Python |
+| OpenAI Agents SDK | `agent-memory-openai-agents-sdk` | Python |
+| OpenClaw | `@surrealdb/agent-memory-openclaw` | TypeScript |
+| Pydantic AI | `agent-memory-pydantic-ai` | Python |
+| Strands Agents | `agent-memory-strands-agents` | Python |
 
 → [CrewAI](frameworks/crewai.md) · [Eve](frameworks/eve.md) · [Google ADK](frameworks/google-adk.md) · [Hermes Agent](frameworks/hermes.md) · [LangChain](frameworks/langchain.md) · [Mastra](frameworks/mastra.md) · [OpenAI Agents SDK](frameworks/openai-agents.md) · [OpenClaw](frameworks/openclaw.md) · [Pydantic AI](frameworks/pydantic-ai.md) · [Strands Agents](frameworks/strands-agents.md)
 

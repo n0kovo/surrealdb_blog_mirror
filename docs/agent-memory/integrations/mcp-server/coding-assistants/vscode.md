@@ -47,7 +47,7 @@ To make the server available in every workspace instead, add the same entry to y
 ```json
 {
   "servers": {
-    "spectron": {
+    "agent-memory": {
       "type": "http",
       "url": "https://<your-context-host>/mcp",
       "headers": {
@@ -76,7 +76,7 @@ The `.vscode/mcp.json` file can be committed to your repository so the team shar
     }
   ],
   "servers": {
-    "spectron": {
+    "agent-memory": {
       "type": "http",
       "url": "https://<your-context-host>/mcp",
       "headers": {

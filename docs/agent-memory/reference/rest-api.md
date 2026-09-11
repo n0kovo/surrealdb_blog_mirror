@@ -64,8 +64,8 @@ A flat `["a", "b"]` means **a OR b**. For **a AND b** in one clause, nest: `[["a
 Register paths before first use:
 
 ```bash
-spectron scopes create org/acme
-spectron scopes create org/acme/user/alice
+agent-memory scopes create org/acme
+agent-memory scopes create org/acme/user/alice
 ```
 
 See [Contexts and scope](https://surrealdb.com/docs/agent-memory/mental-model/contexts-and-scope).

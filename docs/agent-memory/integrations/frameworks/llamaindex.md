@@ -16,7 +16,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 ```bash
 pip install llama-index
-pip install --pre surrealdb
+pip install --pre 'surrealdb[memory]'
 ```
 
 **Bash**
@@ -82,7 +82,7 @@ block = memory.query_context("what is the return policy?", k=8, lens=["org/acme"
 
 ## Scope per user
 
-Pass a `scope` on every call to isolate memory. A scope is a slash path or an array of paths, for example `["org/acme/user/alice"]`. Register paths with `spectron scopes create` before first use.
+Pass a `scope` on every call to isolate memory. A scope is a slash path or an array of paths, for example `["org/acme/user/alice"]`. Register paths with `agent-memory scopes create` before first use.
 
 ## Next steps
 

@@ -125,8 +125,8 @@ _113 posts_
   `releases` `featured` — Surrealist 3.5 introduces a fully redesigned Sidekick experience, a new Parameters view, a revamped functions view, and loads of other enhancements
 - **2025-07-22** · [Two new ways to keep an eye on your SurrealDB database](../2025/07/two-new-ways-to-keep-an-eye-on-your-surrealdb-database.md)  
   `featured` `tutorials` — Logging output to file and seeing the current tasks on a console are two new ways to gain greater insight into what your database is doing.
-- **2025-07-18** · [The new era of data lakes: knowledge lakes](../2025/07/the-new-era-of-data-lakes-knowledge-lakes.md)  
-  `featured` `company` — Knowledge lakes are data lakes with a knowledge graph on top: the same storage, but with relationships and context that make the data queryable as knowledge.
+- **2025-07-18** · [The new era of data lakes: context layers](../2025/07/the-new-era-of-data-lakes-knowledge-lakes.md)  
+  `featured` `company` — Context layers are data lakes with a knowledge graph on top: the same storage, but with relationships and context that make the data queryable as knowledge.
 - **2025-07-15** · [Ten more tips and tricks for your database schema](../2025/07/ten-more-tips-and-tricks-for-your-database-schema.md)  
   `featured` `tutorials` — Schema definition in SurrealDB is a powerful thing, and the more you know the more you can make your schema work for you.
 - **2025-07-09** · [Make a medical chatbot using GraphRAG with SurrealDB + LangChain](../2025/07/make-a-medical-chatbot-using-graphrag-with-surrealdb-langchain.md)  

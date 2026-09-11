@@ -34,7 +34,7 @@ Any MCP client can be configured by hand:
 ```json
 {
   "mcpServers": {
-    "spectron": {
+    "agent-memory": {
       "url": "https://<your-context-host>/mcp",
       "headers": {
         "Authorization": "Bearer <your-api-key>"

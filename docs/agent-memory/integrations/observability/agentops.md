@@ -16,7 +16,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 ```bash
 pip install agentops openai
-pip install --pre surrealdb
+pip install --pre 'surrealdb[memory]'
 ```
 
 **Bash**
@@ -78,7 +78,7 @@ The model call is captured in the AgentOps session automatically. To attribute t
 
 ## Scope per user
 
-Pass a `scope` on every SurrealDB Agent Memory call to isolate memory. A scope is a slash path or an array of paths, for example `["org/acme/user/alice"]`. Register paths with `spectron scopes create` before first use.
+Pass a `scope` on every SurrealDB Agent Memory call to isolate memory. A scope is a slash path or an array of paths, for example `["org/acme/user/alice"]`. Register paths with `agent-memory scopes create` before first use.
 
 ## Next steps
 

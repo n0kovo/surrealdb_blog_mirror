@@ -8,9 +8,11 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 # SurrealKit
 
 > [!NOTE]
-> All of the example commands in this tutorial assume a database running at `http://localhost:8000`, a root user named `root` with the password `secret`, a namespace `main` and a database `main`.
-> As host `http://localhost:8000`, namespace `main` and database `main` are default values, only the necessary `--user root` and `--pass secret` will be shown alongside each command.
-> To test these commands without `--user root` and `--pass secret`, authentication can be disabled by passing in the `--unauthenticated` flag when [starting the SurrealDB server](../../reference/cli/surrealdb-cli/commands/start.md).
+> Examples on these pages assume a [SurrealDB Cloud](../instances/index.md) instance with the namespace `main`, the database `main`, and a root user named `root` with the password `secret`. Set the endpoint once so that each example stays short:
+> ```bash
+> export SURREALDB_HOST=wss://production-6xk2.aws-euw1.surreal.cloud
+> ```
+> Find the endpoint for an instance with [`surrealctl instance endpoint`](../../reference/cli/surrealctl/commands/instance.md). Namespace `main` and database `main` are the defaults, so only `--user root --pass secret` is shown alongside each command.
 
 SurrealKit is the official schema management and migration CLI for SurrealDB. You define your database schema as plain `.surql` files, commit them alongside your application code, and SurrealKit keeps every environment in sync with those definitions.
 
@@ -24,29 +26,37 @@ Most teams use Sync day-to-day and switch to Rollouts when promoting changes to 
 SurrealKit also provides:
 
 - **Templates:** scaffold a new project from a template with selectable features (`surrealkit init`).
-- **Seeding:** apply `.surql` seed data on demand.
+- **Schema modules and targets:** split a project into independently tracked schemas and apply them across several databases.
+- **Seeding:** apply `.surql` seed data, tracked so that each file runs once.
 - **Type generation:** introspect a database to emit JSON and TypeScript types for your application.
 - **Testing:** a declarative framework for validating schema, permissions, and API endpoints.
 
+> [!IMPORTANT]
+> These pages document SurrealKit `1.0.0-beta.1`. Anything added in the 1.0 line is marked with a badge: *Since v1.0*. Upgrading from 0.7 needs a few deliberate changes, two of which are silent: see [Upgrading to SurrealKit 1.0](upgrading.md).
+
 ## Installation
+
+1.0 is a prerelease, so it has to be requested by version. Without one, Cargo installs the latest stable release, which is still 0.7.
 
 **cargo binstall** (recommended, no compilation required once [cargo binstall is installed](https://github.com/cargo-bins/cargo-binstall#installation)):
 
 ```bash
-cargo binstall surrealkit
+cargo binstall surrealkit --version 1.0.0-beta.1
 ```
 
 **Cargo from source:**
 
 ```bash
-cargo install surrealkit
+cargo install surrealkit --version 1.0.0-beta.1
 ```
 
 **Docker:**
 
 ```bash
-docker pull ghcr.io/surrealdb/surrealkit:latest
+docker pull ghcr.io/surrealdb/surrealkit:1.0.0-beta.1
 ```
+
+The `latest` tag also points at the newest stable release rather than the beta. See [Configuration](configuration.md#inside-a-container) for mounting a project into the container.
 
 Prebuilt binaries for Linux (x86_64 / aarch64), macOS (x86_64 / aarch64), and Windows (x86_64) are available on the [GitHub releases page](https://github.com/surrealdb/surrealkit/releases).
 
@@ -69,7 +79,7 @@ database/
 surrealkit.toml    # project configuration
 ```
 
-See [Project templates](templates.md) for the feature checklist, non-interactive flags, and custom templates.
+See [Project templates](templates.md) for the feature checklist, non-interactive flags, and custom templates, and [Configuration](configuration.md) for what `surrealkit.toml` holds.
 
 ## Connection configuration
 
@@ -77,8 +87,7 @@ SurrealKit resolves connection details in the following order (first match wins)
 
 1. CLI arguments (`--host`, `--ns`, `--db`, `--user`, `--pass`, `--auth-level`)
 2. `SURREALDB_*` environment variables
-3. `.env` file in the working directory
-4. Fallback `DATABASE_*` environment variables
+3. `.env` or `.env.local` in the working directory
 
 | Environment variable | CLI equivalent | Purpose |
 |---|---|---|
@@ -87,9 +96,11 @@ SurrealKit resolves connection details in the following order (first match wins)
 | `SURREALDB_NAME` | `--db` | Database name |
 | `SURREALDB_USER` | `--user` | Username |
 | `SURREALDB_PASSWORD` | `--pass` | Password |
-| `SURREALDB_AUTH_LEVEL` | `--auth-level` | `root`, `namespace`/`ns`, or `database`/`db` |
+| `SURREALDB_AUTH_LEVEL` | `--auth-level` | `root`, `namespace`/`ns`, `database`/`db`, or `none` |
+| `SURREALDB_FOLDER` | `--folder` | Project root, holding `schema/`, `rollouts/`, `snapshots/`, `seed/` and `tests/`. Defaults to `./database` |
 
-The project root (containing `schema/`, `rollouts/`, `snapshots/`, `seed/`, and `tests/`) defaults to `./database`. Override it with the global `--folder` flag or the `SURREALDB_FOLDER` environment variable.
+> [!WARNING]
+> The `DATABASE_*` aliases were removed in 1.0. One set without its `SURREALDB_*` replacement is an error rather than being ignored, because ignoring it would fall back to the defaults and connect to the wrong database. See [Upgrading](upgrading.md#rename-the-database-variables).
 
 Example connecting via CLI flags:
 
@@ -97,10 +108,37 @@ Example connecting via CLI flags:
 surrealkit --user root --pass secret sync
 ```
 
+To apply schema to more than one database from one project, declare [targets](modules-and-targets.md) instead of switching these values between runs.
+
+## Embedded databases
+
+*Since v1.0*
+
+SurrealKit can manage an in-process SurrealDB by pointing `--host` at an embedded endpoint. Authentication is skipped automatically, because a fresh embedded datastore has no users:
+
+```bash
+surrealkit --host surrealkv://./data --ns main --db main sync
+```
+
+The recognised schemes are `mem://`, `surrealkv://`, `surrealkv+versioned://`, `rocksdb://`, `speedb://`, `file://`, `tikv://` and `indxdb://`. Pass `--auth-level none` to force the same no-signin path on any endpoint.
+
+The prebuilt CLI bundles the in-memory engine only, to keep the binary small. Build with the matching feature for an on-disk engine:
+
+```bash
+cargo install surrealkit --version 1.0.0-beta.1 --features kv-surrealkv
+```
+
+`kv-rocksdb` is available on the same basis, and `embedded` enables every engine that ships a feature.
+
+> [!NOTE]
+> `speedb://`, `tikv://` and `indxdb://` are recognised as embedded endpoints but have no corresponding cargo feature in `1.0.0-beta.1`, so they fail when the connection is opened. Embedded engines are also single-process: the CLI holds an exclusive lock on the datastore, so run it while your application is stopped. To manage schema inside your application at startup, use the [library](library/index.md) instead.
+
 ## Next steps
 
 - [New databases](getting-started/new-databases.md): start a fresh project with SurrealKit from the beginning
 - [Existing databases](getting-started/existing-databases.md): adopt SurrealKit in a project that already has a database
 - [Sync vs Rollouts](getting-started/sync-vs-rollouts.md): choose the right mode for each environment
+- [Configuration](configuration.md): everything `surrealkit.toml` accepts, and where it has to live
+- [Schema modules and targets](modules-and-targets.md): several schemas across several databases
 - [Project templates](templates.md): scaffold a project with selectable features
 - [Type generation](typegen.md): generate JSON and TypeScript types from your schema

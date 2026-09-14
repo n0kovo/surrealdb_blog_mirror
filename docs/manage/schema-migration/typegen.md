@@ -1,5 +1,5 @@
 ---
-position: 7
+position: 10
 title: Type generation
 description: surrealkit typegen introspects a live database and emits a structured JSON schema document, with optional TypeScript types for the SurrealDB JavaScript SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/schema-migration/typegen.mdx"
@@ -13,7 +13,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 surrealkit typegen --user root --pass secret
 ```
 
-By default this writes a JSON document to `database/types/schema.json`. SurrealKit's internal bookkeeping tables (`__entity`, `__rollout`) are excluded from the output.
+By default this writes a JSON document to `database/types/schema.json`. SurrealKit's internal bookkeeping tables (`__entity`, `__rollout`, `__seed`) are excluded from the output.
 
 ## Command flags
 
@@ -35,7 +35,7 @@ The JSON document includes the namespace, database, generation timestamp, and a 
 
 ## TypeScript output
 
-TypeScript generation is opt-in through the `[typegen]` section of `surrealkit.toml`. Set `typescript` to the directory where the generated `index.ts` should be written:
+TypeScript generation is opt-in through the `[typegen]` section of [`surrealkit.toml`](configuration.md). Set `typescript` to the directory where the generated `index.ts` should be written:
 
 ```toml
 [typegen]
@@ -76,6 +76,17 @@ surrealkit sync --watch --user root --pass secret
 ```
 
 Regeneration is gated on actual schema changes (or a missing output file), so idle watch ticks do not re-introspect the database.
+
+## Type generation and targets
+
+`typegen` introspects the database given by `--host`, `--ns` and `--db`. It does not resolve [targets](modules-and-targets.md), so in `1.0.0-beta.1` neither `--target` nor `[target.<name>] primary = true` changes which database it reads. Pass the connection explicitly to introspect a particular one:
+
+```bash
+surrealkit typegen --host wss://production-6xk2.aws-euw1.surreal.cloud --ns main --db main --user root --pass secret
+```
+
+> [!NOTE]
+> There is one `[typegen] typescript` directory for the whole project, so `surrealkit sync --all` regenerates the same `index.ts` once per module and target pair, and the last pair to run leaves its output in place. Generate types from a single target rather than from a fan-out.
 
 ## Library API
 

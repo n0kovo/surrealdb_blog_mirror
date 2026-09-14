@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1083 pages_  
+_1086 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -876,6 +876,8 @@ _1083 pages_
   Create an account with Google, GitHub, or an email address, and sign in to manage organisations and instances.
 - [Support](manage/organisations/support.md)
   Community help, paid support plans, and raising a ticket.
+- [Configuration](manage/schema-migration/configuration.md)
+  The surrealkit.toml project file: where SurrealKit looks for it, how to supply it inside a container, and every section it accepts - variables, typegen, schema modules and database targets.
 - [embed_schema! macro](manage/schema-migration/embed-schema-macro.md)
   The embed_schema! macro bakes your .surql schema files into the Rust binary at compile time, so schema is always in sync with the application that ships it.
 - [Existing databases](manage/schema-migration/getting-started/existing-databases.md)
@@ -890,8 +892,12 @@ _1083 pages_
   Worked examples of using SurrealKit's library API for both sync and rollouts in a Rust application.
 - [Using SurrealKit as a library](manage/schema-migration/library/index.md)
   Embed SurrealKit directly in a Rust application to connect to SurrealDB, sync schema at startup, run rollouts, and seed data without the CLI.
+- [Schema modules and targets](manage/schema-migration/modules-and-targets.md)
+  Split a SurrealKit project into independently tracked schema modules and apply them across several SurrealDB databases, with dependency ordering, per-target credentials and fan-out control.
 - [Rollouts](manage/schema-migration/rollouts.md)
   Rollouts provide a controlled, phased migration workflow for shared and production SurrealDB databases, with review, staged execution, and rollback support.
+- [Seeding](manage/schema-migration/seeding.md)
+  surrealkit seed applies .surql data files to a database. Each file runs once and re-runs only when its content changes, tracked by hash in the __seed table, so seeding is safe on every deploy.
 - [Sync](manage/schema-migration/sync.md)
   Sync pushes your .surql schema files to SurrealDB immediately, keeping the database in desired state. Use it for local development and ephemeral environments.
 - [Template variables](manage/schema-migration/template-variables.md)
@@ -904,6 +910,8 @@ _1083 pages_
   SurrealKit includes a built-in testing framework for validating schema correctness, permissions, and API behaviour across multiple actor types.
 - [Type generation](manage/schema-migration/typegen.md)
   surrealkit typegen introspects a live database and emits a structured JSON schema document, with optional TypeScript types for the SurrealDB JavaScript SDK.
+- [Upgrading to SurrealKit 1.0](manage/schema-migration/upgrading.md)
+  What changes when moving a SurrealKit project from 0.7 to 1.0: the removed seed.surql fallback, rejected DATABASE_* variables, a --folder flag that now works, stricter test assertions, and library API changes.
 - [Backups & recovery](manage/self-hosted/backups-and-recovery.md)
   Create and restore SurrealQL backups with the CLI, plan backup strategies, and prepare for disaster recovery.
 - [Configuration](manage/self-hosted/configuration.md)
@@ -978,8 +986,6 @@ _1083 pages_
   A command to export data from a SurrealDB database server into a SurrealQL file format.
 - [fix](reference/cli/surrealdb-cli/commands/fix.md)
   A command to convert SurrealDB version 1.x data into a usable format for versions 2.0 and above.
-- [format](reference/cli/surrealdb-cli/commands/format.md)
-  A command to reformat a SurrealQL file to a consistent style, printing the result or writing it back in place.
 - [help](reference/cli/surrealdb-cli/commands/help.md)
   A command to display all possible top-level commands and arguments used in the SurrealDB binary.
 - [import](reference/cli/surrealdb-cli/commands/import.md)

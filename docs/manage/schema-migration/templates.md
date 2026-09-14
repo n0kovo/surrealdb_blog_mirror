@@ -1,5 +1,5 @@
 ---
-position: 3
+position: 4
 title: Project templates
 description: surrealkit init scaffolds a project from a template with selectable features. Use the bundled template, pick only the features you need, or supply your own.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/schema-migration/templates.mdx"
@@ -29,6 +29,8 @@ database/
 └── setup.surql    # runs before sync
 surrealkit.toml    # project configuration
 ```
+
+`surrealkit.toml` holds template variables, type generation settings, and any [schema modules and targets](modules-and-targets.md) the project declares. See [Configuration](configuration.md) for the full key reference. `init` never overwrites an existing one.
 
 ## Choosing features without a prompt
 

@@ -41,11 +41,15 @@ DEFINE INDEX unique_email ON user FIELDS email UNIQUE;
 
 Schema files can be organised by table, by domain, or kept in a single file. SurrealKit applies everything in `database/schema/` together.
 
-## 3. Start a local SurrealDB instance
+## 3. Point at a database
+
+Create a [SurrealDB Cloud instance](../../instances/index.md) if you do not have one, and read its endpoint:
 
 ```bash
-surreal start --user root --pass secret
+surrealctl instance endpoint my-instance
 ```
+
+Any SurrealDB endpoint works here. Cloud is used throughout these pages because it needs no setup of its own.
 
 ## 4. Sync your schema
 
@@ -87,17 +91,20 @@ The plugin watches `database/schema/**/*.surql` and re-syncs on any change, with
 
 Rather than passing flags on every command, store your local connection details in a `.env` file at the project root:
 
-```bash
-SURREALDB_HOST=http://localhost:8000
+```bash title=".env"
+SURREALDB_HOST=wss://production-6xk2.aws-euw1.surreal.cloud
 SURREALDB_NAMESPACE=dev
 SURREALDB_NAME=myapp
 SURREALDB_USER=root
 SURREALDB_PASSWORD=secret
 ```
 
-With those set, `surrealkit sync` picks them up automatically.
+With those set, `surrealkit sync` picks them up automatically. SurrealKit reads `.env` and `.env.local` from the working directory.
+
+Project settings that are not connection details - template variables, type generation, schema modules and targets - live in [`surrealkit.toml`](../configuration.md) instead.
 
 ## Next steps
 
 - [Sync](../sync.md): full reference for all sync options
 - [Sync vs Rollouts](sync-vs-rollouts.md): when to move from Sync to the Rollouts workflow
+- [Seeding](../seeding.md): add starting data to the database

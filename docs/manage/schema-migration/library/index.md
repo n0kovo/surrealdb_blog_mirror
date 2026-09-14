@@ -13,8 +13,24 @@ SurrealKit is published as a Rust crate, so you can drive connections, schema sy
 
 ```toml
 [dependencies]
-surrealkit = "0.7"
+surrealkit = "1.0.0-beta.1"
 ```
+
+The default features include `cli`, which pulls in the argument parser and its supporting crates. A library-only consumer can drop them:
+
+```toml
+[dependencies]
+surrealkit = { version = "1.0.0-beta.1", default-features = false, features = ["kv-mem"] }
+```
+
+> [!WARNING]
+> The `surrealkit` binary declares `cli` as a required feature, so an install with `--no-default-features` and without `cli` builds no binary at all. Use the trimmed form for a dependency, not for installing the CLI.
+
+### Logging
+
+*Since v1.0*
+
+The library reports progress through the `log` facade and is silent unless the consuming application installs a logger. Initialise one and set `RUST_LOG=surrealkit=info` to see what the CLI would print.
 
 ## Sync vs rollout
 
@@ -45,7 +61,7 @@ let db = connect(&cfg).await?;
 
 ```rust
 let cfg = DbCfg::from_env(None, &DbOverrides {
-    host: Some("http://localhost:8000".to_string()),
+    host: Some("wss://production-6xk2.aws-euw1.surreal.cloud".to_string()),
     ..Default::default()
 })?;
 ```
@@ -107,6 +123,9 @@ The two fields serve different purposes:
 ## Rollouts
 
 Rollouts are defined entirely in code, with no TOML or `.surql` files on disk required. Build a spec with [`RolloutSpec::builder`] and drive it with the [`Rollout`] facade.
+
+> [!IMPORTANT]
+> Since 1.0, `Rollout::start`, `Rollout::complete` and `Rollout::rollback` are purely in-database. They previously defaulted to `./database` and created `./database/setup.surql` in the caller's working directory. Call `.folder("database")` to opt back into the filesystem workflow.
 
 ### Status lifecycle
 
@@ -216,6 +235,8 @@ async fn run(db: &Surreal<Any>) -> anyhow::Result<()> {
 
 The second argument is the project folder (the directory containing `seed/`), matching the CLI's `--folder` / `SURREALDB_FOLDER`.
 
+Each file is applied once and re-applied only when its content changes, tracked in `__seed`, so this is safe to call on every application start. Use the [`Seed`] builder for runtime control, including `force` and embedded seed files. See [Seeding](../seeding.md).
+
 ## Template variables
 
 `${VAR}` placeholders in schema, seed, or rollout SQL are substituted from a [`TemplateVars`] map before execution. Lookups are case-insensitive, and an undefined variable is an error naming the missing key and file. Pass them via `Sync::vars(...)`, `Rollout::vars(...)`, or the `seed` argument:
@@ -233,17 +254,21 @@ See [Template variables](../template-variables.md) for the full resolution rules
 
 ## Metadata tables
 
-SurrealKit maintains two internal tables in your namespace and database, created automatically:
+SurrealKit maintains internal tables in your namespace and database, created automatically:
 
 | Table | Purpose |
 |---|---|
 | `__entity` | Tracks every schema object SurrealKit manages (content hash, tracking key) |
 | `__rollout` | Tracks rollout execution state (see the status lifecycle above) |
+| `__seed` | Tracks which seed files have been applied |
+
+Rows in `__entity` are partitioned per [schema module](../modules-and-targets.md). Apply a named module with `Sync::embedded(BILLING).module("billing")?`, and pass the module to `rollout::run_baseline` and `rollout::run_abandon_rollout`, both of which gained a module argument in 1.0.
 
 ## Next steps
 
 - [Library usage example](example.md): full worked sync and rollout programs
 - [`embed_schema!` macro](../embed-schema-macro.md): bake schema into the binary at compile time
+- [Upgrading to SurrealKit 1.0](../upgrading.md#if-you-use-the-rust-library): renamed and removed library items
 - [Type generation](../typegen.md): generate JSON and TypeScript types from the live schema
 </content>
 </invoke>

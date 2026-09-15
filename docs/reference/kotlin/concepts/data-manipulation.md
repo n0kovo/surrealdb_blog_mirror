@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Data manipulation
 
-The Kotlin SDK provides fluent builders for the common CRUD operations. Each builder method (such as [`.select()`](../api/core/surreal-client.md#select) or [`.create()`](../api/core/surreal-client.md#create)) returns a [query builder](../api/core/query-builder.md) that you refine and then terminate with `await()` (raw [`JsonElement`](value-types.md)) or the typed [`awaitAs<T>()`](../api/core/query-builder.md#await-as) extension. Under the hood these compile to [SurrealQL](../../query-language/index.md) and dispatch through [`.query()`](executing-queries.md), mirroring the [JavaScript SDK](../../../languages/javascript.md).
+The Kotlin SDK provides fluent builders for the common CRUD operations. Each builder method (such as [`.select()`](../api/core/surreal-client.md#select) or [`.create()`](../api/core/surreal-client.md#create)) returns a [query builder](../api/core/query-builder.md) that you refine and then terminate with `await()` (raw [`JsonElement`](value-types.md)) or the typed [`awaitAs<T>()`](../api/core/query-builder.md#await-as) extension. Internally these compile to [SurrealQL](../../query-language/index.md) and dispatch through [`.query()`](executing-queries.md), mirroring the [JavaScript SDK](../../../languages/javascript.md).
 
 ## API references
 

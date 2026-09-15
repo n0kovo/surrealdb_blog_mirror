@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # org
 
-`surrealctl org` manages organisations. An organisation owns instances, members and billing, and almost every other command needs to know which one you mean - so this group is usually the second one you reach for after [`auth`](auth.md).
+`surrealctl org` manages organisations. An organisation owns instances, members and billing, and almost every other command needs to know which one you mean - so this group is usually the second one you use after [`auth`](auth.md).
 
 <Synopsis>
 surrealctl org <COMMAND> [OPTIONS]

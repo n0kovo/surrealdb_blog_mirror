@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 *Since v3.1.0*
 
-From SurrealDB 3.1.0, SurrealDB’s GraphQL layer uses **Apollo-style** names: a **pluralised list** field (for example `people` for table `person`), a **singular fetch** field `person(id: …)`, and `people_aggregate` for aggregates. Under the hood these map to SurrealQL-style reads (typically `SELECT`). The SurrealQL here is a rough equivalent for the same or similar data shape. See [GraphQL overview](overview.md#schema-naming-since-vv310-) for the full naming table.
+From SurrealDB 3.1.0, SurrealDB’s GraphQL layer uses **Apollo-style** names: a **pluralised list** field (for example `people` for table `person`), a **singular fetch** field `person(id: …)`, and `people_aggregate` for aggregates. Internally these map to SurrealQL-style reads (typically `SELECT`). The SurrealQL here is a rough equivalent for the same or similar data shape. See [GraphQL overview](overview.md#schema-naming) for the full naming table.
 
 Before trying the examples, enable GraphQL and define data in the current namespace and database (see [GraphQL overview](overview.md) using [`DEFINE CONFIG GRAPHQL AUTO`](../../../reference/query-language/statements/define/config.md)). The snippets below assume:
 

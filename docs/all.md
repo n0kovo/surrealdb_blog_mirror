@@ -619,7 +619,7 @@ _1086 pages_
 - [Creating relations](learn/data-models/graph/creating-relations.md)
   Create graph edges with RELATE, store data on edge tables, define TYPE RELATION for safety and tooling, and handle symmetric relations with unique indexes.
 - [Graph traversal](learn/data-models/graph/graph-traversal.md)
-  Use SurrealQL arrow syntax, bidirectional edges, traversals from record IDs, automatic flattening, graph paths in schema fields, and SurrealDB Studio’s Explorer to debug paths step by step.
+  Use SurrealQL arrow syntax, filter a traversal by edge table and by the fields on an edge, bidirectional edges, traversals from record IDs, automatic flattening, graph paths in schema fields, and SurrealDB Studio’s Explorer to debug paths step by step.
 - [Knowledge graph patterns](learn/data-models/graph/knowledge-graph-patterns.md)
   Model entities and relationships as first-class data for
 - [Graph model](learn/data-models/graph/overview.md)
@@ -933,7 +933,7 @@ _1086 pages_
 - [Authenticating surrealctl](manage/surrealctl/authentication.md)
   Choose between a login session and a personal access token, store credentials safely, and authenticate an unattended run.
 - [surrealctl](manage/surrealctl/index.md)
-  What the surrealctl control-plane CLI does. When to reach for it instead of SurrealDB Studio or the surreal binary, plus a sixty-second quickstart.
+  What the surrealctl control-plane CLI does. When to use it instead of SurrealDB Studio or the surreal binary, plus a sixty-second quickstart.
 - [Install](manage/surrealctl/install.md)
   Install surrealctl on macOS, Linux, or Windows, verify the download, sign in for the first time, and keep the binary up to date.
 - [Instances](manage/surrealctl/instances.md)

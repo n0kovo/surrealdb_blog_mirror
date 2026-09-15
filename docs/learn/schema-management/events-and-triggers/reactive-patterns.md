@@ -57,7 +57,7 @@ For behaviour on the wire, subscriptions, and production caveats, read [Live que
 
 ### Building reactive systems incrementally
 
-The sheer convenience of reactive systems makes them tempting to reach for early. They are harder to debug when many are introduced together. For example, an error that occurs may be difficult to debug inside an [event](defining-events.md) that chains into further writes plus several [`LIVE SELECT`](../../../reference/query-language/statements/live-select.md), especially if all of these reactive patterns were introduced all at once.
+The sheer convenience of reactive systems makes them tempting to use early. They are harder to debug when many are introduced together. For example, an error that occurs may be difficult to debug inside an [event](defining-events.md) that chains into further writes plus several [`LIVE SELECT`](../../../reference/query-language/statements/live-select.md), especially if all of these reactive patterns were introduced all at once.
 
 For this reason, it is often best to introduce reactive behaviour gradually.
 

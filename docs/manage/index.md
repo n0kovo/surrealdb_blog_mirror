@@ -15,4 +15,4 @@ _Auto-generated index — 0 pages and 7 sub-sections._
 - **[Organisations](organisations/index.md)** — The container for instances, members, usage, and billing. What each section of the organisation view holds.
 - **[SurrealKit schema migration](schema-migration/index.md)** — SurrealKit is the official schema migration CLI for SurrealDB. Define your schema in .surql files and keep databases in sync across every environment.
 - **[Self-hosted](self-hosted/index.md)** — SurrealDB deployment models on your own infrastructure. Containers, configuration, backups, monitoring, and upgrades.
-- **[surrealctl](surrealctl/index.md)** — What the surrealctl control-plane CLI does. When to reach for it instead of SurrealDB Studio or the surreal binary, plus a sixty-second quickstart.
+- **[surrealctl](surrealctl/index.md)** — What the surrealctl control-plane CLI does. When to use it instead of SurrealDB Studio or the surreal binary, plus a sixty-second quickstart.

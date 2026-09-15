@@ -82,7 +82,7 @@ client.delete("person:chiru")
 client.insert("person", '[{ "name": "Alice" }, { "name": "Bob" }]')
 ```
 
-These build a SurrealQL statement under the hood. For example, `create("person", data)` runs `CREATE person CONTENT <data>;`. See the method reference for the full list, including [`upsert`](../methods/upsert.md), [`merge`](../methods/merge.md), [`patch`](../methods/patch.md), and [`insert_relation`](../methods/insert-relation.md).
+These build a SurrealQL statement internally. For example, `create("person", data)` runs `CREATE person CONTENT <data>;`. See the method reference for the full list, including [`upsert`](../methods/upsert.md), [`merge`](../methods/merge.md), [`patch`](../methods/patch.md), and [`insert_relation`](../methods/insert-relation.md).
 
 ## Bindings
 

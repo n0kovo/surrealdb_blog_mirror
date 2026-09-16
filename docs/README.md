@@ -1,12 +1,12 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-09-15 10:58 UTC_
+_Last updated: 2026-09-16 10:46 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
 ## Stats
 
-- **Total pages:** 1086
+- **Total pages:** 1087
 
 ## Browse
 
@@ -38,7 +38,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 ### Ecosystem
 
 - **[Migrating](build/migrating/index.md)** — Import data and schemas from elsewhere. — _14 pages_
-- **[Integrations](build/integrations/index.md)** — SDKs, frameworks, and connectors. — _31 pages_
+- **[Integrations](build/integrations/index.md)** — SDKs, frameworks, and connectors. — _32 pages_
 
 ### Intelligence
 

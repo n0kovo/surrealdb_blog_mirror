@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1086 pages_  
+_1087 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -353,6 +353,8 @@ _1086 pages_
   This section contains information about the different data management features of SurrealDB.
 - [Qyrus](build/integrations/data-management/qyrus.md)
   Qyrus Data Testing integrates with SurrealDB for data quality assurance. Use Compare Jobs for cross-source validation (migrations, sync) and Evaluate Jobs for single-source checks (schema, profiling). Configure with Host URL, Port, Namespace, Database, and SurrealQL queries.
+- [Beekeeper Studio](build/integrations/database-clients/beekeeper-studio.md)
+  Connect Beekeeper Studio to SurrealDB to browse a namespace and database, inspect field types and run SurrealQL from a desktop editor.
 - [Fastembed](build/integrations/embeddings-providers/fastembed.md)
   This section contains information about using Fastembed to retrieve embeddings to store in SurrealDB
 - [Mistral](build/integrations/embeddings-providers/mistral.md)

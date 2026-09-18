@@ -876,8 +876,8 @@ _1087 pages_
   Add an authenticator app to your SurrealDB account, and keep a recovery code for when it is unavailable.
 - [Accounts and sign-in](manage/organisations/sign-in.md)
   Create an account with Google, GitHub, or an email address, and sign in to manage organisations and instances.
-- [Support](manage/organisations/support.md)
-  Community help, paid support plans, and raising a ticket.
+- [Support plans and raising a ticket](manage/organisations/support.md)
+  Support plans and response-time targets, severity levels, raising a ticket, and free community help.
 - [Configuration](manage/schema-migration/configuration.md)
   The surrealkit.toml project file: where SurrealKit looks for it, how to supply it inside a container, and every section it accepts - variables, typegen, schema modules and database targets.
 - [embed_schema! macro](manage/schema-migration/embed-schema-macro.md)

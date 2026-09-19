@@ -119,7 +119,7 @@ These environment variables can be used to configure a SurrealDB server to confi
 
 ### File config
 
-Server-side filesystem access for features that read paths from disk (notably the `mapper()` filter on [`DEFINE ANALYZER`](../../query-language/statements/define/analyzer.md)). This is separate from `SURREAL_BUCKET_FOLDER_ALLOWLIST` (below), which gates the experimental [files](../../../learn/schema-management/files/buckets.md) feature.
+Server-side filesystem access for features that read paths from disk (notably the `mapper()` filter and the `segment()` tokenizer on [`DEFINE ANALYZER`](../../query-language/statements/define/analyzer.md)). This is separate from `SURREAL_BUCKET_FOLDER_ALLOWLIST` (below), which gates the experimental [files](../../../learn/schema-management/files/buckets.md) feature.
 
 <table>
   <thead>
@@ -135,7 +135,13 @@ Server-side filesystem access for features that read paths from disk (notably th
       <td scope="row" data-label="Env var">`SURREAL_FILE_ALLOWLIST`</td>
       <td scope="row" data-label="Default">none (deny all)</td>
       <td scope="row" data-label="Allowed values">Colon-separated paths on Unix; semicolon-separated on Windows</td>
-      <td scope="row" data-label="Notes">Directories the server may read when an analyzer uses `mapper('&lt;path&gt;')`. An empty or unset value denies every path. Each dictionary file must resolve under one of the listed directories. See <a href="/docs/reference/query-language/statements/define/analyzer#mapperpath">DEFINE ANALYZER - mapper</a>.</td>
+      <td scope="row" data-label="Notes">Directories the server may read when an analyzer uses `mapper('&lt;path&gt;')`. An empty or unset value denies every path. Each mapper file must resolve under one of the listed directories. See <a href="/docs/reference/query-language/statements/define/analyzer#mapperpath">DEFINE ANALYZER - mapper</a>.</td>
+    </tr>
+  <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SEGMENT_DICTIONARY_PATH`*Since v3.3.0*</td>
+      <td scope="row" data-label="Default">none (use the dictionaries built into the binary)</td>
+      <td scope="row" data-label="Allowed values">A path to a directory</td>
+      <td scope="row" data-label="Notes">Directory holding the morphological dictionaries the `segment(&lt;language&gt;)` tokenizer reads, one subdirectory per language: `chinese`, `japanese`, `korean`. The released binaries already carry all three, so this is only needed to replace them with a custom or updated dictionary, or for a build made without them. Each language is overridden only if the directory holds a dictionary for it; the rest keep using the built-in one. See <a href="/docs/reference/query-language/statements/define/analyzer#segmentlanguage">DEFINE ANALYZER - segment</a>.</td>
     </tr>
   <tr>
       <td scope="row" data-label="Env var">`SURREAL_BUCKET_FOLDER_ALLOWLIST`</td>

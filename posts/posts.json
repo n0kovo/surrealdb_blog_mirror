@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T10:33:19.215473+00:00",
+  "generated_at": "2026-09-21T11:53:06.535575+00:00",
   "count": 267,
   "posts": [
     {
@@ -155,7 +155,7 @@
       "local_path": "2026/08/announcing-the-swift-sdk-for-surrealdb.md"
     },
     {
-      "slug": "hi",
+      "slug": "testing-known-time-in-spectron-on-a-2200-year-corpus",
       "title": "Testing known time in Spectron on a 2,200-year corpus",
       "summary": "How to use asOf in Spectron to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.",
       "publishDate": "2026-08-11T03:43:59.000Z",
@@ -164,8 +164,8 @@
       ],
       "readTime": null,
       "imageUrl": "https://cdn.surrealdb.com/r8jmyr1ulot9ym5yxsaolmky.auto",
-      "source": "https://surrealdb.com/blog/hi",
-      "local_path": "2026/08/hi.md"
+      "source": "https://surrealdb.com/blog/testing-known-time-in-spectron-on-a-2200-year-corpus",
+      "local_path": "2026/08/testing-known-time-in-spectron-on-a-2200-year-corpus.md"
     },
     {
       "slug": "introducing-surrealdb-studio",
@@ -183,8 +183,8 @@
     },
     {
       "slug": "integrating-ultima-vii-with-spectron-part-ii-the-testing",
-      "title": "Integrating Ultima VII with Spectron, part II: the testing",
-      "summary": "How Ultima VII was integrated with Spectron via changes to the Exult code to emit certain events and a Rust app using egui between the game and Spectron.",
+      "title": "Integrating Ultima VII with SurrealDB Agent Memory: the testing",
+      "summary": "How Ultima VII was integrated with SurrealDB Agent Memory via Exult code changes to emit events and a Rust app using egui between the game and Agent Memory.",
       "publishDate": "2026-08-06T04:09:56.000Z",
       "categories": [
         "engineering"
@@ -240,7 +240,7 @@
     {
       "slug": "spectron-insights-how-tri-temporal-belief-history-works",
       "title": "Agent memory needs three clocks: tri-temporal belief history",
-      "summary": "Why tri-temporal belief history is needed for agent memory to properly simulate human memory and how to work with Spectron to best use it.",
+      "summary": "Why tri-temporal belief history is needed for agent memory to properly simulate human memory and how to work with SurrealDB Agent Memory to best use it.",
       "publishDate": "2026-08-04T21:01:26.000Z",
       "categories": [
         "engineering"
@@ -265,8 +265,8 @@
     },
     {
       "slug": "using-ultima-vii-to-test-spectron-part-i-the-game",
-      "title": "Integrating Ultima VII with Spectron, part I: the game",
-      "summary": "Why Ultima VII through the Exult open-source game engine ended up being the perfect testing platform for SurrealDB's memory layer Spectron.",
+      "title": "Integrating Ultima VII with SurrealDB Agent Memory: the game",
+      "summary": "Why Ultima VII through the Exult open-source game engine ended up being the perfect testing platform for SurrealDB Agent Memory",
       "publishDate": "2026-07-30T03:46:30.000Z",
       "categories": [
         "engineering"

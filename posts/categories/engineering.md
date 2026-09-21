@@ -5,14 +5,14 @@ _46 posts_
 
 - **2026-08-13** · [Graph engineering is missing a graph](../2026/08/graph-engineering-is-missing-a-graph.md)  
   `featured` `engineering` `ai` — Graph engineering stops at the diagram. The harder half is the context graph underneath: whether relations, vectors and memory share one consistency boundary.
-- **2026-08-11** · [Testing known time in Spectron on a 2,200-year corpus](../2026/08/hi.md)  
+- **2026-08-11** · [Testing known time in Spectron on a 2,200-year corpus](../2026/08/testing-known-time-in-spectron-on-a-2200-year-corpus.md)  
   `engineering` — How to use asOf in Spectron to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.
-- **2026-08-06** · [Integrating Ultima VII with Spectron, part II: the testing](../2026/08/integrating-ultima-vii-with-spectron-part-ii-the-testing.md)  
-  `engineering` — How Ultima VII was integrated with Spectron via changes to the Exult code to emit certain events and a Rust app using egui between the game and Spectron.
+- **2026-08-06** · [Integrating Ultima VII with SurrealDB Agent Memory: the testing](../2026/08/integrating-ultima-vii-with-spectron-part-ii-the-testing.md)  
+  `engineering` — How Ultima VII was integrated with SurrealDB Agent Memory via Exult code changes to emit events and a Rust app using egui between the game and Agent Memory.
 - **2026-08-04** · [Agent memory needs three clocks: tri-temporal belief history](../2026/08/spectron-insights-how-tri-temporal-belief-history-works.md)  
-  `engineering` — Why tri-temporal belief history is needed for agent memory to properly simulate human memory and how to work with Spectron to best use it.
-- **2026-07-30** · [Integrating Ultima VII with Spectron, part I: the game](../2026/07/using-ultima-vii-to-test-spectron-part-i-the-game.md)  
-  `engineering` — Why Ultima VII through the Exult open-source game engine ended up being the perfect testing platform for SurrealDB's memory layer Spectron.
+  `engineering` — Why tri-temporal belief history is needed for agent memory to properly simulate human memory and how to work with SurrealDB Agent Memory to best use it.
+- **2026-07-30** · [Integrating Ultima VII with SurrealDB Agent Memory: the game](../2026/07/using-ultima-vii-to-test-spectron-part-i-the-game.md)  
+  `engineering` — Why Ultima VII through the Exult open-source game engine ended up being the perfect testing platform for SurrealDB Agent Memory
 - **2026-06-19** · [Deterministic simulation testing and its use at SurrealDB](../2026/06/deterministic-simulation-testing-and-its-use-at-surrealdb.md)  
   `engineering` — How deterministic simulation works from easy to complex scenarios, and its ussage at SurrealDB's transactional key-value store and embedded key-value engine.
 - **2026-06-11** · [Fuzz testing for SurrealDB: finding bugs before users do](../2026/06/fuzz-testing-for-surrealdb-using-randomised-input-to-find-bugs-before-users-do.md)  

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T10:53:42.595079+00:00",
+  "generated_at": "2026-09-23T10:41:59.604046+00:00",
   "count": 267,
   "posts": [
     {
@@ -156,14 +156,14 @@
     },
     {
       "slug": "testing-known-time-in-spectron-on-a-2200-year-corpus",
-      "title": "Testing known time in Spectron on a 2,200-year corpus",
-      "summary": "How to use asOf in Spectron to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.",
+      "title": "Testing known time in Agent Memory on a 2,200-year corpus",
+      "summary": "How to use asOf in Agent Memory to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.",
       "publishDate": "2026-08-11T03:43:59.000Z",
       "categories": [
         "engineering"
       ],
       "readTime": null,
-      "imageUrl": "https://cdn.surrealdb.com/r8jmyr1ulot9ym5yxsaolmky.auto",
+      "imageUrl": "https://cdn.surrealdb.com/udrqti7kjuiph3ydxjw5iqw4.auto",
       "source": "https://surrealdb.com/blog/testing-known-time-in-spectron-on-a-2200-year-corpus",
       "local_path": "2026/08/testing-known-time-in-spectron-on-a-2200-year-corpus.md"
     },

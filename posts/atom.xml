@@ -118,11 +118,11 @@
   </entry>
   <entry>
     <id>https://surrealdb.com/blog/testing-known-time-in-spectron-on-a-2200-year-corpus</id>
-    <title>Testing known time in Spectron on a 2,200-year corpus</title>
+    <title>Testing known time in Agent Memory on a 2,200-year corpus</title>
     <link rel="alternate" href="https://surrealdb.com/blog/testing-known-time-in-spectron-on-a-2200-year-corpus" type="text/html" />
     <published>2026-08-11T03:43:59Z</published>
     <updated>2026-08-11T03:43:59Z</updated>
-    <summary type="text">How to use asOf in Spectron to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.</summary>
+    <summary type="text">How to use asOf in Agent Memory to allow gating of spoilers to ensure that spoiler-filled memory, even if already ingested, does not show up if it should not.</summary>
     <category term="engineering" />
   </entry>
   <entry>

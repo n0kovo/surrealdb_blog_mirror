@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 # Installation
 
 Before you can use this SDK in your .NET applications regardless of your environment, you need to install and import it into your project.
-This guide will walk you through the process of installing and importing the SDK into your project.
+The steps below show how to install and import it.
 
 ## Install the SDK
 

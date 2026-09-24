@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Configuration reference
 
-Every environment variable that controls the observability surface. Variables marked <Edition value="enterprise" /> exist only when the Enterprise binary is running; everything else is available in all editions.
+This page lists every environment variable that controls the observability surface. Variables marked <Edition value="enterprise" /> exist only when the Enterprise binary is running; everything else is available in all editions.
 
 *Since v3.1.0*
 
@@ -262,7 +262,7 @@ Controls the [Enterprise slow-query log pipeline](slow-query-logging.md). Settin
 > [!NOTE]
 > The `SURREAL_DS_*` variables below apply to multi-node clusters, which use distributed storage with replication and consensus - on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) or in self-hosted Enterprise installations.
 
-A short list of the cluster networking, consensus and storage-memory knobs that operators routinely tune in response to a metric signal. The complete `SURREAL_DS_*` reference is part of the Enterprise Kubernetes deployment guide.
+This section lists the cluster networking, consensus and storage-memory knobs that operators routinely tune in response to a metric signal. The complete `SURREAL_DS_*` reference is part of the Enterprise Kubernetes deployment guide.
 
 <table>
     <thead>

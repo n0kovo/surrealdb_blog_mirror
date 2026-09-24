@@ -119,7 +119,7 @@ true
 
 ## `encoding::base64::encode()`
 
-The `encoding::base64::encode()` function encodes a bytes to base64 with optionally padded output.
+The `encoding::base64::encode()` function encodes bytes to base64 with optionally padded output.
 
 **API DEFINITION (before 2.3.0)**
 
@@ -347,7 +347,7 @@ encoding::json::encode({ some: "data"});
 '{"some":"data"}'
 ```
 
-As JSON has fewer data types tha SurrealDB, note that a round trip from SurrealQL to JSON and back to SurrealQL is not guaranteed to be the same type.
+As JSON has fewer data types than SurrealDB, note that a round trip from SurrealQL to JSON and back to SurrealQL is not guaranteed to be the same type.
 
 ```surql
 encoding::json::decode(encoding::json::encode(NONE));

@@ -48,7 +48,7 @@ ON DUPLICATE KEY UPDATE
 
 Importing data from external sources can be done through a number of methods.
 
-- **[Surreal Sync](https://github.com/surrealdb/surreal-sync/)** helps migrate from other databases and streams into SurrealDB. See the [migrations overview](../../../build/migrating/from-other-databases/overview.md) for how it fits with the rest of the import story.
+- **[Surreal Sync](https://github.com/surrealdb/surreal-sync/)** helps migrate from other databases and streams into SurrealDB. See the [migrations overview](../../../build/migrating/from-other-databases/overview.md) for how it fits with the other import methods.
 
 - **`POST /import`** is the HTTP endpoint for importing SurrealQL at volume. Imports must include an `OPTION IMPORT` line which instructs the server to skip events, live queries, query output and so on. For details, see [`POST /import`](../../../reference/rest-api/http-protocol.md#import).
 

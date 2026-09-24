@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Seeding
 
-Seeding applies `.surql` data files to a database: reference data, default records, a demo dataset. It is separate from [schema sync](sync.md), which manages definitions rather than rows.
+Seeding applies `.surql` data files to a database: reference data, default records, a demo dataset. It is separate from [schema sync](sync.md), which manages definitions rather than records.
 
 ```bash
 surrealkit seed --user root --pass secret

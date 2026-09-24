@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `WHERE` clause
 
-The `WHERE` clause can be used to specify a condition that acts as a filter. You can use the `WHERE` clause to either filter the result of the FROM clause in a `SELECT` statement or specify which rows to operate on in an `UPDATE`, `MERGE`, or `DELETE` statement.
+The `WHERE` clause can be used to specify a condition that acts as a filter. You can use the `WHERE` clause to either filter the result of the FROM clause in a `SELECT` statement or specify which records to operate on in an `UPDATE`, `MERGE`, or `DELETE` statement.
 
 It can also be used in special cases when working with conditions in [`DEFINE FUNCTION`](../statements/define/function.md) statements or when asserting access control in [`DEFINE TABLE`](../statements/define/table.md) & [`DEFINE FIELD`](../statements/define/field.md) statements.
 

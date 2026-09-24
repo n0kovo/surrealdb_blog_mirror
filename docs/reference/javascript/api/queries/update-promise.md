@@ -326,7 +326,7 @@ updatePromise.timeout(duration)
 
 ### `.retry()` {#retry}
 
-Retry the operation with exponential backoff if it fails due to a write conflict. Off by default; passing an options object (or calling with no arguments) opts the operation in.
+Retry the operation with exponential backoff if it fails due to a write conflict. Retry is off by default, and passing an options object (or calling with no arguments) opts the operation in.
 
 This overrides the connection-wide default set via the [`retry`](../types/index.md#connectoptions) option on `ConnectOptions`.
 

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # CI / CD
 
-Tests exit non-zero on any failure, produce machine-readable JSON output, and there is an official GitHub Action that handles installation and execution.
+Tests exit non-zero on any failure and can write machine-readable JSON output. An official GitHub Action handles installation and execution.
 
 ## Test output
 

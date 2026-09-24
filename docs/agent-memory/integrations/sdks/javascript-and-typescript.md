@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # JavaScript and TypeScript SDK
 
-Published package: **`@surrealdb/memory`**, a typed REST client for the SurrealDB Agent Memory end-user API. It uses platform `fetch`, ships no runtime dependencies, and aligns with SurrealDB Agent Memory’s OpenAPI specification.
+The published package is **`@surrealdb/memory`**, a typed REST client for the SurrealDB Agent Memory end-user API. It uses platform `fetch`, ships no runtime dependencies, and aligns with SurrealDB Agent Memory’s OpenAPI specification.
 
 > [!NOTE]
 > **npm:** The client is published under the **`@surrealdb`** scope (`@surrealdb/memory`), so no third party can squat the namespace. It was previously published as `@surrealdb/spectron`; that package is deprecated.

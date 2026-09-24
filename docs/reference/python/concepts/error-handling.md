@@ -52,7 +52,7 @@ See the [Errors reference](../api/errors/index.md) for the complete error hierar
 
 ## Where an error surfaces
 
-A query travels through two layers, and it is worth knowing which one a failure comes from.
+A query travels through two layers, and a failure can come from either one.
 
 The first is the request itself: a connection that is unavailable, a rejected sign-in, a query that will not parse. The second is the individual statements inside the query, which can fail while the request as a whole succeeds.
 

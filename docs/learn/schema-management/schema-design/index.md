@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Designing with `DEFINE`, `ALTER`, and `REMOVE`
 
-Almost everything structural in SurrealDB starts with `DEFINE`: namespaces, databases, tables, fields, indexes, functions, access methods, parameters, and more. The [DEFINE overview](../../../reference/query-language/statements/define/overview.md) in the API docs shows the syntax for each statment. Each such resource also has an `ALTER` and `REMOVE` statement if you need to change or remove a definition.
+Almost everything structural in SurrealDB starts with `DEFINE`: namespaces, databases, tables, fields, indexes, functions, access methods, parameters, and more. The [DEFINE overview](../../../reference/query-language/statements/define/overview.md) in the API docs shows the syntax for each statement. Each such resource also has an `ALTER` and `REMOVE` statement if you need to change or remove a definition.
 
 ## Seeing what is defined
 

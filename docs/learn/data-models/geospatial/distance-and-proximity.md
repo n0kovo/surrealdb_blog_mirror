@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Distance and proximity
 
-Many applications need more than boolean inside/outside tests: they need how far apart two geometries are, whether entities fall within a buffer around a route, or a compact geohash key for bucketing nearby points.
+Many applications need more than boolean inside/outside tests: they need to know how far apart two geometries are, whether entities fall within a buffer around a route, or a compact geohash key for bucketing nearby points.
 
 ## Distance
 

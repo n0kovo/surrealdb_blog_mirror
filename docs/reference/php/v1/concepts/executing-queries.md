@@ -13,7 +13,7 @@ You can also use the [`query`](../methods/query.md) method to run [SurrealQL sta
 ## Creating records
 
 If we wish to create a new record in the database, we can use the [`create`](../methods/create.md) method. The first argument
-is the table name and the second argument is an associative array with the column names and values.
+is the table name and the second argument is an associative array with the field names and values.
 
 ```php
 $person = $db->create("person:tobie", [
@@ -26,7 +26,7 @@ $person = $db->create("person:tobie", [
 
 ## Selecting records
 
-After when you created a record, you can now use the [`select`](../methods/select.md) method to fetch the newly created person.
+After creating a record, you can use the [`select`](../methods/select.md) method to fetch the newly created person.
 The first argument is the newly created person's ID or a string which is the table name.
 
 ```php
@@ -48,12 +48,12 @@ $person = $db->select($id);
 ## Updating records
 
 To update a record, you can use the [`update`](../methods/update.md) method. The first argument is the RecordID or a StringRecordId,
-and the second argument is an associative array with the column names and values. Updating a record can be done if 3 ways:
+and the second argument is an associative array with the field names and values. Updating a record can be done in 3 ways:
 
 	
 **update**
 
-The [`update`](../methods/update.md) method will replace the entire record with the new values. So make sure you include all the columns in the associative array.
+The [`update`](../methods/update.md) method will replace the entire record with the new values. So make sure you include all the fields in the associative array.
 		```php
 		$person = $db->update($person->id, [
 			"name" => "Tobie",
@@ -66,7 +66,7 @@ The [`update`](../methods/update.md) method will replace the entire record with 
 	
 **merge**
 
-The [`merge`](../../../query-language/statements/update.md#merge-clause) method will merge the new values with the existing record. If the column already exists, it will be replaced with the new value.
+The [`merge`](../../../query-language/statements/update.md#merge-clause) method will merge the new values with the existing record. If the field already exists, it will be replaced with the new value.
 		```php
 		$person = $db->merge($person->id, [
 			"age" => 31

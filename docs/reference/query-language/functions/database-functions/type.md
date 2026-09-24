@@ -675,7 +675,7 @@ type::int("12345");
 ```surql title="Output"
 12345
 ```
-This is the equivalent of using [`<int>`](../../language-primitives/casting.md#int) to cast a value to a int.
+This is the equivalent of using [`<int>`](../../language-primitives/casting.md#int) to cast a value to an int.
 
   
 
@@ -884,7 +884,7 @@ type::record(person:tobie);
 type::record('person:tobie');
 ```
 
-The optional second argument allows an assertation that the record passed in is of this table name.
+The optional second argument allows an assertion that the record passed in is of this table name.
 
 ```surql
 type::record('person:tobie', 'person'); -- person:tobie

@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 This guide shows how to integrate SurrealDB with [n8n](https://n8n.io/), a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
-The official n8n node for SurrealDB. It provides both action and tool nodes to interact with a SurrealDB database, allowing you to create, read, update, and delete records, as well as execute custom SurrealQL queries. It is available in the [n8n Community Nodes](https://docs.n8n.io/integrations/community-nodes/) repository.
+The SurrealDB node is the official n8n node for SurrealDB. It provides both action and tool nodes to interact with a SurrealDB database, allowing you to create, read, update, and delete records, as well as execute custom SurrealQL queries. It is available in the [n8n Community Nodes](https://docs.n8n.io/integrations/community-nodes/) repository.
 
 > [!IMPORTANT]
 > As with all community nodes, this node works only with self-hosted n8n instances, not with n8n Cloud. This node has been tested with SurrealDB `v2.x`
@@ -149,7 +149,7 @@ For most operations, you can override the namespace and database settings from y
 
 ## Operations
 
-The SurrealDB node provides a comprehensive set of operations organised by resource type. For anything not covered, you can use the **Execute Query** operation.
+The SurrealDB node provides operations organised by resource type. For anything not covered, you can use the **Execute Query** operation.
 
 <table>
   <thead>
@@ -293,7 +293,7 @@ This node uses the HTTP/HTTPS protocol exclusively, which means that each operat
 
 ### Connection pooling
 
-The SurrealDB node includes comprehensive connection pooling to improve performance and resource management. Connection pooling allows the node to reuse database connections across multiple operations, reducing connection overhead and improving response times.
+The SurrealDB node includes connection pooling to improve performance and resource management. Connection pooling allows the node to reuse database connections across multiple operations, reducing connection overhead and improving response times.
 
 #### Pool configuration options
 
@@ -353,7 +353,7 @@ SurrealDB supports rich data types that map well to n8n's JSON handling:
 
 ## Error handling
 
-The SurrealDB node includes a comprehensive error handling and recovery system that automatically manages common database issues:
+The SurrealDB node includes an error handling and recovery system that automatically manages common database issues:
 
 ### Automatic error classification
 

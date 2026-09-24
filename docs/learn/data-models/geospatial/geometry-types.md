@@ -32,4 +32,4 @@ See the [Geometries](../../../reference/query-language/language-primitives/data-
 - **Line strings** represent paths (routes, boundaries along a corridor).
 - **Polygons** represent regions (service areas, countries, floor plans projected to the globe).
 
-Choosing the right type makes spatial predicates (`INTERSECTS`, `CONTAINS`, and so on) accurate and keeps indexes meaningful when you add spatial indexing in your schema.
+Choosing the right type makes spatial predicates (`INTERSECTS`, `CONTAINS`, and so on) accurate.

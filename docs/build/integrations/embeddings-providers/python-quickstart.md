@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # 🐍 Embeddings
 
-SurrealDB offers comprehensive support for vector embeddings, enabling powerful semantic search and machine learning capabilities across your data. Through integrations with leading embedding providers, you can easily store, index and query high-dimensional vectors alongside your regular data.
+SurrealDB supports vector embeddings for semantic search and machine learning across your data. With integrations for the main embedding providers, you can store, index and query high-dimensional vectors alongside your regular data.
 
 **LangChain**
 

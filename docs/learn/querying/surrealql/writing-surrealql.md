@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Writing SurrealQL
 
-[SurrealQL](../../../reference/query-language/index.md) is the query language for SurrealDB. How they reach the database depends on your tool or integration. The sections below describe each path in more detail.
+[SurrealQL](../../../reference/query-language/index.md) is the query language for SurrealDB. How queries reach the database depends on your tool or integration. The sections below describe each path in more detail.
 
 ## SurrealQL execution paths
 

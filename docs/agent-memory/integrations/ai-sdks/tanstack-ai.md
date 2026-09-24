@@ -10,7 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 [`@tanstack/ai`](https://tanstack.com/ai) is a type-safe, provider-agnostic AI SDK for streaming chat, tool calling, and agents. SurrealDB Agent Memory adds long-term memory to a `chat()` call: recall relevant context before a generation, then store the exchange afterwards. There is no dedicated adapter. The [JavaScript SDK](../sdks/javascript-and-typescript.md) (`@surrealdb/memory`) runs in any server handler that calls `chat()`.
 
 > [!NOTE]
-> [!NOTE]
 > This is an integration guide. There is no first-party TanStack package; the code below wires the SurrealDB Agent Memory SDK into a `@tanstack/ai` handler, and you can adapt it to your server shape.
 
 ## Installation

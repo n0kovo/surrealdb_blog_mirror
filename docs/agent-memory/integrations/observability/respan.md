@@ -15,8 +15,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 ## Installation
 
 > [!NOTE]
-> `Spectron` was the project name for SurrealDB Agent Memory. These type names
-> will be renamed in a future release.
+> `Spectron` was the project name for SurrealDB Agent Memory. These type names will be renamed in a future release.
 
 ```bash
 pip install openai

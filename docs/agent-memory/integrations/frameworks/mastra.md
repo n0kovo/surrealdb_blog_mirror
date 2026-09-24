@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Mastra
 
-`@surrealdb/mastra-ai` is the SurrealDB integration for [Mastra](https://mastra.ai). It ships two things that can be used separately or together: a **storage adapter** backed by a SurrealDB instance you run, and an **SurrealDB Agent Memory** memory provider backed by the hosted agent memory service.
+`@surrealdb/mastra-ai` is the SurrealDB integration for [Mastra](https://mastra.ai). It ships two things that can be used separately or together: a **storage adapter** backed by a SurrealDB instance you run, and a **SurrealDB Agent Memory** provider backed by the hosted agent memory service.
 
 ## Requirements
 

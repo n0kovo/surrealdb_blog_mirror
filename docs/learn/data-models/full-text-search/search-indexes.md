@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Search indexes
-description: Apply FULLTEXT ANALYZER indexes to single fields per index, and understand common parse errors when listing multiple columns.
+description: Apply FULLTEXT ANALYZER indexes to single fields per index, and understand common parse errors when listing multiple fields.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/data-models/full-text-search/search-indexes.mdx"
 ---
 
@@ -29,7 +29,7 @@ DEFINE INDEX title_index
   FULLTEXT ANALYZER my_analyzer;
 ```
 
-An index can only be defined on a single field (column).
+An index can only be defined on a single field.
 
 ```surql
 DEFINE ANALYZER my_analyzer
@@ -44,7 +44,7 @@ DEFINE INDEX body_index
 
 ```surql title="Output"
 'Parse error: Expected one column, found 2
- //- [5:55]
+ --> [5:55]
   |
 5 | ...LDS body, title FULLTEXT ANALYZER my_analyzer;
   |              ^^^^^

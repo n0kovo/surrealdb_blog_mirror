@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `.Kill()` {#kill}
 
-Kills a running live query by it's UUID.
+Kills a running live query by its UUID.
 
 ```csharp title="Method Syntax"
 await db.Kill(queryUuid)

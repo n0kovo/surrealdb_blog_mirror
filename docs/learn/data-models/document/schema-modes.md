@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Schema modes
-description: Create flexible documents without upfront column definitions, or tighten schemas with DEFINE TABLE; add and retrieve JSON-like records in SurrealQL.
+description: Create flexible documents without upfront field definitions, or tighten schemas with DEFINE TABLE; add and retrieve JSON-like records in SurrealQL.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/data-models/document/schema-modes.mdx"
 ---
 

@@ -315,7 +315,7 @@ const query = new BoundQuery(
 );
 ```
 
-### 3. Leverage type system
+### 3. Use the type system
 
 ```ts
 // Good: Type-safe values

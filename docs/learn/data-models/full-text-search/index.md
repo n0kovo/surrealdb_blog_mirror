@@ -18,4 +18,4 @@ _Auto-generated index — 5 pages._
 - [Scoring and ranking](scoring-and-ranking.md)
   Query with the MATCHES operator, combine BM25 and HIGHLIGHTS on indexes, and use search::score and search::highlight with numbered match clauses.
 - [Search indexes](search-indexes.md)
-  Apply FULLTEXT ANALYZER indexes to single fields per index, and understand common parse errors when listing multiple columns.
+  Apply FULLTEXT ANALYZER indexes to single fields per index, and understand common parse errors when listing multiple fields.

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Migrating from Mem0
 
-This guide maps Mem0 concepts to their SurrealDB Agent Memory equivalents, then an incremental migration that can run both systems in parallel.
+This guide maps Mem0 concepts to their SurrealDB Agent Memory equivalents, then describes an incremental migration that can run both systems in parallel.
 
 ## Concept mapping
 

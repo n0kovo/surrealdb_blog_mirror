@@ -12,7 +12,7 @@ SurrealDB provides a number of methods for authenticating users and securing the
 
 ## Define scope
 
-If you haven't defined a scope for your database, you can define a scope by quering to the database using the [`query`](../methods/query.md) method.
+If you haven't defined a scope for your database, you can define a scope by querying the database using the [`query`](../methods/query.md) method.
 
 ```php
 $db->query('
@@ -156,4 +156,4 @@ session will be invalidated and the user will be signed out.
 $db->invalidate();
 ```
 
-In the next article we will cover how to query to the database.
+In the next article we will cover how to query the database.

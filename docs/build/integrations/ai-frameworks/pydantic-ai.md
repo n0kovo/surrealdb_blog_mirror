@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Pydantic AI
 
-[Pydantic AI](https://ai.pydantic.dev) is a Python agent framework designed to help you quickly, confidently, and painlessly build production grade applications and workflows with Generative AI.
+[Pydantic AI](https://ai.pydantic.dev) is a Python agent framework for building production-grade applications and workflows with Generative AI.
 
 ## Example
 

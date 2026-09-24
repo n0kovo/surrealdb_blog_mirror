@@ -1,7 +1,7 @@
 ---
 position: 9
 title: Upgrades & patching
-description: "Upgrade SurrealDB safely: binary replacement, surreal fix for major versions, migrations, and cluster rolling upgrades."
+description: "Upgrade SurrealDB safely: binary replacement, major-version data migration, automatic data migrations, and cluster rolling upgrades."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/self-hosted/upgrades-and-patching.mdx"
 ---
 
@@ -11,7 +11,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 Read the release notes for breaking changes, new defaults, or removed flags before you cut over. Re-run integration tests against the new version before promoting the change across your organisation.
 
-Across **major versions**, on-disk formats may change. When documentation requires it, run [`surreal fix`](../../reference/cli/surrealdb-cli/commands/fix.md) to migrate data between layouts, and follow [Migrating from older SurrealDB versions](../../build/migrating/from-old-surrealdb-versions/overview.md) plus any linked guides (for example between specific major lines).
+Across **major versions**, on-disk formats may change. Follow [Migrating from older SurrealDB versions](../../build/migrating/from-old-surrealdb-versions/overview.md) and the guide for your pair of major versions. Moving from 2.x to 3.x uses a v3-compatible export from the 2.x data, imported into 3.x, as described in [Migrating from 2.x to 3.x](../../build/migrating/from-old-surrealdb-versions/2x-to-3x.md). [`surreal fix`](../../reference/cli/surrealdb-cli/commands/fix.md) converts 1.x data to the 2.x layout, and only 2.x binaries implement it.
 
 **Rolling upgrades** in **clustered** setups usually upgrade one node at a time: verify cluster health, upgrade a member, wait for replication or quorum to stabilise, then continue.
 

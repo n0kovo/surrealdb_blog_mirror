@@ -7,18 +7,18 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Upgrading from `2.x` to `3.x` 
 
-This guide consolidates all breaking changes when upgrading from SurrealDB `2.x` to `3.x`, organised by severity level. If you are using SurrealDB Studio, you can use the [migration diagnostics](../../../explore/studio/index.md) to automatically see your data. This will also provide you with a list of actions you need to take to migrate your data.
+This guide consolidates all breaking changes when upgrading from SurrealDB `2.x` to `3.x`, organised by severity level. If you are using SurrealDB Studio, you can use the [migration diagnostics](../../../explore/studio/index.md) to check your data automatically. This will also provide you with a list of actions you need to take to migrate your data.
 
 ## Migration diagnostics in SurrealDB Studio
 
-SurrealDB Studio provides a built-in migration diagnostics tool that can be used to automatically see your data and provide you with a list of actions you need to take to migrate your data.
+SurrealDB Studio provides a built-in migration diagnostics tool that checks your data automatically and gives you a list of actions you need to take to migrate your data.
 
 >[!NOTE]
 >The migration diagnostics tool is only available for SurrealDB version `2.6.1` and above.
 
 ![SurrealDB Studio migration diagnostics](../../../assets/img/image/dark/migration-diagnostics.png)
 
-Select your `2.x` database and click on the **Migration** option in the sidebar. This will open the migration diagnostics tool. First you'll need to start the checks by clicking on the **Start Checks** button. This will return a migration report with a list of actions you need to take to migrate your data (If any).
+Select your `2.x` database and click on the **Migration** option in the sidebar. This will open the migration diagnostics tool. First you'll need to start the checks by clicking on the **Start Checks** button. This will return a migration report with a list of actions you need to take to migrate your data (if any).
 
 ![SurrealDB Studio migration report](../../../assets/img/image/dark/surrealist-migration-report.png)
 
@@ -74,7 +74,7 @@ At checkout, you will be prompted to enter your payment details (if you don't ha
 
 ## Using the CLI
 
-If you prefer to migrate using the command line rather tha SurrealDB Studio, the SurrealDB `3.x` binary includes a `v2` subcommand that can connect to your `2.x` database and produce a v3-compatible export. This is necessary because the `3.x` binary cannot directly read `2.x` data, and the `2.x` binary does not support the v3-compatible export format.
+If you prefer to migrate using the command line rather than SurrealDB Studio, the SurrealDB `3.x` binary includes a `v2` subcommand that can connect to your `2.x` database and produce a v3-compatible export. This is necessary because the `3.x` binary cannot directly read `2.x` data, and the `2.x` binary does not support the v3-compatible export format.
 
 >[!NOTE]
 >The `v2` subcommand requires SurrealDB version `3.0.3` or later.
@@ -106,7 +106,7 @@ For the full list of available options for each command, see the [export command
 
 ## Severity levels
 
-In this section, we will explore the different severity levels of the migration report and the actions you need to take to migrate your data. These severity levels are as follows:
+This section describes the severity levels in the migration report and the actions you need to take to migrate your data. The severity levels are as follows:
 
 - **Will break**: Almost guaranteed to change query semantics when porting to `3.x`.
 - **Can break**: Some use cases will remain the same, but likely to cause issues.
@@ -607,7 +607,7 @@ DEFINE INDEX vec_idx ON table FIELDS embedding HNSW DIMENSION 768;
 
 **What changed**: Closures can no longer be stored as part of a record.
 
-**Action**: Use of closures stored inside a record will have to be removed, there is currently no new feature which can replace the stored closures.
+**Action**: Closures stored inside a record have to be removed. There is currently no new feature that can replace them.
 
 **Before (2.x)**:
 ```surql
@@ -634,7 +634,7 @@ CREATE record SET closure = |$a| $a + 1
 
 **What changed**: The `ANALYZE` statement which could provide some statistics about full text indexes has been removed.
 
-**Action**: Use the `ANALYZE` stastement will have to be removed.
+**Action**: Remove any use of the `ANALYZE` statement.
 
 ## Can break - likely issues
 
@@ -801,7 +801,7 @@ CREATE user CONTENT { name: "Billy", other: "value" }.{ name };
 
 **Severity**: Can break
 
-**What changed**: Numeric values in record now have different ordering and equality when used in keys. Previously, `a:[1]`, `a:[1f]` and `a:[1dec]` were all different record IDs and could have different records.
+**What changed**: Numeric values in record IDs now have different ordering and equality when used in keys. Previously, `a:[1]`, `a:[1f]` and `a:[1dec]` were all different record IDs and could have different records.
 
 Numeric values in record IDs are now ordered by their numeric value, meaning the `a:[1]`, `a:[1f]` and `a:[1dec]` are the same key. Furthermore, `a:[0f]` is now ordered before `a:[1]`.
 
@@ -951,7 +951,7 @@ type::is_array(|a:1..=2|);  // returns true
 
 Before 3.0, `.id` idioms followed by another idiom expression would return the record-id key. After 3.0, the `.id` behaves like any other `.field` idiom.
 
-**Breaks when**: Code depends the special behaviour of that `.id` idioms had.
+**Breaks when**: Code depends on the special behaviour that `.id` idioms had.
 
 **Before (2.x)**:
 ```surql
@@ -980,7 +980,7 @@ This must now be written with backticks, or renamed.
 DEFINE INDEX `select` ...
 ```
 
-The statements which had this change from an identifier to allowing a general expressions are the following:
+The statements which had this change from an identifier to allowing a general expression are the following:
 
 - The `ident` after `DEFINE TABLE ident ...`
 - The `ident` after `DEFINE NAMESPACE ident ...`
@@ -1011,7 +1011,7 @@ The statements which had this change from an identifier to allowing a general ex
 
 A `DEFINE FIELD` statement for arrays and sets in SurrealDB 2.x allowed a maximum number of items to be indicated. This number now refers to the *required* number of items.
 
-As such, a schema with an `ASSERT $value().len()` is equal to a certain number can now have the required number in the type definition itself. Additionally, definitions that indicate a maximum number of items must be changed to `ASSERT $value.len() <=` followed by the maximum number.
+As such, a schema that used an `ASSERT $value().len()` check for an exact number of items can now put the required number in the type definition itself. Additionally, definitions that indicate a maximum number of items must be changed to `ASSERT $value.len() <=` followed by the maximum number.
 
 ```surql
 -- Assert exact length of 640 bytes in SurrealDB 2.x

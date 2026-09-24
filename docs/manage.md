@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # Manage
 
-Operational documentation, for both SurrealDB Cloud and self-hosted deployments. These pages assume a database that already exists and concentrate on keeping it running, observable and up to date.
+This section contains operational documentation for both SurrealDB Cloud and self-hosted deployments. These pages assume a database that already exists and concentrate on keeping it running, observable and up to date.
 
 - **[Instances](manage/instances/index.md)** — Create, connect to, scale, back up and monitor managed instances.
 - **[Organisations](manage/organisations/index.md)** — Members, roles, invitations and billing for a team.

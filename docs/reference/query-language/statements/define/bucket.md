@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 *Since v3.0.0*
 
 > [!NOTE]
-> The `DEFINE BUCKET` statement is currently experimental and subject to change. To use this feature, please ensure you are on the latest supported alpha version of SurrealDB. To enable it, either pass `--allow-experimental files` when [starting the database](../../../cli/surrealdb-cli/commands/start.md) or set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable to `files`.
+> The `DEFINE BUCKET` statement is experimental and subject to change. To enable it, either pass `--allow-experimental files` when [starting the database](../../../cli/surrealdb-cli/commands/start.md) or set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable to `files`.
 
 The `DEFINE BUCKET` statement lets you create a bucket that can hold files.
 

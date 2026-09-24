@@ -24,7 +24,7 @@ The OpenTelemetry exporter speaks OTLP gRPC, so anything that ingests OTLP works
 - **Prometheus pull.** Scrape the built-in `/metrics` endpoint. Anonymous scrapers see only the [public allowlist](../observability/metrics.md#public-metrics-allowlist); pass root credentials to unlock the full surface. Build Grafana dashboards on the resulting time series and pair with Alertmanager for the [alert hints](../observability/metrics.md#alert-hints) recommended for production.
 - **OTLP push.** Point SurrealDB at an OpenTelemetry collector and route from there into Prometheus remote-write, Tempo / Jaeger for traces, and Loki or a SIEM for logs (including audit and slow-query records when their OTel export is opted in). Label streams by environment (`production`, `staging`, `dev`) at the collector so dashboards do not mix traffic accidentally.
 
-Either path uses the same `surrealdb.*` instrument namespace and the same `service.edition` resource attribute, so dashboards travel cleanly across deployments.
+Either path uses the same `surrealdb.*` instrument namespace and the same `service.edition` resource attribute, so the same dashboards work across deployments.
 
 ## Key signals to watch
 

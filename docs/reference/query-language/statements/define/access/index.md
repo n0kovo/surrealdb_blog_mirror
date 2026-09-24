@@ -83,7 +83,7 @@ DEFINE ACCESS account ON DATABASE TYPE RECORD
 
 ## With `AUTHENTICATE` clause
 
-The authenticate clause can be used to change the record identifier returned by the `SIGNIN` and `SIGNUP` clauses or replace the identifier provided in the token when authenticating `WITH JWT`, In the context of [`DEFINE ACCESS ... TYPE RECORD`](record.md), the `AUTHENTICATE` clause is always executed across signin, signup and token authentication.
+The authenticate clause can be used to change the record identifier returned by the `SIGNIN` and `SIGNUP` clauses or replace the identifier provided in the token when authenticating `WITH JWT`. In the context of [`DEFINE ACCESS ... TYPE RECORD`](record.md), the `AUTHENTICATE` clause is always executed across signin, signup and token authentication.
 
 When used in a [`DEFINE ACCESS ... TYPE JWT`](jwt.md), the `AUTHENTICATE` clause is used to validate the token claims and can be used to log or stop authentication attempts.
 

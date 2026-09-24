@@ -14,7 +14,7 @@ SurrealDB supports [GraphQL](https://graphql.org/) through the [`/graphql`](../.
 
 ## Key features
 
-GraphQL offers a number of key features that make it a powerful tool for working with SurrealDB:
+The main features of GraphQL are:
 
 - **Declarative Data Fetching**: GraphQL allows you to request exactly the data you need, no more and no less. This reduces over-fetching and under-fetching of data, leading to more efficient queries.
 
@@ -53,11 +53,11 @@ From SurrealDB 3.1.0, the auto-generated GraphQL schema follows a single **Apoll
 | Operation | Example for table `person` |
 | --- | --- |
 | Fetch one record | `person(id: ID!)` |
-| List records | `people(filter, where, order, limit, start, version)` - pluralised table name |
-| Aggregate | `people_aggregate(filter, groupBy, …)` |
-| Create / update / delete | `createPerson`, `updatePerson`, `deletePerson` (bulk: `createPeople`, …) |
+| List records | `persons(filter, where, order, limit, start, version)` - pluralised table name |
+| Aggregate | `persons_aggregate(filter, groupBy, …)` |
+| Create / update / delete | `createPerson`, `updatePerson`, `deletePerson` (bulk: `createPersons`, …) |
 
-Field names on types mirror SurrealQL unless you set [`GRAPHQL_ALIAS`](../../../reference/query-language/statements/define/field.md) or [`GRAPHQL_DEPRECATED`](../../../reference/query-language/statements/define/field.md) on [`DEFINE FIELD`](../../../reference/query-language/statements/define/field.md) / [`DEFINE TABLE`](../../../reference/query-language/statements/define/table.md) / [`DEFINE FUNCTION`](../../../reference/query-language/statements/define/function.md). List queries also support Relay-style **`peopleConnection`** cursor pagination alongside offset `limit` / `start`.
+Field names on types mirror SurrealQL unless you set [`GRAPHQL_ALIAS`](../../../reference/query-language/statements/define/field.md) or [`GRAPHQL_DEPRECATED`](../../../reference/query-language/statements/define/field.md) on [`DEFINE FIELD`](../../../reference/query-language/statements/define/field.md) / [`DEFINE TABLE`](../../../reference/query-language/statements/define/table.md) / [`DEFINE FUNCTION`](../../../reference/query-language/statements/define/function.md). List queries also support Relay-style **`personsConnection`** cursor pagination alongside offset `limit` / `start`.
 
 If you upgrade from 3.0.x, regenerate client stubs and saved queries - names such as `_get_person` and `createManyPerson` are no longer generated for typical tables.
 
@@ -71,7 +71,7 @@ This is followed by the following pages that detail the various tools by which G
 - Using the [`/graphql`](../../../reference/rest-api/http-protocol.md#graphql) endpoint [via Bruno](via-bruno.md)
 - Using [SurrealDB Studio](https://studio.surrealdb.com/), SurrealDB's interactive environment for experimenting with GraphQL queries and seeing results immediately in the UI.
 
-Other tools such as Postman and many others can be used against the `/graphql` endpoint.
+Other tools such as Postman can also be used against the `/graphql` endpoint.
 
 ## Examples
 

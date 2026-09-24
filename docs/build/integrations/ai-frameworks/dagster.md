@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Dagster
 
-Dagster is a powerful tool for building data pipelines and workflows. It is a popular choice for data engineers and data scientists.
+Dagster is a tool for building data pipelines and workflows, and is widely used by data engineers and data scientists.
 
 ## Install
 

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Installation
 
-In this section, you will learn how to install the SurrealDB Mojo SDK and add it to your project.
+This section covers installing the SurrealDB Mojo SDK and adding it to your project.
 
 ## Requirements
 

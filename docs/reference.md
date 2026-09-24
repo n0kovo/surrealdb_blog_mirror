@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # Reference
 
-Exhaustive material, organised for lookup rather than for reading through. Every SurrealQL statement, every built-in function, every protocol message and every SDK method is documented here. For the explanations behind them, see [Learn](learn.md).
+This section holds exhaustive material, organised for lookup rather than for reading through. Every SurrealQL statement, every built-in function, every protocol message and every SDK method is documented here. For the explanations behind them, see [Learn](learn.md).
 
 ## Core
 

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # Explore
 
-Hands-on material. Where the rest of the documentation explains one thing at a time, these pages show whole projects and the tools used to build them.
+This section contains hands-on material. Where the rest of the documentation explains one thing at a time, these pages show whole projects and the tools used to build them.
 
 - **[SurrealDB Studio](explore/studio/index.md)** — Query, visualise and manage your data in the official dashboard.
 - **[Tutorials and demos](explore/tutorials/index.md)** — Worked walkthroughs, from first query to a deployed application.

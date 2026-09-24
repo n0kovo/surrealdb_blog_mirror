@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 `surrealctl` is driven as often by pipelines and agents as by people. This page is the contract those callers can rely on: which stream carries what, what `--json` guarantees, and what each exit code means.
 
-The framing rule is short. **stderr text is not a contract. The exit codes are.**
+The rule is that **the exit codes are a contract, and stderr text is not.**
 
 ## The stream split
 
@@ -101,7 +101,7 @@ Eleven values, and the set is closed:
 | `wait_timeout` | `10` | A wait gave up; the operation is still running |
 | `unknown` | `1` | Unclassified |
 
-`not_available` is worth calling out: it is HTTP 501, and it means nothing is broken - the feature is simply not enabled here. Every [SurrealDB Agent Memory](commands/spectron.md) route answers this way on a deployment without it.
+`not_available` is HTTP 501, and it means nothing is broken - the feature is simply not enabled here. Every [SurrealDB Agent Memory](commands/spectron.md) route answers this way on a deployment without it.
 
 ### What `--json` guarantees
 
@@ -286,7 +286,7 @@ Codes are never reused, and none exceeds 125 except for the signal convention.
 
 `0`, `1` and `2` keep their conventional meanings, so `if ! surrealctl …` behaves exactly as it does with the [`surreal` CLI](../surrealdb-cli/overview.md), and usage errors exit `2` as every other command-line tool does. Everything above `2` is additive.
 
-`10` earns its own code because *still running* is a genuinely different answer from *failed*, and a pipeline may reasonably poll again rather than roll back. See [Long-running operations](long-running-operations.md).
+`10` has its own code because *still running* is a different answer from *failed*, and a pipeline may reasonably poll again rather than roll back. See [Long-running operations](long-running-operations.md).
 
 ```bash title="Branch on the outcome"
 if surrealctl instance create api --type shared-1 --region aws-euw1 --json > instance.json; then

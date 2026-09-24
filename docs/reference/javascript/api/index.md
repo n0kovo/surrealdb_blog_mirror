@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # API reference
 
-Reference documentation for every public class, type, and helper in the JavaScript SDK. For task-oriented guidance, see the [concepts](../concepts/connecting-to-surrealdb.md) pages.
+This section documents every public class, type, and helper in the JavaScript SDK. For task-oriented guidance, see the [concepts](../concepts/connecting-to-surrealdb.md) pages.
 
 ## Sections
 

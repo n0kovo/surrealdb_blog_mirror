@@ -11,9 +11,9 @@ Once you can store [geometry types](geometry-types.md) and run [spatial queries]
 
 ## Store finder (“near me”)
 
-Store each site's coordinates as a `Point`, optionally with a category and opening hours. At query time, supply the user's location, compute distance or bounding-box filters, and sort by proximity. For dense datasets, consider geohash prefixes or spatial indexes (where supported) to avoid scanning the whole table.
+Store each site's coordinates as a `Point`, optionally with a category and opening hours. At query time, supply the user's location, compute distance or bounding-box filters, and sort by proximity. SurrealDB has no spatial index type, so for dense datasets store a geohash (from [`geo::hash::encode()`](../../../reference/query-language/functions/database-functions/geo.md#geohashencode)) in a field with a standard index, or at the start of the record ID, to avoid scanning the whole table.
 
-For example, consider records used to store millions of events by location. These can use array-based record IDs that start with a geohash, making it easy to query every record with exactly this hash and no need to use any further filtering.
+For example, consider records used to store millions of events by location. These can use array-based record IDs that start with a geohash, so a query can select every record with exactly this hash without any further filtering.
 
 ```surql
 DEFINE FUNCTION fn::create_geo_record($point: point) -> object {

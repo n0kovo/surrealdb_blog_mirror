@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 Connection Strings are an easy way to configure your application to connect to a SurrealDB instance.
 They are stored in the `appsettings.json` file and can be used to configure the `SurrealDbClient`.
 
-In general, it is known as a best practice to:
+It is good practice to:
 
 - set a development Connection String in `appsettings.Development.json`,
 - store your production Connection String in a Secret environment variable, or even better in a Vault.
@@ -121,7 +121,7 @@ In general, it is known as a best practice to:
 
 ## Examples
 
-Here is a couple of examples of Connection Strings:
+Here are a couple of examples of Connection Strings:
 
 ```sh
 Server=http://127.0.0.1:8000;Namespace=test;Database=test;Username=root;Password=secret

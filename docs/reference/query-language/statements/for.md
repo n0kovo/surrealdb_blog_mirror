@@ -49,7 +49,7 @@ FOR $name IN ['Tobie', 'Jaime'] {
 };
 ```
 
-The following query shows the `FOR` statement being used update a property on every user matching certain criteria.
+The following query shows the `FOR` statement being used to update a property on every user matching certain criteria.
 
 ```surql
 /**[test]
@@ -67,7 +67,7 @@ FOR $person IN (SELECT VALUE id FROM person WHERE age >= 18) {
 
 ## Ranges in FOR loops
 
-A `FOR` loop can also be made out of a [range UUID](../language-primitives/data-types/ranges.md) of integers.
+A `FOR` loop can also be made out of a [range](../language-primitives/data-types/ranges.md) of integers.
 
 ```surql
 /**[test]

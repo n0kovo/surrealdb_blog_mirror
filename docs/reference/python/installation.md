@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Installation
 
-In this section, you will learn how to install the Python SDK in your project.
+This page shows how to install the Python SDK and import it into a project.
 
 ## Install the SDK
 

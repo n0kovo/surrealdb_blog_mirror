@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Logging
 
-Logging is an important part of any application to understand what is happening. The .NET SDK supports the built-in logging API offered by the `Microsoft.Extensions.Logging` NuGet package.
+Logging helps you understand what is happening inside an application. The .NET SDK supports the built-in logging API offered by the `Microsoft.Extensions.Logging` NuGet package.
 
 ## Logging categories
 

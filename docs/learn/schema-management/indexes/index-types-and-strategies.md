@@ -59,7 +59,7 @@ The `INFO` statement will help you understand what indexes are defined in your `
 }
 ```
 
-As we defined a `UNIQUE` index on the `email` column, a duplicate entry for that column or field will throw an error.
+As we defined a `UNIQUE` index on the `email` field, a duplicate entry for that field will throw an error.
 
 ```surql
 -- Create a user record and set an email ID.
@@ -75,12 +75,17 @@ with record `user:1`"
 
 ### Composite index
 
-A composite index spans multiple fields of a table. Composite indexes are mainly used to create a unique index when the definition of what is unique pertains to more than one field.
+A composite index spans multiple fields of a table. With `UNIQUE`, it enforces uniqueness when the definition of what is unique pertains to more than one field.
 
 ```surql
 -- Create an index on the account and email fields of the user table
 DEFINE INDEX test ON user FIELDS account, email UNIQUE;
 ```
+
+A composite index also serves queries. The query planner uses it for a `WHERE` clause that filters on its leading fields: `account = 'a'` alone, `account = 'a' AND email = 'x'`, or an equality on `account` followed by a range on the next field. A filter that skips the first field, such as `email = 'x'` on its own, cannot use the index. Use [`EXPLAIN`](../../../reference/query-language/statements/select.md#the-explain-clause) to confirm which index a query uses.
+
+> [!NOTE]
+> Before SurrealDB 2.2.0, the query planner used a composite index only for conditions on its first field. Range conditions on a field after an equality prefix use the index from 3.0.0.
 
 ### Count index
 
@@ -91,7 +96,7 @@ A count index uses the `COUNT` special clause instead of the usual `FIELDS` / `C
 - **`COUNT`** - full-table counts: `SELECT count() FROM <table> GROUP ALL`.
 - **`COUNT WHERE <condition>`** - filtered counts when the query `WHERE` exactly matches the index condition.
 
-An unconditional count index is optional for full-table counts; SurrealDB already uses a `CountScan` fast path that counts keys without deserialising rows. `COUNT WHERE` is most useful for repeated filtered counts without scanning the whole table.
+An unconditional count index is optional for full-table counts; SurrealDB already uses a `CountScan` fast path that counts keys without deserialising records. `COUNT WHERE` is most useful for repeated filtered counts without scanning the whole table.
 
 ```surql
 DEFINE INDEX idx ON indexed_reading COUNT;
@@ -129,14 +134,13 @@ The [Full-Text search](../../data-models/full-text-search/overview.md) index hel
 Let's create a full-text search index for a `name` field on a `user` table.
 
 ```surql
--- Define the an analyzer with
+-- Define an analyzer
 DEFINE ANALYZER example_ascii TOKENIZERS class FILTERS ascii;
--- Since 3.0.0: only FULLTEXT used to benefit from concurrent full-text search
 DEFINE INDEX userNameIndex ON TABLE user FIELDS name FULLTEXT ANALYZER example_ascii BM25 HIGHLIGHTS;
 ```
 
-- `SEARCH` or `FULLTEXT`: By using the `SEARCH` keyword, you enable full-text search on the specified column.
-- `ANALYZER ascii`: Uses a custom [analyzer](../../../reference/query-language/statements/define/analyzer.md) called `example_ascii` which uses the class tokenizier and `ascii` filter to analysing the text input.
+- `FULLTEXT`: enables full-text search on the specified field. Before SurrealDB 3.0.0 this clause was `SEARCH`, which 3.x rejects as a parse error.
+- `ANALYZER ascii`: Uses a custom [analyzer](../../../reference/query-language/statements/define/analyzer.md) called `example_ascii` which uses the class tokenizer and `ascii` filter to analyse the text input.
 - `BM25`: Ranking algorithm used for relevance scoring.
 - `HIGHLIGHTS`: Allows keyword highlighting in search results output when using the [`search::highlight`](../../../reference/query-language/functions/database-functions/search.md#searchhighlight) function
 - `FIELDS`: a full-text search index can only be used on one field at a time. To use full-text search on more than one field, use a separate `DEFINE INDEX` statement for each one.
@@ -145,7 +149,7 @@ DEFINE INDEX userNameIndex ON TABLE user FIELDS name FULLTEXT ANALYZER example_a
 
 Indexes can be rebuilt using the [`REBUILD`](../../../reference/query-language/statements/rebuild.md) statement. This can be useful when you want to update the index definition or when you want to rebuild the index to optimise performance.
 
-You may want to rebuild an index overtime to ensure that the index is up-to-date with the latest data in the table.
+You may want to rebuild an index over time to ensure that the index is up-to-date with the latest data in the table.
 
 ```surql
 REBUILD INDEX userEmailIndex ON user;
@@ -153,7 +157,7 @@ REBUILD INDEX userEmailIndex ON user;
 
 ## Using `CONCURRENTLY` clause
 
-Building indexes can be lengthy and may time out before they're completed. Without `CONCURRENTLY`, `DEFINE INDEX` blocks until the index is ready. They `CONCURRENTLY` clause can be used when the statement should return immediately while the build runs in the background, during which progress can be monitored with [INFO FOR INDEX](../../../reference/query-language/statements/info.md#index-information).
+Building indexes can be lengthy and may time out before they're completed. Without `CONCURRENTLY`, `DEFINE INDEX` blocks until the index is ready. The `CONCURRENTLY` clause can be used when the statement should return immediately while the build runs in the background, during which progress can be monitored with [INFO FOR INDEX](../../../reference/query-language/statements/info.md#index-information).
 
 ```surql
 -- Create an INDEX concurrently
@@ -180,8 +184,8 @@ Note: As unique indexes offer a guarantee that no records that contravene the in
 
 ## Performance implications
 
-When defining indexes, it's essential to consider the fields most frequently queried or used to optimise performance.
+When defining indexes, consider which fields are most frequently queried.
 
-Indexes may improve the performance of SurrealQL statements. This may not be noticeable with small tables but it can be significant for large tables; especially when the indexed fields are used in the `WHERE` clause of a [`SELECT`](../../../reference/query-language/statements/insert.md) statement.
+Indexes may improve the performance of SurrealQL statements. This may not be noticeable with small tables but it can be significant for large tables; especially when the indexed fields are used in the `WHERE` clause of a [`SELECT`](../../../reference/query-language/statements/select.md) statement.
 
-Indexes can also impact the performance of write operations ([INSERT](../../../reference/query-language/statements/insert.md), [UPDATE](../../../reference/query-language/statements/update.md), [DELETE](../../../reference/query-language/statements/delete.md)) since the index needs to be updated accordingly. Therefore, it's essential to balance the need for read performance with write performance.
+Indexes can also impact the performance of write operations ([INSERT](../../../reference/query-language/statements/insert.md), [UPDATE](../../../reference/query-language/statements/update.md), [DELETE](../../../reference/query-language/statements/delete.md)) since the index needs to be updated accordingly, so the need for read performance has to be balanced against write performance.

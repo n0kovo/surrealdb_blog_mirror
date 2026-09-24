@@ -48,7 +48,7 @@ surrealctl --profile staging auth login
 
 ### How the browser flow is hardened
 
-Worth knowing when a corporate network is in the way:
+These details matter when a corporate network is in the way:
 
 - The listener binds the literal `127.0.0.1`, never `localhost`, which resolves through `/etc/hosts` and DNS and can answer on `::1`.
 - One of four ports is used - `9375`, `9376`, `9377`, `9378` - because the identity provider matches callback URLs exactly.
@@ -115,7 +115,7 @@ The scope vocabulary is shared with the Cloud MCP tools:
 | `write:cloud-billing` | Change billing details |
 | `write:cloud-spectron` | Manage SurrealDB Agent Memory contexts and keys |
 
-Two commands answer two different questions. [`token scopes`](commands/token.md#token-scopes) is the catalogue of what *can* be granted; [`auth scopes`](commands/auth.md#auth-scopes) is what the credential in hand *carries*. One is the menu, the other is the receipt.
+Two commands answer two different questions. [`token scopes`](commands/token.md#token-scopes) is the catalogue of what *can* be granted; [`auth scopes`](commands/auth.md#auth-scopes) is what the credential in hand *carries*.
 
 `auth scopes` on a login session returns an empty list and points you at [`org permissions`](commands/org.md#org-permissions), because OAuth identity scopes are not an authorisation model - your role in the organisation is.
 

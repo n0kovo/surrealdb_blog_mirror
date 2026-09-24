@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Handle authentication
 
-Since SurrealDB is a database that is designed to be used in a distributed environment, it is important to secure the database and the data that is stored in it.
+SurrealDB is designed to be used in a distributed environment, so the database and the data stored in it need to be secured.
 SurrealDB provides a number of methods for authenticating users and securing the database.
 
 In your SurrealDB database, you can create authentication login using the [`DEFINE ACCESS`](../../query-language/statements/define/access/index.md) statement which supports [JWT](../../query-language/statements/define/access/jwt.md) and [Record](../../query-language/statements/define/access/record.md) Access methods.

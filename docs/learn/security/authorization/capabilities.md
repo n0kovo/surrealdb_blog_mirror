@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Capabilities
 
-Most powerful features - scripting, functions, network access - are disabled by default and must be explicitly enabled by an administrator per use case.
+Capabilities control features such as scripting, functions and network access. Most capabilities are disabled by default and must be explicitly enabled by an administrator per use case.
 
 > [!IMPORTANT]
 > Capabilities are configured per instance from **Instance settings** in [SurrealDB Studio](https://studio.surrealdb.com). See [Configure an instance](../../../manage/instances/configure.md) for the available settings.
@@ -38,8 +38,7 @@ You can learn more about best practices when using capabilities in our [Security
 
 By default, all capabilities are denied unless allowed. Some few capabilities (e.g. functions) are allowed by default.
 
-Capabilities can be configured globally (e.g. `--allow-all`, `--deny-all`), generally (e.g. `--allow-net`, `--deny-funcs`) or specifically (e.g. `--deny-net 192.168.1.1`, `--allow-funcs string::len`).
-When capabilities are configured, the more specific capabilities prevail over the less specific. At the same level of specificity, denies always prevail over allows.
+Capabilities can be configured globally (e.g. `--allow-all`, `--deny-all`), generally (e.g. `--allow-net`, `--deny-funcs`) or specifically (e.g. `--deny-net 192.168.1.1`, `--allow-funcs string::len`). When capabilities are configured, the more specific capabilities prevail over the less specific. At the same level of specificity, denies always prevail over allows.
 
 ### Examples
 
@@ -236,7 +235,7 @@ List of options for denying capabilities:
                 --deny-guests
             </td>
             <td colspan="2" scope="row" data-label="Description">
-                Deny non-authenticated users to execute queries when authentication is enabled
+                Prevent non-authenticated users from executing queries when authentication is enabled
             </td>
             <td scope="row" data-label="Default">
                 False
@@ -357,7 +356,7 @@ Deny by default: list only the `--allow-net` targets you need, and keep addition
 
 *Since v2.2.0*
 
-The `--allow-arbitrary-query` and `--deny-arbitrary-query` allows database administrators to allow or deny arbitrary quering by either guest, record or system users, or a combination of those. This capability settings affects the following:  [/sql endpoint](../../../reference/rest-api/http-protocol.md#sql), [/key endpoints](../../../reference/rest-api/http-protocol.md#get-table), [/graphql endpoint](../../../reference/rest-api/http-protocol.md#graphql), [/gql endpoint](../../../reference/rest-api/http-protocol.md#gql), the [Postgres wire protocol](../../../reference/rest-api/postgres-protocol.md) listener, [RPC methods](../../../reference/rest-api/rpc-protocol.md) `use`, `select`, `create`, `update`, `merge`, `patch`, `delete`, `relate`, `insert`, `insert_relation`, `query`, `gql`, and `graphql`, and the [`eval::*`](../../../reference/query-language/functions/database-functions/eval.md) functions.
+The `--allow-arbitrary-query` and `--deny-arbitrary-query` allow database administrators to allow or deny arbitrary querying by either guest, record or system users, or a combination of those. This capability setting affects the following: [/sql endpoint](../../../reference/rest-api/http-protocol.md#sql), [/key endpoints](../../../reference/rest-api/http-protocol.md#get-table), [/graphql endpoint](../../../reference/rest-api/http-protocol.md#graphql), [/gql endpoint](../../../reference/rest-api/http-protocol.md#gql), the [Postgres wire protocol](../../../reference/rest-api/postgres-protocol.md) listener, [RPC methods](../../../reference/rest-api/rpc-protocol.md) `use`, `select`, `create`, `update`, `merge`, `patch`, `delete`, `relate`, `insert`, `insert_relation`, `query`, `gql`, and `graphql`, and the [`eval::*`](../../../reference/query-language/functions/database-functions/eval.md) functions.
 
 Endpoints that do not accept arbitrary queries such as [`/version`](../../../reference/rest-api/http-protocol.md#version) and [authentication endpoints](../../../reference/rest-api/http-protocol.md#signin) are not affected.
 
@@ -382,3 +381,81 @@ Deny rules at the same specificity prevail over allow rules. A record user calli
 Configure `--allow-eval-query` on **`surreal start`** when clients connect to a remote instance. It is not required on `surreal sql` for remote connections - only for [embedded REPL sessions](../../../reference/cli/surrealdb-cli/commands/sql.md#capabilities-and-remote-connections).
 
 `eval::gql` does not need an experimental capability from **3.3.0** (on **3.2.x**, also allow `gql`). See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) and [Representations and codecs](../../querying/concepts-and-guides/representations-and-codecs.md).
+
+## HTTP routes and RPC methods
+
+Two capabilities switch individual entry points off rather than whole classes of behaviour. `--allow-http` and `--deny-http` take HTTP route names, and `--allow-rpc` and `--deny-rpc` take RPC method names. Each takes a comma-separated list, or no value at all to mean every route or every method.
+
+```bash
+# Close the SQL and import endpoints, leave the rest open
+surreal start --deny-http sql,import
+
+# Open only the RPC methods a read-only client needs
+surreal start --deny-rpc --allow-rpc use,select,query
+```
+
+These follow the same [priority rules](#priority) as every other capability, so a specific deny beats a specific allow, and both beat the blanket form.
+
+### HTTP route names
+
+A route name covers every method and path under it, so `key` covers all ten [`/key`](../../../reference/rest-api/http-protocol.md#get-table) endpoints and `ml` covers both [`/ml`](../../../reference/rest-api/http-protocol.md#ml-import) endpoints.
+
+| Name | Covers |
+| --- | --- |
+| `health` | [`GET /health`](../../../reference/rest-api/http-protocol.md#health), and the `/status` and `/ready` probes |
+| `version` | [`GET /version`](../../../reference/rest-api/http-protocol.md#version) |
+| `import` | [`POST /import`](../../../reference/rest-api/http-protocol.md#import) |
+| `export` | [`POST /export`](../../../reference/rest-api/http-protocol.md#export) |
+| `signin` | [`POST /signin`](../../../reference/rest-api/http-protocol.md#signin) |
+| `signup` | [`POST /signup`](../../../reference/rest-api/http-protocol.md#signup) |
+| `key` | The [`/key`](../../../reference/rest-api/http-protocol.md#get-table) table and record endpoints |
+| `sql` | [`POST /sql`](../../../reference/rest-api/http-protocol.md#sql) |
+| `gql` | [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql), and the Postgres `gql` dialect |
+| `graphql` | [`POST /graphql`](../../../reference/rest-api/http-protocol.md#graphql) |
+| `ml` | The [`/ml`](../../../reference/rest-api/http-protocol.md#ml-import) import and export endpoints |
+| `api` | Endpoints defined with [`DEFINE API`](../../../reference/query-language/statements/define/api.md) |
+| `mcp` | The [MCP server](../../../reference/cli/surrealdb-cli/commands/mcp.md) endpoint |
+| `rpc` | The HTTP [`/rpc`](../../../reference/rest-api/rpc-protocol.md) endpoint |
+| `sync` | The internal sync endpoint |
+| `postgres` *Since v3.3.0* | The [Postgres wire protocol](../../../reference/rest-api/postgres-protocol.md) listener |
+
+`rpc` closes the HTTP `/rpc` endpoint as a whole. To leave it open and restrict what can be called through it, use the RPC method names below, which apply to the WebSocket and gRPC transports as well.
+
+### RPC method names
+
+| Group | Names |
+| --- | --- |
+| Session | `use`, `info`, `ping`, `version`, `reset` |
+| Authentication | `signup`, `signin`, `authenticate`, `invalidate`, `refresh`, `revoke` |
+| Querying | `query`, `run`, `gql`, `graphql` |
+| Reading and writing | `select`, `create`, `insert`, `insert_relation`, `relate`, `update`, `upsert`, `merge`, `patch`, `delete` |
+| Parameters | `set`, `unset` |
+| Live queries | `live`, `kill` |
+| Transactions | `begin`, `commit`, `cancel` |
+| Streaming | `query_stream`, `query_cancel` |
+| Attached sessions | `attach`, `detach`, `sessions` |
+
+Names are matched case-insensitively, so `--deny-rpc GraphQL` and `--deny-rpc graphql` are the same. `gql` and `graphql` are separate methods.
+
+## GQL entry surfaces
+
+ISO GQL is on by default from **3.3.0**, and the GQL executor is reachable from four entry surfaces. Each has its own switch, so a deployment that serves no GQL closes each surface it exposes:
+
+| Entry surface | Switch |
+| --- | --- |
+| The `/gql` endpoint | `--deny-http gql` |
+| The `gql` [RPC method](../../../reference/rest-api/rpc-protocol.md), over WebSocket, HTTP `/rpc` and gRPC | `--deny-rpc gql` |
+| [`eval::gql()`](../../../reference/query-language/functions/database-functions/eval.md) inside any SurrealQL | `--deny-eval-query`, which is also the default state. `--deny-funcs` reaches it as well. |
+| The [Postgres wire protocol](../../../reference/rest-api/postgres-protocol.md) `dialect=gql` *Since v3.3.0* | `--deny-http gql` |
+
+`--deny-http gql` covers the `/gql` endpoint and the Postgres dialect together, because both are checked against the same `gql` route target. The `gql` RPC method answers to `--deny-rpc gql` instead, so the HTTP route and the RPC method are closed separately. The Postgres listener has a route name of its own, so `--deny-http postgres` closes the port whatever dialect a client asks for, and `--deny-http gql` leaves the port open while refusing the GQL dialect on it.
+
+### Selecting the Postgres dialect
+
+*Since v3.3.0*
+
+A Postgres client selects the dialect in two places, and both are checked from 3.3.0. A connection that asks for GQL at connect time with `options=-c dialect=gql` is refused and closed. A session that runs `SET dialect = 'gql'` receives `42501 insufficient_privilege` and stays usable for SurrealQL.
+
+The check runs where the dialect is selected rather than where a query runs, so a client learns the reason at that point instead of receiving parse errors from a connection left in SurrealQL.
+
+[`--deny-arbitrary-query`](#arbitrary-queries) reaches all four surfaces as well, since each of them accepts a query string.

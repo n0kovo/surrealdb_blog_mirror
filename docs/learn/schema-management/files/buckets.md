@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 A bucket is named storage that backs file values (`f"bucket:/path"`). You have a few options when defining a bucket:
 
-* Memory for non-peristent storage.
+* Memory for non-persistent storage.
 * A folder on disk for persistence.
 * A global backend driven by environment variables.
 

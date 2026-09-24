@@ -31,7 +31,7 @@ Many SurrealDB built-ins do the same broad job: take a value in **representation
 - [`encoding::cbor::encode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingcborencode) / [`decode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingcbordecode) - [CBOR](../../../reference/rest-api/cbor-protocol.md) bytes
 - [`encoding::base64::encode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingbase64encode) / [`decode`](../../../reference/query-language/functions/database-functions/encoding.md#encodingbase64decode) - Base64 text for binary payloads
 
-Typical uses: [`DEFINE API`](../../../reference/query-language/statements/define/api.md) request bodies, file bucket payloads, and SDK interchange. Round-trip is the mental model.
+Typical uses: [`DEFINE API`](../../../reference/query-language/statements/define/api.md) request bodies, file bucket payloads, and SDK interchange. Each pair is designed for a round trip: decoding an encoded value gives back the original.
 
 ```surql
 LET $payload = { event: 'signup', user: 'tobie' };
@@ -50,7 +50,7 @@ Related one-way or format-specific helpers elsewhere include `string::html::enco
 
 [`search::analyze`](../../../reference/query-language/functions/database-functions/search.md#searchanalyze) runs a named [`DEFINE ANALYZER`](../../../reference/query-language/statements/define/analyzer.md) pipeline on a string and returns an array of tokens. It is **lossy** (stemming, filtering) and mirrors what full-text indexing does - useful for debugging analyzers before you index.
 
-The "format" here is not JSON or CBOR; it is whatever pipeline you defined on the analyzer.
+Here the "format" is whatever pipeline you defined on the analyzer.
 
 ```surql
 DEFINE ANALYZER demo_blank TOKENIZERS blank;

@@ -11,10 +11,9 @@ To further test out SurrealDB and SurrealQL functionality, we've included two de
 
 ## Surreal Deal Store - there is a lot in store for you!
 
-Surreal Deal Store is our new and improved demo dataset based on our [SurrealDB Store](https://surrealdb.store/).
-The dataset is made up of 12 tables using both [graph relations](../../../reference/query-language/statements/relate.md) and [record links](../../../reference/query-language/language-primitives/record-links.md).
+Surreal Deal Store is our demo dataset based on our [SurrealDB Store](https://surrealdb.store/). The dataset is made up of 12 tables using both [graph relations](../../../reference/query-language/statements/relate.md) and [record links](../../../reference/query-language/language-primitives/record-links.md).
 
-In the diagram below, the nodes in pink are the [standard tables](../../../reference/query-language/statements/define/table.md), the ones in purple represent the [edge tables](../../../reference/query-language/statements/relate.md) which shows relationships between records and SurrealDB as a graph database. The nodes in grey are the [pre-computed table views](../../../reference/query-language/statements/define/table.md).
+In the diagram below, the nodes in pink are the [standard tables](../../../reference/query-language/statements/define/table.md), the ones in purple represent the [edge tables](../../../reference/query-language/statements/relate.md), which show the relationships between records when SurrealDB is used as a graph database. The nodes in grey are the [pre-computed table views](../../../reference/query-language/statements/define/table.md).
 
 ![Surreal Deal Data Model](../../../assets/img/image/light/surreal-deal-store-light.png)
 
@@ -53,7 +52,7 @@ surreal import --endpoint http://localhost:8000 --user root --pass secret \
   --ns main --db main surreal-deal-store.surql
 ```
 
-To import the surreal downloaded the [Surreal Deal store (mini)](https://datasets.surrealdb.com/surreal-deal-store-mini.surql) use the command below:
+To import the downloaded [Surreal Deal store (mini)](https://datasets.surrealdb.com/surreal-deal-store-mini.surql) dataset, use the command below:
 
 ```bash
 surreal import --endpoint http://localhost:8000 --user root --pass secret \
@@ -96,6 +95,6 @@ curl -v -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" -H 
 Here are some sample queries you can run on the Surreal Deal Store dataset. We've also included a [SurrealDB Studio Mini](https://app.surrealdb.com/mini) below to help you run these queries.
 
 > [!NOTE]
-> The query results below have been limited to 4 rows for brevity. If you remove the `LIMIT 4` clause from the queries, you'll see the full results.
+> The query results below have been limited to 4 records for brevity. If you remove the `LIMIT 4` clause from the queries, you'll see the full results.
 
 [▶ Open in Surrealist](https://app.surrealdb.com/mini?query=--%20Query%201%3A%20Using%20record%20links%20to%20select%20from%20the%20seller%20table%20%0ASELECT%0A%20%20name%2C%0A%20%20seller.name%0AFROM%20product%20LIMIT%204%3B%0A--%20Query%202%3A%20Using%20graph%20relations%20to%20select%20from%20the%20person%20and%20product%20table%0ASELECT%0A%20%20%20%20time.created_at%20as%20order_date%2C%0A%20%20%20%20product_name%2C%0A%20%20%20%20%3C-person.name%20as%20person_name%2C%0A%20%20%20%20-%3Eproduct.details%0AFROM%20order%20LIMIT%204%3B%0A--%20Query%203%3A%20Conditional%20filtering%20based%20on%20an%20embedded%20object%20property.%0ASELECT%20%0A%20%20name%2C%0A%20%20email%20%0AFROM%20person%20%0AWHERE%20address.country%20%3F%3D%20%22England%22%20LIMIT%204%3B%09%0A--%20Query%204%3A%20Conditional%20filtering%20using%20relationships.%0ASELECT%20%2A%20FROM%20review%0AWHERE%20-%3Eproduct.sub_category%20%3F%3D%20%22Activewear%22%20LIMIT%204%3B%0A--%20Query%205%3A%20Count%20orders%20based%20on%20order%20status%0ASELECT%20count%28%29%20FROM%20order%0AWHERE%20order_status%20IN%20%5B%20%22processed%22%2C%20%22shipped%22%5D%0AGROUP%20ALL%20LIMIT%204%3B%0A--%20Query%206%3A%20Get%20a%20deduplicated%20list%20of%20products%20that%20were%20ordered%0ASELECT%20%0A%20%20%20%20array%3A%3Adistinct%28product_name%29%20as%20ordered_products%0AFROM%20order%0AGROUP%20ALL%20LIMIT%204%3B%0A--%20Query%207%3A%20Get%20the%20average%20price%20per%20product%20category%0ASELECT%20%0A%20%20%20%20-%3Eproduct.category%20AS%20product_category%2C%0A%20%20%20%20math%3A%3Amean%28price%29%20AS%20avg_price%0AFROM%20order%0AGROUP%20BY%20product_category%0AORDER%20BY%20avg_price%20DESC%20LIMIT%204%3B%0A--%20Query%208%3A%20encapsulating%20logic%20in%20a%20function%0ARETURN%20fn%3A%3Anumber_of_unfulfilled_orders%28%29%3B%0A--%20Query%209%3A%20using%20a%20custom%20fuction%20for%20currency%20conversion%0ASELECT%20%0A%20%20%20%20product_name%2C%0A%20%20%20%20fn%3A%3Apound_to_usd%28price%29%20AS%20price_usd%0AFROM%20order%20LIMIT%204%3B)

@@ -212,9 +212,9 @@ A table name, represented as a string.
 
 ### Tag 8
 
-A [Record ID](../query-language/language-primitives/data-types/record-ids.md), represented as an two-value array, containing a table part (string) and an id part (string, number, object or array).
+A [Record ID](../query-language/language-primitives/data-types/record-ids.md), represented as a two-value array, containing a table part (string) and an id part (string, number, object or array).
 
-Instead of an two-value array, SurrealDB also accepts a string with a string-formatted Record ID. A string Record ID will never be sent back from SurrealDB, however.
+Instead of a two-value array, SurrealDB also accepts a string with a string-formatted Record ID. A string Record ID will never be sent back from SurrealDB, however.
 
 ### Tag 9
 
@@ -242,7 +242,7 @@ A [Duration](../query-language/language-primitives/data-types/datetimes.md#durat
 
 ### Tag 15
 
-A [Future](../query-language/language-primitives/data-types/futures.md) represented as a string containing the uncomputed SurrealQL query or expression. The value transported needs to be returned in an `Object` in a `{}`,  this will also be the format you receive it in from SurrealDB this will allow for it to be computed when accessed or used within a query.
+A [Future](../query-language/language-primitives/data-types/futures.md) represented as a string containing the uncomputed SurrealQL query or expression. The value must be sent as an `Object` wrapped in `{}`, which is also the format SurrealDB returns it in. This allows it to be computed when it is accessed or used within a query.
 
 ### Tag 37
 
@@ -276,7 +276,7 @@ A [Geometry Line](../query-language/language-primitives/data-types/geometries.md
 
 A [Geometry Polygon](../query-language/language-primitives/data-types/geometries.md#polygon) represented by an array with one or more closed lines ([Tag 89](#tag-89)).
 
-If the lines are not closed, meaning that the first and last point are equal, then SurrealDB will automatically suffix the line with it's first point.
+If a line is not closed, meaning that its first and last points are not equal, SurrealDB automatically appends the line's first point to its end.
 
 ### Tag 91
 

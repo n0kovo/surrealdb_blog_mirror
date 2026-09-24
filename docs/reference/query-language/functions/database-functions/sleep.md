@@ -38,7 +38,7 @@ sleep(1s);
 sleep(500ms);
 ```
 
-SurrealDB also has a [SLEEP statement](../../statements/sleep.md) statement that accepts a datetime; however, the `sleep` function can be used in more dynamic ways such as the following example that simulates a 100ms delay between each record in a query.
+SurrealDB also has a [SLEEP statement](../../statements/sleep.md) that accepts a datetime; however, the `sleep` function can be used in more dynamic ways such as the following example that simulates a 100ms delay between each record in a query.
 
 ```surql
 -- Create 3 `person` records

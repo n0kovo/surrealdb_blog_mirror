@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # SolidJS
 
-[SolidJS](https://docs.solidjs.com/) is a modern JavaScript framework for building responsive and high-performing user interfaces. The SurrealDB SDK for JavaScript can be used in your SolidJS applications to interact with your SurrealDB instance.
+[SolidJS](https://docs.solidjs.com/) is a JavaScript framework for building user interfaces. The SurrealDB SDK for JavaScript can be used in your SolidJS applications to interact with your SurrealDB instance.
 
 This guide walks you through setting up a connection provider and executing queries in a SolidJS project.
 

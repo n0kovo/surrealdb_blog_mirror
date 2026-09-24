@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `Query<R, J>` {#query}
 
-The `Query` class provides a configurable interface for executing raw SurrealQL statements with support for streaming, batch processing, and response handling. It extends `Promise`, allowing you to `await` it directly or use specialized methods.
+The `Query` class provides a configurable interface for executing raw SurrealQL statements with support for streaming, batch processing, and response handling. It extends `Promise`, allowing you to `await` it directly or use specialised methods.
 
 **Returned by:** [`SurrealQueryable.query()`](../core/surreal-queryable.md#query)
 
@@ -207,7 +207,7 @@ for (const response of responses) {
 
 Retry the whole query with exponential backoff if it fails due to a write conflict. Only applies to `.collect()` (and awaiting the query directly) - it does not apply to `.responses()`, which returns partial results, or `.stream()`, which yields results incrementally and cannot be safely replayed mid-stream.
 
-Off by default, since auto-retrying a non-atomic multi-statement query could apply some statements more than once. Passing an options object (or calling with no arguments) opts the query in. This overrides the connection-wide default set via the [`retry`](../types/index.md#connectoptions) option on `ConnectOptions`.
+Retry is off by default, since auto-retrying a non-atomic multi-statement query could apply some statements more than once. Passing an options object (or calling with no arguments) opts the query in. This overrides the connection-wide default set via the [`retry`](../types/index.md#connectoptions) option on `ConnectOptions`.
 
 ```ts title="Method Syntax"
 query.retry(options?)
@@ -504,7 +504,7 @@ const [large] = await db.query('SELECT * FROM large_table').collect();
 // May cause memory issues
 ```
 
-### 4. Leverage type parameters
+### 4. Use type parameters
 
 ```ts
 // Good: Type-safe results

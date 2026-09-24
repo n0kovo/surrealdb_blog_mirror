@@ -111,6 +111,10 @@ async fn main() -> Result<(), Error> {
             <td scope="row" data-label="Description">Sets the WebSocket buffer sizes. Returns a `Result`, as the maximum write buffer must be larger than the write buffer.</td>
         </tr>
         <tr>
+            <td scope="row" data-label="Method">`.grpc(config)`</td>
+            <td scope="row" data-label="Description">Sets the gRPC message size. Returns a `Result`, as a size too small for the protocol's own framing is refused here rather than at connect time. See <a href="/docs/reference/rust/methods/connect#message-size">message size</a>.</td>
+        </tr>
+        <tr>
             <td scope="row" data-label="Method">`.rustls(config)`, `.native_tls(config)`</td>
             <td scope="row" data-label="Description">Configures TLS. Each requires the matching feature flag. Neither is covered by the SDK's stability guarantee, as the underlying crate is not yet stable.</td>
         </tr>

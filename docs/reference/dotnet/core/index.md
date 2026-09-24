@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Concepts
 
-In this section, we will go over the core concepts of the SurrealDB SDK for .NET. You will learn how to connect to a SurrealDB instance, manage authentication, and interact with the database.
+This section covers the core concepts of the SurrealDB SDK for .NET. You will learn how to connect to a SurrealDB instance, manage authentication, and interact with the database.
 
 - [Create a new Connection](create-a-new-connection.md)
 - [Handle authentication](authentication.md)

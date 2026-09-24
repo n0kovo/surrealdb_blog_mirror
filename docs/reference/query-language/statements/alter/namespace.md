@@ -31,7 +31,7 @@ ALTER NAMESPACE COMPACT
 
 ## COMPACT
 
-Performs storage compaction onPerforms storage compaction on the current namespace keyspace. To compact other resources, use [ALTER SYSTEM](system.md) to compact the entire datastore, [ALTER DATABASE](database.md) to compact the current database keyspace, or [ALTER TABLE](table.md) to compact a specific table keyspace.
+Performs storage compaction on the current namespace keyspace. To compact other resources, use [ALTER SYSTEM](system.md) to compact the entire datastore, [ALTER DATABASE](database.md) to compact the current database keyspace, or [ALTER TABLE](table.md) to compact a specific table keyspace.
 
 The actual compaction used will depend on the datastore, such as RocksDB or SurrealKV.
 

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Stateful workflows
 
-SurrealDB Agent Memory is not limited to conversational memory. Its entity-attribute model and temporal validity system make it a natural fit for tracking the state of long-running, multi-step agent workflows - processes that span hours or days, survive restarts, and need to avoid repeating completed steps.
+Besides conversational memory, SurrealDB Agent Memory's entity-attribute model and temporal validity system make it a natural fit for tracking the state of long-running, multi-step agent workflows - processes that span hours or days, survive restarts, and need to avoid repeating completed steps.
 
 ## Why use SurrealDB Agent Memory for workflow state
 
@@ -153,9 +153,7 @@ When the validity period expires, the attribute no longer appears in context ret
 
 ## Step 6 - Tracking progress
 
-Each step's write returns its own delta, so accumulate those rather than polling
-state. `/state` returns the whole Context, and a workflow's Context only grows -
-reading it twice per step gets slower as the run goes on.
+Each step's write returns its own delta, so accumulate those rather than polling state. `/state` returns the whole Context, and a workflow's Context only grows - reading it twice per step gets slower as the run goes on.
 
 ```python
 progress = {"completed": 0, "revised": 0, "blocked": 0}

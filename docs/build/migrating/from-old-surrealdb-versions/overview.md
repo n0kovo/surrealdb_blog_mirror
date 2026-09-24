@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Upgrading
 
-When moving to a new version of SurrealDB, it is important to follow the upgrade instructions to ensure that your data is migrated correctly. This page contains information on how to upgrade your SurrealDB installation.
+When moving to a new version of SurrealDB, follow the upgrade instructions so that your data is migrated correctly. This page contains information on how to upgrade your SurrealDB installation.
 
 ## Upgrading in general
 

@@ -58,11 +58,11 @@ API functions run as middleware on a custom endpoint, altering a request before 
 
 ## Overview
 
-API functions are passed in as middleware inside a [`DEFINE API`](../../statements/define/api.md) or [`DEFINE CONFIG API`](../../statements/define/config.md) statement and called a request is received.
+API functions are passed in as middleware inside a [`DEFINE API`](../../statements/define/api.md) or [`DEFINE CONFIG API`](../../statements/define/config.md) statement and called when a request is received.
 
 The only API function intended for use in regular queries is the [`api::invoke`](#apiinvoke) function, which is used to test API endpoints instead of as middleware.
 
-The signatures for all other functions are presented here are from the point of view of the user. For example, the `api::timeout` function takes a single duration.
+The signatures for all other functions are presented here from the point of view of the user. For example, the `api::timeout` function takes a single duration.
 
 ```surql
 api::timeout(duration)

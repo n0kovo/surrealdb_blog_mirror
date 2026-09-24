@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # TypeScript Types
 
-The SDK provides comprehensive TypeScript type definitions for type-safe development. This page documents the key types and interfaces used throughout the SDK.
+The SDK provides TypeScript type definitions for type-safe development. This page documents the key types and interfaces used throughout the SDK.
 
 ## Connection types
 
@@ -137,7 +137,7 @@ interface ReconnectOptions {
 
 ### `RetryOptions` {#retryoptions}
 
-Configuration for retrying a query, mutation, or transaction when it fails with a write conflict. Modeled on [`ReconnectOptions`](#reconnectoptions), and applied the same way: as a connection-wide default via [`ConnectOptions.retry`](#connectoptions), or per call via `.retry()`.
+Configuration for retrying a query, mutation, or transaction when it fails with a write conflict. Modelled on [`ReconnectOptions`](#reconnectoptions), and applied the same way: as a connection-wide default via [`ConnectOptions.retry`](#connectoptions), or per call via `.retry()`.
 
 ```ts
 interface RetryOptions {
@@ -808,7 +808,7 @@ const result = await api.invoke('/custom', {
 
 ### 1. Use generic type parameters
 
-Leverage generics for type-safe operations:
+Use generics for type-safe operations:
 
 ```ts
 interface User {

@@ -32,7 +32,7 @@ Learn more about starting a connection in the [SurrealDB Studio documentation](.
 
 Before you can start writing queries, you need to set the [namespace and database](../../data-models/architecture.md#namespaces-and-databases) you want to use. For example, you can set the namespace to `test` and the database to `test`. This will set the namespace and database for the current connection.
 
-Additionally, you can start [a serving in SurrealDB Studio](../../../explore/studio/index.md) which also enables GraphQL automatically, starting a server on `http://localhost:8000` by default for a root user with username and password `root`.
+Additionally, you can [start serving from SurrealDB Studio](../../../explore/studio/index.md), which also enables GraphQL automatically, starting a server on `http://localhost:8000` by default for a root user with username and password `root`.
 
 ![SurrealDB Studio connection settings](../../../assets/img/image/surrealist/connection.png)
 
@@ -71,11 +71,11 @@ CREATE user CONTENT {
 
 After you have created some data, you can start writing GraphQL queries. You can use the [SurrealDB Studio GraphQL editor](../../../explore/studio/index.md) to write your GraphQL queries.
 
-For example, to query the `person` table for all records, you can write the following GraphQL query:
+For example, to query the `user` table for all records, you can write the following GraphQL query:
 
 ```graphql
 {
-    user {
+    users {
         firstName
         lastName
         email
@@ -85,11 +85,11 @@ For example, to query the `person` table for all records, you can write the foll
 
 ![SurrealDB Studio GraphQL query](../../../assets/img/image/surrealist/graphql-querying-fields.png)
 
-And to get the person with the email "Jon.Doe@surrealdb.com", you can write the following GraphQL query:
+And to get the user with the email "Jon.Doe@surrealdb.com", you can write the following GraphQL query:
 
 ```graphql
 {
-    user(filter: {email: {eq: "Jon.Doe@surrealdb.com"}}) {
+    users(filter: {email: {eq: "Jon.Doe@surrealdb.com"}}) {
         firstName
         lastName
     }

@@ -96,7 +96,7 @@ Here is the result:
 
 ## The Rust code
 
-The code below that shows an example of `FETCH` is another example related to classes and students. Note that in one part it passes a [`Resource`](https://docs.rs/surrealdb/latest/surrealdb/opt/enum.Resource.html) into the [`create`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.create) method in order to return a [`Value`](https://docs.rs/surrealdb/latest/surrealdb/types/enum.Value.html) and thus not have to specify a return type to deserialise into. For more information on this technique, see [the page on flexible typing](flexible-typing.md).
+The code below shows `FETCH` in another example about classes and students. Note that in one part it passes a [`Resource`](https://docs.rs/surrealdb/latest/surrealdb/opt/enum.Resource.html) into the [`create`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.create) method in order to return a [`Value`](https://docs.rs/surrealdb/latest/surrealdb/types/enum.Value.html) and thus not have to specify a return type to deserialise into. For more information on this technique, see [the page on flexible typing](flexible-typing.md).
 
 ```rust
 use surrealdb::{
@@ -209,7 +209,7 @@ To follow along interactively, connect [using SurrealDB Studio](../../../explore
 surrealdb % surreal sql --user root --pass secret --ns namespace --db database --pretty
 ```
 
-Then use the `cargo add` command to add three crates: `surrealdb` and `tokio`, and with `serde` with the "serde_derive" feature (`cargo add serde --features serde_derive`). The dependencies inside `Cargo.toml` should look something like this:
+Then use the `cargo add` command to add three crates: `surrealdb`, `tokio`, and `serde` with the "serde_derive" feature (`cargo add serde --features serde_derive`). The dependencies inside `Cargo.toml` should look something like this:
 
 cargo add serde --features serde_derive
 
@@ -299,7 +299,7 @@ Here is the result:
 
 ## The Rust code
 
-The code below that shows an example of `FETCH` is another example related to classes and students. Note that in one part it passes a [`Resource`](https://docs.rs/surrealdb/latest/surrealdb/opt/enum.Resource.html) into the [`create`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.create) method in order to return a [`Value`](https://docs.rs/surrealdb/latest/surrealdb/types/enum.Value.html) and thus not have to specify a return type to deserialise into. For more information on this technique, see [the page on flexible typing](flexible-typing.md).
+The code below shows `FETCH` in another example about classes and students. Note that in one part it passes a [`Resource`](https://docs.rs/surrealdb/latest/surrealdb/opt/enum.Resource.html) into the [`create`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#method.create) method in order to return a [`Value`](https://docs.rs/surrealdb/latest/surrealdb/types/enum.Value.html) and thus not have to specify a return type to deserialise into. For more information on this technique, see [the page on flexible typing](flexible-typing.md).
 
 ```rust
 use serde::{Deserialize, Serialize};

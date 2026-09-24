@@ -7,9 +7,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Querying via SDKs
 
-SurrealDB supports a number of methods for connecting to the database and performing data queries. Each SDK has its own set of methods for connecting to the database and performing data queries.
+Each SurrealDB SDK has its own set of methods for connecting to the database and performing data queries.
 
-In each SDK, you can connect to the database using a local or remote connection. Once you are connected, you can start performing data queries. Here is a list of all the Supported SDKs:
+In each SDK, you can connect to the database using a local or remote connection. Once you are connected, you can start performing data queries. The supported SDKs are:
 
 - **[Rust](../../../../reference/rust/index.md)**
 - **[JavaScript](../../../../reference/javascript/concepts/connecting-to-surrealdb.md)**

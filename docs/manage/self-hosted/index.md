@@ -27,7 +27,7 @@ Most self-hosted workloads use **RocksDB** on disk - one SurrealDB process per d
 - [Configuration](configuration.md) - server startup options, environment variables, and storage engine selection.
 - [Backups and recovery](backups-and-recovery.md) - export and import commands, backup strategies, and disaster recovery.
 - [Monitoring and observability](monitoring-and-observability.md) - health endpoints, metrics, and tracing integration.
-- [Upgrades and patching](upgrades-and-patching.md) - version upgrades, the `surreal fix` migration tool, and compatibility notes.
+- [Upgrades and patching](upgrades-and-patching.md) - version upgrades, major-version data migration, and compatibility notes.
 
 Once an instance is running, the [Observability](../observability/index.md) section covers the built-in metrics, audit logs and slow-query logs you can scrape over Prometheus or push over OTLP for production monitoring.
 

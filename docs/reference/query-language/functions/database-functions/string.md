@@ -797,7 +797,7 @@ The `string::distance::damerau_levenshtein` function returns the Damerau-Levensh
 string::distance::damerau_levenshtein(string, string) -> int
 ```
 
-The following examples shows this function, and its output in comparison with a number of strings.
+The following example shows this function, and its output in comparison with a number of strings.
 
 ```surql
 /**[test]
@@ -855,7 +855,7 @@ The `string::distance::normalized_damerau_levenshtein` function returns the norm
 string::distance::normalized_damerau_levenshtein(string, string) -> float
 ```
 
-The following examples shows this function, and its output in comparison with a number of strings.
+The following example shows this function, and its output in comparison with a number of strings.
 
 ```surql
 /**[test]
@@ -913,7 +913,7 @@ The `string::distance::hamming` function returns the Hamming distance between tw
 string::distance::hamming(string, string) -> int
 ```
 
-The following examples shows this function, and its output in comparison with a number of strings.
+The following example shows this function, and its output in comparison with a number of strings.
 
 ```surql
 /**[test]
@@ -971,7 +971,7 @@ The `string::distance::levenshtein` function returns the Levenshtein distance be
 string::distance::levenshtein(string, string) -> int
 ```
 
-The following examples shows this function, and its output in comparison with a number of strings.
+The following example shows this function, and its output in comparison with a number of strings.
 
 ```surql
 /**[test]
@@ -1029,7 +1029,7 @@ The `string::distance::normalized_levenshtein` function returns the normalised L
 string::distance::normalized_levenshtein(string, string) -> float
 ```
 
-The following examples shows this function, and its output in comparison with a number of strings.
+The following example shows this function, and its output in comparison with a number of strings.
 
 ```surql
 /**[test]
@@ -1090,7 +1090,7 @@ The `string::distance::osa` function returns the OSA (Optimal String Alignment) 
 string::distance::normalized_levenshtein(string, string) -> int
 ```
 
-The following examples shows this function, and its output in comparison with a number of strings.
+The following example shows this function, and its output in comparison with a number of strings.
 
 ```surql
 /**[test]
@@ -2186,7 +2186,7 @@ The `string::similarity::jaro` function returns the Jaro similarity between two 
 string::similarity::jaro(string, string) -> float
 ```
 
-The following examples shows this function, and its output in comparison with a number of strings.
+The following example shows this function, and its output in comparison with a number of strings.
 
 ```surql
 /**[test]
@@ -2244,7 +2244,7 @@ The `string::similarity::jaro_winkler` function returns the Jaro-Winkler similar
 string::similarity::jaro_winkler(string, string) -> float
 ```
 
-The following examples shows this function, and its output in comparison with a number of strings.
+The following example shows this function, and its output in comparison with a number of strings.
 
 ```surql
 /**[test]

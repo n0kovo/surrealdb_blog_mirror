@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Backups & recovery
 
-Reliable backups are central to operating self-hosted SurrealDB. The CLI provides logical backups as SurrealQL using [`surreal export`](../../reference/cli/surrealdb-cli/commands/export.md), which dumps namespaces, databases, schemas, and data in a form you can version, diff, and store outside the database.
+The CLI provides logical backups of a self-hosted server as SurrealQL using [`surreal export`](../../reference/cli/surrealdb-cli/commands/export.md), which dumps namespaces, databases, schemas, and data in a form you can version, diff, and store outside the database.
 
 Schedule exports when traffic is lower if large datasets make exports lengthy, and ensure the export process has sufficient disk space and time to finish without overlapping the next run.
 

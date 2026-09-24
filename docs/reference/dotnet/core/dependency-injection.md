@@ -7,11 +7,11 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # Dependency injection
 
-The .NET SDK also support Dependency Injection to ease the use of `SurrealDbClient` and `SurrealDbSession` in your application.
+The .NET SDK also supports Dependency Injection to ease the use of `SurrealDbClient` and `SurrealDbSession` in your application.
 
 ## Create a new project
 
-Let's start by creating a new ASP.NET Core web app.
+Start by creating a new ASP.NET Core web app.
 
 ```sh
 dotnet new webapp -o SurrealDbWeatherApi
@@ -43,10 +43,10 @@ We have added a new Connection String called `SurrealDB` with the default config
 
 Open `Program.cs` and replace everything in there with the following code.
 This code is using the `AddSurreal()` extension method to inject services automatically.
-Notice that all we have to do is one line of code to configure the SurrealDB client with the previously set Connection String.
+Configuring the SurrealDB client with the previously set Connection String takes one line of code.
 
 > [!NOTE]
-> By default, this function will register both `ISurrealDbSession` and `SurrealDbSession` using the `Scoped` service lifetime. This mean that a new isolated SurrealDB session is created per scope.
+> By default, this function will register both `ISurrealDbSession` and `SurrealDbSession` using the `Scoped` service lifetime. This means that a new isolated SurrealDB session is created per scope.
 
 ```csharp
 var builder = WebApplication.CreateBuilder(args);

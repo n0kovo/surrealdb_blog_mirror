@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/b
 
 # Google Agent
 
-Vertex AI Agent Builder provides a powerful framework for developing and deploying intelligent agents in Google Cloud. This integration is particularly valuable since any agent running on Vertex AI Agent Engine or the open-source ADK runtime can be [surfaced through Agentspace](https://cloud.google.com/products/agentspace), making it easily accessible to your organisation.
+Vertex AI Agent Builder is a framework for developing and deploying agents in Google Cloud. Any agent running on Vertex AI Agent Engine or the open-source ADK runtime can be [surfaced through Agentspace](https://cloud.google.com/products/agentspace), which makes it available to everyone in your organisation.
 
 ## TL;DR
 

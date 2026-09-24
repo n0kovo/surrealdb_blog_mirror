@@ -16,7 +16,7 @@ In SurrealQL, clauses can be used to alter the way a query is executed. They are
 - [`LIMIT`](limit.md): Limit the number of results.
 - [`OMIT`](omit.md): Omit related records.
 - [`ORDER`](order.md): Specify the sort order of the results.
-- [`SPLIT`](split.md): Split the results into a set of subqueries.
+- [`SPLIT`](split.md): Split an array field so that each element becomes its own record in the result.
 - [`START`](start.md): Return the results of a query starting from a certain point.
 - [`WHERE`](where.md): Specify a condition that acts as a filter.
 - [`WITH`](with.md): Replace the default table iterator with an index iterator.

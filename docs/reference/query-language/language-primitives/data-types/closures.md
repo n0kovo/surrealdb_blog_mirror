@@ -11,7 +11,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 LET $parameter = |@parameters| @expression;
 ```
 
-One powerful feature available in SurrealDB is the ability to define anonymous functions. These functions can be used to encapsulate reusable logic and can be called from within your queries. Below are some examples demonstrating their capabilities:
+SurrealDB allows you to define anonymous functions. These functions can be used to encapsulate reusable logic and can be called from within your queries. Below are some examples demonstrating their capabilities:
 
 ## Basic function definitions
 
@@ -267,4 +267,4 @@ LET $okay_nums = [1,2,3];
 
 ## Conclusion
 
-These anonymous functions provide a flexible way to define small, reusable pieces of logic that can be used throughout your queries. By leveraging them, you can write more modular and maintainable SurrealQL code.
+Anonymous functions define small, reusable pieces of logic that can be used throughout your queries.

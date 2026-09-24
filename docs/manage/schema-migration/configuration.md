@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Configuration
 
-`surrealkit.toml` declares what a SurrealKit project contains. Template variables and type generation settings have always lived here. Since 1.0 the file also declares [schema modules and database targets](modules-and-targets.md), which makes its location worth knowing rather than incidental.
+`surrealkit.toml` declares what a SurrealKit project contains. Template variables and type generation settings have always lived here. Since 1.0 the file also declares [schema modules and database targets](modules-and-targets.md), so it now matters where the file is.
 
 Every section is optional. A project with no config file, or one holding only `[variables]` and `[typegen]`, behaves the way it did before 1.0: one unnamed schema module applied to one database taken from the environment.
 

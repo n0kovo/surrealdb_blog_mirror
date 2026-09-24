@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `SPLIT` clause
 
-The `SPLIT` clause in SurrealQL is used to split the results of a query based on a specific field, particularly when dealing with arrays. This is useful in scenarios where you want to treat each element of an array as a separate row in the result set. It can be particularly helpful in data analysis contexts where you need to work with individual elements of an array separately.
+The `SPLIT` clause in SurrealQL is used to split the results of a query based on a specific field, particularly when dealing with arrays. This is useful in scenarios where you want to treat each element of an array as a separate record in the result. It can be particularly helpful in data analysis contexts where you need to work with individual elements of an array separately.
 
 ## Syntax
 
@@ -180,7 +180,7 @@ SELECT
 ]
 ```
 
-An example of the same query then mapped into a set of unique keys for serialisation:
+An example of the same query then mapped into an array of unique keys for serialisation:
 
 ```surql
 (SELECT

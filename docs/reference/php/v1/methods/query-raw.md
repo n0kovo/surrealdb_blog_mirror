@@ -8,7 +8,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 # `->queryRaw()` {#queryRaw}
 
 With queryRaw, you will get back the raw RPC response. 
-This contrast to the .query() method, this will not throw for errors that occur in individual queries, 
+In contrast to the .query() method, this will not throw for errors that occur in individual queries, 
 but will rather give those back as a string, and this will include the time it took to execute the individual queries.
 
 ```php title="Method Syntax"

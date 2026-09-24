@@ -25,7 +25,7 @@ The following are the most common causes for a generic authentication error in S
 
 ##### Incorrect user credentials
 
-The simplest reason why authentication may fail. Ensure that the credentials that you are using to authenticate (e.g. username and password) match the ones that you have defined.
+This is the simplest reason why authentication may fail. Ensure that the credentials that you are using to authenticate (e.g. username and password) match the ones that you have defined.
 
 For system users, ensure that any special characters (e.g. quotes) have been interpreted correctly as part of the username or password rather than as SurrealQL syntax. Use the `INFO` statements to display the defined users and ensure that their password hash matches the hash of the password that you are providing. You can use the included [compare hash functions in SurrealQL](../../../reference/query-language/functions/database-functions/crypto.md#cryptoargon2compare) to perform this verification.
 
@@ -63,11 +63,11 @@ A specific example for this error is the `AUTHENTICATE`, `SIGNIN` or `SIGNUP` cl
 
 This error is returned when the token that is being used to authenticate a session has [expired](../authentication/users.md#expiration). If this token was issued by SurrealDB, this expiration defaults to an hour and can be changed using the `DURATION FOR TOKEN` clause in [`DEFINE ACCESS`](../../../reference/query-language/statements/define/access/record.md) and [`DEFINE USER`](../../../reference/query-language/statements/define/user.md). If the token was not issued by SurrealDB, this expiration will be set by the `exp` claim. 
 
-Note that this error will only appear when trying to authenticate the [session](../authentication/users.md#sessions). After authentication, the session will not expire when the token does, but rather after the independent session duration that has been defined in the `DURATION FOR SESSION` clause. By default, sessions will not expire. When using the HTTP REST API, a persistent session is not established as each request will be individually authenticated, as a consequence, requests made using an expired token will be rejected with this error.
+Note that this error will only appear when trying to authenticate the [session](../authentication/users.md#sessions). After authentication, the session will not expire when the token does, but rather after the independent session duration that has been defined in the `DURATION FOR SESSION` clause. By default, sessions will not expire. When using the HTTP REST API, a persistent session is not established as each request will be individually authenticated. As a consequence, requests made using an expired token will be rejected with this error.
 
 Although tokens accepted by SurrealDB must have some expiration, you can configure any amount of time that fits your security and usability requirements with the `DURATION FOR TOKEN` clause or by configuring the `exp` claim if you are using an external token issuer.
 
-To address token expiration errors you will either have to ask your end user to authenticate again with credentials to obtain a new token, rely on a persistent authenticated WebSocket session, rely on an external identity provider like [Auth0](../../../explore/tutorials/tutorials/auth0-integration.md) or [AWS Cognito](../../../explore/tutorials/tutorials/aws-cognito-integration.md) or, for development purposes, test the [expimental refresh token feature](../../../reference/query-language/statements/define/access/record.md#with-refresh-token).
+To address token expiration errors you will either have to ask your end user to authenticate again with credentials to obtain a new token, rely on a persistent authenticated WebSocket session, rely on an external identity provider like [Auth0](../../../explore/tutorials/tutorials/auth0-integration.md) or [AWS Cognito](../../../explore/tutorials/tutorials/aws-cognito-integration.md) or, for development purposes, test the [experimental refresh token feature](../../../reference/query-language/statements/define/access/record.md#with-refresh-token).
 
 ### Other authentication issues
 
@@ -87,7 +87,7 @@ If you are not able to diagnose a specific authentication issue with the informa
 
 Before sharing any information with other SurrealDB users or the SurrealDB team, please ensure that it does not contain any sensitive data, including secrets which may be used to access sensitive data. We recommend setting up a separate SurrealDB environment with dummy data for the purposes of debugging.
 
-In that environment, you can sprinkle [`.expect()`](../../../reference/query-language/functions/database-functions/value.md#valueexpect) (*Since v3.1.0*) on intermediate results in a SurrealQL reproduction to see which step first diverges from what you expect, without changing schema `ASSERT` rules or production `THROW` handlers.
+In that environment, you can add [`.expect()`](../../../reference/query-language/functions/database-functions/value.md#valueexpect) (*Since v3.1.0*) on intermediate results in a SurrealQL reproduction to see which step first diverges from what you expect, without changing schema `ASSERT` rules or production `THROW` handlers.
 
 When requesting support with authentication, we recommend that you provide the following information:
 

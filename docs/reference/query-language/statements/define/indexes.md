@@ -79,18 +79,18 @@ SurrealDB offers a range of indexing capabilities designed to optimise data retr
 
 An index without any special clauses allows for the indexing of attributes that may have non-unique values, facilitating efficient data retrieval. Non-unique indexes help index frequently appearing data in queries that do not require uniqueness, such as categorization tags or status indicators.
 
-Let's create a non-unique index for an age field on a user table.
+The following example creates a non-unique index for an age field on a user table.
 
 ```surql
 -- optimise queries looking for users of a given age
-DEFINE INDEX userAgeIndex ON TABLE user COLUMNS age;
+DEFINE INDEX userAgeIndex ON TABLE user FIELDS age;
 ```
 
 ### Unique index
 
 Ensures each value in the index is unique. A unique index helps enforce uniqueness across records by preventing duplicate entries in fields such as user IDs, email addresses, and other unique identifiers.
 
-Let's create a unique index for the email address field on a user table.
+The following example creates a unique index for the email address field on a user table.
 
 ```surql
 /**[test]
@@ -101,7 +101,7 @@ value = "NONE"
 */
 
 -- Makes sure that the email address in the user table is always unique
-DEFINE INDEX userEmailIndex ON TABLE user COLUMNS email UNIQUE;
+DEFINE INDEX userEmailIndex ON TABLE user FIELDS email UNIQUE;
 ```
 
 The created index can be tested using the [`INFO` statement](../info.md).
@@ -125,7 +125,7 @@ The `INFO` statement will help you understand what indexes are defined in your `
 }
 ```
 
-As we defined a `UNIQUE` index on the `email` column, a duplicate entry for that column or field will throw an error.
+As a `UNIQUE` index is defined on the `email` field, a duplicate entry for that field will throw an error.
 
 ```surql
 -- Create a user record and set an email ID.
@@ -170,7 +170,7 @@ CREATE user:2 SET email = 'test@surrealdb.com'
 
 ### Composite index
 
-A composite index spans multiple fields and columns of a table. Composite indexes are mainly used to create a unique index when the definition of what is unique pertains to more than one field.
+A composite index spans multiple fields of a table. Composite indexes are mainly used to create a unique index when the definition of what is unique pertains to more than one field.
 
 ```surql
 /**[test]
@@ -188,7 +188,7 @@ DEFINE INDEX test ON user FIELDS account, email UNIQUE;
 
 *Since v3.1.0*
 
-From SurrealDB 3.1.0, a composite index can lead with an **array-element** column (`tags.*`) so containment predicates combine with ordering on a trailing column without a full table scan. This supports patterns such as `WHERE tags CONTAINS 'x' ORDER BY age DESC LIMIT N` and the multi-value forms `CONTAINSANY` / `ANYINSIDE` on array fields.
+From SurrealDB 3.1.0, a composite index can lead with an **array-element** field (`tags.*`) so containment predicates combine with ordering on a trailing field without a full table scan. This supports patterns such as `WHERE tags CONTAINS 'x' ORDER BY age DESC LIMIT N` and the multi-value forms `CONTAINSANY` / `ANYINSIDE` on array fields.
 
 ```surql
 DEFINE INDEX tag_age ON article FIELDS tags.*, age;
@@ -217,7 +217,7 @@ As a count index is declared on a table as a whole, it cannot use the `FIELDS` /
 
 #### Full-table counts
 
-For `SELECT count() FROM <table> GROUP ALL`, SurrealDB already uses a `CountScan` fast path that counts record keys in storage without deserialising every row. An unconditional `COUNT` index is optional here; it can reduce work further once count deltas have been compacted, but a freshly built index on a large existing table may hold millions of delta entries until compaction runs.
+For `SELECT count() FROM <table> GROUP ALL`, SurrealDB already uses a `CountScan` fast path that counts record keys in storage without deserialising every record. An unconditional `COUNT` index is optional here; it can reduce work further once count deltas have been compacted, but a freshly built index on a large existing table may hold millions of delta entries until compaction runs.
 
 ```surql
 DEFINE INDEX idx ON indexed_reading COUNT;
@@ -287,11 +287,11 @@ The following chart sums up a few use cases and when to prefer one vs. the other
 
 Count indexes and B-tree indexes store different shapes of data, so size is not the same even when query performance is similar.
 
-A **B-tree index** stores one entry per indexed record: encoded field value(s) plus the record id in the key. Storage grows **with the number of rows** in the table (O(n) for that index).
+A **B-tree index** stores one entry per indexed record: encoded field value(s) plus the record id in the key. Storage grows **with the number of records** in the table (O(n) for that index).
 
-A **`COUNT WHERE` index** does not store per-row field keys. It appends small **delta entries** (`IndexCountKey`) when rows enter or leave the predicate, then **compacts** them into a single aggregate entry in the background. In steady state, footprint is usually **much smaller** than a B-tree on the same field, often a handful of keys rather than one per row.
+A **`COUNT WHERE` index** does not store per-record field keys. It appends small **delta entries** (`IndexCountKey`) when records enter or leave the predicate, then **compacts** them into a single aggregate entry in the background. In steady state, footprint is usually **much smaller** than a B-tree on the same field, often a handful of keys rather than one per record.
 
-So `COUNT WHERE` can be attractive when you need fast filtered counts **without** paying the per-row storage of a B-tree if it will not be used for anything else.
+So `COUNT WHERE` can be attractive when you need fast filtered counts **without** paying the per-record storage of a B-tree if it will not be used for anything else.
 
 To compare indexed and non-indexed performance, the `WITH NOINDEX` clause can be used.
 
@@ -340,7 +340,7 @@ DEFINE INDEX idx2 ON person FIELD name;
 
 ```surql title="Output"
 'There was a problem with the database: Parse error: Unexpected token `FIELD`, expected Eof
- //- [1:29]
+ --> [1:29]
   |
 1 | DEFINE INDEX idx2 ON person FIELD name;
   |                             ^^^^^ 
@@ -353,7 +353,7 @@ Enables efficient searching through textual data, supporting advanced text-match
 
 The [Full-Text search](../../../../learn/data-models/full-text-search/overview.md) index helps implement comprehensive search functionalities in applications, such as searching through articles, product descriptions, and user-generated content.
 
-Let's create a full-text search index for a `name` field on a `user` table.
+The following example creates a full-text search index for a `name` field on a `user` table.
 
 ```surql
 /**[test]
@@ -369,11 +369,11 @@ value = "NONE"
 -- Define the an analyzer with
 DEFINE ANALYZER example_ascii TOKENIZERS class FILTERS ascii;
 -- Since 3.0.0: only FULLTEXT used to benefit from concurrent full-text search
-DEFINE INDEX userNameIndex ON TABLE user COLUMNS name FULLTEXT ANALYZER example_ascii BM25 HIGHLIGHTS;
+DEFINE INDEX userNameIndex ON TABLE user FIELDS name FULLTEXT ANALYZER example_ascii BM25 HIGHLIGHTS;
 ```
 
-- `SEARCH` or `FULLTEXT`: By using the `SEARCH` keyword, you enable full-text search on the specified column.
-- `ANALYZER ascii`: Uses a custom [analyzer](analyzer.md) called `example_ascii` which uses the class tokenizier and `ascii` filter to analysing the text input.
+- `SEARCH` or `FULLTEXT`: By using the `SEARCH` keyword, you enable full-text search on the specified field.
+- `ANALYZER ascii`: Uses a custom [analyzer](analyzer.md) called `example_ascii` which uses the class tokenizer and `ascii` filter to analyse the text input.
 - `BM25`: Ranking algorithm used for relevance scoring. BM25 weighs a term by how rare it is, and clamps that weight to zero for any term appearing in half or more of the indexed documents, which makes [`search::score`](../../functions/database-functions/search.md#searchscore) return `0` for it. See [why a score can be 0](../../../../learn/data-models/full-text-search/scoring-and-ranking.md#why-a-score-can-be-0).
 - `HIGHLIGHTS`: Allows keyword highlighting in search results output when using the [`search::highlight`](../../functions/database-functions/search.md#searchhighlight) function
 - `FIELDS`: a full-text search index can only be used on one field at a time. To use full-text search on more than one field, use a separate `DEFINE INDEX` statement for each one.
@@ -384,7 +384,7 @@ Since version 3.0.0, using `FULLTEXT ANALYZER` is the syntax used for a text ana
 
 ## Vector search indexes
 
-Vector search indexes in SurrealDB support efficient [k-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) (kNN) and [Approximate Nearest Neighbor](https://en.wikipedia.org/wiki/Nearest_neighbor_search) (ANN) operations, which are pivotal in performing similarity searches within complex, high-dimensional datasets and data types. Refer to the [Vector Search Cheat Sheet](../../../../learn/data-models/vector-search/vector-indexes.md#vector-search-cheat-sheet) for the parameters allowed.
+Vector search indexes in SurrealDB support efficient [k-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) (kNN) and [Approximate Nearest Neighbor](https://en.wikipedia.org/wiki/Nearest_neighbor_search) (ANN) operations, which are used to perform similarity searches within complex, high-dimensional datasets and data types. Refer to the [Vector Search Cheat Sheet](../../../../learn/data-models/vector-search/vector-indexes.md#vector-search-cheat-sheet) for the parameters allowed.
 
 ### Types
 
@@ -424,7 +424,7 @@ While it is an approximate technique, it offers a high-performance balance betwe
 In the example above, you may notice the `EFC` and `M` parameters. These are optional to your query but are parameters of the [HNSW algorithm](https://arxiv.org/abs/1603.09320) and can be used to tune the index for better performance.
 
 - M (Max Connections per Element):
-Defines the maximum number of bidirectional links (neighbors) per node in each layer of the graph, except for the lowest layer. This parameter controls the connectivity and overall structure of the network. Higher values of MM generally improve search accuracy but increase memory usage and construction time.
+Defines the maximum number of bidirectional links (neighbors) per node in each layer of the graph, except for the lowest layer. This parameter controls the connectivity and overall structure of the network. Higher values of M generally improve search accuracy but increase memory usage and construction time.
 
 - EFC (EF construction):
 Stands for "exploration factor during construction." This parameter determines the size of the dynamic list for the nearest neighbor candidates during the graph construction phase. A larger efConstruction value leads to a more thorough construction, improving the quality and accuracy of the search but increasing construction time. The default value is 150.
@@ -433,7 +433,7 @@ Stands for "exploration factor during construction." This parameter determines t
 Similar to M, but specifically for the bottom layer (the base layer) of the graph. This layer contains the actual data points. M0 is often set to twice the value of M to enhance search performance and connectivity at the base layer, at the cost of increased memory usage.
 
 - LM (Multiplier for Level Generation):
-Used to determine the maximum level ll for a new element during its insertion into the hierarchical structure. It is used in the formula l←⌊−ln⁡(unif(0..1))⋅mL⌋, where unif(0..1) is a uniform random variable between 0 and 1. This parameter influences the distribution of elements across different levels, impacting the overall balance and efficiency of the search structure.
+Used to determine the maximum level l for a new element during its insertion into the hierarchical structure. It is used in the formula l←⌊−ln⁡(unif(0..1))⋅mL⌋, where unif(0..1) is a uniform random variable between 0 and 1. This parameter influences the distribution of elements across different levels, impacting the overall balance and efficiency of the search structure.
 
 > [!NOTE]
 > You can only provide TYPE, M, and EFC. SurrealDB automatically computes M0 and LM with the most appropriate value. If not specified, M AND EFC are set to 12 and 150, respectively.  Refer to the [Vector Search Cheat Sheet](../../../../learn/data-models/vector-search/vector-indexes.md#vector-search-cheat-sheet) for the parameters allowed.
@@ -505,7 +505,7 @@ In the example below, the query searches for points closest to the vector `[2,3,
 
 ## Verifying Index Utilization in Queries
 
-The [`EXPLAIN` clause](../select.md#the-explain-clause) from SurrealQL helps you understand the execution plan of the query and provides transparency around index utilization.
+The [`EXPLAIN` clause](../select.md#the-explain-clause) from SurrealQL shows the execution plan of the query, including whether it uses an index.
 
 ```surql
 SELECT * FROM user WHERE email='test@surrealdb.com' EXPLAIN FULL;
@@ -539,7 +539,7 @@ It also reveals details about which `operation` was used by the query planner an
 
 Indexes can be rebuilt using the [`REBUILD`](../rebuild.md) statement. This can be useful when you want to update the index definition or when you want to rebuild the index to optimise performance.
 
-You may want to rebuild an index overtime to ensure that the index is up-to-date with the latest data in the table.
+You may want to rebuild an index over time to ensure that the index is up-to-date with the latest data in the table.
 
 ```surql
 /**[test]
@@ -554,11 +554,11 @@ REBUILD INDEX userEmailIndex ON user;
 
 ## Using `IF NOT EXISTS` clause
 
-The `IF NOT EXISTS` clause can be used to define an index only if it does not already exist. You should use the `IF NOT EXISTS` clause when defining a index in SurrealDB if you want to ensure that the index is only created if it does not already exist. If the index already exists, the `DEFINE INDEX` statement will return an error.
+The `IF NOT EXISTS` clause can be used to define an index only if it does not already exist. You should use the `IF NOT EXISTS` clause when defining an index in SurrealDB if you want to ensure that the index is only created if it does not already exist. If the index already exists, the `DEFINE INDEX` statement will return an error.
 
-It's particularly useful when you want to safely attempt to define a index without manually checking its existence first.
+It's particularly useful when you want to safely attempt to define an index without manually checking its existence first.
 
-On the other hand, you should not use the `IF NOT EXISTS` clause when you want to ensure that the index definition is updated regardless of whether it already exists. In such cases, you might prefer using the `OVERWRITE` clause, which allows you to define a index and overwrite an existing one if it already exists, ensuring that the latest version of the index definition is always in use
+On the other hand, you should not use the `IF NOT EXISTS` clause when you want to ensure that the index definition is updated regardless of whether it already exists. In such cases, you might prefer using the `OVERWRITE` clause, which allows you to define an index and overwrite an existing one if it already exists, ensuring that the latest version of the index definition is always in use.
 
 ```surql
 /**[test]
@@ -647,7 +647,7 @@ When both stages are complete, the index status changes to **ready**, meaning th
 
 *Since v2.4.0*
 
-An index defined on a string value can be used via the operators `CONTAINSANY`, `ALLINSIDE`, or `ANYINSIDE`. The operator `CONTAINS`, however, will not use a defined index as `CONTAINS` is used for substring matches between strings themselves as opposed to an index lookup.
+An index on a string field is used by `=` and by `IN` with an array of values. The containment operators `CONTAINS`, `CONTAINSANY`, `ALLINSIDE` and `ANYINSIDE` return the same records on such a field, but they scan the table, because they only use an index defined on the elements of an array field (such as `tags.*`). `CONTAINS` on a string is a substring match.
 
 ```surql
 /**[test]
@@ -680,16 +680,17 @@ DEFINE INDEX name_index ON account FIELDS name;
 
 CREATE account:billy SET name = "Billy McConnell";
 
--- Both return the user Billy McConnell
-SELECT * FROM account WHERE name CONTAINS "Billy McConnell";
-SELECT * FROM account WHERE name CONTAINSANY ["Billy McConnell"];
+-- IN uses the index
+EXPLAIN SELECT * FROM account WHERE name IN ["Billy McConnell"];
+//- "SelectProject [ctx: Db] [projections: *]\n    IndexScan [ctx: Db] [index: name_index, access: = 'Billy McConnell', direction: Forward]\n"
 
--- However, CONTAINS does not use the index
-SELECT * FROM account WHERE name CONTAINS "Billy McConnell" EXPLAIN FULL;
--- CONTAINSANY + putting the value inside an array will use the index
-SELECT * FROM account
-  WHERE name CONTAINSANY ["Billy McConnell"] EXPLAIN FULL;
+-- CONTAINSANY scans the table
+EXPLAIN SELECT * FROM account WHERE name CONTAINSANY ["Billy McConnell"];
+//- "SelectProject [ctx: Db] [projections: *]\n    TableScan [ctx: Db] [table: account, direction: Forward, predicate: name CONTAINSANY ['Billy McConnell'], pre_decode_filter: yes]\n"
 ```
+
+> [!NOTE]
+> In SurrealDB 2.4 and later 2.x releases, `CONTAINSANY`, `ALLINSIDE` and `ANYINSIDE` with the values in an array used an index on a string field, and `CONTAINS` did not. From 3.0.0, use `=` or `IN` to query a string index.
 
 ## The `DEFER` clause
 
@@ -711,8 +712,8 @@ Note: As unique indexes offer a guarantee that no records that contravene the in
 
 ## Performance Implications
 
-When defining indexes, it's essential to consider the fields most frequently queried or used to optimise performance.
+When defining indexes, consider which fields are queried most frequently, and index those to optimise performance.
 
 Indexes may improve the performance of SurrealQL statements. This may not be noticeable with small tables but it can be significant for large tables; especially when the indexed fields are used in the `WHERE` clause of a [`SELECT`](../insert.md) statement.
 
-Indexes can also impact the performance of write operations ([INSERT](../insert.md), [UPDATE](../update.md), [DELETE](../delete.md)) since the index needs to be updated accordingly. Therefore, it's essential to balance the need for read performance with write performance.
+Indexes can also impact the performance of write operations ([INSERT](../insert.md), [UPDATE](../update.md), [DELETE](../delete.md)) since the index needs to be updated accordingly. Therefore, the need for read performance has to be balanced against write performance.

@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1087 pages_  
+_1088 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -230,7 +230,7 @@ _1087 pages_
 - [LiveKit](agent-memory/integrations/voice/livekit.md)
   Adding SurrealDB Agent Memory to a LiveKit voice agent.
 - [Agent guide (AGENTS.md)](agent-memory/reference/agents.md)
-  Copy these into your Cursor rules or agent skills. Instructions for coding agents integrating with SurrealDB Agent Memory.
+  Instructions for coding agents integrating with SurrealDB Agent Memory — copy into Cursor rules or skills.
 - [CLI](agent-memory/reference/cli.md)
   Command-line interface reference.
 - [Configuration](agent-memory/reference/configuration.md)
@@ -381,6 +381,8 @@ _1087 pages_
   This guide will help you upgrade your current SurrealDB installation to the latest `2.x` release.
 - [2.x to 3.x](build/migrating/from-old-surrealdb-versions/2x-to-3x.md)
   This guide will help you upgrade your current SurrealDB installation to the latest `3.x` release.
+- [3.2 to 3.3](build/migrating/from-old-surrealdb-versions/32-to-33.md)
+  What changes on disk and in behaviour when a 3.2 installation moves to 3.3, and which steps are automatic.
 - [Upgrading](build/migrating/from-old-surrealdb-versions/overview.md)
   This guide will help you upgrade your current SurrealDB installation to a newer release.
 - [Migrating from MongoDB](build/migrating/from-other-databases/from-mongodb.md)
@@ -597,7 +599,7 @@ _1087 pages_
 - [Document model](learn/data-models/document/overview.md)
   Learn how to think in a document model, how SurrealDB maps tables and records to documents, and where to find guides on nested data, schema modes, and common patterns including SurrealQL and MongoDB-style mappings.
 - [Schema modes](learn/data-models/document/schema-modes.md)
-  Create flexible documents without upfront column definitions, or tighten schemas with DEFINE TABLE; add and retrieve JSON-like records in SurrealQL.
+  Create flexible documents without upfront field definitions, or tighten schemas with DEFINE TABLE; add and retrieve JSON-like records in SurrealQL.
 - [Analyzers and tokenizers](learn/data-models/full-text-search/analyzers-and-tokenizers.md)
   Learn how analyzers turn raw text into searchable tokens: tokenizers, filters, and testing with search::analyze before you build an index.
 - [Other ways to work with text](learn/data-models/full-text-search/other-ways-to-work-with-text.md)
@@ -607,7 +609,7 @@ _1087 pages_
 - [Scoring and ranking](learn/data-models/full-text-search/scoring-and-ranking.md)
   Query with the MATCHES operator, combine BM25 and HIGHLIGHTS on indexes, and use search::score and search::highlight with numbered match clauses.
 - [Search indexes](learn/data-models/full-text-search/search-indexes.md)
-  Apply FULLTEXT ANALYZER indexes to single fields per index, and understand common parse errors when listing multiple columns.
+  Apply FULLTEXT ANALYZER indexes to single fields per index, and understand common parse errors when listing multiple fields.
 - [Distance and proximity](learn/data-models/geospatial/distance-and-proximity.md)
   Measure distance between points, reason about buffers and proximity, and use geohash helpers for hierarchical location keys alongside SurrealDB geo functions.
 - [Geometry types](learn/data-models/geospatial/geometry-types.md)
@@ -931,7 +933,7 @@ _1087 pages_
 - [Monitoring & observability](manage/self-hosted/monitoring-and-observability.md)
   Health checks, OpenTelemetry metrics and traces, audit logs and slow-query logs, and integration with common observability stacks.
 - [Upgrades & patching](manage/self-hosted/upgrades-and-patching.md)
-  Upgrade SurrealDB safely: binary replacement, surreal fix for major versions, migrations, and cluster rolling upgrades.
+  Upgrade SurrealDB safely: binary replacement, major-version data migration, automatic data migrations, and cluster rolling upgrades.
 - [Authenticating surrealctl](manage/surrealctl/authentication.md)
   Choose between a login session and a personal access token, store credentials safely, and authenticate an unattended run.
 - [surrealctl](manage/surrealctl/index.md)
@@ -1665,7 +1667,7 @@ _1087 pages_
 - [FROM](reference/query-language/clauses/from.md)
   The `FROM` clause is used to specify the table or view to query.
 - [GROUP](reference/query-language/clauses/group.md)
-  The `GROUP` clause is used to group records by one or more columns.
+  The `GROUP` clause is used to group records by one or more fields.
 - [LIMIT](reference/query-language/clauses/limit.md)
   The `LIMIT` clause is used to limit the number of records returned by a query.
 - [OMIT](reference/query-language/clauses/omit.md)

@@ -195,11 +195,10 @@ GQL is **not** the default and is **not** what most Postgres users expect from a
 
 **When to use HTTP or RPC instead:** public APIs, browser clients, typed GQL variables over RPC, or anything that fits the JSON envelope and headers of [`POST /gql`](http-protocol.md#gql) more naturally.
 
-Enable GQL at the server (same experimental gate as HTTP):
+GQL is enabled by default from 3.3.0, the same release as the Postgres listener, so the server needs no experimental capability:
 
 ```bash
 surreal start --user root --pass secret \
-  --allow-experimental gql \
   --postgres-bind 127.0.0.1:5432 \
   memory
 ```
@@ -250,7 +249,7 @@ Connections are gated like other query surfaces:
 
 - **`RouteTarget::Postgres`** - controlled via [`--allow-http`](../cli/surrealdb-cli/commands/start.md) / [`--deny-http`](../cli/surrealdb-cli/commands/start.md) with the route name **`postgres`** (the capability helper is shared with HTTP route names).
 - **Arbitrary query** - subject to [`--allow-arbitrary-query`](../../learn/security/authorization/capabilities.md#arbitrary-queries) / [`--deny-arbitrary-query`](../../learn/security/authorization/capabilities.md#arbitrary-queries) for `guest`, `record`, and `system` users.
-- **GQL** - requires [`--allow-experimental gql`](../cli/surrealdb-cli/commands/start.md#experimental-capabilities) in addition to the above.
+- **GQL** - enabled by default from 3.3.0, so no experimental capability is required.
 
 Authentication is described in [Authentication](#authentication). Resource limits include a connection cap, startup/auth timeout, message size limits, and prepared-statement / portal caps.
 

@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 *Since v3.0.0*
 
 > [!NOTE]
-> The output for the `EXPLAIN` statement is for informational purposes and subject to change. Be sure not to develop tools around it that rely on a single predictible output.
+> The output for the `EXPLAIN` statement is for informational purposes and subject to change. Be sure not to develop tools around it that rely on a single predictable output.
 
 The `EXPLAIN` statement is used to display the query planner for a statement.
 
@@ -172,7 +172,7 @@ EXPLAIN SELECT ->friend->person AS friends FROM ONLY person:one;
 EXPLAIN person:one.{ friends: ->friend->person };
 ```
 
-Not only is the second query faster, but we can see why as the first query is doing more work with four operations instead of one.
+The second query is faster, and the output shows why: the first query does more work, with four operations instead of one.
 
 ```surql title="Output"
 -------- Query 1 --------

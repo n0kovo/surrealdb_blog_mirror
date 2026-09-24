@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `Decimal` {#decimal}
 
-The `Decimal` class provides arbitrary precision decimal numbers, essential for financial calculations and applications where floating-point precision errors are unacceptable.
+The `Decimal` class provides arbitrary precision decimal numbers for financial calculations and other applications where floating-point precision errors are unacceptable.
 
 **Import:**
 ```ts

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Customer support agent
 
-This guide walks through building a customer support agent that uses SurrealDB Agent Memory for two distinct purposes: **authoritative knowledge** holds the authoritative product knowledge - FAQs, policies, and the product catalogue - and **experiential memory** holds per-customer memory accumulated over every interaction. The result is an agent that answers product questions correctly and remembers each customer's history without manual context injection.
+This guide walks through building a customer support agent that uses SurrealDB Agent Memory for two distinct purposes: **authoritative knowledge** holds the FAQs, policies, and product catalogue, and **experiential memory** holds per-customer memory accumulated over every interaction. The result is an agent that answers product questions correctly and remembers each customer's history without manual context injection.
 
 ## What you are building
 

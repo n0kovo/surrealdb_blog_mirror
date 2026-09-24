@@ -123,10 +123,10 @@ type Retryer interface {
 
 When the connection is lost and re-established, `rews` automatically restores:
 
-1. **Namespace and database** -- the last values passed to [`.Use()`](../api/core/db.md#use)
-2. **Authentication** -- the last token from [`.SignIn()`](../api/core/db.md#signin), [`.SignUp()`](../api/core/db.md#signup), or [`.Authenticate()`](../api/core/db.md#authenticate)
-3. **Connection variables** -- all variables set with [`.Let()`](../api/core/db.md#let) (and removed with [`.Unset()`](../api/core/db.md#unset))
-4. **[Live queries](live-queries.md)** -- all active live queries are re-subscribed, and notification routing is restored
+1. **Namespace and database** - the last values passed to [`.Use()`](../api/core/db.md#use)
+2. **Authentication** - the last token from [`.SignIn()`](../api/core/db.md#signin), [`.SignUp()`](../api/core/db.md#signup), or [`.Authenticate()`](../api/core/db.md#authenticate)
+3. **Connection variables** - all variables set with [`.Let()`](../api/core/db.md#let) (and removed with [`.Unset()`](../api/core/db.md#unset))
+4. **[Live queries](live-queries.md)** - all active live queries are re-subscribed, and notification routing is restored
 
 > [!NOTE]
 > If the authentication token has expired by the time reconnection occurs, re-authentication will fail. The application is responsible for handling token expiry, for example by using [refresh tokens](authentication.md#using-refresh-tokens).

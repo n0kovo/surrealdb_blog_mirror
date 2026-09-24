@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 *Since v3.1.0*
 
-From SurrealDB 3.1.0, SurrealDB’s GraphQL layer uses **Apollo-style** names: a **pluralised list** field (for example `people` for table `person`), a **singular fetch** field `person(id: …)`, and `people_aggregate` for aggregates. Internally these map to SurrealQL-style reads (typically `SELECT`). The SurrealQL here is a rough equivalent for the same or similar data shape. See [GraphQL overview](overview.md#schema-naming) for the full naming table.
+From SurrealDB 3.1.0, SurrealDB’s GraphQL layer uses **Apollo-style** names: a **pluralised list** field (for example `persons` for table `person`), a **singular fetch** field `person(id: …)`, and `persons_aggregate` for aggregates. Internally these map to SurrealQL-style reads (typically `SELECT`). The SurrealQL here is a rough equivalent for the same or similar data shape. See [GraphQL overview](overview.md#schema-naming) for the full naming table.
 
 Before trying the examples, enable GraphQL and define data in the current namespace and database (see [GraphQL overview](overview.md) using [`DEFINE CONFIG GRAPHQL AUTO`](../../../reference/query-language/statements/define/config.md)). The snippets below assume:
 
@@ -34,7 +34,7 @@ GraphQL here returns a list of objects, similar to `SELECT` without `ONLY`.
 
 ```graphql title="Query"
 query {
-	people {
+	persons {
 		name
 		age
 	}
@@ -44,7 +44,7 @@ query {
 ```graphql title="Output"
 {
 	"data": {
-		"people": [
+		"persons": [
 			{
 				"age": 28,
 				"name": "Marcus"
@@ -82,7 +82,7 @@ SELECT name, age FROM person;
 ```bash
 curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
   -H "Accept: application/json"
-  -d '{ "query": "query { people { name age } }" }' http://localhost:8000/graphql
+  -d '{ "query": "query { persons { name age } }" }' http://localhost:8000/graphql
 ```
 
 ## Fetch a single record by id
@@ -143,7 +143,7 @@ GraphQL uses **`limit`** (and optional **`start`** for offset). SurrealQL uses `
 
 ```graphql title="Query"
 query {
-	people(limit: 1) {
+	persons(limit: 1) {
 		name
 		age
 	}
@@ -153,7 +153,7 @@ query {
 ```graphql title="Output"
 {
 	"data": {
-		"people": [
+		"persons": [
 			{
 				"age": 28,
 				"name": "Marcus"
@@ -181,7 +181,7 @@ SELECT name, age FROM ONLY person LIMIT 1;
 ```bash
 curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
   -H "Accept: application/json"
-  -d '{ "query": "query { people(limit: 1) { name age } }" }' http://localhost:8000/graphql
+  -d '{ "query": "query { persons(limit: 1) { name age } }" }' http://localhost:8000/graphql
 ```
 
 ## Filter records
@@ -192,7 +192,7 @@ GraphQL accepts **`filter`** or **`where`** with the generated input type for th
 
 ```graphql title="Query"
 query {
-	people(where: { age: { eq: 23 } }) {
+	persons(where: { age: { eq: 23 } }) {
 		name
 	}
 }
@@ -201,7 +201,7 @@ query {
 ```graphql title="Output"
 {
 	"data": {
-		"people": [
+		"persons": [
 			{
 				"name": "Simon"
 			}
@@ -229,7 +229,7 @@ SELECT name FROM person WHERE age = 23;
 ```bash
 curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
   -H "Accept: application/json"
-  -d '{ "query": "query { people(where: { age: { eq: 23 } }) { name } }" }' http://localhost:8000/graphql
+  -d '{ "query": "query { persons(where: { age: { eq: 23 } }) { name } }" }' http://localhost:8000/graphql
 ```
 
 ## Order results
@@ -240,7 +240,7 @@ Use an **`order`** argument with **`asc`** or **`desc`** and a field name.
 
 ```graphql title="Query"
 query {
-	people(order: { asc: age }) {
+	persons(order: { asc: age }) {
 		name
 		age
 	}
@@ -250,7 +250,7 @@ query {
 ```graphql title="Output"
 {
 	"data": {
-		"people": [
+		"persons": [
 			{
 				"age": 23,
 				"name": "Simon"
@@ -288,7 +288,7 @@ SELECT name, age FROM person ORDER BY name ASC;
 ```bash
 curl -X POST -u "root:secret" -H "Surreal-NS: main" -H "Surreal-DB: main" \
   -H "Accept: application/json"
-  -d '{ "query": "query { people(order: { asc: age }) { name age } }" }' http://localhost:8000/graphql
+  -d '{ "query": "query { persons(order: { asc: age }) { name age } }" }' http://localhost:8000/graphql
 ```
 
 ## Next steps

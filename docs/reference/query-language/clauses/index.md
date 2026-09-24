@@ -16,7 +16,7 @@ _Auto-generated index — 12 pages._
 - [FROM](from.md)
   The `FROM` clause is used to specify the table or view to query.
 - [GROUP](group.md)
-  The `GROUP` clause is used to group records by one or more columns.
+  The `GROUP` clause is used to group records by one or more fields.
 - [LIMIT](limit.md)
   The `LIMIT` clause is used to limit the number of records returned by a query.
 - [OMIT](omit.md)

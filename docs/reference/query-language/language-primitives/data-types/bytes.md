@@ -11,7 +11,7 @@ Bytes represent raw binary data. While most data in SurrealDB is stored as strin
 
 ## Casting from strings
 
-Bytes can be created by casting from a string, and are displayed using hexidecimal encoding.
+Bytes can be created by casting from a string, and are displayed using hexadecimal encoding.
 
 ```surql
 /**[test]
@@ -65,7 +65,7 @@ value = "[72, 111, 98, 98, 105, 116, 115]""
 
 *Since v3.0.0*
 
-A string preceded by a `b` prefix can be turned into bytes as long as the string represents a hexidecimal value.
+A string preceded by a `b` prefix can be turned into bytes as long as the string represents a hexadecimal value.
 
 ```surql
 b"486F6262697473";
@@ -88,7 +88,7 @@ b"486F6262697473";
 
 "There was a problem with the database: Parse error: Unexpected
   character `T` expected hexidecimal digit
- //- [1:11]
+ --> [1:11]
   |
 1 | <string>b\"This won't work though\";
   |           ^ 

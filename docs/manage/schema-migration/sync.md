@@ -89,7 +89,7 @@ SurrealKit creates internal tables in the target database:
 | `__rollout` | Stores rollout state. Created when you first use Rollouts; may be present even if you use Sync only. |
 | `__seed` | Stores which [seed files](seeding.md) have been applied. Created on the first seed run. |
 
-On a project using [schema modules](modules-and-targets.md), rows in `__entity` are partitioned per module, so each module only ever prunes its own objects.
+On a project using [schema modules](modules-and-targets.md), records in `__entity` are partitioned per module, so each module only ever prunes its own objects.
 
 These tables are managed by SurrealKit and should not be modified directly.
 

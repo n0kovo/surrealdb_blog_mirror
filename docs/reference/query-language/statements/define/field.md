@@ -262,7 +262,7 @@ DEFINE FIELD locked ON TABLE user TYPE bool;
 DEFINE FIELD login_attempts ON TABLE user TYPE number;
 ```
 
-A `|` vertical bar can be used to allow a field to be one of a set of types. The following example shows a field that can be a [`UUID`](../../language-primitives/data-types/uuids.md) or an [`int`](../../language-primitives/data-types/numbers.md#integer-numbers), perhaps for `user` records that have varying data due to two diffent legacy ID types.
+A `|` vertical bar can be used to allow a field to be one of a set of types. The following example shows a field that can be a [`UUID`](../../language-primitives/data-types/uuids.md) or an [`int`](../../language-primitives/data-types/numbers.md#integer-numbers), perhaps for `user` records that have varying data due to two different legacy ID types.
 
 ```surql
 /**[test]
@@ -737,7 +737,7 @@ The `IF NOT EXISTS` clause can be used to define a field only if it does not alr
 
 It's particularly useful when you want to safely attempt to define a field without manually checking its existence first.
 
-On the other hand, you should not use the `IF NOT EXISTS` clause when you want to ensure that the field definition is updated regardless of whether it already exists. In such cases, you might prefer using the `OVERWRITE` clause, which allows you to define a field and overwrite an existing one if it already exists, ensuring that the latest version of the definition is always in use
+On the other hand, you should not use the `IF NOT EXISTS` clause when you want to ensure that the field definition is updated regardless of whether it already exists. In such cases, you might prefer using the `OVERWRITE` clause, which allows you to define a field and overwrite an existing one if it already exists, ensuring that the latest version of the definition is always in use.
 
 ```surql
 /**[test]
@@ -1269,7 +1269,7 @@ DEFINE FIELD id ON user TYPE string DEFAULT rand::ulid() ASSERT id.id().is_ulid(
 CREATE user SET name = 'Ada';
 ```
 
-`VALUE`, `REFERENCE`, `COMPUTED`, `READONLY`, `FLEXIBLE`, and non-key `TYPE` clauses are forbidden on `id`, a restriction which apple to [`ALTER FIELD`](../alter/field.md) statements as well.
+`VALUE`, `REFERENCE`, `COMPUTED`, `READONLY`, `FLEXIBLE`, and non-key `TYPE` clauses are forbidden on `id`, a restriction which applies to [`ALTER FIELD`](../alter/field.md) statements as well.
 
 ```surql title="Output"
 -------- Query --------

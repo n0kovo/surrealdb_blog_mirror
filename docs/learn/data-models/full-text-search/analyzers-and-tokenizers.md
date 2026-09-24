@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Analyzers and tokenizers
 
-Full-text search does not compare your query string to the document byte for byte. Instead, SurrealDB tokenizer text into terms, optionally filters those terms (case folding, stemming, and more), and indexes what comes out.
+Full-text search does not compare your query string to the document byte for byte. Instead, SurrealDB tokenises text into terms, optionally filters those terms (case folding, stemming, and more), and indexes what comes out.
 
 If you are new to FTS in SurrealDB, read the [overview](overview.md) first. This guide walks through analyzers from the ground up; exact grammar, every clause, and diagrams live under [`DEFINE ANALYZER`](../../../reference/query-language/statements/define/analyzer.md).
 
@@ -23,7 +23,7 @@ The same analyzer is used when indexing and matching queries, so spending time h
 
 ## See the tokens before you index
 
-Use [`search::analyze()`](../../../reference/query-language/functions/database-functions/search.md#searchanalyze) to print the token array an analyzer would produce, which is ideal for experimentisation.
+Use [`search::analyze()`](../../../reference/query-language/functions/database-functions/search.md#searchanalyze) to print the token array an analyzer would produce, which is ideal for experimentation.
 
 Start with the simplest split, whitespace-only tokenization:
 

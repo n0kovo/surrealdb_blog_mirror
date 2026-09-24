@@ -172,4 +172,4 @@ Audit and slow-query records flow over OTLP **only when explicitly opted in** pe
 
 Server **structured logs** (levels, format, files, sockets, and the `--slow-log-*` line-based slow-query helpers) are configured on [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md) and in the [environment variables](../../reference/cli/surrealdb-cli/environment-variables.md) catalogue - see [Logging](logging.md). That stream is separate from the **Enterprise audit** and **slow-query** NDJSON pipelines, which have their own sinks and optional OTel log export - see [Audit logging](audit-logging.md) and [Slow-query logging](slow-query-logging.md).
 
-For async runtime introspection (tasks, poll histograms), use the [Tokio console](tokio-console.md) on trusted hosts only; it complements OTLP and `/metrics`, it does not replace them.
+For async runtime introspection (tasks, poll histograms), use the [Tokio console](tokio-console.md) on trusted hosts only. It complements OTLP and `/metrics` rather than replacing them.

@@ -11,7 +11,7 @@ Environment variables are divided into four types:
 
 * **SurrealDB environment variables**: environment variables that pertain to the overall running of a SurrealDB server. Example: `SURREAL_DEFAULT_DATABASE`. Includes an [operator and internal config](#operator-and-internal-config) subsection for advanced settings.
 * **Command environment variables**: environment variables that can be used in lieu of a command flag. Example: `SURREAL_CAPS_ALLOW_ALL=true surreal start`, equivalent to `surreal start --allow-all`.
-* **Storage backend environment variables**: environment variables that pertain to a certain storage backend. Example: `SURREAL_SURREALKV_MAX_SEGMENT_SIZE`.
+* **Storage backend environment variables**: environment variables that pertain to a certain storage backend. Example: `SURREAL_SURREALKV_ENABLE_VLOG`.
 * **SurrealDB Cloud environment variables**: environment variables that are set via the [Configure instance](../../../manage/instances/configure.md) sidebar for a SurrealDB Cloud instance.
 
 > [!IMPORTANT]
@@ -55,7 +55,7 @@ These environment variables can be used to configure a SurrealDB server to confi
       <td scope="row" data-label="Env var">`SURREAL_NORMAL_FETCH_SIZE`</td>
       <td scope="row" data-label="Default">500</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The maximum number of keys that should be scanned at once in general queries.</td>
+      <td scope="row" data-label="Notes">The maximum number of keys that should be scanned at once in general queries. Read only before 3.1.0; later versions use a fixed batch of 500.</td>
     </tr>
         <tr>
       <td scope="row" data-label="Env var">`SURREAL_EXPORT_BATCH_SIZE`</td>
@@ -65,15 +65,15 @@ These environment variables can be used to configure a SurrealDB server to confi
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_COUNT_BATCH_SIZE`*Since v2.2.0*</td>
-      <td scope="row" data-label="Default">10,000</td>
+      <td scope="row" data-label="Default">50,000 (10,000 on 2.x)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The maximum number of keys that should be scanned at once for count queries.</td>
+      <td scope="row" data-label="Notes">The maximum number of keys that should be scanned at once for count queries. Read only before 3.1.0; later versions use a fixed batch of 50,000.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_INDEXING_BATCH_SIZE`</td>
       <td scope="row" data-label="Default">250</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The maximum number of keys to scan at once per concurrent indexing batch.</td>
+      <td scope="row" data-label="Notes">The maximum number of keys to scan at once per concurrent indexing batch. Read only before 3.1.0; later versions use a fixed batch of 250.</td>
     </tr>
   </tbody>
 </table>
@@ -208,10 +208,10 @@ Server-side filesystem access for features that read paths from disk (notably th
       <td scope="row" data-label="Notes">The timeout for connecting to HTTP endpoints.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_USER_AGENT`</td>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALDB_USER_AGENT`</td>
       <td scope="row" data-label="Default">SurrealDB</td>
       <td scope="row" data-label="Allowed values">A string</td>
-      <td scope="row" data-label="Notes">The USER-AGENT string used by HTTP requests.</td>
+      <td scope="row" data-label="Notes">The USER-AGENT string used by HTTP requests. Before 3.1.0 this variable was named `SURREAL_USER_AGENT`, which later versions ignore.</td>
     </tr>
   </tbody>
 </table>
@@ -270,6 +270,12 @@ Server-side filesystem access for features that read paths from disk (notably th
       <td scope="row" data-label="Default">4,194,304 (4 MiB)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP /rpc endpoint.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_GRPC_MAX_MESSAGE_SIZE`</td>
+      <td scope="row" data-label="Default">The value of `SURREAL_HTTP_MAX_RPC_BODY_SIZE`, so 4,194,304 (4 MiB) unless that is raised</td>
+      <td scope="row" data-label="Allowed values">A usize, clamped to a ceiling of 4,294,967,295 (4 GiB less one byte), the largest size a gRPC length prefix can express. A value below the floor needed to carry one streaming file chunk is raised to it.</td>
+      <td scope="row" data-label="Notes">From 3.3.0. The largest single gRPC message the server will accept or emit, also reported to clients as `Limits.max_message_bytes`. This is the gRPC counterpart of `SURREAL_WEBSOCKET_MAX_MESSAGE_SIZE`: raise it for a transaction that writes a large batch in one request. Before 3.3.0 the gRPC limit followed `SURREAL_HTTP_MAX_RPC_BODY_SIZE`, which moved the HTTP `/rpc` body limit at the same time.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_KEY_BODY_SIZE`</td>
@@ -447,7 +453,7 @@ Resource limits for [ISO GQL](../../../learn/querying/gql/overview.md) `MATCH` e
       <td scope="row" data-label="Env var">`SURREAL_IDIOM_RECURSION_LIMIT`</td>
       <td scope="row" data-label="Default">256</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The maximum recursive idiom path depth allowed.</td>
+      <td scope="row" data-label="Notes">The maximum recursive idiom path depth allowed. Read only before 3.1.0; later versions use a fixed limit of 256.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_MAX_COMPUTATION_DEPTH`</td>
@@ -1080,7 +1086,7 @@ surreal start --allow-all true
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_GUESTS`</td>
       <td scope="row" data-label="Command arg">`allow-guests`</td>
       <td scope="row" data-label="Command">`start`</td>
-      <td scope="row" data-label="Default">true</td>
+      <td scope="row" data-label="Default">false</td>
       <td scope="row" data-label="Allowed values">true, false</td>
       <td scope="row" data-label="Notes">Allow guest users to execute queries.</td>
     </tr>
@@ -1096,7 +1102,7 @@ surreal start --allow-all true
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_SCRIPT`</td>
       <td scope="row" data-label="Command arg">`allow-scripting`</td>
       <td scope="row" data-label="Command">`start`</td>
-      <td scope="row" data-label="Default">true</td>
+      <td scope="row" data-label="Default">false</td>
       <td scope="row" data-label="Allowed values">true, false</td>
       <td scope="row" data-label="Notes">Allow execution of embedded scripting functions.</td>
     </tr>
@@ -1106,7 +1112,7 @@ surreal start --allow-all true
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">false</td>
       <td scope="row" data-label="Allowed values">true, false</td>
-      <td scope="row" data-label="Notes">Takes a boolean. Prevents closures from being stored, which eliminates a potential attack surface. For version 2.5.0, this can still be allowed by using this capability.</td>
+      <td scope="row" data-label="Notes">Takes a boolean. From 2.5.0, closures cannot be stored, which removes a potential attack surface; on 2.5.x and 2.6.x this capability allows them again. Removed in 3.0.0, where closures can never be stored and the flag is rejected.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_DENY_ALL`</td>
@@ -1708,13 +1714,13 @@ The available environment variables for configuring a RocksDB instance are:
       <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_BACKGROUND_FLUSH`</td>
       <td scope="row" data-label="Default">true</td>
       <td scope="row" data-label="Allowed values">false, true</td>
-      <td scope="row" data-label="Notes">Whether to enable background WAL file flushing.</td>
+      <td scope="row" data-label="Notes">Whether to enable background WAL file flushing. 2.x only: from 3.0.0, set a duration on `SURREAL_DATASTORE_SYNC_DATA` instead.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_BACKGROUND_FLUSH_INTERVAL`</td>
       <td scope="row" data-label="Default">200 (milliseconds)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The interval in milliseconds between background flushes.</td>
+      <td scope="row" data-label="Notes">The interval in milliseconds between background flushes. 2.x only: from 3.0.0, set a duration on `SURREAL_DATASTORE_SYNC_DATA` instead.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_ROCKSDB_BLOB_COMPRESSION_TYPE`</td>
@@ -1924,7 +1930,7 @@ The available environment variables for configuring a RocksDB instance are:
       <td scope="row" data-label="Env var">`SURREAL_SYNC_DATA`</td>
       <td scope="row" data-label="Default">true</td>
       <td scope="row" data-label="Allowed values">true, false</td>
-      <td scope="row" data-label="Notes">Whether to sync writes to disk before acknowledgement.</td>
+      <td scope="row" data-label="Notes">Whether to sync writes to disk before acknowledgement. 2.x only: replaced in 3.0.0 by `SURREAL_DATASTORE_SYNC_DATA`.</td>
     </tr>
   </tbody>
 </table>
@@ -2055,7 +2061,7 @@ The available environment variables for configuring a RocksDB instance are:
 ### FoundationDB environment variables
 
 > [!WARNING]
-> FoundationDB support is deprecated in SurrealDB `3.0`. Please plan to migrate to a supported storage backend.
+> FoundationDB support was removed in SurrealDB 3.0.0. These variables apply to 2.x only.
 
 <table>
   <thead>

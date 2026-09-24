@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `init()`
 
-The .init() method initializes a new unconnected instance of the client.
+The .init() method initialises a new unconnected instance of the client.
 This is typically used to create a global, static instance of the client.
 
 ```rust title="Method Syntax"

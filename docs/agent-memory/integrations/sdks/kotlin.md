@@ -10,7 +10,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 The SurrealDB Agent Memory client for Kotlin ships inside the [SurrealDB Kotlin SDK](../../../reference/kotlin/index.md); there is no separate package. It lives in the `com.surrealdb.kotlin.memory` package and talks to SurrealDB Agent Memory's HTTP API directly, independently of the SurrealDB RPC engine. Like the rest of the Kotlin SDK, it is [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) (JVM, Android, iOS) and every method is a `suspend` function.
 
 > [!NOTE]
-> [!NOTE]
 > The Kotlin SDK is in early development (`0.1.0-SNAPSHOT`) and the SurrealDB Agent Memory client is not yet released. The APIs below are provisional.
 
 ## Installation
@@ -25,7 +24,7 @@ dependencies {
 
 ## Configuration
 
-Construct a [`AgentMemory`](../../reference/sdk-kotlin.md) client with a context id, an API key, and your endpoint. Authentication uses the **`Authorization: Bearer`** header on every request.
+Construct an [`AgentMemory`](../../reference/sdk-kotlin.md) client with a context id, an API key, and your endpoint. Authentication uses the **`Authorization: Bearer`** header on every request.
 
 ```kotlin
 

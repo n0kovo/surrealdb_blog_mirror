@@ -17,7 +17,7 @@ SurrealDB Agent Memory ships two binaries:
 The **`agent-memory`** CLI is what integrators install locally. **`spectrond`** is operated via Docker, Kubernetes, or your platform team.
 
 > [!NOTE]
-> The client binary is **`agent-memory`**. It was called `spectron` before the CLI rebrand; if you installed it earlier, `agent-memory upgrade` replaces it. The server binary is still **`spectrond`**, and every `SPECTRON_*` environment variable keeps its name — see [Configuration](configuration.md).
+> The client binary is **`agent-memory`**. It was called `spectron` before the CLI rebrand; if you installed it earlier, `agent-memory upgrade` replaces it. The server binary is still **`spectrond`**, and every `SPECTRON_*` environment variable keeps its name. See [Configuration](configuration.md).
 
 ## Installing the CLI
 
@@ -206,9 +206,7 @@ spectrond keys generate-key …
 spectrond keys rotate <context_id> <key_name> [--expires-in <seconds>]
 ```
 
-**Create principals** (management API - not the data-plane Context key). The two
-binaries reach the control plane over different transports, so each takes its own
-URL:
+**Create principals** (management API - not the data-plane Context key). The two binaries reach the control plane over different transports, so each takes its own URL:
 
 | Binary | Transport | Flag reads | Default port |
 | --- | --- | --- | --- |
@@ -256,16 +254,9 @@ agent-memory principals create "Planner bot" --kind agent -c demo `
 Prints the server-minted principal `id`. Mint an agent key for that principal via the management API or `spectrond keys generate-key`.
 
 > [!NOTE]
-> Point `spectrond` at the REST port and the call fails with `grpc-status header
-> missing, mapped from HTTP status code 404`. The endpoint is reachable; it
-> speaks the other protocol. Both servers run at full parity, so the choice is
-> transport only.
+> Point `spectrond` at the REST port and the call fails with `grpc-status header missing, mapped from HTTP status code 404`. The endpoint is reachable; it speaks the other protocol. Both servers run at full parity, so the choice is transport only.
 
-The management REST default (`9090`) is the same port the end-user API server
-uses. When you run both on one host, override one of them - for example
-`--bind-address 0.0.0.0:9095 --grpc-bind-address 0.0.0.0:9096` on
-`spectrond management start` - and use the ports you chose in the variables
-above.
+The management REST default (`9090`) is the same port the end-user API server uses. When you run both on one host, override one of them - for example `--bind-address 0.0.0.0:9095 --grpc-bind-address 0.0.0.0:9096` on `spectrond management start` - and use the ports you chose in the variables above.
 
 ### Terminal workbench
 

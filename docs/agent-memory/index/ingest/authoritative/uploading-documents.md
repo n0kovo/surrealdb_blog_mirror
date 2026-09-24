@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 The **knowledge** layer holds **authoritative** material - manuals, policies, product data, and files your agents should treat as curated sources. Documents enter through an asynchronous upload pipeline: bytes land in object storage, then SurrealDB Agent Memory extracts, chunks, embeds, and indexes structured state in SurrealDB.
 
-Document extraction uses the same structured schema and reconciler as conversational ingest ([Storing memories](https://surrealdb.com/docs/agent-memory/ingest/experiential/remember)). Facts from a PDF and facts from a turn land in one substrate; prefer documents for long curated sources and `/facts` for short lived moments.
+Document extraction uses the same structured schema and reconciler as conversational ingest ([Storing memories](https://surrealdb.com/docs/agent-memory/ingest/experiential/remember)). Facts from a PDF and facts from a turn land in one substrate; prefer documents for long curated sources and `/facts` for short-lived moments.
 
 ## Supported formats
 
@@ -99,7 +99,7 @@ Poll **`GET /api/v1/{context_id}/documents/{id}`** until **`status`** is **`read
 | `ready` | Fully indexed and available for retrieval |
 | `failed` | Pipeline error; inspect `error` on the document record |
 
-Oversized chunk persists (SurrealDB transaction write-set or WebSocket message caps) are classified as permanent size errors and dead-letter without burning multi-minute re-parse retries. Operators tuning large corpora should keep the client WS cap (`SPECTRON_DB_WS_MAX_MESSAGE_BYTES`) aligned with the SurrealDB server's `SURREAL_WEBSOCKET_MAX_MESSAGE_SIZE` - see [Configuration](../../../reference/configuration.md#request-and-list-limits).
+Oversized chunk persists (SurrealDB transaction write-set or WebSocket message caps) are classified as permanent size errors and dead-letter without spending minutes on re-parse retries. Operators tuning large corpora should keep the client WS cap (`SPECTRON_DB_WS_MAX_MESSAGE_BYTES`) aligned with the SurrealDB server's `SURREAL_WEBSOCKET_MAX_MESSAGE_SIZE` - see [Configuration](../../../reference/configuration.md#request-and-list-limits).
 
 ## Content addressing and deduplication
 
@@ -125,7 +125,7 @@ Documents and their chunks inherit the caller's **resolved write scope** from th
 
 You can **narrow** tagging with **`scopes`** on **`POST /documents`**, **`agent-memory documents upload --scope …`**, or MCP **`upload`** - the path must lie within the caller's `memory:write` region (out-of-region scope returns **`403`**). A document's scope is **fixed at upload** - reprocess rejects a non-empty `scopes` field with **`400`**.
 
-Optional **`labels`** (`key=value` strings) are stamped on the document, chunks, and sections. They follow the same validation rules as fact ingest and are **not** copied onto reconciled graph rows.
+Optional **`labels`** (`key=value` strings) are stamped on the document, chunks, and sections. They follow the same validation rules as fact ingest and are **not** copied onto reconciled graph records.
 
 > [!NOTE]
 > **MCP `upload`** accepts optional **`scope`** and **`labels`** arguments with the same semantics as REST - scoped keys produce scope-tagged documents and chunks visible under `memory:read` within that region.

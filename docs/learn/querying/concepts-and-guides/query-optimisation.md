@@ -33,7 +33,7 @@ See [record IDs](../../../reference/query-language/language-primitives/data-type
 
 By default, events run in the same transaction as the write that triggers them, which keeps behaviour easy to reason about but can slow commits if event logic is heavy.
 
-Using the [`ASYNC` clause in a `DEFINE EVENT` statement](../../../reference/query-language/statements/define/event.md#async-events) runs the handler **after** the triggering transaction. This leads to lower write latency, with the caveat that it is an opt out of the ACID guarantees by default in all transactions. As such, it should only be used when this tradeoff is acceptable.
+Using the [`ASYNC` clause in a `DEFINE EVENT` statement](../../../reference/query-language/statements/define/event.md#async-events) runs the handler **after** the triggering transaction. This leads to lower write latency, with the caveat that the handler opts out of the ACID guarantees that apply by default to all transactions. As such, it should only be used when this tradeoff is acceptable.
 
 More context: [Reactive patterns](../../schema-management/events-and-triggers/reactive-patterns.md).
 
@@ -50,4 +50,4 @@ This will still need a strategy to keep the flag up to date, but allows you to a
 
 ## Fast table counts
 
-For `SELECT count() … GROUP ALL` over a whole table, a `COUNT` index maintains a running total instead of scanning every row each time. See the note under [`SELECT` - `COUNT` index](../../../reference/query-language/statements/select.md#using-a-count-index-to-speed-up-count-in-group-all-queries). From 3.2.5, a bare `count()` projection can [imply `GROUP ALL`](../../../reference/query-language/statements/select.md#bare-count-implies-group-all).
+For `SELECT count() … GROUP ALL` over a whole table, a `COUNT` index maintains a running total instead of scanning every record each time. See the note under [`SELECT` - `COUNT` index](../../../reference/query-language/statements/select.md#using-a-count-index-to-speed-up-count-in-group-all-queries). From 3.2.5, a bare `count()` projection can [imply `GROUP ALL`](../../../reference/query-language/statements/select.md#bare-count-implies-group-all).

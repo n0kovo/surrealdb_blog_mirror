@@ -7,8 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Knowledge graph patterns
 
-A knowledge graph models your domain as entities (people,
-products, documents, concepts) connected by typed relationships:
+A knowledge graph models your domain as entities (people, products, documents, concepts) connected by typed relationships:
 
 -   `document -> cites -> regulation`
 -   `person -> works_at -> organisation`
@@ -20,13 +19,12 @@ This structure gives you a map of meaning that you can do the following with:
 * enrich with metadata that applies to the relation between one record and another
 * combine with search and AI workflows
 
-In SurrealDB, knowledge graphs are built using: - records as nodes
-(`person`, `document`, `concept`) - graph relations as edges,
-created with
-[`RELATE`](../../../reference/query-language/statements/relate.md)
+In SurrealDB, knowledge graphs are built using:
 
-Unlike simple links, edges are first-class records, so you can
-attach rich metadata to relationships.
+* records as nodes (`person`, `document`, `concept`)
+* graph relations as edges, created with [`RELATE`](../../../reference/query-language/statements/relate.md)
+
+Unlike simple links, edges are first-class records, so you can attach metadata to relationships.
 
 ## Core pattern: entities + typed relationships
 
@@ -54,15 +52,13 @@ RELATE person:alice->works_at->organisation:acme
       started_at = time::now();
 ```
 
-This lets you query both the connection and the context of the
-connection.
+This lets you query both the connection and the context of the connection.
 
 ## Design tips
 
 ### Use stable, explicit identities
 
-Use clear table types (`person`, `document`, `clause`) and stable record
-IDs so relationships remain meaningful over time.
+Use clear table types (`person`, `document`, `clause`) and stable record IDs so relationships remain meaningful over time.
 
 ### Map out queries ahead of time and give thought to edge names
 
@@ -109,5 +105,4 @@ FROM person;
 
 ## Industry-oriented examples
 
-You can see these patterns applied in real-world schemas in our [sample industry
-schemas](../../schema-management/schema-design/sample-industry-schemas.md) page.
+You can see these patterns applied in real-world schemas in our [sample industry schemas](../../schema-management/schema-design/sample-industry-schemas.md) page.

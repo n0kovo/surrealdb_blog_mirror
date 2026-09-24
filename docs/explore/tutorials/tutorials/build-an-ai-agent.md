@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/e
 
 # Build an AI agent
 
-This page details a number of ways that you can build an AI agent. As the number of frameworks and programming languages you can choose to do so is quite extensive, this page details three Python frameworks to get you started.
+This page details a number of ways that you can build an AI agent. As there are many frameworks and programming languages to choose from, this page details three Python frameworks to get you started.
 
 ## Setup
 

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `.ListenLive<T>()` {#listen-live}
 
-Listen responses from an existing live query.
+Listens to responses from an existing live query.
 
 ```csharp title="Method Syntax"
 db.ListenLive<T>(queryUuid)

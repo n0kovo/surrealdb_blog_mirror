@@ -17,9 +17,9 @@ SurrealDB supports [full-text search](../full-text-search/overview.md) and Vecto
 
 The image above is a Google search for the word “lead”, a word with more than one definition (and pronunciation!). Lead can mean 'taking initiative', as well as the chemical element with the symbol 'Pb'.
 
-Let's consider this in the context of a database of liquid samples which note down harmful chemicals that are found in them.
+Consider this in the context of a database of liquid samples which note down harmful chemicals that are found in them.
 
-In the example below, we have a table called `liquids` with a `sample` field and a `content` field.  Next, we can define a [full-text index](../../../reference/query-language/statements/define/indexes.md#full-text-search-fulltext-index) on the `content` field by first defining an analyzer called `liquid_analyzer`. We can then [define an index](../../../reference/query-language/statements/define/indexes.md) on the content field in the liquid table and set our [custom analyzer](../../../reference/query-language/statements/define/analyzer.md) (`liquid_analyzer`)to search through the index.
+In the example below, we have a table called `liquids` with a `sample` field and a `content` field. Next, we can define a [full-text index](../../../reference/query-language/statements/define/indexes.md#full-text-search-fulltext-index) on the `content` field by first defining an analyzer called `liquid_analyzer`. We can then [define an index](../../../reference/query-language/statements/define/indexes.md) on the content field in the liquid table and set our [custom analyzer](../../../reference/query-language/statements/define/analyzer.md) (`liquid_analyzer`) to search through the index.
 
 Then, using the select statement to retrieve all the samples containing the chemical lead will also bring up samples that mention the word `lead`.
 
@@ -29,7 +29,7 @@ If you read through the content of the tap water sample, you’ll notice that it
 
 The search pulled up both the records although the tap water sample had no lead in it. This example shows us that while full-text search does a great job at matching query terms with indexed documents, on its own it may not be the best solution for use cases where the query terms have deeper context and scope for ambiguity.
 
-For vector-side retrieval on the same story, see [Similarity search](similarity-search.md).
+For vector-side retrieval on the same example, see [Similarity search](similarity-search.md).
 
 ## Hybrid search functions
 
@@ -89,4 +89,4 @@ search::rrf([$vs, $ft], 2, 60);
 ```
 
 > [!NOTE]
-> On a small dataset the lexical half of a hybrid query can contribute membership without contributing order. BM25 clamps the weight of any term appearing in half or more of the indexed documents to zero, so `search::score` returns `0` for every match and the `ORDER BY score DESC` above has nothing to sort on. Reciprocal rank fusion then folds in an arbitrary ordering of the matched rows. See [why a score can be 0](../full-text-search/scoring-and-ranking.md#why-a-score-can-be-0).
+> On a small dataset the lexical half of a hybrid query can contribute membership without contributing order. BM25 clamps the weight of any term appearing in half or more of the indexed documents to zero, so `search::score` returns `0` for every match and the `ORDER BY score DESC` above has nothing to sort on. Reciprocal rank fusion then folds in an arbitrary ordering of the matched records. See [why a score can be 0](../full-text-search/scoring-and-ranking.md#why-a-score-can-be-0).

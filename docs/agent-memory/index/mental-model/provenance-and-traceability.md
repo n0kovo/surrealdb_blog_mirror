@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Provenance and traceability
 
-SurrealDB Agent Memory’s accuracy story depends on one invariant: no fact-bearing record is anonymous. Provenance is a structured field, not an afterthought in application logs.
+SurrealDB Agent Memory’s accuracy depends on one invariant: no fact-bearing record is anonymous. Provenance is a structured field, not an afterthought in application logs.
 
 ## The `source` object (conceptual)
 

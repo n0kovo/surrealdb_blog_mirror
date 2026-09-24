@@ -622,7 +622,7 @@ This HTTP RESTful endpoint is used to access an existing account inside the Surr
 
 ### Example with a record user
 
-The following example will work as long as as an access method has been defined and a record user has been signed up using the [`/signup`](#signup) endpoint.
+The following example will work as long as an access method has been defined and a record user has been signed up using the [`/signup`](#signup) endpoint.
 
 ```bash title="Request"
 curl -X POST -H "Accept: application/json" -d '{"ns":"main","db":"main","ac":"users","user":"johndoe","pass":"123456"}' http://localhost:8000/signin
@@ -676,7 +676,7 @@ curl -X POST -H "Accept: application/json" -d '{"ns":"main","user":"johndoe","pa
 
 ### Example usage via postman
 
-After you have defined the users permissions for the record user, you can use the `POST /signin` endpoint to sign in as a user.
+After you have defined the permissions for the record user, you can use the `POST /signin` endpoint to sign in as a user.
 
 Using the [user credentials](../../learn/security/authentication/users.md#record-users) created add the following to the request body:
 ```json
@@ -2087,7 +2087,7 @@ SurMlFile.upload("./linear_test.surml", url, 5)
 
 ## `GET /ml/export/:name/:version` {#ml-export}
 
-This HTTP RESTful endpoint exports a SurrealML machine learning model from a specific Namespace and Database. The output file with be a SurrealML file packaged in the `.surml` file format. As machine learning files can be large, the endpoint outputs a chunked HTTP response.
+This HTTP RESTful endpoint exports a SurrealML machine learning model from a specific Namespace and Database. The output file will be a SurrealML file packaged in the `.surml` file format. As machine learning files can be large, the endpoint outputs a chunked HTTP response.
 
 ### Headers
 

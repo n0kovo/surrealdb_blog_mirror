@@ -775,28 +775,26 @@ A [`COMPUTED`](#restrictions-on-computed-fields) body is evaluated on every read
 
 ### A computed body must be read-only
 
-`DEFINE FIELD` refuses a `COMPUTED` body that modifies data. A write inside a body can never succeed inside a plain `SELECT`, so the definition is rejected instead of leaving behind a field that fails on every read.
+`DEFINE FIELD` refuses a `COMPUTED` body that modifies data directly. A write inside a body can never succeed inside a plain `SELECT`, so the definition is rejected instead of leaving behind a field that fails on every read.
 
 ```surql
 -- Refused: the body modifies data
 DEFINE FIELD view_count ON article COMPUTED (UPDATE stats:articles SET views += 1);
 ```
 
-The check covers the whole expression, including subqueries, blocks and closures, and it follows calls to [custom functions](function.md). A body that calls a function which writes is refused, and the error names the function.
+The definition-time check covers the body itself, including subqueries, blocks, closures and the arguments of a call. It does not follow a call into a [custom function](function.md), because the function is stored separately and can be redefined later. A body that calls a function which writes is therefore accepted, and each read that reaches the write fails with `A COMPUTED clause cannot contain a statement that modifies data`.
 
 ```surql
 DEFINE FUNCTION fn::record_view() -> int { CREATE view_log SET at = time::now(); RETURN 1; };
 
--- Refused: fn::record_view() writes
+-- Accepted, but every read of `view_count` now fails
 DEFINE FIELD view_count ON article COMPUTED fn::record_view();
 ```
 
-The same rule holds when the function changes rather than the field: `DEFINE FUNCTION` and `ALTER FUNCTION` refuse a body that starts to write while a computed field still depends on it. See [Functions that other definitions require to stay read-only](function.md#functions-that-other-definitions-require-to-stay-read-only).
-
-A write that cannot be resolved when the field is defined - one reached through [`eval::surql()`](../../functions/database-functions/eval.md#evalsurql), a JavaScript function, or a closure that arrives as data - is still accepted at definition time. The write is refused when the field is read.
+The same read-time refusal applies to a write reached through [`eval::surql()`](../../functions/database-functions/eval.md#evalsurql), a JavaScript function, or a closure that arrives as data, and to a function that is changed to write after the field is defined. See [Functions that other definitions require to stay read-only](function.md#functions-that-other-definitions-require-to-stay-read-only).
 
 > [!NOTE]
-> These checks are relaxed under `OPTION IMPORT`, so an [export](../../../cli/surrealdb-cli/commands/export.md) taken before the rules existed still restores.
+> The definition-time check also applies under `OPTION IMPORT`, so importing an [export](../../../cli/surrealdb-cli/commands/export.md) that holds a `COMPUTED` body with a direct write fails at that `DEFINE FIELD` statement.
 
 ### A computed body is capped at the definer's permissions
 

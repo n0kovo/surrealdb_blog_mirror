@@ -26,7 +26,7 @@ This function can be used to introduce a delay or pause in the execution of a qu
 
 ## `sleep`
 
-The `sleep` function delays or pauses the execution of a query or a set of statements.
+The `sleep` function delays or pauses the execution of a query or a batch of statements.
 
 ```surql title="API DEFINITION"
 sleep(duration) -> none
@@ -77,9 +77,10 @@ FROM person;
 The `sleep()` function does not interfere with operations that are underway in the background, such as a [`DEFINE INDEX`](../../statements/define/indexes.md) statement using the `CONCURRENTLY` clause.
 
 ```surql
-CREATE |user:50000| SET name = id.id() RETURN NONE;
+CREATE |user:1..=50000| RETURN NONE;
+UPDATE user SET name = id.id() RETURN NONE;
 DEFINE INDEX unique_name ON TABLE user FIELDS name UNIQUE CONCURRENTLY;
-INFO FOR INDEX unique_name ON TABLE user;√
+INFO FOR INDEX unique_name ON TABLE user;
 RETURN sleep(50ms);
 INFO FOR INDEX unique_name ON TABLE user;
 RETURN sleep(50ms);
@@ -90,39 +91,40 @@ INFO FOR INDEX unique_name ON TABLE user;
 
 ```surql title="Possible output"
 -------- Query 1 --------
-{ 
+{
     building: {
-        initial: 0,
-        pending: 0,
-        status: 'indexing', 
-        updated: 0
+        compacting: false,
+        status: 'started'
     }
 }
 
 -------- Query 2 --------
-{ 
+{
     building: {
-        initial: 100,
-        pending: 20,
-        status: 'indexing', 
-        updated: 0
+        compacting: false,
+        initial: 9016,
+        pending: 0,
+        status: 'indexing'
     }
 }
 
 -------- Query 3 --------
-{ 
+{
     building: {
-        initial: 100,
-        pending: 4,
-        status: 'indexing', 
-        updated: 16
+        compacting: false,
+        initial: 17266,
+        pending: 0,
+        status: 'indexing'
     }
 }
 
 -------- Query 4 --------
 {
     building: {
-        status: 'ready'
+        compacting: false,
+        initial: 25766,
+        pending: 0,
+        status: 'indexing'
     }
 }
 ```

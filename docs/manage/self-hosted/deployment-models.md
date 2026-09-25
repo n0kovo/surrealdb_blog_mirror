@@ -114,7 +114,7 @@ See also [Self-hosted](index.md) for Docker, Kubernetes, and platform guides.
 
 For single-node and embedded workloads, [SurrealKV](https://github.com/surrealdb/surrealkv) is SurrealDB’s own LSM-backed storage engine, developed together with the database rather than as a third-party dependency. As a result, SurrealKV exposes a comparatively small [configuration surface](../../reference/cli/surrealdb-cli/commands/start.md#supported-parameters-for-surrealkv) and [environment variable set](../../reference/cli/surrealdb-cli/environment-variables.md#surrealkv-environment-variables) next to RocksDB’s extensive tuning knobs, and is aimed at embedded and local-first scenarios.
 
-SurrealKV remains **beta**. For conservative production on-disk server deployments today, **prefer RocksDB**. For embedded deployments where smaller resident memory and in-process behaviour are priorities, SurrealKV is the path to evaluate first. SurrealKV is still where new storage features are tried first: features such as temporal reads via the [`VERSION`](../../reference/query-language/statements/select.md#the-version-clause) clause were exercised on SurrealKV first and have since been extended to [SurrealMX](../../running/in-memory.md) and RocksDB where the engine supports them.
+SurrealKV remains **beta**. For conservative production on-disk server deployments today, **prefer RocksDB**. For embedded deployments where smaller resident memory and in-process behaviour are priorities, SurrealKV is the path to evaluate first. SurrealKV is still where new storage features are tried first: features such as temporal reads via the [`VERSION`](../../reference/query-language/statements/select.md#the-version-clause) clause were exercised on SurrealKV first and have since been extended to RocksDB. From 3.3.0, the in-memory [SurrealMX](../../running/in-memory.md) backend does not support versioned queries.
 
 To try SurrealKV on a server, see the SurrealKV tab on [Run a single-node, on-disk server](../../running/file-backed.md) and the [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md) storage parameters.
 
@@ -171,7 +171,7 @@ SurrealDB supports embedded operation in Rust, Go, JavaScript / TypeScript, WebA
 
 ### Storage options
 
-**In-memory (SurrealMX)** - Default in-memory backend since SurrealDB 3.0, with optional snapshots or append-only persistence and support for versioned queries. See [Run a single-node, in-memory server](../../running/in-memory.md).
+**In-memory (SurrealMX)** - Default in-memory backend since SurrealDB 3.0, with optional snapshots or append-only persistence. From 3.3.0 it does not support versioned queries. See [Run a single-node, in-memory server](../../running/in-memory.md).
 
 **RocksDB** - Persistent on-disk storage with mature tuning for write-heavy, SSD-backed server workloads. See [File-backed storage](../../running/file-backed.md).
 

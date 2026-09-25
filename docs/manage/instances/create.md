@@ -90,7 +90,7 @@ A new instance can start empty or with data already in place.
 
 ## 5. Set the storage capacity
 
-Storage is provisioned per instance, and the available range depends on the plan and the instance type.
+Storage is provisioned per instance, and the available range depends on the plan and the instance type. On Start, the range grows with the memory of the type: see the [Storage limits on Start](scaling.md#storage-limits-on-start) page for more details.
 
 You can increase storage later but never decrease it. Start close to what you need rather than over-provisioning. See [Scaling](scaling.md).
 

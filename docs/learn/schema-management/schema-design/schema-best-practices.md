@@ -41,7 +41,7 @@ CREATE colour SET rgb = [0, 2];
 CREATE colour SET rgb = [0, 2, 400];
 ```
 
-[Learn more about assertions in `DEFINE FIELD`](../../../reference/query-language/statements/define/field.md#assertions)
+[Learn more about assertions in `DEFINE FIELD`](../../../reference/query-language/statements/define/field.md#asserting-rules-on-fields)
 
 ## How to work with objects inside `SCHEMALESS` and `SCHEMAFULL` tables
 

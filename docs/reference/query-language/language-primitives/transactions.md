@@ -68,7 +68,7 @@ COMMIT TRANSACTION;
 
 ## Committing a transaction
 
-The [COMMIT](../statements/commit.md) statement is used to commit a set of statements within a transaction, ensuring that all data modifications become a permanent part of the database.
+The [COMMIT](../statements/commit.md) statement is used to commit the statements within a transaction, ensuring that all data modifications become a permanent part of the database.
 
 ```surql title="Committing a transaction"
 COMMIT [ TRANSACTION ];
@@ -115,7 +115,7 @@ COMMIT TRANSACTION;
 
 ## Cancelling a transaction
 
-The [CANCEL](../statements/cancel.md) statement can be used to cancel a set of statements within a transaction, reverting or rolling back any data modification made within the transaction as a whole.
+The [CANCEL](../statements/cancel.md) statement can be used to cancel the statements within a transaction, reverting or rolling back any data modification made within the transaction as a whole.
 
 ```surql title="Cancelling a transaction"
 CANCEL [ TRANSACTION ];

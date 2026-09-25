@@ -53,7 +53,7 @@ Yes. Automated snapshots run on a schedule, with tiered daily, weekly, and month
 
 ### How often can I increase the disk size of an instance?
 
-Once every six hours. Storage can increase but never decrease. See [Configure an instance](../instances/configure.md#compute-and-storage).
+Once every six hours, and a change of instance type counts as a storage change. Storage can increase but never decrease, up to the maximum of the instance type. See [Storage limits on Start](../instances/scaling.md#storage-limits-on-start) and [Configure an instance](../instances/configure.md#compute-and-storage).
 
 ### Can I transfer an instance to another organisation?
 

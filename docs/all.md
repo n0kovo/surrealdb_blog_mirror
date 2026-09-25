@@ -382,7 +382,7 @@ _1088 pages_
 - [2.x to 3.x](build/migrating/from-old-surrealdb-versions/2x-to-3x.md)
   This guide will help you upgrade your current SurrealDB installation to the latest `3.x` release.
 - [3.2 to 3.3](build/migrating/from-old-surrealdb-versions/32-to-33.md)
-  What changes on disk and in behaviour when a 3.2 installation moves to 3.3, and which steps are automatic.
+  What changes when a 3.2 deployment moves to 3.3, from the data migrations that run at first start and the optional index rebuilds to rolling-upgrade limits and behaviour changes in SurrealQL, permissions, security, configuration and the SDKs.
 - [Upgrading](build/migrating/from-old-surrealdb-versions/overview.md)
   This guide will help you upgrade your current SurrealDB installation to a newer release.
 - [Migrating from MongoDB](build/migrating/from-other-databases/from-mongodb.md)
@@ -761,7 +761,7 @@ _1088 pages_
 - [Reactive patterns](learn/schema-management/events-and-triggers/reactive-patterns.md)
   Choosing between synchronous and asynchronous events, LIVE SELECT subscriptions, and evolving reactive behaviour safely.
 - [Buckets](learn/schema-management/files/buckets.md)
-  Defining file buckets: memory, disk, global backends, and permissions.
+  Defining file buckets: memory, disk, cloud object storage (Amazon S3, S3-compatible, Google Cloud Storage, Azure Blob Storage), global backends, and permissions.
 - [Working with files](learn/schema-management/files/working-with-files.md)
   File pointers, buckets, and putting or getting bytes from SurrealDB.
 - [Schema management](learn/schema-management/index.md)
@@ -807,7 +807,7 @@ _1088 pages_
 - [Manage](manage.md)
   Running SurrealDB in production: managed instances and organisations. Billing, the surrealctl CLI, observability, schema migration and self-hosting.
 - [Enterprise Edition](manage/enterprise/index.md)
-  What Enterprise Edition adds over Community: distributed live queries. S3-backed file storage, audit logging, FIPS-validated cryptography, trusted execution, and contractual support.
+  What Enterprise Edition adds over Community: distributed live queries, audit logging, FIPS-validated cryptography, trusted execution and contractual support, plus the licence key it needs to start, the SURREAL_LICENSE_* variables and the Docker Hub image.
 - [Architecture](manage/instances/architecture.md)
   The topologies behind the Start and Scale plans. Single-node and multi-node, and what each means for growth and recovery.
 - [Backups and recovery](manage/instances/backups.md)
@@ -1861,7 +1861,7 @@ _1088 pages_
 - [CANCEL](reference/query-language/statements/cancel.md)
   The CANCEL statement can be used to cancel the statements within a transaction, reverting or rolling back any data modification made within the transaction as a whole.
 - [COMMIT](reference/query-language/statements/commit.md)
-  The COMMIT statement is used to commit a set of statements within a transaction, ensuring that all data modifications become a permanent part of the database.
+  The COMMIT statement is used to commit the statements within a transaction, ensuring that all data modifications become a permanent part of the database.
 - [CONTINUE](reference/query-language/statements/continue.md)
   The CONTINUE statement can be used to skip an iteration of a loop, like within the FOR statement
 - [CREATE](reference/query-language/statements/create.md)
@@ -1879,7 +1879,7 @@ _1088 pages_
 - [DEFINE API](reference/query-language/statements/define/api.md)
   A DEFINE API statement can be used to set endpoints with custom middleware and permissions.
 - [DEFINE BUCKET](reference/query-language/statements/define/bucket.md)
-  A DEFINE BUCKET statement can be used to set endpoints with custom middleware and permissions.
+  The DEFINE BUCKET statement defines a named file bucket backed by memory, a local folder, or Amazon S3, S3-compatible, Google Cloud Storage or Azure Blob Storage object storage, with permissions.
 - [DEFINE CONFIG](reference/query-language/statements/define/config.md)
   This statement allows you to set external configurations on the database, either for API middleware and permissions, or for how the database's tables and functions are exposed via the GraphQL API.
 - [DEFINE DATABASE](reference/query-language/statements/define/database.md)

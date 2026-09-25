@@ -21,7 +21,7 @@ You can start with SurrealDB in more than one way. This section orders them from
 
 After you are running SurrealDB (locally or on servers you manage), you can choose storage and topology:
 
-- [Run a single-node, in-memory server](in-memory.md) with optional persistence and versioning (SurrealMX)
+- [Run a single-node, in-memory server](in-memory.md) with optional persistence (SurrealMX)
 - [Run a single-node, on-disk server](file-backed.md) (RocksDB or SurrealKV)
 - [Run a multi-node cluster](multi-node.md)
 - [Run with Docker](docker.md)

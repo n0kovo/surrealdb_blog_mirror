@@ -18,7 +18,7 @@ _Auto-generated index — 18 pages and 1 sub-section._
 - [DEFINE API](api.md)
   A DEFINE API statement can be used to set endpoints with custom middleware and permissions.
 - [DEFINE BUCKET](bucket.md)
-  A DEFINE BUCKET statement can be used to set endpoints with custom middleware and permissions.
+  The DEFINE BUCKET statement defines a named file bucket backed by memory, a local folder, or Amazon S3, S3-compatible, Google Cloud Storage or Azure Blob Storage object storage, with permissions.
 - [DEFINE CONFIG](config.md)
   This statement allows you to set external configurations on the database, either for API middleware and permissions, or for how the database's tables and functions are exposed via the GraphQL API.
 - [DEFINE DATABASE](database.md)

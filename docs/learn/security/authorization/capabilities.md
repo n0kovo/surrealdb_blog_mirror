@@ -402,7 +402,7 @@ A route name covers every method and path under it, so `key` covers all ten [`/k
 
 | Name | Covers |
 | --- | --- |
-| `health` | [`GET /health`](../../../reference/rest-api/http-protocol.md#health), and the `/status` and `/ready` probes |
+| `health` | [`GET /health`](../../../reference/rest-api/http-protocol.md#health) and the gRPC [`Health`](../../../reference/rest-api/rpc-protocol.md#grpc-transport) call, but not the `/status` and `/ready` probes |
 | `version` | [`GET /version`](../../../reference/rest-api/http-protocol.md#version) |
 | `import` | [`POST /import`](../../../reference/rest-api/http-protocol.md#import) |
 | `export` | [`POST /export`](../../../reference/rest-api/http-protocol.md#export) |

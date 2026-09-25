@@ -15,3 +15,9 @@ This section describes how to move data into SurrealDB: from other databases, fr
 - [2.x to 3.x](from-old-surrealdb-versions/2x-to-3x.md) - what changed between the 2.x and 3.x releases
 - [From files and streams](from-files-and-streams/index.md) - load data held in files or arriving as a stream
 - [From other databases](from-other-databases/overview.md) - move across from another database engine
+
+## Moving between SurrealDB Cloud instances
+
+A Free instance moves to a paid instance type in place, from the **Compute** tab of its settings, with no migration. See [Scaling](../../manage/instances/scaling.md#scaling-a-start-instance).
+
+Moving from Start to Scale, or to another region, needs a new instance. Deploy it, then [restore a backup](../../manage/instances/backups.md) or [import an export](../../manage/instances/import-and-export.md) into it.

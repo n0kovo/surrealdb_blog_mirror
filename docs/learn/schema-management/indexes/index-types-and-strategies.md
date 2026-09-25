@@ -91,7 +91,7 @@ A composite index also serves queries. The query planner uses it for a `WHERE` c
 
 *Since v3.0.0*
 
-A count index uses the `COUNT` special clause instead of the usual `FIELDS` / `COLUMNS` form (which defines a standard B-tree index). Use it with `count()` and `GROUP ALL`. From 3.2.5, a bare `count()` projection [implies `GROUP ALL`](../../../reference/query-language/statements/select.md#bare-count-implies-group-all).
+A count index uses the `COUNT` special clause instead of the usual `FIELDS` / `COLUMNS` form (which defines a standard B-tree index). Use it with `count()` and `GROUP ALL`.
 
 - **`COUNT`** - full-table counts: `SELECT count() FROM <table> GROUP ALL`.
 - **`COUNT WHERE <condition>`** - filtered counts when the query `WHERE` exactly matches the index condition.

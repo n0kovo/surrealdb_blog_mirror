@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 These snippets are starting points that are realistic enough to learn from, short enough to paste into SurrealDB Studio or to lift into [SurrealKit](../../../manage/schema-migration/index.md) `.surql` schema files and then reshape. They mix **tables**, **relations**, **computed** fields, **events**, and **indexes** the way a real app might.
 
 > [!NOTE]
-> Many fields use [`COMPUTED`](../../../reference/query-language/statements/define/field.md#computed-fields) (SurrealDB 3.0.0 onward). On older versions, replace with a [`future`](../../../reference/query-language/language-primitives/data-types/futures.md) and `VALUE { … }` as in the futures documentation.
+> Many fields use [`COMPUTED`](../computed-data/computed-fields.md) (SurrealDB 3.0.0 onward). On older versions, replace with a [`future`](../../../reference/query-language/language-primitives/data-types/futures.md) and `VALUE { … }` as in the futures documentation.
 
 ## Adding to this page
 
@@ -22,7 +22,7 @@ You can also [get in touch](/contact) with us if you'd like a sample schema that
 
 ### Project planning
 
-A project management schema that demonstrates activity scheduling, milestone tracking, and dependency management using [graph relationships](../../data-models/graph/overview.md). This schema shows how to model complex project workflows with interdependent tasks and progress tracking using [`COMPUTED` fields](../../../reference/query-language/statements/define/field.md#computed-fields) for calculated values.
+A project management schema that demonstrates activity scheduling, milestone tracking, and dependency management using [graph relationships](../../data-models/graph/overview.md). This schema shows how to model complex project workflows with interdependent tasks and progress tracking using [`COMPUTED` fields](../computed-data/computed-fields.md) for calculated values.
 
 ```surql
 DEFINE TABLE project;
@@ -139,7 +139,7 @@ LIVE SELECT * FROM alert;
 
 ### Risk management
 
-Project risk assessment and mitigation tracking schema. Features temporal risk modelling with active/inactive periods, probability-impact calculations, and automated risk scoring using [futures](../../../reference/query-language/statements/define/field.md#futures). Demonstrates [unique constraints](../../../reference/query-language/statements/define/indexes.md#unique-indexes) and complex mathematical aggregations across related records.
+Project risk assessment and mitigation tracking schema. Features temporal risk modelling with active/inactive periods, probability-impact calculations, and automated risk scoring using [`COMPUTED` fields](../computed-data/computed-fields.md). Demonstrates [unique constraints](../../../reference/query-language/statements/define/indexes.md#unique-index) and complex mathematical aggregations across related records.
 
 ```surql
 DEFINE TABLE risk SCHEMAFULL;
@@ -188,7 +188,7 @@ SELECT * FROM project;
 
 ### Supply chain and contract management
 
-Vendor relationship and contract lifecycle management schema. Covers contract value tracking with change orders, deliverable management, and automated total commitment calculations using [futures](../../../reference/query-language/statements/define/field.md#futures). Demonstrates complex financial calculations and status tracking across multiple related entities.
+Vendor relationship and contract lifecycle management schema. Covers contract value tracking with change orders, deliverable management, and automated total commitment calculations using [`COMPUTED` fields](../computed-data/computed-fields.md). Demonstrates complex financial calculations and status tracking across multiple related entities.
 
 ```surql
 -- Vendors who supply goods or services
@@ -470,7 +470,7 @@ SELECT id, <-incident[WHERE severity = "moderate"]<-employee FROM project;
 
 ### General bank schema (graph schema)
 
-Multi-currency banking system using [graph relationships](../../data-models/graph/overview.md). Demonstrates polymorphic account types (JPY, EUR, CAD, USD) with different field structures, customer-bank relationships, and [unique constraint enforcement](../../../reference/query-language/statements/define/indexes.md#unique-indexes). Shows how to model financial relationships with type-specific behaviours.
+Multi-currency banking system using [graph relationships](../../data-models/graph/overview.md). Demonstrates polymorphic account types (JPY, EUR, CAD, USD) with different field structures, customer-bank relationships, and [unique constraint enforcement](../../../reference/query-language/statements/define/indexes.md#unique-index). Shows how to model financial relationships with type-specific behaviours.
 
 ```surql
 DEFINE TABLE bank SCHEMAFULL;

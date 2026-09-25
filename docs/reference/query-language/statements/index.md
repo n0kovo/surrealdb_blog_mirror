@@ -23,7 +23,7 @@ _Auto-generated index — 28 pages and 2 sub-sections._
 - [CANCEL](cancel.md)
   The CANCEL statement can be used to cancel the statements within a transaction, reverting or rolling back any data modification made within the transaction as a whole.
 - [COMMIT](commit.md)
-  The COMMIT statement is used to commit a set of statements within a transaction, ensuring that all data modifications become a permanent part of the database.
+  The COMMIT statement is used to commit the statements within a transaction, ensuring that all data modifications become a permanent part of the database.
 - [CONTINUE](continue.md)
   The CONTINUE statement can be used to skip an iteration of a loop, like within the FOR statement
 - [CREATE](create.md)

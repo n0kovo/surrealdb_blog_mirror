@@ -9,7 +9,7 @@ _Auto-generated index — 0 pages and 7 sub-sections._
 
 ## Sub-sections
 
-- **[Enterprise Edition](enterprise/index.md)** — What Enterprise Edition adds over Community: distributed live queries. S3-backed file storage, audit logging, FIPS-validated cryptography, trusted execution, and contractual support.
+- **[Enterprise Edition](enterprise/index.md)** — What Enterprise Edition adds over Community: distributed live queries, audit logging, FIPS-validated cryptography, trusted execution and contractual support, plus the licence key it needs to start, the SURREAL_LICENSE_* variables and the Docker Hub image.
 - **[Instances](instances/index.md)** — What a SurrealDB Cloud instance is. How the Start and Scale plans differ, and where each operational task is documented.
 - **[Observability](observability/index.md)** — Production visibility for SurrealDB Community and Enterprise. Logging, Prometheus pull, OTLP push, Enterprise pipelines, metric catalogues, and Tokio console.
 - **[Organisations](organisations/index.md)** — The container for instances, members, usage, and billing. What each section of the organisation view holds.

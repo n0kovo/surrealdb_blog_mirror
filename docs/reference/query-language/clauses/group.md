@@ -20,10 +20,6 @@ This clause is followed with either:
 * `BY` to specify certain fields to group by, or
 * `ALL` to group every selected record into a single aggregate.
 
-*Since v3.2.5*
-
-A projection made entirely of bare zero-argument [`count()`](../functions/database-functions/count.md) implies `GROUP ALL`, so `SELECT count() FROM person` and `SELECT count() FROM person GROUP ALL` are equivalent. See [Bare `count()` implies `GROUP ALL`](../statements/select.md#bare-count-implies-group-all) for the cases that stay per-row (`count(field)`, `*`, `SELECT VALUE`, `SPLIT`, and so on).
-
 ## Syntax
 
 ```syntax title="Clause Syntax"

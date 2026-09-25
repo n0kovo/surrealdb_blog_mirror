@@ -105,7 +105,7 @@ DEFINE CONFIG API
 
 To set the actual API endpoints and their middleware, a `DEFINE API` statement is used for each endpoint. For more details and examples, see the pages for [`DEFINE API`](api.md) and [API functions](../../functions/database-functions/api.md).
 
-The behaviour of API endpoints can be tested using the `api::invoke` method, or through a regular HTTP call to the endpoint that [includes the namespace and database name](../../../rest-api/http-protocol.md#custom-endpoint-at-apinsdbendpoint).
+The behaviour of API endpoints can be tested using the `api::invoke` method, or through a regular HTTP call to the endpoint that [includes the namespace and database name](../../../rest-api/http-protocol.md#custom).
 
 This next example uses `DEFINE CONFIG` to set a single response header, followed by two endpoints that return different output.
 

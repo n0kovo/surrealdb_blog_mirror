@@ -216,7 +216,7 @@ surreal sql ...
 surreal sql -e [CONNECTION_STRING] --allow-experimental surrealism,files
 ```
 
-The current experimental targets are `files` and `surrealism`. The legacy tag `gql` is still accepted for compatibility but has no effect from 3.3.0 - [ISO GQL](../../../../learn/querying/gql/overview.md) is enabled by default.
+The current experimental targets are `files` and `surrealism`. The legacy tag `gql` is still accepted for compatibility but has no effect from 3.3.0 - [ISO GQL (Cypher Query Language)](../../../../learn/querying/gql/overview.md) is enabled by default.
 
 | Example feature/statement | Tag |
 | --- | --- |
@@ -224,7 +224,7 @@ The current experimental targets are `files` and `surrealism`. The legacy tag `g
 | [DEFINE MODULE](../../../query-language/statements/define/module.md) | `surrealism` |
 
 > [!NOTE]
-> When connecting to a **remote** server (`ws://`, `http://`, …), experimental features are enforced on the server. Configure them with [`surreal start`](start.md#experimental-capabilities) (or the server's `SURREAL_CAPS_ALLOW_EXPERIMENTAL`). Flags on `surreal sql` only affect [embedded connections](#capabilities-and-remote-connections) or REPL parse validation. From 3.3.0, [ISO GQL](../../../../learn/querying/gql/overview.md) does not need an experimental flag; `eval::gql` still needs [`--allow-eval-query`](../../../../learn/security/authorization/capabilities.md#eval-queries) on the server.
+> When connecting to a **remote** server (`ws://`, `http://`, …), experimental features are enforced on the server. Configure them with [`surreal start`](start.md#experimental-capabilities) (or the server's `SURREAL_CAPS_ALLOW_EXPERIMENTAL`). Flags on `surreal sql` only affect [embedded connections](#capabilities-and-remote-connections) or REPL parse validation. From 3.3.0, [ISO GQL (Cypher Query Language)](../../../../learn/querying/gql/overview.md) does not need an experimental flag; `eval::gql` still needs [`--allow-eval-query`](../../../../learn/security/authorization/capabilities.md#eval-queries) on the server.
 
 ### Default namespace and database
 

@@ -1,7 +1,7 @@
 ---
 position: 1
 title: GQL
-description: Query SurrealDB graph data with ISO GQL - a Cypher-like graph pattern language over HTTP and RPC.
+description: Query SurrealDB graph data with ISO GQL (Cypher Query Language), a graph pattern language, over HTTP and RPC.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/gql/overview.mdx"
 ---
 
@@ -12,11 +12,11 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 SurrealDB supports **[ISO/IEC 39075 GQL](https://www.iso.org/standard/76120.html)** for **graph pattern matching and data modification** over your existing tables and `RELATE` edges. The surface syntax is closer to **Cypher-style `MATCH … RETURN`** than to SurrealQL `SELECT`, but it runs on the same storage model: node labels map to tables, edge types map to relation tables, and properties map to record fields.
 
 > [!NOTE]
-> From **3.3.0**, ISO GQL is enabled by default on `POST /gql`, the `gql` RPC method, and MCP - no experimental capability is required. On **3.2.x**, enable it with `--allow-experimental gql` (or `SURREAL_CAPS_ALLOW_EXPERIMENTAL=gql`). The surface includes read queries (`MATCH … RETURN`) and data-modifying statements (`INSERT`, `SET`, `REMOVE`, `DELETE`) - see [GQL mutations](mutations.md).
+> From **3.3.0**, ISO GQL (Cypher Query Language) is enabled by default on `POST /gql`, the `gql` RPC method, and MCP - no experimental capability is required. On **3.2.x**, enable it with `--allow-experimental gql` (or `SURREAL_CAPS_ALLOW_EXPERIMENTAL=gql`). The surface includes read queries (`MATCH … RETURN`) and data-modifying statements (`INSERT`, `SET`, `REMOVE`, `DELETE`) - see [GQL mutations](mutations.md).
 
 ## GQL is not GraphQL
 
-SurrealDB exposes two different graph query languages on **separate** endpoints. Do not abbreviate [GraphQL](../graphql/overview.md) to `gql` in product identifiers - the short name **`gql`** refers to ISO GQL only.
+SurrealDB exposes two different graph query languages on **separate** endpoints. Do not abbreviate [GraphQL](../graphql/overview.md) to `gql` in product identifiers - the short name **`gql`** refers to ISO GQL (Cypher Query Language) only.
 
 | | **GQL** (this guide) | **[GraphQL](../graphql/overview.md)** |
 | --- | --- | --- |
@@ -31,7 +31,7 @@ SurrealDB exposes two different graph query languages on **separate** endpoints.
 
 - You already think in **graph patterns** such as `(a)-[:knows]->(b)`, `SHORTEST`, and `ALL SHORTEST`, and have yet to learn how to query such paths in SurrealQL.
 - You are migrating a database from Neo4j to SurrealDB and want to test to ensure that existing Cypher queries map to the same output.
-- You want a **stable graph query surface** aligned with the ISO GQL standard.
+- You want a **stable graph query surface** aligned with the ISO GQL (Cypher Query Language) standard.
 
 For general-purpose schema changes, bulk load, and full SurrealQL expressiveness, keep using [SurrealQL](../../../reference/query-language/index.md) and the [`/sql`](../../../reference/rest-api/http-protocol.md) endpoint. For ISO graph-pattern **writes** (`INSERT`, `SET`, `REMOVE`, `DELETE`), see [GQL mutations](mutations.md).
 

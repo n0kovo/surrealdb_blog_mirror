@@ -1,7 +1,7 @@
 ---
 position: 5
 title: Postgres wire protocol
-description: Connect to SurrealDB with standard Postgres clients and drivers, run SurrealQL or ISO GQL, and receive tabular typed results over the Postgres v3 wire protocol.
+description: Connect to SurrealDB with standard Postgres clients and drivers, run SurrealQL or ISO GQL (Cypher Query Language), and receive tabular typed results over the Postgres v3 wire protocol.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/rest-api/postgres-protocol.mdx"
 ---
 
@@ -14,7 +14,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The Postgres wire protocol listener lets **any Postgres client** - `psql`, JDBC, `tokio-postgres`, Npgsql, and similar tools - connect to SurrealDB on a TCP port and run queries. The server speaks **Postgres protocol v3.0** (simple and extended query flows, prepared statements, interactive transactions, cancellation, optional TLS). 
 
-ANSI SQL is **not yet supported** over the Postgres wire protocol. Clients can currently send SurrealQL by default, or ISO GQL when the session dialect is chosen.
+ANSI SQL is **not yet supported** over the Postgres wire protocol. Clients can currently send SurrealQL by default, or ISO GQL (Cypher Query Language) when the session dialect is chosen.
 
 This feature ships with builds that include the `postgres` server feature (enabled in the default feature set). It is opt-in at runtime: the listener starts only when you pass [`--postgres-bind`](../cli/surrealdb-cli/commands/start.md) via the `surreal start` command.
 
@@ -40,7 +40,7 @@ The following chart shows features currently available, along with those that ar
 | Namespace/database via startup `database=ns/db` | `COPY` |
 | Session `USE` / `LET` persistence | `LIVE` queries over Postgres |
 | Interactive `BEGIN` / `COMMIT` / `ROLLBACK` | GQL inside an open interactive transaction |
-| Dialect switch: SurrealQL (default) or ISO GQL | Full static typing for every `prepare` shape |
+| Dialect switch: SurrealQL (default) or ISO GQL (Cypher Query Language) | Full static typing for every `prepare` shape |
 | SCRAM-SHA-256 auth over SASL (when the user has SCRAM verifier material - see [Authentication](#authentication)) | |
 | Positional parameters (`$1` → `$_1` rewrite) | |
 | Typed result columns inferred from values | |
@@ -108,7 +108,7 @@ Failed auth returns **`28P01`** without user enumeration.
 
 ## Coming from Postgres and SQL
 
-The connection speaks **Postgres wire protocol**, but the query language is **SurrealQL** (with [ISO GQL](#iso-gql-optional-dialect) as an optional alternative). The server does **not** yet translate ANSI SQL. If you know Postgres or write SQL for BI tools every day, that background still helps (many SurrealQL queries look and behave like SQL) but you are learning **SurrealQL**, not sending Postgres queries verbatim.
+The connection speaks **Postgres wire protocol**, but the query language is **SurrealQL** (with [ISO GQL (Cypher Query Language)](#iso-gql-cypher-query-language-optional-dialect) as an optional alternative). The server does **not** yet translate ANSI SQL. If you know Postgres or write SQL for BI tools every day, that background still helps (many SurrealQL queries look and behave like SQL) but you are learning **SurrealQL**, not sending Postgres queries verbatim.
 
 ### Try it with `psql`
 
@@ -183,9 +183,9 @@ SELECT * FROM person;
 
 `USE ns/db` and `LET` persist for the lifetime of the connection, as on other surfaces.
 
-### ISO GQL (optional dialect)
+### ISO GQL (Cypher Query Language, optional dialect)
 
-GQL is **not** the default and is **not** what most Postgres users expect from a “Postgres” port. It is available so the **same connection** can run [ISO GQL](../../learn/querying/gql/overview.md) when you opt in - the same engine as [`POST /gql`](http-protocol.md#gql), with results encoded as Postgres rows instead of JSON.
+GQL is **not** the default and is **not** what most Postgres users expect from a “Postgres” port. It is available so the **same connection** can run [ISO GQL (Cypher Query Language)](../../learn/querying/gql/overview.md) when you opt in - the same engine as [`POST /gql`](http-protocol.md#gql), with results encoded as Postgres rows instead of JSON.
 
 **When GQL over Postgres is useful:**
 
@@ -258,14 +258,14 @@ Authentication is described in [Authentication](#authentication). Resource limit
 | Surface | Transport | Default language | Typical client |
 | --- | --- | --- | --- |
 | [`POST /sql`](http-protocol.md) | HTTP | SurrealQL | `curl`, scripts |
-| [`POST /gql`](http-protocol.md#gql) | HTTP | ISO GQL | `curl`, HTTP clients |
+| [`POST /gql`](http-protocol.md#gql) | HTTP | ISO GQL (Cypher Query Language) | `curl`, HTTP clients |
 | [RPC](rpc-protocol.md) | HTTP / WebSocket | SurrealQL (+ RPC methods) | Official SDKs |
 | **Postgres wire** | TCP (Postgres v3) | SurrealQL | `psql`, JDBC, `tokio-postgres`, … |
 
 ## Related pages
 
 - [SurrealQL reference](../query-language/index.md): statements, types, and clauses
-- [GQL overview](../../learn/querying/gql/overview.md): ISO GQL concepts and wire surfaces
+- [GQL overview](../../learn/querying/gql/overview.md): ISO GQL (Cypher Query Language) concepts and wire surfaces
 - [GQL via HTTP](../../learn/querying/gql/via-http.md): enable GQL and run queries with `curl`
 - [`DEFINE USER`](../query-language/statements/define/user.md#scram-credentials-for-postgres-clients): SCRAM verifier material for Postgres clients
 - [Capabilities](../../learn/security/authorization/capabilities.md): lock down arbitrary queries and routes

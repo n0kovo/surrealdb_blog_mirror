@@ -1,7 +1,7 @@
 ---
 position: 9
 title: Eval
-description: "Evaluate a SurrealQL or ISO GQL query string at runtime inside the caller's transaction, gated by dedicated capabilities."
+description: "Evaluate a SurrealQL or ISO GQL (Cypher Query Language) query string at runtime inside the caller's transaction, gated by dedicated capabilities."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/eval.mdx"
 ---
 
@@ -12,7 +12,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 > [!NOTE]
 > `eval::*` is **denied for every subject by default**, including under [`--allow-all`](../../../../learn/security/authorization/capabilities.md). You must explicitly enable it with [`--allow-eval-query`](../../../../learn/security/authorization/capabilities.md#eval-queries) **and** satisfy the [arbitrary-query](../../../../learn/security/authorization/capabilities.md#arbitrary-queries) gate for the same subject. See [Security](#security) below.
 
-The `eval::*` functions run a **query supplied as a string** inside the **caller's open transaction and session context**. They are intended for workloads where the query text is only known at runtime - for example, analytical queries stored in a table, where you want to blend [ISO GQL](../../../../learn/querying/gql/overview.md) and SurrealQL in one transaction, or to learn SurrealQL or rewrite existing queries from another graph database.
+The `eval::*` functions run a **query supplied as a string** inside the **caller's open transaction and session context**. They are intended for workloads where the query text is only known at runtime - for example, analytical queries stored in a table, where you want to blend [ISO GQL (Cypher Query Language)](../../../../learn/querying/gql/overview.md) and SurrealQL in one transaction, or to learn SurrealQL or rewrite existing queries from another graph database.
 
 <table>
   <thead>
@@ -24,7 +24,7 @@ The `eval::*` functions run a **query supplied as a string** inside the **caller
   <tbody>
     <tr>
       <td scope="row" data-label="Function"><a href="#evalgql">`eval::gql()`</a></td>
-      <td scope="row" data-label="Description">Evaluate a nested ISO GQL query and return its result</td>
+      <td scope="row" data-label="Description">Evaluate a nested ISO GQL (Cypher Query Language) query and return its result</td>
     </tr>
     <tr>
       <td scope="row" data-label="Function"><a href="#evalsurql">`eval::surql()`</a></td>
@@ -37,7 +37,7 @@ For how `eval::*` fits with encoding, parsing, and other representation transfor
 
 ## `eval::gql`
 
-Evaluates an [ISO GQL](../../../../learn/querying/gql/overview.md) query string. One GQL query may lower to several internal statements. Unlike `eval::surql`, it is not limited to a single SurrealQL statement.
+Evaluates an [ISO GQL (Cypher Query Language)](../../../../learn/querying/gql/overview.md) query string. One GQL query may lower to several internal statements. Unlike `eval::surql`, it is not limited to a single SurrealQL statement.
 
 ```surql title="API DEFINITION"
 eval::gql(query: string, bindings: option<object>) -> any
@@ -152,7 +152,7 @@ eval::gql(
 
 ### Multi-hop paths
 
-In ISO GQL on SurrealDB, variable-length hops are a **postfix quantifier on the edge**, not Cypher's `*1..3` inside the brackets:
+In ISO GQL (Cypher Query Language) on SurrealDB, variable-length hops are a **postfix quantifier on the edge**, not Cypher's `*1..3` inside the brackets:
 
 ```surql
 -- From A, who is reachable in 1-2 `knows` hops (staying on `:person` nodes)?
@@ -311,5 +311,5 @@ See [`SURREAL_CAPS_ALLOW_EVAL_QUERY`](../../../cli/surrealdb-cli/environment-var
 ## See also
 
 - [Representations and codecs](../../../../learn/querying/concepts-and-guides/representations-and-codecs.md) - when to use `eval::*` versus encode, parse, or analyse functions
-- [GQL overview](../../../../learn/querying/gql/overview.md) - ISO GQL on the wire and via `eval::gql`
+- [GQL overview](../../../../learn/querying/gql/overview.md) - ISO GQL (Cypher Query Language) on the wire and via `eval::gql`
 - [Capabilities](../../../../learn/security/authorization/capabilities.md) - full capability model

@@ -148,7 +148,7 @@ Once connected, ask the assistant which SurrealDB tools it has. It should list `
 | Tool | Purpose |
 | --- | --- |
 | `query` | Run SurrealQL and return serialised results |
-| `gql` | Run an [ISO GQL](../../../learn/querying/gql/overview.md) query (on by default from 3.3.0; on 3.2.x needs `--allow-experimental gql`) |
+| `gql` | Run an [ISO GQL (Cypher Query Language)](../../../learn/querying/gql/overview.md) query (on by default from 3.3.0; on 3.2.x needs `--allow-experimental gql`) |
 | `graphql` | Run a [GraphQL](../../../learn/querying/graphql/overview.md) query against the configured schema |
 | `select`, `create`, `insert`, `upsert`, `update`, `delete`, `relate` | Data manipulation helpers |
 | `run` | Call a database function with typed arguments |

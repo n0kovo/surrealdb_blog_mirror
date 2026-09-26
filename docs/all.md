@@ -707,13 +707,13 @@ _1088 pages_
 - [Middleware](learn/querying/custom-apis/middleware.md)
   Chaining custom functions before your API handler so you can share logic on DEFINE API routes.
 - [Mutations](learn/querying/gql/mutations.md)
-  ISO GQL data-modifying statements - INSERT, SET, REMOVE, and DELETE - on the /gql endpoint.
+  ISO GQL (Cypher Query Language) data-modifying statements - INSERT, SET, REMOVE, and DELETE - on the /gql endpoint.
 - [GQL](learn/querying/gql/overview.md)
-  Query SurrealDB graph data with ISO GQL - a Cypher-like graph pattern language over HTTP and RPC.
+  Query SurrealDB graph data with ISO GQL (Cypher Query Language), a graph pattern language, over HTTP and RPC.
 - [Sample queries](learn/querying/gql/sample-queries.md)
   Compare common GQL graph patterns against similar SurrealQL queries on the same seed graph.
 - [Via HTTP](learn/querying/gql/via-http.md)
-  Enable ISO GQL on a SurrealDB instance and run queries through POST /gql.
+  Enable ISO GQL (Cypher Query Language) on a SurrealDB instance and run queries through POST /gql.
 - [GraphQL](learn/querying/graphql/overview.md)
   In this section, you will explore GraphQL, an industry-wide recognised protocol for interacting with your data, allowing you to query your data using any preferred method which offers precision and efficiency in data retrieval.
 - [Sample queries](learn/querying/graphql/sample-queries.md)
@@ -1699,7 +1699,7 @@ _1088 pages_
 - [Encoding](reference/query-language/functions/database-functions/encoding.md)
   These functions can be used to encode and decode data in base64. It is particularly used when that data needs to be stored and transferred over media that are designed to deal with text. This encoding and decoding helps to ensure that the data remains intact without modification during transport.
 - [Eval](reference/query-language/functions/database-functions/eval.md)
-  Evaluate a SurrealQL or ISO GQL query string at runtime inside the caller's transaction, gated by dedicated capabilities.
+  Evaluate a SurrealQL or ISO GQL (Cypher Query Language) query string at runtime inside the caller's transaction, gated by dedicated capabilities.
 - [File](reference/query-language/functions/database-functions/file.md)
   These functions can be used to work with files.
 - [Geo](reference/query-language/functions/database-functions/geo.md)
@@ -1961,7 +1961,7 @@ _1088 pages_
 - [REST API](reference/rest-api/index.md)
   The SurrealDB REST API: executing queries over HTTP. Manage authentication and perform CRUD operations.
 - [Postgres wire protocol](reference/rest-api/postgres-protocol.md)
-  Connect to SurrealDB with standard Postgres clients and drivers, run SurrealQL or ISO GQL, and receive tabular typed results over the Postgres v3 wire protocol.
+  Connect to SurrealDB with standard Postgres clients and drivers, run SurrealQL or ISO GQL (Cypher Query Language), and receive tabular typed results over the Postgres v3 wire protocol.
 - [RPC protocol](reference/rest-api/rpc-protocol.md)
   The RPC protocol allows for easy bidirectional communication with SurrealDB.
 - [Authenticating users](reference/rust/concepts/authenticating-users.md)

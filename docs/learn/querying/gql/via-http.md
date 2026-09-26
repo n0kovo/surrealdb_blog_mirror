@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Via HTTP
-description: Enable ISO GQL on a SurrealDB instance and run queries through POST /gql.
+description: Enable ISO GQL (Cypher Query Language) on a SurrealDB instance and run queries through POST /gql.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/gql/via-http.mdx"
 ---
 
@@ -13,7 +13,7 @@ The **`POST /gql`** endpoint accepts a **raw GQL query** in the request body (no
 
 ## Start SurrealDB with GQL
 
-From **3.3.0**, start a normal instance - ISO GQL is on by default:
+From **3.3.0**, start a normal instance - ISO GQL (Cypher Query Language) is on by default:
 
 ```bash
 surreal start --log info --user root --pass secret memory

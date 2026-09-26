@@ -386,7 +386,7 @@ surreal start --allow-experimental surrealism,files
 > Experimental capabilities are enforced on the **server** for remote clients. If you use [`surreal sql`](sql.md) against `ws://` or `http://`, configure flags here - not only on the REPL. See [Capabilities and remote connections](sql.md#capabilities-and-remote-connections).
 
 > [!NOTE]
-> From **3.3.0**, [ISO GQL](../../../../learn/querying/gql/overview.md) is enabled by default and no longer uses an experimental capability. The legacy tag `gql` is still accepted for compatibility but has no effect. On **3.2.x**, use `--allow-experimental gql`.
+> From **3.3.0**, [ISO GQL (Cypher Query Language)](../../../../learn/querying/gql/overview.md) is enabled by default and no longer uses an experimental capability. The legacy tag `gql` is still accepted for compatibility but has no effect. On **3.2.x**, use `--allow-experimental gql`.
 
 | Example feature/statement | Tag |
 | --- | --- |

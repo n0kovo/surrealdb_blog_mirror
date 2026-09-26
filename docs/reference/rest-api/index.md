@@ -26,5 +26,5 @@ If you prefer a richer client experience, SurrealDB also supports:
 
 - **[WebSocket protocol](rpc-protocol.md)** - persistent connections with real-time capabilities, including live queries and [streaming query results](rpc-protocol.md#query_stream) that arrive while the query runs.
 - **[gRPC](rpc-protocol.md#grpc-transport)** - the same RPC protocol over HTTP/2, served on the same port with `grpc://` and `grpcs://` addresses, from 3.3.0.
-- **[Postgres wire protocol](postgres-protocol.md)** - connect with `psql`, JDBC, and other Postgres clients, then run SurrealQL or ISO GQL with tabular typed results.
+- **[Postgres wire protocol](postgres-protocol.md)** - connect with `psql`, JDBC, and other Postgres clients, then run SurrealQL or ISO GQL (Cypher Query Language) with tabular typed results.
 - **Official SDKs** - language-specific clients for [JavaScript](../../languages/javascript.md), [Python](../../languages/python.md), [Rust](../../languages/rust.md), [Go](../../languages/golang.md), [Java](../../languages/java.md), [.NET](../../languages/dotnet.md), and [PHP](../../languages/php.md).

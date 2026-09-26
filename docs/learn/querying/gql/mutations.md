@@ -1,7 +1,7 @@
 ---
 position: 4
 title: Mutations
-description: ISO GQL data-modifying statements - INSERT, SET, REMOVE, and DELETE - on the /gql endpoint.
+description: ISO GQL (Cypher Query Language) data-modifying statements - INSERT, SET, REMOVE, and DELETE - on the /gql endpoint.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/gql/mutations.mdx"
 ---
 
@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 *Since v3.2.0*
 
-ISO GQL on SurrealDB supports the four **data-modifying** statements from the standard - **`INSERT`**, **`SET`**, **`REMOVE`**, and **`DELETE`** - in addition to read-only `MATCH … RETURN` queries. Mutations run on the same [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) endpoint and through [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) (which still needs [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries)).
+ISO GQL (Cypher Query Language) on SurrealDB supports the four **data-modifying** statements from the standard - **`INSERT`**, **`SET`**, **`REMOVE`**, and **`DELETE`** - in addition to read-only `MATCH … RETURN` queries. Mutations run on the same [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) endpoint and through [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) (which still needs [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries)).
 
 > [!NOTE]
 > From **3.3.0**, GQL is enabled by default. On **3.2.x**, enable it with [`--allow-experimental gql`](../../../reference/cli/surrealdb-cli/commands/start.md#experimental-capabilities). Mutation-bearing queries open a **write transaction** - the same permissions, field validation, events, indexes, references, and live-query behaviour as native SurrealQL `CREATE` / `UPDATE` / `DELETE` / `RELATE` apply.
@@ -129,7 +129,7 @@ Parse and semantic errors return the same error envelope as read queries.
 | Task | Prefer |
 | --- | --- |
 | Schema changes, bulk load, `RELATE` with arbitrary SurrealQL | [SurrealQL](../../../reference/query-language/index.md) on [`POST /sql`](../../../reference/rest-api/http-protocol.md) |
-| Graph-pattern read + write in one ISO GQL program | GQL mutations on [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) |
+| Graph-pattern read + write in one ISO GQL (Cypher Query Language) program | GQL mutations on [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql) |
 | Nested GQL inside an open SurrealQL transaction | [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) |
 
 ## Next steps

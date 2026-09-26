@@ -103,7 +103,7 @@ value::patch($before, $patch);
 
 [`eval::surql`](../../../reference/query-language/functions/database-functions/eval.md#evalsurql) and [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) parse and **execute** query text in the caller's transaction. That is fundamentally different from encoding:
 
-- Input is **executable** SurrealQL or [ISO GQL](../gql/overview.md), not a static wire format.
+- Input is **executable** SurrealQL or [ISO GQL (Cypher Query Language)](../gql/overview.md), not a static wire format.
 - **Denied by default** - requires [`allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) and the [arbitrary-query](../../security/authorization/capabilities.md#arbitrary-queries) gate.
 - Nested writes affect the caller's transaction; transaction-control statements are rejected.
 
@@ -119,7 +119,7 @@ eval::surql($template, { greeting: 'Hello', name: 'world' });
 'Hello, world'
 ```
 
-For [ISO GQL](../gql/overview.md) strings, use `eval::gql` instead - same bindings object, plus [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries). See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) for setup and examples.
+For [ISO GQL (Cypher Query Language)](../gql/overview.md) strings, use `eval::gql` instead - same bindings object, plus [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries). See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) for setup and examples.
 
 ## See also
 

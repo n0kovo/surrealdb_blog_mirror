@@ -408,7 +408,7 @@ Used by the built-in [Model Context Protocol](../../../build/ai-agents/mcp/embed
 
 *Since v3.2.0*
 
-Resource limits for [ISO GQL](../../../learn/querying/gql/overview.md) `MATCH` execution. Errors name the limit when it is exceeded. From **3.3.0**, GQL is enabled by default; on **3.2.x**, enable it with [`--allow-experimental gql`](commands/start.md#experimental-capabilities).
+Resource limits for [ISO GQL (Cypher Query Language)](../../../learn/querying/gql/overview.md) `MATCH` execution. Errors name the limit when it is exceeded. From **3.3.0**, GQL is enabled by default; on **3.2.x**, enable it with [`--allow-experimental gql`](commands/start.md#experimental-capabilities).
 
 <table>
   <thead>
@@ -1189,7 +1189,7 @@ surreal start --allow-all true
       <td scope="row" data-label="Command">`start`, `sql`</td>
       <td scope="row" data-label="Default">none</td>
       <td scope="row" data-label="Allowed values">files, surrealism (comma-separated; legacy `gql` accepted but unused from 3.3.0)</td>
-      <td scope="row" data-label="Notes">Allow execution of experimental features. For remote clients, set on the `start` process. On `surreal sql`, affects embedded engines and REPL parse validation only. See <a href="/docs/reference/cli/surrealdb-cli/commands/start#experimental-capabilities">experimental capabilities</a>. From 3.3.0, ISO GQL is on by default and does not need this variable.</td>
+      <td scope="row" data-label="Notes">Allow execution of experimental features. For remote clients, set on the `start` process. On `surreal sql`, affects embedded engines and REPL parse validation only. See <a href="/docs/reference/cli/surrealdb-cli/commands/start#experimental-capabilities">experimental capabilities</a>. From 3.3.0, ISO GQL (Cypher Query Language) is on by default and does not need this variable.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_FUNC`</td>

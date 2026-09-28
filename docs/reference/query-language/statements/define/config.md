@@ -46,37 +46,37 @@ DEFINE CONFIG [ OVERWRITE | IF NOT EXISTS ]
 **Railroad Diagram**
 
 ```
-                                                                                                                                                                                        ╭────────────────────────────────────────────╮                                              
-                                                                                                                                                                                        │                                            │                                              
-                                                                                                                                                                                        │                            ╭──────╮        │                                              
-                                                                                                                                                                                        │                      ╭─────│ NONE │──────╮ │                                              
-                                                                                                                                        ╭─────────────────────────────────────────────╮ │                      │     ╰──────╯      │ │                                              
-                                                                                                                                        │                                             │ │                      │                   │ │                                              
-                                                                                                                              ╭─────╮   │    ╭────────────╮     ┌─────────────────┐   │ │    ╭─────────────╮   │     ╭──────╮      │ │                                              
-                                                                                   ╭──────────────────────────────────────────│ API │───╯────│ MIDDLEWARE │─────│ @expression, .. │───╰─╯────│ PERMISSIONS │───┼─────│ FULL │──────┼─╰────────────────────────────────────────╮     
-                                                                                   │                                          ╰─────╯        ╰────────────╯     └─────────────────┘          ╰─────────────╯   │     ╰──────╯      │                                          │     
-                                                                                   │                                                                                                                           │                   │                                          │     
-                                                                                   │                                                                                                                           │  ┌─────────────┐  │                                          │     
-                                                                                   │                                                                                                                           ╰──│ @expression │──╯                                          │     
-                                                                                   │                                                                                                                              └─────────────┘                                             │     
-                                                                                   │                                                                                                                                                                                          │     
-                                    ╭────────────────────────────────────────────╮ │                  ╭────────────────╮ ╭──────────────────────────────────────────────────────────────────╮ ╭─────────────────────────────────────────────────────────────────────────────╮ │     
-                                    │                                            │ │                  │                │ │                                                                  │ │                                                                             │ │     
-                                    │               ╭───────────╮                │ │                  │    ╭──────╮    │ │                                     ╭──────╮                     │ │                                            ╭──────╮                         │ │     
-                                    │ ╭─────────────│ OVERWRITE │──────────────╮ │ │                  │ ╭──│ AUTO │──╮ │ │                 ╭───────────────────│ AUTO │───────────────────╮ │ │                    ╭───────────────────────│ AUTO │───────────────────────╮ │ │     
-                                    │ │             ╰───────────╯              │ │ │                  │ │  ╰──────╯  │ │ │                 │                   ╰──────╯                   │ │ │                    │                       ╰──────╯                       │ │ │     
-                                    │ │                                        │ │ │                  │ │            │ │ │                 │                                              │ │ │                    │                                                      │ │ │     
-        ╭────────╮     ╭────────╮   │ │    ╭────╮     ╭─────╮     ╭────────╮   │ │ │    ╭─────────╮   │ │  ╭──────╮  │ │ │    ╭────────╮   │                   ╭──────╮                   │ │ │    ╭───────────╮   │                       ╭──────╮                       │ │ │     
-├┼──────│ DEFINE │─────│ CONFIG │───╯─╯────│ IF │─────│ NOT │─────│ EXISTS │───╰─╰─╯────│ GRAPHQL │───╯─╯──│ NONE │──╰─╰─╯────│ TABLES │───┼───────────────────│ NONE │───────────────────┼─╰─╯────│ FUNCTIONS │───┼───────────────────────│ NONE │───────────────────────┼─╰─╰───┼┤
-        ╰────────╯     ╰────────╯          ╰────╯     ╰─────╯     ╰────────╯            ╰─────────╯        ╰──────╯           ╰────────╯   │                   ╰──────╯                   │        ╰───────────╯   │                       ╰──────╯                       │         
-                                                                                                                                           │                                              │                        │                                                      │         
-                                                                                                                                           │    ╭─────────╮     ┌─────────────────────┐   │                        │    ╭─────────╮     ┌─────────────────────────────┐   │         
-                                                                                                                                           ╰────│ INCLUDE │─────│ table1, table2, ... │───╯                        ╰────│ INCLUDE │─────│ [function1, function2, ...] │───╯         
-                                                                                                                                                ╰─────────╯     └─────────────────────┘                            │    ╰─────────╯     └─────────────────────────────┘   │         
-                                                                                                                                                                                                                   │                                                      │         
-                                                                                                                                                                                                                   │    ╭─────────╮     ┌─────────────────────────────┐   │         
-                                                                                                                                                                                                                   ╰────│ EXCLUDE │─────│ [function1, function2, ...] │───╯         
-                                                                                                                                                                                                                        ╰─────────╯     └─────────────────────────────┘
+                                                                                                                                                                                           ╭────────────────────────────────────────────╮                                                 
+                                                                                                                                                                                           │                                            │                                                 
+                                                                                                                                                                                           │                            ╭──────╮        │                                                 
+                                                                                                                                                                                           │                      ╭─────│ NONE │──────╮ │                                                 
+                                                                                                                                           ╭─────────────────────────────────────────────╮ │                      │     ╰──────╯      │ │                                                 
+                                                                                                                                           │                                             │ │                      │                   │ │                                                 
+                                                                                                                                 ╭─────╮   │    ╭────────────╮     ┌─────────────────┐   │ │    ╭─────────────╮   │     ╭──────╮      │ │                                                 
+                                                                                   ╭─────────────────────────────────────────────│ API │───╯────│ MIDDLEWARE │─────│ @expression, .. │───╰─╯────│ PERMISSIONS │───┼─────│ FULL │──────┼─╰───────────────────────────────────────────╮     
+                                                                                   │                                             ╰─────╯        ╰────────────╯     └─────────────────┘          ╰─────────────╯   │     ╰──────╯      │                                             │     
+                                                                                   │                                                                                                                              │                   │                                             │     
+                                                                                   │                                                                                                                              │  ┌─────────────┐  │                                             │     
+                                                                                   │                                                                                                                              ╰──│ @expression │──╯                                             │     
+                                                                                   │                                                                                                                                 └─────────────┘                                                │     
+                                                                                   │                                                                                                                                                                                                │     
+                                    ╭────────────────────────────────────────────╮ │                  ╭────────────────╮ ╭──────────────────────────────────────────────────────────────────╮ ╭───────────────────────────────────────────────────────────────────────────────────╮ │     
+                                    │                                            │ │                  │                │ │                                                                  │ │                                                                                   │ │     
+                                    │               ╭───────────╮                │ │                  │    ╭──────╮    │ │                                     ╭──────╮                     │ │                                               ╭──────╮                            │ │     
+                                    │ ╭─────────────│ OVERWRITE │──────────────╮ │ │                  │ ╭──│ AUTO │──╮ │ │                 ╭───────────────────│ AUTO │───────────────────╮ │ │                    ╭──────────────────────────│ AUTO │──────────────────────────╮ │ │     
+                                    │ │             ╰───────────╯              │ │ │                  │ │  ╰──────╯  │ │ │                 │                   ╰──────╯                   │ │ │                    │                          ╰──────╯                          │ │ │     
+                                    │ │                                        │ │ │                  │ │            │ │ │                 │                                              │ │ │                    │                                                            │ │ │     
+        ╭────────╮     ╭────────╮   │ │    ╭────╮     ╭─────╮     ╭────────╮   │ │ │    ╭─────────╮   │ │  ╭──────╮  │ │ │    ╭────────╮   │                   ╭──────╮                   │ │ │    ╭───────────╮   │                          ╭──────╮                          │ │ │     
+├┼──────│ DEFINE │─────│ CONFIG │───╯─╯────│ IF │─────│ NOT │─────│ EXISTS │───╰─╰─╯────│ GRAPHQL │───╯─╯──│ NONE │──╰─╰─╯────│ TABLES │───┼───────────────────│ NONE │───────────────────┼─╰─╯────│ FUNCTIONS │───┼──────────────────────────│ NONE │──────────────────────────┼─╰─╰───┼┤
+        ╰────────╯     ╰────────╯          ╰────╯     ╰─────╯     ╰────────╯            ╰─────────╯        ╰──────╯           ╰────────╯   │                   ╰──────╯                   │        ╰───────────╯   │                          ╰──────╯                          │         
+                                                                                                                                           │                                              │                        │                                                            │         
+                                                                                                                                           │    ╭─────────╮     ┌─────────────────────┐   │                        │    ╭─────────╮     ┌───────────────────────────────────┐   │         
+                                                                                                                                           ╰────│ INCLUDE │─────│ table1, table2, ... │───╯                        ╰────│ INCLUDE │─────│ fn::function1, fn::function2, ... │───╯         
+                                                                                                                                           │    ╰─────────╯     └─────────────────────┘   │                        │    ╰─────────╯     └───────────────────────────────────┘   │         
+                                                                                                                                           │                                              │                        │                                                            │         
+                                                                                                                                           │    ╭─────────╮     ┌─────────────────────┐   │                        │    ╭─────────╮     ┌───────────────────────────────────┐   │         
+                                                                                                                                           ╰────│ EXCLUDE │─────│ table1, table2, ... │───╯                        ╰────│ EXCLUDE │─────│ fn::function1, fn::function2, ... │───╯         
+                                                                                                                                                ╰─────────╯     └─────────────────────┘                                 ╰─────────╯     └───────────────────────────────────┘
 ```
 
 ## DEFINE CONFIG API
@@ -309,7 +309,7 @@ DEFINE CONFIG GRAPHQL TABLES EXCLUDE audit_log, session;
 ```
 
 > [!NOTE]
-> `TABLES EXCLUDE` is fully implemented from SurrealDB 3.0.0. In 2.x releases the clause filters the schema, but the server cannot display the stored definition, so `INFO FOR DB` and `surreal export` fail on a database that uses it.
+> `TABLES EXCLUDE` works from SurrealDB 3.0.0 and 2.6.1. Earlier releases store it as `TABLES INCLUDE`, so the GraphQL schema exposes only the tables it was meant to hide.
 
 ### `FUNCTIONS` configuration
 
@@ -352,20 +352,18 @@ DEFINE CONFIG GRAPHQL FUNCTIONS NONE;
 
 #### `INCLUDE`
 
-You can specify a list of functions to include in the GraphQL schema using the `INCLUDE` clause. The list of functions is specified as a comma-separated list enclosed in square brackets `[]`.
+You can specify a list of functions to include in the GraphQL schema using the `INCLUDE` clause. The functions are named in full, with their `fn::` prefix, and separated by commas.
 
 ```surql
-DEFINE CONFIG GRAPHQL FUNCTIONS INCLUDE [getUser,
-  listPosts,
-  searchComments];
+DEFINE CONFIG GRAPHQL FUNCTIONS INCLUDE fn::getUser, fn::listPosts, fn::searchComments;
 ```
 
 #### `EXCLUDE`
 
-You can specify a list of functions to exclude from the GraphQL schema using the `EXCLUDE` clause. The list of functions is specified as a comma-separated list enclosed in square brackets `[]`.
+You can specify a list of functions to exclude from the GraphQL schema using the `EXCLUDE` clause. The list takes the same form as for `INCLUDE`.
 
 ```surql
-DEFINE CONFIG GRAPHQL FUNCTIONS EXCLUDE [debugFunction, testFunction];
+DEFINE CONFIG GRAPHQL FUNCTIONS EXCLUDE fn::debugFunction, fn::testFunction;
 ```
 
 ### Using the `IF NOT EXISTS` clause
@@ -374,7 +372,7 @@ The `IF NOT EXISTS` clause can be used to define the GraphQL configuration only 
 
 ```surql
 -- Define GraphQL configuration only if it does not already exist
-DEFINE CONFIG GRAPHQL IF NOT EXISTS TABLES AUTO FUNCTIONS AUTO;
+DEFINE CONFIG IF NOT EXISTS GRAPHQL TABLES AUTO FUNCTIONS AUTO;
 ```
 
 ### Using the `OVERWRITE` clause
@@ -401,9 +399,7 @@ DEFINE CONFIG OVERWRITE GRAPHQL TABLES INCLUDE user,
 This example defines a GraphQL configuration that includes specific tables and functions.
 
 ```surql
-DEFINE CONFIG GRAPHQL TABLES INCLUDE user,
-  post FUNCTIONS INCLUDE [getUser,
-  listPosts];
+DEFINE CONFIG GRAPHQL TABLES INCLUDE user, post FUNCTIONS INCLUDE fn::getUser, fn::listPosts;
 ```
 
 #### Example 2: Automatically include all tables and functions
@@ -426,7 +422,7 @@ DEFINE CONFIG GRAPHQL TABLES AUTO FUNCTIONS AUTO;
 This example defines a GraphQL configuration that includes all functions except specific ones.
 
 ```surql
-DEFINE CONFIG GRAPHQL FUNCTIONS EXCLUDE [debugFunction, testFunction];
+DEFINE CONFIG GRAPHQL FUNCTIONS EXCLUDE fn::debugFunction, fn::testFunction;
 ```
 
 ### Error handling

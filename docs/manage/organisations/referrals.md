@@ -1,7 +1,7 @@
 ---
 position: 8
 title: Referrals
-description: Share a referral link to earn credits and rewards when someone signs up through it.
+description: Share a referral link to earn credits when someone signs up.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/organisations/referrals.mdx"
 ---
 

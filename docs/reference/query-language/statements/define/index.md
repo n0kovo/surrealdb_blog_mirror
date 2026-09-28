@@ -44,7 +44,7 @@ _Auto-generated index — 18 pages and 1 sub-section._
 - [DEFINE SEQUENCE](sequence.md)
   A DEFINE SEQUENCE statement defines a distributed generator of monotonically increasing numeric sequences.
 - [DEFINE TABLE](table.md)
-  The DEFINE TABLE statement allows you to declare your table by name, enabling you to apply strict controls to a table's schema and access permissions.
+  Declare a table, its type, schema mode and permissions.
 - [DEFINE TOKEN](token.md)
   SurrealDB can work with third-party authentication providers such as OpenID Connect providers, OAuth providers and other trusted third parties.
 - [DEFINE USER](user.md)

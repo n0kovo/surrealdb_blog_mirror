@@ -1,7 +1,7 @@
 ---
 position: 5
 title: Metrics reference
-description: Access paths, label catalogue and the complete metric reference for SurrealDB Community and Enterprise, with a migration table from 3.0.
+description: Access paths, labels, and the full metric reference for both editions.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/observability/metrics.mdx"
 ---
 

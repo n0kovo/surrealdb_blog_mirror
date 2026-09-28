@@ -1,7 +1,8 @@
 ---
 position: 2
 title: Via CLI
-description: In this section, you will explore SurrealQL queries using the SurrealDB CLI. The SurrealDB CLI provides a powerful command-line interface for writing, executing, and visualising SurrealQL queries in real-time.
+description: Run SurrealQL from the terminal with surreal sql.
+priority: 1
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/surrealql/executing-queries/via-cli.mdx"
 ---
 

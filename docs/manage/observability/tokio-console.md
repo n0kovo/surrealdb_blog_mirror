@@ -1,7 +1,7 @@
 ---
 position: 9
 title: Tokio console
-description: Inspect SurrealDB’s async runtime with the Tokio console - tasks, polls, and bottlenecks separate from OpenTelemetry metrics and traces.
+description: "Inspect the async runtime with the Tokio console: tasks and polls."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/observability/tokio-console.mdx"
 ---
 

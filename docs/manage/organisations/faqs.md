@@ -1,7 +1,7 @@
 ---
 position: 9
 title: FAQs
-description: "Common questions about managed instances: getting started, limits, security, pricing, legal terms, and troubleshooting."
+description: "Managed instances: limits, security, pricing and legal terms."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/organisations/faqs.mdx"
 ---
 

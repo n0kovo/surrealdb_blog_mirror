@@ -14,6 +14,6 @@ _Auto-generated index — 2 pages and 1 sub-section._
 ## Pages
 
 - [Environment variables](environment-variables.md)
-  A list of the available environment variables used when running SurrealDB.
+  Every SURREAL_ variable, with its default and allowed values.
 - [SurrealDB CLI](overview.md)
   The SurrealDB command-line tool can be used to export a dataset as SurrealQL from a local or remote SurrealDB database, import SurrealQL data into a local or remote database, and start a single SurrealDB instance or distributed cluster.

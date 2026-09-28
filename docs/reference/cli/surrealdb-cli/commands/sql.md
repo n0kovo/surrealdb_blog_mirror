@@ -1,7 +1,8 @@
 ---
 position: 3
 title: sql
-description: A command that starts a command-line REPL to make SurrealQL to a local or remote SurrealDB database server.
+description: Open a SurrealQL REPL, or pipe queries in from a script.
+priority: 1
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/sql.mdx"
 ---
 

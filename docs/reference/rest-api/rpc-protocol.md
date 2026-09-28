@@ -1,7 +1,8 @@
 ---
 position: 3
 title: RPC protocol
-description: The RPC protocol allows for easy bidirectional communication with SurrealDB.
+description: Bidirectional RPC over WebSocket, HTTP and gRPC.
+priority: 1
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/rest-api/rpc-protocol.mdx"
 ---
 

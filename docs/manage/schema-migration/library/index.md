@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Using SurrealKit as a library
-description: Embed SurrealKit directly in a Rust application to connect to SurrealDB, sync schema at startup, run rollouts, and seed data without the CLI.
+description: Embed SurrealKit in a Rust application, and skip the CLI.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/schema-migration/library/index.mdx"
 ---
 

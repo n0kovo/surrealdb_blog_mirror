@@ -1,7 +1,8 @@
 ---
 position: 1
 title: GQL
-description: Query SurrealDB graph data with ISO GQL (Cypher Query Language), a graph pattern language, over HTTP and RPC.
+description: Query graph data with ISO GQL (Cypher Query Language), a graph pattern language.
+priority: 1
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/gql/overview.mdx"
 ---
 

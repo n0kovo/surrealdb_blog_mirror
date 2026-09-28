@@ -1,7 +1,7 @@
 ---
 position: 8
 title: Slow-query logging
-description: "The Enterprise slow-query log pipeline: how a query qualifies, record shape, rotation, hash chaining, redaction and pipeline self-metrics."
+description: "The Enterprise slow-query log: qualifying, rotation and redaction."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/observability/slow-query-logging.mdx"
 ---
 

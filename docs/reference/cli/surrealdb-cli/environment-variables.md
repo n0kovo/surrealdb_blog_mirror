@@ -1,7 +1,8 @@
 ---
 position: 3
 title: Environment variables
-description: A list of the available environment variables used when running SurrealDB.
+description: Every SURREAL_ variable, with its default and allowed values.
+priority: 1
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/environment-variables.mdx"
 ---
 

@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Logging
-description: Server log levels, text and JSON formats, file and socket output, slow-query logging, and OpenTelemetry log levels.
+description: Log levels, text and JSON formats, and file, socket and OTel output.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/observability/logging.mdx"
 ---
 

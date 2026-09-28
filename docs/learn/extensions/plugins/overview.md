@@ -1,7 +1,8 @@
 ---
 position: 1
 title: Surrealism plugins
-description: Surrealism is a plugin feature that allows users to compile Rust functions into modules that can be called from a SurrealDB instance.
+description: Compile Rust into WASM modules callable from SurrealQL.
+priority: 1
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/extensions/plugins/overview.mdx"
 ---
 

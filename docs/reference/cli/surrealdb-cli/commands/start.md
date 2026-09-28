@@ -1,7 +1,8 @@
 ---
 position: 2
 title: start
-description: A command that begins a running instance of a SurrealDB server with arguments to set the storage backend, authentication and more.
+description: Run a server in memory, on disk, or as a node in a cluster.
+priority: 1
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/start.mdx"
 ---
 

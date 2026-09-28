@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Configuration
-description: "The surrealkit.toml project file: where SurrealKit looks for it, how to supply it inside a container, and every section it accepts - variables, typegen, schema modules and database targets."
+description: The surrealkit.toml project file, and every section it accepts.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/schema-migration/configuration.mdx"
 ---
 

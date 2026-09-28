@@ -1,7 +1,7 @@
 ---
 position: 2
 title: Accounts and sign-in
-description: Create an account with Google, GitHub, or an email address, and sign in to manage organisations and instances.
+description: Create an account with Google, GitHub or email, and sign in.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/organisations/sign-in.mdx"
 ---
 

@@ -10,7 +10,7 @@ _Auto-generated index — 5 pages._
 ## Pages
 
 - [GraphQL](overview.md)
-  In this section, you will explore GraphQL, an industry-wide recognised protocol for interacting with your data, allowing you to query your data using any preferred method which offers precision and efficiency in data retrieval.
+  Query SurrealDB with GraphQL over HTTP or RPC.
 - [Sample queries](sample-queries.md)
   Compare common GraphQL queries against similar SurrealQL SELECT patterns
 - [Via Bruno](via-bruno.md)

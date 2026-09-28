@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1088 pages_  
+_1086 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -277,8 +277,6 @@ _1088 pages_
   Putting SurrealDB into an application: embedding the engine. Migrating from another database, connecting frameworks, and wiring it to AI agents.
 - [Agent Skills](build/ai-agents/agent-skills.md)
   Official SurrealDB agent skills for use in agentic coding workflows.
-- [AI frameworks](build/ai-agents/ai-frameworks.md)
-  Framework integrations for AI and machine learning libraries. Use SurrealDB for vectors, memory, and pipelines.
 - [AI agents](build/ai-agents/index.md)
   MCP servers, Agent Skills, and framework integrations for SurrealDB. The ways SurrealDB fits into AI tooling, and what it gives an agent.
 - [MCP in Claude](build/ai-agents/mcp/claude.md)
@@ -372,9 +370,9 @@ _1088 pages_
 - [Importing CSV data](build/migrating/from-files-and-streams/csv.md)
   SurrealDB Studio can be used to import CSV data to SurrealDB.
 - [Migrating](build/migrating/from-files-and-streams/index.md)
-  Migrating
+  Import CSV, JSON Lines and Kafka data into SurrealDB.
 - [Importing JSON Lines data](build/migrating/from-files-and-streams/json-lines.md)
-  SurrealDB Studio can be used to import CSV data to SurrealDB.
+  Import JSON Lines files with Surreal Sync, and the type mapping.
 - [Importing Kafka data](build/migrating/from-files-and-streams/kafka.md)
   SurrealDB's Surreal Sync tool can be used to import Kafka data to SurrealDB.
 - [1.x to 2.x](build/migrating/from-old-surrealdb-versions/1x-to-2x.md)
@@ -413,8 +411,6 @@ _1088 pages_
   The SurrealDB Studio command palette and its keyboard shortcuts.
 - [SurrealQL editors](explore/studio/surrealql-editors.md)
   SurrealQL editor shortcuts in SurrealDB Studio. Indentation, comments, multi-cursor edits, running queries, record inspection, and JSON formatting.
-- [Blink note-taking app](explore/tutorials/demos/blink.md)
-  Blink - a Notion-style workspace demo built with SurrealDB and WebAssembly.
 - [Kai G AI demos](explore/tutorials/demos/kaig-ai-demos.md)
   A collection of AI demo applications built with SurrealDB, showcasing RAG, agents, and knowledge graph patterns.
 - [Demos](explore/tutorials/demos/overview.md)
@@ -671,7 +667,7 @@ _1088 pages_
 - [Further examples](learn/extensions/plugins/further-examples.md)
   Further examples of Surrealism attributes, namespaced exports, and CLI commands
 - [Surrealism plugins](learn/extensions/plugins/overview.md)
-  Surrealism is a plugin feature that allows users to compile Rust functions into modules that can be called from a SurrealDB instance.
+  Compile Rust into WASM modules callable from SurrealQL.
 - [Quick tutorial](learn/extensions/plugins/quick-tutorial.md)
   A quick tutorial showing the steps involved in turning regular Rust code into SurrealDB-accessible WASM functions.
 - [Bulk operations and data import](learn/querying/concepts-and-guides/bulk-operations-and-data-import.md)
@@ -709,13 +705,13 @@ _1088 pages_
 - [Mutations](learn/querying/gql/mutations.md)
   ISO GQL (Cypher Query Language) data-modifying statements - INSERT, SET, REMOVE, and DELETE - on the /gql endpoint.
 - [GQL](learn/querying/gql/overview.md)
-  Query SurrealDB graph data with ISO GQL (Cypher Query Language), a graph pattern language, over HTTP and RPC.
+  Query graph data with ISO GQL (Cypher Query Language), a graph pattern language.
 - [Sample queries](learn/querying/gql/sample-queries.md)
   Compare common GQL graph patterns against similar SurrealQL queries on the same seed graph.
 - [Via HTTP](learn/querying/gql/via-http.md)
   Enable ISO GQL (Cypher Query Language) on a SurrealDB instance and run queries through POST /gql.
 - [GraphQL](learn/querying/graphql/overview.md)
-  In this section, you will explore GraphQL, an industry-wide recognised protocol for interacting with your data, allowing you to query your data using any preferred method which offers precision and efficiency in data retrieval.
+  Query SurrealDB with GraphQL over HTTP or RPC.
 - [Sample queries](learn/querying/graphql/sample-queries.md)
   Compare common GraphQL queries against similar SurrealQL SELECT patterns
 - [Via Bruno](learn/querying/graphql/via-bruno.md)
@@ -737,7 +733,7 @@ _1088 pages_
 - [Executing queries](learn/querying/surrealql/executing-queries/index.md)
   In this section, you will explore methods to query data in SurrealDB using SurrealQL, GraphQL or any of the available SDKs. This allows you to retrieve, filter, and manipulate data efficiently and in the best way for your use case.
 - [Via CLI](learn/querying/surrealql/executing-queries/via-cli.md)
-  In this section, you will explore SurrealQL queries using the SurrealDB CLI. The SurrealDB CLI provides a powerful command-line interface for writing, executing, and visualising SurrealQL queries in real-time.
+  Run SurrealQL from the terminal with surreal sql.
 - [Via HTTP](learn/querying/surrealql/executing-queries/via-http.md)
   In this section, you will explore querying SurrealDB using HTTP. The HTTP API is designed to be simple and intuitive, with a RESTful interface that provides a consistent way to interact with the database.
 - [Via SDKs](learn/querying/surrealql/executing-queries/via-sdks.md)
@@ -851,39 +847,39 @@ _1088 pages_
 - [Observability](manage/observability/index.md)
   Production visibility for SurrealDB Community and Enterprise. Logging, Prometheus pull, OTLP push, Enterprise pipelines, metric catalogues, and Tokio console.
 - [Logging](manage/observability/logging.md)
-  Server log levels, text and JSON formats, file and socket output, slow-query logging, and OpenTelemetry log levels.
+  Log levels, text and JSON formats, and file, socket and OTel output.
 - [Metrics reference](manage/observability/metrics.md)
-  Access paths, label catalogue and the complete metric reference for SurrealDB Community and Enterprise, with a migration table from 3.0.
+  Access paths, labels, and the full metric reference for both editions.
 - [Observability (metrics and Prometheus)](manage/observability/observability.md)
   Unified OpenTelemetry metrics common to Community and Enterprise. The `GET /metrics` endpoint, scraper authentication, naming, and migration.
 - [Slow-query logging](manage/observability/slow-query-logging.md)
-  The Enterprise slow-query log pipeline: how a query qualifies, record shape, rotation, hash chaining, redaction and pipeline self-metrics.
+  The Enterprise slow-query log: qualifying, rotation and redaction.
 - [Telemetry (OTLP)](manage/observability/telemetry.md)
   OTLP push export of metrics, logs, and traces. Intervals, backward-compatible instruments, and differences before and after SurrealDB 3.1.
 - [Tokio console](manage/observability/tokio-console.md)
-  Inspect SurrealDB’s async runtime with the Tokio console - tasks, polls, and bottlenecks separate from OpenTelemetry metrics and traces.
+  Inspect the async runtime with the Tokio console: tasks and polls.
 - [AWS Marketplace](manage/organisations/aws-marketplace.md)
-  Subscribe through AWS Marketplace so charges appear on your AWS bill, and link the subscription to an organisation.
+  Subscribe via AWS Marketplace and link it to an organisation.
 - [Billing](manage/organisations/billing.md)
-  Organisation-level billing details, payment methods, discount codes, invoices, and the usage that produces them.
+  Payment methods, discount codes, invoices, and the usage behind them.
 - [FAQs](manage/organisations/faqs.md)
-  Common questions about managed instances: getting started, limits, security, pricing, legal terms, and troubleshooting.
+  Managed instances: limits, security, pricing and legal terms.
 - [Organisations](manage/organisations/index.md)
   The container for instances, members, usage, and billing. What each section of the organisation view holds.
 - [Members and roles](manage/organisations/members-and-roles.md)
-  Invite people to an organisation, track pending invitations, and choose between the Owner, Admin, and Member roles.
+  Invite people, and choose the Owner, Admin or Member role.
 - [Referrals](manage/organisations/referrals.md)
-  Share a referral link to earn credits and rewards when someone signs up through it.
+  Share a referral link to earn credits when someone signs up.
 - [Two-step verification](manage/organisations/security.md)
-  Add an authenticator app to your SurrealDB account, and keep a recovery code for when it is unavailable.
+  Add an authenticator app, and keep a recovery code for it.
 - [Accounts and sign-in](manage/organisations/sign-in.md)
-  Create an account with Google, GitHub, or an email address, and sign in to manage organisations and instances.
+  Create an account with Google, GitHub or email, and sign in.
 - [Support plans and raising a ticket](manage/organisations/support.md)
-  Support plans and response-time targets, severity levels, raising a ticket, and free community help.
+  Support plans, response targets, severity levels and raising a ticket.
 - [Configuration](manage/schema-migration/configuration.md)
-  The surrealkit.toml project file: where SurrealKit looks for it, how to supply it inside a container, and every section it accepts - variables, typegen, schema modules and database targets.
+  The surrealkit.toml project file, and every section it accepts.
 - [embed_schema! macro](manage/schema-migration/embed-schema-macro.md)
-  The embed_schema! macro bakes your .surql schema files into the Rust binary at compile time, so schema is always in sync with the application that ships it.
+  Bake .surql schema into the Rust binary with embed_schema!.
 - [Existing databases](manage/schema-migration/getting-started/existing-databases.md)
   Adopt SurrealKit in a project that already has a SurrealDB database by capturing a baseline snapshot and moving to the Rollouts workflow.
 - [New databases](manage/schema-migration/getting-started/new-databases.md)
@@ -895,11 +891,11 @@ _1088 pages_
 - [Library usage example](manage/schema-migration/library/example.md)
   Worked examples of using SurrealKit's library API for both sync and rollouts in a Rust application.
 - [Using SurrealKit as a library](manage/schema-migration/library/index.md)
-  Embed SurrealKit directly in a Rust application to connect to SurrealDB, sync schema at startup, run rollouts, and seed data without the CLI.
+  Embed SurrealKit in a Rust application, and skip the CLI.
 - [Schema modules and targets](manage/schema-migration/modules-and-targets.md)
-  Split a SurrealKit project into independently tracked schema modules and apply them across several SurrealDB databases, with dependency ordering, per-target credentials and fan-out control.
+  Track schema modules separately and apply them across databases.
 - [Rollouts](manage/schema-migration/rollouts.md)
-  Rollouts provide a controlled, phased migration workflow for shared and production SurrealDB databases, with review, staged execution, and rollback support.
+  A phased migration workflow with review, staging and rollback.
 - [Seeding](manage/schema-migration/seeding.md)
   surrealkit seed applies .surql data files to a database. Each file runs once and re-runs only when its content changes, tracked by hash in the __seed table, so seeding is safe on every deploy.
 - [Sync](manage/schema-migration/sync.md)
@@ -1005,9 +1001,9 @@ _1088 pages_
 - [module](reference/cli/surrealdb-cli/commands/module.md)
   A command used to compile, manage and execute Surrealism plugin modules.
 - [sql](reference/cli/surrealdb-cli/commands/sql.md)
-  A command that starts a command-line REPL to make SurrealQL to a local or remote SurrealDB database server.
+  Open a SurrealQL REPL, or pipe queries in from a script.
 - [start](reference/cli/surrealdb-cli/commands/start.md)
-  A command that begins a running instance of a SurrealDB server with arguments to set the storage backend, authentication and more.
+  Run a server in memory, on disk, or as a node in a cluster.
 - [upgrade](reference/cli/surrealdb-cli/commands/upgrade.md)
   A command to change the current version of SurrealDB to another one, including the latest version, specified version, or nightly.
 - [validate](reference/cli/surrealdb-cli/commands/validate.md)
@@ -1015,7 +1011,7 @@ _1088 pages_
 - [version](reference/cli/surrealdb-cli/commands/version.md)
   A command to output the current version of the SurrealDB binary along with the machine architecture.
 - [Environment variables](reference/cli/surrealdb-cli/environment-variables.md)
-  A list of the available environment variables used when running SurrealDB.
+  Every SURREAL_ variable, with its default and allowed values.
 - [SurrealDB CLI](reference/cli/surrealdb-cli/overview.md)
   The SurrealDB command-line tool can be used to export a dataset as SurrealQL from a local or remote SurrealDB database, import SurrealQL data into a local or remote database, and start a single SurrealDB instance or distributed cluster.
 - [Handle authentication](reference/dotnet/core/authentication.md)
@@ -1905,7 +1901,7 @@ _1088 pages_
 - [DEFINE SEQUENCE](reference/query-language/statements/define/sequence.md)
   A DEFINE SEQUENCE statement defines a distributed generator of monotonically increasing numeric sequences.
 - [DEFINE TABLE](reference/query-language/statements/define/table.md)
-  The DEFINE TABLE statement allows you to declare your table by name, enabling you to apply strict controls to a table's schema and access permissions.
+  Declare a table, its type, schema mode and permissions.
 - [DEFINE TOKEN](reference/query-language/statements/define/token.md)
   SurrealDB can work with third-party authentication providers such as OpenID Connect providers, OAuth providers and other trusted third parties.
 - [DEFINE USER](reference/query-language/statements/define/user.md)
@@ -1939,7 +1935,7 @@ _1088 pages_
 - [RETURN](reference/query-language/statements/return.md)
   The RETURN statement can be used to return an implicit value or the result of a query, and to set the return value for a transaction, block or function.
 - [SELECT](reference/query-language/statements/select.md)
-  The SELECT statement can be used for selecting and querying data in a database.
+  Select and query records, with FROM, WHERE, GROUP, ORDER and LIMIT.
 - [SHOW](reference/query-language/statements/show.md)
   The SHOW statement can be used to replay changes made to a table.
 - [SLEEP](reference/query-language/statements/sleep.md)
@@ -1953,17 +1949,17 @@ _1088 pages_
 - [USE](reference/query-language/statements/use.md)
   The USE statement specifies a namespace and / or a database to use for the subsequent SurrealQL statements when switching between namespaces and databases.
 - [CBOR protocol](reference/rest-api/cbor-protocol.md)
-  SurrealDB supports a number of methods for connecting to the database and performing data queries.
+  The CBOR encoding SurrealDB uses, and its custom tags.
 - [Errors](reference/rest-api/errors.md)
   Every error SurrealDB returns carries a kind, a wire code, optional structured details and an optional cause, in the same shape across every protocol and SDK.
 - [HTTP protocol](reference/rest-api/http-protocol.md)
-  The HTTP endpoints enable selection and modification of data, along with custom SurrealQL queries, using traditional RESTful HTTP endpoints.
+  Query and modify data over plain HTTP endpoints.
 - [REST API](reference/rest-api/index.md)
   The SurrealDB REST API: executing queries over HTTP. Manage authentication and perform CRUD operations.
 - [Postgres wire protocol](reference/rest-api/postgres-protocol.md)
-  Connect to SurrealDB with standard Postgres clients and drivers, run SurrealQL or ISO GQL (Cypher Query Language), and receive tabular typed results over the Postgres v3 wire protocol.
+  Connect with standard Postgres clients and drivers.
 - [RPC protocol](reference/rest-api/rpc-protocol.md)
-  The RPC protocol allows for easy bidirectional communication with SurrealDB.
+  Bidirectional RPC over WebSocket, HTTP and gRPC.
 - [Authenticating users](reference/rust/concepts/authenticating-users.md)
   The Rust SDK for SurrealDB supports a number of methods for authenticating users and securing the database.
 - [Concurrency](reference/rust/concepts/concurrency.md)
@@ -2119,13 +2115,13 @@ _1088 pages_
 - [Installation](running/installation/index.md)
   Install the SurrealDB server on your machine: macOS, Windows, Linux. Nightly builds are covered too.
 - [Linux](running/installation/linux.md)
-  Use this tutorial to install SurrealDB on Linux or Unix operating systems using the SurrealDB install script.
+  Install SurrealDB on Linux or Unix with the install script.
 - [macOS](running/installation/macos.md)
-  Use this tutorial to install SurrealDB on macOS, using the SurrealDB install script, or using the third-party Homebrew package manager.
+  Install SurrealDB on macOS with Homebrew or the install script.
 - [Nightly](running/installation/nightly.md)
   If you prefer developing on the bleeding edge, you can follow this tutorial to install SurrealDB Nightly. The nightly version is built and released every night at midnight.
 - [Windows](running/installation/windows.md)
-  Use this tutorial to install SurrealDB on Windows using the SurrealDB install script, or using third-party package managers like Chocolatey or Scoop.
+  Install SurrealDB on Windows with Chocolatey or the install script.
 - [Multi-node](running/multi-node.md)
   Run SurrealDB against distributed storage: horizontally scalable. Highly available clusters.
 - [Running SurrealDB](running/overview.md)

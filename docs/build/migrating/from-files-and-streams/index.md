@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Migrating
-description: Migrating
+description: Import CSV, JSON Lines and Kafka data into SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/migrating/from-files-and-streams/index.mdx"
 ---
 

@@ -1,7 +1,8 @@
 ---
 position: 24
 title: SELECT
-description: The SELECT statement can be used for selecting and querying data in a database.
+description: Select and query records, with FROM, WHERE, GROUP, ORDER and LIMIT.
+priority: 1
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/statements/select.mdx"
 ---
 

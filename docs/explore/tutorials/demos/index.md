@@ -5,12 +5,10 @@ generated: stub
 
 # Demos
 
-_Auto-generated index — 4 pages._
+_Auto-generated index — 3 pages._
 
 ## Pages
 
-- [Blink note-taking app](blink.md)
-  Blink - a Notion-style workspace demo built with SurrealDB and WebAssembly.
 - [Kai G AI demos](kaig-ai-demos.md)
   A collection of AI demo applications built with SurrealDB, showcasing RAG, agents, and knowledge graph patterns.
 - [Demos](overview.md)

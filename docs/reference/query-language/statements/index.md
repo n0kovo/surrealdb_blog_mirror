@@ -57,7 +57,7 @@ _Auto-generated index — 28 pages and 2 sub-sections._
 - [RETURN](return.md)
   The RETURN statement can be used to return an implicit value or the result of a query, and to set the return value for a transaction, block or function.
 - [SELECT](select.md)
-  The SELECT statement can be used for selecting and querying data in a database.
+  Select and query records, with FROM, WHERE, GROUP, ORDER and LIMIT.
 - [SHOW](show.md)
   The SHOW statement can be used to replay changes made to a table.
 - [SLEEP](sleep.md)

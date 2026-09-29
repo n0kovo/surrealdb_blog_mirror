@@ -1,5 +1,5 @@
 ---
-position: 3
+position: 4
 title: 2.x to 3.x
 description: This guide will help you upgrade your current SurrealDB installation to the latest `3.x` release.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/build/migrating/from-old-surrealdb-versions/2x-to-3x.mdx"

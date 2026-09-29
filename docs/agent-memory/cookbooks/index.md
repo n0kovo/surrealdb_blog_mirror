@@ -9,6 +9,10 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 Practical, end-to-end guides for building trustworthy agent memory with SurrealDB Agent Memory. They assume familiarity with the [eight pillars](https://surrealdb.com/docs/agent-memory/architecture/eight-pillars-and-categories) and [unified substrate](https://surrealdb.com/docs/agent-memory/mental-model/two-layer-architecture).
 
+## Showcase
+
+- [Robin Hood character graph](showcase/robin-hood/index.md) - a book ingested chapter by chapter, drawn as the cast known at each reading position
+
 ## Build
 
 - [Customer support agent](build/customer-support-agent.md)

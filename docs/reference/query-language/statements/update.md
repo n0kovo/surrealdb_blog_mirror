@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `UPDATE` statement
 
-The `UPDATE` statement can be used to update existing records in the database. If the record does not exist, the statement will succeed but no records will be updated.
+The `UPDATE` statement can be used to update existing records in the database. If the record does not exist, the statement will succeed but no records will be updated. To compare it with the other statements that write records, see [Writing records that may already exist](overview.md#writing-records-that-may-already-exist).
 
 > [!NOTE]
 > This statement can not be used to create graph relationships. For that, use the [`RELATE`](relate.md) or [`INSERT`](insert.md) statement.

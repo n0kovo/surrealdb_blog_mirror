@@ -1631,7 +1631,7 @@ surreal start --allow-all true
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">60s</td>
       <td scope="row" data-label="Allowed values">A duration</td>
-      <td scope="row" data-label="Notes">How often the background reaper scans for tombstoned namespace, database, and index data to physically delete after a `REMOVE` statement.</td>
+      <td scope="row" data-label="Notes">How often the background reaper scans for tombstoned namespace, database, and index data to physically delete after a `REMOVE` statement. On the 2.x line it is available from 2.7.0 and covers namespaces and databases only.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_RECLAIM_GRACE`*Since v3.2.0*</td>
@@ -1639,7 +1639,7 @@ surreal start --allow-all true
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">10m</td>
       <td scope="row" data-label="Allowed values">A duration</td>
-      <td scope="row" data-label="Notes">Minimum age a removed namespace, database, or index must reach before its data is reclaimed. The effective grace is the maximum of this value and `--tikv-gc-lifetime` on TiKV backends.</td>
+      <td scope="row" data-label="Notes">Minimum age a removed namespace, database, or index must reach before its data is reclaimed. The effective grace is the maximum of this value and `--tikv-gc-lifetime` on TiKV backends. Not available on 2.x.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_SLOW_QUERY_LOG_THRESHOLD`  

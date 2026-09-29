@@ -17,7 +17,7 @@ Across **major versions**, on-disk formats may change. Follow [Migrating from ol
 
 Never skip staging validation for production-like data volumes. If the cluster spans regions, plan maintenance windows that respect dependency order between tiers.
 
-**Before any upgrade**, take a fresh backup - [`surreal export`](../../reference/cli/surrealdb-cli/commands/export.md) for a logical copy and/or a storage snapshot - so you can revert if migration or client incompatibility surfaces after deploy.
+**Before any upgrade**, take a fresh backup - [`surreal export`](../../reference/cli/surrealdb-cli/commands/export.md) for a logical copy and/or a storage snapshot - so you can revert if migration or client incompatibility surfaces after deploy. Some minor upgrades can only be reverted this way, including [2.6 to 2.7](../../build/migrating/from-old-surrealdb-versions/26-to-27.md#rolling-back-to-26) and [3.2 to 3.3](../../build/migrating/from-old-surrealdb-versions/32-to-33.md#rolling-back-to-32).
 
 Patch **security** releases promptly: subscribe to SurrealDB advisories, test the patch build in staging, then roll out using the same stop - replace - start or rolling pattern your architecture supports. Document the upgraded version in your asset inventory for compliance reviews.
 

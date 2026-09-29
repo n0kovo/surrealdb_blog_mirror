@@ -11,6 +11,7 @@ This section contains operational documentation for both SurrealDB Cloud and sel
 
 - **[Instances](manage/instances/index.md)** — Create, connect to, scale, back up and monitor managed instances.
 - **[Organisations](manage/organisations/index.md)** — Members, roles, invitations and billing for a team.
+- **[Enterprise](manage/enterprise/index.md)** — Single sign-on, centralised member management, and custom roles.
 - **[surrealctl](manage/surrealctl/index.md)** — Manage instances and organisations from the command line.
 - **[Observability](manage/observability/index.md)** — Metrics, logs, traces and slow-query analysis.
 - **[Schema migration](manage/schema-migration/index.md)** — Promote schema changes safely with SurrealKit.
@@ -18,7 +19,7 @@ This section contains operational documentation for both SurrealDB Cloud and sel
 
 ## Enterprise
 
-[SurrealDB Enterprise](manage/enterprise/index.md) adds the controls a regulated deployment needs, including FIPS-validated cryptography and single sign-on.
+[SurrealDB Enterprise](manage/enterprise/index.md) adds the controls a regulated deployment needs, including single sign-on, centralised member management, and custom roles. Self-hosted clusters can also run [Enterprise Edition](manage/enterprise/product/database-enterprise.md) for FIPS-validated cryptography, distributed live queries, and audit logging.
 
 ## Related sections
 

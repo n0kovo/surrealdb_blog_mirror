@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1086 pages_  
+_1106 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -39,6 +39,20 @@ _1086 pages_
   Diff-friendly state for workflow UIs.
 - [User memory in chat](agent-memory/cookbooks/patterns/user-memory-in-chat.md)
   Per-user scopes and profile injection.
+- [Calgary 1912-1913 explorer](agent-memory/cookbooks/showcase/calgary/index.md)
+  A walkable Calgary built from two volumes of Henderson's Calgary Directory in SurrealDB Agent Memory, showing fidelity tiers, fine-grained scopes, the record view and a report that can be rewound.
+- [Domesday: South Erpingham, 1086](agent-memory/cookbooks/showcase/domesday/index.md)
+  52 Domesday Book entries for one Norfolk hundred ingested into SurrealDB Agent Memory as prose, with chat answers on lordship, wealth and mills, each citation linked to its entry and checked.
+- [Showcase](agent-memory/cookbooks/showcase/index.md)
+  Finished demos built on SurrealDB Agent Memory, each with the pages it produced and how it was made.
+- [Pompeii election notices](agent-memory/cookbooks/showcase/pompeii/index.md)
+  127 Roman campaign notices from Pompeii ingested into SurrealDB Agent Memory as prose, with chat answers about who backed whom, each citation linked to its notice and checked.
+- [Build your own character graph](agent-memory/cookbooks/showcase/robin-hood/build-your-own.md)
+  Step-by-step: ingest a text in parts with a narrative clock, read entities and relations asOf a reading position, show supersession, and draw a spoiler-safe character graph.
+- [How the Robin Hood graph was built](agent-memory/cookbooks/showcase/robin-hood/how-it-was-built.md)
+  The pipeline behind the Robin Hood demo: chapter splitting, serial ingest with a narrative clock, harvesting facts by chapter, alias suggestions and the three pages.
+- [Robin Hood character graph](agent-memory/cookbooks/showcase/robin-hood/index.md)
+  Pyle's Robin Hood ingested chapter by chapter into SurrealDB Agent Memory, drawn as the cast known at each reading position, with name variants linked.
 - [Coherence, retrieval, and cost tiers](agent-memory/index/architecture/coherence-retrieval-and-tiers.md)
   Five coherence dimensions and hybrid structural retrieval. Also covers the four-tier query ladder.
 - [Eight pillars and six categories](agent-memory/index/architecture/eight-pillars-and-categories.md)
@@ -69,6 +83,8 @@ _1086 pages_
   Ingest, retrieve, reason, and tune agent memory. All on SurrealDB Agent Memory's unified substrate.
 - [Contexts and scope](agent-memory/index/mental-model/contexts-and-scope.md)
   How scope tags partition memory, and how Contexts isolate tenants. Both operate within a Context.
+- [Entities with several names](agent-memory/index/mental-model/entities-with-several-names.md)
+  How SurrealDB Agent Memory handles nicknames, titles, pen names, renames, roles and secret identities, and when to keep names separate, link them or write them as one.
 - [Memory categories](agent-memory/index/mental-model/memory-categories.md)
   Episodic raw turns plus five extracted experiential categories. Identity, knowledge, context, instructions, and uncertainty.
 - [Supersession, decay, and forget](agent-memory/index/mental-model/memory-lifecycle.md)
@@ -377,6 +393,8 @@ _1086 pages_
   SurrealDB's Surreal Sync tool can be used to import Kafka data to SurrealDB.
 - [1.x to 2.x](build/migrating/from-old-surrealdb-versions/1x-to-2x.md)
   This guide will help you upgrade your current SurrealDB installation to the latest `2.x` release.
+- [2.6 to 2.7](build/migrating/from-old-surrealdb-versions/26-to-27.md)
+  What changes when a 2.6 deployment moves to 2.7, from namespace and database removal in the background and reusing a removed name to rolling back to 2.6, mixed-version clusters and the clean-up that runs after the upgrade.
 - [2.x to 3.x](build/migrating/from-old-surrealdb-versions/2x-to-3x.md)
   This guide will help you upgrade your current SurrealDB installation to the latest `3.x` release.
 - [3.2 to 3.3](build/migrating/from-old-surrealdb-versions/32-to-33.md)
@@ -802,8 +820,32 @@ _1086 pages_
   Secure a SurrealDB deployment with authentication and authorisation. Plus security best practices.
 - [Manage](manage.md)
   Running SurrealDB in production: managed instances and organisations. Billing, the surrealctl CLI, observability, schema migration and self-hosting.
-- [Enterprise Edition](manage/enterprise/index.md)
+- [Enterprises](manage/enterprise/index.md)
+  A SurrealDB enterprise sits above organisations and accounts, adding single sign-on, centralised member management, and custom roles.
+- [Enterprise members](manage/enterprise/members.md)
+  Invite people to an enterprise and assign them roles. Send one invitation, import a member list from a file, and track what is pending.
+- [Enterprise Edition Database](manage/enterprise/product/database-enterprise.md)
   What Enterprise Edition adds over Community: distributed live queries, audit logging, FIPS-validated cryptography, trusted execution and contractual support, plus the licence key it needs to start, the SURREAL_LICENSE_* variables and the Docker Hub image.
+- [Enterprise roles & permissions](manage/enterprise/roles.md)
+  Compose custom roles from the permissions an enterprise can grant. How enterprise roles differ from the fixed organisation roles.
+- [ADFS](manage/enterprise/single-sign-on/adfs.md)
+  Configure Active Directory Federation Services (ADFS) as an identity provider for single sign-on in SurrealDB. Add a WS-Federation relying party trust in ADFS and an ADFS connection in SurrealDB Studio.
+- [Google Workspace](manage/enterprise/single-sign-on/google-workspace.md)
+  Configure Google Workspace as an identity provider for single sign-on in SurrealDB. Create an OAuth client in Google Cloud and add a Google Workspace connection in SurrealDB Studio.
+- [Single sign-on](manage/enterprise/single-sign-on/index.md)
+  Connect your company identity provider to SurrealDB Studio. Verify an email domain, add a connection, and route people to it.
+- [Keycloak](manage/enterprise/single-sign-on/keycloak.md)
+  Configure Keycloak as an identity provider for single sign-on in SurrealDB. Create a SAML client in a Keycloak realm and add a Keycloak connection in SurrealDB Studio.
+- [Microsoft Entra ID](manage/enterprise/single-sign-on/microsoft-entra-id.md)
+  Configure Microsoft Entra ID (Azure Active Directory) as an identity provider for single sign-on in SurrealDB. Register an application in Entra and add a Microsoft Entra ID connection in SurrealDB Studio.
+- [Okta](manage/enterprise/single-sign-on/okta.md)
+  Configure Okta Workforce as an identity provider for single sign-on in SurrealDB. Create an OIDC web app integration in Okta and add an Okta connection in SurrealDB Studio.
+- [OpenID Connect](manage/enterprise/single-sign-on/openid-connect.md)
+  Configure a generic OpenID Connect (OIDC) identity provider for single sign-on in SurrealDB. Register a web application with the authorization code flow and add an OpenID Connect connection in SurrealDB Studio.
+- [PingFederate](manage/enterprise/single-sign-on/ping-federate.md)
+  Configure PingFederate as an identity provider for single sign-on in SurrealDB. Create a SAML 2.0 SP connection in PingFederate and add a PingFederate connection in SurrealDB Studio.
+- [SAML](manage/enterprise/single-sign-on/saml.md)
+  Configure a generic SAML 2.0 identity provider for single sign-on in SurrealDB. Create a SAML application, add a SAML connection in SurrealDB Studio, then enter its ACS URL and entity ID.
 - [Architecture](manage/instances/architecture.md)
   The topologies behind the Start and Scale plans. Single-node and multi-node, and what each means for growth and recovery.
 - [Backups and recovery](manage/instances/backups.md)
@@ -918,8 +960,6 @@ _1086 pages_
   Configure a self-hosted SurrealDB server: CLI options, environment variables, storage, networking, auth, and TLS.
 - [Deployment models](manage/self-hosted/deployment-models.md)
   Deployment models for SurrealDB - managed instances, single-node RocksDB, multi-node clusters, and embedded runtimes - and how to choose between them.
-- [Docker](manage/self-hosted/docker.md)
-  A tutorial to run SurrealDB from within Docker.
 - [Self-hosted](manage/self-hosted/index.md)
   SurrealDB deployment models on your own infrastructure. Containers, configuration, backups, monitoring, and upgrades.
 - [Kubernetes](manage/self-hosted/kubernetes.md)

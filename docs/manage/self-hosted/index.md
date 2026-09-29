@@ -16,7 +16,7 @@ For initial installation, see the [installation guide](../../running/installatio
 | Guide | Typical use |
 | --- | --- |
 | [Deployment models](deployment-models.md) | Choosing between single-node, multi-node, embedded, and managed |
-| [Docker](docker.md) | Quickest path; RocksDB with a volume mount |
+| [Docker](../../running/docker.md) | Quickest path; RocksDB with a volume mount |
 | [Kubernetes](kubernetes.md) | Single SurrealDB pod with RocksDB on a persistent volume |
 | [Managed Kubernetes](managed-kubernetes.md) | Paths on Amazon EKS, Google GKE, and Azure AKS |
 
@@ -33,4 +33,4 @@ Once an instance is running, the [Observability](../observability/index.md) sect
 
 ## Enterprise Edition
 
-Self-hosted clusters can run [Enterprise Edition](../enterprise/index.md), which adds distributed live queries, audit logging, FIPS-validated cryptography and support tiers on top of the same server.
+Self-hosted clusters can run [Enterprise Edition](../enterprise/product/database-enterprise.md), which adds distributed live queries, audit logging, FIPS-validated cryptography and support tiers on top of the same server.

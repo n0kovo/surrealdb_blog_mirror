@@ -112,6 +112,6 @@ ns/db> SELECT * FROM record;
 
 ## Next steps
 
-- [Docker](docker.md) - single-node RocksDB without Kubernetes
+- [Docker](../../running/docker.md) - single-node RocksDB without Kubernetes
 - [Run a single-node, on-disk server](../../running/file-backed.md) - CLI startup options for RocksDB and SurrealKV
 - [Deployment models](deployment-models.md) - managed, single-node, and highly available options

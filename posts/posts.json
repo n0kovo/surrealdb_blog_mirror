@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T12:48:06.797526+00:00",
+  "generated_at": "2026-09-29T12:03:24.329303+00:00",
   "count": 267,
   "posts": [
     {
@@ -485,7 +485,7 @@
     },
     {
       "slug": "organizations-and-teams-for-your-surrealdb-app",
-      "title": "Organizations and Teams for your SurrealDB App",
+      "title": "Organisations and Teams for your SurrealDB App",
       "summary": "Bootstrapping multi-tenant orgs, roles, permissions, and the functions that enforce them - straight from SurrealKit templates.",
       "publishDate": "2026-06-12T21:29:02.000Z",
       "categories": [

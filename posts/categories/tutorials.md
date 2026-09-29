@@ -33,7 +33,7 @@ _102 posts_
   `tutorials` — Build social graphs in SurrealDB: model followers, kudos, segments, and clubs as one graph, with friend-of-friend suggestions and leaderboards in one query.
 - **2026-06-22** · [Build apps on your data with SurrealDB and Lovable](../2026/06/build-apps-on-your-data-with-surrealdb-and-lovable.md)  
   `tutorials` `featured` `ai` — Connect SurrealDB to Lovable using the Model Context Protocol (MCP) to read your schema, query your live data, and build a working application on top of it.
-- **2026-06-12** · [Organizations and Teams for your SurrealDB App](../2026/06/organizations-and-teams-for-your-surrealdb-app.md)  
+- **2026-06-12** · [Organisations and Teams for your SurrealDB App](../2026/06/organizations-and-teams-for-your-surrealdb-app.md)  
   `tutorials` — Bootstrapping multi-tenant orgs, roles, permissions, and the functions that enforce them - straight from SurrealKit templates.
 - **2026-05-22** · [Use SurrealDB to see how Buffalo buffalo buffalo Buffalo buffalo](../2026/05/using-surrealdb-to-understand-how-buffalo-buffalo-buffalo-buffalo-buffalo.md)  
   `tutorials` — Using SurrealDB and Studio's graph visualisation to not just understand but also see how Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo works.

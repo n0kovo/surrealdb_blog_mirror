@@ -5,12 +5,14 @@ generated: stub
 
 # Mental Model
 
-_Auto-generated index — 6 pages._
+_Auto-generated index — 7 pages._
 
 ## Pages
 
 - [Contexts and scope](contexts-and-scope.md)
   How scope tags partition memory, and how Contexts isolate tenants. Both operate within a Context.
+- [Entities with several names](entities-with-several-names.md)
+  How SurrealDB Agent Memory handles nicknames, titles, pen names, renames, roles and secret identities, and when to keep names separate, link them or write them as one.
 - [Memory categories](memory-categories.md)
   Episodic raw turns plus five extracted experiential categories. Identity, knowledge, context, instructions, and uncertainty.
 - [Supersession, decay, and forget](memory-lifecycle.md)

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `CREATE` statement
 
-The `CREATE` statement can be used to add a record to the database. If the record already exists, the statement will give an error.
+The `CREATE` statement can be used to add a record to the database. If the record already exists, the statement will give an error. To compare it with the other statements that write records, see [Writing records that may already exist](overview.md#writing-records-that-may-already-exist).
 
 > [!NOTE]
 > This statement can not be used to create graph relationships. For that, use the [`RELATE`](relate.md) statement.

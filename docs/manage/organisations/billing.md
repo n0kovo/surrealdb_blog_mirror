@@ -1,5 +1,5 @@
 ---
-position: 5
+position: 6
 title: Billing
 description: Payment methods, discount codes, invoices, and the usage behind them.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/organisations/billing.mdx"

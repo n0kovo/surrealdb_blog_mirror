@@ -1,5 +1,5 @@
 ---
-position: 7
+position: 8
 title: AWS Marketplace
 description: Subscribe via AWS Marketplace and link it to an organisation.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/organisations/aws-marketplace.mdx"

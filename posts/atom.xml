@@ -4,10 +4,20 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-09-10T10:05:38Z</updated>
+  <updated>2026-09-30T07:39:20Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/introducing-our-new-university-course-surrealdb-for-ai-engineers</id>
+    <title>Introducing our new University course: “SurrealDB for AI Engineers”</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/introducing-our-new-university-course-surrealdb-for-ai-engineers" type="text/html" />
+    <published>2026-09-30T07:39:20Z</published>
+    <updated>2026-09-30T07:39:20Z</updated>
+    <summary type="text">Learn AI engineering hands-on with SurrealDB, from vector search and RAG to hybrid retrieval, agent memory, Text-to-SurrealQL, and context-layer architecture.</summary>
+    <category term="releases" />
+    <category term="engineering" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/surrealdb-cloud-is-now-available-on-microsoft-azure</id>
     <title>SurrealDB Cloud is now available on Microsoft Azure</title>
@@ -481,15 +491,5 @@
     <summary type="text">Synapse, a memory-first reflection agent, helps users track therapy journal patterns. It structures insights into a knowledge graph to revealing patterns.</summary>
     <category term="community" />
     <category term="ai" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search</id>
-    <title>New SurrealDB docs search with hybrid search and reranking</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/a-real-world-example-of-hybrid-fusion-search-using-the-surrealdb-docs-search" type="text/html" />
-    <published>2026-04-22T01:24:06Z</published>
-    <updated>2026-04-22T01:24:06Z</updated>
-    <summary type="text">How SurrealDB implemented documentation search using hybrid search: full-text and vector hybrid search and reranking with HNSW and BM25 indexes.</summary>
-    <category term="engineering" />
-    <category term="tutorials" />
   </entry>
 </feed>

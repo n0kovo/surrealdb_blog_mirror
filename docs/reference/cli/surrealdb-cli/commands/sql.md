@@ -164,8 +164,6 @@ Capability flags on `surreal sql` still matter in two cases:
 
 ## Experimental capabilities
 
-*Since v2.2.1*
-
 > [!NOTE]
 > The experimental capability is completely hidden in the CLI help command, and `--allow-all` will not enable the experimental capabilities by default.
 

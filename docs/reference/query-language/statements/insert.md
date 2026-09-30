@@ -78,6 +78,16 @@ INSERT INTO company {
 };
 ```
 
+The object comes directly after the table name, with no `CONTENT` keyword. `CREATE`, `UPDATE` and `RELATE` take one clause (`CONTENT`, `SET`, `MERGE` and so on) that applies the same change to every record they write. `INSERT` takes the data for each record instead, as one object or an array of objects that can each have different fields, so there is no clause to name. Writing `CONTENT` anyway fails with an error that does not mention it, because the parser reads `CONTENT` as the value to insert:
+
+```surql
+INSERT INTO company CONTENT { name: 'SurrealDB' };
+```
+
+```text title="Error output"
+Parse error: Unexpected token `{`, expected Eof
+```
+
 Records can also be inserted by using the `VALUES` keyword. This keyword is preceded by the name of the fields in question, and followed by comma-separated values matching the number of fields specified.
 
 ```surql
@@ -423,6 +433,27 @@ INSERT INTO person [
    { id: "jaime", name: "Jaime", surname: "Morgan Hitchcock" },
    { id: "tobie", name: "Tobie", surname: "Morgan Hitchcock" },
    -- ... 1000 more records
+];
+```
+
+## Choosing the table with a parameter
+
+The table after `INTO` can be a parameter, which holds either a table name as a string or a table value. A function call cannot go there directly, so `INSERT INTO type::table($name)` is a parse error. Assign the result to a parameter first:
+
+```surql
+LET $name = "event_" + "2026";
+INSERT INTO $name { kind: "signup" };
+
+LET $table = type::table("person");
+INSERT INTO $table { name: "Ann" };
+```
+
+To write records to different tables in one statement, leave out `INTO` and give each object a full record ID:
+
+```surql
+INSERT [
+	{ id: person:ann, name: "Ann" },
+	{ id: company:acme, name: "Acme" }
 ];
 ```
 

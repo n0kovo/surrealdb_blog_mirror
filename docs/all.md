@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1106 pages_  
+_1108 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -755,7 +755,7 @@ _1106 pages_
 - [Via HTTP](learn/querying/surrealql/executing-queries/via-http.md)
   In this section, you will explore querying SurrealDB using HTTP. The HTTP API is designed to be simple and intuitive, with a RESTful interface that provides a consistent way to interact with the database.
 - [Via SDKs](learn/querying/surrealql/executing-queries/via-sdks.md)
-  Query SurrealDB programmatically using one of the official SDKs available for Rust, JavaScript, Python, Go, Java, .NET, and PHP.
+  Query SurrealDB programmatically using one of the official SDKs for Rust, JavaScript, Python, Go, Java, Kotlin, .NET, PHP, Swift and Mojo, or a community SDK.
 - [Via SurrealDB Studio](learn/querying/surrealql/executing-queries/via-studio.md)
   In this section, you will explore SurrealQL queries using SurrealDB Studio, the official query editor for SurrealDB. SurrealDB Studio is a powerful tool that allows you to write, execute, and visualise SurrealQL queries in real-time.
 - [Sample queries](learn/querying/surrealql/sample-queries.md)
@@ -828,6 +828,8 @@ _1106 pages_
   What Enterprise Edition adds over Community: distributed live queries, audit logging, FIPS-validated cryptography, trusted execution and contractual support, plus the licence key it needs to start, the SURREAL_LICENSE_* variables and the Docker Hub image.
 - [Enterprise roles & permissions](manage/enterprise/roles.md)
   Compose custom roles from the permissions an enterprise can grant. How enterprise roles differ from the fixed organisation roles.
+- [SCIM provisioning](manage/enterprise/scim-provisioning.md)
+  Let your identity provider create, update and deactivate the accounts of a single sign-on connection in SurrealDB with SCIM 2.0.
 - [ADFS](manage/enterprise/single-sign-on/adfs.md)
   Configure Active Directory Federation Services (ADFS) as an identity provider for single sign-on in SurrealDB. Add a WS-Federation relying party trust in ADFS and an ADFS connection in SurrealDB Studio.
 - [Google Workspace](manage/enterprise/single-sign-on/google-workspace.md)
@@ -839,7 +841,7 @@ _1106 pages_
 - [Microsoft Entra ID](manage/enterprise/single-sign-on/microsoft-entra-id.md)
   Configure Microsoft Entra ID (Azure Active Directory) as an identity provider for single sign-on in SurrealDB. Register an application in Entra and add a Microsoft Entra ID connection in SurrealDB Studio.
 - [Okta](manage/enterprise/single-sign-on/okta.md)
-  Configure Okta Workforce as an identity provider for single sign-on in SurrealDB. Create an OIDC web app integration in Okta and add an Okta connection in SurrealDB Studio.
+  Configure Okta Workforce as an identity provider for single sign-on in SurrealDB. Create an OIDC web app integration in Okta, add an Okta connection in SurrealDB Studio, open SurrealDB from the Okta dashboard, sign people out with Universal Logout, and provision users with SCIM.
 - [OpenID Connect](manage/enterprise/single-sign-on/openid-connect.md)
   Configure a generic OpenID Connect (OIDC) identity provider for single sign-on in SurrealDB. Register a web application with the authorization code flow and add an OpenID Connect connection in SurrealDB Studio.
 - [PingFederate](manage/enterprise/single-sign-on/ping-federate.md)
@@ -902,6 +904,8 @@ _1106 pages_
   Inspect the async runtime with the Tokio console: tasks and polls.
 - [AWS Marketplace](manage/organisations/aws-marketplace.md)
   Subscribe via AWS Marketplace and link it to an organisation.
+- [Azure Marketplace](manage/organisations/azure-marketplace.md)
+  Subscribe via Azure Marketplace and link it to an organisation.
 - [Billing](manage/organisations/billing.md)
   Payment methods, discount codes, invoices, and the usage behind them.
 - [FAQs](manage/organisations/faqs.md)

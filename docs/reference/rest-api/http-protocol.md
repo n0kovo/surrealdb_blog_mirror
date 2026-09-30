@@ -2209,8 +2209,6 @@ curl -X GET \
 
 ## Custom endpoint at `/api/:ns/:db/:endpoint` {#custom}
 
-*Since v2.2.0*
-
 A custom endpoint can be set using a [`DEFINE API`](../query-language/statements/define/api.md) statement. The possible HTTP methods (GET, PUT, etc.) are set using the statement itself. The path begins with `/api`, continues with the namespace and database, and ends with a custom endpoint that can include both static and dynamic path segments.
 
 ### Headers

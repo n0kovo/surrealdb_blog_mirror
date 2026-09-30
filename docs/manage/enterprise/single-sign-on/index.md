@@ -80,8 +80,11 @@ People at a routed domain are sent to your identity provider whenever they sign 
 
 The [Members](../members.md) page will automatically show members that have signed in through an identity provider that you own but will not have any permissions unless they are granted to them. To prevent users from being added automatically, you must manage access externally via your identity provider.
 
+To let your identity provider create, update and deactivate these accounts for you, turn on [SCIM provisioning](../scim-provisioning.md) for the connection. A person you deactivate in your identity provider then loses access to SurrealDB too.
+
 ## Related pages
 
 - **[Members](../members.md):** Who belongs to the enterprise, and how they get there.
 - **[Roles](../roles.md):** What a member may administer once they have signed in.
+- **[SCIM provisioning](../scim-provisioning.md):** Keep accounts in step with your identity provider.
 - **[Accounts and sign-in](../../organisations/sign-in.md):** Signing in without an enterprise.

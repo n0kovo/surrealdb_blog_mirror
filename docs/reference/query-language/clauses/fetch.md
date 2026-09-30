@@ -73,6 +73,34 @@ SELECT * FROM post:one FETCH author.role.permissions, category.parent;
 ]
 ```
 
+### Fetching only some linked records
+
+`FETCH` replaces every link in the field it names, and has no `LIMIT` of its own. To fetch a few of a record's posts, such as the latest two, use a subquery in the field list. The subquery can sort and limit, and `.*` is not needed because it selects the records themselves:
+
+```surql
+CREATE user:one SET name = 'Ann';
+CREATE post:1 SET title = 'First', at = d'2026-01-01';
+CREATE post:2 SET title = 'Second', at = d'2026-01-02';
+CREATE post:3 SET title = 'Third', at = d'2026-01-03';
+RELATE user:one->wrote->[post:1, post:2, post:3];
+
+SELECT name, (SELECT title, at FROM ->wrote->post ORDER BY at DESC LIMIT 2) AS latest FROM user:one;
+```
+
+```surql title="Output"
+[
+	{
+		latest: [
+			{ at: d'2026-01-03T00:00:00Z', title: 'Third' },
+			{ at: d'2026-01-02T00:00:00Z', title: 'Second' }
+		],
+		name: 'Ann'
+	}
+]
+```
+
+For a field that holds an array of record links, the subquery reads from the field of the current record: `(SELECT title FROM $parent.posts ORDER BY title LIMIT 2)`. A slice such as `posts[0..2].*` also works, but it takes the first links in the order they are stored rather than the ones a sort would choose.
+
 ## Without the `FETCH` clause
 
 [▶ Open in Surrealist](https://app.surrealdb.com/mini?query=%0A%09%09--%20Access%20single%20field%20from%20author%20link%0A%09%09SELECT%20%0A%09%09%09title%2C%20%0A%09%09%09category%2C%20%0A%09%09%09author.full_name%20AS%20author_name%0A%09%09FROM%20article%3B%0A%09)

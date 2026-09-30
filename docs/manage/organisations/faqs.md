@@ -1,5 +1,5 @@
 ---
-position: 10
+position: 11
 title: FAQs
 description: "Managed instances: limits, security, pricing and legal terms."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/organisations/faqs.mdx"
@@ -187,4 +187,4 @@ If the connection still fails, raise a [support ticket](support.md) with the ins
 
 ### How do I report a bug or request a feature?
 
-Raise a [support ticket](support.md), or ask in the [Discord](https://discord.gg/surrealdb) community. Include steps to reproduce the problem, the instance id, what you expected, and what happened instead.
+Raise a [support ticket](support.md), or report a bug in SurrealDB itself as a [GitHub issue](https://github.com/surrealdb/surrealdb/issues). For a bug, include steps to reproduce the problem, the instance id, what you expected, and what happened instead. Suggest a feature in the Ideas category of [GitHub Discussions](https://github.com/orgs/surrealdb/discussions), where others can add their use cases, or discuss it on [Discord](https://discord.gg/surrealdb).

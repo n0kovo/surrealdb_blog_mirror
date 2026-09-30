@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 Subscribe through AWS Marketplace to pay for managed instances on your existing AWS bill.
 
-You subscribe on the Marketplace listing, and AWS charges you for the usage. SurrealDB holds no card for the organisation.
+You do not need to add a payment card to the organisation in SurrealDB Studio. AWS charges your AWS account for the usage.
 
 This route suits a procurement process that already runs through AWS:
 
@@ -21,15 +21,22 @@ Everything else about the instances is the same.
 
 ## Subscribe
 
-1. Open the **SurrealDB Cloud** listing in [AWS Marketplace](https://aws.amazon.com/marketplace).
+1. Open the [SurrealDB Cloud listing](https://aws.amazon.com/marketplace/pp/prodview-xydgy4nnih6mk) in AWS Marketplace.
 2. Select **Subscribe**.
 3. Confirm the contract and the pricing terms.
 4. Complete the AWS account and payment linkage as prompted.
-5. Follow the set-up steps shown after you subscribe.
 
-The last step signs you in to your SurrealDB account, where you authorise the link between the purchase and your organisation.
+## What happens once you subscribe
 
-After the link is in place, [deploy instances](../instances/create.md) as you would otherwise. Plans, instance types, regions, and capabilities are the same. Only the invoicing route differs.
+1. You'll receive an email confirming your subscription.
+2. Follow the link in the email to sign in and claim the subscription. Sign in with the email address you want to manage the subscription from, because the subscription is attached to the account you sign in with.
+3. Claiming the subscription creates a new organisation, owned by that account and linked to your AWS Marketplace billing. Any instances you deploy in it are billed through the Marketplace.
+
+You can then [deploy instances](../instances/create.md) as you would otherwise. Plans, instance types, regions, and capabilities are the same. Only the invoicing route differs.
+
+### Moving existing instances
+
+Existing instances and members in another SurrealDB Cloud organisation do not move to the new organisation automatically. To move them, please email [support@surrealdb.com](mailto:support@surrealdb.com) with the IDs of the new and the old organisation.
 
 ## Where your invoices are
 
@@ -46,5 +53,6 @@ Changes and cancellations go through AWS. Follow the AWS guidance for Marketplac
 
 ## Related pages
 
-- **[Billing](billing.md):** The direct billing route, and the usage view both routes share.
+- **[Azure Marketplace](azure-marketplace.md):** The same billing route through Azure.
+- **[Billing](billing.md):** The direct billing route, and the usage view all routes share.
 - **[Support](support.md):** Support plans, which are added to the organisation whichever billing route it uses.

@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-09-29T12:03:24.329303+00:00",
-  "count": 267,
+  "generated_at": "2026-09-30T11:51:42.290577+00:00",
+  "count": 268,
   "posts": [
+    {
+      "slug": "introducing-our-new-university-course-surrealdb-for-ai-engineers",
+      "title": "Introducing our new University course: “SurrealDB for AI Engineers”",
+      "summary": "Learn AI engineering hands-on with SurrealDB, from vector search and RAG to hybrid retrieval, agent memory, Text-to-SurrealQL, and context-layer architecture.",
+      "publishDate": "2026-09-30T07:39:20.000Z",
+      "categories": [
+        "releases",
+        "engineering"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/o49648ljqp3ulmgb3orj27wn.auto",
+      "source": "https://surrealdb.com/blog/introducing-our-new-university-course-surrealdb-for-ai-engineers",
+      "local_path": "2026/09/introducing-our-new-university-course-surrealdb-for-ai-engineers.md"
+    },
     {
       "slug": "surrealdb-cloud-is-now-available-on-microsoft-azure",
       "title": "SurrealDB Cloud is now available on Microsoft Azure",

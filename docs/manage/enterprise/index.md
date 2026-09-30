@@ -19,6 +19,7 @@ A standard [organisation](../organisations/index.md) groups instances, members, 
 | Capability | What it gives you |
 | --- | --- |
 | **[Single sign-on](single-sign-on/index.md)** | People may sign in through your own identity provider instead of creating a SurrealDB account. |
+| **[SCIM provisioning](scim-provisioning.md)** | Your identity provider creates, updates and deactivates accounts in SurrealDB. |
 | **[Central member management](members.md)** | One member list for the whole company, with invitations sent one at a time, from a file, or an invite link. |
 | **[Fine-grained user management](members.md)** | Users who are managed through a single sign-on connection can be managed by authorised members of the enterprise in ways that are not possible with managed accounts or standard organisations. |
 | **Brand personalisation** | Your logos and colours can be seen throughout SurrealDB products and pages, giving a more personalised experience. |
@@ -37,6 +38,7 @@ An enterprise can be managed from the `/enterprises` page in SurrealDB Studio or
 | **[Members](members.md)** | See who belongs to the enterprise, invite people, and assign roles. |
 | **[Roles](roles.md)** | Compose roles out of the permissions an enterprise can grant. |
 | **[Single sign-on](single-sign-on/index.md)** | Connect your identity provider to the enterprise. |
+| **[SCIM provisioning](scim-provisioning.md)** | Let your identity provider manage the accounts of a single sign-on connection. |
 | **Settings** | Change your enterprise's display name and branding. |
 
 ## Related pages

@@ -60,6 +60,7 @@ Organisations cannot be deleted at present. Delete the instances inside an organ
 - **[Billing](billing.md):** Payment details, invoices, usage, and spend.
 - **[Support](support.md):** Community help, support plans, and tickets.
 - **[AWS Marketplace](aws-marketplace.md):** Subscribe and pay through AWS.
+- **[Azure Marketplace](azure-marketplace.md):** Subscribe and pay through Azure.
 - **[Referrals](referrals.md):** The referral link and the rewards it earns.
 - **[FAQs](faqs.md):** General, security, pricing, legal, and troubleshooting questions.
 

@@ -99,6 +99,74 @@ CREATE person:simon SET name = 'Simon', friends = [person:jaime, person:tobie];
 CREATE person:marcus SET name = 'Marcus', friends = [person:tobie];
 ```
 
+### Links stay within one database
+
+A record ID holds a table and a key, but no namespace or database, so a link always points to a record in the database the query runs in. There is no syntax for a link to another database. A link that looks like one, such as `other_db_pet:1`, names a table called `other_db_pet` in the current database, and reads as `NONE` if that table has no such record:
+
+```surql
+CREATE owner:1 SET pet = other_db_pet:1;
+SELECT pet.* FROM owner:1;
+```
+
+```surql title="Output"
+[
+	{
+		pet: NONE
+	}
+]
+```
+
+Keep records that link to each other in the same database. Data that must stay in separate databases can store a plain value, such as the key, and look up the record after switching database with [`USE`](../statements/use.md).
+
+Parameters are not tied to a database, so a value read in one database can be used after `USE` switches to another, or to another namespace. This applies to a parameter set with `LET` in the same query, and to a parameter set on the connection with the RPC [`let`](../../rest-api/rpc-protocol.md#let) method, which lasts for the whole connection:
+
+```surql
+USE NS app DB main;
+LET $pet_key = (SELECT VALUE pet_key FROM ONLY owner:1);
+
+USE DB pets;
+SELECT * FROM type::record('pet', $pet_key);
+```
+
+## Filtering by a field of a linked record
+
+A query that would use a `JOIN` in SQL, such as finding the articles that have a certain tag, filters on a path through the link instead. The path reads the linked records while the `WHERE` clause runs, so no join or subquery is needed:
+
+```surql
+CREATE tag:rust SET name = 'rust';
+CREATE tag:db SET name = 'databases';
+CREATE article:one SET title = 'Ownership', tags = [tag:rust];
+CREATE article:two SET title = 'Indexes', tags = [tag:db];
+CREATE article:three SET title = 'SurrealDB in Rust', tags = [tag:rust, tag:db];
+
+SELECT title, tags.name AS tags FROM article WHERE 'rust' IN tags.name;
+```
+
+```surql title="Output"
+[
+	{ tags: ['rust'], title: 'Ownership' },
+	{ tags: ['rust', 'databases'], title: 'SurrealDB in Rust' }
+]
+```
+
+`tags` holds an array of links, so `tags.name` is an array of names, such as `['rust', 'databases']`. A comparison with `=` tests the whole array against one string, which is never true, so `WHERE tags.name = 'rust'` returns no articles. An an operator that looks inside the array can be used:
+
+```surql
+-- Articles with the tag named 'rust'
+SELECT VALUE title FROM article WHERE 'rust' IN tags.name;
+//- ['Ownership', 'SurrealDB in Rust']
+
+-- The same when the tag's record ID is known, without reading the tags
+SELECT VALUE title FROM article WHERE tags CONTAINS tag:rust;
+//- ['Ownership', 'SurrealDB in Rust']
+
+-- Articles that have both tags
+SELECT VALUE title FROM article WHERE tags.name CONTAINSALL ['rust', 'databases'];
+//- ['SurrealDB in Rust']
+```
+
+For a link that holds a single record rather than an array, such as `author = person:tobie`, `=` works as expected: `WHERE author.name = 'Tobie'`. For relationships stored as graph edges instead of record links, see [Joining and querying related tables](../../../build/migrating/from-other-databases/from-postgresql.md#joining-and-querying-related-tables).
+
 ## Fetching remote records from within records
 
 Nested field traversal can be used to fetch the properties from the remote records, as if the record was embedded within the record being queried.

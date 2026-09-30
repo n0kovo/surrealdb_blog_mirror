@@ -1,8 +1,10 @@
 # Category: engineering
 
-_46 posts_  
+_47 posts_  
 [← Index](../../README.md)
 
+- **2026-09-30** · [Introducing our new University course: “SurrealDB for AI Engineers”](../2026/09/introducing-our-new-university-course-surrealdb-for-ai-engineers.md)  
+  `releases` `engineering` — Learn AI engineering hands-on with SurrealDB, from vector search and RAG to hybrid retrieval, agent memory, Text-to-SurrealQL, and context-layer architecture.
 - **2026-08-13** · [Graph engineering is missing a graph](../2026/08/graph-engineering-is-missing-a-graph.md)  
   `featured` `engineering` `ai` — Graph engineering stops at the diagram. The harder half is the context graph underneath: whether relations, vectors and memory share one consistency boundary.
 - **2026-08-11** · [Testing known time in Agent Memory on a 2,200-year corpus](../2026/08/testing-known-time-in-spectron-on-a-2200-year-corpus.md)  

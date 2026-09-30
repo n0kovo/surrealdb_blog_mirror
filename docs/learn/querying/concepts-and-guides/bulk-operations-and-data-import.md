@@ -57,3 +57,12 @@ Importing data from external sources can be done through a number of methods.
 - **SurrealDB Studio** can import SurrealQL files and **CSV** from the Explorer view (choose fields, map to a table, and create records). See [exploring database records / import](../../../explore/studio/index.md).
 
 For large one-off file loads from the shell, the **[`surreal import`](../../../reference/cli/surrealdb-cli/commands/import.md)** command is the usual companion to `POST /import`.
+
+## Reading a large result
+
+A query answered with the [`query`](../../../reference/rest-api/rpc-protocol.md#query) RPC method or `POST /sql` returns each statement's result in one response, so a client that selects a whole large table receives all of it at once. There are two ways to receive it in smaller parts:
+
+- **`query_stream`** (available since version 3.3.0) sends a statement's records in frames of up to 256 while the statement runs, over a WebSocket connection. The Rust and JavaScript SDKs do not use it yet, so a client calls it directly through the [RPC protocol](../../../reference/rest-api/rpc-protocol.md#query_stream).
+- **Pages** with [`LIMIT` and `START`](../../../reference/query-language/clauses/limit.md#use-in-pagination) split the result into separate queries, which works with every SDK and protocol.
+
+To move a whole database to another server, [`surreal export`](../../../reference/cli/surrealdb-cli/commands/export.md) and `surreal import` are usually simpler than either.

@@ -354,8 +354,6 @@ Deny by default: list only the `--allow-net` targets you need, and keep addition
 
 ## Arbitrary queries
 
-*Since v2.2.0*
-
 The `--allow-arbitrary-query` and `--deny-arbitrary-query` allow database administrators to allow or deny arbitrary querying by either guest, record or system users, or a combination of those. This capability setting affects the following: [/sql endpoint](../../../reference/rest-api/http-protocol.md#sql), [/key endpoints](../../../reference/rest-api/http-protocol.md#get-table), [/graphql endpoint](../../../reference/rest-api/http-protocol.md#graphql), [/gql endpoint](../../../reference/rest-api/http-protocol.md#gql), the [Postgres wire protocol](../../../reference/rest-api/postgres-protocol.md) listener, [RPC methods](../../../reference/rest-api/rpc-protocol.md) `use`, `select`, `create`, `update`, `merge`, `patch`, `delete`, `relate`, `insert`, `insert_relation`, `query`, `gql`, and `graphql`, and the [`eval::*`](../../../reference/query-language/functions/database-functions/eval.md) functions.
 
 Endpoints that do not accept arbitrary queries such as [`/version`](../../../reference/rest-api/http-protocol.md#version) and [authentication endpoints](../../../reference/rest-api/http-protocol.md#signin) are not affected.

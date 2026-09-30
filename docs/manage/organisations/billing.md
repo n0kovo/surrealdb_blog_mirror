@@ -62,9 +62,12 @@ Check usage after you resize an instance. A larger instance type is billed on wh
 - **Right-size an instance rather than over-provision it.** Storage can only increase, so a generous first allocation is a permanent cost.
 - **Delete instances you have finished with.** Take an [export](../instances/import-and-export.md) first if the data still matters.
 
-## AWS Marketplace subscriptions
+## Marketplace subscriptions
 
-If you subscribed through AWS Marketplace, billing runs through your AWS account. Invoices and payment details are in the **AWS Billing and Cost Management** console, and do not appear in Studio. See [AWS Marketplace](aws-marketplace.md).
+If you subscribed through AWS Marketplace or Azure Marketplace, billing runs through your cloud provider account, and invoices and payment details do not appear in Studio:
+
+- **AWS:** invoices are in the **AWS Billing and Cost Management** console. See [AWS Marketplace](aws-marketplace.md).
+- **Azure:** invoices are in **Cost Management + Billing** in the Azure portal. See [Azure Marketplace](azure-marketplace.md).
 
 ## Billing questions
 

@@ -371,8 +371,6 @@ rand::time(198371, 1223138713);
 //- d'1991-01-13T23:27:17Z'
 ```
 
-*Since v2.2.0*
-
 This function can take two datetimes, returning a random datetime in between the least and greatest of the two.
 
 ```surql

@@ -603,7 +603,7 @@ Exceeding either is a parse error, not a crash, giving the error `Exceeded query
       <td scope="row" data-label="Env var">`SURREAL_RUNTIME_WORKER_THREADS`</td>
       <td scope="row" data-label="Default">Number of CPU cores (minimum 4)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">Number of runtime worker threads used to start.</td>
+      <td scope="row" data-label="Notes">Number of runtime worker threads used to start. See <a href="/docs/learn/querying/performance/performance-best-practices#cpu-cores-and-concurrent-queries">CPU cores and concurrent queries</a>.</td>
     </tr>
   </tbody>
 </table>

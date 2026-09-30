@@ -7,8 +7,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `ACCESS` statement
 
-*Since v2.2.0*
-
 > [!NOTE]
 > Before SurrealDB 3.0.0, the `ACCESS` statement was experimental and required the server to be started with `--allow-experimental bearer_access`. From 3.0.0 it is available without that flag.
 

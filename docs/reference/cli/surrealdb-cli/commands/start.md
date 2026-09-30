@@ -89,7 +89,7 @@ surreal start [OPTIONS] [PATH]
             "name": "--allow-experimental",
             "value": "<TARGETS>",
             "env": "SURREAL_CAPS_ALLOW_EXPERIMENTAL",
-            "description": "Experimental capabilities to enable, as a comma-separated list. Possible values: `files`, `surrealism`."
+            "description": "Experimental capabilities to enable, as a comma-separated list. Possible values: `files`, `surrealism`. Takes several values, so use `--allow-experimental=files,surrealism` when a storage path follows it."
         },
         {
             "name": "--durable-sessions",
@@ -347,8 +347,6 @@ WebSocket connections keep in-memory sessions only. This mode does not change We
 
 ## Experimental capabilities
 
-*Since v2.2.0*
-
 > [!NOTE]
 > The experimental capability is completely hidden in the CLI help command, and `--allow-all` will not enable the experimental capabilities by default.
 
@@ -392,6 +390,13 @@ surreal start --allow-experimental surrealism,files
 $env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "surrealism,files"
 surreal start
 surreal start --allow-experimental surrealism,files
+```
+
+`--allow-experimental` accepts several values, so a storage path written after it is read as one more capability name, and the server refuses to start with `invalid experimental target name`. Join the value to the flag with `=`, or put the path before the flag:
+
+```bash
+surreal start --allow-experimental=surrealism,files rocksdb:mydatabase.db
+surreal start rocksdb:mydatabase.db --allow-experimental surrealism,files
 ```
 
 > [!NOTE]

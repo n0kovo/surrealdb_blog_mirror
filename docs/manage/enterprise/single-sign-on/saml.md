@@ -49,6 +49,25 @@ Enter the ACS URL and the entity ID in the SAML application. If your provider ca
 
 Copy the values from Studio rather than building them by hand, so the connection name is exact.
 
+## Step 4: Provision users with SCIM
+
+If your identity provider supports SCIM 2.0, it can create, update and deactivate people's SurrealDB accounts. Skip this step if you do not want it to manage accounts.
+
+In Studio, [turn on SCIM and create a token](../scim-provisioning.md) for this connection. Keep the **SCIM base URL** and the token ready.
+
+Most providers set up SCIM on the same app as SAML, in a section called **Provisioning**. Give it these values:
+
+| Setting | Value |
+| --- | --- |
+| Base URL, or tenant URL | The SCIM base URL |
+| Authentication | Bearer token |
+| Token | The token from Studio |
+| Objects to manage | Users |
+| `userName` | The same value that your provider sends as the name ID in the SAML assertion |
+
+> [!IMPORTANT]
+> SurrealDB identifies a person on a SAML connection by the SCIM `userName`. It must be the same as the name ID that your provider sends at sign-in. If the two are different, the person gets a second account the first time they sign in.
+
 ## Next steps
 
 If you did not route a domain when you created the connection, [route one now](index.md#step-3-route-domains-to-the-connection). Then [choose the applications](index.md#step-4-choose-the-applications) that people can sign in to with this connection.

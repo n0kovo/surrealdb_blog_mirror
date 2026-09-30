@@ -1129,8 +1129,6 @@ SELECT * FROM user VERSION fn::yesterday();
 
 ## Selecting inside graph queries
 
-*Since v2.2.0*
-
 A `SELECT` statement and/or its clauses can be used inside graph queries as well at the graph edge portion of the query.
 
 ```surql

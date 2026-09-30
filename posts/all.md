@@ -1,8 +1,10 @@
 # All Posts
 
-_267 posts_  
+_268 posts_  
 [← Index](../README.md)
 
+- **2026-09-30** · [Introducing our new University course: “SurrealDB for AI Engineers”](2026/09/introducing-our-new-university-course-surrealdb-for-ai-engineers.md)  
+  `releases` `engineering` — Learn AI engineering hands-on with SurrealDB, from vector search and RAG to hybrid retrieval, agent memory, Text-to-SurrealQL, and context-layer architecture.
 - **2026-09-10** · [SurrealDB Cloud is now available on Microsoft Azure](2026/09/surrealdb-cloud-is-now-available-on-microsoft-azure.md)  
   `releases` `company` — SurrealDB Cloud now runs on Microsoft Azure, so teams standardised on Azure can deploy inside the cloud they have already approved.
 - **2026-09-08** · [Multi-hop graph traversal inside SurrealDB](2026/09/multi-hop-graph-traversal-inside-surrealdb.md)  

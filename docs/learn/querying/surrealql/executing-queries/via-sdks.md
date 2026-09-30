@@ -1,7 +1,7 @@
 ---
 position: 3
 title: Via SDKs
-description: Query SurrealDB programmatically using one of the official SDKs available for Rust, JavaScript, Python, Go, Java, .NET, and PHP.
+description: Query SurrealDB programmatically using one of the official SDKs for Rust, JavaScript, Python, Go, Java, Kotlin, .NET, PHP, Swift and Mojo, or a community SDK.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/querying/surrealql/executing-queries/via-sdks.mdx"
 ---
 
@@ -20,6 +20,11 @@ In each SDK, you can connect to the database using a local or remote connection.
 - **[Golang](../../../../reference/golang/index.md)**
 - **[Java](../../../../reference/java/index.md)**
 - **[PHP](../../../../reference/php/index.md)**
+- **[Kotlin](../../../../reference/kotlin/index.md)**
+- **[Swift](../../../../reference/swift/index.md)**
+- **[Mojo](../../../../reference/mojo/index.md)**
+
+For other languages and runtimes, see the [community SDKs](../../../../languages/community.md), which are maintained outside SurrealDB.
 
 ## Writing SurrealQL queries in SDKs
 

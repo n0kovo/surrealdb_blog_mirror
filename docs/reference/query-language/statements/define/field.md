@@ -474,8 +474,6 @@ DEFINE FIELD locked ON TABLE user TYPE bool
 
 ### Using the `DEFAULT` and `ALWAYS` clauses
 
-*Since v2.2.0*
-
 `DEFAULT ALWAYS` applies a default on `CREATE` and on `UPDATE` when the value is `NONE`. The `ALWAYS` keyword distinguishes this from plain `DEFAULT`, which only runs on `CREATE`.
 
 ```surql
@@ -664,6 +662,54 @@ value = "NONE"
 DEFINE FIELD email ON TABLE user TYPE string
   VALUE string::lowercase($value);
 ```
+
+https://github.com/surrealdb/surrealdb/discussions/3284
+A `VALUE` clause runs on every write to the record, not only on writes that set the field. When a statement does not set the field, `$value` is the value already stored, so the clause runs on its own output. Lowercasing a lowercase string changes nothing, but a transformation that changes its input each time does. `VALUE crypto::argon2::generate($value)` hashes the password on `CREATE`, then hashes the stored hash on the next `UPDATE` of any other field, and the password no longer matches.
+
+For such a transformation, compare `$value` with `$before`, which is the field's value before the statement, and only transform a value that has changed:
+
+```surql
+DEFINE FIELD pass ON TABLE user TYPE string
+  VALUE IF $value != $before { crypto::argon2::generate($value) } ELSE { $value };
+```
+
+With this definition, `UPDATE user:one SET name = 'Ann'` leaves the hash as it is, and `UPDATE user:one SET pass = 'new-password'` stores a hash of the new password. Hashing the password in the statement that sets it, as the [record access](access/record.md) examples do with `crypto::argon2::generate($pass)` in `SIGNUP`, avoids the question.
+
+https://github.com/surrealdb/surrealdb/discussions/3315
+### Adding a field to a table with existing records
+
+Defining a field does not change the records already in the table. The clauses apply the next time each record is written:
+
+- **`VALUE`** runs on the record's next write, including an `UPDATE` that sets no fields.
+- **`DEFAULT`** only applies when a record is created, so existing records never receive it. `DEFAULT ALWAYS` also applies on an `UPDATE` when the field is `NONE`.
+- **`ASSERT`** and **`TYPE`** check each record's next write, so an existing record that does not conform can make its next `UPDATE` fail.
+
+To bring existing records in line straight away, update them after defining the field:
+
+```surql
+CREATE item:1 SET name = "a";
+
+DEFINE FIELD upper ON item VALUE string::uppercase(name);
+DEFINE FIELD status ON item DEFAULT "new";
+
+-- Runs VALUE on every record
+UPDATE item;
+-- Sets the default on records that do not have the field
+UPDATE item SET status = "new" WHERE status IS NONE;
+```
+
+```surql title="Output"
+[
+	{
+		id: item:1,
+		name: 'a',
+		status: 'new',
+		upper: 'A'
+	}
+]
+```
+
+A [computed field](#restrictions-on-computed-fields) needs no update, because it is calculated when the record is read.
 
 ## Comments
 
@@ -1124,48 +1170,6 @@ CREATE person:one SET name = "Little person", age = 6;
 ]
 ```
 
-## Order of operations when setting a field's value
-
-As `DEFINE FIELD` statements are computed in alphabetical order, be sure to keep this in mind when using fields that rely on the values of others.
-
-The following example is identical to the above except that `full_name` has been chosen for the previous field `name`. The `full_name` field will be calculated after `first_name`, but before `last_name`.
-
-```surql
-/**[test]
-
-[[test.results]]
-value = "NONE"
-
-[[test.results]]
-value = "NONE"
-
-[[test.results]]
-value = "NONE"
-
-[[test.results]]
-value = "NONE"
-
-[[test.results]]
-value = "[{ first_name: 'bob', full_name: 'bob BOBSON', id: person:l07j1ly4oher21g80fr4, last_name: 'bobson' }]"
-skip-record-id-key = true
-
-*/
-
-DEFINE TABLE person SCHEMAFULL;
-
-DEFINE FIELD first_name
-  ON TABLE person TYPE string VALUE string::lowercase($value);
-DEFINE FIELD last_name 
-  ON TABLE person TYPE string VALUE string::lowercase($value);
-DEFINE FIELD full_name 
-  ON TABLE person             VALUE first_name + ' ' + last_name;
-
--- Creates a `person` with `full_name` of "bob BOBSON", not "bob bobson"
-CREATE person SET first_name = "Bob", last_name = "BOBSON";
-```
-
-A good rule of thumb is to organise your `DEFINE FIELD` statements in alphabetical order so that the field definitions show up in the same order as that in which they are computed.
-
 ## Defining a literal on a field
 A field can also be defined as a [literal type](../../language-primitives/data-types/literals.md), by specifying one or more possible values and/or permitted types.
 
@@ -1332,8 +1336,6 @@ Values for an inlined field should also be kept small. A payload larger than `SU
 Demoting a relation table to a normal table while it still carries `INLINE` fields is also rejected.
 
 ## Defining a reference
-
-*Since v2.2.0*
 
 A field that is a record link (type `record`, `option<record>`, `array<record<person>>`, and so on) can be defined as a `REFERENCE`. If this clause is used, any linked to record will be able to define a computed field of its own using the `<~` syntax, which will be aware of the incoming links.
 

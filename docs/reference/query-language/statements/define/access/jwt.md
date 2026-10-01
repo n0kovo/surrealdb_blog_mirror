@@ -31,45 +31,6 @@ DEFINE ACCESS [ OVERWRITE | IF NOT EXISTS ] @name
   [ DURATION FOR SESSION @duration ]
 ```
 
-## Audience validation
-
-*Since v3.3.0*
-
-The `AUDIENCE` clause lists the values accepted for a token's `aud` claim. A token verified against the access method must carry an `aud` claim that intersects the list, and is rejected otherwise.
-
-```surql
-DEFINE ACCESS token_name ON DATABASE TYPE JWT
-  ALGORITHM HS512 KEY "sNSYneezcr8kqphfOC6NwwraUHJCVAt0XjsRSNmssBaBRh3WyMa9TRfq8ST7fsqu"
-  AUDIENCE "surrealdb-api";
-```
-
-Several values can be listed, which suits a token issued for more than one service, or a migration between audience names.
-
-```surql
-DEFINE ACCESS token_name ON DATABASE TYPE JWT
-  ALGORITHM HS512 KEY "sNSYneezcr8kqphfOC6NwwraUHJCVAt0XjsRSNmssBaBRh3WyMa9TRfq8ST7fsqu"
-  AUDIENCE "surrealdb-api", "surrealdb-internal";
-```
-
-The clause works the same way with a remote JWKS object, where it sits before the `WITH ISSUER` clause.
-
-```surql
-DEFINE ACCESS token_name ON DATABASE TYPE JWT
-  URL "https://example.com/.well-known/jwks.json"
-  AUDIENCE "surrealdb-api";
-```
-
-Where the clause is omitted the `aud` claim is not checked, which is the behaviour of an access method defined without it.
-
-> [!IMPORTANT]
-> An issuer that serves more than one application typically mints tokens with a distinct `aud` value per application. Without `AUDIENCE`, a token minted for a different application by the same issuer verifies successfully here, because the signature is valid. Setting the clause confines an access method to the tokens actually intended for it.
-
-Audience values are configuration rather than secrets, so unlike a key they are shown in full by [`INFO`](../../info.md).
-
-```surql title="Output"
-DEFINE ACCESS token_name ON DATABASE TYPE JWT ALGORITHM HS512 KEY '[REDACTED]' AUDIENCE 'surrealdb-api' WITH ISSUER KEY '[REDACTED]' DURATION FOR TOKEN 1h, FOR SESSION NONE
-```
-
 ## Verification types
 
 When defining a token, its type describes the cryptographic algorithm or specification that will be used to verify the token. This can be an HMAC algorithm, a public-key cryptography algorithm or a remote JWKS object containing all the required information to verify the token. When not specified, the type is defined as the `HS256` HMAC cryptographic algorithm.
@@ -213,6 +174,8 @@ The expected claims depend on the level at which the token was defined:
 
 > [!NOTE]
 > An `id` claim is **not** required for `TYPE JWT`. That claim identifies a [record user](../../../../../learn/security/authentication/users.md#record-users) and belongs to [`DEFINE ACCESS ... TYPE RECORD ... WITH JWT`](record.md#with-json-web-token). A `TYPE JWT` token without `id` authenticates as a [system user](../../../../../learn/security/authentication/users.md#system-users) session.
+
+SurrealDB reads these claims from the token itself, and nothing else can supply them. The `surreal-auth-ns` and `surreal-auth-db` HTTP headers apply to username and password authentication only, not to a token. For an identity provider whose tokens cannot carry custom claims, either have your backend issue SurrealDB tokens that include them, or let the client sign in through a [record access method that verifies the provider's token](record.md#signing-in-with-another-providers-token) and issues a SurrealDB token in return.
 
 For tokens defined for [system users](../../../../../learn/security/authentication/users.md#system-users), the optional `rl` claim containing an array of capitalized [system user roles](../user.md#roles) (e.g. `["Viewer", "Editor", "Owner"]`) can be provided. Doing so will apply the access policy for those roles to any action made using the token. By default, sessions established with tokens without the `rl` claim will only have the `Viewer` role.
 
@@ -362,6 +325,45 @@ AUTHENTICATE {
   };
 }
 DURATION FOR SESSION 2h;
+```
+
+## Audience validation
+
+*Since v3.3.0*
+
+The `AUDIENCE` clause lists the values accepted for a token's `aud` claim. A token verified against the access method must carry an `aud` claim that intersects the list, and is rejected otherwise.
+
+```surql
+DEFINE ACCESS token_name ON DATABASE TYPE JWT
+  ALGORITHM HS512 KEY "sNSYneezcr8kqphfOC6NwwraUHJCVAt0XjsRSNmssBaBRh3WyMa9TRfq8ST7fsqu"
+  AUDIENCE "surrealdb-api";
+```
+
+Several values can be listed, which suits a token issued for more than one service, or a migration between audience names.
+
+```surql
+DEFINE ACCESS token_name ON DATABASE TYPE JWT
+  ALGORITHM HS512 KEY "sNSYneezcr8kqphfOC6NwwraUHJCVAt0XjsRSNmssBaBRh3WyMa9TRfq8ST7fsqu"
+  AUDIENCE "surrealdb-api", "surrealdb-internal";
+```
+
+The clause works the same way with a remote JWKS object, where it sits before the `WITH ISSUER` clause.
+
+```surql
+DEFINE ACCESS token_name ON DATABASE TYPE JWT
+  URL "https://example.com/.well-known/jwks.json"
+  AUDIENCE "surrealdb-api";
+```
+
+Where the clause is omitted the `aud` claim is not checked, which is the behaviour of an access method defined without it.
+
+> [!IMPORTANT]
+> An issuer that serves more than one application typically mints tokens with a distinct `aud` value per application. Without `AUDIENCE`, a token minted for a different application by the same issuer verifies successfully here, because the signature is valid. Setting the clause confines an access method to the tokens actually intended for it.
+
+Audience values are configuration rather than secrets, so unlike a key they are shown in full by [`INFO`](../../info.md).
+
+```surql title="Output"
+DEFINE ACCESS token_name ON DATABASE TYPE JWT ALGORITHM HS512 KEY '[REDACTED]' AUDIENCE 'surrealdb-api' WITH ISSUER KEY '[REDACTED]' DURATION FOR TOKEN 1h, FOR SESSION NONE
 ```
 
 ## Using `IF NOT EXISTS` clause

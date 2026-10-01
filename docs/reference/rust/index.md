@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 The SurrealDB SDK for Rust enables you to interact with SurrealDB from client-side, server-side applications, systems, APIs, embedded systems, and IoT devices. The Rust SDK supports structured error handling and type-safe operations, using an asynchronous API for efficient concurrent database interactions. You can use the Rust SDK to interact with your SurrealDB database instances, or to run SurrealDB as an embedded database within your Rust application, with functionality for executing queries, managing data, running database functions, authenticating to the database, building user signup and authentication functionality, and subscribing to data changes with live queries.
 
 > [!IMPORTANT]
-> The SDK requires Rust version `1.89` or greater, and is available as a [crate](https://crates.io/crates/surrealdb).
+> The SDK requires Rust version `1.95` or greater, and is available as a [crate](https://crates.io/crates/surrealdb).
 
 > [!NOTE]
 > The latest version of the SDK is *(latest)*.

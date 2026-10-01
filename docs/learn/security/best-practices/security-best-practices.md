@@ -75,8 +75,7 @@ DEFINE ACCESS user ON DATABASE TYPE RECORD
 		CREATE user CONTENT {
 			name: $name,
 			email: $email,
-			password: crypto::argon2::generate($password) -- Use Argon2 to
-			  generate the hash.
+			password: crypto::argon2::generate($password) -- Use Argon2 to generate the hash.
 		}
 	)
 	SIGNIN (
@@ -135,6 +134,8 @@ DEFINE ACCESS account ON DATABASE TYPE RECORD
 When using SurrealDB as a traditional backend database, your application will usually build SurrealQL queries that may need to contain some untrusted input, such as that provided by the users of your application. To do so, SurrealDB offers [`bind`](../../../reference/rust/methods/query.md) as a method to `query` (implemented in other SDKs as [the `vars` argument to `query`](../../../reference/javascript/concepts/executing-queries.md)), which should always be used when including untrusted input into queries. Otherwise, SurrealDB will be unable to separate the actual query syntax from the user input, resulting in the well-known [SQL injection](https://en.wikipedia.org/w/index.php?title=SQL_injection&oldid=1234729055) vulnerabilities. This practice is known as [prepared statements or parameterised queries](https://en.wikipedia.org/w/index.php?title=Prepared_statement&oldid=1195122133).
 
 Binding parameters ensures that untrusted data is passed to SurrealDB as SurrealQL parameters, which are independent of the query syntax, preventing SQL injection attacks.
+
+Bound parameters are SurrealDB's equivalent of prepared statements. A value such as `He said ", name = 'Gandalf';"` is stored exactly as written when it is passed as `$name`, because it is never read as part of the query. Building the same query by joining strings would let those characters end the string and add a statement of their own.
 
 ### Example: Bind parameters in the provided sdks
 
@@ -373,6 +374,15 @@ Even in this scenario, physical or logical access to the SurrealDB server will r
 ## Untrusted queries
 
 Because SurrealQL includes functions, scripting and network capabilities, running untrusted queries in SurrealDB as a [system user](../authentication/users.md#system-users) should be treated similarly to running untrusted software in any system. When copying queries or importing datasets from sources that you do not trust, make sure to review their contents to ensure that they do not contain any malicious code intended to perform unauthorized changes, computations or network requests.
+
+## Limiting expensive queries
+
+A single query can ask for a lot of work, such as a graph path that fans out through every record several times. These settings limit what one query can cost the server:
+
+- **[`--query-timeout`](../../../reference/cli/surrealdb-cli/environment-variables.md#command-environment-variables)** (`SURREAL_QUERY_TIMEOUT`) stops any query that runs longer than the given duration. A query can also set its own limit with the [`TIMEOUT` clause](../../../reference/query-language/statements/select.md#the-timeout-clause).
+- **[`SURREAL_MEMORY_THRESHOLD`](../../../reference/cli/surrealdb-cli/environment-variables.md#limits-config)** refuses new queries while the server's tracked memory is above the given size.
+- **`SURREAL_MAX_COMPUTATION_DEPTH`** limits how deeply nested computations can go, and a recursive path stops at a depth of 256.
+- **[`--deny-arbitrary-query`](../authorization/capabilities.md#arbitrary-queries)** with a value such as `--deny-arbitrary-query=record,guest` stops record users and guests from sending queries of their own, so they can only call the [`DEFINE API`](../../../reference/query-language/statements/define/api.md) endpoints and functions you define. This is the strongest protection for a database that is reachable from the public internet, because the shape of every query is then decided by you.
 
 ## Session isolation
 

@@ -825,7 +825,7 @@ _1108 pages_
 - [Enterprise members](manage/enterprise/members.md)
   Invite people to an enterprise and assign them roles. Send one invitation, import a member list from a file, and track what is pending.
 - [Enterprise Edition Database](manage/enterprise/product/database-enterprise.md)
-  What Enterprise Edition adds over Community: distributed live queries, audit logging, FIPS-validated cryptography, trusted execution and contractual support, plus the licence key it needs to start, the SURREAL_LICENSE_* variables and the Docker Hub image.
+  What Enterprise Edition adds over Community: fault-tolerant multi-zone clusters, storage and compute that scale independently, distributed live queries, audit logging, FIPS-validated cryptography, trusted execution and contractual support, plus the licence key it needs to start, the SURREAL_LICENSE_* variables and the Docker Hub image.
 - [Enterprise roles & permissions](manage/enterprise/roles.md)
   Compose custom roles from the permissions an enterprise can grant. How enterprise roles differ from the fixed organisation roles.
 - [SCIM provisioning](manage/enterprise/scim-provisioning.md)

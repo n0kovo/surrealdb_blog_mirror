@@ -19,6 +19,8 @@ The following languages are supported:
 - [Python](by-language/python.md)
 - [Rust](by-language/rust.md)
 
+The [Swift](../../reference/swift/index.md) and [Kotlin](../../reference/kotlin/index.md) SDKs, which cover iOS and Android apps, connect to a SurrealDB server over HTTP or WebSocket, and do not run a database inside the app.
+
 ## Browser embedding options
 
 When embedding SurrealDB in web browsers, you have two options:

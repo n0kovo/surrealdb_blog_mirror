@@ -127,37 +127,6 @@ Two of the flags above are documented in more detail elsewhere: `--postgres-bind
 
 The `--query-timeout` flag in the [command help](#command-help) sets the maximum duration that a batch of statements can run for, and is off by default. From 3.3.0 the same value is also a hard wall-clock limit on each HTTP `/sql`, `/gql` and `/graphql` request and on each RPC method call. An HTTP `/sql` or `/gql` request that exceeds it is answered with `504 Gateway Timeout`, and a `/graphql` request with a GraphQL error. The `begin`, `commit` and `cancel` RPC methods are exempt, but the calls made inside the transaction they control are still limited individually. See [`SURREAL_QUERY_TIMEOUT`](../environment-variables.md#command-environment-variables). *Since v3.3.0*
 
-## Positional argument
-
-> [!WARNING]
-> FoundationDB support was removed in SurrealDB 3.0.0, so `fdb://` paths are only accepted by 2.x. Migrate a FoundationDB deployment to one of the backends below before upgrading.
-
-In the `surreal start` command, the path argument is used to specify the location of the database. If no argument is given, the default of `memory` for storage [in memory](../../../../running/in-memory.md) is assumed.
-
-Arguments for persistent backends are a combination of the backend name, a `:` or `://`, and an address or filename - for example `surrealkv://mydb` or `rocksdb:database`. The available backends are:
-
-- `memory` (or no argument) for in-memory storage
-- `rocksdb` for RocksDB
-- `surrealkv` for SurrealKV
-- `indxdb` for IndexedDB
-- `tikv` for TiKV
-
-### Absolute vs. relative paths
-
-The datastorage flavour (`rocksdb`, `surrealkv`, etc.) followed by `:` or `://` will be recognised as a relative path. Any other number of slashes such as `rocksdb:/path` or `surrealkv:///path` will be interpreted as an absolute path. As a short absolute path of this nature will often require elevated permissions, the output for this command may end in this sort of error.
-
-```text
-Failed to create RocksDB directory: `Os { code: 30, kind: ReadOnlyFilesystem, message: "Read-only file system" }`.
-```
-
-If you see this error without having intended to start the server on an absolute path, it is likely that the path passed in unintentionally contains either one slash or more than two slashes.
-
-> [!NOTE]
-> Be sure not to use multiple storage backends in the same location, such as `rocksdb://path/to/database` followed by `surrealkv://path/to/database`. As storage is entirely delegated to the backend, the CLI is not aware of the structure of the data itself. While each backend uses its own file names and directory structure to store data, it is possible that data overwrite or other issues may occur.
-
-> [!IMPORTANT]
-> **TiKV** (`tikv://…`) is supported for local multi-node experimentation with the Community edition. Production multi-node HA uses distributed storage on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) or [SurrealDB Enterprise](https://surrealdb.com/enterprise). See [Run a multi-node cluster](../../../../running/multi-node.md) and [Deployment](../../../../manage/self-hosted/deployment-models.md). To provision and scale those instances from a script rather than a browser, see [`surrealctl`](../../surrealctl/overview.md).
-
 ## Getting started
 
 This example will show how to host a SurrealDB server with the `surreal start` command, and then access the Surreal DB server using the [`surreal sql` command](sql.md).
@@ -182,6 +151,68 @@ surreal sql --endpoint http://127.0.0.1:8000 --namespace my_namespace \
   --database my_database --username my_username --password my_password
 ```
 
+## Positional argument
+
+> [!WARNING]
+> FoundationDB support was removed in SurrealDB 3.0.0, so `fdb://` paths are only accepted by 2.x. Migrate a FoundationDB deployment to one of the backends below before upgrading.
+
+In the `surreal start` command, the path argument is used to specify the location of the database. If no argument is given, the default of `memory` for storage [in memory](../../../../running/in-memory.md) is assumed.
+
+Arguments for persistent backends are a combination of the backend name, a `:` or `://`, and an address or filename - for example `surrealkv://mydb` or `rocksdb:database`. The available backends are:
+
+- `memory` (or no argument) for in-memory storage
+- `rocksdb` for RocksDB
+- `surrealkv` for SurrealKV
+- `indxdb` for IndexedDB
+- `tikv` for TiKV
+
+### Absolute vs. relative paths
+
+The datastorage flavour (`rocksdb`, `surrealkv`, etc.) followed by `:` or `://` will be recognised as a relative path, which is resolved from the directory you run `surreal start` in. Running `surreal start rocksdb:mydb` from `/home/ann/projects` stores the data in `/home/ann/projects/mydb`, and running the same command from another directory creates a new, empty database there. Use an absolute path for a server that is started from different places, such as by a service manager. Any other number of slashes such as `rocksdb:/path` or `surrealkv:///path` will be interpreted as an absolute path. As a short absolute path of this nature will often require elevated permissions, the output for this command may end in this sort of error.
+
+```text
+Failed to create RocksDB directory: `Os { code: 30, kind: ReadOnlyFilesystem, message: "Read-only file system" }`.
+```
+
+If you see this error without having intended to start the server on an absolute path, it is likely that the path passed in unintentionally contains either one slash or more than two slashes.
+
+> [!NOTE]
+> Be sure not to use multiple storage backends in the same location, such as `rocksdb://path/to/database` followed by `surrealkv://path/to/database`. As storage is entirely delegated to the backend, the CLI is not aware of the structure of the data itself. While each backend uses its own file names and directory structure to store data, it is possible that data overwrite or other issues may occur.
+
+> [!IMPORTANT]
+> **TiKV** (`tikv://…`) is supported for local multi-node experimentation with the Community edition. Production multi-node HA uses distributed storage on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) or [SurrealDB Enterprise](https://surrealdb.com/enterprise). See [Run a multi-node cluster](../../../../running/multi-node.md) and [Deployment](../../../../manage/self-hosted/deployment-models.md). To provision and scale those instances from a script rather than a browser, see [`surrealctl`](../../surrealctl/overview.md).
+
+## Authentication
+
+When starting a SurrealDB instance, authentication is enabled by default, and your user credentials will be required to connect. If you are starting a new instance, the user credentials you use to run the `start` command will [define a new root user](../../../query-language/statements/define/user.md#roles) with the [`OWNER`](../../../query-language/statements/define/user.md#roles) role.
+
+```bash
+surreal start --user root --password secret
+```
+
+## Unauthenticated mode
+
+> [!NOTE]
+> We recommend enabling authentication when running SurrealDB in production or in publicly exposed ways. Failure to do so may result in unauthorised access.
+
+Using the `--unauthenticated` flag, you can also start a SurrealDB instance in unauthenticated mode. By doing so, authentication will be disabled. In this mode, any guest user is considered to have the same permissions as a root user with the [`OWNER`](../../../query-language/statements/define/user.md#roles) role.
+
+To start a SurrealDB instance in unauthenticated mode, run the following command:
+
+```bash
+surreal start --unauthenticated
+```
+
+## Using environment variables
+
+> [!IMPORTANT]
+> Most of the flags above have a corresponding [environment variable](../environment-variables.md#command-environment-variables).
+> For example, the `--temporary-directory` flag can be configured with the `SURREAL_TEMPORARY_DIRECTORY` environment variable instead.
+
+When using the `surreal start` command, you can also use environment variables to set the values for the command-line flags. This is useful when you want to set the values for the command-line flags without having to pass them directly on the command line.
+
+For more on the environment variables available for CLI commands or SurrealDB instances in general, see the [environment variables](../environment-variables.md#command-environment-variables) page.
+
 ## Stopping the server
 
 To stop the server, press `Ctrl+C` in its terminal, or send it `SIGTERM` (as `docker stop`, `kill` and `systemctl stop` do). Either signal starts a graceful shutdown: the server stops accepting connections, the storage engine writes out what it holds in memory, and the process exits with status `0`.
@@ -193,15 +224,83 @@ INFO surrealdb::net: Web server stopped. Bye!
 
 A second signal during the shutdown stops the process at once, without waiting. On a persistent backend such as SurrealKV or RocksDB, data from committed transactions is kept either way, subject to the backend's [`sync` setting](#datastore-configuration). On the in-memory backend, all data is lost when the process stops unless [persistence](#supported-parameters-for-memory-surrealmx) is configured.
 
-## Using environment variables
+## Enabling capabilities
 
-> [!IMPORTANT]
-> Most of the flags above have a corresponding [environment variable](../environment-variables.md#command-environment-variables).
-> For example, the `--temporary-directory` flag can be configured with the `SURREAL_TEMPORARY_DIRECTORY` environment variable instead.
+> [!NOTE]
+> If using SurrealDB Cloud, capabilities can be set from [SurrealDB Studio](../../../../manage/instances/configure.md#capabilities) or with [`surrealctl`](../../surrealctl/overview.md).
 
-When using the `surreal start` command, you can also use environment variables to set the values for the command-line flags. This is useful when you want to set the values for the command-line flags without having to pass them directly on the command line.
+Capabilities arguments such as `allow-scripting` or `deny-net` can also be passed into the `surreal start` command. These arguments, the order in which they are evaluated, and other notes on security are presented in detail in a [separate page on capabilities](../../../../learn/security/authorization/capabilities.md).
 
-For more on the environment variables available for CLI commands or SurrealDB instances in general, see the [environment variables](../environment-variables.md#command-environment-variables) page.
+A production-oriented example of the `surreal start` command that begins with the `--deny-all` flag and only thereafter sets which capabilities will be allowed:
+
+```bash
+surreal start --deny-all --allow-funcs "array, string, crypto::argon2, http::get" --allow-net api.example.com:443
+```
+
+## Experimental capabilities
+
+> [!NOTE]
+> The experimental capability is completely hidden in the CLI help command, and `--allow-all` will not enable the experimental capabilities by default.
+
+To use experimental capabilities, set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` [environment variable](../environment-variables.md) to the experimental capability you want to allow.
+
+For example, to use [Surrealism](../../../../learn/extensions/plugins/overview.md) extensions, set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable to `surrealism` - or pass it in via the `--allow-experimental` flag.
+
+**Bash**
+
+```bash
+# Allow experimental via an env var
+SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism surreal start
+
+# Allow experimental via a flag
+surreal start --allow-experimental surrealism
+```
+
+**PowerShell**
+
+```powershell
+# Allow experimental via an env var
+$env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "surrealism"
+surreal start
+
+# Allow experimental via a flag
+surreal start --allow-experimental surrealism
+```
+
+Multiple experimental capabilities can be enabled by separating them with a comma.
+
+**Bash**
+
+```bash
+SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism,files surreal start
+surreal start --allow-experimental surrealism,files
+```
+
+**PowerShell**
+
+```powershell
+$env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "surrealism,files"
+surreal start
+surreal start --allow-experimental surrealism,files
+```
+
+`--allow-experimental` accepts several values, so a storage path written after it is read as one more capability name, and the server refuses to start with `invalid experimental target name`. Join the value to the flag with `=`, or put the path before the flag:
+
+```bash
+surreal start --allow-experimental=surrealism,files rocksdb:mydatabase.db
+surreal start rocksdb:mydatabase.db --allow-experimental surrealism,files
+```
+
+> [!NOTE]
+> Experimental capabilities are enforced on the **server** for remote clients. If you use [`surreal sql`](sql.md) against `ws://` or `http://`, configure flags here - not only on the REPL. See [Capabilities and remote connections](sql.md#capabilities-and-remote-connections).
+
+> [!NOTE]
+> From **3.3.0**, [ISO GQL (Cypher Query Language)](../../../../learn/querying/gql/overview.md) is enabled by default and no longer uses an experimental capability. The legacy tag `gql` is still accepted for compatibility but has no effect. On **3.2.x**, use `--allow-experimental gql`.
+
+| Example feature/statement | Tag |
+| --- | --- |
+| [DEFINE BUCKET](../../../query-language/statements/define/bucket.md) | `files` |
+| [DEFINE MODULE](../../../query-language/statements/define/module.md) | `surrealism` |
 
 ## Strict mode
 
@@ -286,40 +385,6 @@ While SurrealKV supports historical/temporal querying using the `VERSION` clause
 surreal start -u root -p secret surrealkv+versioned://mydb
 ```
 
-## Authentication
-
-When starting a SurrealDB instance, authentication is enabled by default, and your user credentials will be required to connect. If you are starting a new instance, the user credentials you use to run the `start` command will [define a new root user](../../../query-language/statements/define/user.md#roles) with the [`OWNER`](../../../query-language/statements/define/user.md#roles) role.
-
-```bash
-surreal start --user root --password secret
-```
-
-## Enabling capabilities
-
-> [!NOTE]
-> If using SurrealDB Cloud, capabilities can be set from [SurrealDB Studio](../../../../manage/instances/configure.md#capabilities) or with [`surrealctl`](../../surrealctl/overview.md).
-
-Capabilities arguments such as `allow-scripting` or `deny-net` can also be passed into the `surreal start` command. These arguments, the order in which they are evaluated, and other notes on security are presented in detail in a [separate page on capabilities](../../../../learn/security/authorization/capabilities.md).
-
-A production-oriented example of the `surreal start` command that begins with the `--deny-all` flag and only thereafter sets which capabilities will be allowed:
-
-```bash
-surreal start --deny-all --allow-funcs "array, string, crypto::argon2, http::get" --allow-net api.example.com:443
-```
-
-## Unauthenticated mode
-
-> [!NOTE]
-> We recommend enabling authentication when running SurrealDB in production or in publicly exposed ways. Failure to do so may result in unauthorised access.
-
-Using the `--unauthenticated` flag, you can also start a SurrealDB instance in unauthenticated mode. By doing so, authentication will be disabled. In this mode, any guest user is considered to have the same permissions as a root user with the [`OWNER`](../../../query-language/statements/define/user.md#roles) role.
-
-To start a SurrealDB instance in unauthenticated mode, run the following command:
-
-```bash
-surreal start --unauthenticated
-```
-
 ## Identification headers
 
 By default, SurrealDB includes headers in the HTTP response that identify the server name and version. You can suppress these headers by using the `--no-identification-headers` flag.
@@ -344,71 +409,6 @@ surreal start --durable-sessions --durable-session-ttl 12h rocksdb://mydb
 > The durable copy includes the session's authentication state and is stored **unencrypted** in the datastore. Sticky routing is recommended so a given session is used on one node at a time. Concurrent use from multiple nodes is best-effort.
 
 WebSocket connections keep in-memory sessions only. This mode does not change WebSocket behaviour.
-
-## Experimental capabilities
-
-> [!NOTE]
-> The experimental capability is completely hidden in the CLI help command, and `--allow-all` will not enable the experimental capabilities by default.
-
-To use experimental capabilities, set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` [environment variable](../environment-variables.md) to the experimental capability you want to allow.
-
-For example, to use [Surrealism](../../../../learn/extensions/plugins/overview.md) extensions, set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable to `surrealism` - or pass it in via the `--allow-experimental` flag.
-
-**Bash**
-
-```bash
-# Allow experimental via an env var
-SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism surreal start
-
-# Allow experimental via a flag
-surreal start --allow-experimental surrealism
-```
-
-**PowerShell**
-
-```powershell
-# Allow experimental via an env var
-$env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "surrealism"
-surreal start
-
-# Allow experimental via a flag
-surreal start --allow-experimental surrealism
-```
-
-Multiple experimental capabilities can be enabled by separating them with a comma.
-
-**Bash**
-
-```bash
-SURREAL_CAPS_ALLOW_EXPERIMENTAL=surrealism,files surreal start
-surreal start --allow-experimental surrealism,files
-```
-
-**PowerShell**
-
-```powershell
-$env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "surrealism,files"
-surreal start
-surreal start --allow-experimental surrealism,files
-```
-
-`--allow-experimental` accepts several values, so a storage path written after it is read as one more capability name, and the server refuses to start with `invalid experimental target name`. Join the value to the flag with `=`, or put the path before the flag:
-
-```bash
-surreal start --allow-experimental=surrealism,files rocksdb:mydatabase.db
-surreal start rocksdb:mydatabase.db --allow-experimental surrealism,files
-```
-
-> [!NOTE]
-> Experimental capabilities are enforced on the **server** for remote clients. If you use [`surreal sql`](sql.md) against `ws://` or `http://`, configure flags here - not only on the REPL. See [Capabilities and remote connections](sql.md#capabilities-and-remote-connections).
-
-> [!NOTE]
-> From **3.3.0**, [ISO GQL (Cypher Query Language)](../../../../learn/querying/gql/overview.md) is enabled by default and no longer uses an experimental capability. The legacy tag `gql` is still accepted for compatibility but has no effect. On **3.2.x**, use `--allow-experimental gql`.
-
-| Example feature/statement | Tag |
-| --- | --- |
-| [DEFINE BUCKET](../../../query-language/statements/define/bucket.md) | `files` |
-| [DEFINE MODULE](../../../query-language/statements/define/module.md) | `surrealism` |
 
 ## Further examples
 

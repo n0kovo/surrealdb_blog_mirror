@@ -532,6 +532,14 @@ These functions are:
 * [`time::max()`](time.md#timemax)
 * [`time::min()`](time.md#timemin)
 
+The following functions also aggregate in a `GROUP BY` query, but cannot be used in a pre-computed table view:
+
+* [`array::distinct()`](array.md#arraydistinct)
+* [`array::group()`](array.md#arraygroup)
+* [`array::join()`](array.md#arrayjoin)
+* [`math::median()`](math.md#mathmedian)
+* [`vector::sum()`](vector.md#vectorsum)
+
 ## Anonymous functions
 
 SurrealDB also allows for the creation of anonymous functions (also known as closures) that do not need to be defined on the database. See [the page on closures](../../language-primitives/data-types/closures.md) for more details.

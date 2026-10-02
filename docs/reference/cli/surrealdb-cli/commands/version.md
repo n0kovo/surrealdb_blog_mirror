@@ -21,7 +21,7 @@ surreal version [OPTIONS]
             "name": "--endpoint",
             "short": "-e",
             "value": "<ENDPOINT>",
-            "description": "Remote database server URL to connect to. Alias: `--conn`. When given, only the server's version number is printed."
+            "description": "Remote database server URL to connect to. When given, only the server's version number is printed."
         },
         {
             "name": "--log",

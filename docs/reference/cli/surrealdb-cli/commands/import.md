@@ -33,7 +33,7 @@ surreal import [OPTIONS] --namespace <NAMESPACE> --database <DATABASE> <FILE>
             "short": "-e",
             "value": "<ENDPOINT>",
             "default": "http://localhost:8000",
-            "description": "Database endpoint to import to. Alias: `--conn`."
+            "description": "Database endpoint to import to."
         },
         {
             "name": "--username",
@@ -123,6 +123,10 @@ See [request size limits](../../../rest-api/http-protocol.md#request-size-limits
 
 A good practice before importing for the first time is to use the [`surreal validate`](validate.md) command to ensure that the statements therein are valid SurrealQL. This allows you to save time by failing quickly on the command line if there is invalid SurrealQL instead of starting a full database instance that will eventually fail in the middle of the import process.
 
+## Importing data from other databases and sources
+
+To import data from other sources besides `.surql` files (such as PostgreSQL, MongoDB, CSV data, Kafka, etc.), see the [migrations](../../../../build/migrating/index.md) section of the documentation.
+
 ## Using environment variables
 
 When using the `surreal import` command, you can also use environment variables to set the values for the command-line flags.
@@ -142,10 +146,6 @@ To import into a SurrealDB Cloud instance by name, [`surrealctl`](../../surrealc
 The output of a database export includes a line that contains the keywords `OPTION IMPORT`. This command is used internally to ensure that side effects do not run when the data is imported, such as [events](../../../query-language/statements/define/event.md) and [table views](../../../query-language/statements/define/table.md#pre-computed-table-views).
 
 As of SurrealDB 3.0.4, this line must be present in order to use the `/import` endpoint. If side effects when importing a `.surql` file are desired, remove the `OPTION IMPORT` line and use the [`/sql`](../../../rest-api/http-protocol.md#sql) endpoint instead.
-
-## Importing data from other databases and sources
-
-To import data from other sources besides `.surql` files (such as PostgreSQL, MongoDB, CSV data, Kafka, etc.), see the [migrations](../../../../build/migrating/index.md) section of the documentation.
 
 ## Command help
 

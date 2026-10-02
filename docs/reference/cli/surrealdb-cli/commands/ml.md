@@ -99,7 +99,7 @@ surreal ml export [OPTIONS] --name <NAME> --version <VERSION> --namespace <NAMES
             "short": "-e",
             "value": "<ENDPOINT>",
             "default": "ws://localhost:8000",
-            "description": "Remote database server URL to connect to. Alias: `--conn`."
+            "description": "Remote database server URL to connect to."
         },
         {
             "name": "--username",
@@ -159,13 +159,13 @@ surreal ml export [OPTIONS] --name <NAME> --version <VERSION> --namespace <NAMES
 To export a stored model to a local file, in a terminal run the `surreal ml export` command with the required arguments.
 
 ```bash
-surreal ml export --conn http://localhost:8000 --user root --pass secret --ns main --db main --name my-surrealml-model --version 1.0.0 my-surrealml-model.surml
+surreal ml export --endpoint http://localhost:8000 --user root --pass secret --ns main --db main --name my-surrealml-model --version 1.0.0 my-surrealml-model.surml
 ```
 
 Using token-based authentication:
 
 ```bash
-surreal ml export --conn http://localhost:8000 --token <token> --ns main --db main --name my-surrealml-model --version 1.0.0 my-surrealml-model.surml
+surreal ml export --endpoint http://localhost:8000 --token <token> --ns main --db main --name my-surrealml-model --version 1.0.0 my-surrealml-model.surml
 ```
 
 ### Command help
@@ -240,7 +240,7 @@ surreal ml import [OPTIONS] --namespace <NAMESPACE> --database <DATABASE> <FILE>
             "short": "-e",
             "value": "<ENDPOINT>",
             "default": "ws://localhost:8000",
-            "description": "Remote database server URL to connect to. Alias: `--conn`."
+            "description": "Remote database server URL to connect to."
         },
         {
             "name": "--username",
@@ -300,14 +300,14 @@ surreal ml import [OPTIONS] --namespace <NAMESPACE> --database <DATABASE> <FILE>
 To import a model from a local file, in a terminal run the `surreal ml import` command with the required arguments.
 
 ```bash
-surreal ml import --conn http://localhost:8000 --user root --pass secret \
+surreal ml import --endpoint http://localhost:8000 --user root --pass secret \
   --ns main --db main my-surrealml-model.surml
 ```
 
 Using token-based authentication:
 
 ```bash
-surreal ml import --conn http://localhost:8000 --token <token> --ns main --db main my-surrealml-model.surml
+surreal ml import --endpoint http://localhost:8000 --token <token> --ns main --db main my-surrealml-model.surml
 ```
 
 ### Command help

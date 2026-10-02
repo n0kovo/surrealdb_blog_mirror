@@ -55,7 +55,7 @@ Note the forwarding address provided by ngrok. For example, **`25f6-2402-e280-21
 Connect using the forwarding address from ngrok, replacing **`[ngrok-address]`** with the address you noted earlier. You can open an interactive REPL:
 
 ```bash
-surreal sql --conn wss://[ngrok-address] --user root --pass secret --ns main --db main --pretty
+surreal sql --endpoint wss://[ngrok-address] --user root --pass secret --ns main --db main --pretty
 ```
 
 Or run a one-shot check that [creates a record](../../../reference/query-language/statements/create.md) and [selects it](../../../reference/query-language/statements/select.md):
@@ -63,13 +63,13 @@ Or run a one-shot check that [creates a record](../../../reference/query-languag
 **Bash**
 
 ```bash
-echo "CREATE registration SET full_name = 'John Doe', email = 'johndoe@gmail.com', address_line1 = 'Room number 1, Hogwarts', address_line2 = 'Near Diagon Alley', city = 'Hogwarts', country = 'England'; SELECT * FROM registration;" | surreal sql --conn wss://[ngrok-address] --user root --pass secret --ns main --db main --pretty --hide-welcome
+echo "CREATE registration SET full_name = 'John Doe', email = 'johndoe@gmail.com', address_line1 = 'Room number 1, Hogwarts', address_line2 = 'Near Diagon Alley', city = 'Hogwarts', country = 'England'; SELECT * FROM registration;" | surreal sql --endpoint wss://[ngrok-address] --user root --pass secret --ns main --db main --pretty --hide-welcome
 ```
 
 **PowerShell**
 
 ```powershell
-"CREATE registration SET full_name = 'John Doe', email = 'johndoe@gmail.com', address_line1 = 'Room number 1, Hogwarts', address_line2 = 'Near Diagon Alley', city = 'Hogwarts', country = 'England'; SELECT * FROM registration;" | surreal sql --conn wss://[ngrok-address] --user root --pass secret --ns main --db main --pretty --hide-welcome
+"CREATE registration SET full_name = 'John Doe', email = 'johndoe@gmail.com', address_line1 = 'Room number 1, Hogwarts', address_line2 = 'Near Diagon Alley', city = 'Hogwarts', country = 'England'; SELECT * FROM registration;" | surreal sql --endpoint wss://[ngrok-address] --user root --pass secret --ns main --db main --pretty --hide-welcome
 ```
 
 ## Conclusion

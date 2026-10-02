@@ -22,7 +22,7 @@ surreal is-ready [OPTIONS]
             "short": "-e",
             "value": "<ENDPOINT>",
             "default": "ws://localhost:8000",
-            "description": "Remote database server URL to connect to. Alias: `--conn`."
+            "description": "Remote database server URL to connect to."
         },
         {
             "name": "--log",
@@ -40,7 +40,7 @@ surreal is-ready [OPTIONS]
 To check whether a server has started and is accepting connections, in a terminal run the `surreal isready` command against its endpoint.
 
 ```bash
-surreal isready --conn http://localhost:8000
+surreal isready --endpoint http://localhost:8000
 ```
 
 The output of the command will either be a simple `OK` if ready, or some sort of error depending on the situation.

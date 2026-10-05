@@ -1024,7 +1024,7 @@ INFO FOR TABLE some_table;
 {
 	events: {},
 	fields: {
-		info: 'DEFINE FIELD info ON some_table TYPE string PERMISSIONS FULL'
+		some_info: 'DEFINE FIELD some_info ON some_table TYPE string PERMISSIONS FULL'
 	},
 	indexes: {},
 	lives: {},
@@ -1034,7 +1034,7 @@ INFO FOR TABLE some_table;
 
 You can set permissions on fields to control who can perform operations on them using the `PERMISSIONS` clause. The `PERMISSIONS` clause can be used to set permissions for `SELECT`, `CREATE`, and `UPDATE` operations. The `DELETE` operation only relates to records and, as such, is not available for fields.
 
-Like table permissions, field permissions apply to [record users](../../../../learn/security/authentication/users.md#record-users) (and guests when enabled), not to system users.
+Like table permissions, field permissions apply to [record users](../../../../learn/security/authentication/users.md#record-users) (and guests when enabled), not to [system users](../../../../learn/security/authentication/users.md#system-users) such as `root`. A query run as `root`, including one in SurrealDB Studio or `surreal sql` signed in as root, therefore still returns a field defined with `PERMISSIONS FOR select NONE`. To check that a field is hidden, sign in as a record user and run the query again.
 
 ```surql
 /**[test]

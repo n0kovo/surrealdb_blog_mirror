@@ -68,6 +68,8 @@ docker run --rm --pull always -p 80:8000 -v /local-dir:/container-dir surrealdb/
 2025-08-30T15:06:35.205827Z  INFO surrealdb::net: Started web server on 0.0.0.0:8080
 ```
 
+The server has no web page of its own. Opening `http://localhost:8000` in a browser redirects to [SurrealDB Studio](../explore/studio/index.md) on surrealdb.com, which can then connect to the server. To check that the server is running, request `http://localhost:8000/health` instead, which returns `200` with an empty body. Queries go to the [HTTP and WebSocket endpoints](../reference/rest-api/http-protocol.md), such as `/sql` and `/rpc`.
+
 For details on the `start` command, and all of the available configuration options and arguments, view the [`start command documentation`](../reference/cli/surrealdb-cli/commands/start.md).
 
 ## Run your first query

@@ -19,6 +19,10 @@ This section is organised into three areas:
 
 - [Tokens & JWTs](authorization/tokens-and-jwts.md) - how a token carries identity and what the database checks
 
+- [Guest access](authorization/capabilities.md#guest-access) - letting clients that have not signed in read public tables or call public functions, turned on with `--allow-guests` and limited by each table's and function's `PERMISSIONS`
+
+Logic that goes beyond reading and writing records, such as an order that has to update stock and create an invoice together, can live in the database as a [custom function](../querying/concepts-and-guides/custom-functions.md) or behind an HTTP endpoint defined with [`DEFINE API`](../../reference/query-language/statements/define/api.md). A function's `PERMISSIONS` clause decides who may call it, while its body runs with the caller's own table and field permissions - see [function permissions](../../reference/query-language/statements/define/function.md#permissions).
+
 ## Troubleshooting
 
 - [Troubleshooting](best-practices/troubleshooting.md) - what a rejected token, an expired session or a denied permission looks like, and what to check

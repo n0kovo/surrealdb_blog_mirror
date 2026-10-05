@@ -1911,7 +1911,7 @@ _1108 pages_
 - [DEFINE ACCESS](reference/query-language/statements/define/access/index.md)
   Defining an access method allows SurrealDB to grant access to resources using different kinds of credentials.
 - [JWT](reference/query-language/statements/define/access/jwt.md)
-  A JWT access method allows accessing SurrealDB with a token signed by a trusted issuer.
+  A JWT access method lets SurrealDB accept tokens from a trusted issuer, such as an OpenID Connect (OIDC) or OAuth 2.0 provider, verified with a shared secret, a public key or a JWKS URL.
 - [RECORD](reference/query-language/statements/define/access/record.md)
   A record access method allows accessing SurrealDB as a record user.
 - [DEFINE ANALYZER](reference/query-language/statements/define/analyzer.md)

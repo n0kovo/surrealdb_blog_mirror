@@ -65,6 +65,20 @@ Then, simply use the global parameter like you would with any variable.
 http::get($endpointBase + "/products");
 ```
 
+A parameter belongs to the database, and `DEFINE PARAM` has no clause that attaches it to a table. For a value that differs from table to table, define one parameter that holds an object with a field for each table:
+
+```surql
+DEFINE PARAM $page_size VALUE { book: 10, author: 25 };
+
+$page_size.book;
+//- 10
+
+-- With the table name in a variable
+LET $table = "author";
+$page_size[$table];
+//- 25
+```
+
 ## Using `IF NOT EXISTS` clause
 
 The `IF NOT EXISTS` clause can be used to define a param only if it does not already exist. You should use the `IF NOT EXISTS` clause when defining a param in SurrealDB if you want to ensure that the param is only created if it does not already exist. If the param already exists, the `DEFINE PARAM` statement will return an error.

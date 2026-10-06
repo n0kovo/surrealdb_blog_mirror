@@ -75,4 +75,5 @@ const { Surreal } = require('surrealdb');
 After installing the SDK, see the quick start guide to build a simple application with the SDK. You can also learn more about carrying out common tasks with the SDK in the following sections:
 - [Getting started](../../languages/javascript.md)
 - [Connecting to SurrealDB](concepts/connecting-to-surrealdb.md)
+- [Embedded engines](concepts/embedded-engines.md) - run SurrealDB inside your application, in a browser with the WebAssembly engine or in Node.js, Bun or Deno with the Node.js engine
 - [Authentication](concepts/authentication.md)

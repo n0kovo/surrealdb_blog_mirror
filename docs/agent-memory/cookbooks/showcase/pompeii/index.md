@@ -82,4 +82,4 @@ The graph holds less than the answers above. Chat also reads the text of the not
 ## Related pages
 
 - [Historical and archaeological data](../../patterns/historical-and-archaeological-data.md): the method behind this demo, from preparing records to proving an answer came from the corpus.
-- [Domesday: South Erpingham, 1086](../domesday/index.md): the same approach on a land survey, where allegiance is implied rather than stated.
+- [The Domesday Book, 1086](../domesday/index.md): the same approach on a land survey, where allegiance is implied rather than stated.

@@ -11,12 +11,6 @@ The `DEFINE FUNCTION` statement allows you to define custom functions that can b
 
 Functions can be used to encapsulate logic that you want to reuse in multiple queries. They can also be used to simplify complex queries by breaking them down into smaller, more manageable pieces. They are particularly useful when you have a complex query that you need to run multiple times with different arguments.
 
-## Stored procedures
-
-A defined function is what SurrealDB has in place of a stored procedure. Its body can read and write records, it is stored in the database schema, and it runs as [one transaction](#transactional-behaviour), so a failure part way through leaves no partial writes. Where a relational database would use `CALL place_order(...)`, SurrealQL calls `fn::place_order(...)`, as a statement of its own or inside any other statement.
-
-Function bodies are written in SurrealQL. To write the logic in Rust instead, compile it into a [Surrealism](../../../../learn/extensions/plugins/overview.md) module, which SurrealDB loads with [`DEFINE MODULE`](module.md) and calls with a `mod::` path. Surrealism is experimental, so the server has to be started with `--allow-experimental=files,surrealism`, or the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable set to the same value. Loading a module file also needs the experimental `files` feature, which is why both are listed.
-
 ## Requirements
 
 - You must be authenticated as a root owner or editor, namespace owner or editor, or database owner or editor before you can use the `DEFINE FUNCTION` statement.
@@ -78,6 +72,12 @@ DEFINE FUNCTION fn::relation_exists(
     RETURN array::len($results) > 0;
 };
 ```
+
+## Stored procedures
+
+A defined function is what SurrealDB has in place of a stored procedure. Its body can read and write records, it is stored in the database schema, and it runs as [one transaction](#transactional-behaviour), so a failure part way through leaves no partial writes. Where a relational database would use `CALL place_order(...)`, SurrealQL calls `fn::place_order(...)`, as a statement of its own or inside any other statement.
+
+Function bodies are written in SurrealQL. To write the logic in Rust instead, compile it into a [Surrealism](../../../../learn/extensions/plugins/overview.md) module, which SurrealDB loads with [`DEFINE MODULE`](module.md) and calls with a `mod::` path. Surrealism is experimental, so the server has to be started with `--allow-experimental=files,surrealism`, or the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable set to the same value. Loading a module file also needs the experimental `files` feature, which is why both are listed.
 
 ## Optional arguments
 If one or more ending arguments have the `option<T>` type, they can be omitted when you invoke the function.
@@ -200,6 +200,77 @@ fn::age_and_name(2);
 "Couldn't find user number 2!"
 ```
 
+## Permissions
+
+You can set the permissions for a custom function using the `PERMISSIONS` clause. The `PERMISSIONS` clause restricts who can call a function. It can be set to `NONE`, `FULL`, or `WHERE @condition`.
+
+- `FULL`: When Full permissions are granted [record](../../../../learn/security/authentication/users.md#record-users) users have access to the function. This is the default permission when not specified.
+- `NONE`: When this permission is granted, [record](../../../../learn/security/authentication/users.md#record-users) users have no access to the defined function.
+- `WHERE @condition`: Permissions are granted to the function based on the specified condition.
+
+The `PERMISSIONS` clause decides who may call the function. It does not change what the body can do: the body runs with the permissions of the caller, so a record user's call can read and write only what that user could read and write directly. A query the user is not allowed to run returns no records rather than an error, in the same way as when the user runs it directly:
+
+```surql
+DEFINE TABLE secret_note PERMISSIONS NONE;
+DEFINE FUNCTION fn::read_notes() -> array { SELECT * FROM secret_note } PERMISSIONS FULL;
+
+-- As a record user, both return [], however many notes exist
+SELECT * FROM secret_note;
+fn::read_notes();
+```
+
+To let users change data they cannot reach directly, use an [event](event.md#events-and-permissions) or a [`DEFINE API`](api.md#permissions) endpoint, whose bodies run without table permission checks, or a table permission clause that allows the change.
+
+> [!NOTE]
+> The examples below use the [`Surreal Deal Store`](../../../../explore/tutorials/demos/surreal-deal-store.md) dataset.
+
+### Using the `FULL` permission
+
+The `FULL` permission grants all users access to the function. The following example defines a function that fetches all products from the `product` table and grants the function full permissions to access the data to all users.
+
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=--%20Define%20a%20function%20to%20fetch%20all%20products.%20All%20users%20can%20access%20this%20function%0ADEFINE%20FUNCTION%20fn%3A%3AfetchAllProducts%28%29%20%7B%0A%09RETURN%20%28SELECT%20%2A%20FROM%20product%20LIMIT%2010%29%3B%0A%7D%20PERMISSIONS%20FULL%3B%0A--%20Returns%3A%20The%20first%2010%20products%20in%20the%20product%20table%0ARETURN%20fn%3A%3AfetchAllProducts%28%29%3B)
+
+### Using the `NONE` permission
+
+The `NONE` permission denies all [record](../../../../learn/security/authentication/users.md#record-users) users access to the function. The following example defines a function that fetches all products from the `product` table
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "NONE"
+
+[[test.results]]
+value = "[]"
+
+*/
+
+-- Define a function that fetches all expiration years from the payment_details table and denies access to all none-admin users
+DEFINE FUNCTION fn::fetchAllPaymentDetails() -> array {
+	SELECT stored_cards.expiry_year FROM payment_details LIMIT 5
+} PERMISSIONS NONE;
+
+RETURN fn::fetchAllPaymentDetails();
+```
+
+### Using the `WHERE` clause
+
+The `WHERE` clause allows you to specify a condition that determines the permissions granted to the function. The condition must evaluate to a boolean value. If the condition evaluates to `true`, the function is granted permissions. If the condition evaluates to `false`, the function is not granted permissions.
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "NONE"
+
+*/
+
+-- Define a function that fetches all products with the condition that only admin users can access it
+DEFINE FUNCTION fn::fetchAllProducts() -> array {
+	 SELECT * FROM product LIMIT 10
+} PERMISSIONS WHERE $auth.admin = true;
+```
+
 ## Transactional behaviour
 
 A function body runs as a single transaction, without `BEGIN` or `COMMIT` appearing in the definition. It commits when the body finishes, and rolls back if anything inside it fails.
@@ -283,64 +354,6 @@ SELECT id, ->to->? FROM person;
 The last query [can be viewed graphically](/blog/whats-new-in-surrealist-3-2#graph-visualisation) inside SurrealDB Studio, leading to an output showing a seven-pointed star.
 
 ![An image of a seven-pointed star created visually by relating seven records to each other and displayed inside SurrealDB Studio's graph view.](../../../../assets/img/image/light/recursive_star.png)
-
-## Permissions
-
-You can set the permissions for a custom function using the `PERMISSIONS` clause. The `PERMISSIONS` clause is mostly used to restrict who can access a function and what data they can access. It can be set to `NONE`, `FULL`, or `WHERE @condition`.
-
-- `FULL`: When Full permissions are granted [record](../../../../learn/security/authentication/users.md#record-users) users have access to the function. This is the default permission when not specified.
-- `NONE`: When this permission is granted, [record](../../../../learn/security/authentication/users.md#record-users) users have no access to the defined function.
-- `WHERE @condition`: Permissions are granted to the function based on the specified condition.
-
-> [!NOTE]
-> The examples below use the [`Surreal Deal Store`](../../../../explore/tutorials/demos/surreal-deal-store.md) dataset.
-
-### Using the `FULL` permission
-
-The `FULL` permission grants all users access to the function. The following example defines a function that fetches all products from the `product` table and grants the function full permissions to access the data to all users.
-
-[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=--%20Define%20a%20function%20to%20fetch%20all%20products.%20All%20users%20can%20access%20this%20function%0ADEFINE%20FUNCTION%20fn%3A%3AfetchAllProducts%28%29%20%7B%0A%09RETURN%20%28SELECT%20%2A%20FROM%20product%20LIMIT%2010%29%3B%0A%7D%20PERMISSIONS%20FULL%3B%0A--%20Returns%3A%20The%20first%2010%20products%20in%20the%20product%20table%0ARETURN%20fn%3A%3AfetchAllProducts%28%29%3B)
-
-### Using the `NONE` permission
-
-The `NONE` permission denies all [record](../../../../learn/security/authentication/users.md#record-users) users access to the function. The following example defines a function that fetches all products from the `product` table
-
-```surql
-/**[test]
-
-[[test.results]]
-value = "NONE"
-
-[[test.results]]
-value = "[]"
-
-*/
-
--- Define a function that fetches all expiration years from the payment_details table and denies access to all none-admin users
-DEFINE FUNCTION fn::fetchAllPaymentDetails() -> array {
-	SELECT stored_cards.expiry_year FROM payment_details LIMIT 5
-} PERMISSIONS NONE;
-
-RETURN fn::fetchAllPaymentDetails();
-```
-
-### Using the `WHERE` clause
-
-The `WHERE` clause allows you to specify a condition that determines the permissions granted to the function. The condition must evaluate to a boolean value. If the condition evaluates to `true`, the function is granted permissions. If the condition evaluates to `false`, the function is not granted permissions.
-
-```surql
-/**[test]
-
-[[test.results]]
-value = "NONE"
-
-*/
-
--- Define a function that fetches all products with the condition that only admin users can access it
-DEFINE FUNCTION fn::fetchAllProducts() -> array {
-	 SELECT * FROM product LIMIT 10
-} PERMISSIONS WHERE $auth.admin = true;
-```
 
 ## Functions that other definitions require to stay read-only
 

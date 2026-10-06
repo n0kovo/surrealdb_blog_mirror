@@ -235,6 +235,28 @@ All three `api::invoke` calls will now show the following output.
 };
 ```
 
+## Permissions
+
+The `PERMISSIONS` clause decides who may call an endpoint, and can differ for each method. When it is left out, it is `PERMISSIONS FULL`, so anyone who can reach the server can call the endpoint, including a client that has not signed in, whether or not [guest access](../../../../learn/security/authorization/capabilities.md#guest-access) is allowed.
+
+The body runs without table and field permission checks, like the body of an [event](event.md#events-and-permissions), so it can read and write records that the caller cannot reach directly. Inside the body, `$auth` is still the caller: a record user's record ID, or `NONE` for a client that has not signed in. In the example below, a record user cannot select from `secret_note`, but can read it through the endpoint, while a client without credentials is refused:
+
+```surql
+DEFINE TABLE secret_note PERMISSIONS NONE;
+
+DEFINE API "/notes"
+	FOR get
+		PERMISSIONS WHERE $auth.id != NONE
+		THEN {
+			{ status: 200, body: <string> (SELECT VALUE text FROM secret_note) }
+		};
+```
+
+> [!WARNING]
+> Because the body is not limited by table permissions, an endpoint returns whatever its body selects to everyone its `PERMISSIONS` clause lets in. Set `PERMISSIONS` on every endpoint that reads or writes data, and check `$auth` in the body where different callers should see different records.
+
+This is the opposite of a [defined function](function.md#permissions), whose body runs with the caller's permissions.
+
 ## Custom middleware
 
 Custom middleware can be used in addition to the functions listed above.

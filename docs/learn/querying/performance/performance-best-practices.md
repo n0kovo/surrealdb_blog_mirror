@@ -9,6 +9,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 To achieve the best performance from SurrealDB, there are a number of configuration options and runtime design choices to consider. The following is a non-exhaustive list of best practices to help you address common performance challenges and avoid frequent pitfalls.
 
+For published results comparing storage engines and deployment modes, see the [SurrealDB benchmarks](https://surrealdb.com/benchmarks).
+
 ## SurrealDB architecture
 
 While SurrealDB is a [multi-model database](/blog/what-are-multi-model-databases), at its core, SurrealDB stores data in documents on transactional key-value stores.

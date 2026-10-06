@@ -29,6 +29,8 @@ When embedding SurrealDB in web browsers, you have two options:
 
 - **SDK**: Alternatively, you can use the SurrealDB SDK to connect to a remote SurrealDB instance instead of using IndexedDB for local persistence.
 
+Embedding in a browser uses the JavaScript SDK's [WebAssembly engine](../../reference/javascript/engines/wasm.md) (`@surrealdb/wasm`). It connects with `mem://` for an in-memory database or `indxdb://` for IndexedDB persistence, and can run inside a Web Worker so that queries do not block the page. [Embedded engines](../../reference/javascript/concepts/embedded-engines.md#running-in-a-web-worker) shows both setups.
+
 ## Storage
 
 - [Storage engines](storage-engines.md) - which engine an embedded database can use, and what each gives up

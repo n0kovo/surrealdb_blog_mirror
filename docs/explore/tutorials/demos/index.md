@@ -14,4 +14,4 @@ _Auto-generated index — 3 pages._
 - [Demos](overview.md)
   Sample applications and datasets you can clone, import, or run locally to explore SurrealDB without a long-form walkthrough.
 - [Surreal Deal Store](surreal-deal-store.md)
-  To quickly test out SurrealDB and SurrealQL functionality, we've included demo data which you can download and import into SurrealDB.
+  Surreal Deal Store, a sample dataset of 12 tables with graph relations and record links, as .surql files to download and import into SurrealDB for trying SurrealQL queries on realistic data.

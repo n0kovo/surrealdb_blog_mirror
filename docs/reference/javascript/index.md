@@ -38,7 +38,7 @@ The SurrealDB SDK for JavaScript and TypeScript lets you easily connect to Surre
 - [Utilities](concepts/utilities.md) - compare, convert and escape values
 - [Error handling](concepts/error-handling.md) - what a failure looks like, and how to catch it
 - [Diagnostics](concepts/diagnostics.md) - inspect protocol-level traffic
-- [Embedded engines](concepts/embedded-engines.md) - run the database in the browser or on the server through WebAssembly
+- [Embedded engines](concepts/embedded-engines.md) - run the database in the browser through WebAssembly, or on the server through the Node.js engine
 
 ## Language and engines
 

@@ -1,5 +1,5 @@
 ---
-position: 2
+position: 1
 title: Calgary 1912-1913 explorer
 description: "A walkable Calgary built from two volumes of Henderson's Calgary Directory in SurrealDB Agent Memory, showing fidelity tiers, fine-grained scopes, the record view and a report that can be rewound."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/agent-memory/cookbooks/showcase/calgary/index.mdx"

@@ -559,6 +559,36 @@ SELECT * FROM { person: person:lrym5gur8hzws72ux5fa, embedded: true };
 SELECT * FROM (SELECT age >= 18 AS adult FROM user) WHERE adult = true;
 ```
 
+SurrealQL has no `UNION` or `UNION ALL` keyword. Listing several tables in `FROM` returns the records of all of them and keeps duplicates, which is the result of `UNION ALL`. The results of two separate queries can be joined with [`array::concat()`](../functions/database-functions/array.md#arrayconcat) or the `+` operator. To remove duplicates, as `UNION` does, use [`array::union()`](../functions/database-functions/array.md#arrayunion):
+
+```surql
+CREATE user:tobie SET name = 'Tobie';
+CREATE admin:jaime SET name = 'Jaime';
+CREATE admin:tobie SET name = 'Tobie';
+
+SELECT VALUE name FROM user, admin;
+//- ['Tobie', 'Jaime', 'Tobie']
+
+array::union((SELECT VALUE name FROM user), (SELECT VALUE name FROM admin));
+//- ['Tobie', 'Jaime']
+```
+
+Every record belongs to a table, so a `SELECT` always names the tables that it reads from. To read the records of every table in the current database, take the table names from [`INFO FOR DB`](info.md) and select from each one. This reads every record in the database, so the time it takes grows with the size of the database.
+
+```surql
+CREATE person:aisha SET name = 'Aisha';
+CREATE product:lamp SET price = 40;
+
+(INFO FOR DB).tables.keys().map(|$table| SELECT * FROM type::table($table)).flatten();
+```
+
+```surql title="Output"
+[
+	{ id: person:aisha, name: 'Aisha' },
+	{ id: product:lamp, price: 40 }
+]
+```
+
 ## Record ranges
 
 SurrealDB supports the ability to query a range of records, using the record ID. Record ID ranges retrieve records using the natural sorting order of the record IDs. These range queries can be used to query a range of records in a timeseries context. You can see more here about [array-based Record IDs](../language-primitives/data-types/record-ids.md#array-based-record-ids).

@@ -171,7 +171,7 @@ The above will create a new record with the ID `person:tobie` and the specified 
 
 ### Creating multiple records
 
-Multiple records or even multiple record types can be created by separating table names by commas.
+Multiple records or even multiple record types can be created by separating table names by commas. Every table gets the same field values. To give each record its own content in one statement, use [`INSERT` without `INTO`](insert.md#choosing-the-table-with-a-parameter) and give each object a full record ID.
 
 ```surql
 /**[test]

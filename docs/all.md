@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1108 pages_  
+_1109 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -41,7 +41,7 @@ _1108 pages_
   Per-user scopes and profile injection.
 - [Calgary 1912-1913 explorer](agent-memory/cookbooks/showcase/calgary/index.md)
   A walkable Calgary built from two volumes of Henderson's Calgary Directory in SurrealDB Agent Memory, showing fidelity tiers, fine-grained scopes, the record view and a report that can be rewound.
-- [Domesday: South Erpingham, 1086](agent-memory/cookbooks/showcase/domesday/index.md)
+- [The Domesday Book, 1086](agent-memory/cookbooks/showcase/domesday/index.md)
   52 Domesday Book entries for one Norfolk hundred ingested into SurrealDB Agent Memory as prose, with chat answers on lordship, wealth and mills, each citation linked to its entry and checked.
 - [Showcase](agent-memory/cookbooks/showcase/index.md)
   Finished demos built on SurrealDB Agent Memory, each with the pages it produced and how it was made.
@@ -53,6 +53,8 @@ _1108 pages_
   The pipeline behind the Robin Hood demo: chapter splitting, serial ingest with a narrative clock, harvesting facts by chapter, alias suggestions and the three pages.
 - [Robin Hood character graph](agent-memory/cookbooks/showcase/robin-hood/index.md)
   Pyle's Robin Hood ingested chapter by chapter into SurrealDB Agent Memory, drawn as the cast known at each reading position, with name variants linked.
+- [Vulcan, Alberta: an article's history](agent-memory/cookbooks/showcase/vulcan/index.md)
+  The 24-year edit history of the Wikipedia article on Vulcan, Alberta in SurrealDB Agent Memory, with agents answering questions about what the article used to say. With every model, Agent Memory scores 6 to 8 points out of 38 more than reading the history, and Claude Haiku 4.5 with Agent Memory scores at least as well as Claude Opus 5.5 reading the history, for less than half the cost.
 - [Coherence, retrieval, and cost tiers](agent-memory/index/architecture/coherence-retrieval-and-tiers.md)
   Five coherence dimensions and hybrid structural retrieval. Also covers the four-tier query ladder.
 - [Eight pillars and six categories](agent-memory/index/architecture/eight-pillars-and-categories.md)
@@ -434,7 +436,7 @@ _1108 pages_
 - [Demos](explore/tutorials/demos/overview.md)
   Sample applications and datasets you can clone, import, or run locally to explore SurrealDB without a long-form walkthrough.
 - [Surreal Deal Store](explore/tutorials/demos/surreal-deal-store.md)
-  To quickly test out SurrealDB and SurrealQL functionality, we've included demo data which you can download and import into SurrealDB.
+  Surreal Deal Store, a sample dataset of 12 tables with graph relations and record links, as .surql files to download and import into SurrealDB for trying SurrealQL queries on realistic data.
 - [Demos and tutorials](explore/tutorials/index.md)
   Hands-on demo applications and tutorials. Learn SurrealDB by building real projects.
 - [Integrate Auth0 with SurrealDB](explore/tutorials/tutorials/auth0-integration.md)

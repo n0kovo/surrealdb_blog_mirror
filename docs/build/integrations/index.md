@@ -11,6 +11,10 @@ This section collects guides for wiring SurrealDB into the rest of your stack: A
 
 This section assumes a certain level of familiarity with SurrealDB itself. If more general orientation and tutorials are needed first, be sure to start with [What is SurrealDB?](../../what-is-surrealdb.md) and the [Querying](../../learn/querying/index.md) section of the docs.
 
+## Backend platforms
+
+- [Encore](backend-platforms/encore.md) - build and verify a complete TypeScript backend for durable AI agent memory using type-safe API, Pub/Sub and cron primitives with SurrealDB vector search and graph relationships
+
 ## Agent rules
 
 - [Agent rules](agent-rules/index.md) - rule files that teach an assistant your project's conventions

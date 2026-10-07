@@ -11,7 +11,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 Read the release notes for breaking changes, new defaults, or removed flags before you cut over. Re-run integration tests against the new version before promoting the change across your organisation.
 
-Across **major versions**, on-disk formats may change. Follow [Migrating from older SurrealDB versions](../../build/migrating/from-old-surrealdb-versions/overview.md) and the guide for your pair of major versions. Moving from 2.x to 3.x uses a v3-compatible export from the 2.x data, imported into 3.x, as described in [Migrating from 2.x to 3.x](../../build/migrating/from-old-surrealdb-versions/2x-to-3x.md). [`surreal fix`](../../reference/cli/surrealdb-cli/commands/fix.md) converts 1.x data to the 2.x layout, and only 2.x binaries implement it.
+Across **major versions**, on-disk formats may change. Follow [Migrating from older SurrealDB versions](../../build/migrating/from-old-surrealdb-versions/overview.md) and the guide for your pair of major versions. Moving from 2.x to 3.x uses a v3-compatible export from the 2.x data, imported into 3.x, as described in [Migrating from 2.x to 3.x](../../build/migrating/from-old-surrealdb-versions/2x-to-3x.md). https://github.com/orgs/surrealdb/discussions/4809
+Moving from 1.x to 2.x is described in [Migrating from 1.x to 2.x](../../build/migrating/from-old-surrealdb-versions/1x-to-2x.md), which also lists the breaking changes in SurrealQL and the SDKs. [`surreal fix`](../../reference/cli/surrealdb-cli/commands/fix.md) converts 1.x data to the 2.x layout, and only 2.x binaries implement it.
+--END--
 
 **Rolling upgrades** in **clustered** setups usually upgrade one node at a time: verify cluster health, upgrade a member, wait for replication or quorum to stabilise, then continue.
 
@@ -35,4 +37,4 @@ Two consequences for planning an upgrade:
 - **Define new sequences once every node runs 3.3.0.** The migration copies each sequence definition to a new key layout and leaves the original in place, so existing sequences keep working on nodes of either version throughout the rollout. A sequence created on an upgraded node exists only in the new layout, so a node still on the previous release cannot see it.
 
 > [!NOTE]
-> The first migration fixes a key layout in which `DEFINE SEQUENCE` definitions overlapped tables whose names begin with `sq`. On 3.0 to 3.2, a database containing such a table fails `INFO FOR DB`, fails `REMOVE DATABASE` - leaving the database undroppable - and fails an export that includes sequences. No sequence needs to exist for this to happen. Upgrading to 3.3.0 repairs it.
+> The first migration fixes a key layout in which `DEFINE SEQUENCE` definitions overlapped tables whose names begin with `sq`. On 3.0 to 3.2.4, a database containing such a table fails `INFO FOR DB`, fails `REMOVE DATABASE` - leaving the database undroppable - and fails an export that includes sequences. No sequence needs to exist for this to happen. SurrealDB 3.2.5 skips such a table when it lists sequence definitions, so these operations work again. Upgrading to 3.3.0 repairs the key layout.

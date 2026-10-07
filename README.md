@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-10-06 12:41 UTC_
+_Last updated: 2026-10-07 12:34 UTC_
 
 ## Stats
 
-- **Total posts:** 268
+- **Total posts:** 269
 - **First post:** 2022-07-20
-- **Latest post:** 2026-09-30
+- **Latest post:** 2026-10-06
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-10-06 12:41 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 73 posts
+- [2026](posts/years/2026.md) — 74 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -33,11 +33,13 @@ _Last updated: 2026-10-06 12:41 UTC_
 - [engineering](posts/categories/engineering.md) — 47 posts
 - [events](posts/categories/events.md) — 7 posts
 - [featured](posts/categories/featured.md) — 113 posts
-- [releases](posts/categories/releases.md) — 58 posts
+- [releases](posts/categories/releases.md) — 59 posts
 - [tutorials](posts/categories/tutorials.md) — 102 posts
 
 ## Latest posts
 
+- **2026-10-06** · [Introducing Encore × SurrealDB](posts/2026/10/introducing-encore-surrealdb.md)  
+  `releases` — SurrealDB and Encore make it easier to build production-ready AI applications with durable memory. The integration combines SurrealDB’s vector search, graph relationships and structured data with Encore’s APIs and infrastructure, giving developers a simpler way to build, test and deploy context-aware agents.
 - **2026-09-30** · [Introducing our new University course: “SurrealDB for AI Engineers”](posts/2026/09/introducing-our-new-university-course-surrealdb-for-ai-engineers.md)  
   `releases` `engineering` — Learn AI engineering hands-on with SurrealDB, from vector search and RAG to hybrid retrieval, agent memory, Text-to-SurrealQL, and context-layer architecture.
 - **2026-09-10** · [SurrealDB Cloud is now available on Microsoft Azure](posts/2026/09/surrealdb-cloud-is-now-available-on-microsoft-azure.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-10-06 12:41 UTC_
   `tutorials` `ai` — Give an AI agent persistent memory as a filesystem in SurrealDB: computed file paths, fused full-text and vector search, and RBAC in a single PERMISSIONS clause
 - **2026-08-25** · [How Cobrainer built graph-based agent memory on one engine](posts/2026/08/how-cobrainer-built-graph-based-agent-memory-on-one-engine.md)  
   `company` — Cobrainer runs graph-based agent memory and a Rust-native agentic graph RAG on SurrealDB, replacing a separate vector store and search engine.
-- **2026-08-18** · [SurrealDB University's newest course on schemas](posts/2026/08/surrealdb-universitys-newest-course-schema-internals-and-migrations-2.md)  
-  `featured` — SurrealDB University's newest course teaches you about schema internals and migrations.

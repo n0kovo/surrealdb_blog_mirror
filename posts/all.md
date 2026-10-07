@@ -1,8 +1,10 @@
 # All Posts
 
-_268 posts_  
+_269 posts_  
 [← Index](../README.md)
 
+- **2026-10-06** · [Introducing Encore × SurrealDB](2026/10/introducing-encore-surrealdb.md)  
+  `releases` — SurrealDB and Encore make it easier to build production-ready AI applications with durable memory. The integration combines SurrealDB’s vector search, graph relationships and structured data with Encore’s APIs and infrastructure, giving developers a simpler way to build, test and deploy context-aware agents.
 - **2026-09-30** · [Introducing our new University course: “SurrealDB for AI Engineers”](2026/09/introducing-our-new-university-course-surrealdb-for-ai-engineers.md)  
   `releases` `engineering` — Learn AI engineering hands-on with SurrealDB, from vector search and RAG to hybrid retrieval, agent memory, Text-to-SurrealQL, and context-layer architecture.
 - **2026-09-10** · [SurrealDB Cloud is now available on Microsoft Azure](2026/09/surrealdb-cloud-is-now-available-on-microsoft-azure.md)  

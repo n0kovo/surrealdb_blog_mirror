@@ -9,6 +9,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 Bytes represent raw binary data. While most data in SurrealDB is stored as strings or structured values, bytes are useful when working with encoded data such as hashes, binary identifiers, or compact representations.
 
+A `bytes` value is stored inside its record, so it is read and written together with the rest of the record's fields. For whole files such as images or documents, the experimental [files feature](../../../../learn/schema-management/files/working-with-files.md) stores the content in a [bucket](../../../../learn/schema-management/files/buckets.md) held in memory, on disk or in cloud object storage. A record field then holds a file pointer such as `f"images:/cat.jpg"`, and calling `.get()` on the pointer returns the file's content as bytes.
+
 ## Casting from strings
 
 Bytes can be created by casting from a string, and are displayed using hexadecimal encoding.

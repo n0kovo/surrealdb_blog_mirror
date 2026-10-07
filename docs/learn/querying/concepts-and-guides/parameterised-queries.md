@@ -87,6 +87,14 @@ let people = await surreal.query("SELECT * FROM article WHERE status INSIDE $sta
 });
 ```
 
+The JavaScript SDK can also take a variable written directly into the query text. With the `surql` template tag, each `${...}` value is sent as a parameter, not joined into the string, so the query is safe from injection. [Bound queries](../../../reference/javascript/concepts/bound-queries.md) has more examples.
+
+```javascript
+
+const status = ["live", "draft"];
+let people = await surreal.query(surql`SELECT * FROM article WHERE status INSIDE ${status}`);
+```
+
 ## Reserved variable names
 
 SurrealDB automatically predefines certain variables depending on the type of operation being performed. For example, `$this` and `$parent` are automatically predefined for subqueries so that the fields of one can be compared to another if necessary. In addition, the predefined variables `$access`, `$auth`, `$token`, and `$session` are protected variables used to give access to parts of the current database configuration and can never be overwritten.

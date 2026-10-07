@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1109 pages_  
+_1113 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -53,8 +53,14 @@ _1109 pages_
   The pipeline behind the Robin Hood demo: chapter splitting, serial ingest with a narrative clock, harvesting facts by chapter, alias suggestions and the three pages.
 - [Robin Hood character graph](agent-memory/cookbooks/showcase/robin-hood/index.md)
   Pyle's Robin Hood ingested chapter by chapter into SurrealDB Agent Memory, drawn as the cast known at each reading position, with name variants linked.
+- [Vulcan, Alberta: the answers side by side](agent-memory/cookbooks/showcase/vulcan/answers.md)
+  Three questions about the Wikipedia article on Vulcan, Alberta, each answered by Claude Haiku 4.5 with SurrealDB Agent Memory and by Claude Sonnet 5 reading the page and its history, with the recall result that held the answer.
+- [Vulcan, Alberta: the article over time](agent-memory/cookbooks/showcase/vulcan/article-over-time.md)
+  The edit history of the Wikipedia article on Vulcan, Alberta as the Vulcan demo gives it to SurrealDB Agent Memory: claims added, questioned and removed over 24 years, edit activity and reverted vandalism, and how the history was prepared and ingested.
 - [Vulcan, Alberta: an article's history](agent-memory/cookbooks/showcase/vulcan/index.md)
-  The 24-year edit history of the Wikipedia article on Vulcan, Alberta in SurrealDB Agent Memory, with agents answering questions about what the article used to say. With every model, Agent Memory scores 6 to 8 points out of 38 more than reading the history, and Claude Haiku 4.5 with Agent Memory scores at least as well as Claude Opus 5.5 reading the history, for less than half the cost.
+  The 24-year edit history of the Wikipedia article on Vulcan, Alberta in SurrealDB Agent Memory, with agents answering questions about what the article used to say. Claude Haiku 4.5 with Agent Memory answers as accurately as Claude Opus 5.5 reading the history, for less than half the cost.
+- [Vulcan, Alberta: results](agent-memory/cookbooks/showcase/vulcan/results.md)
+  Scores and costs from the Vulcan, Alberta demo: Claude Haiku 4.5, Sonnet 5 and Opus 5.5 answering 19 questions about a Wikipedia article's history with today's page, the page and its history, or SurrealDB Agent Memory.
 - [Coherence, retrieval, and cost tiers](agent-memory/index/architecture/coherence-retrieval-and-tiers.md)
   Five coherence dimensions and hybrid structural retrieval. Also covers the four-tier query ladder.
 - [Eight pillars and six categories](agent-memory/index/architecture/eight-pillars-and-categories.md)
@@ -359,6 +365,8 @@ _1109 pages_
   Use any Better Auth plugin with the SurrealDB adapter and call the SurrealQL helper functions generated for the organisation plugin.
 - [Transactions & limitations](build/integrations/authentication/better-auth/transactions-and-limitations.md)
   How the @surrealdb/better-auth adapter handles transactions, and the current limitations to be aware of.
+- [Encore](build/integrations/backend-platforms/encore.md)
+  Build and verify an AI agent memory service with Encore APIs, Pub/Sub and scheduled jobs around SurrealDB vector and graph queries.
 - [Airbyte](build/integrations/data-management/airbyte.md)
   The Airbyte connector allows you to sync data to SurrealDB from hundreds of sources.
 - [Fivetran](build/integrations/data-management/fivetran.md)

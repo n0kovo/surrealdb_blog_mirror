@@ -140,6 +140,8 @@ surreal start --user root --pass secret --bind 0.0.0.0:8080 memory
 
 For details on the different commands available, visit the [CLI tool documentation](../reference/cli/surrealdb-cli/overview.md).
 
+The server has no graphical interface of its own. Opening the server's address, such as `http://localhost:8000`, in a browser redirects to [SurrealDB Studio](../explore/studio/index.md) on surrealdb.com. Studio is a separate application, in the browser or as a desktop app, and it connects to a running server. To check that the server is running, request `/health` instead, which returns `200`.
+
 ## Run your first query
 
 With the server running, open a second terminal and connect to it with the [`surreal sql`](../reference/cli/surrealdb-cli/commands/sql.md) command. This starts a SurrealQL REPL against the server, using the credentials from the step above.

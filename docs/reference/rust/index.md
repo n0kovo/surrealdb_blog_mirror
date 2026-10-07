@@ -25,6 +25,7 @@ The SurrealDB SDK for Rust enables you to interact with SurrealDB from client-si
 - **[Concepts](concepts/index.md)** — Guides for connecting, authenticating, querying, and working with data.
 - **[API Reference](methods/index.md)** — Complete reference for the SDK's methods, types, and errors.
 - **[Error handling](concepts/error-handling.md)** — Match on error kinds, inspect structured details, and follow the cause chain.
+- **[Schema migrations](../../manage/schema-migration/library/index.md)** — Keep the schema in .surql files and apply it from Rust code with SurrealKit.
 
 ## Frameworks
 

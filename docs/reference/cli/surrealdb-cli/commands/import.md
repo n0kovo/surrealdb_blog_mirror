@@ -115,6 +115,8 @@ An import against a remote endpoint goes through the [`/import`](../../../rest-a
 
 The import is applied as it is parsed, statement by statement, and each statement commits as it goes. An import that exceeds the limit or is interrupted therefore leaves everything applied up to that point in the database, with nothing rolled back.
 
+A statement that fails does not stop the import, and the statements after it are still applied. When the import finishes, the command logs the failure and exits with code `1`, so a script can tell a partial import from a complete one.
+
 Before importing a large file, decide how a failed run would be retried. Either write the file so that running it twice is safe, or import into a fresh namespace or database and switch over once the import has completed.
 
 See [request size limits](../../../rest-api/http-protocol.md#request-size-limits) for the caps on every endpoint, and [environment variables](../environment-variables.md#http-server-config) for changing them on a self-hosted server.

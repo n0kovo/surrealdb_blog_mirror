@@ -15,8 +15,9 @@ The JavaScript SDK provides custom classes for SurrealDB-specific data types, en
   - `new RecordId(table, id)` - Create record ID
   - Also includes `RecordIdRange` for querying ranges
 
-- [**Table**](table.md) - Type-safe table references
-  - `new Table<T>(name)` - Create typed table reference
+- [**Table**](table.md) - Table references, optionally typed with their record type
+  - `new Table<T>(name)` - Create a table reference with a record type
+  - `Table.of<T>()(name)` - Same, keeping the table name as a literal type
   - Used in SELECT, CREATE, UPDATE, DELETE operations
 
 - [**DateTime**](datetime.md) - Datetime values with nanosecond precision

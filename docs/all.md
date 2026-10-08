@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1113 pages_  
+_1114 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -1068,6 +1068,8 @@ _1113 pages_
   Every SURREAL_ variable, with its default and allowed values.
 - [SurrealDB CLI](reference/cli/surrealdb-cli/overview.md)
   The SurrealDB command-line tool can be used to export a dataset as SurrealQL from a local or remote SurrealDB database, import SurrealQL data into a local or remote database, and start a single SurrealDB instance or distributed cluster.
+- [Environment variables and flags by version](reference/cli/surrealdb-cli/version-history.md)
+  Which SURREAL_ environment variables and surreal command-line flags existed in each SurrealDB release from 1.0.0 to 3.3.0, when each was added or removed, and how defaults changed.
 - [Handle authentication](reference/dotnet/core/authentication.md)
   In this section, we will walk you through the process of authenticating users and securing your SurrealDB database.
 - [Connection strings](reference/dotnet/core/connection-strings.md)
@@ -1341,7 +1343,7 @@ _1113 pages_
 - [RecordId](reference/javascript/api/values/record-id.md)
   Type-safe record identifiers with table name and ID components.
 - [Table](reference/javascript/api/values/table.md)
-  Type-safe table references for query operations.
+  Table references, optionally typed with the records they contain.
 - [Uuid](reference/javascript/api/values/uuid.md)
   Universally unique identifiers for generating unique IDs.
 - [Authentication](reference/javascript/concepts/authentication.md)

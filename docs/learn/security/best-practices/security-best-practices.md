@@ -421,7 +421,7 @@ WebSocket connections offer an additional degree of isolation between users that
 A single query can ask for a lot of work, such as a graph path that fans out through every record several times. These settings limit what one query can cost the server:
 
 - **[`--query-timeout`](../../../reference/cli/surrealdb-cli/environment-variables.md#command-environment-variables)** (`SURREAL_QUERY_TIMEOUT`) stops any query that runs longer than the given duration. A query can also set its own limit with the [`TIMEOUT` clause](../../../reference/query-language/statements/select.md#the-timeout-clause).
-- **[`SURREAL_MEMORY_THRESHOLD`](../../../reference/cli/surrealdb-cli/environment-variables.md#limits-config)** refuses new queries while the server's tracked memory is above the given size.
+- **[`SURREAL_MEMORY_THRESHOLD`](../../../reference/cli/surrealdb-cli/environment-variables.md#limits-config)** refuses new queries while the server's tracked memory is above the given size. From 3.3.1 it also stops a running query that reads records once memory passes that size.
 - **`SURREAL_MAX_COMPUTATION_DEPTH`** limits how deeply nested computations can go, and a recursive path stops at a depth of 256.
 - **[`--deny-arbitrary-query`](../authorization/capabilities.md#arbitrary-queries)** with a value such as `--deny-arbitrary-query=record,guest` stops record users and guests from sending queries of their own, so they can only call the [`DEFINE API`](../../../reference/query-language/statements/define/api.md) endpoints and functions you define. This is the strongest protection for a database that is reachable from the public internet, because the shape of every query is then decided by you.
 

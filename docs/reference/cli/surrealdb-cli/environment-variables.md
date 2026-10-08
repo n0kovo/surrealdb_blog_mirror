@@ -547,6 +547,12 @@ Resource limits for [ISO GQL (Cypher Query Language)](../../../learn/querying/gq
       <td scope="row" data-label="Notes">Limits the maximum allowed size (in bytes) for regular expressions. This prevents excessive memory consumption when building complex or very large regex patterns.</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SCAN_BATCH_BYTES`*Since v3.3.1*</td>
+      <td scope="row" data-label="Default">2,097,152 (2 MiB)</td>
+      <td scope="row" data-label="Allowed values">A byte count, or a size such as `512KiB`</td>
+      <td scope="row" data-label="Notes">The approximate decoded size of each batch of records that a query fetches from an index result, such as the matches of a full-text search. A batch also holds at most 1,000 records. Every operator after the scan holds whole batches, so the memory a query uses grows with this value. Lower it to limit memory on a small node, or raise it for fewer, larger batches. `0` and values that cannot be parsed are ignored.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_TRANSACTION_MAX_WRITE_KEYS`*Since v3.2.4*</td>
       <td scope="row" data-label="Default">0 (disabled)</td>
       <td scope="row" data-label="Allowed values">A `u64`; `0` disables</td>
@@ -1027,7 +1033,7 @@ These settings are for operators, benchmarks, and advanced debugging - not typic
       <td scope="row" data-label="Env var">`SURREAL_MEMORY_THRESHOLD`</td>
       <td scope="row" data-label="Default">0 (disabled)</td>
       <td scope="row" data-label="Allowed values">A usize or suffixed integer</td>
-      <td scope="row" data-label="Notes">The tracked memory, in bytes, above which queries are refused with `The query was not executed due to the memory threshold being reached`. The value can be specified as bytes (b, or without any suffix), kibibytes (k, kb, or kib), mebibytes (m, mb, or mib), or gibibytes (g, gb, or gib); Kubernetes-style `Gi` and `Mi` are not accepted. Unset or `0` disables the guard, and any other value is raised to at least 1 MiB. Tracked memory is the size the allocator reserves for each live heap allocation plus the RocksDB block cache, which is less than the process's resident memory, so set the threshold below the container's memory limit and above `SURREAL_ROCKSDB_BLOCK_CACHE_SIZE`: at or below the cache size, a full cache refuses every query until the server restarts. From 3.3.0 the reserved size rather than the requested size is counted, so a threshold carried over from an earlier release refuses queries at a lighter workload and may need raising. *Since v3.3.0*</td>
+      <td scope="row" data-label="Notes">The tracked memory, in bytes, above which queries are refused with `The query was not executed due to the memory threshold being reached`. The value can be specified as bytes (b, or without any suffix), kibibytes (k, kb, or kib), mebibytes (m, mb, or mib), or gibibytes (g, gb, or gib); Kubernetes-style `Gi` and `Mi` are not accepted. Unset or `0` disables the guard, and any other value is raised to at least 1 MiB. Tracked memory is the size the allocator reserves for each live heap allocation plus the RocksDB block cache, which is less than the process's resident memory, so set the threshold below the container's memory limit and above `SURREAL_ROCKSDB_BLOCK_CACHE_SIZE`: at or below the cache size, a full cache refuses every query until the server restarts. From 3.3.0 the reserved size rather than the requested size is counted, so a threshold carried over from an earlier release refuses queries at a lighter workload and may need raising. *Since v3.3.0* From 3.3.1 the threshold also stops a query that is already running: a query that reads records checks it after each batch, and fails with the same error once tracked memory is above it, rather than growing until the operating system stops the server. *Since v3.3.1*</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_REGEX_CACHE_SIZE`</td>
@@ -2172,6 +2178,24 @@ The available environment variables for configuring a RocksDB instance are:
       <td scope="row" data-label="Default">10</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">The duration in seconds for requests before they time out.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_TLS_CA_PATH`*Since v3.3.0*</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">A file path</td>
+      <td scope="row" data-label="Notes">Path to the CA certificate used to verify the TiKV and PD servers. Setting all three `SURREAL_TIKV_TLS_*` variables switches the connection to mutual TLS (mTLS).</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_TLS_CERT_PATH`*Since v3.3.0*</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">A file path</td>
+      <td scope="row" data-label="Notes">Path to the client certificate that SurrealDB presents during mTLS. It must be set together with the CA and key paths.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_TLS_KEY_PATH`*Since v3.3.0*</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">A file path</td>
+      <td scope="row" data-label="Notes">Path to the private key that matches the client certificate. It must be set together with the CA and certificate paths. If only some of the three paths are set, SurrealDB refuses to connect and reports which are missing.</td>
     </tr>
   </tbody>
 </table>

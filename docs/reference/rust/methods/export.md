@@ -129,7 +129,7 @@ INSERT [ { id: person:bgq0b0rblnozrufizdjm } ];
 
 The [`Export`](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Export.html) struct has a method called `.with_config()` that gives access to the configuration parameters for the export. These can be chained one after another inside a single line of code. The majority of these functions take a single `bool`:
 
-* `.versions()`: whether to include [version information](../../query-language/statements/select.md#the-version-clause) for the SurrealKV storage backend
+* `.versions()`: refused from SurrealDB 3.3.1, because an export holds only the current state of each record. SurrealDB 3.0.0 to 3.3.0 accepted it and ignored it.
 * `.accesses()`: whether to include [`DEFINE ACCESS` statements](../../query-language/statements/define/access/record.md)
 * `.analyzers()`: whether to include [`DEFINE ANALYZER` statements](../../query-language/statements/define/analyzer.md)
 * `.functions()`: whether to include [`DEFINE FUNCTION` statements](../../query-language/statements/define/function.md)

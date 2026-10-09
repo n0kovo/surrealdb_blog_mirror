@@ -14,25 +14,61 @@ The `@surrealdb/wasm` package is a plugin for the [JavaScript SDK](../installati
 
 ## Installation
 
-First, [install the JavaScript SDK](../installation.md) if you haven't already. Then add the WASM engine:
+First, [install the JavaScript SDK](../installation.md) if you haven't already. Then add the WASM engine plugin and the SurrealDB engine it runs:
 
 **npm**
 
 ```bash
-npm install --save @surrealdb/wasm
+npm install --save @surrealdb/wasm @surrealdb/wasm-native
 ```
 
 **yarn**
 
 ```bash
-yarn add @surrealdb/wasm
+yarn add @surrealdb/wasm @surrealdb/wasm-native
 ```
 
 **pnpm**
 
 ```bash
-pnpm install @surrealdb/wasm
+pnpm install @surrealdb/wasm @surrealdb/wasm-native
 ```
+
+### Choosing the engine version
+
+From `@surrealdb/wasm` 3.0.4, the SurrealDB engine is a separate package, `@surrealdb/wasm-native`, which the plugin declares as a peer dependency. The engine version is independent of the plugin version, so you choose which SurrealDB release runs in your process.
+
+To run a specific release, install it by version:
+
+```bash
+npm install --save @surrealdb/wasm @surrealdb/wasm-native@3.3.2
+```
+
+The result in `package.json` looks like this:
+
+```json title="package.json"
+{
+    "dependencies": {
+        "surrealdb": "^2.0.1",
+        "@surrealdb/wasm": "^3.0.4",
+        "@surrealdb/wasm-native": "3.3.2"
+    }
+}
+```
+
+An exact version gives the same engine on every install. A range such as `^3.3.2` follows new engine releases when you update your dependencies.
+
+If you do not install the engine yourself, npm 7 or later, pnpm and Bun add the newest release that satisfies the peer range. Two installs of the same `@surrealdb/wasm` version can then run different engines. To make every install match, pin the engine version or commit your lockfile. Yarn does not install peer dependencies, so add `@surrealdb/wasm-native` explicitly.
+
+Only engine versions inside the peer range of `@surrealdb/wasm` are supported. A version outside the range causes a peer dependency conflict in your package manager.
+
+To confirm which engine is installed, for example when you report a bug, list the package:
+
+```bash
+npm ls @surrealdb/wasm-native
+```
+
+The WebAssembly plugin has no `engineVersion()` function, because the engine must be initialised before it can report its version.
 
 ## Quick start
 

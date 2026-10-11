@@ -236,6 +236,8 @@ const result = await db.run('fn::calculate_total', [100, 0.2]);
 const prediction = await db.run('ml::predict', '1.0.0', [inputData]);
 ```
 
+To check the arguments and the result against a schema, see [Validating calls](validating-calls.md).
+
 ## Setting session parameters
 
 You can define parameters on the current session using `.set()` and remove them with `.unset()`. Session parameters are available in all subsequent queries as `$name` variables and persist for the lifetime of the session.

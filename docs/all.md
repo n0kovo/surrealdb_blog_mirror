@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1114 pages_  
+_1115 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -1372,6 +1372,8 @@ _1114 pages_
   The JavaScript SDK supports atomic transactions for executing multiple queries that succeed or fail together.
 - [Utilities](reference/javascript/concepts/utilities.md)
   SQON provides value comparison, conversion, and escaping utilities. The SDK adds query-building helpers on top.
+- [Validating calls](reference/javascript/concepts/validating-calls.md)
+  Check the arguments, request bodies, results and responses of function and API calls against a Standard Schema in the JavaScript SDK.
 - [Value types](reference/javascript/concepts/value-types.md)
   The SQON library provides custom classes for SurrealDB-specific data types, re-exported by the JavaScript SDK for convenience.
 - [Node.js](reference/javascript/engines/node.md)

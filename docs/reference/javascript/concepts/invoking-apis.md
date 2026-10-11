@@ -139,6 +139,10 @@ try {
 }
 ```
 
+## Validating requests and responses
+
+To check a request body before it is sent, or a response body after it arrives, use `.request()` and `.response()` with any [Standard Schema](https://standardschema.dev). See [Validating calls](validating-calls.md).
+
 ## Learn more
 
 - [SurrealApi API reference](../api/core/surreal-api.md) for the complete list of methods and type parameters

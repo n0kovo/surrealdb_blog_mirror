@@ -536,17 +536,17 @@ string::repeat('test', 3);
 The `string::replace` function replaces an occurrence of a string with another string.
 
   
-**Before 2.3**
-
-```surql title="API DEFINITION"
-string::replace(string, $from: string, $to: string) -> string
-```
-
-  
 **After 2.3**
 
 ```surql title="API DEFINITION"
 string::replace(string, $from: string|regex, $to: string) -> string
+```
+
+  
+**Before 2.3**
+
+```surql title="API DEFINITION"
+string::replace(string, $from: string, $to: string) -> string
 ```
 
 The following example shows this function, and its output:

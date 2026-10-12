@@ -429,24 +429,6 @@ CREATE person:gladys SET age = 90;
 UPDATE person:gladys CONTENT { age: 70 };
 ```
 
-**Output before 2.1.0**
-
-```surql
--------- Query --------
-[
-	{
-		age: 90,
-		created: d'2024-01-01T00:00:00Z',
-		id: person:gladys
-	}
-]
-
--------- Query --------
-'Found changed value for field `created`,
-  with record `person:gladys`,
-  but field is readonly'
-```
-
 **Output after 2.1.0**
 
 ```surql
@@ -467,6 +449,24 @@ UPDATE person:gladys CONTENT { age: 70 };
 		id: person:gladys
 	}
 ]
+```
+
+**Output before 2.1.0**
+
+```surql
+-------- Query --------
+[
+	{
+		age: 90,
+		created: d'2024-01-01T00:00:00Z',
+		id: person:gladys
+	}
+]
+
+-------- Query --------
+'Found changed value for field `created`,
+  with record `person:gladys`,
+  but field is readonly'
 ```
 
 ## MERGE clause

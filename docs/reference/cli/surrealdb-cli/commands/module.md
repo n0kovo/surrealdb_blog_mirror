@@ -5,9 +5,9 @@ description: A command used to compile, manage and execute Surrealism plugin mod
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/module.mdx"
 ---
 
-Manage and execute WASM modules, including [Surrealism](../../../../learn/extensions/plugins/overview.md) plugin modules: scaffold a project, build it, inspect the result, and run its functions from the command line.
-
 *Since v3.0.0*
+
+Manage and execute WASM modules, including [Surrealism](../../../../learn/extensions/plugins/overview.md) plugin modules: scaffold a project, build it, inspect the result, and run its functions from the command line.
 
 > [!NOTE]
 > **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).

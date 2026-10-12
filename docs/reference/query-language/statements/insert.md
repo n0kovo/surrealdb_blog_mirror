@@ -253,6 +253,25 @@ INSERT IGNORE INTO person [
 ];
 ```
 
+A unique index violation is skipped in the same way. A record that would break a `UNIQUE` index is ignored and the rest of the statement still runs, which gives an insert-if-not-exists pattern without a separate check. Without `IGNORE`, the same statement fails with an error.
+
+```surql
+DEFINE INDEX unique_email ON user FIELDS email UNIQUE;
+INSERT INTO user { id: 'one', email: 'a@example.com' };
+
+-- The first record repeats an existing email and is skipped
+INSERT IGNORE INTO user [
+	{ id: 'two', email: 'a@example.com' },
+	{ id: 'three', email: 'b@example.com' }
+];
+```
+
+```surql title="Output"
+[{ email: 'b@example.com', id: user:three }]
+```
+
+Only the records that were inserted are returned, so an empty array means that every record was skipped.
+
 ### Return values
 
 By default, the `INSERT` statement returns the record once it has been inserted. To change what is returned, we can use the `RETURN` clause, specifying either `NONE`, `BEFORE`, `AFTER`, `DIFF`, or a comma-separated list of specific fields to return.
@@ -436,6 +455,23 @@ INSERT INTO person [
 ];
 ```
 
+A bulk insert can also take an `ON DUPLICATE KEY UPDATE` clause. Each object in the array is inserted in turn, so when the same record ID appears more than once, the first object creates the record and each later one runs the update against the record as it stands at that point. The statement returns the record after each attempt, which shows the update applying once per duplicate. Counting page visits from a batch of events works this way:
+
+```surql
+INSERT INTO page [
+	{ id: page:home, visits: 1 },
+	{ id: page:home, visits: 1 },
+	{ id: page:home, visits: 1 },
+	{ id: page:home, visits: 1 },
+	{ id: page:about, visits: 1 },
+	{ id: page:about, visits: 1 }
+] ON DUPLICATE KEY UPDATE visits += 1;
+//- [{ id: page:home, visits: 1 }, { id: page:home, visits: 2 }, { id: page:home, visits: 3 }, { id: page:home, visits: 4 }, { id: page:about, visits: 1 }, { id: page:about, visits: 2 }]
+
+SELECT * FROM page;
+//- [{ id: page:about, visits: 2 }, { id: page:home, visits: 4 }]
+```
+
 ## Choosing the table with a parameter
 
 The table after `INTO` can be a parameter, which holds either a table name as a string or a table value. A function call cannot go there directly, so `INSERT INTO type::table($name)` is a parse error. Assign the result to a parameter first:
@@ -519,9 +555,7 @@ SELECT VALUE ->likes FROM person;
 
 ```
 
-*Since v3.1.5*
-
-When `INSERT RELATION` specifies an explicit edge `id` that already exists, SurrealDB returns a record-exists error instead of updating the edge in place. You can use `ON DUPLICATE KEY UPDATE` to merge into the existing relation, in the same way as a normal [`INSERT`](insert.md#example-usage):
+From SurrealDB 3.1.5, when `INSERT RELATION` specifies an explicit edge `id` that already exists, SurrealDB returns a record-exists error instead of updating the edge in place. You can use `ON DUPLICATE KEY UPDATE` to merge into the existing relation, in the same way as a normal [`INSERT`](insert.md#example-usage):
 
 ```surql
 /**[test]

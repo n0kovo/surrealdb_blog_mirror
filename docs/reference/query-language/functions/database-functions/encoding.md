@@ -121,16 +121,16 @@ true
 
 The `encoding::base64::encode()` function encodes bytes to base64 with optionally padded output.
 
-**API DEFINITION (before 2.3.0)**
-
-```surql
-encoding::base64::encode(bytes) -> string
-```
-
 **API DEFINITION (after 2.3.0)**
 
 ```surql
 encoding::base64::encode(bytes, $pad_output: option<bool>) -> string
+```
+
+**API DEFINITION (before 2.3.0)**
+
+```surql
+encoding::base64::encode(bytes) -> string
 ```
 
 The following example shows this function, and its output:

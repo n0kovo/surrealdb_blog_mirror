@@ -317,9 +317,7 @@ INFO FOR INDEX unique_name ON user;
 
 Once the build has finished, the status is `ready`, as in the first example.
 
-*Since v3.3.0*
-
-The `compacting` field is `true` while an HNSW or DISKANN index holds record updates that have not yet been merged into its graph. A KNN search reads those updates alongside the graph and computes their distances one by one, so after a large write, such as a bulk import, searches are slower until background index compaction has merged them and the field returns to `false`. Compaction runs after writes, and at least once in every interval set by the `--index-compaction-interval` option of `surreal start`, which is 5 seconds by default. For every other kind of index the field is always `false`.
+From SurrealDB 3.3, the `compacting` field is `true` while an HNSW or DISKANN index holds record updates that have not yet been merged into its graph. A KNN search reads those updates alongside the graph and computes their distances one by one, so after a large write, such as a bulk import, searches are slower until background index compaction has merged them and the field returns to `false`. Compaction runs after writes, and at least once in every interval set by the `--index-compaction-interval` option of `surreal start`, which is 5 seconds by default. For every other kind of index the field is always `false`.
 
 ```surql
 DEFINE INDEX idx_embedding ON document FIELDS embedding HNSW DIMENSION 2;

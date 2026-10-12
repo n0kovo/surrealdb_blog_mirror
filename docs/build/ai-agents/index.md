@@ -11,7 +11,7 @@ SurrealDB connects to AI tooling in three places: the assistant you write code w
 
 ## Ways to integrate
 
-**[MCP](mcp/index.md)** - Give an AI tool a set of tools to call. The hosted [SurrealDB MCP Server](mcp/index.md) connects Claude, Cursor, and other clients to your SurrealDB Cloud account with one URL, so an assistant can deploy instances, query their data, and read logs while you work. A database you run yourself publishes the same data tools through [Embedded MCP](mcp/embedded.md). *Since v3.1.0*
+**[MCP](mcp/index.md)** - Give an AI tool a set of tools to call. The hosted [SurrealDB MCP Server](mcp/index.md) connects Claude, Cursor, and other clients to your SurrealDB Cloud account with one URL, so an assistant can deploy instances, query their data, and read logs while you work. A database you run yourself publishes the same data tools through [Embedded MCP](mcp/embedded.md), from SurrealDB 3.1.
 
 **[Agent Skills](agent-skills.md)** - Install packaged knowledge into a coding agent. The official skills cover SurrealQL, vector search, and the Python SDK, so generated queries match how SurrealDB actually behaves instead of guessing at an API.
 

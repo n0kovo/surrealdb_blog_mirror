@@ -9,8 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 This page is the canonical reference for every metric emitted by SurrealDB. It covers how operators access them, the labels and naming rules that govern the surface, the full catalogue grouped by signal family, the public allowlist for anonymous scrapers, and the migration table from 3.0 names.
 
-*Since v3.1.0*
-
 The instruments listed below were introduced as part of the 3.1 observability overhaul. The [Migration from 3.0](#migration-from-30) section at the bottom maps every legacy Prometheus name to its current replacement.
 
 ## Access paths

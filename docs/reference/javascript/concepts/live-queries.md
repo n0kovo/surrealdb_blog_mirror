@@ -113,6 +113,8 @@ Every live query message has an action that indicates what happened to the recor
 | `UPDATE` | An existing record within the subscription was modified |
 | `DELETE` | A record within the subscription was deleted |
 
+To receive only some actions, filter on the server rather than in the handler. A live query started from SurrealQL, as in [Creating an unmanaged live query](#creating-an-unmanaged-live-query), can filter on `$event`, so `LIVE SELECT * FROM users WHERE $event = 'CREATE'` sends create notifications only. [Filtering with WHERE](../../../learn/querying/real-time/live-queries.md#filtering-with-where) lists the other parameters a filter can use.
+
 ## Stopping a live query
 
 Call `.kill()` to stop a live query and unsubscribe all listeners. This releases resources on both the client and the server.

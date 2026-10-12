@@ -1635,9 +1635,9 @@ ORDER BY score DESC;
 ]
 ```
 
-*Since v3.0.0*
-
 ### `AND`, `OR`, and numeric operators inside `@@`
+
+*Since v3.0.0*
 
 In addition to the `AND` keyword, the `OR` matches operator can also be used. This allows a single string to be compared against instead of needing to specify individual parts of the string.
 

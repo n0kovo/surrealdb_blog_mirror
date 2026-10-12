@@ -244,6 +244,28 @@ DEFINE FIELD tag_key ON post VALUE <string> tags.sort();
 DEFINE INDEX unique_tags ON post FIELDS tag_key UNIQUE;
 ```
 
+A `UNIQUE` index compares values exactly, so `'Bob'` and `'bob'` count as different. For a case-insensitive unique value, end the indexed field with a method call that normalises it, and the index stores the result:
+
+```surql
+DEFINE INDEX unique_name ON user FIELDS name.lowercase() UNIQUE;
+
+CREATE user:1 SET name = 'Bob';
+CREATE user:2 SET name = 'bOB';
+```
+
+```text title="Error output"
+Database index `unique_name` already contains 'bob', with record `user:1`
+```
+
+A query uses this index when its condition repeats the same expression, such as `WHERE name.lowercase() = 'bob'`. A condition on `name` alone does not, and scans the table instead.
+
+The function-call form `string::lowercase(name)` is not accepted in `FIELDS`, and a record where `name` is `NONE` or not a string fails the write, because `lowercase()` cannot run on it. Alternatively, store the normalised value in a field of its own and index that field, which keeps the lowercase value visible in query results:
+
+```surql
+DEFINE FIELD name_key ON user VALUE name.lowercase();
+DEFINE INDEX unique_name ON user FIELDS name_key UNIQUE;
+```
+
 ### Composite index
 
 A composite index spans multiple fields of a table. Composite indexes are mainly used to create a unique index when the definition of what is unique pertains to more than one field.
@@ -541,9 +563,7 @@ When defining a vector index with [HNSW](#hnsw-hierarchical-navigable-small-worl
 > [!NOTE]
 > In SurrealDB the default type for vectors is `F32`.
 
-*Since v3.1.0*
-
-[DISKANN](#diskann-disk-based-approximate-nearest-neighbours) indexes accept a **narrower** set of element types: `F32`, `F16`, `I8`, and `U8` only, and only a subset of distance metrics - see the [DISKANN](#diskann-disk-based-approximate-nearest-neighbours) section below.
+[DISKANN](#diskann-disk-based-approximate-nearest-neighbours) indexes, available from SurrealDB 3.1, accept a **narrower** set of element types: `F32`, `F16`, `I8`, and `U8` only, and only a subset of distance metrics - see the [DISKANN](#diskann-disk-based-approximate-nearest-neighbours) section below.
 
 For example, to define a vector index with 64-bit signed integers, you can use the following query:
 

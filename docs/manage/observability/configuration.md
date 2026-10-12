@@ -9,8 +9,6 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 This page lists every environment variable that controls the observability surface. Variables marked <Edition value="enterprise" /> exist only when the Enterprise binary is running; everything else is available in all editions.
 
-*Since v3.1.0*
-
 The audit log, slow-query log and cluster configuration surfaces are new in SurrealDB 3.1.
 
 ## How to read this page

@@ -398,6 +398,8 @@ UPDATE cat SET nicknames += "Snuggles"
 ]
 ```
 
+`$before` and `$after` are also set in [`DEFINE EVENT`](../statements/define/event.md) clauses and in a [live query](../statements/live-select.md)'s `WHERE` clause and projection, where they hold the changed record before and after the write. `$before` is `NONE` for a created record, and `$after` is `NONE` for a deleted one.
+
 ### $event
 
 Represents the type of table event triggered on an event. This parameter will be one of either `"CREATE"`, `"UPDATE"`, or `"DELETE"`.
@@ -416,6 +418,14 @@ DEFINE EVENT user_created ON TABLE user WHEN $event = "CREATE" THEN (
       created_at = time::now()
 );
 ```
+
+`$event` is also set while a live query checks a changed record, so a live query can subscribe to some kinds of change only. The following live query sends a notification for each deleted record and none for creates or updates:
+
+```surql
+LIVE SELECT * FROM person WHERE $event = 'DELETE';
+```
+
+See [Filter by event](../statements/live-select.md#filter-by-event) for more examples.
 
 ### $input
 
@@ -654,6 +664,8 @@ DEFINE EVENT email
         action = 'email_changed'
 );
 ```
+
+In a live query, `$value` is the changed record after the write, the same as `$after`.
 
 ## Improvements to parameters and expressions in statements
 

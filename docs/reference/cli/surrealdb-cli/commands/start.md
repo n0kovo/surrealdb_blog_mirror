@@ -144,9 +144,9 @@ The root user from `--username` and `--password`, and the default namespace and 
 
 `surreal start` has more options than any other subcommand, and the table above covers the ones described on this page. The remaining groups - database tuning, datastore TLS, HTTP server, capabilities, and logging - are listed in full in the [command help](#command-help) below, and mapped to their variables on the [environment variables](../environment-variables.md) page.
 
-Two of the flags above are documented in more detail elsewhere: `--postgres-bind` exposes the [Postgres wire protocol](../../../rest-api/postgres-protocol.md), and the `--durable-*` flags are explained under [Durable HTTP RPC sessions](#durable-http-rpc-sessions). The `Forwarded` value for `--client-ip` reads the RFC 7239 `Forwarded` header. *Since v3.1.0*
+Two of the flags above are documented in more detail elsewhere: `--postgres-bind` exposes the [Postgres wire protocol](../../../rest-api/postgres-protocol.md), and the `--durable-*` flags are explained under [Durable HTTP RPC sessions](#durable-http-rpc-sessions). From SurrealDB 3.1, the `Forwarded` value for `--client-ip` reads the RFC 7239 `Forwarded` header.
 
-The `--query-timeout` flag in the [command help](#command-help) sets the maximum duration that a batch of statements can run for, and is off by default. From 3.3.0 the same value is also a hard wall-clock limit on each HTTP `/sql`, `/gql` and `/graphql` request and on each RPC method call. An HTTP `/sql` or `/gql` request that exceeds it is answered with `504 Gateway Timeout`, and a `/graphql` request with a GraphQL error. The `begin`, `commit` and `cancel` RPC methods are exempt, but the calls made inside the transaction they control are still limited individually. See [`SURREAL_QUERY_TIMEOUT`](../environment-variables.md#command-environment-variables). *Since v3.3.0*
+The `--query-timeout` flag in the [command help](#command-help) sets the maximum duration that a batch of statements can run for, and is off by default. From 3.3.0 the same value is also a hard wall-clock limit on each HTTP `/sql`, `/gql` and `/graphql` request and on each RPC method call. An HTTP `/sql` or `/gql` request that exceeds it is answered with `504 Gateway Timeout`, and a `/graphql` request with a GraphQL error. The `begin`, `commit` and `cancel` RPC methods are exempt, but the calls made inside the transaction they control are still limited individually. See [`SURREAL_QUERY_TIMEOUT`](../environment-variables.md#command-environment-variables).
 
 ## Getting started
 
@@ -219,7 +219,7 @@ Each database store supports different parameters.
 
 ### Supported parameters for Memory (SurrealMX)
 
-The memory backend does not support versioned queries. From 3.3.0 a server started on it with `versioned=true` or a non-zero `retention`, whether through the parameters or the matching `SURREAL_DATASTORE_VERSIONED` and `SURREAL_DATASTORE_RETENTION` environment variables, fails to start. `versioned=false` and a zero retention are accepted. To use the [`VERSION` clause](../../../query-language/statements/select.md#the-version-clause), start the server on SurrealKV or RocksDB instead. *Since v3.3.0*
+The memory backend does not support versioned queries. From 3.3.0 a server started on it with `versioned=true` or a non-zero `retention`, whether through the parameters or the matching `SURREAL_DATASTORE_VERSIONED` and `SURREAL_DATASTORE_RETENTION` environment variables, fails to start. `versioned=false` and a zero retention are accepted. To use the [`VERSION` clause](../../../query-language/statements/select.md#the-version-clause), start the server on SurrealKV or RocksDB instead.
 
 - `aol` (`never`, `sync`, or `async`), for writing changes to an append-only log file
 - `snapshot` (a duration string, e.g. `60s`), for periodically writing a snapshot of the database to the file system

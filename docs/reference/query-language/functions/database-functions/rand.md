@@ -381,9 +381,7 @@ rand::time(d'1970-01-01', d'2000-01-01');
 d'1999-05-29T17:02:16Z"
 ```
 
-*Since v2.3.0*
-
-Either of the arguments of this function can be either a number or a datetime.
+From SurrealDB 2.3, either of the arguments of this function can be either a number or a datetime.
 
 ```surql
 rand::time(0, d'1990-01-01');

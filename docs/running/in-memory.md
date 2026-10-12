@@ -64,7 +64,7 @@ For details on the different commands available, visit the [CLI tool documentati
 
 Since SurrealDB 3.0, in-memory storage runs on a backend called [SurrealMX](https://github.com/surrealdb/surrealmx) that also allows for [persistent storage](../reference/cli/surrealdb-cli/commands/start.md#supported-parameters-for-memory-surrealmx) as a snapshot or AOL (append-only log).
 
-SurrealMX does not support [versioned queries](../reference/query-language/statements/select.md#the-version-clause). From 3.3.0 a server started on it with `versioned=true` or a non-zero `retention` fails to start. Earlier 3.x releases supported versioned queries on SurrealMX. For versioned queries, use a [file-backed](file-backed.md) server on SurrealKV or RocksDB. *Since v3.3.0*
+SurrealMX does not support [versioned queries](../reference/query-language/statements/select.md#the-version-clause). From 3.3.0 a server started on it with `versioned=true` or a non-zero `retention` fails to start. Earlier 3.x releases supported versioned queries on SurrealMX. For versioned queries, use a [file-backed](file-backed.md) server on SurrealKV or RocksDB.
 
 SurrealMX uses a commit pipeline that splits the commit process into discrete, narrowly-scoped stages. Multiple transactions can then progress through different stages of the pipeline concurrently, much like instruction pipelining in a CPU.
 

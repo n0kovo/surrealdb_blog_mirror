@@ -5,6 +5,8 @@ description: These functions can be used to work with files.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/query-language/functions/database-functions/file.mdx"
 ---
 
+*Since v3.0.0*
+
 # File functions
 
 These functions can be used to work with files.
@@ -74,8 +76,6 @@ These functions can be used to work with files.
     </tr>
   </tbody>
 </table>
-
-*Since v3.0.0*
 
 ## `file::bucket`
 

@@ -424,9 +424,7 @@ SELECT VALUE [type::field($param),
 
   
 
-*Since v3.0.0*
-
-This function can be used after the `OMIT` clause of a `SELECT` statement.
+From SurrealDB 3.0, this function can be used after the `OMIT` clause of a `SELECT` statement.
 
 ```surql
 /**[test]
@@ -517,9 +515,7 @@ SELECT VALUE type::fields($param) FROM person;
 
   
 
-*Since v3.0.0*
-
-This function can be used after the `OMIT` clause of a `SELECT` statement.
+From SurrealDB 3.0, this function can be used after the `OMIT` clause of a `SELECT` statement.
 
 ```surql
 /**[test]

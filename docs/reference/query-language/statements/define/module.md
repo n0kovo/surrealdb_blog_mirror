@@ -17,26 +17,6 @@ A `DEFINE MODULE` statement is used to define a module via which [Surrealism](..
 ## Statement syntax
 
   
-**Before SurrealDB 3.3**
-
-```syntax title="SurrealQL Syntax"
-DEFINE MODULE [ OVERWRITE | IF NOT EXISTS ] @mod::@sub AS @file_name
-	[ COMMENT @string ]
-```
-
-```
-                                    ╭────────────────────────────────────────────╮                                                                                           
-                                    │                                            │                                                                                           
-                                    │               ╭───────────╮                │                                                                                           
-                                    │ ╭─────────────│ OVERWRITE │──────────────╮ │                                                                                           
-                                    │ │             ╰───────────╯              │ │                                                  ╭──────────────────────────────────╮     
-                                    │ │                                        │ │                                                  │                                  │     
-        ╭────────╮     ╭────────╮   │ │    ╭────╮     ╭─────╮     ╭────────╮   │ │   ┌────────────┐     ╭────╮     ┌────────────┐   │    ╭─────────╮     ┌─────────┐   │     
-├┼──────│ DEFINE │─────│ MODULE │───╯─╯────│ IF │─────│ NOT │─────│ EXISTS │───╰─╰───│ @mod::@sub │─────│ AS │─────│ @file_name │───╯────│ COMMENT │─────│ @string │───╰───┼┤
-        ╰────────╯     ╰────────╯          ╰────╯     ╰─────╯     ╰────────╯         └────────────┘     ╰────╯     └────────────┘        ╰─────────╯     └─────────┘
-```
-
-  
 **SurrealDB 3.3 and later**
 
 ```syntax title="SurrealQL Syntax"
@@ -59,19 +39,32 @@ DEFINE MODULE [ OVERWRITE | IF NOT EXISTS ] silo::@org::@package::<@version> UNS
         ╰────────╯     ╰────────╯          ╰────╯     ╰─────╯     ╰────────╯         └────────────┘     ╰──────╯     └────────────┘     ╰──────────╯        ╰─────────╯     └─────────┘
 ```
 
+  
+**Before SurrealDB 3.3**
+
+```syntax title="SurrealQL Syntax"
+DEFINE MODULE [ OVERWRITE | IF NOT EXISTS ] @mod::@sub AS @file_name
+	[ COMMENT @string ]
+```
+
+```
+                                    ╭────────────────────────────────────────────╮                                                                                           
+                                    │                                            │                                                                                           
+                                    │               ╭───────────╮                │                                                                                           
+                                    │ ╭─────────────│ OVERWRITE │──────────────╮ │                                                                                           
+                                    │ │             ╰───────────╯              │ │                                                  ╭──────────────────────────────────╮     
+                                    │ │                                        │ │                                                  │                                  │     
+        ╭────────╮     ╭────────╮   │ │    ╭────╮     ╭─────╮     ╭────────╮   │ │   ┌────────────┐     ╭────╮     ┌────────────┐   │    ╭─────────╮     ┌─────────┐   │     
+├┼──────│ DEFINE │─────│ MODULE │───╯─╯────│ IF │─────│ NOT │─────│ EXISTS │───╰─╰───│ @mod::@sub │─────│ AS │─────│ @file_name │───╯────│ COMMENT │─────│ @string │───╰───┼┤
+        ╰────────╯     ╰────────╯          ╰────╯     ╰─────╯     ╰────────╯         └────────────┘     ╰────╯     └────────────┘        ╰─────────╯     └─────────┘
+```
+
 > [!WARNING]
 > `DEFINE MODULE` changed in SurrealDB 3.3.0. `FROM` replaces `AS` before the module executable, and the new `UNSIGNED` keyword is required. `AS` is rejected rather than kept as an alternative spelling, so a statement written for an earlier version does not parse on 3.3. Nothing stored changes, so existing modules keep working and an export taken on an earlier version still restores.
 
 ## Example
 
 A module includes a module and a sub, followed by a pointer to the `.surli` file containing the Rust code compiled to WASM through the Surrealism CLI.
-
-  
-**Before SurrealDB 3.3**
-
-```surql
-DEFINE MODULE mod::test AS f"test:/demo.surli";
-```
 
   
 **SurrealDB 3.3 and later**
@@ -88,6 +81,13 @@ DEFINE MODULE mod::test AS f"test:/demo.surli" UNSIGNED;
 
 ```text
 Unexpected token `AS`, expected FROM
+```
+
+  
+**Before SurrealDB 3.3**
+
+```surql
+DEFINE MODULE mod::test AS f"test:/demo.surli";
 ```
 
 The keyword changed because everywhere else in SurrealQL `AS` introduces an alias, with the new name on the right. `DEFINE MODULE` read the other way round: the name on the left, the module's source on the right.

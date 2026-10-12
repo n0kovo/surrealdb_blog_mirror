@@ -282,6 +282,31 @@ value = "false"
 false
 ```
 
+Only a boolean, or the lowercase string `"true"` or `"false"`, converts. Any other value is an error, including the strings `"TRUE"`, `"yes"` and `"1"`, the numbers `1` and `0`, `NONE`, `NULL` and an empty array.
+
+```surql
+<bool>1;
+```
+
+```surql title="Error output"
+Could not cast into `bool` using input `1`
+```
+
+To convert a value by its [truthiness](data-types/values.md#values-and-truthiness) instead, use the `!!` operator. Note that `!!'false'` is `true`, because a non-empty string is truthy:
+
+```surql
+!!0;
+//- false
+
+!!1;
+//- true
+
+!!'false';
+//- true
+```
+
+To accept other spellings of a boolean, normalise the string before casting, for example with `<bool>string::lowercase('TRUE')`, which gives `true`.
+
 ## `<datetime>`
 
 The `<datetime>` casting function converts a value into a datetime.
@@ -397,6 +422,29 @@ value = "53"
 <int>53;
 -- Output:
 53
+```
+
+A float or decimal converts only when it has no fractional part, and a string converts only when it is written as an integer. Anything else is an error, including `<int> 12.34`, `<int> "4.0"`, a string with spaces around the number, and a boolean:
+
+```surql
+<int> 12.0;
+//- 12
+
+<int> "42";
+//- 42
+
+<int> 12.34;
+//- 'Could not cast into `int` using input `12.34f`'
+```
+
+To convert a number with a fractional part, round it first with [`math::round()`](../functions/database-functions/math.md#mathround), [`math::floor()`](../functions/database-functions/math.md#mathfloor) or [`math::ceil()`](../functions/database-functions/math.md#mathceil):
+
+```surql
+<int> math::round(12.34);
+```
+
+```surql title="Output"
+12
 ```
 
 ## `<number>`

@@ -12,7 +12,7 @@ _Auto-generated index — 10 pages._
 - [Antigravity](antigravity.md)
   Installing SurrealDB Agent Memory as an MCP server in Google Antigravity.
 - [Claude](claude-desktop-and-code.md)
-  Connecting SurrealDB Agent Memory to Claude Code, Cowork, and Claude Desktop.
+  Connecting SurrealDB Agent Memory to Claude Code, Cowork, and Claude Desktop with the agent-memory plugin, the managed MCP server and memory hooks.
 - [Codex](codex.md)
   Installing SurrealDB Agent Memory as an MCP server in the OpenAI Codex CLI.
 - [Cursor](cursor.md)

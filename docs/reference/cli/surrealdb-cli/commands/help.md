@@ -5,10 +5,7 @@ description: A command to display all possible top-level commands and arguments 
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/help.mdx"
 ---
 
-Print the help information for the `surreal` binary, or for one of its subcommands.
-
-> [!NOTE]
-> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+Print the help information for the [installed](../../../../running/installation/index.md) `surreal` binary, or for one of its subcommands.
 
 <Synopsis>
 surreal help

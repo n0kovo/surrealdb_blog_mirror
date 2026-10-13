@@ -1,8 +1,10 @@
 # Category: engineering
 
-_47 posts_  
+_48 posts_  
 [← Index](../../README.md)
 
+- **2026-10-12** · [Introducing SurrealMX: SurrealDB’s new in-memory storage engine](../2026/10/introducing-surrealmx-surrealdbs-new-in-memory-storage-engine.md)  
+  `releases` `engineering` `featured` — SurrealMX is SurrealDB’s high-performance in-memory storage engine, built for ultra-low latency, high concurrency, and millions of operations per second.
 - **2026-09-30** · [Introducing our new University course: “SurrealDB for AI Engineers”](../2026/09/introducing-our-new-university-course-surrealdb-for-ai-engineers.md)  
   `releases` `engineering` — Learn AI engineering hands-on with SurrealDB, from vector search and RAG to hybrid retrieval, agent memory, Text-to-SurrealQL, and context-layer architecture.
 - **2026-08-13** · [Graph engineering is missing a graph](../2026/08/graph-engineering-is-missing-a-graph.md)  

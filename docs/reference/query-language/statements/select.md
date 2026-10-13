@@ -423,9 +423,7 @@ SELECT * OMIT password, opts.{ security, enabled } FROM person;
 
 To sort records, SurrealDB allows ordering on multiple fields and nested fields. Use the `ORDER BY` clause to specify a comma-separated list of field names that should be used to order the resulting records. The `ASC` and `DESC` keywords can be used to specify whether results should be sorted in an ascending or descending manner. The `COLLATE` keyword can be used to use Unicode collation when ordering text in string values, ensuring that different cases, and different languages are sorted in a consistent manner. Finally, the `NUMERIC` can be used to correctly sort text which contains numeric values.
 
-*Since v3.3.0*
-
-Fields used only for sorting do not need to appear in the `SELECT` list. Sorting runs before projection, so the full record is available when the order keys are evaluated:
+From SurrealDB 3.3, fields used only for sorting do not need to appear in the `SELECT` list. Sorting runs before projection, so the full record is available when the order keys are evaluated:
 
 ```surql
 -- Return only event and subject, ordered by a field that is not selected
@@ -450,6 +448,49 @@ SELECT * FROM article ORDER BY title NUMERIC ASC;
 ```
 
 For more detail on collation, numeric ordering, and random order, see the [`ORDER` clause](../clauses/order.md).
+
+### Ranking records
+
+SurrealQL has no `RANK()` window function. To rank records, count the records that sort ahead of each one in a subquery, using `$parent` to refer to the outer record, and add one. Records with equal scores share a rank, and the rank after a tie is skipped, as in competition ranking (1, 1, 3, 4).
+
+This works because a record's rank is defined by how many records beat it, not by its position in the output. For each record of the outer query, the subquery reads the whole `player` table again and keeps only the records whose score is strictly greater than `$parent.score`, the score of the record being ranked. If two records score higher, the record is third, so the rank is that count plus one. In the example below, Cai's score of 70 is beaten by Ana and Ben, so the subquery returns two records and Cai's rank is 3. Ana and Ben each find no higher score, so both get rank 1, and because the comparison is `>` rather than `>=`, neither counts the other. The `ORDER BY` clause only sorts the final output, so the ranks come out the same in any order.
+
+```surql
+CREATE player:1 SET name = 'Ana', score = 90;
+CREATE player:2 SET name = 'Ben', score = 90;
+CREATE player:3 SET name = 'Cai', score = 70;
+CREATE player:4 SET name = 'Dee', score = 50;
+
+SELECT name, score, (SELECT id FROM player WHERE score > $parent.score).len() + 1 AS rank
+FROM player ORDER BY score DESC;
+```
+
+```surql title="Output"
+[
+	{ name: 'Ana', rank: 1, score: 90 },
+	{ name: 'Ben', rank: 1, score: 90 },
+	{ name: 'Cai', rank: 3, score: 70 },
+	{ name: 'Dee', rank: 4, score: 50 }
+]
+```
+
+For dense ranking, where the rank after a tie is the next number (1, 1, 2, 3), count the distinct higher scores instead:
+
+```surql
+SELECT name, score, (SELECT VALUE score FROM player WHERE score > $parent.score).distinct().len() + 1 AS rank
+FROM player ORDER BY score DESC;
+```
+
+```surql title="Output"
+[
+	{ name: 'Ana', rank: 1, score: 90 },
+	{ name: 'Ben', rank: 1, score: 90 },
+	{ name: 'Cai', rank: 2, score: 70 },
+	{ name: 'Dee', rank: 3, score: 50 }
+]
+```
+
+The subquery scans the table once for each record in the outer query, so this approach suits tables of modest size.
 
 ## The `LIMIT` clause
 
@@ -1160,7 +1201,7 @@ surreal start --unauthenticated "surrealkv://my_kv_db?versioned=true"
 surreal start --user root --pass secret "rocksdb://my_db?versioned=true"
 ```
 
-The in-memory SurrealMX backend does not support versioned queries. From 3.3.0 it refuses `versioned=true` and a non-zero `retention` at startup, and a `VERSION` clause sent to it returns an error saying that the underlying datastore does not support versioned queries. *Since v3.3.0*
+The in-memory SurrealMX backend does not support versioned queries. From 3.3.0 it refuses `versioned=true` and a non-zero `retention` at startup, and a `VERSION` clause sent to it returns an error saying that the underlying datastore does not support versioned queries.
 
 The `VERSION` clause is always followed by a [datetime](../language-primitives/data-types/datetimes.md). When the specified timestamp does not exist, an empty array is returned.
 

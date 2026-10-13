@@ -1,8 +1,10 @@
 # Category: company
 
-_45 posts_  
+_46 posts_  
 [← Index](../../README.md)
 
+- **2026-10-12** · [Our commitment to open source: show the code, run the numbers](../2026/10/our-commitment-to-open-source-show-the-code-run-the-numbers.md)  
+  `company` `community` — SurrealKV and SurrealMX are open source under Apache 2.0, and every benchmark we publish comes with the command to run it.
 - **2026-09-10** · [SurrealDB Cloud is now available on Microsoft Azure](../2026/09/surrealdb-cloud-is-now-available-on-microsoft-azure.md)  
   `releases` `company` — SurrealDB Cloud now runs on Microsoft Azure, so teams standardised on Azure can deploy inside the cloud they have already approved.
 - **2026-09-02** · [SurrealDB Cloud is now available in Frankfurt, Germany](../2026/09/surrealdb-cloud-is-now-available-in-frankfurt-germany.md)  

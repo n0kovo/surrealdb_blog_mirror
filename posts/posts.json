@@ -1,7 +1,36 @@
 {
-  "generated_at": "2026-10-12T14:19:01.908165+00:00",
-  "count": 269,
+  "generated_at": "2026-10-13T13:28:33.262170+00:00",
+  "count": 271,
   "posts": [
+    {
+      "slug": "our-commitment-to-open-source-show-the-code-run-the-numbers",
+      "title": "Our commitment to open source: show the code, run the numbers",
+      "summary": "SurrealKV and SurrealMX are open source under Apache 2.0, and every benchmark we publish comes with the command to run it.",
+      "publishDate": "2026-10-12T17:08:36.000Z",
+      "categories": [
+        "company",
+        "community"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/zhvysxgsp0ois0ckp0jxneau.auto",
+      "source": "https://surrealdb.com/blog/our-commitment-to-open-source-show-the-code-run-the-numbers",
+      "local_path": "2026/10/our-commitment-to-open-source-show-the-code-run-the-numbers.md"
+    },
+    {
+      "slug": "introducing-surrealmx-surrealdbs-new-in-memory-storage-engine",
+      "title": "Introducing SurrealMX: SurrealDB’s new in-memory storage engine",
+      "summary": "SurrealMX is SurrealDB’s high-performance in-memory storage engine, built for ultra-low latency, high concurrency, and millions of operations per second.",
+      "publishDate": "2026-10-12T16:18:17.000Z",
+      "categories": [
+        "releases",
+        "engineering",
+        "featured"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/eusdsicyd3u6ni7upby5i2eb.auto",
+      "source": "https://surrealdb.com/blog/introducing-surrealmx-surrealdbs-new-in-memory-storage-engine",
+      "local_path": "2026/10/introducing-surrealmx-surrealdbs-new-in-memory-storage-engine.md"
+    },
     {
       "slug": "introducing-encore-surrealdb",
       "title": "Introducing Encore × SurrealDB",

@@ -16,7 +16,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 ```bash
 pip install "livekit-agents[gradium,openai]"
-pip install --pre surrealdb
+pip install --pre "surrealdb[memory]"
 ```
 
 Set the connection details. Create the Gradium API key in the [Gradium Studio console](https://studio.gradium.ai/platform/api-keys):
@@ -27,7 +27,7 @@ Set the connection details. Create the Gradium API key in the [Gradium Studio co
 export GRADIUM_API_KEY="gd_..."
 export AGENT_MEMORY_ENDPOINT="https://memory.example.com"
 export AGENT_MEMORY_CONTEXT="acme-prod"
-export AGENT_MEMORY_API_KEY="sk-mem-..."
+export AGENT_MEMORY_API_KEY="sp-..."
 ```
 
 **PowerShell**
@@ -36,7 +36,7 @@ export AGENT_MEMORY_API_KEY="sk-mem-..."
 $env:GRADIUM_API_KEY = "gd_..."
 $env:AGENT_MEMORY_ENDPOINT = "https://memory.example.com"
 $env:AGENT_MEMORY_CONTEXT = "acme-prod"
-$env:AGENT_MEMORY_API_KEY = "sk-mem-..."
+$env:AGENT_MEMORY_API_KEY = "sp-..."
 ```
 
 ## Recall before the model, store after
@@ -47,10 +47,10 @@ LiveKit calls `on_user_turn_completed` once Gradium has transcribed the caller's
 from livekit import agents
 from livekit.agents import Agent, AgentServer, AgentSession, ChatContext, ChatMessage
 from livekit.plugins import gradium, openai
-from surrealdb import AsyncAgentMemory
+from surrealdb.memory import AsyncMemory
 
 class MemoryAgent(Agent):
-    def __init__(self, memory: AsyncAgentMemory, scope: list[str]):
+    def __init__(self, memory: AsyncMemory, scope: list[str]):
         super().__init__(instructions="You are a helpful voice assistant.")
         self._memory = memory
         self._scope = scope
@@ -59,7 +59,7 @@ class MemoryAgent(Agent):
         # Recall relevant memory and inject it as context for this turn.
         block = await self._memory.query_context(
             new_message.text_content, k=8, lens=self._scope,
-        )
+        ).context
         if block:
             turn_ctx.add_message(role="system", content=f"## Memory\n{block}")
 
@@ -70,7 +70,7 @@ server = AgentServer()
 
 @server.rtc_session()
 async def entrypoint(ctx: agents.JobContext):
-    memory = AsyncAgentMemory(
+    memory = AsyncMemory(
         endpoint=os.environ["AGENT_MEMORY_ENDPOINT"],
         context=os.environ["AGENT_MEMORY_CONTEXT"],
         api_key=os.environ["AGENT_MEMORY_API_KEY"],

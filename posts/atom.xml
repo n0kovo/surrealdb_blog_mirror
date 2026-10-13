@@ -4,10 +4,31 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-10-06T14:24:55Z</updated>
+  <updated>2026-10-12T17:08:36Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/our-commitment-to-open-source-show-the-code-run-the-numbers</id>
+    <title>Our commitment to open source: show the code, run the numbers</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/our-commitment-to-open-source-show-the-code-run-the-numbers" type="text/html" />
+    <published>2026-10-12T17:08:36Z</published>
+    <updated>2026-10-12T17:08:36Z</updated>
+    <summary type="text">SurrealKV and SurrealMX are open source under Apache 2.0, and every benchmark we publish comes with the command to run it.</summary>
+    <category term="company" />
+    <category term="community" />
+  </entry>
+  <entry>
+    <id>https://surrealdb.com/blog/introducing-surrealmx-surrealdbs-new-in-memory-storage-engine</id>
+    <title>Introducing SurrealMX: SurrealDB’s new in-memory storage engine</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/introducing-surrealmx-surrealdbs-new-in-memory-storage-engine" type="text/html" />
+    <published>2026-10-12T16:18:17Z</published>
+    <updated>2026-10-12T16:18:17Z</updated>
+    <summary type="text">SurrealMX is SurrealDB’s high-performance in-memory storage engine, built for ultra-low latency, high concurrency, and millions of operations per second.</summary>
+    <category term="releases" />
+    <category term="engineering" />
+    <category term="featured" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/introducing-encore-surrealdb</id>
     <title>Introducing Encore × SurrealDB</title>
@@ -472,23 +493,5 @@
     <category term="tutorials" />
     <category term="featured" />
     <category term="releases" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/kreuzberg-surrealdb-from-unstructured-documents-to-hybrid-retrieval</id>
-    <title>Kreuzberg &amp; SurrealDB: unstructured docs to hybrid search</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/kreuzberg-surrealdb-from-unstructured-documents-to-hybrid-retrieval" type="text/html" />
-    <published>2026-04-30T11:20:48Z</published>
-    <updated>2026-04-30T11:20:48Z</updated>
-    <summary type="text">SurrealDB integrates with Kreuzberg to ingest and chunk unstructured documents across 88+ formats, then run keyword, semantic, or hybrid search with reranking.</summary>
-    <category term="releases" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/hybrid-search-inside-surrealdb</id>
-    <title>Hybrid search inside SurrealDB</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/hybrid-search-inside-surrealdb" type="text/html" />
-    <published>2026-04-30T11:03:59Z</published>
-    <updated>2026-04-30T11:03:59Z</updated>
-    <summary type="text">How Júlia Sala-Bayo and Archie Marshall fused vector and keyword retrieval in a single query.</summary>
-    <category term="ai" />
   </entry>
 </feed>

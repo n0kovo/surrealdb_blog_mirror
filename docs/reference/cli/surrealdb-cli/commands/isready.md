@@ -5,10 +5,7 @@ description: A command that determines whether a SurrealDB server has started an
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/isready.mdx"
 ---
 
-Check whether a SurrealDB server has started and is able to accept connections. The command is named `is-ready` and also accepts the alias `isready`.
-
-> [!NOTE]
-> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+Check whether a SurrealDB server has started and is able to accept connections, using the [installed](../../../../running/installation/index.md) `surreal` binary. The command is named `is-ready` and also accepts the alias `isready`.
 
 <Synopsis>
 surreal is-ready [OPTIONS]

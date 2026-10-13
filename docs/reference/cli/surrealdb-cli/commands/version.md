@@ -5,10 +5,7 @@ description: A command to output the current version of the SurrealDB binary alo
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/version.mdx"
 ---
 
-Output the command-line tool version, or the version of a remote server.
-
-> [!NOTE]
-> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+Output the version of the [installed](../../../../running/installation/index.md) `surreal` binary, or the version of a remote server.
 
 <Synopsis>
 surreal version [OPTIONS]

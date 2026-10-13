@@ -10,7 +10,7 @@ _Auto-generated index — 6 pages._
 ## Pages
 
 - [Authority when pillars meet](authority-hierarchy.md)
-  How the Authoritative and Experiential pillars interact. Reconciliation, uncertainty, and resolves_to.
+  How the Authoritative and Experiential pillars interact. Reconciliation, uncertainty, and shared entities.
 - [Cross-layer linking](cross-layer-linking.md)
   How authoritative documents and experiential facts relate. Both live in the unified graph.
 - [Extraction pipeline](extraction-pipeline.md)

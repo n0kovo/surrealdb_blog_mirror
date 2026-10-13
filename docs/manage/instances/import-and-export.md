@@ -36,6 +36,8 @@ The file contains the SurrealQL statements needed to rebuild the schema and the 
 
 An export covers a single namespace and database. Export each one you need separately.
 
+By default an export contains everything in the database. To export only some tables or kinds of definition, such as the schema without its records, see [Choosing what to export](../../reference/cli/surrealdb-cli/commands/export.md#choosing-what-to-export). In SurrealDB Studio, the **Export database** dialog offers the same choices with checkboxes and shows the matching `surreal export` command.
+
 ## Importing
 
 [`surreal import`](../../reference/cli/surrealdb-cli/commands/import.md) replays that file into a target database:

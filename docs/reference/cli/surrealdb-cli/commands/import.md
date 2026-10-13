@@ -5,10 +5,7 @@ description: A command that imports a file in SurrealQL format into a local or r
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/import.mdx"
 ---
 
-Import a SurrealQL script into an existing database, on a local or remote server.
-
-> [!NOTE]
-> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+Import a SurrealQL script into an existing database, on a local or remote server, using the [installed](../../../../running/installation/index.md) `surreal` binary.
 
 <Synopsis>
 surreal import [OPTIONS] --namespace <NAMESPACE> --database <DATABASE> <FILE>

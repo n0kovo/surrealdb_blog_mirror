@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 SurrealDB Agent Memory builds a **structural graph** during document ingest and fact extraction: documents, chunks, keywords, and entities linked by typed edges. You do not need a separate graph database - these edges live in SurrealDB alongside vectors and text.
 
-Most retrieval uses this graph **implicitly** through **`hybrid_graph`** mode on **`POST /api/v1/{context_id}/documents/query`**, which reranks vector/BM25 hits using graph-density signals. You can also inspect or query edges directly with SurrealQL on self-hosted deployments.
+Most retrieval uses this graph **implicitly** through **`hybrid_graph`** mode on **`POST /api/v1/{context_id}/documents/query`**, which reranks vector/BM25 hits using graph-density signals.
 
 > Dedicated **`/knowledge/traverse`** REST endpoints are **not shipped yet**. This page documents the **edge types that exist today** and how retrieval consumes them.
 
@@ -22,13 +22,13 @@ These relations are created automatically when documents are processed:
 | `knowledge_has_keyword` | Document | Keyword | Links content to RAKE keyphrases |
 | `knowledge_links_to` | Document | Document | Outbound hyperlinks or citations between files |
 
-Optional **`graph_edges`** on **`/documents/query`** select which of these signals contribute during **`hybrid_graph`** reranking (`knowledge_has_keyword`, `section_match`, `document_link`, `document_summary`). See [Hybrid search](https://surrealdb.com/docs/agent-memory/retrieve/hybrid-search).
+Optional **`graphEdges`** on **`/documents/query`** select which of these signals contribute during **`hybrid_graph`** reranking (`knowledge_has_keyword`, `section_match`, `document_link`, `document_summary`). See [Hybrid search](https://surrealdb.com/docs/agent-memory/retrieve/hybrid-search).
 
 ## Entity graph (memory + extraction)
 
 Conversational and document extraction both write **`entity`**, **`attribute`**, and **`relates_to`** records in the unified graph. Add or update relations explicitly with **`POST /api/v1/{context_id}/facts`** and `infer: "triples"` when you already know the structure.
 
-Unified recall via **`POST /api/v1/{context_id}/query`** can traverse one- or two-hop entity relationships as part of tier-3 hybrid retrieval - you do not call a separate traverse API.
+Unified recall via **`POST /api/v1/{context_id}/query`** can traverse one- or two-hop entity relationships as part of tier-3 hybrid retrieval - you do not call a separate traverse API. Its `mode` is one of `hybrid`, `vector`, `bm25` or `graph`; `hybrid_graph` is a `/documents/query` mode only.
 
 ## Example: hybrid graph query
 
@@ -39,21 +39,9 @@ Content-Type: application/json
 {
   "query": "return policy restocking fee",
   "mode": "hybrid_graph",
-  "limit": 10,
-  "graph_edges": ["knowledge_has_keyword", "document_link"]
+  "k": 10,
+  "graphEdges": ["knowledge_has_keyword", "document_link"]
 }
-```
-
-## Example: SurrealQL inspection (self-hosted)
-
-```surql
--- Keywords attached to a document
-SELECT ->knowledge_has_keyword->keyword AS keywords
-FROM document:01hx9…;
-
--- Documents linked from a handbook
-SELECT ->knowledge_links_to->document AS related
-FROM document:01hx9…;
 ```
 
 ## Related reading
@@ -61,4 +49,3 @@ FROM document:01hx9…;
 - [Hybrid search](https://surrealdb.com/docs/agent-memory/retrieve/hybrid-search)
 - [Keywords and BM25](https://surrealdb.com/docs/agent-memory/retrieve/keywords-and-bm25)
 - [Cross-layer linking](https://surrealdb.com/docs/agent-memory/reasoning/cross-layer-linking)
-- [Data model and schema](../../reference/data-model-and-schema.md)

@@ -30,7 +30,7 @@ Construct an [`AgentMemory`](../../reference/sdk-kotlin.md) client with a contex
 
 val memory = AgentMemory(
     contextId = "acme-prod",
-    apiKey = "sk-spec-...",
+    apiKey = "sp-...",
     endpoint = "https://api.memory.example",
 )
 ```
@@ -77,7 +77,7 @@ memory.rememberMany(
         BatchMessage("I was promoted to CTO.", role = TurnRole.USER),
         BatchMessage("Congratulations!", role = TurnRole.ASSISTANT),
     ),
-    scope = listOf("org/acme/user/alice"),
+    scopes = listOf(listOf("org/acme/user/alice")),
 )
 ```
 
@@ -101,8 +101,7 @@ val doc = memory.documents.upload(
     filename = "returns.pdf",
     contentType = "application/pdf",
     title = "Returns Policy",
-    scope = listOf("org/acme/team/eng"),
-    labels = listOf("team=eng"),
+    scopes = listOf(listOf("org/acme/team/eng")),
 )
 
 memory.documents.get(doc.id)
@@ -133,7 +132,7 @@ Create a session handle and either let SurrealDB Agent Memory drive the turn or 
 
 ```kotlin
 
-val session = memory.sessions.create(scope = listOf("user/tobie"))
+val session = memory.sessions.create(scopes = listOf(listOf("user/tobie")))
 
 // Server-driven turn scoped to the session.
 val reply = session.chat("What do you know about me?")
@@ -161,7 +160,7 @@ memory.documents.list(status = "ready", onBehalfOf = "alpha-bot")
 
 ## Error handling
 
-All failures throw a subclass of `AgentMemoryException`. See the [Kotlin SDK reference](../../reference/sdk-kotlin.md#errors) for the full exception to status mapping, and [error responses](../../reference/errors.md) for the shared RFC 7807 format.
+All failures throw a subclass of `AgentMemoryException`. See the [Kotlin SDK reference](../../reference/sdk-kotlin.md#errors) for the full exception to status mapping, and [error responses](../../reference/errors.md) for the shared format, a JSON object with a `message` field.
 
 ```kotlin
 

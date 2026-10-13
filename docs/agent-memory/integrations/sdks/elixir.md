@@ -7,16 +7,19 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/a
 
 # Elixir SDK
 
-The SurrealDB Agent Memory client ships in the [`:surrealdb`](https://github.com/surrealdb/surrealdb.elixir) package on Hex as a typed REST client. It aims for feature parity with the JavaScript SDKs (`surrealdb` and `@surrealdb/memory`).
+The SurrealDB Agent Memory client ships in the [`:surrealdb`](https://github.com/surrealdb/surrealdb.elixir) package as a typed REST client. It aims for feature parity with the JavaScript SDKs (`surrealdb` and `@surrealdb/memory`).
+
+> [!WARNING]
+> The current version of the Elixir SDK sends its requests to routes that the SurrealDB Agent Memory server does not serve. It calls paths such as `/remember` and `/recall` under `/contexts/{context}/...`, while the server serves the end-user API at `/api/v1/{context}/...` (for example `/facts` and `/query`). Most calls therefore fail. Until the SDK is updated, call the [REST API](../surfaces/rest.md) directly.
 
 ## Installation
 
-Add `:surrealdb` to your `mix.exs`:
+The package is not published on Hex. Add it to your `mix.exs` as a git dependency:
 
 ```elixir
 def deps do
   [
-    {:surrealdb, "~> 0.1"}
+    {:surrealdb, git: "https://github.com/surrealdb/surrealdb.elixir.git"}
   ]
 end
 ```

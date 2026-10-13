@@ -22,7 +22,7 @@ The SurrealDB Agent Memory client ships inside the [SurrealDB Kotlin SDK](../../
 
 val memory = AgentMemory(
     contextId = "acme-prod",
-    apiKey = "sk-spec-...",
+    apiKey = "sp-...",
     endpoint = "https://api.memory.example",
     timeout = 30.seconds,
     maxRetries = 3,

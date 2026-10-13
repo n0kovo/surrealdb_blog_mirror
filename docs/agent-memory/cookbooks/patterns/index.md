@@ -16,7 +16,7 @@ _Auto-generated index — 8 pages._
 - [Historical and archaeological data](historical-and-archaeological-data.md)
   Ingest fragmentary primary sources, ask questions the corpus can answer, and prove the answers came from the corpus.
 - [Knowledge-grounded agents](knowledge-grounded-agents.md)
-  Combine authoritative knowledge retrieval with experiential memory.
+  Combine document retrieval with experiential memory, and handle contradictions between them.
 - [Reflection loops](reflection-loops.md)
   Scheduled or triggered reflect jobs.
 - [Spoiler-safe narrative memory](spoiler-safe-narrative-memory.md)

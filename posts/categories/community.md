@@ -1,8 +1,10 @@
 # Category: community
 
-_35 posts_  
+_36 posts_  
 [← Index](../../README.md)
 
+- **2026-10-12** · [Our commitment to open source: show the code, run the numbers](../2026/10/our-commitment-to-open-source-show-the-code-run-the-numbers.md)  
+  `company` `community` — SurrealKV and SurrealMX are open source under Apache 2.0, and every benchmark we publish comes with the command to run it.
 - **2026-07-08** · [Detecting connections as they form: streaming graph patterns](../2026/07/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2.md)  
   `community` — Guest author Cyril Scetbon on streaming graph pattern matching: detecting when a pattern is satisfied in real time, incrementally, as new edges are added.
 - **2026-04-27** · [Building compounding memory with knowledge graphs and agentic RAG](../2026/04/building-compounding-memory-with-knowledge-graphs-and-agentic-rag.md)  

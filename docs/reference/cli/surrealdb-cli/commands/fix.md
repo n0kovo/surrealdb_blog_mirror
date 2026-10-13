@@ -5,13 +5,10 @@ description: A command to convert SurrealDB version 1.x data into a usable forma
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/fix.mdx"
 ---
 
-Convert data written by SurrealDB 1.x into the storage format used by 2.0 and above.
+Convert data written by SurrealDB 1.x into the storage format used by 2.0 and above, using a `surreal` binary [installed](../../../../running/installation/index.md) at a 2.x version.
 
 > [!IMPORTANT]
 > The conversion is only implemented in 2.x binaries. From SurrealDB 3.0.0 the command is still listed, but it exits with `Fix is not implemented` and changes nothing. Run `surreal fix` with a 2.x binary to move 1.x data to 2.x, then follow [Migrating from 2.x to 3.x](../../../../build/migrating/from-old-surrealdb-versions/2x-to-3x.md) to reach 3.x.
-
-> [!NOTE]
-> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
 
 <Synopsis>
 surreal fix [OPTIONS] [PATH]

@@ -5,10 +5,7 @@ description: A command to confirm whether one or more SurrealQL files are valid 
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/validate.mdx"
 ---
 
-Validate SurrealQL query files, or a query read from standard input, without connecting to a server.
-
-> [!NOTE]
-> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+Validate SurrealQL query files, or a query read from standard input, with the [installed](../../../../running/installation/index.md) `surreal` binary and without connecting to a server.
 
 <Synopsis>
 surreal validate [OPTIONS] [PATTERNS]...

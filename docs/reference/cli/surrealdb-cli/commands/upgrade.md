@@ -5,10 +5,7 @@ description: A command to change the current version of SurrealDB to another one
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/upgrade.mdx"
 ---
 
-Replace the installed `surreal` executable with another version: the latest stable release, a specific version, or a pre-release build.
-
-> [!NOTE]
-> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+Replace the [installed](../../../../running/installation/index.md) `surreal` executable with another version: the latest stable release, a specific version, or a pre-release build.
 
 <Synopsis>
 surreal upgrade [OPTIONS]

@@ -6,10 +6,11 @@ priority: 1
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/start.mdx"
 ---
 
-The start command starts a SurrealDB server in memory, on disk, or in a distributed setup.
+The start command starts a SurrealDB server in memory, on disk, or in a distributed setup, using the [installed](../../../../running/installation/index.md) `surreal` binary.
 
-> [!NOTE]
-> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+This page is divided into two views: the details of the `surreal start` command itself, and a builder that creates a command based on the options you choose.
+
+**surreal start details**
 
 <Synopsis>
 surreal start [OPTIONS] [PATH]
@@ -859,3 +860,9 @@ Logging:
           [default: daily]
           [possible values: daily, hourly, never]
 ```
+
+**Build your own command**
+
+Select the storage, authentication, network and capability options you want, and the builder writes the matching `surreal start` command. Every other option is under **Advanced options**. Notes under the command describe what the chosen combination means, such as which data is lost when the server stops, or who can reach the server without signing in. The **surreal start details** tab describes each option in full.
+
+<DemoEmbed title="Start command builder" height={760} pages={[{ "label": "Start command builder", "src": "/docs/start-builder/builder.html" }]} />

@@ -29,13 +29,13 @@ Call SurrealDB Agent Memory directly from application code.
 
 | Language | Package |
 | --- | --- |
-| Dart | `surrealdb` (import `spectron.dart`) |
-| Elixir | `:surrealdb` (`SurrealDB.Memory`) |
-| Go | `spectron` package in `surrealdb.go` |
-| Haskell | `surrealdb-spectron` |
+| Dart | `surrealdb` from the `surrealdb.dart` git repository (import `memory.dart`) |
+| Elixir | `:surrealdb` from the `surrealdb.elixir` git repository (`SurrealDB.Memory`) |
+| Go | `memory` package in `surrealdb.go` |
+| Haskell | `surrealdb-memory` |
 | JavaScript / TypeScript | `@surrealdb/memory` |
 | Kotlin | bundled in `com.surrealdb:kotlin` |
-| Python | `surrealdb` (SurrealDB Agent Memory ships inside it) |
+| Python | `surrealdb-memory`, installed with the `surrealdb[memory]` extra |
 | Swift | `AgentMemory` product in `surrealdb.swift` |
 
 → [Dart](sdks/dart.md) · [Elixir](sdks/elixir.md) · [Go](sdks/go.md) · [Haskell](sdks/haskell.md) · [JavaScript & TypeScript](sdks/javascript-and-typescript.md) · [Kotlin](sdks/kotlin.md) · [Python](sdks/python.md) · [Swift](sdks/swift.md)
@@ -52,7 +52,7 @@ These integrations add memory to the popular TypeScript AI SDKs by wrapping reca
 
 ## Agent frameworks
 
-Harness adapters expose SurrealDB Agent Memory as agent tools and add automatic per-turn memory, without changing your prompts.
+Harness adapters expose SurrealDB Agent Memory as agent tools and add automatic per-turn memory, without changing your prompts. The Python adapters are not published on PyPI. Install each one from its GitHub repository, for example `pip install "git+https://github.com/surrealdb/agent-memory-crew-ai"`.
 
 | Framework | Package | Language |
 | --- | --- | --- |
@@ -94,17 +94,14 @@ Run SurrealDB Agent Memory for memory while an observability platform traces and
 
 ## REST API
 
-Call the API over HTTP from any language. End-user routes: `/api/v1/{context_id}/…`. Management: `/api/v1/contexts/…`.
+Call the API over HTTP from any language. Routes live under `/api/v1/{context_id}/…` on your context host.
 
 → [REST integration guide](surfaces/rest.md) · [Full reference](../reference/rest-api.md)
 
 ## Not shipped yet
 
 - **Embedded in-process library**: use REST or an SDK against a deployed instance ([Embedded quickstart](https://surrealdb.com/docs/agent-memory/quickstarts/embedded)).
-
-## Surfaces
-
-- [Filesystem view](surfaces/filesystem-view.md) - browse a context as though it were a filesystem
+- **Filesystem view**: browsing a context as though it were a filesystem through MCP resources is planned. The MCP server does not provide it yet.
 
 ## MCP tools
 

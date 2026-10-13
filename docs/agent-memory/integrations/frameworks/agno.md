@@ -22,17 +22,17 @@ pip install --pre 'surrealdb[memory]'
 **Bash**
 
 ```bash
-export AGENT_MEMORY_ENDPOINT="https://api.spectron.example"
+export AGENT_MEMORY_ENDPOINT="https://api.memory.example"
 export AGENT_MEMORY_CONTEXT="acme-prod"
-export AGENT_MEMORY_API_KEY="sk-spec-..."
+export AGENT_MEMORY_API_KEY="sp-..."
 ```
 
 **PowerShell**
 
 ```powershell
-$env:AGENT_MEMORY_ENDPOINT = "https://api.spectron.example"
+$env:AGENT_MEMORY_ENDPOINT = "https://api.memory.example"
 $env:AGENT_MEMORY_CONTEXT = "acme-prod"
-$env:AGENT_MEMORY_API_KEY = "sk-spec-..."
+$env:AGENT_MEMORY_API_KEY = "sp-..."
 ```
 
 ## Memory as tools
@@ -58,7 +58,7 @@ def remember(text: str) -> str:
 
 def recall(query: str) -> str:
     """Retrieve relevant memory for a query."""
-    return memory.query_context(query, k=8, lens=scope)
+    return memory.query_context(query, k=8, lens=scope).context
 
 agent = Agent(
     model=OpenAIChat(id="gpt-4o"),
@@ -75,7 +75,7 @@ agent.print_response("What do you know about Alice's role?")
 Recall first, add the context to the agent's instructions, then store the exchange after the response:
 
 ```python
-block = memory.query_context(user_message, k=8, lens=scope)
+block = memory.query_context(user_message, k=8, lens=scope).context
 
 agent = Agent(
     model=OpenAIChat(id="gpt-4o"),

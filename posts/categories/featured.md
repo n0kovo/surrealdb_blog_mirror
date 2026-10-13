@@ -1,8 +1,10 @@
 # Category: featured
 
-_113 posts_  
+_114 posts_  
 [← Index](../../README.md)
 
+- **2026-10-12** · [Introducing SurrealMX: SurrealDB’s new in-memory storage engine](../2026/10/introducing-surrealmx-surrealdbs-new-in-memory-storage-engine.md)  
+  `releases` `engineering` `featured` — SurrealMX is SurrealDB’s high-performance in-memory storage engine, built for ultra-low latency, high concurrency, and millions of operations per second.
 - **2026-08-18** · [SurrealDB University's newest course on schemas](../2026/08/surrealdb-universitys-newest-course-schema-internals-and-migrations-2.md)  
   `featured` — SurrealDB University's newest course teaches you about schema internals and migrations.
 - **2026-08-13** · [Graph engineering is missing a graph](../2026/08/graph-engineering-is-missing-a-graph.md)  

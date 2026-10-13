@@ -59,7 +59,7 @@ How isolation, sessions, categories, and provenance fit together:
 - **[Memory & knowledge](https://surrealdb.com/docs/agent-memory/memory-and-knowledge)** - authoritative and experiential ingest, unified retrieval, reasoning, operations, tuning.
 - **[Integrations](../integrations/index.md)** - SDKs, MCP, framework adapters.
 - **[Cookbooks](../cookbooks/index.md)** - end-to-end patterns.
-- **[Reference](../reference/index.md)** - REST, management API, CLI, configuration, errors.
+- **[Reference](../reference/index.md)** - REST, CLI, configuration, errors.
 
 ## Sessions
 

@@ -6,10 +6,7 @@ priority: 1
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/surrealdb-cli/commands/sql.mdx"
 ---
 
-Start a SurrealQL REPL in your terminal, with pipe support for one-shot queries.
-
-> [!NOTE]
-> **Before you start** - make sure you’ve [installed SurrealDB](../../../../running/installation/index.md).
+Start a SurrealQL REPL in your terminal with the [installed](../../../../running/installation/index.md) `surreal` binary, with pipe support for one-shot queries.
 
 <Synopsis>
 surreal sql [OPTIONS]

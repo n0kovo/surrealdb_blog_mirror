@@ -12,7 +12,7 @@ _Auto-generated index — 5 pages._
 - [Coding agent with project memory](coding-agent-with-project-memory.md)
   Repository scoped sessions and MCP.
 - [Customer support agent](customer-support-agent.md)
-  Ticket-linked memory with authoritative knowledge policies.
+  Ticket-linked memory with policy and catalogue documents, and flagged contradictions.
 - [Long-running research agent](long-running-research-agent.md)
   Sessions across days with reflection.
 - [Multi-agent shared memory](multi-agent-shared-memory.md)

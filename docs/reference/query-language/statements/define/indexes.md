@@ -686,36 +686,52 @@ In the example below, the query searches for points closest to the vector `[2,3,
 
 [▶ Open in Surrealist](https://app.surrealdb.com/mini?query=CREATE%20pts%3A1%20SET%20point%20%3D%20%5B1%2C2%2C3%2C4%5D%3B%0ACREATE%20pts%3A2%20SET%20point%20%3D%20%5B4%2C5%2C6%2C7%5D%3B%0ACREATE%20pts%3A3%20SET%20point%20%3D%20%5B8%2C9%2C10%2C11%5D%3B%0ALET%20%24pt%20%3D%20%5B2%2C3%2C4%2C5%5D%3B%0ASELECT%20id%2C%20vector%3A%3Adistance%3A%3Aeuclidean%28point%2C%20%24pt%29%20AS%20dist%20FROM%20pts%20WHERE%20point%20%3C%7C2%2CEUCLIDEAN%7C%3E%20%24pt%3B%0ASELECT%20id%20FROM%20pts%20WHERE%20point%20%3C%7C2%7C%3E%20%24pt%20EXPLAIN%3B)
 
-## Verifying Index Utilization in Queries
+## Verifying index use in queries
 
-The [`EXPLAIN` clause](../select.md#the-explain-clause) from SurrealQL shows the execution plan of the query, including whether it uses an index.
+The [`EXPLAIN` clause](../../clauses/explain.md) shows the execution plan of a query, including whether it uses an index.
 
 ```surql
-SELECT * FROM user WHERE email='test@surrealdb.com' EXPLAIN FULL;
+DEFINE INDEX userEmailIndex ON user FIELDS email UNIQUE;
+CREATE user:test SET email = 'test@surrealdb.com';
+
+SELECT * FROM user WHERE email = 'test@surrealdb.com' EXPLAIN FULL;
 ```
 
-It also reveals details about which `operation` was used by the query planner and how many records matched the search criteria.
+An `IndexScan` operator names the index the query planner used. With `FULL`, each operator also reports `metrics`, including how many rows it produced (`output_rows`).
 
-```surql
-[
-    {
-        "detail": {
-            "plan": {
-                "index": "userEmailIndex",
-                "operator": "=",
-                "value": "test@surrealdb.com"
-            },
-            "table": "user"
-        },
-        "operation": "Iterate Index"
-    },
-    {
-        "detail": {
-            "count": 1
-        },
-        "operation": "Fetch"
-    }
-]
+```surql title="Sample output"
+{
+	attributes: {
+		projections: '*'
+	},
+	children: [
+		{
+			attributes: {
+				access: "= 'test@surrealdb.com'",
+				direction: 'Forward',
+				index: 'userEmailIndex',
+				predicate: "email = 'test@surrealdb.com'"
+			},
+			context: 'Db',
+			metrics: {
+				elapsed_ns: 2380999,
+				output_batches: 1,
+				output_rows: 1,
+				records_fetched: 0
+			},
+			operator: 'IndexScan'
+		}
+	],
+	context: 'Db',
+	metrics: {
+		elapsed_ns: 47083,
+		output_batches: 1,
+		output_rows: 1,
+		records_fetched: 0
+	},
+	operator: 'SelectProject',
+	total_rows: 1
+}
 ```
 
 ## Using the `ANY`/`ALL` operators for string indexes
@@ -737,16 +753,10 @@ value = "NONE"
 value = "[{ id: account:billy, name: 'Billy McConnell' }]"
 
 [[test.results]]
-value = "[{ id: account:billy, name: 'Billy McConnell' }]"
+value = '''"SelectProject [ctx: Db] [projections: *]\n    IndexScan [ctx: Db] [index: name_index, access: = 'Billy McConnell', direction: Forward, predicate: name INSIDE ['Billy McConnell']]\n"'''
 
 [[test.results]]
-value = "[{ id: account:billy, name: 'Billy McConnell' }]"
-
-[[test.results]]
-value = "[{ id: account:billy, name: 'Billy McConnell' }], [{ detail: { direction: 'forward', table: 'account' }, operation: 'Iterate Table' }, { detail: { type: 'Memory' }, operation: 'Collector' }, { detail: { type: 'KeysAndValues' }, operation: 'RecordStrategy' }, { detail: { count: 1 }, operation: 'Fetch' }]"
-
-[[test.results]]
-value = "[{ detail: { plan: { index: 'name_index', operator: 'union', value: ['Billy McConnell'] }, table: 'account' }, operation: 'Iterate Index' }, { detail: { type: 'Memory' }, operation: 'Collector' }, { detail: { type: 'KeysAndValues' }, operation: 'RecordStrategy' }, { detail: { count: 1 }, operation: 'Fetch' }]"
+value = '''"SelectProject [ctx: Db] [projections: *]\n    TableScan [ctx: Db] [table: account, direction: Forward, predicate: name CONTAINSANY ['Billy McConnell'], pre_decode_filter: yes]\n"'''
 
 */
 
@@ -757,7 +767,7 @@ CREATE account:billy SET name = "Billy McConnell";
 
 -- IN uses the index
 EXPLAIN SELECT * FROM account WHERE name IN ["Billy McConnell"];
-//- "SelectProject [ctx: Db] [projections: *]\n    IndexScan [ctx: Db] [index: name_index, access: = 'Billy McConnell', direction: Forward]\n"
+//- "SelectProject [ctx: Db] [projections: *]\n    IndexScan [ctx: Db] [index: name_index, access: = 'Billy McConnell', direction: Forward, predicate: name INSIDE ['Billy McConnell']]\n"
 
 -- CONTAINSANY scans the table
 EXPLAIN SELECT * FROM account WHERE name CONTAINSANY ["Billy McConnell"];
@@ -777,7 +787,7 @@ You may want to rebuild an index over time to ensure that the index is up-to-dat
 /**[test]
 
 [[test.results]]
-error = ""The index 'userEmailIndex' does not exist""
+error = "The index 'userEmailIndex' does not exist"
 
 */
 

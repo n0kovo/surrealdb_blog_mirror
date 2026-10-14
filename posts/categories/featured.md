@@ -1,8 +1,10 @@
 # Category: featured
 
-_114 posts_  
+_115 posts_  
 [← Index](../../README.md)
 
+- **2026-10-13** · [We are replacing RocksDB with SurrealKV 1.0](../2026/10/we-are-replacing-rocksdb-with-surrealkv-1-0.md)  
+  `releases` `engineering` `featured` — SurrealKV 1.0 is open source today: 7.95× faster point reads than RocksDB with synchronous durability, and the command to run the benchmark yourself.
 - **2026-10-12** · [Introducing SurrealMX: SurrealDB’s new in-memory storage engine](../2026/10/introducing-surrealmx-surrealdbs-new-in-memory-storage-engine.md)  
   `releases` `engineering` `featured` — SurrealMX is SurrealDB’s high-performance in-memory storage engine, built for ultra-low latency, high concurrency, and millions of operations per second.
 - **2026-08-18** · [SurrealDB University's newest course on schemas](../2026/08/surrealdb-universitys-newest-course-schema-internals-and-migrations-2.md)  

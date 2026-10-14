@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-10-13 13:28 UTC_
+_Last updated: 2026-10-14 11:05 UTC_
 
 ## Stats
 
-- **Total posts:** 271
+- **Total posts:** 272
 - **First post:** 2022-07-20
-- **Latest post:** 2026-10-12
+- **Latest post:** 2026-10-13
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-10-13 13:28 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 76 posts
+- [2026](posts/years/2026.md) — 77 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -30,14 +30,16 @@ _Last updated: 2026-10-13 13:28 UTC_
 - [ai](posts/categories/ai.md) — 53 posts
 - [community](posts/categories/community.md) — 36 posts
 - [company](posts/categories/company.md) — 46 posts
-- [engineering](posts/categories/engineering.md) — 48 posts
+- [engineering](posts/categories/engineering.md) — 49 posts
 - [events](posts/categories/events.md) — 7 posts
-- [featured](posts/categories/featured.md) — 114 posts
-- [releases](posts/categories/releases.md) — 60 posts
+- [featured](posts/categories/featured.md) — 115 posts
+- [releases](posts/categories/releases.md) — 61 posts
 - [tutorials](posts/categories/tutorials.md) — 102 posts
 
 ## Latest posts
 
+- **2026-10-13** · [We are replacing RocksDB with SurrealKV 1.0](posts/2026/10/we-are-replacing-rocksdb-with-surrealkv-1-0.md)  
+  `releases` `engineering` `featured` — SurrealKV 1.0 is open source today: 7.95× faster point reads than RocksDB with synchronous durability, and the command to run the benchmark yourself.
 - **2026-10-12** · [Our commitment to open source: show the code, run the numbers](posts/2026/10/our-commitment-to-open-source-show-the-code-run-the-numbers.md)  
   `company` `community` — SurrealKV and SurrealMX are open source under Apache 2.0, and every benchmark we publish comes with the command to run it.
 - **2026-10-12** · [Introducing SurrealMX: SurrealDB’s new in-memory storage engine](posts/2026/10/introducing-surrealmx-surrealdbs-new-in-memory-storage-engine.md)  
@@ -56,5 +58,3 @@ _Last updated: 2026-10-13 13:28 UTC_
   `releases` `ai` — One package gives Mastra agents a single database for conversations, workflow state, observability and vectors, plus managed memory that extracts and semantically recalls facts.
 - **2026-09-02** · [SurrealDB Cloud is now available in Frankfurt, Germany](posts/2026/09/surrealdb-cloud-is-now-available-in-frankfurt-germany.md)  
   `releases` `company` — SurrealDB Cloud now runs in Frankfurt, Germany: lower latency across continental Europe, German and EU data residency, and a shorter round trip for agents.
-- **2026-09-01** · [SurrealDB Cloud is now available in São Paulo, Brazil](posts/2026/09/surrealdb-cloud-is-now-available-in-so-paulo.md)  
-  `releases` `company` — SurrealDB Cloud now runs in São Paulo: in-region latency for Latin America, Brazilian data residency, and faster agent workloads.

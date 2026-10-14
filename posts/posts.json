@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-10-13T13:28:33.262170+00:00",
-  "count": 271,
+  "generated_at": "2026-10-14T11:05:57.748659+00:00",
+  "count": 272,
   "posts": [
+    {
+      "slug": "we-are-replacing-rocksdb-with-surrealkv-1-0",
+      "title": "We are replacing RocksDB with SurrealKV 1.0",
+      "summary": "SurrealKV 1.0 is open source today: 7.95× faster point reads than RocksDB with synchronous durability, and the command to run the benchmark yourself.",
+      "publishDate": "2026-10-13T14:17:44.000Z",
+      "categories": [
+        "releases",
+        "engineering",
+        "featured"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/0ytqbh70mi5w5xl6lh1nban7.auto",
+      "source": "https://surrealdb.com/blog/we-are-replacing-rocksdb-with-surrealkv-1-0",
+      "local_path": "2026/10/we-are-replacing-rocksdb-with-surrealkv-1-0.md"
+    },
     {
       "slug": "our-commitment-to-open-source-show-the-code-run-the-numbers",
       "title": "Our commitment to open source: show the code, run the numbers",

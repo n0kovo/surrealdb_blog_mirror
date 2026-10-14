@@ -64,9 +64,14 @@ Specifying only the table name will delete all the records from a table. Note th
 /**[test]
 
 [[test.results]]
+value = "[{ id: person:one }, { id: person:two }]"
+
+[[test.results]]
 value = "[]"
 
 */
+
+CREATE person:one, person:two;
 
 -- Delete all records from a table
 DELETE person;
@@ -82,12 +87,14 @@ A `DELETE` statement on a specific ID will delete a single record.
 /**[test]
 
 [[test.results]]
-value = "[]"
-
+value = "[{ id: person:100 }, { id: person:tobie }]"
 [[test.results]]
 value = "[]"
-
+[[test.results]]
+value = "[]"
 */
+
+CREATE person:100, person:tobie;
 
 -- Delete a record with a specific numeric id
 DELETE person:100;
@@ -108,10 +115,8 @@ A `DELETE` statement returns nothing by default, so `DELETE ONLY` returns `NONE`
 
 [[test.results]]
 value = "{ id: person:tobie }"
-
 [[test.results]]
 value = "NONE"
-
 */
 
 CREATE ONLY person:tobie;
@@ -129,13 +134,10 @@ A record that is already gone also returns `NONE`, so the statement is safe to r
 
 [[test.results]]
 value = "{ id: person:tobie }"
-
 [[test.results]]
 value = "NONE"
-
 [[test.results]]
 value = "NONE"
-
 */
 
 CREATE ONLY person:tobie;
@@ -167,10 +169,8 @@ Add a `RETURN BEFORE` clause to return the deleted record as a single object.
 
 [[test.results]]
 value = "{ id: person:tobie }"
-
 [[test.results]]
 value = "{ id: person:tobie }"
-
 */
 
 CREATE ONLY person:tobie;
@@ -188,10 +188,8 @@ As `ONLY` checks the output and not the target, it raises an error when a `RETUR
 
 [[test.results]]
 value = "[{ id: person:one }, { id: person:two }, { id: person:three }]"
-
 [[test.results]]
-error = "'Expected a single result output when using the ONLY keyword'"
-
+error = "Expected a single result output when using the ONLY keyword"
 */
 
 CREATE person:one, person:two, person:three;
@@ -208,13 +206,10 @@ A `DELETE` statement has no `LIMIT` clause, so pass a `SELECT` subquery with `LI
 
 [[test.results]]
 value = "[{ id: person:one }, { id: person:two }, { id: person:three }]"
-
 [[test.results]]
 value = "{ id: person:one }"
-
 [[test.results]]
 value = "[person:three, person:two]"
-
 */
 
 CREATE person:one, person:two, person:three;
@@ -251,11 +246,14 @@ The delete statement supports conditional matching of records using a `WHERE` cl
 /**[test]
 
 [[test.results]]
+value = "[{ id: city:london, name: 'London' }]"
+[[test.results]]
 value = "[]"
-
 */
 
--- Update all records which match the condition
+CREATE city:london SET name = 'London';
+
+-- Delete all records which match the condition
 DELETE city WHERE name = 'London';
 ```
 
@@ -265,18 +263,28 @@ By default, the delete statement does not return any data, returning only an emp
 /**[test]
 
 [[test.results]]
-value = "[]"
+value = "[{ age: 16, id: user:one, interests: ['gaming'] }, { age: 30, id: user:two, interests: ['reading'] }, { age: 45, id: user:three, interests: ['chess'] }, { age: 60, id: user:four, interests: ['golf'] }]"
 
 [[test.results]]
 value = "[]"
 
 [[test.results]]
-value = "[]"
+value = "[[{ op: 'replace', path: '', value: NONE }]]"
 
 [[test.results]]
-value = "[]"
+value = "[{ age: 45, id: user:three, interests: ['chess'] }]"
+
+[[test.results]]
+value = "[NONE]"
 
 */
+
+INSERT INTO user [
+    { id: user:one, age: 16, interests: ['gaming'] },
+    { id: user:two, age: 30, interests: ['reading'] },
+    { id: user:three, age: 45, interests: ['chess'] },
+    { id: user:four, age: 60, interests: ['golf'] }
+];
 
 -- Don't return any result (the default)
 DELETE user WHERE age < 18 RETURN NONE;
@@ -285,10 +293,10 @@ DELETE user WHERE age < 18 RETURN NONE;
 DELETE user WHERE interests CONTAINS 'reading' RETURN DIFF;
 
 -- Return the record before changes were applied
-DELETE user WHERE interests CONTAINS 'reading' RETURN BEFORE;
+DELETE user WHERE interests CONTAINS 'chess' RETURN BEFORE;
 
 -- Return the record after changes were applied
-DELETE user WHERE interests CONTAINS 'reading' RETURN AFTER;
+DELETE user WHERE interests CONTAINS 'golf' RETURN AFTER;
 ```
 
 To find out how many records a `DELETE` removed, return them with `RETURN BEFORE` and take the length: `(DELETE user WHERE age < 18 RETURN BEFORE).len()`. See [Counting the records a statement changed](update.md#counting-the-records-a-statement-changed).
@@ -335,26 +343,20 @@ This pattern is particularly useful when using SurrealDB's [literal types](../la
 
 [[test.results]]
 value = "NONE"
-
 [[test.results]]
 value = "[{ error_info: { continue: { message: 'Continue' } }, id: information:y0wty8grwins5yxyswea }]"
 skip-record-id-key = true
-
 [[test.results]]
 value = "[{ error_info: { continue: { message: 'Continue' } }, id: information:wbg4q0k3z97jdy7x5sns }]"
 skip-record-id-key = true
-
 [[test.results]]
-value = "[{ error_info: { deprecated: { message: "We don't use this anymore" } }, id: information:r4pa3c49one2ofd2bcbw }]"
+value = '''[{ error_info: { deprecated: { message: "We don't use this anymore" } }, id: information:r4pa3c49one2ofd2bcbw }]'''
 skip-record-id-key = true
-
 [[test.results]]
 value = "[]"
-
 [[test.results]]
-value = "[{ error_info: { deprecated: { message: "We don't use this anymore" } }, id: information:r4pa3c49one2ofd2bcbw }]"
+value = '''[{ error_info: { deprecated: { message: "We don't use this anymore" } }, id: information:r4pa3c49one2ofd2bcbw }]'''
 skip-record-id-key = true
-
 */
 
 DEFINE FIELD error_info ON TABLE information TYPE
@@ -378,7 +380,7 @@ SELECT * FROM information;
 				message: "We don't use this anymore"
 			}
 		},
-		id: info:o0pmm7zos98iv03xliav
+		id: information:o0pmm7zos98iv03xliav
 	}
 ]
 ```
@@ -390,9 +392,20 @@ When processing a large result set with many interconnected records, it is possi
 /**[test]
 
 [[test.results]]
+value = "[{ id: person:one }, { id: person:two }, { id: person:three }]"
+[[test.results]]
+value = "[{ id: knows:ra42idvqagjqh4xfju0c, in: person:one, out: person:two }]"
+skip-record-id-key = true
+[[test.results]]
+value = "[{ id: knows:ksmfzstk4doi7ggnu07i, in: person:two, influencer: false, out: person:three }]"
+skip-record-id-key = true
+[[test.results]]
 value = "[]"
-
 */
+
+CREATE person:one, person:two, person:three;
+RELATE person:one->knows->person:two;
+RELATE person:two->knows->person:three SET influencer = false;
 
 DELETE person
   WHERE ->knows->person->(knows
@@ -415,12 +428,14 @@ skip-record-id-key = true
 */
 
 RELATE person:tobie->bought->product:iphone;
+```
 
+```surql title="Output"
 [
 	{
-		"id": bought:ctwsll49k37a7rmqz9rr,
-		"in": person:tobie,
-		"out": product:iphone
+		id: bought:ctwsll49k37a7rmqz9rr,
+		in: person:tobie,
+		out: product:iphone
 	}
 ]
 ```
@@ -431,11 +446,18 @@ Can be deleted by:
 /**[test]
 
 [[test.results]]
+value = "[{ id: person:tobie }, { id: product:iphone }]"
+[[test.results]]
+value = "[{ id: bought:mwz02epxlsmjdxnvd7q2, in: person:tobie, out: product:iphone }]"
+skip-record-id-key = true
+[[test.results]]
 value = "[]"
-
 */
 
-DELETE person:tobie->bought WHERE out=product:iphone;
+CREATE person:tobie, product:iphone;
+RELATE person:tobie->bought->product:iphone;
+
+DELETE person:tobie->bought WHERE out = product:iphone;
 ```
 
 ## Soft deletions

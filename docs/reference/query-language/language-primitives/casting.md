@@ -153,7 +153,9 @@ value = "[1, 2, 3]"
 */
 
 <array>1..=3;
--- Output:
+```
+
+```surql title="Output"
 [1, 2, 3]
 ```
 
@@ -173,7 +175,9 @@ value = "[42, 314, 271, 137, 141]"
 */
 
 <array<int>>["42", "314", "271", "137", "141"];
--- Output:
+```
+
+```surql title="Output"
 [42, 314, 271, 137, 141]
 ```
 
@@ -186,7 +190,9 @@ value = "['42', '314', '271', '137', '141']"
 */
 
 <array<string>> [42, 314, 271, 137, 141];
--- Output:
+```
+
+```surql title="Output"
 ['42', '314', '271', '137', '141']
 ```
 
@@ -265,7 +271,9 @@ value = "true"
 */
 
 <bool>"true";
--- Output:
+```
+
+```surql title="Output"
 true
 ```
 
@@ -278,7 +286,9 @@ value = "false"
 */
 
 <bool>"false";
--- Output:
+```
+
+```surql title="Output"
 false
 ```
 
@@ -316,11 +326,14 @@ The `<datetime>` casting function converts a value into a datetime.
 
 [[test.results]]
 value = "d'2025-06-07T00:00:00Z'"
+skip-datetime = true
 
 */
 
 <datetime>"2025-06-07";
--- Output:
+```
+
+```surql title="Output"
 d'2025-06-07T00:00:00Z'
 ```
 
@@ -371,7 +384,9 @@ value = "1h30m"
 */
 
 <duration>"1h30m";
--- Output:
+```
+
+```surql title="Output"
 1h30m
 ```
 
@@ -390,7 +405,9 @@ value = "13.572948467293847f"
 */
 
 <float>13.572948467293847293841093845679289;
--- Output:
+```
+
+```surql title="Output"
 13.572948467293847f
 ```
 
@@ -403,8 +420,10 @@ value = "13.572948467293847f"
 */
 
 <float>"13.572948467293847293841093845679289";
--- Output:
-13.572948467293847
+```
+
+```surql title="Output"
+13.572948467293847f
 ```
 
 ## `<int>`
@@ -420,7 +439,9 @@ value = "53"
 */
 
 <int>53;
--- Output:
+```
+
+```surql title="Output"
 53
 ```
 
@@ -565,7 +586,9 @@ value = "'true'"
 */
 
 <string>true;
--- Output:
+```
+
+```surql title="Output"
 'true'
 ```
 
@@ -578,7 +601,9 @@ value = "'1.3463f'"
 */
 
 <string>1.3463;
--- Output:
+```
+
+```surql title="Output"
 '1.3463f'
 ```
 
@@ -591,8 +616,10 @@ value = "'false'"
 */
 
 <string>false;
--- Output:
-"false"
+```
+
+```surql title="Output"
+'false'
 ```
 
 ## `<regex>`
@@ -608,7 +635,9 @@ value = "true"
 */
 
 <regex> "a|b" = "a";
--- Output:
+```
+
+```surql title="Output"
 true
 ```
 
@@ -621,7 +650,9 @@ value = "false"
 */
 
 <regex> "a|b" = "c";
--- Output:
+```
+
+```surql title="Output"
 false
 ```
 

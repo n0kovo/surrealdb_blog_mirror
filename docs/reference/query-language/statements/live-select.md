@@ -60,6 +60,7 @@ By default, SurrealDB will push the entire record over the websocket when it is 
 
 ```surql
 /**[test]
+run = false
 
 [[test.results]]
 value = "u'0f0d0e40-f371-4a68-8ee0-6d5eb3565b76'"
@@ -70,8 +71,8 @@ skip-uuid = true
 LIVE SELECT * FROM person;
 ```
 
-```surql title="Output"
-'b1f1d115-ad0f-460d-8cbf-dbc7ce48851c'
+```surql title="Sample output"
+u'b1f1d115-ad0f-460d-8cbf-dbc7ce48851c'
 ```
 
 The result of the above query will be a UUID. This UUID is the Live Query Unique ID, and is used to differentiate between different Live Queries. You will want to keep track of this ID, so that you can differentiate between different notifications being received after this query. You can also use this UUID to [KILL](kill.md) (stop) the Live Query. The protocol will then send messages that are of a Notification format.
@@ -84,6 +85,7 @@ When using the `DIFF` mode, updates will be sent in the form of an array with [J
 
 ```surql
 /**[test]
+run = false
 
 [[test.results]]
 value = "u'0f0d0e40-f371-4a68-8ee0-6d5eb3565b76'"
@@ -94,8 +96,8 @@ skip-uuid = true
 LIVE SELECT DIFF FROM person;
 ```
 
-```surql title="Output"
-'b87cbb0d-ca15-4f0a-8f86-caa680672aa5'
+```surql title="Sample output"
+u\'b87cbb0d-ca15-4f0a-8f86-caa680672aa5\'
 ```
 
 ### Filter the live query
@@ -104,6 +106,7 @@ You can optionally apply filters with the `WHERE` clause.
 
 ```surql
 /**[test]
+run = false
 
 [[test.results]]
 value = "u'0f0d0e40-f371-4a68-8ee0-6d5eb3565b76'"
@@ -194,6 +197,7 @@ The `FETCH` clause can be used inside live queries as well.
 
 ```surql
 /**[test]
+run = false
 
 [[test.results]]
 value = "u'0f0d0e40-f371-4a68-8ee0-6d5eb3565b76'"

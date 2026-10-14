@@ -1,8 +1,10 @@
 # All Posts
 
-_271 posts_  
+_272 posts_  
 [← Index](../README.md)
 
+- **2026-10-13** · [We are replacing RocksDB with SurrealKV 1.0](2026/10/we-are-replacing-rocksdb-with-surrealkv-1-0.md)  
+  `releases` `engineering` `featured` — SurrealKV 1.0 is open source today: 7.95× faster point reads than RocksDB with synchronous durability, and the command to run the benchmark yourself.
 - **2026-10-12** · [Our commitment to open source: show the code, run the numbers](2026/10/our-commitment-to-open-source-show-the-code-run-the-numbers.md)  
   `company` `community` — SurrealKV and SurrealMX are open source under Apache 2.0, and every benchmark we publish comes with the command to run it.
 - **2026-10-12** · [Introducing SurrealMX: SurrealDB’s new in-memory storage engine](2026/10/introducing-surrealmx-surrealdbs-new-in-memory-storage-engine.md)  

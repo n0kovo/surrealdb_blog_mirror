@@ -1,8 +1,10 @@
 # Category: engineering
 
-_48 posts_  
+_49 posts_  
 [← Index](../../README.md)
 
+- **2026-10-13** · [We are replacing RocksDB with SurrealKV 1.0](../2026/10/we-are-replacing-rocksdb-with-surrealkv-1-0.md)  
+  `releases` `engineering` `featured` — SurrealKV 1.0 is open source today: 7.95× faster point reads than RocksDB with synchronous durability, and the command to run the benchmark yourself.
 - **2026-10-12** · [Introducing SurrealMX: SurrealDB’s new in-memory storage engine](../2026/10/introducing-surrealmx-surrealdbs-new-in-memory-storage-engine.md)  
   `releases` `engineering` `featured` — SurrealMX is SurrealDB’s high-performance in-memory storage engine, built for ultra-low latency, high concurrency, and millions of operations per second.
 - **2026-09-30** · [Introducing our new University course: “SurrealDB for AI Engineers”](../2026/09/introducing-our-new-university-course-surrealdb-for-ai-engineers.md)  

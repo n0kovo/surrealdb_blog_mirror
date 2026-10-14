@@ -390,7 +390,7 @@ CREATE person SET age = 46, username = "john-smith" RETURN DIFF;
 	[
 		{
 			op: 'replace',
-			path: '/',
+			path: '',
 			value: {
 				age: 46,
 				id: person:h84x4k5kh2m6cjf1vvza,
@@ -407,7 +407,7 @@ CREATE person SET age = 46, username = "john-smith" RETURN DIFF;
 /**[test]
 
 [[test.results]]
-value = "NONE"
+value = "[NONE]"
 
 */
 

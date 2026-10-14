@@ -527,10 +527,14 @@ ACCESS @name [ ON [ ROOT | NAMESPACE | DATABASE ] ]
 /**[test]
 
 [[test.results]]
+value = "NONE"
+
+[[test.results]]
 value = "[]"
 
 */
 
+DEFINE ACCESS api ON DATABASE TYPE BEARER FOR RECORD;
 ACCESS api PURGE EXPIRED;
 ```
 
@@ -540,10 +544,14 @@ ACCESS api PURGE EXPIRED;
 /**[test]
 
 [[test.results]]
+value = "NONE"
+
+[[test.results]]
 value = "[]"
 
 */
 
+DEFINE ACCESS api ON DATABASE TYPE BEARER FOR RECORD;
 ACCESS api PURGE REVOKED FOR 90d;
 ```
 
@@ -553,10 +561,14 @@ ACCESS api PURGE REVOKED FOR 90d;
 /**[test]
 
 [[test.results]]
+value = "NONE"
+
+[[test.results]]
 value = "[]"
 
 */
 
+DEFINE ACCESS api ON DATABASE TYPE BEARER FOR RECORD;
 ACCESS api PURGE EXPIRED, REVOKED FOR 1y;
 ```
 

@@ -1,7 +1,37 @@
 {
-  "generated_at": "2026-10-14T11:05:57.748659+00:00",
-  "count": 272,
+  "generated_at": "2026-10-15T10:47:44.253094+00:00",
+  "count": 274,
   "posts": [
+    {
+      "slug": "introducing-surrealdb-agent-memory",
+      "title": "Introducing SurrealDB Agent Memory",
+      "summary": "SurrealDB Agent Memory gives AI agents persistent, queryable memory with provenance, temporal context, and hybrid retrieval.",
+      "publishDate": "2026-10-14T18:45:06.000Z",
+      "categories": [
+        "releases",
+        "engineering",
+        "featured"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/a2jrvk7q6o9dabrjlyhdis5q.auto",
+      "source": "https://surrealdb.com/blog/introducing-surrealdb-agent-memory",
+      "local_path": "2026/10/introducing-surrealdb-agent-memory.md"
+    },
+    {
+      "slug": "agent-memory-benchmarks-are-baked",
+      "title": "Agent memory benchmarks are baked",
+      "summary": "Agent memory benchmark scores are recipes: answering model, judge, prompts and scoring rule. Here is how ours was made, including the numbers that lower it.",
+      "publishDate": "2026-10-14T18:45:03.000Z",
+      "categories": [
+        "engineering",
+        "featured",
+        "releases"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/kmdjeifs3wjzfrhbfdla902j.auto",
+      "source": "https://surrealdb.com/blog/agent-memory-benchmarks-are-baked",
+      "local_path": "2026/10/agent-memory-benchmarks-are-baked.md"
+    },
     {
       "slug": "we-are-replacing-rocksdb-with-surrealkv-1-0",
       "title": "We are replacing RocksDB with SurrealKV 1.0",

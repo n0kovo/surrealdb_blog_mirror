@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1113 pages_  
+_1114 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -343,6 +343,8 @@ _1113 pages_
   Integrate Kreuzberg document intelligence extraction pipelines with SurrealDB.
 - [LangChain](build/integrations/ai-frameworks/langchain.md)
   Use SurrealDB native vector indexes as a drop-in vector store for LangChain.
+- [LangGraph](build/integrations/ai-frameworks/langgraph.md)
+  Use SurrealDB as the checkpointer, long-term memory store and node cache for LangGraph.js agents and graphs with the @surrealdb/langgraph package.
 - [LlamaIndex](build/integrations/ai-frameworks/llamaindex.md)
   Use SurrealDB’s native HNSW vector index as the backing store for a Llama Index `VectorStoreIndex`.
 - [Mastra](build/integrations/ai-frameworks/mastra.md)

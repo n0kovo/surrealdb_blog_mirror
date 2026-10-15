@@ -1,8 +1,12 @@
 # Category: featured
 
-_115 posts_  
+_117 posts_  
 [← Index](../../README.md)
 
+- **2026-10-14** · [Introducing SurrealDB Agent Memory](../2026/10/introducing-surrealdb-agent-memory.md)  
+  `releases` `engineering` `featured` — SurrealDB Agent Memory gives AI agents persistent, queryable memory with provenance, temporal context, and hybrid retrieval.
+- **2026-10-14** · [Agent memory benchmarks are baked](../2026/10/agent-memory-benchmarks-are-baked.md)  
+  `engineering` `featured` `releases` — Agent memory benchmark scores are recipes: answering model, judge, prompts and scoring rule. Here is how ours was made, including the numbers that lower it.
 - **2026-10-13** · [We are replacing RocksDB with SurrealKV 1.0](../2026/10/we-are-replacing-rocksdb-with-surrealkv-1-0.md)  
   `releases` `engineering` `featured` — SurrealKV 1.0 is open source today: 7.95× faster point reads than RocksDB with synchronous durability, and the command to run the benchmark yourself.
 - **2026-10-12** · [Introducing SurrealMX: SurrealDB’s new in-memory storage engine](../2026/10/introducing-surrealmx-surrealdbs-new-in-memory-storage-engine.md)  

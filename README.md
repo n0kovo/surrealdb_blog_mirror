@@ -1,12 +1,12 @@
 # SurrealDB Blog Mirror
 
-_Last updated: 2026-10-14 11:05 UTC_
+_Last updated: 2026-10-15 10:47 UTC_
 
 ## Stats
 
-- **Total posts:** 272
+- **Total posts:** 274
 - **First post:** 2022-07-20
-- **Latest post:** 2026-10-13
+- **Latest post:** 2026-10-14
 - **Years covered:** 5
 - **Categories:** 8
 
@@ -19,7 +19,7 @@ _Last updated: 2026-10-14 11:05 UTC_
 
 ### By year
 
-- [2026](posts/years/2026.md) — 77 posts
+- [2026](posts/years/2026.md) — 79 posts
 - [2025](posts/years/2025.md) — 76 posts
 - [2024](posts/years/2024.md) — 44 posts
 - [2023](posts/years/2023.md) — 47 posts
@@ -30,14 +30,18 @@ _Last updated: 2026-10-14 11:05 UTC_
 - [ai](posts/categories/ai.md) — 53 posts
 - [community](posts/categories/community.md) — 36 posts
 - [company](posts/categories/company.md) — 46 posts
-- [engineering](posts/categories/engineering.md) — 49 posts
+- [engineering](posts/categories/engineering.md) — 51 posts
 - [events](posts/categories/events.md) — 7 posts
-- [featured](posts/categories/featured.md) — 115 posts
-- [releases](posts/categories/releases.md) — 61 posts
+- [featured](posts/categories/featured.md) — 117 posts
+- [releases](posts/categories/releases.md) — 63 posts
 - [tutorials](posts/categories/tutorials.md) — 102 posts
 
 ## Latest posts
 
+- **2026-10-14** · [Introducing SurrealDB Agent Memory](posts/2026/10/introducing-surrealdb-agent-memory.md)  
+  `releases` `engineering` `featured` — SurrealDB Agent Memory gives AI agents persistent, queryable memory with provenance, temporal context, and hybrid retrieval.
+- **2026-10-14** · [Agent memory benchmarks are baked](posts/2026/10/agent-memory-benchmarks-are-baked.md)  
+  `engineering` `featured` `releases` — Agent memory benchmark scores are recipes: answering model, judge, prompts and scoring rule. Here is how ours was made, including the numbers that lower it.
 - **2026-10-13** · [We are replacing RocksDB with SurrealKV 1.0](posts/2026/10/we-are-replacing-rocksdb-with-surrealkv-1-0.md)  
   `releases` `engineering` `featured` — SurrealKV 1.0 is open source today: 7.95× faster point reads than RocksDB with synchronous durability, and the command to run the benchmark yourself.
 - **2026-10-12** · [Our commitment to open source: show the code, run the numbers](posts/2026/10/our-commitment-to-open-source-show-the-code-run-the-numbers.md)  
@@ -54,7 +58,3 @@ _Last updated: 2026-10-14 11:05 UTC_
   `tutorials` `ai` — Move breadth-first search into SurrealDB: recursive traversal with a depth range, predicates pushed into every hop, and what EXPLAIN says about edge indexes.
 - **2026-09-03** · [Why does my vector search return nothing when I add a filter?](posts/2026/09/why-does-my-vector-search-return-nothing-when-i-add-a-filter-2.md)  
   `ai` `tutorials` — A filter applied after an HNSW walk can only remove rows, so a selective one comes back empty. Three measured SurrealDB fixes, plus the schema that avoids them.
-- **2026-09-03** · [Announcing the Mastra integration for SurrealDB and Agent Memory](posts/2026/09/announcing-the-mastra-integration-for-surrealdb-and-agent-memory.md)  
-  `releases` `ai` — One package gives Mastra agents a single database for conversations, workflow state, observability and vectors, plus managed memory that extracts and semantically recalls facts.
-- **2026-09-02** · [SurrealDB Cloud is now available in Frankfurt, Germany](posts/2026/09/surrealdb-cloud-is-now-available-in-frankfurt-germany.md)  
-  `releases` `company` — SurrealDB Cloud now runs in Frankfurt, Germany: lower latency across continental Europe, German and EU data residency, and a shorter round trip for agents.

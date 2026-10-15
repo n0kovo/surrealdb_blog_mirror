@@ -5,7 +5,7 @@ generated: stub
 
 # Ai Frameworks
 
-_Auto-generated index — 14 pages._
+_Auto-generated index — 15 pages._
 
 ## Pages
 
@@ -27,6 +27,8 @@ _Auto-generated index — 14 pages._
   Integrate Kreuzberg document intelligence extraction pipelines with SurrealDB.
 - [LangChain](langchain.md)
   Use SurrealDB native vector indexes as a drop-in vector store for LangChain.
+- [LangGraph](langgraph.md)
+  Use SurrealDB as the checkpointer, long-term memory store and node cache for LangGraph.js agents and graphs with the @surrealdb/langgraph package.
 - [LlamaIndex](llamaindex.md)
   Use SurrealDB’s native HNSW vector index as the backing store for a Llama Index `VectorStoreIndex`.
 - [Mastra](mastra.md)

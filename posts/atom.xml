@@ -4,10 +4,32 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-10-13T14:17:44Z</updated>
+  <updated>2026-10-14T18:45:06Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/introducing-surrealdb-agent-memory</id>
+    <title>Introducing SurrealDB Agent Memory</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/introducing-surrealdb-agent-memory" type="text/html" />
+    <published>2026-10-14T18:45:06Z</published>
+    <updated>2026-10-14T18:45:06Z</updated>
+    <summary type="text">SurrealDB Agent Memory gives AI agents persistent, queryable memory with provenance, temporal context, and hybrid retrieval.</summary>
+    <category term="releases" />
+    <category term="engineering" />
+    <category term="featured" />
+  </entry>
+  <entry>
+    <id>https://surrealdb.com/blog/agent-memory-benchmarks-are-baked</id>
+    <title>Agent memory benchmarks are baked</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/agent-memory-benchmarks-are-baked" type="text/html" />
+    <published>2026-10-14T18:45:03Z</published>
+    <updated>2026-10-14T18:45:03Z</updated>
+    <summary type="text">Agent memory benchmark scores are recipes: answering model, judge, prompts and scoring rule. Here is how ours was made, including the numbers that lower it.</summary>
+    <category term="engineering" />
+    <category term="featured" />
+    <category term="releases" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/we-are-replacing-rocksdb-with-surrealkv-1-0</id>
     <title>We are replacing RocksDB with SurrealKV 1.0</title>
@@ -475,23 +497,5 @@
     <summary type="text">An agentic pattern overview for structured retrieval that gives an LLM agent a database-aware tool that converts natural-language questions into valid SurrealQL</summary>
     <category term="ai" />
     <category term="tutorials" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/what-chunk-strategies-exist-and-how-to-choose-one</id>
-    <title>What chunking strategies exist and how to choose one?</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/what-chunk-strategies-exist-and-how-to-choose-one" type="text/html" />
-    <published>2026-05-12T10:56:54Z</published>
-    <updated>2026-05-12T10:56:54Z</updated>
-    <summary type="text">If you've decided to chunk documents for a RAG pipeline or semantic search system, the next question hits immediately: which chunking strategy should I use?</summary>
-    <category term="ai" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/what-is-the-recommended-chunk-size</id>
-    <title>What is the recommended chunk size?</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/what-is-the-recommended-chunk-size" type="text/html" />
-    <published>2026-05-08T10:55:33Z</published>
-    <updated>2026-05-08T10:55:33Z</updated>
-    <summary type="text">What chunk size to one when building a RAG (Retrieval-Augmented Generation) pipeline, a semantic search system, or AI app that reads from a vector store?</summary>
-    <category term="ai" />
   </entry>
 </feed>

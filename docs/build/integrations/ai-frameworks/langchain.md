@@ -15,6 +15,9 @@ LangChain applications often work with several types of data for tasks such as c
 
 This guide shows how to use SurrealDB as a vector store for LangChain.
 
+> [!NOTE]
+> This page uses the Python package, `langchain-surrealdb`. For TypeScript and JavaScript, the `@surrealdb/langgraph` package stores LangGraph.js checkpoints, long-term memory and node results in SurrealDB. See [LangGraph](langgraph.md).
+
 <video style="width: 100%;" height="300" controls>
     <source src={VidMp4} type="video/mp4" />
     <source src={VidWebm} type="video/webm" />

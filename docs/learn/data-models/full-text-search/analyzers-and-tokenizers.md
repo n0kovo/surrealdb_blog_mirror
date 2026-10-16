@@ -105,7 +105,7 @@ search::analyze("example_ngram", "apple banana");
 
 The `mapper(path)` filter rewrites tokens using a tab-separated file: canonical form first, variant second, one pair per line. That supports lemmatisation beyond what stemming alone catches, or normalising arbitrary phrasing (for example mapping multilingual error strings to a single code).
 
-The server reads the dictionary from the **host filesystem** when you define the analyzer. Configure [`SURREAL_FILE_ALLOWLIST`](../../../reference/cli/surrealdb-cli/environment-variables.md#file-config) so the path lies under an allowed directory, without which no filesystem paths are permitted. See [DEFINE ANALYZER - `mapper(path)`](../../../reference/query-language/statements/define/analyzer.md#mapperpath) for startup examples.
+The server reads the dictionary from the **host filesystem** when you define the analyzer. Configure [`SURREAL_FILE_ALLOWLIST`](../../../reference/cli/db/environment-variables.md#file-config) so the path lies under an allowed directory, without which no filesystem paths are permitted. See [DEFINE ANALYZER - `mapper(path)`](../../../reference/query-language/statements/define/analyzer.md#mapperpath) for startup examples.
 
 Point `path` at a dictionary file under your allowlist. Here is a very short example dictionary:
 

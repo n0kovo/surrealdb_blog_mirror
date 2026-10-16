@@ -12,7 +12,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 A `DEFINE MODULE` statement is used to define a module via which [Surrealism](../../../../learn/extensions/plugins/overview.md) extensions functions can be called.
 
 > [!NOTE]
-> The [`surrealism` experimental](../../../cli/surrealdb-cli/commands/module.md) feature must be enabled before you can use a `DEFINE MODULE` statement.
+> The [`surrealism` experimental](../../../cli/db/commands/module.md) feature must be enabled before you can use a `DEFINE MODULE` statement.
 
 ## Statement syntax
 
@@ -132,7 +132,7 @@ DEFINE MODULE mod::color FROM f"modules:/color.surli" UNSIGNED COMMENT "Colour h
 
 The keyword marks a module as carrying no signature. Only packages published to Silo are signed - Silo signs a package when it is uploaded - so a module loaded from anywhere else can never carry one and must say so explicitly.
 
-The requirement is in place before signature verification ships, so a definition written today stays valid once the keyword starts gating a real check. A module defined before 3.3.0 is treated as unsigned and keeps loading unchanged, and both [`INFO FOR DB`](../info.md) and [`surreal export`](../../../cli/surrealdb-cli/commands/export.md) render the keyword back, so a dump re-imports.
+The requirement is in place before signature verification ships, so a definition written today stays valid once the keyword starts gating a real check. A module defined before 3.3.0 is treated as unsigned and keeps loading unchanged, and both [`INFO FOR DB`](../info.md) and [`surreal db export`](../../../cli/db/commands/export.md) render the keyword back, so a dump re-imports.
 
 ## Silo packages
 

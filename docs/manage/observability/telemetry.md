@@ -90,12 +90,12 @@ From the repository root, start the observability stack under `dev/docker` (coll
 
 ```bash
 docker compose -f dev/docker/compose.yaml up -d
-SURREAL_TELEMETRY_PROVIDER=otlp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" surreal start
+SURREAL_TELEMETRY_PROVIDER=otlp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" surreal db start
 ```
 
 Open `http://localhost:3000` in a browser; default Grafana credentials are `admin` / `admin`.
 
-For OpenTelemetry log and trace verbosity, file output, sockets, and other logging flags used alongside this stack, see [Logging](logging.md) and [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md).
+For OpenTelemetry log and trace verbosity, file output, sockets, and other logging flags used alongside this stack, see [Logging](logging.md) and [`surreal db start`](../../reference/cli/db/commands/start.md).
 
 **Before SurrealDB 3.1**
 

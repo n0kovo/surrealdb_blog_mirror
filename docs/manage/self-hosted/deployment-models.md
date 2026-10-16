@@ -96,7 +96,7 @@ For setup examples, see [Run a single-node, on-disk server](../../running/file-b
 **CLI**
 
 ```bash
-surreal start rocksdb://path/to/database
+surreal db start rocksdb://path/to/database
 ```
 
 **Docker**
@@ -112,9 +112,9 @@ See also [Self-hosted](index.md) for Docker, Kubernetes, and platform guides.
 
 ### SurrealKV
 
-For single-node and embedded workloads, [SurrealKV](https://github.com/surrealdb/surrealkv) is SurrealDB’s own LSM-backed storage engine, developed together with the database rather than as a third-party dependency. As a result, SurrealKV exposes a comparatively small [configuration surface](../../reference/cli/surrealdb-cli/commands/start.md#supported-parameters-for-surrealkv) and [environment variable set](../../reference/cli/surrealdb-cli/environment-variables.md#surrealkv-environment-variables) next to RocksDB’s extensive tuning knobs, and is aimed at embedded and local-first scenarios.
+For single-node and embedded workloads, [SurrealKV](https://github.com/surrealdb/surrealkv) is SurrealDB’s own LSM-backed storage engine, developed together with the database rather than as a third-party dependency. As a result, SurrealKV exposes a comparatively small [configuration surface](../../reference/cli/db/commands/start.md#supported-parameters-for-surrealkv) and [environment variable set](../../reference/cli/db/environment-variables.md#surrealkv-environment-variables) next to RocksDB’s extensive tuning knobs, and is aimed at embedded and local-first scenarios.
 
-The chart below shows each setting that the two engines read, one square for each, grouped by what it controls. RocksDB has 53 and SurrealKV has 10, not counting the `versioned`, `retention` and `sync` settings that both share. In the SurrealKV rows, a dashed square stands for a RocksDB setting that SurrealKV leaves to the engine, and the dashed square for RocksDB versioning shows how each engine keeps versions. Select a square to see its environment variable, or the reason no setting is needed. The [environment variables](../../reference/cli/surrealdb-cli/environment-variables.md#storage-backend-environment-variables) reference describes each variable.
+The chart below shows each setting that the two engines read, one square for each, grouped by what it controls. RocksDB has 53 and SurrealKV has 10, not counting the `versioned`, `retention` and `sync` settings that both share. In the SurrealKV rows, a dashed square stands for a RocksDB setting that SurrealKV leaves to the engine, and the dashed square for RocksDB versioning shows how each engine keeps versions. Select a square to see its environment variable, or the reason no setting is needed. The [environment variables](../../reference/cli/db/environment-variables.md#storage-backend-environment-variables) reference describes each variable.
 
 <DemoEmbed title="Storage engine settings" height={820} pages={[{ "label": "Settings per storage engine", "src": "/docs/engine-settings/settings.html" }]} />
 
@@ -122,7 +122,7 @@ In SurrealDB 3.3 and earlier, SurrealKV is in **beta**, and **RocksDB** is the r
 
 SurrealKV has since reached 1.0, which has a stable on-disk format. The upcoming SurrealDB 3.4 uses SurrealKV 1.0 and makes it the recommended on-disk engine. SurrealKV 1.0 also converts an existing RocksDB data directory the first time it opens it, so a server on 3.4 can change engines without an export and import. SurrealKV is still where new storage features are tried first: features such as temporal reads via the [`VERSION`](../../reference/query-language/statements/select.md#the-version-clause) clause were exercised on SurrealKV first and have since been extended to RocksDB. From 3.3.0, the in-memory [SurrealMX](../../running/in-memory.md) backend does not support versioned queries.
 
-To try SurrealKV on a server, see the SurrealKV tab on [Run a single-node, on-disk server](../../running/file-backed.md) and the [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md) storage parameters.
+To try SurrealKV on a server, see the SurrealKV tab on [Run a single-node, on-disk server](../../running/file-backed.md) and the [`surreal db start`](../../reference/cli/db/commands/start.md) storage parameters.
 
 ## Multi-node clusters
 

@@ -85,7 +85,7 @@ DEFINE INDEX diskann_idx
   ON pts FIELDS point DISKANN DIMENSION 4 DIST COSINE TYPE F32;
 ```
 
-DISKANN keeps its graph and full-precision vectors in the key-value store and answers queries through a bounded in-memory cache, so resident memory is bounded by the cache rather than by the dataset. (DISKANN does not apply product quantisation; per-vector size is governed only by the chosen `TYPE`.) The cache defaults to 256 MiB and is shared across all DISKANN indexes; cap it with [`SURREAL_DISKANN_CACHE_SIZE`](../../../reference/cli/surrealdb-cli/environment-variables.md#cache-config).
+DISKANN keeps its graph and full-precision vectors in the key-value store and answers queries through a bounded in-memory cache, so resident memory is bounded by the cache rather than by the dataset. (DISKANN does not apply product quantisation; per-vector size is governed only by the chosen `TYPE`.) The cache defaults to 256 MiB and is shared across all DISKANN indexes; cap it with [`SURREAL_DISKANN_CACHE_SIZE`](../../../reference/cli/db/environment-variables.md#cache-config).
 
 See [`DEFINE INDEX` → DISKANN](../../../reference/query-language/statements/define/indexes.md#diskann-disk-based-approximate-nearest-neighbours) for the full memory model and platform notes (including **no WASM support**).
 

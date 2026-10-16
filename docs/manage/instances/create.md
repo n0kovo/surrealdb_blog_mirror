@@ -113,7 +113,7 @@ If the instance started empty, it has no namespace or database yet. Create both 
 
 ## Deploying from the command line
 
-`surrealctl instance create` performs the same deploy, which is what you want in CI or in a provisioning script. See [surrealctl instances](../surrealctl/instances.md).
+`surreal cloud instance create` performs the same deploy, which is what you want in CI or in a provisioning script. See [surreal cloud instances](../../explore/cli/cloud/instances.md).
 
 ## Next steps
 

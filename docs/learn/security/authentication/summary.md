@@ -83,7 +83,7 @@ SurrealDB also provides other functions that support developers with building se
 
 ### Transport layer security
 SurrealDB has the ability to provide a secure TLS connection to its HTTP server without the need for a reverse proxy or load balancer. A certificate and a private key can be provided when starting the server in order to provide a secure connection.
-- [CLI Start command](../../../reference/cli/surrealdb-cli/commands/start.md)
+- [CLI Start command](../../../reference/cli/db/commands/start.md)
 - [Security Best Practices: Encryption in Transit](../best-practices/security-best-practices.md#encryption-in-transit)
 
 ## Process

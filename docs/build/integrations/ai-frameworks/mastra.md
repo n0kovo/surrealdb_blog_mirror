@@ -25,7 +25,7 @@ Because SurrealDB is [multi-model](../../../learn/data-models/index.md), one dat
 Start SurrealDB locally, either [installed directly](../../../running/installation/index.md):
 
 ```sh
-surreal start --user root --pass secret memory
+surreal db start --user root --pass secret memory
 ```
 
 or [with Docker](../../../running/docker.md):

@@ -27,7 +27,7 @@ USE NS my_namespace DB my_database;
 
 After running this, all queries will operate within that context.
 
-The name `main` is used as the default name for the current namespace and database [when starting SurrealDB](../../../reference/cli/surrealdb-cli/commands/sql.md#default-namespace-and-database).
+The name `main` is used as the default name for the current namespace and database [when starting SurrealDB](../../../reference/cli/db/commands/sql.md#default-namespace-and-database).
 
 ## Parameters
 

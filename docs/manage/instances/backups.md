@@ -45,7 +45,7 @@ Longer retention lets you recover from further back and increases storage cost. 
 
 Take an on-demand snapshot before anything you might want to undo, such as a major version upgrade, a schema migration, or a bulk delete. On-demand snapshots appear in the same list as scheduled ones and follow the same retention.
 
-`surrealctl instance backup` triggers one from a terminal, which is what you want in a deployment pipeline that runs a migration. See [surrealctl instances](../surrealctl/instances.md).
+`surreal cloud instance backup` triggers one from a terminal, which is what you want in a deployment pipeline that runs a migration. See [surreal cloud instances](../../explore/cli/cloud/instances.md).
 
 ## Restoring from a snapshot
 
@@ -67,12 +67,12 @@ Three constraints apply to a restore:
 
 ## What backups do not cover
 
-- **They are not portable.** You cannot download a snapshot. It is not an archival format, not a way to seed a local development database, and not a route to another provider. Use [`surreal export`](../../reference/cli/surrealdb-cli/commands/export.md) for those cases. See [Import and export](import-and-export.md).
+- **They are not portable.** You cannot download a snapshot. It is not an archival format, not a way to seed a local development database, and not a route to another provider. Use [`surreal db export`](../../reference/cli/db/commands/export.md) for those cases. See [Import and export](import-and-export.md).
 - **They are not cross-region disaster recovery.** A snapshot restores into the region it was taken in. Recovering into a different region needs a logical export and import.
 - **They are not a substitute for testing a restore.** Restore into a throwaway instance periodically and check that the data is what you expect. That is the only way to know the recovery path works.
 
 ## Related pages
 
-- **[Import and export](import-and-export.md):** portable data with `surreal export` and `surreal import`.
+- **[Import and export](import-and-export.md):** portable data with `surreal db export` and `surreal db import`.
 - **[Versions and upgrades](versions-and-upgrades.md):** snapshot first, then upgrade.
 - **[High availability](high-availability.md):** what redundancy covers and what backups cover.

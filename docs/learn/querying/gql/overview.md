@@ -54,30 +54,30 @@ To experiment in the REPL without `curl` or `POST /gql`, wrap a GQL string in [`
 
 `eval::gql` needs the **`eval`** capability that `--allow-all` does not enable: [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) (denied for every subject by default). From 3.3.0 you do **not** also need `--allow-experimental gql` (that flag is still required on 3.2.x).
 
-**Embedded REPL** (`surreal sql` against `memory` or a file path - no separate `surreal start`):
+**Embedded REPL** (`surreal db sql` against `memory` or a file path - no separate `surreal db start`):
 
 **Bash**
 
 ```bash
-echo 'eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");' | surreal sql --user root --pass secret --allow-eval-query --pretty --hide-welcome
+echo 'eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");' | surreal db sql --user root --pass secret --allow-eval-query --pretty --hide-welcome
 ```
 
 **PowerShell**
 
 ```powershell
-'eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");' | surreal sql --user root --pass secret --allow-eval-query --pretty --hide-welcome
+'eval::gql("MATCH (n:person) RETURN n.name AS name ORDER BY name");' | surreal db sql --user root --pass secret --allow-eval-query --pretty --hide-welcome
 ```
 
 To explore interactively instead, open the same REPL without piping:
 
 ```bash
-surreal sql --user root --pass secret --allow-eval-query
+surreal db sql --user root --pass secret --allow-eval-query
 ```
 
-**Remote server** (`surreal start` + `surreal sql -e ws://…`): pass `--allow-eval-query` on **`surreal start`** only. The client REPL does not enable `eval` at runtime.
+**Remote server** (`surreal db start` + `surreal db sql -e ws://…`): pass `--allow-eval-query` on **`surreal db start`** only. The client REPL does not enable `eval` at runtime.
 
 ```bash
-surreal start --user root --pass secret --allow-eval-query
+surreal db start --user root --pass secret --allow-eval-query
 ```
 
 Optional bindings use an object as the second argument: `eval::gql("… WHERE n.age > $min …", { min: 18 })`. Full setup, seed data, and more examples can be found on the [Eval functions](../../../reference/query-language/functions/database-functions/eval.md#evalgql) page.

@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 Custom APIs let you expose a small, deliberate set of routes on top of SurrealDB. Instead of handing every caller a generic query channel, you can define named endpoints that return a familiar HTTP-shaped result.
 
-That pattern pairs well with tightening access such as varying querying timeouts for free or entry-level users on an app. To accomplish this, you can combine [`DEFINE API`](../../../reference/query-language/statements/define/api.md) with [capabilities](../../security/authorization/capabilities.md) or server [environment variables](../../../reference/cli/surrealdb-cli/environment-variables.md) so certain users only see the APIs you designed.
+That pattern pairs well with tightening access such as varying querying timeouts for free or entry-level users on an app. To accomplish this, you can combine [`DEFINE API`](../../../reference/query-language/statements/define/api.md) with [capabilities](../../security/authorization/capabilities.md) or server [environment variables](../../../reference/cli/db/environment-variables.md) so certain users only see the APIs you designed.
 
 ## Where endpoints live
 

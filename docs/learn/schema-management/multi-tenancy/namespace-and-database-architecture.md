@@ -17,7 +17,7 @@ Namespaces are created by root users. Databases live inside a namespace and are 
 
 Reference pages: [`DEFINE NAMESPACE`](../../../reference/query-language/statements/define/namespace.md), [`DEFINE DATABASE`](../../../reference/query-language/statements/define/database.md).
 
-For convenience, a new running instance will create a new namespace and database that each have the name `main`. This can be disabled by passing in a flag or setting an environment variable when using the [`surreal start`](../../../reference/cli/surrealdb-cli/environment-variables.md) command.
+For convenience, a new running instance will create a new namespace and database that each have the name `main`. This can be disabled by passing in a flag or setting an environment variable when using the [`surreal db start`](../../../reference/cli/db/environment-variables.md) command.
 
 ## Namespaces
 

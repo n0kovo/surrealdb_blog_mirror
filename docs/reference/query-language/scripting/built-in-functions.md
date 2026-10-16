@@ -218,7 +218,7 @@ RETURN function() {
 
 ## `console`
 
-The `console` object writes to the server log, which is the output of the `surreal start` process. Each method logs at the matching level, and the arguments are converted to strings and joined with spaces.
+The `console` object writes to the server log, which is the output of the `surreal db start` process. Each method logs at the matching level, and the arguments are converted to strings and joined with spaces.
 
 | Method                              | Log level |
 | ----------------------------------- | --------- |
@@ -228,7 +228,7 @@ The `console` object writes to the server log, which is the output of the `surre
 | `console.debug()`                   | `debug`   |
 | `console.trace()`                   | `trace`   |
 
-The default log level is `info`, so `console.debug()` and `console.trace()` produce output only when the server is started with a more verbose [`--log`](../../cli/surrealdb-cli/commands/start.md) level. Nothing is returned to the client, and the output does not appear in the result of the query.
+The default log level is `info`, so `console.debug()` and `console.trace()` produce output only when the server is started with a more verbose [`--log`](../../cli/db/commands/start.md) level. Nothing is returned to the client, and the output does not appear in the result of the query.
 
 ```surql
 CREATE x SET v = function() {

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Using WASM plugins
 
-You do not have to author Rust yourself to benefit from Surrealism. Many teams consume a **pre-built `.surli` archive** produced by another team or pipeline. Authoring a module means writing Rust, configuring `surrealism.toml`, and running [`surreal module`](../../../reference/cli/surrealdb-cli/commands/module.md) yourself. This page focuses on the consumer workflow.
+You do not have to author Rust yourself to benefit from Surrealism. Many teams consume a **pre-built `.surli` archive** produced by another team or pipeline. Authoring a module means writing Rust, configuring `surrealism.toml`, and running [`surreal db module`](../../../reference/cli/db/commands/module.md) yourself. This page focuses on the consumer workflow.
 
 ## Storing the module archive
 
@@ -22,8 +22,8 @@ Once the binary is stored, [`DEFINE MODULE`](../../../reference/query-language/s
 If you receive a module from another team, inspect it locally before upload:
 
 ```bash
-surreal module info demo.surli
-surreal module sig --fnc can_drive demo.surli
+surreal db module info demo.surli
+surreal db module sig --fnc can_drive demo.surli
 ```
 
 These commands let you verify function signatures and metadata (such as writeable/comment annotations) before registration.

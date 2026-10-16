@@ -388,7 +388,7 @@ To run the application as a user with fewer permissions, create the schema once 
 | `SurrealDBStore` | `langgraph_store` |
 | `SurrealDBNodeCache` | `langgraph_cache` |
 
-The quickest way to get the exact definitions is to let the adapters create the tables in a development database, then run [`INFO FOR TABLE`](../../../reference/query-language/statements/info.md) on each one or use [`surreal export`](../../../reference/cli/surrealdb-cli/commands/export.md).
+The quickest way to get the exact definitions is to let the adapters create the tables in a development database, then run [`INFO FOR TABLE`](../../../reference/query-language/statements/info.md) on each one or use [`surreal export`](https://surrealdb.com/docs/reference/cli/surrealdb-cli/commands/export).
 
 ## Close connections
 

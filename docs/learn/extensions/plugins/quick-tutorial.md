@@ -5,11 +5,11 @@ description: A quick tutorial showing the steps involved in turning regular Rust
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/extensions/plugins/quick-tutorial.mdx"
 ---
 
-This tutorial turns ordinary Rust code into a SurrealDB-accessible WASM module, from `surreal module init` through to calling the function from SurrealQL.
+This tutorial turns ordinary Rust code into a SurrealDB-accessible WASM module, from `surreal db module init` through to calling the function from SurrealQL.
 
 ## Getting started: regular Rust code
 
-Starting a Surrealism project is best done using the `surreal module init` command, which is similar to `cargo new` when starting a project in Rust. The `Cargo.toml` file will include the following line to instruct cargo to generate a `.wasm` file instead of the standard `.rlib` file when compiling Rust.
+Starting a Surrealism project is best done using the `surreal db module init` command, which is similar to `cargo new` when starting a project in Rust. The `Cargo.toml` file will include the following line to instruct cargo to generate a `.wasm` file instead of the standard `.rlib` file when compiling Rust.
 
 ```toml
 [lib]
@@ -152,16 +152,16 @@ pub fn random_user() -> User {
 }
 ```
 
-With this done, the Rust code can now be compiled via the [`module build`](../../../reference/cli/surrealdb-cli/commands/module.md) command in the CLI. This is followed with the `--out` flag and the output file name/path (e.g. `demo.surli`). If you are in a separate folder, you can follow this with the path to the Rust code with functions to expose.
+With this done, the Rust code can now be compiled via the [`module build`](../../../reference/cli/db/commands/module.md) command in the CLI. This is followed with the `--out` flag and the output file name/path (e.g. `demo.surli`). If you are in a separate folder, you can follow this with the path to the Rust code with functions to expose.
 
 ```bash
-surreal module build --out demo.surli /Users/my_name/my_rust_code
+surreal db module build --out demo.surli /Users/my_name/my_rust_code
 ```
 
 For faster local iteration:
 
 ```bash
-surreal module build --debug --out demo.surli /Users/my_name/my_rust_code
+surreal db module build --debug --out demo.surli /Users/my_name/my_rust_code
 ```
 
 The file will now be compiled at either your current location or the one specified like in the command above: `/Users/my_name/my_rust_code`.
@@ -175,12 +175,12 @@ The Surrealism file is ready to be used. All that is left now is to start a data
 * `SURREAL_CAPS_ALLOW_EXPERIMENTAL=files,surrealism`, which allows the [files](../../../reference/query-language/statements/define/bucket.md) and surrealism features to be used in the first place. Files can be used in SurrealDB once a `DEFINE BUCKET` statement has been used to set up the location for the files to be stored.
 * `SURREAL_BUCKET_FOLDER_ALLOWLIST="/Users/my_name/my_rust_code/"`, which tells the database that it's okay to access this folder when using the files feature.
 
-Now it's time to [start the database](../../../reference/cli/surrealdb-cli/commands/start.md) with the `surreal start` command and these two env vars.
+Now it's time to [start the database](../../../reference/cli/db/commands/start.md) with the `surreal db start` command and these two env vars.
 
 **Bash**
 
 ```bash
-SURREAL_CAPS_ALLOW_EXPERIMENTAL=files,surrealism SURREAL_BUCKET_FOLDER_ALLOWLIST="/Users/my_name/my_rust_code/" surreal start --user root --pass secret
+SURREAL_CAPS_ALLOW_EXPERIMENTAL=files,surrealism SURREAL_BUCKET_FOLDER_ALLOWLIST="/Users/my_name/my_rust_code/" surreal db start --user root --pass secret
 ```
 
 **PowerShell**
@@ -188,15 +188,15 @@ SURREAL_CAPS_ALLOW_EXPERIMENTAL=files,surrealism SURREAL_BUCKET_FOLDER_ALLOWLIST
 ```powershell
 $env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "files,surrealism"
 $env:SURREAL_BUCKET_FOLDER_ALLOWLIST = "C:\Users\my_name\my_rust_code"
-surreal start --user root --pass secret
+surreal db start --user root --pass secret
 ```
 
-You can then connect through [SurrealDB Studio](../../../explore/studio/index.md) or the CLI with the [surreal sql](../../../reference/cli/surrealdb-cli/commands/sql.md) command:
+You can then connect through [SurrealDB Studio](../../../explore/studio/index.md) or the CLI with the [surreal db sql](../../../reference/cli/db/commands/sql.md) command:
 
 **Bash**
 
 ```bash
-SURREAL_CAPS_ALLOW_EXPERIMENTAL=files,surrealism SURREAL_BUCKET_FOLDER_ALLOWLIST="/Users/my_name/my_rust_code/" surreal sql --user root --pass secret
+SURREAL_CAPS_ALLOW_EXPERIMENTAL=files,surrealism SURREAL_BUCKET_FOLDER_ALLOWLIST="/Users/my_name/my_rust_code/" surreal db sql --user root --pass secret
 ```
 
 **PowerShell**
@@ -204,7 +204,7 @@ SURREAL_CAPS_ALLOW_EXPERIMENTAL=files,surrealism SURREAL_BUCKET_FOLDER_ALLOWLIST
 ```powershell
 $env:SURREAL_CAPS_ALLOW_EXPERIMENTAL = "files,surrealism"
 $env:SURREAL_BUCKET_FOLDER_ALLOWLIST = "C:\Users\my_name\my_rust_code"
-surreal sql --user root --pass secret
+surreal db sql --user root --pass secret
 ```
 
 We're almost there! Only two statements left and we can start accessing these functions.

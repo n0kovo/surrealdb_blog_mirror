@@ -1034,7 +1034,7 @@ INFO FOR TABLE some_table;
 
 You can set permissions on fields to control who can perform operations on them using the `PERMISSIONS` clause. The `PERMISSIONS` clause can be used to set permissions for `SELECT`, `CREATE`, and `UPDATE` operations. The `DELETE` operation only relates to records and, as such, is not available for fields.
 
-Like table permissions, field permissions apply to [record users](../../../../learn/security/authentication/users.md#record-users) (and guests when enabled), not to [system users](../../../../learn/security/authentication/users.md#system-users) such as `root`. A query run as `root`, including one in SurrealDB Studio or `surreal sql` signed in as root, therefore still returns a field defined with `PERMISSIONS FOR select NONE`. To check that a field is hidden, sign in as a record user and run the query again.
+Like table permissions, field permissions apply to [record users](../../../../learn/security/authentication/users.md#record-users) (and guests when enabled), not to [system users](../../../../learn/security/authentication/users.md#system-users) such as `root`. A query run as `root`, including one in SurrealDB Studio or `surreal db sql` signed in as root, therefore still returns a field defined with `PERMISSIONS FOR select NONE`. To check that a field is hidden, sign in as a record user and run the query again.
 
 ```surql
 /**[test]
@@ -1315,7 +1315,7 @@ DEFINE FIELD view_count ON article COMPUTED fn::record_view();
 The same read-time refusal applies to a write reached through [`eval::surql()`](../../functions/database-functions/eval.md#evalsurql), a JavaScript function, or a closure that arrives as data, and to a function that is changed to write after the field is defined. See [Functions that other definitions require to stay read-only](function.md#functions-that-other-definitions-require-to-stay-read-only).
 
 > [!NOTE]
-> The definition-time check also applies under `OPTION IMPORT`, so importing an [export](../../../cli/surrealdb-cli/commands/export.md) that holds a `COMPUTED` body with a direct write fails at that `DEFINE FIELD` statement.
+> The definition-time check also applies under `OPTION IMPORT`, so importing an [export](../../../cli/db/commands/export.md) that holds a `COMPUTED` body with a direct write fails at that `DEFINE FIELD` statement.
 
 ### A computed body is capped at the definer's permissions
 
@@ -1396,7 +1396,7 @@ The condition has to sit inside the graph path for the inlined value to be reach
 
 An inlined field can be thought of as an index in that it is a write-side cost paid for a read-side gain. Conversely, a field that is filtered rarely and written constantly is not one that you would want to inline.
 
-Values for an inlined field should also be kept small. A payload larger than `SURREAL_GRAPH_INLINE_PROPS_CAP` (64 bytes by default) is spilled, meaning the value stays on the record only and the traversal falls back to fetching it. See [environment variables](../../../cli/surrealdb-cli/environment-variables.md).
+Values for an inlined field should also be kept small. A payload larger than `SURREAL_GRAPH_INLINE_PROPS_CAP` (64 bytes by default) is spilled, meaning the value stays on the record only and the traversal falls back to fetching it. See [environment variables](../../../cli/db/environment-variables.md).
 
 `ALTER FIELD` adds the clause to an existing field and removes it again, so the decision is reversible without redefining the field.
 

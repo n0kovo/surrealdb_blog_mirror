@@ -1,0 +1,81 @@
+---
+position: 10
+title: mcp
+description: "Start SurrealDB's Model Context Protocol server over stdio for local IDE and agent integrations."
+source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/db/commands/mcp.mdx"
+---
+
+*Since v3.1.0*
+
+The `surreal db mcp` subcommand starts the built-in [Model Context Protocol](https://modelcontextprotocol.io) server on **stdio**, suitable for Cursor, VS Code, Claude Desktop, and other MCP clients. It opens an embedded datastore at the path you pass (default `memory`) and runs every tool call with owner-level access.
+
+For HTTP-based clients against a running server, use [`surreal db start`](start.md) and connect to the **`/mcp`** endpoint instead. See [When to use `surreal db mcp` vs `surreal db start`](../../../../build/ai-agents/mcp/embedded.md#when-to-use-surreal-db-mcp-vs-surreal-db-start) for the comparison, and [Embedded MCP](../../../../build/ai-agents/mcp/embedded.md) for transports, editor setup, and security.
+
+> [!WARNING]
+> Stdio MCP is intended for a trusted operator on the same machine. Do not expose this process to untrusted users - there is no per-call HTTP authentication surface to re-bind credentials.
+
+<Synopsis>
+surreal db mcp [OPTIONS] [PATH]
+</Synopsis>
+
+<OptionsTable
+    title="Arguments"
+    options={[
+        {
+            "name": "[PATH]",
+            "default": "memory",
+            "env": "SURREAL_PATH",
+            "description": "Database path for the embedded datastore."
+        }
+    ]}
+/>
+
+<OptionsTable
+    title="Options"
+    options={[
+        {
+            "name": "--ns",
+            "value": "<NAMESPACE>",
+            "env": "SURREAL_MCP_NS",
+            "description": "Initial namespace."
+        },
+        {
+            "name": "--db",
+            "value": "<DATABASE>",
+            "env": "SURREAL_MCP_DB",
+            "description": "Initial database."
+        },
+        {
+            "name": "--username",
+            "short": "-u",
+            "value": "<USERNAME>",
+            "env": "SURREAL_USER",
+            "description": "Root username. Requires `--password`, and applies only if no root user exists yet."
+        },
+        {
+            "name": "--password",
+            "short": "-p",
+            "value": "<PASSWORD>",
+            "env": "SURREAL_PASS",
+            "description": "Root password."
+        }
+    ]}
+/>
+
+Database tuning flags from `surreal db start` are also available via the shared `dbs` option group (see `surreal db mcp --help`).
+
+## Usage
+
+```bash
+surreal db mcp --ns main --db main memory
+```
+
+Optional root credentials apply only when no root user exists yet (same semantics as `surreal db start`):
+
+```bash
+surreal db mcp -u root -p secret --ns main --db main memory
+```
+
+## Limits
+
+Process-wide MCP limits use the `SURREAL_MCP_*` variables documented in [Environment variables](../environment-variables.md) and on [Embedded MCP](../../../../build/ai-agents/mcp/embedded.md#configuration). For HTTP `/mcp` on a non-loopback hostname, set `SURREAL_MCP_ALLOWED_HOSTS` (or `SURREAL_MCP_ALLOW_ALL_HOSTS` behind a trusted proxy). See those pages for details.

@@ -16,7 +16,7 @@ The following four approaches are the most commonly used ways to execute Surreal
 | Approach | Typical use |
 | -------- | ----------- |
 | [SurrealDB Studio](executing-queries/via-studio.md) | Interactive editing, Sandbox, and visual results in the browser. |
-| [CLI](executing-queries/via-cli.md) | Local development, scripts, and [`surreal sql`](../../../reference/cli/surrealdb-cli/commands/sql.md) against a running server. |
+| [CLI](executing-queries/via-cli.md) | Local development, scripts, and [`surreal db sql`](../../../reference/cli/db/commands/sql.md) against a running server. |
 | [HTTP](executing-queries/via-http.md) | Services and integrations that call the [`/sql`](../../../reference/rest-api/http-protocol.md#sql) endpoint. |
 | [SDKs](executing-queries/via-sdks.md) | Application code using the official clients (WebSocket or HTTP internally, depending on SDK and configuration). |
 

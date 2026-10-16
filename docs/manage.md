@@ -1,7 +1,7 @@
 ---
 position: 12
 title: Manage
-description: "Running SurrealDB in production: managed instances and organisations. Billing, the surrealctl CLI, observability, schema migration and self-hosting."
+description: "Running SurrealDB in production: managed instances and organisations. Billing, observability, schema migration and self-hosting."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/manage.mdx"
 ---
 
@@ -12,7 +12,6 @@ This section contains operational documentation for both SurrealDB Cloud and sel
 - **[Instances](manage/instances/index.md)** — Create, connect to, scale, back up and monitor managed instances.
 - **[Organisations](manage/organisations/index.md)** — Members, roles, invitations and billing for a team.
 - **[Enterprise](manage/enterprise/index.md)** — Single sign-on, centralised member management, and custom roles.
-- **[surrealctl](manage/surrealctl/index.md)** — Manage instances and organisations from the command line.
 - **[Observability](manage/observability/index.md)** — Metrics, logs, traces and slow-query analysis.
 - **[Schema migration](manage/schema-migration/index.md)** — Promote schema changes safely with SurrealKit.
 - **[Self-hosted](manage/self-hosted/index.md)** — Run and operate SurrealDB on your own infrastructure.
@@ -23,4 +22,4 @@ This section contains operational documentation for both SurrealDB Cloud and sel
 
 ## Related sections
 
-The full command surface for `surrealctl`, `surreal` and `surqlfmt` is in the [CLI reference](reference/cli/index.md). The pages here cover what to run and when; the reference covers every flag.
+Manage Cloud from the command line with [`surreal cloud`](explore/cli/cloud/index.md). The full command surface for `surreal` and `surqlfmt` is in the [CLI reference](reference/cli/index.md). The pages here cover what to run and when; the reference covers every flag.

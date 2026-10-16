@@ -84,5 +84,5 @@ Embedded databases are well suited for scenarios where running a separate Surrea
 - [Surreal API reference](../api/core/surreal.md) for complete method signatures
 - [Connecting to SurrealDB](connecting-to-surrealdb.md) for all connection protocols
 - [Deployment models](../../../manage/self-hosted/deployment-models.md) for production server deployment
-- [SurrealDB CLI start](../../cli/surrealdb-cli/commands/start.md) for server configuration and storage backends
-- [SurrealDB CLI import](../../cli/surrealdb-cli/commands/import.md) and [export](../../cli/surrealdb-cli/commands/export.md) for command-line data management
+- [SurrealDB CLI start](../../cli/db/commands/start.md) for server configuration and storage backends
+- [SurrealDB CLI import](../../cli/db/commands/import.md) and [export](../../cli/db/commands/export.md) for command-line data management

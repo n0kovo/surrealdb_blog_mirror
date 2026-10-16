@@ -12,14 +12,14 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 Read the release notes for breaking changes, new defaults, or removed flags before you cut over. Re-run integration tests against the new version before promoting the change across your organisation.
 
 Across **major versions**, on-disk formats may change. Follow [Migrating from older SurrealDB versions](../../build/migrating/from-old-surrealdb-versions/overview.md) and the guide for your pair of major versions. Moving from 2.x to 3.x uses a v3-compatible export from the 2.x data, imported into 3.x, as described in [Migrating from 2.x to 3.x](../../build/migrating/from-old-surrealdb-versions/2x-to-3x.md). https://github.com/orgs/surrealdb/discussions/4809
-Moving from 1.x to 2.x is described in [Migrating from 1.x to 2.x](../../build/migrating/from-old-surrealdb-versions/1x-to-2x.md), which also lists the breaking changes in SurrealQL and the SDKs. [`surreal fix`](../../reference/cli/surrealdb-cli/commands/fix.md) converts 1.x data to the 2.x layout, and only 2.x binaries implement it.
+Moving from 1.x to 2.x is described in [Migrating from 1.x to 2.x](../../build/migrating/from-old-surrealdb-versions/1x-to-2x.md), which also lists the breaking changes in SurrealQL and the SDKs. [`surreal db fix`](../../reference/cli/db/commands/fix.md) converts 1.x data to the 2.x layout, and only 2.x binaries implement it.
 --END--
 
 **Rolling upgrades** in **clustered** setups usually upgrade one node at a time: verify cluster health, upgrade a member, wait for replication or quorum to stabilise, then continue.
 
 Never skip staging validation for production-like data volumes. If the cluster spans regions, plan maintenance windows that respect dependency order between tiers.
 
-**Before any upgrade**, take a fresh backup - [`surreal export`](../../reference/cli/surrealdb-cli/commands/export.md) for a logical copy and/or a storage snapshot - so you can revert if migration or client incompatibility surfaces after deploy. Some minor upgrades can only be reverted this way, including [2.6 to 2.7](../../build/migrating/from-old-surrealdb-versions/26-to-27.md#rolling-back-to-26) and [3.2 to 3.3](../../build/migrating/from-old-surrealdb-versions/32-to-33.md#rolling-back-to-32).
+**Before any upgrade**, take a fresh backup - [`surreal db export`](../../reference/cli/db/commands/export.md) for a logical copy and/or a storage snapshot - so you can revert if migration or client incompatibility surfaces after deploy. Some minor upgrades can only be reverted this way, including [2.6 to 2.7](../../build/migrating/from-old-surrealdb-versions/26-to-27.md#rolling-back-to-26) and [3.2 to 3.3](../../build/migrating/from-old-surrealdb-versions/32-to-33.md#rolling-back-to-32).
 
 Patch **security** releases promptly: subscribe to SurrealDB advisories, test the patch build in staging, then roll out using the same stop - replace - start or rolling pattern your architecture supports. Document the upgraded version in your asset inventory for compliance reviews.
 
@@ -33,7 +33,7 @@ A datastore created on 3.3.0 or later records the full migration set as applied 
 
 Two consequences for planning an upgrade:
 
-- **Reverting past a migration needs an export.** From 3.3.0, a build that lacks a migration the datastore has recorded refuses to start and names the migration. A build older than 3.3.0 records no migrations and checks only the major version, so it starts on a migrated datastore and reads it wrongly. In both cases the way back is to restore a [`surreal export`](../../reference/cli/surrealdb-cli/commands/export.md) taken before the upgrade into a datastore created by the older version. See [Rolling back to 3.2](../../build/migrating/from-old-surrealdb-versions/32-to-33.md#rolling-back-to-32).
+- **Reverting past a migration needs an export.** From 3.3.0, a build that lacks a migration the datastore has recorded refuses to start and names the migration. A build older than 3.3.0 records no migrations and checks only the major version, so it starts on a migrated datastore and reads it wrongly. In both cases the way back is to restore a [`surreal db export`](../../reference/cli/db/commands/export.md) taken before the upgrade into a datastore created by the older version. See [Rolling back to 3.2](../../build/migrating/from-old-surrealdb-versions/32-to-33.md#rolling-back-to-32).
 - **Define new sequences once every node runs 3.3.0.** The migration copies each sequence definition to a new key layout and leaves the original in place, so existing sequences keep working on nodes of either version throughout the rollout. A sequence created on an upgraded node exists only in the new layout, so a node still on the previous release cannot see it.
 
 > [!NOTE]

@@ -12,7 +12,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 > ```bash
 > export SURREALDB_HOST=wss://production-6xk2.aws-euw1.surreal.cloud
 > ```
-> Find the endpoint for an instance with [`surrealctl instance endpoint`](../../reference/cli/surrealctl/commands/instance.md). Namespace `main` and database `main` are the defaults, so only `--user root --pass secret` is shown alongside each command.
+> Find the endpoint for an instance with [`surreal cloud instance endpoint`](../../reference/cli/cloud/commands/instance.md). Namespace `main` and database `main` are the defaults, so only `--user root --pass secret` is shown alongside each command.
 
 SurrealKit is the official schema management and migration CLI for SurrealDB. You define your database schema as plain `.surql` files, commit them alongside your application code, and SurrealKit keeps every environment in sync with those definitions.
 

@@ -43,4 +43,4 @@ Each registered method can be removed from the same page. Removing your only met
 ## Next steps
 
 1. [Invite colleagues](members-and-roles.md) so each person signs in with their own account and their own second factor.
-2. [Create a token](../surrealctl/authentication.md) for automation rather than sharing an interactive account.
+2. [Create a token](../../explore/cli/cloud/authentication.md) for automation rather than sharing an interactive account.

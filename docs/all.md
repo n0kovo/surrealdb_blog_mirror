@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1114 pages_  
+_1124 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -391,6 +391,16 @@ _1114 pages_
   This section contains information about different embedding models you can use with SurrealDB.
 - [Integrations](build/integrations/index.md)
   Integrations connecting SurrealDB to AI frameworks and embeddings. Also agents and data tools.
+- [AI SDK](build/integrations/vercel/ai-sdk.md)
+  Use SurrealDB with the Vercel AI SDK 7 - store embeddings from embedMany, give models vector search and graph traversal tools, and persist chat history in a Next.js route.
+- [Eve](build/integrations/vercel/eve.md)
+  Connect eve agents to SurrealDB - tools that query your records with parameters and approval, and a custom memory provider with scoped vector recall and idempotent capture.
+- [Vercel](build/integrations/vercel/index.md)
+  Use SurrealDB with Vercel - Next.js apps, the AI SDK, eve agents and Vercel Sandbox - with connection, credential and runtime guidance that applies to all four.
+- [Next.js](build/integrations/vercel/nextjs.md)
+  Connect a Next.js App Router application on Vercel to SurrealDB - one shared client, Server Components, Server Actions, Route Handlers and browser live queries with record users.
+- [Vercel Sandbox](build/integrations/vercel/vercel-sandbox.md)
+  Run a temporary SurrealDB server inside a Vercel Sandbox microVM for tests and agent scratch data, or give sandboxed code read-only access to a SurrealDB database.
 - [Importing CSV data](build/migrating/from-files-and-streams/csv.md)
   SurrealDB Studio can be used to import CSV data to SurrealDB.
 - [Migrating](build/migrating/from-files-and-streams/index.md)
@@ -424,7 +434,27 @@ _1114 pages_
 - [Migrating to SurrealDB](build/migrating/index.md)
   Moving data into SurrealDB from other databases, or older releases. Also from files and streams.
 - [Explore](explore.md)
-  SurrealDB Studio, video tutorials and demos, and worked examples. Machine-learning models, and the SurrealDB Labs archive.
+  SurrealDB Studio, the SurrealDB CLI, video tutorials and demos, and worked examples. Machine-learning models, and the SurrealDB Labs archive.
+- [Authenticating surreal cloud](explore/cli/cloud/authentication.md)
+  Choose between a login session and a personal access token with surreal cloud, create and revoke tokens, scopes, profiles, where credentials are stored, and authenticating an unattended run.
+- [Managing SurrealDB Cloud](explore/cli/cloud/index.md)
+  Manage SurrealDB Cloud from the command line with surreal cloud: sign in, create and scale instances, pause and resume them, read logs and metrics, manage members, and script it in CI. Includes the move from surrealctl.
+- [Instances with surreal cloud](explore/cli/cloud/instances.md)
+  Deploy, find, connect to, scale, pause, back up, set capabilities on, and delete SurrealDB Cloud instances with the surreal cloud instance commands.
+- [Organisations with surreal cloud](explore/cli/cloud/organisations.md)
+  Select an organisation, manage members and invitations, check roles, and read usage, spend and plans from the command line with surreal cloud.
+- [Scripting surreal cloud](explore/cli/cloud/scripting.md)
+  Drive surreal cloud from CI and shell scripts: the JSON contract, exit codes for control flow, unattended runs, waiting semantics, and installing the component in a pipeline.
+- [Managing components](explore/cli/components.md)
+  How surreal installs, upgrades, pins, switches and removes components, how version names work (3.3.2, 2, beta, nightly), running another version once with +VERSION, and offline or unattended use.
+- [Using the database](explore/cli/database.md)
+  Run the SurrealDB database through the surreal launcher: surreal db start, sql, import, export, is-ready, validate, fix, ml and mcp. Workflows for local development, moving data, and checking a server, plus the deprecated surreal start forms.
+- [SurrealDB CLI](explore/cli/index.md)
+  The surreal command installs once, then installs, versions and runs components: the database (surreal db), SurrealDB Cloud (surreal cloud) and WebAssembly modules (surreal mod). A first session, how components work, and where each workflow is documented.
+- [Install the SurrealDB CLI](explore/cli/install.md)
+  Install the surreal command with the install script on macOS, Linux and Windows. Options for the database switch (--db, --no-db, SURREAL_CLI_INSTALL_DB), choosing a release, adding components, mirrors, package managers and Docker.
+- [Working with modules](explore/cli/modules.md)
+  Scaffold, build, inspect and run Surrealism WebAssembly modules from the command line with surreal db module, and how the mod component of the surreal launcher relates to it.
 - [Introduction](explore/ml-models/index.md)
   SurrealML runs trained ML models in SurrealDB: train in Python. Then load and infer with sklearn or PyTorch.
 - [Computation](explore/ml-models/surrealml/computation.md)
@@ -759,7 +789,7 @@ _1114 pages_
 - [Executing queries](learn/querying/surrealql/executing-queries/index.md)
   In this section, you will explore methods to query data in SurrealDB using SurrealQL, GraphQL or any of the available SDKs. This allows you to retrieve, filter, and manipulate data efficiently and in the best way for your use case.
 - [Via CLI](learn/querying/surrealql/executing-queries/via-cli.md)
-  Run SurrealQL from the terminal with surreal sql.
+  Run SurrealQL from the terminal with surreal db sql.
 - [Via HTTP](learn/querying/surrealql/executing-queries/via-http.md)
   In this section, you will explore querying SurrealDB using HTTP. The HTTP API is designed to be simple and intuitive, with a RESTful interface that provides a consistent way to interact with the database.
 - [Via SDKs](learn/querying/surrealql/executing-queries/via-sdks.md)
@@ -827,7 +857,7 @@ _1114 pages_
 - [Security](learn/security/index.md)
   Secure a SurrealDB deployment with authentication and authorisation. Plus security best practices.
 - [Manage](manage.md)
-  Running SurrealDB in production: managed instances and organisations. Billing, the surrealctl CLI, observability, schema migration and self-hosting.
+  Running SurrealDB in production: managed instances and organisations. Billing, observability, schema migration and self-hosting.
 - [Enterprises](manage/enterprise/index.md)
   A SurrealDB enterprise sits above organisations and accounts, adding single sign-on, centralised member management, and custom roles.
 - [Enterprise members](manage/enterprise/members.md)
@@ -865,7 +895,7 @@ _1114 pages_
 - [Connect to an instance](manage/instances/connect/index.md)
   The four routes to a SurrealDB Cloud instance. SurrealDB Studio, the CLI, a client SDK, and the HTTP API, plus where to find the connection details.
 - [Via CLI](manage/instances/connect/via-cli.md)
-  Open an interactive SurrealQL shell against an instance with surreal sql, and where to get the token.
+  Open an interactive SurrealQL shell against an instance with surreal db sql, and where to get the token.
 - [Via HTTP](manage/instances/connect/via-http.md)
   Query an instance with cURL or any HTTP client, and the request size limits that apply per endpoint.
 - [Via SDK](manage/instances/connect/via-sdk.md)
@@ -877,7 +907,7 @@ _1114 pages_
 - [High availability](manage/instances/high-availability.md)
   What a Start instance and a Scale cluster each survive. How to plan for the failures they do not.
 - [Import and export](manage/instances/import-and-export.md)
-  Move data in and out with surreal export and surreal import. Covers size limits and partial-import behaviour.
+  Move data in and out with surreal db export and surreal db import. Covers size limits and partial-import behaviour.
 - [Instances](manage/instances/index.md)
   What a SurrealDB Cloud instance is. How the Start and Scale plans differ, and where each operational task is documented.
 - [Monitoring](manage/instances/monitoring.md)
@@ -982,92 +1012,82 @@ _1114 pages_
   Health checks, OpenTelemetry metrics and traces, audit logs and slow-query logs, and integration with common observability stacks.
 - [Upgrades & patching](manage/self-hosted/upgrades-and-patching.md)
   Upgrade SurrealDB safely: binary replacement, major-version data migration, automatic data migrations, and cluster rolling upgrades.
-- [Authenticating surrealctl](manage/surrealctl/authentication.md)
-  Choose between a login session and a personal access token, store credentials safely, and authenticate an unattended run.
-- [surrealctl](manage/surrealctl/index.md)
-  What the surrealctl control-plane CLI does. When to use it instead of SurrealDB Studio or the surreal binary, plus a sixty-second quickstart.
-- [Install](manage/surrealctl/install.md)
-  Install surrealctl on macOS, Linux, or Windows, verify the download, sign in for the first time, and keep the binary up to date.
-- [Instances](manage/surrealctl/instances.md)
-  Deploy, find, connect to, scale, pause, back up, and delete instances with the surrealctl instance commands.
-- [Organisations](manage/surrealctl/organisations.md)
-  Select an organisation, manage members and invitations, check roles, and read usage and spend from the command line.
-- [Scripting](manage/surrealctl/scripting.md)
-  Drive surrealctl from CI and shell scripts: the JSON contract, exit codes for control flow, unattended runs, and waiting semantics.
 - [Reference](reference.md)
   SurrealQL statements and functions, and the full API surface. The HTTP, RPC, CBOR and Postgres wire protocols, the command-line tools, and every official SDK.
+- [surreal cloud authentication](reference/cli/cloud/authentication.md)
+  How surreal cloud signs in, the difference between a login session and a personal access token, what a token cannot do, and where credentials are stored on disk.
+- [surreal cloud auth](reference/cli/cloud/commands/auth.md)
+  Reference for surreal cloud auth - signing in, signing out, inspecting the stored credential, renewing it, and listing what it is permitted to do.
+- [surreal cloud catalog](reference/cli/cloud/commands/catalog.md)
+  Reference for surreal cloud catalog - the platform-wide lists of regions, instance types, storage types, SurrealDB versions and billing countries.
+- [surreal cloud config](reference/cli/cloud/commands/config.md)
+  Reference for surreal cloud config - listing, reading, setting and clearing configuration values, printing the file path, and opening it in an editor.
+- [surreal cloud context](reference/cli/cloud/commands/context.md)
+  Reference for surreal cloud context - showing what an invocation resolved, switching between profiles, and listing the profiles that are configured.
+- [surreal cloud commands](reference/cli/cloud/commands/index.md)
+  A map of every surreal cloud command group and leaf command, with links to the page documenting each one.
+- [surreal cloud instance](reference/cli/cloud/commands/instance.md)
+  Reference for surreal cloud instance - create, update, pause, resume, delete and watch instances, read status, endpoint, logs, metrics and usage, mint database tokens, open sql, import and export through surreal db, and manage capabilities and backups.
+- [surreal cloud invite](reference/cli/cloud/commands/invite.md)
+  Reference for surreal cloud invite - list pending organisation invitations, send one with a role, and withdraw one by email address or code. Same command as team invite; email is checked locally and roles come from org roles.
+- [surreal cloud other commands](reference/cli/cloud/commands/misc.md)
+  Reference for the surreal cloud leaf commands - whoami, api, open, status, version and completion.
+- [surreal cloud org](reference/cli/cloud/commands/org.md)
+  Reference for surreal cloud org - list, get, create, rename, archive and remember a default organisation, and read its roles, permissions, usage, spend and plans. Includes the --period format, archive confirmation and the scopes this group needs.
+- [surreal cloud team](reference/cli/cloud/commands/team.md)
+  Reference for surreal cloud team - list and inspect organisation members, invite someone, change a member's role, and remove a membership. Members are matched by username or user id; roles come from org roles.
+- [surreal cloud token](reference/cli/cloud/commands/token.md)
+  Reference for surreal cloud token - listing, creating and revoking personal access tokens, and listing the scopes a token can be granted. Covers the login-session requirement, the secret guard, expiry, and the 10-minute revocation lag.
+- [surreal cloud global flags](reference/cli/cloud/global-flags.md)
+  The sixteen flags every surreal cloud command accepts, the environment variable behind each one, the precedence chain that resolves them, the duration syntax, and the deprecated SURREALCTL_ aliases.
+- [surreal cloud reference](reference/cli/cloud/index.md)
+  What surreal cloud is, where the control plane ends and the database commands begin, how it relates to the former surrealctl, the command grammar, and how this reference is organised.
+- [surreal cloud long-running operations](reference/cli/cloud/long-running-operations.md)
+  How surreal cloud waits for an instance to settle - the wait flags, which commands wait by default, the polling schedule, rate-limit handling, and exit code 10.
+- [surreal cloud output and exit codes](reference/cli/cloud/output-and-exit-codes.md)
+  The surreal cloud --json contract, the stdout and stderr split, NDJSON streams, the shared list presentation flags, the secret and confirmation guards, and every exit code.
+- [export](reference/cli/db/commands/export.md)
+  A command to export data from a SurrealDB database server into a SurrealQL file format.
+- [fix](reference/cli/db/commands/fix.md)
+  A command to convert SurrealDB version 1.x data into a usable format for versions 2.0 and above.
+- [help](reference/cli/db/commands/help.md)
+  surreal db help and surreal db <COMMAND> --help print the database help. surreal help and surreal --help print the launcher help, which lists components and version commands instead.
+- [import](reference/cli/db/commands/import.md)
+  A command that imports a file in SurrealQL format into a local or remote SurrealDB database server.
+- [surreal db commands](reference/cli/db/commands/index.md)
+  Every surreal db subcommand with its purpose, and how each relates to the launcher commands, with links to each command’s flags and examples.
+- [isready](reference/cli/db/commands/isready.md)
+  A command that determines whether a SurrealDB server has started and is able to accept connections.
+- [mcp](reference/cli/db/commands/mcp.md)
+  Start SurrealDB's Model Context Protocol server over stdio for local IDE and agent integrations.
+- [ml](reference/cli/db/commands/ml.md)
+  The ML command can be used to import and export machine learning models.
+- [module](reference/cli/db/commands/module.md)
+  A command used to compile, manage and execute Surrealism plugin modules.
+- [sql](reference/cli/db/commands/sql.md)
+  Open a SurrealQL REPL, or pipe queries in from a script.
+- [start](reference/cli/db/commands/start.md)
+  Run a server in memory, on disk, or as a node in a cluster.
+- [surreal upgrade db](reference/cli/db/commands/upgrade.md)
+  How to upgrade the database component with the launcher command surreal upgrade db, to the latest release, a specific version, or an alpha, beta or nightly build. surreal db upgrade is refused.
+- [validate](reference/cli/db/commands/validate.md)
+  A command to confirm whether one or more SurrealQL files are valid or not.
+- [version](reference/cli/db/commands/version.md)
+  surreal db version prints the database component version with its platform and architecture, or the version of a remote server with --endpoint. The launcher has its own surreal version and surreal --version.
+- [Environment variables](reference/cli/db/environment-variables.md)
+  Every SURREAL_ variable, with its default and allowed values.
+- [surreal db](reference/cli/db/index.md)
+  The database component of the surreal CLI, run as surreal db. It can be used to export a dataset as SurrealQL from a local or remote SurrealDB database, import SurrealQL data into a local or remote database, and start a single SurrealDB instance or distributed cluster.
+- [Environment variables and flags by version](reference/cli/db/version-history.md)
+  Which SURREAL_ environment variables and surreal db command-line flags existed in each SurrealDB release from 1.0.0 to 3.3.0, when each was added or removed, and how defaults changed.
 - [SurrealQL formatter](reference/cli/formatter/overview.md)
   The surqlfmt command automatically formats SurrealQL files for consistent style and readability.
-- [CLI Tools](reference/cli/index.md)
-  Reference for surrealctl, surreal and surqlfmt. The control plane, the data plane, and formatting SurrealQL.
-- [Authentication reference](reference/cli/surrealctl/authentication.md)
-  How surrealctl signs in, the difference between a login session and a personal access token, what a token cannot do, and where credentials are stored on disk.
-- [auth](reference/cli/surrealctl/commands/auth.md)
-  Reference for surrealctl auth - signing in, signing out, inspecting the stored credential, renewing it, and listing what it is permitted to do.
-- [catalog](reference/cli/surrealctl/commands/catalog.md)
-  Reference for surrealctl catalog - the platform-wide lists of regions, instance types, storage types, SurrealDB versions and billing countries.
-- [config](reference/cli/surrealctl/commands/config.md)
-  Reference for surrealctl config - listing, reading, setting and clearing configuration values, printing the file path, and opening it in an editor.
-- [context](reference/cli/surrealctl/commands/context.md)
-  Reference for surrealctl context - showing what an invocation resolved, switching between profiles, and listing the profiles that are configured.
-- [surrealctl commands](reference/cli/surrealctl/commands/index.md)
-  A map of every surrealctl command group and leaf command, with links to the page documenting each one.
-- [instance](reference/cli/surrealctl/commands/instance.md)
-  Reference for surrealctl instance - creating, scaling, pausing and deleting instances, reading logs, metrics and endpoints, minting tokens, and managing capabilities and backups.
-- [invite](reference/cli/surrealctl/commands/invite.md)
-  Reference for surrealctl invite - listing an organisation's pending invitations, sending one, and withdrawing one.
-- [Other commands](reference/cli/surrealctl/commands/misc.md)
-  Reference for the surrealctl leaf commands - whoami, api, open, status, version and completion.
-- [org](reference/cli/surrealctl/commands/org.md)
-  Reference for surrealctl org - listing and creating organisations, renaming and archiving them, remembering a default, and reading roles, permissions, usage, spend and plans.
-- [spectron](reference/cli/surrealctl/commands/spectron.md)
-  Reference for surrealctl spectron - managing SurrealDB Agent Memory contexts, API keys, scoped keys, access tokens, principals and grants, packages, and the scope and provider catalogues.
-- [team](reference/cli/surrealctl/commands/team.md)
-  Reference for surrealctl team - listing organisation members, inspecting one, inviting someone, changing a role, and ending a membership.
-- [token](reference/cli/surrealctl/commands/token.md)
-  Reference for surrealctl token - listing, creating and revoking personal access tokens, and browsing the scopes a token can be granted.
-- [Global flags](reference/cli/surrealctl/global-flags.md)
-  The sixteen flags every surrealctl command accepts, the environment variable behind each one, the precedence chain that resolves them, and the duration syntax.
-- [Long-running operations](reference/cli/surrealctl/long-running-operations.md)
-  How surrealctl waits for an instance to settle - the wait flags, which commands wait by default, the polling schedule, rate-limit handling, and exit code 10.
-- [Output and exit codes](reference/cli/surrealctl/output-and-exit-codes.md)
-  The surrealctl --json contract, the stdout and stderr split, NDJSON streams, the shared list presentation flags, the secret and confirmation guards, and every exit code.
-- [surrealctl reference](reference/cli/surrealctl/overview.md)
-  What surrealctl is, where the control plane ends and the SurrealDB CLI begins, the command grammar, and how this reference is organised.
-- [export](reference/cli/surrealdb-cli/commands/export.md)
-  A command to export data from a SurrealDB database server into a SurrealQL file format.
-- [fix](reference/cli/surrealdb-cli/commands/fix.md)
-  A command to convert SurrealDB version 1.x data into a usable format for versions 2.0 and above.
-- [help](reference/cli/surrealdb-cli/commands/help.md)
-  A command to display all possible top-level commands and arguments used in the SurrealDB binary.
-- [import](reference/cli/surrealdb-cli/commands/import.md)
-  A command that imports a file in SurrealQL format into a local or remote SurrealDB database server.
-- [SurrealDB CLI commands](reference/cli/surrealdb-cli/commands/index.md)
-  How the SurrealDB CLI is organised into subcommands, with links to each command’s flags and examples.
-- [isready](reference/cli/surrealdb-cli/commands/isready.md)
-  A command that determines whether a SurrealDB server has started and is able to accept connections.
-- [mcp](reference/cli/surrealdb-cli/commands/mcp.md)
-  Start SurrealDB's Model Context Protocol server over stdio for local IDE and agent integrations.
-- [ml](reference/cli/surrealdb-cli/commands/ml.md)
-  The ML command can be used to import and export machine learning models.
-- [module](reference/cli/surrealdb-cli/commands/module.md)
-  A command used to compile, manage and execute Surrealism plugin modules.
-- [sql](reference/cli/surrealdb-cli/commands/sql.md)
-  Open a SurrealQL REPL, or pipe queries in from a script.
-- [start](reference/cli/surrealdb-cli/commands/start.md)
-  Run a server in memory, on disk, or as a node in a cluster.
-- [upgrade](reference/cli/surrealdb-cli/commands/upgrade.md)
-  A command to change the current version of SurrealDB to another one, including the latest version, specified version, or nightly.
-- [validate](reference/cli/surrealdb-cli/commands/validate.md)
-  A command to confirm whether one or more SurrealQL files are valid or not.
-- [version](reference/cli/surrealdb-cli/commands/version.md)
-  A command to output the current version of the SurrealDB binary along with the machine architecture.
-- [Environment variables](reference/cli/surrealdb-cli/environment-variables.md)
-  Every SURREAL_ variable, with its default and allowed values.
-- [SurrealDB CLI](reference/cli/surrealdb-cli/overview.md)
-  The SurrealDB command-line tool can be used to export a dataset as SurrealQL from a local or remote SurrealDB database, import SurrealQL data into a local or remote database, and start a single SurrealDB instance or distributed cluster.
-- [Environment variables and flags by version](reference/cli/surrealdb-cli/version-history.md)
-  Which SURREAL_ environment variables and surreal command-line flags existed in each SurrealDB release from 1.0.0 to 3.3.0, when each was added or removed, and how defaults changed.
+- [CLI tools](reference/cli/index.md)
+  Overview of every command in the surreal launcher, surreal db, surreal cloud and surreal mod, with links to each reference page, plus the separate surqlfmt formatter.
+- [surreal launcher commands](reference/cli/launcher.md)
+  Reference for the surreal launcher: install, upgrade, use, uninstall, version, --version, +VERSION, help, version names, SURREAL_CLI_* environment variables, and exit codes.
+- [surreal mod](reference/cli/modules.md)
+  The mod component of the surreal launcher, for building and running WebAssembly modules. Its status, and the surreal db module commands that provide the same workflow today.
 - [Handle authentication](reference/dotnet/core/authentication.md)
   In this section, we will walk you through the process of authenticating users and securing your SurrealDB database.
 - [Connection strings](reference/dotnet/core/connection-strings.md)
@@ -2169,15 +2189,15 @@ _1114 pages_
 - [In-memory](running/in-memory.md)
   Start an in-memory SurrealDB database. The quickest way to get started, though data does not persist on shutdown.
 - [Installation](running/installation/index.md)
-  Install the SurrealDB server on your machine: macOS, Windows, Linux. Nightly builds are covered too.
+  Install the surreal command-line tool and the SurrealDB database on macOS, Windows and Linux. Nightly builds and the install script's options are covered too.
 - [Linux](running/installation/linux.md)
-  Install SurrealDB on Linux or Unix with the install script.
+  Install the surreal command-line tool and the SurrealDB database on Linux with the install script, then confirm the installation.
 - [macOS](running/installation/macos.md)
-  Install SurrealDB on macOS with Homebrew or the install script.
+  Install the surreal command-line tool and the SurrealDB database on macOS with the install script or Homebrew, then confirm the installation.
 - [Nightly](running/installation/nightly.md)
-  If you prefer developing on the bleeding edge, you can follow this tutorial to install SurrealDB Nightly. The nightly version is built and released every night at midnight.
+  Install or upgrade to the SurrealDB nightly build, an unreleased build made every night, with the install script, surreal upgrade, or the nightly Docker tag.
 - [Windows](running/installation/windows.md)
-  Install SurrealDB on Windows with Chocolatey or the install script.
+  Install the surreal command-line tool and the SurrealDB database on Windows with the PowerShell install script, Chocolatey or Scoop, then confirm the installation.
 - [Multi-node](running/multi-node.md)
   Run SurrealDB against distributed storage: horizontally scalable. Highly available clusters.
 - [Running SurrealDB](running/overview.md)

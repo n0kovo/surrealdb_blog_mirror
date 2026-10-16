@@ -57,7 +57,7 @@ val client = SurrealClient(SurrealClientConfig(url = "ws://localhost:8000"))
 
 ## Connection string protocols
 
-The URL scheme determines the transport. For more on server configuration, see the [start command](../../cli/surrealdb-cli/commands/start.md) documentation.
+The URL scheme determines the transport. For more on server configuration, see the [start command](../../cli/db/commands/start.md) documentation.
 
 | Protocol | Description |
 |---|---|

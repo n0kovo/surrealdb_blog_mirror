@@ -95,14 +95,14 @@ The `--v3` flag ensures the export applies the same automatic transformations de
 
 ### Step 2: Import into your v3 instance
 
-Once the export is complete, import the file into your `3.x` instance using the standard `surreal import` command:
+Once the export is complete, import the file into your `3.x` instance using the standard `surreal db import` command:
 
 ```bash
-surreal import --namespace <namespace> --database <database> \
+surreal db import --namespace <namespace> --database <database> \
   --endpoint <endpoint> --token <token> v2_exported_for_v3.surql
 ```
 
-For the full list of available options for each command, see the [export command](../../../reference/cli/surrealdb-cli/commands/export.md) and [import command](../../../reference/cli/surrealdb-cli/commands/import.md) documentation.
+For the full list of available options for each command, see the [export command](../../../reference/cli/db/commands/export.md) and [import command](../../../reference/cli/db/commands/import.md) documentation.
 
 ## Severity levels
 
@@ -573,7 +573,7 @@ COLUMNS name FULLTEXT ANALYZER example_ascii BM25 HIGHLIGHTS;
 
 **Before (2.x)**:
 ```bash
-surreal start --strict
+surreal db start --strict
 ```
 
 **After (3.x)**:

@@ -41,7 +41,7 @@ Any other language can use the [HTTP API](../instances/connect/via-http.md).
 
 Yes. Export from your current deployment, then import into the instance. See [Import and export](../instances/import-and-export.md), and [Migrating to SurrealDB](../../build/migrating/index.md) for a move from another database.
 
-A dedicated migration tool for existing self-hosted deployments is in development. Until it ships, use `surreal export` and `surreal import`.
+A dedicated migration tool for existing self-hosted deployments is in development. Until it ships, use `surreal db export` and `surreal db import`.
 
 ### Why am I getting an authentication error when connecting through an SDK?
 
@@ -57,7 +57,7 @@ Once every six hours, and a change of instance type counts as a storage change. 
 
 ### Can I transfer an instance to another organisation?
 
-No. Deploy an instance in the target organisation, then move the data with [`surreal export` and `surreal import`](../instances/import-and-export.md).
+No. Deploy an instance in the target organisation, then move the data with [`surreal db export` and `surreal db import`](../instances/import-and-export.md).
 
 ### Can I delete an organisation?
 
@@ -65,7 +65,7 @@ Not at present. Delete the instances inside it, and it stops accruing charges. S
 
 ### What are the current limits?
 
-- **Server flags and environment variables** cannot be set directly. [Instance capabilities](../instances/configure.md#capabilities) control runtime behaviour instead, in Studio or with `surrealctl instance capabilities`.
+- **Server flags and environment variables** cannot be set directly. [Instance capabilities](../instances/configure.md#capabilities) control runtime behaviour instead, in Studio or with `surreal cloud instance capabilities`.
 - **[GraphQL](../../learn/querying/graphql/overview.md)** is not yet enabled on managed instances.
 - **Free instances** become read-only above the 1 GB storage allowance. Existing data stays available, and new writes are refused until you move to a paid instance type.
 - **Request sizes** are capped per endpoint. See [request size limits](../instances/connect/via-http.md#request-size-limits).
@@ -109,7 +109,7 @@ In return, SurrealDB:
 
 ### How do I configure user authentication?
 
-Connect to the instance, then [define users](../../reference/query-language/statements/define/user.md) or [access methods](../../reference/query-language/statements/define/access/index.md) at root, namespace, or database level. Those credentials work across every interface: the [HTTP API](../../reference/rest-api/index.md), the [CLI](../../reference/cli/surrealdb-cli/overview.md), the SDKs, and [SurrealDB Studio](https://studio.surrealdb.com). See [Connect via SDK](../instances/connect/via-sdk.md#create-credentials).
+Connect to the instance, then [define users](../../reference/query-language/statements/define/user.md) or [access methods](../../reference/query-language/statements/define/access/index.md) at root, namespace, or database level. Those credentials work across every interface: the [HTTP API](../../reference/rest-api/index.md), the [CLI](../../reference/cli/db/index.md), the SDKs, and [SurrealDB Studio](https://studio.surrealdb.com). See [Connect via SDK](../instances/connect/via-sdk.md#create-credentials).
 
 ### Can I use my own encryption keys?
 

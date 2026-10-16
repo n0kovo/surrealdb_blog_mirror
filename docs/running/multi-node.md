@@ -15,7 +15,7 @@ Because compute and storage are separate layers, query nodes hold no data of the
 
 ## Managed clusters
 
-The [Scale](https://surrealdb.com/pricing/scale) plan on [managed instances](../manage/instances/index.md) runs multi-node clusters on distributed storage with replication and consensus. SurrealDB operates the storage layer, so a cluster is provisioned and resized from the Cloud dashboard, or from a script with [`surrealctl`](../reference/cli/surrealctl/overview.md).
+The [Scale](https://surrealdb.com/pricing/scale) plan on [managed instances](../manage/instances/index.md) runs multi-node clusters on distributed storage with replication and consensus. SurrealDB operates the storage layer, so a cluster is provisioned and resized from the Cloud dashboard, or from a script with [`surreal cloud`](../reference/cli/cloud/index.md).
 
 ## Self-hosted clusters
 
@@ -25,4 +25,4 @@ The [Scale](https://surrealdb.com/pricing/scale) plan on [managed instances](../
 
 Where one node is enough, [file-backed storage](file-backed.md) covers an on-disk server, and [Deploy on Kubernetes](../manage/self-hosted/kubernetes.md) covers a single SurrealDB pod with RocksDB on a persistent volume. [Deployment models](../manage/self-hosted/deployment-models.md) compares the options side by side.
 
-For the flags accepted when starting a server, see the [`surreal start`](../reference/cli/surrealdb-cli/commands/start.md) reference.
+For the flags accepted when starting a server, see the [`surreal db start`](../reference/cli/db/commands/start.md) reference.

@@ -54,7 +54,7 @@ The four cards give the totals: spend, compute hours, storage, and instance coun
 
 Check usage after you resize an instance. A larger instance type is billed on what it provisions. The effect on spend appears at once, rather than at the end of the month. See [Scaling](../instances/scaling.md).
 
-`surrealctl org spend` and `surrealctl org usage` print the same figures for a script or an internal cost report. See [surrealctl organisations](../surrealctl/organisations.md).
+`surreal cloud org spend` and `surreal cloud org usage` print the same figures for a script or an internal cost report. See [surreal cloud organisations](../../explore/cli/cloud/organisations.md).
 
 ## Control what you spend
 

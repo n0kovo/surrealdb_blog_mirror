@@ -27,14 +27,14 @@ Surrealism uses pooled module controllers so invocations can reuse warm executio
 - **Timeout mode:** strict timeout behaviour can be configured by module/runtime settings.
 - **Resource ceilings:** memory, execution time, and module KV limits can be enforced with Surrealism environment variables.
 
-For a complete list of server-level variables, see [environment variables](../../../reference/cli/surrealdb-cli/environment-variables.md#surrealism-config).
+For a complete list of server-level variables, see [environment variables](../../../reference/cli/db/environment-variables.md#surrealism-config).
 
 ## Module loading strategy
 
 By default, SurrealDB eagerly compiles defined Surrealism modules at startup to reduce first-call latency. If you prefer lazy loading, start the server with:
 
 ```bash
-surreal start --lazy-surrealism
+surreal db start --lazy-surrealism
 ```
 
 Or set:
@@ -42,19 +42,19 @@ Or set:
 **Bash**
 
 ```bash
-SURREAL_LAZY_SURREALISM=true surreal start
+SURREAL_LAZY_SURREALISM=true surreal db start
 ```
 
 **PowerShell**
 
 ```powershell
 $env:SURREAL_LAZY_SURREALISM = "true"
-surreal start
+surreal db start
 ```
 
 ## Lifecycle
 
-The end-to-end lifecycle is: **build** your crate with [`surreal module`](../../../reference/cli/surrealdb-cli/commands/module.md), **upload** the `.surli` archive (typically via [`DEFINE BUCKET`](../../../reference/query-language/statements/define/bucket.md)), **define** the module ([`DEFINE MODULE`](../../../reference/query-language/statements/define/module.md)), then **invoke** functions from queries.
+The end-to-end lifecycle is: **build** your crate with [`surreal db module`](../../../reference/cli/db/commands/module.md), **upload** the `.surli` archive (typically via [`DEFINE BUCKET`](../../../reference/query-language/statements/define/bucket.md)), **define** the module ([`DEFINE MODULE`](../../../reference/query-language/statements/define/module.md)), then **invoke** functions from queries.
 
 Operational teams often automate upload and definition in CI so test and production databases stay aligned. The [overview](../plugins/overview.md) summarises this flow.
 

@@ -156,7 +156,7 @@ For the strongest security, we recommend denying all capabilities by default and
 ```bash
 # Allow SurrealDB to call any functions from the array and string families, generate and compare Argon2 hashes
 # and make HTTP GET requests over HTTPS to the address of a specific API.
-surreal start --deny-all --allow-funcs \
+surreal db start --deny-all --allow-funcs \
   "array, string, crypto::argon2, http::get" --allow-net \
   api.example.com:443
 ```
@@ -173,7 +173,7 @@ When you allow a hostname, also allow any private or special-use address that ho
 // highlight-next-line
 # Avoid doing this:
 # Allow SurrealDB to make outgoing HTTP GET and POST request to any address except to some known private CIDR blocks.
-surreal start --deny-all --allow-funcs "http::get, http::post" \
+surreal db start --deny-all --allow-funcs "http::get, http::post" \
   --allow-net --deny-net "10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16"
 ```
 
@@ -194,7 +194,7 @@ In cases where SurrealDB is publicly exposed in environments where any sort of i
 ### Example: Start SurrealDB with identification headers
 
 ```bash
-$ surreal start &
+$ surreal db start &
 $ curl -vvv "127.0.0.1:8000"
 *   Trying 127.0.0.1:8000...
 * Connected to 127.0.0.1 (127.0.0.1) port 8000 (#0)
@@ -224,7 +224,7 @@ $ curl -vvv "127.0.0.1:8000"
 ### Example: Start SurrealDB without identification headers
 
 ```bash
-$ surreal start --no-identification-headers &
+$ surreal db start --no-identification-headers &
 $ curl -vvv "127.0.0.1:8000"
 *   Trying 127.0.0.1:8000...
 * Connected to 127.0.0.1 (127.0.0.1) port 8000 (#0)
@@ -249,13 +249,13 @@ $ curl -vvv "127.0.0.1:8000"
 
 ## Encryption in transit
 
-Encryption in transit is recommended, especially when deploying SurrealDB on a server in a different network than its clients. This mitigates the impact of man-in-the-middle attacks and provides confidentiality and integrity guarantees with regard to the data being exchanged. Encryption in transit can be achieved by using the SurrealDB server to serve its interfaces through HTTPS by providing the `--web-crt` and `--web-key` arguments when calling [the `start` subcommand in the CLI](../../../reference/cli/surrealdb-cli/commands/start.md#command-help). For production deployments, we recommend that TLS termination be performed by a load balancer or reverse proxy, which will often provide additional guarantees to the process.
+Encryption in transit is recommended, especially when deploying SurrealDB on a server in a different network than its clients. This mitigates the impact of man-in-the-middle attacks and provides confidentiality and integrity guarantees with regard to the data being exchanged. Encryption in transit can be achieved by using the SurrealDB server to serve its interfaces through HTTPS by providing the `--web-crt` and `--web-key` arguments when calling [the `start` subcommand in the CLI](../../../reference/cli/db/commands/start.md#command-help). For production deployments, we recommend that TLS termination be performed by a load balancer or reverse proxy, which will often provide additional guarantees to the process.
 
 ### Example: Start SurrealDB with TLS
 
 ```bash
 # If you want to serve TLS directly with SurrealDB:
-surreal start --web-crt "cert.pem" --web-key "key.pem"
+surreal db start --web-crt "cert.pem" --web-key "key.pem"
 ```
 
 ### Example: A certificate for development
@@ -274,17 +274,17 @@ printf 'subjectAltName=DNS:localhost,IP:127.0.0.1\n' > san.ext
 openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial \
   -days 365 -out server.crt -extfile san.ext
 
-surreal start --user root --pass secret --web-crt server.crt --web-key server.key
+surreal db start --user root --pass secret --web-crt server.crt --web-key server.key
 ```
 
-Each client then has to trust `ca.crt`, and keep `ca.key` private. A client that does not trust it refuses the connection, as `surreal sql` does with `invalid peer certificate: UnknownIssuer`:
+Each client then has to trust `ca.crt`, and keep `ca.key` private. A client that does not trust it refuses the connection, as `surreal db sql` does with `invalid peer certificate: UnknownIssuer`:
 
 | Client | How to trust `ca.crt` |
 | --- | --- |
 | `curl` | `curl --cacert ca.crt https://localhost:8000/health` |
 | JavaScript SDK on Node.js | Set `NODE_EXTRA_CA_CERTS=ca.crt` in the environment of the process |
 | Rust SDK | Pass a `rustls::ClientConfig` that trusts `ca.crt` with `Config::new().rustls(...)`, as shown below |
-| `surreal sql` and other `surreal` commands | Not possible. They trust only the public certificate authorities built into the binary, so use a certificate from a public authority, or connect over plain HTTP inside a trusted network |
+| `surreal db sql` and other `surreal` commands | Not possible. They trust only the public certificate authorities built into the binary, so use a certificate from a public authority, or connect over plain HTTP inside a trusted network |
 
 ```rust
 use rustls::RootCertStore;
@@ -420,8 +420,8 @@ WebSocket connections offer an additional degree of isolation between users that
 
 A single query can ask for a lot of work, such as a graph path that fans out through every record several times. These settings limit what one query can cost the server:
 
-- **[`--query-timeout`](../../../reference/cli/surrealdb-cli/environment-variables.md#command-environment-variables)** (`SURREAL_QUERY_TIMEOUT`) stops any query that runs longer than the given duration. A query can also set its own limit with the [`TIMEOUT` clause](../../../reference/query-language/statements/select.md#the-timeout-clause).
-- **[`SURREAL_MEMORY_THRESHOLD`](../../../reference/cli/surrealdb-cli/environment-variables.md#limits-config)** refuses new queries while the server's tracked memory is above the given size. From 3.3.1 it also stops a running query that reads records once memory passes that size.
+- **[`--query-timeout`](../../../reference/cli/db/environment-variables.md#command-environment-variables)** (`SURREAL_QUERY_TIMEOUT`) stops any query that runs longer than the given duration. A query can also set its own limit with the [`TIMEOUT` clause](../../../reference/query-language/statements/select.md#the-timeout-clause).
+- **[`SURREAL_MEMORY_THRESHOLD`](../../../reference/cli/db/environment-variables.md#limits-config)** refuses new queries while the server's tracked memory is above the given size. From 3.3.1 it also stops a running query that reads records once memory passes that size.
 - **`SURREAL_MAX_COMPUTATION_DEPTH`** limits how deeply nested computations can go, and a recursive path stops at a depth of 256.
 - **[`--deny-arbitrary-query`](../authorization/capabilities.md#arbitrary-queries)** with a value such as `--deny-arbitrary-query=record,guest` stops record users and guests from sending queries of their own, so they can only call the [`DEFINE API`](../../../reference/query-language/statements/define/api.md) endpoints and functions you define. This is the strongest protection for a database that is reachable from the public internet, because the shape of every query is then decided by you.
 

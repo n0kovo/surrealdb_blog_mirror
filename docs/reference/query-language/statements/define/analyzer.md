@@ -51,7 +51,7 @@ The `FUNCTION` clause runs a preprocessing step on the initial input before toke
 You can use either:
 
 * a [`fn::`](function.md) user-defined function defined with `DEFINE FUNCTION`, or
-* a [`mod::`](module.md) function from a Surrealism [extension module](../../../../learn/extensions/plugins/overview.md) defined with `DEFINE MODULE` (requires the [`surrealism` experimental capability](../../../cli/surrealdb-cli/commands/start.md#experimental-capabilities)).
+* a [`mod::`](module.md) function from a Surrealism [extension module](../../../../learn/extensions/plugins/overview.md) defined with `DEFINE MODULE` (requires the [`surrealism` experimental capability](../../../cli/db/commands/start.md#experimental-capabilities)).
 
 ```surql
 /**[test]
@@ -596,14 +596,14 @@ search::analyze("example_chinese", "数據库");
 # /opt/surreal/dicts needs a subdirectory only for the languages it replaces;
 # the rest keep using the dictionaries built into the binary
 SURREAL_SEGMENT_DICTIONARY_PATH="/opt/surreal/dicts" \
-  surreal start --user root --pass secret
+  surreal db start --user root --pass secret
 ```
 
 **PowerShell**
 
 ```powershell
 $env:SURREAL_SEGMENT_DICTIONARY_PATH = "C:\surreal\dicts"
-surreal start --user root --pass secret
+surreal db start --user root --pass secret
 ```
 
 The directory overrides the built-in dictionary for each language it carries, and leaves the rest alone. A directory holding only `korean` therefore replaces Korean while Japanese and Chinese keep using the dictionaries in the binary.
@@ -699,13 +699,13 @@ This is particularly useful for handling irregular verbs and other terms that th
 
 #### Filesystem allowlist
 
-A `DEFINE ANALYZER` statement with `mapper('<path>')` opens the dictionary file on the **host filesystem** when the analyzer is defined. Access is gated by [`SURREAL_FILE_ALLOWLIST`](../../../cli/surrealdb-cli/environment-variables.md#file-config), without which no paths are permitted. Set one or more directories before using `mapper()`:
+A `DEFINE ANALYZER` statement with `mapper('<path>')` opens the dictionary file on the **host filesystem** when the analyzer is defined. Access is gated by [`SURREAL_FILE_ALLOWLIST`](../../../cli/db/environment-variables.md#file-config), without which no paths are permitted. Set one or more directories before using `mapper()`:
 
 **Bash**
 
 ```bash
 # Colon-separated directories
-SURREAL_FILE_ALLOWLIST="/var/surreal/dicts:/opt/wordlists" surreal start --user root --pass secret
+SURREAL_FILE_ALLOWLIST="/var/surreal/dicts:/opt/wordlists" surreal db start --user root --pass secret
 ```
 
 **PowerShell**
@@ -713,13 +713,13 @@ SURREAL_FILE_ALLOWLIST="/var/surreal/dicts:/opt/wordlists" surreal start --user 
 ```powershell
 # Semicolon-separated directories
 $env:SURREAL_FILE_ALLOWLIST = "C:\dicts;D:\wordlists"
-surreal start --user root --pass secret
+surreal db start --user root --pass secret
 ```
 
 The path in `mapper()` must resolve to a file **under** an allowed directory. Paths outside the allowlist are rejected at `DEFINE ANALYZER` time.
 
 > [!NOTE]
-> This allowlist is for analyzer dictionary files only. The experimental [files](../../../../learn/schema-management/files/buckets.md) feature uses [`SURREAL_BUCKET_FOLDER_ALLOWLIST`](../../../cli/surrealdb-cli/environment-variables.md#file-config) instead.
+> This allowlist is for analyzer dictionary files only. The experimental [files](../../../../learn/schema-management/files/buckets.md) feature uses [`SURREAL_BUCKET_FOLDER_ALLOWLIST`](../../../cli/db/environment-variables.md#file-config) instead.
 
 How does the mapper work?
 

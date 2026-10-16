@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 Events let the database react to record changes: write an audit log, normalise related records, or enqueue follow-up work. They run after the record change but inside the same transaction (unless you opt into async), and they see [$before and $after](../../../reference/query-language/language-primitives/parameters.md#before-after) snapshots of the record.
 
 > [!NOTE]
-> Events are a side effect of normal writes. They are not fired during a bulk [import](../../../reference/cli/surrealdb-cli/commands/import.md).
+> Events are a side effect of normal writes. They are not fired during a bulk [import](../../../reference/cli/db/commands/import.md).
 
 ## Key ideas
 

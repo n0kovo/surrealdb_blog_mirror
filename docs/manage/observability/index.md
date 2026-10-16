@@ -105,7 +105,7 @@ The `/metrics` endpoint is mounted by default. Anonymous scrapers receive only t
 
 ```bash
 # Start the server (Community example)
-surreal start --user root --pass secret
+surreal db start --user root --pass secret
 
 # Anonymous scrape - public allowlist only
 curl http://127.0.0.1:8000/metrics
@@ -117,7 +117,7 @@ curl -u root:secret http://127.0.0.1:8000/metrics
 To turn the endpoint off entirely:
 
 ```bash
-SURREAL_METRICS_ENABLED=false surreal start ...
+SURREAL_METRICS_ENABLED=false surreal db start ...
 # /metrics now returns 404
 ```
 
@@ -128,7 +128,7 @@ OTLP push targets any OpenTelemetry collector. SurrealDB exports metrics, logs (
 ```bash
 SURREAL_TELEMETRY_PROVIDER=otlp \
 OTEL_EXPORTER_OTLP_ENDPOINT="http://my-collector.monitoring.svc.cluster.local:4317" \
-surreal start ...
+surreal db start ...
 ```
 
 To selectively disable parts of the OTLP pipeline:
@@ -168,6 +168,6 @@ Audit and slow-query records flow over OTLP **only when explicitly opted in** pe
 
 ## Structured logs versus audit and slow-query records
 
-Server **structured logs** (levels, format, files, sockets, and the `--slow-log-*` line-based slow-query helpers) are configured on [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md) and in the [environment variables](../../reference/cli/surrealdb-cli/environment-variables.md) catalogue - see [Logging](logging.md). That stream is separate from the **Enterprise audit** and **slow-query** NDJSON pipelines, which have their own sinks and optional OTel log export - see [Audit logging](audit-logging.md) and [Slow-query logging](slow-query-logging.md).
+Server **structured logs** (levels, format, files, sockets, and the `--slow-log-*` line-based slow-query helpers) are configured on [`surreal db start`](../../reference/cli/db/commands/start.md) and in the [environment variables](../../reference/cli/db/environment-variables.md) catalogue - see [Logging](logging.md). That stream is separate from the **Enterprise audit** and **slow-query** NDJSON pipelines, which have their own sinks and optional OTel log export - see [Audit logging](audit-logging.md) and [Slow-query logging](slow-query-logging.md).
 
 For async runtime introspection (tasks, poll histograms), use the [Tokio console](tokio-console.md) on trusted hosts only. It complements OTLP and `/metrics` rather than replacing them.

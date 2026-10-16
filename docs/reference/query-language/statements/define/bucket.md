@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 *Since v3.0.0*
 
 > [!NOTE]
-> The `DEFINE BUCKET` statement is experimental and subject to change. To enable it, either pass `--allow-experimental files` when [starting the database](../../../cli/surrealdb-cli/commands/start.md) or set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable to `files`.
+> The `DEFINE BUCKET` statement is experimental and subject to change. To enable it, either pass `--allow-experimental files` when [starting the database](../../../cli/db/commands/start.md) or set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable to `files`.
 
 The `DEFINE BUCKET` statement lets you create a bucket that can hold files.
 
@@ -103,11 +103,11 @@ The following command can be used to start running an instance in which a bucket
 
 ```bash
 # Unix
-SURREAL_BUCKET_FOLDER_ALLOWLIST="/" surreal start --user root --pass secret --allow-experimental files
+SURREAL_BUCKET_FOLDER_ALLOWLIST="/" surreal db start --user root --pass secret --allow-experimental files
 
 # Windows (PowerShell)
 $env:SURREAL_BUCKET_FOLDER_ALLOWLIST = "/" 
-surreal start --user root --pass secret --allow-experimental files
+surreal db start --user root --pass secret --allow-experimental files
 ```
 
 ### Cloud object storage backends

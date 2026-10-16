@@ -36,7 +36,7 @@ curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
 Start SurrealDB with a persistent backend, either [installed directly](../../../running/installation/index.md):
 
 ```bash
-surreal start --user root --pass secret rocksdb://surrealfs.db
+surreal db start --user root --pass secret rocksdb://surrealfs.db
 ```
 
 or [with Docker](../../../running/docker.md):
@@ -66,7 +66,7 @@ Nothing stores a path, so moving or renaming a folder is a single `UPDATE` and e
 
 ## Connection settings
 
-Both plugins read the same environment variables and default to a local server, so the defaults already work against `surreal start` on your own machine.
+Both plugins read the same environment variables and default to a local server, so the defaults already work against `surreal db start` on your own machine.
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
@@ -226,7 +226,7 @@ Turns are filed under `/home/<agent>/memories/<profile>/`. The path has two segm
 Everything outside `/home/` stays shared. `/preferences/`, `/projects/`, and anything else written with the `surrealfs_*` tools is the handover point between an agent and its user, or between two agents working for the same person. Anything that must not be shared at all belongs in a `SURREALDB_DATABASE` of its own, and since `.env` lives in `$HERMES_HOME`, that is already per-profile.
 
 > [!WARNING]
-> `hermes backup` captures none of this. It walks `HERMES_HOME`, and the memories are in SurrealDB. Use [`surreal export`](../../../reference/cli/surrealdb-cli/commands/export.md) instead.
+> `hermes backup` captures none of this. It walks `HERMES_HOME`, and the memories are in SurrealDB. Use [`surreal db export`](../../../reference/cli/db/commands/export.md) instead.
 
 ## Semantic search
 

@@ -51,7 +51,7 @@ fn parse_number(input: String) -> Result<i64, String> {
 
 The comment appears in module metadata outputs such as:
 
-- `surreal module info`
+- `surreal db module info`
 - `INFO FOR DB STRUCTURE` module export metadata
 
 ## `init`
@@ -102,4 +102,4 @@ Exports are prefixed by namespace, for example:
 
 - [Creating custom modules](creating-custom-modules.md)
 - [Module architecture](module-architecture.md)
-- [Module command reference](../../../reference/cli/surrealdb-cli/commands/module.md)
+- [Module command reference](../../../reference/cli/db/commands/module.md)

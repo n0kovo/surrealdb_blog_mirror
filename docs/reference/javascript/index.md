@@ -53,7 +53,7 @@ The SurrealDB SDK for JavaScript and TypeScript lets you easily connect to Surre
 - **[Vue.js](frameworks/vuejs.md)**
 - **[Expo](frameworks/expo.md)**
 - **[React Native](frameworks/react-native.md)**
-- **Next.js**
+- **[Next.js](../../build/integrations/vercel/nextjs.md)**
 - **Angular**
 - **Svelte**
 

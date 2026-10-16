@@ -105,7 +105,7 @@ db = "main"
 pass_env = "PRODUCTION_DB_PASSWORD"
 ```
 
-Get the endpoint for a Cloud instance with [`surrealctl instance endpoint`](../../reference/cli/surrealctl/commands/instance.md).
+Get the endpoint for a Cloud instance with [`surreal cloud instance endpoint`](../../reference/cli/cloud/commands/instance.md).
 
 ### Restricting modules per target
 

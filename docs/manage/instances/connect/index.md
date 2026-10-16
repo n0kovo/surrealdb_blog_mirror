@@ -31,4 +31,4 @@ You need:
 
 The **Connect** menu of the instance in [SurrealDB Studio](https://studio.surrealdb.com) holds the endpoint. It also produces a ready-made command or snippet for each route, with the details of your instance already filled in. Copying from there avoids transcription mistakes in the hostname.
 
-`surrealctl instance endpoint` prints the same endpoint, and `surrealctl instance token` issues a token for it. Both are useful in scripts and in CI, where opening a browser is not an option. See [surrealctl instances](../../surrealctl/instances.md).
+`surreal cloud instance endpoint` prints the same endpoint, and `surreal cloud instance token` issues a token for it. Both are useful in scripts and in CI, where opening a browser is not an option. See [surreal cloud instances](../../../explore/cli/cloud/instances.md).

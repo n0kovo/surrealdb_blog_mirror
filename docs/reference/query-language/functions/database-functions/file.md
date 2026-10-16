@@ -12,7 +12,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 These functions can be used to work with files.
 
 > [!NOTE]
-> Files support is currently experimental and subject to change. To use these functions and `f"..."` file pointers, either pass `--allow-experimental files` when [starting the database](../../../cli/surrealdb-cli/commands/start.md) or set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable to `files`. On a server without the flag, file syntax is rejected at parse time.
+> Files support is currently experimental and subject to change. To use these functions and `f"..."` file pointers, either pass `--allow-experimental files` when [starting the database](../../../cli/db/commands/start.md) or set the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable to `files`. On a server without the flag, file syntax is rejected at parse time.
 
 <table>
   <thead>

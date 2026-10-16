@@ -24,13 +24,13 @@ This tutorial assumes that you have the following:
 
 Before forking the Collection from Postman, ensure that you have your SurrealDB instance running locally because by default the collection endpoint is set to [`localhost:8000`](http://localhost:8000) or [`http://127.0.0.1:8000`](http://127.0.0.1:8000/)
 
-To do so run the [Start command](../../../reference/cli/surrealdb-cli/commands/start.md) in your terminal: 
+To do so run the [Start command](../../../reference/cli/db/commands/start.md) in your terminal: 
 
 ```bash
-surreal start --user root --pass secret
+surreal db start --user root --pass secret
 ```
 
-The above command starts SurrealDB with [authentication](../../../reference/cli/surrealdb-cli/commands/start.md#authentication) and specifies that the user and password are `root`. Note that this is just for demonstration purposes. You can replace `root` in both instances with any other value.
+The above command starts SurrealDB with [authentication](../../../reference/cli/db/commands/start.md#authentication) and specifies that the user and password are `root`. Note that this is just for demonstration purposes. You can replace `root` in both instances with any other value.
 
 After running locally, head over to Postman and create a fork for your workspace. You should see all the endpoints listed. You can also [check the endpoints in the documentation](../../../reference/rest-api/http-protocol.md). 
 

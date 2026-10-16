@@ -10,7 +10,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 Events allow you to define custom logic that is executed when a record is created, updated, or deleted. These events are triggered automatically within the current transaction after data modifications in the record, giving you access to the state of the record [before and after](../../language-primitives/parameters.md#before-after) the change.
 
 > [!NOTE]
-> Events are a side effect of other operations and thus are not triggered when data is [imported](../../../cli/surrealdb-cli/commands/import.md).
+> Events are a side effect of other operations and thus are not triggered when data is [imported](../../../cli/db/commands/import.md).
 
 ## Key concepts
 

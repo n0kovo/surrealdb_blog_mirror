@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The `surqlfmt` tool reformats `.surql` files to follow a consistent style. It adjusts whitespace, indentation, and keyword casing so that SurrealQL code is easy to read and review.
 
-`surqlfmt` is a third command-line tool alongside [`surreal`](../surrealdb-cli/overview.md) and [`surrealctl`](../surrealctl/overview.md). It is shipped as an npm package rather than as part of the `surreal` binary, it never connects to a database, and it only reads and writes files.
+`surqlfmt` is a separate command-line tool alongside the [`surreal` CLI](../index.md). It is shipped as an npm package rather than as part of the `surreal` binary, it never connects to a database, and it only reads and writes files.
 
 ## Installation
 

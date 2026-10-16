@@ -138,7 +138,7 @@ let db = surrealdb::engine::any::connect("grpc://127.0.0.1:8000").await?;
 
 *Since v3.3.0*
 
-A gRPC message has a size limit at each end. The server sets its own with [`SURREAL_GRPC_MAX_MESSAGE_SIZE`](../../cli/surrealdb-cli/environment-variables.md) and advertises it on connection, and the SDK takes that advertised figure by default. `Config::grpc` sets the client's own figure, for a workload that writes a large batch in one transaction:
+A gRPC message has a size limit at each end. The server sets its own with [`SURREAL_GRPC_MAX_MESSAGE_SIZE`](../../cli/db/environment-variables.md) and advertises it on connection, and the SDK takes that advertised figure by default. `Config::grpc` sets the client's own figure, for a workload that writes a large batch in one transaction:
 
 ```rust
 use surrealdb::opt::{Config, GrpcConfig};

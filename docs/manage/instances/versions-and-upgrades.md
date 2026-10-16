@@ -43,10 +43,10 @@ Timing depends on the instance size, the dataset size, and the cluster layout. W
 
 For a major-version change that migrates data on disk, work through [Migrating from older SurrealDB versions](../../build/migrating/from-old-surrealdb-versions/overview.md) against a staging instance before you touch production.
 
-`surrealctl instance update` sets the version from a terminal, and `surrealctl instance status` reports what an instance is running. The second command is useful for checking a fleet at once. See [surrealctl instances](../surrealctl/instances.md).
+`surreal cloud instance update` sets the version from a terminal, and `surreal cloud instance status` reports what an instance is running. The second command is useful for checking a fleet at once. See [surreal cloud instances](../../explore/cli/cloud/instances.md).
 
 ## Compared with self-hosting
 
-Self-hosted operators replace the `surreal` binary, run `surreal fix` where a release requires it, and coordinate the restart order across nodes themselves. On an instance, the control plane does that work.
+Self-hosted operators replace the `surreal` binary, run `surreal db fix` where a release requires it, and coordinate the restart order across nodes themselves. On an instance, the control plane does that work.
 
 The underlying mechanics, and the release-specific migration notes, are in [Self-hosted upgrades and patching](../self-hosted/upgrades-and-patching.md).

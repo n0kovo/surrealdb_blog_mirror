@@ -20,9 +20,9 @@ Surrealism was built in order to allow users to extend SurrealDB in ways that be
 
 Surrealism works by using the following steps:
 
-* Use the [`surreal module init`](../../../reference/cli/surrealdb-cli/commands/module.md) command to begin a new project. This command works in a similar manner to `cargo new` in scaffolding a new project with its own `toml` file (`surrealism.toml`).
+* Use the [`surreal db module init`](../../../reference/cli/db/commands/module.md) command to begin a new project. This command works in a similar manner to `cargo new` in scaffolding a new project with its own `toml` file (`surrealism.toml`).
 * Annotate functions to export with `#[surrealism]`.
-* Use the `surreal module build` command to build the module.
+* Use the `surreal db module build` command to build the module.
 * In SurrealDB, [allow access to module files](../../../reference/query-language/statements/define/bucket.md) and [define a module](../../../reference/query-language/statements/define/module.md) to access the functions.
 
 ![A flowchart showing the steps involved to turn regular Rust code into a compiled WASM binary that can be accessed from a running SurrealDB instance.](../../../assets/img/surrealdb/extension/surrealism_flow-light.png)

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 # Designing reactive systems in SurrealDB
 
-[Events](defining-events.md) are SurrealDB's built-in way to react to changes: you attach logic that runs after a create, update, or delete using [`DEFINE EVENT`](../../../reference/query-language/statements/define/event.md). They do not run during bulk [import](../../../reference/cli/surrealdb-cli/commands/import.md), so plan backfills separately or use the [sql](../../../reference/cli/surrealdb-cli/commands/sql.md) endpoint if you rely on them for derived data. When deciding how to define an event, consider the following:
+[Events](defining-events.md) are SurrealDB's built-in way to react to changes: you attach logic that runs after a create, update, or delete using [`DEFINE EVENT`](../../../reference/query-language/statements/define/event.md). They do not run during bulk [import](../../../reference/cli/db/commands/import.md), so plan backfills separately or use the [sql](../../../reference/cli/db/commands/sql.md) endpoint if you rely on them for derived data. When deciding how to define an event, consider the following:
 
 * What should happen immediately, what can wait, and how do you keep the system predictable?
 
@@ -122,4 +122,4 @@ SELECT VALUE id FROM session;
 [session:recent]
 ```
 
-The expired `session:old` is deleted when `session:recent` is created. The index on `created_at` keeps the `DELETE` fast, because it runs on every create. Old records stay until the next record is created, so a table that stops receiving writes keeps them. For cleanup on a fixed schedule instead, run the `DELETE` statement from an external scheduler such as `cron`, for example with [`surreal sql`](../../../reference/cli/surrealdb-cli/commands/sql.md).
+The expired `session:old` is deleted when `session:recent` is created. The index on `created_at` keeps the `DELETE` fast, because it runs on every create. Old records stay until the next record is created, so a table that stops receiving writes keeps them. For cleanup on a fixed schedule instead, run the `DELETE` statement from an external scheduler such as `cron`, for example with [`surreal db sql`](../../../reference/cli/db/commands/sql.md).

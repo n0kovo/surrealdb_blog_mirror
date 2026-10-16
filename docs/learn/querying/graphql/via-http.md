@@ -11,10 +11,10 @@ SurrealDB provides an HTTP API for interacting with the database programmaticall
 
 ## Starting a new connection
 
-Before you can start making queries, you need to start SurrealDB with the GraphQL module enabled. You can do this by starting a new instance of SurrealDB with the [`surreal start` command](../../../reference/cli/surrealdb-cli/commands/start.md).
+Before you can start making queries, you need to start SurrealDB with the GraphQL module enabled. You can do this by starting a new instance of SurrealDB with the [`surreal db start` command](../../../reference/cli/db/commands/start.md).
 
 ```bash
-surreal start --log debug --user root --password secret
+surreal db start --log debug --user root --password secret
 ```
 
 In order to allow querying the created table using GraphQL, you will need to explicitly enable GraphQL using the [`DEFINE CONFIG`](../../../reference/query-language/statements/define/config.md) statement. This will allow you to query the table using GraphQL on a per-database basis.

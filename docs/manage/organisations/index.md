@@ -22,7 +22,7 @@ Create one organisation for each company, department, or environment you keep ap
 
 You become the [owner](members-and-roles.md), and Studio opens the organisation overview. The breadcrumb at the top of Studio switches between the organisations you belong to.
 
-To create an organisation from a terminal, run `surrealctl org create`. `surrealctl org use` sets which organisation later commands apply to. See [surrealctl organisations](../surrealctl/organisations.md).
+To create an organisation from a terminal, run `surreal cloud org create`. `surreal cloud org use` sets which organisation later commands apply to. See [surreal cloud organisations](../../explore/cli/cloud/organisations.md).
 
 ## The organisation view
 
@@ -67,4 +67,4 @@ Organisations cannot be deleted at present. Delete the instances inside an organ
 ## Related pages
 
 - **[Instances](../instances/index.md):** Deploy and operate databases inside an organisation.
-- **[surrealctl organisations](../surrealctl/organisations.md):** Organisations, teams, invitations, and tokens from the command line.
+- **[surreal cloud organisations](../../explore/cli/cloud/organisations.md):** Organisations, teams, invitations, and tokens from the command line.

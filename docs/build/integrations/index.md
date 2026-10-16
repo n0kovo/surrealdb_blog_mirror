@@ -42,3 +42,11 @@ This section assumes a certain level of familiarity with SurrealDB itself. If mo
 - [Fastembed](embeddings-providers/fastembed.md) - embed locally, without an API call
 - [Python quickstart](embeddings-providers/python-quickstart.md) - end to end from Python
 - [Rust quickstart](embeddings-providers/rust-quickstart.md) - end to end from Rust
+
+## Vercel
+
+- [Vercel](vercel/index.md) - credentials, connection types and schema setup for SurrealDB on Vercel
+- [Next.js](vercel/nextjs.md) - query from Server Components, Server Actions and Route Handlers, with live updates in the browser
+- [AI SDK](vercel/ai-sdk.md) - vector search and graph tools for models, and chat history in SurrealDB
+- [Eve](vercel/eve.md) - tools and a memory provider for eve agents
+- [Vercel Sandbox](vercel/vercel-sandbox.md) - run SurrealDB inside a sandbox, or give sandboxed code read-only access

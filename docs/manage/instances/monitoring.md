@@ -61,7 +61,7 @@ Sustained pressure on the first three is a [scaling](scaling.md) signal. A spike
 
 ## From the command line
 
-`surrealctl instance metrics` and `surrealctl instance logs` print the same data for scripting or for feeding an external monitor. `surrealctl instance watch` follows the state of an instance during a change. See [surrealctl instances](../surrealctl/instances.md).
+`surreal cloud instance metrics` and `surreal cloud instance logs` print the same data for scripting or for feeding an external monitor. `surreal cloud instance watch` follows the state of an instance during a change. See [surreal cloud instances](../../explore/cli/cloud/instances.md).
 
 ## The wider observability surface
 

@@ -27,7 +27,7 @@ The invitation appears under **Pending** until the person accepts it. An invitee
 
 Invite the address of a named person rather than a shared mailbox, above all for the Admin and Owner roles. A shared mailbox hides which person acted, and you cannot withdraw it from one reader who leaves.
 
-`surrealctl team invite` sends an invitation. `surrealctl team list` reports current membership, which helps when you review access across several organisations. See [surrealctl organisations](../surrealctl/organisations.md).
+`surreal cloud team invite` sends an invitation. `surreal cloud team list` reports current membership, which helps when you review access across several organisations. See [surreal cloud organisations](../../explore/cli/cloud/organisations.md).
 
 ## What each role can do
 
@@ -66,4 +66,4 @@ Remove access when a person leaves the project. A member who has left keeps the 
 
 - **[Organisations](index.md):** The organisation view and its settings.
 - **[Accounts and sign-in](sign-in.md):** How an invitee creates an account.
-- **[surrealctl organisations](../surrealctl/organisations.md):** Teams, invitations, and tokens from the command line.
+- **[surreal cloud organisations](../../explore/cli/cloud/organisations.md):** Teams, invitations, and tokens from the command line.

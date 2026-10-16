@@ -87,7 +87,7 @@ async fn main() -> surrealdb::Result<()> {
 Then connect to it using SurrealDB Studio or open a new terminal window with the following command.
 
 ```bash
-surreal sql --user root --pass secret --pretty
+surreal db sql --user root --pass secret --pretty
 ```
 
 You can then use queries like the following to work with some `person` records.
@@ -188,7 +188,7 @@ async fn main() -> surrealdb::Result<()> {
 Then connect to it using SurrealDB Studio or open a new terminal window with the following command.
 
 ```bash
-surreal sql --namespace ns --database db --user root --pass secret --pretty
+surreal db sql --namespace ns --database db --user root --pass secret --pretty
 ```
 
 You can then use queries like the following to work with some `person` records.

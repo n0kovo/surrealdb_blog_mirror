@@ -93,7 +93,7 @@ COMMIT TRANSACTION;
 
 ## Validating `.surql` files
 
-One or more `.surql` files can be validated by the CLI using the [`surreal validate`](../../../reference/cli/surrealdb-cli/commands/validate.md) command.
+One or more `.surql` files can be validated by the CLI using the [`surreal db validate`](../../../reference/cli/db/commands/validate.md) command.
 
 ## SurrealDB internal testing
 

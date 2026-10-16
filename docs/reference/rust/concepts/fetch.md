@@ -12,13 +12,13 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 Start a running database using the following command:
 
 ```bash
-surreal start --user root --pass secret 
+surreal db start --user root --pass secret 
 ```
 
 To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open up the CLI:
 
 ```bash
-surrealdb % surreal sql --user root --pass secret --pretty
+surrealdb % surreal db sql --user root --pass secret --pretty
 ```
 
 Then use the `cargo add` command to add the crates `surrealdb` and `tokio`.
@@ -200,13 +200,13 @@ Students = [StudentClasses { id: RecordId { table: "student", key: String("jane"
 Start a running database using the following command:
 
 ```bash
-surreal start --user root --pass secret 
+surreal db start --user root --pass secret 
 ```
 
 To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open up the CLI:
 
 ```bash
-surrealdb % surreal sql --user root --pass secret --ns namespace --db database --pretty
+surrealdb % surreal db sql --user root --pass secret --ns namespace --db database --pretty
 ```
 
 Then use the `cargo add` command to add three crates: `surrealdb`, `tokio`, and `serde` with the "serde_derive" feature (`cargo add serde --features serde_derive`). The dependencies inside `Cargo.toml` should look something like this:

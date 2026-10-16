@@ -1,7 +1,7 @@
 ---
 position: 9
 title: Import and export
-description: Move data in and out with surreal export and surreal import. Covers size limits and partial-import behaviour.
+description: Move data in and out with surreal db export and surreal db import. Covers size limits and partial-import behaviour.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/instances/import-and-export.mdx"
 ---
 
@@ -18,14 +18,14 @@ Use them for four cases:
 
 [Backups](backups.md) cover the recover-this-instance case instead, and you cannot download them.
 
-Both commands come from the [SurrealDB CLI](../../reference/cli/surrealdb-cli/overview.md), which you install once and point at any instance. The connection URL, namespace, and database are on the **Connect** menu of the instance in [SurrealDB Studio](https://studio.surrealdb.com).
+Both commands come from the [SurrealDB CLI](../../reference/cli/db/index.md), which you install once and point at any instance. The connection URL, namespace, and database are on the **Connect** menu of the instance in [SurrealDB Studio](https://studio.surrealdb.com).
 
 ## Exporting
 
-[`surreal export`](../../reference/cli/surrealdb-cli/commands/export.md) writes the contents of one database to a `.surql` file:
+[`surreal db export`](../../reference/cli/db/commands/export.md) writes the contents of one database to a `.surql` file:
 
 ```bash title="Export a database to a file"
-surreal export \
+surreal db export \
   --endpoint wss://<endpoint> \
   --user root --pass <password> \
   --ns main --db main \
@@ -36,14 +36,14 @@ The file contains the SurrealQL statements needed to rebuild the schema and the 
 
 An export covers a single namespace and database. Export each one you need separately.
 
-By default an export contains everything in the database. To export only some tables or kinds of definition, such as the schema without its records, see [Choosing what to export](../../reference/cli/surrealdb-cli/commands/export.md#choosing-what-to-export). In SurrealDB Studio, the **Export database** dialog offers the same choices with checkboxes and shows the matching `surreal export` command.
+By default an export contains everything in the database. To export only some tables or kinds of definition, such as the schema without its records, see [Choosing what to export](../../reference/cli/db/commands/export.md#choosing-what-to-export). In SurrealDB Studio, the **Export database** dialog offers the same choices with checkboxes and shows the matching `surreal db export` command.
 
 ## Importing
 
-[`surreal import`](../../reference/cli/surrealdb-cli/commands/import.md) replays that file into a target database:
+[`surreal db import`](../../reference/cli/db/commands/import.md) replays that file into a target database:
 
 ```bash title="Import a file into an instance"
-surreal import \
+surreal db import \
   --endpoint wss://<endpoint> \
   --user root --pass <password> \
   --ns main --db main \
@@ -72,4 +72,4 @@ Import into a fresh namespace or database, verify the result, then switch the ap
 
 - **[Backups and recovery](backups.md):** snapshots and in-platform restore.
 - **[Migrating to SurrealDB](../../build/migrating/index.md):** moving from another database.
-- **[surrealctl instances](../surrealctl/instances.md):** `surrealctl instance import` and `surrealctl instance export` wrap the same operations against an instance.
+- **[surreal cloud instances](../../explore/cli/cloud/instances.md):** `surreal cloud instance import` and `surreal cloud instance export` wrap the same operations against an instance.

@@ -11,7 +11,7 @@ An instance is a SurrealDB deployment that SurrealDB runs for you.
 
 That covers provisioning, high availability, patching, backups, and version upgrades. You choose a plan, a size, and a region, then connect your application.
 
-Every instance belongs to an [organisation](../organisations/index.md), which also holds members, usage, and billing. You operate instances from [SurrealDB Studio](https://studio.surrealdb.com), or from a terminal with [`surrealctl`](../surrealctl/instances.md). To run and operate the server yourself, see [Self-hosted](../self-hosted/index.md).
+Every instance belongs to an [organisation](../organisations/index.md), which also holds members, usage, and billing. You operate instances from [SurrealDB Studio](https://studio.surrealdb.com), or from a terminal with [`surreal cloud`](../../explore/cli/cloud/instances.md). To run and operate the server yourself, see [Self-hosted](../self-hosted/index.md).
 
 <Button label="Open SurrealDB Studio" href="https://studio.surrealdb.com" variant="surreal" />
 
@@ -38,7 +38,7 @@ The **Instances** section of SurrealDB Studio lists every instance in the organi
 
 Selecting an instance opens its own workspace. That workspace holds a [dashboard](monitoring.md) of resource use, the schema and query views, and **Settings**. Settings is where [configuration](configure.md), [capabilities](configure.md#capabilities), [versions](versions-and-upgrades.md), compute, and [backups](backups.md) live.
 
-`surrealctl instance list` prints the same list in a terminal, and `--json` makes it scriptable. See [surrealctl instances](../surrealctl/instances.md).
+`surreal cloud instance list` prints the same list in a terminal, and `--json` makes it scriptable. See [surreal cloud instances](../../explore/cli/cloud/instances.md).
 
 ## Lifecycle
 
@@ -62,7 +62,7 @@ You cannot change an instance name after deployment. Pick a name a colleague wil
 - **[Scaling](scaling.md):** matching compute and storage to the workload.
 - **[High availability](high-availability.md):** what survives a node failure on each plan.
 - **[Backups and recovery](backups.md):** automated snapshots, retention, and restore.
-- **[Import and export](import-and-export.md):** moving data with `surreal export` and `surreal import`.
+- **[Import and export](import-and-export.md):** moving data with `surreal db export` and `surreal db import`.
 - **[Versions and upgrades](versions-and-upgrades.md):** changing the SurrealDB version.
 - **[Monitoring](monitoring.md):** the instance dashboard, metrics, and logs.
 - **[Network access](network-access.md):** which outbound destinations queries may reach.
@@ -71,6 +71,6 @@ You cannot change an instance name after deployment. Pick a name a colleague wil
 ## Related sections
 
 - **[Organisations](../organisations/index.md):** accounts, members, roles, usage, billing, and support.
-- **[surrealctl](../surrealctl/index.md):** the management-plane command-line tool.
+- **[surreal cloud](../../explore/cli/cloud/index.md):** the management-plane command-line tool.
 - **[Observability](../observability/index.md):** the full metric, audit-log, and slow-query reference.
 - **[Self-hosted](../self-hosted/index.md):** running SurrealDB on your own infrastructure instead.

@@ -7,9 +7,9 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 # `USE` statement
 
-The `USE` statement specifies a namespace and / or a database to use for the subsequent SurrealQL statements when switching between namespaces and databases. If you have a single namespace and database, you can define them in the [sql command](../../cli/surrealdb-cli/commands/sql.md#example-usage).
+The `USE` statement specifies a namespace and / or a database to use for the subsequent SurrealQL statements when switching between namespaces and databases. If you have a single namespace and database, you can define them in the [sql command](../../cli/db/commands/sql.md#example-usage).
 
-Ensure that your database and namespace exist and you have [started your database](../../cli/surrealdb-cli/commands/start.md) before using the Sql command option.
+Ensure that your database and namespace exist and you have [started your database](../../cli/db/commands/start.md) before using the Sql command option.
 
 ## Statement syntax
 
@@ -91,7 +91,7 @@ USE NS ns; -- Output: NONE (success)
 (INFO FOR ROOT).namespaces; -- Output: { ns: 'DEFINE NAMESPACE ns' }
 ```
 
-In [strict mode](../../cli/surrealdb-cli/commands/start.md#strict-mode), a resource will not be created unless it is already defined. In this case, the `USE` statement will return an error.
+In [strict mode](../../cli/db/commands/start.md#strict-mode), a resource will not be created unless it is already defined. In this case, the `USE` statement will return an error.
 
 ```surql
 USE NS ns; -- Output: "The namespace 'ns' does not exist"

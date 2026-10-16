@@ -30,7 +30,7 @@ This guide will help you upgrade your current SurrealDB installation to the late
   - `string::startsWith()` -> [`string::starts_with()`](../../../reference/query-language/functions/database-functions/string.md)
 
 ### Authentication and headers
-- Authentication is now enabled by default as you previously would with `--auth`. The [`--unauthenticated`](../../../reference/cli/surrealdb-cli/commands/start.md#unauthenticated-mode) flag is now required in order to provide the previous default behaviour.
+- Authentication is now enabled by default as you previously would with `--auth`. The [`--unauthenticated`](../../../reference/cli/db/commands/start.md#unauthenticated-mode) flag is now required in order to provide the previous default behaviour.
 - Specifying the level on which credentials will be authenticated is now required when connecting to SurrealDB. By default, this level will be root. This can be provided with the `--auth-level` flag in the CLI or the `surreal-auth-ns` and `surreal-auth-db` headers in the HTTP REST API.
 - SurrealDB now listens only for connections from the local machine unless another interface (e.g. 0.0.0.0) is provided via the `--bind` command line argument.
 - SurrealDB now does not print secrets in response to `INFO` statements. The values of the secrets will appear as `[REDACTED]` to prevent accidental leakage. The export functionality will still print the values of the secrets. An `UNREDACTED` clause will be added soon to provide the previous behaviour.
@@ -38,36 +38,36 @@ This guide will help you upgrade your current SurrealDB installation to the late
 
 ## Upgrading your data
 
-A new [`surreal fix`](../../../reference/cli/surrealdb-cli/commands/fix.md) command has been implemented to automatically change the format of your stored data. The command is followed by a path to the data. For example:
+A new [`surreal db fix`](../../../reference/cli/db/commands/fix.md) command has been implemented to automatically change the format of your stored data. The command is followed by a path to the data. For example:
 
 ```bash
 # For SurrealKV
-surreal fix surrealkv://mydata
+surreal db fix surrealkv://mydata
 
 # For RocksDB
-surreal fix rocksdb:somedatabase
+surreal db fix rocksdb:somedatabase
 ```
 
 > [!IMPORTANT]
-> Run `surreal fix` with a 2.x binary. From SurrealDB 3.0.0 the command exits with `Fix is not implemented` and changes nothing, so data going from 1.x to 3.x is fixed with 2.x first and then moved to 3.x by following [Migrating from 2.x to 3.x](2x-to-3x.md).
+> Run `surreal db fix` with a 2.x binary. From SurrealDB 3.0.0 the command exits with `Fix is not implemented` and changes nothing, so data going from 1.x to 3.x is fixed with 2.x first and then moved to 3.x by following [Migrating from 2.x to 3.x](2x-to-3x.md).
 
-### Limitations of the surreal fix command
+### Limitations of the surreal db fix command
 
-Although the `surreal fix` command is a quick way to migrate your data, it is not without its drawbacks:
+Although the `surreal db fix` command is a quick way to migrate your data, it is not without its drawbacks:
 
 -  If you have used the now deprecated [`DEFINE TOKEN`](../../../reference/query-language/statements/define/token.md) command to define a token on a Scope with the also deprecated [`DEFINE SCOPE`](../../../reference/query-language/statements/define/scope.md) command, you will have to update your access management rules to use the new [`DEFINE ACCESS`](../../../reference/query-language/statements/define/access/index.md) which supports creating permissions using [TYPE JWT](../../../reference/query-language/statements/define/access/jwt.md) and [TYPE RECORD](../../../reference/query-language/statements/define/access/record.md) rules.
 
-- If you were querying SurrealDB via the HTTP API, the `surreal fix` command will not update the header format for you. You will need to manually update the header format  from `ns` and `db` to `surreal-ns` and `surreal-db` respectively before using the `surreal fix` command. Learn more about this in the [HTTP documentation](../../../reference/rest-api/http-protocol.md).
+- If you were querying SurrealDB via the HTTP API, the `surreal db fix` command will not update the header format for you. You will need to manually update the header format  from `ns` and `db` to `surreal-ns` and `surreal-db` respectively before using the `surreal db fix` command. Learn more about this in the [HTTP documentation](../../../reference/rest-api/http-protocol.md).
 
 ### Upgrading from 2.0.0-alpha
 
-The `surreal fix` command above has been created specifically for 1.x instances. However, data currently on a `2.0.0-alpha` instance can still be manually exported and then reimported into a project running on `2.0.0` via the following steps.
+The `surreal db fix` command above has been created specifically for 1.x instances. However, data currently on a `2.0.0-alpha` instance can still be manually exported and then reimported into a project running on `2.0.0` via the following steps.
 
-1. Export your current data as a `.surql` (SurrealQL) file. You can do this using the [`surreal export`](../../../reference/cli/surrealdb-cli/commands/export.md) command in the terminal:
+1. Export your current data as a `.surql` (SurrealQL) file. You can do this using the [`surreal db export`](../../../reference/cli/db/commands/export.md) command in the terminal:
 
 ```bash
 # Example export command to export data to a file called `export.surql` in the downloads directory.
-surreal export --conn http://localhost:8000 --user root --pass secret --ns main --db main downloads/export.surql
+surreal db export --conn http://localhost:8000 --user root --pass secret --ns main --db main downloads/export.surql
 ```
 
 2. This will create a file called `export.surql` in the current directory.
@@ -75,7 +75,7 @@ surreal export --conn http://localhost:8000 --user root --pass secret --ns main 
 3. You can now import this file back into your project running on `2.0.0`.
 
 ```bash
-surreal import --conn http://localhost:8000 --user root --pass secret --ns main --db main downloads/export.surql
+surreal db import --conn http://localhost:8000 --user root --pass secret --ns main --db main downloads/export.surql
 ```
 
 ## Troubleshooting

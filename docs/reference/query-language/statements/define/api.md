@@ -51,7 +51,7 @@ DEFINE API [ OVERWRITE | IF NOT EXISTS ] @endpoint
                                                                                                                                                                                                                                                                          └─────────────┘
 ```
 
-`DEFINE API` is often used in conjunction with a [capabilities flag](../../../../learn/security/authorization/capabilities.md) or [environment variable](../../../cli/surrealdb-cli/environment-variables.md) to disable arbitrary queries, thereby forcing record and anonymous users to interact with the database via API endpoints alone.
+`DEFINE API` is often used in conjunction with a [capabilities flag](../../../../learn/security/authorization/capabilities.md) or [environment variable](../../../cli/db/environment-variables.md) to disable arbitrary queries, thereby forcing record and anonymous users to interact with the database via API endpoints alone.
 
 ## Quick example
 

@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Self-hosted
 
-Running SurrealDB yourself is quick to start and gives you full control over storage, configuration, and placement. Everything needed to start a server and to import and export data is in the [command-line tool](../../reference/cli/surrealdb-cli/overview.md), packaged and distributed as a single executable that can be downloaded, installed, or run from within Docker.
+Running SurrealDB yourself is quick to start and gives you full control over storage, configuration, and placement. Everything needed to start a server and to import and export data is in the [command-line tool](../../reference/cli/db/index.md), packaged and distributed as a single executable that can be downloaded, installed, or run from within Docker.
 
 For initial installation, see the [installation guide](../../running/installation/index.md). If you would rather not operate the infrastructure, see [Instances](../instances/index.md) for the managed option.
 

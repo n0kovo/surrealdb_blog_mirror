@@ -29,7 +29,7 @@ WARN surrealdb_core::ctx::context: Capabilities denied outgoing network connecti
 In production deployments, we recommend denying all capabilities by default and specifically allowing only those required.
 
 ```bash
-surreal start --deny-all --allow-funcs "array, string, crypto::argon2, http::get" --allow-net api.example.com:443
+surreal db start --deny-all --allow-funcs "array, string, crypto::argon2, http::get" --allow-net api.example.com:443
 ```
 
 You can learn more about best practices when using capabilities in our [Security Best Practices](../best-practices/security-best-practices.md#capabilities) guide.
@@ -58,18 +58,18 @@ Capabilities denied specifically prevail over those allowed specifically:
 
 ## Server versus client configuration
 
-Capability flags on [`surreal start`](../../../reference/cli/surrealdb-cli/commands/start.md) configure the **running database instance**. That is what enforces permissions when clients connect over HTTP, WebSocket, RPC, or [`surreal sql`](../../../reference/cli/surrealdb-cli/commands/sql.md) to a remote endpoint.
+Capability flags on [`surreal db start`](../../../reference/cli/db/commands/start.md) configure the **running database instance**. That is what enforces permissions when clients connect over HTTP, WebSocket, RPC, or [`surreal db sql`](../../../reference/cli/db/commands/sql.md) to a remote endpoint.
 
-[`surreal sql`](../../../reference/cli/surrealdb-cli/commands/sql.md) accepts the same flags, but they apply differently:
+[`surreal db sql`](../../../reference/cli/db/commands/sql.md) accepts the same flags, but they apply differently:
 
 | How you connect | Configure capabilities on |
 | --- | --- |
-| Remote server (`ws://`, `http://`, …) | **`surreal start`** (or server env vars) |
-| Embedded storage (`memory`, `rocksdb://…`, …) | **`surreal sql`** |
+| Remote server (`ws://`, `http://`, …) | **`surreal db start`** (or server env vars) |
+| Embedded storage (`memory`, `rocksdb://…`, …) | **`surreal db sql`** |
 
-When using a remote server, flags on `surreal sql` do **not** enable or disable execution-time checks such as [`eval::*`](../../../reference/query-language/functions/database-functions/eval.md), arbitrary-query gates, or experimental features. They can still affect **REPL line parsing** before a query is sent.
+When using a remote server, flags on `surreal db sql` do **not** enable or disable execution-time checks such as [`eval::*`](../../../reference/query-language/functions/database-functions/eval.md), arbitrary-query gates, or experimental features. They can still affect **REPL line parsing** before a query is sent.
 
-See [Capabilities and remote connections](../../../reference/cli/surrealdb-cli/commands/sql.md#capabilities-and-remote-connections) for detail.
+See [Capabilities and remote connections](../../../reference/cli/db/commands/sql.md#capabilities-and-remote-connections) for detail.
 
 ## List
 
@@ -111,7 +111,7 @@ List of options for allowing capabilities:
                 --allow-experimental
             </td>
             <td colspan="2" scope="row" data-label="Description">
-                Allow the usage of one or more experimental features. Possible values are `files` and `surrealism`, separated by a comma. See <a href="/docs/reference/cli/surrealdb-cli/commands/start#experimental-capabilities">experimental capabilities</a> for which tag enables each feature. (The legacy tag `gql` is still accepted for compatibility but is unused from 3.3.0 - GQL is on by default.)
+                Allow the usage of one or more experimental features. Possible values are `files` and `surrealism`, separated by a comma. See <a href="/docs/reference/cli/db/commands/start#experimental-capabilities">experimental capabilities</a> for which tag enables each feature. (The legacy tag `gql` is still accepted for compatibility but is unused from 3.3.0 - GQL is on by default.)
             </td>
             <td scope="row" data-label="Default">
                 None
@@ -278,7 +278,7 @@ test/test> DEFINE TABLE protected PERMISSIONS NONE;
 test/test> DEFINE TABLE public PERMISSIONS FULL;
 
 -- When guest access is allowed
-$ surreal start --allow-guests
+$ surreal db start --allow-guests
 
 test/test> CREATE public;
 [{ id: public:uy0qzy31v4xox8vivrd4 }]
@@ -293,7 +293,7 @@ test/test> SELECT * FROM protected;
 []
 
 -- When guest access is denied
-$ surreal start --deny-guests
+$ surreal db start --deny-guests
 
 test/test> CREATE public;
 There was a problem with the database: There was a problem with the database: IAM error: Not enough permissions to perform this action
@@ -316,10 +316,10 @@ In certain environments, you may not want users to use specific functions (i.e. 
 
 ```bash
 // Allow all functions except the http family and crypto::md5()
-surreal start --allow-funcs --deny-funcs "http","crypto::md5"
+surreal db start --allow-funcs --deny-funcs "http","crypto::md5"
 
 // Allow certain custom functions only (all custom functions start with "fn::")
-surreal start --allow-funcs "fn::shared_fn"
+surreal db start --allow-funcs "fn::shared_fn"
 ```
 
 A denied function is refused however a query calls it, including through method syntax. With `--deny-funcs string::len`, both `string::len('abcd')` and `'abcd'.len()` return the error `Function 'string::len' is not allowed to be executed`.
@@ -333,13 +333,13 @@ SurrealDB can make outbound network connections from [`http::*`](../../../refere
 
 ```bash
 # Deny network access to localhost and private IPv4 ranges
-surreal start --allow-net --deny-net "127.0.0.1","localhost","10.0.0.0/8","192.168.0.0/16","172.16.0.0/12"
+surreal db start --allow-net --deny-net "127.0.0.1","localhost","10.0.0.0/8","192.168.0.0/16","172.16.0.0/12"
 
 # Allow access to an internal system on port 443 only
-surreal start --allow-net internal.example.com:443
+surreal db start --allow-net internal.example.com:443
 
 # Allow access to some private networks but not to others
-surreal start --allow-net 10.0.0.0/16 --deny-net 10.10.0.0/24
+surreal db start --allow-net 10.0.0.0/16 --deny-net 10.10.0.0/24
 ```
 
 SurrealDB resolves hostnames with DNS, then checks every resulting IP address against `--allow-net` and `--deny-net`. A hostname that resolves to an address listed in `--deny-net` is blocked.
@@ -349,7 +349,7 @@ Note that allowlisting a hostname alone is not enough when that name resolves to
 Example for an in-cluster JWKS issuer whose service name resolves inside `10.0.0.0/8`:
 
 ```bash
-surreal start --deny-all --allow-net idp.namespace.svc,10.0.0.0/8
+surreal db start --deny-all --allow-net idp.namespace.svc,10.0.0.0/8
 ```
 
 > [!WARNING]
@@ -374,14 +374,14 @@ The [`eval::surql`](../../../reference/query-language/functions/database-functio
 Unlike most capabilities, **eval is denied for every subject by default**, including when you pass `--allow-all`. You must opt in explicitly:
 
 ```bash
-surreal start --allow-eval-query
+surreal db start --allow-eval-query
 ```
 
 Arbitrary queries are **allowed by default** on the server, so you do not need `--allow-arbitrary-query` for eval unless you have restricted arbitrary queries (for example with `--deny-arbitrary-query` or `--deny-all`). If a subject is denied arbitrary queries - a common pattern alongside [`DEFINE API`](../../../reference/query-language/statements/define/api.md) - **`eval` is denied for that subject too**, even when `--allow-eval-query` includes them. `eval` cannot bypass arbitrary-query lockdown.
 
 Deny rules at the same specificity prevail over allow rules. A record user calling an owner-defined function that invokes `eval` is still checked as `record` - auth limiting never escalates the subject.
 
-Configure `--allow-eval-query` on **`surreal start`** when clients connect to a remote instance. It is not required on `surreal sql` for remote connections - only for [embedded REPL sessions](../../../reference/cli/surrealdb-cli/commands/sql.md#capabilities-and-remote-connections).
+Configure `--allow-eval-query` on **`surreal db start`** when clients connect to a remote instance. It is not required on `surreal db sql` for remote connections - only for [embedded REPL sessions](../../../reference/cli/db/commands/sql.md#capabilities-and-remote-connections).
 
 `eval::gql` does not need an experimental capability from **3.3.0** (on **3.2.x**, also allow `gql`). See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) and [Representations and codecs](../../querying/concepts-and-guides/representations-and-codecs.md).
 
@@ -391,10 +391,10 @@ Two capabilities switch individual entry points off rather than whole classes of
 
 ```bash
 # Close the SQL and import endpoints, leave the rest open
-surreal start --deny-http sql,import
+surreal db start --deny-http sql,import
 
 # Open only the RPC methods a read-only client needs
-surreal start --deny-rpc --allow-rpc use,select,query
+surreal db start --deny-rpc --allow-rpc use,select,query
 ```
 
 These follow the same [priority rules](#priority) as every other capability, so a specific deny beats a specific allow, and both beat the blanket form.
@@ -417,7 +417,7 @@ A route name covers every method and path under it, so `key` covers all ten [`/k
 | `graphql` | [`POST /graphql`](../../../reference/rest-api/http-protocol.md#graphql) |
 | `ml` | The [`/ml`](../../../reference/rest-api/http-protocol.md#ml-import) import and export endpoints |
 | `api` | Endpoints defined with [`DEFINE API`](../../../reference/query-language/statements/define/api.md) |
-| `mcp` | The [MCP server](../../../reference/cli/surrealdb-cli/commands/mcp.md) endpoint |
+| `mcp` | The [MCP server](../../../reference/cli/db/commands/mcp.md) endpoint |
 | `rpc` | The HTTP [`/rpc`](../../../reference/rest-api/rpc-protocol.md) endpoint |
 | `sync` | The internal sync endpoint |
 | `postgres` *Since v3.3.0* | The [Postgres wire protocol](../../../reference/rest-api/postgres-protocol.md) listener |

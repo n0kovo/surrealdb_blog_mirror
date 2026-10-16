@@ -16,13 +16,13 @@ While every query in SurrealDB is run [inside its own transaction](../../query-l
 Start a running database using the following command:
 
 ```bash
-surreal start --user root --pass secret 
+surreal db start --user root --pass secret 
 ```
 
 To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open a connection in the CLI:
 
 ```bash
-surreal sql --user root --pass secret --pretty
+surreal db sql --user root --pass secret --pretty
 ```
 
 Then use the `cargo add` command to add the `surrealdb` and `tokio` crates. The dependencies inside `Cargo.toml` should look something like this:
@@ -214,13 +214,13 @@ The [`.query()`](https://docs.rs/surrealdb/latest/surrealdb/struct.Surreal.html#
 Start a running database using the following command:
 
 ```bash
-surreal start --user root --pass secret 
+surreal db start --user root --pass secret 
 ```
 
 To follow along interactively, connect [using SurrealDB Studio](../../../explore/studio/index.md) or the following command to open a connection in the CLI:
 
 ```bash
-surreal sql --user root --pass secret --ns main --db main --pretty
+surreal db sql --user root --pass secret --ns main --db main --pretty
 ```
 
 Then use the `cargo add` command to add the `surrealdb` and `tokio` crates. The dependencies inside `Cargo.toml` should look something like this:

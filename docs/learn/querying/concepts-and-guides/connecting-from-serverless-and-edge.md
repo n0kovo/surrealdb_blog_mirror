@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 
 Instead of long-lived processes with persistent connections, serverless and edge code runs in short-lived, stateless executions, often across multiple regions.
 
-Some examples of environments in which this pattern is used are AWS Lambda, Vercel Functions / Edge Functions, Cloudflare Workers, and Deno Deploy.
+Some examples of environments in which this pattern is used are AWS Lambda, Vercel Functions / Edge Functions, Cloudflare Workers, and Deno Deploy. For Vercel specifically, see [SurrealDB on Vercel](../../../build/integrations/vercel/index.md), which covers Next.js, the AI SDK, eve and Vercel Sandbox.
 
 SurrealDB works well in these environments when it is used with the connection patterns on this page.
 

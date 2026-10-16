@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/e
 
 # Demo data
 
-To further test out SurrealDB and SurrealQL functionality, we've included two demo datasets here in `.surql` files which you can download and [`import`](../../../reference/cli/surrealdb-cli/commands/import.md) into SurrealDB using the [CLI](../../../reference/cli/surrealdb-cli/overview.md).
+To further test out SurrealDB and SurrealQL functionality, we've included two demo datasets here in `.surql` files which you can download and [`import`](../../../reference/cli/db/commands/import.md) into SurrealDB using the [CLI](../../../reference/cli/db/index.md).
 
 ## Surreal Deal Store - there is a lot in store for you!
 
@@ -36,26 +36,26 @@ In the diagram below, the nodes in pink are the [standard tables](../../../refer
 
 ### Import
 
-Once one of the datasets has been downloaded, it's now time to [start the server](../../../reference/cli/surrealdb-cli/commands/start.md).
+Once one of the datasets has been downloaded, it's now time to [start the server](../../../reference/cli/db/commands/start.md).
 
 ```bash
 # Create a new in-memory server
-surreal start --user root --pass secret --allow-all
+surreal db start --user root --pass secret --allow-all
 ```
 
-Lastly, use the [import command](../../../reference/cli/surrealdb-cli/commands/import.md) to add the dataset.
+Lastly, use the [import command](../../../reference/cli/db/commands/import.md) to add the dataset.
 
 Use the command below to import the [surreal deal store dataset](https://datasets.surrealdb.com/surreal-deal-store.surql):
 
 ```bash
-surreal import --endpoint http://localhost:8000 --user root --pass secret \
+surreal db import --endpoint http://localhost:8000 --user root --pass secret \
   --ns main --db main surreal-deal-store.surql
 ```
 
 To import the downloaded [Surreal Deal store (mini)](https://datasets.surrealdb.com/surreal-deal-store-mini.surql) dataset, use the command below:
 
 ```bash
-surreal import --endpoint http://localhost:8000 --user root --pass secret \
+surreal db import --endpoint http://localhost:8000 --user root --pass secret \
   --ns main --db main surreal-deal-store-mini.surql
 ```
 
@@ -67,7 +67,7 @@ First, start the SurrealDB server:
 
 ```bash
 # Create a new in-memory server
-surreal start --user root --pass secret --allow-all
+surreal db start --user root --pass secret --allow-all
 ```
 
 Then download the file and load it into the database:

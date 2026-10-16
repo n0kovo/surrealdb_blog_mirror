@@ -126,7 +126,7 @@ async fn get_new_token(db: &Surreal<Client>, user: &RecordUser) -> Result<(), Er
         })
         .await?
         .into_insecure_token();
-    println!("New token! Sign in with surreal sql --namespace namespace --database database --pretty --token \"{jwt}\"\n");
+    println!("New token! Sign in with surreal db sql --namespace namespace --database database --pretty --token \"{jwt}\"\n");
     Ok(())
 }
 ```
@@ -197,7 +197,7 @@ async fn get_new_token(db: &Surreal<Any>, user: RecordUser) -> Result<(), Error>
         })
         .await?;
     println!(
-        "New token! Sign in with surreal sql --pretty --token \"{}\"\n",
+        "New token! Sign in with surreal db sql --pretty --token \"{}\"\n",
         jwt.access.into_insecure_token()
     );
     Ok(())
@@ -270,9 +270,9 @@ Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzA4NjQ2NDAsIm5iZiI6MTcz
 
 To log in, use this command:
 
-surreal sql --pretty --token "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzA4NjQ2NDAsIm5iZiI6MTczMDg2NDY0MCwiZXhwIjoxNzMwODY1NTQwLCJpc3MiOiJTdXJyZWFsREIiLCJqdGkiOiIwNmYwOGFhZi0zYzIyLTQ5N2UtYWRmNC0zNDMxMzA5YWYxOGEiLCJOUyI6Im5hbWVzcGFjZSIsIkRCIjoiZGF0YWJhc2UiLCJBQyI6ImFjY291bnQiLCJJRCI6InVzZXI6YW92bHN0dzBvN2R1Y2J4ZWpqZWsifQ.tHCVlubg3G2j05-LsEaE6jRHMwrBtccJcR6uC9Z6Lo-egrYlBybEEfOZh020OxWxKvUt8eA92-6TjwBvSpN5KA"
+surreal db sql --pretty --token "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzA4NjQ2NDAsIm5iZiI6MTczMDg2NDY0MCwiZXhwIjoxNzMwODY1NTQwLCJpc3MiOiJTdXJyZWFsREIiLCJqdGkiOiIwNmYwOGFhZi0zYzIyLTQ5N2UtYWRmNC0zNDMxMzA5YWYxOGEiLCJOUyI6Im5hbWVzcGFjZSIsIkRCIjoiZGF0YWJhc2UiLCJBQyI6ImFjY291bnQiLCJJRCI6InVzZXI6YW92bHN0dzBvN2R1Y2J4ZWpqZWsifQ.tHCVlubg3G2j05-LsEaE6jRHMwrBtccJcR6uC9Z6Lo-egrYlBybEEfOZh020OxWxKvUt8eA92-6TjwBvSpN5KA"
 
-New token! Sign in with surreal sql --pretty --token "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzA4NjQ2NDAsIm5iZiI6MTczMDg2NDY0MCwiZXhwIjoxNzMwODY1NTQwLCJpc3MiOiJTdXJyZWFsREIiLCJqdGkiOiIyZjExZTQzZi04ODg1LTRmNzAtOGI2Zi0zNGZmZGZlZWY4MDUiLCJOUyI6Im5hbWVzcGFjZSIsIkRCIjoiZGF0YWJhc2UiLCJBQyI6ImFjY291bnQiLCJJRCI6InVzZXI6YW92bHN0dzBvN2R1Y2J4ZWpqZWsifQ.0GWwMiAjn5kKUoNAw2TxAdVLhWIHeJsVWvlAzw1QZ91qdIhkazygdG5uFl5DHVmmoYC-cLo-ko27jiRCid5xDg"
+New token! Sign in with surreal db sql --pretty --token "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzA4NjQ2NDAsIm5iZiI6MTczMDg2NDY0MCwiZXhwIjoxNzMwODY1NTQwLCJpc3MiOiJTdXJyZWFsREIiLCJqdGkiOiIyZjExZTQzZi04ODg1LTRmNzAtOGI2Zi0zNGZmZGZlZWY4MDUiLCJOUyI6Im5hbWVzcGFjZSIsIkRCIjoiZGF0YWJhc2UiLCJBQyI6ImFjY291bnQiLCJJRCI6InVzZXI6YW92bHN0dzBvN2R1Y2J4ZWpqZWsifQ.0GWwMiAjn5kKUoNAw2TxAdVLhWIHeJsVWvlAzw1QZ91qdIhkazygdG5uFl5DHVmmoYC-cLo-ko27jiRCid5xDg"
 
 Two `person` records: [Person { name: "Created by record user", id: RecordId { table: "person", key: String("i2sv6bqk0mso0udgzmdx") }, created_by: Some(RecordId { table: "user", key: String("aovlstw0o7ducbxejjek") }) }, Person { name: "Created by root", id: RecordId { table: "person", key: String("u6mry7agmsmtbwl94yui") }, created_by: None }]
 
@@ -410,7 +410,7 @@ async fn get_new_token(db: &Surreal<Client>, user: &RecordUser) -> Result<(), Er
         })
         .await?
         .into_insecure_token();
-    println!("New token! Sign in with surreal sql --namespace namespace --database database --pretty --token \"{jwt}\"\n");
+    println!("New token! Sign in with surreal db sql --namespace namespace --database database --pretty --token \"{jwt}\"\n");
     Ok(())
 }
 ```
@@ -481,7 +481,7 @@ async fn get_new_token(db: &Surreal<Client>, user: &RecordUser) -> Result<(), Er
         })
         .await?
         .into_insecure_token();
-    println!("New token! Sign in with surreal sql --namespace namespace --database database --pretty --token \"{jwt}\"\n");
+    println!("New token! Sign in with surreal db sql --namespace namespace --database database --pretty --token \"{jwt}\"\n");
     Ok(())
 }
 
@@ -552,9 +552,9 @@ Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzA4NjQ2NDAsIm5iZiI6MTcz
 
 To log in, use this command:
 
-surreal sql --namespace namespace --database database --pretty --token "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzA4NjQ2NDAsIm5iZiI6MTczMDg2NDY0MCwiZXhwIjoxNzMwODY1NTQwLCJpc3MiOiJTdXJyZWFsREIiLCJqdGkiOiIwNmYwOGFhZi0zYzIyLTQ5N2UtYWRmNC0zNDMxMzA5YWYxOGEiLCJOUyI6Im5hbWVzcGFjZSIsIkRCIjoiZGF0YWJhc2UiLCJBQyI6ImFjY291bnQiLCJJRCI6InVzZXI6YW92bHN0dzBvN2R1Y2J4ZWpqZWsifQ.tHCVlubg3G2j05-LsEaE6jRHMwrBtccJcR6uC9Z6Lo-egrYlBybEEfOZh020OxWxKvUt8eA92-6TjwBvSpN5KA"
+surreal db sql --namespace namespace --database database --pretty --token "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzA4NjQ2NDAsIm5iZiI6MTczMDg2NDY0MCwiZXhwIjoxNzMwODY1NTQwLCJpc3MiOiJTdXJyZWFsREIiLCJqdGkiOiIwNmYwOGFhZi0zYzIyLTQ5N2UtYWRmNC0zNDMxMzA5YWYxOGEiLCJOUyI6Im5hbWVzcGFjZSIsIkRCIjoiZGF0YWJhc2UiLCJBQyI6ImFjY291bnQiLCJJRCI6InVzZXI6YW92bHN0dzBvN2R1Y2J4ZWpqZWsifQ.tHCVlubg3G2j05-LsEaE6jRHMwrBtccJcR6uC9Z6Lo-egrYlBybEEfOZh020OxWxKvUt8eA92-6TjwBvSpN5KA"
 
-New token! Sign in with surreal sql --namespace namespace --database database --pretty --token "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzA4NjQ2NDAsIm5iZiI6MTczMDg2NDY0MCwiZXhwIjoxNzMwODY1NTQwLCJpc3MiOiJTdXJyZWFsREIiLCJqdGkiOiIyZjExZTQzZi04ODg1LTRmNzAtOGI2Zi0zNGZmZGZlZWY4MDUiLCJOUyI6Im5hbWVzcGFjZSIsIkRCIjoiZGF0YWJhc2UiLCJBQyI6ImFjY291bnQiLCJJRCI6InVzZXI6YW92bHN0dzBvN2R1Y2J4ZWpqZWsifQ.0GWwMiAjn5kKUoNAw2TxAdVLhWIHeJsVWvlAzw1QZ91qdIhkazygdG5uFl5DHVmmoYC-cLo-ko27jiRCid5xDg"
+New token! Sign in with surreal db sql --namespace namespace --database database --pretty --token "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzA4NjQ2NDAsIm5iZiI6MTczMDg2NDY0MCwiZXhwIjoxNzMwODY1NTQwLCJpc3MiOiJTdXJyZWFsREIiLCJqdGkiOiIyZjExZTQzZi04ODg1LTRmNzAtOGI2Zi0zNGZmZGZlZWY4MDUiLCJOUyI6Im5hbWVzcGFjZSIsIkRCIjoiZGF0YWJhc2UiLCJBQyI6ImFjY291bnQiLCJJRCI6InVzZXI6YW92bHN0dzBvN2R1Y2J4ZWpqZWsifQ.0GWwMiAjn5kKUoNAw2TxAdVLhWIHeJsVWvlAzw1QZ91qdIhkazygdG5uFl5DHVmmoYC-cLo-ko27jiRCid5xDg"
 
 Two `person` records: [Person { name: "Created by record user", id: RecordId { table: "person", key: String("i2sv6bqk0mso0udgzmdx") }, created_by: Some(RecordId { table: "user", key: String("aovlstw0o7ducbxejjek") }) }, Person { name: "Created by root", id: RecordId { table: "person", key: String("u6mry7agmsmtbwl94yui") }, created_by: None }]
 

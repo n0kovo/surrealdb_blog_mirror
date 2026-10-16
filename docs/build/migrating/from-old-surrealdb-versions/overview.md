@@ -11,7 +11,7 @@ When moving to a new version of SurrealDB, follow the upgrade instructions so th
 
 ## Upgrading in general
 
-Upgrading the SurrealDB server itself is done through a single command: [`surreal upgrade`](../../../reference/cli/surrealdb-cli/commands/upgrade.md). For minor versions, a read through the [release notes](/releases) will suffice to see which breaking changes may exist.
+Upgrading the SurrealDB server itself is done through a single command: [`surreal upgrade db`](../../../reference/cli/db/commands/upgrade.md). For minor versions, a read through the [release notes](/releases) will suffice to see which breaking changes may exist.
 
 To see the exact PRs that were merged between two versions, you can compare the changes between one version tag and another on GitHub. For example, [comparing `v3.0.0` with `v3.0.2`](https://github.com/surrealdb/surrealdb/compare/v3.0.0...v3.0.2) shows which PRs were merged between those two versions.
 

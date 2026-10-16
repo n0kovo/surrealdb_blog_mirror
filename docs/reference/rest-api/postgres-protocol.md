@@ -17,7 +17,7 @@ The Postgres wire protocol listener lets **any Postgres client** - `psql`, JDBC,
 
 ANSI SQL is **not yet supported** over the Postgres wire protocol. Clients can currently send SurrealQL by default, or ISO GQL (Cypher Query Language) when the session dialect is chosen.
 
-This feature ships with builds that include the `postgres` server feature (enabled in the default feature set). It is opt-in at runtime: the listener starts only when you pass [`--postgres-bind`](../cli/surrealdb-cli/commands/start.md) via the `surreal start` command.
+This feature ships with builds that include the `postgres` server feature (enabled in the default feature set). It is opt-in at runtime: the listener starts only when you pass [`--postgres-bind`](../cli/db/commands/start.md) via the `surreal db start` command.
 
 ## Why Postgres protocol on SurrealDB?
 
@@ -53,7 +53,7 @@ The following chart shows features currently available, along with those that ar
 Bind a separate address from the HTTP server (default HTTP remains `127.0.0.1:8000`):
 
 ```bash
-surreal start --user root --pass secret \
+surreal db start --user root --pass secret \
   --postgres-bind 127.0.0.1:5432 \
   memory
 ```
@@ -64,14 +64,14 @@ Environment variable equivalent:
 
 ```bash
 export SURREAL_POSTGRES_BIND=127.0.0.1:5432
-surreal start --user root --pass secret memory
+surreal db start --user root --pass secret memory
 ```
 
 **PowerShell**
 
 ```powershell
 $env:SURREAL_POSTGRES_BIND = "127.0.0.1:5432"
-surreal start --user root --pass secret memory
+surreal db start --user root --pass secret memory
 ```
 
 Connect with `psql`:
@@ -99,7 +99,7 @@ ALTER USER analyst ON DATABASE PASSWORD 'new-secret';
 
 Users defined with **`PASSHASH` only** have no SCRAM material (no plaintext was available at definition time). They can sign in over HTTP/RPC with the hash path, but Postgres clients must use **cleartext password** auth for those users until you run **`ALTER USER … PASSWORD`** to set a plaintext password and regenerate SCRAM verifiers.
 
-Root credentials created via **`surreal start --user` / `--pass`** work on the Postgres port the same way as other IAM users once SCRAM material exists for that account.
+Root credentials created via **`surreal db start --user` / `--pass`** work on the Postgres port the same way as other IAM users once SCRAM material exists for that account.
 
 ### TLS
 
@@ -199,7 +199,7 @@ GQL is **not** the default and is **not** what most Postgres users expect from a
 GQL is enabled by default from 3.3.0, the same release as the Postgres listener, so the server needs no experimental capability:
 
 ```bash
-surreal start --user root --pass secret \
+surreal db start --user root --pass secret \
   --postgres-bind 127.0.0.1:5432 \
   memory
 ```
@@ -248,7 +248,7 @@ Standalone **`BEGIN`**, **`COMMIT`**, and **`ROLLBACK`** open an interactive tra
 
 Connections are gated like other query surfaces:
 
-- **`RouteTarget::Postgres`** - controlled via [`--allow-http`](../cli/surrealdb-cli/commands/start.md) / [`--deny-http`](../cli/surrealdb-cli/commands/start.md) with the route name **`postgres`** (the capability helper is shared with HTTP route names).
+- **`RouteTarget::Postgres`** - controlled via [`--allow-http`](../cli/db/commands/start.md) / [`--deny-http`](../cli/db/commands/start.md) with the route name **`postgres`** (the capability helper is shared with HTTP route names).
 - **Arbitrary query** - subject to [`--allow-arbitrary-query`](../../learn/security/authorization/capabilities.md#arbitrary-queries) / [`--deny-arbitrary-query`](../../learn/security/authorization/capabilities.md#arbitrary-queries) for `guest`, `record`, and `system` users.
 - **GQL** - enabled by default from 3.3.0, so no experimental capability is required.
 
@@ -270,4 +270,4 @@ Authentication is described in [Authentication](#authentication). Resource limit
 - [GQL via HTTP](../../learn/querying/gql/via-http.md): enable GQL and run queries with `curl`
 - [`DEFINE USER`](../query-language/statements/define/user.md#scram-credentials-for-postgres-clients): SCRAM verifier material for Postgres clients
 - [Capabilities](../../learn/security/authorization/capabilities.md): lock down arbitrary queries and routes
-- [`surreal start`](../cli/surrealdb-cli/commands/start.md): CLI reference including `--postgres-bind`
+- [`surreal db start`](../cli/db/commands/start.md): CLI reference including `--postgres-bind`

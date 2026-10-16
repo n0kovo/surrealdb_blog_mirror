@@ -13,7 +13,7 @@ This section holds exhaustive material, organised for lookup rather than for rea
 
 - **[SurrealQL](reference/query-language/index.md)** — Statements, functions, operators, data types and language primitives.
 - **[APIs and protocols](reference/rest-api/index.md)** — REST, HTTP, RPC, CBOR and Postgres wire protocols, and the shared error format.
-- **[CLI tools](reference/cli/index.md)** — Command reference for surrealctl, surreal and surqlfmt.
+- **[CLI tools](reference/cli/index.md)** — Command reference for the surreal launcher, its components and surqlfmt.
 
 ## SDKs
 

@@ -91,4 +91,4 @@ Compare the same metrics before and after the change. A resize that shifts the b
 
 If utilisation stays low after a large resize, step back down. Instance type is billed on what is provisioned, not on what is used, so an oversized instance is a standing cost with no benefit.
 
-`surrealctl instance metrics` and `surrealctl instance update` let you read the signals and apply the change from a terminal. See [surrealctl instances](../surrealctl/instances.md).
+`surreal cloud instance metrics` and `surreal cloud instance update` let you read the signals and apply the change from a terminal. See [surreal cloud instances](../../explore/cli/cloud/instances.md).

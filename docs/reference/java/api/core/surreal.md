@@ -31,7 +31,7 @@ Surreal db = new Surreal();
 
 ### `.connect(url)` {#connect}
 
-Connects the instance to a SurrealDB server using the specified URL. The URL scheme determines the connection protocol. See the [start command](../../../cli/surrealdb-cli/commands/start.md) documentation for server configuration options.
+Connects the instance to a SurrealDB server using the specified URL. The URL scheme determines the connection protocol. See the [start command](../../../cli/db/commands/start.md) documentation for server configuration options.
 
 ```java title="Method Syntax"
 db.connect(url)

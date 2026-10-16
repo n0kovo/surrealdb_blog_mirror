@@ -11,12 +11,12 @@ Bruno is an API client that can send GraphQL queries to SurrealDB over HTTP. Thi
 
 ## Getting started
 
-Before you can start making queries, you need to start SurrealDB. You can do this by starting a new instance of SurrealDB with the [`surreal start`](../../../reference/cli/surrealdb-cli/commands/start.md) command, Docker, or SurrealDB Studio.
+Before you can start making queries, you need to start SurrealDB. You can do this by starting a new instance of SurrealDB with the [`surreal db start`](../../../reference/cli/db/commands/start.md) command, Docker, or SurrealDB Studio.
 
 **CLI**
 
 ```bash
-surreal start --log debug --user root --password secret
+surreal db start --log debug --user root --password secret
 ```
 
 **Docker**

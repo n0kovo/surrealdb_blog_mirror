@@ -46,7 +46,7 @@ Schema files can be organised by table, by domain, or kept in a single file. Sur
 Create a [SurrealDB Cloud instance](../../instances/index.md) if you do not have one, and read its endpoint:
 
 ```bash
-surrealctl instance endpoint my-instance
+surreal cloud instance endpoint my-instance
 ```
 
 Any SurrealDB endpoint works here. Cloud is used throughout these pages because it needs no setup of its own.

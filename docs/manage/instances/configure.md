@@ -47,7 +47,7 @@ For a production instance, deny by default and allow only what the application u
 > [!IMPORTANT]
 > **Network access** governs outbound HTTP requests made from inside queries, and is denied by default. It does not control who can reach the instance. See [Network access](network-access.md) for the pattern syntax, and [Private connectivity](private-connectivity.md) for inbound access modes.
 
-The **Import** and **Export** buttons read and write the whole capability configuration as a JSON file. Use the export to keep staging and production aligned, or to hold the configuration in version control. `surrealctl instance capabilities` does the same from a terminal. See [surrealctl instances](../surrealctl/instances.md).
+The **Import** and **Export** buttons read and write the whole capability configuration as a JSON file. Use the export to keep staging and production aligned, or to hold the configuration in version control. `surreal cloud instance capabilities` does the same from a terminal. See [surreal cloud instances](../../explore/cli/cloud/instances.md).
 
 ## Compute and storage
 
@@ -109,7 +109,7 @@ To delete an instance:
 2. Select **Delete instance**.
 3. Confirm the action.
 
-`surrealctl instance pause`, `surrealctl instance resume`, and `surrealctl instance delete` are the command-line equivalents.
+`surreal cloud instance pause`, `surreal cloud instance resume`, and `surreal cloud instance delete` are the command-line equivalents.
 
 ## The instance id
 

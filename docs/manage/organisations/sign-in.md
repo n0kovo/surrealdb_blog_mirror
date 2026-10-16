@@ -59,7 +59,7 @@ An account created through Google or GitHub has no SurrealDB password to reset. 
 
 Each person needs their own account. Invite colleagues to the organisation instead of sharing credentials. Separate accounts let each member hold a different role, and let you remove someone without changing a password the rest of the team uses. See [Members and roles](members-and-roles.md).
 
-For automation, use a token from [`surrealctl`](../surrealctl/authentication.md) rather than an interactive account.
+For automation, use a token from [`surreal cloud`](../../explore/cli/cloud/authentication.md) rather than an interactive account.
 
 ## Next steps
 

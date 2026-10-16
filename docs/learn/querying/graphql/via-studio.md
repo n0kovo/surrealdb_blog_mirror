@@ -11,10 +11,10 @@ The GraphQL query view in [SurrealDB Studio](https://studio.surrealdb.com/query)
 
 ## Getting started
 
-Before you can start making queries, you need to start SurrealDB with the GraphQL module enabled. You can do this by starting a new instance of SurrealDB with the [`surreal start`](../../../reference/cli/surrealdb-cli/commands/start.md) command.
+Before you can start making queries, you need to start SurrealDB with the GraphQL module enabled. You can do this by starting a new instance of SurrealDB with the [`surreal db start`](../../../reference/cli/db/commands/start.md) command.
 
 ```bash
-surreal start --log debug --user root --password secret
+surreal db start --log debug --user root --password secret
 ```
 
 After starting the SurrealDB instance, you can navigate to SurrealDB Studio to start a new connection.

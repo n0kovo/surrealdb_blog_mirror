@@ -9,7 +9,7 @@ _Auto-generated index — 7 pages and 1 sub-section._
 
 ## Sub-sections
 
-- **[Installation](installation/index.md)** — Install the SurrealDB server on your machine: macOS, Windows, Linux. Nightly builds are covered too.
+- **[Installation](installation/index.md)** — Install the surreal command-line tool and the SurrealDB database on macOS, Windows and Linux. Nightly builds and the install script's options are covered too.
 
 ## Pages
 

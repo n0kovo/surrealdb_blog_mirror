@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/m
 
 # Logging
 
-SurrealDB writes server logs to stderr by default. You can set flags on [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md) or the matching [environment variables](../../reference/cli/surrealdb-cli/environment-variables.md) and ship lines to your collector or log store.
+SurrealDB writes server logs to stderr by default. You can set flags on [`surreal db start`](../../reference/cli/db/commands/start.md) or the matching [environment variables](../../reference/cli/db/environment-variables.md) and ship lines to your collector or log store.
 
 ## Core options
 
@@ -20,7 +20,7 @@ SurrealDB writes server logs to stderr by default. You can set flags on [`surrea
 | File level | `--log-file-level` | `SURREAL_LOG_FILE_LEVEL` |
 | Slow queries | `--slow-log-threshold`, `--slow-log-param-allow`, `--slow-log-param-deny` | `SURREAL_SLOW_QUERY_LOG_THRESHOLD`, `SURREAL_SLOW_QUERY_LOG_PARAM_ALLOW`, `SURREAL_SLOW_QUERY_LOG_PARAM_DENY` |
 
-Further socket and file options (`--log-socket-level`, `--log-file-name`, `--log-file-format`, and others) are documented on [`surreal start`](../../reference/cli/surrealdb-cli/commands/start.md) and in [Environment variables](../../reference/cli/surrealdb-cli/environment-variables.md).
+Further socket and file options (`--log-socket-level`, `--log-file-name`, `--log-file-format`, and others) are documented on [`surreal db start`](../../reference/cli/db/commands/start.md) and in [Environment variables](../../reference/cli/db/environment-variables.md).
 
 Slow-query logging records statements that exceed your threshold. The `--slow-log-param-allow` / `--slow-log-param-deny` flags control whether bound parameters are expanded in the log line (for example turning `SELECT * FROM $table_name` into `SELECT * FROM person` when `table_name` is allowed). Set these flags for any logs that may contain sensitive data.
 

@@ -65,7 +65,7 @@ db.connect("ws://localhost:8000");
 
 ## Connection string protocols
 
-The connection string determines the protocol and transport used to communicate with SurrealDB. For more on server configuration, see the [start command](../../cli/surrealdb-cli/commands/start.md) documentation.
+The connection string determines the protocol and transport used to communicate with SurrealDB. For more on server configuration, see the [start command](../../cli/db/commands/start.md) documentation.
 
 | Protocol | Description |
 |---|---|

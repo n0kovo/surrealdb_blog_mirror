@@ -594,6 +594,12 @@ Exceeding either is a parse error, not a crash, giving the error `Exceeded query
   </thead>
   <tbody>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_KVS_THREADPOOL_SIZE` *Since v3.1.1*</td>
+      <td scope="row" data-label="Default">Number of CPU cores (minimum 16)</td>
+      <td scope="row" data-label="Allowed values">A usize, at least 4</td>
+      <td scope="row" data-label="Notes">Number of worker threads the in-memory, RocksDB and SurrealKV engines use for storage work. A value below 4 or a value that is not a number logs a warning and the default is used.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_RUNTIME_MAX_BLOCKING_THREADS`</td>
       <td scope="row" data-label="Default">512</td>
       <td scope="row" data-label="Allowed values">A usize</td>

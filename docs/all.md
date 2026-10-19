@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1124 pages_  
+_1125 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -53,6 +53,8 @@ _1124 pages_
   The pipeline behind the Robin Hood demo: chapter splitting, serial ingest with a narrative clock, harvesting facts by chapter, alias suggestions and the three pages.
 - [Robin Hood character graph](agent-memory/cookbooks/showcase/robin-hood/index.md)
   Pyle's Robin Hood ingested chapter by chapter into SurrealDB Agent Memory, drawn as the cast known at each reading position, with name variants linked.
+- [Rome, 753 BC to AD 1453](agent-memory/cookbooks/showcase/rome/index.md)
+  Every year of Roman history from the founding of the city to the fall of Constantinople, written into SurrealDB Agent Memory as structured facts, with rulers and control of places read back as value histories.
 - [Vulcan, Alberta: the answers side by side](agent-memory/cookbooks/showcase/vulcan/answers.md)
   Three questions about the Wikipedia article on Vulcan, Alberta, each answered by Claude Haiku 4.5 with SurrealDB Agent Memory and by Claude Sonnet 5 reading the page and its history, with the recall result that held the answer.
 - [Vulcan, Alberta: the article over time](agent-memory/cookbooks/showcase/vulcan/article-over-time.md)

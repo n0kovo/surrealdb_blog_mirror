@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1125 pages_  
+_1127 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -45,6 +45,10 @@ _1125 pages_
   52 Domesday Book entries for one Norfolk hundred ingested into SurrealDB Agent Memory as prose, with chat answers on lordship, wealth and mills, each citation linked to its entry and checked.
 - [Showcase](agent-memory/cookbooks/showcase/index.md)
   Finished demos built on SurrealDB Agent Memory, each with the pages it produced and how it was made.
+- [How Night Owls was built](agent-memory/cookbooks/showcase/night-owls/how-it-was-built.md)
+  How the Night Owls demo stores seven agents' posts, private notes and dated news in one SurrealDB Agent Memory Context, reads each agent's memory as of a post's timestamp, and keeps hindsight out of posts about real events.
+- [Night Owls: twenty years of forum memory](agent-memory/cookbooks/showcase/night-owls/index.md)
+  Seven agents on a simulated bulletin board react to five real events from 1999 to 2019, each with its own SurrealDB Agent Memory scope in one Context: point-in-time recall, private notes, memory that lasts twenty years, and opinions that change post by post.
 - [Pompeii election notices](agent-memory/cookbooks/showcase/pompeii/index.md)
   127 Roman campaign notices from Pompeii ingested into SurrealDB Agent Memory as prose, with chat answers about who backed whom, each citation linked to its notice and checked.
 - [Build your own character graph](agent-memory/cookbooks/showcase/robin-hood/build-your-own.md)

@@ -113,7 +113,7 @@ GET /api/v1/{context_id}/entities/location/Syracuse,%20Sicily/history/tyrant
 
 For Syracuse, the chain runs from Gelon to Hieronymus, with the known time of each change. The page reads the value of each chain at the selected year, which is the value that was current then. **Compare two years** in the demo puts two of these readings side by side.
 
-Agent Memory keeps a value until a later fact supersedes it, and in data this sparse a later fact may never come. Publius Quinctilius Varus became governor of Germania in AD 7 and died in AD 9, and no later governor is recorded, so the memory still holds him as governor. The page treats a value as supported until the death of the person it names, or for 60 years after it was set when nothing later is recorded, apart from slow-changing values such as who controls a place. The life view draws the value as a bar for that time and as a dashed line after it, and the entity panel marks it as having no later record.
+Agent Memory keeps a value until a later fact supersedes it, and in data this sparse a later fact may never come. Publius Quinctilius Varus became governor of Germania in AD 7 and died in AD 9, and no later governor is recorded, so the memory still holds him as governor. The page treats a value as supported until the death of the person it names, or for 60 years after it was set when nothing later is recorded, apart from slow-changing values such as who controls a place. Those still need evidence: who controls or governs a place is supported until the last record of that place, or of its controller. Nothing about Milan is recorded after AD 540, so its last controller, the Byzantine Empire, is not shown as ruling Milan until 1453. The life view draws the value as a bar for that time and as a dashed line after it, and the entity panel marks it as having no later record.
 
 Some offices are held by two people at once. Two consuls in one year are written as one value, `Julius Caesar and Mark Antony`, because a second `consul` entry for the same year would supersede the first.
 
@@ -185,6 +185,18 @@ Possible output:
 > - https://en.wikipedia.org/wiki/529
 
 This article came from Gemini 3.8 Flash. It uses all six events, keeps the inferred places as "probably", and says that little is recorded between 361 BC and AD 321. One detail comes from the model rather than the facts: no fact calls Justinian I a Christian emperor. Check any article in this way, because models frequently add what they already know unless the facts leave them no room.
+
+## Query the records yourself
+
+The embeds below load what the Agent Memory API returned for this demo into a SurrealDB instance in your browser, as three tables: `entity`, `attribute` and `relation`. This is the API's response shape, not the data Agent Memory holds internally, which also includes embeddings, source chunks and indexes. The attributes include the value histories, so a value that a later fact replaced is there with its `validUntil`. Dates use the demo's clock, in which year 1 is 753 BC, and each fact carries the real year in `labels`. Edit a query and run it again, or download the file from [datasets.surrealdb.com](https://datasets.surrealdb.com/datasets/agent-memory/rome.surql).
+
+The tyrants of Syracuse, from the history chain described above, each one superseding the last:
+
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=--%20The%20tyrants%20of%20Syracuse%20in%20the%20order%20Agent%20Memory%20recorded%20them%0ASELECT%20string%3A%3Areplace%28labels%5B0%5D%2C%20%27year%3D%27%2C%20%27%27%29%20AS%20year%2C%20value%20AS%20tyrant%20FROM%20attribute%20WHERE%20entity%20%3D%20entity%3A%5B%27location%27%2C%20%27syracuse%2C_sicily%27%5D%20AND%20key%20%3D%20%27tyrant%27%20ORDER%20BY%20validFrom%3B%0A)
+
+Who controlled Rome itself. In the sixth century the city changed hands between the Byzantine Empire and the Ostrogoths several times, and each change replaced the value before it:
+
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=--%20Who%20controlled%20the%20city%20of%20Rome%2C%20value%20by%20value%0ASELECT%20string%3A%3Areplace%28labels%5B0%5D%2C%20%27year%3D%27%2C%20%27%27%29%20AS%20year%2C%20value%20AS%20controller%20FROM%20attribute%20WHERE%20entity%20%3D%20entity%3A%5B%27location%27%2C%20%27rome%27%5D%20AND%20key%20%3D%20%27controlled_by%27%20ORDER%20BY%20validFrom%3B%0A)
 
 ## Sources and licences
 

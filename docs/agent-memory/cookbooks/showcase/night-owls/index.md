@@ -62,6 +62,22 @@ How warmly each member feels about each other member comes from the feelings rec
 
 ![A grid for each thread showing how warmly each member feels about each other member, from red for hostile to blue for affectionate. TheyKnow's row is red until 2006 and blue from 2012.](../../../../assets/img/spectron/night-owls/warmth.webp)
 
+## Query the records yourself
+
+The embeds below load the whole board into a SurrealDB instance in your browser. The demo's own records are `member`, `thread`, `news` and `post`, and each post holds its author's private note, the items recall returned for it (`recalled`) and the view read from them (`state`). A recalled post, note or news report links to its record in `from`. The file also holds what the Agent Memory API returned for the run, as `entity`, `attribute` and `relation`: the API's response shape, not the data Agent Memory holds internally. Edit a query and run it again, or download the file from [datasets.surrealdb.com](https://datasets.surrealdb.com/datasets/agent-memory/night-owls.surql).
+
+In 2019, every member's recall still brought back private notes they wrote in 1999. This query counts the 2019 posts for which it did:
+
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=--%202019%20posts%20whose%20recall%20included%20the%20author%27s%20own%20private%20note%20from%201999%0ASELECT%20author.username%20AS%20member%2C%20count%28%29%20AS%20posts_in_2019%20FROM%20post%20WHERE%20thread%20%3D%20thread%3Aendgame%20AND%20recalled%5BWHERE%20kind%20%3D%20%27private%27%20AND%20at%20%3C%20d%272000-01-07%27%5D%20%21%3D%20%5B%5D%20GROUP%20BY%20member%3B%0A)
+
+A recalled note links to the post it was written with, so the notes themselves can be read by following `from`. These are the 1999 notes behind one of TheyKnow's first posts in 2019:
+
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=--%20What%20TheyKnow%27s%20memory%20returned%20from%201999%20when%20he%20wrote%20this%202019%20post%0ASELECT%20at%2C%20body%2C%20recalled%5BWHERE%20kind%20%3D%20%27private%27%20AND%20at%20%3C%20d%272000-01-07%27%5D.from.note%20AS%20notes_from_1999%20FROM%20post%3A%5B%27endgame%27%2C%205%5D%3B%0A)
+
+The API's own records show supersession. Each new opinion TheyKnow gave replaced the one before, and `validUntil` records when it stopped being current:
+
+[▶ Open in Surrealist](https://app.surrealdb.com/mini?query=--%20TheyKnow%27s%20opinions%20in%20the%20order%20Agent%20Memory%20recorded%20them%0ASELECT%20createdAt%2C%20value%2C%20validUntil%20FROM%20attribute%20WHERE%20entity%20%3D%20entity%3A%5B%27person%27%2C%20%27theyknow%27%5D%20AND%20key%20%3D%20%27opinion%27%20ORDER%20BY%20createdAt%20LIMIT%2010%3B%0A)
+
 ## Related pages
 
 - [How Night Owls was built](how-it-was-built.md): the scopes, the writes, point-in-time recall, and how hindsight was kept out of the posts.

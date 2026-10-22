@@ -160,6 +160,11 @@ UPDATE account:two SET balance -= 300.00;
 CANCEL TRANSACTION;
 ```
 
+A cancelled transaction only rolls back changes to the database. Changes outside it, such as [files written to a bucket](../functions/database-functions/file.md), are kept.
+
+> [!WARNING]
+> `BEGIN`, `COMMIT` and `CANCEL` only take effect as top-level statements of a query. Inside a block, such as an `IF` or `FOR` body, a bare `{ }` block or a `DEFINE FUNCTION` body, they are ignored without an error. A `CANCEL` inside `IF` does not cancel the transaction, so the statements after it are still committed. To cancel a transaction on a condition, use `THROW` as shown below.
+
 ## THROW to conditionally cancel a transaction
 
 While transactions are automatically rolled back if an error occurs in any of its statements, [THROW](../statements/throw.md) can also be used to explicitly break out of a transaction at any point. `THROW` can be followed by any value which serves as the error message, usually a string.
@@ -197,6 +202,22 @@ SELECT * FROM account;
 	}
 ]
 ```
+
+## Skipping writes on a condition
+
+A rollback in SurrealQL, whether from `CANCEL` or from an error, always reports every statement in the transaction as not executed. Where the transaction should succeed but some writes are not needed, put those writes inside an `IF` block instead of throwing an error. In the following example, the counter only changes when the vote changes its score.
+
+```surql
+BEGIN;
+LET $old = (SELECT VALUE score FROM ONLY vote:1);
+UPSERT vote:1 SET score = 4;
+IF $old != 4 { UPSERT counter:1 SET n += 1 };
+COMMIT;
+```
+
+For more than one dependent statement, a block with an early `RETURN` works as a guard clause, and `CONTINUE` and `BREAK` control a loop, all without ending the transaction. See [Control flow inside a transaction](../../../learn/querying/concepts-and-guides/transactions.md#control-flow-inside-a-transaction).
+
+To roll back on a condition without returning an error, use a client-side transaction from an SDK instead. The client starts the transaction, checks the results of its queries, and then commits or cancels it. See [manual transactions in Rust](../../rust/concepts/transaction.md) and [transactions in JavaScript](../../javascript/concepts/transactions.md).
 
 ## Nested transactions and savepoints
 

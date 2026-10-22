@@ -72,6 +72,17 @@ CANCEL TRANSACTION;
 
 `CANCEL` is not used to automatically cancel a transaction based on a condition such as inside an [IF..ELSE](if-else.md) block. Instead, a [THROW](throw.md) statement is used. THROW can be followed by any value, usually a string containing context behind the error.
 
+> [!WARNING]
+> `CANCEL` only takes effect as a top-level statement. Inside a block, such as an `IF` or `FOR` body, a bare `{ }` block or a `DEFINE FUNCTION` body, it is ignored without an error, and the transaction still commits. The same applies to `BEGIN` and `COMMIT`. In the following query both records are created.
+>
+> ```surql
+> BEGIN;
+> CREATE a:1;
+> IF true { CANCEL };
+> CREATE a:2;
+> COMMIT;
+> ```
+
 ```surql
 /**[test]
 

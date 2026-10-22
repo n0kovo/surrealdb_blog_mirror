@@ -671,6 +671,24 @@ Exceeding either is a parse error, not a crash, giving the error `Exceeded query
       <td scope="row" data-label="Allowed values">true, false</td>
       <td scope="row" data-label="Notes">Forward all signup/signin/authenticate query errors to a client performing authentication. Do not use in production.</td>
     </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_JWKS_CACHE_COOLDOWN_SECONDS`</td>
+      <td scope="row" data-label="Default">300</td>
+      <td scope="row" data-label="Allowed values">seconds</td>
+      <td scope="row" data-label="Notes">The shortest time between two fetches of a <a href="/docs/reference/query-language/statements/define/access/jwt#json-web-key-set-jwks">JWKS</a> object that a token with an unknown key identifier (`kid`) can cause.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_JWKS_CACHE_EXPIRATION_SECONDS`</td>
+      <td scope="row" data-label="Default">43200</td>
+      <td scope="row" data-label="Allowed values">seconds</td>
+      <td scope="row" data-label="Notes">How long a fetched JWKS object stays in the cache before it is fetched again. The default is 12 hours.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_JWKS_REMOTE_TIMEOUT_MILLISECONDS`</td>
+      <td scope="row" data-label="Default">1000</td>
+      <td scope="row" data-label="Allowed values">milliseconds</td>
+      <td scope="row" data-label="Notes">How long a request for a JWKS object from its URL may take before it fails. Raise it for an identity provider that answers slowly.</td>
+    </tr>
   </tbody>
 </table>
 

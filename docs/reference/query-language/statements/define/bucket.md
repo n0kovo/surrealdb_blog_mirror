@@ -254,3 +254,7 @@ You can set permissions on buckets to control who can perform operations on the 
 DEFINE BUCKET admin_bucket BACKEND "memory"
   PERMISSIONS WHERE $auth.admin = true
 ```
+
+A bucket's `PERMISSIONS` clause reads records without checking the caller's permissions, in the same way as a [table permission clause](table.md#defining-permissions). In the example above, `$auth.admin` resolves even when the record user may not select their own record.
+
+Record users and guests can never list the files in a bucket, whatever its `PERMISSIONS` clause allows. For them, [`file::list()`](../../functions/database-functions/file.md) fails with an error such as ``"You don't have permission to list this file in the `my_bucket` bucket"``.

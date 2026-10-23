@@ -44,6 +44,7 @@ An enterprise can be managed from the `/enterprises` page in SurrealDB Studio or
 ## Related pages
 
 - **[Organisations](../organisations/index.md):** Instances, usage, and billing.
+- **[Account structure](../organisations/account-structure.md):** How an enterprise, its organisations and their instances fit together.
 - **[Members and roles](../organisations/members-and-roles.md):** Learn more about role management in standard organisations.
 - **[Accounts and sign-in](../organisations/sign-in.md):** How sign-in works without an enterprise.
 - **[Enterprise Edition](product/database-enterprise.md):** Self-hosted database features unlocked with an Enterprise licence.

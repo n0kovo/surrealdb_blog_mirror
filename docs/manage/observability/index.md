@@ -14,6 +14,9 @@ SurrealDB exposes **logging**, **metrics**, **traces**, and (with **SurrealDB En
 
 Both paths can run together or independently; each is controlled with environment variables documented on the [configuration reference](configuration.md).
 
+> [!NOTE]
+> These pages apply to SurrealDB that you run yourself. On a [SurrealDB Cloud](../instances/index.md) instance, the server's environment variables and command-line flags are managed for you, so the settings described here, including slow-query logging, OTLP export and Tokio console, cannot currently be configured. A Cloud instance reports its resource use and its activity in [Monitoring](../instances/monitoring.md) instead.
+
 **Suggested reading order**
 
 1. [Logging](logging.md) - stderr, JSON, files, sockets, and line-based slow-query logging (no metrics stack required).

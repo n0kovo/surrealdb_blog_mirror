@@ -1,12 +1,12 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-10-22 11:05 UTC_
+_Last updated: 2026-10-23 10:57 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
 ## Stats
 
-- **Total pages:** 1127
+- **Total pages:** 1129
 
 ## Browse
 
@@ -63,7 +63,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Guides and resources
 
-- **[Tutorials & demos](explore/tutorials/index.md)** — Hands-on walkthroughs and demos. — _17 pages_
+- **[Tutorials & demos](explore/tutorials/index.md)** — Hands-on walkthroughs and demos. — _18 pages_
 - **[SurrealDB Labs](labs/index.md)** — Preview features and lab notes. — _77 pages_
 
 ## Reference

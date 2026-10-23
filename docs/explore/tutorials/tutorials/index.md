@@ -5,7 +5,7 @@ generated: stub
 
 # Tutorials
 
-_Auto-generated index — 13 pages._
+_Auto-generated index — 14 pages._
 
 ## Pages
 
@@ -31,6 +31,8 @@ _Auto-generated index — 13 pages._
   In this tutorial, you will learn how to query the SurrealDB RESTful HTTP API endpoints using Postman.
 - [Build a minimal LangChain chatbot](minimal-langchain.md)
   This tutorial shows how to build a minimal LangChain chatbot with both vector and graph.
+- [Navigate a drone without GPS](navigate-a-drone-without-gps.md)
+  Locate a drone from aerial photos with vector search, narrow the search with a geospatial prior, and plan each leg with geo::distance, geo::bearing and INTERSECTS to keep out of a neighbouring country.
 - [Tutorials](overview.md)
   Step-by-step tutorials and walkthroughs for specific tasks with SurrealDB: integrations, real-time apps, AI patterns, and more.
 - [Implement semantic search in Rust](semantic-search-in-rust.md)

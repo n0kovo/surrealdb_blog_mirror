@@ -1,5 +1,5 @@
 ---
-position: 9
+position: 10
 title: Integrate AWS Cognito with SurrealDB
 description: Use AWS Cognito as the authentication provider for a client-side application backed only by SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/explore/tutorials/tutorials/aws-cognito-integration.mdx"

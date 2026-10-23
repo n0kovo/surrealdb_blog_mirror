@@ -73,4 +73,6 @@ The guides in this section break down how to store embeddings and query them in 
 - [Hybrid search](hybrid-search.md): combining lexical full-text search with vector retrieval, including `search::rrf()`.
 - [RAG architecture patterns](rag-architecture-patterns.md): retrieval-oriented conclusions and further reading.
 
+For vector search and geospatial queries in the same statement, the tutorial [Navigate a drone without GPS](../../../explore/tutorials/tutorials/navigate-a-drone-without-gps.md) locates a drone from aerial photos and uses its estimated position to narrow each search.
+
 For statement-level reference, see [Vector functions](../../../reference/query-language/functions/database-functions/vector.md) and [`DEFINE INDEX` (vector search)](../../../reference/query-language/statements/define/indexes.md#vector-search-indexes).

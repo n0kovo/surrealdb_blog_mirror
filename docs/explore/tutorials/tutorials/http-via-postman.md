@@ -1,5 +1,5 @@
 ---
-position: 11
+position: 12
 title: Query SurrealDB from Postman
 description: In this tutorial, you will learn how to query the SurrealDB RESTful HTTP API endpoints using Postman.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/explore/tutorials/tutorials/http-via-postman.mdx"

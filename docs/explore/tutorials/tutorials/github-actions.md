@@ -1,5 +1,5 @@
 ---
-position: 12
+position: 13
 title: Use SurrealDB in GitHub Actions
 description: This guide will show you how to set up and use the official GitHub Action for SurrealDB in your CI/CD pipeline.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/explore/tutorials/tutorials/github-actions.mdx"

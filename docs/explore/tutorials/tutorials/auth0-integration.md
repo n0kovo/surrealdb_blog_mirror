@@ -1,5 +1,5 @@
 ---
-position: 10
+position: 11
 title: Integrate Auth0 with SurrealDB
 description: Use Auth0 as the authentication provider for a single-page application backed only by SurrealDB.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/explore/tutorials/tutorials/auth0-integration.mdx"

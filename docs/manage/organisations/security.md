@@ -1,5 +1,5 @@
 ---
-position: 3
+position: 4
 title: Two-step verification
 description: Add an authenticator app, and keep a recovery code for it.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/organisations/security.mdx"

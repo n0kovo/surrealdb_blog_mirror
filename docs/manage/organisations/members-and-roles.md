@@ -1,5 +1,5 @@
 ---
-position: 4
+position: 5
 title: Members and roles
 description: Invite people, and choose the Owner, Admin or Member role.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/manage/organisations/members-and-roles.mdx"

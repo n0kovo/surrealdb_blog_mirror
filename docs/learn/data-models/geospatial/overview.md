@@ -24,3 +24,5 @@ In this section, you’ll learn how to think like a geospatial database user: re
 - Distance and proximity: Measuring distance between geometries, buffers, and geohash-style encodings - see [Distance and proximity](distance-and-proximity.md).
 
 For reference types and function signatures, see [Geometries](../../../reference/query-language/language-primitives/data-types/geometries.md) and [Geo functions](../../../reference/query-language/functions/database-functions/geo.md).
+
+The tutorial [Navigate a drone without GPS](../../../explore/tutorials/tutorials/navigate-a-drone-without-gps.md) combines these queries with vector search: it finds which country a drone is in with `INSIDE`, plans each leg with `geo::distance()` and `geo::bearing()`, and checks a route against a no-fly zone with `INTERSECTS`.

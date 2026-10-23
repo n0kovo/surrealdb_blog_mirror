@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1127 pages_  
+_1129 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -503,6 +503,8 @@ _1127 pages_
   In this tutorial, you will learn how to query the SurrealDB RESTful HTTP API endpoints using Postman.
 - [Build a minimal LangChain chatbot](explore/tutorials/tutorials/minimal-langchain.md)
   This tutorial shows how to build a minimal LangChain chatbot with both vector and graph.
+- [Navigate a drone without GPS](explore/tutorials/tutorials/navigate-a-drone-without-gps.md)
+  Locate a drone from aerial photos with vector search, narrow the search with a geospatial prior, and plan each leg with geo::distance, geo::bearing and INTERSECTS to keep out of a neighbouring country.
 - [Tutorials](explore/tutorials/tutorials/overview.md)
   Step-by-step tutorials and walkthroughs for specific tasks with SurrealDB: integrations, real-time apps, AI patterns, and more.
 - [Implement semantic search in Rust](explore/tutorials/tutorials/semantic-search-in-rust.md)
@@ -946,6 +948,8 @@ _1127 pages_
   OTLP push export of metrics, logs, and traces. Intervals, backward-compatible instruments, and differences before and after SurrealDB 3.1.
 - [Tokio console](manage/observability/tokio-console.md)
   Inspect the async runtime with the Tokio console: tasks and polls.
+- [Account structure](manage/organisations/account-structure.md)
+  How enterprises, organisations, instances, namespaces and databases fit together in SurrealDB Cloud, the two layers of permissions, and which layer to use to separate environments, teams, billing and data.
 - [AWS Marketplace](manage/organisations/aws-marketplace.md)
   Subscribe via AWS Marketplace and link it to an organisation.
 - [Azure Marketplace](manage/organisations/azure-marketplace.md)

@@ -11,7 +11,7 @@ An organisation groups instances, members, usage, and billing.
 
 Every instance, membership, and invoice belongs to exactly one organisation. Nobody in one organisation can see or change the resources of another.
 
-Create one organisation for each company, department, or environment you keep apart. Separate organisations for production and development each get their own member list and their own invoice.
+Create one organisation for each company, department, or environment you keep apart. Separate organisations for production and development each get their own member list and their own invoice. [Account structure](account-structure.md) compares this with separating them into instances, namespaces or databases.
 
 ## Create an organisation
 
@@ -55,6 +55,7 @@ Organisations cannot be deleted at present. Delete the instances inside an organ
 
 ## Topics
 
+- **[Account structure](account-structure.md):** How enterprises, organisations, instances, namespaces and databases fit together, and which to use to keep things apart.
 - **[Accounts and sign-in](sign-in.md):** Create an account and sign in.
 - **[Members and roles](members-and-roles.md):** Send invitations, and choose what each member can do.
 - **[Billing](billing.md):** Payment details, invoices, usage, and spend.

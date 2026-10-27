@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1129 pages_  
+_1130 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -563,6 +563,8 @@ _1129 pages_
 - [Schemaless vs Schemafull Databases](labs/schemaless-vs-schemafull-databases.md)
 - [Setting up an invite system](labs/setting-up-an-invite-system.md)
 - [Simple API with Gin/Gonic and SurrealDB (GO).](labs/simple-api-with-gingonic-and-surrealdb-go.md)
+- [Surform](labs/surform.md)
+  A declarative schema definition language for SurrealDB — write the schema as a file, compile it to SurrealQL DDL, and diff it against the live database.
 - [Surreal-4o Fine-tuned Model Datasets for SurrealQL Queries - Project to create structured datasets for OpenAI.](labs/surreal-4o-fine-tuned-model-datasets-for-surrealql-queries-project-to-create-structured-datasets-for-openai.md)
   Structured datasets for fine-tuning models on SurrealQL-style queries.
 - [surreal-codegen](labs/surreal-codegen.md)

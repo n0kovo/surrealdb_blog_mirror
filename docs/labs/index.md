@@ -5,7 +5,7 @@ generated: stub
 
 # Labs
 
-_Auto-generated index — 77 pages._
+_Auto-generated index — 78 pages._
 
 ## Pages
 
@@ -57,6 +57,8 @@ _Auto-generated index — 77 pages._
 - [Schemaless vs Schemafull Databases](schemaless-vs-schemafull-databases.md)
 - [Setting up an invite system](setting-up-an-invite-system.md)
 - [Simple API with Gin/Gonic and SurrealDB (GO).](simple-api-with-gingonic-and-surrealdb-go.md)
+- [Surform](surform.md)
+  A declarative schema definition language for SurrealDB — write the schema as a file, compile it to SurrealQL DDL, and diff it against the live database.
 - [Surreal-4o Fine-tuned Model Datasets for SurrealQL Queries - Project to create structured datasets for OpenAI.](surreal-4o-fine-tuned-model-datasets-for-surrealql-queries-project-to-create-structured-datasets-for-openai.md)
   Structured datasets for fine-tuning models on SurrealQL-style queries.
 - [surreal-codegen](surreal-codegen.md)

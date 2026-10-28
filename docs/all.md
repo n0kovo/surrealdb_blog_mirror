@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1130 pages_  
+_1131 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -2058,12 +2058,14 @@ _1130 pages_
   All the fields of a SurrealDB linked record can be fetched and deserialised into a Rust type
 - [Flexible typing](reference/rust/concepts/flexible-typing.md)
   The Rust SDK for SurrealDB offers methods for working with types without deserialisation
-- [SDK Concepts](reference/rust/concepts/index.md)
+- [SDK concepts](reference/rust/concepts/index.md)
   The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
 - [Live queries](reference/rust/concepts/live.md)
   The Rust SDK for SurrealDB allows changes to tables in real time to be observed
 - [Multi-tenancy](reference/rust/concepts/multi-tenancy.md)
   Multi-tenancy in the Rust SDK allows multiple connections to be used simultaneously, each tenant operating inside its own isolated namespace and database.
+- [Raspberry Pi and small devices](reference/rust/concepts/raspberry-pi.md)
+  Build a Rust application that uses the SurrealDB SDK for a Raspberry Pi or another device with little memory: client-only builds, embedded builds, and cross-compiling for arm64 Linux with cargo-zigbuild.
 - [SurrealValue attributes](reference/rust/concepts/surrealvalue-attributes.md)
   Reference for the #[surreal(...)] attributes used with the SurrealValue derive, covering renaming, defaults, flattening and enum tagging.
 - [Manual transactions](reference/rust/concepts/transaction.md)

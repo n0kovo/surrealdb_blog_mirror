@@ -1,6 +1,6 @@
 ---
 position: 1
-title: SDK Concepts
+title: SDK concepts
 description: The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/rust/concepts/index.mdx"
 ---
@@ -20,3 +20,4 @@ This section covers the core concepts of the SurrealDB SDK for Rust: connecting 
 - [SurrealValue attributes](surrealvalue-attributes.md)
 - [Multi-tenancy](multi-tenancy.md)
 - [Error handling](error-handling.md)
+- [Raspberry Pi and small devices](raspberry-pi.md)

@@ -1,12 +1,12 @@
 # SurrealDB Documentation Mirror
 
-_Last updated: 2026-10-28 12:02 UTC_
+_Last updated: 2026-10-29 12:12 UTC_
 
 _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.surrealdb.com)_
 
 ## Stats
 
-- **Total pages:** 1131
+- **Total pages:** 1134
 
 ## Browse
 
@@ -37,7 +37,7 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 
 ### Ecosystem
 
-- **[Migrating](build/migrating/index.md)** — Import data and schemas from elsewhere. — _16 pages_
+- **[Migrating](build/migrating/index.md)** — Import data and schemas from elsewhere. — _17 pages_
 - **[Integrations](build/integrations/index.md)** — SDKs, frameworks, and connectors. — _39 pages_
 
 ### Intelligence
@@ -69,8 +69,8 @@ _Mirrored from [surrealdb/docs.surrealdb.com](https://github.com/surrealdb/docs.
 ## Reference
 
 - **[Query language](reference/query-language/index.md)** — Syntax, statements, and builtins. — _146 pages_
-- **[CLI tools](reference/cli/index.md)** — CLI install, backup, and ops. — _37 pages_
-- **[REST API](reference/rest-api/index.md)** — HTTP API for queries and admin. — _6 pages_
+- **[CLI tools](reference/cli/index.md)** — CLI install, backup, and ops. — _36 pages_
+- **[REST API](reference/rest-api/index.md)** — HTTP API for queries and admin. — _7 pages_
 
 ## More content
 

@@ -4,10 +4,19 @@
   <subtitle>Daily mirror of surrealdb.com/blog</subtitle>
   <id>https://surrealdb.com/blog/</id>
   <link rel="alternate" href="https://surrealdb.com/blog/" type="text/html" />
-  <updated>2026-10-14T18:45:06Z</updated>
+  <updated>2026-10-29T11:34:00Z</updated>
   <author>
     <name>SurrealDB</name>
   </author>
+  <entry>
+    <id>https://surrealdb.com/blog/remembering-the-correction-ontology-and-agent-memory-in-pivot-ai</id>
+    <title>Remembering the correction: Ontology and agent memory in Pivot AI</title>
+    <link rel="alternate" href="https://surrealdb.com/blog/remembering-the-correction-ontology-and-agent-memory-in-pivot-ai" type="text/html" />
+    <published>2026-10-29T11:34:00Z</published>
+    <updated>2026-10-29T11:34:00Z</updated>
+    <summary type="text">Agent memory for professional work: keep reviewed corrections, unresolved classifications and evidence gaps in SurrealDB, scoped to an authorised matter.</summary>
+    <category term="community" />
+  </entry>
   <entry>
     <id>https://surrealdb.com/blog/introducing-surrealdb-agent-memory</id>
     <title>Introducing SurrealDB Agent Memory</title>
@@ -486,16 +495,6 @@
     <published>2026-05-22T13:38:14Z</published>
     <updated>2026-05-22T13:38:14Z</updated>
     <summary type="text">Using SurrealDB and Studio's graph visualisation to not just understand but also see how Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo works.</summary>
-    <category term="tutorials" />
-  </entry>
-  <entry>
-    <id>https://surrealdb.com/blog/agentic-retrieval-for-structured-data-with-text-to-surql</id>
-    <title>Agentic retrieval for structured data with text-to-surql</title>
-    <link rel="alternate" href="https://surrealdb.com/blog/agentic-retrieval-for-structured-data-with-text-to-surql" type="text/html" />
-    <published>2026-05-19T13:47:30Z</published>
-    <updated>2026-05-19T13:47:30Z</updated>
-    <summary type="text">An agentic pattern overview for structured retrieval that gives an LLM agent a database-aware tool that converts natural-language questions into valid SurrealQL</summary>
-    <category term="ai" />
     <category term="tutorials" />
   </entry>
 </feed>

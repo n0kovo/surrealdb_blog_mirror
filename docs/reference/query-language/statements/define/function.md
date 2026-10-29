@@ -24,6 +24,7 @@ DEFINE FUNCTION [ OVERWRITE | IF NOT EXISTS ] fn::@name
 	[ @query ... ]
 	[ RETURN @returned ]
 } [ COMMENT @string ] [ PERMISSIONS [ NONE | FULL | WHERE @condition]]
+  [ GRAPHQL_ALIAS @string ] [ GRAPHQL_DEPRECATED @string ]
 ```
 
 ## Example usage
@@ -77,7 +78,25 @@ DEFINE FUNCTION fn::relation_exists(
 
 A defined function is what SurrealDB has in place of a stored procedure. Its body can read and write records, it is stored in the database schema, and it runs as [one transaction](#transactional-behaviour), so a failure part way through leaves no partial writes. Where a relational database would use `CALL place_order(...)`, SurrealQL calls `fn::place_order(...)`, as a statement of its own or inside any other statement.
 
-Function bodies are written in SurrealQL. To write the logic in Rust instead, compile it into a [Surrealism](../../../../learn/extensions/plugins/overview.md) module, which SurrealDB loads with [`DEFINE MODULE`](module.md) and calls with a `mod::` path. Surrealism is experimental, so the server has to be started with `--allow-experimental=files,surrealism`, or the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable set to the same value. Loading a module file also needs the experimental `files` feature, which is why both are listed.
+Function bodies are written in SurrealQL. To write the logic in Rust instead, compile it into a [Surrealism](../../../../learn/extensions/plugins/overview.md) extension, which SurrealDB loads with [`DEFINE EXTENSION`](extension.md) and calls with an `ext::` path. Surrealism is experimental, so the server has to be started with `--allow-experimental=files,surrealism`, or the `SURREAL_CAPS_ALLOW_EXPERIMENTAL` environment variable set to the same value. Loading an extension archive from a bucket also needs the experimental `files` feature, which is why both are listed.
+
+## GraphQL names and deprecation
+
+*Since v3.1.0*
+
+A custom function is exposed to [GraphQL](../../../../learn/querying/graphql/overview.md) as a root query field when the database's `DEFINE CONFIG GRAPHQL` includes functions. `GRAPHQL_ALIAS` sets the name of that field in place of one derived from the function name, and must match `[_A-Za-z][_0-9A-Za-z]*`. `GRAPHQL_DEPRECATED` adds `[Deprecated: reason]` to the start of the field's description.
+
+```surql
+DEFINE FUNCTION fn::get_user($n: string) -> string { "hi " + $n } GRAPHQL_ALIAS "getUser" GRAPHQL_DEPRECATED "Use fn::greet instead";
+```
+
+```graphql title="Query"
+{ getUser(n: "x") }
+```
+
+```json title="Output"
+{"data":{"getUser":"hi x"}}
+```
 
 ## Optional arguments
 If one or more ending arguments have the `option<T>` type, they can be omitted when you invoke the function.
@@ -363,22 +382,22 @@ The last query [can be viewed graphically](/blog/whats-new-in-surrealist-3-2#gra
 
 ![An image of a seven-pointed star created visually by relating seven records to each other and displayed inside SurrealDB Studio's graph view.](../../../../assets/img/image/light/recursive_star.png)
 
-## Functions that other definitions require to stay read-only
+## Functions called from schema clauses
 
-*Since v3.3.0*
+*Since v4.0.0*
 
-Two places in the schema evaluate an expression that must not modify data: a [`COMPUTED` field](field.md#restrictions-on-computed-fields) body, and a `PERMISSIONS FOR select` clause. A custom function called from either is held to the same rule. The rule is enforced when the write is reached, not when the field, the clause or the function is defined, so a definition that calls a writing function is stored without complaint and fails when it is evaluated.
-
-A `FOR select` clause that calls a function which writes is accepted, and each read that evaluates the clause fails with `A PERMISSIONS clause cannot contain a statement that modifies data`. The `FOR create`, `FOR update` and `FOR delete` clauses may call a function that writes, as described in [Writes inside a permission clause](table.md#writes-inside-a-permission-clause).
+A custom function called from a `COMPUTED`, `ASSERT`, `VALUE` or `DEFAULT` clause, or from a `PERMISSIONS` clause, is held to the rules of that clause: it may not write data, change the schema or `SLEEP`, and outside `VALUE` and `DEFAULT` it may not call `sequence::nextval()`. The rules are listed in [Clauses that must not have effects](field.md#clauses-that-must-not-have-effects). The clause is checked when it is defined, and the check follows each function into the functions it calls:
 
 ```surql
 DEFINE FUNCTION fn::log_access() -> bool { CREATE access_log SET at = time::now(); RETURN true; };
-
--- Accepted, but a read that evaluates this clause now fails
 DEFINE TABLE product PERMISSIONS FOR select WHERE fn::log_access();
 ```
 
-The same applies when the function changes rather than the caller. `DEFINE FUNCTION OVERWRITE` and [`ALTER FUNCTION`](../alter/function.md) accept a body that starts to write while a computed field or a `FOR select` clause still calls the function. The field or clause then fails the next time it is evaluated - a computed field with `A COMPUTED clause cannot contain a statement that modifies data` - so check which definitions call a function before changing its body to write.
+```surql title="Error output"
+'The PERMISSIONS clause must not have effects: it calls `fn::log_access`, in whose body `CREATE` writes data'
+```
+
+A function can change after the clause that calls it was defined. `DEFINE FUNCTION OVERWRITE` and [`ALTER FUNCTION`](../alter/function.md) accept a body that starts to write, and the clause then fails each time it is evaluated, so check which definitions call a function before changing its body:
 
 ```surql
 DEFINE FUNCTION fn::price_with_tax($price: number) -> number { RETURN $price * 1.2; };
@@ -389,9 +408,13 @@ DEFINE FUNCTION OVERWRITE fn::price_with_tax($price: number) -> number {
 	CREATE price_change SET price = $price, at = time::now();
 	RETURN $price * 1.2;
 };
+
+CREATE product:1 SET price = 10;
 ```
 
-The check runs where the write is reached, so it applies in the same way to a write several functions deep and to one reached through [`eval::surql()`](../../functions/database-functions/eval.md#evalsurql), a JavaScript function, or a closure that arrives as data.
+```surql title="Error output"
+'The COMPUTED clause must not have effects: `CREATE` writes data'
+```
 
 ## Using `IF NOT EXISTS` clause
 

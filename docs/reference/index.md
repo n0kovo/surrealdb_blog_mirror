@@ -9,7 +9,7 @@ _Auto-generated index — 0 pages and 13 sub-sections._
 
 ## Sub-sections
 
-- **[CLI tools](cli/index.md)** — Overview of every command in the surreal launcher, surreal db, surreal cloud and surreal mod, with links to each reference page, plus the separate surqlfmt formatter.
+- **[CLI tools](cli/index.md)** — Overview of every command in the surreal launcher, surreal db, surreal cloud and surreal ext, with links to each reference page, plus the separate surqlfmt formatter.
 - **[.NET SDK](dotnet/index.md)** — The official SurrealDB SDK for .NET. Provides methods for interacting with your SurrealDB database.
 - **[Go SDK](golang/index.md)** — The official SurrealDB SDK for Go. Simple and advanced querying of a remote database from server-side applications.
 - **[Java SDK](java/index.md)** — The official SurrealDB SDK for Java. Simple and advanced querying of a remote or embedded database.

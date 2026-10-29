@@ -25,14 +25,14 @@ _Auto-generated index — 18 pages and 1 sub-section._
   The DEFINE DATABASE statement allows you to instantiate a named database, enabling you to specify security and configuration options.
 - [DEFINE EVENT](event.md)
   The DEFINE EVENT statement can be used to create events which can be triggered after any change or modification to the data in a record.
+- [DEFINE EXTENSION](extension.md)
+  The DEFINE EXTENSION statement loads a Surrealism extension into a database from a bucket or Silo, with its DIGEST, SIGNER or UNSIGNED, CAPABILITIES and PERMISSIONS, so that its functions can be called as ext::name::function().
 - [DEFINE FIELD](field.md)
   The DEFINE FIELD statement allows you to instantiate a named field on a table, enabling you to set the field's schema and configuration.
 - [DEFINE FUNCTION](function.md)
   The DEFINE FUNCTION statement allows you to define custom functions that can be reused throughout a database.
 - [DEFINE INDEX](indexes.md)
-  SurrealDB uses indexes to help optimise query performance. An index can consist of one or more fields in a table and can enforce a uniqueness constraint - including HNSW and DISKANN vector indexes.
-- [DEFINE MODULE](module.md)
-  A DEFINE MODULE statement can be used to define a module through which Surrealism extension functions can be called.
+  SurrealDB uses indexes to help optimise query performance. An index can consist of one or more fields in a table and can enforce a uniqueness constraint - including SPATIAL indexes for geometries and HNSW and DISKANN vector indexes.
 - [DEFINE NAMESPACE](namespace.md)
   The DEFINE NAMESPACE statement can be used to setup namespaces, which can contain multiple databases.
 - [DEFINE](overview.md)

@@ -90,6 +90,11 @@ SurrealQL types map to JavaScript types as follows:
 			<td>`42`, `3.14`</td>
 		</tr>
 		<tr>
+			<td>Sized numbers, such as `u8`, `i32` and `f32` (SurrealDB 4.0)</td>
+			<td>`number`, or <a href="/docs/reference/javascript/api/values/decimal">`Decimal`</a> for a `u64` above `9223372036854775807`</td>
+			<td>`200`, `1.5`</td>
+		</tr>
+		<tr>
 			<td>`string`</td>
 			<td>`string`</td>
 			<td>`"hello"`</td>

@@ -71,8 +71,8 @@ SurrealDB ships as a single Rust binary and separates compute from storage. The 
 
 ![Four deployment models side by side: embedded in an application, a single node with disk persistence, a distributed set of compute nodes on shared storage, and a managed deployment run by SurrealDB Cloud. All four share the same SurrealQL, SDKs and transaction guarantees.](assets/img/surrealdb/overview/deployment-models-light.png)
 
-- **[Embedded](build/embedding/index.md)** in a Rust, Go, JavaScript, Python or .NET application, in memory or on disk, and in the browser through WebAssembly and IndexedDB.
-- **[Single node](running/file-backed.md)** on RocksDB, which suits development and smaller production workloads.
+- **[Embedded](build/embedding/index.md)** in a Rust, Go, JavaScript, Python or .NET application, in memory or on disk, and in the browser through WebAssembly and SurrealKV over the Origin Private File System.
+- **[Single node](running/file-backed.md)** on SurrealKV, which suits development and smaller production workloads.
 - **[Distributed](manage/self-hosted/deployment-models.md)** across many compute nodes on shared storage, with automatic sharding and read replicas.
 - **[Managed](manage/instances/index.md)** on SurrealDB Cloud, which runs the infrastructure, the backups and the scaling for you.
 

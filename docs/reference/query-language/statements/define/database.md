@@ -20,22 +20,22 @@ The `DEFINE DATABASE` statement allows you to instantiate a named database, enab
 **SurrealQL Syntax**
 
 ```syntax title="SurrealQL Syntax"
-DEFINE DATABASE [ OVERWRITE | IF NOT EXISTS ] @name [ STRICT ] [ COMMENT @string ]
+DEFINE DATABASE [ OVERWRITE | IF NOT EXISTS ] @name [ STRICT ] [ COMPATIBILITY 3 | 4 ] [ COMMENT @string ]
 ```
 
   
 **Railroad Diagram**
 
 ```
-                                      ╭────────────────────────────────────────────╮                                                                            
-                                      │                                            │                                                                            
-                                      │               ╭───────────╮                │                                                                            
-                                      │ ╭─────────────│ OVERWRITE │──────────────╮ │                                                                            
-                                      │ │             ╰───────────╯              │ │               ╭─────────────────╮ ╭──────────────────────────────────╮     
-                                      │ │                                        │ │               │                 │ │                                  │     
-        ╭────────╮     ╭──────────╮   │ │    ╭────╮     ╭─────╮     ╭────────╮   │ │   ┌───────┐   │    ╭────────╮   │ │    ╭─────────╮     ┌─────────┐   │     
-├┼──────│ DEFINE │─────│ DATABASE │───╯─╯────│ IF │─────│ NOT │─────│ EXISTS │───╰─╰───│ @name │───╯────│ STRICT │───╰─╯────│ COMMENT │─────│ @string │───╰───┼┤
-        ╰────────╯     ╰──────────╯          ╰────╯     ╰─────╯     ╰────────╯         └───────┘        ╰────────╯          ╰─────────╯     └─────────┘
+                                      ╭────────────────────────────────────────────╮                                   ╭────────────────────────────────────╮                                          
+                                      │                                            │                                   │                                    │                                          
+                                      │               ╭───────────╮                │                                   │                           ╭───╮    │                                          
+                                      │ ╭─────────────│ OVERWRITE │──────────────╮ │                                   │                        ╭──│ 3 │──╮ │                                          
+                                      │ │             ╰───────────╯              │ │               ╭─────────────────╮ │                        │  ╰───╯  │ │ ╭──────────────────────────────────╮     
+                                      │ │                                        │ │               │                 │ │                        │         │ │ │                                  │     
+        ╭────────╮     ╭──────────╮   │ │    ╭────╮     ╭─────╮     ╭────────╮   │ │   ┌───────┐   │    ╭────────╮   │ │    ╭───────────────╮   │  ╭───╮  │ │ │    ╭─────────╮     ┌─────────┐   │     
+├┼──────│ DEFINE │─────│ DATABASE │───╯─╯────│ IF │─────│ NOT │─────│ EXISTS │───╰─╰───│ @name │───╯────│ STRICT │───╰─╯────│ COMPATIBILITY │───╯──│ 4 │──╰─╰─╯────│ COMMENT │─────│ @string │───╰───┼┤
+        ╰────────╯     ╰──────────╯          ╰────╯     ╰─────╯     ╰────────╯         └───────┘        ╰────────╯          ╰───────────────╯      ╰───╯           ╰─────────╯     └─────────┘
 ```
 
 ## Example usage
@@ -125,3 +125,24 @@ CREATE some_new_table;
 ```surql title="Output"
 "The table 'some_new_table' does not exist"
 ```
+
+## Compatibility level
+
+*Since v4.0.0*
+
+A database has a compatibility level, `3` or `4`, which decides how a `SCHEMAFULL` table treats the records it already holds when one of its fields changes:
+
+| Level | A field change that existing records may not satisfy | `REMOVE FIELD` |
+| --- | --- | --- |
+| `4` | Refused unless the statement says what the records become, with [`MIGRATE EXISTING ROWS`](field.md#migrating-existing-records) | Removes the field's stored values |
+| `3` | Accepted, and the records keep the values they held, as in SurrealDB 3.x | Removes only the definition |
+
+A database created by SurrealDB 4.0 is at level 4 unless the statement says otherwise. A database that a 3.x release created stays at level 3 after an upgrade, so its schema changes behave as they did before. `INFO FOR DB` shows the level as `compatibility`.
+
+```surql
+DEFINE DATABASE legacy_app COMPATIBILITY 3;
+```
+
+To change the level of an existing database, use [`ALTER DATABASE`](../alter/database.md#compatibility), and to change the level that databases created later start at, use [`ALTER SYSTEM`](../alter/system.md#compatibility-clause).
+
+Level 4 and `MIGRATE EXISTING ROWS` need the [4.0 record format](../../../../build/migrating/from-old-surrealdb-versions/3x-to-4x.md#the-40-record-format). A datastore that still writes the 3.x format, such as a TiKV cluster that has not yet been switched with `SURREAL_FEATURE_LEVEL=4.0`, refuses them.

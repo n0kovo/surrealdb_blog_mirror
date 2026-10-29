@@ -29,26 +29,28 @@ DEFINE API [ OVERWRITE | IF NOT EXISTS ] @endpoint
     [ FOR @HTTP_method, .. ]
     [ MIDDLEWARE @function, .. ]
     [ THEN { @value } ]
-    [ PERMISSIONS [ NONE | FULL | @expression ]
+    [ PERMISSIONS [ NONE | FULL | @expression ] ]
+    [ SECURITY DEFINER | SECURITY INVOKER ]
+    [ COMMENT @string ]
 ```
 
   
 **Railroad Diagram**
 
 ```
-                                 ╭────────────────────────────────────────────╮                                                                                                                                                                ╭────────────────────────────────────────────╮     
-                                 │                                            │                                                                                                                                                                │                                            │     
-                                 │               ╭───────────╮                │                                                                                                                                                                │                            ╭──────╮        │     
-                                 │ ╭─────────────│ OVERWRITE │──────────────╮ │                                                                                                                                                                │                      ╭─────│ NONE │──────╮ │     
-                                 │ │             ╰───────────╯              │ │                   ╭───────────────────────────────────────╮ ╭───────────────────────────────────────────╮ ╭──────────────────────────────────────────────────╮ │                      │     ╰──────╯      │ │     
-                                 │ │                                        │ │                   │                                       │ │                                           │ │                                                  │ │                      │                   │ │     
-        ╭────────╮     ╭─────╮   │ │    ╭────╮     ╭─────╮     ╭────────╮   │ │   ┌───────────┐   │    ╭─────╮     ┌──────────────────┐   │ │    ╭────────────╮     ┌───────────────┐   │ │    ╭──────╮     ╭───╮     ┌────────┐     ╭───╮   │ │    ╭─────────────╮   │     ╭──────╮      │ │     
-├┼──────│ DEFINE │─────│ API │───╯─╯────│ IF │─────│ NOT │─────│ EXISTS │───╰─╰───│ @endpoint │───╯────│ FOR │─────│ @HTTP_method, .. │───╰─╯────│ MIDDLEWARE │─────│ @function, .. │───╰─╯────│ THEN │─────│ { │─────│ @value │─────│ } │───╰─╯────│ PERMISSIONS │───┼─────│ FULL │──────┼─╰───┼┤
-        ╰────────╯     ╰─────╯          ╰────╯     ╰─────╯     ╰────────╯         └───────────┘        ╰─────╯     └──────────────────┘          ╰────────────╯     └───────────────┘          ╰──────╯     ╰───╯     └────────┘     ╰───╯          ╰─────────────╯   │     ╰──────╯      │       
-                                                                                                                                                                                                                                                                      │                   │       
-                                                                                                                                                                                                                                                                      │  ┌─────────────┐  │       
-                                                                                                                                                                                                                                                                      ╰──│ @expression │──╯       
-                                                                                                                                                                                                                                                                         └─────────────┘
+                                 ╭────────────────────────────────────────────╮                                                                                                                                                                ╭────────────────────────────────────────────╮                                                                                  
+                                 │                                            │                                                                                                                                                                │                                            │                                                                                  
+                                 │               ╭───────────╮                │                                                                                                                                                                │                            ╭──────╮        │                                                                                  
+                                 │ ╭─────────────│ OVERWRITE │──────────────╮ │                                                                                                                                                                │                      ╭─────│ NONE │──────╮ │                                                                                  
+                                 │ │             ╰───────────╯              │ │                   ╭───────────────────────────────────────╮ ╭───────────────────────────────────────────╮ ╭──────────────────────────────────────────────────╮ │                      │     ╰──────╯      │ │ ╭─────────────────────────────────────╮ ╭──────────────────────────────────╮     
+                                 │ │                                        │ │                   │                                       │ │                                           │ │                                                  │ │                      │                   │ │ │                                     │ │                                  │     
+        ╭────────╮     ╭─────╮   │ │    ╭────╮     ╭─────╮     ╭────────╮   │ │   ┌───────────┐   │    ╭─────╮     ┌──────────────────┐   │ │    ╭────────────╮     ┌───────────────┐   │ │    ╭──────╮     ╭───╮     ┌────────┐     ╭───╮   │ │    ╭─────────────╮   │     ╭──────╮      │ │ │    ╭──────────╮      ╭─────────╮    │ │    ╭─────────╮     ┌─────────┐   │     
+├┼──────│ DEFINE │─────│ API │───╯─╯────│ IF │─────│ NOT │─────│ EXISTS │───╰─╰───│ @endpoint │───╯────│ FOR │─────│ @HTTP_method, .. │───╰─╯────│ MIDDLEWARE │─────│ @function, .. │───╰─╯────│ THEN │─────│ { │─────│ @value │─────│ } │───╰─╯────│ PERMISSIONS │───┼─────│ FULL │──────┼─╰─╯────│ SECURITY │───╮──│ DEFINER │──╭─╰─╯────│ COMMENT │─────│ @string │───╰───┼┤
+        ╰────────╯     ╰─────╯          ╰────╯     ╰─────╯     ╰────────╯         └───────────┘        ╰─────╯     └──────────────────┘          ╰────────────╯     └───────────────┘          ╰──────╯     ╰───╯     └────────┘     ╰───╯          ╰─────────────╯   │     ╰──────╯      │        ╰──────────╯   │  ╰─────────╯  │        ╰─────────╯     └─────────┘         
+                                                                                                                                                                                                                                                                      │                   │                       │               │                                            
+                                                                                                                                                                                                                                                                      │  ┌─────────────┐  │                       │  ╭─────────╮  │                                            
+                                                                                                                                                                                                                                                                      ╰──│ @expression │──╯                       ╰──│ INVOKER │──╯                                            
+                                                                                                                                                                                                                                                                         └─────────────┘                             ╰─────────╯
 ```
 
 `DEFINE API` is often used in conjunction with a [capabilities flag](../../../../learn/security/authorization/capabilities.md) or [environment variable](../../../cli/db/environment-variables.md) to disable arbitrary queries, thereby forcing record and anonymous users to interact with the database via API endpoints alone.
@@ -237,27 +239,91 @@ All three `api::invoke` calls now return the body with a status of `200`, such a
 }
 ```
 
+### Typed segments and route order
+
+A dynamic segment can name a type after its name, such as `:id<number>`. The segment then matches only a value that converts to the type, and `$request.params.id` holds the converted value: `/items/789` matches `"/items/:id<number>"` with `id` set to `789`, and `/items/abc` does not match it.
+
+When more than one path matches a request, the most specific path runs. Each segment of a path adds to its score, and a fixed segment adds the most, then a typed dynamic segment, then an untyped dynamic segment, and a `*` remainder adds the least. The path with the highest score runs. With the following three definitions, `/users/me` runs the first, `/users/42` the second, and `/users/42/posts` the third:
+
+```surql
+DEFINE API "/users/me" FOR get THEN { { body: 'me' } };
+DEFINE API "/users/:id<number>" FOR get THEN { { body: $request.params.id } };
+DEFINE API "/users/*rest" FOR get THEN { { body: 'rest' } };
+```
+
 ## Permissions
 
 The `PERMISSIONS` clause decides who may call an endpoint, and can differ for each method. When it is left out, it is `PERMISSIONS FULL`, so anyone who can reach the server can call the endpoint, including a client that has not signed in, whether or not [guest access](../../../../learn/security/authorization/capabilities.md#guest-access) is allowed.
 
-The body runs without table and field permission checks, like the body of an [event](event.md#events-and-permissions), so it can read and write records that the caller cannot reach directly. Inside the body, `$auth` is still the caller: a record user's record ID, or `NONE` for a client that has not signed in. In the example below, a record user cannot select from `secret_note`, but can read it through the endpoint, while a client without credentials is refused:
+By default, the body runs without table and field permission checks, like the body of an [event](event.md#events-and-permissions), so it can read and write records that the caller cannot reach directly. This is the `SECURITY DEFINER` mode, which can be written out or left out. Inside the body, `$auth` is still the caller: a record user's record ID, or `NONE` for a client that has not signed in. In the example below, a record user cannot select from `secret_note`, but can read it through the endpoint, while a client without credentials is refused:
 
 ```surql
 DEFINE TABLE secret_note PERMISSIONS NONE;
 
 DEFINE API "/notes"
 	FOR get
-		PERMISSIONS WHERE $auth.id != NONE
+		PERMISSIONS WHERE $auth != NONE
 		THEN {
 			{ status: 200, body: <string> (SELECT VALUE text FROM secret_note) }
 		};
 ```
 
 > [!WARNING]
-> Because the body is not limited by table permissions, an endpoint returns whatever its body selects to everyone its `PERMISSIONS` clause lets in. Set `PERMISSIONS` on every endpoint that reads or writes data, and check `$auth` in the body where different callers should see different records.
+> Because the body of a `SECURITY DEFINER` endpoint is not limited by table permissions, the endpoint returns whatever its body selects to everyone its `PERMISSIONS` clause lets in. Set `PERMISSIONS` on every endpoint that reads or writes data, and check `$auth` in the body where different callers should see different records.
 
-This is the opposite of a [defined function](function.md#permissions), whose body runs with the caller's permissions.
+A `SECURITY DEFINER` endpoint is the opposite of a [defined function](function.md#permissions), whose body runs with the caller's permissions. A `SECURITY INVOKER` endpoint behaves like a function.
+
+### Running the body with the caller's permissions
+
+*Since v4.0.0*
+
+With `SECURITY INVOKER`, the body runs with the permissions of the caller, so its queries return the same records and fields that the caller gets from a direct query. The clause applies to the whole endpoint: every method, its `FOR any` handler and its middleware. The body never has more access than the user who defined the endpoint.
+
+The endpoint below is the same as the one above, with `SECURITY INVOKER` added. A record user who calls it gets an empty array, because `secret_note` has `PERMISSIONS NONE`, while the `SECURITY DEFINER` endpoint above returns every note to the same user.
+
+```surql
+DEFINE API "/my-notes"
+	FOR get
+		PERMISSIONS WHERE $auth != NONE
+		THEN {
+			{ status: 200, body: <string> (SELECT VALUE text FROM secret_note) }
+		}
+	SECURITY INVOKER;
+```
+
+```text title="Output for a record user"
+[]
+```
+
+`INFO FOR DB` and exports show `SECURITY INVOKER` after the methods of the definition, before any `COMMENT`, and leave the clause out for a `SECURITY DEFINER` endpoint. `DEFINE API OVERWRITE` without the clause returns the endpoint to `SECURITY DEFINER`. To change only the mode, use [`ALTER API`](../alter/api.md), which keeps the current mode when the clause is left out:
+
+```surql
+ALTER API "/my-notes" SECURITY DEFINER;
+```
+
+## When a handler fails
+
+*Since v4.0.0*
+
+A handler that fails answers with an error response, usually a `500`, and keeps none of what it wrote. Its records, its index entries and the writes of any events it set off are rolled back, while the rest of the transaction it ran in carries on. The same applies to each middleware call together with the part of the chain that it called.
+
+```surql
+DEFINE INDEX unique_v ON t FIELDS v UNIQUE;
+CREATE t:0 SET v = 0;
+
+DEFINE API "/two" FOR post THEN {
+	INSERT INTO t [{ id: 1, v: 1 }, { id: 2, v: 0 }];
+	{ status: 200 }
+};
+
+api::invoke("/two", { method: "post" }).status;
+//- 500
+
+SELECT id, v FROM t;
+//- [{ id: t:0, v: 0 }]
+```
+
+The second record breaks the unique index, so the handler fails. Before 4.0, the response was the same but the first record stayed in the table, and so did the second one, which the index did not list.
 
 ## Custom middleware
 

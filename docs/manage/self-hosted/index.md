@@ -16,11 +16,11 @@ For initial installation, see the [installation guide](../../running/installatio
 | Guide | Typical use |
 | --- | --- |
 | [Deployment models](deployment-models.md) | Choosing between single-node, multi-node, embedded, and managed |
-| [Docker](../../running/docker.md) | Quickest path; RocksDB with a volume mount |
-| [Kubernetes](kubernetes.md) | Single SurrealDB pod with RocksDB on a persistent volume |
+| [Docker](../../running/docker.md) | Quickest path; SurrealKV with a volume mount |
+| [Kubernetes](kubernetes.md) | Single SurrealDB pod with SurrealKV on a persistent volume |
 | [Managed Kubernetes](managed-kubernetes.md) | Paths on Amazon EKS, Google GKE, and Azure AKS |
 
-Most self-hosted workloads use **RocksDB** on disk - one SurrealDB process per database file.
+Most self-hosted workloads store data on disk, with one SurrealDB process per database directory. From SurrealDB 4.0 the on-disk engine is **SurrealKV** (`surrealkv://`). RocksDB (`rocksdb://`) was removed in SurrealDB 4.0; see [Moving a RocksDB database to SurrealKV](deployment-models.md#moving-a-rocksdb-database-to-surrealkv).
 
 ## Operating a self-hosted instance
 

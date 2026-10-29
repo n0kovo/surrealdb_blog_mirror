@@ -1,8 +1,10 @@
 # Category: community
 
-_36 posts_  
+_37 posts_  
 [← Index](../../README.md)
 
+- **2026-10-29** · [Remembering the correction: Ontology and agent memory in Pivot AI](../2026/10/remembering-the-correction-ontology-and-agent-memory-in-pivot-ai.md)  
+  `community` — Agent memory for professional work: keep reviewed corrections, unresolved classifications and evidence gaps in SurrealDB, scoped to an authorised matter.
 - **2026-10-12** · [Our commitment to open source: show the code, run the numbers](../2026/10/our-commitment-to-open-source-show-the-code-run-the-numbers.md)  
   `company` `community` — SurrealKV and SurrealMX are open source under Apache 2.0, and every benchmark we publish comes with the command to run it.
 - **2026-07-08** · [Detecting connections as they form: streaming graph patterns](../2026/07/detecting-connections-as-they-form-an-introduction-to-streaming-graph-pattern-matching-2.md)  

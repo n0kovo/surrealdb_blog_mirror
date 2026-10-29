@@ -135,8 +135,10 @@ The [`Export`](https://docs.rs/surrealdb/latest/surrealdb/method/struct.Export.h
 * `.functions()`: whether to include [`DEFINE FUNCTION` statements](../../query-language/statements/define/function.md)
 * `.apis()`: whether to include API definitions in the export
 * `.buckets()`: whether to include bucket definitions
-* `.modules()`: whether to include [`DEFINE MODULE`](../../query-language/statements/define/module.md) statements
+* `.modules()`: whether to include [`DEFINE EXTENSION`](../../query-language/statements/define/extension.md) statements
 * `.configs()`: whether to include stored configuration definitions
+* `.sequences()`: whether to include [`DEFINE SEQUENCE` statements](../../query-language/statements/define/sequence.md)
+* `.database_definition()`: whether to include the database's own definition, with its `STRICT`, `COMMENT` and `CHANGEFEED` clauses. Importing it rewrites those clauses on the target database, so an export of only some resources should leave it off. Over a gRPC connection, `.database_definition(false)` fails, because the gRPC export request has no field for it.
 * `.records()`: whether to include the existing records in the database
 * `.params()`: whether to include [`DEFINE PARAM` statements](../../query-language/statements/define/param.md)
 * `.users()`: whether to include [`DEFINE USER` statements](../../query-language/statements/define/user.md)
@@ -316,7 +318,7 @@ The [`Export`](https://docs.rs/surrealdb/2/surrealdb/method/struct.Export.html) 
 * `.functions()`: whether to include [`DEFINE FUNCTION` statements](../../query-language/statements/define/function.md)
 * `.apis()`: whether to include [defined APIs](../../query-language/statements/define/api.md) in the export
 * `.buckets()`: whether to include [defined buckets](../../query-language/statements/define/bucket.md)
-* `.modules()`: whether to include [`DEFINE MODULE`](../../query-language/statements/define/module.md) statements
+* `.modules()`: whether to include [`DEFINE EXTENSION`](../../query-language/statements/define/extension.md) statements
 * `.configs()`: whether to include stored configuration definitions
 * `.records()`: whether to include the existing records in the database
 * `.params()`: whether to include [`DEFINE PARAM` statements](../../query-language/statements/define/param.md)

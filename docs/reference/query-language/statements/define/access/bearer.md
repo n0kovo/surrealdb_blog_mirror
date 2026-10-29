@@ -33,7 +33,9 @@ DEFINE ACCESS [ OVERWRITE | IF NOT EXISTS ] @name
 
 ## `FOR USER`
 
-Defining a bearer access method `FOR USER` will ensure that grants can only be created with a [system user](../../../../../learn/security/authentication/users.md#system-users) as its subject. This application is useful for integrations that require administering SurrealDB at the `ROOT`, `NAMESPACE` or `DATABASE` level with the roles with which the user has been defined with [`DEFINE USER`](../user.md). 
+Defining a bearer access method `FOR USER` will ensure that grants can only be created with a [system user](../../../../../learn/security/authentication/users.md#system-users) as its subject. This application is useful for integrations that require administering SurrealDB at the `ROOT`, `NAMESPACE` or `DATABASE` level with the roles with which the user has been defined with [`DEFINE USER`](../user.md).
+
+From SurrealDB 4.0, a token issued from such a grant acts as the user with the roles the user holds when the token is used. Removing the user, changing its roles, or revoking the grant takes effect on the next request.
 
 ### Example
 

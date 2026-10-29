@@ -44,7 +44,7 @@ The unit reads its settings from the environment file, which keeps the root pass
 SURREAL_USER=root
 SURREAL_PASS=secret
 SURREAL_BIND=127.0.0.1:8000
-SURREAL_PATH=rocksdb:///var/lib/surrealdb/data
+SURREAL_PATH=surrealkv:///var/lib/surrealdb/data
 ```
 
 Restrict the file with `chmod 600`, and make sure the `surrealdb` user owns the data directory. Use `journalctl -u surrealdb -f` to follow the server log.
@@ -64,7 +64,7 @@ Restrict the file with `chmod 600`, and make sure the `surrealdb` user owns the 
   <env name="SURREAL_USER" value="root" />
   <env name="SURREAL_PASS" value="secret" />
   <env name="SURREAL_BIND" value="127.0.0.1:8000" />
-  <env name="SURREAL_PATH" value="rocksdb://data" />
+  <env name="SURREAL_PATH" value="surrealkv://data" />
   <onfailure action="restart" delay="10 sec" />
   <log mode="roll" />
 </service>
@@ -80,7 +80,7 @@ cd C:\SurrealDB
 
 The service starts with Windows from then on. WinSW stops the server by sending it Ctrl+C, which SurrealDB handles as a clean shutdown, and writes the server's output to log files in `C:\SurrealDB`. The XML file holds the root password, so limit who can read it, for example with `icacls surrealdb-service.xml /inheritance:r /grant:r Administrators:F SYSTEM:R`.
 
-**Storage engines** are selected by the path on [`surreal db start`](../../reference/cli/db/commands/start.md). For most self-hosted servers, use **RocksDB** (`rocksdb://…`) for on-disk production data. The default **`memory`** backend (SurrealMX) suits development and tests as well as solutions that make use of its Redis-like persistent storage, while the optional **SurrealKV** (`surrealkv://…`, beta) is an alternative single-node disk engine with a smaller tuning surface. Capacity planning, backups, and versioning options differ by engine - see the [Deployment models](deployment-models.md) and [Run a single-node, on-disk server](../../running/file-backed.md) pages for more.
+**Storage engines** are selected by the path on [`surreal db start`](../../reference/cli/db/commands/start.md). For on-disk production data on a self-hosted server, use **SurrealKV** (`surrealkv://…`). RocksDB (`rocksdb://…`) was removed in SurrealDB 4.0; see [Moving a RocksDB database to SurrealKV](deployment-models.md#moving-a-rocksdb-database-to-surrealkv). The default **`memory`** backend (SurrealMX) suits development and tests as well as solutions that make use of its Redis-like persistent storage. Capacity planning, backups, and versioning options differ by engine - see the [Deployment models](deployment-models.md) and [Run a single-node, on-disk server](../../running/file-backed.md) pages for more.
 
 **Bind address and port** determine where clients and operators reach the server. Restrict admin interfaces to trusted networks, use a load balancer or service mesh for TLS termination if that matches your platform, and document ports for HTTP, WebSocket, and any separate metrics endpoints you expose.
 

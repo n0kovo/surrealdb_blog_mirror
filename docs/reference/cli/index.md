@@ -1,11 +1,11 @@
 ---
 position: 0
 title: CLI tools
-description: Overview of every command in the surreal launcher, surreal db, surreal cloud and surreal mod, with links to each reference page, plus the separate surqlfmt formatter.
+description: Overview of every command in the surreal launcher, surreal db, surreal cloud and surreal ext, with links to each reference page, plus the separate surqlfmt formatter.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/reference/cli/index.mdx"
 ---
 
-SurrealDB has one command line, `surreal`. The `surreal` launcher installs once, then installs, versions and runs **components**, each with its own commands: the database (`surreal db`), SurrealDB Cloud (`surreal cloud`) and WebAssembly modules (`surreal mod`). This section is the reference for all of them. For how they fit together, start with the [SurrealDB CLI guide](../../explore/cli/index.md).
+SurrealDB has one command line, `surreal`. The `surreal` launcher installs once, then installs, versions and runs **components**, each with its own commands: the database (`surreal db`), SurrealDB Cloud (`surreal cloud`) and Surrealism extensions (`surreal ext`). This section is the reference for all of them. For how they fit together, start with the [SurrealDB CLI guide](../../explore/cli/index.md).
 
 ```bash
 surreal install cloud
@@ -18,7 +18,7 @@ surreal cloud instance list
 | [Launcher commands](launcher.md) | Installing, upgrading, pinning and removing components, version names, `+VERSION`, and the launcher's environment variables |
 | [`surreal db`](db/index.md) | The database: run a server, query it, and move data in and out |
 | [`surreal cloud`](cloud/index.md) | SurrealDB Cloud: organisations, instances, backups, members and tokens |
-| [`surreal mod`](modules.md) | WebAssembly modules |
+| [`surreal ext`](ext.md) | Surrealism extensions |
 | [`surqlfmt`](formatter/overview.md) | Formatting `.surql` files, distributed separately as an npm package |
 
 ## Launcher commands
@@ -31,8 +31,8 @@ These commands belong to the launcher, and nothing else installs or changes comp
 | `surreal upgrade [<COMPONENT[@VERSION]> \| cli]...` | Upgrade the launcher and every installed component, or those named |
 | `surreal use <COMPONENT@VERSION>` | Make an installed version the default |
 | `surreal uninstall <COMPONENT[@VERSION]>...` | Remove a version, or a component entirely |
-| `surreal version` | Show each component, the version that runs, and where it runs from |
-| `surreal --version` | Print the launcher's version and each component's |
+| `surreal list` | Show each component, the version that runs, and where it runs from |
+| `surreal --version` | Print the launcher's own version |
 | `surreal +VERSION <COMPONENT> ...` | Run another version for one command |
 | `surreal help` | Print the launcher's help |
 
@@ -51,7 +51,7 @@ The database component. Everything after `db` goes to the database, so the same 
 | [`surreal db fix`](db/commands/fix.md) | Repair storage issues |
 | [`surreal db ml`](db/commands/ml.md) | Import and export machine-learning models |
 | [`surreal db mcp`](db/commands/mcp.md) | Run the Model Context Protocol server over stdio |
-| [`surreal db module`](db/commands/module.md) | Build and run WebAssembly modules |
+| [`surreal ext`](ext.md) | Build, sign, install and run Surrealism extensions |
 | [`surreal db version`](db/commands/version.md) | Print the database or server version |
 
 The old top-level forms, such as `surreal start`, still run and print a deprecation warning. Upgrading the database is `surreal upgrade db`, a launcher command.
@@ -73,9 +73,9 @@ The SurrealDB Cloud component. Every command takes `--json`, and sends its data 
 | [`surreal cloud context`](cloud/commands/context.md) | Inspect and switch profiles |
 | [`surreal cloud whoami`, `api`, `open`, `status`, `version`, `completion`](cloud/commands/misc.md) | Identity, raw API calls, dashboard links, diagnostics and shell completions |
 
-## surreal mod
+## surreal ext
 
-The WebAssembly module component. Its first release is not published yet, and the same workflow is available today as `surreal db module`. See [`surreal mod`](modules.md).
+The Surrealism extension component, which builds, signs and installs extensions. Its first release is not published yet. Before SurrealDB 4.0, the same commands were `surreal db module`. See [`surreal ext`](ext.md).
 
 ## SurrealQL formatter
 

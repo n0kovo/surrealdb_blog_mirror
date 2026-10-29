@@ -128,6 +128,12 @@ These environment variables can be used to configure a SurrealDB server to confi
       <td scope="row" data-label="Notes">The maximum total size, in bytes, of the DISKANN index cache, shared across all DISKANN indexes in the process. DISKANN graph data lives in the key-value store and is paged through this bounded cache. The DISKANN counterpart of `SURREAL_HNSW_CACHE_SIZE`.</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_FULLTEXT_CACHE_SIZE`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">134,217,728 (128 MiB)</td>
+      <td scope="row" data-label="Allowed values">A u64</td>
+      <td scope="row" data-label="Notes">The maximum total size, in bytes, of the cache of compacted full-text terms, which every read-only full-text query on the node shares. Changes that are not compacted yet are always read from storage, and write transactions do not use the cache. `0` turns it off.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_GRAPH_RESOLVE_CACHE_SIZE`*Since v3.3.0*</td>
       <td scope="row" data-label="Default">67,108,864 (64 MiB)</td>
       <td scope="row" data-label="Allowed values">A u64</td>
@@ -279,6 +285,12 @@ Server-side filesystem access for features that read paths from disk (notably th
       <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP `/gql` endpoint. See <a href="/docs/learn/querying/gql/via-http">GQL via HTTP</a>.</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_GRAPHQL_BODY_SIZE`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">1,048,576 (1 MiB)</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP `/graphql` endpoint. See <a href="/docs/learn/querying/graphql/overview">GraphQL</a>.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_API_BODY_SIZE`</td>
       <td scope="row" data-label="Default">4,194,304 (4 MiB)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
@@ -289,6 +301,18 @@ Server-side filesystem access for features that read paths from disk (notably th
       <td scope="row" data-label="Default">4,194,304 (4 MiB)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">Maximum HTTP body size of the HTTP /rpc endpoint.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_HTTP_MAX_ATTACHED_SESSIONS`</td>
+      <td scope="row" data-label="Default">16384</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">The maximum number of attached HTTP RPC sessions that a node keeps. A session counts against the node it was attached through until it is detached or expires, wherever it is used. When the limit is reached, the node first releases the sessions that were detached or expired through other nodes, and then refuses the attach.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_GRAPHQL_SUBSCRIPTION_CHANNEL_CAPACITY`</td>
+      <td scope="row" data-label="Default">1024</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">How many notifications can be buffered for one GraphQL subscription. When the buffer is full, new notifications for that subscription are dropped.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_GRPC_MAX_MESSAGE_SIZE`</td>
@@ -409,7 +433,7 @@ Used by the built-in [Model Context Protocol](../../../build/ai-agents/mcp/embed
 
 *Since v3.2.0*
 
-Resource limits for [ISO GQL (Cypher Query Language)](../../../learn/querying/gql/overview.md) `MATCH` execution. Errors name the limit when it is exceeded. From **3.3.0**, GQL is enabled by default; on **3.2.x**, enable it with [`--allow-experimental gql`](commands/start.md#experimental-capabilities).
+Resource limits for [ISO GQL](../../../learn/querying/gql/overview.md) `MATCH` execution. Errors name the limit when it is exceeded. From **3.3.0**, GQL is enabled by default; on **3.2.x**, enable it with [`--allow-experimental gql`](commands/start.md#experimental-capabilities).
 
 <table>
   <thead>
@@ -488,15 +512,63 @@ Resource limits for [ISO GQL (Cypher Query Language)](../../../learn/querying/gq
     </tr>
      <tr>
       <td scope="row" data-label="Env var">`SURREAL_GENERATION_ALLOCATION_LIMIT`</td>
-      <td scope="row" data-label="Default">1,048,576</td>
-      <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">Limits memory allocation for certain built-in functions (e.g., string::replace) to avoid uncontrolled memory usage. Default is 1,048,576 bytes (computed as 2<sup>20</sup>).</td>
+      <td scope="row" data-label="Default">20 (2<sup>20</sup> = 1,048,576 bytes)</td>
+      <td scope="row" data-label="Allowed values">A power of two, as its exponent: an integer up to 28 (256 MiB); larger values are treated as 28</td>
+      <td scope="row" data-label="Notes">Limits the memory that a single call to `array::combine`, `array::concat`, `array::range`, `array::repeat`, `array::sequence`, `array::transpose`, `array::windows`, `string::concat`, `string::join`, `string::repeat` or `string::replace` can allocate for its result, and the number of values that a scripting function can return. A call over the limit fails with an error. The value is an exponent, not a byte count: the limit is 2 to the power of the value, so the default of `20` allows 1,048,576 bytes. Setting a byte count such as `1048576` sets the limit to its maximum of 2<sup>28</sup> bytes.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_IDIOM_RECURSION_LIMIT`</td>
       <td scope="row" data-label="Default">256</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">The maximum recursive idiom path depth allowed. Read only before 3.1.0; later versions use a fixed limit of 256.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MEMORY_LIMIT`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">0 (half of `SURREAL_MEMORY_THRESHOLD` if set, otherwise 2 GiB)</td>
+      <td scope="row" data-label="Allowed values">A usize or suffixed integer</td>
+      <td scope="row" data-label="Notes">The bytes that all queries on the node may hold in sorts, grouped aggregates, `DISTINCT` and join builds before they spill to disk. See <a href="#memory-limits-and-spilling-to-disk">Memory limits and spilling to disk</a>.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_QUERY_MEMORY_MAX`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">0 (the node memory limit)</td>
+      <td scope="row" data-label="Allowed values">A usize or suffixed integer</td>
+      <td scope="row" data-label="Notes">The bytes that a single query may hold which it cannot spill, such as gathered values and its transaction buffers. A query that passes it fails with the memory threshold error, and other queries are not affected.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_QUERY_MEMORY_MINIMUM`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">4 MiB</td>
+      <td scope="row" data-label="Allowed values">A usize or suffixed integer</td>
+      <td scope="row" data-label="Notes">The bytes that every query holding a sort, group, `DISTINCT` or join build is guaranteed, in addition to what spilling takes.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MEMORY_WAIT`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">1000</td>
+      <td scope="row" data-label="Allowed values">A number of milliseconds</td>
+      <td scope="row" data-label="Notes">The longest that a query waits in total for other queries to release memory before it continues past the node limit. `0` never waits.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SPILL_PART_SIZE`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">1 MiB</td>
+      <td scope="row" data-label="Allowed values">A suffixed integer greater than zero</td>
+      <td scope="row" data-label="Notes">The size of the parts in which a spilled run is written and read.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SPILL_MERGE_FAN_IN`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">8</td>
+      <td scope="row" data-label="Allowed values">A usize, at least 2</td>
+      <td scope="row" data-label="Notes">The number of spilled runs that a merge reads at once. A merge of more runs takes several passes.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MEMORY_RESERVE_CHUNK`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">256 KiB</td>
+      <td scope="row" data-label="Allowed values">A suffixed integer greater than zero</td>
+      <td scope="row" data-label="Notes">The bytes that a sort, group, `DISTINCT` or join build reserves from its query at a time.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_STREAM_STAGE_BYTES`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">No limit</td>
+      <td scope="row" data-label="Allowed values">A byte count, or a size such as `64KiB`</td>
+      <td scope="row" data-label="Notes">The estimated bytes of result rows that a write statement streaming its results, in a transaction of its own, holds back until it commits. Held rows let a statement that meets a retryable conflict at commit run again without its client receiving the rows of the failed attempt. Past this size the held rows are sent and the rest stream as they are produced, and the statement is no longer run again on a conflict. `0` holds nothing back. By default every row is held until the commit.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_MAX_COMPUTATION_DEPTH`</td>
@@ -508,7 +580,7 @@ Resource limits for [ISO GQL (Cypher Query Language)](../../../learn/querying/gq
       <td scope="row" data-label="Env var">`SURREAL_MAX_CONCURRENT_TASKS`</td>
       <td scope="row" data-label="Default">64</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">Specifies how many concurrent jobs can be buffered in the worker channel.</td>
+      <td scope="row" data-label="Notes">Specifies how many concurrent jobs can be buffered in the worker channel. Removed in 4.0.0, which no longer reads it, so setting it has no effect. *Since v4.0.0*</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_MAX_EXPRESSION_PARSING_DEPTH`*Since v3.3.0*</td>
@@ -558,8 +630,41 @@ Resource limits for [ISO GQL (Cypher Query Language)](../../../learn/querying/gq
       <td scope="row" data-label="Allowed values">A `u64`; `0` disables</td>
       <td scope="row" data-label="Notes">Maximum number of key writes a single statement transaction may buffer before it is aborted and rolled back. Cascaded deletes, full-text index maintenance, graph-edge cleanup, and commit-time changefeed / live-query events all count toward the limit; each range delete counts as one write. Tripping the guard poisons the transaction so an explicit client `COMMIT` cannot persist a partial statement. Internal maintenance transactions (index builds, compaction, GC) are not bounded. On TiKV, range deletes may expand further inside the storage layer - size distributed clusters with both this limit and `SURREAL_TIKV_DELR_MAX_KEYS` in mind. Scale / multi-node deployments often use a limit in the 50,000-100,000 range; leave at `0` for typical single-node use.</td>
     </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_READ_SNAPSHOT_MAX_STALENESS_SECS`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">3600 (one hour)</td>
+      <td scope="row" data-label="Allowed values">A u64 (seconds)</td>
+      <td scope="row" data-label="Notes">The largest `MAX STALENESS` that a <a href="/docs/reference/query-language/statements/begin#read-only-transactions">read-only transaction</a> can ask for. A larger request fails when the transaction begins, with `The requested MAX STALENESS of 5s is above the maximum of 1s this datastore allows`. It also limits how long a permission that has been revoked can still apply to a stale read.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_READ_SNAPSHOT_FALLBACK`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">allow</td>
+      <td scope="row" data-label="Allowed values">`allow`, `deny`, `rate:&lt;n&gt;`</td>
+      <td scope="row" data-label="Notes">What a read-only transaction with `MAX STALENESS` does when no published snapshot is recent enough: read the current state (`allow`), fail (`deny`), or read the current state at most `n` times a second. `STRICT` on the statement fails in that case whatever this setting says. A datastore that publishes no snapshots, which includes every storage engine of the open-source release, always reads the current state, which meets every bound.</td>
+    </tr>
   </tbody>
 </table>
+
+### Memory limits and spilling to disk
+
+*Since v4.0.0*
+
+From SurrealDB 4.0, each node holds its queries to a memory limit, set by `SURREAL_MEMORY_LIMIT`. By default the limit is half of `SURREAL_MEMORY_THRESHOLD` where that is set, and 2 GiB otherwise. Each query is guaranteed a minimum share, set by `SURREAL_QUERY_MEMORY_MINIMUM`.
+
+When a sort, a grouped aggregate, a `DISTINCT` or a join build outgrows its share, it writes sorted runs to temporary files and merges them. The query is slower, but it does not fail, and it does not need the `TEMPFILES` clause. If memory is short, a query first spills, then waits for other queries to release memory for up to `SURREAL_MEMORY_WAIT` milliseconds in total, and then continues past the limit.
+
+Values that a query cannot spill, such as a gathered subquery result or a value bound with `LET`, are bounded for each query by `SURREAL_QUERY_MEMORY_MAX`. A query that passes it fails with the memory threshold error, and other queries are not affected.
+
+Spill files go to the directory in `SURREAL_TEMPORARY_DIRECTORY`, or to a `surrealdb` folder in the system temporary directory. SurrealDB clears the files left by a process that has stopped the next time it opens the directory. There is no disk quota on this directory, so give it enough space and, in a container, mount it on a volume of suitable size. If the directory cannot be created, the server logs `Queries will not spill to disk` and starts with no memory limit on its queries.
+
+> [!IMPORTANT]
+> `SURREAL_MEMORY_THRESHOLD` is a separate guard over the whole process. Spilling does not exempt a query from it, so a query is still refused when the tracked memory of the process passes the threshold, whatever `SURREAL_MEMORY_LIMIT` is set to.
+
+The following command lowers the node limit to 512 MiB and spills to a dedicated volume:
+
+```bash
+SURREAL_MEMORY_LIMIT=512MiB SURREAL_TEMPORARY_DIRECTORY=/var/lib/surrealdb/spill surreal db start --user root --pass secret surrealkv://mydb
+```
 
 #### Nesting depth in queries versus data
 
@@ -597,7 +702,7 @@ Exceeding either is a parse error, not a crash, giving the error `Exceeded query
       <td scope="row" data-label="Env var">`SURREAL_KVS_THREADPOOL_SIZE` *Since v3.1.1*</td>
       <td scope="row" data-label="Default">Number of CPU cores (minimum 16)</td>
       <td scope="row" data-label="Allowed values">A usize, at least 4</td>
-      <td scope="row" data-label="Notes">Number of worker threads the in-memory, RocksDB and SurrealKV engines use for storage work. A value below 4 or a value that is not a number logs a warning and the default is used.</td>
+      <td scope="row" data-label="Notes">Number of worker threads the in-memory and SurrealKV engines use for storage work. A value below 4 or a value that is not a number logs a warning and the default is used.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_RUNTIME_MAX_BLOCKING_THREADS`</td>
@@ -616,6 +721,30 @@ Exceeding either is a parse error, not a crash, giving the error `Exceeded query
       <td scope="row" data-label="Default">Number of CPU cores (minimum 4)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
       <td scope="row" data-label="Notes">Number of runtime worker threads used to start. See <a href="/docs/learn/querying/performance/performance-best-practices#cpu-cores-and-concurrent-queries">CPU cores and concurrent queries</a>.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MORSEL_PLACES`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">No limit</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">The most places of the node's worker pool that one statement can hold at once to scan in parallel. The pool has one place for each core beyond the one a statement's own task runs on. `0` runs every statement on its own task. Index builds and background index compaction draw on the same pool.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MORSEL_OLTP_RESERVE`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">1</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">The places of the worker pool that parallel scans never take, so that short statements keep a core. On a host with two cores or fewer, the default leaves no place to share, so index builds and compaction run on one task unless this is set to `0`.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MORSEL_PLACE_QUANTUM`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">8</td>
+      <td scope="row" data-label="Allowed values">A u32</td>
+      <td scope="row" data-label="Notes">How many chunks of its work a parallel worker finishes while another statement waits for a place, before it hands what is left of its work back and frees the place.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MORSEL_SPLIT_PASS_PPM`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">50000</td>
+      <td scope="row" data-label="Allowed values">A u32</td>
+      <td scope="row" data-label="Notes">The most records in a million that a scan's `WHERE` conditions can keep for the scan to be split into parts that run in parallel. The default is one record in twenty. A scan that keeps a larger share of the records it reads stays on one task, because most of its time is spent reading records, which more workers do not make faster. The share is measured from the records the scan has read so far. With `1000000`, a scan with a `WHERE` condition can be split whatever share of its records the condition keeps.</td>
     </tr>
   </tbody>
 </table>
@@ -720,31 +849,49 @@ Exceeding either is a parse error, not a crash, giving the error `Exceeded query
       <td scope="row" data-label="Env var">`SURREAL_SURREALISM_MAX_POOL_SIZE`*Since v3.0.0*</td>
       <td scope="row" data-label="Default">8</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">Per-module controller pool size ceiling for Surrealism WASM modules. Has no effect: the server does not read this variable, so the ceiling stays at 8.</td>
+      <td scope="row" data-label="Notes">Per-module controller pool size ceiling for Surrealism WASM modules. Has no effect: the server does not read this variable, so the ceiling stays at 8. Removed in 4.0.0, which runs each call on a fresh instance; see `SURREAL_SURREALISM_MAX_CONCURRENT_INVOCATIONS`.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_SURREALISM_MAX_MEMORY`*Since v3.0.0*</td>
       <td scope="row" data-label="Default">None (unlimited)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">Per-module WASM linear memory ceiling in bytes.</td>
+      <td scope="row" data-label="Notes">Per-module WASM linear memory ceiling in bytes. From 4.0.0, an extension's `CAPABILITIES` can set a lower limit, and the smaller of the two applies.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_SURREALISM_MAX_EXECUTION_TIME`*Since v3.0.0*</td>
       <td scope="row" data-label="Default">None (unlimited)</td>
       <td scope="row" data-label="Allowed values">A u64 (milliseconds)</td>
-      <td scope="row" data-label="Notes">Per-invocation execution time ceiling for Surrealism WASM modules.</td>
+      <td scope="row" data-label="Notes">Per-invocation execution time ceiling for Surrealism WASM modules. From 4.0.0, an extension's `CAPABILITIES` and the query's timeout can set a lower limit, and the smallest applies.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALISM_MAX_CONCURRENT_INVOCATIONS`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">64</td>
+      <td scope="row" data-label="Allowed values">A u32</td>
+      <td scope="row" data-label="Notes">How many extension calls can run at once across the datastore. Each call runs on a fresh instance in one of these slots, and each slot reserves about 4 GiB of virtual address space (not resident memory) on 64-bit hosts, which a virtual memory limit such as `RLIMIT_AS` must allow. A quarter of the slots is kept for calls made from inside another extension. A call that finds no free slot waits, within its query's timeout.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALISM_MAX_FS_BYTES`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">104857600 (100 MiB)</td>
+      <td scope="row" data-label="Allowed values">A u64</td>
+      <td scope="row" data-label="Notes">The largest total size, in bytes, of the files that an extension archive bundles in its read-only filesystem. Applied when an archive is unpacked by `DEFINE EXTENSION` or at startup.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALISM_ALLOW_UNBOUNDED_EXECUTION`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">false</td>
+      <td scope="row" data-label="Allowed values">true, false</td>
+      <td scope="row" data-label="Notes">Whether an extension defined with `CAPABILITIES { strict_timeout: false }` runs without time checks. Without this setting, every call is stopped by the execution time ceiling and the query's timeout, whatever the definition says. With it, such an extension holds its slot and its worker thread until it returns.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_SURREALISM_MAX_KV_ENTRIES`*Since v3.0.0*</td>
       <td scope="row" data-label="Default">None (unlimited)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">Per-module KV store entry count ceiling.</td>
+      <td scope="row" data-label="Notes">Per-module KV store entry count ceiling. Has no effect from 4.0.0, which removes the module KV store.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_SURREALISM_MAX_KV_VALUE_BYTES`*Since v3.0.0*</td>
       <td scope="row" data-label="Default">None (unlimited)</td>
       <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">Per-module KV store maximum value size in bytes.</td>
+      <td scope="row" data-label="Notes">Per-module KV store maximum value size in bytes. Has no effect from 4.0.0, which removes the module KV store.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_SURREALISM_LOG_LEVEL`*Since v3.1.0*</td>
@@ -756,7 +903,7 @@ Exceeding either is a parse error, not a crash, giving the error `Exceeded query
       <td scope="row" data-label="Env var">`SURREAL_SURREALISM_SILO_ENDPOINT`*Since v3.3.0*</td>
       <td scope="row" data-label="Default">`https://silo.surrealdb.com`</td>
       <td scope="row" data-label="Allowed values">A URL</td>
-      <td scope="row" data-label="Notes">The base URL that a `silo::` module executable in <a href="/docs/reference/query-language/statements/define/module">DEFINE MODULE</a> is fetched from, as `{endpoint}/{organisation}/{package}/{major}.{minor}.{patch}.surli`. A trailing slash is removed. Set it to a mirror to serve packages from somewhere else.</td>
+      <td scope="row" data-label="Notes">Not read from 4.0.0, where `silo::` packages always come from `https://silo.surrealdb.com`. Before 4.0.0: the base URL that a `silo::` package in <a href="/docs/reference/query-language/statements/define/extension">DEFINE EXTENSION</a> is fetched from, as `{endpoint}/{organisation}/{package}/{major}.{minor}.{patch}.surli`. A trailing slash is removed. Set it to a mirror to serve packages from somewhere else.</td>
     </tr>
   </tbody>
 </table>
@@ -773,6 +920,24 @@ Exceeding either is a parse error, not a crash, giving the error `Exceeded query
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_METRICS_ENABLED`</td>
+      <td scope="row" data-label="Default">true</td>
+      <td scope="row" data-label="Allowed values">true, false</td>
+      <td scope="row" data-label="Notes">Whether the Prometheus `/metrics` endpoint is served on the HTTP port. When `false`, the route returns `404`. See <a href="/docs/manage/observability/metrics">Metrics</a>.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_PROCESS_METRICS_REFRESH_INTERVAL`</td>
+      <td scope="row" data-label="Default">5</td>
+      <td scope="row" data-label="Allowed values">Seconds (integer); values below 1 are raised to 1</td>
+      <td scope="row" data-label="Notes">How often the process memory and CPU snapshot is refreshed. The `surrealdb.process.*` gauges and `INFO FOR ROOT` read this snapshot.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SLOW_QUERY_METRIC_THRESHOLD_MS`</td>
+      <td scope="row" data-label="Default">1000</td>
+      <td scope="row" data-label="Allowed values">Milliseconds (integer); `0` disables the counter</td>
+      <td scope="row" data-label="Notes">The duration above which a completed statement is also counted by the `surrealdb.slow_query.total` metric.</td>
+    </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_TELEMETRY_DISABLE_METRICS`</td>
       <td scope="row" data-label="Default">false</td>
@@ -822,7 +987,7 @@ Exceeding either is a parse error, not a crash, giving the error `Exceeded query
 
 *Since v3.3.0*
 
-These variables tune pre-filtered vector search. When a KNN query on an HNSW or DiskANN index has `WHERE` conditions that other indexes can answer, SurrealDB first evaluates those conditions into an allow-list of matching records and restricts the vector search to it. See [How the filter is applied](../../../learn/data-models/vector-search/similarity-search.md#how-the-filter-is-applied).
+These variables tune vector search on HNSW and DiskANN indexes. Most of them tune pre-filtered vector search: when a KNN query on an HNSW or DiskANN index has `WHERE` conditions that other indexes can answer, SurrealDB first evaluates those conditions into an allow-list of matching records and restricts the vector search to it. See [How the filter is applied](../../../learn/data-models/vector-search/similarity-search.md#how-the-filter-is-applied).
 
 <table>
   <thead>
@@ -834,6 +999,30 @@ These variables tune pre-filtered vector search. When a KNN query on an HNSW or 
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_HNSW_BUILD_PARALLELISM`</td>
+      <td scope="row" data-label="Default">auto</td>
+      <td scope="row" data-label="Allowed values">`auto`, `serial`, or a number of tasks (`0` means `auto`)</td>
+      <td scope="row" data-label="Notes">How many tasks one batch of HNSW index compaction builds its graph changes on. `auto` uses as many tasks as the machine reports available parallelism, and `serial` uses one. A batch that removes vectors always runs on one task.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_INDEX_BUILD_PARALLELISM`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">auto</td>
+      <td scope="row" data-label="Allowed values">`auto`, `serial`, or a number of tasks (`0` means `auto`)</td>
+      <td scope="row" data-label="Notes">How many batches of records the initial scan of a standard or `UNIQUE` index build indexes at the same time, each in a transaction of its own. `auto` uses the machine's available parallelism, up to 16, and `serial` indexes one batch at a time.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_DISKANN_FILTER_PREFETCH_MIN_CHUNK`</td>
+      <td scope="row" data-label="Default">64</td>
+      <td scope="row" data-label="Allowed values">A usize greater than zero</td>
+      <td scope="row" data-label="Notes">The first and smallest number of candidate records that a filtered KNN search on a DiskANN index reads at once. Each following read doubles, up to `SURREAL_DISKANN_FILTER_PREFETCH_MAX_CHUNK`.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_DISKANN_FILTER_PREFETCH_MAX_CHUNK`</td>
+      <td scope="row" data-label="Default">4096</td>
+      <td scope="row" data-label="Allowed values">A usize greater than zero</td>
+      <td scope="row" data-label="Notes">The largest number of candidate records that a filtered KNN search on a DiskANN index reads at once.</td>
+    </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_KNN_PREFILTER_ENABLED`</td>
       <td scope="row" data-label="Default">true</td>
@@ -847,10 +1036,22 @@ These variables tune pre-filtered vector search. When a KNN query on an HNSW or 
       <td scope="row" data-label="Notes">The allow-list size at or below which the search does not use the index graph at all, and instead scores every allowed record exactly. At this size an exact search is cheaper than a traversal and always finds the true nearest neighbours.</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_KNN_PREFILTER_EXACT_COST`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">5</td>
+      <td scope="row" data-label="Allowed values">A u32</td>
+      <td scope="row" data-label="Notes">How strongly an HNSW search above `SURREAL_KNN_PREFILTER_EXACT_THRESHOLD` favours walking the graph over scoring the allowed records exactly. The search scores them exactly when the number of allowed records, squared and multiplied by this value, is at most `ef` multiplied by the index's `M0` and by the number of nodes in the graph. A larger value keeps more searches on the graph.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_KNN_PREFILTER_EF_BOOST`</td>
       <td scope="row" data-label="Default">4</td>
       <td scope="row" data-label="Allowed values">A u32</td>
-      <td scope="row" data-label="Notes">The multiplier applied to the search width (`ef`) of a traversal restricted to an allow-list. A selective allow-list rejects most candidates, and a wider search recovers the recall that loses. The result is capped by `SURREAL_KNN_PREFILTER_EF_MAX` and is never lower than the `ef` the query asks for.</td>
+      <td scope="row" data-label="Notes">The multiplier applied to the search width (`ef`) of a DiskANN traversal restricted to an allow-list. From 4.0, an HNSW traversal reads `SURREAL_KNN_PREFILTER_HNSW_EF_BOOST` instead. A selective allow-list rejects most candidates, and a wider search recovers the recall that loses. The result is capped by `SURREAL_KNN_PREFILTER_EF_MAX` and is never lower than the `ef` the query asks for.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_KNN_PREFILTER_HNSW_EF_BOOST`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">1</td>
+      <td scope="row" data-label="Allowed values">A u32</td>
+      <td scope="row" data-label="Notes">The multiplier applied to the search width (`ef`) of an HNSW traversal restricted to an allow-list. The traversal already continues past the candidates the allow-list rejects, so the default of `1` does not widen it. Set it to `4` for the width that 3.x used.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_KNN_PREFILTER_EF_BOOST_THRESHOLD`</td>
@@ -863,6 +1064,18 @@ These variables tune pre-filtered vector search. When a KNN query on an HNSW or 
       <td scope="row" data-label="Default">1024</td>
       <td scope="row" data-label="Allowed values">A u32</td>
       <td scope="row" data-label="Notes">The ceiling for the multiplied `ef`. It never lowers the `ef` a query asks for.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_DISKANN_QUANTIZED_SEARCH`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">true</td>
+      <td scope="row" data-label="Allowed values">true, false</td>
+      <td scope="row" data-label="Notes">Whether a KNN search on a DiskANN index of `TYPE F32` or `TYPE F16` compares candidates using an 8-bit code of each vector, and then ranks its nearest results from the full vectors. The distances a query returns are exact either way. `false` compares full vectors throughout. Only an index defined or rebuilt on SurrealDB 4.0 keeps the codes, and other indexes ignore the setting.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_DISKANN_SEARCH_BEAM_WIDTH`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">1</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">How many candidates a DiskANN search expands in each step. A wider beam reads the neighbours of all of them in one batched read, so the search makes fewer storage round trips, but it also expands some candidates that a narrower beam would skip. The value is limited to between 1 and the search size of the query.</td>
     </tr>
   </tbody>
 </table>
@@ -934,6 +1147,12 @@ The allow-list is built within the entry budget set by [`SURREAL_BITMAP_BRANCH_B
       <td scope="row" data-label="Default">30</td>
       <td scope="row" data-label="Allowed values">Seconds (integer), clamped to 1-86,400</td>
       <td scope="row" data-label="Notes">How long a streaming query may wait to hand one frame to the connection before the stream is stopped. The wait resets for every frame, so it limits a stalled client rather than the length of a stream, and it applies even when `SURREAL_QUERY_TIMEOUT` is not set.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_WEBSOCKET_MAX_ATTACHED_SESSIONS`</td>
+      <td scope="row" data-label="Default">256</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">The maximum number of explicitly attached sessions that a single WebSocket connection can hold at once. The sessions of a connection end when it closes.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_MAX_TRANSACTIONS_PER_CONNECTION`*Since v3.2.2*</td>
@@ -1033,7 +1252,7 @@ These settings are for operators, benchmarks, and advanced debugging - not typic
       <td scope="row" data-label="Env var">`SURREAL_DATASTORE_RETENTION`*Since v3.0.0*</td>
       <td scope="row" data-label="Default">0 (unlimited)</td>
       <td scope="row" data-label="Allowed values">A duration</td>
-      <td scope="row" data-label="Notes">Version retention period as a duration string. Used by the rocksdb and surrealkv engines. From 3.3.0 the memory engine refuses a non-zero value and the server does not start. *Since v3.3.0*</td>
+      <td scope="row" data-label="Notes">Version retention period as a duration string. Used by the surrealkv engine. From 3.3.0 the memory engine refuses a non-zero value and the server does not start. *Since v3.3.0*</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_DATASTORE_SNAPSHOT`*Since v3.0.0*</td>
@@ -1042,27 +1261,57 @@ These settings are for operators, benchmarks, and advanced debugging - not typic
       <td scope="row" data-label="Notes">Snapshot interval. Only used by the memory engine.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_DATASTORE_SYNC_DATA`*Since v3.0.0*</td>
-      <td scope="row" data-label="Default">every</td>
+      <td scope="row" data-label="Env var">`SURREAL_DATASTORE_SYNC`</td>
+      <td scope="row" data-label="Default">every (never on the memory engine)</td>
       <td scope="row" data-label="Allowed values">never|every|duration</td>
-      <td scope="row" data-label="Notes">The sync mode for the database. Used by memory, rocksdb, and surrealkv engines.</td>
+      <td scope="row" data-label="Notes">The sync mode for the database, the same setting as the `sync` path parameter. Used by the memory and surrealkv engines. When both are set, it takes precedence over `SURREAL_DATASTORE_SYNC_DATA`.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_DATASTORE_SYNC_DATA`*Since v3.0.0*</td>
+      <td scope="row" data-label="Default">every (never on the memory engine)</td>
+      <td scope="row" data-label="Allowed values">never|every|duration</td>
+      <td scope="row" data-label="Notes">The sync mode for the database. Used by the memory and surrealkv engines.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_DATASTORE_VERSIONED`*Since v3.0.0*</td>
       <td scope="row" data-label="Default">false</td>
       <td scope="row" data-label="Allowed values">true|false|0|1</td>
-      <td scope="row" data-label="Notes">Whether MVCC versioning is enabled, for use with the <a href="/docs/reference/query-language/statements/select#the-version-clause">`VERSION` clause</a>. Used by the rocksdb and surrealkv engines. From 3.3.0 the memory engine does not support versioned queries, and refuses `true` so that the server does not start. *Since v3.3.0*</td>
+      <td scope="row" data-label="Notes">Whether MVCC versioning is enabled, for use with the <a href="/docs/reference/query-language/statements/select#the-version-clause">`VERSION` clause</a>. Used by the surrealkv engine. From 3.3.0 the memory engine does not support versioned queries, and refuses `true` so that the server does not start. *Since v3.3.0*</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_FEATURE_LEVEL`*Since v4.0.0*</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">4.0|current</td>
+      <td scope="row" data-label="Notes">The record format release a datastore is switched to when a node starts. A datastore in memory or SurrealKV switches to the 4.0 format on its first 4.0 start without it. A TiKV datastore keeps the 3.x format until a node starts with this set, and the switch is refused, with a warning, while a node that runs an older release is still running. It never moves a datastore back to an earlier format. See <a href="/docs/build/migrating/from-old-surrealdb-versions/3x-to-4x#the-40-record-format">The 4.0 record format</a>.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_MEMORY_THRESHOLD`</td>
       <td scope="row" data-label="Default">0 (disabled)</td>
       <td scope="row" data-label="Allowed values">A usize or suffixed integer</td>
-      <td scope="row" data-label="Notes">The tracked memory, in bytes, above which queries are refused with `The query was not executed due to the memory threshold being reached`. The value can be specified as bytes (b, or without any suffix), kibibytes (k, kb, or kib), mebibytes (m, mb, or mib), or gibibytes (g, gb, or gib); Kubernetes-style `Gi` and `Mi` are not accepted. Unset or `0` disables the guard, and any other value is raised to at least 1 MiB. Tracked memory is the size the allocator reserves for each live heap allocation plus the RocksDB block cache, which is less than the process's resident memory, so set the threshold below the container's memory limit and above `SURREAL_ROCKSDB_BLOCK_CACHE_SIZE`: at or below the cache size, a full cache refuses every query until the server restarts. From 3.3.0 the reserved size rather than the requested size is counted, so a threshold carried over from an earlier release refuses queries at a lighter workload and may need raising. *Since v3.3.0* From 3.3.1 the threshold also stops a query that is already running: a query that reads records checks it after each batch, and fails with the same error once tracked memory is above it, rather than growing until the operating system stops the server. *Since v3.3.1*</td>
+      <td scope="row" data-label="Notes">The tracked memory, in bytes, above which queries are refused with `The query was not executed due to the memory threshold being reached`. The value can be specified as bytes (b, or without any suffix), kibibytes (k, kb, or kib), mebibytes (m, mb, or mib), or gibibytes (g, gb, or gib); Kubernetes-style `Gi` and `Mi` are not accepted. Unset or `0` disables the guard, and any other value is raised to at least 1 MiB. Tracked memory is the size the allocator reserves for each live heap allocation, which includes the SurrealKV block cache and is less than the process's resident memory, so set the threshold below the container's memory limit and above `SURREAL_SURREALKV_BLOCK_CACHE_CAPACITY`: at or below the cache size, a full cache refuses every query until the server restarts. Before 4.0, the RocksDB block cache was counted in the same way, and the threshold had to be above `SURREAL_ROCKSDB_BLOCK_CACHE_SIZE`. From 3.3.0 the reserved size rather than the requested size is counted, so a threshold carried over from an earlier release refuses queries at a lighter workload and may need raising. *Since v3.3.0* From 3.3.1 the threshold also stops a query that is already running: a query that reads records checks it after each batch, and fails with the same error once tracked memory is above it, rather than growing until the operating system stops the server. *Since v3.3.1* From 4.0.0 it also sets the default node memory limit, which is half of the threshold when `SURREAL_MEMORY_LIMIT` is not set. The threshold still refuses queries when the whole process passes it, whether or not their sorts and groups would spill. See <a href="#memory-limits-and-spilling-to-disk">Memory limits and spilling to disk</a>. *Since v4.0.0*</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MEMORY_THRESHOLD_UNHEALTHY_AFTER`*Since v3.3.5*</td>
+      <td scope="row" data-label="Default">60</td>
+      <td scope="row" data-label="Allowed values">Seconds (integer); `0` disables the check</td>
+      <td scope="row" data-label="Notes">How long the memory threshold may refuse requests without a break before `/health` answers `503 Service Unavailable`, so that a liveness probe restarts the process. Any observation below the threshold resets the clock. Has no effect while `SURREAL_MEMORY_THRESHOLD` is not set.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_OBJECT_STORE`</td>
+      <td scope="row" data-label="Default">a `store` folder in the current directory</td>
+      <td scope="row" data-label="Allowed values">A URL, such as `file:///var/lib/surrealdb/store`</td>
+      <td scope="row" data-label="Notes">Where SurrealML model files are stored. The folder is created when it does not exist.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_CACHE_STORE`</td>
+      <td scope="row" data-label="Default">a `cache` folder in the current directory</td>
+      <td scope="row" data-label="Allowed values">A URL, such as `file:///var/lib/surrealdb/cache`</td>
+      <td scope="row" data-label="Notes">Where SurrealML model files are cached. The folder is created when it does not exist.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_REGEX_CACHE_SIZE`</td>
       <td scope="row" data-label="Default">1000</td>
-      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Allowed values">An integer from 10 to 100,000; a value outside that range is treated as the nearest end of it</td>
       <td scope="row" data-label="Notes">The number of computed regexes which can be cached in the engine.</td>
     </tr>
   </tbody>
@@ -1089,8 +1338,8 @@ The command would then look like the following:
 **Bash**
 
 ```bash
-SURREAL_CAPS_ALLOW_NET
-SURREAL_CAPS_DENY_FUNC="crypto::md5, http::post, http::delete"
+export SURREAL_CAPS_ALLOW_NET=
+export SURREAL_CAPS_DENY_FUNC="crypto::md5, http::post, http::delete"
 surreal db start --user root --pass secret
 ```
 
@@ -1159,6 +1408,14 @@ surreal db start --allow-all true
   </thead>
   <tbody>
   <tr>
+      <td scope="row" data-label="Env var">`SURREAL_ALLOW_ORIGIN`</td>
+      <td scope="row" data-label="Command arg">`allow-origin`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">All origins</td>
+      <td scope="row" data-label="Allowed values">A comma-separated list of origins</td>
+      <td scope="row" data-label="Notes">The origins allowed to make cross-origin (CORS) requests, such as `https://app.example.com`. When it is not set, every origin is allowed. When it lists origins and no `*`, a WebSocket connection to `/rpc` that sends an `Origin` header is accepted only from a listed origin or with `Sec-Fetch-Site: same-origin`.</td>
+    </tr>
+  <tr>
       <td scope="row" data-label="Env var">`SURREAL_ASYNC_EVENT_PROCESSING_INTERVAL`*Since v3.0.0* </td>
       <td scope="row" data-label="Command arg">`async-event-interval`</td>
       <td scope="row" data-label="Command">`start`</td>
@@ -1191,6 +1448,14 @@ surreal db start --allow-all true
       <td scope="row" data-label="Notes">The hostname or IP address to listen for <a href="/docs/reference/rest-api/postgres-protocol">Postgres wire protocol</a> connections on.</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_MYSQL_BIND`*Since v4.0.0*</td>
+      <td scope="row" data-label="Command arg">`mysql-bind`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">(disabled)</td>
+      <td scope="row" data-label="Allowed values">String to an address</td>
+      <td scope="row" data-label="Notes">The hostname or IP address to listen for <a href="/docs/reference/rest-api/mysql-protocol">MySQL wire protocol</a> connections on, for example `127.0.0.1:3306`. The listener is disabled when this is not set.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_ALL`</td>
       <td scope="row" data-label="Command arg">`allow-all`</td>
       <td scope="row" data-label="Command">`start`</td>
@@ -1219,8 +1484,8 @@ surreal db start --allow-all true
       <td scope="row" data-label="Command arg">`allow-experimental`</td>
       <td scope="row" data-label="Command">`start`, `sql`</td>
       <td scope="row" data-label="Default">none</td>
-      <td scope="row" data-label="Allowed values">files, surrealism (comma-separated; legacy `gql` accepted but unused from 3.3.0)</td>
-      <td scope="row" data-label="Notes">Allow execution of experimental features. For remote clients, set on the `start` process. On `surreal db sql`, affects embedded engines and REPL parse validation only. See <a href="/docs/reference/cli/db/commands/start#experimental-capabilities">experimental capabilities</a>. From 3.3.0, ISO GQL (Cypher Query Language) is on by default and does not need this variable.</td>
+      <td scope="row" data-label="Allowed values">files, surrealism, kvexport (comma-separated)</td>
+      <td scope="row" data-label="Notes">Allow execution of experimental features. For remote clients, set on the `start` process. On `surreal db sql`, affects embedded engines and REPL parse validation only. See <a href="/docs/reference/cli/db/commands/start#experimental-capabilities">experimental capabilities</a>. `kvexport` turns on the `POST /kvexport` route. From 3.3.0, ISO GQL is on by default and does not need this variable. From 4.0, the value `gql` is refused as an invalid name.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_FUNC`</td>
@@ -1239,12 +1504,36 @@ surreal db start --allow-all true
       <td scope="row" data-label="Notes">Allow guest users to execute queries.</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_HTTP`</td>
+      <td scope="row" data-label="Command arg">`allow-http`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">all routes allowed</td>
+      <td scope="row" data-label="Allowed values">Empty, or a comma-separated list of HTTP routes</td>
+      <td scope="row" data-label="Notes">Allow all HTTP routes except those specifically denied, or only the listed routes. Route names: `health`, `export`, `kvexport`, `import`, `rpc`, `version`, `sync`, `sql`, `signin`, `signup`, `key`, `ml`, `graphql`, `api`, `mcp`, `gql`, `postgres`, `mysql`.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_MCP`*Since v4.0.0*</td>
+      <td scope="row" data-label="Command arg">`allow-mcp`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">all tools allowed</td>
+      <td scope="row" data-label="Allowed values">Empty, or a comma-separated list of MCP tool names</td>
+      <td scope="row" data-label="Notes">Allow all tools of the built-in MCP server except those specifically denied, or only the listed tools.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_NET`</td>
       <td scope="row" data-label="Command arg">`allow-net`</td>
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">none</td>
       <td scope="row" data-label="Allowed values">Comma-separated list of paths</td>
       <td scope="row" data-label="Notes">Allow all or certain outbound network access.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_RPC`</td>
+      <td scope="row" data-label="Command arg">`allow-rpc`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">all methods allowed</td>
+      <td scope="row" data-label="Allowed values">Empty, or a comma-separated list of RPC methods</td>
+      <td scope="row" data-label="Notes">Allow all RPC methods except those specifically denied, or only the listed methods.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_ALLOW_SCRIPT`</td>
@@ -1271,6 +1560,14 @@ surreal db start --allow-all true
       <td scope="row" data-label="Notes">Deny all capabilities.</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_CAPS_DENY_ARBITRARY_QUERY`</td>
+      <td scope="row" data-label="Command arg">`deny-arbitrary-query`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">guest, record, system (comma-separated)</td>
+      <td scope="row" data-label="Notes">Deny arbitrary queries for the listed user groups, or for all of them when no value is given. Specifically allowed user groups prevail over a general denial.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_DENY_EVAL_QUERY`*Since v3.2.0*</td>
       <td scope="row" data-label="Command arg">`deny-eval-query`</td>
       <td scope="row" data-label="Command">`start`, `sql`</td>
@@ -1295,6 +1592,22 @@ surreal db start --allow-all true
       <td scope="row" data-label="Notes">Deny guest users from executing queries.</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_CAPS_DENY_HTTP`</td>
+      <td scope="row" data-label="Command arg">`deny-http`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">Empty, or a comma-separated list of HTTP routes</td>
+      <td scope="row" data-label="Notes">Deny all HTTP routes except those specifically allowed, or only the listed routes. Uses the same route names as `SURREAL_CAPS_ALLOW_HTTP`.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_CAPS_DENY_MCP`*Since v4.0.0*</td>
+      <td scope="row" data-label="Command arg">`deny-mcp`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">Empty, or a comma-separated list of MCP tool names</td>
+      <td scope="row" data-label="Notes">Deny all tools of the built-in MCP server except those specifically allowed, or only the listed tools.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_DENY_NET`</td>
       <td scope="row" data-label="Command arg">`deny-net`</td>
       <td scope="row" data-label="Command">`start`</td>
@@ -1303,12 +1616,28 @@ surreal db start --allow-all true
       <td scope="row" data-label="Notes">Deny all or certain outbound access paths.</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Env var">`SURREAL_CAPS_DENY_RPC`</td>
+      <td scope="row" data-label="Command arg">`deny-rpc`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">Empty, or a comma-separated list of RPC methods</td>
+      <td scope="row" data-label="Notes">Deny all RPC methods except those specifically allowed, or only the listed methods.</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Env var">`SURREAL_CAPS_DENY_SCRIPT`</td>
       <td scope="row" data-label="Command arg">`deny-scripting`</td>
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">true</td>
       <td scope="row" data-label="Allowed values">true, false</td>
       <td scope="row" data-label="Notes">Deny execution of embedded scripting functions.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_COOKIE_AUTH`*Since v4.0.0*</td>
+      <td scope="row" data-label="Command arg">`cookie-auth`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">false</td>
+      <td scope="row" data-label="Allowed values">true, false</td>
+      <td scope="row" data-label="Notes">Issue the access token as an `HttpOnly` cookie through `/signin/cookie` and `/signup/cookie`, and accept the cookie from the origins in `SURREAL_ALLOW_ORIGIN`. When the record access method has `WITH REFRESH`, the refresh token is issued as a second `HttpOnly` cookie, and `POST /refresh/cookie` rotates both. Requires `SURREAL_ALLOW_ORIGIN` with no `*` entry. See <a href="/docs/reference/rest-api/http-protocol#cookie-authentication">Cookie authentication</a>.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_CHANGEFEED_GC_INTERVAL`</td>
@@ -1322,7 +1651,7 @@ surreal db start --allow-all true
       <td scope="row" data-label="Env var">`SURREAL_CLIENT_IP`</td>
       <td scope="row" data-label="Command arg">`client-ip`</td>
       <td scope="row" data-label="Command">`start`</td>
-      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Default">socket</td>
       <td scope="row" data-label="Allowed values">none, socket, CF-Connecting-IP, Fly-Client-IP, True-Client-IP, X-Real-IP, X-Forwarded-For, Forwarded</td>
       <td scope="row" data-label="Notes">The method of detecting the client's IP address. *Since v3.1.0* `Forwarded` parses the RFC 7239 `Forwarded` header (`for=` parameter).</td>
     </tr>
@@ -1364,23 +1693,23 @@ surreal db start --allow-all true
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">false</td>
       <td scope="row" data-label="Allowed values">true, false</td>
-      <td scope="row" data-label="Notes">Persist client-attached HTTP RPC sessions in the datastore so they survive restarts and can be resumed on any node sharing the storage. Off by default. WebSocket sessions are not durable. The persisted copy includes authentication state and is stored unencrypted. See <a href="/docs/reference/cli/db/commands/start#durable-http-rpc-sessions">Durable HTTP RPC sessions</a>.</td>
+      <td scope="row" data-label="Notes">From 4.0.0 this variable has no effect: every attached HTTP RPC session is stored in the datastore, and the server still accepts the flag and the variable, and logs a deprecation warning. Before 4.0.0 it persists client-attached HTTP RPC sessions in the datastore so they survive restarts and can be resumed on any node sharing the storage, and is off by default. WebSocket sessions are not durable. The persisted copy includes authentication state and is stored unencrypted. See <a href="/docs/reference/cli/db/commands/start#durable-http-rpc-sessions">Durable HTTP RPC sessions</a>.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_DURABLE_SESSION_GC_INTERVAL`*Since v3.2.2*</td>
       <td scope="row" data-label="Command arg">`durable-session-gc-interval`</td>
       <td scope="row" data-label="Command">`start`</td>
-      <td scope="row" data-label="Default">60s</td>
+      <td scope="row" data-label="Default">1h (60s before 4.0.0)</td>
       <td scope="row" data-label="Allowed values">A duration; `0` disables the background sweep</td>
-      <td scope="row" data-label="Notes">How often expired durable HTTP RPC sessions are purged. Lazy expiry on load still applies when the sweep is disabled. Only meaningful when durable sessions are enabled.</td>
+      <td scope="row" data-label="Notes">How often expired attached HTTP RPC sessions are purged from the datastore. An expired session is refused whether or not it has been purged, so the sweep only reclaims storage. Before 4.0.0 it applies only when durable sessions are enabled.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_DURABLE_SESSION_TTL`*Since v3.2.2*</td>
       <td scope="row" data-label="Command arg">`durable-session-ttl`</td>
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">24h</td>
-      <td scope="row" data-label="Allowed values">A duration greater than zero</td>
-      <td scope="row" data-label="Notes">Idle lifetime of a persisted HTTP RPC session; each use refreshes the expiry (sliding TTL). Must be greater than zero when durable sessions are enabled.</td>
+      <td scope="row" data-label="Allowed values">A duration of at least 1ms</td>
+      <td scope="row" data-label="Notes">Idle lifetime of an attached HTTP RPC session; each use refreshes the expiry (sliding TTL). From 4.0.0 a session expires between one and one and a half times this value after its last request, and applies to every attached HTTP RPC session. Before 4.0.0 it applies only when durable sessions are enabled.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_GRAPH_FOLD_INTERVAL`*Since v3.3.0*</td>
@@ -1405,6 +1734,14 @@ surreal db start --allow-all true
       <td scope="row" data-label="Default">none</td>
       <td scope="row" data-label="Allowed values">A file path</td>
       <td scope="row" data-label="Notes">Path to a SurrealQL file that will be imported when starting the server.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_INDEX_BUILD_RESUME_INTERVAL`</td>
+      <td scope="row" data-label="Command arg">`index-build-resume-interval`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">30s</td>
+      <td scope="row" data-label="Allowed values">A duration; `0` disables it</td>
+      <td scope="row" data-label="Notes">The interval at which a node looks for index builds that a node which stopped left unfinished, and resumes them.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_INDEX_COMPACTION_INTERVAL`*Since v3.0.0*</td>
@@ -1460,7 +1797,7 @@ surreal db start --allow-all true
       <td scope="row" data-label="Command">`start`, `fix`</td>
       <td scope="row" data-label="Default">info</td>
       <td scope="row" data-label="Allowed values">none, full, error, warn, info, debug, trace</td>
-      <td scope="row" data-label="Notes">The logging level for the database server.</td>
+      <td scope="row" data-label="Notes">The logging level for the database server. In a release build, `trace` and `full` give the same output as `debug`, because the TRACE level is compiled only into debug builds.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_LOG_FILE_ENABLED`*Since v2.4.0*</td>
@@ -1474,7 +1811,7 @@ surreal db start --allow-all true
       <td scope="row" data-label="Env var">`SURREAL_LOG_FILE_FORMAT`*Since v2.4.0*</td>
       <td scope="row" data-label="Command arg">`log-file-format`</td>
       <td scope="row" data-label="Command">`start`</td>
-      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Default">text</td>
       <td scope="row" data-label="Allowed values">text, json</td>
       <td scope="row" data-label="Notes">The format for log file output.</td>
     </tr>
@@ -1484,7 +1821,7 @@ surreal db start --allow-all true
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">none</td>
       <td scope="row" data-label="Allowed values">none, full, error, warn, info, debug, trace</td>
-      <td scope="row" data-label="Notes">Override the logging level for file output</td>
+      <td scope="row" data-label="Notes">Override the logging level for file output. In a release build, `trace` and `full` give the same output as `debug`, because the TRACE level is compiled only into debug builds.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_LOG_FILE_NAME`*Since v2.4.0*</td>
@@ -1525,7 +1862,7 @@ surreal db start --allow-all true
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">SURREAL_LOG logging level</td>
       <td scope="row" data-label="Allowed values">none, full, error, warn, info, debug, trace</td>
-      <td scope="row" data-label="Notes">Override the logging level for OpenTelemetry</td>
+      <td scope="row" data-label="Notes">Override the logging level for OpenTelemetry. In a release build, `trace` and `full` give the same output as `debug`, because the TRACE level is compiled only into debug builds.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_LOG_SOCKET`*Since v3.0.0*</td>
@@ -1549,15 +1886,23 @@ surreal db start --allow-all true
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">SURREAL_LOG logging level</td>
       <td scope="row" data-label="Allowed values">none, full, error, warn, info, debug, trace</td>
-      <td scope="row" data-label="Notes">  Override the logging level for socket logs. Possible values: none, full, error, warn, info, debug, trace</td>
+      <td scope="row" data-label="Notes">Override the logging level for socket logs. In a release build, `trace` and `full` give the same output as `debug`, because the TRACE level is compiled only into debug builds.</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_NAME`</td>
+      <td scope="row" data-label="Env var">`SURREAL_ML_EXPORT_MODEL_NAME`*Since v3.0.1*</td>
       <td scope="row" data-label="Command arg">`name`</td>
       <td scope="row" data-label="Command">`ml export`</td>
       <td scope="row" data-label="Default">none</td>
       <td scope="row" data-label="Allowed values">A string</td>
-      <td scope="row" data-label="Notes">The name of the model.</td>
+      <td scope="row" data-label="Notes">The name of the model. Before 3.0.1 this variable was named `SURREAL_NAME`, which later versions ignore.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_ML_EXPORT_MODEL_VERSION`*Since v3.0.1*</td>
+      <td scope="row" data-label="Command arg">`version`</td>
+      <td scope="row" data-label="Command">`ml export`</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">A string</td>
+      <td scope="row" data-label="Notes">The version of the model. Before 3.0.1 this variable was named `SURREAL_VERSION`, which later versions ignore.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_NAMESPACE`</td>
@@ -1621,7 +1966,7 @@ surreal db start --allow-all true
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">3s</td>
       <td scope="row" data-label="Allowed values">A duration</td>
-      <td scope="row" data-label="Notes">The interval at which to refresh node registration information. The <a href="/docs/reference/rest-api/http-protocol#ready">`/ready`</a> endpoint reports the node unhealthy when its cluster heartbeat is older than three times this interval (9s by default). The multiple is fixed and cannot be configured.</td>
+      <td scope="row" data-label="Notes">The interval at which to refresh node registration information. The <a href="/docs/reference/rest-api/http-protocol#ready">`/ready`</a> endpoint reports the node unhealthy when its cluster heartbeat is older than three times this interval (9s by default). The multiple is fixed and cannot be configured. From SurrealDB 4.0, on a datastore that several nodes write, such as TiKV, a value above 10s stops the node from starting.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_PASS`</td>
@@ -1629,12 +1974,12 @@ surreal db start --allow-all true
       <td scope="row" data-label="Command">`export`, `import`, `sql`, `start`</td>
       <td scope="row" data-label="Default">none</td>
       <td scope="row" data-label="Allowed values">A string</td>
-      <td scope="row" data-label="Notes">Database authentication password to use when connecting.</td>
+      <td scope="row" data-label="Notes">Database authentication password to use when connecting. For `start`, the password of the initial root user, which cannot be empty or only whitespace.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">SURREAL_PATH</td>
       <td scope="row" data-label="Command arg">`path`</td>
-      <td scope="row" data-label="Command">`fix`, `start`</td>
+      <td scope="row" data-label="Command">`fix`, `mcp`, `start`</td>
       <td scope="row" data-label="Default">memory</td>
       <td scope="row" data-label="Allowed values">A string</td>
       <td scope="row" data-label="Notes">Database path used for storing data. As a required argument (albeit with a default), it is not passed in via `--path`.</td>
@@ -1643,9 +1988,9 @@ surreal db start --allow-all true
       <td scope="row" data-label="Env var">`SURREAL_PLANNER_STRATEGY`*Since v3.0.0*</td>
       <td scope="row" data-label="Command arg">`planner-strategy`</td>
       <td scope="row" data-label="Command">`start`</td>
-      <td scope="row" data-label="Default">best-effort</td>
+      <td scope="row" data-label="Default">None (before 4.0.0, best-effort)</td>
       <td scope="row" data-label="Allowed values">best-effort|compute-only|all-read-only</td>
-      <td scope="row" data-label="Notes">Which strategy to use with the new query planner introduced in SurrealDB 3.0. The default setting uses the new planner for read-only statements, falling back to the previous compute planner on unimplemented paths. The new planner can be skipped entirely by using compute-only.</td>
+      <td scope="row" data-label="Notes">Deprecated, and has no effect from 4.0.0 as queries run on a single execution engine. The server still accepts the three values so that an existing configuration keeps starting, logs a deprecation warning and ignores them, and refuses to start on any other value. Remove it from your configuration. Before 4.0.0 it chose how far to use the query planner introduced in 3.0: the default used the new planner for read-only statements and fell back to the earlier compute planner on paths it did not implement, and compute-only skipped the new planner entirely.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_QUERY_TIMEOUT`</td>
@@ -1681,13 +2026,12 @@ surreal db start --allow-all true
       <td scope="row" data-label="Notes">A duration specifying the minimum execution time after which a log is made to indicate a slow query</td>
     </tr>
     <tr>
-      <td scope="row" data-label="Env var">`SURREAL_SLOW_QUERY_LOG_PARAM_ALLOW`  
-`slow-log-param-allow` *Since v2.3.9*</td>
+      <td scope="row" data-label="Env var">`SURREAL_SLOW_QUERY_LOG_PARAM_ALLOW`*Since v2.3.9*</td>
       <td scope="row" data-label="Command arg">`slow-log-param-allow`</td>
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">none</td>
       <td scope="row" data-label="Allowed values">Comma-separated strings</td>
-      <td scope="row" data-label="Notes">A comma-separated list of parameter names to include in slow query logs.</td>
+      <td scope="row" data-label="Notes">A comma-separated list of parameter names whose values are listed in slow query logs. No parameter value is logged unless its name is listed here. See <a href="/docs/manage/observability/logging">Logging</a>.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_SLOW_QUERY_LOG_PARAM_DENY`*Since v2.3.9*</td>
@@ -1695,7 +2039,7 @@ surreal db start --allow-all true
       <td scope="row" data-label="Command">`start`</td>
       <td scope="row" data-label="Default">none</td>
       <td scope="row" data-label="Allowed values">Comma-separated strings</td>
-      <td scope="row" data-label="Notes">A comma-separated list of parameter names to omit from slow query logs.</td>
+      <td scope="row" data-label="Notes">A comma-separated list of parameter names whose values are left out of slow query logs, even when `SURREAL_SLOW_QUERY_LOG_PARAM_ALLOW` also names them.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_STRICT`</td>
@@ -1717,9 +2061,33 @@ surreal db start --allow-all true
       <td scope="row" data-label="Env var">`SURREAL_TEMPORARY_DIRECTORY`</td>
       <td scope="row" data-label="Command arg">`temporary-directory`</td>
       <td scope="row" data-label="Command">`start`</td>
-      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Default">A `surrealdb` folder in the system temporary directory *Since v4.0.0*</td>
       <td scope="row" data-label="Allowed values">String to a directory</td>
-      <td scope="row" data-label="Notes">Sets the directory for storing temporary database files</td>
+      <td scope="row" data-label="Notes">Sets the directory for storing temporary database files, including the files that queries spill to when they pass their memory budget. Before 4.0.0 there was no default and the directory was used only by queries with `TEMPFILES`. A value that is not a directory is refused at startup. See <a href="#memory-limits-and-spilling-to-disk">Memory limits and spilling to disk</a>.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_GC_INTERVAL`</td>
+      <td scope="row" data-label="Command arg">`tikv-gc-interval`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">10m</td>
+      <td scope="row" data-label="Allowed values">A duration</td>
+      <td scope="row" data-label="Notes">The interval at which the TiKV MVCC garbage collector runs. Only used with a TiKV datastore.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_GC_LIFETIME`</td>
+      <td scope="row" data-label="Command arg">`tikv-gc-lifetime`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">10m</td>
+      <td scope="row" data-label="Allowed values">A duration</td>
+      <td scope="row" data-label="Notes">How far behind the current timestamp the TiKV garbage collection safepoint may sit. Only used with a TiKV datastore. The effective `SURREAL_RECLAIM_GRACE` is never shorter than this value.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_LOCK_CLEANUP_INTERVAL`</td>
+      <td scope="row" data-label="Command arg">`tikv-lock-cleanup-interval`</td>
+      <td scope="row" data-label="Command">`start`</td>
+      <td scope="row" data-label="Default">60s</td>
+      <td scope="row" data-label="Allowed values">A duration</td>
+      <td scope="row" data-label="Notes">The interval at which stale TiKV transaction locks are resolved. Only used with a TiKV datastore.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_TOKEN`</td>
@@ -1751,15 +2119,7 @@ surreal db start --allow-all true
       <td scope="row" data-label="Command">`export`, `import`, `sql`, start</td>
       <td scope="row" data-label="Default">none</td>
       <td scope="row" data-label="Allowed values">A string</td>
-      <td scope="row" data-label="Notes">Database authentication username to use when connecting.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_VERSION`</td>
-      <td scope="row" data-label="Command arg">`version`</td>
-      <td scope="row" data-label="Command">`ml export`</td>
-      <td scope="row" data-label="Default">none</td>
-      <td scope="row" data-label="Allowed values">A string</td>
-      <td scope="row" data-label="Notes">The version of the ML model.</td>
+      <td scope="row" data-label="Notes">Database authentication username to use when connecting. For `start`, the username of the initial root user, which cannot be empty or only whitespace.</td>
     </tr>
     <tr>
       <td scope="row" data-label="Env var">`SURREAL_WEB_CRT`</td>
@@ -1784,7 +2144,7 @@ surreal db start --allow-all true
 
 *Since v3.3.0*
 
-These variables throttle authentication attempts on the HTTP `/signin` and `/signup` endpoints, per client address. Both endpoints draw on one shared budget. The limiter is off by default, and setting any of the burst, rate, or tracked-client values to `0` also turns it off.
+These variables throttle authentication attempts on the HTTP `/signin` and `/signup` endpoints, per client address. Both endpoints draw on one shared budget. A request to any other endpoint that carries HTTP Basic credentials (`Authorization: Basic ...`) is counted as a sign-in attempt and draws on the same budget. The limiter is off by default, and setting any of the burst, rate, or tracked-client values to `0` also turns it off.
 
 An attempt that exceeds the budget is answered with `429 Too Many Requests` and a `Retry-After` header giving the seconds to wait.
 
@@ -1832,7 +2192,195 @@ An attempt that exceeds the budget is answered with `429 Too Many Requests` and 
 
 These environment variables are used to configure the storage backend for SurrealDB.
 
+Some defaults below depend on system memory. That is the memory available to the SurrealDB process: the host's memory, lowered to the tightest memory limit of the cgroup the process runs in, whether that limit comes from a container or from a systemd unit's `MemoryMax`. Before SurrealDB 4.0, only a limit at the root of the process's cgroup hierarchy was read, which covers containers but not a systemd unit, so a server capped by systemd sized its caches from the whole host.
+
+### SurrealKV environment variables
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col" style={{width: '50%'}}>Environment variable</th>
+      <th scope="col" style={{width: '15%'}}>Default</th>
+      <th scope="col" style={{width: '15%'}}>Allowed values</th>
+      <th scope="col" style={{width: '30%'}}>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_BLOCK_CACHE_CAPACITY`</td>
+      <td scope="row" data-label="Default">Dynamically calculated via greater of ((system memory / 2) - 1 GiB) and 16MiB</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">The capacity of the block cache in bytes. The cache holds recently read data blocks in memory.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_BLOCK_SIZE`</td>
+      <td scope="row" data-label="Default">65_536 (64 KiB)</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">The block size in bytes.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_ENABLE_VLOG`</td>
+      <td scope="row" data-label="Default">true</td>
+      <td scope="row" data-label="Allowed values">true, false</td>
+      <td scope="row" data-label="Notes">Whether to enable value log separation.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_GROUPED_COMMIT_MAX_BATCH_SIZE`</td>
+      <td scope="row" data-label="Default">4096</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">The maximum number of transactions in a single grouped commit batch. This prevents unbounded memory growth while still allowing large batches for efficiency. Larger batches improve throughput but increase memory usage and commit latency. From 4.0 the setting has no effect, because SurrealKV groups the syncs of concurrent commits itself, and the server logs a warning and ignores it.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_GROUPED_COMMIT_TIMEOUT`</td>
+      <td scope="row" data-label="Default">5ms</td>
+      <td scope="row" data-label="Allowed values">A duration in nanoseconds</td>
+      <td scope="row" data-label="Notes">The maximum wait time in nanoseconds before forcing a grouped commit. Ensures that transactions do not wait indefinitely under low concurrency and balances commit latency against write throughput. From 4.0 the setting has no effect, because SurrealKV groups the syncs of concurrent commits itself, and the server logs a warning and ignores it.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_GROUPED_COMMIT_WAIT_THRESHOLD`</td>
+      <td scope="row" data-label="Default">12</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">Threshold for deciding whether to wait for more transactions. If the current batch size is greater or equal to this threshold (and below SURREAL_SURREALKV_GROUPED_COMMIT_MAX_BATCH_SIZE), then the coordinator will wait up to SURREAL_SURREALKV_GROUPED_COMMIT_TIMEOUT to collect more transactions. Smaller batches are flushed immediately to preserve low latency. From 4.0 the setting has no effect, because SurrealKV groups the syncs of concurrent commits itself, and the server logs a warning and ignores it.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_MAX_MEMTABLE_SIZE`*Since v3.1.0*</td>
+      <td scope="row" data-label="Default">Depends on system memory: 64 MiB below 1 GiB, 128 MiB below 4 GiB, 256 MiB below 16 GiB, 1 GiB below 64 GiB, and 4 GiB otherwise</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">The size of the memory area that holds the memtable, which holds recent writes before they are flushed to disk. From 4.0 it bounds the memory the memtable holds, not the size of a transaction: a commit too large for the memtable is written directly to a level-0 table. Before 4.0 a transaction larger than this fails, so raise it for large transactions.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_VERSIONED_INDEX`</td>
+      <td scope="row" data-label="Default">false</td>
+      <td scope="row" data-label="Allowed values">true, false</td>
+      <td scope="row" data-label="Notes">Whether to enable versioned index. Only applies when versioning is enabled. From 4.0 the setting has no effect, because SurrealKV 1.0 reads versions without a separate index, and the server logs a warning and ignores it.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_VLOG_MAX_FILE_SIZE`</td>
+      <td scope="row" data-label="Default">64 MiB (systems under 4 GiB), 128 MiB (up to 16 GiB), 256 MiB (up to 64 GiB), 512 MiB (others)</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">The maximum size of a value log file in bytes.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_VLOG_THRESHOLD`</td>
+      <td scope="row" data-label="Default">4096 (4 KiB)</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">The value log threshold in bytes. Values larger than this are stored in the value log.</td>
+    </tr>
+  </tbody>
+</table>
+
+### TiKV environment variables
+
+> [!IMPORTANT]
+> These variables apply when SurrealDB is started with a `tikv://` endpoint for **local Community experimentation**. They are not the configuration surface for production multi-node HA. Prefer a managed cluster on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) or a self-hosted cluster with [SurrealDB Enterprise](https://surrealdb.com/enterprise). See [Run a multi-node cluster](../../../running/multi-node.md).
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col" style={{width: '50%'}}>Environment variable</th>
+      <th scope="col" style={{width: '15%'}}>Default</th>
+      <th scope="col" style={{width: '15%'}}>Allowed values</th>
+      <th scope="col" style={{width: '30%'}}>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_API_VERSION`</td>
+      <td scope="row" data-label="Default">1</td>
+      <td scope="row" data-label="Allowed values">A u8</td>
+      <td scope="row" data-label="Notes">Which TiKV cluster API version to use.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_ASYNC_COMMIT`</td>
+      <td scope="row" data-label="Default">true</td>
+      <td scope="row" data-label="Allowed values">true, false</td>
+      <td scope="row" data-label="Notes">Whether to use asynchronous transactions.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_KEYSPACE`</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">A string</td>
+      <td scope="row" data-label="Notes">A string specifying the keyspace identifier for data isolation.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_DELR_MAX_KEYS`</td>
+      <td scope="row" data-label="Default">1,000,000</td>
+      <td scope="row" data-label="Allowed values">A u32</td>
+      <td scope="row" data-label="Notes">The most keys that one range delete in a TiKV transaction may remove. A larger range fails with an error rather than growing the transaction without bound.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_GC_ENABLED`</td>
+      <td scope="row" data-label="Default">true</td>
+      <td scope="row" data-label="Allowed values">true, false</td>
+      <td scope="row" data-label="Notes">Whether the background TiKV garbage collection runs. When `false`, the stale lock cleanup is skipped as well. The interval and lifetime are set with `SURREAL_TIKV_GC_INTERVAL` and `SURREAL_TIKV_GC_LIFETIME`, described under <a href="#command-environment-variables">Command environment variables</a>.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_GRPC_MAX_DECODING_MESSAGE_SIZE`</td>
+      <td scope="row" data-label="Default">4,194,304 (4 MiB)</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">Sets the maximum size of a gRPC message that SurrealDB receives from TiKV, which limits how much one read can return. A single record or a batch of records larger than this fails with `decoded message length too large`. Raise it together with `SURREAL_TIKV_GRPC_MAX_ENCODING_MESSAGE_SIZE`, so that a record that can be written can also be read back.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_GRPC_MAX_ENCODING_MESSAGE_SIZE`</td>
+      <td scope="row" data-label="Default">4,194,304 (4 MiB)</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">Sets the maximum size of a gRPC message that SurrealDB sends to TiKV, which limits the size of a single write. A record larger than this fails with an `h2 protocol error`. TiKV refuses a single write above its own entry limit of 8 MiB whatever this is set to, with `The transaction is too large`.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_HEALTH_PROBE`</td>
+      <td scope="row" data-label="Default">true</td>
+      <td scope="row" data-label="Allowed values">true, false</td>
+      <td scope="row" data-label="Notes">Whether the server checks that the TiKV cluster answers when it connects at startup, so that an unreachable cluster fails the start rather than the first query.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_ONE_PHASE_COMMIT`</td>
+      <td scope="row" data-label="Default">true</td>
+      <td scope="row" data-label="Allowed values">true, false</td>
+      <td scope="row" data-label="Notes">Whether to use one-phase transaction commit.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_REQUEST_TIMEOUT`</td>
+      <td scope="row" data-label="Default">10</td>
+      <td scope="row" data-label="Allowed values">A usize</td>
+      <td scope="row" data-label="Notes">The duration in seconds for requests before they time out.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_SHUTDOWN_GRACE`</td>
+      <td scope="row" data-label="Default">30</td>
+      <td scope="row" data-label="Allowed values">Seconds (integer)</td>
+      <td scope="row" data-label="Notes">How long a shutdown waits for running transactions to finish before it continues.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_SHUTDOWN_GC_TIMEOUT`</td>
+      <td scope="row" data-label="Default">10</td>
+      <td scope="row" data-label="Allowed values">Seconds (integer)</td>
+      <td scope="row" data-label="Notes">The longest that the last garbage collection pass at shutdown may take, so that a slow pass does not hold up the exit.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_TLS_CA_PATH`*Since v3.3.0*</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">A file path</td>
+      <td scope="row" data-label="Notes">Path to the CA certificate used to verify the TiKV and PD servers. Setting all three `SURREAL_TIKV_TLS_*` variables switches the connection to mutual TLS (mTLS).</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_TLS_CERT_PATH`*Since v3.3.0*</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">A file path</td>
+      <td scope="row" data-label="Notes">Path to the client certificate that SurrealDB presents during mTLS. It must be set together with the CA and key paths.</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Env var">`SURREAL_TIKV_TLS_KEY_PATH`*Since v3.3.0*</td>
+      <td scope="row" data-label="Default">none</td>
+      <td scope="row" data-label="Allowed values">A file path</td>
+      <td scope="row" data-label="Notes">Path to the private key that matches the client certificate. It must be set together with the CA and certificate paths. If only some of the three paths are set, SurrealDB refuses to connect and reports which are missing.</td>
+    </tr>
+  </tbody>
+</table>
+
 ### RocksDB environment variables
+
+> [!WARNING]
+> RocksDB support was removed in SurrealDB 4.0. These variables apply to 3.x and earlier only. See [Moving a RocksDB database to SurrealKV](../../../manage/self-hosted/deployment-models.md#moving-a-rocksdb-database-to-surrealkv).
 
 Many RocksDB environment variables pertain to memory use. The default configuration results in the following rough estimates of RocksDB memory use on different instances:
 
@@ -2187,153 +2735,6 @@ The available environment variables for configuring a RocksDB instance are:
       <td scope="row" data-label="Default">true</td>
       <td scope="row" data-label="Allowed values">true, false</td>
       <td scope="row" data-label="Notes">Whether to sync writes to disk before acknowledgement. 2.x only: replaced in 3.0.0 by `SURREAL_DATASTORE_SYNC_DATA`.</td>
-    </tr>
-  </tbody>
-</table>
-
-### SurrealKV environment variables
-
-<table>
-  <thead>
-    <tr>
-      <th scope="col" style={{width: '50%'}}>Environment variable</th>
-      <th scope="col" style={{width: '15%'}}>Default</th>
-      <th scope="col" style={{width: '15%'}}>Allowed values</th>
-      <th scope="col" style={{width: '30%'}}>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_BLOCK_CACHE_CAPACITY`</td>
-      <td scope="row" data-label="Default">Dynamically calculated via greater of ((system memory / 2) - 1 GiB) and 16MiB</td>
-      <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The maximum log file size in bytes.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_BLOCK_SIZE`</td>
-      <td scope="row" data-label="Default">65_536 (64 KiB)</td>
-      <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The block size in bytes.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_ENABLE_VLOG`</td>
-      <td scope="row" data-label="Default">true</td>
-      <td scope="row" data-label="Allowed values">true, false</td>
-      <td scope="row" data-label="Notes">Whether to enable value log separation.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_GROUPED_COMMIT_MAX_BATCH_SIZE`</td>
-      <td scope="row" data-label="Default">4096</td>
-      <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The maximum number of transactions in a single grouped commit batch. This prevents unbounded memory growth while still allowing large batches for efficiency. Larger batches improve throughput but increase memory usage and commit latency.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_GROUPED_COMMIT_TIMEOUT`</td>
-      <td scope="row" data-label="Default">5ms</td>
-      <td scope="row" data-label="Allowed values">A duration in nanoseconds</td>
-      <td scope="row" data-label="Notes">The maximum wait time in nanoseconds before forcing a grouped commit. Ensures that transactions do not wait indefinitely under low concurrency and balances commit latency against write throughput.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_GROUPED_COMMIT_WAIT_THRESHOLD`</td>
-      <td scope="row" data-label="Default">12</td>
-      <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">Threshold for deciding whether to wait for more transactions. If the current batch size is greater or equal to this threshold (and below SURREAL_SURREALKV_GROUPED_COMMIT_MAX_BATCH_SIZE), then the coordinator will wait up to SURREAL_SURREALKV_GROUPED_COMMIT_TIMEOUT to collect more transactions. Smaller batches are flushed immediately to preserve low latency.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_MAX_MEMTABLE_SIZE`*Since v3.1.0*</td>
-      <td scope="row" data-label="Default">Depends on system memory: 64 MiB below 1 GiB, 128 MiB below 4 GiB, 256 MiB below 16 GiB, 1 GiB below 64 GiB, and 4 GiB otherwise</td>
-      <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The size of the memory area that holds the memtable. A transaction larger than this fails, so raise it for large transactions.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_VERSIONED_INDEX`</td>
-      <td scope="row" data-label="Default">false</td>
-      <td scope="row" data-label="Allowed values">true, false</td>
-      <td scope="row" data-label="Notes">Whether to enable versioned index. Only applies when versioning is enabled.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_VLOG_MAX_FILE_SIZE`</td>
-      <td scope="row" data-label="Default">64 MiB (systems under 4 GiB), 128 MiB (up to 16 GiB), 256 MiB (up to 64 GiB), 512 MiB (others)</td>
-      <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The readahead buffer size used during compaction.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_SURREALKV_VLOG_THRESHOLD`</td>
-      <td scope="row" data-label="Default">4096 (4 KiB)</td>
-      <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The value log threshold in bytes. Values larger than this are stored in the value log.</td>
-    </tr>
-  </tbody>
-</table>
-
-### TiKV environment variables
-
-> [!IMPORTANT]
-> These variables apply when SurrealDB is started with a `tikv://` endpoint for **local Community experimentation**. They are not the configuration surface for production multi-node HA. Prefer a managed cluster on [SurrealDB Cloud Scale](https://surrealdb.com/pricing/scale) or a self-hosted cluster with [SurrealDB Enterprise](https://surrealdb.com/enterprise). See [Run a multi-node cluster](../../../running/multi-node.md).
-
-<table>
-  <thead>
-    <tr>
-      <th scope="col" style={{width: '50%'}}>Environment variable</th>
-      <th scope="col" style={{width: '15%'}}>Default</th>
-      <th scope="col" style={{width: '15%'}}>Allowed values</th>
-      <th scope="col" style={{width: '30%'}}>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_TIKV_API_VERSION`</td>
-      <td scope="row" data-label="Default">1</td>
-      <td scope="row" data-label="Allowed values">A u8</td>
-      <td scope="row" data-label="Notes">Which TiKV cluster API version to use.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_TIKV_ASYNC_COMMIT`</td>
-      <td scope="row" data-label="Default">true</td>
-      <td scope="row" data-label="Allowed values">true, false</td>
-      <td scope="row" data-label="Notes">Whether to use asynchronous transactions.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_TIKV_KEYSPACE`</td>
-      <td scope="row" data-label="Default">none</td>
-      <td scope="row" data-label="Allowed values">A string</td>
-      <td scope="row" data-label="Notes">A string specifying the keyspace identifier for data isolation.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_TIKV_GRPC_MAX_DECODING_MESSAGE_SIZE`</td>
-      <td scope="row" data-label="Default">4,194,304 (4 MiB)</td>
-      <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">Sets the maximum decoding size of a gRPC message.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_TIKV_ONE_PHASE_COMMIT`</td>
-      <td scope="row" data-label="Default">true</td>
-      <td scope="row" data-label="Allowed values">true, false</td>
-      <td scope="row" data-label="Notes">Whether to use one-phase transaction commit.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_TIKV_REQUEST_TIMEOUT`</td>
-      <td scope="row" data-label="Default">10</td>
-      <td scope="row" data-label="Allowed values">A usize</td>
-      <td scope="row" data-label="Notes">The duration in seconds for requests before they time out.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_TIKV_TLS_CA_PATH`*Since v3.3.0*</td>
-      <td scope="row" data-label="Default">none</td>
-      <td scope="row" data-label="Allowed values">A file path</td>
-      <td scope="row" data-label="Notes">Path to the CA certificate used to verify the TiKV and PD servers. Setting all three `SURREAL_TIKV_TLS_*` variables switches the connection to mutual TLS (mTLS).</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_TIKV_TLS_CERT_PATH`*Since v3.3.0*</td>
-      <td scope="row" data-label="Default">none</td>
-      <td scope="row" data-label="Allowed values">A file path</td>
-      <td scope="row" data-label="Notes">Path to the client certificate that SurrealDB presents during mTLS. It must be set together with the CA and key paths.</td>
-    </tr>
-    <tr>
-      <td scope="row" data-label="Env var">`SURREAL_TIKV_TLS_KEY_PATH`*Since v3.3.0*</td>
-      <td scope="row" data-label="Default">none</td>
-      <td scope="row" data-label="Allowed values">A file path</td>
-      <td scope="row" data-label="Notes">Path to the private key that matches the client certificate. It must be set together with the CA and certificate paths. If only some of the three paths are set, SurrealDB refuses to connect and reports which are missing.</td>
     </tr>
   </tbody>
 </table>

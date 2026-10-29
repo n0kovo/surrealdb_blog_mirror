@@ -1,41 +1,50 @@
 ---
 position: 2
 title: Using WASM plugins
-description: How to load a pre-built Surrealism module archive into SurrealDB, register it, inspect exports, and call functions from SurrealQL.
+description: "How to install a pre-built Surrealism extension archive into SurrealDB: inspect its exports, check its signer, grant capabilities, and call its functions from SurrealQL."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/learn/extensions/guides/using-wasm-plugins.mdx"
 ---
 
 # Using WASM plugins
 
-You do not have to author Rust yourself to benefit from Surrealism. Many teams consume a **pre-built `.surli` archive** produced by another team or pipeline. Authoring a module means writing Rust, configuring `surrealism.toml`, and running [`surreal db module`](../../../reference/cli/db/commands/module.md) yourself. This page focuses on the consumer workflow.
+You do not have to author Rust yourself to benefit from Surrealism. Many teams install a **pre-built `.surli` archive** produced by another team or pipeline, or a package published to Silo. Writing an extension means writing Rust, configuring `package.toml`, and running [`surreal ext build`](../../../reference/cli/ext.md) yourself, as described in [Creating custom extensions](creating-custom-extensions.md). This page focuses on installing one.
 
-## Storing the module archive
+## Inspecting an archive before use
 
-SurrealDB needs access to the `.surli` binary. Use [`DEFINE BUCKET`](../../../reference/query-language/statements/define/bucket.md) to create or configure bucket storage, then upload the `.surli` file according to your environment’s path and permissions model.
-
-## Registering the module
-
-Once the binary is stored, [`DEFINE MODULE`](../../../reference/query-language/statements/define/module.md) associates that artefact with a module name and exposes the compiled functions to SurrealQL. The module definition must line up with the exported function names and signatures from the build.
-
-## Inspecting exports before use
-
-If you receive a module from another team, inspect it locally before upload:
+If you receive an archive from another team, inspect it locally first:
 
 ```bash
-surreal db module info demo.surli
-surreal db module sig --fnc can_drive demo.surli
+surreal ext info demo.surli
+surreal ext sig --fnc can_drive demo.surli
 ```
 
-These commands let you verify function signatures and metadata (such as writeable/comment annotations) before registration.
+These commands show the functions it exports, their signatures, and whether each one can write.
+
+## Storing the archive
+
+SurrealDB needs access to the `.surli` file. Use [`DEFINE BUCKET`](../../../reference/query-language/statements/define/bucket.md) to create or configure bucket storage, then upload the file according to your environment's path and permissions model. A Silo package needs no bucket, because the database fetches it from Silo.
+
+## Installing the extension
+
+[`surreal ext install`](../../../reference/cli/ext.md#ext-install) reads the archive, shows who signed it, its digest, the functions it adds and the capabilities it requests, and asks which to accept before it defines the extension:
+
+```bash
+surreal ext install 'f"extensions:/demo.surli"' --as demo \
+    -e ws://localhost:8000 -u root -p secret --ns app --db main
+```
+
+Confirm the signer's key fingerprint or CI identity with the team that published the archive before you accept it. In a script, pass the decisions as flags, such as `--trust-signer` and `--with-capability`.
+
+The command runs a [`DEFINE EXTENSION`](../../../reference/query-language/statements/define/extension.md) statement, which can also be written by hand when the signer and capabilities are already known.
 
 ## Calling functions from SurrealQL
 
-After the module is defined, call its exported functions by qualifying the function with the registered module path. Consult your module’s documentation for exact names and parameters.
+After the extension is defined, call its functions through the name it was installed as, such as `ext::demo::can_drive(18)`. Consult the extension's documentation for exact names and parameters.
 
-If you upgrade the module archive, repeat upload and module definition steps (or your deployment automation) so the running instance picks up the new build.
+To move to a new version of the archive, upload it under a new file name and run [`surreal ext upgrade`](../../../reference/cli/ext.md#ext-upgrade), which compares the new signer and capabilities with the installed ones before it redefines the extension.
 
 ## Further reading
 
-- [Surrealism overview](../plugins/overview.md) - how compilation, buckets, and modules fit together.
+- [Surrealism overview](../plugins/overview.md) - how compilation, buckets, and extensions fit together.
 - [`DEFINE BUCKET` reference](../../../reference/query-language/statements/define/bucket.md) - file storage for WASM.
-- [`DEFINE MODULE` reference](../../../reference/query-language/statements/define/module.md) - registering Surrealism functions.
+- [`DEFINE EXTENSION` reference](../../../reference/query-language/statements/define/extension.md) - `DIGEST`, `SIGNER` and `CAPABILITIES`.

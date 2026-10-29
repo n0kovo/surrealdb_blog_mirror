@@ -1,7 +1,7 @@
 ---
 position: 1
 title: Installation
-description: "Install the surreal command-line tool and the SurrealDB database on macOS, Windows and Linux. Nightly builds and the install script's options are covered too."
+description: "Install the surreal command-line tool and the SurrealDB database on macOS, Windows and Linux. Beta and nightly builds and the install script's options are covered too."
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/running/installation/index.mdx"
 ---
 
@@ -29,6 +29,7 @@ You can install SurrealDB on the following operating systems:
 
 Running and maintaining your own database can be a time consuming task. That's why we offer [SurrealDB Cloud](../../manage/instances/index.md), a fully managed database service that allows you to focus on building your applications without worrying about the underlying infrastructure.
 
-## Nightly builds
+## Beta and nightly builds
 
+- [Beta](beta.md) - install the SurrealDB 4.0 beta before its stable release
 - [Nightly](nightly.md) - install an unreleased build to try changes early

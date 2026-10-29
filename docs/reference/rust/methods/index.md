@@ -22,6 +22,10 @@ The table below lists documented methods **in alphabetical order** (by page name
 	</thead>
 	<tbody>
 		<tr>
+			<td scope="row" data-label="Function"><a href="/docs/reference/rust/methods/api"> `db.api()`</a></td>
+			<td scope="row" data-label="Description">Invokes the endpoints defined with `DEFINE API`</td>
+		</tr>
+		<tr>
 			<td scope="row" data-label="Function"><a href="/docs/reference/rust/methods/authenticate"> `db.authenticate()`</a></td>
 			<td scope="row" data-label="Description">Authenticates the current connection with a JWT token</td>
 		</tr>

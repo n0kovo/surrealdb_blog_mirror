@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 *Since v3.0.0*
 
-The `ALTER DATABASE` statement can be used to modify the database. `ALTER DATABASE` is used on the current database, which is why a `IF EXISTS` clause does not exist.
+The `ALTER DATABASE` statement can be used to modify a database. Without a name, it applies to the current database, which is why an `IF EXISTS` clause does not exist.
 
 ## Statement syntax
 
@@ -15,31 +15,41 @@ The `ALTER DATABASE` statement can be used to modify the database. `ALTER DATABA
 **SurrealQL Syntax**
 
 ```syntax title="SurrealQL Syntax"
-ALTER DATABASE COMPACT
+ALTER DATABASE [ @name ]
+    COMPACT |
+    COMPATIBILITY 3 | 4
 ```
 
   
 **Railroad Diagram**
 
 ```
-        ╭────────────────╮     ╭─────────╮       
-├┼──────│ ALTER DATABASE │─────│ COMPACT │─────┼┤
-        ╰────────────────╯     ╰─────────╯
+                             ╭─────────────╮                                            
+                             │             │                                            
+        ╭────────────────╮   │  ┌───────┐  │              ╭─────────╮                   
+├┼──────│ ALTER DATABASE │───╯──│ @name │──╰─╮────────────│ COMPACT │─────────────╭───┼┤
+        ╰────────────────╯      └───────┘    │            ╰─────────╯             │     
+                                             │                                    │     
+                                             │                           ╭───╮    │     
+                                             │                        ╭──│ 3 │──╮ │     
+                                             │                        │  ╰───╯  │ │     
+                                             │                        │         │ │     
+                                             │    ╭───────────────╮   │  ╭───╮  │ │     
+                                             ╰────│ COMPATIBILITY │───╯──│ 4 │──╰─╯     
+                                                  ╰───────────────╯      ╰───╯
 ```
 
 ## COMPACT
 
 Performs storage compaction on the current database keyspace. To compact other resources, use [ALTER SYSTEM](system.md) to compact the entire datastore, [ALTER NAMESPACE](namespace.md) to compact the current namespace keyspace, or [ALTER TABLE](table.md) to compact a specific table keyspace.
 
-The actual compaction used will depend on the datastore, such as RocksDB or SurrealKV.
-
-This clause will not work with in-memory storage which has nothing persistent to compact, producing the following error:
+The storage engine carries out the compaction. In SurrealDB 4.0, SurrealKV supports it: it writes recent changes to disk, merges the data files that hold the keys, and drops deleted data and old versions that no reader can see, which frees their space. The statement returns once the compaction is done, and reads and writes carry on meanwhile. Before 4.0, RocksDB was the only engine that supported compaction requests. The in-memory engine and TiKV do not support them, and return the following error:
 
 ```surql
-'The storage layer does not support compaction requests.'
+'There was a problem with the key-value store: The storage layer does not support compaction requests.'
 ```
 
-A successful compaction will return `NONE`.
+A successful compaction returns `NONE`.
 
 ```surql
 ALTER DATABASE COMPACT;
@@ -48,6 +58,55 @@ ALTER DATABASE COMPACT;
 ```surql title="Output"
 NONE
 ```
+
+## COMPATIBILITY
+
+*Since v4.0.0*
+
+Sets the [compatibility level](../define/database.md#compatibility-level) of a database, `3` or `4`. A database that a 3.x release created is at level 3 after an upgrade, and moves to level 4 with:
+
+```surql
+ALTER DATABASE COMPATIBILITY 4;
+```
+
+Raising a database to level 4 checks every field of its `SCHEMAFULL` tables in the background. `INFO FOR TABLE` then lists, under `migrations.verification`, each field with the number of records whose value does not fit its definition, and the fields whose values all fit under `migrations.guaranteed`:
+
+```surql
+INFO FOR TABLE person;
+```
+
+```surql title="Sample output"
+{
+	events: {},
+	fields: {
+		age: 'DEFINE FIELD age ON person TYPE string PERMISSIONS FULL'
+	},
+	indexes: {},
+	lives: {},
+	migrations: {
+		generation: 3,
+		guaranteed: [],
+		migrations: [],
+		verification: [
+			{
+				failures: 2,
+				field: 'age',
+				finished: true
+			}
+		]
+	},
+	tables: {}
+}
+```
+
+A field with failures is one that was changed at level 3 without its records being updated. A [`MIGRATE EXISTING ROWS`](../define/field.md#migrating-existing-records) clause on the field's definition converts those records:
+
+```surql
+DEFINE FIELD OVERWRITE age ON person TYPE string
+    MIGRATE EXISTING ROWS AS age_to_string USING <string> $value FALLBACK '';
+```
+
+Raise the level only once every node runs 4.0. A datastore that still writes the 3.x record format, such as a TiKV cluster that has not been switched with `SURREAL_FEATURE_LEVEL=4.0`, refuses level 4.
 
 ## See also
 

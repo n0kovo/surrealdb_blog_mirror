@@ -25,6 +25,16 @@ The [Swift](../../reference/swift/index.md) and [Kotlin](../../reference/kotlin/
 
 When embedding SurrealDB in web browsers, you have two options:
 
+**SurrealDB 4.0 and later**
+
+- **SurrealKV over OPFS**: SurrealDB can store and persist data within the web browser with SurrealKV, which keeps its files in the browser's Origin Private File System (OPFS). The database has to run in a dedicated web worker, and one database can be open in one tab at a time.
+
+- **SDK**: Alternatively, you can use the SurrealDB SDK to connect to a remote SurrealDB instance instead of storing data in the browser.
+
+Embedding in a browser uses the JavaScript SDK's [WebAssembly engine](../../reference/javascript/engines/wasm.md) (`@surrealdb/wasm`). It connects with `mem://` for an in-memory database or `surrealkv://` for persistent storage, and can run inside a Web Worker so that queries do not block the page. A `surrealkv://` database only opens inside a dedicated worker. IndexedDB (`indxdb://`) was removed in SurrealDB 4.0, and a `surrealkv://` database copies the data of an IndexedDB database with the same name when it is first opened. [Embedded engines](../../reference/javascript/concepts/embedded-engines.md#running-in-a-web-worker) shows both setups.
+
+**Before SurrealDB 4.0**
+
 - **IndexedDB**: SurrealDB can be configured to use IndexedDB to store and persist data within the web browser. SurrealDB first serialises both keys and values into a Uint8Array and uses IndexedDB as a binary key-value store. This gives good performance, and all of the functionality that SurrealDB offers when it runs in other ways.
 
 - **SDK**: Alternatively, you can use the SurrealDB SDK to connect to a remote SurrealDB instance instead of using IndexedDB for local persistence.

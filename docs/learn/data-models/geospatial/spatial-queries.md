@@ -23,7 +23,7 @@ let $harare = (30.463880214538577, -17.865161568822085);
 RETURN geo::distance($london, $harare);
 ```
 
-Exact operators available to your version are documented alongside geometry types and index definitions. You can also use [`EXPLAIN`](../../../reference/query-language/clauses/explain.md) to confirm your query plan when tuning performance.
+Exact operators available to your version are documented alongside geometry types and index definitions. From SurrealDB 4.0, a [`SPATIAL` index](../../../reference/query-language/statements/define/indexes.md#spatial-index) answers the spatial operators and `geo::distance` radius conditions without a scan of the whole table. Use [`EXPLAIN`](../../../reference/query-language/clauses/explain.md) to confirm that a query uses it.
 
 ## Tip: combine with non-spatial filters
 

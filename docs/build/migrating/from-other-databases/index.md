@@ -12,7 +12,7 @@ _Auto-generated index — 6 pages._
 - [Migrating from MongoDB](from-mongodb.md)
   How to map existing data and concepts from MongoDB to SurrealDB
 - [Migrating from MySQL](from-mysql.md)
-  How to map existing data and concepts from PostgreSQL to SurrealDB
+  How to map existing data and concepts from MySQL to SurrealDB
 - [Migrating from Neo4j](from-neo4j.md)
   How to map existing data and concepts from Neo4j to SurrealDB
 - [Migrating from PostgreSQL](from-postgresql.md)

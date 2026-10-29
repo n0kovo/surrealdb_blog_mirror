@@ -1,74 +1,77 @@
 ---
 position: 6
 title: File-backed
-description: Start a RocksDB database that persists data on the filesystem. The quickest way to get started with data that survives a restart.
+description: Start a SurrealDB server that persists data on the filesystem with SurrealKV. The quickest way to get started with data that survives a restart.
 source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/index/running/file-backed.mdx"
 ---
 
 # Run a single-node, on-disk server
 
-A single node of SurrealDB can be run with data persisted to the filesystem. This configuration can be done using either RocksDB or SurrealKV as the backend. Both use the same [transaction and isolation semantics](../learn/querying/concepts-and-guides/transactions.md) as every other SurrealDB deployment.
+A single node of SurrealDB can be run with data persisted to the filesystem, using SurrealKV (`surrealkv://`) as the storage engine. It uses the same [transaction and isolation semantics](../learn/querying/concepts-and-guides/transactions.md) as every other SurrealDB deployment.
 
-**RocksDB**
+**SurrealDB 4.0 and later**
 
-## RocksDB
+SurrealKV is the only on-disk engine. SurrealDB 4.0 removed the RocksDB engine. A `rocksdb://` path is still accepted as a deprecated spelling of `surrealkv://`: the server opens it with SurrealKV, converts any RocksDB data in the directory, and logs a warning to use `surrealkv://` instead. See [Moving a RocksDB database to SurrealKV](../manage/self-hosted/deployment-models.md#moving-a-rocksdb-database-to-surrealkv).
 
-```bash 
-surreal db start rocksdb://mydatabase.db
-```
+**Before SurrealDB 4.0**
 
-The default logging level for the database server is `info`. To control the logging verbosity, specify the `--log` argument. The following command starts the database with `debug` level logging, resulting in more logs being output to the terminal. If extra verbosity is not needed, specify a lower level or simply remove the flag, which will default to the `info` level.
+SurrealKV and RocksDB are both available, and the commands below work with either: replace `surrealkv://` with `rocksdb://` to use RocksDB. SurrealKV was in beta, and RocksDB was the recommended engine.
 
-```bash
-surreal db start --log debug rocksdb://mydatabase.db
-```
-
-The SurrealDB server runs with authentication enabled by default. To disable it, the `--unauthenticated` flag can be passed in.
-
-```bash
-surreal db start --unauthenticated rocksdb://mydatabase.db
-```
-
-However, for anything but simple testing, it is better to configure your initial root-level user by setting the `--user` and `--pass` command-line arguments. The following command starts the database with a top-level user named root with a password set to `secret`. The root user will be persisted in storage, which means you don't have to include the command line arguments next time you start SurrealDB.
+[RocksDB](https://rocksdb.org/) is a high-performance LSM-tree key-value store. It offers more tuning options than SurrealKV for write-heavy, SSD-backed servers.
 
 ```bash
 surreal db start --user root --pass secret rocksdb://mydatabase.db
 ```
 
+A number of parameters can be used on startup, such as `sync` to set when to flush the database to the file system. See [Supported parameters for RocksDB](../reference/cli/db/commands/start.md#supported-parameters-for-rocksdb) for the `start` command, or [RocksDB environment variables](../reference/cli/db/environment-variables.md#rocksdb-environment-variables) to set the same parameters with environment variables.
+
+## Start the server
+
+```bash
+surreal db start surrealkv://mydatabase.db
+```
+
+The default logging level for the database server is `info`. To control the logging verbosity, specify the `--log` argument. The following command starts the database with `debug` level logging, resulting in more logs being output to the terminal. If extra verbosity is not needed, specify a lower level or simply remove the flag, which will default to the `info` level.
+
+```bash
+surreal db start --log debug surrealkv://mydatabase.db
+```
+
+The SurrealDB server runs with authentication enabled by default. To disable it, the `--unauthenticated` flag can be passed in.
+
+```bash
+surreal db start --unauthenticated surrealkv://mydatabase.db
+```
+
+However, for anything but simple testing, it is better to configure your initial root-level user by setting the `--user` and `--pass` command-line arguments. The following command starts the database with a top-level user named root with a password set to `secret`. The root user will be persisted in storage, which means you don't have to include the command line arguments next time you start SurrealDB.
+
+```bash
+surreal db start --user root --pass secret surrealkv://mydatabase.db
+```
+
 In order to change the default port that SurrealDB uses for web connections and from database clients you can use the `--bind` argument. The following command starts the database on port `8080`.
 
 ```bash
-surreal db start --user root --pass secret --bind 0.0.0.0:8080 rocksdb://path/to/mydatabase
+surreal db start --user root --pass secret --bind 0.0.0.0:8080 surrealkv://mydatabase.db
 ```
 
 After running the above command, you should see the SurrealDB server start up successfully.
 
-```text
-surreal db start --user root --pass secret --bind 0.0.0.0:8080 rocksdb://mydatabase.db
-```
-```text title="Output"
-2025-08-30T15:06:34.788739Z  INFO surreal::dbs: ✅🔒 Authentication is enabled 🔒✅
-2025-08-30T15:06:34.788821Z  INFO surrealdb::kvs::ds: Starting kvs store in file:mydatabase.db
-2025-08-30T15:06:34.788859Z  INFO surrealdb::kvs::ds: Started kvs store in file:mydatabase.db
-2025-08-30T15:06:34.789222Z  INFO surrealdb::kvs::ds: Initial credentials were provided and no existing root-level users were found: create the initial user 'root'.
-2025-08-30T15:06:35.205123Z  INFO surrealdb::node: Started node agent
-2025-08-30T15:06:35.205827Z  INFO surrealdb::net: Started web server on 0.0.0.0:8080
+```text title="Sample output"
+INFO surrealdb::core::kvs::ds: Starting kvs store at relative path surrealkv://mydatabase.db
+INFO surrealdb::core::kvs::ds: Started surrealkv kvs store
+INFO surrealdb::core::kvs::ds: This is a new SurrealDB instance. Initialising default namespace 'main' and database 'main'
+INFO surrealdb::core::kvs::ds: Credentials were provided, and no root users were found. The root user 'root' will be created
+INFO surrealdb::net: Started web server on 0.0.0.0:8080
 ```
 
 For details on the different commands available, visit the [CLI tool documentation](../reference/cli/db/index.md).
-
-## Parameters on startup
-
-A number of parameters can be used on startup such as `sync` to set when to flush the database to the file system. For more details on these parameters, see [this page](../reference/cli/db/commands/start.md#supported-parameters-for-rocksdb) for the `start` command or [this page](../reference/cli/db/environment-variables.md#rocksdb-environment-variables) to set the same parameters using environment variables.
-
-**SurrealKV**
 
 ## SurrealKV
 
 [SurrealKV](https://github.com/surrealdb/surrealkv) is an embedded storage engine developed in house by SurrealDB: a versioned key-value store built on an LSM (log-structured merge) tree, with optional time-travel reads when versioning is enabled in SurrealDB. It is implemented in Rust and ships with the main SurrealDB release so the storage layer can evolve with SurrealDB’s access patterns.
 
-> [!IMPORTANT]
-> In SurrealDB 3.3 and earlier, SurrealKV is in beta. SurrealKV has since reached 1.0, and the upcoming SurrealDB 3.4 will use it as the recommended on-disk engine. See [Deployment models](../manage/self-hosted/deployment-models.md#surrealkv-beta) for what changes.
+From SurrealDB 4.0, SurrealDB uses SurrealKV 1.0, which converts a data directory written by RocksDB or by an earlier SurrealKV release the first time it opens it. The conversion is one-way, so take a copy of the directory first, or convert ahead of time into a new directory with `skv migrate`, which leaves the original unchanged. See [Moving a RocksDB database to SurrealKV](../manage/self-hosted/deployment-models.md#moving-a-rocksdb-database-to-surrealkv) and [Converting ahead of time with `skv`](../manage/self-hosted/deployment-models.md#converting-ahead-of-time-with-skv). Before 4.0, SurrealKV was in beta.
 
 ## Key features
 
@@ -97,7 +100,7 @@ Parameters such as `versioned` and `sync` control versioning and durability. See
 
 - Compaction and space: Compaction reclaims space but uses extra I/O and temporary disk headroom while merges run.
 - Read amplification: Point lookups may touch several levels; very wide range scans can require more I/O than a single B-tree-style read, so plan indexes and query shapes accordingly.
-- Platform notes: The SurrealKV library targets Unix-like desktop and server OSes; WebAssembly is not a supported target for the native engine (browser embeddings use IndexedDB via SurrealDB’s WASM stack, not SurrealKV on disk). Windows support exists with some filesystem caveats. See upstream [platform compatibility](https://github.com/surrealdb/surrealkv#platform-compatibility) notes for more details.
+- Platform notes: The SurrealKV library targets Unix-like desktop and server OSes; in the browser, the same engine keeps its files in the Origin Private File System and runs in a dedicated worker (see the [Wasm engine](../reference/javascript/engines/wasm.md)). Windows support exists with some filesystem caveats. See upstream [platform compatibility](https://github.com/surrealdb/surrealkv#platform-compatibility) notes for more details.
 
 ## Performance implications
 

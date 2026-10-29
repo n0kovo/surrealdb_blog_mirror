@@ -32,6 +32,7 @@ ALTER TABLE [
     [ COMMENT @string ] 
     [ INLINE EDGES @number ]
     [ INLINE REFERENCES @number ]
+    [ MIGRATE EXISTING ROWS AS @name REMOVE UNDECLARED FIELDS ]
 ]
 ```
 
@@ -123,11 +124,15 @@ ALTER TABLE [
                                                                                 │ │                                                                                                                                                   │ │      
                                                                                 │ │                                                  ╭────────╮        ╭───────╮         ┌─────────┐                                                  │ │      
                                                                                 │ ╰──────────────────────────────────────────────────│ INLINE │───╮────│ EDGES │─────╭───│ @number │──────────────────────────────────────────────────╯ │      
-                                                                                │                                                    ╰────────╯   │    ╰───────╯     │   └─────────┘                                                    │      
-                                                                                │                                                                 │                  │                                                                  │      
-                                                                                │                                                                 │  ╭────────────╮  │                                                                  │      
-                                                                                │                                                                 ╰──│ REFERENCES │──╯                                                                  │      
-                                                                                │                                                                    ╰────────────╯                                                                     │      
+                                                                                │ │                                                  ╰────────╯   │    ╰───────╯     │   └─────────┘                                                  │ │      
+                                                                                │ │                                                               │                  │                                                                │ │      
+                                                                                │ │                                                               │  ╭────────────╮  │                                                                │ │      
+                                                                                │ │                                                               ╰──│ REFERENCES │──╯                                                                │ │      
+                                                                                │ │                                                                  ╰────────────╯                                                                   │ │      
+                                                                                │ │                                                                                                                                                   │ │      
+                                                                                │ │                                    ╭──────────────────────────╮     ┌───────┐     ╭──────────────────────────╮                                    │ │      
+                                                                                │ ╰────────────────────────────────────│ MIGRATE EXISTING ROWS AS │─────│ @name │─────│ REMOVE UNDECLARED FIELDS │────────────────────────────────────╯ │      
+                                                                                │                                      ╰──────────────────────────╯     └───────┘     ╰──────────────────────────╯                                      │      
                                                                                 ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
@@ -137,15 +142,13 @@ ALTER TABLE [
 
 Performs storage compaction on a specific table keyspace. To compact other resources, use [ALTER SYSTEM](system.md) to compact the entire datastore, [ALTER NAMESPACE](namespace.md) to compact the current namespace keyspace, or [ALTER DATABASE](database.md) to compact the current database keyspace.
 
-The actual compaction used will depend on the datastore, such as RocksDB or SurrealKV.
-
-This clause will not work with in-memory storage which has nothing persistent to compact, producing the following error:
+The storage engine carries out the compaction. In SurrealDB 4.0, SurrealKV supports it: it writes recent changes to disk, merges the data files that hold the keys, and drops deleted data and old versions that no reader can see, which frees their space. The statement returns once the compaction is done, and reads and writes carry on meanwhile. Before 4.0, RocksDB was the only engine that supported compaction requests. The in-memory engine and TiKV do not support them, and return the following error:
 
 ```surql
-'The storage layer does not support compaction requests.'
+'There was a problem with the key-value store: The storage layer does not support compaction requests.'
 ```
 
-A successful compaction will return `NONE`.
+A successful compaction returns `NONE`.
 
 ```surql
 ALTER TABLE user COMPACT;
@@ -166,6 +169,43 @@ ALTER TABLE person INLINE EDGES 8 DROP INLINE REFERENCES;
 ```
 
 Any change to a cap discards the table's existing caches of that kind. They are rebuilt as edges or references are written.
+
+## Changing the table type
+
+`TYPE` changes what kind of records the table holds. A table that holds records of the other kind cannot change to a type that excludes them: `TYPE RELATION` is refused while the table holds a record that is not an edge, and `TYPE NORMAL` while it holds an edge. The error names the first record that does not fit:
+
+```surql
+CREATE note:1;
+ALTER TABLE note TYPE RELATION;
+```
+
+```surql title="Error output"
+'Cannot make `note` TYPE RELATION: it holds note:1, which is not an edge. Delete the record first, or define the table TYPE ANY'
+```
+
+`TYPE ANY` holds both kinds of record, so a change to it is always accepted. The same check applies to `DEFINE TABLE OVERWRITE` with a new type. Before SurrealDB 4.0 the change was accepted, and an export of the table then failed to import.
+
+## MIGRATE EXISTING ROWS ... REMOVE UNDECLARED FIELDS
+
+*Since v4.0.0*
+
+`REMOVE UNDECLARED FIELDS` removes every field that the table does not define from every record of the table. It is a named migration, so it runs once for a given name, in the background, and a record is cleaned the first time it is read.
+
+```surql
+DEFINE TABLE person SCHEMALESS;
+CREATE person:1 SET name = 'Ada', nickname = 'A';
+DEFINE FIELD name ON person TYPE string;
+ALTER TABLE person SCHEMAFULL;
+
+ALTER TABLE person MIGRATE EXISTING ROWS AS drop_undeclared REMOVE UNDECLARED FIELDS;
+SELECT * FROM person;
+```
+
+```surql title="Output"
+[{ id: person:1, name: 'Ada' }]
+```
+
+See [Migrating existing records](../define/field.md#migrating-existing-records) for migrations that convert the values of one field.
 
 ## See also
 

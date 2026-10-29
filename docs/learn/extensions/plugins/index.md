@@ -12,6 +12,6 @@ _Auto-generated index — 3 pages._
 - [Further examples](further-examples.md)
   Further examples of Surrealism attributes, namespaced exports, and CLI commands
 - [Surrealism plugins](overview.md)
-  Compile Rust into WASM modules callable from SurrealQL.
+  Compile Rust into Surrealism extensions, WebAssembly archives whose functions are callable from SurrealQL.
 - [Quick tutorial](quick-tutorial.md)
   A quick tutorial showing the steps involved in turning regular Rust code into SurrealDB-accessible WASM functions.

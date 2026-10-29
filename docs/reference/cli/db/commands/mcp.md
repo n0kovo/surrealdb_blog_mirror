@@ -9,6 +9,8 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The `surreal db mcp` subcommand starts the built-in [Model Context Protocol](https://modelcontextprotocol.io) server on **stdio**, suitable for Cursor, VS Code, Claude Desktop, and other MCP clients. It opens an embedded datastore at the path you pass (default `memory`) and runs every tool call with owner-level access.
 
+From SurrealDB 4.0, the command writes its log lines to standard error at every log level, so standard output carries only the MCP messages that the client reads.
+
 For HTTP-based clients against a running server, use [`surreal db start`](start.md) and connect to the **`/mcp`** endpoint instead. See [When to use `surreal db mcp` vs `surreal db start`](../../../../build/ai-agents/mcp/embedded.md#when-to-use-surreal-db-mcp-vs-surreal-db-start) for the comparison, and [Embedded MCP](../../../../build/ai-agents/mcp/embedded.md) for transports, editor setup, and security.
 
 > [!WARNING]

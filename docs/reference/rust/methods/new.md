@@ -130,6 +130,10 @@ async fn main() -> Result<(), Error> {
             <td scope="row" data-label="Method">`.node_membership_refresh_interval(duration)`, `.node_membership_check_interval(duration)`, `.node_membership_cleanup_interval(duration)`</td>
             <td scope="row" data-label="Description">Intervals for the node maintenance tasks the local engines run. A zero duration is treated as unset.</td>
         </tr>
+        <tr>
+            <td scope="row" data-label="Method">`.datastore_option(key, value)`</td>
+            <td scope="row" data-label="Description">Sets a datastore setting for the local engines, named as the server's `SURREAL_` environment variable without that prefix. See <a href="#setting-storage-engine-options">Setting storage engine options</a>. *Since v4.0.0*</td>
+        </tr>
     </tbody>
 </table>
 
@@ -195,6 +199,62 @@ async fn main() -> surrealdb::Result<()> {
     Ok(())
 }
 ```
+
+### Durability of the local engines
+
+`.sync()` sets when the local engines flush committed data to disk, and `.aol()` and `.snapshot()` set how the memory engine persists itself when it is given a path, such as `Surreal::new::<Mem>("/tmp/data")`. They take the `SyncMode`, `AolMode` and `SnapshotMode` types from `surrealdb::opt`, which exist with the `kv-mem` or `kv-surrealkv` feature. *Since v4.0.0*
+
+```rust
+use std::time::Duration;
+use surrealdb::Surreal;
+use surrealdb::engine::local::{Mem, SurrealKv};
+use surrealdb::opt::{AolMode, SnapshotMode, SyncMode};
+
+#[tokio::main]
+async fn main() -> surrealdb::Result<()> {
+    // Flush in the background every 200 ms instead of on every commit
+    let db = Surreal::new::<SurrealKv>("path/to/database-folder")
+        .sync(SyncMode::Interval(Duration::from_millis(200)))
+        .await?;
+
+    // A memory engine that keeps an append-only log and a snapshot every minute
+    let mem = Surreal::new::<Mem>("/tmp/data")
+        .aol(AolMode::Sync)
+        .snapshot(SnapshotMode::Interval(Duration::from_secs(60)))
+        .await?;
+    Ok(())
+}
+```
+
+`SyncMode::Every` is the default for SurrealKV on native targets, and a one-second `SyncMode::Interval` in the browser. The memory engine defaults to `SyncMode::Never`, and to no append-only log and no snapshots. `.aol()` and `.snapshot()` fail on any engine other than `Mem`.
+
+### Setting storage engine options
+
+An embedded engine reads no environment variables, so the `SURREAL_` variables a server uses to tune its storage have no effect on it. A local engine takes the same settings in two other ways, which both cap SurrealKV's block cache at 256 MiB and each memtable at 64 MiB in this example:
+
+```rust
+use surrealdb::{Surreal, engine::local::SurrealKv, opt::Config};
+
+#[tokio::main]
+async fn main() -> surrealdb::Result<()> {
+    // As parameters on the path, named as on `surreal start`
+    let db = Surreal::new::<SurrealKv>(
+        "path/to/database-folder?block_cache_capacity=268435456&max_memtable_size=67108864",
+    )
+    .await?;
+
+    // With Config, named as the environment variable without `SURREAL_`
+    let config = Config::new()
+        .datastore_option("surrealkv_block_cache_capacity", 256 * 1024 * 1024)
+        .datastore_option("surrealkv_max_memtable_size", 64 * 1024 * 1024);
+    let db = Surreal::new::<SurrealKv>(("path/to/other-folder", config)).await?;
+    Ok(())
+}
+```
+
+`datastore_option` accepts any value that implements `Display`. Keys are not case-sensitive, and a later call for the same key replaces an earlier one. It also reaches the datastore's runtime settings, such as `memory_limit` for [`SURREAL_MEMORY_LIMIT`](../../cli/db/environment-variables.md). Where the path and `datastore_option` set the same storage setting, the path takes precedence. The bucket folder allowlist has its own method, `.bucket_folder_allowlist()`, and connecting with `bucket_folder_allowlist` set through `datastore_option` fails. *Since v4.0.0*
+
+The [SurrealKV environment variables](../../cli/db/environment-variables.md#surrealkv-environment-variables) reference lists the settings SurrealKV reads.
 
 ## See also
 

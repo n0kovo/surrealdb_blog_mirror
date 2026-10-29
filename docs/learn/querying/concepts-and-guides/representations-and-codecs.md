@@ -44,6 +44,24 @@ encoding::json::decode(encoding::json::encode($payload));
 { event: 'signup', user: 'tobie' }
 ```
 
+From SurrealDB 4.0, `encoding::cbor::decode` refuses CBOR that could be read in more than one way or that would lose data, and fails with `invalid cbor`. This applies to tags 0, 9 and 13, which hold a datetime, a UUID or a duration as text (use the compact tags 12, 37 and 14, which `encoding::cbor::encode` writes), an integer outside the signed 64-bit range, a map with a repeated key, and tag 6 (`NONE`) with any content other than `null`. Bytes in these forms that were stored by an earlier version, or that another library produced, no longer decode.
+
+```surql
+/**[test]
+
+[[test.results]]
+error = "Incorrect arguments for function encoding::cbor::decode(). invalid cbor"
+
+*/
+
+-- Tag 0: a datetime written as text
+encoding::cbor::decode(b"C06161");
+```
+
+```surql title="Error output"
+"Incorrect arguments for function encoding::cbor::decode(). invalid cbor"
+```
+
 Related one-way or format-specific helpers elsewhere include `string::html::encode`, `geo::hash::encode`, and [`crypto::*`](../../../reference/query-language/functions/database-functions/crypto.md) hashes.
 
 ## Text analysis (`search::analyze`)
@@ -84,11 +102,11 @@ Compare the tokens above with what you get after adding `FILTERS lowercase, snow
 [`value::diff`](../../../reference/query-language/functions/database-functions/value.md#valuediff) and [`value::patch`](../../../reference/query-language/functions/database-functions/value.md#valuepatch) move between a SurrealQL value and JSON Patch operations. They pair naturally with [changefeeds](../real-time/changefeeds.md) and [`LIVE SELECT DIFF`](../real-time/live-queries.md).
 
 ```surql
-LET $before = { title: 'Weekly update', status: 'draft' };
-LET $after = { title: 'Weekly update', status: 'published' };
-LET $patch = value::diff($before, $after);
+LET $draft = { title: 'Weekly update', status: 'draft' };
+LET $published = { title: 'Weekly update', status: 'published' };
+LET $patch = value::diff($draft, $published);
 
-value::patch($before, $patch);
+value::patch($draft, $patch);
 ```
 
 ```surql title="Output"
@@ -103,7 +121,7 @@ value::patch($before, $patch);
 
 [`eval::surql`](../../../reference/query-language/functions/database-functions/eval.md#evalsurql) and [`eval::gql`](../../../reference/query-language/functions/database-functions/eval.md#evalgql) parse and **execute** query text in the caller's transaction. That is fundamentally different from encoding:
 
-- Input is **executable** SurrealQL or [ISO GQL (Cypher Query Language)](../gql/overview.md), not a static wire format.
+- Input is **executable** SurrealQL or [ISO GQL](../gql/overview.md), not a static wire format.
 - **Denied by default** - requires [`allow-eval-query`](../../security/authorization/capabilities.md#eval-queries) and the [arbitrary-query](../../security/authorization/capabilities.md#arbitrary-queries) gate.
 - Nested writes affect the caller's transaction; transaction-control statements are rejected.
 
@@ -119,7 +137,7 @@ eval::surql($template, { greeting: 'Hello', name: 'world' });
 'Hello, world'
 ```
 
-For [ISO GQL (Cypher Query Language)](../gql/overview.md) strings, use `eval::gql` instead - same bindings object, plus [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries). See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) for setup and examples.
+For [ISO GQL](../gql/overview.md) strings, use `eval::gql` instead - same bindings object, plus [`--allow-eval-query`](../../security/authorization/capabilities.md#eval-queries). See [Eval functions](../../../reference/query-language/functions/database-functions/eval.md) for setup and examples.
 
 ## See also
 

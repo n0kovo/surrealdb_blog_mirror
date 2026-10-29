@@ -122,7 +122,7 @@ Quit and reopen Claude Desktop completely, then start a new conversation.
 If the editor cannot find the binary, use the full path from `which surreal` (macOS and Linux) or `where surreal` (Windows) as `command`.
 
 > [!NOTE]
-> `--user` and `--pass` create the root user on a **new** datastore, the same as [`surreal db start`](../../../reference/cli/db/commands/start.md). They do not authenticate each MCP call, because stdio runs every call as owner. Prefer an `env` block (`SURREAL_USER`, `SURREAL_PASS`) over literals in `args` so credentials stay out of committed config. To keep data between sessions, replace `memory` with a [file-backed path](../../../reference/cli/db/commands/start.md#datastore-configuration) such as `rocksdb://tmp/surreal-mcp`.
+> `--user` and `--pass` create the root user on a **new** datastore, the same as [`surreal db start`](../../../reference/cli/db/commands/start.md). They do not authenticate each MCP call, because stdio runs every call as owner. Prefer an `env` block (`SURREAL_USER`, `SURREAL_PASS`) over literals in `args` so credentials stay out of committed config. To keep data between sessions, replace `memory` with a [file-backed path](../../../reference/cli/db/commands/start.md#datastore-configuration) such as `surrealkv://tmp/surreal-mcp`.
 
 For HTTP, point the editor at a server you are already running and attach credentials as headers:
 
@@ -148,7 +148,7 @@ Once connected, ask the assistant which SurrealDB tools it has. It should list `
 | Tool | Purpose |
 | --- | --- |
 | `query` | Run SurrealQL and return serialised results |
-| `gql` | Run an [ISO GQL (Cypher Query Language)](../../../learn/querying/gql/overview.md) query (on by default from 3.3.0; on 3.2.x needs `--allow-experimental gql`) |
+| `gql` | Run an [ISO GQL](../../../learn/querying/gql/overview.md) query (on by default from 3.3.0; on 3.2.x needs `--allow-experimental gql`) |
 | `graphql` | Run a [GraphQL](../../../learn/querying/graphql/overview.md) query against the configured schema |
 | `select`, `create`, `insert`, `upsert`, `update`, `delete`, `relate` | Data manipulation helpers |
 | `run` | Call a database function with typed arguments |
@@ -159,6 +159,8 @@ Once connected, ask the assistant which SurrealDB tools it has. It should list `
 Legacy names such as `list_tables`, `use_database`, and `version` are no longer published. Use `list` and `use` instead.
 
 When an agent inspects the schema with `info` or `list`, any [`COMMENT`](../../../reference/query-language/statements/define/overview.md#comments-on-definitions) on tables and fields is included. Put query-relevant detail in those comments (record-ID conventions, how to compare a field, graph paths) so the agent does not have to guess from names alone.
+
+From SurrealDB 4.0, each tool in `tools/list` also carries an `outputSchema` that describes every result it can return, including an error. A result carries its data in that shape as `structuredContent`, so a client can validate it and read it without parsing the text content.
 
 Each tool also carries annotation hints that clients use to decide what to auto-approve. `gql` is annotated as neither read-only nor safe, because the GQL dialect parses `INSERT`, `SET`, `REMOVE`, and `DELETE` as well as reads.
 

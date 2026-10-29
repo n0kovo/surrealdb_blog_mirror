@@ -45,6 +45,14 @@ These functions can be used for generating and coercing data to specific data ty
       <td scope="row" data-label="Description">Converts a value into a duration</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Function"><a href="#typef16">`type::f16()`</a></td>
+      <td scope="row" data-label="Description">Converts a value into a 16-bit floating point number</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typef32">`type::f32()`</a></td>
+      <td scope="row" data-label="Description">Converts a value into a 32-bit floating point number</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Function"><a href="#typefield">`type::field()`</a></td>
       <td scope="row" data-label="Description">Projects a single field within a SELECT statement</td>
     </tr>
@@ -59,6 +67,18 @@ These functions can be used for generating and coercing data to specific data ty
     <tr>
       <td scope="row" data-label="Function"><a href="#typefloat">`type::float()`</a></td>
       <td scope="row" data-label="Description">Converts a value into a floating point number</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typei8">`type::i8()`</a></td>
+      <td scope="row" data-label="Description">Converts a value into an 8-bit signed integer</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typei16">`type::i16()`</a></td>
+      <td scope="row" data-label="Description">Converts a value into a 16-bit signed integer</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typei32">`type::i32()`</a></td>
+      <td scope="row" data-label="Description">Converts a value into a 32-bit signed integer</td>
     </tr>
     <tr>
       <td scope="row" data-label="Function"><a href="#typeint">`type::int()`</a></td>
@@ -93,6 +113,22 @@ These functions can be used for generating and coercing data to specific data ty
       <td scope="row" data-label="Description">Converts a value into a range</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Function"><a href="#typeu8">`type::u8()`</a></td>
+      <td scope="row" data-label="Description">Converts a value into an 8-bit unsigned integer</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typeu16">`type::u16()`</a></td>
+      <td scope="row" data-label="Description">Converts a value into a 16-bit unsigned integer</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typeu32">`type::u32()`</a></td>
+      <td scope="row" data-label="Description">Converts a value into a 32-bit unsigned integer</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typeu64">`type::u64()`</a></td>
+      <td scope="row" data-label="Description">Converts a value into a 64-bit unsigned integer</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Function"><a href="#typeuuid">`type::uuid()`</a></td>
       <td scope="row" data-label="Description">Converts a value into a UUID</td>
     </tr>
@@ -125,12 +161,32 @@ These functions can be used for generating and coercing data to specific data ty
       <td scope="row" data-label="Description">Checks if given value is of type duration</td>
     </tr>
     <tr>
+      <td scope="row" data-label="Function"><a href="#typeis_f16">`type::is_f16()`</a></td>
+      <td scope="row" data-label="Description">Checks if given value is of type f16</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typeis_f32">`type::is_f32()`</a></td>
+      <td scope="row" data-label="Description">Checks if given value is of type f32</td>
+    </tr>
+    <tr>
       <td scope="row" data-label="Function"><a href="#typeis_float">`type::is_float()`</a></td>
       <td scope="row" data-label="Description">Checks if given value is of type float</td>
     </tr>
     <tr>
       <td scope="row" data-label="Function"><a href="#typeis_geometry">`type::is_geometry()`</a></td>
       <td scope="row" data-label="Description">Checks if given value is of type geometry</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typeis_i8">`type::is_i8()`</a></td>
+      <td scope="row" data-label="Description">Checks if given value is of type i8</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typeis_i16">`type::is_i16()`</a></td>
+      <td scope="row" data-label="Description">Checks if given value is of type i16</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typeis_i32">`type::is_i32()`</a></td>
+      <td scope="row" data-label="Description">Checks if given value is of type i32</td>
     </tr>
     <tr>
       <td scope="row" data-label="Function"><a href="#typeis_int">`type::is_int()`</a></td>
@@ -187,6 +243,22 @@ These functions can be used for generating and coercing data to specific data ty
     <tr>
       <td scope="row" data-label="Function"><a href="#typeis_string">`type::is_string()`</a></td>
       <td scope="row" data-label="Description">Checks if given value is of type string</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typeis_u8">`type::is_u8()`</a></td>
+      <td scope="row" data-label="Description">Checks if given value is of type u8</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typeis_u16">`type::is_u16()`</a></td>
+      <td scope="row" data-label="Description">Checks if given value is of type u16</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typeis_u32">`type::is_u32()`</a></td>
+      <td scope="row" data-label="Description">Checks if given value is of type u32</td>
+    </tr>
+    <tr>
+      <td scope="row" data-label="Function"><a href="#typeis_u64">`type::is_u64()`</a></td>
+      <td scope="row" data-label="Description">Checks if given value is of type u64</td>
     </tr>
     <tr>
       <td scope="row" data-label="Function"><a href="#typeis_uuid">`type::is_uuid()`</a></td>
@@ -362,6 +434,66 @@ type::duration("4h");
 ```
 
 This is the equivalent of using [`<duration>`](../../language-primitives/casting.md#duration) to cast a value to a duration.
+
+  
+
+## `type::f16`
+
+*Since v4.0.0*
+
+The `type::f16` function converts a value into a 16-bit floating point number. A value that is out of range for `f16` is refused.
+
+```surql title="API DEFINITION"
+type::f16(decimal|float|int|number|string) -> f16
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "1.5f16"
+
+*/
+
+type::f16(1.5);
+```
+
+```surql title="Output"
+1.5f16
+```
+
+This is the equivalent of using [`<f16>`](../../language-primitives/casting.md#sized-number-casts) to cast a value.
+
+  
+
+## `type::f32`
+
+*Since v4.0.0*
+
+The `type::f32` function converts a value into a 32-bit floating point number. A value that is out of range for `f32` is refused.
+
+```surql title="API DEFINITION"
+type::f32(decimal|float|int|number|string) -> f32
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "1.5f32"
+
+*/
+
+type::f32(1.5);
+```
+
+```surql title="Output"
+1.5f32
+```
+
+This is the equivalent of using [`<f32>`](../../language-primitives/casting.md#sized-number-casts) to cast a value.
 
   
 
@@ -645,6 +777,96 @@ type::float("12345");
 12345f
 ```
 This is the equivalent of using [`<float>`](../../language-primitives/casting.md#float) to cast a value to a float.
+
+  
+
+## `type::i8`
+
+*Since v4.0.0*
+
+The `type::i8` function converts a value into an 8-bit signed integer. A value that is out of range for `i8`, or that has a fractional part, is refused.
+
+```surql title="API DEFINITION"
+type::i8(decimal|float|int|number|string) -> i8
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "-128i8"
+
+*/
+
+type::i8('-128');
+```
+
+```surql title="Output"
+-128i8
+```
+
+This is the equivalent of using [`<i8>`](../../language-primitives/casting.md#sized-number-casts) to cast a value.
+
+  
+
+## `type::i16`
+
+*Since v4.0.0*
+
+The `type::i16` function converts a value into a 16-bit signed integer. A value that is out of range for `i16`, or that has a fractional part, is refused.
+
+```surql title="API DEFINITION"
+type::i16(decimal|float|int|number|string) -> i16
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "1000i16"
+
+*/
+
+type::i16(1000);
+```
+
+```surql title="Output"
+1000i16
+```
+
+This is the equivalent of using [`<i16>`](../../language-primitives/casting.md#sized-number-casts) to cast a value.
+
+  
+
+## `type::i32`
+
+*Since v4.0.0*
+
+The `type::i32` function converts a value into a 32-bit signed integer. A value that is out of range for `i32`, or that has a fractional part, is refused.
+
+```surql title="API DEFINITION"
+type::i32(decimal|float|int|number|string) -> i32
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "100000i32"
+
+*/
+
+type::i32(100000);
+```
+
+```surql title="Output"
+100000i32
+```
+
+This is the equivalent of using [`<i32>`](../../language-primitives/casting.md#sized-number-casts) to cast a value.
 
   
 
@@ -1048,6 +1270,126 @@ value = "`dog:two`"
 
   
 
+## `type::u8`
+
+*Since v4.0.0*
+
+The `type::u8` function converts a value into an 8-bit unsigned integer. A value that is out of range for `u8`, or that has a fractional part, is refused.
+
+```surql title="API DEFINITION"
+type::u8(decimal|float|int|number|string) -> u8
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "255u8"
+
+*/
+
+type::u8(255);
+```
+
+```surql title="Output"
+255u8
+```
+
+This is the equivalent of using [`<u8>`](../../language-primitives/casting.md#sized-number-casts) to cast a value.
+
+  
+
+## `type::u16`
+
+*Since v4.0.0*
+
+The `type::u16` function converts a value into a 16-bit unsigned integer. A value that is out of range for `u16`, or that has a fractional part, is refused.
+
+```surql title="API DEFINITION"
+type::u16(decimal|float|int|number|string) -> u16
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "1000u16"
+
+*/
+
+type::u16(1000);
+```
+
+```surql title="Output"
+1000u16
+```
+
+This is the equivalent of using [`<u16>`](../../language-primitives/casting.md#sized-number-casts) to cast a value.
+
+  
+
+## `type::u32`
+
+*Since v4.0.0*
+
+The `type::u32` function converts a value into a 32-bit unsigned integer. A value that is out of range for `u32`, or that has a fractional part, is refused.
+
+```surql title="API DEFINITION"
+type::u32(decimal|float|int|number|string) -> u32
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "100000u32"
+
+*/
+
+type::u32(100000);
+```
+
+```surql title="Output"
+100000u32
+```
+
+This is the equivalent of using [`<u32>`](../../language-primitives/casting.md#sized-number-casts) to cast a value.
+
+  
+
+## `type::u64`
+
+*Since v4.0.0*
+
+The `type::u64` function converts a value into a 64-bit unsigned integer. A value that is out of range for `u64`, or that has a fractional part, is refused.
+
+```surql title="API DEFINITION"
+type::u64(decimal|float|int|number|string) -> u64
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "18446744073709551615u64"
+
+*/
+
+type::u64('18446744073709551615');
+```
+
+```surql title="Output"
+18446744073709551615u64
+```
+
+This is the equivalent of using [`<u64>`](../../language-primitives/casting.md#sized-number-casts) to cast a value.
+
+  
+
 ## `type::uuid`
 
 The `type::uuid` function converts a value into a UUID.
@@ -1283,12 +1625,68 @@ false
 
   
 
+## `type::is_f16`
+
+*Since v4.0.0*
+
+The `type::is_f16` function checks if the passed value is of type `f16`.
+
+```surql title="API DEFINITION"
+type::is_f16(any) -> bool
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "true"
+
+*/
+
+type::is_f16(1.5f16);
+```
+
+```surql title="Output"
+true
+```
+
+  
+
+## `type::is_f32`
+
+*Since v4.0.0*
+
+The `type::is_f32` function checks if the passed value is of type `f32`.
+
+```surql title="API DEFINITION"
+type::is_f32(any) -> bool
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "true"
+
+*/
+
+type::is_f32(1.5f32);
+```
+
+```surql title="Output"
+true
+```
+
+  
+
 ## `type::is_float`
 
 > [!NOTE]
 > This function was known as `type::is::float` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
-The `type::is_float` function checks if the passed value is of type ` float`.
+The `type::is_float` function checks if the passed value is of type `float`. From SurrealDB 4.0, a [sized float](../../language-primitives/data-types/numbers.md#sized-numbers) such as `1.5f32` is not of type `float`, so this function returns `false` for it. Use [`type::is_number()`](#typeis_number) to accept a number of any type.
 
 ```surql title="API DEFINITION"
 type::is_float(any) -> bool
@@ -1341,12 +1739,96 @@ true
 
   
 
+## `type::is_i8`
+
+*Since v4.0.0*
+
+The `type::is_i8` function checks if the passed value is of type `i8`.
+
+```surql title="API DEFINITION"
+type::is_i8(any) -> bool
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "true"
+
+*/
+
+type::is_i8(5i8);
+```
+
+```surql title="Output"
+true
+```
+
+  
+
+## `type::is_i16`
+
+*Since v4.0.0*
+
+The `type::is_i16` function checks if the passed value is of type `i16`.
+
+```surql title="API DEFINITION"
+type::is_i16(any) -> bool
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "true"
+
+*/
+
+type::is_i16(5i16);
+```
+
+```surql title="Output"
+true
+```
+
+  
+
+## `type::is_i32`
+
+*Since v4.0.0*
+
+The `type::is_i32` function checks if the passed value is of type `i32`.
+
+```surql title="API DEFINITION"
+type::is_i32(any) -> bool
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "true"
+
+*/
+
+type::is_i32(5i32);
+```
+
+```surql title="Output"
+true
+```
+
+  
+
 ## `type::is_int`
 
 > [!NOTE]
 > This function was known as `type::is::int` in versions of SurrealDB before 3.0.0. The behaviour has not changed.
 
-The `type::is_int` function checks if the passed value is of type `int`.
+The `type::is_int` function checks if the passed value is of type `int`. From SurrealDB 4.0, a [sized integer](../../language-primitives/data-types/numbers.md#sized-numbers) such as `5u8` or `5u64` is not of type `int`, so this function returns `false` for it. Use [`type::is_number()`](#typeis_number) to accept a number of any type.
 
 ```surql title="API DEFINITION"
 type::is_int(any) -> bool
@@ -1764,6 +2246,118 @@ value = "true"
 */
 
 type::is_string("abc");
+```
+
+```surql title="Output"
+true
+```
+
+  
+
+## `type::is_u8`
+
+*Since v4.0.0*
+
+The `type::is_u8` function checks if the passed value is of type `u8`. A number of another type with the same value, such as `5` or `5u16`, is not a `u8`.
+
+```surql title="API DEFINITION"
+type::is_u8(any) -> bool
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "false"
+
+*/
+
+type::is_u8(5);
+```
+
+```surql title="Output"
+false
+```
+
+  
+
+## `type::is_u16`
+
+*Since v4.0.0*
+
+The `type::is_u16` function checks if the passed value is of type `u16`.
+
+```surql title="API DEFINITION"
+type::is_u16(any) -> bool
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "true"
+
+*/
+
+type::is_u16(5u16);
+```
+
+```surql title="Output"
+true
+```
+
+  
+
+## `type::is_u32`
+
+*Since v4.0.0*
+
+The `type::is_u32` function checks if the passed value is of type `u32`.
+
+```surql title="API DEFINITION"
+type::is_u32(any) -> bool
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "true"
+
+*/
+
+type::is_u32(5u32);
+```
+
+```surql title="Output"
+true
+```
+
+  
+
+## `type::is_u64`
+
+*Since v4.0.0*
+
+The `type::is_u64` function checks if the passed value is of type `u64`.
+
+```surql title="API DEFINITION"
+type::is_u64(any) -> bool
+```
+The following example shows this function, and its output:
+
+```surql
+/**[test]
+
+[[test.results]]
+value = "true"
+
+*/
+
+type::is_u64(5u64);
 ```
 
 ```surql title="Output"

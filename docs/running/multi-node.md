@@ -7,7 +7,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/i
 
 # Run a multi-node cluster
 
-Multi-node SurrealDB requires **shared distributed storage** - a backend that every query node can reach with transactional consistency. A single RocksDB file on one server (or one Kubernetes pod) is **not** a multi-node cluster; it is the [single-node, on-disk](file-backed.md) model.
+Multi-node SurrealDB requires **shared distributed storage** - a backend that every query node can reach with transactional consistency. A single SurrealKV directory on one server (or one Kubernetes pod) is **not** a multi-node cluster; it is the [single-node, on-disk](file-backed.md) model.
 
 ![Diagram of a multi-node deployment: SurrealDB compute nodes each connect to a shared distributed storage cluster.](../assets/img/image/light/storage-cluster.png)
 
@@ -23,6 +23,6 @@ The [Scale](https://surrealdb.com/pricing/scale) plan on [managed instances](../
 
 ## Single-node deployments
 
-Where one node is enough, [file-backed storage](file-backed.md) covers an on-disk server, and [Deploy on Kubernetes](../manage/self-hosted/kubernetes.md) covers a single SurrealDB pod with RocksDB on a persistent volume. [Deployment models](../manage/self-hosted/deployment-models.md) compares the options side by side.
+Where one node is enough, [file-backed storage](file-backed.md) covers an on-disk server, and [Deploy on Kubernetes](../manage/self-hosted/kubernetes.md) covers a single SurrealDB pod with SurrealKV on a persistent volume. [Deployment models](../manage/self-hosted/deployment-models.md) compares the options side by side.
 
 For the flags accepted when starting a server, see the [`surreal db start`](../reference/cli/db/commands/start.md) reference.

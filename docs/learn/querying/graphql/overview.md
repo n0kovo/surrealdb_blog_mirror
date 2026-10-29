@@ -11,7 +11,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/l
 SurrealDB supports [GraphQL](https://graphql.org/) through the [`/graphql`](../../../reference/rest-api/http-protocol.md#graphql) endpoint, which can be accessed via [SurrealDB Studio](https://studio.surrealdb.com/), GraphiQL, Postman, or any other GraphQL client.
 
 > [!NOTE]
-> **GraphQL is not GQL.** [ISO GQL (Cypher Query Language)](../gql/overview.md) (`MATCH … RETURN …`) is a separate language on [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql). Do not abbreviate GraphQL to `gql` - in SurrealDB, `gql` always means ISO GQL (Cypher Query Language).
+> **GraphQL is not GQL.** [ISO GQL](../gql/overview.md) (`MATCH … RETURN …`) is a separate language on [`POST /gql`](../../../reference/rest-api/http-protocol.md#gql). Do not abbreviate GraphQL to `gql` - in SurrealDB, `gql` always means ISO GQL.
 
 ## Key features
 
@@ -58,7 +58,15 @@ From SurrealDB 3.1.0, the auto-generated GraphQL schema follows a single **Apoll
 | Aggregate | `persons_aggregate(filter, groupBy, …)` |
 | Create / update / delete | `createPerson`, `updatePerson`, `deletePerson` (bulk: `createPersons`, …) |
 
-Field names on types mirror SurrealQL unless you set [`GRAPHQL_ALIAS`](../../../reference/query-language/statements/define/field.md) or [`GRAPHQL_DEPRECATED`](../../../reference/query-language/statements/define/field.md) on [`DEFINE FIELD`](../../../reference/query-language/statements/define/field.md) / [`DEFINE TABLE`](../../../reference/query-language/statements/define/table.md) / [`DEFINE FUNCTION`](../../../reference/query-language/statements/define/function.md). List queries also support Relay-style **`personsConnection`** cursor pagination alongside offset `limit` / `start`.
+Field names on types mirror SurrealQL unless you set `GRAPHQL_ALIAS` or `GRAPHQL_DEPRECATED`, which [`DEFINE TABLE`](../../../reference/query-language/statements/define/table.md#graphql-names-and-deprecation), [`DEFINE FIELD`](../../../reference/query-language/statements/define/field.md#graphql-names-and-deprecation) and [`DEFINE FUNCTION`](../../../reference/query-language/statements/define/function.md#graphql-names-and-deprecation) each accept. List queries also support Relay-style `personsConnection` cursor pagination alongside offset `limit` / `start`, as shown in [Sample queries](sample-queries.md#paginate-with-cursors).
+
+A table defined as a view with `AS SELECT` gets query fields only, with no create, update, upsert or delete mutations. Fields marked `READONLY` or `COMPUTED` are left out of the input types for mutations.
+
+If two tables produce the same query field, such as `store` and `stores`, the schema cannot be generated and every GraphQL request fails with the error below. Set a `GRAPHQL_ALIAS` on one of the tables to resolve it.
+
+```text title="Error output"
+Error generating schema: GraphQL naming collision on `stores` — table `store` and table `stores` produce the same query field. Set an explicit `GRAPHQL_ALIAS` on the table.
+```
 
 If you upgrade from 3.0.x, regenerate client stubs and saved queries - names such as `_get_person` and `createManyPerson` are no longer generated for typical tables.
 

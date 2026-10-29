@@ -124,7 +124,7 @@ The table below lists all of SurrealDB's function modules, grouped by purpose an
 				</a>
 			</td>
 			<td scope="row" data-label="Description and Example">
-				Evaluate a SurrealQL or ISO GQL (Cypher Query Language) query string at runtime inside the
+				Evaluate a SurrealQL or ISO GQL query string at runtime inside the
 				caller's transaction.
 				Example: `eval::surql("RETURN 1 + 1")`
 			</td>
@@ -535,6 +535,8 @@ These functions are:
 The following functions also aggregate in a `GROUP BY` query, but cannot be used in a pre-computed table view:
 
 * [`array::distinct()`](array.md#arraydistinct)
+* [`array::max()`](array.md#arraymax), from SurrealDB 4.0
+* [`array::min()`](array.md#arraymin), from SurrealDB 4.0
 * [`array::group()`](array.md#arraygroup)
 * [`array::join()`](array.md#arrayjoin)
 * [`math::median()`](math.md#mathmedian)

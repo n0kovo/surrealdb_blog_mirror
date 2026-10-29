@@ -13,7 +13,7 @@ Many applications need more than boolean inside/outside tests: they need to know
 
 The shortest path between two points on the Earth is often approximated in databases using great-circle or similar metrics, depending on your CRS and functions available. SurrealDB’s [`geo::distance()`](../../../reference/query-language/functions/database-functions/geo.md#geodistance) calculates the distance between two geolocation points, and can be useful when ranking “nearest” results or filtering by a maximum radius.
 
-When you only need ordering, you may still use distance in an `ORDER BY` clause. When you need a hard cutoff, combine it with a `WHERE` threshold.
+When you only need ordering, you may still use distance in an `ORDER BY` clause. When you need a hard cutoff, combine it with a `WHERE` threshold, such as `geo::distance(location, $here) < 10000`. From SurrealDB 4.0, a [`SPATIAL` index](../../../reference/query-language/statements/define/indexes.md#spatial-index) on the field answers that condition without computing the distance to every record.
 
 ## Geohashes
 

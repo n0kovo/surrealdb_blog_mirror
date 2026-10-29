@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-10-28T12:02:34.000783+00:00",
-  "count": 274,
+  "generated_at": "2026-10-29T12:13:02.702467+00:00",
+  "count": 275,
   "posts": [
+    {
+      "slug": "remembering-the-correction-ontology-and-agent-memory-in-pivot-ai",
+      "title": "Remembering the correction: Ontology and agent memory in Pivot AI",
+      "summary": "Agent memory for professional work: keep reviewed corrections, unresolved classifications and evidence gaps in SurrealDB, scoped to an authorised matter.",
+      "publishDate": "2026-10-29T11:34:00.000Z",
+      "categories": [
+        "community"
+      ],
+      "readTime": null,
+      "imageUrl": "https://cdn.surrealdb.com/ef8afneskmzantuanyp3oktq.auto",
+      "source": "https://surrealdb.com/blog/remembering-the-correction-ontology-and-agent-memory-in-pivot-ai",
+      "local_path": "2026/10/remembering-the-correction-ontology-and-agent-memory-in-pivot-ai.md"
+    },
     {
       "slug": "introducing-surrealdb-agent-memory",
       "title": "Introducing SurrealDB Agent Memory",

@@ -9,7 +9,7 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 *Since v3.0.0*
 
-The `ALTER SYSTEM` statement is used to alter the entire datastore. It can be used to compact the system, or to set or drop a systemwide query timeout.
+The `ALTER SYSTEM` statement is used to alter the entire datastore. It can be used to compact the system, to set or drop a systemwide query timeout, or to set the compatibility level of new databases.
 
 This statement is the only `ALTER` statement that does not have a corresponding `DEFINE` statement.
 
@@ -21,8 +21,9 @@ This statement is the only `ALTER` statement that does not have a corresponding 
 ```syntax title="SurrealQL Syntax"
 ALTER SYSTEM 
     COMPACT |
-    QUERY_TIMEOUT |
-    DROP QUERY_TIMEOUT
+    QUERY_TIMEOUT @duration |
+    DROP QUERY_TIMEOUT |
+    COMPATIBILITY 3 | 4
 ```
 
   
@@ -39,7 +40,15 @@ ALTER SYSTEM
                            │                                          │     
                            │          ╭────────────────────╮          │     
                            ╰──────────│ DROP QUERY_TIMEOUT │──────────╯     
-                                      ╰────────────────────╯
+                           │          ╰────────────────────╯          │     
+                           │                                          │     
+                           │                              ╭───╮       │     
+                           │                           ╭──│ 3 │──╮    │     
+                           │                           │  ╰───╯  │    │     
+                           │                           │         │    │     
+                           │       ╭───────────────╮   │  ╭───╮  │    │     
+                           ╰───────│ COMPATIBILITY │───╯──│ 4 │──╰────╯     
+                                   ╰───────────────╯      ╰───╯
 ```
 
 ## `QUERY_TIMEOUT` clause
@@ -70,19 +79,29 @@ FOR $_ IN 0..1000 {
 'The query was not executed because it exceeded the timeout: 1ms'
 ```
 
+## `COMPATIBILITY` clause
+
+*Since v4.0.0*
+
+Sets the [compatibility level](../define/database.md#compatibility-level) that a database starts at when a `DEFINE DATABASE` statement does not give one. A datastore created by SurrealDB 4.0 starts new databases at level 4. One that a 3.x release created starts them at level 3, so that every database in it behaves the same way until the level is raised.
+
+```surql
+ALTER SYSTEM COMPATIBILITY 4;
+```
+
+The clause changes only databases defined afterwards. To change an existing database, use [`ALTER DATABASE`](database.md#compatibility).
+
 ## COMPACT clause
 
 Compacts the entire datastore. To compact other resources, use [ALTER NAMESPACE](namespace.md) to compact the current namespace keyspace, [ALTER DATABASE](database.md) to compact the current database keyspace, or [ALTER TABLE](table.md) to compact a specific table keyspace.
 
-The actual compaction used will depend on the datastore, such as RocksDB or SurrealKV.
-
-This clause will not work with in-memory storage which has nothing persistent to compact, producing the following error:
+The storage engine carries out the compaction. In SurrealDB 4.0, SurrealKV supports it: it writes recent changes to disk, merges the data files that hold the keys, and drops deleted data and old versions that no reader can see, which frees their space. The statement returns once the compaction is done, and reads and writes carry on meanwhile. Before 4.0, RocksDB was the only engine that supported compaction requests. The in-memory engine and TiKV do not support them, and return the following error:
 
 ```surql
-'The storage layer does not support compaction requests.'
+'There was a problem with the key-value store: The storage layer does not support compaction requests.'
 ```
 
-A successful compaction will return `NONE`.
+A successful compaction returns `NONE`.
 
 ```surql
 ALTER SYSTEM COMPACT;

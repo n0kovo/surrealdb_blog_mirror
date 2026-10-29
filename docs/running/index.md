@@ -9,7 +9,7 @@ _Auto-generated index — 7 pages and 1 sub-section._
 
 ## Sub-sections
 
-- **[Installation](installation/index.md)** — Install the surreal command-line tool and the SurrealDB database on macOS, Windows and Linux. Nightly builds and the install script's options are covered too.
+- **[Installation](installation/index.md)** — Install the surreal command-line tool and the SurrealDB database on macOS, Windows and Linux. Beta and nightly builds and the install script's options are covered too.
 
 ## Pages
 
@@ -18,7 +18,7 @@ _Auto-generated index — 7 pages and 1 sub-section._
 - [Docker](docker.md)
   Use this tutorial to get started with SurrealDB from within Docker.
 - [File-backed](file-backed.md)
-  Start a RocksDB database that persists data on the filesystem. The quickest way to get started with data that survives a restart.
+  Start a SurrealDB server that persists data on the filesystem with SurrealKV. The quickest way to get started with data that survives a restart.
 - [In-memory](in-memory.md)
   Start an in-memory SurrealDB database. The quickest way to get started, though data does not persist on shutdown.
 - [Multi-node](multi-node.md)

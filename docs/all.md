@@ -1,6 +1,6 @@
 # All Documentation Pages
 
-_1131 pages_  
+_1134 pages_  
 [← Index](README.md)
 
 - [Coding agent with project memory](agent-memory/cookbooks/build/coding-agent-with-project-memory.md)
@@ -423,12 +423,14 @@ _1131 pages_
   This guide will help you upgrade your current SurrealDB installation to the latest `3.x` release.
 - [3.2 to 3.3](build/migrating/from-old-surrealdb-versions/32-to-33.md)
   What changes when a 3.2 deployment moves to 3.3, from the data migrations that run at first start and the optional index rebuilds to rolling-upgrade limits and behaviour changes in SurrealQL, permissions, security, configuration and the SDKs.
+- [3.x to 4.0](build/migrating/from-old-surrealdb-versions/3x-to-4x.md)
+  What to do when a 3.x deployment moves to 4.0, covering the one-way switch to the 4.0 record format, export and import changes, the removal of RocksDB and IndexedDB, the conversion of SurrealKV and RocksDB datastores, database compatibility levels and MIGRATE EXISTING ROWS, which HNSW, DiskANN and B-tree indexes to rebuild with REBUILD INDEX, and the behaviour changes in SurrealQL, the CBOR protocol, the SDKs, configuration and Surrealism modules.
 - [Upgrading](build/migrating/from-old-surrealdb-versions/overview.md)
   This guide will help you upgrade your current SurrealDB installation to a newer release.
 - [Migrating from MongoDB](build/migrating/from-other-databases/from-mongodb.md)
   How to map existing data and concepts from MongoDB to SurrealDB
 - [Migrating from MySQL](build/migrating/from-other-databases/from-mysql.md)
-  How to map existing data and concepts from PostgreSQL to SurrealDB
+  How to map existing data and concepts from MySQL to SurrealDB
 - [Migrating from Neo4j](build/migrating/from-other-databases/from-neo4j.md)
   How to map existing data and concepts from Neo4j to SurrealDB
 - [Migrating from PostgreSQL](build/migrating/from-other-databases/from-postgresql.md)
@@ -455,12 +457,12 @@ _1131 pages_
   How surreal installs, upgrades, pins, switches and removes components, how version names work (3.3.2, 2, beta, nightly), running another version once with +VERSION, and offline or unattended use.
 - [Using the database](explore/cli/database.md)
   Run the SurrealDB database through the surreal launcher: surreal db start, sql, import, export, is-ready, validate, fix, ml and mcp. Workflows for local development, moving data, and checking a server, plus the deprecated surreal start forms.
+- [Working with extensions](explore/cli/extensions.md)
+  Scaffold, build, inspect, run, sign and install Surrealism WebAssembly extensions from the command line with surreal ext, the extension component of the Surreal CLI.
 - [SurrealDB CLI](explore/cli/index.md)
-  The surreal command installs once, then installs, versions and runs components: the database (surreal db), SurrealDB Cloud (surreal cloud) and WebAssembly modules (surreal mod). A first session, how components work, and where each workflow is documented.
+  The surreal command installs once, then installs, versions and runs components: the database (surreal db), SurrealDB Cloud (surreal cloud) and Surrealism extensions (surreal ext). A first session, how components work, and where each workflow is documented.
 - [Install the SurrealDB CLI](explore/cli/install.md)
   Install the surreal command with the install script on macOS, Linux and Windows. Options for the database switch (--db, --no-db, SURREAL_CLI_INSTALL_DB), choosing a release, adding components, mirrors, package managers and Docker.
-- [Working with modules](explore/cli/modules.md)
-  Scaffold, build, inspect and run Surrealism WebAssembly modules from the command line with surreal db module, and how the mod component of the surreal launcher relates to it.
 - [Introduction](explore/ml-models/index.md)
   SurrealML runs trained ML models in SurrealDB: train in Python. Then load and infer with sklearn or PyTorch.
 - [Computation](explore/ml-models/surrealml/computation.md)
@@ -720,20 +722,20 @@ _1131 pages_
   Run SurrealQL similarity queries with the liquids example, use vector:: distance and similarity helpers, and filter KNN results with predicates.
 - [Vector indexes](learn/data-models/vector-search/vector-indexes.md)
   Choose brute force, HNSW, or DISKANN vector indexes, tune DIMENSION and distance metrics, and use the query cheat sheet with vector::distance::knn().
-- [Creating custom modules](learn/extensions/guides/creating-custom-modules.md)
-  Step-by-step guide to scaffolding a Surrealism module, exposing functions with attributes, compiling and loading into SurrealDB.
-- [Module architecture](learn/extensions/guides/module-architecture.md)
-  How Surrealism modules are packaged, sandboxed, and invoked by SurrealDB, including exports metadata, runtime limits, and load strategy.
+- [Creating custom extensions](learn/extensions/guides/creating-custom-extensions.md)
+  Step-by-step guide to scaffolding a Surrealism extension, exposing functions with attributes, configuring package.toml, building, signing and loading it into SurrealDB.
+- [Extension architecture](learn/extensions/guides/extension-architecture.md)
+  How Surrealism extensions are packaged, sandboxed, and invoked by SurrealDB, including exports metadata, fresh memory per call, runtime limits, and load strategy.
 - [Surrealism attribute reference](learn/extensions/guides/surrealism-attribute-reference.md)
-  Reference for the #[surrealism] attribute options, including writeable functions, comments, init hooks, and namespaced exports.
+  Reference for the #[surrealism] attribute options, including database access through a transaction, comments, init hooks, and namespaced exports.
 - [Using WASM plugins](learn/extensions/guides/using-wasm-plugins.md)
-  How to load a pre-built Surrealism module archive into SurrealDB, register it, inspect exports, and call functions from SurrealQL.
+  How to install a pre-built Surrealism extension archive into SurrealDB: inspect its exports, check its signer, grant capabilities, and call its functions from SurrealQL.
 - [Extensions](learn/extensions/index.md)
-  Extend SurrealDB with custom modules and WASM plugins. Done through the Surrealism extension system.
+  Extend SurrealDB with custom functions written in Rust and compiled to WebAssembly, through the Surrealism extension system: building, signing, installing and calling extensions.
 - [Further examples](learn/extensions/plugins/further-examples.md)
   Further examples of Surrealism attributes, namespaced exports, and CLI commands
 - [Surrealism plugins](learn/extensions/plugins/overview.md)
-  Compile Rust into WASM modules callable from SurrealQL.
+  Compile Rust into Surrealism extensions, WebAssembly archives whose functions are callable from SurrealQL.
 - [Quick tutorial](learn/extensions/plugins/quick-tutorial.md)
   A quick tutorial showing the steps involved in turning regular Rust code into SurrealDB-accessible WASM functions.
 - [Bulk operations and data import](learn/querying/concepts-and-guides/bulk-operations-and-data-import.md)
@@ -761,7 +763,7 @@ _1131 pages_
 - [Testing](learn/querying/concepts-and-guides/testing.md)
   This page details a number of ways that SurrealDB can be tested.
 - [Transactions](learn/querying/concepts-and-guides/transactions.md)
-  How SurrealDB transactions work: the default per-statement scope, manual BEGIN, COMMIT and CANCEL, and the snapshot isolation guarantees that apply under concurrency.
+  How SurrealDB transactions work: the default per-statement scope, manual BEGIN, COMMIT and CANCEL, the snapshot isolation guarantees that apply under concurrency, and the serializable level that SurrealMX and SurrealDS offer.
 - [Working with types](learn/querying/concepts-and-guides/working-with-types.md)
   Tips for working with data types in SurrealDB, including arrays, type safety, typed LET statements, and chaining array functions.
 - [Managing APIs](learn/querying/custom-apis/managing-apis.md)
@@ -769,13 +771,13 @@ _1131 pages_
 - [Middleware](learn/querying/custom-apis/middleware.md)
   Chaining custom functions before your API handler so you can share logic on DEFINE API routes.
 - [Mutations](learn/querying/gql/mutations.md)
-  ISO GQL (Cypher Query Language) data-modifying statements - INSERT, SET, REMOVE, and DELETE - on the /gql endpoint.
+  ISO GQL data-modifying statements - INSERT, SET, REMOVE, and DELETE - on the /gql endpoint.
 - [GQL](learn/querying/gql/overview.md)
-  Query graph data with ISO GQL (Cypher Query Language), a graph pattern language.
+  Query graph data with ISO GQL, a graph pattern language.
 - [Sample queries](learn/querying/gql/sample-queries.md)
   Compare common GQL graph patterns against similar SurrealQL queries on the same seed graph.
 - [Via HTTP](learn/querying/gql/via-http.md)
-  Enable ISO GQL (Cypher Query Language) on a SurrealDB instance and run queries through POST /gql.
+  Enable ISO GQL on a SurrealDB instance and run queries through POST /gql.
 - [GraphQL](learn/querying/graphql/overview.md)
   Query SurrealDB with GraphQL over HTTP or RPC.
 - [Sample queries](learn/querying/graphql/sample-queries.md)
@@ -1013,13 +1015,13 @@ _1131 pages_
 - [Configuration](manage/self-hosted/configuration.md)
   Configure a self-hosted SurrealDB server: CLI options, environment variables, storage, networking, auth, and TLS.
 - [Deployment models](manage/self-hosted/deployment-models.md)
-  Deployment models for SurrealDB - managed instances, single-node RocksDB, multi-node clusters, and embedded runtimes - and how to choose between them.
+  Deployment models for SurrealDB - managed instances, single-node SurrealKV, multi-node clusters, and embedded runtimes - and how to choose between them.
 - [Self-hosted](manage/self-hosted/index.md)
   SurrealDB deployment models on your own infrastructure. Containers, configuration, backups, monitoring, and upgrades.
 - [Kubernetes](manage/self-hosted/kubernetes.md)
-  Deploy SurrealDB to Kubernetes with RocksDB on a persistent volume.
+  Deploy SurrealDB to Kubernetes with SurrealKV on a persistent volume.
 - [Managed Kubernetes](manage/self-hosted/managed-kubernetes.md)
-  Options for running SurrealDB on Amazon EKS, Google GKE, and Azure AKS - managed Scale, self-hosted Enterprise clusters, or single-node RocksDB.
+  Options for running SurrealDB on Amazon EKS, Google GKE, and Azure AKS - managed Scale, self-hosted Enterprise clusters, or a single node.
 - [Monitoring & observability](manage/self-hosted/monitoring-and-observability.md)
   Health checks, OpenTelemetry metrics and traces, audit logs and slow-query logs, and integration with common observability stacks.
 - [Upgrades & patching](manage/self-hosted/upgrades-and-patching.md)
@@ -1074,8 +1076,6 @@ _1131 pages_
   Start SurrealDB's Model Context Protocol server over stdio for local IDE and agent integrations.
 - [ml](reference/cli/db/commands/ml.md)
   The ML command can be used to import and export machine learning models.
-- [module](reference/cli/db/commands/module.md)
-  A command used to compile, manage and execute Surrealism plugin modules.
 - [sql](reference/cli/db/commands/sql.md)
   Open a SurrealQL REPL, or pipe queries in from a script.
 - [start](reference/cli/db/commands/start.md)
@@ -1085,21 +1085,21 @@ _1131 pages_
 - [validate](reference/cli/db/commands/validate.md)
   A command to confirm whether one or more SurrealQL files are valid or not.
 - [version](reference/cli/db/commands/version.md)
-  surreal db version prints the database component version with its platform and architecture, or the version of a remote server with --endpoint. The launcher has its own surreal version and surreal --version.
+  surreal db version prints the database component version with its platform and architecture, or the version of a remote server with --endpoint. The launcher has its own surreal list and surreal --version.
 - [Environment variables](reference/cli/db/environment-variables.md)
   Every SURREAL_ variable, with its default and allowed values.
 - [surreal db](reference/cli/db/index.md)
   The database component of the surreal CLI, run as surreal db. It can be used to export a dataset as SurrealQL from a local or remote SurrealDB database, import SurrealQL data into a local or remote database, and start a single SurrealDB instance or distributed cluster.
 - [Environment variables and flags by version](reference/cli/db/version-history.md)
   Which SURREAL_ environment variables and surreal db command-line flags existed in each SurrealDB release from 1.0.0 to 3.3.0, when each was added or removed, and how defaults changed.
+- [surreal ext](reference/cli/ext.md)
+  The ext component of the Surreal CLI scaffolds, builds, inspects, runs, signs, installs and upgrades Surrealism extensions packaged as .surli archives, and edits a project's package.toml.
 - [SurrealQL formatter](reference/cli/formatter/overview.md)
   The surqlfmt command automatically formats SurrealQL files for consistent style and readability.
 - [CLI tools](reference/cli/index.md)
-  Overview of every command in the surreal launcher, surreal db, surreal cloud and surreal mod, with links to each reference page, plus the separate surqlfmt formatter.
+  Overview of every command in the surreal launcher, surreal db, surreal cloud and surreal ext, with links to each reference page, plus the separate surqlfmt formatter.
 - [surreal launcher commands](reference/cli/launcher.md)
-  Reference for the surreal launcher: install, upgrade, use, uninstall, version, --version, +VERSION, help, version names, SURREAL_CLI_* environment variables, and exit codes.
-- [surreal mod](reference/cli/modules.md)
-  The mod component of the surreal launcher, for building and running WebAssembly modules. Its status, and the surreal db module commands that provide the same workflow today.
+  Reference for the surreal launcher: install, upgrade, use, uninstall, list, --version, +VERSION, help, version names, SURREAL_CLI_* environment variables, and exit codes.
 - [Handle authentication](reference/dotnet/core/authentication.md)
   In this section, we will walk you through the process of authenticating users and securing your SurrealDB database.
 - [Connection strings](reference/dotnet/core/connection-strings.md)
@@ -1783,7 +1783,7 @@ _1131 pages_
 - [Encoding](reference/query-language/functions/database-functions/encoding.md)
   These functions can be used to encode and decode data in base64. It is particularly used when that data needs to be stored and transferred over media that are designed to deal with text. This encoding and decoding helps to ensure that the data remains intact without modification during transport.
 - [Eval](reference/query-language/functions/database-functions/eval.md)
-  Evaluate a SurrealQL or ISO GQL (Cypher Query Language) query string at runtime inside the caller's transaction, gated by dedicated capabilities.
+  Evaluate a SurrealQL or ISO GQL query string at runtime inside the caller's transaction, gated by dedicated capabilities.
 - [File](reference/query-language/functions/database-functions/file.md)
   These functions can be used to work with files.
 - [Geo](reference/query-language/functions/database-functions/geo.md)
@@ -1970,14 +1970,14 @@ _1131 pages_
   The DEFINE DATABASE statement allows you to instantiate a named database, enabling you to specify security and configuration options.
 - [DEFINE EVENT](reference/query-language/statements/define/event.md)
   The DEFINE EVENT statement can be used to create events which can be triggered after any change or modification to the data in a record.
+- [DEFINE EXTENSION](reference/query-language/statements/define/extension.md)
+  The DEFINE EXTENSION statement loads a Surrealism extension into a database from a bucket or Silo, with its DIGEST, SIGNER or UNSIGNED, CAPABILITIES and PERMISSIONS, so that its functions can be called as ext::name::function().
 - [DEFINE FIELD](reference/query-language/statements/define/field.md)
   The DEFINE FIELD statement allows you to instantiate a named field on a table, enabling you to set the field's schema and configuration.
 - [DEFINE FUNCTION](reference/query-language/statements/define/function.md)
   The DEFINE FUNCTION statement allows you to define custom functions that can be reused throughout a database.
 - [DEFINE INDEX](reference/query-language/statements/define/indexes.md)
-  SurrealDB uses indexes to help optimise query performance. An index can consist of one or more fields in a table and can enforce a uniqueness constraint - including HNSW and DISKANN vector indexes.
-- [DEFINE MODULE](reference/query-language/statements/define/module.md)
-  A DEFINE MODULE statement can be used to define a module through which Surrealism extension functions can be called.
+  SurrealDB uses indexes to help optimise query performance. An index can consist of one or more fields in a table and can enforce a uniqueness constraint - including SPATIAL indexes for geometries and HNSW and DISKANN vector indexes.
 - [DEFINE NAMESPACE](reference/query-language/statements/define/namespace.md)
   The DEFINE NAMESPACE statement can be used to setup namespaces, which can contain multiple databases.
 - [DEFINE](reference/query-language/statements/define/overview.md)
@@ -2044,6 +2044,8 @@ _1131 pages_
   Query and modify data over plain HTTP endpoints.
 - [REST API](reference/rest-api/index.md)
   The SurrealDB REST API: executing queries over HTTP. Manage authentication and perform CRUD operations.
+- [MySQL wire protocol](reference/rest-api/mysql-protocol.md)
+  Connect with standard MySQL clients and drivers, and run MySQL SQL, SurrealQL or other dialects against SurrealDB tables over the MySQL wire protocol.
 - [Postgres wire protocol](reference/rest-api/postgres-protocol.md)
   Connect with standard Postgres clients and drivers.
 - [RPC protocol](reference/rest-api/rpc-protocol.md)
@@ -2088,6 +2090,8 @@ _1131 pages_
   The SDK for Rust allows SurrealDB to be used as the storage backend for a Rocket web server
 - [Rust SDK](reference/rust/index.md)
   The official SurrealDB SDK for Rust. Use SurrealDB from client-side and server-side applications, systems, APIs, embedded systems, and IoT devices.
+- [api](reference/rust/methods/api.md)
+  The .api() method for the SurrealDB Rust SDK invokes the endpoints defined with DEFINE API on the selected database.
 - [authenticate](reference/rust/methods/authenticate.md)
   The .authenticate() method for the SurrealDB Rust SDK authenticates the current connection with a JWT token.
 - [begin](reference/rust/methods/begin.md)
@@ -2199,15 +2203,17 @@ _1131 pages_
 - [Docker](running/docker.md)
   Use this tutorial to get started with SurrealDB from within Docker.
 - [File-backed](running/file-backed.md)
-  Start a RocksDB database that persists data on the filesystem. The quickest way to get started with data that survives a restart.
+  Start a SurrealDB server that persists data on the filesystem with SurrealKV. The quickest way to get started with data that survives a restart.
 - [In-memory](running/in-memory.md)
   Start an in-memory SurrealDB database. The quickest way to get started, though data does not persist on shutdown.
+- [Beta](running/installation/beta.md)
+  Install or upgrade to a SurrealDB beta release, such as the 4.0 beta, with the install script, surreal upgrade --beta, or a versioned Docker tag.
 - [Installation](running/installation/index.md)
-  Install the surreal command-line tool and the SurrealDB database on macOS, Windows and Linux. Nightly builds and the install script's options are covered too.
+  Install the surreal command-line tool and the SurrealDB database on macOS, Windows and Linux. Beta and nightly builds and the install script's options are covered too.
 - [Linux](running/installation/linux.md)
   Install the surreal command-line tool and the SurrealDB database on Linux with the install script, then confirm the installation.
 - [macOS](running/installation/macos.md)
-  Install the surreal command-line tool and the SurrealDB database on macOS with the install script or Homebrew, then confirm the installation.
+  Install the surreal command-line tool and the SurrealDB database on macOS with the install script or Homebrew, or the database alone with the surreal-db formula, then confirm the installation.
 - [Nightly](running/installation/nightly.md)
   Install or upgrade to the SurrealDB nightly build, an unreleased build made every night, with the install script, surreal upgrade, or the nightly Docker tag.
 - [Windows](running/installation/windows.md)

@@ -22,7 +22,7 @@ surreal db [OPTIONS] <COMMAND>
 | [`surreal db is-ready`](isready.md) | Health check for readiness probes. |
 | [`surreal db mcp`](mcp.md) *Since v3.1.0* | Start the Model Context Protocol server on stdio for IDE integrations. |
 | [`surreal db ml`](ml.md) | Work with machine-learning features from the CLI. |
-| [`surreal db module`](module.md) | Build and manage WASM modules (including Surrealism). |
+| `surreal db module` | Before SurrealDB 4.0, built and ran Surrealism modules. From 4.0 the commands are part of [`surreal ext`](../../ext.md), and `surreal db module` only says so. |
 | [`surreal upgrade db`](upgrade.md) | Upgrade the database component. Run by the launcher, not by `surreal db`. |
 | [`surreal db validate`](validate.md) | Validate SurrealQL or configuration. |
 | [`surreal db version`](version.md) | Print the database client version, or the version of a server. |
@@ -39,6 +39,6 @@ Most flags have an equivalent environment variable, listed in the tables on each
 
 These subcommands act on a database that already exists or that you start yourself. Provisioning, pausing, scaling, and deleting SurrealDB Cloud instances is handled by [`surreal cloud instance`](../../cloud/index.md), which calls out to `surreal db` for SQL, imports, and exports, so the pages here still describe what happens once a Cloud instance has been resolved.
 
-Installing, upgrading and selecting versions of the database is done by the launcher, with `surreal install db`, `surreal upgrade db`, `surreal use db@<VERSION>` and `surreal version`, described in the [launcher reference](../../launcher.md). The `surreal db upgrade` form is refused, with a message that names `surreal upgrade db`.
+Installing, upgrading and selecting versions of the database is done by the launcher, with `surreal install db`, `surreal upgrade db`, `surreal use db@<VERSION>` and `surreal list`, described in the [launcher reference](../../launcher.md). The `surreal db upgrade` form is refused, with a message that names `surreal upgrade db`.
 
 For installation and a minimal end-to-end example, see the [surreal db overview](../index.md).

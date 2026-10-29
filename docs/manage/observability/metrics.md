@@ -192,7 +192,7 @@ The catalogue is grouped by signal family. Each subsection lists the Prometheus 
             <td scope="row" data-label="Name">`surrealdb_process_memory_allocated_bytes`*Since v3.2.5*</td>
             <td scope="row" data-label="Type">gauge</td>
             <td scope="row" data-label="Labels">-</td>
-            <td scope="row" data-label="Notes">Tracked memory: live Rust-heap allocations, counted at the size class the allocator reserved for each, plus external memory reporters such as the RocksDB block cache. This is the value compared against `SURREAL_MEMORY_THRESHOLD`.</td>
+            <td scope="row" data-label="Notes">Tracked memory: live Rust-heap allocations, counted at the size class the allocator reserved for each, plus memory held by any registered external memory reporter. This is the value compared against `SURREAL_MEMORY_THRESHOLD`.</td>
         </tr>
         <tr>
             <td scope="row" data-label="Name">`surrealdb_process_memory_requested_bytes`*Since v3.3.0*</td>
@@ -211,6 +211,18 @@ The catalogue is grouped by signal family. Each subsection lists the Prometheus 
             <td scope="row" data-label="Type">gauge</td>
             <td scope="row" data-label="Labels">-</td>
             <td scope="row" data-label="Notes">The configured `SURREAL_MEMORY_THRESHOLD` in bytes, or `0` when the memory guard is disabled. Constant for the life of the process.</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Name">`surrealdb_process_memory_refusals_total`*Since v3.3.5*</td>
+            <td scope="row" data-label="Type">counter</td>
+            <td scope="row" data-label="Labels">`site`</td>
+            <td scope="row" data-label="Notes">Requests and queries refused because tracked memory was above `SURREAL_MEMORY_THRESHOLD`. `site` is `websocket` for an RPC message refused before it ran, `http` for a `POST /rpc` request refused before it ran, or `query` for a running query that failed with the memory threshold error. All three series are published from `0`.</td>
+        </tr>
+        <tr>
+            <td scope="row" data-label="Name">`surrealdb_process_memory_guard_engaged_seconds`*Since v3.3.5*</td>
+            <td scope="row" data-label="Type">gauge</td>
+            <td scope="row" data-label="Labels">-</td>
+            <td scope="row" data-label="Notes">How long, in seconds, the memory threshold has refused every request without a break, or `0` while tracked memory is below it. <a href="/docs/reference/rest-api/http-protocol#health">`/health`</a> returns `503` once this reaches `SURREAL_MEMORY_THRESHOLD_UNHEALTHY_AFTER`.</td>
         </tr>
         <tr>
             <td scope="row" data-label="Name">`surrealdb_process_cpu_percent`</td>
@@ -235,10 +247,10 @@ The catalogue is grouped by signal family. Each subsection lists the Prometheus 
 
 The cadence of the process snapshot can be tuned with `SURREAL_PROCESS_METRICS_REFRESH_INTERVAL` (seconds; default `5`, floored at 1).
 
-The four `surrealdb_process_memory_*_bytes` gauges are not on the [public allowlist](#public-metrics-allowlist), because together they show how close an instance is to refusing queries, so only an authenticated scrape returns them. The allocated and threshold gauges are available from 3.2.5, and the requested and reserved gauges from 3.3.0. The allocated, requested and reserved gauges report `0` in a build compiled without allocation tracking. Read together, they answer three questions:
+The four `surrealdb_process_memory_*_bytes` gauges are not on the [public allowlist](#public-metrics-allowlist), because together they show how close an instance is to refusing queries, so only an authenticated scrape returns them. The same is true of the refusal counter and the engaged gauge. The allocated and threshold gauges are available from 3.2.5, the requested and reserved gauges from 3.3.0, and the refusal counter and the engaged gauge from 3.3.5. The allocated, requested and reserved gauges report `0` in a build compiled without allocation tracking. Read together, they answer three questions:
 
 - `surrealdb_process_memory_allocated_bytes / surrealdb_process_memory_threshold_bytes` is how close the instance is to the threshold. Once tracked memory passes it, queries fail with a memory threshold error.
-- `surrealdb_process_memory_bytes - surrealdb_process_memory_allocated_bytes` is resident memory the tracker cannot see, such as allocator overhead, thread stacks and RocksDB memory outside its caches. This is the headroom to leave between `SURREAL_MEMORY_THRESHOLD` and a container memory limit.
+- `surrealdb_process_memory_bytes - surrealdb_process_memory_allocated_bytes` is resident memory the tracker cannot see, such as allocator overhead and thread stacks. This is the headroom to leave between `SURREAL_MEMORY_THRESHOLD` and a container memory limit.
 - `surrealdb_process_memory_reserved_bytes - surrealdb_process_memory_requested_bytes` is internal fragmentation. Use the reserved gauge rather than the allocated one here, because the allocated gauge also counts the external reporters.
 
 ### Statement - `surrealdb.statement`
@@ -667,9 +679,9 @@ The slow-query counter is a Community-edition signal - it bumps for every statem
 
 <Edition value="community" />
 
-Each enabled backend publishes a manifest of `u64` values through the transaction layer. The server bridge registers each entry as an observable gauge under `surrealdb.storage.<backend>.<metric>`; Prometheus renders them as `surrealdb_storage_<backend>_<metric>`. The set is backend-specific (RocksDB, in-memory, SurrealKV) and may change between releases - the canonical list at runtime is whatever the running build exposes at `/metrics`.
+Each enabled backend can publish a manifest of `u64` values through the transaction layer. The server bridge registers each entry as an observable gauge under `surrealdb.storage.<backend>.<metric>`; Prometheus renders them as `surrealdb_storage_<backend>_<metric>`. The set is backend-specific and may change between releases - the canonical list at runtime is whatever the running build exposes at `/metrics`. In SurrealDB 4.0 the in-memory, SurrealKV and TiKV backends publish none, and SurrealDS publishes its own. Before SurrealDB 4.0, the RocksDB backend published them, such as compaction statistics and block cache hits.
 
-Treat these metrics as operator-only - they leak backend-specific implementation detail (compaction stats, block cache hits, etc.) that is rarely meaningful outside the operator persona.
+Treat these metrics as operator-only - they expose backend-specific implementation detail that is rarely meaningful outside the operator persona.
 
 ### Cluster - `surrealdb.ds`
 
@@ -854,6 +866,7 @@ A starter set for production:
 - `rate(surrealdb_audit_dropped[5m]) > 0` or `rate(surrealdb_audit_append_errors[5m]) > 0` - audit records being lost.
 - `surrealdb_audit_queue_depth` sustained above ~50% of `SURREAL_AUDIT_QUEUE_CAPACITY` - sink is falling behind.
 - `surrealdb_process_memory_allocated_bytes / surrealdb_process_memory_threshold_bytes > 0.9 and surrealdb_process_memory_threshold_bytes > 0` sustained - tracked memory is close to the point where queries fail.
+- `increase(surrealdb_process_memory_refusals_total[5m]) > 0`, or `surrealdb_process_memory_guard_engaged_seconds > 30` - the memory threshold is refusing requests.
 - `surrealdb_license_state{state="valid"} == 0` - an Enterprise node's licence is not currently verified as valid, so its next start may be refused. A `surrealdb_license_shutdown_at_seconds` series means an exit is scheduled.
 
 ## Migration from 3.0

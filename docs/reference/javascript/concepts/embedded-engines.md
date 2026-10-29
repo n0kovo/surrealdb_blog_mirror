@@ -9,6 +9,17 @@ source: "https://github.com/surrealdb/docs.surrealdb.com/blob/main/src/content/r
 
 The JavaScript SDK supports running SurrealDB as an embedded database through two engine plugins. Choose the one that matches your environment:
 
+**SurrealDB 4.0 and later**
+
+| Engine | Package | Environment | Storage options |
+|--------|---------|-------------|-----------------|
+| WebAssembly | `@surrealdb/wasm` | Browsers | `mem://`, `surrealkv://` (dedicated worker only) |
+| Node.js | `@surrealdb/node` | Node.js, Bun, Deno | `mem://`, `surrealkv://` |
+
+RocksDB (`rocksdb://`) and IndexedDB (`indxdb://`) were removed in SurrealDB 4.0. The [Node.js](../engines/node.md) and [WebAssembly](../engines/wasm.md#moving-from-indexeddb) engine pages describe how existing data moves to SurrealKV.
+
+**Before SurrealDB 4.0**
+
 | Engine | Package | Environment | Storage options |
 |--------|---------|-------------|-----------------|
 | WebAssembly | `@surrealdb/wasm` | Browsers | `mem://`, `indxdb://` |
@@ -25,7 +36,15 @@ Each plugin runs a SurrealDB engine that ships as its own package: `@surrealdb/w
 
 ## WebAssembly engine (browser)
 
-The `@surrealdb/wasm` package runs SurrealDB inside a browser environment. It supports in-memory databases and persistent storage via IndexedDB, and can optionally run inside a Web Worker to keep the main thread responsive.
+The `@surrealdb/wasm` package runs SurrealDB inside a browser environment. It can run inside a Web Worker to keep the main thread responsive.
+
+**SurrealDB 4.0 and later**
+
+The engine supports in-memory databases, and persistent storage with SurrealKV over the browser's Origin Private File System (OPFS). Persistent storage requires a web worker.
+
+**Before SurrealDB 4.0**
+
+The engine supports in-memory databases and persistent storage via IndexedDB.
 
 ### Installation
 
@@ -45,13 +64,23 @@ const db = new Surreal({
 });
 
 await db.connect('mem://');
-// or persist with IndexedDB:
+```
+
+**SurrealDB 4.0 and later**
+
+These engines run on the main thread of the page, so they support `mem://` only. A `surrealkv://` database needs the web worker setup below.
+
+**Before SurrealDB 4.0**
+
+To persist the database with IndexedDB, connect with an `indxdb://` endpoint:
+
+```ts
 await db.connect('indxdb://myapp');
 ```
 
 ### Running in a web worker
 
-Offload database operations from the main thread to keep your interface responsive:
+A web worker runs JavaScript on a separate thread in the background of the page, so database work in a worker does not delay the page's own drawing and input. `createWasmWorkerEngines` starts the worker, loads the engine into it, and passes each query and its result between the page and the worker, so the rest of the application uses `db` in the same way as on the main thread. The only worker-specific line is the import of the worker script, written below in the `?worker` form that Vite uses to bundle a file as a worker. Other bundlers have their own form for this:
 
 ```ts
 
@@ -65,6 +94,24 @@ const db = new Surreal({
 });
 
 await db.connect('mem://');
+```
+
+**SurrealDB 4.0 and later**
+
+A worker created this way is a dedicated worker, which is where a persistent `surrealkv://` database has to run. Connect to one with a `surrealkv://` endpoint:
+
+```ts
+await db.connect('surrealkv://myapp');
+```
+
+The [WebAssembly engine](../engines/wasm.md#persistent-storage) page describes what a persistent browser database needs from the page, including persistent storage permission and one tab per database.
+
+**Before SurrealDB 4.0**
+
+A worker also supports `indxdb://`, in the same way as the main thread:
+
+```ts
+await db.connect('indxdb://myapp');
 ```
 
 ### Bundler configuration
@@ -89,7 +136,7 @@ export default {
 
 ## Node.js engine (server)
 
-The `@surrealdb/node` package runs SurrealDB within Node.js, Bun, or Deno. It supports in-memory databases and persistent storage via RocksDB and SurrealKV.
+The `@surrealdb/node` package runs SurrealDB within Node.js, Bun, or Deno. It supports in-memory databases and persistent storage via SurrealKV.
 
 ### Installation
 
